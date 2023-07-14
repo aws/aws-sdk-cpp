@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class KinesisVideoErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,10 +55,25 @@ enum class KinesisVideoErrors
   INVALID_DEVICE,
   INVALID_RESOURCE_FORMAT,
   NOT_AUTHORIZED,
+  NO_DATA_RETENTION,
   RESOURCE_IN_USE,
   TAGS_PER_RESOURCE_EXCEEDED_LIMIT,
   VERSION_MISMATCH
 };
+
+class AWS_KINESISVIDEO_API KinesisVideoError : public Aws::Client::AWSError<KinesisVideoErrors>
+{
+public:
+  KinesisVideoError() {}
+  KinesisVideoError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+  KinesisVideoError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+  KinesisVideoError(const Aws::Client::AWSError<KinesisVideoErrors>& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+  KinesisVideoError(Aws::Client::AWSError<KinesisVideoErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KinesisVideoErrorMapper
 {
   AWS_KINESISVIDEO_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

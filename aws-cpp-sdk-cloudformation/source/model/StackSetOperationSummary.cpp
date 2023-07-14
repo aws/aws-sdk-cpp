@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackSetOperationSummary.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,7 +27,8 @@ StackSetOperationSummary::StackSetOperationSummary() :
     m_status(StackSetOperationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+    m_endTimestampHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -48,7 +39,8 @@ StackSetOperationSummary::StackSetOperationSummary(const XmlNode& xmlNode) :
     m_status(StackSetOperationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
+    m_endTimestampHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -89,6 +81,12 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
       m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimestampHasBeenSet = true;
     }
+    XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
+    if(!statusReasonNode.IsNull())
+    {
+      m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
+      m_statusReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +119,11 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+
 }
 
 void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +147,10 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
   if(m_endTimestampHasBeenSet)
   {
       oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 }
 

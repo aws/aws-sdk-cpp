@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
+#include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
@@ -158,13 +149,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -186,13 +177,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -214,13 +205,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -242,13 +233,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -270,13 +261,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -298,13 +289,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -326,13 +317,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -354,13 +345,13 @@ namespace Model
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
      * <code>KeyType</code> - The role that the key attribute will assume:</p> <ul>
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
-     * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * - sort key</p> </li> </ul> </li> </ul>  <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
      * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
-     * physically close together, in sorted order by the sort key value.</p> </note>
+     * physically close together, in sorted order by the sort key value.</p> 
      * <p>For a simple primary key (partition key), you must provide exactly one
      * element with a <code>KeyType</code> of <code>HASH</code>.</p> <p>For a composite
      * primary key (partition key and sort key), you must provide exactly two elements,
@@ -905,10 +896,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
 
@@ -917,10 +908,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
 
@@ -929,10 +920,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
@@ -941,10 +932,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
 
@@ -953,10 +944,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
@@ -965,10 +956,10 @@ namespace Model
      * index. The settings can be modified using the <code>UpdateTable</code>
      * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
-     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * you cannot specify this property.</p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
@@ -1163,6 +1154,43 @@ namespace Model
      */
     inline CreateTableRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline const TableClass& GetTableClass() const{ return m_tableClass; }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline bool TableClassHasBeenSet() const { return m_tableClassHasBeenSet; }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline void SetTableClass(const TableClass& value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline void SetTableClass(TableClass&& value) { m_tableClassHasBeenSet = true; m_tableClass = std::move(value); }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline CreateTableRequest& WithTableClass(const TableClass& value) { SetTableClass(value); return *this;}
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline CreateTableRequest& WithTableClass(TableClass&& value) { SetTableClass(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1194,6 +1222,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    TableClass m_tableClass;
+    bool m_tableClassHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,10 @@ AddPermissionRequest::AddPermissionRequest() :
     m_sourceAccountHasBeenSet(false),
     m_eventSourceTokenHasBeenSet(false),
     m_qualifierHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_principalOrgIDHasBeenSet(false),
+    m_functionUrlAuthType(FunctionUrlAuthType::NOT_SET),
+    m_functionUrlAuthTypeHasBeenSet(false)
 {
 }
 
@@ -82,6 +75,17 @@ Aws::String AddPermissionRequest::SerializePayload() const
   {
    payload.WithString("RevisionId", m_revisionId);
 
+  }
+
+  if(m_principalOrgIDHasBeenSet)
+  {
+   payload.WithString("PrincipalOrgID", m_principalOrgID);
+
+  }
+
+  if(m_functionUrlAuthTypeHasBeenSet)
+  {
+   payload.WithString("FunctionUrlAuthType", FunctionUrlAuthTypeMapper::GetNameForFunctionUrlAuthType(m_functionUrlAuthType));
   }
 
   return payload.View().WriteReadable();

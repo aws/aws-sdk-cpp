@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/CreateOTAUpdateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ CreateOTAUpdateRequest::CreateOTAUpdateRequest() :
     m_targetSelectionHasBeenSet(false),
     m_awsJobExecutionsRolloutConfigHasBeenSet(false),
     m_awsJobPresignedUrlConfigHasBeenSet(false),
+    m_awsJobAbortConfigHasBeenSet(false),
+    m_awsJobTimeoutConfigHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_additionalParametersHasBeenSet(false),
@@ -84,6 +76,18 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
   if(m_awsJobPresignedUrlConfigHasBeenSet)
   {
    payload.WithObject("awsJobPresignedUrlConfig", m_awsJobPresignedUrlConfig.Jsonize());
+
+  }
+
+  if(m_awsJobAbortConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobAbortConfig", m_awsJobAbortConfig.Jsonize());
+
+  }
+
+  if(m_awsJobTimeoutConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobTimeoutConfig", m_awsJobTimeoutConfig.Jsonize());
 
   }
 

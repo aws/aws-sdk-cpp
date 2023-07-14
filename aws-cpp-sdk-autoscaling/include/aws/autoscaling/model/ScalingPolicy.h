@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/TargetTrackingConfiguration.h>
+#include <aws/autoscaling/model/PredictiveScalingConfiguration.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <aws/autoscaling/model/Alarm.h>
 #include <utility>
@@ -177,106 +168,162 @@ namespace Model
 
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline ScalingPolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <p>One of the following policy types: </p> <ul> <li> <p>
+     * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
+     * tracking scaling policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
+     * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
-     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
+     * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
@@ -308,38 +355,26 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
-     * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <p>The minimum value to scale by when the adjustment type is
+     * <code>PercentChangeInCapacity</code>. </p>
      */
     inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
 
     /**
-     * <p>The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
-     * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <p>The minimum value to scale by when the adjustment type is
+     * <code>PercentChangeInCapacity</code>. </p>
      */
     inline bool MinAdjustmentMagnitudeHasBeenSet() const { return m_minAdjustmentMagnitudeHasBeenSet; }
 
     /**
-     * <p>The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
-     * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <p>The minimum value to scale by when the adjustment type is
+     * <code>PercentChangeInCapacity</code>. </p>
      */
     inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
 
     /**
-     * <p>The minimum number of instances to scale. If the value of
-     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
-     * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
-     * least this many instances. Otherwise, the error is
-     * <code>ValidationError</code>.</p>
+     * <p>The minimum value to scale by when the adjustment type is
+     * <code>PercentChangeInCapacity</code>. </p>
      */
     inline ScalingPolicy& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 
@@ -374,26 +409,22 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * <p>The duration of the policy's cooldown period, in seconds.</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * <p>The duration of the policy's cooldown period, in seconds.</p>
      */
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * <p>The duration of the policy's cooldown period, in seconds.</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before any
-     * further dynamic scaling activities can start.</p>
+     * <p>The duration of the policy's cooldown period, in seconds.</p>
      */
     inline ScalingPolicy& WithCooldown(int value) { SetCooldown(value); return *this;}
 
@@ -617,6 +648,37 @@ namespace Model
      */
     inline ScalingPolicy& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const{ return m_predictiveScalingConfiguration; }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline bool PredictiveScalingConfigurationHasBeenSet() const { return m_predictiveScalingConfigurationHasBeenSet; }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = value; }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::move(value); }
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline ScalingPolicy& WithPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { SetPredictiveScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>A predictive scaling policy.</p>
+     */
+    inline ScalingPolicy& WithPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { SetPredictiveScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -663,6 +725,9 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    PredictiveScalingConfiguration m_predictiveScalingConfiguration;
+    bool m_predictiveScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

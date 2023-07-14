@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribestreaming/model/Item.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,14 @@ Item::Item() :
     m_endTimeHasBeenSet(false),
     m_type(ItemType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_vocabularyFilterMatch(false),
+    m_vocabularyFilterMatchHasBeenSet(false),
+    m_speakerHasBeenSet(false),
+    m_confidence(0.0),
+    m_confidenceHasBeenSet(false),
+    m_stable(false),
+    m_stableHasBeenSet(false)
 {
 }
 
@@ -46,7 +43,14 @@ Item::Item(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_type(ItemType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_vocabularyFilterMatch(false),
+    m_vocabularyFilterMatchHasBeenSet(false),
+    m_speakerHasBeenSet(false),
+    m_confidence(0.0),
+    m_confidenceHasBeenSet(false),
+    m_stable(false),
+    m_stableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +85,34 @@ Item& Item::operator =(JsonView jsonValue)
     m_contentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VocabularyFilterMatch"))
+  {
+    m_vocabularyFilterMatch = jsonValue.GetBool("VocabularyFilterMatch");
+
+    m_vocabularyFilterMatchHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Speaker"))
+  {
+    m_speaker = jsonValue.GetString("Speaker");
+
+    m_speakerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Confidence"))
+  {
+    m_confidence = jsonValue.GetDouble("Confidence");
+
+    m_confidenceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Stable"))
+  {
+    m_stable = jsonValue.GetBool("Stable");
+
+    m_stableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +140,30 @@ JsonValue Item::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithString("Content", m_content);
+
+  }
+
+  if(m_vocabularyFilterMatchHasBeenSet)
+  {
+   payload.WithBool("VocabularyFilterMatch", m_vocabularyFilterMatch);
+
+  }
+
+  if(m_speakerHasBeenSet)
+  {
+   payload.WithString("Speaker", m_speaker);
+
+  }
+
+  if(m_confidenceHasBeenSet)
+  {
+   payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_stableHasBeenSet)
+  {
+   payload.WithBool("Stable", m_stable);
 
   }
 

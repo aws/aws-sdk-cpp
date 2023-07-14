@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/polly/model/VoiceId.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -47,6 +37,7 @@ namespace Aws
         static const int Enrique_HASH = HashingUtils::HashString("Enrique");
         static const int Ewa_HASH = HashingUtils::HashString("Ewa");
         static const int Filiz_HASH = HashingUtils::HashString("Filiz");
+        static const int Gabrielle_HASH = HashingUtils::HashString("Gabrielle");
         static const int Geraint_HASH = HashingUtils::HashString("Geraint");
         static const int Giorgio_HASH = HashingUtils::HashString("Giorgio");
         static const int Gwyneth_HASH = HashingUtils::HashString("Gwyneth");
@@ -60,6 +51,7 @@ namespace Aws
         static const int Justin_HASH = HashingUtils::HashString("Justin");
         static const int Karl_HASH = HashingUtils::HashString("Karl");
         static const int Kendra_HASH = HashingUtils::HashString("Kendra");
+        static const int Kevin_HASH = HashingUtils::HashString("Kevin");
         static const int Kimberly_HASH = HashingUtils::HashString("Kimberly");
         static const int Lea_HASH = HashingUtils::HashString("Lea");
         static const int Liv_HASH = HashingUtils::HashString("Liv");
@@ -77,6 +69,7 @@ namespace Aws
         static const int Mizuki_HASH = HashingUtils::HashString("Mizuki");
         static const int Naja_HASH = HashingUtils::HashString("Naja");
         static const int Nicole_HASH = HashingUtils::HashString("Nicole");
+        static const int Olivia_HASH = HashingUtils::HashString("Olivia");
         static const int Penelope_HASH = HashingUtils::HashString("Penelope");
         static const int Raveena_HASH = HashingUtils::HashString("Raveena");
         static const int Ricardo_HASH = HashingUtils::HashString("Ricardo");
@@ -90,6 +83,10 @@ namespace Aws
         static const int Vitoria_HASH = HashingUtils::HashString("Vitoria");
         static const int Zeina_HASH = HashingUtils::HashString("Zeina");
         static const int Zhiyu_HASH = HashingUtils::HashString("Zhiyu");
+        static const int Aria_HASH = HashingUtils::HashString("Aria");
+        static const int Ayanda_HASH = HashingUtils::HashString("Ayanda");
+        static const int Arlet_HASH = HashingUtils::HashString("Arlet");
+        static const int Hannah_HASH = HashingUtils::HashString("Hannah");
 
 
         VoiceId GetVoiceIdForName(const Aws::String& name)
@@ -163,6 +160,10 @@ namespace Aws
           {
             return VoiceId::Filiz;
           }
+          else if (hashCode == Gabrielle_HASH)
+          {
+            return VoiceId::Gabrielle;
+          }
           else if (hashCode == Geraint_HASH)
           {
             return VoiceId::Geraint;
@@ -214,6 +215,10 @@ namespace Aws
           else if (hashCode == Kendra_HASH)
           {
             return VoiceId::Kendra;
+          }
+          else if (hashCode == Kevin_HASH)
+          {
+            return VoiceId::Kevin;
           }
           else if (hashCode == Kimberly_HASH)
           {
@@ -283,6 +288,10 @@ namespace Aws
           {
             return VoiceId::Nicole;
           }
+          else if (hashCode == Olivia_HASH)
+          {
+            return VoiceId::Olivia;
+          }
           else if (hashCode == Penelope_HASH)
           {
             return VoiceId::Penelope;
@@ -335,6 +344,22 @@ namespace Aws
           {
             return VoiceId::Zhiyu;
           }
+          else if (hashCode == Aria_HASH)
+          {
+            return VoiceId::Aria;
+          }
+          else if (hashCode == Ayanda_HASH)
+          {
+            return VoiceId::Ayanda;
+          }
+          else if (hashCode == Arlet_HASH)
+          {
+            return VoiceId::Arlet;
+          }
+          else if (hashCode == Hannah_HASH)
+          {
+            return VoiceId::Hannah;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -383,6 +408,8 @@ namespace Aws
             return "Ewa";
           case VoiceId::Filiz:
             return "Filiz";
+          case VoiceId::Gabrielle:
+            return "Gabrielle";
           case VoiceId::Geraint:
             return "Geraint";
           case VoiceId::Giorgio:
@@ -409,6 +436,8 @@ namespace Aws
             return "Karl";
           case VoiceId::Kendra:
             return "Kendra";
+          case VoiceId::Kevin:
+            return "Kevin";
           case VoiceId::Kimberly:
             return "Kimberly";
           case VoiceId::Lea:
@@ -443,6 +472,8 @@ namespace Aws
             return "Naja";
           case VoiceId::Nicole:
             return "Nicole";
+          case VoiceId::Olivia:
+            return "Olivia";
           case VoiceId::Penelope:
             return "Penelope";
           case VoiceId::Raveena:
@@ -469,6 +500,14 @@ namespace Aws
             return "Zeina";
           case VoiceId::Zhiyu:
             return "Zhiyu";
+          case VoiceId::Aria:
+            return "Aria";
+          case VoiceId::Ayanda:
+            return "Ayanda";
+          case VoiceId::Arlet:
+            return "Arlet";
+          case VoiceId::Hannah:
+            return "Hannah";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

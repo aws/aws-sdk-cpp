@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ESPartitionInstanceType.h>
 #include <aws/es/model/ZoneAwarenessConfig.h>
 #include <aws/es/model/ESWarmPartitionInstanceType.h>
+#include <aws/es/model/ColdStorageOptions.h>
 #include <utility>
 
 namespace Aws
@@ -335,6 +326,43 @@ namespace Model
      */
     inline ElasticsearchClusterConfig& WithWarmCount(int value) { SetWarmCount(value); return *this;}
 
+
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
+     */
+    inline const ColdStorageOptions& GetColdStorageOptions() const{ return m_coldStorageOptions; }
+
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
+     */
+    inline bool ColdStorageOptionsHasBeenSet() const { return m_coldStorageOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
+     */
+    inline void SetColdStorageOptions(const ColdStorageOptions& value) { m_coldStorageOptionsHasBeenSet = true; m_coldStorageOptions = value; }
+
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
+     */
+    inline void SetColdStorageOptions(ColdStorageOptions&& value) { m_coldStorageOptionsHasBeenSet = true; m_coldStorageOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
+     */
+    inline ElasticsearchClusterConfig& WithColdStorageOptions(const ColdStorageOptions& value) { SetColdStorageOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch
+     * Domain</p>
+     */
+    inline ElasticsearchClusterConfig& WithColdStorageOptions(ColdStorageOptions&& value) { SetColdStorageOptions(std::move(value)); return *this;}
+
   private:
 
     ESPartitionInstanceType m_instanceType;
@@ -366,6 +394,9 @@ namespace Model
 
     int m_warmCount;
     bool m_warmCountHasBeenSet;
+
+    ColdStorageOptions m_coldStorageOptions;
+    bool m_coldStorageOptionsHasBeenSet;
   };
 
 } // namespace Model

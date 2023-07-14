@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -92,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline GetConfigurationProfileRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline GetConfigurationProfileRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the configuration profile you want to get.</p>
+     * <p>The ID of the configuration profile that you want to get.</p>
      */
     inline GetConfigurationProfileRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
 

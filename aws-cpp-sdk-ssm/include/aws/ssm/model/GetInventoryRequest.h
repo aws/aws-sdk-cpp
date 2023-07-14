@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -101,7 +91,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline const Aws::Vector<InventoryAggregator>& GetAggregators() const{ return m_aggregators; }
 
@@ -109,7 +99,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
 
@@ -117,7 +107,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline void SetAggregators(const Aws::Vector<InventoryAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
 
@@ -125,7 +115,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline void SetAggregators(Aws::Vector<InventoryAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
 
@@ -133,7 +123,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline GetInventoryRequest& WithAggregators(const Aws::Vector<InventoryAggregator>& value) { SetAggregators(value); return *this;}
 
@@ -141,7 +131,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline GetInventoryRequest& WithAggregators(Aws::Vector<InventoryAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
 
@@ -149,7 +139,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline GetInventoryRequest& AddAggregators(const InventoryAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
 
@@ -157,7 +147,7 @@ namespace Model
      * <p>Returns counts of inventory types based on one or more expressions. For
      * example, if you aggregate by using an expression that uses the
      * <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
-     * how many Windows and Linux instances exist in your inventoried fleet.</p>
+     * how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
      */
     inline GetInventoryRequest& AddAggregators(InventoryAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
 

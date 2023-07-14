@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -50,49 +40,57 @@ namespace Model
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline const Aws::String& GetStandardsSubscriptionArn() const{ return m_standardsSubscriptionArn; }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline bool StandardsSubscriptionArnHasBeenSet() const { return m_standardsSubscriptionArnHasBeenSet; }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline void SetStandardsSubscriptionArn(const Aws::String& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = value; }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline void SetStandardsSubscriptionArn(Aws::String&& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = std::move(value); }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline void SetStandardsSubscriptionArn(const char* value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn.assign(value); }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline DescribeStandardsControlsRequest& WithStandardsSubscriptionArn(const Aws::String& value) { SetStandardsSubscriptionArn(value); return *this;}
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline DescribeStandardsControlsRequest& WithStandardsSubscriptionArn(Aws::String&& value) { SetStandardsSubscriptionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
-     * standard.</p>
+     * standard. To get the subscription ARNs of the standards you have enabled, use
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline DescribeStandardsControlsRequest& WithStandardsSubscriptionArn(const char* value) { SetStandardsSubscriptionArn(value); return *this;}
 

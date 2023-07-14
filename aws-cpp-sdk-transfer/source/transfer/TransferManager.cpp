@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transfer/TransferManager.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -110,6 +100,24 @@ namespace Aws
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn, writeToFile);
+            handle->ApplyDownloadConfiguration(downloadConfig);
+            handle->SetContext(context);
+
+            auto self = shared_from_this();
+            m_transferConfig.transferExecutor->Submit([self, handle] { self->DoDownload(handle); });
+            return handle;
+        }
+
+        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName,
+                                                                      const Aws::String& keyName,
+                                                                      uint64_t fileOffset,
+                                                                      uint64_t downloadBytes,
+                                                                      CreateDownloadStreamCallback writeToStreamfn,
+                                                                      const DownloadConfiguration& downloadConfig,
+                                                                      const Aws::String& writeToFile,
+                                                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+        {
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, fileOffset, downloadBytes, writeToStreamfn, writeToFile);
             handle->ApplyDownloadConfiguration(downloadConfig);
             handle->SetContext(context);
 
@@ -293,7 +301,7 @@ namespace Aws
                     {
                         uint64_t partSize = (std::min)(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
                         bool lastPart = (i == partCount - 1) ? true : false;
-                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize), lastPart));
+                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize, lastPart));
                     }
                 }
                 else
@@ -311,7 +319,7 @@ namespace Aws
             }
             else
             {
-                size_t bytesLeft = 0;
+                uint64_t bytesLeft = 0;
                 //at this point we've been going synchronously so this is consistent
                 const auto failedPartsSize = handle->GetFailedParts().size();
                 for (auto failedParts : handle->GetFailedParts())
@@ -416,7 +424,7 @@ namespace Aws
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
-            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, static_cast<size_t>(handle->GetBytesTotalSize()), true);
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, handle->GetBytesTotalSize(), true);
 
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
@@ -642,15 +650,26 @@ namespace Aws
             return retryHandle;
         }
 
+        static Aws::String FormatRangeSpecifier(uint64_t rangeStart, uint64_t rangeEnd)
+        {
+            Aws::StringStream rangeStream;
+            rangeStream << "bytes=" << rangeStart << "-" << rangeEnd;
+            return rangeStream.str();
+        }
+
         void TransferManager::DoSinglePartDownload(const std::shared_ptr<TransferHandle>& handle)
         {
             auto queuedParts = handle->GetQueuedParts();
             assert(queuedParts.size() == 1);
 
             auto partState = queuedParts.begin()->second;
-            Aws::S3::Model::GetObjectRequest request;
+            auto request = m_transferConfig.getObjectTemplate;
             request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+            request.SetRange(
+                FormatRangeSpecifier(
+                    handle->GetBytesOffset(),
+                    handle->GetBytesOffset() + handle->GetBytesTotalSize() - 1));
             request.WithBucket(handle->GetBucketName())
                    .WithKey(handle->GetKey());
 
@@ -696,17 +715,10 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
         }
 
-        static Aws::String FormatRangeSpecifier(std::size_t rangeStart, std::size_t rangeEnd)
-        {
-            Aws::StringStream rangeStream;
-            rangeStream << "bytes=" << rangeStart << "-" << rangeEnd;
-            return rangeStream.str();
-        }
-
         bool TransferManager::InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle)
         {
             bool isRetry = handle->HasParts();
-            size_t bufferSize = static_cast<size_t>(m_transferConfig.bufferSize);
+            uint64_t bufferSize = m_transferConfig.bufferSize;
             if (!isRetry)
             {
                 Aws::S3::Model::HeadObjectRequest headObjectRequest;
@@ -717,6 +729,15 @@ namespace Aws
                 if(!handle->GetVersionId().empty())
                 {
                     headObjectRequest.SetVersionId(handle->GetVersionId());
+                }
+
+                if (handle->GetBytesTotalSize() != 0)
+                {
+                    // if non zero, then offset and numbytes were passed, so using part download
+                    headObjectRequest.SetRange(
+                        FormatRangeSpecifier(
+                            handle->GetBytesOffset(),
+                            handle->GetBytesOffset() + handle->GetBytesTotalSize() - 1));
                 }
 
                 auto headObjectOutcome = m_transferConfig.s3Client->HeadObject(headObjectRequest);
@@ -734,7 +755,7 @@ namespace Aws
                     return false;
                 }
 
-                std::size_t downloadSize = static_cast<size_t>(headObjectOutcome.GetResult().GetContentLength());
+                auto downloadSize = static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength());
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
@@ -748,12 +769,12 @@ namespace Aws
                 }
 
                 // For empty file, we create 1 part here to make downloading behaviors consistent for files with different size.
-                std::size_t partCount = (std::max)((downloadSize + bufferSize - 1) / bufferSize, static_cast<std::size_t>(1));
+                auto partCount = (std::max)((downloadSize + bufferSize - 1) / bufferSize, static_cast<uint64_t>(1));
                 handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
 
                 for(std::size_t i = 0; i < partCount; ++i)
                 {
-                    std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
+                    auto partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
                     bool lastPart = (i == partCount - 1) ? true : false;
                     auto partState = Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize, lastPart);
                     partState->SetRangeBegin(i * bufferSize);
@@ -781,7 +802,7 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
 
             bool isMultipart = handle->IsMultipart();
-            size_t bufferSize = static_cast<size_t>(m_transferConfig.bufferSize);
+            uint64_t bufferSize = m_transferConfig.bufferSize;
 
             if(!isMultipart)
             {
@@ -795,8 +816,8 @@ namespace Aws
             while(queuedPartIter != queuedParts.end() && handle->ShouldContinue())
             {
                 const auto& partState = queuedPartIter->second;
-                std::size_t rangeStart = ( partState->GetPartId() - 1 ) * bufferSize;
-                std::size_t rangeEnd = rangeStart + partState->GetSizeInBytes() - 1;
+                uint64_t rangeStart = handle->GetBytesOffset() + ( partState->GetPartId() - 1 ) * bufferSize;
+                uint64_t rangeEnd = rangeStart + partState->GetSizeInBytes() - 1;
                 auto buffer = m_bufferManager.Acquire();
                 partState->SetDownloadBuffer(buffer);
 
@@ -812,7 +833,7 @@ namespace Aws
                 {
                     partState->SetDownloadBuffer(buffer);
 
-                    Aws::S3::Model::GetObjectRequest getObjectRangeRequest;
+                    auto getObjectRangeRequest = m_transferConfig.getObjectTemplate;
                     getObjectRangeRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     getObjectRangeRequest.SetBucket(handle->GetBucketName());
@@ -995,8 +1016,13 @@ namespace Aws
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
             auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
-            auto handler = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
-                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
+            auto handler = [self](const Aws::S3::S3Client* client,
+                                  const Aws::S3::Model::ListObjectsV2Request& lambdaRequest,
+                                  const Aws::S3::Model::ListObjectsV2Outcome& lambdaOutcome,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
+                                {
+                                    self->HandleListObjectsResponse(client, lambdaRequest, lambdaOutcome, lambdaContext);
+                                };
 
             auto downloadContext = std::static_pointer_cast<const DownloadDirectoryContext>(context);
             const auto& directory = downloadContext->rootDirectory;
@@ -1138,9 +1164,10 @@ namespace Aws
 
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Seeking input stream to determine content-length to upload file to bucket: "
                     << bucketName << " with key: " << keyName);
+            auto preLen = static_cast<uint64_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::end);
-            size_t length = static_cast<size_t>(fileStream->tellg());
-            fileStream->seekg(0, std::ios_base::beg);
+            auto length = static_cast<uint64_t>(fileStream->tellg()) - preLen;
+            fileStream->seekg(static_cast<size_t>(preLen), std::ios_base::beg);
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting content-length to " << length << " bytes. To upload file to bucket: "
                     << bucketName << " with key: " << keyName);
 

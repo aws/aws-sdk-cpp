@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appsync/model/UpdateDataSourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_elasticsearchConfigHasBeenSet(false),
+    m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false)
 {
@@ -73,6 +64,12 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
   if(m_elasticsearchConfigHasBeenSet)
   {
    payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
+
+  }
+
+  if(m_openSearchServiceConfigHasBeenSet)
+  {
+   payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
 
   }
 

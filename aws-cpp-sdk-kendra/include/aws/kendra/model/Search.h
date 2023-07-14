@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -132,6 +122,39 @@ namespace Model
      */
     inline Search& WithDisplayable(bool value) { SetDisplayable(value); return *this;}
 
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline bool GetSortable() const{ return m_sortable; }
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline bool SortableHasBeenSet() const { return m_sortableHasBeenSet; }
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline void SetSortable(bool value) { m_sortableHasBeenSet = true; m_sortable = value; }
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline Search& WithSortable(bool value) { SetSortable(value); return *this;}
+
   private:
 
     bool m_facetable;
@@ -142,6 +165,9 @@ namespace Model
 
     bool m_displayable;
     bool m_displayableHasBeenSet;
+
+    bool m_sortable;
+    bool m_sortableHasBeenSet;
   };
 
 } // namespace Model

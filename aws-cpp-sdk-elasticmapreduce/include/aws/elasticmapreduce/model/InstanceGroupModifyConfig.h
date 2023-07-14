@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ShrinkPolicy.h>
+#include <aws/elasticmapreduce/model/ReconfigurationType.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <utility>
 
@@ -52,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::move(value); }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique ID of the instance group to expand or shrink.</p>
+     * <p>Unique ID of the instance group to modify.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
@@ -200,6 +191,37 @@ namespace Model
 
 
     /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline const ReconfigurationType& GetReconfigurationType() const{ return m_reconfigurationType; }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline bool ReconfigurationTypeHasBeenSet() const { return m_reconfigurationTypeHasBeenSet; }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline void SetReconfigurationType(const ReconfigurationType& value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = value; }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline void SetReconfigurationType(ReconfigurationType&& value) { m_reconfigurationTypeHasBeenSet = true; m_reconfigurationType = std::move(value); }
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline InstanceGroupModifyConfig& WithReconfigurationType(const ReconfigurationType& value) { SetReconfigurationType(value); return *this;}
+
+    /**
+     * <p>Type of reconfiguration requested. Valid values are MERGE and OVERWRITE.</p>
+     */
+    inline InstanceGroupModifyConfig& WithReconfigurationType(ReconfigurationType&& value) { SetReconfigurationType(std::move(value)); return *this;}
+
+
+    /**
      * <p>A list of new or modified configurations to apply for an instance group.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
@@ -252,6 +274,9 @@ namespace Model
 
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet;
+
+    ReconfigurationType m_reconfigurationType;
+    bool m_reconfigurationTypeHasBeenSet;
 
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;

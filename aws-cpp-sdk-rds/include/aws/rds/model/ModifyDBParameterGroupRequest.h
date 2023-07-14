@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -109,98 +99,178 @@ namespace Model
 
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>An array of parameter names, values, and the apply method for the parameter
-     * update. At least one parameter name, value, and apply method must be supplied;
-     * later arguments are optional. A maximum of 20 parameters can be modified in a
-     * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
-     * value with dynamic parameters only. You can use the pending-reboot value for
-     * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * <p>An array of parameter names, values, and the application methods for the
+     * parameter update. At least one parameter name, value, and application method
+     * must be supplied; later arguments are optional. A maximum of 20 parameters can
+     * be modified in a single request.</p> <p>Valid Values (for the application
+     * method): <code>immediate | pending-reboot</code> </p> <p>You can use the
+     * <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+     * <p>When the application method is <code>immediate</code>, changes to dynamic
+     * parameters are applied immediately to the DB instances associated with the
+     * parameter group.</p> <p>When the application method is
+     * <code>pending-reboot</code>, changes to dynamic and static parameters are
+     * applied after a reboot without failover to the DB instances associated with the
+     * parameter group.</p>  <p>You can't use <code>pending-reboot</code> with
+     * dynamic parameters on RDS for SQL Server DB instances. Use
+     * <code>immediate</code>.</p>  <p>For more information on modifying DB
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working
+     * with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline ModifyDBParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 

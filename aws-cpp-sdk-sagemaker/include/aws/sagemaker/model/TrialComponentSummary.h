@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -334,32 +324,32 @@ namespace Model
 
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline TrialComponentSummary& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline TrialComponentSummary& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 

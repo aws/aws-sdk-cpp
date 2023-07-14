@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -151,9 +141,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -163,9 +153,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -175,9 +165,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -187,9 +177,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -199,9 +189,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -211,9 +201,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -223,9 +213,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>
@@ -235,9 +225,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeClusters</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You
      * can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b>
      * parameter, but not both. </p>

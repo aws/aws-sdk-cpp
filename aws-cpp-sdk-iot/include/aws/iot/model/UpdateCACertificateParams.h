@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -49,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The action that you want to apply to the CA cerrtificate. The only supported
+     * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
     inline const CACertificateUpdateAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that you want to apply to the CA cerrtificate. The only supported
+     * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that you want to apply to the CA cerrtificate. The only supported
+     * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
     inline void SetAction(const CACertificateUpdateAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that you want to apply to the CA cerrtificate. The only supported
+     * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
     inline void SetAction(CACertificateUpdateAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that you want to apply to the CA cerrtificate. The only supported
+     * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
     inline UpdateCACertificateParams& WithAction(const CACertificateUpdateAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that you want to apply to the CA cerrtificate. The only supported
+     * <p>The action that you want to apply to the CA certificate. The only supported
      * value is <code>DEACTIVATE</code>.</p>
      */
     inline UpdateCACertificateParams& WithAction(CACertificateUpdateAction&& value) { SetAction(std::move(value)); return *this;}

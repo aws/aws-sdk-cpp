@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -36,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A wrapper type for the topic's Amazon Resource Name (ARN).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A wrapper type for the topic's ARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSnsTopicDetails">AWS
    * API Reference</a></p>
    */
@@ -51,99 +40,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline AwsSnsTopicDetails& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline AwsSnsTopicDetails& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer
+     * managed key.</p>
      */
     inline AwsSnsTopicDetails& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
 
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline const Aws::Vector<AwsSnsTopicSubscription>& GetSubscription() const{ return m_subscription; }
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline bool SubscriptionHasBeenSet() const { return m_subscriptionHasBeenSet; }
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline void SetSubscription(const Aws::Vector<AwsSnsTopicSubscription>& value) { m_subscriptionHasBeenSet = true; m_subscription = value; }
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline void SetSubscription(Aws::Vector<AwsSnsTopicSubscription>&& value) { m_subscriptionHasBeenSet = true; m_subscription = std::move(value); }
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline AwsSnsTopicDetails& WithSubscription(const Aws::Vector<AwsSnsTopicSubscription>& value) { SetSubscription(value); return *this;}
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline AwsSnsTopicDetails& WithSubscription(Aws::Vector<AwsSnsTopicSubscription>&& value) { SetSubscription(std::move(value)); return *this;}
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline AwsSnsTopicDetails& AddSubscription(const AwsSnsTopicSubscription& value) { m_subscriptionHasBeenSet = true; m_subscription.push_back(value); return *this; }
 
     /**
      * <p>Subscription is an embedded property that describes the subscription
-     * endpoints of an Amazon SNS topic.</p>
+     * endpoints of an SNS topic.</p>
      */
     inline AwsSnsTopicDetails& AddSubscription(AwsSnsTopicSubscription&& value) { m_subscriptionHasBeenSet = true; m_subscription.push_back(std::move(value)); return *this; }
 

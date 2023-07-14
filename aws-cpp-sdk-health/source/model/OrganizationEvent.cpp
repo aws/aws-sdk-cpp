@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/health/model/OrganizationEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,8 @@ OrganizationEvent::OrganizationEvent() :
     m_eventTypeCodeHasBeenSet(false),
     m_eventTypeCategory(EventTypeCategory::NOT_SET),
     m_eventTypeCategoryHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -49,6 +41,8 @@ OrganizationEvent::OrganizationEvent(JsonView jsonValue) :
     m_eventTypeCodeHasBeenSet(false),
     m_eventTypeCategory(EventTypeCategory::NOT_SET),
     m_eventTypeCategoryHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -87,6 +81,13 @@ OrganizationEvent& OrganizationEvent::operator =(JsonView jsonValue)
     m_eventTypeCategory = EventTypeCategoryMapper::GetEventTypeCategoryForName(jsonValue.GetString("eventTypeCategory"));
 
     m_eventTypeCategoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventScopeCode"))
+  {
+    m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
+
+    m_eventScopeCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("region"))
@@ -152,6 +153,11 @@ JsonValue OrganizationEvent::Jsonize() const
   if(m_eventTypeCategoryHasBeenSet)
   {
    payload.WithString("eventTypeCategory", EventTypeCategoryMapper::GetNameForEventTypeCategory(m_eventTypeCategory));
+  }
+
+  if(m_eventScopeCodeHasBeenSet)
+  {
+   payload.WithString("eventScopeCode", EventScopeCodeMapper::GetNameForEventScopeCode(m_eventScopeCode));
   }
 
   if(m_regionHasBeenSet)

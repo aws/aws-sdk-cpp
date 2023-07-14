@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -23,11 +13,13 @@ using namespace Aws::Utils;
 ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() : 
     m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_launchTemplateConfigsHasBeenSet(false),
     m_spotFleetRequestIdHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
     m_onDemandTargetCapacity(0),
-    m_onDemandTargetCapacityHasBeenSet(false)
+    m_onDemandTargetCapacityHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -38,6 +30,16 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
     ss << "ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+
+  if(m_launchTemplateConfigsHasBeenSet)
+  {
+    unsigned launchTemplateConfigsCount = 1;
+    for(auto& item : m_launchTemplateConfigs)
+    {
+      item.OutputToStream(ss, "LaunchTemplateConfig.", launchTemplateConfigsCount, "");
+      launchTemplateConfigsCount++;
+    }
   }
 
   if(m_spotFleetRequestIdHasBeenSet)
@@ -53,6 +55,11 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
   if(m_onDemandTargetCapacityHasBeenSet)
   {
     ss << "OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
+  }
+
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

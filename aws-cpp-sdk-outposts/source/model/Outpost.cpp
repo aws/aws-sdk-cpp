@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/outposts/model/Outpost.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,11 @@ Outpost::Outpost() :
     m_descriptionHasBeenSet(false),
     m_lifeCycleStatusHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
+    m_availabilityZoneIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false),
+    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
+    m_supportedHardwareTypeHasBeenSet(false)
 {
 }
 
@@ -50,7 +44,11 @@ Outpost::Outpost(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_lifeCycleStatusHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
+    m_availabilityZoneIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false),
+    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
+    m_supportedHardwareTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +118,30 @@ Outpost& Outpost::operator =(JsonView jsonValue)
     m_availabilityZoneIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SiteArn"))
+  {
+    m_siteArn = jsonValue.GetString("SiteArn");
+
+    m_siteArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SupportedHardwareType"))
+  {
+    m_supportedHardwareType = SupportedHardwareTypeMapper::GetSupportedHardwareTypeForName(jsonValue.GetString("SupportedHardwareType"));
+
+    m_supportedHardwareTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +201,28 @@ JsonValue Outpost::Jsonize() const
   {
    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
 
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_siteArnHasBeenSet)
+  {
+   payload.WithString("SiteArn", m_siteArn);
+
+  }
+
+  if(m_supportedHardwareTypeHasBeenSet)
+  {
+   payload.WithString("SupportedHardwareType", SupportedHardwareTypeMapper::GetNameForSupportedHardwareType(m_supportedHardwareType));
   }
 
   return payload;

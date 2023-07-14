@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/detective/model/MemberStatus.h>
 #include <aws/detective/model/MemberDisabledReason.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/detective/model/InvitationType.h>
 #include <utility>
 
 namespace Aws
@@ -37,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a member account that was invited to contribute to a behavior
-   * graph.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a member account in a behavior graph.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/MemberDetail">AWS
    * API Reference</a></p>
    */
@@ -52,292 +43,362 @@ namespace Model
 
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline MemberDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline MemberDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account identifier for the member account.</p>
+     * <p>The Amazon Web Services account identifier for the member account.</p>
      */
     inline MemberDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline MemberDetail& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline MemberDetail& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account root user email address for the member account.</p>
+     * <p>The Amazon Web Services account root user email address for the member
+     * account.</p>
      */
     inline MemberDetail& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline MemberDetail& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline MemberDetail& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the behavior graph that the member account was invited to.</p>
+     * <p>The ARN of the behavior graph.</p>
      */
     inline MemberDetail& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
 
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline const Aws::String& GetMasterId() const{ return m_masterId; }
+    inline const Aws::String& GetAdministratorId() const{ return m_administratorId; }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
+    inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
+    inline void SetAdministratorId(const Aws::String& value) { m_administratorIdHasBeenSet = true; m_administratorId = value; }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
+    inline void SetAdministratorId(Aws::String&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::move(value); }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
+    inline void SetAdministratorId(const char* value) { m_administratorIdHasBeenSet = true; m_administratorId.assign(value); }
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline MemberDetail& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
+    inline MemberDetail& WithAdministratorId(const Aws::String& value) { SetAdministratorId(value); return *this;}
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline MemberDetail& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
+    inline MemberDetail& WithAdministratorId(Aws::String&& value) { SetAdministratorId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account identifier of the master account for the behavior graph.</p>
+     * <p>The Amazon Web Services account identifier of the administrator account for
+     * the behavior graph.</p>
      */
-    inline MemberDetail& WithMasterId(const char* value) { SetMasterId(value); return *this;}
+    inline MemberDetail& WithAdministratorId(const char* value) { SetAdministratorId(value); return *this;}
 
 
     /**
      * <p>The current membership status of the member account. The status can have one
-     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that
-     * the member was sent an invitation but has not yet responded.</p> </li> <li> <p>
-     * <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying
-     * that the account identifier and email address provided for the member account
-     * match. If they do match, then Detective sends the invitation. If the email
-     * address and account identifier don't match, then the member cannot be added to
-     * the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> -
-     * Indicates that the account and email address provided for the member account do
-     * not match, and Detective did not send an invitation to the account.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation but is prevented from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is not
-     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
-     * were removed from the behavior graph are not included.</p>
+     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - For invited
+     * accounts only. Indicates that the member was sent an invitation but has not yet
+     * responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For
+     * invited accounts only, indicates that Detective is verifying that the account
+     * identifier and email address provided for the member account match. If they do
+     * match, then Detective sends the invitation. If the email address and account
+     * identifier don't match, then the member cannot be added to the behavior
+     * graph.</p> <p>For organization accounts in the organization behavior graph,
+     * indicates that Detective is verifying that the account belongs to the
+     * organization.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - For invited
+     * accounts only. Indicates that the account and email address provided for the
+     * member account do not match, and Detective did not send an invitation to the
+     * account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member
+     * account currently contributes data to the behavior graph. For invited accounts,
+     * the member account accepted the invitation. For organization accounts in the
+     * organization behavior graph, the Detective administrator account enabled the
+     * organization account as a member account.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+     * enabled by the Detective administrator account, but is prevented from
+     * contributing data to the behavior graph. <code>DisabledReason</code> provides
+     * the reason why the member account is not enabled.</p> </li> </ul> <p>Invited
+     * accounts that declined an invitation or that were removed from the behavior
+     * graph are not included. In the organization behavior graph, organization
+     * accounts that the Detective administrator account did not enable are not
+     * included.</p>
      */
     inline const MemberStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current membership status of the member account. The status can have one
-     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that
-     * the member was sent an invitation but has not yet responded.</p> </li> <li> <p>
-     * <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying
-     * that the account identifier and email address provided for the member account
-     * match. If they do match, then Detective sends the invitation. If the email
-     * address and account identifier don't match, then the member cannot be added to
-     * the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> -
-     * Indicates that the account and email address provided for the member account do
-     * not match, and Detective did not send an invitation to the account.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation but is prevented from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is not
-     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
-     * were removed from the behavior graph are not included.</p>
+     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - For invited
+     * accounts only. Indicates that the member was sent an invitation but has not yet
+     * responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For
+     * invited accounts only, indicates that Detective is verifying that the account
+     * identifier and email address provided for the member account match. If they do
+     * match, then Detective sends the invitation. If the email address and account
+     * identifier don't match, then the member cannot be added to the behavior
+     * graph.</p> <p>For organization accounts in the organization behavior graph,
+     * indicates that Detective is verifying that the account belongs to the
+     * organization.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - For invited
+     * accounts only. Indicates that the account and email address provided for the
+     * member account do not match, and Detective did not send an invitation to the
+     * account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member
+     * account currently contributes data to the behavior graph. For invited accounts,
+     * the member account accepted the invitation. For organization accounts in the
+     * organization behavior graph, the Detective administrator account enabled the
+     * organization account as a member account.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+     * enabled by the Detective administrator account, but is prevented from
+     * contributing data to the behavior graph. <code>DisabledReason</code> provides
+     * the reason why the member account is not enabled.</p> </li> </ul> <p>Invited
+     * accounts that declined an invitation or that were removed from the behavior
+     * graph are not included. In the organization behavior graph, organization
+     * accounts that the Detective administrator account did not enable are not
+     * included.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current membership status of the member account. The status can have one
-     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that
-     * the member was sent an invitation but has not yet responded.</p> </li> <li> <p>
-     * <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying
-     * that the account identifier and email address provided for the member account
-     * match. If they do match, then Detective sends the invitation. If the email
-     * address and account identifier don't match, then the member cannot be added to
-     * the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> -
-     * Indicates that the account and email address provided for the member account do
-     * not match, and Detective did not send an invitation to the account.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation but is prevented from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is not
-     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
-     * were removed from the behavior graph are not included.</p>
+     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - For invited
+     * accounts only. Indicates that the member was sent an invitation but has not yet
+     * responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For
+     * invited accounts only, indicates that Detective is verifying that the account
+     * identifier and email address provided for the member account match. If they do
+     * match, then Detective sends the invitation. If the email address and account
+     * identifier don't match, then the member cannot be added to the behavior
+     * graph.</p> <p>For organization accounts in the organization behavior graph,
+     * indicates that Detective is verifying that the account belongs to the
+     * organization.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - For invited
+     * accounts only. Indicates that the account and email address provided for the
+     * member account do not match, and Detective did not send an invitation to the
+     * account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member
+     * account currently contributes data to the behavior graph. For invited accounts,
+     * the member account accepted the invitation. For organization accounts in the
+     * organization behavior graph, the Detective administrator account enabled the
+     * organization account as a member account.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+     * enabled by the Detective administrator account, but is prevented from
+     * contributing data to the behavior graph. <code>DisabledReason</code> provides
+     * the reason why the member account is not enabled.</p> </li> </ul> <p>Invited
+     * accounts that declined an invitation or that were removed from the behavior
+     * graph are not included. In the organization behavior graph, organization
+     * accounts that the Detective administrator account did not enable are not
+     * included.</p>
      */
     inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current membership status of the member account. The status can have one
-     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that
-     * the member was sent an invitation but has not yet responded.</p> </li> <li> <p>
-     * <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying
-     * that the account identifier and email address provided for the member account
-     * match. If they do match, then Detective sends the invitation. If the email
-     * address and account identifier don't match, then the member cannot be added to
-     * the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> -
-     * Indicates that the account and email address provided for the member account do
-     * not match, and Detective did not send an invitation to the account.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation but is prevented from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is not
-     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
-     * were removed from the behavior graph are not included.</p>
+     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - For invited
+     * accounts only. Indicates that the member was sent an invitation but has not yet
+     * responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For
+     * invited accounts only, indicates that Detective is verifying that the account
+     * identifier and email address provided for the member account match. If they do
+     * match, then Detective sends the invitation. If the email address and account
+     * identifier don't match, then the member cannot be added to the behavior
+     * graph.</p> <p>For organization accounts in the organization behavior graph,
+     * indicates that Detective is verifying that the account belongs to the
+     * organization.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - For invited
+     * accounts only. Indicates that the account and email address provided for the
+     * member account do not match, and Detective did not send an invitation to the
+     * account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member
+     * account currently contributes data to the behavior graph. For invited accounts,
+     * the member account accepted the invitation. For organization accounts in the
+     * organization behavior graph, the Detective administrator account enabled the
+     * organization account as a member account.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+     * enabled by the Detective administrator account, but is prevented from
+     * contributing data to the behavior graph. <code>DisabledReason</code> provides
+     * the reason why the member account is not enabled.</p> </li> </ul> <p>Invited
+     * accounts that declined an invitation or that were removed from the behavior
+     * graph are not included. In the organization behavior graph, organization
+     * accounts that the Detective administrator account did not enable are not
+     * included.</p>
      */
     inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current membership status of the member account. The status can have one
-     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that
-     * the member was sent an invitation but has not yet responded.</p> </li> <li> <p>
-     * <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying
-     * that the account identifier and email address provided for the member account
-     * match. If they do match, then Detective sends the invitation. If the email
-     * address and account identifier don't match, then the member cannot be added to
-     * the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> -
-     * Indicates that the account and email address provided for the member account do
-     * not match, and Detective did not send an invitation to the account.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation but is prevented from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is not
-     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
-     * were removed from the behavior graph are not included.</p>
+     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - For invited
+     * accounts only. Indicates that the member was sent an invitation but has not yet
+     * responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For
+     * invited accounts only, indicates that Detective is verifying that the account
+     * identifier and email address provided for the member account match. If they do
+     * match, then Detective sends the invitation. If the email address and account
+     * identifier don't match, then the member cannot be added to the behavior
+     * graph.</p> <p>For organization accounts in the organization behavior graph,
+     * indicates that Detective is verifying that the account belongs to the
+     * organization.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - For invited
+     * accounts only. Indicates that the account and email address provided for the
+     * member account do not match, and Detective did not send an invitation to the
+     * account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member
+     * account currently contributes data to the behavior graph. For invited accounts,
+     * the member account accepted the invitation. For organization accounts in the
+     * organization behavior graph, the Detective administrator account enabled the
+     * organization account as a member account.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+     * enabled by the Detective administrator account, but is prevented from
+     * contributing data to the behavior graph. <code>DisabledReason</code> provides
+     * the reason why the member account is not enabled.</p> </li> </ul> <p>Invited
+     * accounts that declined an invitation or that were removed from the behavior
+     * graph are not included. In the organization behavior graph, organization
+     * accounts that the Detective administrator account did not enable are not
+     * included.</p>
      */
     inline MemberDetail& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current membership status of the member account. The status can have one
-     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - Indicates that
-     * the member was sent an invitation but has not yet responded.</p> </li> <li> <p>
-     * <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying
-     * that the account identifier and email address provided for the member account
-     * match. If they do match, then Detective sends the invitation. If the email
-     * address and account identifier don't match, then the member cannot be added to
-     * the behavior graph.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> -
-     * Indicates that the account and email address provided for the member account do
-     * not match, and Detective did not send an invitation to the account.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation but is prevented from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is not
-     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
-     * were removed from the behavior graph are not included.</p>
+     * of the following values:</p> <ul> <li> <p> <code>INVITED</code> - For invited
+     * accounts only. Indicates that the member was sent an invitation but has not yet
+     * responded.</p> </li> <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For
+     * invited accounts only, indicates that Detective is verifying that the account
+     * identifier and email address provided for the member account match. If they do
+     * match, then Detective sends the invitation. If the email address and account
+     * identifier don't match, then the member cannot be added to the behavior
+     * graph.</p> <p>For organization accounts in the organization behavior graph,
+     * indicates that Detective is verifying that the account belongs to the
+     * organization.</p> </li> <li> <p> <code>VERIFICATION_FAILED</code> - For invited
+     * accounts only. Indicates that the account and email address provided for the
+     * member account do not match, and Detective did not send an invitation to the
+     * account.</p> </li> <li> <p> <code>ENABLED</code> - Indicates that the member
+     * account currently contributes data to the behavior graph. For invited accounts,
+     * the member account accepted the invitation. For organization accounts in the
+     * organization behavior graph, the Detective administrator account enabled the
+     * organization account as a member account.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+     * enabled by the Detective administrator account, but is prevented from
+     * contributing data to the behavior graph. <code>DisabledReason</code> provides
+     * the reason why the member account is not enabled.</p> </li> </ul> <p>Invited
+     * accounts that declined an invitation or that were removed from the behavior
+     * graph are not included. In the organization behavior graph, organization
+     * accounts that the Detective administrator account did not enable are not
+     * included.</p>
      */
     inline MemberDetail& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -416,153 +477,202 @@ namespace Model
 
 
     /**
-     * <p>The date and time that Detective sent the invitation to the member account.
-     * The value is in milliseconds since the epoch.</p>
+     * <p>For invited accounts, the date and time that Detective sent the invitation to
+     * the account. The value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetInvitedTime() const{ return m_invitedTime; }
 
     /**
-     * <p>The date and time that Detective sent the invitation to the member account.
-     * The value is in milliseconds since the epoch.</p>
+     * <p>For invited accounts, the date and time that Detective sent the invitation to
+     * the account. The value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline bool InvitedTimeHasBeenSet() const { return m_invitedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that Detective sent the invitation to the member account.
-     * The value is in milliseconds since the epoch.</p>
+     * <p>For invited accounts, the date and time that Detective sent the invitation to
+     * the account. The value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetInvitedTime(const Aws::Utils::DateTime& value) { m_invitedTimeHasBeenSet = true; m_invitedTime = value; }
 
     /**
-     * <p>The date and time that Detective sent the invitation to the member account.
-     * The value is in milliseconds since the epoch.</p>
+     * <p>For invited accounts, the date and time that Detective sent the invitation to
+     * the account. The value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetInvitedTime(Aws::Utils::DateTime&& value) { m_invitedTimeHasBeenSet = true; m_invitedTime = std::move(value); }
 
     /**
-     * <p>The date and time that Detective sent the invitation to the member account.
-     * The value is in milliseconds since the epoch.</p>
+     * <p>For invited accounts, the date and time that Detective sent the invitation to
+     * the account. The value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline MemberDetail& WithInvitedTime(const Aws::Utils::DateTime& value) { SetInvitedTime(value); return *this;}
 
     /**
-     * <p>The date and time that Detective sent the invitation to the member account.
-     * The value is in milliseconds since the epoch.</p>
+     * <p>For invited accounts, the date and time that Detective sent the invitation to
+     * the account. The value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline MemberDetail& WithInvitedTime(Aws::Utils::DateTime&& value) { SetInvitedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the member account was last updated. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the member account was last updated. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
 
     /**
-     * <p>The date and time that the member account was last updated. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the member account was last updated. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the member account was last updated. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the member account was last updated. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetUpdatedTime(const Aws::Utils::DateTime& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = value; }
 
     /**
-     * <p>The date and time that the member account was last updated. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the member account was last updated. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::move(value); }
 
     /**
-     * <p>The date and time that the member account was last updated. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the member account was last updated. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline MemberDetail& WithUpdatedTime(const Aws::Utils::DateTime& value) { SetUpdatedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the member account was last updated. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the member account was last updated. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline MemberDetail& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline double GetPercentOfGraphUtilization() const{ return m_percentOfGraphUtilization; }
+    inline long long GetVolumeUsageInBytes() const{ return m_volumeUsageInBytes; }
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline bool PercentOfGraphUtilizationHasBeenSet() const { return m_percentOfGraphUtilizationHasBeenSet; }
+    inline bool VolumeUsageInBytesHasBeenSet() const { return m_volumeUsageInBytesHasBeenSet; }
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline void SetPercentOfGraphUtilization(double value) { m_percentOfGraphUtilizationHasBeenSet = true; m_percentOfGraphUtilization = value; }
+    inline void SetVolumeUsageInBytes(long long value) { m_volumeUsageInBytesHasBeenSet = true; m_volumeUsageInBytes = value; }
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline MemberDetail& WithPercentOfGraphUtilization(double value) { SetPercentOfGraphUtilization(value); return *this;}
+    inline MemberDetail& WithVolumeUsageInBytes(long long value) { SetVolumeUsageInBytes(value); return *this;}
 
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated. The
+     * value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetPercentOfGraphUtilizationUpdatedTime() const{ return m_percentOfGraphUtilizationUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetVolumeUsageUpdatedTime() const{ return m_volumeUsageUpdatedTime; }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated. The
+     * value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline bool PercentOfGraphUtilizationUpdatedTimeHasBeenSet() const { return m_percentOfGraphUtilizationUpdatedTimeHasBeenSet; }
+    inline bool VolumeUsageUpdatedTimeHasBeenSet() const { return m_volumeUsageUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated. The
+     * value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline void SetPercentOfGraphUtilizationUpdatedTime(const Aws::Utils::DateTime& value) { m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true; m_percentOfGraphUtilizationUpdatedTime = value; }
+    inline void SetVolumeUsageUpdatedTime(const Aws::Utils::DateTime& value) { m_volumeUsageUpdatedTimeHasBeenSet = true; m_volumeUsageUpdatedTime = value; }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated. The
+     * value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline void SetPercentOfGraphUtilizationUpdatedTime(Aws::Utils::DateTime&& value) { m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true; m_percentOfGraphUtilizationUpdatedTime = std::move(value); }
+    inline void SetVolumeUsageUpdatedTime(Aws::Utils::DateTime&& value) { m_volumeUsageUpdatedTimeHasBeenSet = true; m_volumeUsageUpdatedTime = std::move(value); }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated. The
+     * value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline MemberDetail& WithPercentOfGraphUtilizationUpdatedTime(const Aws::Utils::DateTime& value) { SetPercentOfGraphUtilizationUpdatedTime(value); return *this;}
+    inline MemberDetail& WithVolumeUsageUpdatedTime(const Aws::Utils::DateTime& value) { SetVolumeUsageUpdatedTime(value); return *this;}
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated. The
+     * value is an ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline MemberDetail& WithPercentOfGraphUtilizationUpdatedTime(Aws::Utils::DateTime&& value) { SetPercentOfGraphUtilizationUpdatedTime(std::move(value)); return *this;}
+    inline MemberDetail& WithVolumeUsageUpdatedTime(Aws::Utils::DateTime&& value) { SetVolumeUsageUpdatedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of behavior graph membership.</p> <p>For an organization account in
+     * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+     * <p>For an account that was invited to a behavior graph, the type is
+     * <code>INVITATION</code>. </p>
+     */
+    inline const InvitationType& GetInvitationType() const{ return m_invitationType; }
+
+    /**
+     * <p>The type of behavior graph membership.</p> <p>For an organization account in
+     * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+     * <p>For an account that was invited to a behavior graph, the type is
+     * <code>INVITATION</code>. </p>
+     */
+    inline bool InvitationTypeHasBeenSet() const { return m_invitationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of behavior graph membership.</p> <p>For an organization account in
+     * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+     * <p>For an account that was invited to a behavior graph, the type is
+     * <code>INVITATION</code>. </p>
+     */
+    inline void SetInvitationType(const InvitationType& value) { m_invitationTypeHasBeenSet = true; m_invitationType = value; }
+
+    /**
+     * <p>The type of behavior graph membership.</p> <p>For an organization account in
+     * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+     * <p>For an account that was invited to a behavior graph, the type is
+     * <code>INVITATION</code>. </p>
+     */
+    inline void SetInvitationType(InvitationType&& value) { m_invitationTypeHasBeenSet = true; m_invitationType = std::move(value); }
+
+    /**
+     * <p>The type of behavior graph membership.</p> <p>For an organization account in
+     * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+     * <p>For an account that was invited to a behavior graph, the type is
+     * <code>INVITATION</code>. </p>
+     */
+    inline MemberDetail& WithInvitationType(const InvitationType& value) { SetInvitationType(value); return *this;}
+
+    /**
+     * <p>The type of behavior graph membership.</p> <p>For an organization account in
+     * the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+     * <p>For an account that was invited to a behavior graph, the type is
+     * <code>INVITATION</code>. </p>
+     */
+    inline MemberDetail& WithInvitationType(InvitationType&& value) { SetInvitationType(std::move(value)); return *this;}
 
   private:
 
@@ -575,8 +685,8 @@ namespace Model
     Aws::String m_graphArn;
     bool m_graphArnHasBeenSet;
 
-    Aws::String m_masterId;
-    bool m_masterIdHasBeenSet;
+    Aws::String m_administratorId;
+    bool m_administratorIdHasBeenSet;
 
     MemberStatus m_status;
     bool m_statusHasBeenSet;
@@ -590,11 +700,14 @@ namespace Model
     Aws::Utils::DateTime m_updatedTime;
     bool m_updatedTimeHasBeenSet;
 
-    double m_percentOfGraphUtilization;
-    bool m_percentOfGraphUtilizationHasBeenSet;
+    long long m_volumeUsageInBytes;
+    bool m_volumeUsageInBytesHasBeenSet;
 
-    Aws::Utils::DateTime m_percentOfGraphUtilizationUpdatedTime;
-    bool m_percentOfGraphUtilizationUpdatedTimeHasBeenSet;
+    Aws::Utils::DateTime m_volumeUsageUpdatedTime;
+    bool m_volumeUsageUpdatedTimeHasBeenSet;
+
+    InvitationType m_invitationType;
+    bool m_invitationTypeHasBeenSet;
   };
 
 } // namespace Model

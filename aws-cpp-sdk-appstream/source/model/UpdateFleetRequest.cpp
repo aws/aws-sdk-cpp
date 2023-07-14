@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,15 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_idleDisconnectTimeoutInSeconds(0),
     m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
     m_attributesToDeleteHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
+    m_iamRoleArnHasBeenSet(false),
+    m_streamView(StreamView::NOT_SET),
+    m_streamViewHasBeenSet(false),
+    m_platform(PlatformType::NOT_SET),
+    m_platformHasBeenSet(false),
+    m_maxConcurrentSessions(0),
+    m_maxConcurrentSessionsHasBeenSet(false),
+    m_usbDeviceFilterStringsHasBeenSet(false),
+    m_sessionScriptS3LocationHasBeenSet(false)
 {
 }
 
@@ -141,6 +139,39 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_iamRoleArnHasBeenSet)
   {
    payload.WithString("IamRoleArn", m_iamRoleArn);
+
+  }
+
+  if(m_streamViewHasBeenSet)
+  {
+   payload.WithString("StreamView", StreamViewMapper::GetNameForStreamView(m_streamView));
+  }
+
+  if(m_platformHasBeenSet)
+  {
+   payload.WithString("Platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
+  }
+
+  if(m_maxConcurrentSessionsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentSessions", m_maxConcurrentSessions);
+
+  }
+
+  if(m_usbDeviceFilterStringsHasBeenSet)
+  {
+   Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
+   for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
+   {
+     usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);
+   }
+   payload.WithArray("UsbDeviceFilterStrings", std::move(usbDeviceFilterStringsJsonList));
+
+  }
+
+  if(m_sessionScriptS3LocationHasBeenSet)
+  {
+   payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
 
   }
 

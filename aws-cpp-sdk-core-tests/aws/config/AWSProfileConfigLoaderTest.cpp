@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #include <aws/external/gtest.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/utils/FileSystemUtils.h>
@@ -39,6 +29,14 @@ static void WriteDefaultConfigFile(Aws::OStream& stream, bool useProfilePrefix =
     stream << "external_id = some-random-characters" << std::endl;
     stream << "source_profile= default" << std::endl;
     stream << "region = us-west-2" << std::endl;
+
+    // SSO Profile
+    stream << "[" << profilePrefix << "sso-test]" << std::endl;
+    stream << "sso_start_url = https://t-1234567890.awsapps.com/start" << std::endl;
+    stream << "sso_region = us-east-1" << std::endl;
+    stream << "sso_account_id = 123456789012" << std::endl;
+    stream << "sso_role_name= TestRole" << std::endl;
+    stream << "region = us-west-2" << std::endl;
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
@@ -52,10 +50,13 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    ASSERT_EQ(2u, profiles.size());
+    // check the 3 profiles were read
+    ASSERT_EQ(3u, profiles.size());
     ASSERT_NE(profiles.end(), profiles.find("default"));
     ASSERT_NE(profiles.end(), profiles.find("assumes_role"));
+    ASSERT_NE(profiles.end(), profiles.find("sso-test"));
 
+    // check the default profile parameters are as expected
     ASSERT_STREQ("AKIAKEY", profiles["default"].GetCredentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("foobarbarfoo", profiles["default"].GetCredentials().GetAWSSecretKey().c_str());
     ASSERT_STREQ("\"tokentokentoken==\"", profiles["default"].GetCredentials().GetSessionToken().c_str());
@@ -63,6 +64,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
     ASSERT_TRUE(profiles["default"].GetRoleArn().empty());
     ASSERT_TRUE(profiles["default"].GetSourceProfile().empty());
 
+    // check the assume_role profile parameters are as expected
     ASSERT_STREQ("arn:aws:iam::123456789:role/foo", profiles["assumes_role"].GetRoleArn().c_str());
     ASSERT_STREQ("some-random-characters", profiles["assumes_role"].GetExternalId().c_str());
     ASSERT_STREQ("default", profiles["assumes_role"].GetSourceProfile().c_str());
@@ -70,6 +72,18 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetSessionToken().empty());
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSSecretKey().empty());
+
+    // check the sso-test profile parameters are as expected
+    ASSERT_STREQ("https://t-1234567890.awsapps.com/start", profiles["sso-test"].GetSsoStartUrl().c_str());
+    ASSERT_STREQ("us-east-1", profiles["sso-test"].GetSsoRegion().c_str());
+    ASSERT_STREQ("123456789012", profiles["sso-test"].GetSsoAccountId().c_str());
+    ASSERT_STREQ("TestRole", profiles["sso-test"].GetSsoRoleName().c_str());
+    ASSERT_STREQ("us-west-2", profiles["sso-test"].GetRegion().c_str());
+    ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSAccessKeyId().empty());
+    ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetSessionToken().empty());
+    ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSSecretKey().empty());
+
+    Aws::FileSystem::RemoveFileIfExists(configFile.GetFileName().c_str());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
@@ -82,9 +96,10 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
     AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
     ASSERT_TRUE(loader.Load());
     auto profiles = loader.GetProfiles();
-    ASSERT_EQ(2u, profiles.size());
+    ASSERT_EQ(3u, profiles.size());
     ASSERT_NE(profiles.end(), profiles.find("default"));
     ASSERT_NE(profiles.end(), profiles.find("assumes_role"));
+    ASSERT_NE(profiles.end(), profiles.find("sso-test"));
 
     ASSERT_STREQ("AKIAKEY", profiles["default"].GetCredentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("foobarbarfoo", profiles["default"].GetCredentials().GetAWSSecretKey().c_str());
@@ -99,6 +114,18 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetSessionToken().empty());
     ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSSecretKey().empty());
+
+    // check the sso-test profile parameters are as expected
+    ASSERT_STREQ("https://t-1234567890.awsapps.com/start", profiles["sso-test"].GetSsoStartUrl().c_str());
+    ASSERT_STREQ("us-east-1", profiles["sso-test"].GetSsoRegion().c_str());
+    ASSERT_STREQ("123456789012", profiles["sso-test"].GetSsoAccountId().c_str());
+    ASSERT_STREQ("TestRole", profiles["sso-test"].GetSsoRoleName().c_str());
+    ASSERT_STREQ("us-west-2", profiles["sso-test"].GetRegion().c_str());
+    ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSAccessKeyId().empty());
+    ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetSessionToken().empty());
+    ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSSecretKey().empty());
+
+    Aws::FileSystem::RemoveFileIfExists(configFile.GetFileName().c_str());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)

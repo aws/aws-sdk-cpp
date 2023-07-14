@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/Table.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -47,7 +37,10 @@ Table::Table() :
     m_parametersHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false)
+    m_isRegisteredWithLakeFormationHasBeenSet(false),
+    m_targetTableHasBeenSet(false),
+    m_catalogIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -70,7 +63,10 @@ Table::Table(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false)
+    m_isRegisteredWithLakeFormationHasBeenSet(false),
+    m_targetTableHasBeenSet(false),
+    m_catalogIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -202,6 +198,27 @@ Table& Table::operator =(JsonView jsonValue)
     m_isRegisteredWithLakeFormationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetTable"))
+  {
+    m_targetTable = jsonValue.GetObject("TargetTable");
+
+    m_targetTableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionId"))
+  {
+    m_versionId = jsonValue.GetString("VersionId");
+
+    m_versionIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +331,24 @@ JsonValue Table::Jsonize() const
   if(m_isRegisteredWithLakeFormationHasBeenSet)
   {
    payload.WithBool("IsRegisteredWithLakeFormation", m_isRegisteredWithLakeFormation);
+
+  }
+
+  if(m_targetTableHasBeenSet)
+  {
+   payload.WithObject("TargetTable", m_targetTable.Jsonize());
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
+
+  }
+
+  if(m_versionIdHasBeenSet)
+  {
+   payload.WithString("VersionId", m_versionId);
 
   }
 

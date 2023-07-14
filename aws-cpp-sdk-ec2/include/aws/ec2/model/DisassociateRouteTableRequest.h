@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -48,49 +38,49 @@ namespace Model
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline DisassociateRouteTableRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline DisassociateRouteTableRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline DisassociateRouteTableRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 

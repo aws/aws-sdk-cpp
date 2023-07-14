@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/logs/model/MetricTransformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,10 @@ MetricTransformation::MetricTransformation() :
     m_metricNamespaceHasBeenSet(false),
     m_metricValueHasBeenSet(false),
     m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false)
+    m_defaultValueHasBeenSet(false),
+    m_dimensionsHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
+    m_unitHasBeenSet(false)
 {
 }
 
@@ -42,7 +35,10 @@ MetricTransformation::MetricTransformation(JsonView jsonValue) :
     m_metricNamespaceHasBeenSet(false),
     m_metricValueHasBeenSet(false),
     m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false)
+    m_defaultValueHasBeenSet(false),
+    m_dimensionsHasBeenSet(false),
+    m_unit(StandardUnit::NOT_SET),
+    m_unitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +73,23 @@ MetricTransformation& MetricTransformation::operator =(JsonView jsonValue)
     m_defaultValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dimensions"))
+  {
+    Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("dimensions").GetAllObjects();
+    for(auto& dimensionsItem : dimensionsJsonMap)
+    {
+      m_dimensions[dimensionsItem.first] = dimensionsItem.second.AsString();
+    }
+    m_dimensionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unit"))
+  {
+    m_unit = StandardUnitMapper::GetStandardUnitForName(jsonValue.GetString("unit"));
+
+    m_unitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,6 +119,22 @@ JsonValue MetricTransformation::Jsonize() const
   {
    payload.WithDouble("defaultValue", m_defaultValue);
 
+  }
+
+  if(m_dimensionsHasBeenSet)
+  {
+   JsonValue dimensionsJsonMap;
+   for(auto& dimensionsItem : m_dimensions)
+   {
+     dimensionsJsonMap.WithString(dimensionsItem.first, dimensionsItem.second);
+   }
+   payload.WithObject("dimensions", std::move(dimensionsJsonMap));
+
+  }
+
+  if(m_unitHasBeenSet)
+  {
+   payload.WithString("unit", StandardUnitMapper::GetNameForStandardUnit(m_unit));
   }
 
   return payload;

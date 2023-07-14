@@ -1,21 +1,12 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
 #include <algorithm>
+#include <thread>
 
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
@@ -39,6 +30,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/core/platform/Environment.h>
 
 using namespace Aws::CognitoIdentity;
 using namespace Aws::CognitoIdentity::Model;
@@ -67,8 +59,10 @@ public:
 protected:
     void SetUp()
     {
+        Aws::Client::ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
         //TODO: move this over to profile config file.
-        client = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
+        client = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG, config);
         CleanupPreviousFailedTests();
     }
 
@@ -107,7 +101,7 @@ protected:
             ListIdentitiesRequest listIdentitiesRequest;
             listIdentitiesRequest.WithIdentityPoolId(identityPoolId).WithMaxResults(10);
             ListIdentitiesOutcome listIdentitiesOutcome = client->ListIdentities(listIdentitiesRequest);
-            
+
             if (listIdentitiesOutcome.IsSuccess())
             {
                 if (listIdentitiesOutcome.GetResult().GetIdentities().size() > 0)
@@ -256,13 +250,17 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 
     GetIdRequest getIdRequest;
     getIdRequest.WithIdentityPoolId(identityPoolId);
-    
-    ClientConfiguration clientConfig;
 
-    auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
-    Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, client);
-    
-    getIdRequest.WithAccountId(accessManagementClient.GetAccountId());
+    ClientConfiguration clientConfig;
+    clientConfig.region = Aws::Region::US_EAST_1;
+
+    auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
+    if (accountId.empty()) {
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
+        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, client);
+        accountId = accessManagementClient.GetAccountId();
+    }
+    getIdRequest.WithAccountId(accountId);
 
     GetIdOutcome getIdOutcome = client->GetId(getIdRequest);
     EXPECT_TRUE(getIdOutcome.IsSuccess());

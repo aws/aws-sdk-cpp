@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/route53/model/CloudWatchRegion.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -44,6 +34,7 @@ namespace Aws
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
+        static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
         static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
         static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
         static const int ap_northeast_3_HASH = HashingUtils::HashString("ap-northeast-3");
@@ -51,6 +42,13 @@ namespace Aws
         static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
         static const int cn_northwest_1_HASH = HashingUtils::HashString("cn-northwest-1");
         static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
+        static const int af_south_1_HASH = HashingUtils::HashString("af-south-1");
+        static const int eu_south_1_HASH = HashingUtils::HashString("eu-south-1");
+        static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
+        static const int us_gov_east_1_HASH = HashingUtils::HashString("us-gov-east-1");
+        static const int us_iso_east_1_HASH = HashingUtils::HashString("us-iso-east-1");
+        static const int us_iso_west_1_HASH = HashingUtils::HashString("us-iso-west-1");
+        static const int us_isob_east_1_HASH = HashingUtils::HashString("us-isob-east-1");
 
 
         CloudWatchRegion GetCloudWatchRegionForName(const Aws::String& name)
@@ -112,6 +110,10 @@ namespace Aws
           {
             return CloudWatchRegion::ap_southeast_2;
           }
+          else if (hashCode == ap_southeast_3_HASH)
+          {
+            return CloudWatchRegion::ap_southeast_3;
+          }
           else if (hashCode == ap_northeast_1_HASH)
           {
             return CloudWatchRegion::ap_northeast_1;
@@ -139,6 +141,34 @@ namespace Aws
           else if (hashCode == cn_north_1_HASH)
           {
             return CloudWatchRegion::cn_north_1;
+          }
+          else if (hashCode == af_south_1_HASH)
+          {
+            return CloudWatchRegion::af_south_1;
+          }
+          else if (hashCode == eu_south_1_HASH)
+          {
+            return CloudWatchRegion::eu_south_1;
+          }
+          else if (hashCode == us_gov_west_1_HASH)
+          {
+            return CloudWatchRegion::us_gov_west_1;
+          }
+          else if (hashCode == us_gov_east_1_HASH)
+          {
+            return CloudWatchRegion::us_gov_east_1;
+          }
+          else if (hashCode == us_iso_east_1_HASH)
+          {
+            return CloudWatchRegion::us_iso_east_1;
+          }
+          else if (hashCode == us_iso_west_1_HASH)
+          {
+            return CloudWatchRegion::us_iso_west_1;
+          }
+          else if (hashCode == us_isob_east_1_HASH)
+          {
+            return CloudWatchRegion::us_isob_east_1;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -182,6 +212,8 @@ namespace Aws
             return "ap-southeast-1";
           case CloudWatchRegion::ap_southeast_2:
             return "ap-southeast-2";
+          case CloudWatchRegion::ap_southeast_3:
+            return "ap-southeast-3";
           case CloudWatchRegion::ap_northeast_1:
             return "ap-northeast-1";
           case CloudWatchRegion::ap_northeast_2:
@@ -196,6 +228,20 @@ namespace Aws
             return "cn-northwest-1";
           case CloudWatchRegion::cn_north_1:
             return "cn-north-1";
+          case CloudWatchRegion::af_south_1:
+            return "af-south-1";
+          case CloudWatchRegion::eu_south_1:
+            return "eu-south-1";
+          case CloudWatchRegion::us_gov_west_1:
+            return "us-gov-west-1";
+          case CloudWatchRegion::us_gov_east_1:
+            return "us-gov-east-1";
+          case CloudWatchRegion::us_iso_east_1:
+            return "us-iso-east-1";
+          case CloudWatchRegion::us_iso_west_1:
+            return "us-iso-west-1";
+          case CloudWatchRegion::us_isob_east_1:
+            return "us-isob-east-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

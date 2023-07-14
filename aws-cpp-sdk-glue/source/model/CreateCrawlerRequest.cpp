@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/CreateCrawlerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,9 @@ CreateCrawlerRequest::CreateCrawlerRequest() :
     m_classifiersHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
+    m_recrawlPolicyHasBeenSet(false),
+    m_lineageConfigurationHasBeenSet(false),
+    m_lakeFormationConfigurationHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_crawlerSecurityConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -98,6 +91,24 @@ Aws::String CreateCrawlerRequest::SerializePayload() const
   if(m_schemaChangePolicyHasBeenSet)
   {
    payload.WithObject("SchemaChangePolicy", m_schemaChangePolicy.Jsonize());
+
+  }
+
+  if(m_recrawlPolicyHasBeenSet)
+  {
+   payload.WithObject("RecrawlPolicy", m_recrawlPolicy.Jsonize());
+
+  }
+
+  if(m_lineageConfigurationHasBeenSet)
+  {
+   payload.WithObject("LineageConfiguration", m_lineageConfiguration.Jsonize());
+
+  }
+
+  if(m_lakeFormationConfigurationHasBeenSet)
+  {
+   payload.WithObject("LakeFormationConfiguration", m_lakeFormationConfiguration.Jsonize());
 
   }
 

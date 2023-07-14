@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -48,58 +38,66 @@ namespace Model
 
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     * <p>The name to use for your new Lightsail database resource.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
 
@@ -471,57 +469,57 @@ namespace Model
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateRelationalDatabaseFromSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

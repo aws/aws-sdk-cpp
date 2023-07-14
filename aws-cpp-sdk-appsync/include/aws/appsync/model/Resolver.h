@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -175,42 +165,42 @@ namespace Model
 
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResolverArn() const{ return m_resolverArn; }
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline bool ResolverArnHasBeenSet() const { return m_resolverArnHasBeenSet; }
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline void SetResolverArn(const Aws::String& value) { m_resolverArnHasBeenSet = true; m_resolverArn = value; }
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline void SetResolverArn(Aws::String&& value) { m_resolverArnHasBeenSet = true; m_resolverArn = std::move(value); }
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline void SetResolverArn(const char* value) { m_resolverArnHasBeenSet = true; m_resolverArn.assign(value); }
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline Resolver& WithResolverArn(const Aws::String& value) { SetResolverArn(value); return *this;}
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline Resolver& WithResolverArn(Aws::String&& value) { SetResolverArn(std::move(value)); return *this;}
 
     /**
-     * <p>The resolver ARN.</p>
+     * <p>The resolver Amazon Resource Name (ARN).</p>
      */
     inline Resolver& WithResolverArn(const char* value) { SetResolverArn(value); return *this;}
 
@@ -299,67 +289,61 @@ namespace Model
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline const ResolverKind& GetKind() const{ return m_kind; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline void SetKind(const ResolverKind& value) { m_kindHasBeenSet = true; m_kind = value; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline void SetKind(ResolverKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline Resolver& WithKind(const ResolverKind& value) { SetKind(value); return *this;}
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline Resolver& WithKind(ResolverKind&& value) { SetKind(std::move(value)); return *this;}
 
@@ -396,38 +380,38 @@ namespace Model
 
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline Resolver& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline Resolver& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
 
@@ -462,6 +446,27 @@ namespace Model
      */
     inline Resolver& WithCachingConfig(CachingConfig&& value) { SetCachingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline Resolver& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
+
   private:
 
     Aws::String m_typeName;
@@ -493,6 +498,9 @@ namespace Model
 
     CachingConfig m_cachingConfig;
     bool m_cachingConfigHasBeenSet;
+
+    int m_maxBatchSize;
+    bool m_maxBatchSizeHasBeenSet;
   };
 
 } // namespace Model

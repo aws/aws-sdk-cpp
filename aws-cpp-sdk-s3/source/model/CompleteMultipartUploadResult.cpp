@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/CompleteMultipartUploadResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -28,12 +18,14 @@ using namespace Aws;
 
 CompleteMultipartUploadResult::CompleteMultipartUploadResult() : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
 CompleteMultipartUploadResult::CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
@@ -66,6 +58,26 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
     {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
     }
+    XmlNode checksumCRC32Node = resultNode.FirstChild("ChecksumCRC32");
+    if(!checksumCRC32Node.IsNull())
+    {
+      m_checksumCRC32 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32Node.GetText());
+    }
+    XmlNode checksumCRC32CNode = resultNode.FirstChild("ChecksumCRC32C");
+    if(!checksumCRC32CNode.IsNull())
+    {
+      m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
+    }
+    XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
+    if(!checksumSHA1Node.IsNull())
+    {
+      m_checksumSHA1 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA1Node.GetText());
+    }
+    XmlNode checksumSHA256Node = resultNode.FirstChild("ChecksumSHA256");
+    if(!checksumSHA256Node.IsNull())
+    {
+      m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -91,6 +103,12 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
   if(sSEKMSKeyIdIter != headers.end())
   {
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
+  }
+
+  const auto& bucketKeyEnabledIter = headers.find("x-amz-server-side-encryption-bucket-key-enabled");
+  if(bucketKeyEnabledIter != headers.end())
+  {
+     m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
   }
 
   const auto& requestChargedIter = headers.find("x-amz-request-charged");

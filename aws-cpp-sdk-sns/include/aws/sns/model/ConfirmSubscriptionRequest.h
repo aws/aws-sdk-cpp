@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sns/SNS_EXPORTS.h>
@@ -141,65 +131,73 @@ namespace Model
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline const Aws::String& GetAuthenticateOnUnsubscribe() const{ return m_authenticateOnUnsubscribe; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline bool AuthenticateOnUnsubscribeHasBeenSet() const { return m_authenticateOnUnsubscribeHasBeenSet; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline void SetAuthenticateOnUnsubscribe(const Aws::String& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = value; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline void SetAuthenticateOnUnsubscribe(Aws::String&& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = std::move(value); }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline void SetAuthenticateOnUnsubscribe(const char* value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe.assign(value); }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const Aws::String& value) { SetAuthenticateOnUnsubscribe(value); return *this;}
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(Aws::String&& value) { SetAuthenticateOnUnsubscribe(std::move(value)); return *this;}
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const char* value) { SetAuthenticateOnUnsubscribe(value); return *this;}
 

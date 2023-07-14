@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -36,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An Amazon Web Services Systems Manager parameter in Parameter
+   * Store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter">AWS API
    * Reference</a></p>
    */
@@ -92,79 +82,113 @@ namespace Model
 
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline Parameter& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+     *  <p>If type is <code>StringList</code>, the system returns a
+     * comma-separated string with no spaces between commas in the <code>Value</code>
+     * field.</p> 
      */
     inline Parameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline Parameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline Parameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter value.</p>
+     * <p>The parameter value.</p>  <p>If type is <code>StringList</code>, the
+     * system returns a comma-separated string with no spaces between commas in the
+     * <code>Value</code> field.</p> 
      */
     inline Parameter& WithValue(const char* value) { SetValue(value); return *this;}
 
@@ -248,50 +272,58 @@ namespace Model
 
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline const Aws::String& GetSourceResult() const{ return m_sourceResult; }
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline bool SourceResultHasBeenSet() const { return m_sourceResultHasBeenSet; }
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline void SetSourceResult(const Aws::String& value) { m_sourceResultHasBeenSet = true; m_sourceResult = value; }
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline void SetSourceResult(Aws::String&& value) { m_sourceResultHasBeenSet = true; m_sourceResult = std::move(value); }
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline void SetSourceResult(const char* value) { m_sourceResultHasBeenSet = true; m_sourceResult.assign(value); }
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline Parameter& WithSourceResult(const Aws::String& value) { SetSourceResult(value); return *this;}
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline Parameter& WithSourceResult(Aws::String&& value) { SetSourceResult(std::move(value)); return *this;}
 
     /**
-     * <p>Applies to parameters that reference information in other AWS services.
-     * SourceResult is the raw result or response from the source.</p>
+     * <p>Applies to parameters that reference information in other Amazon Web Services
+     * services. <code>SourceResult</code> is the raw result or response from the
+     * source.</p>
      */
     inline Parameter& WithSourceResult(const char* value) { SetSourceResult(value); return *this;}
 
@@ -373,6 +405,55 @@ namespace Model
      */
     inline Parameter& WithARN(const char* value) { SetARN(value); return *this;}
 
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline Parameter& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline Parameter& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -398,6 +479,9 @@ namespace Model
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model

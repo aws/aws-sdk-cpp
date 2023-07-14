@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -37,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>The details of an AWS Config evaluation. Provides the AWS resource that was
-   * evaluated, the compliance of the resource, related time stamps, and
-   * supplementary information.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an Config evaluation. Provides the Amazon Web Services
+   * resource that was evaluated, the compliance of the resource, related time
+   * stamps, and supplementary information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -84,60 +74,60 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
-     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
-     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <p>Indicates whether the Amazon Web Services resource complies with the Config
+     * rule that evaluated it.</p> <p>For the <code>EvaluationResult</code> data type,
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. Config does not support the
      * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
      * type.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
-     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
-     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <p>Indicates whether the Amazon Web Services resource complies with the Config
+     * rule that evaluated it.</p> <p>For the <code>EvaluationResult</code> data type,
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. Config does not support the
      * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
      * type.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
-     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
-     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <p>Indicates whether the Amazon Web Services resource complies with the Config
+     * rule that evaluated it.</p> <p>For the <code>EvaluationResult</code> data type,
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. Config does not support the
      * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
      * type.</p>
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
-     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
-     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <p>Indicates whether the Amazon Web Services resource complies with the Config
+     * rule that evaluated it.</p> <p>For the <code>EvaluationResult</code> data type,
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. Config does not support the
      * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
      * type.</p>
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
-     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
-     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <p>Indicates whether the Amazon Web Services resource complies with the Config
+     * rule that evaluated it.</p> <p>For the <code>EvaluationResult</code> data type,
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. Config does not support the
      * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
      * type.</p>
      */
     inline EvaluationResult& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
-     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
-     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <p>Indicates whether the Amazon Web Services resource complies with the Config
+     * rule that evaluated it.</p> <p>For the <code>EvaluationResult</code> data type,
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. Config does not support the
      * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
      * type.</p>
      */
@@ -145,63 +135,63 @@ namespace Model
 
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result.</p>
+     * <p>The time when Config recorded the evaluation result.</p>
      */
     inline const Aws::Utils::DateTime& GetResultRecordedTime() const{ return m_resultRecordedTime; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result.</p>
+     * <p>The time when Config recorded the evaluation result.</p>
      */
     inline bool ResultRecordedTimeHasBeenSet() const { return m_resultRecordedTimeHasBeenSet; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result.</p>
+     * <p>The time when Config recorded the evaluation result.</p>
      */
     inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result.</p>
+     * <p>The time when Config recorded the evaluation result.</p>
      */
     inline void SetResultRecordedTime(Aws::Utils::DateTime&& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = std::move(value); }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result.</p>
+     * <p>The time when Config recorded the evaluation result.</p>
      */
     inline EvaluationResult& WithResultRecordedTime(const Aws::Utils::DateTime& value) { SetResultRecordedTime(value); return *this;}
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result.</p>
+     * <p>The time when Config recorded the evaluation result.</p>
      */
     inline EvaluationResult& WithResultRecordedTime(Aws::Utils::DateTime&& value) { SetResultRecordedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline bool ConfigRuleInvokedTimeHasBeenSet() const { return m_configRuleInvokedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = std::move(value); }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline EvaluationResult& WithConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { SetConfigRuleInvokedTime(value); return *this;}
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline EvaluationResult& WithConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { SetConfigRuleInvokedTime(std::move(value)); return *this;}
 
@@ -256,58 +246,58 @@ namespace Model
 
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline const Aws::String& GetResultToken() const{ return m_resultToken; }
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline bool ResultTokenHasBeenSet() const { return m_resultTokenHasBeenSet; }
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline void SetResultToken(const Aws::String& value) { m_resultTokenHasBeenSet = true; m_resultToken = value; }
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline void SetResultToken(Aws::String&& value) { m_resultTokenHasBeenSet = true; m_resultToken = std::move(value); }
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline void SetResultToken(const char* value) { m_resultTokenHasBeenSet = true; m_resultToken.assign(value); }
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline EvaluationResult& WithResultToken(const Aws::String& value) { SetResultToken(value); return *this;}
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline EvaluationResult& WithResultToken(Aws::String&& value) { SetResultToken(std::move(value)); return *this;}
 
     /**
-     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
-     * token identifies the rule, the AWS resource being evaluated, and the event that
-     * triggered the evaluation.</p>
+     * <p>An encrypted token that associates an evaluation with an Config rule. The
+     * token identifies the rule, the Amazon Web Services resource being evaluated, and
+     * the event that triggered the evaluation.</p>
      */
     inline EvaluationResult& WithResultToken(const char* value) { SetResultToken(value); return *this;}
 

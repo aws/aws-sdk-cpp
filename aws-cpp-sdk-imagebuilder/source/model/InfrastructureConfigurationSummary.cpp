@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/InfrastructureConfigurationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,10 @@ InfrastructureConfigurationSummary::InfrastructureConfigurationSummary() :
     m_descriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false),
+    m_instanceProfileNameHasBeenSet(false)
 {
 }
 
@@ -44,7 +37,10 @@ InfrastructureConfigurationSummary::InfrastructureConfigurationSummary(JsonView 
     m_descriptionHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false),
+    m_instanceProfileNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +82,16 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
     m_dateUpdatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceTags"))
+  {
+    Aws::Map<Aws::String, JsonView> resourceTagsJsonMap = jsonValue.GetObject("resourceTags").GetAllObjects();
+    for(auto& resourceTagsItem : resourceTagsJsonMap)
+    {
+      m_resourceTags[resourceTagsItem.first] = resourceTagsItem.second.AsString();
+    }
+    m_resourceTagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -94,6 +100,23 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceTypes"))
+  {
+    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
+    {
+      m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
+    }
+    m_instanceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceProfileName"))
+  {
+    m_instanceProfileName = jsonValue.GetString("instanceProfileName");
+
+    m_instanceProfileNameHasBeenSet = true;
   }
 
   return *this;
@@ -133,6 +156,17 @@ JsonValue InfrastructureConfigurationSummary::Jsonize() const
 
   }
 
+  if(m_resourceTagsHasBeenSet)
+  {
+   JsonValue resourceTagsJsonMap;
+   for(auto& resourceTagsItem : m_resourceTags)
+   {
+     resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+   }
+   payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -141,6 +175,23 @@ JsonValue InfrastructureConfigurationSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_instanceTypesHasBeenSet)
+  {
+   Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
+   {
+     instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
+   }
+   payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
+
+  }
+
+  if(m_instanceProfileNameHasBeenSet)
+  {
+   payload.WithString("instanceProfileName", m_instanceProfileName);
 
   }
 

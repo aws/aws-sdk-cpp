@@ -1,19 +1,8 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
-#define AWS_DISABLE_DEPRECATION
 #include <aws/external/gtest.h>
 
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
@@ -35,12 +24,15 @@
 #include <stdlib.h>
 #include <thread>
 #include <fstream>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/auth/SSOCredentialsProvider.h>
 
 static const char *AllocationTag = "AWSCredentialsProviderTest";
 
 using namespace Aws::Auth;
 using namespace Aws::Utils;
 using namespace Aws::Client;
+using namespace Aws::FileSystem;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 
@@ -309,17 +301,17 @@ TEST_F(EnvironmentModifyingTest, TestProvidersNumberInCredentialsProvidersChain)
     Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
 
-    DefaultAWSCredentialsProviderChain providersChainWith4ProvidersEC2;
-    ASSERT_EQ(4u, providersChainWith4ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
+    DefaultAWSCredentialsProviderChain providersChainWith6ProvidersEC2;
+    ASSERT_EQ(6u, providersChainWith6ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
 
     Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "TestVar", 1);
-    DefaultAWSCredentialsProviderChain providersChainWith4ProvidersECS;
-    ASSERT_EQ(4u, providersChainWith4ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
+    DefaultAWSCredentialsProviderChain providersChainWith6ProvidersECS;
+    ASSERT_EQ(6u, providersChainWith6ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
 
     Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "TruE", 1);
     Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI"); //Without ECS task role, without ec2
-    DefaultAWSCredentialsProviderChain providersChainWith3Providers;
-    ASSERT_EQ(3u, providersChainWith3Providers.GetProviders().size());
+    DefaultAWSCredentialsProviderChain providersChainWith5Providers;
+    ASSERT_EQ(5u, providersChainWith5Providers.GetProviders().size());
 }
 
 
@@ -327,7 +319,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
@@ -340,19 +332,68 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
-    const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\" }";
+    const char* nextSetOfCredentials = R"({ "AccessKeyId": "betterAccessKey", "SecretAccessKey": "betterSecretKey", "Token": "betterToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
-
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+}
+
+TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForCredentialsInPast)
+{
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
+
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+
+    const char* nextSetOfCredentials = R"({ "AccessKeyId": "betterAccessKey", "SecretAccessKey": "betterSecretKey", "Token": "betterToken", "Code": "Success", "Expiration": "2019-04-19T00:00:00Z" })";
+    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());;
+}
+
+TEST(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForFailedCall)
+{
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
+
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2047-04-19T00:00:00Z" })";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+
+    const char* nextSetOfCredentials = R"({ "Code": "InternalServiceException", "Message": "Unable to process request" })";
+    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());;
+}
+
+TEST(InstanceProfileCredentialsProviderTest, TestCredentialsWhenExpirationAndCodeAreMissing)
+{
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
+
+    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken" })";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCredentials)
@@ -572,6 +613,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupporte
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 2, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
     configFileNew.close();
     Aws::Config::ReloadCachedConfigFile();
+
     ProcessCredentialsProvider provider;
     EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
 
@@ -664,29 +706,6 @@ public:
         InitHttp();
     }
 
-    void SaveEnvironmentVariable(const char* variableName)
-    {
-        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
-    }
-
-    void RestoreEnvironmentVariables()
-    {
-        for(const auto& iter : m_environment)
-        {
-            if(iter.second.empty())
-            {
-                Aws::Environment::UnSetEnv(iter.first);
-            }
-            else
-            {
-                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
-            }
-        }
-    }
-
-    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
-    Aws::String m_configFileName;
-
     std::shared_ptr<MockHttpClient> mockHttpClient;
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
 };
@@ -777,12 +796,13 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
 
     auto request = mockHttpClient->GetMostRecentHttpRequest();
     ASSERT_EQ("https://sts.us-west-2.amazonaws.com", request.GetURIString(false /*don't include querystring*/));
-    ASSERT_EQ("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request.GetURIString(true /*include query string*/));
-
+    Aws::StringStream ss;
+    ss << request.GetContentBody()->rdbuf();
+    ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
     std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI(request.GetURIString(true /*include querystring*/)), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     //Made up credentials from https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
     Aws::String goodXml = "<AssumeRoleWithWebIdentityResult><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2226-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId></Credentials></AssumeRoleWithWebIdentityResult>";
-    std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, (*requestTmp));
+    std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
     goodResponse->SetResponseCode(HttpResponseCode::OK);
     goodResponse->GetResponseBody() << goodXml;
     mockHttpClient->AddResponseToReturn(goodResponse);
@@ -827,10 +847,9 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     auto creds = provider.GetAWSCredentials();
     ASSERT_TRUE(creds.IsEmpty());
     auto request = mockHttpClient->GetMostRecentHttpRequest();
-    ASSERT_EQ("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request.GetURIString(true /*include query string*/));
-    // If loaded from config, query uri should be the following string
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request.GetURIString(true /*include query string*/));
-
+    Aws::StringStream ss;
+    ss << request.GetContentBody()->rdbuf();
+    ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
 
     // Role session name will be an random uuid
     Aws::Environment::UnSetEnv("AWS_ROLE_SESSION_NAME");
@@ -839,9 +858,9 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     auto creds1 = provider1.GetAWSCredentials();
     ASSERT_TRUE(creds1.IsEmpty());
     auto request1 = mockHttpClient->GetMostRecentHttpRequest();
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request1.GetURIString(true /*include query string*/));
-    // If loaded from config, query uri should be the following string
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request1.GetURIString(true /*include query string*/));
+    ss.str("");
+    ss << request1.GetContentBody()->rdbuf();
+    ASSERT_NE("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
 
     // Set session name back
     Aws::Environment::SetEnv("AWS_ROLE_SESSION_NAME", "sessionId_abcd_1234_xxxx", 1/*override*/);
@@ -852,12 +871,197 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     auto creds2 = provider2.GetAWSCredentials();
     ASSERT_TRUE(creds2.IsEmpty());
     auto request2 = mockHttpClient->GetMostRecentHttpRequest();
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request2.GetURIString(true /*include query string*/));
-    // Will load from config
-    ASSERT_EQ("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request2.GetURIString(true /*include query string*/));
+    ss.str("");
+    ss << request2.GetContentBody()->rdbuf();
+    ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
 
     Aws::FileSystem::RemoveFileIfExists(tokenFileName.c_str());
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+class SSOCredentialsProviderTest :public ProcessCredentialsProviderTest
+{
+public:
+    void SetUp()
+    {
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+        SaveEnvironmentVariable("AWS_PROFILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_REGION");
+
+        Aws::StringStream ssConfig;
+        ssConfig << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFileName = ssConfig.str();
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_PROFILE");
+        // avoid reading region environment var when testing get correct region from config file
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+        Aws::StringStream ssCachedTokenDirectory;
+        ssCachedTokenDirectory << profileDirectory << PATH_DELIM << "sso";
+        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+        ssCachedTokenDirectory << PATH_DELIM << "cache";
+        Aws::FileSystem::CreateDirectoryIfNotExists(ssCachedTokenDirectory.str().c_str());
+
+        // setting up token file for tests
+        Aws::StringStream ssToken;
+        ssToken << ssCachedTokenDirectory.str();
+        auto ssoTokenDirectory = ssToken.str();
+        // SHA1 of "https://d-92671207e4.awsapps.com/start" -> 13f9d35043871d073ab260e020f0ffde092cb14b
+        ssToken << PATH_DELIM << "13f9d35043871d073ab260e020f0ffde092cb14b.json";
+        m_ssoTokenFileName = ssToken.str();
+
+        mockHttpClient = Aws::MakeShared<MockHttpClient>(AllocationTag);
+        mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(AllocationTag);
+        mockHttpClientFactory->SetClient(mockHttpClient);
+        SetHttpClientFactory(mockHttpClientFactory);
+    }
+
+    void TearDown()
+    {
+        RestoreEnvironmentVariables();
+        mockHttpClient = nullptr;
+        mockHttpClientFactory = nullptr;
+
+        CleanupHttp();
+        InitHttp();
+
+        Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str());
+    }
+
+    Aws::String m_ssoTokenFileName;
+    std::shared_ptr<MockHttpClient> mockHttpClient;
+    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+};
+
+TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromConfigCorrectly)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenFileName);
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    tokenFile << R"({
+    "accessToken": "base64string",
+    "expiresAt": ")";
+    tokenFile << DateTime::Now().GetYear() + 1;
+    tokenFile << R"(-01-02T00:00:00Z",
+    "region": "us-west-2",
+    "startUrl": "https://d-92671207e4.awsapps.com/start"
+})";
+    tokenFile.close();
+
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([default]
+sso_account_id = 012345678901
+sso_region = us-east-1
+sso_role_name = SampleRole
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    // No response is set to mockHttpClient, there will be no response
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    auto request = mockHttpClient->GetMostRecentHttpRequest();
+
+    ASSERT_EQ("https://portal.sso.us-east-1.amazonaws.com/federation/credentials?account_id=012345678901&role_name=SampleRole", request.GetURIString());
+    ASSERT_EQ("base64string", request.GetHeaderValue("x-amz-sso_bearer_token"));
+    // No response is set to mockHttpClient, there will be no response
+    creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+
+    // adding a valid response to the http request
+    std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI(request.GetURIString(true /*include querystring*/)), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    //Made up credentials
+    Aws::String goodResult = R"({
+   "roleCredentials": {
+      "accessKeyId": "access",
+      "expiration": 2303614800000,
+      "secretAccessKey": "secret",
+      "sessionToken": "token"
+   }
+}
+)";
+
+    std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
+    goodResponse->SetResponseCode(HttpResponseCode::OK);
+    goodResponse->GetResponseBody() << goodResult;
+    mockHttpClient->AddResponseToReturn(goodResponse);
+
+    creds = provider.GetAWSCredentials();
+    ASSERT_FALSE(creds.IsEmpty());
+    ASSERT_EQ("access", creds.GetAWSAccessKeyId());
+    ASSERT_EQ("secret", creds.GetAWSSecretKey());
+    ASSERT_EQ("token", creds.GetSessionToken());
+    ASSERT_EQ(DateTime((int64_t) 2303614800000), creds.GetExpiration());
+}
+
+TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromExpiredTokenProvidesNoCredentials)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenFileName);
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::String token = R"({
+    "accessToken": "base64string",
+    "expiresAt": "1997-05-15T00:00:00Z",
+    "region": "us-west-2",
+    "startUrl": "https://d-92671207e4.awsapps.com/start"
+})";
+    tokenFile << token;
+    tokenFile.close();
+
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([default]
+sso_account_id = 012345678901
+sso_region = us-east-1
+sso_role_name = SampleRole
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    // No request is made to get credentials
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty());
+}
+
+TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromBadConfigProvidesNoCredentials)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenFileName);
+    Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::String token = R"({
+    "accessToken": "base64string",
+    "expiresAt": "2042-12-12T00:00:00Z",
+    "region": "us-west-2",
+})";// Missing startUrl attribute
+    tokenFile << token;
+    tokenFile.close();
+
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([default]
+sso_account_id = 012345678901
+sso_region = us-east-1
+sso_role_name = SampleRole
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    // No request is made to get credentials
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty());
 }
 
 TEST(AWSCredentialsTest, TestDefaultState)

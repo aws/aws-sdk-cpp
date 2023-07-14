@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The source of the trial component.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Resource Name (ARN) and job type of the source of a trial
+   * component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSource">AWS
    * API Reference</a></p>
    */
@@ -48,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline TrialComponentSource& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline TrialComponentSource& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source.</p>
+     * <p>The source ARN.</p>
      */
     inline TrialComponentSource& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 

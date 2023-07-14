@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/budgets/BudgetsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Budgets;
 using namespace Aws::Utils;
+using namespace Aws::Budgets;
 
 namespace Aws
 {
@@ -30,6 +20,7 @@ namespace BudgetsErrorMapper
 
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int RESOURCE_LOCKED_HASH = HashingUtils::HashString("ResourceLockedException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int DUPLICATE_RECORD_HASH = HashingUtils::HashString("DuplicateRecordException");
 static const int CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CreationLimitExceededException");
@@ -48,6 +39,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == RESOURCE_LOCKED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BudgetsErrors::RESOURCE_LOCKED), false);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {

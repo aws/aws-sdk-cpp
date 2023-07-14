@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -27,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessionsInput">AWS
    * API Reference</a></p>
    */
@@ -48,56 +38,56 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * <p>A unique identifier for the fleet to search for active game sessions. You can
      * use either the fleet ID or ARN value. Each request must reference either a fleet
      * ID or alias ID, but not both.</p>
      */
@@ -105,60 +95,117 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for an alias associated with the fleet to search for
+     * <p>A unique identifier for the alias associated with the fleet to search for
      * active game sessions. You can use either the alias ID or ARN value. Each request
      * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline SearchGameSessionsRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline SearchGameSessionsRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>A fleet location to search for game sessions. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p> <p> </p>
+     */
+    inline SearchGameSessionsRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
     /**
@@ -589,58 +636,58 @@ namespace Model
 
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline SearchGameSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline SearchGameSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value.</p>
      */
     inline SearchGameSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -651,6 +698,9 @@ namespace Model
 
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
+
+    Aws::String m_location;
+    bool m_locationHasBeenSet;
 
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;

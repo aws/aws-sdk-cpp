@@ -1,24 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sms/model/AppStatus.h>
+#include <aws/sms/model/AppReplicationConfigurationStatus.h>
 #include <aws/sms/model/AppReplicationStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sms/model/AppLaunchConfigurationStatus.h>
 #include <aws/sms/model/AppLaunchStatus.h>
 #include <aws/sms/model/LaunchDetails.h>
 #include <utility>
@@ -53,124 +45,165 @@ namespace Model
 
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline AppSummary& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline AppSummary& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique ID of the application.</p>
+     * <p>The unique ID of the application.</p>
      */
     inline AppSummary& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The ID of the application.</p>
+     */
+    inline const Aws::String& GetImportedAppId() const{ return m_importedAppId; }
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline bool ImportedAppIdHasBeenSet() const { return m_importedAppIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline void SetImportedAppId(const Aws::String& value) { m_importedAppIdHasBeenSet = true; m_importedAppId = value; }
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline void SetImportedAppId(Aws::String&& value) { m_importedAppIdHasBeenSet = true; m_importedAppId = std::move(value); }
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline void SetImportedAppId(const char* value) { m_importedAppIdHasBeenSet = true; m_importedAppId.assign(value); }
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline AppSummary& WithImportedAppId(const Aws::String& value) { SetImportedAppId(value); return *this;}
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline AppSummary& WithImportedAppId(Aws::String&& value) { SetImportedAppId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the application.</p>
+     */
+    inline AppSummary& WithImportedAppId(const char* value) { SetImportedAppId(value); return *this;}
+
+
+    /**
+     * <p>The name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline AppSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline AppSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the application.</p>
+     * <p>The name of the application.</p>
      */
     inline AppSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline AppSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline AppSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of the application.</p>
+     * <p>The description of the application.</p>
      */
     inline AppSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -248,32 +281,63 @@ namespace Model
 
 
     /**
-     * <p>Replication status of the application.</p>
+     * <p>Status of the replication configuration.</p>
+     */
+    inline const AppReplicationConfigurationStatus& GetReplicationConfigurationStatus() const{ return m_replicationConfigurationStatus; }
+
+    /**
+     * <p>Status of the replication configuration.</p>
+     */
+    inline bool ReplicationConfigurationStatusHasBeenSet() const { return m_replicationConfigurationStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the replication configuration.</p>
+     */
+    inline void SetReplicationConfigurationStatus(const AppReplicationConfigurationStatus& value) { m_replicationConfigurationStatusHasBeenSet = true; m_replicationConfigurationStatus = value; }
+
+    /**
+     * <p>Status of the replication configuration.</p>
+     */
+    inline void SetReplicationConfigurationStatus(AppReplicationConfigurationStatus&& value) { m_replicationConfigurationStatusHasBeenSet = true; m_replicationConfigurationStatus = std::move(value); }
+
+    /**
+     * <p>Status of the replication configuration.</p>
+     */
+    inline AppSummary& WithReplicationConfigurationStatus(const AppReplicationConfigurationStatus& value) { SetReplicationConfigurationStatus(value); return *this;}
+
+    /**
+     * <p>Status of the replication configuration.</p>
+     */
+    inline AppSummary& WithReplicationConfigurationStatus(AppReplicationConfigurationStatus&& value) { SetReplicationConfigurationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The replication status of the application.</p>
      */
     inline const AppReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
 
     /**
-     * <p>Replication status of the application.</p>
+     * <p>The replication status of the application.</p>
      */
     inline bool ReplicationStatusHasBeenSet() const { return m_replicationStatusHasBeenSet; }
 
     /**
-     * <p>Replication status of the application.</p>
+     * <p>The replication status of the application.</p>
      */
     inline void SetReplicationStatus(const AppReplicationStatus& value) { m_replicationStatusHasBeenSet = true; m_replicationStatus = value; }
 
     /**
-     * <p>Replication status of the application.</p>
+     * <p>The replication status of the application.</p>
      */
     inline void SetReplicationStatus(AppReplicationStatus&& value) { m_replicationStatusHasBeenSet = true; m_replicationStatus = std::move(value); }
 
     /**
-     * <p>Replication status of the application.</p>
+     * <p>The replication status of the application.</p>
      */
     inline AppSummary& WithReplicationStatus(const AppReplicationStatus& value) { SetReplicationStatus(value); return *this;}
 
     /**
-     * <p>Replication status of the application.</p>
+     * <p>The replication status of the application.</p>
      */
     inline AppSummary& WithReplicationStatus(AppReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}
 
@@ -320,63 +384,94 @@ namespace Model
 
 
     /**
-     * <p>Timestamp of the application's most recent successful replication.</p>
+     * <p>The timestamp of the application's most recent successful replication.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestReplicationTime() const{ return m_latestReplicationTime; }
 
     /**
-     * <p>Timestamp of the application's most recent successful replication.</p>
+     * <p>The timestamp of the application's most recent successful replication.</p>
      */
     inline bool LatestReplicationTimeHasBeenSet() const { return m_latestReplicationTimeHasBeenSet; }
 
     /**
-     * <p>Timestamp of the application's most recent successful replication.</p>
+     * <p>The timestamp of the application's most recent successful replication.</p>
      */
     inline void SetLatestReplicationTime(const Aws::Utils::DateTime& value) { m_latestReplicationTimeHasBeenSet = true; m_latestReplicationTime = value; }
 
     /**
-     * <p>Timestamp of the application's most recent successful replication.</p>
+     * <p>The timestamp of the application's most recent successful replication.</p>
      */
     inline void SetLatestReplicationTime(Aws::Utils::DateTime&& value) { m_latestReplicationTimeHasBeenSet = true; m_latestReplicationTime = std::move(value); }
 
     /**
-     * <p>Timestamp of the application's most recent successful replication.</p>
+     * <p>The timestamp of the application's most recent successful replication.</p>
      */
     inline AppSummary& WithLatestReplicationTime(const Aws::Utils::DateTime& value) { SetLatestReplicationTime(value); return *this;}
 
     /**
-     * <p>Timestamp of the application's most recent successful replication.</p>
+     * <p>The timestamp of the application's most recent successful replication.</p>
      */
     inline AppSummary& WithLatestReplicationTime(Aws::Utils::DateTime&& value) { SetLatestReplicationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Launch status of the application.</p>
+     * <p>Status of the launch configuration.</p>
+     */
+    inline const AppLaunchConfigurationStatus& GetLaunchConfigurationStatus() const{ return m_launchConfigurationStatus; }
+
+    /**
+     * <p>Status of the launch configuration.</p>
+     */
+    inline bool LaunchConfigurationStatusHasBeenSet() const { return m_launchConfigurationStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the launch configuration.</p>
+     */
+    inline void SetLaunchConfigurationStatus(const AppLaunchConfigurationStatus& value) { m_launchConfigurationStatusHasBeenSet = true; m_launchConfigurationStatus = value; }
+
+    /**
+     * <p>Status of the launch configuration.</p>
+     */
+    inline void SetLaunchConfigurationStatus(AppLaunchConfigurationStatus&& value) { m_launchConfigurationStatusHasBeenSet = true; m_launchConfigurationStatus = std::move(value); }
+
+    /**
+     * <p>Status of the launch configuration.</p>
+     */
+    inline AppSummary& WithLaunchConfigurationStatus(const AppLaunchConfigurationStatus& value) { SetLaunchConfigurationStatus(value); return *this;}
+
+    /**
+     * <p>Status of the launch configuration.</p>
+     */
+    inline AppSummary& WithLaunchConfigurationStatus(AppLaunchConfigurationStatus&& value) { SetLaunchConfigurationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The launch status of the application.</p>
      */
     inline const AppLaunchStatus& GetLaunchStatus() const{ return m_launchStatus; }
 
     /**
-     * <p>Launch status of the application.</p>
+     * <p>The launch status of the application.</p>
      */
     inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
 
     /**
-     * <p>Launch status of the application.</p>
+     * <p>The launch status of the application.</p>
      */
     inline void SetLaunchStatus(const AppLaunchStatus& value) { m_launchStatusHasBeenSet = true; m_launchStatus = value; }
 
     /**
-     * <p>Launch status of the application.</p>
+     * <p>The launch status of the application.</p>
      */
     inline void SetLaunchStatus(AppLaunchStatus&& value) { m_launchStatusHasBeenSet = true; m_launchStatus = std::move(value); }
 
     /**
-     * <p>Launch status of the application.</p>
+     * <p>The launch status of the application.</p>
      */
     inline AppSummary& WithLaunchStatus(const AppLaunchStatus& value) { SetLaunchStatus(value); return *this;}
 
     /**
-     * <p>Launch status of the application.</p>
+     * <p>The launch status of the application.</p>
      */
     inline AppSummary& WithLaunchStatus(AppLaunchStatus&& value) { SetLaunchStatus(std::move(value)); return *this;}
 
@@ -454,146 +549,154 @@ namespace Model
 
 
     /**
-     * <p>Time of creation of this application.</p>
+     * <p>The creation time of the application.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time of creation of this application.</p>
+     * <p>The creation time of the application.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>Time of creation of this application.</p>
+     * <p>The creation time of the application.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time of creation of this application.</p>
+     * <p>The creation time of the application.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>Time of creation of this application.</p>
+     * <p>The creation time of the application.</p>
      */
     inline AppSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time of creation of this application.</p>
+     * <p>The creation time of the application.</p>
      */
     inline AppSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Timestamp of the application's creation.</p>
+     * <p>The last modified time of the application.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>Timestamp of the application's creation.</p>
+     * <p>The last modified time of the application.</p>
      */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
-     * <p>Timestamp of the application's creation.</p>
+     * <p>The last modified time of the application.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p>Timestamp of the application's creation.</p>
+     * <p>The last modified time of the application.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * <p>Timestamp of the application's creation.</p>
+     * <p>The last modified time of the application.</p>
      */
     inline AppSummary& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>Timestamp of the application's creation.</p>
+     * <p>The last modified time of the application.</p>
      */
     inline AppSummary& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline AppSummary& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline AppSummary& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     * <p>The name of the service role in the customer's account used by Server
+     * Migration Service.</p>
      */
     inline AppSummary& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
 
     /**
-     * <p>Number of server groups present in the application.</p>
+     * <p>The number of server groups present in the application.</p>
      */
     inline int GetTotalServerGroups() const{ return m_totalServerGroups; }
 
     /**
-     * <p>Number of server groups present in the application.</p>
+     * <p>The number of server groups present in the application.</p>
      */
     inline bool TotalServerGroupsHasBeenSet() const { return m_totalServerGroupsHasBeenSet; }
 
     /**
-     * <p>Number of server groups present in the application.</p>
+     * <p>The number of server groups present in the application.</p>
      */
     inline void SetTotalServerGroups(int value) { m_totalServerGroupsHasBeenSet = true; m_totalServerGroups = value; }
 
     /**
-     * <p>Number of server groups present in the application.</p>
+     * <p>The number of server groups present in the application.</p>
      */
     inline AppSummary& WithTotalServerGroups(int value) { SetTotalServerGroups(value); return *this;}
 
 
     /**
-     * <p>Number of servers present in the application.</p>
+     * <p>The number of servers present in the application.</p>
      */
     inline int GetTotalServers() const{ return m_totalServers; }
 
     /**
-     * <p>Number of servers present in the application.</p>
+     * <p>The number of servers present in the application.</p>
      */
     inline bool TotalServersHasBeenSet() const { return m_totalServersHasBeenSet; }
 
     /**
-     * <p>Number of servers present in the application.</p>
+     * <p>The number of servers present in the application.</p>
      */
     inline void SetTotalServers(int value) { m_totalServersHasBeenSet = true; m_totalServers = value; }
 
     /**
-     * <p>Number of servers present in the application.</p>
+     * <p>The number of servers present in the application.</p>
      */
     inline AppSummary& WithTotalServers(int value) { SetTotalServers(value); return *this;}
 
@@ -601,6 +704,9 @@ namespace Model
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
+
+    Aws::String m_importedAppId;
+    bool m_importedAppIdHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -614,6 +720,9 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
 
+    AppReplicationConfigurationStatus m_replicationConfigurationStatus;
+    bool m_replicationConfigurationStatusHasBeenSet;
+
     AppReplicationStatus m_replicationStatus;
     bool m_replicationStatusHasBeenSet;
 
@@ -622,6 +731,9 @@ namespace Model
 
     Aws::Utils::DateTime m_latestReplicationTime;
     bool m_latestReplicationTimeHasBeenSet;
+
+    AppLaunchConfigurationStatus m_launchConfigurationStatus;
+    bool m_launchConfigurationStatusHasBeenSet;
 
     AppLaunchStatus m_launchStatus;
     bool m_launchStatusHasBeenSet;

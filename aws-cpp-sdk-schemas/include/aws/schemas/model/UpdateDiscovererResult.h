@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
@@ -215,6 +205,25 @@ namespace Model
 
 
     /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccount = value; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline UpdateDiscovererResult& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
+
+
+    /**
      * <p>Tags associated with the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -285,6 +294,8 @@ namespace Model
     Aws::String m_sourceArn;
 
     DiscovererState m_state;
+
+    bool m_crossAccount;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

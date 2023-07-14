@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/RegisterImageRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -36,7 +26,12 @@ RegisterImageRequest::RegisterImageRequest() :
     m_ramdiskIdHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false),
+    m_tpmSupport(TpmSupportValues::NOT_SET),
+    m_tpmSupportHasBeenSet(false),
+    m_uefiDataHasBeenSet(false)
 {
 }
 
@@ -118,6 +113,21 @@ Aws::String RegisterImageRequest::SerializePayload() const
   if(m_virtualizationTypeHasBeenSet)
   {
     ss << "VirtualizationType=" << StringUtils::URLEncode(m_virtualizationType.c_str()) << "&";
+  }
+
+  if(m_bootModeHasBeenSet)
+  {
+    ss << "BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+
+  if(m_tpmSupportHasBeenSet)
+  {
+    ss << "TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
+  }
+
+  if(m_uefiDataHasBeenSet)
+  {
+    ss << "UefiData=" << StringUtils::URLEncode(m_uefiData.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

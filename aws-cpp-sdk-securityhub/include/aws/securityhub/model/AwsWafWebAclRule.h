@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -38,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Details for a rule in a WAF WebACL.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for a rule in an WAF WebACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclRule">AWS
    * API Reference</a></p>
    */
@@ -52,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the Rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline const WafAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the Rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the Rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the Rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the Rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline AwsWafWebAclRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
-     * matches the conditions in the Rule. </p>
+     * <p>Specifies the action that CloudFront or WAF takes when a web request matches
+     * the conditions in the rule. </p>
      */
     inline AwsWafWebAclRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -233,75 +223,75 @@ namespace Model
 
 
     /**
-     * <p>Specifies the order in which the Rules in a WebACL are evaluated. Rules with
-     * a lower value for Priority are evaluated before Rules with a higher value. The
-     * value must be a unique integer. If you add multiple Rules to a WebACL, the
-     * values do not need to be consecutive.</p>
+     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * a lower value for <code>Priority</code> are evaluated before rules with a higher
+     * value. The value must be a unique integer. If you add multiple rules to a
+     * WebACL, the values do not need to be consecutive.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>Specifies the order in which the Rules in a WebACL are evaluated. Rules with
-     * a lower value for Priority are evaluated before Rules with a higher value. The
-     * value must be a unique integer. If you add multiple Rules to a WebACL, the
-     * values do not need to be consecutive.</p>
+     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * a lower value for <code>Priority</code> are evaluated before rules with a higher
+     * value. The value must be a unique integer. If you add multiple rules to a
+     * WebACL, the values do not need to be consecutive.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>Specifies the order in which the Rules in a WebACL are evaluated. Rules with
-     * a lower value for Priority are evaluated before Rules with a higher value. The
-     * value must be a unique integer. If you add multiple Rules to a WebACL, the
-     * values do not need to be consecutive.</p>
+     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * a lower value for <code>Priority</code> are evaluated before rules with a higher
+     * value. The value must be a unique integer. If you add multiple rules to a
+     * WebACL, the values do not need to be consecutive.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>Specifies the order in which the Rules in a WebACL are evaluated. Rules with
-     * a lower value for Priority are evaluated before Rules with a higher value. The
-     * value must be a unique integer. If you add multiple Rules to a WebACL, the
-     * values do not need to be consecutive.</p>
+     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * a lower value for <code>Priority</code> are evaluated before rules with a higher
+     * value. The value must be a unique integer. If you add multiple rules to a
+     * WebACL, the values do not need to be consecutive.</p>
      */
     inline AwsWafWebAclRule& WithPriority(int value) { SetPriority(value); return *this;}
 
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline AwsWafWebAclRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline AwsWafWebAclRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for a Rule.</p>
+     * <p>The identifier for a rule.</p>
      */
     inline AwsWafWebAclRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -47,50 +37,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace. It's found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
 
@@ -174,137 +172,297 @@ namespace Model
 
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline void SetQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline void SetQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& WithQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryParameters(value); return *this;}
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& WithQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const char* key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string map that contains attributes with values that you can use to filter
-     * instances by any custom attribute that you specified when you registered the
-     * instance. Only instances that match all the specified key/value pairs will be
-     * returned.</p>
+     * <p>Filters to scope the results based on custom attributes for the instance (for
+     * example, <code>{version=v1, az=1a}</code>). Only instances that match all the
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const char* key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The health status of the instances that you want to discover.</p>
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptionalParameters() const{ return m_optionalParameters; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline bool OptionalParametersHasBeenSet() const { return m_optionalParametersHasBeenSet; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline void SetOptionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = value; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline void SetOptionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters = std::move(value); }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& WithOptionalParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetOptionalParameters(value); return *this;}
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& WithOptionalParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetOptionalParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const Aws::String& key, const Aws::String& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, const Aws::String& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const Aws::String& key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const char* key, Aws::String&& value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(Aws::String&& key, const char* value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Opportunistic filters to scope the results based on custom attributes. If
+     * there are instances that match both the filters specified in both the
+     * <code>QueryParameters</code> parameter and this parameter, all of these
+     * instances are returned. Otherwise, the filters are ignored, and only instances
+     * that match the filters that are specified in the <code>QueryParameters</code>
+     * parameter are returned.</p>
+     */
+    inline DiscoverInstancesRequest& AddOptionalParameters(const char* key, const char* value) { m_optionalParametersHasBeenSet = true; m_optionalParameters.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The health status of the instances that you want to discover. This parameter
+     * is ignored for services that don't have a health check configured, and all
+     * instances are returned.</p> <dl> <dt>HEALTHY</dt> <dd> <p>Returns healthy
+     * instances.</p> </dd> <dt>UNHEALTHY</dt> <dd> <p>Returns unhealthy instances.</p>
+     * </dd> <dt>ALL</dt> <dd> <p>Returns all instances.</p> </dd>
+     * <dt>HEALTHY_OR_ELSE_ALL</dt> <dd> <p>Returns healthy instances, unless none are
+     * reporting a healthy state. In that case, return all instances. This is also
+     * called failing open.</p> </dd> </dl>
      */
     inline const HealthStatusFilter& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
-     * <p>The health status of the instances that you want to discover.</p>
+     * <p>The health status of the instances that you want to discover. This parameter
+     * is ignored for services that don't have a health check configured, and all
+     * instances are returned.</p> <dl> <dt>HEALTHY</dt> <dd> <p>Returns healthy
+     * instances.</p> </dd> <dt>UNHEALTHY</dt> <dd> <p>Returns unhealthy instances.</p>
+     * </dd> <dt>ALL</dt> <dd> <p>Returns all instances.</p> </dd>
+     * <dt>HEALTHY_OR_ELSE_ALL</dt> <dd> <p>Returns healthy instances, unless none are
+     * reporting a healthy state. In that case, return all instances. This is also
+     * called failing open.</p> </dd> </dl>
      */
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
-     * <p>The health status of the instances that you want to discover.</p>
+     * <p>The health status of the instances that you want to discover. This parameter
+     * is ignored for services that don't have a health check configured, and all
+     * instances are returned.</p> <dl> <dt>HEALTHY</dt> <dd> <p>Returns healthy
+     * instances.</p> </dd> <dt>UNHEALTHY</dt> <dd> <p>Returns unhealthy instances.</p>
+     * </dd> <dt>ALL</dt> <dd> <p>Returns all instances.</p> </dd>
+     * <dt>HEALTHY_OR_ELSE_ALL</dt> <dd> <p>Returns healthy instances, unless none are
+     * reporting a healthy state. In that case, return all instances. This is also
+     * called failing open.</p> </dd> </dl>
      */
     inline void SetHealthStatus(const HealthStatusFilter& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p>The health status of the instances that you want to discover.</p>
+     * <p>The health status of the instances that you want to discover. This parameter
+     * is ignored for services that don't have a health check configured, and all
+     * instances are returned.</p> <dl> <dt>HEALTHY</dt> <dd> <p>Returns healthy
+     * instances.</p> </dd> <dt>UNHEALTHY</dt> <dd> <p>Returns unhealthy instances.</p>
+     * </dd> <dt>ALL</dt> <dd> <p>Returns all instances.</p> </dd>
+     * <dt>HEALTHY_OR_ELSE_ALL</dt> <dd> <p>Returns healthy instances, unless none are
+     * reporting a healthy state. In that case, return all instances. This is also
+     * called failing open.</p> </dd> </dl>
      */
     inline void SetHealthStatus(HealthStatusFilter&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
-     * <p>The health status of the instances that you want to discover.</p>
+     * <p>The health status of the instances that you want to discover. This parameter
+     * is ignored for services that don't have a health check configured, and all
+     * instances are returned.</p> <dl> <dt>HEALTHY</dt> <dd> <p>Returns healthy
+     * instances.</p> </dd> <dt>UNHEALTHY</dt> <dd> <p>Returns unhealthy instances.</p>
+     * </dd> <dt>ALL</dt> <dd> <p>Returns all instances.</p> </dd>
+     * <dt>HEALTHY_OR_ELSE_ALL</dt> <dd> <p>Returns healthy instances, unless none are
+     * reporting a healthy state. In that case, return all instances. This is also
+     * called failing open.</p> </dd> </dl>
      */
     inline DiscoverInstancesRequest& WithHealthStatus(const HealthStatusFilter& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>The health status of the instances that you want to discover.</p>
+     * <p>The health status of the instances that you want to discover. This parameter
+     * is ignored for services that don't have a health check configured, and all
+     * instances are returned.</p> <dl> <dt>HEALTHY</dt> <dd> <p>Returns healthy
+     * instances.</p> </dd> <dt>UNHEALTHY</dt> <dd> <p>Returns unhealthy instances.</p>
+     * </dd> <dt>ALL</dt> <dd> <p>Returns all instances.</p> </dd>
+     * <dt>HEALTHY_OR_ELSE_ALL</dt> <dd> <p>Returns healthy instances, unless none are
+     * reporting a healthy state. In that case, return all instances. This is also
+     * called failing open.</p> </dd> </dl>
      */
     inline DiscoverInstancesRequest& WithHealthStatus(HealthStatusFilter&& value) { SetHealthStatus(std::move(value)); return *this;}
 
@@ -321,6 +479,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
     bool m_queryParametersHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_optionalParameters;
+    bool m_optionalParametersHasBeenSet;
 
     HealthStatusFilter m_healthStatus;
     bool m_healthStatusHasBeenSet;

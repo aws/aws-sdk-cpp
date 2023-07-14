@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/firehose/model/DeliveryStreamFailureType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,13 @@ namespace Aws
         static const int INVALID_KMS_KEY_HASH = HashingUtils::HashString("INVALID_KMS_KEY");
         static const int KMS_KEY_NOT_FOUND_HASH = HashingUtils::HashString("KMS_KEY_NOT_FOUND");
         static const int KMS_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMS_OPT_IN_REQUIRED");
+        static const int CREATE_ENI_FAILED_HASH = HashingUtils::HashString("CREATE_ENI_FAILED");
+        static const int DELETE_ENI_FAILED_HASH = HashingUtils::HashString("DELETE_ENI_FAILED");
+        static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
+        static const int SECURITY_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("SECURITY_GROUP_NOT_FOUND");
+        static const int ENI_ACCESS_DENIED_HASH = HashingUtils::HashString("ENI_ACCESS_DENIED");
+        static const int SUBNET_ACCESS_DENIED_HASH = HashingUtils::HashString("SUBNET_ACCESS_DENIED");
+        static const int SECURITY_GROUP_ACCESS_DENIED_HASH = HashingUtils::HashString("SECURITY_GROUP_ACCESS_DENIED");
         static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
 
 
@@ -71,6 +68,34 @@ namespace Aws
           {
             return DeliveryStreamFailureType::KMS_OPT_IN_REQUIRED;
           }
+          else if (hashCode == CREATE_ENI_FAILED_HASH)
+          {
+            return DeliveryStreamFailureType::CREATE_ENI_FAILED;
+          }
+          else if (hashCode == DELETE_ENI_FAILED_HASH)
+          {
+            return DeliveryStreamFailureType::DELETE_ENI_FAILED;
+          }
+          else if (hashCode == SUBNET_NOT_FOUND_HASH)
+          {
+            return DeliveryStreamFailureType::SUBNET_NOT_FOUND;
+          }
+          else if (hashCode == SECURITY_GROUP_NOT_FOUND_HASH)
+          {
+            return DeliveryStreamFailureType::SECURITY_GROUP_NOT_FOUND;
+          }
+          else if (hashCode == ENI_ACCESS_DENIED_HASH)
+          {
+            return DeliveryStreamFailureType::ENI_ACCESS_DENIED;
+          }
+          else if (hashCode == SUBNET_ACCESS_DENIED_HASH)
+          {
+            return DeliveryStreamFailureType::SUBNET_ACCESS_DENIED;
+          }
+          else if (hashCode == SECURITY_GROUP_ACCESS_DENIED_HASH)
+          {
+            return DeliveryStreamFailureType::SECURITY_GROUP_ACCESS_DENIED;
+          }
           else if (hashCode == UNKNOWN_ERROR_HASH)
           {
             return DeliveryStreamFailureType::UNKNOWN_ERROR;
@@ -103,6 +128,20 @@ namespace Aws
             return "KMS_KEY_NOT_FOUND";
           case DeliveryStreamFailureType::KMS_OPT_IN_REQUIRED:
             return "KMS_OPT_IN_REQUIRED";
+          case DeliveryStreamFailureType::CREATE_ENI_FAILED:
+            return "CREATE_ENI_FAILED";
+          case DeliveryStreamFailureType::DELETE_ENI_FAILED:
+            return "DELETE_ENI_FAILED";
+          case DeliveryStreamFailureType::SUBNET_NOT_FOUND:
+            return "SUBNET_NOT_FOUND";
+          case DeliveryStreamFailureType::SECURITY_GROUP_NOT_FOUND:
+            return "SECURITY_GROUP_NOT_FOUND";
+          case DeliveryStreamFailureType::ENI_ACCESS_DENIED:
+            return "ENI_ACCESS_DENIED";
+          case DeliveryStreamFailureType::SUBNET_ACCESS_DENIED:
+            return "SUBNET_ACCESS_DENIED";
+          case DeliveryStreamFailureType::SECURITY_GROUP_ACCESS_DENIED:
+            return "SECURITY_GROUP_ACCESS_DENIED";
           case DeliveryStreamFailureType::UNKNOWN_ERROR:
             return "UNKNOWN_ERROR";
           default:

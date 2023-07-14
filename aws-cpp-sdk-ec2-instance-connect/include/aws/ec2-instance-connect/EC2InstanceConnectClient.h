@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ec2-instance-connect/model/SendSSHPublicKeyResult.h>
+#include <aws/ec2-instance-connect/model/SendSerialConsoleSSHPublicKeyResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -62,21 +53,24 @@ namespace EC2InstanceConnect
 namespace Model
 {
         class SendSSHPublicKeyRequest;
+        class SendSerialConsoleSSHPublicKeyRequest;
 
-        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, Aws::Client::AWSError<EC2InstanceConnectErrors>> SendSSHPublicKeyOutcome;
+        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, EC2InstanceConnectError> SendSSHPublicKeyOutcome;
+        typedef Aws::Utils::Outcome<SendSerialConsoleSSHPublicKeyResult, EC2InstanceConnectError> SendSerialConsoleSSHPublicKeyOutcome;
 
         typedef std::future<SendSSHPublicKeyOutcome> SendSSHPublicKeyOutcomeCallable;
+        typedef std::future<SendSerialConsoleSSHPublicKeyOutcome> SendSerialConsoleSSHPublicKeyOutcomeCallable;
 } // namespace Model
 
   class EC2InstanceConnectClient;
 
     typedef std::function<void(const EC2InstanceConnectClient*, const Model::SendSSHPublicKeyRequest&, const Model::SendSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendSSHPublicKeyResponseReceivedHandler;
+    typedef std::function<void(const EC2InstanceConnectClient*, const Model::SendSerialConsoleSSHPublicKeyRequest&, const Model::SendSerialConsoleSSHPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendSerialConsoleSSHPublicKeyResponseReceivedHandler;
 
   /**
-   * <p>AWS EC2 Connect Service is a service that enables system administrators to
-   * publish temporary SSH keys to their EC2 instances in order to establish
-   * connections to their instances without leaving a permanent authentication
-   * option.</p>
+   * <p>Amazon EC2 Instance Connect enables system administrators to publish one-time
+   * use SSH public keys to EC2, providing users a simple and secure way to connect
+   * to their instances.</p>
    */
   class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::AWSJsonClient
   {
@@ -104,42 +98,56 @@ namespace Model
 
         virtual ~EC2InstanceConnectClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "EC2 Instance Connect"; }
-
 
         /**
-         * <p>Pushes an SSH public key to a particular OS user on a given EC2 instance for
-         * 60 seconds.</p><p><h3>See Also:</h3>   <a
+         * <p>Pushes an SSH public key to the specified EC2 instance for use by the
+         * specified user. The key remains for 60 seconds. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect
+         * to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">AWS
          * API Reference</a></p>
          */
         virtual Model::SendSSHPublicKeyOutcome SendSSHPublicKey(const Model::SendSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Pushes an SSH public key to a particular OS user on a given EC2 instance for
-         * 60 seconds.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendSSHPublicKeyOutcomeCallable SendSSHPublicKeyCallable(const Model::SendSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Pushes an SSH public key to a particular OS user on a given EC2 instance for
-         * 60 seconds.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendSSHPublicKeyAsync(const Model::SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Pushes an SSH public key to the specified EC2 instance. The key remains for
+         * 60 seconds, which gives you 60 seconds to establish a serial console connection
+         * to the instance using SSH. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2
+         * Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendSerialConsoleSSHPublicKeyOutcome SendSerialConsoleSSHPublicKey(const Model::SendSerialConsoleSSHPublicKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendSerialConsoleSSHPublicKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendSerialConsoleSSHPublicKeyOutcomeCallable SendSerialConsoleSSHPublicKeyCallable(const Model::SendSerialConsoleSSHPublicKeyRequest& request) const;
+
+        /**
+         * An Async wrapper for SendSerialConsoleSSHPublicKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendSerialConsoleSSHPublicKeyAsync(const Model::SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void SendSSHPublicKeyAsyncHelper(const Model::SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendSerialConsoleSSHPublicKeyAsyncHelper(const Model::SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
@@ -82,22 +72,34 @@ namespace Model
     inline JobError& WithCode(Code&& value) { SetCode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline const Details& GetDetails() const{ return m_details; }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline void SetDetails(const Details& value) { m_detailsHasBeenSet = true; m_details = value; }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline void SetDetails(Details&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline JobError& WithDetails(const Details& value) { SetDetails(value); return *this;}
 
-    
+    /**
+     * <p>The details about the job error.</p>
+     */
     inline JobError& WithDetails(Details&& value) { SetDetails(std::move(value)); return *this;}
 
 
@@ -195,42 +197,42 @@ namespace Model
 
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline JobError& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline JobError& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline JobError& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

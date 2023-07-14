@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/kendra/model/DataSourceConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kendra/model/DataSourceStatus.h>
+#include <aws/kendra/model/CustomDocumentEnrichmentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -181,37 +172,32 @@ namespace Model
 
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Information that describes where the data source is located and how the data
-     * source is configured. The specific information in the description depends on the
-     * data source provider.</p>
+     * <p>Describes how the data source is configured. The specific information in the
+     * description depends on the data source provider.</p>
      */
     inline DescribeDataSourceResult& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
@@ -346,37 +332,37 @@ namespace Model
 
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_schedule = value; }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_schedule = std::move(value); }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline void SetSchedule(const char* value) { m_schedule.assign(value); }
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>The schedule that Amazon Kendra will update the data source.</p>
+     * <p>The schedule for Amazon Kendra to update the index.</p>
      */
     inline DescribeDataSourceResult& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
@@ -473,6 +459,121 @@ namespace Model
      */
     inline DescribeDataSourceResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const Aws::String& value) { m_languageCode = value; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(Aws::String&& value) { m_languageCode = std::move(value); }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const char* value) { m_languageCode.assign(value); }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline DescribeDataSourceResult& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline DescribeDataSourceResult& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline DescribeDataSourceResult& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you describe a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline const CustomDocumentEnrichmentConfiguration& GetCustomDocumentEnrichmentConfiguration() const{ return m_customDocumentEnrichmentConfiguration; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you describe a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { m_customDocumentEnrichmentConfiguration = value; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you describe a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { m_customDocumentEnrichmentConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you describe a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline DescribeDataSourceResult& WithCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { SetCustomDocumentEnrichmentConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you describe a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline DescribeDataSourceResult& WithCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { SetCustomDocumentEnrichmentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -498,6 +599,10 @@ namespace Model
     Aws::String m_roleArn;
 
     Aws::String m_errorMessage;
+
+    Aws::String m_languageCode;
+
+    CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
   };
 
 } // namespace Model

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/Owner.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/CustomPolicyDetails.h>
 #include <aws/config/model/SourceDetail.h>
 #include <utility>
 
@@ -37,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides the AWS Config rule owner (AWS or customer), the rule identifier,
-   * and the events that trigger the evaluation of your AWS resources.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or
+   * customer), the rule identifier, and the events that cause the evaluation of your
+   * Amazon Web Services resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Source">AWS API
    * Reference</a></p>
    */
@@ -53,178 +44,313 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
-     * rule.</p>
+     * <p>Indicates whether Amazon Web Services or the customer owns and manages the
+     * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
+     * Web Services. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
+     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
+     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+     * Custom Rules </a> in the Config developer guide.</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
-     * rule.</p>
+     * <p>Indicates whether Amazon Web Services or the customer owns and manages the
+     * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
+     * Web Services. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
+     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
+     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+     * Custom Rules </a> in the Config developer guide.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
-     * rule.</p>
+     * <p>Indicates whether Amazon Web Services or the customer owns and manages the
+     * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
+     * Web Services. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
+     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
+     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+     * Custom Rules </a> in the Config developer guide.</p>
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
-     * rule.</p>
+     * <p>Indicates whether Amazon Web Services or the customer owns and manages the
+     * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
+     * Web Services. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
+     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
+     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+     * Custom Rules </a> in the Config developer guide.</p>
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
-     * rule.</p>
+     * <p>Indicates whether Amazon Web Services or the customer owns and manages the
+     * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
+     * Web Services. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
+     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
+     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+     * Custom Rules </a> in the Config developer guide.</p>
      */
     inline Source& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
-     * rule.</p>
+     * <p>Indicates whether Amazon Web Services or the customer owns and manages the
+     * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
+     * Web Services. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
+     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
+     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+     * Custom Rules </a> in the Config developer guide.</p>
      */
     inline Source& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline Source& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline Source& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>For AWS Config managed rules, a predefined identifier from a list. For
-     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
-     * managed rule, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
-     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <p>For Config Managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule,
+     * see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+     * of Config Managed Rules</a>.</p> <p>For Config Custom Lambda rules, the
+     * identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such
+     * as
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     * <p>For Config Custom Policy rules, this field will be ignored.</p>
      */
     inline Source& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline const Aws::Vector<SourceDetail>& GetSourceDetails() const{ return m_sourceDetails; }
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline bool SourceDetailsHasBeenSet() const { return m_sourceDetailsHasBeenSet; }
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline void SetSourceDetails(const Aws::Vector<SourceDetail>& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = value; }
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline void SetSourceDetails(Aws::Vector<SourceDetail>&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = std::move(value); }
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline Source& WithSourceDetails(const Aws::Vector<SourceDetail>& value) { SetSourceDetails(value); return *this;}
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline Source& WithSourceDetails(Aws::Vector<SourceDetail>&& value) { SetSourceDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline Source& AddSourceDetails(const SourceDetail& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(value); return *this; }
 
     /**
-     * <p>Provides the source and type of the event that causes AWS Config to evaluate
-     * your AWS resources.</p>
+     * <p>Provides the source and the message types that cause Config to evaluate your
+     * Amazon Web Services resources against a rule. It also provides the frequency
+     * with which you want Config to run evaluations for the rule if the trigger type
+     * is periodic.</p> <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only
+     * acceptable values for the Config rule trigger message type are
+     * <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>.</p>
      */
     inline Source& AddSourceDetails(SourceDetail&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Provides the runtime system, policy definition, and whether debug logging is
+     * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+     */
+    inline const CustomPolicyDetails& GetCustomPolicyDetails() const{ return m_customPolicyDetails; }
+
+    /**
+     * <p>Provides the runtime system, policy definition, and whether debug logging is
+     * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+     */
+    inline bool CustomPolicyDetailsHasBeenSet() const { return m_customPolicyDetailsHasBeenSet; }
+
+    /**
+     * <p>Provides the runtime system, policy definition, and whether debug logging is
+     * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+     */
+    inline void SetCustomPolicyDetails(const CustomPolicyDetails& value) { m_customPolicyDetailsHasBeenSet = true; m_customPolicyDetails = value; }
+
+    /**
+     * <p>Provides the runtime system, policy definition, and whether debug logging is
+     * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+     */
+    inline void SetCustomPolicyDetails(CustomPolicyDetails&& value) { m_customPolicyDetailsHasBeenSet = true; m_customPolicyDetails = std::move(value); }
+
+    /**
+     * <p>Provides the runtime system, policy definition, and whether debug logging is
+     * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+     */
+    inline Source& WithCustomPolicyDetails(const CustomPolicyDetails& value) { SetCustomPolicyDetails(value); return *this;}
+
+    /**
+     * <p>Provides the runtime system, policy definition, and whether debug logging is
+     * enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
+     */
+    inline Source& WithCustomPolicyDetails(CustomPolicyDetails&& value) { SetCustomPolicyDetails(std::move(value)); return *this;}
 
   private:
 
@@ -236,6 +362,9 @@ namespace Model
 
     Aws::Vector<SourceDetail> m_sourceDetails;
     bool m_sourceDetailsHasBeenSet;
+
+    CustomPolicyDetails m_customPolicyDetails;
+    bool m_customPolicyDetailsHasBeenSet;
   };
 
 } // namespace Model

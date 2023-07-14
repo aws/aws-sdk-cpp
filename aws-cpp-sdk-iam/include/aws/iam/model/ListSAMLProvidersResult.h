@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -51,44 +41,44 @@ namespace Model
 
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<SAMLProviderListEntry>& GetSAMLProviderList() const{ return m_sAMLProviderList; }
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline void SetSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { m_sAMLProviderList = value; }
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline void SetSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { m_sAMLProviderList = std::move(value); }
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline ListSAMLProvidersResult& WithSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { SetSAMLProviderList(value); return *this;}
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline ListSAMLProvidersResult& WithSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { SetSAMLProviderList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline ListSAMLProvidersResult& AddSAMLProviderList(const SAMLProviderListEntry& value) { m_sAMLProviderList.push_back(value); return *this; }
 
     /**
-     * <p>The list of SAML provider resource objects defined in IAM for this AWS
-     * account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this Amazon Web
+     * Services account.</p>
      */
     inline ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListEntry&& value) { m_sAMLProviderList.push_back(std::move(value)); return *this; }
 

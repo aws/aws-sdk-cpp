@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/secretsmanager/model/SecretListEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,7 +33,9 @@ SecretListEntry::SecretListEntry() :
     m_deletedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
-    m_owningServiceHasBeenSet(false)
+    m_owningServiceHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
+    m_primaryRegionHasBeenSet(false)
 {
 }
 
@@ -62,7 +54,9 @@ SecretListEntry::SecretListEntry(JsonView jsonValue) :
     m_deletedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
-    m_owningServiceHasBeenSet(false)
+    m_owningServiceHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
+    m_primaryRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -180,6 +174,20 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     m_owningServiceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrimaryRegion"))
+  {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+
+    m_primaryRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +287,17 @@ JsonValue SecretListEntry::Jsonize() const
   if(m_owningServiceHasBeenSet)
   {
    payload.WithString("OwningService", m_owningService);
+
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_primaryRegionHasBeenSet)
+  {
+   payload.WithString("PrimaryRegion", m_primaryRegion);
 
   }
 

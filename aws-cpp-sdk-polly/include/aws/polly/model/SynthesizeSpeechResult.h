@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
@@ -69,7 +59,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
@@ -84,7 +74,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
@@ -99,7 +89,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
@@ -114,7 +104,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
@@ -129,7 +119,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline SynthesizeSpeechResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
@@ -144,7 +134,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline SynthesizeSpeechResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
@@ -159,7 +149,7 @@ namespace Model
      * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
      * (mono), little-endian format. </p> </li> <li> <p>If you request
      * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-     * returned is audio/json.</p> </li> </ul> <p> </p>
+     * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
      */
     inline SynthesizeSpeechResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 

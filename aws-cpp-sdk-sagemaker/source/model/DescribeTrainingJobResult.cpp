@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,8 @@ DescribeTrainingJobResult::DescribeTrainingJobResult() :
     m_enableInterContainerTrafficEncryption(false),
     m_enableManagedSpotTraining(false),
     m_trainingTimeInSeconds(0),
-    m_billableTimeInSeconds(0)
+    m_billableTimeInSeconds(0),
+    m_profilingStatus(ProfilingStatus::NOT_SET)
 {
 }
 
@@ -44,7 +35,8 @@ DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebService
     m_enableInterContainerTrafficEncryption(false),
     m_enableManagedSpotTraining(false),
     m_trainingTimeInSeconds(0),
-    m_billableTimeInSeconds(0)
+    m_billableTimeInSeconds(0),
+    m_profilingStatus(ProfilingStatus::NOT_SET)
 {
   *this = result;
 }
@@ -271,6 +263,51 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     for(unsigned debugRuleEvaluationStatusesIndex = 0; debugRuleEvaluationStatusesIndex < debugRuleEvaluationStatusesJsonList.GetLength(); ++debugRuleEvaluationStatusesIndex)
     {
       m_debugRuleEvaluationStatuses.push_back(debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ProfilerConfig"))
+  {
+    m_profilerConfig = jsonValue.GetObject("ProfilerConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ProfilerRuleConfigurations"))
+  {
+    Array<JsonView> profilerRuleConfigurationsJsonList = jsonValue.GetArray("ProfilerRuleConfigurations");
+    for(unsigned profilerRuleConfigurationsIndex = 0; profilerRuleConfigurationsIndex < profilerRuleConfigurationsJsonList.GetLength(); ++profilerRuleConfigurationsIndex)
+    {
+      m_profilerRuleConfigurations.push_back(profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ProfilerRuleEvaluationStatuses"))
+  {
+    Array<JsonView> profilerRuleEvaluationStatusesJsonList = jsonValue.GetArray("ProfilerRuleEvaluationStatuses");
+    for(unsigned profilerRuleEvaluationStatusesIndex = 0; profilerRuleEvaluationStatusesIndex < profilerRuleEvaluationStatusesJsonList.GetLength(); ++profilerRuleEvaluationStatusesIndex)
+    {
+      m_profilerRuleEvaluationStatuses.push_back(profilerRuleEvaluationStatusesJsonList[profilerRuleEvaluationStatusesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ProfilingStatus"))
+  {
+    m_profilingStatus = ProfilingStatusMapper::GetProfilingStatusForName(jsonValue.GetString("ProfilingStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+  }
+
+  if(jsonValue.ValueExists("Environment"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for(auto& environmentItem : environmentJsonMap)
+    {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
     }
   }
 

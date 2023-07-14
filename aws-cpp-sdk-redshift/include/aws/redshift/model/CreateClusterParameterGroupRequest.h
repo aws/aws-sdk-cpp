@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -56,8 +46,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
 
@@ -66,8 +56,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
 
@@ -76,8 +66,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
@@ -86,8 +76,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
 
@@ -96,8 +86,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
 
@@ -106,8 +96,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
 
@@ -116,8 +106,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
 
@@ -126,8 +116,8 @@ namespace Model
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
-     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
-     * string.</p> </note>
+     * Amazon Web Services account.</p> </li> </ul>  <p>This value is stored as a
+     * lower-case string.</p> 
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
@@ -137,10 +127,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline const Aws::String& GetParameterGroupFamily() const{ return m_parameterGroupFamily; }
@@ -150,10 +140,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline bool ParameterGroupFamilyHasBeenSet() const { return m_parameterGroupFamilyHasBeenSet; }
@@ -163,10 +153,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline void SetParameterGroupFamily(const Aws::String& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
@@ -176,10 +166,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = std::move(value); }
@@ -189,10 +179,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline void SetParameterGroupFamily(const char* value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily.assign(value); }
@@ -202,10 +192,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupFamily(const Aws::String& value) { SetParameterGroupFamily(value); return *this;}
@@ -215,10 +205,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(std::move(value)); return *this;}
@@ -228,10 +218,10 @@ namespace Model
      * applies. The cluster engine version determines the set of parameters.</p> <p>To
      * get a list of valid parameter group family names, you can call
      * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
-     * list of all the parameter groups that are owned by your AWS account, including
-     * the default parameter groups for each Amazon Redshift engine version. The
-     * parameter group family names associated with the default parameter groups
-     * provide you the valid values. For example, a valid family name is
+     * list of all the parameter groups that are owned by your Amazon Web Services
+     * account, including the default parameter groups for each Amazon Redshift engine
+     * version. The parameter group family names associated with the default parameter
+     * groups provide you the valid values. For example, a valid family name is
      * "redshift-1.0". </p>
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/robomaker/model/LaunchConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ LaunchConfig::LaunchConfig() :
     m_environmentVariablesHasBeenSet(false),
     m_portForwardingConfigHasBeenSet(false),
     m_streamUI(false),
-    m_streamUIHasBeenSet(false)
+    m_streamUIHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ LaunchConfig::LaunchConfig(JsonView jsonValue) :
     m_environmentVariablesHasBeenSet(false),
     m_portForwardingConfigHasBeenSet(false),
     m_streamUI(false),
-    m_streamUIHasBeenSet(false)
+    m_streamUIHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +81,16 @@ LaunchConfig& LaunchConfig::operator =(JsonView jsonValue)
     m_streamUIHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("command"))
+  {
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
+    {
+      m_command.push_back(commandJsonList[commandIndex].AsString());
+    }
+    m_commandHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +130,17 @@ JsonValue LaunchConfig::Jsonize() const
   if(m_streamUIHasBeenSet)
   {
    payload.WithBool("streamUI", m_streamUI);
+
+  }
+
+  if(m_commandHasBeenSet)
+  {
+   Array<JsonValue> commandJsonList(m_command.size());
+   for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
+   {
+     commandJsonList[commandIndex].AsString(m_command[commandIndex]);
+   }
+   payload.WithArray("command", std::move(commandJsonList));
 
   }
 

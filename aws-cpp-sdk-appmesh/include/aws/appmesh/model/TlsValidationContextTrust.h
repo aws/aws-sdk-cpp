@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/TlsValidationContextAcmTrust.h>
 #include <aws/appmesh/model/TlsValidationContextFileTrust.h>
+#include <aws/appmesh/model/TlsValidationContextSdsTrust.h>
 #include <utility>
 
 namespace Aws
@@ -50,77 +41,114 @@ namespace Model
 
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * validation context trust for an Certificate Manager certificate.</p>
      */
     inline const TlsValidationContextAcmTrust& GetAcm() const{ return m_acm; }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * validation context trust for an Certificate Manager certificate.</p>
      */
     inline bool AcmHasBeenSet() const { return m_acmHasBeenSet; }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * validation context trust for an Certificate Manager certificate.</p>
      */
     inline void SetAcm(const TlsValidationContextAcmTrust& value) { m_acmHasBeenSet = true; m_acm = value; }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * validation context trust for an Certificate Manager certificate.</p>
      */
     inline void SetAcm(TlsValidationContextAcmTrust&& value) { m_acmHasBeenSet = true; m_acm = std::move(value); }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * validation context trust for an Certificate Manager certificate.</p>
      */
     inline TlsValidationContextTrust& WithAcm(const TlsValidationContextAcmTrust& value) { SetAcm(value); return *this;}
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * validation context trust for an Certificate Manager certificate.</p>
      */
     inline TlsValidationContextTrust& WithAcm(TlsValidationContextAcmTrust&& value) { SetAcm(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object that represents a TLS validation context trust for a local
-     * file.</p>
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
      */
     inline const TlsValidationContextFileTrust& GetFile() const{ return m_file; }
 
     /**
-     * <p>An object that represents a TLS validation context trust for a local
-     * file.</p>
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
      */
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
 
     /**
-     * <p>An object that represents a TLS validation context trust for a local
-     * file.</p>
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
      */
     inline void SetFile(const TlsValidationContextFileTrust& value) { m_fileHasBeenSet = true; m_file = value; }
 
     /**
-     * <p>An object that represents a TLS validation context trust for a local
-     * file.</p>
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
      */
     inline void SetFile(TlsValidationContextFileTrust&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
 
     /**
-     * <p>An object that represents a TLS validation context trust for a local
-     * file.</p>
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
      */
     inline TlsValidationContextTrust& WithFile(const TlsValidationContextFileTrust& value) { SetFile(value); return *this;}
 
     /**
-     * <p>An object that represents a TLS validation context trust for a local
-     * file.</p>
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
      */
     inline TlsValidationContextTrust& WithFile(TlsValidationContextFileTrust&& value) { SetFile(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * Secret Discovery Service validation context trust.</p>
+     */
+    inline const TlsValidationContextSdsTrust& GetSds() const{ return m_sds; }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * Secret Discovery Service validation context trust.</p>
+     */
+    inline bool SdsHasBeenSet() const { return m_sdsHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * Secret Discovery Service validation context trust.</p>
+     */
+    inline void SetSds(const TlsValidationContextSdsTrust& value) { m_sdsHasBeenSet = true; m_sds = value; }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * Secret Discovery Service validation context trust.</p>
+     */
+    inline void SetSds(TlsValidationContextSdsTrust&& value) { m_sdsHasBeenSet = true; m_sds = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * Secret Discovery Service validation context trust.</p>
+     */
+    inline TlsValidationContextTrust& WithSds(const TlsValidationContextSdsTrust& value) { SetSds(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a Transport Layer Security (TLS)
+     * Secret Discovery Service validation context trust.</p>
+     */
+    inline TlsValidationContextTrust& WithSds(TlsValidationContextSdsTrust&& value) { SetSds(std::move(value)); return *this;}
 
   private:
 
@@ -129,6 +157,9 @@ namespace Model
 
     TlsValidationContextFileTrust m_file;
     bool m_fileHasBeenSet;
+
+    TlsValidationContextSdsTrust m_sds;
+    bool m_sdsHasBeenSet;
   };
 
 } // namespace Model

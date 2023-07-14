@@ -530,7 +530,7 @@ Resources:
           - - Type: EVENT
               Pattern: PUSH
             - Type: HEAD_REF
-              Pattern: ^refs/heads/master$
+              Pattern: ^refs/heads/main$
       Artifacts:
         Type: S3
         Location: !Ref BinaryReleaseS3BucketName

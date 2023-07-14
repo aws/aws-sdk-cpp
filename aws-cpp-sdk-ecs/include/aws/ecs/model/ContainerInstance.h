@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/AgentUpdateStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecs/model/ContainerInstanceHealthStatus.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/Attachment.h>
@@ -42,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>An EC2 instance that is running the Amazon ECS agent and has been registered
+   * <p>An EC2 instance that's running the Amazon ECS agent and has been registered
    * with a cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerInstance">AWS
    * API Reference</a></p>
@@ -59,9 +50,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
@@ -69,9 +60,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
@@ -79,9 +70,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
@@ -89,9 +80,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
@@ -99,9 +90,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
@@ -109,9 +100,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
@@ -119,9 +110,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
@@ -129,92 +120,108 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * instance, the Amazon Web Services account ID of the container instance owner,
+     * the <code>container-instance</code> namespace, and then the container instance
+     * ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline const Aws::String& GetCapacityProviderName() const{ return m_capacityProviderName; }
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline bool CapacityProviderNameHasBeenSet() const { return m_capacityProviderNameHasBeenSet; }
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline void SetCapacityProviderName(const Aws::String& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = value; }
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline void SetCapacityProviderName(Aws::String&& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = std::move(value); }
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline void SetCapacityProviderName(const char* value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName.assign(value); }
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline ContainerInstance& WithCapacityProviderName(const Aws::String& value) { SetCapacityProviderName(value); return *this;}
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline ContainerInstance& WithCapacityProviderName(Aws::String&& value) { SetCapacityProviderName(std::move(value)); return *this;}
 
     /**
-     * <p>The capacity provider associated with the container instance.</p>
+     * <p>The capacity provider that's associated with the container instance.</p>
      */
     inline ContainerInstance& WithCapacityProviderName(const char* value) { SetCapacityProviderName(value); return *this;}
 
@@ -222,44 +229,44 @@ namespace Model
     /**
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
-     * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch Events, you can compare the version of a
-     * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch Events for the container instance (inside the <code>detail</code>
-     * object) to verify that the version in your event stream is current.</p>
+     * counter is incremented. If you're replicating your Amazon ECS container instance
+     * state with CloudWatch Events, you can compare the version of a container
+     * instance reported by the Amazon ECS APIs with the version reported in CloudWatch
+     * Events for the container instance (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
      */
     inline long long GetVersion() const{ return m_version; }
 
     /**
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
-     * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch Events, you can compare the version of a
-     * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch Events for the container instance (inside the <code>detail</code>
-     * object) to verify that the version in your event stream is current.</p>
+     * counter is incremented. If you're replicating your Amazon ECS container instance
+     * state with CloudWatch Events, you can compare the version of a container
+     * instance reported by the Amazon ECS APIs with the version reported in CloudWatch
+     * Events for the container instance (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
-     * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch Events, you can compare the version of a
-     * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch Events for the container instance (inside the <code>detail</code>
-     * object) to verify that the version in your event stream is current.</p>
+     * counter is incremented. If you're replicating your Amazon ECS container instance
+     * state with CloudWatch Events, you can compare the version of a container
+     * instance reported by the Amazon ECS APIs with the version reported in CloudWatch
+     * Events for the container instance (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
      */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
-     * counter is incremented. If you are replicating your Amazon ECS container
-     * instance state with CloudWatch Events, you can compare the version of a
-     * container instance reported by the Amazon ECS APIs with the version reported in
-     * CloudWatch Events for the container instance (inside the <code>detail</code>
-     * object) to verify that the version in your event stream is current.</p>
+     * counter is incremented. If you're replicating your Amazon ECS container instance
+     * state with CloudWatch Events, you can compare the version of a container
+     * instance reported by the Amazon ECS APIs with the version reported in CloudWatch
+     * Events for the container instance (inside the <code>detail</code> object) to
+     * verify that the version in your event stream is current.</p>
      */
     inline ContainerInstance& WithVersion(long long value) { SetVersion(value); return *this;}
 
@@ -303,89 +310,89 @@ namespace Model
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline const Aws::Vector<Resource>& GetRemainingResources() const{ return m_remainingResources; }
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline bool RemainingResourcesHasBeenSet() const { return m_remainingResourcesHasBeenSet; }
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline void SetRemainingResources(const Aws::Vector<Resource>& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = value; }
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline void SetRemainingResources(Aws::Vector<Resource>&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = std::move(value); }
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline ContainerInstance& WithRemainingResources(const Aws::Vector<Resource>& value) { SetRemainingResources(value); return *this;}
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline ContainerInstance& WithRemainingResources(Aws::Vector<Resource>&& value) { SetRemainingResources(std::move(value)); return *this;}
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline ContainerInstance& AddRemainingResources(const Resource& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(value); return *this; }
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
-     * and memory that has not already been allocated to tasks and is therefore
-     * available for new tasks. For port resource types, this parameter describes the
-     * ports that were reserved by the Amazon ECS container agent (at instance
-     * registration time) and any task containers that have reserved port mappings on
-     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
-     * port that is not specified here is available for new tasks.</p>
+     * and memory that wasn't already allocated to tasks and is therefore available for
+     * new tasks. For port resource types, this parameter describes the ports that were
+     * reserved by the Amazon ECS container agent (at instance registration time) and
+     * any task containers that have reserved port mappings on the host (with the
+     * <code>host</code> or <code>bridge</code> network mode). Any port that's not
+     * specified here is available for new tasks.</p>
      */
     inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(std::move(value)); return *this; }
 
@@ -494,9 +501,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -518,9 +525,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -542,9 +549,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -566,9 +573,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -590,9 +597,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -614,9 +621,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -638,9 +645,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -662,9 +669,9 @@ namespace Model
      * elastic network interface is deprovisioned. The instance then transitions to an
      * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
      * that the container instance can accept tasks. The <code>DRAINING</code>
-     * indicates that new tasks are not placed on the container instance and any
-     * service tasks running on the container instance are removed if possible. For
-     * more information, see <a
+     * indicates that new tasks aren't placed on the container instance and any service
+     * tasks running on the container instance are removed if possible. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -797,37 +804,37 @@ namespace Model
 
 
     /**
-     * <p>The status of the most recent agent update. If an update has never been
+     * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
     inline const AgentUpdateStatus& GetAgentUpdateStatus() const{ return m_agentUpdateStatus; }
 
     /**
-     * <p>The status of the most recent agent update. If an update has never been
+     * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
     inline bool AgentUpdateStatusHasBeenSet() const { return m_agentUpdateStatusHasBeenSet; }
 
     /**
-     * <p>The status of the most recent agent update. If an update has never been
+     * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
     inline void SetAgentUpdateStatus(const AgentUpdateStatus& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = value; }
 
     /**
-     * <p>The status of the most recent agent update. If an update has never been
+     * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
     inline void SetAgentUpdateStatus(AgentUpdateStatus&& value) { m_agentUpdateStatusHasBeenSet = true; m_agentUpdateStatus = std::move(value); }
 
     /**
-     * <p>The status of the most recent agent update. If an update has never been
+     * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
     inline ContainerInstance& WithAgentUpdateStatus(const AgentUpdateStatus& value) { SetAgentUpdateStatus(value); return *this;}
 
     /**
-     * <p>The status of the most recent agent update. If an update has never been
+     * <p>The status of the most recent agent update. If an update wasn't ever
      * requested, this value is <code>NULL</code>.</p>
      */
     inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(std::move(value)); return *this;}
@@ -891,32 +898,38 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for the time when the container instance was
+     * registered.</p>
      */
     inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for the time when the container instance was
+     * registered.</p>
      */
     inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for the time when the container instance was
+     * registered.</p>
      */
     inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for the time when the container instance was
+     * registered.</p>
      */
     inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for the time when the container instance was
+     * registered.</p>
      */
     inline ContainerInstance& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for the time when the container instance was
+     * registered.</p>
      */
     inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
 
@@ -972,163 +985,194 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline ContainerInstance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline ContainerInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline ContainerInstance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
-     * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
-     * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
-     * and resources, remember that other services may have restrictions on allowed
-     * characters. Generally allowed characters are: letters, numbers, and spaces
-     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-     * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
-     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * and organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
+     * each tag key must be unique, and each tag key can have only one value.</p> </li>
+     * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+     * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
+     * your tagging schema is used across multiple services and resources, remember
+     * that other services may have restrictions on allowed characters. Generally
+     * allowed characters are: letters, numbers, and spaces representable in UTF-8, and
+     * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
+     * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
+     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline ContainerInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An object representing the health status of the container instance.</p>
+     */
+    inline const ContainerInstanceHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>An object representing the health status of the container instance.</p>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+
+    /**
+     * <p>An object representing the health status of the container instance.</p>
+     */
+    inline void SetHealthStatus(const ContainerInstanceHealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+
+    /**
+     * <p>An object representing the health status of the container instance.</p>
+     */
+    inline void SetHealthStatus(ContainerInstanceHealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
+
+    /**
+     * <p>An object representing the health status of the container instance.</p>
+     */
+    inline ContainerInstance& WithHealthStatus(const ContainerInstanceHealthStatus& value) { SetHealthStatus(value); return *this;}
+
+    /**
+     * <p>An object representing the health status of the container instance.</p>
+     */
+    inline ContainerInstance& WithHealthStatus(ContainerInstanceHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 
   private:
 
@@ -1182,6 +1226,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ContainerInstanceHealthStatus m_healthStatus;
+    bool m_healthStatusHasBeenSet;
   };
 
 } // namespace Model

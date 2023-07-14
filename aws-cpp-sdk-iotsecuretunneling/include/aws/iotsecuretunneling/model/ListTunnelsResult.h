@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
@@ -45,73 +35,80 @@ namespace Model
 
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline const Aws::Vector<TunnelSummary>& GetTunnelSummaries() const{ return m_tunnelSummaries; }
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline void SetTunnelSummaries(const Aws::Vector<TunnelSummary>& value) { m_tunnelSummaries = value; }
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline void SetTunnelSummaries(Aws::Vector<TunnelSummary>&& value) { m_tunnelSummaries = std::move(value); }
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline ListTunnelsResult& WithTunnelSummaries(const Aws::Vector<TunnelSummary>& value) { SetTunnelSummaries(value); return *this;}
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline ListTunnelsResult& WithTunnelSummaries(Aws::Vector<TunnelSummary>&& value) { SetTunnelSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline ListTunnelsResult& AddTunnelSummaries(const TunnelSummary& value) { m_tunnelSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A short description of the tunnels in an AWS account.</p>
+     * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
     inline ListTunnelsResult& AddTunnelSummaries(TunnelSummary&& value) { m_tunnelSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline ListTunnelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline ListTunnelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to used to retrieve the next set of results.</p>
+     * <p>The token to use to get the next set of results, or null if there are no
+     * additional results.</p>
      */
     inline ListTunnelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

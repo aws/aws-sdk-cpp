@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/translate/model/InputDataConfig.h>
 #include <aws/translate/model/OutputDataConfig.h>
+#include <aws/translate/model/TranslationSettings.h>
 #include <utility>
 
 namespace Aws
@@ -372,49 +363,104 @@ namespace Model
 
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetParallelDataNames() const{ return m_parallelDataNames; }
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline bool ParallelDataNamesHasBeenSet() const { return m_parallelDataNamesHasBeenSet; }
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline void SetParallelDataNames(const Aws::Vector<Aws::String>& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = value; }
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline void SetParallelDataNames(Aws::Vector<Aws::String>&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = std::move(value); }
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline TextTranslationJobProperties& WithParallelDataNames(const Aws::Vector<Aws::String>& value) { SetParallelDataNames(value); return *this;}
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline TextTranslationJobProperties& WithParallelDataNames(Aws::Vector<Aws::String>&& value) { SetParallelDataNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline TextTranslationJobProperties& AddParallelDataNames(const Aws::String& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline TextTranslationJobProperties& AddParallelDataNames(Aws::String&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list containing the names of the parallel data resources applied to the
+     * translation job.</p>
+     */
+    inline TextTranslationJobProperties& AddParallelDataNames(const char* value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline TextTranslationJobProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline TextTranslationJobProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>An explanation of any errors that may have occured during the translation
+     * <p>An explanation of any errors that may have occurred during the translation
      * job.</p>
      */
     inline TextTranslationJobProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
@@ -604,6 +650,37 @@ namespace Model
      */
     inline TextTranslationJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline const TranslationSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline TextTranslationJobProperties& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline TextTranslationJobProperties& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -627,6 +704,9 @@ namespace Model
     Aws::Vector<Aws::String> m_terminologyNames;
     bool m_terminologyNamesHasBeenSet;
 
+    Aws::Vector<Aws::String> m_parallelDataNames;
+    bool m_parallelDataNamesHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
 
@@ -644,6 +724,9 @@ namespace Model
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;
+
+    TranslationSettings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

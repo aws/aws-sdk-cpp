@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/TrialComponentSourceDetail.h>
 #include <aws/sagemaker/model/TrialComponentParameterValue.h>
 #include <aws/sagemaker/model/TrialComponentArtifact.h>
@@ -46,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the properties of a trial component as returned by the
-   * <a>Search</a> API.</p><p><h3>See Also:</h3>   <a
+   * <p>The properties of a trial component as returned by the <a>Search</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponent">AWS
    * API Reference</a></p>
    */
@@ -191,22 +182,40 @@ namespace Model
     inline TrialComponent& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline const TrialComponentSource& GetSource() const{ return m_source; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline void SetSource(const TrialComponentSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline void SetSource(TrialComponentSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline TrialComponent& WithSource(const TrialComponentSource& value) { SetSource(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline TrialComponent& WithSource(TrialComponentSource&& value) { SetSource(std::move(value)); return *this;}
 
 
@@ -322,22 +331,34 @@ namespace Model
     inline TrialComponent& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline TrialComponent& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>Who created the trial component.</p>
+     */
     inline TrialComponent& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 
@@ -615,35 +636,95 @@ namespace Model
     inline TrialComponent& AddMetrics(TrialComponentMetricSummary&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+
+    
+    inline bool MetadataPropertiesHasBeenSet() const { return m_metadataPropertiesHasBeenSet; }
+
+    
+    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = value; }
+
+    
+    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::move(value); }
+
+    
+    inline TrialComponent& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
+
+    
+    inline TrialComponent& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+
+
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline const TrialComponentSourceDetail& GetSourceDetail() const{ return m_sourceDetail; }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline bool SourceDetailHasBeenSet() const { return m_sourceDetailHasBeenSet; }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline void SetSourceDetail(const TrialComponentSourceDetail& value) { m_sourceDetailHasBeenSet = true; m_sourceDetail = value; }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline void SetSourceDetail(TrialComponentSourceDetail&& value) { m_sourceDetailHasBeenSet = true; m_sourceDetail = std::move(value); }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline TrialComponent& WithSourceDetail(const TrialComponentSourceDetail& value) { SetSourceDetail(value); return *this;}
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline TrialComponent& WithSourceDetail(TrialComponentSourceDetail&& value) { SetSourceDetail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline const Aws::String& GetLineageGroupArn() const{ return m_lineageGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline bool LineageGroupArnHasBeenSet() const { return m_lineageGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline void SetLineageGroupArn(const Aws::String& value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline void SetLineageGroupArn(Aws::String&& value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline void SetLineageGroupArn(const char* value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline TrialComponent& WithLineageGroupArn(const Aws::String& value) { SetLineageGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline TrialComponent& WithLineageGroupArn(Aws::String&& value) { SetLineageGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+     */
+    inline TrialComponent& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
 
 
     /**
@@ -798,8 +879,14 @@ namespace Model
     Aws::Vector<TrialComponentMetricSummary> m_metrics;
     bool m_metricsHasBeenSet;
 
+    MetadataProperties m_metadataProperties;
+    bool m_metadataPropertiesHasBeenSet;
+
     TrialComponentSourceDetail m_sourceDetail;
     bool m_sourceDetailHasBeenSet;
+
+    Aws::String m_lineageGroupArn;
+    bool m_lineageGroupArnHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/Dimension.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,10 +23,12 @@ namespace Aws
         static const int AZ_HASH = HashingUtils::HashString("AZ");
         static const int INSTANCE_TYPE_HASH = HashingUtils::HashString("INSTANCE_TYPE");
         static const int LINKED_ACCOUNT_HASH = HashingUtils::HashString("LINKED_ACCOUNT");
+        static const int LINKED_ACCOUNT_NAME_HASH = HashingUtils::HashString("LINKED_ACCOUNT_NAME");
         static const int OPERATION_HASH = HashingUtils::HashString("OPERATION");
         static const int PURCHASE_TYPE_HASH = HashingUtils::HashString("PURCHASE_TYPE");
         static const int REGION_HASH = HashingUtils::HashString("REGION");
         static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+        static const int SERVICE_CODE_HASH = HashingUtils::HashString("SERVICE_CODE");
         static const int USAGE_TYPE_HASH = HashingUtils::HashString("USAGE_TYPE");
         static const int USAGE_TYPE_GROUP_HASH = HashingUtils::HashString("USAGE_TYPE_GROUP");
         static const int RECORD_TYPE_HASH = HashingUtils::HashString("RECORD_TYPE");
@@ -57,6 +49,9 @@ namespace Aws
         static const int SAVINGS_PLANS_TYPE_HASH = HashingUtils::HashString("SAVINGS_PLANS_TYPE");
         static const int SAVINGS_PLAN_ARN_HASH = HashingUtils::HashString("SAVINGS_PLAN_ARN");
         static const int PAYMENT_OPTION_HASH = HashingUtils::HashString("PAYMENT_OPTION");
+        static const int AGREEMENT_END_DATE_TIME_AFTER_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_AFTER");
+        static const int AGREEMENT_END_DATE_TIME_BEFORE_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_BEFORE");
+        static const int INVOICING_ENTITY_HASH = HashingUtils::HashString("INVOICING_ENTITY");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -74,6 +69,10 @@ namespace Aws
           {
             return Dimension::LINKED_ACCOUNT;
           }
+          else if (hashCode == LINKED_ACCOUNT_NAME_HASH)
+          {
+            return Dimension::LINKED_ACCOUNT_NAME;
+          }
           else if (hashCode == OPERATION_HASH)
           {
             return Dimension::OPERATION;
@@ -89,6 +88,10 @@ namespace Aws
           else if (hashCode == SERVICE_HASH)
           {
             return Dimension::SERVICE;
+          }
+          else if (hashCode == SERVICE_CODE_HASH)
+          {
+            return Dimension::SERVICE_CODE;
           }
           else if (hashCode == USAGE_TYPE_HASH)
           {
@@ -170,6 +173,18 @@ namespace Aws
           {
             return Dimension::PAYMENT_OPTION;
           }
+          else if (hashCode == AGREEMENT_END_DATE_TIME_AFTER_HASH)
+          {
+            return Dimension::AGREEMENT_END_DATE_TIME_AFTER;
+          }
+          else if (hashCode == AGREEMENT_END_DATE_TIME_BEFORE_HASH)
+          {
+            return Dimension::AGREEMENT_END_DATE_TIME_BEFORE;
+          }
+          else if (hashCode == INVOICING_ENTITY_HASH)
+          {
+            return Dimension::INVOICING_ENTITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -190,6 +205,8 @@ namespace Aws
             return "INSTANCE_TYPE";
           case Dimension::LINKED_ACCOUNT:
             return "LINKED_ACCOUNT";
+          case Dimension::LINKED_ACCOUNT_NAME:
+            return "LINKED_ACCOUNT_NAME";
           case Dimension::OPERATION:
             return "OPERATION";
           case Dimension::PURCHASE_TYPE:
@@ -198,6 +215,8 @@ namespace Aws
             return "REGION";
           case Dimension::SERVICE:
             return "SERVICE";
+          case Dimension::SERVICE_CODE:
+            return "SERVICE_CODE";
           case Dimension::USAGE_TYPE:
             return "USAGE_TYPE";
           case Dimension::USAGE_TYPE_GROUP:
@@ -238,6 +257,12 @@ namespace Aws
             return "SAVINGS_PLAN_ARN";
           case Dimension::PAYMENT_OPTION:
             return "PAYMENT_OPTION";
+          case Dimension::AGREEMENT_END_DATE_TIME_AFTER:
+            return "AGREEMENT_END_DATE_TIME_AFTER";
+          case Dimension::AGREEMENT_END_DATE_TIME_BEFORE:
+            return "AGREEMENT_END_DATE_TIME_BEFORE";
+          case Dimension::INVOICING_ENTITY:
+            return "INVOICING_ENTITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

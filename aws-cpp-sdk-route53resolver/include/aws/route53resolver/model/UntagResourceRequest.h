@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
@@ -48,11 +38,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
@@ -60,11 +57,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -72,11 +76,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
@@ -84,11 +95,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
@@ -96,11 +114,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
@@ -108,11 +133,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
@@ -120,11 +152,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
@@ -132,11 +171,18 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags
      * from. To get the ARN for a resource, use the applicable <code>Get</code> or
-     * <code>List</code> command: </p> <ul> <li> <p> <a>GetResolverEndpoint</a> </p>
-     * </li> <li> <p> <a>GetResolverRule</a> </p> </li> <li> <p>
-     * <a>GetResolverRuleAssociation</a> </p> </li> <li> <p>
-     * <a>ListResolverEndpoints</a> </p> </li> <li> <p>
-     * <a>ListResolverRuleAssociations</a> </p> </li> <li> <p> <a>ListResolverRules</a>
+     * <code>List</code> command: </p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html">GetResolverRuleAssociation</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>
      * </p> </li> </ul>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}

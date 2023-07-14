@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/acm/model/FailureReason.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -45,6 +35,7 @@ namespace Aws
         static const int PCA_INVALID_ARGS_HASH = HashingUtils::HashString("PCA_INVALID_ARGS");
         static const int PCA_INVALID_DURATION_HASH = HashingUtils::HashString("PCA_INVALID_DURATION");
         static const int PCA_ACCESS_DENIED_HASH = HashingUtils::HashString("PCA_ACCESS_DENIED");
+        static const int SLR_NOT_FOUND_HASH = HashingUtils::HashString("SLR_NOT_FOUND");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -111,6 +102,10 @@ namespace Aws
           {
             return FailureReason::PCA_ACCESS_DENIED;
           }
+          else if (hashCode == SLR_NOT_FOUND_HASH)
+          {
+            return FailureReason::SLR_NOT_FOUND;
+          }
           else if (hashCode == OTHER_HASH)
           {
             return FailureReason::OTHER;
@@ -159,6 +154,8 @@ namespace Aws
             return "PCA_INVALID_DURATION";
           case FailureReason::PCA_ACCESS_DENIED:
             return "PCA_ACCESS_DENIED";
+          case FailureReason::SLR_NOT_FOUND:
+            return "SLR_NOT_FOUND";
           case FailureReason::OTHER:
             return "OTHER";
           default:

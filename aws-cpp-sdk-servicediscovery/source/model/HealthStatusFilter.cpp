@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/servicediscovery/model/HealthStatusFilter.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
         static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static const int HEALTHY_OR_ELSE_ALL_HASH = HashingUtils::HashString("HEALTHY_OR_ELSE_ALL");
 
 
         HealthStatusFilter GetHealthStatusFilterForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == ALL_HASH)
           {
             return HealthStatusFilter::ALL;
+          }
+          else if (hashCode == HEALTHY_OR_ELSE_ALL_HASH)
+          {
+            return HealthStatusFilter::HEALTHY_OR_ELSE_ALL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "UNHEALTHY";
           case HealthStatusFilter::ALL:
             return "ALL";
+          case HealthStatusFilter::HEALTHY_OR_ELSE_ALL:
+            return "HEALTHY_OR_ELSE_ALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

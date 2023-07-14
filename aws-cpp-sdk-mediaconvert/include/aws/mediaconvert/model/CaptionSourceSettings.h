@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/mediaconvert/model/CaptionSourceType.h>
 #include <aws/mediaconvert/model/TeletextSourceSettings.h>
 #include <aws/mediaconvert/model/TrackSourceSettings.h>
+#include <aws/mediaconvert/model/WebvttHlsSourceSettings.h>
 #include <utility>
 
 namespace Aws
@@ -150,44 +141,50 @@ namespace Model
 
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline const FileSourceSettings& GetFileSourceSettings() const{ return m_fileSourceSettings; }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline bool FileSourceSettingsHasBeenSet() const { return m_fileSourceSettingsHasBeenSet; }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline void SetFileSourceSettings(const FileSourceSettings& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = value; }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline void SetFileSourceSettings(FileSourceSettings&& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = std::move(value); }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline CaptionSourceSettings& WithFileSourceSettings(const FileSourceSettings& value) { SetFileSourceSettings(value); return *this;}
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-     * specify the URI of the input caption source file. If your caption source is IMSC
-     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+     * xml file, specify the URI of the input caption source file. If your caption
+     * source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * FileSoureSettings.
      */
     inline CaptionSourceSettings& WithFileSourceSettings(FileSourceSettings&& value) { SetFileSourceSettings(std::move(value)); return *this;}
 
@@ -308,6 +305,79 @@ namespace Model
      */
     inline CaptionSourceSettings& WithTrackSourceSettings(TrackSourceSettings&& value) { SetTrackSourceSettings(std::move(value)); return *this;}
 
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline const WebvttHlsSourceSettings& GetWebvttHlsSourceSettings() const{ return m_webvttHlsSourceSettings; }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline bool WebvttHlsSourceSettingsHasBeenSet() const { return m_webvttHlsSourceSettingsHasBeenSet; }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline void SetWebvttHlsSourceSettings(const WebvttHlsSourceSettings& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = value; }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline void SetWebvttHlsSourceSettings(WebvttHlsSourceSettings&& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = std::move(value); }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline CaptionSourceSettings& WithWebvttHlsSourceSettings(const WebvttHlsSourceSettings& value) { SetWebvttHlsSourceSettings(value); return *this;}
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline CaptionSourceSettings& WithWebvttHlsSourceSettings(WebvttHlsSourceSettings&& value) { SetWebvttHlsSourceSettings(std::move(value)); return *this;}
+
   private:
 
     AncillarySourceSettings m_ancillarySourceSettings;
@@ -330,6 +400,9 @@ namespace Model
 
     TrackSourceSettings m_trackSourceSettings;
     bool m_trackSourceSettingsHasBeenSet;
+
+    WebvttHlsSourceSettings m_webvttHlsSourceSettings;
+    bool m_webvttHlsSourceSettingsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -109,6 +99,68 @@ namespace Model
      */
     inline UpdateVirtualInterfaceAttributesRequest& WithMtu(int value) { SetMtu(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline bool GetEnableSiteLink() const{ return m_enableSiteLink; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline bool EnableSiteLinkHasBeenSet() const { return m_enableSiteLinkHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline void SetEnableSiteLink(bool value) { m_enableSiteLinkHasBeenSet = true; m_enableSiteLink = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithEnableSiteLink(bool value) { SetEnableSiteLink(value); return *this;}
+
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline bool VirtualInterfaceNameHasBeenSet() const { return m_virtualInterfaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = value; }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = std::move(value); }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName.assign(value); }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
+
   private:
 
     Aws::String m_virtualInterfaceId;
@@ -116,6 +168,12 @@ namespace Model
 
     int m_mtu;
     bool m_mtuHasBeenSet;
+
+    bool m_enableSiteLink;
+    bool m_enableSiteLinkHasBeenSet;
+
+    Aws::String m_virtualInterfaceName;
+    bool m_virtualInterfaceNameHasBeenSet;
   };
 
 } // namespace Model

@@ -3,30 +3,60 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($payloadType = ${CppViewHelper.computeServicePayloadType($metadata.protocol)})
+#set($nonCoreServiceErrors = $serviceModel.getNonCoreServiceErrors())
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/HashingUtils.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
-#if($serviceModel.serviceErrors.size() == 0)
+#if($nonCoreServiceErrors.size() == 0)
 \#include <aws/core/utils/UnreferencedParam.h>
+#end
+#foreach($error in $serviceModel.serviceErrors)
+#if($error.isModeled())
+\#include <aws/${metadata.projectName}/model/${error.name}.h>
+#set($hasModeledErrors = true)
+#end
 #end
 
 using namespace Aws::Client;
-using namespace ${rootNamespace}::${serviceNamespace};
 using namespace Aws::Utils;
+using namespace ${rootNamespace}::${serviceNamespace};
+#if($hasModeledErrors)
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+#end
 
 namespace ${rootNamespace}
 {
 namespace ${serviceNamespace}
 {
+#foreach($error in $serviceModel.serviceErrors)
+#if($error.isModeled())
+#if($error.isCoreError())
+#set($constName = ${CppViewHelper.computeCoreErrorConstName($error.name)})
+#else
+#set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
+#end
+template<> ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${error.name} ${metadata.classNamePrefix}Error::GetModeledError()
+{
+  assert(this->GetErrorType() == ${metadata.classNamePrefix}Errors::$constName);
+#if($payloadType.equals("xml"))
+  return ${error.name}(this->GetXmlPayload().GetRootElement());
+#elseif($$payloadType.equals("json"))
+  return ${error.name}(this->GetJsonPayload().View());
+#end
+}
+
+#end
+#end
 namespace ${metadata.classNamePrefix}ErrorMapper
 {
 
-#foreach($error in $serviceModel.serviceErrors)
+#foreach($error in $nonCoreServiceErrors)
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
 static const int ${constName}_HASH = HashingUtils::HashString("${error.text}");
 #end
 
-#if ($serviceModel.serviceErrors.size() > 121)
+#if ($nonCoreServiceErrors.size() > 121)
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -34,7 +64,7 @@ which allows constant time lookup. The chain has been broken into helper functio
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 #set ($errorCounter = 0)
-#foreach($error in $serviceModel.serviceErrors)
+#foreach($error in $nonCoreServiceErrors)
 #if ($errorCounter % 122 == 0)
 #set($elseText = "")
 #set ($helperIndex =  $errorCounter / 122)
@@ -50,7 +80,7 @@ static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreError
   }
 #set($elseText = "else ")
 #set ($errorCounter = $errorCounter + 1)
-#if ($errorCounter % 122 == 0 || $errorCounter == $serviceModel.serviceErrors.size())
+#if ($errorCounter % 122 == 0 || $errorCounter == $nonCoreServiceErrors.size())
   return false;
 }
 #end
@@ -60,10 +90,10 @@ static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreError
 #set($elseText = "")
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-#if($serviceModel.serviceErrors.size() > 0 && $serviceModel.serviceErrors.size() < 122)
+#if($nonCoreServiceErrors.size() > 0 && $nonCoreServiceErrors.size() < 122)
   int hashCode = HashingUtils::HashString(errorName);
 
-#foreach($error in $serviceModel.serviceErrors)
+#foreach($error in $nonCoreServiceErrors)
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
   ${elseText}if (hashCode == ${constName}_HASH)
   {
@@ -71,11 +101,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
 #set($elseText = "else ")
 #end
-#elseif ($serviceModel.serviceErrors.size() > 121)
+#elseif ($nonCoreServiceErrors.size() > 121)
 #set($elseText = "")
   int hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
-#set($maxHelperIndex = $serviceModel.serviceErrors.size() / 122)
+#set($maxHelperIndex = ($nonCoreServiceErrors.size() - 1) / 122)
 #foreach($helperIndex in [0..$maxHelperIndex])
   ${elseText}if (GetErrorForNameHelper${helperIndex}(hashCode, error))
   {

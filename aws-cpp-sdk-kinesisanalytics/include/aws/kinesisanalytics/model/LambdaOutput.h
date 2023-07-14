@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
@@ -52,81 +42,81 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline LambdaOutput& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline LambdaOutput& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function to write
-     * to.</p> <note> <p>To specify an earlier version of the Lambda function than the
+     * to.</p>  <p>To specify an earlier version of the Lambda function than the
      * latest, include the Lambda function version in the Lambda function ARN. For more
      * information about Lambda ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: AWS Lambda</a> </p> </note>
+     * ARNs: AWS Lambda</a> </p> 
      */
     inline LambdaOutput& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

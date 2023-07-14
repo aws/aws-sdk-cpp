@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,8 @@ ContentRedaction::ContentRedaction() :
     m_redactionType(RedactionType::NOT_SET),
     m_redactionTypeHasBeenSet(false),
     m_redactionOutput(RedactionOutput::NOT_SET),
-    m_redactionOutputHasBeenSet(false)
+    m_redactionOutputHasBeenSet(false),
+    m_piiEntityTypesHasBeenSet(false)
 {
 }
 
@@ -40,7 +31,8 @@ ContentRedaction::ContentRedaction(JsonView jsonValue) :
     m_redactionType(RedactionType::NOT_SET),
     m_redactionTypeHasBeenSet(false),
     m_redactionOutput(RedactionOutput::NOT_SET),
-    m_redactionOutputHasBeenSet(false)
+    m_redactionOutputHasBeenSet(false),
+    m_piiEntityTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +53,16 @@ ContentRedaction& ContentRedaction::operator =(JsonView jsonValue)
     m_redactionOutputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PiiEntityTypes"))
+  {
+    Array<JsonView> piiEntityTypesJsonList = jsonValue.GetArray("PiiEntityTypes");
+    for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
+    {
+      m_piiEntityTypes.push_back(PiiEntityTypeMapper::GetPiiEntityTypeForName(piiEntityTypesJsonList[piiEntityTypesIndex].AsString()));
+    }
+    m_piiEntityTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +78,17 @@ JsonValue ContentRedaction::Jsonize() const
   if(m_redactionOutputHasBeenSet)
   {
    payload.WithString("RedactionOutput", RedactionOutputMapper::GetNameForRedactionOutput(m_redactionOutput));
+  }
+
+  if(m_piiEntityTypesHasBeenSet)
+  {
+   Array<JsonValue> piiEntityTypesJsonList(m_piiEntityTypes.size());
+   for(unsigned piiEntityTypesIndex = 0; piiEntityTypesIndex < piiEntityTypesJsonList.GetLength(); ++piiEntityTypesIndex)
+   {
+     piiEntityTypesJsonList[piiEntityTypesIndex].AsString(PiiEntityTypeMapper::GetNameForPiiEntityType(m_piiEntityTypes[piiEntityTypesIndex]));
+   }
+   payload.WithArray("PiiEntityTypes", std::move(piiEntityTypesJsonList));
+
   }
 
   return payload;

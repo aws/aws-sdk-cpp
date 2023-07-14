@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/connect/Connect_EXPORTS.h>
 
@@ -52,20 +43,42 @@ enum class ConnectErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONTACT_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONTACT_FLOW_NOT_PUBLISHED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONTACT_NOT_FOUND,
   DESTINATION_NOT_ALLOWED,
   DUPLICATE_RESOURCE,
+  IDEMPOTENCY,
   INTERNAL_SERVICE,
+  INVALID_CONTACT_FLOW,
+  INVALID_CONTACT_FLOW_MODULE,
   INVALID_PARAMETER,
   INVALID_REQUEST,
   LIMIT_EXCEEDED,
   OUTBOUND_CONTACT_NOT_PERMITTED,
+  PROPERTY_VALIDATION,
+  RESOURCE_CONFLICT,
+  RESOURCE_IN_USE,
+  SERVICE_QUOTA_EXCEEDED,
   USER_NOT_FOUND
 };
+
+class AWS_CONNECT_API ConnectError : public Aws::Client::AWSError<ConnectErrors>
+{
+public:
+  ConnectError() {}
+  ConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+  ConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+  ConnectError(const Aws::Client::AWSError<ConnectErrors>& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+  ConnectError(Aws::Client::AWSError<ConnectErrors>&& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ConnectErrorMapper
 {
   AWS_CONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

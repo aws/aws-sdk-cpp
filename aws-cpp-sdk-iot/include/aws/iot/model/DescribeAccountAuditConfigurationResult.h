@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -47,56 +37,56 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
     inline DescribeAccountAuditConfigurationResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
     inline DescribeAccountAuditConfigurationResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates, and other items as required when
+     * <p>The ARN of the role that grants permission to IoT to access information about
+     * your devices, policies, certificates, and other items as required when
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */

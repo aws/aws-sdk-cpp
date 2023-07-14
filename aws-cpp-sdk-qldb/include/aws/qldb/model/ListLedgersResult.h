@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb/QLDB_EXPORTS.h>
@@ -45,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline const Aws::Vector<LedgerSummary>& GetLedgers() const{ return m_ledgers; }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline void SetLedgers(const Aws::Vector<LedgerSummary>& value) { m_ledgers = value; }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline void SetLedgers(Aws::Vector<LedgerSummary>&& value) { m_ledgers = std::move(value); }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline ListLedgersResult& WithLedgers(const Aws::Vector<LedgerSummary>& value) { SetLedgers(value); return *this;}
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline ListLedgersResult& WithLedgers(Aws::Vector<LedgerSummary>&& value) { SetLedgers(std::move(value)); return *this;}
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline ListLedgersResult& AddLedgers(const LedgerSummary& value) { m_ledgers.push_back(value); return *this; }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current AWS
-     * account and Region.</p>
+     * <p>The array of ledger summaries that are associated with the current Amazon Web
+     * Services account and Region.</p>
      */
     inline ListLedgersResult& AddLedgers(LedgerSummary&& value) { m_ledgers.push_back(std::move(value)); return *this; }
 

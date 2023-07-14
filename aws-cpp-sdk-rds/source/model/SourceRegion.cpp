@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/SourceRegion.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,14 +23,18 @@ namespace Model
 SourceRegion::SourceRegion() : 
     m_regionNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsDBInstanceAutomatedBackupsReplication(false),
+    m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet(false)
 {
 }
 
 SourceRegion::SourceRegion(const XmlNode& xmlNode) : 
     m_regionNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsDBInstanceAutomatedBackupsReplication(false),
+    m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -69,6 +63,12 @@ SourceRegion& SourceRegion::operator =(const XmlNode& xmlNode)
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
+    XmlNode supportsDBInstanceAutomatedBackupsReplicationNode = resultNode.FirstChild("SupportsDBInstanceAutomatedBackupsReplication");
+    if(!supportsDBInstanceAutomatedBackupsReplicationNode.IsNull())
+    {
+      m_supportsDBInstanceAutomatedBackupsReplication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDBInstanceAutomatedBackupsReplicationNode.GetText()).c_str()).c_str());
+      m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -91,6 +91,11 @@ void SourceRegion::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
+  if(m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsDBInstanceAutomatedBackupsReplication=" << std::boolalpha << m_supportsDBInstanceAutomatedBackupsReplication << "&";
+  }
+
 }
 
 void SourceRegion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -106,6 +111,10 @@ void SourceRegion::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet)
+  {
+      oStream << location << ".SupportsDBInstanceAutomatedBackupsReplication=" << std::boolalpha << m_supportsDBInstanceAutomatedBackupsReplication << "&";
   }
 }
 

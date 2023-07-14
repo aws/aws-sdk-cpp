@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -49,80 +39,140 @@ namespace Model
 
 
     /**
-     * <p>The status of the investigation into the finding. The allowed values are the
-     * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * you notified the resource owner about the security issue. Used when the initial
-     * reviewer is not the resource owner, and needs intervention from the resource
-     * owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will not be
-     * reviewed again and will not be acted upon.</p> </li> <li> <p>
-     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * <p>The status of the investigation into the finding. The workflow status is
+     * specific to an individual finding. It does not affect the generation of new
+     * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
+     * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+     * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
+     * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
+     * resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+     * to <code>NEW</code> in the following cases:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>ComplianceStatus</code> changes
+     * from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p> <code>NOTIFIED</code>
+     * - Indicates that you notified the resource owner about the security issue. Used
+     * when the initial reviewer is not the resource owner, and needs intervention from
+     * the resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - Indicates that
+     * you reviewed the finding and do not believe that any action is needed. The
+     * finding is no longer updated.</p> </li> <li> <p> <code>RESOLVED</code> - The
+     * finding was reviewed and remediated and is now considered resolved. </p> </li>
+     * </ul>
      */
     inline const WorkflowStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the investigation into the finding. The allowed values are the
-     * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * you notified the resource owner about the security issue. Used when the initial
-     * reviewer is not the resource owner, and needs intervention from the resource
-     * owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will not be
-     * reviewed again and will not be acted upon.</p> </li> <li> <p>
-     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * <p>The status of the investigation into the finding. The workflow status is
+     * specific to an individual finding. It does not affect the generation of new
+     * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
+     * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+     * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
+     * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
+     * resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+     * to <code>NEW</code> in the following cases:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>ComplianceStatus</code> changes
+     * from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p> <code>NOTIFIED</code>
+     * - Indicates that you notified the resource owner about the security issue. Used
+     * when the initial reviewer is not the resource owner, and needs intervention from
+     * the resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - Indicates that
+     * you reviewed the finding and do not believe that any action is needed. The
+     * finding is no longer updated.</p> </li> <li> <p> <code>RESOLVED</code> - The
+     * finding was reviewed and remediated and is now considered resolved. </p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the investigation into the finding. The allowed values are the
-     * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * you notified the resource owner about the security issue. Used when the initial
-     * reviewer is not the resource owner, and needs intervention from the resource
-     * owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will not be
-     * reviewed again and will not be acted upon.</p> </li> <li> <p>
-     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * <p>The status of the investigation into the finding. The workflow status is
+     * specific to an individual finding. It does not affect the generation of new
+     * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
+     * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+     * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
+     * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
+     * resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+     * to <code>NEW</code> in the following cases:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>ComplianceStatus</code> changes
+     * from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p> <code>NOTIFIED</code>
+     * - Indicates that you notified the resource owner about the security issue. Used
+     * when the initial reviewer is not the resource owner, and needs intervention from
+     * the resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - Indicates that
+     * you reviewed the finding and do not believe that any action is needed. The
+     * finding is no longer updated.</p> </li> <li> <p> <code>RESOLVED</code> - The
+     * finding was reviewed and remediated and is now considered resolved. </p> </li>
+     * </ul>
      */
     inline void SetStatus(const WorkflowStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the investigation into the finding. The allowed values are the
-     * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * you notified the resource owner about the security issue. Used when the initial
-     * reviewer is not the resource owner, and needs intervention from the resource
-     * owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will not be
-     * reviewed again and will not be acted upon.</p> </li> <li> <p>
-     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * <p>The status of the investigation into the finding. The workflow status is
+     * specific to an individual finding. It does not affect the generation of new
+     * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
+     * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+     * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
+     * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
+     * resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+     * to <code>NEW</code> in the following cases:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>ComplianceStatus</code> changes
+     * from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p> <code>NOTIFIED</code>
+     * - Indicates that you notified the resource owner about the security issue. Used
+     * when the initial reviewer is not the resource owner, and needs intervention from
+     * the resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - Indicates that
+     * you reviewed the finding and do not believe that any action is needed. The
+     * finding is no longer updated.</p> </li> <li> <p> <code>RESOLVED</code> - The
+     * finding was reviewed and remediated and is now considered resolved. </p> </li>
+     * </ul>
      */
     inline void SetStatus(WorkflowStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the investigation into the finding. The allowed values are the
-     * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * you notified the resource owner about the security issue. Used when the initial
-     * reviewer is not the resource owner, and needs intervention from the resource
-     * owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will not be
-     * reviewed again and will not be acted upon.</p> </li> <li> <p>
-     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * <p>The status of the investigation into the finding. The workflow status is
+     * specific to an individual finding. It does not affect the generation of new
+     * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
+     * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+     * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
+     * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
+     * resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+     * to <code>NEW</code> in the following cases:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>ComplianceStatus</code> changes
+     * from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p> <code>NOTIFIED</code>
+     * - Indicates that you notified the resource owner about the security issue. Used
+     * when the initial reviewer is not the resource owner, and needs intervention from
+     * the resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - Indicates that
+     * you reviewed the finding and do not believe that any action is needed. The
+     * finding is no longer updated.</p> </li> <li> <p> <code>RESOLVED</code> - The
+     * finding was reviewed and remediated and is now considered resolved. </p> </li>
+     * </ul>
      */
     inline Workflow& WithStatus(const WorkflowStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the investigation into the finding. The allowed values are the
-     * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * you notified the resource owner about the security issue. Used when the initial
-     * reviewer is not the resource owner, and needs intervention from the resource
-     * owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will not be
-     * reviewed again and will not be acted upon.</p> </li> <li> <p>
-     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * <p>The status of the investigation into the finding. The workflow status is
+     * specific to an individual finding. It does not affect the generation of new
+     * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
+     * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
+     * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
+     * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
+     * resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+     * to <code>NEW</code> in the following cases:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>ComplianceStatus</code> changes
+     * from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p> <code>NOTIFIED</code>
+     * - Indicates that you notified the resource owner about the security issue. Used
+     * when the initial reviewer is not the resource owner, and needs intervention from
+     * the resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - Indicates that
+     * you reviewed the finding and do not believe that any action is needed. The
+     * finding is no longer updated.</p> </li> <li> <p> <code>RESOLVED</code> - The
+     * finding was reviewed and remediated and is now considered resolved. </p> </li>
+     * </ul>
      */
     inline Workflow& WithStatus(WorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
 

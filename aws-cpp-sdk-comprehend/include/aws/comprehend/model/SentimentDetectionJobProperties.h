@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
@@ -93,6 +83,95 @@ namespace Model
      * <p>The identifier assigned to the sentiment detection job.</p>
      */
     inline SentimentDetectionJobProperties& WithJobId(const char* value) { SetJobId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline SentimentDetectionJobProperties& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline SentimentDetectionJobProperties& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:sentiment-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline SentimentDetectionJobProperties& WithJobArn(const char* value) { SetJobArn(value); return *this;}
 
 
     /**
@@ -591,6 +670,9 @@ namespace Model
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
+    Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet;
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;

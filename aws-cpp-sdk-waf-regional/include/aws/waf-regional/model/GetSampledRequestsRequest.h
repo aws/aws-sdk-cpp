@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
@@ -185,49 +175,61 @@ namespace Model
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
-     * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
-     * specify any time range in the previous three hours.</p>
+     * want <code>GetSampledRequests</code> to return a sample of requests. You must
+     * specify the times in Coordinated Universal Time (UTC) format. UTC format
+     * includes the special designator, <code>Z</code>. For example,
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
-     * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
-     * specify any time range in the previous three hours.</p>
+     * want <code>GetSampledRequests</code> to return a sample of requests. You must
+     * specify the times in Coordinated Universal Time (UTC) format. UTC format
+     * includes the special designator, <code>Z</code>. For example,
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline bool TimeWindowHasBeenSet() const { return m_timeWindowHasBeenSet; }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
-     * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
-     * specify any time range in the previous three hours.</p>
+     * want <code>GetSampledRequests</code> to return a sample of requests. You must
+     * specify the times in Coordinated Universal Time (UTC) format. UTC format
+     * includes the special designator, <code>Z</code>. For example,
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
-     * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
-     * specify any time range in the previous three hours.</p>
+     * want <code>GetSampledRequests</code> to return a sample of requests. You must
+     * specify the times in Coordinated Universal Time (UTC) format. UTC format
+     * includes the special designator, <code>Z</code>. For example,
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
-     * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
-     * specify any time range in the previous three hours.</p>
+     * want <code>GetSampledRequests</code> to return a sample of requests. You must
+     * specify the times in Coordinated Universal Time (UTC) format. UTC format
+     * includes the special designator, <code>Z</code>. For example,
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
 
     /**
      * <p>The start date and time and the end date and time of the range for which you
-     * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
-     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
-     * specify any time range in the previous three hours.</p>
+     * want <code>GetSampledRequests</code> to return a sample of requests. You must
+     * specify the times in Coordinated Universal Time (UTC) format. UTC format
+     * includes the special designator, <code>Z</code>. For example,
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 

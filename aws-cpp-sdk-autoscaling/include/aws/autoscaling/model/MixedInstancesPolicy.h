@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -35,19 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>Describes a mixed instances policy for an Auto Scaling group. With mixed
-   * instances, your Auto Scaling group can provision a combination of On-Demand
-   * Instances and Spot Instances across multiple instance types. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-   * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed
-   * instances policy for a new Auto Scaling group, or you can create it for an
-   * existing group by updating the group to specify
-   * <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
-   * configuration or template. For more information, see
-   * <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes a mixed instances policy. A mixed instances policy contains the
+   * instance types that Amazon EC2 Auto Scaling can launch and other information
+   * that Amazon EC2 Auto Scaling can use to launch instances and help optimize your
+   * costs. For more information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+   * Scaling groups with multiple instance types and purchase options</a> in the
+   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
    */
@@ -63,81 +47,75 @@ namespace Model
 
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and the instance types (overrides) that
+     * are used to launch EC2 instances to fulfill On-Demand and Spot capacities.
+     * Required when creating a mixed instances policy.</p>
      */
     inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and the instance types (overrides) that
+     * are used to launch EC2 instances to fulfill On-Demand and Spot capacities.
+     * Required when creating a mixed instances policy.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and the instance types (overrides) that
+     * are used to launch EC2 instances to fulfill On-Demand and Spot capacities.
+     * Required when creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and the instance types (overrides) that
+     * are used to launch EC2 instances to fulfill On-Demand and Spot capacities.
+     * Required when creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and the instance types (overrides) that
+     * are used to launch EC2 instances to fulfill On-Demand and Spot capacities.
+     * Required when creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>Specifies the launch template to use and the instance types (overrides) that
+     * are used to launch EC2 instances to fulfill On-Demand and Spot capacities.
+     * Required when creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution.</p>
      */
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution.</p>
      */
     inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution.</p>
      */
     inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
 
     /**
-     * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
-     * uses a default value.</p>
+     * <p>Specifies the instances distribution.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
 

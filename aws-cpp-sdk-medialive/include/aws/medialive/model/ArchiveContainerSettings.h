@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/M2tsSettings.h>
+#include <aws/medialive/model/RawSettings.h>
 #include <utility>
 
 namespace Aws
@@ -65,10 +56,32 @@ namespace Model
     
     inline ArchiveContainerSettings& WithM2tsSettings(M2tsSettings&& value) { SetM2tsSettings(std::move(value)); return *this;}
 
+
+    
+    inline const RawSettings& GetRawSettings() const{ return m_rawSettings; }
+
+    
+    inline bool RawSettingsHasBeenSet() const { return m_rawSettingsHasBeenSet; }
+
+    
+    inline void SetRawSettings(const RawSettings& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = value; }
+
+    
+    inline void SetRawSettings(RawSettings&& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = std::move(value); }
+
+    
+    inline ArchiveContainerSettings& WithRawSettings(const RawSettings& value) { SetRawSettings(value); return *this;}
+
+    
+    inline ArchiveContainerSettings& WithRawSettings(RawSettings&& value) { SetRawSettings(std::move(value)); return *this;}
+
   private:
 
     M2tsSettings m_m2tsSettings;
     bool m_m2tsSettingsHasBeenSet;
+
+    RawSettings m_rawSettings;
+    bool m_rawSettingsHasBeenSet;
   };
 
 } // namespace Model

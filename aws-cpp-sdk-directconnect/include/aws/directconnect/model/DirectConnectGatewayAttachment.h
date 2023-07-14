@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -133,83 +123,91 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline const Aws::String& GetVirtualInterfaceRegion() const{ return m_virtualInterfaceRegion; }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline bool VirtualInterfaceRegionHasBeenSet() const { return m_virtualInterfaceRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetVirtualInterfaceRegion(const Aws::String& value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion = value; }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetVirtualInterfaceRegion(Aws::String&& value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline void SetVirtualInterfaceRegion(const char* value) { m_virtualInterfaceRegionHasBeenSet = true; m_virtualInterfaceRegion.assign(value); }
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(const Aws::String& value) { SetVirtualInterfaceRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(Aws::String&& value) { SetVirtualInterfaceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the virtual interface is located.</p>
+     * <p>The Amazon Web Services Region where the virtual interface is located.</p>
      */
     inline DirectConnectGatewayAttachment& WithVirtualInterfaceRegion(const char* value) { SetVirtualInterfaceRegion(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline const Aws::String& GetVirtualInterfaceOwnerAccount() const{ return m_virtualInterfaceOwnerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline bool VirtualInterfaceOwnerAccountHasBeenSet() const { return m_virtualInterfaceOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetVirtualInterfaceOwnerAccount(const Aws::String& value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetVirtualInterfaceOwnerAccount(Aws::String&& value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline void SetVirtualInterfaceOwnerAccount(const char* value) { m_virtualInterfaceOwnerAccountHasBeenSet = true; m_virtualInterfaceOwnerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(const Aws::String& value) { SetVirtualInterfaceOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(Aws::String&& value) { SetVirtualInterfaceOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual interface.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual
+     * interface.</p>
      */
     inline DirectConnectGatewayAttachment& WithVirtualInterfaceOwnerAccount(const char* value) { SetVirtualInterfaceOwnerAccount(value); return *this;}
 

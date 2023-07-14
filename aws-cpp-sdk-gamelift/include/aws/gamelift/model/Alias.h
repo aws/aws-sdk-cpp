@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -36,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Properties that describe an alias resource.</p> <ul> <li> <p>
-   * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
-   * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
-   * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <p>Properties that describe an alias resource.</p> <p> <b>Related actions</b>
+   * </p> <p> <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> |
+   * <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS API
    * Reference</a></p>
    */
@@ -54,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline Alias& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline Alias& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for an alias. Alias IDs are unique within a Region.</p>
+     * <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
      */
     inline Alias& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
@@ -144,74 +134,82 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline void SetAliasArn(const char* value) { m_aliasArnHasBeenSet = true; m_aliasArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline Alias& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline Alias& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
-     * the alias ID value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
      */
     inline Alias& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
 
@@ -296,74 +294,86 @@ namespace Model
 
     /**
      * <p>A time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>A time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>A time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>A time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>A time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Alias& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>A time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
      * <p>The time that this data object was last modified. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>The time that this data object was last modified. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time that this data object was last modified. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>The time that this data object was last modified. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
      * <p>The time that this data object was last modified. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Alias& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
      * <p>The time that this data object was last modified. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 

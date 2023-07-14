@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudformation/model/CallAs.h>
 #include <utility>
 
 namespace Aws
@@ -54,7 +45,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -65,7 +56,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -76,7 +67,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -87,7 +78,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -98,7 +89,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -109,7 +100,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -120,7 +111,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -131,7 +122,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -141,10 +132,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -153,10 +144,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -165,10 +156,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -177,10 +168,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -189,10 +180,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -201,10 +192,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -213,10 +204,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -225,10 +216,10 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
-     * more information about templates, see <a
+     * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
+     * Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>StackName</code>,
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
@@ -237,7 +228,7 @@ namespace Model
 
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -247,7 +238,7 @@ namespace Model
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -257,7 +248,7 @@ namespace Model
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -267,7 +258,7 @@ namespace Model
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -277,7 +268,7 @@ namespace Model
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -287,7 +278,7 @@ namespace Model
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -297,7 +288,7 @@ namespace Model
     inline GetTemplateSummaryRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -307,7 +298,7 @@ namespace Model
     inline GetTemplateSummaryRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name or the stack ID that is associated with the stack, which are not
+     * <p>The name or the stack ID that's associated with the stack, which aren't
      * always interchangeable. For running stacks, you can specify either the stack's
      * name or its unique stack ID. For deleted stack, you must specify the unique
      * stack ID.</p> <p>Conditional: You must specify only one of the following
@@ -381,6 +372,103 @@ namespace Model
      */
     inline GetTemplateSummaryRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
+     */
+    inline const CallAs& GetCallAs() const{ return m_callAs; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
+     */
+    inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
+     */
+    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
+     */
+    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
+     */
+    inline GetTemplateSummaryRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
+
+    /**
+     * <p>[Service-managed permissions] Specifies whether you are acting as an account
+     * administrator in the organization's management account or as a delegated
+     * administrator in a member account.</p> <p>By default, <code>SELF</code> is
+     * specified. Use <code>SELF</code> for stack sets with self-managed
+     * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
+     * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon
+     * Web Services account must be registered as a delegated administrator in the
+     * management account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
+     */
+    inline GetTemplateSummaryRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_templateBody;
@@ -394,6 +482,9 @@ namespace Model
 
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
+    CallAs m_callAs;
+    bool m_callAsHasBeenSet;
   };
 
 } // namespace Model

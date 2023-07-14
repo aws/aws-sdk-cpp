@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/BucketOwnerAccess.h>
 #include <utility>
 
 namespace Aws
@@ -90,130 +81,130 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline const Aws::String& GetSha256sum() const{ return m_sha256sum; }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline bool Sha256sumHasBeenSet() const { return m_sha256sumHasBeenSet; }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline void SetSha256sum(const Aws::String& value) { m_sha256sumHasBeenSet = true; m_sha256sum = value; }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline void SetSha256sum(Aws::String&& value) { m_sha256sumHasBeenSet = true; m_sha256sum = std::move(value); }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline void SetSha256sum(const char* value) { m_sha256sumHasBeenSet = true; m_sha256sum.assign(value); }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline BuildArtifacts& WithSha256sum(const Aws::String& value) { SetSha256sum(value); return *this;}
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline BuildArtifacts& WithSha256sum(Aws::String&& value) { SetSha256sum(std::move(value)); return *this;}
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> 
      * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * value is set to <code>ZIP</code>.</p> 
      */
     inline BuildArtifacts& WithSha256sum(const char* value) { SetSha256sum(value); return *this;}
 
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline const Aws::String& GetMd5sum() const{ return m_md5sum; }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline bool Md5sumHasBeenSet() const { return m_md5sumHasBeenSet; }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline void SetMd5sum(const Aws::String& value) { m_md5sumHasBeenSet = true; m_md5sum = value; }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline void SetMd5sum(Aws::String&& value) { m_md5sumHasBeenSet = true; m_md5sum = std::move(value); }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline void SetMd5sum(const char* value) { m_md5sumHasBeenSet = true; m_md5sum.assign(value); }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline BuildArtifacts& WithMd5sum(const Aws::String& value) { SetMd5sum(value); return *this;}
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline BuildArtifacts& WithMd5sum(Aws::String&& value) { SetMd5sum(std::move(value)); return *this;}
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * checksum tool to confirm file integrity and authenticity.</p>  <p>This
      * value is available only if the build project's <code>packaging</code> value is
-     * set to <code>ZIP</code>.</p> </note>
+     * set to <code>ZIP</code>.</p> 
      */
     inline BuildArtifacts& WithMd5sum(const char* value) { SetMd5sum(value); return *this;}
 
@@ -316,6 +307,25 @@ namespace Model
      */
     inline BuildArtifacts& WithArtifactIdentifier(const char* value) { SetArtifactIdentifier(value); return *this;}
 
+
+    
+    inline const BucketOwnerAccess& GetBucketOwnerAccess() const{ return m_bucketOwnerAccess; }
+
+    
+    inline bool BucketOwnerAccessHasBeenSet() const { return m_bucketOwnerAccessHasBeenSet; }
+
+    
+    inline void SetBucketOwnerAccess(const BucketOwnerAccess& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = value; }
+
+    
+    inline void SetBucketOwnerAccess(BucketOwnerAccess&& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = std::move(value); }
+
+    
+    inline BuildArtifacts& WithBucketOwnerAccess(const BucketOwnerAccess& value) { SetBucketOwnerAccess(value); return *this;}
+
+    
+    inline BuildArtifacts& WithBucketOwnerAccess(BucketOwnerAccess&& value) { SetBucketOwnerAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_location;
@@ -335,6 +345,9 @@ namespace Model
 
     Aws::String m_artifactIdentifier;
     bool m_artifactIdentifierHasBeenSet;
+
+    BucketOwnerAccess m_bucketOwnerAccess;
+    bool m_bucketOwnerAccessHasBeenSet;
   };
 
 } // namespace Model

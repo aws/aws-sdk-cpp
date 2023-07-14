@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/Flow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,7 @@ Flow::Flow() :
     m_egressIpHasBeenSet(false),
     m_entitlementsHasBeenSet(false),
     m_flowArnHasBeenSet(false),
+    m_mediaStreamsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -41,7 +32,8 @@ Flow::Flow() :
     m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
+    m_vpcInterfacesHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -51,6 +43,7 @@ Flow::Flow(JsonView jsonValue) :
     m_egressIpHasBeenSet(false),
     m_entitlementsHasBeenSet(false),
     m_flowArnHasBeenSet(false),
+    m_mediaStreamsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -58,7 +51,8 @@ Flow::Flow(JsonView jsonValue) :
     m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
+    m_vpcInterfacesHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +95,16 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_flowArn = jsonValue.GetString("flowArn");
 
     m_flowArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaStreams"))
+  {
+    Array<JsonView> mediaStreamsJsonList = jsonValue.GetArray("mediaStreams");
+    for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
+    {
+      m_mediaStreams.push_back(mediaStreamsJsonList[mediaStreamsIndex].AsObject());
+    }
+    m_mediaStreamsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -161,6 +165,13 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_vpcInterfacesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+    m_maintenanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +211,17 @@ JsonValue Flow::Jsonize() const
   if(m_flowArnHasBeenSet)
   {
    payload.WithString("flowArn", m_flowArn);
+
+  }
+
+  if(m_mediaStreamsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
+   {
+     mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreams", std::move(mediaStreamsJsonList));
 
   }
 
@@ -256,6 +278,12 @@ JsonValue Flow::Jsonize() const
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());
    }
    payload.WithArray("vpcInterfaces", std::move(vpcInterfacesJsonList));
+
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
 
   }
 

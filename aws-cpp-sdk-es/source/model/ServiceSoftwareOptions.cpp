@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/es/model/ServiceSoftwareOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,9 @@ ServiceSoftwareOptions::ServiceSoftwareOptions() :
     m_updateStatus(DeploymentStatus::NOT_SET),
     m_updateStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_automatedUpdateDateHasBeenSet(false)
+    m_automatedUpdateDateHasBeenSet(false),
+    m_optionalDeployment(false),
+    m_optionalDeploymentHasBeenSet(false)
 {
 }
 
@@ -52,7 +44,9 @@ ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue) :
     m_updateStatus(DeploymentStatus::NOT_SET),
     m_updateStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_automatedUpdateDateHasBeenSet(false)
+    m_automatedUpdateDateHasBeenSet(false),
+    m_optionalDeployment(false),
+    m_optionalDeploymentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +102,13 @@ ServiceSoftwareOptions& ServiceSoftwareOptions::operator =(JsonView jsonValue)
     m_automatedUpdateDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OptionalDeployment"))
+  {
+    m_optionalDeployment = jsonValue.GetBool("OptionalDeployment");
+
+    m_optionalDeploymentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +154,12 @@ JsonValue ServiceSoftwareOptions::Jsonize() const
   if(m_automatedUpdateDateHasBeenSet)
   {
    payload.WithDouble("AutomatedUpdateDate", m_automatedUpdateDate.SecondsWithMSPrecision());
+  }
+
+  if(m_optionalDeploymentHasBeenSet)
+  {
+   payload.WithBool("OptionalDeployment", m_optionalDeployment);
+
   }
 
   return payload;

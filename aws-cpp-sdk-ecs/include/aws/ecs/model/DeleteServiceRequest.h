@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -143,30 +133,30 @@ namespace Model
 
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline DeleteServiceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

@@ -1,24 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/ComponentType.h>
 #include <aws/imagebuilder/model/Platform.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/ComponentState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/ComponentParameterDetail.h>
 #include <utility>
 
 namespace Aws
@@ -324,6 +317,156 @@ namespace Model
 
 
     /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline Component& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline Component& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline Component& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline Component& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline Component& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline const ComponentState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline void SetState(const ComponentState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline void SetState(ComponentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline Component& WithState(const ComponentState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>Describes the current status of the component. This is used for components
+     * that are no longer active.</p>
+     */
+    inline Component& WithState(ComponentState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline const Aws::Vector<ComponentParameterDetail>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline void SetParameters(const Aws::Vector<ComponentParameterDetail>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline void SetParameters(Aws::Vector<ComponentParameterDetail>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& WithParameters(const Aws::Vector<ComponentParameterDetail>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& WithParameters(Aws::Vector<ComponentParameterDetail>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& AddParameters(const ComponentParameterDetail& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& AddParameters(ComponentParameterDetail&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The owner of the component.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
@@ -365,42 +508,42 @@ namespace Model
 
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline Component& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline Component& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The data of the component.</p>
+     * <p>Component data contains the YAML document content for the component.</p>
      */
     inline Component& WithData(const char* value) { SetData(value); return *this;}
 
@@ -595,6 +738,15 @@ namespace Model
 
     Platform m_platform;
     bool m_platformHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedOsVersions;
+    bool m_supportedOsVersionsHasBeenSet;
+
+    ComponentState m_state;
+    bool m_stateHasBeenSet;
+
+    Aws::Vector<ComponentParameterDetail> m_parameters;
+    bool m_parametersHasBeenSet;
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet;

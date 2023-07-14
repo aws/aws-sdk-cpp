@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -147,6 +137,96 @@ namespace Model
 
 
     /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline const Aws::String& GetActiveMotionGraphicsActionName() const{ return m_activeMotionGraphicsActionName; }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline bool ActiveMotionGraphicsActionNameHasBeenSet() const { return m_activeMotionGraphicsActionNameHasBeenSet; }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline void SetActiveMotionGraphicsActionName(const Aws::String& value) { m_activeMotionGraphicsActionNameHasBeenSet = true; m_activeMotionGraphicsActionName = value; }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline void SetActiveMotionGraphicsActionName(Aws::String&& value) { m_activeMotionGraphicsActionNameHasBeenSet = true; m_activeMotionGraphicsActionName = std::move(value); }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline void SetActiveMotionGraphicsActionName(const char* value) { m_activeMotionGraphicsActionNameHasBeenSet = true; m_activeMotionGraphicsActionName.assign(value); }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline PipelineDetail& WithActiveMotionGraphicsActionName(const Aws::String& value) { SetActiveMotionGraphicsActionName(value); return *this;}
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline PipelineDetail& WithActiveMotionGraphicsActionName(Aws::String&& value) { SetActiveMotionGraphicsActionName(std::move(value)); return *this;}
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and
+     * that resulted in the current graphics URI for this pipeline.
+     */
+    inline PipelineDetail& WithActiveMotionGraphicsActionName(const char* value) { SetActiveMotionGraphicsActionName(value); return *this;}
+
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline const Aws::String& GetActiveMotionGraphicsUri() const{ return m_activeMotionGraphicsUri; }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline bool ActiveMotionGraphicsUriHasBeenSet() const { return m_activeMotionGraphicsUriHasBeenSet; }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline void SetActiveMotionGraphicsUri(const Aws::String& value) { m_activeMotionGraphicsUriHasBeenSet = true; m_activeMotionGraphicsUri = value; }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline void SetActiveMotionGraphicsUri(Aws::String&& value) { m_activeMotionGraphicsUriHasBeenSet = true; m_activeMotionGraphicsUri = std::move(value); }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline void SetActiveMotionGraphicsUri(const char* value) { m_activeMotionGraphicsUriHasBeenSet = true; m_activeMotionGraphicsUri.assign(value); }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline PipelineDetail& WithActiveMotionGraphicsUri(const Aws::String& value) { SetActiveMotionGraphicsUri(value); return *this;}
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline PipelineDetail& WithActiveMotionGraphicsUri(Aws::String&& value) { SetActiveMotionGraphicsUri(std::move(value)); return *this;}
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+    inline PipelineDetail& WithActiveMotionGraphicsUri(const char* value) { SetActiveMotionGraphicsUri(value); return *this;}
+
+
+    /**
      * Pipeline ID
      */
     inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
@@ -193,6 +273,12 @@ namespace Model
 
     Aws::String m_activeInputSwitchActionName;
     bool m_activeInputSwitchActionNameHasBeenSet;
+
+    Aws::String m_activeMotionGraphicsActionName;
+    bool m_activeMotionGraphicsActionNameHasBeenSet;
+
+    Aws::String m_activeMotionGraphicsUri;
+    bool m_activeMotionGraphicsUriHasBeenSet;
 
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;

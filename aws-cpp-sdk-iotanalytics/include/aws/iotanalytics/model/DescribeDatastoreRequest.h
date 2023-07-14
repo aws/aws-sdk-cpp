@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -91,28 +81,28 @@ namespace Model
 
     /**
      * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature cannot be used with a data store whose S3 storage
+     * in the response. This feature can't be used with a data store whose S3 storage
      * is customer-managed.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
 
     /**
      * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature cannot be used with a data store whose S3 storage
+     * in the response. This feature can't be used with a data store whose S3 storage
      * is customer-managed.</p>
      */
     inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
 
     /**
      * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature cannot be used with a data store whose S3 storage
+     * in the response. This feature can't be used with a data store whose S3 storage
      * is customer-managed.</p>
      */
     inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
 
     /**
      * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature cannot be used with a data store whose S3 storage
+     * in the response. This feature can't be used with a data store whose S3 storage
      * is customer-managed.</p>
      */
     inline DescribeDatastoreRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}

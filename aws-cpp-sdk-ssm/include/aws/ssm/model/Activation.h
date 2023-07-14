@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -38,9 +28,9 @@ namespace Model
 
   /**
    * <p>An activation registers one or more on-premises servers or virtual machines
-   * (VMs) with AWS so that you can configure those servers or VMs using Run Command.
-   * A server or VM that has been registered with AWS is called a managed
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * (VMs) with Amazon Web Services so that you can configure those servers or VMs
+   * using Run Command. A server or VM that has been registered with Amazon Web
+   * Services Systems Manager is called a managed node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation">AWS API
    * Reference</a></p>
    */
@@ -136,174 +126,174 @@ namespace Model
 
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline const Aws::String& GetDefaultInstanceName() const{ return m_defaultInstanceName; }
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline bool DefaultInstanceNameHasBeenSet() const { return m_defaultInstanceNameHasBeenSet; }
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline void SetDefaultInstanceName(const Aws::String& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = std::move(value); }
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline void SetDefaultInstanceName(const char* value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName.assign(value); }
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline Activation& WithDefaultInstanceName(const Aws::String& value) { SetDefaultInstanceName(value); return *this;}
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline Activation& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the managed instance when it is created.</p>
+     * <p>A name for the managed node when it is created.</p>
      */
     inline Activation& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline Activation& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline Activation& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
-     * instance.</p>
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
+     * node.</p>
      */
     inline Activation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
 
     /**
-     * <p>The maximum number of managed instances that can be registered using this
+     * <p>The maximum number of managed nodes that can be registered using this
      * activation.</p>
      */
     inline int GetRegistrationLimit() const{ return m_registrationLimit; }
 
     /**
-     * <p>The maximum number of managed instances that can be registered using this
+     * <p>The maximum number of managed nodes that can be registered using this
      * activation.</p>
      */
     inline bool RegistrationLimitHasBeenSet() const { return m_registrationLimitHasBeenSet; }
 
     /**
-     * <p>The maximum number of managed instances that can be registered using this
+     * <p>The maximum number of managed nodes that can be registered using this
      * activation.</p>
      */
     inline void SetRegistrationLimit(int value) { m_registrationLimitHasBeenSet = true; m_registrationLimit = value; }
 
     /**
-     * <p>The maximum number of managed instances that can be registered using this
+     * <p>The maximum number of managed nodes that can be registered using this
      * activation.</p>
      */
     inline Activation& WithRegistrationLimit(int value) { SetRegistrationLimit(value); return *this;}
 
 
     /**
-     * <p>The number of managed instances already registered with this activation.</p>
+     * <p>The number of managed nodes already registered with this activation.</p>
      */
     inline int GetRegistrationsCount() const{ return m_registrationsCount; }
 
     /**
-     * <p>The number of managed instances already registered with this activation.</p>
+     * <p>The number of managed nodes already registered with this activation.</p>
      */
     inline bool RegistrationsCountHasBeenSet() const { return m_registrationsCountHasBeenSet; }
 
     /**
-     * <p>The number of managed instances already registered with this activation.</p>
+     * <p>The number of managed nodes already registered with this activation.</p>
      */
     inline void SetRegistrationsCount(int value) { m_registrationsCountHasBeenSet = true; m_registrationsCount = value; }
 
     /**
-     * <p>The number of managed instances already registered with this activation.</p>
+     * <p>The number of managed nodes already registered with this activation.</p>
      */
     inline Activation& WithRegistrationsCount(int value) { SetRegistrationsCount(value); return *this;}
 
 
     /**
      * <p>The date when this activation can no longer be used to register managed
-     * instances.</p>
+     * nodes.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
     /**
      * <p>The date when this activation can no longer be used to register managed
-     * instances.</p>
+     * nodes.</p>
      */
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
      * <p>The date when this activation can no longer be used to register managed
-     * instances.</p>
+     * nodes.</p>
      */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
 
     /**
      * <p>The date when this activation can no longer be used to register managed
-     * instances.</p>
+     * nodes.</p>
      */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
 
     /**
      * <p>The date when this activation can no longer be used to register managed
-     * instances.</p>
+     * nodes.</p>
      */
     inline Activation& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
 
     /**
      * <p>The date when this activation can no longer be used to register managed
-     * instances.</p>
+     * nodes.</p>
      */
     inline Activation& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 

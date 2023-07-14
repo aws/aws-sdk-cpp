@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/elasticloadbalancingv2/model/Matcher.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
+#include <aws/elasticloadbalancingv2/model/TargetGroupIpAddressTypeEnum.h>
 #include <utility>
 
 namespace Aws
@@ -233,32 +224,38 @@ namespace Model
 
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.</p>
      */
     inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.</p>
      */
     inline TargetGroup& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and
+     * TCP_UDP protocols are not supported for health checks.</p>
      */
     inline TargetGroup& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 
@@ -426,78 +423,78 @@ namespace Model
 
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline TargetGroup& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline TargetGroup& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
     /**
-     * <p>The destination for the health check request.</p>
+     * <p>The destination for health checks on the targets.</p>
      */
     inline TargetGroup& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline TargetGroup& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
+     * <p>The HTTP or gRPC codes to use when checking for a successful response from a
      * target.</p>
      */
     inline TargetGroup& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
@@ -560,51 +557,149 @@ namespace Model
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).</p>
+     * target group. The possible values are <code>instance</code> (register targets by
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).</p>
+     * target group. The possible values are <code>instance</code> (register targets by
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).</p>
+     * target group. The possible values are <code>instance</code> (register targets by
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).</p>
+     * target group. The possible values are <code>instance</code> (register targets by
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).</p>
+     * target group. The possible values are <code>instance</code> (register targets by
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline TargetGroup& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address).</p>
+     * target group. The possible values are <code>instance</code> (register targets by
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline TargetGroup& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline const Aws::String& GetProtocolVersion() const{ return m_protocolVersion; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline bool ProtocolVersionHasBeenSet() const { return m_protocolVersionHasBeenSet; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline void SetProtocolVersion(const Aws::String& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline void SetProtocolVersion(Aws::String&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::move(value); }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline void SetProtocolVersion(const char* value) { m_protocolVersionHasBeenSet = true; m_protocolVersion.assign(value); }
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline TargetGroup& WithProtocolVersion(const Aws::String& value) { SetProtocolVersion(value); return *this;}
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline TargetGroup& WithProtocolVersion(Aws::String&& value) { SetProtocolVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>[HTTP/HTTPS protocol] The protocol version. The possible values are
+     * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+     */
+    inline TargetGroup& WithProtocolVersion(const char* value) { SetProtocolVersion(value); return *this;}
+
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(const TargetGroupIpAddressTypeEnum& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(TargetGroupIpAddressTypeEnum&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline TargetGroup& WithIpAddressType(const TargetGroupIpAddressTypeEnum& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline TargetGroup& WithIpAddressType(TargetGroupIpAddressTypeEnum&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
 
@@ -655,6 +750,12 @@ namespace Model
 
     TargetTypeEnum m_targetType;
     bool m_targetTypeHasBeenSet;
+
+    Aws::String m_protocolVersion;
+    bool m_protocolVersionHasBeenSet;
+
+    TargetGroupIpAddressTypeEnum m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

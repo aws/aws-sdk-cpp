@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -23,6 +13,7 @@
 #include <aws/firehose/model/S3DestinationConfiguration.h>
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <aws/firehose/model/VpcConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -542,7 +533,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
-     * <code>FailedDocumentsOnly</code>.</p>
+     * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
+     * you create the delivery stream. </p>
      */
     inline const ElasticsearchS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
@@ -557,7 +549,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
-     * <code>FailedDocumentsOnly</code>.</p>
+     * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
+     * you create the delivery stream. </p>
      */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
@@ -572,7 +565,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
-     * <code>FailedDocumentsOnly</code>.</p>
+     * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
+     * you create the delivery stream. </p>
      */
     inline void SetS3BackupMode(const ElasticsearchS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
@@ -587,7 +581,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
-     * <code>FailedDocumentsOnly</code>.</p>
+     * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
+     * you create the delivery stream. </p>
      */
     inline void SetS3BackupMode(ElasticsearchS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
 
@@ -602,7 +597,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
-     * <code>FailedDocumentsOnly</code>.</p>
+     * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
+     * you create the delivery stream. </p>
      */
     inline ElasticsearchDestinationConfiguration& WithS3BackupMode(const ElasticsearchS3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
@@ -617,7 +613,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
-     * <code>FailedDocumentsOnly</code>.</p>
+     * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
+     * you create the delivery stream. </p>
      */
     inline ElasticsearchDestinationConfiguration& WithS3BackupMode(ElasticsearchS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
@@ -714,6 +711,37 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -751,6 +779,9 @@ namespace Model
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet;
   };
 
 } // namespace Model

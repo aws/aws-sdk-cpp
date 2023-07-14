@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediapackage-vod/model/HlsPackage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 HlsPackage::HlsPackage() : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
+    m_includeDvbSubtitles(false),
+    m_includeDvbSubtitlesHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
     m_useAudioRenditionGroup(false),
@@ -41,6 +33,8 @@ HlsPackage::HlsPackage() :
 HlsPackage::HlsPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
+    m_includeDvbSubtitles(false),
+    m_includeDvbSubtitlesHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
     m_useAudioRenditionGroup(false),
@@ -66,6 +60,13 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
       m_hlsManifests.push_back(hlsManifestsJsonList[hlsManifestsIndex].AsObject());
     }
     m_hlsManifestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeDvbSubtitles"))
+  {
+    m_includeDvbSubtitles = jsonValue.GetBool("includeDvbSubtitles");
+
+    m_includeDvbSubtitlesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentDurationSeconds"))
@@ -103,6 +104,12 @@ JsonValue HlsPackage::Jsonize() const
      hlsManifestsJsonList[hlsManifestsIndex].AsObject(m_hlsManifests[hlsManifestsIndex].Jsonize());
    }
    payload.WithArray("hlsManifests", std::move(hlsManifestsJsonList));
+
+  }
+
+  if(m_includeDvbSubtitlesHasBeenSet)
+  {
+   payload.WithBool("includeDvbSubtitles", m_includeDvbSubtitles);
 
   }
 

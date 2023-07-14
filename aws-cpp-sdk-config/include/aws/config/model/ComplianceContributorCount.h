@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -32,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The number of AWS resources or AWS Config rules responsible for the current
-   * compliance of the item, up to a maximum number.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of Amazon Web Services resources or Config rules responsible for
+   * the current compliance of the item, up to a maximum number.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceContributorCount">AWS
    * API Reference</a></p>
    */
@@ -47,26 +38,26 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline int GetCappedCount() const{ return m_cappedCount; }
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline bool CappedCountHasBeenSet() const { return m_cappedCountHasBeenSet; }
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline void SetCappedCount(int value) { m_cappedCountHasBeenSet = true; m_cappedCount = value; }
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline ComplianceContributorCount& WithCappedCount(int value) { SetCappedCount(value); return *this;}
 

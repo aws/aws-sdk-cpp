@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -36,7 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for debugging rules.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration information for SageMaker Debugger rules for debugging. To
+   * learn more about how to configure the <code>DebugRuleConfiguration</code>
+   * parameter, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+   * the SageMaker and Debugger Configuration API Operations to Create, Update, and
+   * Debug Your Training Job</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DebugRuleConfiguration">AWS
    * API Reference</a></p>
    */
@@ -230,32 +225,38 @@ namespace Model
 
 
     /**
-     * <p>The instance type to deploy for a training job.</p>
+     * <p>The instance type to deploy a Debugger custom rule for debugging a training
+     * job.</p>
      */
     inline const ProcessingInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type to deploy for a training job.</p>
+     * <p>The instance type to deploy a Debugger custom rule for debugging a training
+     * job.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type to deploy for a training job.</p>
+     * <p>The instance type to deploy a Debugger custom rule for debugging a training
+     * job.</p>
      */
     inline void SetInstanceType(const ProcessingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type to deploy for a training job.</p>
+     * <p>The instance type to deploy a Debugger custom rule for debugging a training
+     * job.</p>
      */
     inline void SetInstanceType(ProcessingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type to deploy for a training job.</p>
+     * <p>The instance type to deploy a Debugger custom rule for debugging a training
+     * job.</p>
      */
     inline DebugRuleConfiguration& WithInstanceType(const ProcessingInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type to deploy for a training job.</p>
+     * <p>The instance type to deploy a Debugger custom rule for debugging a training
+     * job.</p>
      */
     inline DebugRuleConfiguration& WithInstanceType(ProcessingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -286,67 +287,67 @@ namespace Model
 
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRuleParameters() const{ return m_ruleParameters; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline bool RuleParametersHasBeenSet() const { return m_ruleParametersHasBeenSet; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline void SetRuleParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters = value; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline void SetRuleParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters = std::move(value); }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& WithRuleParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRuleParameters(value); return *this;}
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& WithRuleParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRuleParameters(std::move(value)); return *this;}
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(const Aws::String& key, const Aws::String& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, value); return *this; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(Aws::String&& key, const Aws::String& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(const Aws::String& key, Aws::String&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(Aws::String&& key, Aws::String&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(const char* key, Aws::String&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(Aws::String&& key, const char* value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> Runtime configuration for rule container.</p>
+     * <p>Runtime configuration for rule container.</p>
      */
     inline DebugRuleConfiguration& AddRuleParameters(const char* key, const char* value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, value); return *this; }
 

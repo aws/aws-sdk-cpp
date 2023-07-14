@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -91,38 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The status of the conformance pack. The allowed values are COMPLIANT and
-     * NON_COMPLIANT. </p>
+     * <p>The status of the conformance pack. The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline const ConformancePackComplianceType& GetConformancePackComplianceStatus() const{ return m_conformancePackComplianceStatus; }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are COMPLIANT and
-     * NON_COMPLIANT. </p>
+     * <p>The status of the conformance pack. The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline bool ConformancePackComplianceStatusHasBeenSet() const { return m_conformancePackComplianceStatusHasBeenSet; }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are COMPLIANT and
-     * NON_COMPLIANT. </p>
+     * <p>The status of the conformance pack. The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetConformancePackComplianceStatus(const ConformancePackComplianceType& value) { m_conformancePackComplianceStatusHasBeenSet = true; m_conformancePackComplianceStatus = value; }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are COMPLIANT and
-     * NON_COMPLIANT. </p>
+     * <p>The status of the conformance pack. The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetConformancePackComplianceStatus(ConformancePackComplianceType&& value) { m_conformancePackComplianceStatusHasBeenSet = true; m_conformancePackComplianceStatus = std::move(value); }
 
     /**
-     * <p>The status of the conformance pack. The allowed values are COMPLIANT and
-     * NON_COMPLIANT. </p>
+     * <p>The status of the conformance pack. The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline ConformancePackComplianceSummary& WithConformancePackComplianceStatus(const ConformancePackComplianceType& value) { SetConformancePackComplianceStatus(value); return *this;}
 
     /**
-     * <p>The status of the conformance pack. The allowed values are COMPLIANT and
-     * NON_COMPLIANT. </p>
+     * <p>The status of the conformance pack. The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline ConformancePackComplianceSummary& WithConformancePackComplianceStatus(ConformancePackComplianceType&& value) { SetConformancePackComplianceStatus(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -88,50 +78,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline DeleteNotificationConfigurationRequest& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline DeleteNotificationConfigurationRequest& WithTopicARN(Aws::String&& value) { SetTopicARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (Amazon SNS) topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
      */
     inline DeleteNotificationConfigurationRequest& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
 

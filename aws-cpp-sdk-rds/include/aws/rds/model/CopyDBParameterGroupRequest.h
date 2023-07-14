@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,90 +42,82 @@ namespace Model
   public:
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline const Aws::String& GetSourceDBParameterGroupIdentifier() const{ return m_sourceDBParameterGroupIdentifier; }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline bool SourceDBParameterGroupIdentifierHasBeenSet() const { return m_sourceDBParameterGroupIdentifierHasBeenSet; }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetSourceDBParameterGroupIdentifier(const Aws::String& value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier = value; }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetSourceDBParameterGroupIdentifier(Aws::String&& value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier = std::move(value); }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetSourceDBParameterGroupIdentifier(const char* value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier.assign(value); }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline CopyDBParameterGroupRequest& WithSourceDBParameterGroupIdentifier(const Aws::String& value) { SetSourceDBParameterGroupIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline CopyDBParameterGroupRequest& WithSourceDBParameterGroupIdentifier(Aws::String&& value) { SetSourceDBParameterGroupIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
-     * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
-     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     * </li> </ul>
      */
     inline CopyDBParameterGroupRequest& WithSourceDBParameterGroupIdentifier(const char* value) { SetSourceDBParameterGroupIdentifier(value); return *this;}
 

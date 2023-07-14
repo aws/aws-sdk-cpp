@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -35,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The currently active data capture configuration used by your
+   * Endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfigSummary">AWS
    * API Reference</a></p>
    */
@@ -49,156 +40,156 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Whether data capture is enabled or disabled.</p>
      */
     inline bool GetEnableCapture() const{ return m_enableCapture; }
 
     /**
-     * <p/>
+     * <p>Whether data capture is enabled or disabled.</p>
      */
     inline bool EnableCaptureHasBeenSet() const { return m_enableCaptureHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Whether data capture is enabled or disabled.</p>
      */
     inline void SetEnableCapture(bool value) { m_enableCaptureHasBeenSet = true; m_enableCapture = value; }
 
     /**
-     * <p/>
+     * <p>Whether data capture is enabled or disabled.</p>
      */
     inline DataCaptureConfigSummary& WithEnableCapture(bool value) { SetEnableCapture(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Whether data capture is currently functional.</p>
      */
     inline const CaptureStatus& GetCaptureStatus() const{ return m_captureStatus; }
 
     /**
-     * <p/>
+     * <p>Whether data capture is currently functional.</p>
      */
     inline bool CaptureStatusHasBeenSet() const { return m_captureStatusHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Whether data capture is currently functional.</p>
      */
     inline void SetCaptureStatus(const CaptureStatus& value) { m_captureStatusHasBeenSet = true; m_captureStatus = value; }
 
     /**
-     * <p/>
+     * <p>Whether data capture is currently functional.</p>
      */
     inline void SetCaptureStatus(CaptureStatus&& value) { m_captureStatusHasBeenSet = true; m_captureStatus = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Whether data capture is currently functional.</p>
      */
     inline DataCaptureConfigSummary& WithCaptureStatus(const CaptureStatus& value) { SetCaptureStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Whether data capture is currently functional.</p>
      */
     inline DataCaptureConfigSummary& WithCaptureStatus(CaptureStatus&& value) { SetCaptureStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The percentage of requests being captured by your Endpoint.</p>
      */
     inline int GetCurrentSamplingPercentage() const{ return m_currentSamplingPercentage; }
 
     /**
-     * <p/>
+     * <p>The percentage of requests being captured by your Endpoint.</p>
      */
     inline bool CurrentSamplingPercentageHasBeenSet() const { return m_currentSamplingPercentageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The percentage of requests being captured by your Endpoint.</p>
      */
     inline void SetCurrentSamplingPercentage(int value) { m_currentSamplingPercentageHasBeenSet = true; m_currentSamplingPercentage = value; }
 
     /**
-     * <p/>
+     * <p>The percentage of requests being captured by your Endpoint.</p>
      */
     inline DataCaptureConfigSummary& WithCurrentSamplingPercentage(int value) { SetCurrentSamplingPercentage(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline const Aws::String& GetDestinationS3Uri() const{ return m_destinationS3Uri; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline bool DestinationS3UriHasBeenSet() const { return m_destinationS3UriHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline void SetDestinationS3Uri(const Aws::String& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline void SetDestinationS3Uri(Aws::String&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline void SetDestinationS3Uri(const char* value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline DataCaptureConfigSummary& WithDestinationS3Uri(const Aws::String& value) { SetDestinationS3Uri(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline DataCaptureConfigSummary& WithDestinationS3Uri(Aws::String&& value) { SetDestinationS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 location being used to capture the data.</p>
      */
     inline DataCaptureConfigSummary& WithDestinationS3Uri(const char* value) { SetDestinationS3Uri(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline DataCaptureConfigSummary& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline DataCaptureConfigSummary& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The KMS key being used to encrypt the data in Amazon S3.</p>
      */
     inline DataCaptureConfigSummary& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

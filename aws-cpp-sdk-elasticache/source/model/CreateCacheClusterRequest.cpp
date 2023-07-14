@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/CreateCacheClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -48,7 +38,14 @@ CreateCacheClusterRequest::CreateCacheClusterRequest() :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
+    m_authTokenHasBeenSet(false),
+    m_outpostMode(OutpostMode::NOT_SET),
+    m_outpostModeHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
+    m_preferredOutpostArnsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false)
 {
 }
 
@@ -198,6 +195,42 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
   if(m_authTokenHasBeenSet)
   {
     ss << "AuthToken=" << StringUtils::URLEncode(m_authToken.c_str()) << "&";
+  }
+
+  if(m_outpostModeHasBeenSet)
+  {
+    ss << "OutpostMode=" << OutpostModeMapper::GetNameForOutpostMode(m_outpostMode) << "&";
+  }
+
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+    ss << "PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
+  }
+
+  if(m_preferredOutpostArnsHasBeenSet)
+  {
+    unsigned preferredOutpostArnsCount = 1;
+    for(auto& item : m_preferredOutpostArns)
+    {
+      ss << "PreferredOutpostArns.member." << preferredOutpostArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      preferredOutpostArnsCount++;
+    }
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
+    }
+  }
+
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+    ss << "TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
   }
 
   ss << "Version=2015-02-02";

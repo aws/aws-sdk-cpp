@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -36,8 +26,8 @@ namespace Model
 
   /**
    * <p>The configuration of the self-managed Microsoft Active Directory (AD)
-   * directory to which the Windows File Server instance is joined.</p><p><h3>See
-   * Also:</h3>   <a
+   * directory to which the Windows File Server or ONTAP storage virtual machine
+   * (SVM) instance is joined.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryAttributes">AWS
    * API Reference</a></p>
    */
@@ -93,57 +83,57 @@ namespace Model
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline const Aws::String& GetOrganizationalUnitDistinguishedName() const{ return m_organizationalUnitDistinguishedName; }
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline bool OrganizationalUnitDistinguishedNameHasBeenSet() const { return m_organizationalUnitDistinguishedNameHasBeenSet; }
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline void SetOrganizationalUnitDistinguishedName(const Aws::String& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = value; }
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline void SetOrganizationalUnitDistinguishedName(Aws::String&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::move(value); }
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline void SetOrganizationalUnitDistinguishedName(const char* value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName.assign(value); }
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(const Aws::String& value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(Aws::String&& value) { SetOrganizationalUnitDistinguishedName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified distinguished name of the organizational unit within the
-     * self-managed AD directory to which the Windows File Server instance is
-     * joined.</p>
+     * self-managed AD directory to which the Windows File Server or ONTAP storage
+     * virtual machine (SVM) instance is joined.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 
@@ -247,56 +237,56 @@ namespace Model
 
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryAttributes& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 

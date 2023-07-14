@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -133,7 +123,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline const Aws::Vector<RouteFilterPrefix>& GetAddAllowedPrefixesToDirectConnectGateway() const{ return m_addAllowedPrefixesToDirectConnectGateway; }
 
@@ -142,7 +132,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline bool AddAllowedPrefixesToDirectConnectGatewayHasBeenSet() const { return m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet; }
 
@@ -151,7 +141,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline void SetAddAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway = value; }
 
@@ -160,7 +150,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline void SetAddAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway = std::move(value); }
 
@@ -169,7 +159,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithAddAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { SetAddAllowedPrefixesToDirectConnectGateway(value); return *this;}
 
@@ -178,7 +168,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithAddAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { SetAddAllowedPrefixesToDirectConnectGateway(std::move(value)); return *this;}
 
@@ -187,7 +177,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& AddAddAllowedPrefixesToDirectConnectGateway(const RouteFilterPrefix& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway.push_back(value); return *this; }
 
@@ -196,7 +186,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& AddAddAllowedPrefixesToDirectConnectGateway(RouteFilterPrefix&& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway.push_back(std::move(value)); return *this; }
 

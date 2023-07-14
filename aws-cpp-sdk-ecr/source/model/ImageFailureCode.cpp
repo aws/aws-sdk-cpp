@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecr/model/ImageFailureCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,8 @@ namespace Aws
         static const int ImageTagDoesNotMatchDigest_HASH = HashingUtils::HashString("ImageTagDoesNotMatchDigest");
         static const int ImageNotFound_HASH = HashingUtils::HashString("ImageNotFound");
         static const int MissingDigestAndTag_HASH = HashingUtils::HashString("MissingDigestAndTag");
+        static const int ImageReferencedByManifestList_HASH = HashingUtils::HashString("ImageReferencedByManifestList");
+        static const int KmsError_HASH = HashingUtils::HashString("KmsError");
 
 
         ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
@@ -60,6 +52,14 @@ namespace Aws
           {
             return ImageFailureCode::MissingDigestAndTag;
           }
+          else if (hashCode == ImageReferencedByManifestList_HASH)
+          {
+            return ImageFailureCode::ImageReferencedByManifestList;
+          }
+          else if (hashCode == KmsError_HASH)
+          {
+            return ImageFailureCode::KmsError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +84,10 @@ namespace Aws
             return "ImageNotFound";
           case ImageFailureCode::MissingDigestAndTag:
             return "MissingDigestAndTag";
+          case ImageFailureCode::ImageReferencedByManifestList:
+            return "ImageReferencedByManifestList";
+          case ImageFailureCode::KmsError:
+            return "KmsError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

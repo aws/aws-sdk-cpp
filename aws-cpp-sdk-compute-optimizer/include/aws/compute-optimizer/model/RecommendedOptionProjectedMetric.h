@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
@@ -36,8 +26,15 @@ namespace Model
 {
 
   /**
-   * <p>Describes a projected utilization metric of a recommendation
-   * option.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a projected utilization metric of a recommendation option.</p>
+   *  <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only
+   * projected utilization metrics returned when you run the
+   * <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the
+   * <code>Memory</code> metric is returned only for resources that have the unified
+   * CloudWatch agent installed on them. For more information, see <a
+   * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+   * Memory Utilization with the CloudWatch Agent</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendedOptionProjectedMetric">AWS
    * API Reference</a></p>
    */

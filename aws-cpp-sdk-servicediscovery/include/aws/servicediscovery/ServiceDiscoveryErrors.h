@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class ServiceDiscoveryErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,11 +54,27 @@ enum class ServiceDiscoveryErrors
   NAMESPACE_ALREADY_EXISTS,
   NAMESPACE_NOT_FOUND,
   OPERATION_NOT_FOUND,
+  REQUEST_LIMIT_EXCEEDED,
   RESOURCE_IN_USE,
   RESOURCE_LIMIT_EXCEEDED,
   SERVICE_ALREADY_EXISTS,
-  SERVICE_NOT_FOUND
+  SERVICE_NOT_FOUND,
+  TOO_MANY_TAGS
 };
+
+class AWS_SERVICEDISCOVERY_API ServiceDiscoveryError : public Aws::Client::AWSError<ServiceDiscoveryErrors>
+{
+public:
+  ServiceDiscoveryError() {}
+  ServiceDiscoveryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+  ServiceDiscoveryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+  ServiceDiscoveryError(const Aws::Client::AWSError<ServiceDiscoveryErrors>& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+  ServiceDiscoveryError(Aws::Client::AWSError<ServiceDiscoveryErrors>&& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ServiceDiscoveryErrorMapper
 {
   AWS_SERVICEDISCOVERY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dataexchange/model/JobErrorLimitName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int Assets_per_revision_HASH = HashingUtils::HashString("Assets per revision");
         static const int Asset_size_in_GB_HASH = HashingUtils::HashString("Asset size in GB");
+        static const int Amazon_Redshift_datashare_assets_per_revision_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per revision");
 
 
         JobErrorLimitName GetJobErrorLimitNameForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == Asset_size_in_GB_HASH)
           {
             return JobErrorLimitName::Asset_size_in_GB;
+          }
+          else if (hashCode == Amazon_Redshift_datashare_assets_per_revision_HASH)
+          {
+            return JobErrorLimitName::Amazon_Redshift_datashare_assets_per_revision;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "Assets per revision";
           case JobErrorLimitName::Asset_size_in_GB:
             return "Asset size in GB";
+          case JobErrorLimitName::Amazon_Redshift_datashare_assets_per_revision:
+            return "Amazon Redshift datashare assets per revision";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

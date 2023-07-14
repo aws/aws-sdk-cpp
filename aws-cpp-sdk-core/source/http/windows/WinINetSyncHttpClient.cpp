@@ -1,18 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
-#define AWS_DISABLE_DEPRECATION
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/http/windows/WinINetSyncHttpClient.h>
 
@@ -44,7 +33,7 @@ static void WinINetEnableHttp2(void* handle)
 {
 #ifdef WININET_HAS_H2
     DWORD http2 = HTTP_PROTOCOL_FLAG_HTTP2;
-    if (!InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2))) 
+    if (!InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2)))
     {
         AWS_LOGSTREAM_ERROR("WinINetHttp2", "Failed to enable HTTP/2 on WinInet handle: " << handle << ". Falling back to HTTP/1.1.");
     }
@@ -61,9 +50,17 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
     Base()
 {
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " <<
-         config.maxConnections << ", request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);       
+         config.maxConnections << ", request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
-    m_allowRedirects = config.followRedirects;
+    if (config.followRedirects == FollowRedirectsPolicy::NEVER ||
+       (config.followRedirects == FollowRedirectsPolicy::DEFAULT && config.region == Aws::Region::AWS_GLOBAL))
+    {
+        m_allowRedirects = false;
+    }
+    else
+    {
+        m_allowRedirects = true;
+    }
 
     DWORD inetFlags = INTERNET_OPEN_TYPE_DIRECT;
     const char* proxyHosts = nullptr;
@@ -116,13 +113,13 @@ WinINetSyncHttpClient::~WinINetSyncHttpClient()
     SetOpenHandle(nullptr);  // the handle is already closed, annul it to avoid double-closing the handle (in the base class' destructor)
 }
 
-void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const
+void* WinINetSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& request, void* connection, const Aws::StringStream& ss) const
 {
     DWORD requestFlags =
-        INTERNET_FLAG_NO_AUTH | 
-        INTERNET_FLAG_RELOAD | 
-        INTERNET_FLAG_KEEP_CONNECTION | 
-        (request.GetUri().GetScheme() == Scheme::HTTPS ? INTERNET_FLAG_SECURE : 0) |
+        INTERNET_FLAG_NO_AUTH |
+        INTERNET_FLAG_RELOAD |
+        INTERNET_FLAG_KEEP_CONNECTION |
+        (request->GetUri().GetScheme() == Scheme::HTTPS ? INTERNET_FLAG_SECURE : 0) |
         INTERNET_FLAG_NO_CACHE_WRITE |
         (m_allowRedirects ? 0 : INTERNET_FLAG_NO_AUTO_REDIRECT);
 
@@ -130,14 +127,14 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
 
     Aws::String acceptHeader("*/*");
 
-    if (request.HasHeader(Aws::Http::ACCEPT_HEADER))
+    if (request->HasHeader(Aws::Http::ACCEPT_HEADER))
     {
-        acceptHeader = request.GetHeaderValue(Aws::Http::ACCEPT_HEADER);
+        acceptHeader = request->GetHeaderValue(Aws::Http::ACCEPT_HEADER);
     }
 
     accept[0] = acceptHeader.c_str();
 
-    HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()),
+    HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request->GetMethod()),
         ss.str().c_str(), nullptr, nullptr, accept, requestFlags, 0);
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle " << hHttpRequest);
 
@@ -157,7 +154,7 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
 void WinINetSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const
 {
     if (!HttpAddRequestHeadersA(hHttpRequest, headerStr.c_str(), (DWORD)headerStr.length(), HTTP_ADDREQ_FLAG_REPLACE | HTTP_ADDREQ_FLAG_ADD))
-        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers with error code: " << GetLastError());
+        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers: " << headerStr << ", with error code: " << GetLastError());
 }
 
 uint64_t WinINetSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const
@@ -214,7 +211,7 @@ bool WinINetSyncHttpClient::DoReceiveResponse(void* hHttpRequest) const
 {
     return (HttpEndRequest(hHttpRequest, nullptr, 0, 0) != 0);
 }
-   
+
 bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<HttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const
 {
 

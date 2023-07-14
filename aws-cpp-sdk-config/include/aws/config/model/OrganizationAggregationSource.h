@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -50,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline OrganizationAggregationSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline OrganizationAggregationSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
-     * the aggregator account.</p>
+     * <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+     * associated with the aggregator account.</p>
      */
     inline OrganizationAggregationSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -145,22 +135,22 @@ namespace Model
 
 
     /**
-     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing Config regions and future regions.</p>
      */
     inline bool GetAllAwsRegions() const{ return m_allAwsRegions; }
 
     /**
-     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing Config regions and future regions.</p>
      */
     inline bool AllAwsRegionsHasBeenSet() const { return m_allAwsRegionsHasBeenSet; }
 
     /**
-     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing Config regions and future regions.</p>
      */
     inline void SetAllAwsRegions(bool value) { m_allAwsRegionsHasBeenSet = true; m_allAwsRegions = value; }
 
     /**
-     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
+     * <p>If true, aggregate existing Config regions and future regions.</p>
      */
     inline OrganizationAggregationSource& WithAllAwsRegions(bool value) { SetAllAwsRegions(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -135,7 +125,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline const Aws::String& GetKpiName() const{ return m_kpiName; }
@@ -146,7 +136,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline bool KpiNameHasBeenSet() const { return m_kpiNameHasBeenSet; }
@@ -157,7 +147,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const Aws::String& value) { m_kpiNameHasBeenSet = true; m_kpiName = value; }
@@ -168,7 +158,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(Aws::String&& value) { m_kpiNameHasBeenSet = true; m_kpiName = std::move(value); }
@@ -179,7 +169,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const char* value) { m_kpiNameHasBeenSet = true; m_kpiName.assign(value); }
@@ -190,7 +180,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline ApplicationDateRangeKpiResponse& WithKpiName(const Aws::String& value) { SetKpiName(value); return *this;}
@@ -201,7 +191,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline ApplicationDateRangeKpiResponse& WithKpiName(Aws::String&& value) { SetKpiName(std::move(value)); return *this;}
@@ -212,7 +202,7 @@ namespace Model
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of possible values,
      * see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline ApplicationDateRangeKpiResponse& WithKpiName(const char* value) { SetKpiName(value); return *this;}

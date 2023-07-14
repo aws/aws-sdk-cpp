@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/redshift/model/ResizeClusterMessage.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,7 +27,9 @@ ResizeClusterMessage::ResizeClusterMessage() :
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_classic(false),
-    m_classicHasBeenSet(false)
+    m_classicHasBeenSet(false),
+    m_reservedNodeIdHasBeenSet(false),
+    m_targetReservedNodeOfferingIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ ResizeClusterMessage::ResizeClusterMessage(const XmlNode& xmlNode) :
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_classic(false),
-    m_classicHasBeenSet(false)
+    m_classicHasBeenSet(false),
+    m_reservedNodeIdHasBeenSet(false),
+    m_targetReservedNodeOfferingIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -89,6 +83,18 @@ ResizeClusterMessage& ResizeClusterMessage::operator =(const XmlNode& xmlNode)
       m_classic = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(classicNode.GetText()).c_str()).c_str());
       m_classicHasBeenSet = true;
     }
+    XmlNode reservedNodeIdNode = resultNode.FirstChild("ReservedNodeId");
+    if(!reservedNodeIdNode.IsNull())
+    {
+      m_reservedNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeIdNode.GetText());
+      m_reservedNodeIdHasBeenSet = true;
+    }
+    XmlNode targetReservedNodeOfferingIdNode = resultNode.FirstChild("TargetReservedNodeOfferingId");
+    if(!targetReservedNodeOfferingIdNode.IsNull())
+    {
+      m_targetReservedNodeOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(targetReservedNodeOfferingIdNode.GetText());
+      m_targetReservedNodeOfferingIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +127,16 @@ void ResizeClusterMessage::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".Classic=" << std::boolalpha << m_classic << "&";
   }
 
+  if(m_reservedNodeIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
+  }
+
+  if(m_targetReservedNodeOfferingIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetReservedNodeOfferingId=" << StringUtils::URLEncode(m_targetReservedNodeOfferingId.c_str()) << "&";
+  }
+
 }
 
 void ResizeClusterMessage::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +160,14 @@ void ResizeClusterMessage::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_classicHasBeenSet)
   {
       oStream << location << ".Classic=" << std::boolalpha << m_classic << "&";
+  }
+  if(m_reservedNodeIdHasBeenSet)
+  {
+      oStream << location << ".ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
+  }
+  if(m_targetReservedNodeOfferingIdHasBeenSet)
+  {
+      oStream << location << ".TargetReservedNodeOfferingId=" << StringUtils::URLEncode(m_targetReservedNodeOfferingId.c_str()) << "&";
   }
 }
 

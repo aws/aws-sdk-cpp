@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -124,65 +114,65 @@ namespace Model
 
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>You should use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
-     * only be modified by an administrator. Users will not be able to modify this
+     * only be modified by an administrator. Users won't be able to modify this
      * attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
-     * updated using the API.</p>
+     * <code>DeveloperOnlyAttribute</code> can be modified using
+     * AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
      */
     inline bool GetDeveloperOnlyAttribute() const{ return m_developerOnlyAttribute; }
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>You should use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
-     * only be modified by an administrator. Users will not be able to modify this
+     * only be modified by an administrator. Users won't be able to modify this
      * attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
-     * updated using the API.</p>
+     * <code>DeveloperOnlyAttribute</code> can be modified using
+     * AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
      */
     inline bool DeveloperOnlyAttributeHasBeenSet() const { return m_developerOnlyAttributeHasBeenSet; }
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>You should use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
-     * only be modified by an administrator. Users will not be able to modify this
+     * only be modified by an administrator. Users won't be able to modify this
      * attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
-     * updated using the API.</p>
+     * <code>DeveloperOnlyAttribute</code> can be modified using
+     * AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
      */
     inline void SetDeveloperOnlyAttribute(bool value) { m_developerOnlyAttributeHasBeenSet = true; m_developerOnlyAttribute = value; }
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>You should use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
-     * only be modified by an administrator. Users will not be able to modify this
+     * only be modified by an administrator. Users won't be able to modify this
      * attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
-     * updated using the API.</p>
+     * <code>DeveloperOnlyAttribute</code> can be modified using
+     * AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.</p>
      */
     inline SchemaAttributeType& WithDeveloperOnlyAttribute(bool value) { SetDeveloperOnlyAttribute(value); return *this;}
 
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that's mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -190,11 +180,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that's mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -202,11 +192,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that's mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -214,11 +204,11 @@ namespace Model
 
     /**
      * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
-     * user pool attribute that's mapped to an identity provider attribute, you must
-     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
-     * attributes when users sign in to your application through an identity provider.
-     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
-     * update the attribute. For more information, see <a
+     * user pool attribute that is mapped to an IdP attribute, you must set this
+     * parameter to <code>true</code>. Amazon Cognito updates mapped attributes when
+     * users sign in to your application through an IdP. If an attribute is immutable,
+     * Amazon Cognito throws an error when it attempts to update the attribute. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
@@ -227,28 +217,28 @@ namespace Model
 
     /**
      * <p>Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in will
+     * required and the user doesn't provide a value, registration or sign-in will
      * fail.</p>
      */
     inline bool GetRequired() const{ return m_required; }
 
     /**
      * <p>Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in will
+     * required and the user doesn't provide a value, registration or sign-in will
      * fail.</p>
      */
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
 
     /**
      * <p>Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in will
+     * required and the user doesn't provide a value, registration or sign-in will
      * fail.</p>
      */
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
 
     /**
      * <p>Specifies whether a user pool attribute is required. If the attribute is
-     * required and the user does not provide a value, registration or sign-in will
+     * required and the user doesn't provide a value, registration or sign-in will
      * fail.</p>
      */
     inline SchemaAttributeType& WithRequired(bool value) { SetRequired(value); return *this;}

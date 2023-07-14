@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eks/model/Cluster.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,6 +26,7 @@ Cluster::Cluster() :
     m_endpointHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_kubernetesNetworkConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_identityHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
@@ -44,7 +35,8 @@ Cluster::Cluster() :
     m_clientRequestTokenHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+    m_encryptionConfigHasBeenSet(false),
+    m_connectorConfigHasBeenSet(false)
 {
 }
 
@@ -56,6 +48,7 @@ Cluster::Cluster(JsonView jsonValue) :
     m_endpointHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_kubernetesNetworkConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
     m_identityHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
@@ -64,7 +57,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_clientRequestTokenHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+    m_encryptionConfigHasBeenSet(false),
+    m_connectorConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +112,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_resourcesVpcConfig = jsonValue.GetObject("resourcesVpcConfig");
 
     m_resourcesVpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kubernetesNetworkConfig"))
+  {
+    m_kubernetesNetworkConfig = jsonValue.GetObject("kubernetesNetworkConfig");
+
+    m_kubernetesNetworkConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("logging"))
@@ -182,6 +183,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_encryptionConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectorConfig"))
+  {
+    m_connectorConfig = jsonValue.GetObject("connectorConfig");
+
+    m_connectorConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +235,12 @@ JsonValue Cluster::Jsonize() const
   if(m_resourcesVpcConfigHasBeenSet)
   {
    payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
+
+  }
+
+  if(m_kubernetesNetworkConfigHasBeenSet)
+  {
+   payload.WithObject("kubernetesNetworkConfig", m_kubernetesNetworkConfig.Jsonize());
 
   }
 
@@ -284,6 +298,12 @@ JsonValue Cluster::Jsonize() const
      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
    }
    payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
+
+  }
+
+  if(m_connectorConfigHasBeenSet)
+  {
+   payload.WithObject("connectorConfig", m_connectorConfig.Jsonize());
 
   }
 

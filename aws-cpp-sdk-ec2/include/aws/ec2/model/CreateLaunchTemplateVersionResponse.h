@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/LaunchTemplateVersion.h>
+#include <aws/ec2/model/ValidationWarning.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -69,6 +60,42 @@ namespace Model
     inline CreateLaunchTemplateVersionResponse& WithLaunchTemplateVersion(LaunchTemplateVersion&& value) { SetLaunchTemplateVersion(std::move(value)); return *this;}
 
 
+    /**
+     * <p>If the new version of the launch template contains parameters or parameter
+     * combinations that are not valid, an error code and an error message are returned
+     * for each issue that's found.</p>
+     */
+    inline const ValidationWarning& GetWarning() const{ return m_warning; }
+
+    /**
+     * <p>If the new version of the launch template contains parameters or parameter
+     * combinations that are not valid, an error code and an error message are returned
+     * for each issue that's found.</p>
+     */
+    inline void SetWarning(const ValidationWarning& value) { m_warning = value; }
+
+    /**
+     * <p>If the new version of the launch template contains parameters or parameter
+     * combinations that are not valid, an error code and an error message are returned
+     * for each issue that's found.</p>
+     */
+    inline void SetWarning(ValidationWarning&& value) { m_warning = std::move(value); }
+
+    /**
+     * <p>If the new version of the launch template contains parameters or parameter
+     * combinations that are not valid, an error code and an error message are returned
+     * for each issue that's found.</p>
+     */
+    inline CreateLaunchTemplateVersionResponse& WithWarning(const ValidationWarning& value) { SetWarning(value); return *this;}
+
+    /**
+     * <p>If the new version of the launch template contains parameters or parameter
+     * combinations that are not valid, an error code and an error message are returned
+     * for each issue that's found.</p>
+     */
+    inline CreateLaunchTemplateVersionResponse& WithWarning(ValidationWarning&& value) { SetWarning(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -87,6 +114,8 @@ namespace Model
   private:
 
     LaunchTemplateVersion m_launchTemplateVersion;
+
+    ValidationWarning m_warning;
 
     ResponseMetadata m_responseMetadata;
   };

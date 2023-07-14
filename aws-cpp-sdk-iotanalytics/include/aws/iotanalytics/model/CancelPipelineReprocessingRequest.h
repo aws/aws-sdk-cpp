@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -85,49 +75,49 @@ namespace Model
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline const Aws::String& GetReprocessingId() const{ return m_reprocessingId; }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline bool ReprocessingIdHasBeenSet() const { return m_reprocessingIdHasBeenSet; }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline void SetReprocessingId(const Aws::String& value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId = value; }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline void SetReprocessingId(Aws::String&& value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId = std::move(value); }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline void SetReprocessingId(const char* value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId.assign(value); }
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline CancelPipelineReprocessingRequest& WithReprocessingId(const Aws::String& value) { SetReprocessingId(value); return *this;}
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline CancelPipelineReprocessingRequest& WithReprocessingId(Aws::String&& value) { SetReprocessingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reprocessing task (returned by
-     * "StartPipelineReprocessing").</p>
+     * <code>StartPipelineReprocessing</code>).</p>
      */
     inline CancelPipelineReprocessingRequest& WithReprocessingId(const char* value) { SetReprocessingId(value); return *this;}
 

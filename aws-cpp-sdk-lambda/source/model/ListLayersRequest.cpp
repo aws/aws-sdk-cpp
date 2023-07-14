@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/ListLayersRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,7 +20,9 @@ ListLayersRequest::ListLayersRequest() :
     m_compatibleRuntimeHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
+    m_maxItemsHasBeenSet(false),
+    m_compatibleArchitecture(Architecture::NOT_SET),
+    m_compatibleArchitectureHasBeenSet(false)
 {
 }
 
@@ -60,6 +52,13 @@ void ListLayersRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxItems;
       uri.AddQueryStringParameter("MaxItems", ss.str());
+      ss.str("");
+    }
+
+    if(m_compatibleArchitectureHasBeenSet)
+    {
+      ss << ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitecture);
+      uri.AddQueryStringParameter("CompatibleArchitecture", ss.str());
       ss.str("");
     }
 

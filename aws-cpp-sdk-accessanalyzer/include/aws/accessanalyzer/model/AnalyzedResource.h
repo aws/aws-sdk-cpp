@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
@@ -276,42 +266,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline AnalyzedResource& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline AnalyzedResource& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline AnalyzedResource& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
 
@@ -348,47 +338,56 @@ namespace Model
 
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSharedVia() const{ return m_sharedVia; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline bool SharedViaHasBeenSet() const { return m_sharedViaHasBeenSet; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline void SetSharedVia(const Aws::Vector<Aws::String>& value) { m_sharedViaHasBeenSet = true; m_sharedVia = value; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline void SetSharedVia(Aws::Vector<Aws::String>&& value) { m_sharedViaHasBeenSet = true; m_sharedVia = std::move(value); }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& WithSharedVia(const Aws::Vector<Aws::String>& value) { SetSharedVia(value); return *this;}
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& WithSharedVia(Aws::Vector<Aws::String>&& value) { SetSharedVia(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& AddSharedVia(const Aws::String& value) { m_sharedViaHasBeenSet = true; m_sharedVia.push_back(value); return *this; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& AddSharedVia(Aws::String&& value) { m_sharedViaHasBeenSet = true; m_sharedVia.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& AddSharedVia(const char* value) { m_sharedViaHasBeenSet = true; m_sharedVia.push_back(value); return *this; }
 

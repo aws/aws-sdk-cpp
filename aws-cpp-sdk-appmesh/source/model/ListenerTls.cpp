@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/ListenerTls.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 ListenerTls::ListenerTls() : 
     m_certificateHasBeenSet(false),
     m_mode(ListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
 }
 
 ListenerTls::ListenerTls(JsonView jsonValue) : 
     m_certificateHasBeenSet(false),
     m_mode(ListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_validationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +51,13 @@ ListenerTls& ListenerTls::operator =(JsonView jsonValue)
     m_modeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validation"))
+  {
+    m_validation = jsonValue.GetObject("validation");
+
+    m_validationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +74,12 @@ JsonValue ListenerTls::Jsonize() const
   if(m_modeHasBeenSet)
   {
    payload.WithString("mode", ListenerTlsModeMapper::GetNameForListenerTlsMode(m_mode));
+  }
+
+  if(m_validationHasBeenSet)
+  {
+   payload.WithObject("validation", m_validation.Jsonize());
+
   }
 
   return payload;

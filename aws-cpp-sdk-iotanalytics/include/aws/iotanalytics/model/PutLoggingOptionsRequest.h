@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -43,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     * <p>The new values of the IoT Analytics logging options.</p>
      */
     inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
 
     /**
-     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     * <p>The new values of the IoT Analytics logging options.</p>
      */
     inline bool LoggingOptionsHasBeenSet() const { return m_loggingOptionsHasBeenSet; }
 
     /**
-     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     * <p>The new values of the IoT Analytics logging options.</p>
      */
     inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = value; }
 
     /**
-     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     * <p>The new values of the IoT Analytics logging options.</p>
      */
     inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = std::move(value); }
 
     /**
-     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     * <p>The new values of the IoT Analytics logging options.</p>
      */
     inline PutLoggingOptionsRequest& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
 
     /**
-     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     * <p>The new values of the IoT Analytics logging options.</p>
      */
     inline PutLoggingOptionsRequest& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
 

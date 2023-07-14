@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
@@ -271,39 +261,53 @@ namespace Model
 
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetEncodedMessage() const{ return m_encodedMessage; }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
+    inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessage = value; }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+    inline void SetEncodedMessage(Aws::String&& value) { m_encodedMessage = std::move(value); }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline void SetMessage(const char* value) { m_message.assign(value); }
+    inline void SetEncodedMessage(const char* value) { m_encodedMessage.assign(value); }
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PutSessionResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline PutSessionResult& WithEncodedMessage(const Aws::String& value) { SetEncodedMessage(value); return *this;}
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PutSessionResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline PutSessionResult& WithEncodedMessage(Aws::String&& value) { SetEncodedMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The next message that should be presented to the user.</p>
+     * <p>The next message that should be presented to the user.</p> <p>The
+     * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
+     * before you can use the value.</p>
      */
-    inline PutSessionResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline PutSessionResult& WithEncodedMessage(const char* value) { SetEncodedMessage(value); return *this;}
 
 
     /**
@@ -537,6 +541,42 @@ namespace Model
      */
     inline PutSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(const Aws::String& value) { m_activeContexts = value; }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(Aws::String&& value) { m_activeContexts = std::move(value); }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline void SetActiveContexts(const char* value) { m_activeContexts.assign(value); }
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of active contexts for the session.</p>
+     */
+    inline PutSessionResult& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+
   private:
 
     Aws::String m_contentType;
@@ -547,7 +587,7 @@ namespace Model
 
     Aws::String m_sessionAttributes;
 
-    Aws::String m_message;
+    Aws::String m_encodedMessage;
 
     MessageFormatType m_messageFormat;
 
@@ -558,6 +598,8 @@ namespace Model
   Aws::Utils::Stream::ResponseStream m_audioStream;
 
     Aws::String m_sessionId;
+
+    Aws::String m_activeContexts;
   };
 
 } // namespace Model

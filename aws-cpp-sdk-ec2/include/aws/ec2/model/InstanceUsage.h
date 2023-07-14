@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -51,67 +41,75 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline InstanceUsage& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline InstanceUsage& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that is making use of the Capacity Reservation.</p>
+     * <p>The ID of the Amazon Web Services account that is making use of the Capacity
+     * Reservation.</p>
      */
     inline InstanceUsage& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The number of instances the AWS account currently has in the Capacity
-     * Reservation.</p>
+     * <p>The number of instances the Amazon Web Services account currently has in the
+     * Capacity Reservation.</p>
      */
     inline int GetUsedInstanceCount() const{ return m_usedInstanceCount; }
 
     /**
-     * <p>The number of instances the AWS account currently has in the Capacity
-     * Reservation.</p>
+     * <p>The number of instances the Amazon Web Services account currently has in the
+     * Capacity Reservation.</p>
      */
     inline bool UsedInstanceCountHasBeenSet() const { return m_usedInstanceCountHasBeenSet; }
 
     /**
-     * <p>The number of instances the AWS account currently has in the Capacity
-     * Reservation.</p>
+     * <p>The number of instances the Amazon Web Services account currently has in the
+     * Capacity Reservation.</p>
      */
     inline void SetUsedInstanceCount(int value) { m_usedInstanceCountHasBeenSet = true; m_usedInstanceCount = value; }
 
     /**
-     * <p>The number of instances the AWS account currently has in the Capacity
-     * Reservation.</p>
+     * <p>The number of instances the Amazon Web Services account currently has in the
+     * Capacity Reservation.</p>
      */
     inline InstanceUsage& WithUsedInstanceCount(int value) { SetUsedInstanceCount(value); return *this;}
 

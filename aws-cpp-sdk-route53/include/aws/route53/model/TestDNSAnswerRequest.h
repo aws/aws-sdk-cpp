@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
@@ -187,64 +177,64 @@ namespace Model
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline const Aws::String& GetResolverIP() const{ return m_resolverIP; }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline bool ResolverIPHasBeenSet() const { return m_resolverIPHasBeenSet; }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline void SetResolverIP(const Aws::String& value) { m_resolverIPHasBeenSet = true; m_resolverIP = value; }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline void SetResolverIP(Aws::String&& value) { m_resolverIPHasBeenSet = true; m_resolverIP = std::move(value); }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline void SetResolverIP(const char* value) { m_resolverIPHasBeenSet = true; m_resolverIP.assign(value); }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline TestDNSAnswerRequest& WithResolverIP(const Aws::String& value) { SetResolverIP(value); return *this;}
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline TestDNSAnswerRequest& WithResolverIP(Aws::String&& value) { SetResolverIP(std::move(value)); return *this;}
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
-     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
-     * (<code>us-east-1</code>).</p>
+     * uses the IP address of a DNS resolver in the Amazon Web Services US East (N.
+     * Virginia) Region (<code>us-east-1</code>).</p>
      */
     inline TestDNSAnswerRequest& WithResolverIP(const char* value) { SetResolverIP(value); return *this;}
 

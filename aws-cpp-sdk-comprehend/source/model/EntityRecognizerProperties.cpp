@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/comprehend/model/EntityRecognizerProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,7 +33,10 @@ EntityRecognizerProperties::EntityRecognizerProperties() :
     m_recognizerMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
+    m_sourceModelArnHasBeenSet(false)
 {
 }
 
@@ -62,7 +55,10 @@ EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue) :
     m_recognizerMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
+    m_sourceModelArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +156,27 @@ EntityRecognizerProperties& EntityRecognizerProperties::operator =(JsonView json
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelKmsKeyId"))
+  {
+    m_modelKmsKeyId = jsonValue.GetString("ModelKmsKeyId");
+
+    m_modelKmsKeyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+    m_versionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceModelArn"))
+  {
+    m_sourceModelArn = jsonValue.GetString("SourceModelArn");
+
+    m_sourceModelArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -236,6 +253,24 @@ JsonValue EntityRecognizerProperties::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
+
+  }
+
+  if(m_sourceModelArnHasBeenSet)
+  {
+   payload.WithString("SourceModelArn", m_sourceModelArn);
 
   }
 

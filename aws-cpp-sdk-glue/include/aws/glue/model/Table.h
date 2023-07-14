@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -741,24 +732,127 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline bool GetIsRegisteredWithLakeFormation() const{ return m_isRegisteredWithLakeFormation; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline bool IsRegisteredWithLakeFormationHasBeenSet() const { return m_isRegisteredWithLakeFormationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline void SetIsRegisteredWithLakeFormation(bool value) { m_isRegisteredWithLakeFormationHasBeenSet = true; m_isRegisteredWithLakeFormation = value; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline Table& WithIsRegisteredWithLakeFormation(bool value) { SetIsRegisteredWithLakeFormation(value); return *this;}
+
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline const TableIdentifier& GetTargetTable() const{ return m_targetTable; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(const TableIdentifier& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(TableIdentifier&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline Table& WithTargetTable(const TableIdentifier& value) { SetTargetTable(value); return *this;}
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline Table& WithTargetTable(TableIdentifier&& value) { SetTargetTable(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline Table& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline Table& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline Table& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
+
+    
+    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    
+    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
+
+    
+    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
+
+    
+    inline Table& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    
+    inline Table& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
+
+    
+    inline Table& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
 
@@ -812,6 +906,15 @@ namespace Model
 
     bool m_isRegisteredWithLakeFormation;
     bool m_isRegisteredWithLakeFormationHasBeenSet;
+
+    TableIdentifier m_targetTable;
+    bool m_targetTableHasBeenSet;
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
+
+    Aws::String m_versionId;
+    bool m_versionIdHasBeenSet;
   };
 
 } // namespace Model

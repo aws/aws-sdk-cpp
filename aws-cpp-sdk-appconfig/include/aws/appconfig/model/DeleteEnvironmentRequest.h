@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -43,83 +33,83 @@ namespace Model
 
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline DeleteEnvironmentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline DeleteEnvironmentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The application ID that includes the environment you want to delete.</p>
+     * <p>The application ID that includes the environment that you want to delete.</p>
      */
     inline DeleteEnvironmentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline DeleteEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline DeleteEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the environment you want to delete.</p>
+     * <p>The ID of the environment that you want to delete.</p>
      */
     inline DeleteEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 

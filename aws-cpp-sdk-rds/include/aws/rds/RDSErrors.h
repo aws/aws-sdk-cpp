@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rds/RDS_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class RDSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,9 +52,10 @@ enum class RDSErrors
   AUTHORIZATION_QUOTA_EXCEEDED_FAULT,
   BACKUP_POLICY_NOT_FOUND_FAULT,
   CERTIFICATE_NOT_FOUND_FAULT,
-  CUSTOM_AVAILABILITY_ZONE_ALREADY_EXISTS_FAULT,
   CUSTOM_AVAILABILITY_ZONE_NOT_FOUND_FAULT,
-  CUSTOM_AVAILABILITY_ZONE_QUOTA_EXCEEDED_FAULT,
+  CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT,
+  CUSTOM_D_B_ENGINE_VERSION_NOT_FOUND_FAULT,
+  CUSTOM_D_B_ENGINE_VERSION_QUOTA_EXCEEDED_FAULT,
   DOMAIN_NOT_FOUND_FAULT,
   D_B_CLUSTER_ALREADY_EXISTS_FAULT,
   D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT,
@@ -90,6 +82,9 @@ enum class RDSErrors
   D_B_PARAMETER_GROUP_NOT_FOUND_FAULT,
   D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT,
   D_B_PROXY_ALREADY_EXISTS_FAULT,
+  D_B_PROXY_ENDPOINT_ALREADY_EXISTS_FAULT,
+  D_B_PROXY_ENDPOINT_NOT_FOUND_FAULT,
+  D_B_PROXY_ENDPOINT_QUOTA_EXCEEDED_FAULT,
   D_B_PROXY_NOT_FOUND_FAULT,
   D_B_PROXY_QUOTA_EXCEEDED_FAULT,
   D_B_PROXY_TARGET_ALREADY_REGISTERED_FAULT,
@@ -116,12 +111,12 @@ enum class RDSErrors
   GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT,
   IAM_ROLE_MISSING_PERMISSIONS_FAULT,
   IAM_ROLE_NOT_FOUND_FAULT,
-  INSTALLATION_MEDIA_ALREADY_EXISTS_FAULT,
-  INSTALLATION_MEDIA_NOT_FOUND_FAULT,
   INSTANCE_QUOTA_EXCEEDED_FAULT,
+  INSUFFICIENT_AVAILABLE_I_PS_IN_SUBNET_FAULT,
   INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT,
   INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT,
   INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT,
+  INVALID_CUSTOM_D_B_ENGINE_VERSION_STATE_FAULT,
   INVALID_D_B_CLUSTER_CAPACITY_FAULT,
   INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT,
   INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT,
@@ -129,6 +124,7 @@ enum class RDSErrors
   INVALID_D_B_INSTANCE_AUTOMATED_BACKUP_STATE_FAULT,
   INVALID_D_B_INSTANCE_STATE_FAULT,
   INVALID_D_B_PARAMETER_GROUP_STATE_FAULT,
+  INVALID_D_B_PROXY_ENDPOINT_STATE_FAULT,
   INVALID_D_B_PROXY_STATE_FAULT,
   INVALID_D_B_SECURITY_GROUP_STATE_FAULT,
   INVALID_D_B_SNAPSHOT_STATE_FAULT,
@@ -146,6 +142,7 @@ enum class RDSErrors
   INVALID_SUBNET,
   INVALID_V_P_C_NETWORK_STATE_FAULT,
   K_M_S_KEY_NOT_ACCESSIBLE_FAULT,
+  NETWORK_TYPE_NOT_SUPPORTED,
   OPTION_GROUP_ALREADY_EXISTS_FAULT,
   OPTION_GROUP_NOT_FOUND_FAULT,
   OPTION_GROUP_QUOTA_EXCEEDED_FAULT,
@@ -169,6 +166,20 @@ enum class RDSErrors
   S_N_S_NO_AUTHORIZATION_FAULT,
   S_N_S_TOPIC_ARN_NOT_FOUND_FAULT
 };
+
+class AWS_RDS_API RDSError : public Aws::Client::AWSError<RDSErrors>
+{
+public:
+  RDSError() {}
+  RDSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RDSErrors>(rhs) {}
+  RDSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RDSErrors>(rhs) {}
+  RDSError(const Aws::Client::AWSError<RDSErrors>& rhs) : Aws::Client::AWSError<RDSErrors>(rhs) {}
+  RDSError(Aws::Client::AWSError<RDSErrors>&& rhs) : Aws::Client::AWSError<RDSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace RDSErrorMapper
 {
   AWS_RDS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

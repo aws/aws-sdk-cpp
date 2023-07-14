@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -53,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline GetUsageRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
@@ -135,83 +125,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     * <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
     inline GetUsageRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline GetUsageRequest& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline GetUsageRequest& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     * <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline GetUsageRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 

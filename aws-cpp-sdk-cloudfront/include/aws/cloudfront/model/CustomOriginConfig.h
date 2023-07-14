@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -34,9 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>A custom origin or an Amazon S3 bucket configured as a website
-   * endpoint.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CustomOriginConfig">AWS
+   * <p>A custom origin. A custom origin is any origin that is <i>not</i> an Amazon
+   * S3 bucket, with one exception. An Amazon S3 bucket that is <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured
+   * with static website hosting</a> <i>is</i> a custom origin.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CustomOriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomOriginConfig
@@ -50,193 +43,261 @@ namespace Model
 
 
     /**
-     * <p>The HTTP port the custom origin listens on.</p>
+     * <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP
+     * port that the origin listens on.</p>
      */
     inline int GetHTTPPort() const{ return m_hTTPPort; }
 
     /**
-     * <p>The HTTP port the custom origin listens on.</p>
+     * <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP
+     * port that the origin listens on.</p>
      */
     inline bool HTTPPortHasBeenSet() const { return m_hTTPPortHasBeenSet; }
 
     /**
-     * <p>The HTTP port the custom origin listens on.</p>
+     * <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP
+     * port that the origin listens on.</p>
      */
     inline void SetHTTPPort(int value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
 
     /**
-     * <p>The HTTP port the custom origin listens on.</p>
+     * <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP
+     * port that the origin listens on.</p>
      */
     inline CustomOriginConfig& WithHTTPPort(int value) { SetHTTPPort(value); return *this;}
 
 
     /**
-     * <p>The HTTPS port the custom origin listens on.</p>
+     * <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the
+     * HTTPS port that the origin listens on.</p>
      */
     inline int GetHTTPSPort() const{ return m_hTTPSPort; }
 
     /**
-     * <p>The HTTPS port the custom origin listens on.</p>
+     * <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the
+     * HTTPS port that the origin listens on.</p>
      */
     inline bool HTTPSPortHasBeenSet() const { return m_hTTPSPortHasBeenSet; }
 
     /**
-     * <p>The HTTPS port the custom origin listens on.</p>
+     * <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the
+     * HTTPS port that the origin listens on.</p>
      */
     inline void SetHTTPSPort(int value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
 
     /**
-     * <p>The HTTPS port the custom origin listens on.</p>
+     * <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the
+     * HTTPS port that the origin listens on.</p>
      */
     inline CustomOriginConfig& WithHTTPSPort(int value) { SetHTTPSPort(value); return *this;}
 
 
     /**
-     * <p>The origin protocol policy to apply to your origin.</p>
+     * <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the
+     * origin. Valid values are:</p> <ul> <li> <p> <code>http-only</code> – CloudFront
+     * always uses HTTP to connect to the origin.</p> </li> <li> <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same
+     * protocol that the viewer used to connect to CloudFront.</p> </li> <li> <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+     * origin.</p> </li> </ul>
      */
     inline const OriginProtocolPolicy& GetOriginProtocolPolicy() const{ return m_originProtocolPolicy; }
 
     /**
-     * <p>The origin protocol policy to apply to your origin.</p>
+     * <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the
+     * origin. Valid values are:</p> <ul> <li> <p> <code>http-only</code> – CloudFront
+     * always uses HTTP to connect to the origin.</p> </li> <li> <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same
+     * protocol that the viewer used to connect to CloudFront.</p> </li> <li> <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+     * origin.</p> </li> </ul>
      */
     inline bool OriginProtocolPolicyHasBeenSet() const { return m_originProtocolPolicyHasBeenSet; }
 
     /**
-     * <p>The origin protocol policy to apply to your origin.</p>
+     * <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the
+     * origin. Valid values are:</p> <ul> <li> <p> <code>http-only</code> – CloudFront
+     * always uses HTTP to connect to the origin.</p> </li> <li> <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same
+     * protocol that the viewer used to connect to CloudFront.</p> </li> <li> <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+     * origin.</p> </li> </ul>
      */
     inline void SetOriginProtocolPolicy(const OriginProtocolPolicy& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
 
     /**
-     * <p>The origin protocol policy to apply to your origin.</p>
+     * <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the
+     * origin. Valid values are:</p> <ul> <li> <p> <code>http-only</code> – CloudFront
+     * always uses HTTP to connect to the origin.</p> </li> <li> <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same
+     * protocol that the viewer used to connect to CloudFront.</p> </li> <li> <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+     * origin.</p> </li> </ul>
      */
     inline void SetOriginProtocolPolicy(OriginProtocolPolicy&& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = std::move(value); }
 
     /**
-     * <p>The origin protocol policy to apply to your origin.</p>
+     * <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the
+     * origin. Valid values are:</p> <ul> <li> <p> <code>http-only</code> – CloudFront
+     * always uses HTTP to connect to the origin.</p> </li> <li> <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same
+     * protocol that the viewer used to connect to CloudFront.</p> </li> <li> <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+     * origin.</p> </li> </ul>
      */
     inline CustomOriginConfig& WithOriginProtocolPolicy(const OriginProtocolPolicy& value) { SetOriginProtocolPolicy(value); return *this;}
 
     /**
-     * <p>The origin protocol policy to apply to your origin.</p>
+     * <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the
+     * origin. Valid values are:</p> <ul> <li> <p> <code>http-only</code> – CloudFront
+     * always uses HTTP to connect to the origin.</p> </li> <li> <p>
+     * <code>match-viewer</code> – CloudFront connects to the origin using the same
+     * protocol that the viewer used to connect to CloudFront.</p> </li> <li> <p>
+     * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+     * origin.</p> </li> </ul>
      */
     inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
-     * your origin over HTTPS.</p>
+     * <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting
+     * to your origin over HTTPS. Valid values include <code>SSLv3</code>,
+     * <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+     * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const OriginSslProtocols& GetOriginSslProtocols() const{ return m_originSslProtocols; }
 
     /**
-     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
-     * your origin over HTTPS.</p>
+     * <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting
+     * to your origin over HTTPS. Valid values include <code>SSLv3</code>,
+     * <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+     * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool OriginSslProtocolsHasBeenSet() const { return m_originSslProtocolsHasBeenSet; }
 
     /**
-     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
-     * your origin over HTTPS.</p>
+     * <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting
+     * to your origin over HTTPS. Valid values include <code>SSLv3</code>,
+     * <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+     * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginSslProtocols(const OriginSslProtocols& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = value; }
 
     /**
-     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
-     * your origin over HTTPS.</p>
+     * <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting
+     * to your origin over HTTPS. Valid values include <code>SSLv3</code>,
+     * <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+     * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginSslProtocols(OriginSslProtocols&& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = std::move(value); }
 
     /**
-     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
-     * your origin over HTTPS.</p>
+     * <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting
+     * to your origin over HTTPS. Valid values include <code>SSLv3</code>,
+     * <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+     * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline CustomOriginConfig& WithOriginSslProtocols(const OriginSslProtocols& value) { SetOriginSslProtocols(value); return *this;}
 
     /**
-     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
-     * your origin over HTTPS.</p>
+     * <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting
+     * to your origin over HTTPS. Valid values include <code>SSLv3</code>,
+     * <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
+     * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(std::move(value)); return *this;}
 
 
     /**
-     * <p>You can create a custom origin read timeout. All timeout units are in
-     * seconds. The default origin read timeout is 30 seconds, but you can configure
-     * custom timeout lengths using the CloudFront API. The minimum timeout length is 4
-     * seconds; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront waits for a response from the
+     * origin. This is also known as the <i>origin response timeout</i>. The minimum
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline int GetOriginReadTimeout() const{ return m_originReadTimeout; }
 
     /**
-     * <p>You can create a custom origin read timeout. All timeout units are in
-     * seconds. The default origin read timeout is 30 seconds, but you can configure
-     * custom timeout lengths using the CloudFront API. The minimum timeout length is 4
-     * seconds; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront waits for a response from the
+     * origin. This is also known as the <i>origin response timeout</i>. The minimum
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
 
     /**
-     * <p>You can create a custom origin read timeout. All timeout units are in
-     * seconds. The default origin read timeout is 30 seconds, but you can configure
-     * custom timeout lengths using the CloudFront API. The minimum timeout length is 4
-     * seconds; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront waits for a response from the
+     * origin. This is also known as the <i>origin response timeout</i>. The minimum
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginReadTimeout(int value) { m_originReadTimeoutHasBeenSet = true; m_originReadTimeout = value; }
 
     /**
-     * <p>You can create a custom origin read timeout. All timeout units are in
-     * seconds. The default origin read timeout is 30 seconds, but you can configure
-     * custom timeout lengths using the CloudFront API. The minimum timeout length is 4
-     * seconds; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront waits for a response from the
+     * origin. This is also known as the <i>origin response timeout</i>. The minimum
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline CustomOriginConfig& WithOriginReadTimeout(int value) { SetOriginReadTimeout(value); return *this;}
 
 
     /**
-     * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.
-     * The default keep-alive timeout is 5 seconds, but you can configure custom
-     * timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront persists its connection to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
+     * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline int GetOriginKeepaliveTimeout() const{ return m_originKeepaliveTimeout; }
 
     /**
-     * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.
-     * The default keep-alive timeout is 5 seconds, but you can configure custom
-     * timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront persists its connection to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
+     * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool OriginKeepaliveTimeoutHasBeenSet() const { return m_originKeepaliveTimeoutHasBeenSet; }
 
     /**
-     * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.
-     * The default keep-alive timeout is 5 seconds, but you can configure custom
-     * timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront persists its connection to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
+     * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetOriginKeepaliveTimeout(int value) { m_originKeepaliveTimeoutHasBeenSet = true; m_originKeepaliveTimeout = value; }
 
     /**
-     * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.
-     * The default keep-alive timeout is 5 seconds, but you can configure custom
-     * timeout lengths using the CloudFront API. The minimum timeout length is 1
-     * second; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
-     * time limit, contact the <a
-     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     * <p>Specifies how long, in seconds, CloudFront persists its connection to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
+     * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline CustomOriginConfig& WithOriginKeepaliveTimeout(int value) { SetOriginKeepaliveTimeout(value); return *this;}
 

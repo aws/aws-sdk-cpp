@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -44,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceArns() const{ return m_serviceArns; }
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline void SetServiceArns(const Aws::Vector<Aws::String>& value) { m_serviceArns = value; }
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline void SetServiceArns(Aws::Vector<Aws::String>&& value) { m_serviceArns = std::move(value); }
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline ListServicesResult& WithServiceArns(const Aws::Vector<Aws::String>& value) { SetServiceArns(value); return *this;}
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline ListServicesResult& WithServiceArns(Aws::Vector<Aws::String>&& value) { SetServiceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline ListServicesResult& AddServiceArns(const Aws::String& value) { m_serviceArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline ListServicesResult& AddServiceArns(Aws::String&& value) { m_serviceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of full ARN entries for each service associated with the specified
-     * cluster.</p>
+     * <p>The list of full ARN entries for each service that's associated with the
+     * specified cluster.</p>
      */
     inline ListServicesResult& AddServiceArns(const char* value) { m_serviceArns.push_back(value); return *this; }
 

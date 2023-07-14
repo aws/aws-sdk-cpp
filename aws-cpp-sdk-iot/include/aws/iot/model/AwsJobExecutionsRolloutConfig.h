@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/AwsJobExponentialRolloutRate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,10 +57,50 @@ namespace Model
      */
     inline AwsJobExecutionsRolloutConfig& WithMaximumPerMinute(int value) { SetMaximumPerMinute(value); return *this;}
 
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate increase for a job rollout.</p>
+     */
+    inline const AwsJobExponentialRolloutRate& GetExponentialRate() const{ return m_exponentialRate; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate increase for a job rollout.</p>
+     */
+    inline bool ExponentialRateHasBeenSet() const { return m_exponentialRateHasBeenSet; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate increase for a job rollout.</p>
+     */
+    inline void SetExponentialRate(const AwsJobExponentialRolloutRate& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = value; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate increase for a job rollout.</p>
+     */
+    inline void SetExponentialRate(AwsJobExponentialRolloutRate&& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = std::move(value); }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate increase for a job rollout.</p>
+     */
+    inline AwsJobExecutionsRolloutConfig& WithExponentialRate(const AwsJobExponentialRolloutRate& value) { SetExponentialRate(value); return *this;}
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate increase for a job rollout.</p>
+     */
+    inline AwsJobExecutionsRolloutConfig& WithExponentialRate(AwsJobExponentialRolloutRate&& value) { SetExponentialRate(std::move(value)); return *this;}
+
   private:
 
     int m_maximumPerMinute;
     bool m_maximumPerMinuteHasBeenSet;
+
+    AwsJobExponentialRolloutRate m_exponentialRate;
+    bool m_exponentialRateHasBeenSet;
   };
 
 } // namespace Model

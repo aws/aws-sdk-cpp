@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -49,37 +39,79 @@ namespace Model
 
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline const Aws::String& GetDefaultClientId() const{ return m_defaultClientId; }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline void SetDefaultClientId(const Aws::String& value) { m_defaultClientId = value; }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline void SetDefaultClientId(Aws::String&& value) { m_defaultClientId = std::move(value); }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline void SetDefaultClientId(const char* value) { m_defaultClientId.assign(value); }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline DescribeThingResult& WithDefaultClientId(const Aws::String& value) { SetDefaultClientId(value); return *this;}
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline DescribeThingResult& WithDefaultClientId(Aws::String&& value) { SetDefaultClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline DescribeThingResult& WithDefaultClientId(const char* value) { SetDefaultClientId(value); return *this;}
 
@@ -290,26 +322,26 @@ namespace Model
 
 
     /**
-     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * <p>The current version of the thing record in the registry.</p>  <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
      * version information in the <code>expectedVersion</code> parameter of the
-     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
     inline long long GetVersion() const{ return m_version; }
 
     /**
-     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * <p>The current version of the thing record in the registry.</p>  <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
      * version information in the <code>expectedVersion</code> parameter of the
-     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
     inline void SetVersion(long long value) { m_version = value; }
 
     /**
-     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * <p>The current version of the thing record in the registry.</p>  <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
      * version information in the <code>expectedVersion</code> parameter of the
-     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
     inline DescribeThingResult& WithVersion(long long value) { SetVersion(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -154,11 +144,11 @@ namespace Model
 
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -167,11 +157,11 @@ namespace Model
     inline const Aws::String& GetResolution() const{ return m_resolution; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -180,11 +170,11 @@ namespace Model
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -193,11 +183,11 @@ namespace Model
     inline void SetResolution(const Aws::String& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -206,11 +196,11 @@ namespace Model
     inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -219,11 +209,11 @@ namespace Model
     inline void SetResolution(const char* value) { m_resolutionHasBeenSet = true; m_resolution.assign(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -232,11 +222,11 @@ namespace Model
     inline Thumbnails& WithResolution(const Aws::String& value) { SetResolution(value); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -245,11 +235,11 @@ namespace Model
     inline Thumbnails& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The width
+     * are mutually exclusive. Do not use them together.</p>  <p>The width
      * and height of thumbnail files in pixels. Specify a value in the format <code>
      * <i>width</i> </code> x <code> <i>height</i> </code> where both values are even
      * integers. The values cannot exceed the width and height that you specified in
@@ -259,11 +249,11 @@ namespace Model
 
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -272,11 +262,11 @@ namespace Model
     inline const Aws::String& GetAspectRatio() const{ return m_aspectRatio; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -285,11 +275,11 @@ namespace Model
     inline bool AspectRatioHasBeenSet() const { return m_aspectRatioHasBeenSet; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -298,11 +288,11 @@ namespace Model
     inline void SetAspectRatio(const Aws::String& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = value; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -311,11 +301,11 @@ namespace Model
     inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::move(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -324,11 +314,11 @@ namespace Model
     inline void SetAspectRatio(const char* value) { m_aspectRatioHasBeenSet = true; m_aspectRatio.assign(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -337,11 +327,11 @@ namespace Model
     inline Thumbnails& WithAspectRatio(const Aws::String& value) { SetAspectRatio(value); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -350,11 +340,11 @@ namespace Model
     inline Thumbnails& WithAspectRatio(Aws::String&& value) { SetAspectRatio(std::move(value)); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of thumbnails, we
+     *  <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
      * <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of
      * <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings
-     * are mutually exclusive. Do not use them together.</p> </important> <p>The aspect
+     * are mutually exclusive. Do not use them together.</p>  <p>The aspect
      * ratio of thumbnails. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the

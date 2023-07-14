@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -271,99 +261,131 @@ namespace Model
 
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaFunctionDetails& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaFunctionDetails& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time that the function was last updated, in ISO-8601 format
-     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+     * <p>Indicates when the function was last updated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsLambdaFunctionDetails& WithLastModified(const char* value) { SetLastModified(value); return *this;}
 
@@ -451,22 +473,22 @@ namespace Model
 
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline AwsLambdaFunctionDetails& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -620,32 +642,32 @@ namespace Model
 
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline const AwsLambdaFunctionTracingConfig& GetTracingConfig() const{ return m_tracingConfig; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline bool TracingConfigHasBeenSet() const { return m_tracingConfigHasBeenSet; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(const AwsLambdaFunctionTracingConfig& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(AwsLambdaFunctionTracingConfig&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline AwsLambdaFunctionDetails& WithTracingConfig(const AwsLambdaFunctionTracingConfig& value) { SetTracingConfig(value); return *this;}
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline AwsLambdaFunctionDetails& WithTracingConfig(AwsLambdaFunctionTracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
 

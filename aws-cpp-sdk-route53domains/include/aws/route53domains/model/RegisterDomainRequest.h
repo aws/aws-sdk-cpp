@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -50,58 +40,170 @@ namespace Model
 
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline RegisterDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline RegisterDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name that you want to register.</p> <p>Constraints: The domain
-     * name can contain only the letters a through z, the numbers 0 through 9, and
-     * hyphen (-). Internationalized Domain Names are not supported.</p>
+     * <p>The domain name that you want to register. The top-level domain (TLD), such
+     * as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>The domain name can contain only the following
+     * characters:</p> <ul> <li> <p>Letters a through z. Domain names are not case
+     * sensitive.</p> </li> <li> <p>Numbers 0 through 9.</p> </li> <li> <p>Hyphen (-).
+     * You can't specify a hyphen at the beginning or end of a label. </p> </li> <li>
+     * <p>Period (.) to separate the labels in the name, such as the <code>.</code> in
+     * <code>example.com</code>.</p> </li> </ul> <p>Internationalized domain names are
+     * not supported for some top-level domains. To determine whether the TLD that you
+     * want to use supports internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
+     * Internationalized Domain Names</a>. </p>
      */
     inline RegisterDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -151,7 +253,7 @@ namespace Model
      * <p>The number of years that you want to register the domain for. Domains are
      * registered for a minimum of one year. The maximum period depends on the
      * top-level domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
@@ -161,7 +263,7 @@ namespace Model
      * <p>The number of years that you want to register the domain for. Domains are
      * registered for a minimum of one year. The maximum period depends on the
      * top-level domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
@@ -171,7 +273,7 @@ namespace Model
      * <p>The number of years that you want to register the domain for. Domains are
      * registered for a minimum of one year. The maximum period depends on the
      * top-level domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
@@ -181,7 +283,7 @@ namespace Model
      * <p>The number of years that you want to register the domain for. Domains are
      * registered for a minimum of one year. The maximum period depends on the
      * top-level domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
@@ -218,94 +320,130 @@ namespace Model
 
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline const ContactDetail& GetAdminContact() const{ return m_adminContact; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline bool AdminContactHasBeenSet() const { return m_adminContactHasBeenSet; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline void SetAdminContact(const ContactDetail& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::move(value); }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline RegisterDomainRequest& WithAdminContact(const ContactDetail& value) { SetAdminContact(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline RegisterDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline const ContactDetail& GetRegistrantContact() const{ return m_registrantContact; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline bool RegistrantContactHasBeenSet() const { return m_registrantContactHasBeenSet; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline void SetRegistrantContact(const ContactDetail& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::move(value); }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline RegisterDomainRequest& WithRegistrantContact(const ContactDetail& value) { SetRegistrantContact(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline RegisterDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
 
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline const ContactDetail& GetTechContact() const{ return m_techContact; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline bool TechContactHasBeenSet() const { return m_techContactHasBeenSet; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline void SetTechContact(const ContactDetail& value) { m_techContactHasBeenSet = true; m_techContact = value; }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = std::move(value); }
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline RegisterDomainRequest& WithTechContact(const ContactDetail& value) { SetTechContact(value); return *this;}
 
     /**
-     * <p>Provides detailed contact information.</p>
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
     inline RegisterDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
@@ -316,7 +454,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline bool GetPrivacyProtectAdminContact() const{ return m_privacyProtectAdminContact; }
 
@@ -326,7 +466,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline bool PrivacyProtectAdminContactHasBeenSet() const { return m_privacyProtectAdminContactHasBeenSet; }
 
@@ -336,7 +478,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline void SetPrivacyProtectAdminContact(bool value) { m_privacyProtectAdminContactHasBeenSet = true; m_privacyProtectAdminContact = value; }
 
@@ -346,7 +490,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectAdminContact(bool value) { SetPrivacyProtectAdminContact(value); return *this;}
 
@@ -357,8 +503,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p> <p>Default: <code>true</code>
-     * </p>
+     * the registrant contact (the domain owner).</p>  <p>You must specify the
+     * same privacy setting for the administrative, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectRegistrantContact() const{ return m_privacyProtectRegistrantContact; }
 
@@ -368,8 +515,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p> <p>Default: <code>true</code>
-     * </p>
+     * the registrant contact (the domain owner).</p>  <p>You must specify the
+     * same privacy setting for the administrative, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectRegistrantContactHasBeenSet() const { return m_privacyProtectRegistrantContactHasBeenSet; }
 
@@ -379,8 +527,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p> <p>Default: <code>true</code>
-     * </p>
+     * the registrant contact (the domain owner).</p>  <p>You must specify the
+     * same privacy setting for the administrative, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectRegistrantContact(bool value) { m_privacyProtectRegistrantContactHasBeenSet = true; m_privacyProtectRegistrantContact = value; }
 
@@ -390,8 +539,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p> <p>Default: <code>true</code>
-     * </p>
+     * the registrant contact (the domain owner).</p>  <p>You must specify the
+     * same privacy setting for the administrative, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectRegistrantContact(bool value) { SetPrivacyProtectRegistrantContact(value); return *this;}
 
@@ -402,7 +552,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectTechContact() const{ return m_privacyProtectTechContact; }
 
@@ -412,7 +564,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectTechContactHasBeenSet() const { return m_privacyProtectTechContactHasBeenSet; }
 
@@ -422,7 +576,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectTechContact(bool value) { m_privacyProtectTechContactHasBeenSet = true; m_privacyProtectTechContact = value; }
 
@@ -432,7 +588,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectTechContact(bool value) { SetPrivacyProtectTechContact(value); return *this;}
 

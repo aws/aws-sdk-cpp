@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/Input.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,6 +25,8 @@ Input::Input() :
     m_idHasBeenSet(false),
     m_inputClass(InputClass::NOT_SET),
     m_inputClassHasBeenSet(false),
+    m_inputDevicesHasBeenSet(false),
+    m_inputPartnerIdsHasBeenSet(false),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_inputSourceTypeHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -57,6 +49,8 @@ Input::Input(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_inputClass(InputClass::NOT_SET),
     m_inputClassHasBeenSet(false),
+    m_inputDevicesHasBeenSet(false),
+    m_inputPartnerIdsHasBeenSet(false),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_inputSourceTypeHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -114,6 +108,26 @@ Input& Input::operator =(JsonView jsonValue)
     m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
 
     m_inputClassHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputDevices"))
+  {
+    Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
+    for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+    {
+      m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
+    }
+    m_inputDevicesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputPartnerIds"))
+  {
+    Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
+    for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
+    {
+      m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
+    }
+    m_inputPartnerIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputSourceType"))
@@ -235,6 +249,28 @@ JsonValue Input::Jsonize() const
   if(m_inputClassHasBeenSet)
   {
    payload.WithString("inputClass", InputClassMapper::GetNameForInputClass(m_inputClass));
+  }
+
+  if(m_inputDevicesHasBeenSet)
+  {
+   Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
+   for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+   {
+     inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
+   }
+   payload.WithArray("inputDevices", std::move(inputDevicesJsonList));
+
+  }
+
+  if(m_inputPartnerIdsHasBeenSet)
+  {
+   Array<JsonValue> inputPartnerIdsJsonList(m_inputPartnerIds.size());
+   for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
+   {
+     inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString(m_inputPartnerIds[inputPartnerIdsIndex]);
+   }
+   payload.WithArray("inputPartnerIds", std::move(inputPartnerIdsJsonList));
+
   }
 
   if(m_inputSourceTypeHasBeenSet)

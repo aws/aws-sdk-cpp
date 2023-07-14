@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/AssignPrivateIpAddressesRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,7 +16,10 @@ AssignPrivateIpAddressesRequest::AssignPrivateIpAddressesRequest() :
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false)
+    m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false),
+    m_ipv4PrefixCount(0),
+    m_ipv4PrefixCountHasBeenSet(false)
 {
 }
 
@@ -58,6 +51,22 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
   if(m_secondaryPrivateIpAddressCountHasBeenSet)
   {
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
+  }
+
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+    unsigned ipv4PrefixesCount = 1;
+    for(auto& item : m_ipv4Prefixes)
+    {
+      ss << "Ipv4Prefix." << ipv4PrefixesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      ipv4PrefixesCount++;
+    }
+  }
+
+  if(m_ipv4PrefixCountHasBeenSet)
+  {
+    ss << "Ipv4PrefixCount=" << m_ipv4PrefixCount << "&";
   }
 
   ss << "Version=2016-11-15";

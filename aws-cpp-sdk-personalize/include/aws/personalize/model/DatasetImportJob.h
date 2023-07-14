@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
@@ -37,10 +27,11 @@ namespace Model
 
   /**
    * <p>Describes a job that imports training data from a data source (Amazon S3
-   * bucket) to an Amazon Personalize dataset. For more information, see
-   * <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the
-   * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-   * ACTIVE -or- CREATE FAILED</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * bucket) to an Amazon Personalize dataset. For more information, see <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.</p>
+   * <p>A dataset import job can be in one of the following states:</p> <ul> <li>
+   * <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetImportJob">AWS
    * API Reference</a></p>
    */
@@ -216,50 +207,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline DatasetImportJob& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline DatasetImportJob& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline DatasetImportJob& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

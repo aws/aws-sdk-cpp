@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -156,105 +146,121 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListLicenseConfigurationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListLicenseConfigurationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListLicenseConfigurationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters to scope the results. The following filters and logical operators are
-     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
-     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
-     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
-     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension
+     * for which licenses are counted. Possible values are <code>vCPU</code> |
+     * <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical
      * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
-     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
-     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
-     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard
+     * license enforcement is used. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>usagelimitExceeded</code> - A
+     * Boolean value that indicates whether the available licenses have been exceeded.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+     * </ul>
      */
     inline ListLicenseConfigurationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

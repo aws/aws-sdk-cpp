@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
@@ -84,10 +74,82 @@ namespace Model
      */
     inline DeleteEventRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline DeleteEventRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline DeleteEventRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline DeleteEventRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline bool GetDeleteAuditHistory() const{ return m_deleteAuditHistory; }
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline bool DeleteAuditHistoryHasBeenSet() const { return m_deleteAuditHistoryHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline void SetDeleteAuditHistory(bool value) { m_deleteAuditHistoryHasBeenSet = true; m_deleteAuditHistory = value; }
+
+    /**
+     * <p>Specifies whether or not to delete any predictions associated with the
+     * event.</p>
+     */
+    inline DeleteEventRequest& WithDeleteAuditHistory(bool value) { SetDeleteAuditHistory(value); return *this;}
+
   private:
 
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
+
+    bool m_deleteAuditHistory;
+    bool m_deleteAuditHistoryHasBeenSet;
   };
 
 } // namespace Model

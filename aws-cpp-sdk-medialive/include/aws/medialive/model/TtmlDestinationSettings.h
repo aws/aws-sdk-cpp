@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -48,44 +38,38 @@ namespace Model
 
 
     /**
-     * When set to passthrough, passes through style and position information from a
-     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-     * output.
+     * This field is not currently supported and will not affect the output styling.
+     * Leave the default value.
      */
     inline const TtmlDestinationStyleControl& GetStyleControl() const{ return m_styleControl; }
 
     /**
-     * When set to passthrough, passes through style and position information from a
-     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-     * output.
+     * This field is not currently supported and will not affect the output styling.
+     * Leave the default value.
      */
     inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
 
     /**
-     * When set to passthrough, passes through style and position information from a
-     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-     * output.
+     * This field is not currently supported and will not affect the output styling.
+     * Leave the default value.
      */
     inline void SetStyleControl(const TtmlDestinationStyleControl& value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
 
     /**
-     * When set to passthrough, passes through style and position information from a
-     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-     * output.
+     * This field is not currently supported and will not affect the output styling.
+     * Leave the default value.
      */
     inline void SetStyleControl(TtmlDestinationStyleControl&& value) { m_styleControlHasBeenSet = true; m_styleControl = std::move(value); }
 
     /**
-     * When set to passthrough, passes through style and position information from a
-     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-     * output.
+     * This field is not currently supported and will not affect the output styling.
+     * Leave the default value.
      */
     inline TtmlDestinationSettings& WithStyleControl(const TtmlDestinationStyleControl& value) { SetStyleControl(value); return *this;}
 
     /**
-     * When set to passthrough, passes through style and position information from a
-     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
-     * output.
+     * This field is not currently supported and will not affect the output styling.
+     * Leave the default value.
      */
     inline TtmlDestinationSettings& WithStyleControl(TtmlDestinationStyleControl&& value) { SetStyleControl(std::move(value)); return *this;}
 

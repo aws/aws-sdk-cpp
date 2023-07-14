@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -35,11 +25,11 @@ namespace Model
 
   /**
    * <p>The metadata that you apply to a resource to help you categorize and organize
-   * them. Each tag consists of a key and an optional value, both of which you
-   * define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
-   * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
-   * each tag key must be unique, and each tag key can have only one value.</p> </li>
-   * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
+   * them. Each tag consists of a key and an optional value. You define them.</p>
+   * <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum
+   * number of tags per resource - 50</p> </li> <li> <p>For each resource, each tag
+   * key must be unique, and each tag key can have only one value.</p> </li> <li>
+   * <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
    * <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If
    * your tagging schema is used across multiple services and resources, remember
    * that other services may have restrictions on allowed characters. Generally
@@ -47,10 +37,10 @@ namespace Model
    * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
    * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
    * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-   * either keys or values as it is reserved for AWS use. You cannot edit or delete
-   * tag keys or values with this prefix. Tags with this prefix do not count against
-   * your tags per resource limit.</p> </li> </ul><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Tag">AWS API
+   * either keys or values as it is reserved for Amazon Web Services use. You cannot
+   * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+   * count against your tags per resource limit.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Tag">AWS API
    * Reference</a></p>
    */
   class AWS_ECS_API Tag

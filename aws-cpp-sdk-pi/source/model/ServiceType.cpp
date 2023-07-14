@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pi/model/ServiceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int RDS_HASH = HashingUtils::HashString("RDS");
+        static const int DOCDB_HASH = HashingUtils::HashString("DOCDB");
 
 
         ServiceType GetServiceTypeForName(const Aws::String& name)
@@ -39,6 +30,10 @@ namespace Aws
           if (hashCode == RDS_HASH)
           {
             return ServiceType::RDS;
+          }
+          else if (hashCode == DOCDB_HASH)
+          {
+            return ServiceType::DOCDB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +51,8 @@ namespace Aws
           {
           case ServiceType::RDS:
             return "RDS";
+          case ServiceType::DOCDB:
+            return "DOCDB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

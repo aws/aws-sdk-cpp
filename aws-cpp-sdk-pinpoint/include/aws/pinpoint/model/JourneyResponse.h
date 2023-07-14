@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/pinpoint/model/JourneySchedule.h>
 #include <aws/pinpoint/model/StartCondition.h>
 #include <aws/pinpoint/model/State.h>
+#include <aws/pinpoint/model/JourneyChannelSettings.h>
 #include <aws/pinpoint/model/Activity.h>
 #include <utility>
 
@@ -834,6 +825,83 @@ namespace Model
      */
     inline JourneyResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline bool GetWaitForQuietTime() const{ return m_waitForQuietTime; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline bool WaitForQuietTimeHasBeenSet() const { return m_waitForQuietTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline void SetWaitForQuietTime(bool value) { m_waitForQuietTimeHasBeenSet = true; m_waitForQuietTime = value; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline JourneyResponse& WithWaitForQuietTime(bool value) { SetWaitForQuietTime(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline bool GetRefreshOnSegmentUpdate() const{ return m_refreshOnSegmentUpdate; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline bool RefreshOnSegmentUpdateHasBeenSet() const { return m_refreshOnSegmentUpdateHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline void SetRefreshOnSegmentUpdate(bool value) { m_refreshOnSegmentUpdateHasBeenSet = true; m_refreshOnSegmentUpdate = value; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline JourneyResponse& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
+
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline const JourneyChannelSettings& GetJourneyChannelSettings() const{ return m_journeyChannelSettings; }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline bool JourneyChannelSettingsHasBeenSet() const { return m_journeyChannelSettingsHasBeenSet; }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline void SetJourneyChannelSettings(const JourneyChannelSettings& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = value; }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline void SetJourneyChannelSettings(JourneyChannelSettings&& value) { m_journeyChannelSettingsHasBeenSet = true; m_journeyChannelSettings = std::move(value); }
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline JourneyResponse& WithJourneyChannelSettings(const JourneyChannelSettings& value) { SetJourneyChannelSettings(value); return *this;}
+
+    /**
+     * <p>The channel-specific configurations for the journey.</p>
+     */
+    inline JourneyResponse& WithJourneyChannelSettings(JourneyChannelSettings&& value) { SetJourneyChannelSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Activity> m_activities;
@@ -880,6 +948,15 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_waitForQuietTime;
+    bool m_waitForQuietTimeHasBeenSet;
+
+    bool m_refreshOnSegmentUpdate;
+    bool m_refreshOnSegmentUpdateHasBeenSet;
+
+    JourneyChannelSettings m_journeyChannelSettings;
+    bool m_journeyChannelSettingsHasBeenSet;
   };
 
 } // namespace Model

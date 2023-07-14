@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
@@ -98,105 +88,122 @@ namespace Model
 
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsToAdd() const{ return m_tagsToAdd; }
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline void SetTagsToAdd(const Aws::Vector<Tag>& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = value; }
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline void SetTagsToAdd(Aws::Vector<Tag>&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::move(value); }
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& WithTagsToAdd(const Aws::Vector<Tag>& value) { SetTagsToAdd(value); return *this;}
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& WithTagsToAdd(Aws::Vector<Tag>&& value) { SetTagsToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& AddTagsToAdd(const Tag& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags to add or update.</p> <p>If a key of an existing tag is added,
-     * the tag's value is updated.</p>
+     * <p>A list of tags to add or update. If a key of an existing tag is added, the
+     * tag's value is updated.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& AddTagsToAdd(Tag&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToRemove() const{ return m_tagsToRemove; }
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline bool TagsToRemoveHasBeenSet() const { return m_tagsToRemoveHasBeenSet; }
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline void SetTagsToRemove(const Aws::Vector<Aws::String>& value) { m_tagsToRemoveHasBeenSet = true; m_tagsToRemove = value; }
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline void SetTagsToRemove(Aws::Vector<Aws::String>&& value) { m_tagsToRemoveHasBeenSet = true; m_tagsToRemove = std::move(value); }
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& WithTagsToRemove(const Aws::Vector<Aws::String>& value) { SetTagsToRemove(value); return *this;}
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& WithTagsToRemove(Aws::Vector<Aws::String>&& value) { SetTagsToRemove(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& AddTagsToRemove(const Aws::String& value) { m_tagsToRemoveHasBeenSet = true; m_tagsToRemove.push_back(value); return *this; }
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& AddTagsToRemove(Aws::String&& value) { m_tagsToRemoveHasBeenSet = true; m_tagsToRemove.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is
-     * silently ignored.</p>
+     * <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently
+     * ignored.</p> <p>Specify at least one of these parameters:
+     * <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
      */
     inline UpdateTagsForResourceRequest& AddTagsToRemove(const char* value) { m_tagsToRemoveHasBeenSet = true; m_tagsToRemove.push_back(value); return *this; }
 

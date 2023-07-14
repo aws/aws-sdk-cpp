@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -45,42 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline GetMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline GetMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the medical transcription job.</p>
+     * <p>The name of the medical transcription job you want information about. Job
+     * names are case sensitive.</p>
      */
     inline GetMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 

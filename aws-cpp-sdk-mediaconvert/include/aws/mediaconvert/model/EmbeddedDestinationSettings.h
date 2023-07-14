@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -32,8 +22,13 @@ namespace Model
 {
 
   /**
-   * Settings specific to embedded/ancillary caption outputs, including 608/708
-   * Channel destination number.<p><h3>See Also:</h3>   <a
+   * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or
+   * ancillary) captions. Set up embedded captions in the same output as your video.
+   * For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
+   * When you work directly in your JSON job specification, include this object and
+   * any required children when you set destinationType to EMBEDDED,
+   * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/EmbeddedDestinationSettings">AWS
    * API Reference</a></p>
    */

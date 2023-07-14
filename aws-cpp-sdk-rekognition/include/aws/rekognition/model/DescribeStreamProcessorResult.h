@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -21,6 +11,10 @@
 #include <aws/rekognition/model/StreamProcessorInput.h>
 #include <aws/rekognition/model/StreamProcessorOutput.h>
 #include <aws/rekognition/model/StreamProcessorSettings.h>
+#include <aws/rekognition/model/StreamProcessorNotificationChannel.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/StreamProcessorDataSharingPreference.h>
+#include <aws/rekognition/model/RegionOfInterest.h>
 #include <utility>
 
 namespace Aws
@@ -337,39 +331,189 @@ namespace Model
 
 
     /**
-     * <p>Face recognition input parameters that are being used by the stream
-     * processor. Includes the collection to use for face recognition and the face
-     * attributes to detect.</p>
+     * <p>Input parameters used in a streaming video analyzed by a stream processor.
+     * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
+     * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
     inline const StreamProcessorSettings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Face recognition input parameters that are being used by the stream
-     * processor. Includes the collection to use for face recognition and the face
-     * attributes to detect.</p>
+     * <p>Input parameters used in a streaming video analyzed by a stream processor.
+     * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
+     * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
     inline void SetSettings(const StreamProcessorSettings& value) { m_settings = value; }
 
     /**
-     * <p>Face recognition input parameters that are being used by the stream
-     * processor. Includes the collection to use for face recognition and the face
-     * attributes to detect.</p>
+     * <p>Input parameters used in a streaming video analyzed by a stream processor.
+     * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
+     * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
     inline void SetSettings(StreamProcessorSettings&& value) { m_settings = std::move(value); }
 
     /**
-     * <p>Face recognition input parameters that are being used by the stream
-     * processor. Includes the collection to use for face recognition and the face
-     * attributes to detect.</p>
+     * <p>Input parameters used in a streaming video analyzed by a stream processor.
+     * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
+     * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
     inline DescribeStreamProcessorResult& WithSettings(const StreamProcessorSettings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Face recognition input parameters that are being used by the stream
-     * processor. Includes the collection to use for face recognition and the face
-     * attributes to detect.</p>
+     * <p>Input parameters used in a streaming video analyzed by a stream processor.
+     * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
+     * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
     inline DescribeStreamProcessorResult& WithSettings(StreamProcessorSettings&& value) { SetSettings(std::move(value)); return *this;}
+
+
+    
+    inline const StreamProcessorNotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+
+    
+    inline void SetNotificationChannel(const StreamProcessorNotificationChannel& value) { m_notificationChannel = value; }
+
+    
+    inline void SetNotificationChannel(StreamProcessorNotificationChannel&& value) { m_notificationChannel = std::move(value); }
+
+    
+    inline DescribeStreamProcessorResult& WithNotificationChannel(const StreamProcessorNotificationChannel& value) { SetNotificationChannel(value); return *this;}
+
+    
+    inline DescribeStreamProcessorResult& WithNotificationChannel(StreamProcessorNotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline DescribeStreamProcessorResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline DescribeStreamProcessorResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p> The identifier for your AWS Key Management Service key (AWS KMS key). This
+     * is an optional parameter for label detection stream processors. </p>
+     */
+    inline DescribeStreamProcessorResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const{ return m_regionsOfInterest; }
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline void SetRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { m_regionsOfInterest = value; }
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline void SetRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { m_regionsOfInterest = std::move(value); }
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline DescribeStreamProcessorResult& WithRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { SetRegionsOfInterest(value); return *this;}
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline DescribeStreamProcessorResult& WithRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { SetRegionsOfInterest(std::move(value)); return *this;}
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline DescribeStreamProcessorResult& AddRegionsOfInterest(const RegionOfInterest& value) { m_regionsOfInterest.push_back(value); return *this; }
+
+    /**
+     * <p> Specifies locations in the frames where Amazon Rekognition checks for
+     * objects or people. This is an optional parameter for label detection stream
+     * processors. </p>
+     */
+    inline DescribeStreamProcessorResult& AddRegionsOfInterest(RegionOfInterest&& value) { m_regionsOfInterest.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Shows whether you are sharing data with Rekognition to improve model
+     * performance. You can choose this option at the account level or on a per-stream
+     * basis. Note that if you opt out at the account level this setting is ignored on
+     * individual streams. </p>
+     */
+    inline const StreamProcessorDataSharingPreference& GetDataSharingPreference() const{ return m_dataSharingPreference; }
+
+    /**
+     * <p> Shows whether you are sharing data with Rekognition to improve model
+     * performance. You can choose this option at the account level or on a per-stream
+     * basis. Note that if you opt out at the account level this setting is ignored on
+     * individual streams. </p>
+     */
+    inline void SetDataSharingPreference(const StreamProcessorDataSharingPreference& value) { m_dataSharingPreference = value; }
+
+    /**
+     * <p> Shows whether you are sharing data with Rekognition to improve model
+     * performance. You can choose this option at the account level or on a per-stream
+     * basis. Note that if you opt out at the account level this setting is ignored on
+     * individual streams. </p>
+     */
+    inline void SetDataSharingPreference(StreamProcessorDataSharingPreference&& value) { m_dataSharingPreference = std::move(value); }
+
+    /**
+     * <p> Shows whether you are sharing data with Rekognition to improve model
+     * performance. You can choose this option at the account level or on a per-stream
+     * basis. Note that if you opt out at the account level this setting is ignored on
+     * individual streams. </p>
+     */
+    inline DescribeStreamProcessorResult& WithDataSharingPreference(const StreamProcessorDataSharingPreference& value) { SetDataSharingPreference(value); return *this;}
+
+    /**
+     * <p> Shows whether you are sharing data with Rekognition to improve model
+     * performance. You can choose this option at the account level or on a per-stream
+     * basis. Note that if you opt out at the account level this setting is ignored on
+     * individual streams. </p>
+     */
+    inline DescribeStreamProcessorResult& WithDataSharingPreference(StreamProcessorDataSharingPreference&& value) { SetDataSharingPreference(std::move(value)); return *this;}
 
   private:
 
@@ -392,6 +536,14 @@ namespace Model
     Aws::String m_roleArn;
 
     StreamProcessorSettings m_settings;
+
+    StreamProcessorNotificationChannel m_notificationChannel;
+
+    Aws::String m_kmsKeyId;
+
+    Aws::Vector<RegionOfInterest> m_regionsOfInterest;
+
+    StreamProcessorDataSharingPreference m_dataSharingPreference;
   };
 
 } // namespace Model

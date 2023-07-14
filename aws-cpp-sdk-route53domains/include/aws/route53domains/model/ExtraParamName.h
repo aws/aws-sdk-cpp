@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -37,6 +27,8 @@ namespace Model
     AU_ID_TYPE,
     CA_LEGAL_TYPE,
     CA_BUSINESS_ENTITY_TYPE,
+    CA_LEGAL_REPRESENTATIVE,
+    CA_LEGAL_REPRESENTATIVE_CAPACITY,
     ES_IDENTIFICATION,
     ES_IDENTIFICATION_TYPE,
     ES_LEGAL_FORM,
@@ -44,6 +36,7 @@ namespace Model
     FI_ID_NUMBER,
     FI_NATIONALITY,
     FI_ORGANIZATION_TYPE,
+    IT_NATIONALITY,
     IT_PIN,
     IT_REGISTRANT_ENTITY_TYPE,
     RU_PASSPORT_DATA,
@@ -51,7 +44,8 @@ namespace Model
     SG_ID_NUMBER,
     VAT_NUMBER,
     UK_CONTACT_TYPE,
-    UK_COMPANY_NUMBER
+    UK_COMPANY_NUMBER,
+    EU_COUNTRY_OF_CITIZENSHIP
   };
 
 namespace ExtraParamNameMapper

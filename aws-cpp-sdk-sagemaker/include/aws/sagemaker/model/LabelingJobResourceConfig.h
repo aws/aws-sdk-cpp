@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -34,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for labeling jobs.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configure encryption on the storage volume attached to the ML compute
+   * instance used to run automated data labeling model training and inference.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobResourceConfig">AWS
    * API Reference</a></p>
    */
@@ -49,11 +40,19 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -61,11 +60,19 @@ namespace Model
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -73,11 +80,19 @@ namespace Model
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -85,11 +100,19 @@ namespace Model
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -97,11 +120,19 @@ namespace Model
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -109,11 +140,19 @@ namespace Model
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -121,11 +160,19 @@ namespace Model
     inline LabelingJobResourceConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
@@ -133,11 +180,19 @@ namespace Model
     inline LabelingJobResourceConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training and inference jobs used for
+     * automated data labeling. </p> <p>You can only specify a
+     * <code>VolumeKmsKeyId</code> when you create a labeling job with automated data
+     * labeling enabled using the API operation <code>CreateLabelingJob</code>. You
+     * cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
+     * for automated data labeling model training and inference when you create a
+     * labeling job using the console. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+     * Data and Storage Volume Encryption</a>.</p> <p>The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:</p> <ul> <li> <p>KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>

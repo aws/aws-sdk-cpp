@@ -1,23 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ce/model/DateInterval.h>
+#include <aws/ce/model/Expression.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ce/model/SortDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -182,59 +175,228 @@ namespace Model
     inline GetTagsRequest& WithTagKey(const char* value) { SetTagKey(value); return *this;}
 
 
+    
+    inline const Expression& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
+    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    
+    inline GetTagsRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
+
+    
+    inline GetTagsRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+
+
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline GetTagsRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline GetTagsRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline GetTagsRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The key represents cost
+     * and usage metrics. The following values are supported:</p> <ul> <li> <p>
+     * <code>BlendedCost</code> </p> </li> <li> <p> <code>UnblendedCost</code> </p>
+     * </li> <li> <p> <code>AmortizedCost</code> </p> </li> <li> <p>
+     * <code>NetAmortizedCost</code> </p> </li> <li> <p> <code>NetUnblendedCost</code>
+     * </p> </li> <li> <p> <code>UsageQuantity</code> </p> </li> <li> <p>
+     * <code>NormalizedUsageAmount</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
+     * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
+     */
+    inline GetTagsRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>This field is only used when SortBy is provided in the request. The maximum
+     * number of objects that are returned for this request. If MaxResults isn't
+     * specified with SortBy, the request returns 1000 results as the default value for
+     * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
+     * of 1000.</p>
+     */
+    inline GetTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetTagsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetTagsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetTagsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
@@ -248,6 +410,15 @@ namespace Model
 
     Aws::String m_tagKey;
     bool m_tagKeyHasBeenSet;
+
+    Expression m_filter;
+    bool m_filterHasBeenSet;
+
+    Aws::Vector<SortDefinition> m_sortBy;
+    bool m_sortByHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;

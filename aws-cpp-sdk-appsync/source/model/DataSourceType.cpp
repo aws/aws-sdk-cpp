@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appsync/model/DataSourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
         static const int RELATIONAL_DATABASE_HASH = HashingUtils::HashString("RELATIONAL_DATABASE");
+        static const int AMAZON_OPENSEARCH_SERVICE_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH_SERVICE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -65,6 +56,10 @@ namespace Aws
           {
             return DataSourceType::RELATIONAL_DATABASE;
           }
+          else if (hashCode == AMAZON_OPENSEARCH_SERVICE_HASH)
+          {
+            return DataSourceType::AMAZON_OPENSEARCH_SERVICE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +86,8 @@ namespace Aws
             return "HTTP";
           case DataSourceType::RELATIONAL_DATABASE:
             return "RELATIONAL_DATABASE";
+          case DataSourceType::AMAZON_OPENSEARCH_SERVICE:
+            return "AMAZON_OPENSEARCH_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

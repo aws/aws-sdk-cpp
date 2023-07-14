@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -94,42 +85,132 @@ namespace Model
 
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline const Protocol& GetServerProtocol() const{ return m_serverProtocol; }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline bool ServerProtocolHasBeenSet() const { return m_serverProtocolHasBeenSet; }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline void SetServerProtocol(const Protocol& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = value; }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline void SetServerProtocol(Protocol&& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = std::move(value); }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline TestIdentityProviderRequest& WithServerProtocol(const Protocol& value) { SetServerProtocol(value); return *this;}
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline TestIdentityProviderRequest& WithServerProtocol(Protocol&& value) { SetServerProtocol(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline const Aws::String& GetSourceIp() const{ return m_sourceIp; }
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline void SetSourceIp(Aws::String&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline void SetSourceIp(const char* value) { m_sourceIpHasBeenSet = true; m_sourceIp.assign(value); }
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline TestIdentityProviderRequest& WithSourceIp(const Aws::String& value) { SetSourceIp(value); return *this;}
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline TestIdentityProviderRequest& WithSourceIp(Aws::String&& value) { SetSourceIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The source IP address of the user account to be tested.</p>
+     */
+    inline TestIdentityProviderRequest& WithSourceIp(const char* value) { SetSourceIp(value); return *this;}
+
+
+    /**
+     * <p>The name of the user account to be tested.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline TestIdentityProviderRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline TestIdentityProviderRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline TestIdentityProviderRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -178,6 +259,12 @@ namespace Model
 
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;
+
+    Protocol m_serverProtocol;
+    bool m_serverProtocolHasBeenSet;
+
+    Aws::String m_sourceIp;
+    bool m_sourceIpHasBeenSet;
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;

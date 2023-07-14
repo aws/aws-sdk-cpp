@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -91,70 +81,102 @@ namespace Model
 
     /**
      * <p>The maximum number of shards to return in a single call. The default value is
-     * 100. If you specify a value greater than 100, at most 100 shards are
+     * 100. If you specify a value greater than 100, at most 100 results are
      * returned.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of shards to return in a single call. The default value is
-     * 100. If you specify a value greater than 100, at most 100 shards are
+     * 100. If you specify a value greater than 100, at most 100 results are
      * returned.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of shards to return in a single call. The default value is
-     * 100. If you specify a value greater than 100, at most 100 shards are
+     * 100. If you specify a value greater than 100, at most 100 results are
      * returned.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of shards to return in a single call. The default value is
-     * 100. If you specify a value greater than 100, at most 100 shards are
+     * 100. If you specify a value greater than 100, at most 100 results are
      * returned.</p>
      */
     inline DescribeStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline bool ExclusiveStartShardIdHasBeenSet() const { return m_exclusiveStartShardIdHasBeenSet; }
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline void SetExclusiveStartShardId(const Aws::String& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::move(value); }
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline void SetExclusiveStartShardId(const char* value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId.assign(value); }
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline DescribeStreamRequest& WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline DescribeStreamRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(std::move(value)); return *this;}
 
     /**
-     * <p>The shard ID of the shard to start with.</p>
+     * <p>The shard ID of the shard to start with.</p> <p>Specify this parameter to
+     * indicate that you want to describe the stream starting with the shard whose ID
+     * immediately follows <code>ExclusiveStartShardId</code>.</p> <p>If you don't
+     * specify this parameter, the default behavior for <code>DescribeStream</code> is
+     * to describe the stream starting with the first shard in the stream.</p>
      */
     inline DescribeStreamRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
 

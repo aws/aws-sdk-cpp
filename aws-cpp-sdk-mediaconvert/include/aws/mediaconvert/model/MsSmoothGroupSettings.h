@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/MsSmoothEncryptionSettings.h>
+#include <aws/mediaconvert/model/MsSmoothFragmentLengthControl.h>
 #include <aws/mediaconvert/model/MsSmoothManifestEncoding.h>
 #include <aws/mediaconvert/model/MsSmoothAdditionalManifest.h>
 #include <utility>
@@ -40,7 +31,11 @@ namespace Model
 {
 
   /**
-   * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+   * Settings related to your Microsoft Smooth Streaming output package. For more
+   * information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+   * you work directly in your JSON job specification, include this object and any
+   * required children when you set Type, under OutputGroupSettings, to
    * MS_SMOOTH_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MsSmoothGroupSettings">AWS
    * API Reference</a></p>
@@ -312,28 +307,95 @@ namespace Model
 
 
     /**
-     * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds. Fragment length must be compatible with GOP size and frame rate.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
      */
     inline int GetFragmentLength() const{ return m_fragmentLength; }
 
     /**
-     * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds. Fragment length must be compatible with GOP size and frame rate.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
      */
     inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
 
     /**
-     * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds. Fragment length must be compatible with GOP size and frame rate.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
      */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
-     * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
-     * seconds. Fragment length must be compatible with GOP size and frame rate.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
      */
     inline MsSmoothGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
+
+
+    /**
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline const MsSmoothFragmentLengthControl& GetFragmentLengthControl() const{ return m_fragmentLengthControl; }
+
+    /**
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline bool FragmentLengthControlHasBeenSet() const { return m_fragmentLengthControlHasBeenSet; }
+
+    /**
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetFragmentLengthControl(const MsSmoothFragmentLengthControl& value) { m_fragmentLengthControlHasBeenSet = true; m_fragmentLengthControl = value; }
+
+    /**
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetFragmentLengthControl(MsSmoothFragmentLengthControl&& value) { m_fragmentLengthControlHasBeenSet = true; m_fragmentLengthControl = std::move(value); }
+
+    /**
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline MsSmoothGroupSettings& WithFragmentLengthControl(const MsSmoothFragmentLengthControl& value) { SetFragmentLengthControl(value); return *this;}
+
+    /**
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Fragment length (FragmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline MsSmoothGroupSettings& WithFragmentLengthControl(MsSmoothFragmentLengthControl&& value) { SetFragmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -391,6 +453,9 @@ namespace Model
 
     int m_fragmentLength;
     bool m_fragmentLengthHasBeenSet;
+
+    MsSmoothFragmentLengthControl m_fragmentLengthControl;
+    bool m_fragmentLengthControlHasBeenSet;
 
     MsSmoothManifestEncoding m_manifestEncoding;
     bool m_manifestEncodingHasBeenSet;

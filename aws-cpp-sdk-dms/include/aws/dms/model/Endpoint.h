@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -25,7 +15,17 @@
 #include <aws/dms/model/KinesisSettings.h>
 #include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
+#include <aws/dms/model/NeptuneSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
+#include <aws/dms/model/PostgreSQLSettings.h>
+#include <aws/dms/model/MySQLSettings.h>
+#include <aws/dms/model/OracleSettings.h>
+#include <aws/dms/model/SybaseSettings.h>
+#include <aws/dms/model/MicrosoftSQLServerSettings.h>
+#include <aws/dms/model/IBMDb2Settings.h>
+#include <aws/dms/model/DocDbSettings.h>
+#include <aws/dms/model/RedisSettings.h>
+#include <aws/dms/model/GcpMySQLSettings.h>
 #include <utility>
 
 namespace Aws
@@ -47,7 +47,6 @@ namespace Model
    * <p>Describes an endpoint of a database instance in response to operations such
    * as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li>
    * <p> <code>DescribeEndpoint</code> </p> </li> <li> <p>
-   * <code>DescribeEndpointTypes</code> </p> </li> <li> <p>
    * <code>ModifyEndpoint</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Endpoint">AWS API
    * Reference</a></p>
@@ -159,11 +158,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -171,11 +170,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -183,11 +182,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -195,11 +194,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -207,11 +206,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -219,11 +218,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -231,11 +230,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -243,11 +242,11 @@ namespace Model
      * <p>The database engine name. Valid values, depending on the EndpointType,
      * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
      * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
-     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -536,74 +535,82 @@ namespace Model
 
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline Endpoint& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline Endpoint& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
-     * for the endpoint.</p> <p>If you don't specify a value for the
-     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * <p>An KMS key identifier that is used to encrypt the connection parameters for
+     * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline Endpoint& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -736,42 +743,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline Endpoint& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline Endpoint& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline Endpoint& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
@@ -875,37 +890,37 @@ namespace Model
 
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline const DynamoDbSettings& GetDynamoDbSettings() const{ return m_dynamoDbSettings; }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline bool DynamoDbSettingsHasBeenSet() const { return m_dynamoDbSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline void SetDynamoDbSettings(DynamoDbSettings&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::move(value); }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline Endpoint& WithDynamoDbSettings(const DynamoDbSettings& value) { SetDynamoDbSettings(value); return *this;}
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline Endpoint& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
@@ -949,104 +964,38 @@ namespace Model
 
 
     /**
-     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
-     * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket.</p> </li> <li> <p> <code>BucketName</code> - The name of
-     * the S3 bucket to use.</p> </li> <li> <p> <code>CompressionType</code> - An
-     * optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these settings is
-     * as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
-     * </p> <p>JSON syntax for these settings is as follows: <code>{
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </code> </p>
+     * <p>The settings for the DMS Transfer type source. For more information, see the
+     * DmsTransferSettings structure. </p>
      */
     inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
 
     /**
-     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
-     * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket.</p> </li> <li> <p> <code>BucketName</code> - The name of
-     * the S3 bucket to use.</p> </li> <li> <p> <code>CompressionType</code> - An
-     * optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these settings is
-     * as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
-     * </p> <p>JSON syntax for these settings is as follows: <code>{
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </code> </p>
+     * <p>The settings for the DMS Transfer type source. For more information, see the
+     * DmsTransferSettings structure. </p>
      */
     inline bool DmsTransferSettingsHasBeenSet() const { return m_dmsTransferSettingsHasBeenSet; }
 
     /**
-     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
-     * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket.</p> </li> <li> <p> <code>BucketName</code> - The name of
-     * the S3 bucket to use.</p> </li> <li> <p> <code>CompressionType</code> - An
-     * optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these settings is
-     * as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
-     * </p> <p>JSON syntax for these settings is as follows: <code>{
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </code> </p>
+     * <p>The settings for the DMS Transfer type source. For more information, see the
+     * DmsTransferSettings structure. </p>
      */
     inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
 
     /**
-     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
-     * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket.</p> </li> <li> <p> <code>BucketName</code> - The name of
-     * the S3 bucket to use.</p> </li> <li> <p> <code>CompressionType</code> - An
-     * optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these settings is
-     * as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
-     * </p> <p>JSON syntax for these settings is as follows: <code>{
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </code> </p>
+     * <p>The settings for the DMS Transfer type source. For more information, see the
+     * DmsTransferSettings structure. </p>
      */
     inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
 
     /**
-     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
-     * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket.</p> </li> <li> <p> <code>BucketName</code> - The name of
-     * the S3 bucket to use.</p> </li> <li> <p> <code>CompressionType</code> - An
-     * optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these settings is
-     * as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
-     * </p> <p>JSON syntax for these settings is as follows: <code>{
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </code> </p>
+     * <p>The settings for the DMS Transfer type source. For more information, see the
+     * DmsTransferSettings structure. </p>
      */
     inline Endpoint& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
 
     /**
-     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
-     * </p> <p>Possible settings include the following:</p> <ul> <li> <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access
-     * the Amazon S3 bucket.</p> </li> <li> <p> <code>BucketName</code> - The name of
-     * the S3 bucket to use.</p> </li> <li> <p> <code>CompressionType</code> - An
-     * optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these settings is
-     * as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
-     * </p> <p>JSON syntax for these settings is as follows: <code>{
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </code> </p>
+     * <p>The settings for the DMS Transfer type source. For more information, see the
+     * DmsTransferSettings structure. </p>
      */
     inline Endpoint& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
 
@@ -1163,40 +1112,77 @@ namespace Model
 
 
     /**
-     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * <p>The settings for the OpenSearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
 
     /**
-     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * <p>The settings for the OpenSearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * <p>The settings for the OpenSearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
 
     /**
-     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * <p>The settings for the OpenSearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
 
     /**
-     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * <p>The settings for the OpenSearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline Endpoint& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
 
     /**
-     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * <p>The settings for the OpenSearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline Endpoint& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
+     */
+    inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
+
+    /**
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
+     */
+    inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
+     */
+    inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
+
+    /**
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
+     */
+    inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
+     */
+    inline Endpoint& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
+     */
+    inline Endpoint& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
 
 
     /**
@@ -1228,6 +1214,315 @@ namespace Model
      * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline Endpoint& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline const PostgreSQLSettings& GetPostgreSQLSettings() const{ return m_postgreSQLSettings; }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline bool PostgreSQLSettingsHasBeenSet() const { return m_postgreSQLSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline void SetPostgreSQLSettings(const PostgreSQLSettings& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = value; }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline void SetPostgreSQLSettings(PostgreSQLSettings&& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithPostgreSQLSettings(const PostgreSQLSettings& value) { SetPostgreSQLSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithPostgreSQLSettings(PostgreSQLSettings&& value) { SetPostgreSQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline const MySQLSettings& GetMySQLSettings() const{ return m_mySQLSettings; }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline bool MySQLSettingsHasBeenSet() const { return m_mySQLSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline void SetMySQLSettings(const MySQLSettings& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = value; }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline void SetMySQLSettings(MySQLSettings&& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMySQLSettings(const MySQLSettings& value) { SetMySQLSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMySQLSettings(MySQLSettings&& value) { SetMySQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline const OracleSettings& GetOracleSettings() const{ return m_oracleSettings; }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline bool OracleSettingsHasBeenSet() const { return m_oracleSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline void SetOracleSettings(const OracleSettings& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = value; }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline void SetOracleSettings(OracleSettings&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline Endpoint& WithOracleSettings(const OracleSettings& value) { SetOracleSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline Endpoint& WithOracleSettings(OracleSettings&& value) { SetOracleSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline const SybaseSettings& GetSybaseSettings() const{ return m_sybaseSettings; }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline bool SybaseSettingsHasBeenSet() const { return m_sybaseSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline void SetSybaseSettings(const SybaseSettings& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = value; }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline void SetSybaseSettings(SybaseSettings&& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline Endpoint& WithSybaseSettings(const SybaseSettings& value) { SetSybaseSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline Endpoint& WithSybaseSettings(SybaseSettings&& value) { SetSybaseSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline const MicrosoftSQLServerSettings& GetMicrosoftSQLServerSettings() const{ return m_microsoftSQLServerSettings; }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline bool MicrosoftSQLServerSettingsHasBeenSet() const { return m_microsoftSQLServerSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline void SetMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = value; }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline void SetMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { SetMicrosoftSQLServerSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { SetMicrosoftSQLServerSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline const IBMDb2Settings& GetIBMDb2Settings() const{ return m_iBMDb2Settings; }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline bool IBMDb2SettingsHasBeenSet() const { return m_iBMDb2SettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline void SetIBMDb2Settings(const IBMDb2Settings& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = value; }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline void SetIBMDb2Settings(IBMDb2Settings&& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = std::move(value); }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline Endpoint& WithIBMDb2Settings(const IBMDb2Settings& value) { SetIBMDb2Settings(value); return *this;}
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline Endpoint& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
+
+
+    
+    inline const DocDbSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+
+    
+    inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
+
+    
+    inline void SetDocDbSettings(const DocDbSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
+
+    
+    inline void SetDocDbSettings(DocDbSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
+
+    
+    inline Endpoint& WithDocDbSettings(const DocDbSettings& value) { SetDocDbSettings(value); return *this;}
+
+    
+    inline Endpoint& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Redis target endpoint. For more information, see the
+     * <code>RedisSettings</code> structure.</p>
+     */
+    inline const RedisSettings& GetRedisSettings() const{ return m_redisSettings; }
+
+    /**
+     * <p>The settings for the Redis target endpoint. For more information, see the
+     * <code>RedisSettings</code> structure.</p>
+     */
+    inline bool RedisSettingsHasBeenSet() const { return m_redisSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Redis target endpoint. For more information, see the
+     * <code>RedisSettings</code> structure.</p>
+     */
+    inline void SetRedisSettings(const RedisSettings& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = value; }
+
+    /**
+     * <p>The settings for the Redis target endpoint. For more information, see the
+     * <code>RedisSettings</code> structure.</p>
+     */
+    inline void SetRedisSettings(RedisSettings&& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Redis target endpoint. For more information, see the
+     * <code>RedisSettings</code> structure.</p>
+     */
+    inline Endpoint& WithRedisSettings(const RedisSettings& value) { SetRedisSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Redis target endpoint. For more information, see the
+     * <code>RedisSettings</code> structure.</p>
+     */
+    inline Endpoint& WithRedisSettings(RedisSettings&& value) { SetRedisSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline const GcpMySQLSettings& GetGcpMySQLSettings() const{ return m_gcpMySQLSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline bool GcpMySQLSettingsHasBeenSet() const { return m_gcpMySQLSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline void SetGcpMySQLSettings(const GcpMySQLSettings& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline void SetGcpMySQLSettings(GcpMySQLSettings&& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline Endpoint& WithGcpMySQLSettings(const GcpMySQLSettings& value) { SetGcpMySQLSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline Endpoint& WithGcpMySQLSettings(GcpMySQLSettings&& value) { SetGcpMySQLSettings(std::move(value)); return *this;}
 
   private:
 
@@ -1303,8 +1598,38 @@ namespace Model
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;
 
+    NeptuneSettings m_neptuneSettings;
+    bool m_neptuneSettingsHasBeenSet;
+
     RedshiftSettings m_redshiftSettings;
     bool m_redshiftSettingsHasBeenSet;
+
+    PostgreSQLSettings m_postgreSQLSettings;
+    bool m_postgreSQLSettingsHasBeenSet;
+
+    MySQLSettings m_mySQLSettings;
+    bool m_mySQLSettingsHasBeenSet;
+
+    OracleSettings m_oracleSettings;
+    bool m_oracleSettingsHasBeenSet;
+
+    SybaseSettings m_sybaseSettings;
+    bool m_sybaseSettingsHasBeenSet;
+
+    MicrosoftSQLServerSettings m_microsoftSQLServerSettings;
+    bool m_microsoftSQLServerSettingsHasBeenSet;
+
+    IBMDb2Settings m_iBMDb2Settings;
+    bool m_iBMDb2SettingsHasBeenSet;
+
+    DocDbSettings m_docDbSettings;
+    bool m_docDbSettingsHasBeenSet;
+
+    RedisSettings m_redisSettings;
+    bool m_redisSettingsHasBeenSet;
+
+    GcpMySQLSettings m_gcpMySQLSettings;
+    bool m_gcpMySQLSettingsHasBeenSet;
   };
 
 } // namespace Model

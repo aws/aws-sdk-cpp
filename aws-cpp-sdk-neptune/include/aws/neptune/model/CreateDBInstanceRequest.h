@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -163,91 +153,79 @@ namespace Model
 
 
     /**
-     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Type: Integer</p> <p>Not applicable. Neptune cluster volumes automatically
-     * grow as the amount of data in your database increases, though you are only
-     * charged for the space that you use in a Neptune cluster volume.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Type: Integer</p> <p>Not applicable. Neptune cluster volumes automatically
-     * grow as the amount of data in your database increases, though you are only
-     * charged for the space that you use in a Neptune cluster volume.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Type: Integer</p> <p>Not applicable. Neptune cluster volumes automatically
-     * grow as the amount of data in your database increases, though you are only
-     * charged for the space that you use in a Neptune cluster volume.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Type: Integer</p> <p>Not applicable. Neptune cluster volumes automatically
-     * grow as the amount of data in your database increases, though you are only
-     * charged for the space that you use in a Neptune cluster volume.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p>
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -302,91 +280,83 @@ namespace Model
 
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the master user. Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -530,80 +500,80 @@ namespace Model
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
-     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
-     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
+     * <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
      * parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon
      * Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
@@ -662,9 +632,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -672,9 +642,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -682,9 +652,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -692,9 +662,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -702,9 +672,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -712,9 +682,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -722,9 +692,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -732,9 +702,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1481,122 +1451,122 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
-     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB instance with the same AWS account that owns the KMS
+     * <p>The Amazon KMS key identifier for an encrypted DB instance.</p> <p>The KMS
+     * key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If
+     * you are creating a DB instance with the same Amazon account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
      * KMS key identifier is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
      * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1897,26 +1867,22 @@ namespace Model
 
 
     /**
-     * <p>True to enable AWS Identity and Access Management (IAM) authentication for
-     * Neptune.</p> <p>Default: <code>false</code> </p>
+     * <p>Not supported by Neptune (ignored).</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable AWS Identity and Access Management (IAM) authentication for
-     * Neptune.</p> <p>Default: <code>false</code> </p>
+     * <p>Not supported by Neptune (ignored).</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable AWS Identity and Access Management (IAM) authentication for
-     * Neptune.</p> <p>Default: <code>false</code> </p>
+     * <p>Not supported by Neptune (ignored).</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable AWS Identity and Access Management (IAM) authentication for
-     * Neptune.</p> <p>Default: <code>false</code> </p>
+     * <p>Not supported by Neptune (ignored).</p>
      */
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 

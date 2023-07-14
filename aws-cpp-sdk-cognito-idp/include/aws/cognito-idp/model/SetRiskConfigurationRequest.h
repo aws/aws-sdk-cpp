@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -93,8 +83,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
@@ -103,8 +93,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
@@ -113,8 +103,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
@@ -123,8 +113,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
@@ -133,8 +123,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
@@ -143,8 +133,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline SetRiskConfigurationRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
@@ -153,8 +143,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline SetRiskConfigurationRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
@@ -163,8 +153,8 @@ namespace Model
      * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
      * the same risk configuration is applied to all the clients in the userPool.</p>
      * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
-     * is not null, the user pool configuration is overridden and the risk
-     * configuration for the client is used instead.</p>
+     * isn't null, the user pool configuration is overridden and the risk configuration
+     * for the client is used instead.</p>
      */
     inline SetRiskConfigurationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 

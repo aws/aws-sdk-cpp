@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
@@ -52,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the analyzer to retrieve information from.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.</p>
      */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
 

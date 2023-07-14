@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/WriteApplicationSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,8 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() :
     m_campaignHookHasBeenSet(false),
     m_cloudWatchMetricsEnabled(false),
     m_cloudWatchMetricsEnabledHasBeenSet(false),
+    m_eventTaggingEnabled(false),
+    m_eventTaggingEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -41,6 +33,8 @@ WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonVa
     m_campaignHookHasBeenSet(false),
     m_cloudWatchMetricsEnabled(false),
     m_cloudWatchMetricsEnabledHasBeenSet(false),
+    m_eventTaggingEnabled(false),
+    m_eventTaggingEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
@@ -61,6 +55,13 @@ WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(Jso
     m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
 
     m_cloudWatchMetricsEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventTaggingEnabled"))
+  {
+    m_eventTaggingEnabled = jsonValue.GetBool("EventTaggingEnabled");
+
+    m_eventTaggingEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Limits"))
@@ -93,6 +94,12 @@ JsonValue WriteApplicationSettingsRequest::Jsonize() const
   if(m_cloudWatchMetricsEnabledHasBeenSet)
   {
    payload.WithBool("CloudWatchMetricsEnabled", m_cloudWatchMetricsEnabled);
+
+  }
+
+  if(m_eventTaggingEnabledHasBeenSet)
+  {
+   payload.WithBool("EventTaggingEnabled", m_eventTaggingEnabled);
 
   }
 

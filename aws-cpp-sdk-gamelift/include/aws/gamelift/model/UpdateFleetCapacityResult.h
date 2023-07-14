@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace GameLift
 namespace Model
 {
   /**
-   * <p>Represents the returned data in response to a request action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the returned data in response to a request
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacityOutput">AWS
    * API Reference</a></p>
    */
@@ -49,43 +39,161 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline UpdateFleetCapacityResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline UpdateFleetCapacityResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline UpdateFleetCapacityResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline UpdateFleetCapacityResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline UpdateFleetCapacityResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    inline UpdateFleetCapacityResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline void SetLocation(const Aws::String& value) { m_location = value; }
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline void SetLocation(const char* value) { m_location.assign(value); }
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline UpdateFleetCapacityResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline UpdateFleetCapacityResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>The remote location being updated, expressed as an Amazon Web Services Region
+     * code, such as <code>us-west-2</code>.</p>
+     */
+    inline UpdateFleetCapacityResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
 
     Aws::String m_fleetId;
+
+    Aws::String m_fleetArn;
+
+    Aws::String m_location;
   };
 
 } // namespace Model

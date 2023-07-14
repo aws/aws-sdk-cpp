@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/storagegateway/model/GatewayInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,10 @@ GatewayInfo::GatewayInfo() :
     m_gatewayOperationalStateHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_ec2InstanceRegionHasBeenSet(false)
+    m_ec2InstanceRegionHasBeenSet(false),
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_hostEnvironmentHasBeenSet(false),
+    m_hostEnvironmentIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +39,10 @@ GatewayInfo::GatewayInfo(JsonView jsonValue) :
     m_gatewayOperationalStateHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_ec2InstanceRegionHasBeenSet(false)
+    m_ec2InstanceRegionHasBeenSet(false),
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_hostEnvironmentHasBeenSet(false),
+    m_hostEnvironmentIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +98,20 @@ GatewayInfo& GatewayInfo::operator =(JsonView jsonValue)
     m_ec2InstanceRegionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HostEnvironment"))
+  {
+    m_hostEnvironment = HostEnvironmentMapper::GetHostEnvironmentForName(jsonValue.GetString("HostEnvironment"));
+
+    m_hostEnvironmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HostEnvironmentId"))
+  {
+    m_hostEnvironmentId = jsonValue.GetString("HostEnvironmentId");
+
+    m_hostEnvironmentIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +158,17 @@ JsonValue GatewayInfo::Jsonize() const
   if(m_ec2InstanceRegionHasBeenSet)
   {
    payload.WithString("Ec2InstanceRegion", m_ec2InstanceRegion);
+
+  }
+
+  if(m_hostEnvironmentHasBeenSet)
+  {
+   payload.WithString("HostEnvironment", HostEnvironmentMapper::GetNameForHostEnvironment(m_hostEnvironment));
+  }
+
+  if(m_hostEnvironmentIdHasBeenSet)
+  {
+   payload.WithString("HostEnvironmentId", m_hostEnvironmentId);
 
   }
 

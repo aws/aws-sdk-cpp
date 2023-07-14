@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/ComputeResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,7 +30,6 @@ ComputeResource::ComputeResource() :
     m_desiredvCpus(0),
     m_desiredvCpusHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_ec2KeyPairHasBeenSet(false),
@@ -50,7 +39,8 @@ ComputeResource::ComputeResource() :
     m_bidPercentage(0),
     m_bidPercentageHasBeenSet(false),
     m_spotIamFleetRoleHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_ec2ConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +56,6 @@ ComputeResource::ComputeResource(JsonView jsonValue) :
     m_desiredvCpus(0),
     m_desiredvCpusHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_ec2KeyPairHasBeenSet(false),
@@ -76,7 +65,8 @@ ComputeResource::ComputeResource(JsonView jsonValue) :
     m_bidPercentage(0),
     m_bidPercentageHasBeenSet(false),
     m_spotIamFleetRoleHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_ec2ConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,13 +116,6 @@ ComputeResource& ComputeResource::operator =(JsonView jsonValue)
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
     }
     m_instanceTypesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("imageId"))
-  {
-    m_imageId = jsonValue.GetString("imageId");
-
-    m_imageIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("subnets"))
@@ -207,6 +190,16 @@ ComputeResource& ComputeResource::operator =(JsonView jsonValue)
     m_launchTemplateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ec2Configuration"))
+  {
+    Array<JsonView> ec2ConfigurationJsonList = jsonValue.GetArray("ec2Configuration");
+    for(unsigned ec2ConfigurationIndex = 0; ec2ConfigurationIndex < ec2ConfigurationJsonList.GetLength(); ++ec2ConfigurationIndex)
+    {
+      m_ec2Configuration.push_back(ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject());
+    }
+    m_ec2ConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -250,12 +243,6 @@ JsonValue ComputeResource::Jsonize() const
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);
    }
    payload.WithArray("instanceTypes", std::move(instanceTypesJsonList));
-
-  }
-
-  if(m_imageIdHasBeenSet)
-  {
-   payload.WithString("imageId", m_imageId);
 
   }
 
@@ -325,6 +312,17 @@ JsonValue ComputeResource::Jsonize() const
   if(m_launchTemplateHasBeenSet)
   {
    payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_ec2ConfigurationHasBeenSet)
+  {
+   Array<JsonValue> ec2ConfigurationJsonList(m_ec2Configuration.size());
+   for(unsigned ec2ConfigurationIndex = 0; ec2ConfigurationIndex < ec2ConfigurationJsonList.GetLength(); ++ec2ConfigurationIndex)
+   {
+     ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject(m_ec2Configuration[ec2ConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("ec2Configuration", std::move(ec2ConfigurationJsonList));
 
   }
 

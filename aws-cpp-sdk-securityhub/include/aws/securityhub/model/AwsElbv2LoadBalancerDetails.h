@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/LoadBalancerState.h>
 #include <aws/securityhub/model/AvailabilityZone.h>
+#include <aws/securityhub/model/AwsElbv2LoadBalancerAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -141,42 +132,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedTime(const Aws::String& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedTime(Aws::String&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedTime(const char* value) { m_createdTimeHasBeenSet = true; m_createdTime.assign(value); }
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsElbv2LoadBalancerDetails& WithCreatedTime(const Aws::String& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsElbv2LoadBalancerDetails& WithCreatedTime(Aws::String&& value) { SetCreatedTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time the load balancer was created.</p>
+     * <p>Indicates when the load balancer was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsElbv2LoadBalancerDetails& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
@@ -478,6 +501,47 @@ namespace Model
      */
     inline AwsElbv2LoadBalancerDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline const Aws::Vector<AwsElbv2LoadBalancerAttribute>& GetLoadBalancerAttributes() const{ return m_loadBalancerAttributes; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline bool LoadBalancerAttributesHasBeenSet() const { return m_loadBalancerAttributesHasBeenSet; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline void SetLoadBalancerAttributes(const Aws::Vector<AwsElbv2LoadBalancerAttribute>& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = value; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline void SetLoadBalancerAttributes(Aws::Vector<AwsElbv2LoadBalancerAttribute>&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes = std::move(value); }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& WithLoadBalancerAttributes(const Aws::Vector<AwsElbv2LoadBalancerAttribute>& value) { SetLoadBalancerAttributes(value); return *this;}
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& WithLoadBalancerAttributes(Aws::Vector<AwsElbv2LoadBalancerAttribute>&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& AddLoadBalancerAttributes(const AwsElbv2LoadBalancerAttribute& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Attributes of the load balancer.</p>
+     */
+    inline AwsElbv2LoadBalancerDetails& AddLoadBalancerAttributes(AwsElbv2LoadBalancerAttribute&& value) { m_loadBalancerAttributesHasBeenSet = true; m_loadBalancerAttributes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
@@ -509,6 +573,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::Vector<AwsElbv2LoadBalancerAttribute> m_loadBalancerAttributes;
+    bool m_loadBalancerAttributesHasBeenSet;
   };
 
 } // namespace Model

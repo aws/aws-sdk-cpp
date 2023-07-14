@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The list of information about logs currently enabled and pending to be deployed
-   * for the specified broker.<p><h3>See Also:</h3>   <a
+   * <p>The list of information about logs currently enabled and pending to be
+   * deployed for the specified broker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LogsSummary">AWS API
    * Reference</a></p>
    */
@@ -50,166 +40,174 @@ namespace Model
 
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged.</p>
      */
     inline bool GetAudit() const{ return m_audit; }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged.</p>
      */
     inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged.</p>
      */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged.</p>
      */
     inline LogsSummary& WithAudit(bool value) { SetAudit(value); return *this;}
 
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline const Aws::String& GetAuditLogGroup() const{ return m_auditLogGroup; }
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline bool AuditLogGroupHasBeenSet() const { return m_auditLogGroupHasBeenSet; }
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline void SetAuditLogGroup(const Aws::String& value) { m_auditLogGroupHasBeenSet = true; m_auditLogGroup = value; }
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline void SetAuditLogGroup(Aws::String&& value) { m_auditLogGroupHasBeenSet = true; m_auditLogGroup = std::move(value); }
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline void SetAuditLogGroup(const char* value) { m_auditLogGroupHasBeenSet = true; m_auditLogGroup.assign(value); }
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline LogsSummary& WithAuditLogGroup(const Aws::String& value) { SetAuditLogGroup(value); return *this;}
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline LogsSummary& WithAuditLogGroup(Aws::String&& value) { SetAuditLogGroup(std::move(value)); return *this;}
 
     /**
-     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
      */
     inline LogsSummary& WithAuditLogGroup(const char* value) { SetAuditLogGroup(value); return *this;}
 
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline bool GetGeneral() const{ return m_general; }
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline bool GeneralHasBeenSet() const { return m_generalHasBeenSet; }
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline void SetGeneral(bool value) { m_generalHasBeenSet = true; m_general = value; }
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline LogsSummary& WithGeneral(bool value) { SetGeneral(value); return *this;}
 
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline const Aws::String& GetGeneralLogGroup() const{ return m_generalLogGroup; }
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline bool GeneralLogGroupHasBeenSet() const { return m_generalLogGroupHasBeenSet; }
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline void SetGeneralLogGroup(const Aws::String& value) { m_generalLogGroupHasBeenSet = true; m_generalLogGroup = value; }
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline void SetGeneralLogGroup(Aws::String&& value) { m_generalLogGroupHasBeenSet = true; m_generalLogGroup = std::move(value); }
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline void SetGeneralLogGroup(const char* value) { m_generalLogGroupHasBeenSet = true; m_generalLogGroup.assign(value); }
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline LogsSummary& WithGeneralLogGroup(const Aws::String& value) { SetGeneralLogGroup(value); return *this;}
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline LogsSummary& WithGeneralLogGroup(Aws::String&& value) { SetGeneralLogGroup(std::move(value)); return *this;}
 
     /**
-     * The location of the CloudWatch Logs log group where general logs are sent.
+     * <p>The location of the CloudWatch Logs log group where general logs are
+     * sent.</p>
      */
     inline LogsSummary& WithGeneralLogGroup(const char* value) { SetGeneralLogGroup(value); return *this;}
 
 
     /**
-     * The list of information about logs pending to be deployed for the specified
-     * broker.
+     * <p>The list of information about logs pending to be deployed for the specified
+     * broker.</p>
      */
     inline const PendingLogs& GetPending() const{ return m_pending; }
 
     /**
-     * The list of information about logs pending to be deployed for the specified
-     * broker.
+     * <p>The list of information about logs pending to be deployed for the specified
+     * broker.</p>
      */
     inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
 
     /**
-     * The list of information about logs pending to be deployed for the specified
-     * broker.
+     * <p>The list of information about logs pending to be deployed for the specified
+     * broker.</p>
      */
     inline void SetPending(const PendingLogs& value) { m_pendingHasBeenSet = true; m_pending = value; }
 
     /**
-     * The list of information about logs pending to be deployed for the specified
-     * broker.
+     * <p>The list of information about logs pending to be deployed for the specified
+     * broker.</p>
      */
     inline void SetPending(PendingLogs&& value) { m_pendingHasBeenSet = true; m_pending = std::move(value); }
 
     /**
-     * The list of information about logs pending to be deployed for the specified
-     * broker.
+     * <p>The list of information about logs pending to be deployed for the specified
+     * broker.</p>
      */
     inline LogsSummary& WithPending(const PendingLogs& value) { SetPending(value); return *this;}
 
     /**
-     * The list of information about logs pending to be deployed for the specified
-     * broker.
+     * <p>The list of information about logs pending to be deployed for the specified
+     * broker.</p>
      */
     inline LogsSummary& WithPending(PendingLogs&& value) { SetPending(std::move(value)); return *this;}
 

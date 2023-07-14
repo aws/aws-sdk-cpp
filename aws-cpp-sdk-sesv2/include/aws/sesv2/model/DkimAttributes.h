@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/DkimStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/DkimSigningAttributesOrigin.h>
+#include <aws/sesv2/model/DkimSigningKeyLength.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -323,8 +315,8 @@ namespace Model
 
 
     /**
-     * <p>A string that indicates how DKIM was configured for the identity. There are
-     * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
+     * <p>A string that indicates how DKIM was configured for the identity. These are
+     * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
@@ -334,8 +326,8 @@ namespace Model
     inline const DkimSigningAttributesOrigin& GetSigningAttributesOrigin() const{ return m_signingAttributesOrigin; }
 
     /**
-     * <p>A string that indicates how DKIM was configured for the identity. There are
-     * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
+     * <p>A string that indicates how DKIM was configured for the identity. These are
+     * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
@@ -345,8 +337,8 @@ namespace Model
     inline bool SigningAttributesOriginHasBeenSet() const { return m_signingAttributesOriginHasBeenSet; }
 
     /**
-     * <p>A string that indicates how DKIM was configured for the identity. There are
-     * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
+     * <p>A string that indicates how DKIM was configured for the identity. These are
+     * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
@@ -356,8 +348,8 @@ namespace Model
     inline void SetSigningAttributesOrigin(const DkimSigningAttributesOrigin& value) { m_signingAttributesOriginHasBeenSet = true; m_signingAttributesOrigin = value; }
 
     /**
-     * <p>A string that indicates how DKIM was configured for the identity. There are
-     * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
+     * <p>A string that indicates how DKIM was configured for the identity. These are
+     * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
@@ -367,8 +359,8 @@ namespace Model
     inline void SetSigningAttributesOrigin(DkimSigningAttributesOrigin&& value) { m_signingAttributesOriginHasBeenSet = true; m_signingAttributesOrigin = std::move(value); }
 
     /**
-     * <p>A string that indicates how DKIM was configured for the identity. There are
-     * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
+     * <p>A string that indicates how DKIM was configured for the identity. These are
+     * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
@@ -378,8 +370,8 @@ namespace Model
     inline DkimAttributes& WithSigningAttributesOrigin(const DkimSigningAttributesOrigin& value) { SetSigningAttributesOrigin(value); return *this;}
 
     /**
-     * <p>A string that indicates how DKIM was configured for the identity. There are
-     * two possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
+     * <p>A string that indicates how DKIM was configured for the identity. These are
+     * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
      * DKIM was configured for the identity by using <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
@@ -387,6 +379,105 @@ namespace Model
      * </ul>
      */
     inline DkimAttributes& WithSigningAttributesOrigin(DkimSigningAttributesOrigin&& value) { SetSigningAttributesOrigin(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
+     * can be changed at most once per day.</p>
+     */
+    inline const DkimSigningKeyLength& GetNextSigningKeyLength() const{ return m_nextSigningKeyLength; }
+
+    /**
+     * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
+     * can be changed at most once per day.</p>
+     */
+    inline bool NextSigningKeyLengthHasBeenSet() const { return m_nextSigningKeyLengthHasBeenSet; }
+
+    /**
+     * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
+     * can be changed at most once per day.</p>
+     */
+    inline void SetNextSigningKeyLength(const DkimSigningKeyLength& value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = value; }
+
+    /**
+     * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
+     * can be changed at most once per day.</p>
+     */
+    inline void SetNextSigningKeyLength(DkimSigningKeyLength&& value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = std::move(value); }
+
+    /**
+     * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
+     * can be changed at most once per day.</p>
+     */
+    inline DkimAttributes& WithNextSigningKeyLength(const DkimSigningKeyLength& value) { SetNextSigningKeyLength(value); return *this;}
+
+    /**
+     * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
+     * can be changed at most once per day.</p>
+     */
+    inline DkimAttributes& WithNextSigningKeyLength(DkimSigningKeyLength&& value) { SetNextSigningKeyLength(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+     */
+    inline const DkimSigningKeyLength& GetCurrentSigningKeyLength() const{ return m_currentSigningKeyLength; }
+
+    /**
+     * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+     */
+    inline bool CurrentSigningKeyLengthHasBeenSet() const { return m_currentSigningKeyLengthHasBeenSet; }
+
+    /**
+     * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+     */
+    inline void SetCurrentSigningKeyLength(const DkimSigningKeyLength& value) { m_currentSigningKeyLengthHasBeenSet = true; m_currentSigningKeyLength = value; }
+
+    /**
+     * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+     */
+    inline void SetCurrentSigningKeyLength(DkimSigningKeyLength&& value) { m_currentSigningKeyLengthHasBeenSet = true; m_currentSigningKeyLength = std::move(value); }
+
+    /**
+     * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+     */
+    inline DkimAttributes& WithCurrentSigningKeyLength(const DkimSigningKeyLength& value) { SetCurrentSigningKeyLength(value); return *this;}
+
+    /**
+     * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
+     */
+    inline DkimAttributes& WithCurrentSigningKeyLength(DkimSigningKeyLength&& value) { SetCurrentSigningKeyLength(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastKeyGenerationTimestamp() const{ return m_lastKeyGenerationTimestamp; }
+
+    /**
+     * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+     */
+    inline bool LastKeyGenerationTimestampHasBeenSet() const { return m_lastKeyGenerationTimestampHasBeenSet; }
+
+    /**
+     * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+     */
+    inline void SetLastKeyGenerationTimestamp(const Aws::Utils::DateTime& value) { m_lastKeyGenerationTimestampHasBeenSet = true; m_lastKeyGenerationTimestamp = value; }
+
+    /**
+     * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+     */
+    inline void SetLastKeyGenerationTimestamp(Aws::Utils::DateTime&& value) { m_lastKeyGenerationTimestampHasBeenSet = true; m_lastKeyGenerationTimestamp = std::move(value); }
+
+    /**
+     * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+     */
+    inline DkimAttributes& WithLastKeyGenerationTimestamp(const Aws::Utils::DateTime& value) { SetLastKeyGenerationTimestamp(value); return *this;}
+
+    /**
+     * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
+     */
+    inline DkimAttributes& WithLastKeyGenerationTimestamp(Aws::Utils::DateTime&& value) { SetLastKeyGenerationTimestamp(std::move(value)); return *this;}
 
   private:
 
@@ -401,6 +492,15 @@ namespace Model
 
     DkimSigningAttributesOrigin m_signingAttributesOrigin;
     bool m_signingAttributesOriginHasBeenSet;
+
+    DkimSigningKeyLength m_nextSigningKeyLength;
+    bool m_nextSigningKeyLengthHasBeenSet;
+
+    DkimSigningKeyLength m_currentSigningKeyLength;
+    bool m_currentSigningKeyLengthHasBeenSet;
+
+    Aws::Utils::DateTime m_lastKeyGenerationTimestamp;
+    bool m_lastKeyGenerationTimestampHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -90,7 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -98,7 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -106,7 +96,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -114,7 +104,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -122,7 +112,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -130,7 +120,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline CreateLogGroupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -138,7 +128,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline CreateLogGroupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -146,73 +136,151 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - Key Management Service</a>.</p>
      */
     inline CreateLogGroupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The key-value pairs to use for the tags.</p>
+     * <p>The key-value pairs to use for the tags.</p> <p>CloudWatch Logs doesn’t
+     * support IAM policies that prevent users from assigning specified tags to log
+     * groups using the <code>aws:Resource/<i>key-name</i> </code> or
+     * <code>aws:TagKeys</code> condition keys. For more information about using tags
+     * to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+     * access to Amazon Web Services resources using tags</a>.</p>
      */
     inline CreateLogGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

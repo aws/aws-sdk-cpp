@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -20,6 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ConnectionLogOptions.h>
 #include <aws/ec2/model/TransportProtocol.h>
+#include <aws/ec2/model/SelfServicePortal.h>
+#include <aws/ec2/model/ClientConnectOptions.h>
+#include <aws/ec2/model/ClientLoginBannerOptions.h>
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -127,56 +120,56 @@ namespace Model
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(const Aws::String& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = value; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(Aws::String&& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(const char* value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn.assign(value); }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(const Aws::String& value) { SetServerCertificateArn(value); return *this;}
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(Aws::String&& value) { SetServerCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
      * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(const char* value) { SetServerCertificateArn(value); return *this;}
@@ -464,42 +457,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool GetSplitTunnel() const{ return m_splitTunnel; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline bool SplitTunnelHasBeenSet() const { return m_splitTunnelHasBeenSet; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
      * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
      * information about split-tunnel VPN endpoints, see <a
-     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-     * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+     * Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithSplitTunnel(bool value) { SetSplitTunnel(value); return *this;}
 
@@ -541,7 +530,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -549,7 +538,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -557,7 +546,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -565,7 +554,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -573,7 +562,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -581,7 +570,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -589,7 +578,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -597,7 +586,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -754,6 +743,142 @@ namespace Model
      */
     inline CreateClientVpnEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline const SelfServicePortal& GetSelfServicePortal() const{ return m_selfServicePortal; }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline bool SelfServicePortalHasBeenSet() const { return m_selfServicePortalHasBeenSet; }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline void SetSelfServicePortal(const SelfServicePortal& value) { m_selfServicePortalHasBeenSet = true; m_selfServicePortal = value; }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline void SetSelfServicePortal(SelfServicePortal&& value) { m_selfServicePortalHasBeenSet = true; m_selfServicePortal = std::move(value); }
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline CreateClientVpnEndpointRequest& WithSelfServicePortal(const SelfServicePortal& value) { SetSelfServicePortal(value); return *this;}
+
+    /**
+     * <p>Specify whether to enable the self-service portal for the Client VPN
+     * endpoint.</p> <p>Default Value: <code>enabled</code> </p>
+     */
+    inline CreateClientVpnEndpointRequest& WithSelfServicePortal(SelfServicePortal&& value) { SetSelfServicePortal(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline const ClientConnectOptions& GetClientConnectOptions() const{ return m_clientConnectOptions; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline bool ClientConnectOptionsHasBeenSet() const { return m_clientConnectOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(const ClientConnectOptions& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = value; }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline void SetClientConnectOptions(ClientConnectOptions&& value) { m_clientConnectOptionsHasBeenSet = true; m_clientConnectOptions = std::move(value); }
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline CreateClientVpnEndpointRequest& WithClientConnectOptions(const ClientConnectOptions& value) { SetClientConnectOptions(value); return *this;}
+
+    /**
+     * <p>The options for managing connection authorization for new client
+     * connections.</p>
+     */
+    inline CreateClientVpnEndpointRequest& WithClientConnectOptions(ClientConnectOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
+    inline int GetSessionTimeoutHours() const{ return m_sessionTimeoutHours; }
+
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
+    inline bool SessionTimeoutHoursHasBeenSet() const { return m_sessionTimeoutHoursHasBeenSet; }
+
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
+    inline void SetSessionTimeoutHours(int value) { m_sessionTimeoutHoursHasBeenSet = true; m_sessionTimeoutHours = value; }
+
+    /**
+     * <p>The maximum VPN session duration time in hours.</p> <p>Valid values: <code>8
+     * | 10 | 12 | 24</code> </p> <p>Default value: <code>24</code> </p>
+     */
+    inline CreateClientVpnEndpointRequest& WithSessionTimeoutHours(int value) { SetSessionTimeoutHours(value); return *this;}
+
+
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
+    inline const ClientLoginBannerOptions& GetClientLoginBannerOptions() const{ return m_clientLoginBannerOptions; }
+
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
+    inline bool ClientLoginBannerOptionsHasBeenSet() const { return m_clientLoginBannerOptionsHasBeenSet; }
+
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
+    inline void SetClientLoginBannerOptions(const ClientLoginBannerOptions& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = value; }
+
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
+    inline void SetClientLoginBannerOptions(ClientLoginBannerOptions&& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = std::move(value); }
+
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
+    inline CreateClientVpnEndpointRequest& WithClientLoginBannerOptions(const ClientLoginBannerOptions& value) { SetClientLoginBannerOptions(value); return *this;}
+
+    /**
+     * <p>Options for enabling a customizable text banner that will be displayed on
+     * Amazon Web Services provided clients when a VPN session is established.</p>
+     */
+    inline CreateClientVpnEndpointRequest& WithClientLoginBannerOptions(ClientLoginBannerOptions&& value) { SetClientLoginBannerOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientCidrBlock;
@@ -797,6 +922,18 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    SelfServicePortal m_selfServicePortal;
+    bool m_selfServicePortalHasBeenSet;
+
+    ClientConnectOptions m_clientConnectOptions;
+    bool m_clientConnectOptionsHasBeenSet;
+
+    int m_sessionTimeoutHours;
+    bool m_sessionTimeoutHoursHasBeenSet;
+
+    ClientLoginBannerOptions m_clientLoginBannerOptions;
+    bool m_clientLoginBannerOptionsHasBeenSet;
   };
 
 } // namespace Model

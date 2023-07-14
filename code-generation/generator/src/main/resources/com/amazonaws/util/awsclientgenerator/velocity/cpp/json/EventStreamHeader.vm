@@ -50,20 +50,15 @@ namespace Model
        Aws::Utils::Event::Message msg;
        msg.InsertEventHeader(":message-type", Aws::String("event"));
        msg.InsertEventHeader(":event-type", Aws::String("${entry.value.shape.name}"));
-#foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
-#if($eventMemberEntry.value.isEventPayload())
-#if($eventMemberEntry.value.shape.isBlob())
+#if($entry.value.shape.eventPayloadType.equals("blob"))
        msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
-       msg.WriteEventPayload(value.Get${eventMemberEntry.key}());
-#elseif($eventMemberEntry.value.shape.isString())
+       msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})());
+#elseif($entry.value.shape.eventPayloadType.equals("string"))
        msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
-       msg.WriteEventPayload(value.Get${eventMemberEntry.key}());
-#elseif($eventMemberEntry.value.shape.isStructure())
+       msg.WriteEventPayload(value.Get$CppViewHelper.capitalizeFirstChar(${entry.value.shape.eventPayloadMemberName})()));
+#elseif($entry.value.shape.eventPayloadType.equals("structure") || $entry.value.shape.eventPayloadType.equals("list"))
        msg.InsertEventHeader(":content-type", Aws::String("application/json"));
        msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
-#end
-#break
-#end
 #end
        WriteEvent(msg);
        return *this;

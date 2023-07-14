@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/TaskSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -49,6 +39,7 @@ TaskSet::TaskSet() :
     m_launchTypeHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
     m_serviceRegistriesHasBeenSet(false),
@@ -81,6 +72,7 @@ TaskSet::TaskSet(JsonView jsonValue) :
     m_launchTypeHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
     m_serviceRegistriesHasBeenSet(false),
@@ -208,6 +200,13 @@ TaskSet& TaskSet::operator =(JsonView jsonValue)
     m_platformVersion = jsonValue.GetString("platformVersion");
 
     m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformFamily"))
+  {
+    m_platformFamily = jsonValue.GetString("platformFamily");
+
+    m_platformFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("networkConfiguration"))
@@ -370,6 +369,12 @@ JsonValue TaskSet::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_platformFamilyHasBeenSet)
+  {
+   payload.WithString("platformFamily", m_platformFamily);
 
   }
 

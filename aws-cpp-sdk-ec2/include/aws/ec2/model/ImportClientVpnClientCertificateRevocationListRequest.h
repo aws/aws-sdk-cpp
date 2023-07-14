@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -98,7 +88,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline const Aws::String& GetCertificateRevocationList() const{ return m_certificateRevocationList; }
@@ -106,7 +96,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline bool CertificateRevocationListHasBeenSet() const { return m_certificateRevocationListHasBeenSet; }
@@ -114,7 +104,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline void SetCertificateRevocationList(const Aws::String& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = value; }
@@ -122,7 +112,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline void SetCertificateRevocationList(Aws::String&& value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList = std::move(value); }
@@ -130,7 +120,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline void SetCertificateRevocationList(const char* value) { m_certificateRevocationListHasBeenSet = true; m_certificateRevocationList.assign(value); }
@@ -138,7 +128,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(const Aws::String& value) { SetCertificateRevocationList(value); return *this;}
@@ -146,7 +136,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(Aws::String&& value) { SetCertificateRevocationList(std::move(value)); return *this;}
@@ -154,7 +144,7 @@ namespace Model
     /**
      * <p>The client certificate revocation list file. For more information, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
-     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * a Client Certificate Revocation List</a> in the <i>Client VPN Administrator
      * Guide</i>.</p>
      */
     inline ImportClientVpnClientCertificateRevocationListRequest& WithCertificateRevocationList(const char* value) { SetCertificateRevocationList(value); return *this;}

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/ec2/model/ExportTaskS3LocationRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -92,49 +84,49 @@ namespace Model
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline ExportImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline ExportImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the image being exported. The maximum length is 255
-     * bytes.</p>
+     * characters.</p>
      */
     inline ExportImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -245,43 +237,43 @@ namespace Model
 
 
     /**
-     * <p>Information about the destination S3 bucket. The bucket must exist and grant
-     * WRITE and READ_ACP permissions to the AWS account
+     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline const ExportTaskS3LocationRequest& GetS3ExportLocation() const{ return m_s3ExportLocation; }
 
     /**
-     * <p>Information about the destination S3 bucket. The bucket must exist and grant
-     * WRITE and READ_ACP permissions to the AWS account
+     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline bool S3ExportLocationHasBeenSet() const { return m_s3ExportLocationHasBeenSet; }
 
     /**
-     * <p>Information about the destination S3 bucket. The bucket must exist and grant
-     * WRITE and READ_ACP permissions to the AWS account
+     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline void SetS3ExportLocation(const ExportTaskS3LocationRequest& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = value; }
 
     /**
-     * <p>Information about the destination S3 bucket. The bucket must exist and grant
-     * WRITE and READ_ACP permissions to the AWS account
+     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline void SetS3ExportLocation(ExportTaskS3LocationRequest&& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = std::move(value); }
 
     /**
-     * <p>Information about the destination S3 bucket. The bucket must exist and grant
-     * WRITE and READ_ACP permissions to the AWS account
+     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(const ExportTaskS3LocationRequest& value) { SetS3ExportLocation(value); return *this;}
 
     /**
-     * <p>Information about the destination S3 bucket. The bucket must exist and grant
-     * WRITE and READ_ACP permissions to the AWS account
+     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(ExportTaskS3LocationRequest&& value) { SetS3ExportLocation(std::move(value)); return *this;}
@@ -289,59 +281,100 @@ namespace Model
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline ExportImageRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline ExportImageRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket. If this parameter is not specified, the default role is named
-     * 'vmimport'.</p>
+     * to your Amazon S3 bucket. If this parameter is not specified, the default role
+     * is named 'vmimport'.</p>
      */
     inline ExportImageRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline ExportImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline ExportImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline ExportImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the export image task during creation.</p>
+     */
+    inline ExportImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -365,6 +398,9 @@ namespace Model
 
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

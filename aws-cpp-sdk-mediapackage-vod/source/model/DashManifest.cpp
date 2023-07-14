@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediapackage-vod/model/DashManifest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,6 +26,8 @@ DashManifest::DashManifest() :
     m_minBufferTimeSecondsHasBeenSet(false),
     m_profile(Profile::NOT_SET),
     m_profileHasBeenSet(false),
+    m_scteMarkersSource(ScteMarkersSource::NOT_SET),
+    m_scteMarkersSourceHasBeenSet(false),
     m_streamSelectionHasBeenSet(false)
 {
 }
@@ -48,6 +40,8 @@ DashManifest::DashManifest(JsonView jsonValue) :
     m_minBufferTimeSecondsHasBeenSet(false),
     m_profile(Profile::NOT_SET),
     m_profileHasBeenSet(false),
+    m_scteMarkersSource(ScteMarkersSource::NOT_SET),
+    m_scteMarkersSourceHasBeenSet(false),
     m_streamSelectionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -81,6 +75,13 @@ DashManifest& DashManifest::operator =(JsonView jsonValue)
     m_profile = ProfileMapper::GetProfileForName(jsonValue.GetString("profile"));
 
     m_profileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scteMarkersSource"))
+  {
+    m_scteMarkersSource = ScteMarkersSourceMapper::GetScteMarkersSourceForName(jsonValue.GetString("scteMarkersSource"));
+
+    m_scteMarkersSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamSelection"))
@@ -117,6 +118,11 @@ JsonValue DashManifest::Jsonize() const
   if(m_profileHasBeenSet)
   {
    payload.WithString("profile", ProfileMapper::GetNameForProfile(m_profile));
+  }
+
+  if(m_scteMarkersSourceHasBeenSet)
+  {
+   payload.WithString("scteMarkersSource", ScteMarkersSourceMapper::GetNameForScteMarkersSource(m_scteMarkersSource));
   }
 
   if(m_streamSelectionHasBeenSet)

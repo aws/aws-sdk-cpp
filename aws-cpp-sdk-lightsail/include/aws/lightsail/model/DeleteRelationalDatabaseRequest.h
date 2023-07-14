@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -128,9 +118,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -139,9 +129,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -150,9 +140,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -161,9 +151,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -172,9 +162,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -183,9 +173,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -194,9 +184,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
@@ -205,9 +195,9 @@ namespace Model
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>
-     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * is <code>false</code>, which is the default value for that parameter.</p> 
      * <p>Specifying this parameter and also specifying the <code>skip final
-     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>

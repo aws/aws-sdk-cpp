@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -213,8 +203,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -230,8 +220,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -247,8 +237,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -264,8 +254,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -281,8 +271,8 @@ namespace Model
      * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
-     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
+     * capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid

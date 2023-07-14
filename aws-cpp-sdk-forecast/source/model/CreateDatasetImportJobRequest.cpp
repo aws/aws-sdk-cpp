@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/forecast/model/CreateDatasetImportJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,7 +16,13 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_datasetImportJobNameHasBeenSet(false),
     m_datasetArnHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false)
+    m_timestampFormatHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_useGeolocationForTimeZone(false),
+    m_useGeolocationForTimeZoneHasBeenSet(false),
+    m_geolocationFormatHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -55,6 +51,41 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
   if(m_timestampFormatHasBeenSet)
   {
    payload.WithString("TimestampFormat", m_timestampFormat);
+
+  }
+
+  if(m_timeZoneHasBeenSet)
+  {
+   payload.WithString("TimeZone", m_timeZone);
+
+  }
+
+  if(m_useGeolocationForTimeZoneHasBeenSet)
+  {
+   payload.WithBool("UseGeolocationForTimeZone", m_useGeolocationForTimeZone);
+
+  }
+
+  if(m_geolocationFormatHasBeenSet)
+  {
+   payload.WithString("GeolocationFormat", m_geolocationFormat);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", m_format);
 
   }
 

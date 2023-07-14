@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -45,57 +35,57 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline SearchDashboardsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline SearchDashboardsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the user whose dashboards you're
-     * searching for. </p>
+     * <p>The ID of the Amazon Web Services account that contains the user whose
+     * dashboards you're searching for. </p>
      */
     inline SearchDashboardsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -103,7 +93,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -111,7 +101,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -119,7 +109,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -127,7 +117,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -135,7 +125,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -143,7 +133,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -151,7 +141,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */

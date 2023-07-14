@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/iotanalytics/model/DatastoreStorageSummary.h>
 #include <aws/iotanalytics/model/DatastoreStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotanalytics/model/FileFormatType.h>
+#include <aws/iotanalytics/model/DatastorePartitions.h>
 #include <utility>
 
 namespace Aws
@@ -92,32 +84,32 @@ namespace Model
 
 
     /**
-     * <p>Where data store data is stored.</p>
+     * <p>Where data in a data store is stored.</p>
      */
     inline const DatastoreStorageSummary& GetDatastoreStorage() const{ return m_datastoreStorage; }
 
     /**
-     * <p>Where data store data is stored.</p>
+     * <p>Where data in a data store is stored.</p>
      */
     inline bool DatastoreStorageHasBeenSet() const { return m_datastoreStorageHasBeenSet; }
 
     /**
-     * <p>Where data store data is stored.</p>
+     * <p>Where data in a data store is stored.</p>
      */
     inline void SetDatastoreStorage(const DatastoreStorageSummary& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = value; }
 
     /**
-     * <p>Where data store data is stored.</p>
+     * <p>Where data in a data store is stored.</p>
      */
     inline void SetDatastoreStorage(DatastoreStorageSummary&& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = std::move(value); }
 
     /**
-     * <p>Where data store data is stored.</p>
+     * <p>Where data in a data store is stored.</p>
      */
     inline DatastoreSummary& WithDatastoreStorage(const DatastoreStorageSummary& value) { SetDatastoreStorage(value); return *this;}
 
     /**
-     * <p>Where data store data is stored.</p>
+     * <p>Where data in a data store is stored.</p>
      */
     inline DatastoreSummary& WithDatastoreStorage(DatastoreStorageSummary&& value) { SetDatastoreStorage(std::move(value)); return *this;}
 
@@ -214,6 +206,123 @@ namespace Model
      */
     inline DatastoreSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline DatastoreSummary& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline DatastoreSummary& WithLastMessageArrivalTime(Aws::Utils::DateTime&& value) { SetLastMessageArrivalTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline const FileFormatType& GetFileFormatType() const{ return m_fileFormatType; }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline bool FileFormatTypeHasBeenSet() const { return m_fileFormatTypeHasBeenSet; }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline void SetFileFormatType(const FileFormatType& value) { m_fileFormatTypeHasBeenSet = true; m_fileFormatType = value; }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline void SetFileFormatType(FileFormatType&& value) { m_fileFormatTypeHasBeenSet = true; m_fileFormatType = std::move(value); }
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline DatastoreSummary& WithFileFormatType(const FileFormatType& value) { SetFileFormatType(value); return *this;}
+
+    /**
+     * <p>The file format of the data in the data store.</p>
+     */
+    inline DatastoreSummary& WithFileFormatType(FileFormatType&& value) { SetFileFormatType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline const DatastorePartitions& GetDatastorePartitions() const{ return m_datastorePartitions; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline bool DatastorePartitionsHasBeenSet() const { return m_datastorePartitionsHasBeenSet; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(const DatastorePartitions& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = value; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(DatastorePartitions&& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = std::move(value); }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline DatastoreSummary& WithDatastorePartitions(const DatastorePartitions& value) { SetDatastorePartitions(value); return *this;}
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline DatastoreSummary& WithDatastorePartitions(DatastorePartitions&& value) { SetDatastorePartitions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreName;
@@ -230,6 +339,15 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_lastMessageArrivalTime;
+    bool m_lastMessageArrivalTimeHasBeenSet;
+
+    FileFormatType m_fileFormatType;
+    bool m_fileFormatTypeHasBeenSet;
+
+    DatastorePartitions m_datastorePartitions;
+    bool m_datastorePartitionsHasBeenSet;
   };
 
 } // namespace Model

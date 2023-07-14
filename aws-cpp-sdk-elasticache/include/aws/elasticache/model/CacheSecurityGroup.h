@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -56,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline CacheSecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline CacheSecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the cache security group owner.</p>
+     * <p>The Amazon account ID of the cache security group owner.</p>
      */
     inline CacheSecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -226,6 +216,47 @@ namespace Model
      */
     inline CacheSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline CacheSecurityGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline CacheSecurityGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the cache security group,</p>
+     */
+    inline CacheSecurityGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -239,6 +270,9 @@ namespace Model
 
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
     bool m_eC2SecurityGroupsHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

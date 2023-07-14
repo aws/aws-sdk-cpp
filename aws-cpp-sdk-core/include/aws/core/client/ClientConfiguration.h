@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -20,6 +10,8 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/Array.h>
+#include <aws/crt/Optional.h>
 #include <memory>
 
 namespace Aws
@@ -41,9 +33,22 @@ namespace Aws
         class RetryStrategy; // forward declare
 
         /**
-          * This mutable structure is used to configure any of the AWS clients.
-          * Default values can only be overwritten prior to passing to the client constructors.
-          */
+         * Sets the behaviors of the underlying HTTP clients handling response with 30x status code.
+         * By default, HTTP clients will always redirect the 30x response automatically, except when
+         * specifying aws-global as the client region, then SDK will handle 30x response and redirect
+         * the request manually.
+         */
+        enum class FollowRedirectsPolicy
+        {
+            DEFAULT,
+            ALWAYS,
+            NEVER
+        };
+
+        /**
+         * This mutable structure is used to configure any of the AWS clients.
+         * Default values can only be overwritten prior to passing to the client constructors.
+         */
         struct AWS_CORE_API ClientConfiguration
         {
             ClientConfiguration();
@@ -53,6 +58,13 @@ namespace Aws
              * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
              */
             ClientConfiguration(const char* profileName);
+
+            /**
+             * Create a configuration with a predefined smart defaults
+             * @param useSmartDefaults, required to differentiate c-tors
+             * @param defaultMode, default mode to use
+             */
+            explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy");
 
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
@@ -99,7 +111,7 @@ namespace Aws
             bool enableTcpKeepAlive;
             /**
              * Interval to send a keep-alive packet over the connection. Default 30 seconds. Minimum 15 seconds.
-             * WinHTTP & libcurl support this option.
+             * WinHTTP & libcurl support this option. Note that for Curl, this value will be rounded to an integer with second granularity.
              * No-op for WinINet and IXMLHTTPRequest2 client.
              */
             unsigned long tcpKeepAliveIntervalMs;
@@ -109,7 +121,7 @@ namespace Aws
              */
             unsigned long lowSpeedLimit;
             /**
-             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (e.g. exponential backoff)
+             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff)
              */
             std::shared_ptr<RetryStrategy> retryStrategy;
             /**
@@ -162,6 +174,10 @@ namespace Aws
             */
             Aws::String proxySSLKeyPassword;
             /**
+            * Calls to hosts in this vector will not use proxy configuration
+            */
+            Aws::Utils::Array<Aws::String> nonProxyHosts;
+            /**
             * Threading Executor implementation. Default uses std::thread::detach()
             */
             std::shared_ptr<Aws::Utils::Threading::Executor> executor;
@@ -195,9 +211,9 @@ namespace Aws
              */
             Aws::Http::TransferLibType httpLibOverride;
             /**
-             * If set to true the http stack will follow 300 redirect codes.
+             * Sets the behavior how http stack handles 30x redirect codes.
              */
-            bool followRedirects;
+            FollowRedirectsPolicy followRedirects;
 
             /**
              * Only works for Curl http client.
@@ -225,19 +241,25 @@ namespace Aws
             /**
              * Enable endpoint discovery
              * For some services to dynamically set up their endpoints for different requests.
-             * Defaults to false, it's an opt-in feature.
-             * If disabled, regional or overriden endpoint will be used instead.
+             * By default, service clients will decide if endpoint discovery is enabled or not.
+             * If disabled, regional or overridden endpoint will be used instead.
              * If a request requires endpoint discovery but you disabled it. The request will never succeed.
+             * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
+             * such that SDK will decide the default behavior as stated before, if no value specified.
              */
-            bool enableEndpointDiscovery;
+            Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
             /**
-             * profileName in config file that will be used by this object to reslove more configurations.
+             * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;
         };
 
+        /**
+         * A helper function to initialize a retry strategy.
+         * Default is DefaultRetryStrategy (i.e. exponential backoff)
+         */
+        std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
+
     } // namespace Client
 } // namespace Aws
-
-

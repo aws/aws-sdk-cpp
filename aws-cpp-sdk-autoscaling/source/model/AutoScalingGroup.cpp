@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/AutoScalingGroup.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,6 +32,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
     m_desiredCapacityHasBeenSet(false),
+    m_predictedCapacity(0),
+    m_predictedCapacityHasBeenSet(false),
     m_defaultCooldown(0),
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
@@ -63,7 +55,16 @@ AutoScalingGroup::AutoScalingGroup() :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false),
+    m_warmPoolConfigurationHasBeenSet(false),
+    m_warmPoolSize(0),
+    m_warmPoolSizeHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_desiredCapacityTypeHasBeenSet(false),
+    m_defaultInstanceWarmup(0),
+    m_defaultInstanceWarmupHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
     m_desiredCapacityHasBeenSet(false),
+    m_predictedCapacity(0),
+    m_predictedCapacityHasBeenSet(false),
     m_defaultCooldown(0),
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
@@ -100,7 +103,16 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_serviceLinkedRoleARNHasBeenSet(false),
     m_maxInstanceLifetime(0),
-    m_maxInstanceLifetimeHasBeenSet(false)
+    m_maxInstanceLifetimeHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false),
+    m_warmPoolConfigurationHasBeenSet(false),
+    m_warmPoolSize(0),
+    m_warmPoolSizeHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_desiredCapacityTypeHasBeenSet(false),
+    m_defaultInstanceWarmup(0),
+    m_defaultInstanceWarmupHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -158,6 +170,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     {
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
+    }
+    XmlNode predictedCapacityNode = resultNode.FirstChild("PredictedCapacity");
+    if(!predictedCapacityNode.IsNull())
+    {
+      m_predictedCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(predictedCapacityNode.GetText()).c_str()).c_str());
+      m_predictedCapacityHasBeenSet = true;
     }
     XmlNode defaultCooldownNode = resultNode.FirstChild("DefaultCooldown");
     if(!defaultCooldownNode.IsNull())
@@ -315,6 +333,42 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_maxInstanceLifetime = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxInstanceLifetimeNode.GetText()).c_str()).c_str());
       m_maxInstanceLifetimeHasBeenSet = true;
     }
+    XmlNode capacityRebalanceNode = resultNode.FirstChild("CapacityRebalance");
+    if(!capacityRebalanceNode.IsNull())
+    {
+      m_capacityRebalance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityRebalanceNode.GetText()).c_str()).c_str());
+      m_capacityRebalanceHasBeenSet = true;
+    }
+    XmlNode warmPoolConfigurationNode = resultNode.FirstChild("WarmPoolConfiguration");
+    if(!warmPoolConfigurationNode.IsNull())
+    {
+      m_warmPoolConfiguration = warmPoolConfigurationNode;
+      m_warmPoolConfigurationHasBeenSet = true;
+    }
+    XmlNode warmPoolSizeNode = resultNode.FirstChild("WarmPoolSize");
+    if(!warmPoolSizeNode.IsNull())
+    {
+      m_warmPoolSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(warmPoolSizeNode.GetText()).c_str()).c_str());
+      m_warmPoolSizeHasBeenSet = true;
+    }
+    XmlNode contextNode = resultNode.FirstChild("Context");
+    if(!contextNode.IsNull())
+    {
+      m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
+      m_contextHasBeenSet = true;
+    }
+    XmlNode desiredCapacityTypeNode = resultNode.FirstChild("DesiredCapacityType");
+    if(!desiredCapacityTypeNode.IsNull())
+    {
+      m_desiredCapacityType = Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityTypeNode.GetText());
+      m_desiredCapacityTypeHasBeenSet = true;
+    }
+    XmlNode defaultInstanceWarmupNode = resultNode.FirstChild("DefaultInstanceWarmup");
+    if(!defaultInstanceWarmupNode.IsNull())
+    {
+      m_defaultInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultInstanceWarmupNode.GetText()).c_str()).c_str());
+      m_defaultInstanceWarmupHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -364,6 +418,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+
+  if(m_predictedCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PredictedCapacity=" << m_predictedCapacity << "&";
   }
 
   if(m_defaultCooldownHasBeenSet)
@@ -496,6 +555,38 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
   }
 
+  if(m_capacityRebalanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
+  }
+
+  if(m_warmPoolConfigurationHasBeenSet)
+  {
+      Aws::StringStream warmPoolConfigurationLocationAndMemberSs;
+      warmPoolConfigurationLocationAndMemberSs << location << index << locationValue << ".WarmPoolConfiguration";
+      m_warmPoolConfiguration.OutputToStream(oStream, warmPoolConfigurationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_warmPoolSizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".WarmPoolSize=" << m_warmPoolSize << "&";
+  }
+
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
+  if(m_desiredCapacityTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
+  }
+
+  if(m_defaultInstanceWarmupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -535,6 +626,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+  if(m_predictedCapacityHasBeenSet)
+  {
+      oStream << location << ".PredictedCapacity=" << m_predictedCapacity << "&";
   }
   if(m_defaultCooldownHasBeenSet)
   {
@@ -647,6 +742,32 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_maxInstanceLifetimeHasBeenSet)
   {
       oStream << location << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
+  }
+  if(m_capacityRebalanceHasBeenSet)
+  {
+      oStream << location << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
+  }
+  if(m_warmPoolConfigurationHasBeenSet)
+  {
+      Aws::String warmPoolConfigurationLocationAndMember(location);
+      warmPoolConfigurationLocationAndMember += ".WarmPoolConfiguration";
+      m_warmPoolConfiguration.OutputToStream(oStream, warmPoolConfigurationLocationAndMember.c_str());
+  }
+  if(m_warmPoolSizeHasBeenSet)
+  {
+      oStream << location << ".WarmPoolSize=" << m_warmPoolSize << "&";
+  }
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+  if(m_desiredCapacityTypeHasBeenSet)
+  {
+      oStream << location << ".DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
+  }
+  if(m_defaultInstanceWarmupHasBeenSet)
+  {
+      oStream << location << ".DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
   }
 }
 

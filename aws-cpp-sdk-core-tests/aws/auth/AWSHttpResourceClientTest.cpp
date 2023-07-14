@@ -1,18 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
-#define AWS_DISABLE_DEPRECATION
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -105,23 +94,23 @@ namespace
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
         Aws::String retryError = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>IDPCommunicationError</Code><Message>The resource you requested does not exist</Message><Resource>/path/to/resource.jpg</Resource><RequestId>4442587FB7D0A2F9</RequestId></Error>";
-        std::shared_ptr<StandardHttpResponse> retryableResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> retryableResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         retryableResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         retryableResponse->GetResponseBody() << retryError;
 
         Aws::String retryError2 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>InvalidIdentityToken</Code><Message>The resource you requested does not exist</Message><Resource>/path/to/resource.jpg</Resource><RequestId>4442587FB7D0A2F9</RequestId></Error>";
-        std::shared_ptr<StandardHttpResponse> retryableResponse2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> retryableResponse2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         retryableResponse2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         retryableResponse2->GetResponseBody() << retryError2;
 
         Aws::String nonRetryError = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>OtherError</Code><Message>The resource you requested does not exist</Message><Resource>/path/to/resource.jpg</Resource><RequestId>4442587FB7D0A2F9</RequestId></Error>";
-        std::shared_ptr<StandardHttpResponse> nonRetryResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> nonRetryResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         nonRetryResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         nonRetryResponse->GetResponseBody() << nonRetryError;
 
         //Made up credentials from https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
         Aws::String goodXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2014-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId></Credentials>";
-        std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         goodResponse->SetResponseCode(HttpResponseCode::OK);
         goodResponse->GetResponseBody() << goodXml;
 
@@ -176,7 +165,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response->SetResponseCode(HttpResponseCode::OK);
         response->GetResponseBody() << "";
         mockHttpClient->AddResponseToReturn(response);
@@ -200,7 +189,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response);
@@ -224,7 +213,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
 
@@ -253,7 +242,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response->SetResponseCode(HttpResponseCode::OK);
         response->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response);
@@ -278,13 +267,13 @@ namespace
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
-        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         //response code is REQUEST_NOT_MADE, indicates error, and we set this as client error.
         response1->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
         response1->SetClientErrorMessage("Mock Client Error");
         mockHttpClient->AddResponseToReturn(response1);
 
-        std::shared_ptr<StandardHttpResponse> response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response2->SetResponseCode(HttpResponseCode::OK);
         response2->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response2);
@@ -308,11 +297,11 @@ namespace
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
-        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         //response code is REQUEST_NOT_MADE, indicates error, and we set this as unparsable error.
         mockHttpClient->AddResponseToReturn(response1);
 
-        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         response2->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(response2);
@@ -335,12 +324,12 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response1->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
         response1->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response1);
 
-        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response2->SetResponseCode(HttpResponseCode::OK);
         response2->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response2);
@@ -364,12 +353,12 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response1->SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
         response1->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
         mockHttpClient->AddResponseToReturn(response1);
 
-        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
         response2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         response2->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(response2);
@@ -412,7 +401,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponse->SetResponseCode(HttpResponseCode::OK);
         profileResponse->GetResponseBody() << "";
         mockHttpClient->AddResponseToReturn(profileResponse);
@@ -436,7 +425,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponse->SetResponseCode(HttpResponseCode::OK);
         profileResponse->GetResponseBody() << " \n \t ";
         mockHttpClient->AddResponseToReturn(profileResponse);
@@ -460,7 +449,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/iam/token"),
                 HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         tokenResponse->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(tokenResponse);
@@ -484,8 +473,8 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                        HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
-        std::shared_ptr<StandardHttpResponse> tokenResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
+        std::shared_ptr<StandardHttpResponse> tokenResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponseRetry->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
         tokenResponseRetry->GetResponseBody() << "Throttling";
         mockHttpClient->AddResponseToReturn(tokenResponseRetry);
@@ -495,8 +484,8 @@ namespace
 
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
-        std::shared_ptr<StandardHttpResponse> profileResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
+        std::shared_ptr<StandardHttpResponse> profileResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
 
         profileResponseRetry->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
         profileResponseRetry->GetResponseBody() << "Throttling";
@@ -508,7 +497,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials/credentials"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*credRequest));
+        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credRequest);
         credResponse->SetResponseCode(HttpResponseCode::OK);
         credResponse->GetResponseBody() << "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
         mockHttpClient->AddResponseToReturn(credResponse);
@@ -543,7 +532,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         tokenResponse->GetResponseBody() << "bad request info";
         mockHttpClient->AddResponseToReturn(tokenResponse);
@@ -565,14 +554,14 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::OK);
         tokenResponse->GetResponseBody() << "123321--=random token information xxx===";
         mockHttpClient->AddResponseToReturn(tokenResponse);
 
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponse->SetResponseCode(HttpResponseCode::UNAUTHORIZED);
         profileResponse->GetResponseBody() << "expired token";
         mockHttpClient->AddResponseToReturn(profileResponse);
@@ -596,14 +585,14 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::OK);
         tokenResponse->GetResponseBody() << "123321--=random token information xxx===";
         mockHttpClient->AddResponseToReturn(tokenResponse);
 
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        Aws::Vector<std::shared_ptr<StandardHttpResponse>> profileResponses(3, Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest)));
+        Aws::Vector<std::shared_ptr<StandardHttpResponse>> profileResponses(3, Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest));
         for (auto& response: profileResponses)
         {
             response->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
@@ -634,7 +623,7 @@ namespace
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         // max try 2 times
-        Aws::Vector<std::shared_ptr<StandardHttpResponse>> tokenResponses(3, Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest)));
+        Aws::Vector<std::shared_ptr<StandardHttpResponse>> tokenResponses(3, Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest));
         for (auto& response: tokenResponses)
         {
             response->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
@@ -644,7 +633,7 @@ namespace
         // falling back to insecure way
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponse->SetResponseCode(HttpResponseCode::UNAUTHORIZED);
         profileResponse->GetResponseBody() << "token required";
         mockHttpClient->AddResponseToReturn(profileResponse);
@@ -674,15 +663,15 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::NOT_FOUND);
         tokenResponse->GetResponseBody() << "error information"; // empty body will be treated as NETWORK_ERROR, hence retryable error.
         mockHttpClient->AddResponseToReturn(tokenResponse);
 
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
-        std::shared_ptr<StandardHttpResponse> profileResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
+        std::shared_ptr<StandardHttpResponse> profileResponseRetry = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponseRetry->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
         profileResponseRetry->GetResponseBody() << "Throttling";
         mockHttpClient->AddResponseToReturn(profileResponseRetry);
@@ -693,7 +682,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials/credentials"),
                                                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*credRequest));
+        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credRequest);
         credResponse->SetResponseCode(HttpResponseCode::OK);
         credResponse->GetResponseBody() << "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
         mockHttpClient->AddResponseToReturn(credResponse);
@@ -725,14 +714,14 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::NOT_FOUND);
         tokenResponse->GetResponseBody() << "error information"; // empty body will be treated as NETWORK_ERROR, hence retryable error.
         mockHttpClient->AddResponseToReturn(tokenResponse);
 
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest));
+        std::shared_ptr<StandardHttpResponse> profileResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest);
         profileResponse->SetResponseCode(HttpResponseCode::NOT_FOUND);
         profileResponse->GetResponseBody() << "profile not found";
         mockHttpClient->AddResponseToReturn(profileResponse);
@@ -756,14 +745,14 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> tokenRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/api/token"),
                                                                       HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*tokenRequest));
+        std::shared_ptr<StandardHttpResponse> tokenResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, tokenRequest);
         tokenResponse->SetResponseCode(HttpResponseCode::NOT_FOUND);
         tokenResponse->GetResponseBody() << "error information"; // empty body will be treated as NETWORK_ERROR, hence retryable error.
         mockHttpClient->AddResponseToReturn(tokenResponse);
 
         std::shared_ptr<HttpRequest> profileRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/iam/security-credentials"),
                                                                        HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        Aws::Vector<std::shared_ptr<StandardHttpResponse>> profileResponses(3, Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*profileRequest)));
+        Aws::Vector<std::shared_ptr<StandardHttpResponse>> profileResponses(3, Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, profileRequest));
         for (auto& response: profileResponses)
         {
             response->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
@@ -809,7 +798,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::OK);
         regionResponse->GetResponseBody() << "";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -833,7 +822,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         regionResponse->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -857,7 +846,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::OK);
         regionResponse->GetResponseBody() << "us-west-123abc";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -880,7 +869,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::OK);
         regionResponse->GetResponseBody() << "us-west-123abc321def";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -903,7 +892,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::OK);
         regionResponse->GetResponseBody() << "123456-us-west-123abc321def";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -926,7 +915,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::OK);
         regionResponse->GetResponseBody() << "us-west-123321";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -949,7 +938,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*regionRequest));
+        std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
         regionResponse->SetResponseCode(HttpResponseCode::OK);
         regionResponse->GetResponseBody() << "us-west-abccba";
         mockHttpClient->AddResponseToReturn(regionResponse);
@@ -987,7 +976,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.170.2/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*credRequest));
+        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credRequest);
         credResponse->SetResponseCode(HttpResponseCode::OK);
         credResponse->GetResponseBody() << "";
         mockHttpClient->AddResponseToReturn(credResponse);
@@ -1026,7 +1015,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.170.2/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*credRequest));
+        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credRequest);
         credResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         credResponse->GetResponseBody() << "Any test string";
         mockHttpClient->AddResponseToReturn(credResponse);
@@ -1049,7 +1038,7 @@ namespace
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> credRequest = CreateHttpRequest(URI("http://169.254.170.2/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*credRequest));
+        std::shared_ptr<StandardHttpResponse> credResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, credRequest);
         credResponse->SetResponseCode(HttpResponseCode::OK);
         credResponse->GetResponseBody() << "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
         mockHttpClient->AddResponseToReturn(credResponse);

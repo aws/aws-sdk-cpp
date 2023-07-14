@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -40,13 +30,14 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a usage plan than can specify who can assess associated API stages
-   * with specified request limits and quotas.</p> <div class="remarks"> <p>In a
-   * usage plan, you associate an API by specifying the API's Id and a stage name of
-   * the specified API. You add plan customers by adding API keys to the plan. </p>
-   * </div> <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-   * and Use Usage Plans</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents a usage plan used to specify who can assess associated API stages.
+   * Optionally, target request rate and quota limits can be set. In some cases
+   * clients can exceed the targets that you set. Don’t rely on usage plans to
+   * control costs. Consider using <a
+   * href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon
+   * Web Services Budgets</a> to monitor costs and <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a>
+   * to manage API requests.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlan">AWS
    * API Reference</a></p>
    */
@@ -59,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline CreateUsagePlanResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline CreateUsagePlanResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     * <p>The identifier of a UsagePlan resource.</p>
      */
     inline CreateUsagePlanResult& WithId(const char* value) { SetId(value); return *this;}
 
@@ -203,53 +194,63 @@ namespace Model
 
 
     /**
-     * <p>The request throttle limits of a usage plan.</p>
+     * <p>A map containing method level throttling information for API stage in a usage
+     * plan.</p>
      */
     inline const ThrottleSettings& GetThrottle() const{ return m_throttle; }
 
     /**
-     * <p>The request throttle limits of a usage plan.</p>
+     * <p>A map containing method level throttling information for API stage in a usage
+     * plan.</p>
      */
     inline void SetThrottle(const ThrottleSettings& value) { m_throttle = value; }
 
     /**
-     * <p>The request throttle limits of a usage plan.</p>
+     * <p>A map containing method level throttling information for API stage in a usage
+     * plan.</p>
      */
     inline void SetThrottle(ThrottleSettings&& value) { m_throttle = std::move(value); }
 
     /**
-     * <p>The request throttle limits of a usage plan.</p>
+     * <p>A map containing method level throttling information for API stage in a usage
+     * plan.</p>
      */
     inline CreateUsagePlanResult& WithThrottle(const ThrottleSettings& value) { SetThrottle(value); return *this;}
 
     /**
-     * <p>The request throttle limits of a usage plan.</p>
+     * <p>A map containing method level throttling information for API stage in a usage
+     * plan.</p>
      */
     inline CreateUsagePlanResult& WithThrottle(ThrottleSettings&& value) { SetThrottle(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum number of permitted requests per a given unit time interval.</p>
+     * <p>The target maximum number of permitted requests per a given unit time
+     * interval.</p>
      */
     inline const QuotaSettings& GetQuota() const{ return m_quota; }
 
     /**
-     * <p>The maximum number of permitted requests per a given unit time interval.</p>
+     * <p>The target maximum number of permitted requests per a given unit time
+     * interval.</p>
      */
     inline void SetQuota(const QuotaSettings& value) { m_quota = value; }
 
     /**
-     * <p>The maximum number of permitted requests per a given unit time interval.</p>
+     * <p>The target maximum number of permitted requests per a given unit time
+     * interval.</p>
      */
     inline void SetQuota(QuotaSettings&& value) { m_quota = std::move(value); }
 
     /**
-     * <p>The maximum number of permitted requests per a given unit time interval.</p>
+     * <p>The target maximum number of permitted requests per a given unit time
+     * interval.</p>
      */
     inline CreateUsagePlanResult& WithQuota(const QuotaSettings& value) { SetQuota(value); return *this;}
 
     /**
-     * <p>The maximum number of permitted requests per a given unit time interval.</p>
+     * <p>The target maximum number of permitted requests per a given unit time
+     * interval.</p>
      */
     inline CreateUsagePlanResult& WithQuota(QuotaSettings&& value) { SetQuota(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/gamelift/model/ScalingPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 ScalingPolicy::ScalingPolicy() : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(ScalingStatusType::NOT_SET),
     m_statusHasBeenSet(false),
@@ -47,12 +38,16 @@ ScalingPolicy::ScalingPolicy() :
     m_metricNameHasBeenSet(false),
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
+    m_targetConfigurationHasBeenSet(false),
+    m_updateStatus(LocationUpdateStatus::NOT_SET),
+    m_updateStatusHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
 ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(ScalingStatusType::NOT_SET),
     m_statusHasBeenSet(false),
@@ -70,7 +65,10 @@ ScalingPolicy::ScalingPolicy(JsonView jsonValue) :
     m_metricNameHasBeenSet(false),
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
+    m_targetConfigurationHasBeenSet(false),
+    m_updateStatus(LocationUpdateStatus::NOT_SET),
+    m_updateStatusHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +80,13 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -154,6 +159,20 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
     m_targetConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UpdateStatus"))
+  {
+    m_updateStatus = LocationUpdateStatusMapper::GetLocationUpdateStatusForName(jsonValue.GetString("UpdateStatus"));
+
+    m_updateStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +183,12 @@ JsonValue ScalingPolicy::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 
@@ -219,6 +244,17 @@ JsonValue ScalingPolicy::Jsonize() const
   if(m_targetConfigurationHasBeenSet)
   {
    payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+
+  }
+
+  if(m_updateStatusHasBeenSet)
+  {
+   payload.WithString("UpdateStatus", LocationUpdateStatusMapper::GetNameForLocationUpdateStatus(m_updateStatus));
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

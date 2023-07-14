@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/VpnConnection.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -41,6 +31,10 @@ VpnConnection::VpnConnection() :
     m_vpnConnectionIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false),
+    m_coreNetworkAttachmentArnHasBeenSet(false),
+    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
+    m_gatewayAssociationStateHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -59,6 +53,10 @@ VpnConnection::VpnConnection(const XmlNode& xmlNode) :
     m_vpnConnectionIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false),
+    m_coreNetworkAttachmentArnHasBeenSet(false),
+    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
+    m_gatewayAssociationStateHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -120,6 +118,24 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+    }
+    XmlNode coreNetworkArnNode = resultNode.FirstChild("coreNetworkArn");
+    if(!coreNetworkArnNode.IsNull())
+    {
+      m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
+      m_coreNetworkArnHasBeenSet = true;
+    }
+    XmlNode coreNetworkAttachmentArnNode = resultNode.FirstChild("coreNetworkAttachmentArn");
+    if(!coreNetworkAttachmentArnNode.IsNull())
+    {
+      m_coreNetworkAttachmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkAttachmentArnNode.GetText());
+      m_coreNetworkAttachmentArnHasBeenSet = true;
+    }
+    XmlNode gatewayAssociationStateNode = resultNode.FirstChild("gatewayAssociationState");
+    if(!gatewayAssociationStateNode.IsNull())
+    {
+      m_gatewayAssociationState = GatewayAssociationStateMapper::GetGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText()).c_str()).c_str());
+      m_gatewayAssociationStateHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
@@ -210,6 +226,21 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+
+  if(m_coreNetworkAttachmentArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkAttachmentArn=" << StringUtils::URLEncode(m_coreNetworkAttachmentArn.c_str()) << "&";
+  }
+
+  if(m_gatewayAssociationStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GatewayAssociationState=" << GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState) << "&";
+  }
+
   if(m_optionsHasBeenSet)
   {
       Aws::StringStream optionsLocationAndMemberSs;
@@ -285,6 +316,18 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_transitGatewayIdHasBeenSet)
   {
       oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+  if(m_coreNetworkAttachmentArnHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkAttachmentArn=" << StringUtils::URLEncode(m_coreNetworkAttachmentArn.c_str()) << "&";
+  }
+  if(m_gatewayAssociationStateHasBeenSet)
+  {
+      oStream << location << ".GatewayAssociationState=" << GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState) << "&";
   }
   if(m_optionsHasBeenSet)
   {

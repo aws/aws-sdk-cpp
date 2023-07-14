@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DashboardErrorType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,6 +20,8 @@ namespace Aws
       namespace DashboardErrorTypeMapper
       {
 
+        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static const int SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SOURCE_NOT_FOUND");
         static const int DATA_SET_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SET_NOT_FOUND");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
         static const int PARAMETER_VALUE_INCOMPATIBLE_HASH = HashingUtils::HashString("PARAMETER_VALUE_INCOMPATIBLE");
@@ -43,7 +35,15 @@ namespace Aws
         DashboardErrorType GetDashboardErrorTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DATA_SET_NOT_FOUND_HASH)
+          if (hashCode == ACCESS_DENIED_HASH)
+          {
+            return DashboardErrorType::ACCESS_DENIED;
+          }
+          else if (hashCode == SOURCE_NOT_FOUND_HASH)
+          {
+            return DashboardErrorType::SOURCE_NOT_FOUND;
+          }
+          else if (hashCode == DATA_SET_NOT_FOUND_HASH)
           {
             return DashboardErrorType::DATA_SET_NOT_FOUND;
           }
@@ -89,6 +89,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashboardErrorType::ACCESS_DENIED:
+            return "ACCESS_DENIED";
+          case DashboardErrorType::SOURCE_NOT_FOUND:
+            return "SOURCE_NOT_FOUND";
           case DashboardErrorType::DATA_SET_NOT_FOUND:
             return "DATA_SET_NOT_FOUND";
           case DashboardErrorType::INTERNAL_FAILURE:

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
@@ -91,32 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline const DataType& GetDataType() const{ return m_dataType; }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetDataType(const DataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetDataType(DataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline Variable& WithDataType(const DataType& value) { SetDataType(value); return *this;}
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline Variable& WithDataType(DataType&& value) { SetDataType(std::move(value)); return *this;}
 
@@ -235,42 +237,98 @@ namespace Model
 
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline const Aws::String& GetVariableType() const{ return m_variableType; }
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline Variable& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline Variable& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
 
     /**
-     * <p>The variable type of the variable.</p>
+     * <p>The variable type of the variable.</p> <p>Valid Values: <code>AUTH_CODE | AVS
+     * | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY |
+     * BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN |
+     * CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL |
+     * FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER |
+     * PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 |
+     * SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE |
+     * SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code> </p>
      */
     inline Variable& WithVariableType(const char* value) { SetVariableType(value); return *this;}
 
@@ -356,6 +414,47 @@ namespace Model
      */
     inline Variable& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline Variable& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline Variable& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the variable.</p>
+     */
+    inline Variable& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -381,6 +480,9 @@ namespace Model
 
     Aws::String m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/glue/model/WorkflowRun.h>
 #include <aws/glue/model/WorkflowGraph.h>
+#include <aws/glue/model/BlueprintDetails.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>A workflow represents a flow in which AWS Glue components should be executed
-   * to complete a logical task.</p><p><h3>See Also:</h3>   <a
+   * <p>A workflow is a collection of multiple dependent Glue jobs and crawlers that
+   * are run to complete a complex ETL task. A workflow manages the execution and
+   * monitoring of all its jobs and crawlers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Workflow">AWS API
    * Reference</a></p>
    */
@@ -53,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline Workflow& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline Workflow& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline Workflow& WithName(const char* value) { SetName(value); return *this;}
 
@@ -136,79 +128,92 @@ namespace Model
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDefaultRunProperties() const{ return m_defaultRunProperties; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline bool DefaultRunPropertiesHasBeenSet() const { return m_defaultRunPropertiesHasBeenSet; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline void SetDefaultRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = value; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline void SetDefaultRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = std::move(value); }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& WithDefaultRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultRunProperties(value); return *this;}
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& WithDefaultRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultRunProperties(std::move(value)); return *this;}
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const Aws::String& key, const Aws::String& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, value); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(Aws::String&& key, const Aws::String& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const Aws::String& key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(Aws::String&& key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const char* key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(Aws::String&& key, const char* value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const char* key, const char* value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, value); return *this; }
 
@@ -307,40 +312,110 @@ namespace Model
 
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline const WorkflowGraph& GetGraph() const{ return m_graph; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline bool GraphHasBeenSet() const { return m_graphHasBeenSet; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(const WorkflowGraph& value) { m_graphHasBeenSet = true; m_graph = value; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(WorkflowGraph&& value) { m_graphHasBeenSet = true; m_graph = std::move(value); }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline Workflow& WithGraph(const WorkflowGraph& value) { SetGraph(value); return *this;}
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline Workflow& WithGraph(WorkflowGraph&& value) { SetGraph(std::move(value)); return *this;}
+
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
+
+    /**
+     * <p>You can use this parameter to prevent unwanted multiple updates to data, to
+     * control costs, or in some cases, to prevent exceeding the maximum number of
+     * concurrent runs of any of the component jobs. If you leave this parameter blank,
+     * there is no limit to the number of concurrent workflow runs.</p>
+     */
+    inline Workflow& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
+
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline const BlueprintDetails& GetBlueprintDetails() const{ return m_blueprintDetails; }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline bool BlueprintDetailsHasBeenSet() const { return m_blueprintDetailsHasBeenSet; }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline void SetBlueprintDetails(const BlueprintDetails& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = value; }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline void SetBlueprintDetails(BlueprintDetails&& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = std::move(value); }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline Workflow& WithBlueprintDetails(const BlueprintDetails& value) { SetBlueprintDetails(value); return *this;}
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline Workflow& WithBlueprintDetails(BlueprintDetails&& value) { SetBlueprintDetails(std::move(value)); return *this;}
 
   private:
 
@@ -364,6 +439,12 @@ namespace Model
 
     WorkflowGraph m_graph;
     bool m_graphHasBeenSet;
+
+    int m_maxConcurrentRuns;
+    bool m_maxConcurrentRunsHasBeenSet;
+
+    BlueprintDetails m_blueprintDetails;
+    bool m_blueprintDetailsHasBeenSet;
   };
 
 } // namespace Model

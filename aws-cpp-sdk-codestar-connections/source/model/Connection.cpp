@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codestar-connections/model/Connection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,8 @@ Connection::Connection() :
     m_providerTypeHasBeenSet(false),
     m_ownerAccountIdHasBeenSet(false),
     m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_hostArnHasBeenSet(false)
 {
 }
 
@@ -46,7 +37,8 @@ Connection::Connection(JsonView jsonValue) :
     m_providerTypeHasBeenSet(false),
     m_ownerAccountIdHasBeenSet(false),
     m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_hostArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +80,13 @@ Connection& Connection::operator =(JsonView jsonValue)
     m_connectionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HostArn"))
+  {
+    m_hostArn = jsonValue.GetString("HostArn");
+
+    m_hostArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +120,12 @@ JsonValue Connection::Jsonize() const
   if(m_connectionStatusHasBeenSet)
   {
    payload.WithString("ConnectionStatus", ConnectionStatusMapper::GetNameForConnectionStatus(m_connectionStatus));
+  }
+
+  if(m_hostArnHasBeenSet)
+  {
+   payload.WithString("HostArn", m_hostArn);
+
   }
 
   return payload;

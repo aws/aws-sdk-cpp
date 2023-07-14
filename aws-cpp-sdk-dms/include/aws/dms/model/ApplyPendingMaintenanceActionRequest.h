@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -48,91 +38,107 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline void SetApplyAction(Aws::String&& value) { m_applyActionHasBeenSet = true; m_applyAction = std::move(value); }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline void SetApplyAction(const char* value) { m_applyActionHasBeenSet = true; m_applyAction.assign(value); }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(Aws::String&& value) { SetApplyAction(std::move(value)); return *this;}
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>os-upgrade</code>, <code>system-update</code>,
+     * <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const char* value) { SetApplyAction(value); return *this;}
 

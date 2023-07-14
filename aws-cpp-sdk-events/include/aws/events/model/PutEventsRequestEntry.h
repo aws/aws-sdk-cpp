@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
@@ -52,42 +42,54 @@ namespace Model
     /**
      * <p>The time stamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
-     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     * is provided, the time stamp of the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+     * call is used.</p>
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
      * <p>The time stamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
-     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     * is provided, the time stamp of the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+     * call is used.</p>
      */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
      * <p>The time stamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
-     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     * is provided, the time stamp of the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+     * call is used.</p>
      */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
      * <p>The time stamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
-     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     * is provided, the time stamp of the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+     * call is used.</p>
      */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
      * <p>The time stamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
-     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     * is provided, the time stamp of the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+     * call is used.</p>
      */
     inline PutEventsRequestEntry& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
 
     /**
      * <p>The time stamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
-     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     * is provided, the time stamp of the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
+     * call is used.</p>
      */
     inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
@@ -134,56 +136,65 @@ namespace Model
 
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutEventsRequestEntry& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutEventsRequestEntry& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutEventsRequestEntry& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
@@ -287,52 +298,133 @@ namespace Model
 
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline PutEventsRequestEntry& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline PutEventsRequestEntry& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
     /**
-     * <p>The event bus that will receive the event. Only the rules that are associated
-     * with this event bus will be able to match the event.</p>
+     * <p>The name or ARN of the event bus to receive the event. Only the rules that
+     * are associated with this event bus are used to match the event. If you omit
+     * this, the default event bus is used.</p>
      */
     inline PutEventsRequestEntry& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
+
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline bool TraceHeaderHasBeenSet() const { return m_traceHeaderHasBeenSet; }
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline void SetTraceHeader(const Aws::String& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = value; }
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline void SetTraceHeader(Aws::String&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::move(value); }
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline void SetTraceHeader(const char* value) { m_traceHeaderHasBeenSet = true; m_traceHeader.assign(value); }
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline PutEventsRequestEntry& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline PutEventsRequestEntry& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
+
+    /**
+     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * contains the trace-id associated with the event.</p> <p>To learn more about
+     * X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the X-Ray Developer Guide.</p>
+     */
+    inline PutEventsRequestEntry& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
 
   private:
 
@@ -353,6 +445,9 @@ namespace Model
 
     Aws::String m_eventBusName;
     bool m_eventBusNameHasBeenSet;
+
+    Aws::String m_traceHeader;
+    bool m_traceHeaderHasBeenSet;
   };
 
 } // namespace Model

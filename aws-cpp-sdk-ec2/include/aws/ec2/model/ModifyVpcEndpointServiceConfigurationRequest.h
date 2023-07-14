@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -122,63 +112,75 @@ namespace Model
 
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The private DNS name to assign to the endpoint service.</p>
+     * <p>(Interface endpoint configuration) The private DNS name to assign to the
+     * endpoint service.</p>
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
 
     /**
-     * <p>Removes the private DNS name of the endpoint service.</p>
+     * <p>(Interface endpoint configuration) Removes the private DNS name of the
+     * endpoint service.</p>
      */
     inline bool GetRemovePrivateDnsName() const{ return m_removePrivateDnsName; }
 
     /**
-     * <p>Removes the private DNS name of the endpoint service.</p>
+     * <p>(Interface endpoint configuration) Removes the private DNS name of the
+     * endpoint service.</p>
      */
     inline bool RemovePrivateDnsNameHasBeenSet() const { return m_removePrivateDnsNameHasBeenSet; }
 
     /**
-     * <p>Removes the private DNS name of the endpoint service.</p>
+     * <p>(Interface endpoint configuration) Removes the private DNS name of the
+     * endpoint service.</p>
      */
     inline void SetRemovePrivateDnsName(bool value) { m_removePrivateDnsNameHasBeenSet = true; m_removePrivateDnsName = value; }
 
     /**
-     * <p>Removes the private DNS name of the endpoint service.</p>
+     * <p>(Interface endpoint configuration) Removes the private DNS name of the
+     * endpoint service.</p>
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& WithRemovePrivateDnsName(bool value) { SetRemovePrivateDnsName(value); return *this;}
 
@@ -317,6 +319,208 @@ namespace Model
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveNetworkLoadBalancerArns(const char* value) { m_removeNetworkLoadBalancerArnsHasBeenSet = true; m_removeNetworkLoadBalancerArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddGatewayLoadBalancerArns() const{ return m_addGatewayLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline bool AddGatewayLoadBalancerArnsHasBeenSet() const { return m_addGatewayLoadBalancerArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline void SetAddGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline void SetAddGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetAddGatewayLoadBalancerArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetAddGatewayLoadBalancerArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(const Aws::String& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(Aws::String&& value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddGatewayLoadBalancerArns(const char* value) { m_addGatewayLoadBalancerArnsHasBeenSet = true; m_addGatewayLoadBalancerArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveGatewayLoadBalancerArns() const{ return m_removeGatewayLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline bool RemoveGatewayLoadBalancerArnsHasBeenSet() const { return m_removeGatewayLoadBalancerArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline void SetRemoveGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline void SetRemoveGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetRemoveGatewayLoadBalancerArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetRemoveGatewayLoadBalancerArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(const Aws::String& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(Aws::String&& value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveGatewayLoadBalancerArns(const char* value) { m_removeGatewayLoadBalancerArnsHasBeenSet = true; m_removeGatewayLoadBalancerArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddSupportedIpAddressTypes() const{ return m_addSupportedIpAddressTypes; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline bool AddSupportedIpAddressTypesHasBeenSet() const { return m_addSupportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline void SetAddSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = value; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline void SetAddSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetAddSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetAddSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(const Aws::String& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(Aws::String&& value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP address types to add to your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedIpAddressTypes(const char* value) { m_addSupportedIpAddressTypesHasBeenSet = true; m_addSupportedIpAddressTypes.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveSupportedIpAddressTypes() const{ return m_removeSupportedIpAddressTypes; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline bool RemoveSupportedIpAddressTypesHasBeenSet() const { return m_removeSupportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline void SetRemoveSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = value; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline void SetRemoveSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(const Aws::Vector<Aws::String>& value) { SetRemoveSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedIpAddressTypes(Aws::Vector<Aws::String>&& value) { SetRemoveSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const Aws::String& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(Aws::String&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IP address types to remove from your service configuration.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const char* value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
+
   private:
 
     bool m_dryRun;
@@ -339,6 +543,18 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeNetworkLoadBalancerArns;
     bool m_removeNetworkLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_addGatewayLoadBalancerArns;
+    bool m_addGatewayLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_removeGatewayLoadBalancerArns;
+    bool m_removeGatewayLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_addSupportedIpAddressTypes;
+    bool m_addSupportedIpAddressTypesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_removeSupportedIpAddressTypes;
+    bool m_removeSupportedIpAddressTypesHasBeenSet;
   };
 
 } // namespace Model

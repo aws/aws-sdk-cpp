@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mobile/Mobile_EXPORTS.h>
@@ -79,15 +69,15 @@ namespace Model
         class ListProjectsRequest;
         class UpdateProjectRequest;
 
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<MobileErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<MobileErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeBundleResult, Aws::Client::AWSError<MobileErrors>> DescribeBundleOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, Aws::Client::AWSError<MobileErrors>> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<ExportBundleResult, Aws::Client::AWSError<MobileErrors>> ExportBundleOutcome;
-        typedef Aws::Utils::Outcome<ExportProjectResult, Aws::Client::AWSError<MobileErrors>> ExportProjectOutcome;
-        typedef Aws::Utils::Outcome<ListBundlesResult, Aws::Client::AWSError<MobileErrors>> ListBundlesOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<MobileErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<MobileErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, MobileError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, MobileError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeBundleResult, MobileError> DescribeBundleOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectResult, MobileError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<ExportBundleResult, MobileError> ExportBundleOutcome;
+        typedef Aws::Utils::Outcome<ExportProjectResult, MobileError> ExportProjectOutcome;
+        typedef Aws::Utils::Outcome<ListBundlesResult, MobileError> ListBundlesOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, MobileError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, MobileError> UpdateProjectOutcome;
 
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
@@ -144,8 +134,6 @@ namespace Model
 
         virtual ~MobileClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mobile"; }
-
 
         /**
          * <p> Creates an AWS Mobile Hub project. </p><p><h3>See Also:</h3>   <a
@@ -155,20 +143,12 @@ namespace Model
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p> Creates an AWS Mobile Hub project. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p> Creates an AWS Mobile Hub project. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -180,20 +160,12 @@ namespace Model
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p> Delets a project in AWS Mobile Hub. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p> Delets a project in AWS Mobile Hub. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -206,22 +178,12 @@ namespace Model
         virtual Model::DescribeBundleOutcome DescribeBundle(const Model::DescribeBundleRequest& request) const;
 
         /**
-         * <p> Get the bundle details for the requested bundle id. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBundle that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBundleOutcomeCallable DescribeBundleCallable(const Model::DescribeBundleRequest& request) const;
 
         /**
-         * <p> Get the bundle details for the requested bundle id. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBundleAsync(const Model::DescribeBundleRequest& request, const DescribeBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -234,22 +196,12 @@ namespace Model
         virtual Model::DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest& request) const;
 
         /**
-         * <p> Gets details about a project in AWS Mobile Hub. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request) const;
 
         /**
-         * <p> Gets details about a project in AWS Mobile Hub. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -263,24 +215,12 @@ namespace Model
         virtual Model::ExportBundleOutcome ExportBundle(const Model::ExportBundleRequest& request) const;
 
         /**
-         * <p> Generates customized software development kit (SDK) and or tool packages
-         * used to integrate mobile web or mobile app clients with backend AWS resources.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExportBundle that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExportBundleOutcomeCallable ExportBundleCallable(const Model::ExportBundleRequest& request) const;
 
         /**
-         * <p> Generates customized software development kit (SDK) and or tool packages
-         * used to integrate mobile web or mobile app clients with backend AWS resources.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExportBundle that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportBundleAsync(const Model::ExportBundleRequest& request, const ExportBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -295,26 +235,12 @@ namespace Model
         virtual Model::ExportProjectOutcome ExportProject(const Model::ExportProjectRequest& request) const;
 
         /**
-         * <p> Exports project configuration to a snapshot which can be downloaded and
-         * shared. Note that mobile app push credentials are encrypted in exported
-         * projects, so they can only be shared successfully within the same AWS account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExportProject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExportProjectOutcomeCallable ExportProjectCallable(const Model::ExportProjectRequest& request) const;
 
         /**
-         * <p> Exports project configuration to a snapshot which can be downloaded and
-         * shared. Note that mobile app push credentials are encrypted in exported
-         * projects, so they can only be shared successfully within the same AWS account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExportProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportProjectAsync(const Model::ExportProjectRequest& request, const ExportProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -326,20 +252,12 @@ namespace Model
         virtual Model::ListBundlesOutcome ListBundles(const Model::ListBundlesRequest& request) const;
 
         /**
-         * <p> List all available bundles. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListBundles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListBundlesOutcomeCallable ListBundlesCallable(const Model::ListBundlesRequest& request) const;
 
         /**
-         * <p> List all available bundles. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBundlesAsync(const Model::ListBundlesRequest& request, const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -351,20 +269,12 @@ namespace Model
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p> Lists projects in AWS Mobile Hub. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p> Lists projects in AWS Mobile Hub. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -376,20 +286,12 @@ namespace Model
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p> Update an existing project. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p> Update an existing project. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

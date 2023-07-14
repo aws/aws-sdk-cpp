@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,8 @@ CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult() :
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_mtu(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_siteLinkEnabled(false)
 {
 }
 
@@ -44,7 +35,8 @@ CreatePublicVirtualInterfaceResult::CreatePublicVirtualInterfaceResult(const Aws
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_mtu(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_siteLinkEnabled(false)
 {
   *this = result;
 }
@@ -196,6 +188,12 @@ CreatePublicVirtualInterfaceResult& CreatePublicVirtualInterfaceResult::operator
 
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -203,6 +201,12 @@ CreatePublicVirtualInterfaceResult& CreatePublicVirtualInterfaceResult::operator
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("siteLinkEnabled"))
+  {
+    m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
+
   }
 
 

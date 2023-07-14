@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/networkmanager/model/Device.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ Device::Device() :
     m_deviceIdHasBeenSet(false),
     m_deviceArnHasBeenSet(false),
     m_globalNetworkIdHasBeenSet(false),
+    m_aWSLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vendorHasBeenSet(false),
@@ -50,6 +41,7 @@ Device::Device(JsonView jsonValue) :
     m_deviceIdHasBeenSet(false),
     m_deviceArnHasBeenSet(false),
     m_globalNetworkIdHasBeenSet(false),
+    m_aWSLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vendorHasBeenSet(false),
@@ -86,6 +78,13 @@ Device& Device::operator =(JsonView jsonValue)
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
 
     m_globalNetworkIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AWSLocation"))
+  {
+    m_aWSLocation = jsonValue.GetObject("AWSLocation");
+
+    m_aWSLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -183,6 +182,12 @@ JsonValue Device::Jsonize() const
   if(m_globalNetworkIdHasBeenSet)
   {
    payload.WithString("GlobalNetworkId", m_globalNetworkId);
+
+  }
+
+  if(m_aWSLocationHasBeenSet)
+  {
+   payload.WithObject("AWSLocation", m_aWSLocation.Jsonize());
 
   }
 

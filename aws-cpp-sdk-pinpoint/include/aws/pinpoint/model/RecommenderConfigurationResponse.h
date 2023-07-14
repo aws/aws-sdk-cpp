@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -52,144 +42,157 @@ namespace Model
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map that defines 1-10 custom endpoint or user attributes, depending on the
-     * value for the RecommenderUserIdType property. Each of these attributes
+     * value for the RecommendationProviderIdType property. Each of these attributes
      * temporarily stores a recommended item that's retrieved from the recommender
      * model and sent to an AWS Lambda function for additional processing. Each
      * attribute can be used as a message variable in a message template.</p> <p>This
      * value is null if the configuration doesn't invoke an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -717,122 +720,130 @@ namespace Model
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline const Aws::String& GetRecommendationsDisplayName() const{ return m_recommendationsDisplayName; }
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline bool RecommendationsDisplayNameHasBeenSet() const { return m_recommendationsDisplayNameHasBeenSet; }
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline void SetRecommendationsDisplayName(const Aws::String& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = value; }
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline void SetRecommendationsDisplayName(Aws::String&& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = std::move(value); }
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline void SetRecommendationsDisplayName(const char* value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName.assign(value); }
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& WithRecommendationsDisplayName(const Aws::String& value) { SetRecommendationsDisplayName(value); return *this;}
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& WithRecommendationsDisplayName(Aws::String&& value) { SetRecommendationsDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on
-     * the Amazon Pinpoint console.</p> <p>This value is null if the configuration
-     * doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform additional
-     * processing of recommendation data.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template
+     * editor on the Amazon Pinpoint console.</p> <p>This value is null if the
+     * configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline RecommenderConfigurationResponse& WithRecommendationsDisplayName(const char* value) { SetRecommendationsDisplayName(value); return *this;}
 
 
     /**
      * <p>The number of recommended items that are retrieved from the model for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This number determines how many recommended attributes are available for use as
-     * message variables in message templates.</p>
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This number determines how many recommended items are available for
+     * use in message variables.</p>
      */
     inline int GetRecommendationsPerMessage() const{ return m_recommendationsPerMessage; }
 
     /**
      * <p>The number of recommended items that are retrieved from the model for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This number determines how many recommended attributes are available for use as
-     * message variables in message templates.</p>
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This number determines how many recommended items are available for
+     * use in message variables.</p>
      */
     inline bool RecommendationsPerMessageHasBeenSet() const { return m_recommendationsPerMessageHasBeenSet; }
 
     /**
      * <p>The number of recommended items that are retrieved from the model for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This number determines how many recommended attributes are available for use as
-     * message variables in message templates.</p>
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This number determines how many recommended items are available for
+     * use in message variables.</p>
      */
     inline void SetRecommendationsPerMessage(int value) { m_recommendationsPerMessageHasBeenSet = true; m_recommendationsPerMessage = value; }
 
     /**
      * <p>The number of recommended items that are retrieved from the model for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This number determines how many recommended attributes are available for use as
-     * message variables in message templates.</p>
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This number determines how many recommended items are available for
+     * use in message variables.</p>
      */
     inline RecommenderConfigurationResponse& WithRecommendationsPerMessage(int value) { SetRecommendationsPerMessage(value); return *this;}
 

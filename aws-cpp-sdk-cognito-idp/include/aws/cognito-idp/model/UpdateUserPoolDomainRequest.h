@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -50,122 +40,122 @@ namespace Model
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline UpdateUserPoolDomainRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline UpdateUserPoolDomainRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The domain name for the custom domain that hosts the sign-up and sign-in
-     * pages for your application. For example: <code>auth.example.com</code>. </p>
-     * <p>This string can include only lowercase letters, numbers, and hyphens. Do not
-     * use a hyphen for the first or last character. Use periods to separate subdomain
-     * names.</p>
+     * pages for your application. One example might be <code>auth.example.com</code>.
+     * </p> <p>This string can include only lowercase letters, numbers, and hyphens.
+     * Don't use a hyphen for the first or last character. Use periods to separate
+     * subdomain names.</p>
      */
     inline UpdateUserPoolDomainRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline UpdateUserPoolDomainRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline UpdateUserPoolDomainRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the user pool that is associated with the custom domain that you
-     * are updating the certificate for.</p>
+     * <p>The ID of the user pool that is associated with the custom domain whose
+     * certificate you're updating.</p>
      */
     inline UpdateUserPoolDomainRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 

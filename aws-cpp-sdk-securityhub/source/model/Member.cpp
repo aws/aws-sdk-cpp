@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/Member.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,7 +21,7 @@ namespace Model
 Member::Member() : 
     m_accountIdHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_memberStatusHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -41,7 +31,7 @@ Member::Member() :
 Member::Member(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_memberStatusHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -65,11 +55,11 @@ Member& Member::operator =(JsonView jsonValue)
     m_emailHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("MasterId"))
+  if(jsonValue.ValueExists("AdministratorId"))
   {
-    m_masterId = jsonValue.GetString("MasterId");
+    m_administratorId = jsonValue.GetString("AdministratorId");
 
-    m_masterIdHasBeenSet = true;
+    m_administratorIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MemberStatus"))
@@ -112,9 +102,9 @@ JsonValue Member::Jsonize() const
 
   }
 
-  if(m_masterIdHasBeenSet)
+  if(m_administratorIdHasBeenSet)
   {
-   payload.WithString("MasterId", m_masterId);
+   payload.WithString("AdministratorId", m_administratorId);
 
   }
 

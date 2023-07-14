@@ -1,0 +1,15 @@
+---
+Checks:          'clang-diagnostic-*,clang-analyzer-*,performance-*,readability-*,modernize-*,bugprone-*,misc-*'
+WarningsAsErrors: 'performance-*'
+HeaderFilterRegex: ''
+FormatStyle: 'none'
+CheckOptions:
+  - key:             modernize-pass-by-value.ValuesOnly
+    value:           '1',
+  - key:             readability-implicit-bool-conversion.AllowPointerConditions
+    value:           '1',
+  - key:             readability-implicit-bool-conversion.AllowIntegerConditions
+    value:           '1'
+
+
+...

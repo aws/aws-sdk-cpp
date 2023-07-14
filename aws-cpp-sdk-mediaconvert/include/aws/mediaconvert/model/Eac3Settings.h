@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -248,69 +238,147 @@ namespace Model
 
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the line
+     * operating mode. Related setting: When you use this setting, MediaConvert ignores
+     * any value you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline const Eac3DynamicRangeCompressionLine& GetDynamicRangeCompressionLine() const{ return m_dynamicRangeCompressionLine; }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the line
+     * operating mode. Related setting: When you use this setting, MediaConvert ignores
+     * any value you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline bool DynamicRangeCompressionLineHasBeenSet() const { return m_dynamicRangeCompressionLineHasBeenSet; }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the line
+     * operating mode. Related setting: When you use this setting, MediaConvert ignores
+     * any value you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline void SetDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the line
+     * operating mode. Related setting: When you use this setting, MediaConvert ignores
+     * any value you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline void SetDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine&& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = std::move(value); }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the line
+     * operating mode. Related setting: When you use this setting, MediaConvert ignores
+     * any value you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline Eac3Settings& WithDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { SetDynamicRangeCompressionLine(value); return *this;}
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the line
+     * operating mode. Related setting: When you use this setting, MediaConvert ignores
+     * any value you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline Eac3Settings& WithDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine&& value) { SetDynamicRangeCompressionLine(std::move(value)); return *this;}
 
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the
-     * audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the RF operating
+     * mode. Related setting: When you use this setting, MediaConvert ignores any value
+     * you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline const Eac3DynamicRangeCompressionRf& GetDynamicRangeCompressionRf() const{ return m_dynamicRangeCompressionRf; }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the
-     * audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the RF operating
+     * mode. Related setting: When you use this setting, MediaConvert ignores any value
+     * you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline bool DynamicRangeCompressionRfHasBeenSet() const { return m_dynamicRangeCompressionRfHasBeenSet; }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the
-     * audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the RF operating
+     * mode. Related setting: When you use this setting, MediaConvert ignores any value
+     * you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline void SetDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the
-     * audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the RF operating
+     * mode. Related setting: When you use this setting, MediaConvert ignores any value
+     * you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline void SetDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf&& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = std::move(value); }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the
-     * audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the RF operating
+     * mode. Related setting: When you use this setting, MediaConvert ignores any value
+     * you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline Eac3Settings& WithDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { SetDynamicRangeCompressionRf(value); return *this;}
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the
-     * audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert
+     * uses when encoding the metadata in the Dolby Digital stream for the RF operating
+     * mode. Related setting: When you use this setting, MediaConvert ignores any value
+     * you provide for Dynamic range compression profile
+     * (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby
+     * Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     inline Eac3Settings& WithDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf&& value) { SetDynamicRangeCompressionRf(std::move(value)); return *this;}
 

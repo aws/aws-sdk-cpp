@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codeguru-reviewer/model/ProviderType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,9 @@ namespace Aws
 
         static const int CodeCommit_HASH = HashingUtils::HashString("CodeCommit");
         static const int GitHub_HASH = HashingUtils::HashString("GitHub");
+        static const int Bitbucket_HASH = HashingUtils::HashString("Bitbucket");
+        static const int GitHubEnterpriseServer_HASH = HashingUtils::HashString("GitHubEnterpriseServer");
+        static const int S3Bucket_HASH = HashingUtils::HashString("S3Bucket");
 
 
         ProviderType GetProviderTypeForName(const Aws::String& name)
@@ -44,6 +37,18 @@ namespace Aws
           else if (hashCode == GitHub_HASH)
           {
             return ProviderType::GitHub;
+          }
+          else if (hashCode == Bitbucket_HASH)
+          {
+            return ProviderType::Bitbucket;
+          }
+          else if (hashCode == GitHubEnterpriseServer_HASH)
+          {
+            return ProviderType::GitHubEnterpriseServer;
+          }
+          else if (hashCode == S3Bucket_HASH)
+          {
+            return ProviderType::S3Bucket;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,12 @@ namespace Aws
             return "CodeCommit";
           case ProviderType::GitHub:
             return "GitHub";
+          case ProviderType::Bitbucket:
+            return "Bitbucket";
+          case ProviderType::GitHubEnterpriseServer:
+            return "GitHubEnterpriseServer";
+          case ProviderType::S3Bucket:
+            return "S3Bucket";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

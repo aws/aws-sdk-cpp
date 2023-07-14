@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/firehose/model/ElasticsearchDestinationDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,8 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription() :
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_vpcConfigurationDescriptionHasBeenSet(false)
 {
 }
 
@@ -60,7 +51,8 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription(JsonVie
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_vpcConfigurationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +143,13 @@ ElasticsearchDestinationDescription& ElasticsearchDestinationDescription::operat
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfigurationDescription"))
+  {
+    m_vpcConfigurationDescription = jsonValue.GetObject("VpcConfigurationDescription");
+
+    m_vpcConfigurationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +224,12 @@ JsonValue ElasticsearchDestinationDescription::Jsonize() const
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("VpcConfigurationDescription", m_vpcConfigurationDescription.Jsonize());
 
   }
 

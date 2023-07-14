@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,12 +20,9 @@ namespace Model
 
 ContainerProperties::ContainerProperties() : 
     m_imageHasBeenSet(false),
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_jobRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_mountPointsHasBeenSet(false),
@@ -47,18 +34,19 @@ ContainerProperties::ContainerProperties() :
     m_userHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_resourceRequirementsHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false)
+    m_linuxParametersHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_secretsHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_fargatePlatformConfigurationHasBeenSet(false)
 {
 }
 
 ContainerProperties::ContainerProperties(JsonView jsonValue) : 
     m_imageHasBeenSet(false),
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_jobRoleArnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_mountPointsHasBeenSet(false),
@@ -70,7 +58,11 @@ ContainerProperties::ContainerProperties(JsonView jsonValue) :
     m_userHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_resourceRequirementsHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false)
+    m_linuxParametersHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_secretsHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_fargatePlatformConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,20 +74,6 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_image = jsonValue.GetString("image");
 
     m_imageHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("vcpus"))
-  {
-    m_vcpus = jsonValue.GetInteger("vcpus");
-
-    m_vcpusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("memory"))
-  {
-    m_memory = jsonValue.GetInteger("memory");
-
-    m_memoryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("command"))
@@ -113,6 +91,13 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_jobRoleArn = jsonValue.GetString("jobRoleArn");
 
     m_jobRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("executionRoleArn");
+
+    m_executionRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("volumes"))
@@ -200,6 +185,37 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_linuxParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("logConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secrets"))
+  {
+    Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
+    for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
+    {
+      m_secrets.push_back(secretsJsonList[secretsIndex].AsObject());
+    }
+    m_secretsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkConfiguration"))
+  {
+    m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
+
+    m_networkConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fargatePlatformConfiguration"))
+  {
+    m_fargatePlatformConfiguration = jsonValue.GetObject("fargatePlatformConfiguration");
+
+    m_fargatePlatformConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -210,18 +226,6 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_imageHasBeenSet)
   {
    payload.WithString("image", m_image);
-
-  }
-
-  if(m_vcpusHasBeenSet)
-  {
-   payload.WithInteger("vcpus", m_vcpus);
-
-  }
-
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
 
   }
 
@@ -239,6 +243,12 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_jobRoleArnHasBeenSet)
   {
    payload.WithString("jobRoleArn", m_jobRoleArn);
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("executionRoleArn", m_executionRoleArn);
 
   }
 
@@ -324,6 +334,35 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_linuxParametersHasBeenSet)
   {
    payload.WithObject("linuxParameters", m_linuxParameters.Jsonize());
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_secretsHasBeenSet)
+  {
+   Array<JsonValue> secretsJsonList(m_secrets.size());
+   for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
+   {
+     secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
+   }
+   payload.WithArray("secrets", std::move(secretsJsonList));
+
+  }
+
+  if(m_networkConfigurationHasBeenSet)
+  {
+   payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_fargatePlatformConfigurationHasBeenSet)
+  {
+   payload.WithObject("fargatePlatformConfiguration", m_fargatePlatformConfiguration.Jsonize());
 
   }
 

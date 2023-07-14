@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/BehaviorCriteriaType.h>
+#include <aws/iot/model/VerificationState.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +194,89 @@ namespace Model
 
 
     /**
+     * <p> The criteria for a behavior. </p>
+     */
+    inline const BehaviorCriteriaType& GetBehaviorCriteriaType() const{ return m_behaviorCriteriaType; }
+
+    /**
+     * <p> The criteria for a behavior. </p>
+     */
+    inline bool BehaviorCriteriaTypeHasBeenSet() const { return m_behaviorCriteriaTypeHasBeenSet; }
+
+    /**
+     * <p> The criteria for a behavior. </p>
+     */
+    inline void SetBehaviorCriteriaType(const BehaviorCriteriaType& value) { m_behaviorCriteriaTypeHasBeenSet = true; m_behaviorCriteriaType = value; }
+
+    /**
+     * <p> The criteria for a behavior. </p>
+     */
+    inline void SetBehaviorCriteriaType(BehaviorCriteriaType&& value) { m_behaviorCriteriaTypeHasBeenSet = true; m_behaviorCriteriaType = std::move(value); }
+
+    /**
+     * <p> The criteria for a behavior. </p>
+     */
+    inline ListViolationEventsRequest& WithBehaviorCriteriaType(const BehaviorCriteriaType& value) { SetBehaviorCriteriaType(value); return *this;}
+
+    /**
+     * <p> The criteria for a behavior. </p>
+     */
+    inline ListViolationEventsRequest& WithBehaviorCriteriaType(BehaviorCriteriaType&& value) { SetBehaviorCriteriaType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A list of all suppressed alerts. </p>
+     */
+    inline bool GetListSuppressedAlerts() const{ return m_listSuppressedAlerts; }
+
+    /**
+     * <p> A list of all suppressed alerts. </p>
+     */
+    inline bool ListSuppressedAlertsHasBeenSet() const { return m_listSuppressedAlertsHasBeenSet; }
+
+    /**
+     * <p> A list of all suppressed alerts. </p>
+     */
+    inline void SetListSuppressedAlerts(bool value) { m_listSuppressedAlertsHasBeenSet = true; m_listSuppressedAlerts = value; }
+
+    /**
+     * <p> A list of all suppressed alerts. </p>
+     */
+    inline ListViolationEventsRequest& WithListSuppressedAlerts(bool value) { SetListSuppressedAlerts(value); return *this;}
+
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline ListViolationEventsRequest& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
+
+    /**
+     * <p>The verification state of the violation (detect alarm).</p>
+     */
+    inline ListViolationEventsRequest& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
+
+
+    /**
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -275,6 +350,15 @@ namespace Model
 
     Aws::String m_securityProfileName;
     bool m_securityProfileNameHasBeenSet;
+
+    BehaviorCriteriaType m_behaviorCriteriaType;
+    bool m_behaviorCriteriaTypeHasBeenSet;
+
+    bool m_listSuppressedAlerts;
+    bool m_listSuppressedAlertsHasBeenSet;
+
+    VerificationState m_verificationState;
+    bool m_verificationStateHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

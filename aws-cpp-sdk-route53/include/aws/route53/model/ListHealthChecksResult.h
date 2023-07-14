@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
@@ -52,43 +42,50 @@ namespace Model
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<HealthCheck>& GetHealthChecks() const{ return m_healthChecks; }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline void SetHealthChecks(const Aws::Vector<HealthCheck>& value) { m_healthChecks = value; }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline void SetHealthChecks(Aws::Vector<HealthCheck>&& value) { m_healthChecks = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& WithHealthChecks(const Aws::Vector<HealthCheck>& value) { SetHealthChecks(value); return *this;}
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& WithHealthChecks(Aws::Vector<HealthCheck>&& value) { SetHealthChecks(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& AddHealthChecks(const HealthCheck& value) { m_healthChecks.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& AddHealthChecks(HealthCheck&& value) { m_healthChecks.push_back(std::move(value)); return *this; }
 

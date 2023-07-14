@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lightsail/model/LoadBalancer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -48,7 +38,12 @@ LoadBalancer::LoadBalancer() :
     m_instancePortHasBeenSet(false),
     m_instanceHealthSummaryHasBeenSet(false),
     m_tlsCertificateSummariesHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false)
+    m_configurationOptionsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
+    m_httpsRedirectionEnabled(false),
+    m_httpsRedirectionEnabledHasBeenSet(false),
+    m_tlsPolicyNameHasBeenSet(false)
 {
 }
 
@@ -72,7 +67,12 @@ LoadBalancer::LoadBalancer(JsonView jsonValue) :
     m_instancePortHasBeenSet(false),
     m_instanceHealthSummaryHasBeenSet(false),
     m_tlsCertificateSummariesHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false)
+    m_configurationOptionsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
+    m_httpsRedirectionEnabled(false),
+    m_httpsRedirectionEnabledHasBeenSet(false),
+    m_tlsPolicyNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -206,6 +206,27 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     m_configurationOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+
+    m_ipAddressTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("httpsRedirectionEnabled"))
+  {
+    m_httpsRedirectionEnabled = jsonValue.GetBool("httpsRedirectionEnabled");
+
+    m_httpsRedirectionEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tlsPolicyName"))
+  {
+    m_tlsPolicyName = jsonValue.GetString("tlsPolicyName");
+
+    m_tlsPolicyNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -327,6 +348,23 @@ JsonValue LoadBalancer::Jsonize() const
      configurationOptionsJsonMap.WithString(LoadBalancerAttributeNameMapper::GetNameForLoadBalancerAttributeName(configurationOptionsItem.first), configurationOptionsItem.second);
    }
    payload.WithObject("configurationOptions", std::move(configurationOptionsJsonMap));
+
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if(m_httpsRedirectionEnabledHasBeenSet)
+  {
+   payload.WithBool("httpsRedirectionEnabled", m_httpsRedirectionEnabled);
+
+  }
+
+  if(m_tlsPolicyNameHasBeenSet)
+  {
+   payload.WithString("tlsPolicyName", m_tlsPolicyName);
 
   }
 

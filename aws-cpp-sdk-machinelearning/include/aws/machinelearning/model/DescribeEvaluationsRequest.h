@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -48,109 +38,109 @@ namespace Model
 
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
-     * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the
-     * <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the
-     * search criteria to the <code>Evaluation</code> status.</li> <li>
-     * <code>Name</code> - Sets the search criteria to the contents of
-     * <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search
-     * criteria to the <code>MLModel</code> that was evaluated.</li> <li>
-     * <code>DataSourceId</code> - Sets the search criteria to the
-     * <code>DataSource</code> used in <code>Evaluation</code>.</li> <li>
+     * objects:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to
+     * the <code>Evaluation</code> creation date.</p> </li> <li> <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code>
+     * status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked an <code>Evaluation</code>.</p> </li> <li> <p> <code>MLModelId</code> -
+     * Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+     * </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the
+     * <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the data file(s) used in
      * <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple
-     * Storage Solution (Amazon S3) bucket or directory.</li> </ul>
+     * Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
     inline const EvaluationFilterVariable& GetFilterVariable() const{ return m_filterVariable; }
 
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
-     * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the
-     * <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the
-     * search criteria to the <code>Evaluation</code> status.</li> <li>
-     * <code>Name</code> - Sets the search criteria to the contents of
-     * <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search
-     * criteria to the <code>MLModel</code> that was evaluated.</li> <li>
-     * <code>DataSourceId</code> - Sets the search criteria to the
-     * <code>DataSource</code> used in <code>Evaluation</code>.</li> <li>
+     * objects:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to
+     * the <code>Evaluation</code> creation date.</p> </li> <li> <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code>
+     * status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked an <code>Evaluation</code>.</p> </li> <li> <p> <code>MLModelId</code> -
+     * Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+     * </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the
+     * <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the data file(s) used in
      * <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple
-     * Storage Solution (Amazon S3) bucket or directory.</li> </ul>
+     * Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
     inline bool FilterVariableHasBeenSet() const { return m_filterVariableHasBeenSet; }
 
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
-     * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the
-     * <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the
-     * search criteria to the <code>Evaluation</code> status.</li> <li>
-     * <code>Name</code> - Sets the search criteria to the contents of
-     * <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search
-     * criteria to the <code>MLModel</code> that was evaluated.</li> <li>
-     * <code>DataSourceId</code> - Sets the search criteria to the
-     * <code>DataSource</code> used in <code>Evaluation</code>.</li> <li>
+     * objects:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to
+     * the <code>Evaluation</code> creation date.</p> </li> <li> <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code>
+     * status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked an <code>Evaluation</code>.</p> </li> <li> <p> <code>MLModelId</code> -
+     * Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+     * </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the
+     * <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the data file(s) used in
      * <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple
-     * Storage Solution (Amazon S3) bucket or directory.</li> </ul>
+     * Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
     inline void SetFilterVariable(const EvaluationFilterVariable& value) { m_filterVariableHasBeenSet = true; m_filterVariable = value; }
 
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
-     * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the
-     * <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the
-     * search criteria to the <code>Evaluation</code> status.</li> <li>
-     * <code>Name</code> - Sets the search criteria to the contents of
-     * <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search
-     * criteria to the <code>MLModel</code> that was evaluated.</li> <li>
-     * <code>DataSourceId</code> - Sets the search criteria to the
-     * <code>DataSource</code> used in <code>Evaluation</code>.</li> <li>
+     * objects:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to
+     * the <code>Evaluation</code> creation date.</p> </li> <li> <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code>
+     * status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked an <code>Evaluation</code>.</p> </li> <li> <p> <code>MLModelId</code> -
+     * Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+     * </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the
+     * <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the data file(s) used in
      * <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple
-     * Storage Solution (Amazon S3) bucket or directory.</li> </ul>
+     * Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
     inline void SetFilterVariable(EvaluationFilterVariable&& value) { m_filterVariableHasBeenSet = true; m_filterVariable = std::move(value); }
 
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
-     * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the
-     * <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the
-     * search criteria to the <code>Evaluation</code> status.</li> <li>
-     * <code>Name</code> - Sets the search criteria to the contents of
-     * <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search
-     * criteria to the <code>MLModel</code> that was evaluated.</li> <li>
-     * <code>DataSourceId</code> - Sets the search criteria to the
-     * <code>DataSource</code> used in <code>Evaluation</code>.</li> <li>
+     * objects:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to
+     * the <code>Evaluation</code> creation date.</p> </li> <li> <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code>
+     * status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked an <code>Evaluation</code>.</p> </li> <li> <p> <code>MLModelId</code> -
+     * Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+     * </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the
+     * <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the data file(s) used in
      * <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple
-     * Storage Solution (Amazon S3) bucket or directory.</li> </ul>
+     * Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
     inline DescribeEvaluationsRequest& WithFilterVariable(const EvaluationFilterVariable& value) { SetFilterVariable(value); return *this;}
 
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
-     * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the
-     * <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the
-     * search criteria to the <code>Evaluation</code> status.</li> <li>
-     * <code>Name</code> - Sets the search criteria to the contents of
-     * <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li>
-     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-     * an <code>Evaluation</code>.</li> <li> <code>MLModelId</code> - Sets the search
-     * criteria to the <code>MLModel</code> that was evaluated.</li> <li>
-     * <code>DataSourceId</code> - Sets the search criteria to the
-     * <code>DataSource</code> used in <code>Evaluation</code>.</li> <li>
+     * objects:</p> <ul> <li> <p> <code>CreatedAt</code> - Sets the search criteria to
+     * the <code>Evaluation</code> creation date.</p> </li> <li> <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code>
+     * status.</p> </li> <li> <p> <code>Name</code> - Sets the search criteria to the
+     * contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li> <li>
+     * <p> <code>IAMUser</code> - Sets the search criteria to the user account that
+     * invoked an <code>Evaluation</code>.</p> </li> <li> <p> <code>MLModelId</code> -
+     * Sets the search criteria to the <code>MLModel</code> that was evaluated.</p>
+     * </li> <li> <p> <code>DataSourceId</code> - Sets the search criteria to the
+     * <code>DataSource</code> used in <code>Evaluation</code>.</p> </li> <li> <p>
      * <code>DataUri</code> - Sets the search criteria to the data file(s) used in
      * <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple
-     * Storage Solution (Amazon S3) bucket or directory.</li> </ul>
+     * Storage Solution (Amazon S3) bucket or directory.</p> </li> </ul>
      */
     inline DescribeEvaluationsRequest& WithFilterVariable(EvaluationFilterVariable&& value) { SetFilterVariable(std::move(value)); return *this;}
 
@@ -504,8 +494,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -516,8 +506,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
@@ -528,8 +518,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
@@ -540,8 +530,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
@@ -552,8 +542,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
@@ -564,8 +554,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline DescribeEvaluationsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
@@ -576,8 +566,8 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline DescribeEvaluationsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
@@ -588,63 +578,63 @@ namespace Model
      * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
      * <code>Evaluation</code>, select <code>Name</code> for the
      * <code>FilterVariable</code> and any of the following strings for the
-     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
-     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     * <code>Prefix</code>: </p> <ul> <li> <p>2014-09</p> </li> <li> <p>2014-09-09</p>
+     * </li> <li> <p>2014-09-09-Holiday</p> </li> </ul>
      */
     inline DescribeEvaluationsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>Evaluation</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>Evaluation</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>Evaluation</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>Evaluation</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>Evaluation</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>Evaluation</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>Evaluation</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>Evaluation</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>Evaluation</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>Evaluation</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline DescribeEvaluationsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
-     * <code>Evaluation</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
-     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
-     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
-     * <code>FilterVariable</code>.</p>
+     * <code>Evaluation</code>.</p> <ul> <li> <p> <code>asc</code> - Arranges the list
+     * in ascending order (A-Z, 0-9).</p> </li> <li> <p> <code>dsc</code> - Arranges
+     * the list in descending order (Z-A, 9-0).</p> </li> </ul> <p>Results are sorted
+     * by <code>FilterVariable</code>.</p>
      */
     inline DescribeEvaluationsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 

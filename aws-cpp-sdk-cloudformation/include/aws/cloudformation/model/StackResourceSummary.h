@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ResourceStatus.h>
 #include <aws/cloudformation/model/StackResourceDriftInformationSummary.h>
+#include <aws/cloudformation/model/ModuleInfo.h>
 #include <utility>
 
 namespace Aws
@@ -145,57 +136,57 @@ namespace Model
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline StackResourceSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline StackResourceSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline StackResourceSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -363,6 +354,43 @@ namespace Model
      */
     inline StackResourceSummary& WithDriftInformation(StackResourceDriftInformationSummary&& value) { SetDriftInformation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline const ModuleInfo& GetModuleInfo() const{ return m_moduleInfo; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline bool ModuleInfoHasBeenSet() const { return m_moduleInfoHasBeenSet; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(const ModuleInfo& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = value; }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline void SetModuleInfo(ModuleInfo&& value) { m_moduleInfoHasBeenSet = true; m_moduleInfo = std::move(value); }
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline StackResourceSummary& WithModuleInfo(const ModuleInfo& value) { SetModuleInfo(value); return *this;}
+
+    /**
+     * <p>Contains information about the module from which the resource was created, if
+     * the resource was created from a module included in the stack template.</p>
+     */
+    inline StackResourceSummary& WithModuleInfo(ModuleInfo&& value) { SetModuleInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_logicalResourceId;
@@ -385,6 +413,9 @@ namespace Model
 
     StackResourceDriftInformationSummary m_driftInformation;
     bool m_driftInformationHasBeenSet;
+
+    ModuleInfo m_moduleInfo;
+    bool m_moduleInfoHasBeenSet;
   };
 
 } // namespace Model

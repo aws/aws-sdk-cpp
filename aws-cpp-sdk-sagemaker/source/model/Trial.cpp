@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/Trial.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,6 +28,7 @@ Trial::Trial() :
     m_createdByHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trialComponentSummariesHasBeenSet(false)
 {
@@ -53,6 +44,7 @@ Trial::Trial(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trialComponentSummariesHasBeenSet(false)
 {
@@ -122,6 +114,13 @@ Trial& Trial::operator =(JsonView jsonValue)
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
 
     m_lastModifiedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+    m_metadataPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -200,6 +199,12 @@ JsonValue Trial::Jsonize() const
   if(m_lastModifiedByHasBeenSet)
   {
    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
+
+  }
+
+  if(m_metadataPropertiesHasBeenSet)
+  {
+   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
 
   }
 

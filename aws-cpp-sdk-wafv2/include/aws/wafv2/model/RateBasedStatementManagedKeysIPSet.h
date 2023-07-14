@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -36,12 +26,8 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>The set of IP addresses that are
-   * currently blocked for a rate-based statement.</p><p><h3>See Also:</h3>   <a
+   * <p>The set of IP addresses that are currently blocked for a
+   * <a>RateBasedStatement</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateBasedStatementManagedKeysIPSet">AWS
    * API Reference</a></p>
    */
@@ -54,22 +40,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
+     */
     inline const IPAddressVersion& GetIPAddressVersion() const{ return m_iPAddressVersion; }
 
-    
+    /**
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
+     */
     inline bool IPAddressVersionHasBeenSet() const { return m_iPAddressVersionHasBeenSet; }
 
-    
+    /**
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
+     */
     inline void SetIPAddressVersion(const IPAddressVersion& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
 
-    
+    /**
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
+     */
     inline void SetIPAddressVersion(IPAddressVersion&& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = std::move(value); }
 
-    
+    /**
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
+     */
     inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(const IPAddressVersion& value) { SetIPAddressVersion(value); return *this;}
 
-    
+    /**
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
+     */
     inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(IPAddressVersion&& value) { SetIPAddressVersion(std::move(value)); return *this;}
 
 

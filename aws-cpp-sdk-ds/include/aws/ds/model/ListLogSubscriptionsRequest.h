@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -47,72 +37,72 @@ namespace Model
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline ListLogSubscriptionsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline ListLogSubscriptionsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline ListLogSubscriptionsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

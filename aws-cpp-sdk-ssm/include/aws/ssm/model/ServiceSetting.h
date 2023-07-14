@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -36,19 +26,20 @@ namespace Model
 
   /**
    * <p>The service setting data structure.</p> <p> <code>ServiceSetting</code> is an
-   * account-level setting for an AWS service. This setting defines how a user
-   * interacts with or uses a service or a feature of a service. For example, if an
-   * AWS service charges money to the account based on feature or service usage, then
-   * the AWS service team might create a default setting of "false". This means the
-   * user can't use this feature unless they change the setting to "true" and
-   * intentionally opt in for a paid feature.</p> <p>Services map a
-   * <code>SettingId</code> object to a setting value. AWS services teams define the
-   * default value for a <code>SettingId</code>. You can't create a new
-   * <code>SettingId</code>, but you can overwrite the default value if you have the
+   * account-level setting for an Amazon Web Services service. This setting defines
+   * how a user interacts with or uses a service or a feature of a service. For
+   * example, if an Amazon Web Services service charges money to the account based on
+   * feature or service usage, then the Amazon Web Services service team might create
+   * a default setting of "false". This means the user can't use this feature unless
+   * they change the setting to "true" and intentionally opt in for a paid
+   * feature.</p> <p>Services map a <code>SettingId</code> object to a setting value.
+   * Amazon Web Services services teams define the default value for a
+   * <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you
+   * can overwrite the default value if you have the
    * <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-   * <a>UpdateServiceSetting</a> API action to change the default setting. Or, use
+   * <a>UpdateServiceSetting</a> API operation to change the default setting. Or, use
    * the <a>ResetServiceSetting</a> to change the value back to the original value
-   * defined by the AWS service team.</p><p><h3>See Also:</h3>   <a
+   * defined by the Amazon Web Services service team.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ServiceSetting">AWS
    * API Reference</a></p>
    */
@@ -267,80 +258,80 @@ namespace Model
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline ServiceSetting& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline ServiceSetting& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or
      * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
-     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
-     * current setting use a custom value specified by the customer.</p> </li> <li>
-     * <p>PendingUpdate: The current setting uses a default or custom value, but a
-     * setting change request is pending approval.</p> </li> </ul>
+     * value provisioned by the Amazon Web Services service team.</p> </li> <li>
+     * <p>Customized: The current setting use a custom value specified by the
+     * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
+     * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
     inline ServiceSetting& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
@@ -58,10 +48,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline const Aws::String& GetSelector() const{ return m_selector; }
 
@@ -76,10 +67,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
 
@@ -94,10 +86,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline void SetSelector(const Aws::String& value) { m_selectorHasBeenSet = true; m_selector = value; }
 
@@ -112,10 +105,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline void SetSelector(Aws::String&& value) { m_selectorHasBeenSet = true; m_selector = std::move(value); }
 
@@ -130,10 +124,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline void SetSelector(const char* value) { m_selectorHasBeenSet = true; m_selector.assign(value); }
 
@@ -148,10 +143,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline ObjectReference& WithSelector(const Aws::String& value) { SetSelector(value); return *this;}
 
@@ -166,10 +162,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline ObjectReference& WithSelector(Aws::String&& value) { SetSelector(std::move(value)); return *this;}
 
@@ -184,10 +181,11 @@ namespace Model
      * <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string
      * provided by Amazon Cloud Directory. When creating objects, the system will
      * provide you with the identifier of the created object. An object’s identifier is
-     * immutable and no two objects will ever share the same object identifier</p>
-     * </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-     * <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p>
-     * </li> </ul>
+     * immutable and no two objects will ever share the same object identifier. To
+     * identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped
+     * in double quotes. </p> </li> <li> <p> <i>/some/path</i> - Identifies the object
+     * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
+     * object in a batch call</p> </li> </ul>
      */
     inline ObjectReference& WithSelector(const char* value) { SetSelector(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/StorageClass.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,8 @@ namespace Aws
         static const int INTELLIGENT_TIERING_HASH = HashingUtils::HashString("INTELLIGENT_TIERING");
         static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
         static const int DEEP_ARCHIVE_HASH = HashingUtils::HashString("DEEP_ARCHIVE");
+        static const int OUTPOSTS_HASH = HashingUtils::HashString("OUTPOSTS");
+        static const int GLACIER_IR_HASH = HashingUtils::HashString("GLACIER_IR");
 
 
         StorageClass GetStorageClassForName(const Aws::String& name)
@@ -70,6 +62,14 @@ namespace Aws
           {
             return StorageClass::DEEP_ARCHIVE;
           }
+          else if (hashCode == OUTPOSTS_HASH)
+          {
+            return StorageClass::OUTPOSTS;
+          }
+          else if (hashCode == GLACIER_IR_HASH)
+          {
+            return StorageClass::GLACIER_IR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +98,10 @@ namespace Aws
             return "GLACIER";
           case StorageClass::DEEP_ARCHIVE:
             return "DEEP_ARCHIVE";
+          case StorageClass::OUTPOSTS:
+            return "OUTPOSTS";
+          case StorageClass::GLACIER_IR:
+            return "GLACIER_IR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

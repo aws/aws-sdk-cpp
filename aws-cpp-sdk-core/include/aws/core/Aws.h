@@ -1,26 +1,19 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #pragma once
 
 #include <aws/core/utils/logging/LogLevel.h>
 #include <aws/core/utils/logging/LogSystemInterface.h>
+#include <aws/core/utils/logging/CRTLogSystem.h>
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/crt/io/Bootstrap.h>
+#include <aws/crt/io/TlsOptions.h>
 
 namespace Aws
 {
@@ -45,10 +38,16 @@ namespace Aws
         const char* defaultLogPrefix;
 
         /**
-         * Defaults to empty, if logLevel has been set and this field is empty, then the default log interface will be used.
+         * Defaults to empty, if logLevel has been set and this field is empty, then the default log system will be used.
          * otherwise, we will call this closure to create a logger
          */
          std::function<std::shared_ptr<Aws::Utils::Logging::LogSystemInterface>()> logger_create_fn;
+
+         /**
+          * Defaults to empty, if logLevel has been set and this field is empty, then the default CRT log system will be used.
+          * The default CRT log system will redirect all logs from common runtime libraries (CRT) to C++ SDK with the same log level and formatting.
+          */
+         std::function<std::shared_ptr<Aws::Utils::Logging::CRTLogSystemInterface>()> crt_logger_create_fn;
     };
 
     /**
@@ -68,11 +67,20 @@ namespace Aws
     };
 
     /**
+     * SDK wide options for I/O: client bootstrap and TLS connection options
+     */
+    struct IoOptions
+    {
+        std::function<std::shared_ptr<Aws::Crt::Io::ClientBootstrap>()> clientBootstrap_create_fn;
+        std::function<std::shared_ptr<Aws::Crt::Io::TlsConnectionOptions>()> tlsConnectionOptions_create_fn;
+    };
+
+    /**
      * SDK wide options for http
      */
     struct HttpOptions
     {
-        HttpOptions() : initAndCleanupCurl(true), installSigPipeHandler(false)
+        HttpOptions() : initAndCleanupCurl(true), installSigPipeHandler(false), compliantRfc3986Encoding(false)
         { }
 
         /**
@@ -92,6 +100,10 @@ namespace Aws
          * NOTE: CURLOPT_NOSIGNAL is already being set.
          */
         bool installSigPipeHandler;
+        /**
+         * Disable legacy URL encoding that leaves `$&,:@=` unescaped for legacy purposes.
+         */
+        bool compliantRfc3986Encoding;
     };
 
     /**
@@ -106,6 +118,10 @@ namespace Aws
          * If set, this closure will be used to create and install the factory.
          */
         std::function<std::shared_ptr<Aws::Utils::Crypto::HashFactory>()> md5Factory_create_fn;
+        /**
+        * If set, this closure will be used to create and install the factory.
+        */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::HashFactory>()> sha1Factory_create_fn;
         /**
          * If set, this closure will be used to create and install the factory.
          */
@@ -200,6 +216,10 @@ namespace Aws
     struct SDKOptions
     {
         /**
+         * SDK wide options for I/O: client bootstrap and TLS connection options
+         */
+        IoOptions ioOptions;
+        /**
          * SDK wide options for logging
          */
         LoggingOptions loggingOptions;
@@ -270,4 +290,3 @@ namespace Aws
      */
     AWS_CORE_API void ShutdownAPI(const SDKOptions& options);
 }
-

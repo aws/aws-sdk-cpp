@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ModelApprovalStatus.h>
+#include <aws/sagemaker/model/ModelPackageType.h>
 #include <aws/sagemaker/model/ModelPackageSortBy.h>
 #include <aws/sagemaker/model/SortOrder.h>
 #include <utility>
@@ -192,6 +184,153 @@ namespace Model
 
 
     /**
+     * <p>A filter that returns only the model packages with the specified approval
+     * status.</p>
+     */
+    inline const ModelApprovalStatus& GetModelApprovalStatus() const{ return m_modelApprovalStatus; }
+
+    /**
+     * <p>A filter that returns only the model packages with the specified approval
+     * status.</p>
+     */
+    inline bool ModelApprovalStatusHasBeenSet() const { return m_modelApprovalStatusHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only the model packages with the specified approval
+     * status.</p>
+     */
+    inline void SetModelApprovalStatus(const ModelApprovalStatus& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
+
+    /**
+     * <p>A filter that returns only the model packages with the specified approval
+     * status.</p>
+     */
+    inline void SetModelApprovalStatus(ModelApprovalStatus&& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = std::move(value); }
+
+    /**
+     * <p>A filter that returns only the model packages with the specified approval
+     * status.</p>
+     */
+    inline ListModelPackagesRequest& WithModelApprovalStatus(const ModelApprovalStatus& value) { SetModelApprovalStatus(value); return *this;}
+
+    /**
+     * <p>A filter that returns only the model packages with the specified approval
+     * status.</p>
+     */
+    inline ListModelPackagesRequest& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline ListModelPackagesRequest& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline ListModelPackagesRequest& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only model versions that belong to the specified model
+     * group.</p>
+     */
+    inline ListModelPackagesRequest& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+
+
+    /**
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
+     */
+    inline const ModelPackageType& GetModelPackageType() const{ return m_modelPackageType; }
+
+    /**
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
+     */
+    inline bool ModelPackageTypeHasBeenSet() const { return m_modelPackageTypeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
+     */
+    inline void SetModelPackageType(const ModelPackageType& value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = value; }
+
+    /**
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
+     */
+    inline void SetModelPackageType(ModelPackageType&& value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = std::move(value); }
+
+    /**
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
+     */
+    inline ListModelPackagesRequest& WithModelPackageType(const ModelPackageType& value) { SetModelPackageType(value); return *this;}
+
+    /**
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
+     */
+    inline ListModelPackagesRequest& WithModelPackageType(ModelPackageType&& value) { SetModelPackageType(std::move(value)); return *this;}
+
+
+    /**
      * <p>If the response to a previous <code>ListModelPackages</code> request was
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of model packages, use the token in the next request.</p>
@@ -328,6 +467,15 @@ namespace Model
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet;
+
+    ModelApprovalStatus m_modelApprovalStatus;
+    bool m_modelApprovalStatusHasBeenSet;
+
+    Aws::String m_modelPackageGroupName;
+    bool m_modelPackageGroupNameHasBeenSet;
+
+    ModelPackageType m_modelPackageType;
+    bool m_modelPackageTypeHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/forecast/model/ReferencePredictorSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -183,14 +174,72 @@ namespace Model
 
 
     /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline bool GetIsAutoPredictor() const{ return m_isAutoPredictor; }
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline bool IsAutoPredictorHasBeenSet() const { return m_isAutoPredictorHasBeenSet; }
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline void SetIsAutoPredictor(bool value) { m_isAutoPredictorHasBeenSet = true; m_isAutoPredictor = value; }
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline PredictorSummary& WithIsAutoPredictor(bool value) { SetIsAutoPredictor(value); return *this;}
+
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline const ReferencePredictorSummary& GetReferencePredictorSummary() const{ return m_referencePredictorSummary; }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline bool ReferencePredictorSummaryHasBeenSet() const { return m_referencePredictorSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline void SetReferencePredictorSummary(const ReferencePredictorSummary& value) { m_referencePredictorSummaryHasBeenSet = true; m_referencePredictorSummary = value; }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline void SetReferencePredictorSummary(ReferencePredictorSummary&& value) { m_referencePredictorSummaryHasBeenSet = true; m_referencePredictorSummary = std::move(value); }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline PredictorSummary& WithReferencePredictorSummary(const ReferencePredictorSummary& value) { SetReferencePredictorSummary(value); return *this;}
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline PredictorSummary& WithReferencePredictorSummary(ReferencePredictorSummary&& value) { SetReferencePredictorSummary(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of the predictor. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -199,10 +248,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -211,10 +260,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -223,10 +272,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -235,10 +284,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -247,10 +296,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline PredictorSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -259,10 +308,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline PredictorSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -271,10 +320,10 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
-     * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before you can use the predictor to create a forecast.</p> </note>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>  <p>The <code>Status</code>
+     * of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     * create a forecast.</p> 
      */
     inline PredictorSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -352,56 +401,68 @@ namespace Model
 
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline PredictorSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline PredictorSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
@@ -415,6 +476,12 @@ namespace Model
 
     Aws::String m_datasetGroupArn;
     bool m_datasetGroupArnHasBeenSet;
+
+    bool m_isAutoPredictor;
+    bool m_isAutoPredictorHasBeenSet;
+
+    ReferencePredictorSummary m_referencePredictorSummary;
+    bool m_referencePredictorSummaryHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -263,6 +253,35 @@ namespace Model
      */
     inline UpdateAuthorizerRequest& WithStatus(AuthorizerStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline bool GetEnableCachingForHttp() const{ return m_enableCachingForHttp; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline bool EnableCachingForHttpHasBeenSet() const { return m_enableCachingForHttpHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline void SetEnableCachingForHttp(bool value) { m_enableCachingForHttpHasBeenSet = true; m_enableCachingForHttp = value; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline UpdateAuthorizerRequest& WithEnableCachingForHttp(bool value) { SetEnableCachingForHttp(value); return *this;}
+
   private:
 
     Aws::String m_authorizerName;
@@ -279,6 +298,9 @@ namespace Model
 
     AuthorizerStatus m_status;
     bool m_statusHasBeenSet;
+
+    bool m_enableCachingForHttp;
+    bool m_enableCachingForHttpHasBeenSet;
   };
 
 } // namespace Model

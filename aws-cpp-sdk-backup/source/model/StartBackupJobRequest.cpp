@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,8 @@ StartBackupJobRequest::StartBackupJobRequest() :
     m_completeWindowMinutes(0),
     m_completeWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
-    m_recoveryPointTagsHasBeenSet(false)
+    m_recoveryPointTagsHasBeenSet(false),
+    m_backupOptionsHasBeenSet(false)
 {
 }
 
@@ -90,6 +81,17 @@ Aws::String StartBackupJobRequest::SerializePayload() const
      recoveryPointTagsJsonMap.WithString(recoveryPointTagsItem.first, recoveryPointTagsItem.second);
    }
    payload.WithObject("RecoveryPointTags", std::move(recoveryPointTagsJsonMap));
+
+  }
+
+  if(m_backupOptionsHasBeenSet)
+  {
+   JsonValue backupOptionsJsonMap;
+   for(auto& backupOptionsItem : m_backupOptions)
+   {
+     backupOptionsJsonMap.WithString(backupOptionsItem.first, backupOptionsItem.second);
+   }
+   payload.WithObject("BackupOptions", std::move(backupOptionsJsonMap));
 
   }
 

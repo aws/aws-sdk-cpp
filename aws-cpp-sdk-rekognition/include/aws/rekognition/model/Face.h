@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -228,6 +218,55 @@ namespace Model
      */
     inline Face& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline const Aws::String& GetIndexFacesModelVersion() const{ return m_indexFacesModelVersion; }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline bool IndexFacesModelVersionHasBeenSet() const { return m_indexFacesModelVersionHasBeenSet; }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline void SetIndexFacesModelVersion(const Aws::String& value) { m_indexFacesModelVersionHasBeenSet = true; m_indexFacesModelVersion = value; }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline void SetIndexFacesModelVersion(Aws::String&& value) { m_indexFacesModelVersionHasBeenSet = true; m_indexFacesModelVersion = std::move(value); }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline void SetIndexFacesModelVersion(const char* value) { m_indexFacesModelVersionHasBeenSet = true; m_indexFacesModelVersion.assign(value); }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline Face& WithIndexFacesModelVersion(const Aws::String& value) { SetIndexFacesModelVersion(value); return *this;}
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline Face& WithIndexFacesModelVersion(Aws::String&& value) { SetIndexFacesModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline Face& WithIndexFacesModelVersion(const char* value) { SetIndexFacesModelVersion(value); return *this;}
+
   private:
 
     Aws::String m_faceId;
@@ -244,6 +283,9 @@ namespace Model
 
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
+    Aws::String m_indexFacesModelVersion;
+    bool m_indexFacesModelVersionHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -115,78 +105,152 @@ namespace Model
 
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline const Aws::Vector<Aws::String>& GetProfilingGroupNames() const{ return m_profilingGroupNames; }
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline void SetProfilingGroupNames(const Aws::Vector<Aws::String>& value) { m_profilingGroupNames = value; }
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline void SetProfilingGroupNames(Aws::Vector<Aws::String>&& value) { m_profilingGroupNames = std::move(value); }
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline ListProfilingGroupsResult& WithProfilingGroupNames(const Aws::Vector<Aws::String>& value) { SetProfilingGroupNames(value); return *this;}
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline ListProfilingGroupsResult& WithProfilingGroupNames(Aws::Vector<Aws::String>&& value) { SetProfilingGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline ListProfilingGroupsResult& AddProfilingGroupNames(const Aws::String& value) { m_profilingGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline ListProfilingGroupsResult& AddProfilingGroupNames(Aws::String&& value) { m_profilingGroupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Information about profiling group names.</p>
+     * <p> A returned list of profiling group names. A list of the names is returned
+     * only if <code>includeDescription</code> is <code>false</code>, otherwise a list
+     * of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
      */
     inline ListProfilingGroupsResult& AddProfilingGroupNames(const char* value) { m_profilingGroupNames.push_back(value); return *this; }
 
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline const Aws::Vector<ProfilingGroupDescription>& GetProfilingGroups() const{ return m_profilingGroups; }
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline void SetProfilingGroups(const Aws::Vector<ProfilingGroupDescription>& value) { m_profilingGroups = value; }
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline void SetProfilingGroups(Aws::Vector<ProfilingGroupDescription>&& value) { m_profilingGroups = std::move(value); }
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline ListProfilingGroupsResult& WithProfilingGroups(const Aws::Vector<ProfilingGroupDescription>& value) { SetProfilingGroups(value); return *this;}
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline ListProfilingGroupsResult& WithProfilingGroups(Aws::Vector<ProfilingGroupDescription>&& value) { SetProfilingGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline ListProfilingGroupsResult& AddProfilingGroups(const ProfilingGroupDescription& value) { m_profilingGroups.push_back(value); return *this; }
 
     /**
-     * <p>Information about profiling groups.</p>
+     * <p> A returned list <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects. A list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects is returned only if
+     * <code>includeDescription</code> is <code>true</code>, otherwise a list of
+     * profiling group names is returned. </p>
      */
     inline ListProfilingGroupsResult& AddProfilingGroups(ProfilingGroupDescription&& value) { m_profilingGroups.push_back(std::move(value)); return *this; }
 

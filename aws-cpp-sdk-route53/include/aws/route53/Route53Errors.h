@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/route53/Route53_EXPORTS.h>
 
@@ -52,11 +43,15 @@ enum class Route53Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CIDR_BLOCK_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CIDR_COLLECTION_ALREADY_EXISTS,
+  CIDR_COLLECTION_IN_USE,
+  CIDR_COLLECTION_VERSION_MISMATCH,
+  CONCURRENT_MODIFICATION,
   CONFLICTING_DOMAIN_EXISTS,
   CONFLICTING_TYPES,
   DELEGATION_SET_ALREADY_CREATED,
@@ -64,6 +59,7 @@ enum class Route53Errors
   DELEGATION_SET_IN_USE,
   DELEGATION_SET_NOT_AVAILABLE,
   DELEGATION_SET_NOT_REUSABLE,
+  D_N_S_S_E_C_NOT_FOUND,
   HEALTH_CHECK_ALREADY_EXISTS,
   HEALTH_CHECK_IN_USE,
   HEALTH_CHECK_VERSION_MISMATCH,
@@ -71,24 +67,36 @@ enum class Route53Errors
   HOSTED_ZONE_NOT_EMPTY,
   HOSTED_ZONE_NOT_FOUND,
   HOSTED_ZONE_NOT_PRIVATE,
+  HOSTED_ZONE_PARTIALLY_DELEGATED,
   INCOMPATIBLE_VERSION,
   INSUFFICIENT_CLOUD_WATCH_LOGS_RESOURCE_POLICY,
   INVALID_ARGUMENT,
   INVALID_CHANGE_BATCH,
   INVALID_DOMAIN_NAME,
   INVALID_INPUT,
+  INVALID_KEY_SIGNING_KEY_NAME,
+  INVALID_KEY_SIGNING_KEY_STATUS,
+  INVALID_K_M_S_ARN,
   INVALID_PAGINATION_TOKEN,
+  INVALID_SIGNING_STATUS,
   INVALID_TRAFFIC_POLICY_DOCUMENT,
   INVALID_V_P_C_ID,
+  KEY_SIGNING_KEY_ALREADY_EXISTS,
+  KEY_SIGNING_KEY_IN_PARENT_D_S_RECORD,
+  KEY_SIGNING_KEY_IN_USE,
+  KEY_SIGNING_KEY_WITH_ACTIVE_STATUS_NOT_FOUND,
   LAST_V_P_C_ASSOCIATION,
   LIMITS_EXCEEDED,
   NOT_AUTHORIZED,
   NO_SUCH_CHANGE,
+  NO_SUCH_CIDR_COLLECTION,
+  NO_SUCH_CIDR_LOCATION,
   NO_SUCH_CLOUD_WATCH_LOGS_LOG_GROUP,
   NO_SUCH_DELEGATION_SET,
   NO_SUCH_GEO_LOCATION,
   NO_SUCH_HEALTH_CHECK,
   NO_SUCH_HOSTED_ZONE,
+  NO_SUCH_KEY_SIGNING_KEY,
   NO_SUCH_QUERY_LOGGING_CONFIG,
   NO_SUCH_TRAFFIC_POLICY,
   NO_SUCH_TRAFFIC_POLICY_INSTANCE,
@@ -97,6 +105,7 @@ enum class Route53Errors
   QUERY_LOGGING_CONFIG_ALREADY_EXISTS,
   TOO_MANY_HEALTH_CHECKS,
   TOO_MANY_HOSTED_ZONES,
+  TOO_MANY_KEY_SIGNING_KEYS,
   TOO_MANY_TRAFFIC_POLICIES,
   TOO_MANY_TRAFFIC_POLICY_INSTANCES,
   TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY,
@@ -107,6 +116,20 @@ enum class Route53Errors
   V_P_C_ASSOCIATION_AUTHORIZATION_NOT_FOUND,
   V_P_C_ASSOCIATION_NOT_FOUND
 };
+
+class AWS_ROUTE53_API Route53Error : public Aws::Client::AWSError<Route53Errors>
+{
+public:
+  Route53Error() {}
+  Route53Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+  Route53Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+  Route53Error(const Aws::Client::AWSError<Route53Errors>& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+  Route53Error(Aws::Client::AWSError<Route53Errors>&& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace Route53ErrorMapper
 {
   AWS_ROUTE53_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

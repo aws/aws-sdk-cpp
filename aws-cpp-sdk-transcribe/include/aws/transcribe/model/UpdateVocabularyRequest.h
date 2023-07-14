@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -47,248 +37,355 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     * <p>The name of the custom vocabulary you want to update. Vocabulary names are
+     * case sensitive.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code that represents the language of the entries in the custom
+     * vocabulary you want to update. Each vocabulary must contain terms in only one
+     * language.</p> <p>A custom vocabulary can only be used to transcribe files in the
+     * same language as the vocabulary. For example, if you create a vocabulary using
+     * US English (<code>en-US</code>), you can only apply this vocabulary to files
+     * that contain English audio.</p> <p>For a list of supported languages and their
+     * associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code that represents the language of the entries in the custom
+     * vocabulary you want to update. Each vocabulary must contain terms in only one
+     * language.</p> <p>A custom vocabulary can only be used to transcribe files in the
+     * same language as the vocabulary. For example, if you create a vocabulary using
+     * US English (<code>en-US</code>), you can only apply this vocabulary to files
+     * that contain English audio.</p> <p>For a list of supported languages and their
+     * associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code that represents the language of the entries in the custom
+     * vocabulary you want to update. Each vocabulary must contain terms in only one
+     * language.</p> <p>A custom vocabulary can only be used to transcribe files in the
+     * same language as the vocabulary. For example, if you create a vocabulary using
+     * US English (<code>en-US</code>), you can only apply this vocabulary to files
+     * that contain English audio.</p> <p>For a list of supported languages and their
+     * associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code that represents the language of the entries in the custom
+     * vocabulary you want to update. Each vocabulary must contain terms in only one
+     * language.</p> <p>A custom vocabulary can only be used to transcribe files in the
+     * same language as the vocabulary. For example, if you create a vocabulary using
+     * US English (<code>en-US</code>), you can only apply this vocabulary to files
+     * that contain English audio.</p> <p>For a list of supported languages and their
+     * associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code that represents the language of the entries in the custom
+     * vocabulary you want to update. Each vocabulary must contain terms in only one
+     * language.</p> <p>A custom vocabulary can only be used to transcribe files in the
+     * same language as the vocabulary. For example, if you create a vocabulary using
+     * US English (<code>en-US</code>), you can only apply this vocabulary to files
+     * that contain English audio.</p> <p>For a list of supported languages and their
+     * associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>
      */
     inline UpdateVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code that represents the language of the entries in the custom
+     * vocabulary you want to update. Each vocabulary must contain terms in only one
+     * language.</p> <p>A custom vocabulary can only be used to transcribe files in the
+     * same language as the vocabulary. For example, if you create a vocabulary using
+     * US English (<code>en-US</code>), you can only apply this vocabulary to files
+     * that contain English audio.</p> <p>For a list of supported languages and their
+     * associated language codes, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> table.</p>
      */
     inline UpdateVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPhrases() const{ return m_phrases; }
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline bool PhrasesHasBeenSet() const { return m_phrasesHasBeenSet; }
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline void SetPhrases(const Aws::Vector<Aws::String>& value) { m_phrasesHasBeenSet = true; m_phrases = value; }
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline void SetPhrases(Aws::Vector<Aws::String>&& value) { m_phrasesHasBeenSet = true; m_phrases = std::move(value); }
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyRequest& WithPhrases(const Aws::Vector<Aws::String>& value) { SetPhrases(value); return *this;}
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyRequest& WithPhrases(Aws::Vector<Aws::String>&& value) { SetPhrases(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyRequest& AddPhrases(const Aws::String& value) { m_phrasesHasBeenSet = true; m_phrases.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyRequest& AddPhrases(Aws::String&& value) { m_phrasesHasBeenSet = true; m_phrases.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings containing the vocabulary entries.</p>
+     * <p>Use this parameter if you want to update your vocabulary by including all
+     * desired terms, as comma-separated values, within your request. The other option
+     * for updating your vocabulary is to save your entries in a text file and upload
+     * them to an Amazon S3 bucket, then specify the location of your file using the
+     * <code>VocabularyFileUri</code> parameter.</p> <p>Note that if you include
+     * <code>Phrases</code> in your request, you cannot use
+     * <code>VocabularyFileUri</code>; you must choose one or the other.</p> <p>Each
+     * language has a character set that contains all allowed characters for that
+     * specific language. If you use unsupported characters, your vocabulary filter
+     * request fails. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+     * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyRequest& AddPhrases(const char* value) { m_phrasesHasBeenSet = true; m_phrases.push_back(value); return *this; }
 
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 location of the text file that contains the definition of the custom
-     * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-     * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
-     * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * <p>The Amazon S3 location of the text file that contains your custom vocabulary.
+     * The URI must be located in the same Amazon Web Services Region as the resource
+     * you're calling.</p> <p>Here's an example URI path:
+     * <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p> <p>Note that if you
+     * include <code>VocabularyFileUri</code> in your request, you cannot use the
+     * <code>Phrases</code> flag; you must choose one or the other.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -132,38 +122,38 @@ namespace Model
 
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. The Default value
-     * is WINDOWS. </p>
+     * <p>Defines the operating system the patch baseline applies to. The default value
+     * is <code>WINDOWS</code>. </p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. The Default value
-     * is WINDOWS. </p>
+     * <p>Defines the operating system the patch baseline applies to. The default value
+     * is <code>WINDOWS</code>. </p>
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. The Default value
-     * is WINDOWS. </p>
+     * <p>Defines the operating system the patch baseline applies to. The default value
+     * is <code>WINDOWS</code>. </p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. The Default value
-     * is WINDOWS. </p>
+     * <p>Defines the operating system the patch baseline applies to. The default value
+     * is <code>WINDOWS</code>. </p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. The Default value
-     * is WINDOWS. </p>
+     * <p>Defines the operating system the patch baseline applies to. The default value
+     * is <code>WINDOWS</code>. </p>
      */
     inline PatchBaselineIdentity& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Defines the operating system the patch baseline applies to. The Default value
-     * is WINDOWS. </p>
+     * <p>Defines the operating system the patch baseline applies to. The default value
+     * is <code>WINDOWS</code>. </p>
      */
     inline PatchBaselineIdentity& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
@@ -210,30 +200,30 @@ namespace Model
 
 
     /**
-     * <p>Whether this is the default baseline. Note that Systems Manager supports
-     * creating multiple default patch baselines. For example, you can create a default
-     * patch baseline for each operating system.</p>
+     * <p>Whether this is the default baseline. Amazon Web Services Systems Manager
+     * supports creating multiple default patch baselines. For example, you can create
+     * a default patch baseline for each operating system.</p>
      */
     inline bool GetDefaultBaseline() const{ return m_defaultBaseline; }
 
     /**
-     * <p>Whether this is the default baseline. Note that Systems Manager supports
-     * creating multiple default patch baselines. For example, you can create a default
-     * patch baseline for each operating system.</p>
+     * <p>Whether this is the default baseline. Amazon Web Services Systems Manager
+     * supports creating multiple default patch baselines. For example, you can create
+     * a default patch baseline for each operating system.</p>
      */
     inline bool DefaultBaselineHasBeenSet() const { return m_defaultBaselineHasBeenSet; }
 
     /**
-     * <p>Whether this is the default baseline. Note that Systems Manager supports
-     * creating multiple default patch baselines. For example, you can create a default
-     * patch baseline for each operating system.</p>
+     * <p>Whether this is the default baseline. Amazon Web Services Systems Manager
+     * supports creating multiple default patch baselines. For example, you can create
+     * a default patch baseline for each operating system.</p>
      */
     inline void SetDefaultBaseline(bool value) { m_defaultBaselineHasBeenSet = true; m_defaultBaseline = value; }
 
     /**
-     * <p>Whether this is the default baseline. Note that Systems Manager supports
-     * creating multiple default patch baselines. For example, you can create a default
-     * patch baseline for each operating system.</p>
+     * <p>Whether this is the default baseline. Amazon Web Services Systems Manager
+     * supports creating multiple default patch baselines. For example, you can create
+     * a default patch baseline for each operating system.</p>
      */
     inline PatchBaselineIdentity& WithDefaultBaseline(bool value) { SetDefaultBaseline(value); return *this;}
 

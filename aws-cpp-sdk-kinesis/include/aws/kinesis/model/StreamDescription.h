@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/model/StreamStatus.h>
+#include <aws/kinesis/model/StreamModeDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kinesis/model/EncryptionType.h>
@@ -234,6 +225,49 @@ namespace Model
 
 
     /**
+     * <p> Specifies the capacity mode to which you want to set your data stream.
+     * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
+     * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+     */
+    inline const StreamModeDetails& GetStreamModeDetails() const{ return m_streamModeDetails; }
+
+    /**
+     * <p> Specifies the capacity mode to which you want to set your data stream.
+     * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
+     * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+     */
+    inline bool StreamModeDetailsHasBeenSet() const { return m_streamModeDetailsHasBeenSet; }
+
+    /**
+     * <p> Specifies the capacity mode to which you want to set your data stream.
+     * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
+     * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+     */
+    inline void SetStreamModeDetails(const StreamModeDetails& value) { m_streamModeDetailsHasBeenSet = true; m_streamModeDetails = value; }
+
+    /**
+     * <p> Specifies the capacity mode to which you want to set your data stream.
+     * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
+     * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+     */
+    inline void SetStreamModeDetails(StreamModeDetails&& value) { m_streamModeDetailsHasBeenSet = true; m_streamModeDetails = std::move(value); }
+
+    /**
+     * <p> Specifies the capacity mode to which you want to set your data stream.
+     * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
+     * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+     */
+    inline StreamDescription& WithStreamModeDetails(const StreamModeDetails& value) { SetStreamModeDetails(value); return *this;}
+
+    /**
+     * <p> Specifies the capacity mode to which you want to set your data stream.
+     * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
+     * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+     */
+    inline StreamDescription& WithStreamModeDetails(StreamModeDetails&& value) { SetStreamModeDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>The shards that comprise the stream.</p>
      */
     inline const Aws::Vector<Shard>& GetShards() const{ return m_shards; }
@@ -300,22 +334,26 @@ namespace Model
 
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
     /**
-     * <p>The current retention period, in hours.</p>
+     * <p>The current retention period, in hours. Minimum value of 24. Maximum value of
+     * 168.</p>
      */
     inline StreamDescription& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
 
@@ -396,8 +434,8 @@ namespace Model
      * <p>The server-side encryption type used on the stream. This parameter can be one
      * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
@@ -405,8 +443,8 @@ namespace Model
      * <p>The server-side encryption type used on the stream. This parameter can be one
      * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
@@ -414,8 +452,8 @@ namespace Model
      * <p>The server-side encryption type used on the stream. This parameter can be one
      * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
@@ -423,8 +461,8 @@ namespace Model
      * <p>The server-side encryption type used on the stream. This parameter can be one
      * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
@@ -432,8 +470,8 @@ namespace Model
      * <p>The server-side encryption type used on the stream. This parameter can be one
      * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline StreamDescription& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
@@ -441,17 +479,17 @@ namespace Model
      * <p>The server-side encryption type used on the stream. This parameter can be one
      * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline StreamDescription& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -464,10 +502,10 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -480,10 +518,10 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -496,10 +534,10 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -512,10 +550,10 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -528,10 +566,10 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -544,10 +582,10 @@ namespace Model
     inline StreamDescription& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -560,10 +598,10 @@ namespace Model
     inline StreamDescription& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified ARN to either an
-     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
-     * key owned by Kinesis Data Streams by specifying the alias
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * ARN to either an alias or a key, or an alias name prefixed by "alias/".You can
+     * also use a master key owned by Kinesis Data Streams by specifying the alias
      * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
@@ -585,6 +623,9 @@ namespace Model
 
     StreamStatus m_streamStatus;
     bool m_streamStatusHasBeenSet;
+
+    StreamModeDetails m_streamModeDetails;
+    bool m_streamModeDetailsHasBeenSet;
 
     Aws::Vector<Shard> m_shards;
     bool m_shardsHasBeenSet;

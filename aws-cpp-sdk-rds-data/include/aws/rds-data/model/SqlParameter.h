@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
@@ -91,104 +81,128 @@ namespace Model
 
 
     /**
-     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
-     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
-     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
-     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIMESTAMP</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
-     * The corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIME</code> type to the database. The accepted format is
-     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>DATE</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     * <p>A hint that specifies the correct object type for data type mapping. Possible
+     * values are as follows:</p> <ul> <li> <p> <code>DATE</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DATE</code>
+     * type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+     * <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter
+     * value is sent as an object of <code>DECIMAL</code> type to the database.</p>
+     * </li> <li> <p> <code>JSON</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>JSON</code> type to the
+     * database.</p> </li> <li> <p> <code>TIME</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>TIME</code>
+     * type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>TIMESTAMP</code> type to the
+     * database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>UUID</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>UUID</code> type to the database.
+     * </p> </li> </ul>
      */
     inline const TypeHint& GetTypeHint() const{ return m_typeHint; }
 
     /**
-     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
-     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
-     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
-     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIMESTAMP</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
-     * The corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIME</code> type to the database. The accepted format is
-     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>DATE</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     * <p>A hint that specifies the correct object type for data type mapping. Possible
+     * values are as follows:</p> <ul> <li> <p> <code>DATE</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DATE</code>
+     * type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+     * <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter
+     * value is sent as an object of <code>DECIMAL</code> type to the database.</p>
+     * </li> <li> <p> <code>JSON</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>JSON</code> type to the
+     * database.</p> </li> <li> <p> <code>TIME</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>TIME</code>
+     * type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>TIMESTAMP</code> type to the
+     * database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>UUID</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>UUID</code> type to the database.
+     * </p> </li> </ul>
      */
     inline bool TypeHintHasBeenSet() const { return m_typeHintHasBeenSet; }
 
     /**
-     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
-     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
-     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
-     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIMESTAMP</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
-     * The corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIME</code> type to the database. The accepted format is
-     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>DATE</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     * <p>A hint that specifies the correct object type for data type mapping. Possible
+     * values are as follows:</p> <ul> <li> <p> <code>DATE</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DATE</code>
+     * type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+     * <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter
+     * value is sent as an object of <code>DECIMAL</code> type to the database.</p>
+     * </li> <li> <p> <code>JSON</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>JSON</code> type to the
+     * database.</p> </li> <li> <p> <code>TIME</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>TIME</code>
+     * type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>TIMESTAMP</code> type to the
+     * database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>UUID</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>UUID</code> type to the database.
+     * </p> </li> </ul>
      */
     inline void SetTypeHint(const TypeHint& value) { m_typeHintHasBeenSet = true; m_typeHint = value; }
 
     /**
-     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
-     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
-     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
-     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIMESTAMP</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
-     * The corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIME</code> type to the database. The accepted format is
-     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>DATE</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     * <p>A hint that specifies the correct object type for data type mapping. Possible
+     * values are as follows:</p> <ul> <li> <p> <code>DATE</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DATE</code>
+     * type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+     * <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter
+     * value is sent as an object of <code>DECIMAL</code> type to the database.</p>
+     * </li> <li> <p> <code>JSON</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>JSON</code> type to the
+     * database.</p> </li> <li> <p> <code>TIME</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>TIME</code>
+     * type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>TIMESTAMP</code> type to the
+     * database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>UUID</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>UUID</code> type to the database.
+     * </p> </li> </ul>
      */
     inline void SetTypeHint(TypeHint&& value) { m_typeHintHasBeenSet = true; m_typeHint = std::move(value); }
 
     /**
-     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
-     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
-     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
-     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIMESTAMP</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
-     * The corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIME</code> type to the database. The accepted format is
-     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>DATE</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     * <p>A hint that specifies the correct object type for data type mapping. Possible
+     * values are as follows:</p> <ul> <li> <p> <code>DATE</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DATE</code>
+     * type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+     * <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter
+     * value is sent as an object of <code>DECIMAL</code> type to the database.</p>
+     * </li> <li> <p> <code>JSON</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>JSON</code> type to the
+     * database.</p> </li> <li> <p> <code>TIME</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>TIME</code>
+     * type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>TIMESTAMP</code> type to the
+     * database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>UUID</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>UUID</code> type to the database.
+     * </p> </li> </ul>
      */
     inline SqlParameter& WithTypeHint(const TypeHint& value) { SetTypeHint(value); return *this;}
 
     /**
-     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
-     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
-     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
-     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIMESTAMP</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
-     * The corresponding <code>String</code> parameter value is sent as an object of
-     * <code>TIME</code> type to the database. The accepted format is
-     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
-     * corresponding <code>String</code> parameter value is sent as an object of
-     * <code>DATE</code> type to the database. The accepted format is
-     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     * <p>A hint that specifies the correct object type for data type mapping. Possible
+     * values are as follows:</p> <ul> <li> <p> <code>DATE</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DATE</code>
+     * type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+     * <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter
+     * value is sent as an object of <code>DECIMAL</code> type to the database.</p>
+     * </li> <li> <p> <code>JSON</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>JSON</code> type to the
+     * database.</p> </li> <li> <p> <code>TIME</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>TIME</code>
+     * type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>TIMESTAMP</code> type to the
+     * database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p>
+     * </li> <li> <p> <code>UUID</code> - The corresponding <code>String</code>
+     * parameter value is sent as an object of <code>UUID</code> type to the database.
+     * </p> </li> </ul>
      */
     inline SqlParameter& WithTypeHint(TypeHint&& value) { SetTypeHint(std::move(value)); return *this;}
 

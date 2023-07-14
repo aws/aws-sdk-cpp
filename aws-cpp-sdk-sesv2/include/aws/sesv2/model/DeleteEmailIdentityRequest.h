@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -49,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline DeleteEmailIdentityRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline DeleteEmailIdentityRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The identity (that is, the email address or domain) that you want to
-     * delete.</p>
+     * <p>The identity (that is, the email address or domain) to delete.</p>
      */
     inline DeleteEmailIdentityRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
 

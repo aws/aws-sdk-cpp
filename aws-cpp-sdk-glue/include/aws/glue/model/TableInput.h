@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -588,6 +579,43 @@ namespace Model
      */
     inline TableInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline const TableIdentifier& GetTargetTable() const{ return m_targetTable; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(const TableIdentifier& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(TableIdentifier&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline TableInput& WithTargetTable(const TableIdentifier& value) { SetTargetTable(value); return *this;}
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline TableInput& WithTargetTable(TableIdentifier&& value) { SetTargetTable(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -625,6 +653,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
+    TableIdentifier m_targetTable;
+    bool m_targetTableHasBeenSet;
   };
 
 } // namespace Model

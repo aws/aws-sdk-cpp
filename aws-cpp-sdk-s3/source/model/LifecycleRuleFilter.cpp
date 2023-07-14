@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/LifecycleRuleFilter.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,6 +23,10 @@ namespace Model
 LifecycleRuleFilter::LifecycleRuleFilter() : 
     m_prefixHasBeenSet(false),
     m_tagHasBeenSet(false),
+    m_objectSizeGreaterThan(0),
+    m_objectSizeGreaterThanHasBeenSet(false),
+    m_objectSizeLessThan(0),
+    m_objectSizeLessThanHasBeenSet(false),
     m_andHasBeenSet(false)
 {
 }
@@ -40,6 +34,10 @@ LifecycleRuleFilter::LifecycleRuleFilter() :
 LifecycleRuleFilter::LifecycleRuleFilter(const XmlNode& xmlNode) : 
     m_prefixHasBeenSet(false),
     m_tagHasBeenSet(false),
+    m_objectSizeGreaterThan(0),
+    m_objectSizeGreaterThanHasBeenSet(false),
+    m_objectSizeLessThan(0),
+    m_objectSizeLessThanHasBeenSet(false),
     m_andHasBeenSet(false)
 {
   *this = xmlNode;
@@ -62,6 +60,18 @@ LifecycleRuleFilter& LifecycleRuleFilter::operator =(const XmlNode& xmlNode)
     {
       m_tag = tagNode;
       m_tagHasBeenSet = true;
+    }
+    XmlNode objectSizeGreaterThanNode = resultNode.FirstChild("ObjectSizeGreaterThan");
+    if(!objectSizeGreaterThanNode.IsNull())
+    {
+      m_objectSizeGreaterThan = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeGreaterThanNode.GetText()).c_str()).c_str());
+      m_objectSizeGreaterThanHasBeenSet = true;
+    }
+    XmlNode objectSizeLessThanNode = resultNode.FirstChild("ObjectSizeLessThan");
+    if(!objectSizeLessThanNode.IsNull())
+    {
+      m_objectSizeLessThan = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeLessThanNode.GetText()).c_str()).c_str());
+      m_objectSizeLessThanHasBeenSet = true;
     }
     XmlNode andNode = resultNode.FirstChild("And");
     if(!andNode.IsNull())
@@ -87,6 +97,22 @@ void LifecycleRuleFilter::AddToNode(XmlNode& parentNode) const
   {
    XmlNode tagNode = parentNode.CreateChildElement("Tag");
    m_tag.AddToNode(tagNode);
+  }
+
+  if(m_objectSizeGreaterThanHasBeenSet)
+  {
+   XmlNode objectSizeGreaterThanNode = parentNode.CreateChildElement("ObjectSizeGreaterThan");
+   ss << m_objectSizeGreaterThan;
+   objectSizeGreaterThanNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_objectSizeLessThanHasBeenSet)
+  {
+   XmlNode objectSizeLessThanNode = parentNode.CreateChildElement("ObjectSizeLessThan");
+   ss << m_objectSizeLessThan;
+   objectSizeLessThanNode.SetText(ss.str());
+   ss.str("");
   }
 
   if(m_andHasBeenSet)

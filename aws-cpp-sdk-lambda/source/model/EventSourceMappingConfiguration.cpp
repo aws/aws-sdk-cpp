@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/EventSourceMappingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,9 @@ namespace Model
 
 EventSourceMappingConfiguration::EventSourceMappingConfiguration() : 
     m_uUIDHasBeenSet(false),
+    m_startingPosition(EventSourcePosition::NOT_SET),
+    m_startingPositionHasBeenSet(false),
+    m_startingPositionTimestampHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
@@ -37,23 +30,34 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
+    m_filterCriteriaHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_stateTransitionReasonHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
+    m_topicsHasBeenSet(false),
+    m_queuesHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false),
+    m_selfManagedEventSourceHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false)
+    m_maximumRetryAttemptsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
 }
 
 EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonValue) : 
     m_uUIDHasBeenSet(false),
+    m_startingPosition(EventSourcePosition::NOT_SET),
+    m_startingPositionHasBeenSet(false),
+    m_startingPositionTimestampHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
@@ -61,18 +65,26 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_parallelizationFactor(0),
     m_parallelizationFactorHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
+    m_filterCriteriaHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_stateTransitionReasonHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
+    m_topicsHasBeenSet(false),
+    m_queuesHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false),
+    m_selfManagedEventSourceHasBeenSet(false),
     m_maximumRecordAgeInSeconds(0),
     m_maximumRecordAgeInSecondsHasBeenSet(false),
     m_bisectBatchOnFunctionError(false),
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false)
+    m_maximumRetryAttemptsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +96,20 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_uUID = jsonValue.GetString("UUID");
 
     m_uUIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartingPosition"))
+  {
+    m_startingPosition = EventSourcePositionMapper::GetEventSourcePositionForName(jsonValue.GetString("StartingPosition"));
+
+    m_startingPositionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartingPositionTimestamp"))
+  {
+    m_startingPositionTimestamp = jsonValue.GetDouble("StartingPositionTimestamp");
+
+    m_startingPositionTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BatchSize"))
@@ -112,6 +138,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_eventSourceArn = jsonValue.GetString("EventSourceArn");
 
     m_eventSourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FilterCriteria"))
+  {
+    m_filterCriteria = jsonValue.GetObject("FilterCriteria");
+
+    m_filterCriteriaHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FunctionArn"))
@@ -156,6 +189,43 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_destinationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Topics"))
+  {
+    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+    {
+      m_topics.push_back(topicsJsonList[topicsIndex].AsString());
+    }
+    m_topicsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Queues"))
+  {
+    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+    {
+      m_queues.push_back(queuesJsonList[queuesIndex].AsString());
+    }
+    m_queuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceAccessConfigurations"))
+  {
+    Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
+    for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+    {
+      m_sourceAccessConfigurations.push_back(sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject());
+    }
+    m_sourceAccessConfigurationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SelfManagedEventSource"))
+  {
+    m_selfManagedEventSource = jsonValue.GetObject("SelfManagedEventSource");
+
+    m_selfManagedEventSourceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
   {
     m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");
@@ -177,6 +247,23 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_maximumRetryAttemptsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TumblingWindowInSeconds"))
+  {
+    m_tumblingWindowInSeconds = jsonValue.GetInteger("TumblingWindowInSeconds");
+
+    m_tumblingWindowInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FunctionResponseTypes"))
+  {
+    Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
+    for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+    {
+      m_functionResponseTypes.push_back(FunctionResponseTypeMapper::GetFunctionResponseTypeForName(functionResponseTypesJsonList[functionResponseTypesIndex].AsString()));
+    }
+    m_functionResponseTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -188,6 +275,16 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   {
    payload.WithString("UUID", m_uUID);
 
+  }
+
+  if(m_startingPositionHasBeenSet)
+  {
+   payload.WithString("StartingPosition", EventSourcePositionMapper::GetNameForEventSourcePosition(m_startingPosition));
+  }
+
+  if(m_startingPositionTimestampHasBeenSet)
+  {
+   payload.WithDouble("StartingPositionTimestamp", m_startingPositionTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_batchSizeHasBeenSet)
@@ -211,6 +308,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_eventSourceArnHasBeenSet)
   {
    payload.WithString("EventSourceArn", m_eventSourceArn);
+
+  }
+
+  if(m_filterCriteriaHasBeenSet)
+  {
+   payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
 
   }
 
@@ -249,6 +352,45 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   }
 
+  if(m_topicsHasBeenSet)
+  {
+   Array<JsonValue> topicsJsonList(m_topics.size());
+   for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+   {
+     topicsJsonList[topicsIndex].AsString(m_topics[topicsIndex]);
+   }
+   payload.WithArray("Topics", std::move(topicsJsonList));
+
+  }
+
+  if(m_queuesHasBeenSet)
+  {
+   Array<JsonValue> queuesJsonList(m_queues.size());
+   for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+   {
+     queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);
+   }
+   payload.WithArray("Queues", std::move(queuesJsonList));
+
+  }
+
+  if(m_sourceAccessConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
+   for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+   {
+     sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
+
+  }
+
+  if(m_selfManagedEventSourceHasBeenSet)
+  {
+   payload.WithObject("SelfManagedEventSource", m_selfManagedEventSource.Jsonize());
+
+  }
+
   if(m_maximumRecordAgeInSecondsHasBeenSet)
   {
    payload.WithInteger("MaximumRecordAgeInSeconds", m_maximumRecordAgeInSeconds);
@@ -264,6 +406,23 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_maximumRetryAttemptsHasBeenSet)
   {
    payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
+
+  }
+
+  if(m_tumblingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
+
+  }
+
+  if(m_functionResponseTypesHasBeenSet)
+  {
+   Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
+   for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+   {
+     functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
+   }
+   payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
 
   }
 

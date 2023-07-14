@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/signer/model/GetSigningProfileResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,6 +36,24 @@ GetSigningProfileResult& GetSigningProfileResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
+
+  }
+
+  if(jsonValue.ValueExists("profileVersionArn"))
+  {
+    m_profileVersionArn = jsonValue.GetString("profileVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("revocationRecord"))
+  {
+    m_revocationRecord = jsonValue.GetObject("revocationRecord");
+
+  }
+
   if(jsonValue.ValueExists("signingMaterial"))
   {
     m_signingMaterial = jsonValue.GetObject("signingMaterial");
@@ -55,6 +63,18 @@ GetSigningProfileResult& GetSigningProfileResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
+
+  }
+
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+  }
+
+  if(jsonValue.ValueExists("signatureValidityPeriod"))
+  {
+    m_signatureValidityPeriod = jsonValue.GetObject("signatureValidityPeriod");
 
   }
 
@@ -76,6 +96,12 @@ GetSigningProfileResult& GetSigningProfileResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("status"))
   {
     m_status = SigningProfileStatusMapper::GetSigningProfileStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("statusReason"))
+  {
+    m_statusReason = jsonValue.GetString("statusReason");
 
   }
 

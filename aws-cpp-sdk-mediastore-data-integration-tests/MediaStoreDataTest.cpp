@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 
 #include <aws/external/gtest.h>
@@ -20,7 +10,6 @@
 #include <aws/core/platform/Platform.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -37,6 +26,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <fstream>
+#include <thread>
 
 using namespace Aws;
 using namespace Aws::Utils;
@@ -46,6 +36,16 @@ using namespace Aws::MediaStore;
 using namespace Aws::MediaStore::Model;
 using namespace Aws::MediaStoreData;
 using namespace Aws::MediaStoreData::Model;
+
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
 
 namespace
 {

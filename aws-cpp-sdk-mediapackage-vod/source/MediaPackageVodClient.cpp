@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -30,6 +20,7 @@
 #include <aws/mediapackage-vod/MediaPackageVodClient.h>
 #include <aws/mediapackage-vod/MediaPackageVodEndpoint.h>
 #include <aws/mediapackage-vod/MediaPackageVodErrorMarshaller.h>
+#include <aws/mediapackage-vod/model/ConfigureLogsRequest.h>
 #include <aws/mediapackage-vod/model/CreateAssetRequest.h>
 #include <aws/mediapackage-vod/model/CreatePackagingConfigurationRequest.h>
 #include <aws/mediapackage-vod/model/CreatePackagingGroupRequest.h>
@@ -42,6 +33,10 @@
 #include <aws/mediapackage-vod/model/ListAssetsRequest.h>
 #include <aws/mediapackage-vod/model/ListPackagingConfigurationsRequest.h>
 #include <aws/mediapackage-vod/model/ListPackagingGroupsRequest.h>
+#include <aws/mediapackage-vod/model/ListTagsForResourceRequest.h>
+#include <aws/mediapackage-vod/model/TagResourceRequest.h>
+#include <aws/mediapackage-vod/model/UntagResourceRequest.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -58,7 +53,7 @@ static const char* ALLOCATION_TAG = "MediaPackageVodClient";
 MediaPackageVodClient::MediaPackageVodClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,7 +63,7 @@ MediaPackageVodClient::MediaPackageVodClient(const Client::ClientConfiguration& 
 MediaPackageVodClient::MediaPackageVodClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -79,7 +74,7 @@ MediaPackageVodClient::MediaPackageVodClient(const std::shared_ptr<AWSCredential
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -90,8 +85,9 @@ MediaPackageVodClient::~MediaPackageVodClient()
 {
 }
 
-void MediaPackageVodClient::init(const ClientConfiguration& config)
+void MediaPackageVodClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("MediaPackage Vod");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -115,21 +111,43 @@ void MediaPackageVodClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+ConfigureLogsOutcome MediaPackageVodClient::ConfigureLogs(const ConfigureLogsRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ConfigureLogs", "Required field: Id, is not set");
+    return ConfigureLogsOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/packaging_groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/configure_logs");
+  return ConfigureLogsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ConfigureLogsOutcomeCallable MediaPackageVodClient::ConfigureLogsCallable(const ConfigureLogsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ConfigureLogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureLogs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ConfigureLogsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::ConfigureLogsAsyncHelper(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfigureLogs(request), context);
+}
+
 CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assets";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAssetOutcome(CreateAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAssetOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/assets");
+  return CreateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAssetOutcomeCallable MediaPackageVodClient::CreateAssetCallable(const CreateAssetRequest& request) const
@@ -153,18 +171,8 @@ void MediaPackageVodClient::CreateAssetAsyncHelper(const CreateAssetRequest& req
 CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfiguration(const CreatePackagingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePackagingConfigurationOutcome(CreatePackagingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePackagingConfigurationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_configurations");
+  return CreatePackagingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePackagingConfigurationOutcomeCallable MediaPackageVodClient::CreatePackagingConfigurationCallable(const CreatePackagingConfigurationRequest& request) const
@@ -188,18 +196,8 @@ void MediaPackageVodClient::CreatePackagingConfigurationAsyncHelper(const Create
 CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const CreatePackagingGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_groups";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePackagingGroupOutcome(CreatePackagingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePackagingGroupOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_groups");
+  return CreatePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePackagingGroupOutcomeCallable MediaPackageVodClient::CreatePackagingGroupCallable(const CreatePackagingGroupRequest& request) const
@@ -228,19 +226,9 @@ DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& 
     return DeleteAssetOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assets/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAssetOutcome(DeleteAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAssetOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/assets/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetOutcomeCallable MediaPackageVodClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
@@ -269,19 +257,9 @@ DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfig
     return DeletePackagingConfigurationOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_configurations/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePackagingConfigurationOutcome(DeletePackagingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePackagingConfigurationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_configurations/");
+  uri.AddPathSegment(request.GetId());
+  return DeletePackagingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackagingConfigurationOutcomeCallable MediaPackageVodClient::DeletePackagingConfigurationCallable(const DeletePackagingConfigurationRequest& request) const
@@ -310,19 +288,9 @@ DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const De
     return DeletePackagingGroupOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_groups/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePackagingGroupOutcome(DeletePackagingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePackagingGroupOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_groups/");
+  uri.AddPathSegment(request.GetId());
+  return DeletePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackagingGroupOutcomeCallable MediaPackageVodClient::DeletePackagingGroupCallable(const DeletePackagingGroupRequest& request) const
@@ -351,19 +319,9 @@ DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetReq
     return DescribeAssetOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assets/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAssetOutcome(DescribeAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAssetOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/assets/");
+  uri.AddPathSegment(request.GetId());
+  return DescribeAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetOutcomeCallable MediaPackageVodClient::DescribeAssetCallable(const DescribeAssetRequest& request) const
@@ -392,19 +350,9 @@ DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingCo
     return DescribePackagingConfigurationOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_configurations/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePackagingConfigurationOutcome(DescribePackagingConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePackagingConfigurationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_configurations/");
+  uri.AddPathSegment(request.GetId());
+  return DescribePackagingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePackagingConfigurationOutcomeCallable MediaPackageVodClient::DescribePackagingConfigurationCallable(const DescribePackagingConfigurationRequest& request) const
@@ -433,19 +381,9 @@ DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(cons
     return DescribePackagingGroupOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_groups/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePackagingGroupOutcome(DescribePackagingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePackagingGroupOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_groups/");
+  uri.AddPathSegment(request.GetId());
+  return DescribePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePackagingGroupOutcomeCallable MediaPackageVodClient::DescribePackagingGroupCallable(const DescribePackagingGroupRequest& request) const
@@ -469,18 +407,8 @@ void MediaPackageVodClient::DescribePackagingGroupAsyncHelper(const DescribePack
 ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assets";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssetsOutcome(ListAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssetsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/assets");
+  return ListAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetsOutcomeCallable MediaPackageVodClient::ListAssetsCallable(const ListAssetsRequest& request) const
@@ -504,18 +432,8 @@ void MediaPackageVodClient::ListAssetsAsyncHelper(const ListAssetsRequest& reque
 ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigurations(const ListPackagingConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackagingConfigurationsOutcome(ListPackagingConfigurationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackagingConfigurationsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_configurations");
+  return ListPackagingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackagingConfigurationsOutcomeCallable MediaPackageVodClient::ListPackagingConfigurationsCallable(const ListPackagingConfigurationsRequest& request) const
@@ -539,18 +457,8 @@ void MediaPackageVodClient::ListPackagingConfigurationsAsyncHelper(const ListPac
 ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const ListPackagingGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/packaging_groups";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackagingGroupsOutcome(ListPackagingGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackagingGroupsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/packaging_groups");
+  return ListPackagingGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackagingGroupsOutcomeCallable MediaPackageVodClient::ListPackagingGroupsCallable(const ListPackagingGroupsRequest& request) const
@@ -569,5 +477,134 @@ void MediaPackageVodClient::ListPackagingGroupsAsync(const ListPackagingGroupsRe
 void MediaPackageVodClient::ListPackagingGroupsAsyncHelper(const ListPackagingGroupsRequest& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPackagingGroups(request), context);
+}
+
+ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable MediaPackageVodClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
+TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable MediaPackageVodClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable MediaPackageVodClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
+UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const UpdatePackagingGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePackagingGroup", "Required field: Id, is not set");
+    return UpdatePackagingGroupOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/packaging_groups/");
+  uri.AddPathSegment(request.GetId());
+  return UpdatePackagingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackagingGroupOutcomeCallable MediaPackageVodClient::UpdatePackagingGroupCallable(const UpdatePackagingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackagingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::UpdatePackagingGroupAsync(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackagingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::UpdatePackagingGroupAsyncHelper(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePackagingGroup(request), context);
 }
 

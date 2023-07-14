@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -32,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The structure representing the removePermissionRequest.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p> <pre><code> The structure representing the
+   * &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt;
+   * </code></pre><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermissionRequest">AWS
    * API Reference</a></p>
    */
@@ -54,38 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The list of actions that the users and roles can perform on the profiling
-     * group.</p>
+     * <p> Specifies an action group that contains the permissions to remove from a
+     * profiling group's resource-based policy. One action group is supported,
+     * <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions. </p>
      */
     inline const ActionGroup& GetActionGroup() const{ return m_actionGroup; }
 
     /**
-     * <p>The list of actions that the users and roles can perform on the profiling
-     * group.</p>
+     * <p> Specifies an action group that contains the permissions to remove from a
+     * profiling group's resource-based policy. One action group is supported,
+     * <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions. </p>
      */
     inline bool ActionGroupHasBeenSet() const { return m_actionGroupHasBeenSet; }
 
     /**
-     * <p>The list of actions that the users and roles can perform on the profiling
-     * group.</p>
+     * <p> Specifies an action group that contains the permissions to remove from a
+     * profiling group's resource-based policy. One action group is supported,
+     * <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions. </p>
      */
     inline void SetActionGroup(const ActionGroup& value) { m_actionGroupHasBeenSet = true; m_actionGroup = value; }
 
     /**
-     * <p>The list of actions that the users and roles can perform on the profiling
-     * group.</p>
+     * <p> Specifies an action group that contains the permissions to remove from a
+     * profiling group's resource-based policy. One action group is supported,
+     * <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions. </p>
      */
     inline void SetActionGroup(ActionGroup&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::move(value); }
 
     /**
-     * <p>The list of actions that the users and roles can perform on the profiling
-     * group.</p>
+     * <p> Specifies an action group that contains the permissions to remove from a
+     * profiling group's resource-based policy. One action group is supported,
+     * <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions. </p>
      */
     inline RemovePermissionRequest& WithActionGroup(const ActionGroup& value) { SetActionGroup(value); return *this;}
 
     /**
-     * <p>The list of actions that the users and roles can perform on the profiling
-     * group.</p>
+     * <p> Specifies an action group that contains the permissions to remove from a
+     * profiling group's resource-based policy. One action group is supported,
+     * <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions. </p>
      */
     inline RemovePermissionRequest& WithActionGroup(ActionGroup&& value) { SetActionGroup(std::move(value)); return *this;}
 
@@ -132,42 +135,50 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline RemovePermissionRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline RemovePermissionRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the current revision of the policy.</p>
+     * <p> A universally unique identifier (UUID) for the revision of the
+     * resource-based policy from which you want to remove permissions. </p>
      */
     inline RemovePermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

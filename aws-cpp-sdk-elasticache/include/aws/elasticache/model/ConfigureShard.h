@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -130,9 +120,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -143,9 +132,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -156,9 +144,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -169,9 +156,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -268,6 +254,52 @@ namespace Model
      */
     inline ConfigureShard& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const{ return m_preferredOutpostArns; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline bool PreferredOutpostArnsHasBeenSet() const { return m_preferredOutpostArnsHasBeenSet; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = value; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline void SetPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::move(value); }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& WithPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { SetPreferredOutpostArns(value); return *this;}
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& WithPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { SetPreferredOutpostArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& AddPreferredOutpostArns(const Aws::String& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& AddPreferredOutpostArns(Aws::String&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The outpost ARNs in which the cache cluster is created.</p>
+     */
+    inline ConfigureShard& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_nodeGroupId;
@@ -278,6 +310,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
     bool m_preferredAvailabilityZonesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_preferredOutpostArns;
+    bool m_preferredOutpostArnsHasBeenSet;
   };
 
 } // namespace Model

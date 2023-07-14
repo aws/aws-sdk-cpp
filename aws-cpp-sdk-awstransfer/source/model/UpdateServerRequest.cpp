@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/awstransfer/model/UpdateServerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -23,19 +13,38 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateServerRequest::UpdateServerRequest() : 
+    m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_hostKeyHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
-    m_serverIdHasBeenSet(false)
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
+    m_serverIdHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
 Aws::String UpdateServerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
+
+  }
 
   if(m_endpointDetailsHasBeenSet)
   {
@@ -66,9 +75,44 @@ Aws::String UpdateServerRequest::SerializePayload() const
 
   }
 
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
+
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
+
+  }
+
   if(m_serverIdHasBeenSet)
   {
    payload.WithString("ServerId", m_serverId);
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

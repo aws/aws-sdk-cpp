@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dms/model/RedshiftSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,10 @@ RedshiftSettings::RedshiftSettings() :
     m_afterConnectScriptHasBeenSet(false),
     m_bucketFolderHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
+    m_caseSensitiveNames(false),
+    m_caseSensitiveNamesHasBeenSet(false),
+    m_compUpdate(false),
+    m_compUpdateHasBeenSet(false),
     m_connectionTimeout(0),
     m_connectionTimeoutHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
@@ -42,6 +36,8 @@ RedshiftSettings::RedshiftSettings() :
     m_emptyAsNullHasBeenSet(false),
     m_encryptionMode(EncryptionModeValue::NOT_SET),
     m_encryptionModeHasBeenSet(false),
+    m_explicitIds(false),
+    m_explicitIdsHasBeenSet(false),
     m_fileTransferUploadStreams(0),
     m_fileTransferUploadStreamsHasBeenSet(false),
     m_loadTimeout(0),
@@ -65,7 +61,9 @@ RedshiftSettings::RedshiftSettings() :
     m_truncateColumnsHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false)
+    m_writeBufferSizeHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +73,10 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_afterConnectScriptHasBeenSet(false),
     m_bucketFolderHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
+    m_caseSensitiveNames(false),
+    m_caseSensitiveNamesHasBeenSet(false),
+    m_compUpdate(false),
+    m_compUpdateHasBeenSet(false),
     m_connectionTimeout(0),
     m_connectionTimeoutHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
@@ -83,6 +85,8 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_emptyAsNullHasBeenSet(false),
     m_encryptionMode(EncryptionModeValue::NOT_SET),
     m_encryptionModeHasBeenSet(false),
+    m_explicitIds(false),
+    m_explicitIdsHasBeenSet(false),
     m_fileTransferUploadStreams(0),
     m_fileTransferUploadStreamsHasBeenSet(false),
     m_loadTimeout(0),
@@ -106,7 +110,9 @@ RedshiftSettings::RedshiftSettings(JsonView jsonValue) :
     m_truncateColumnsHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_writeBufferSize(0),
-    m_writeBufferSizeHasBeenSet(false)
+    m_writeBufferSizeHasBeenSet(false),
+    m_secretsManagerAccessRoleArnHasBeenSet(false),
+    m_secretsManagerSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +145,20 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_bucketName = jsonValue.GetString("BucketName");
 
     m_bucketNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CaseSensitiveNames"))
+  {
+    m_caseSensitiveNames = jsonValue.GetBool("CaseSensitiveNames");
+
+    m_caseSensitiveNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompUpdate"))
+  {
+    m_compUpdate = jsonValue.GetBool("CompUpdate");
+
+    m_compUpdateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ConnectionTimeout"))
@@ -174,6 +194,13 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_encryptionMode = EncryptionModeValueMapper::GetEncryptionModeValueForName(jsonValue.GetString("EncryptionMode"));
 
     m_encryptionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExplicitIds"))
+  {
+    m_explicitIds = jsonValue.GetBool("ExplicitIds");
+
+    m_explicitIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FileTransferUploadStreams"))
@@ -288,6 +315,20 @@ RedshiftSettings& RedshiftSettings::operator =(JsonView jsonValue)
     m_writeBufferSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
+  {
+    m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
+
+    m_secretsManagerAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretsManagerSecretId"))
+  {
+    m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
+
+    m_secretsManagerSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -319,6 +360,18 @@ JsonValue RedshiftSettings::Jsonize() const
 
   }
 
+  if(m_caseSensitiveNamesHasBeenSet)
+  {
+   payload.WithBool("CaseSensitiveNames", m_caseSensitiveNames);
+
+  }
+
+  if(m_compUpdateHasBeenSet)
+  {
+   payload.WithBool("CompUpdate", m_compUpdate);
+
+  }
+
   if(m_connectionTimeoutHasBeenSet)
   {
    payload.WithInteger("ConnectionTimeout", m_connectionTimeout);
@@ -346,6 +399,12 @@ JsonValue RedshiftSettings::Jsonize() const
   if(m_encryptionModeHasBeenSet)
   {
    payload.WithString("EncryptionMode", EncryptionModeValueMapper::GetNameForEncryptionModeValue(m_encryptionMode));
+  }
+
+  if(m_explicitIdsHasBeenSet)
+  {
+   payload.WithBool("ExplicitIds", m_explicitIds);
+
   }
 
   if(m_fileTransferUploadStreamsHasBeenSet)
@@ -441,6 +500,18 @@ JsonValue RedshiftSettings::Jsonize() const
   if(m_writeBufferSizeHasBeenSet)
   {
    payload.WithInteger("WriteBufferSize", m_writeBufferSize);
+
+  }
+
+  if(m_secretsManagerAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("SecretsManagerAccessRoleArn", m_secretsManagerAccessRoleArn);
+
+  }
+
+  if(m_secretsManagerSecretIdHasBeenSet)
+  {
+   payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
 
   }
 

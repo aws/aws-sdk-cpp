@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
@@ -433,6 +423,62 @@ namespace Model
      */
     inline Problem& AddFeedback(FeedbackKey&& key, FeedbackValue&& value) { m_feedbackHasBeenSet = true; m_feedback.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p> The number of times that the same problem reoccurred after the first time it
+     * was resolved. </p>
+     */
+    inline long long GetRecurringCount() const{ return m_recurringCount; }
+
+    /**
+     * <p> The number of times that the same problem reoccurred after the first time it
+     * was resolved. </p>
+     */
+    inline bool RecurringCountHasBeenSet() const { return m_recurringCountHasBeenSet; }
+
+    /**
+     * <p> The number of times that the same problem reoccurred after the first time it
+     * was resolved. </p>
+     */
+    inline void SetRecurringCount(long long value) { m_recurringCountHasBeenSet = true; m_recurringCount = value; }
+
+    /**
+     * <p> The number of times that the same problem reoccurred after the first time it
+     * was resolved. </p>
+     */
+    inline Problem& WithRecurringCount(long long value) { SetRecurringCount(value); return *this;}
+
+
+    /**
+     * <p> The last time that the problem reoccurred after its last resolution. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastRecurrenceTime() const{ return m_lastRecurrenceTime; }
+
+    /**
+     * <p> The last time that the problem reoccurred after its last resolution. </p>
+     */
+    inline bool LastRecurrenceTimeHasBeenSet() const { return m_lastRecurrenceTimeHasBeenSet; }
+
+    /**
+     * <p> The last time that the problem reoccurred after its last resolution. </p>
+     */
+    inline void SetLastRecurrenceTime(const Aws::Utils::DateTime& value) { m_lastRecurrenceTimeHasBeenSet = true; m_lastRecurrenceTime = value; }
+
+    /**
+     * <p> The last time that the problem reoccurred after its last resolution. </p>
+     */
+    inline void SetLastRecurrenceTime(Aws::Utils::DateTime&& value) { m_lastRecurrenceTimeHasBeenSet = true; m_lastRecurrenceTime = std::move(value); }
+
+    /**
+     * <p> The last time that the problem reoccurred after its last resolution. </p>
+     */
+    inline Problem& WithLastRecurrenceTime(const Aws::Utils::DateTime& value) { SetLastRecurrenceTime(value); return *this;}
+
+    /**
+     * <p> The last time that the problem reoccurred after its last resolution. </p>
+     */
+    inline Problem& WithLastRecurrenceTime(Aws::Utils::DateTime&& value) { SetLastRecurrenceTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -464,6 +510,12 @@ namespace Model
 
     Aws::Map<FeedbackKey, FeedbackValue> m_feedback;
     bool m_feedbackHasBeenSet;
+
+    long long m_recurringCount;
+    bool m_recurringCountHasBeenSet;
+
+    Aws::Utils::DateTime m_lastRecurrenceTime;
+    bool m_lastRecurrenceTimeHasBeenSet;
   };
 
 } // namespace Model

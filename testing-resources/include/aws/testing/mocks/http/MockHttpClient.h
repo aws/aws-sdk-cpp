@@ -1,20 +1,11 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <assert.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/URI.h>
@@ -30,17 +21,6 @@ static const char MockHttpAllocationTag[] = "MockHttp";
 class MockHttpClient : public Aws::Http::HttpClient
 {
 public:
-    std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(Aws::Http::HttpRequest& request,
-                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                                                         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
-    {
-        AWS_UNREFERENCED_PARAM(request);
-        AWS_UNREFERENCED_PARAM(readLimiter);
-        AWS_UNREFERENCED_PARAM(writeLimiter);
-        assert(false); // should not use this overload. It's deprecated
-        return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
-    }
-
     std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request,
                                                          Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
@@ -48,6 +28,7 @@ public:
         AWS_UNREFERENCED_PARAM(readLimiter);
         AWS_UNREFERENCED_PARAM(writeLimiter);
 
+        request->SetResolvedRemoteHost("127.0.0.1");
         //note that the mock client factory logically enforces type safety here.
         m_requestsMade.push_back(static_cast<const Aws::Http::Standard::StandardHttpRequest&>(*request));
 
@@ -64,7 +45,11 @@ public:
         return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
     }
 
-    const Aws::Http::Standard::StandardHttpRequest& GetMostRecentHttpRequest() const { return m_requestsMade.back(); }
+    const Aws::Http::Standard::StandardHttpRequest& GetMostRecentHttpRequest() const
+    {
+        assert(!m_requestsMade.empty());
+        return m_requestsMade.back();
+    }
     const Aws::Vector<Aws::Http::Standard::StandardHttpRequest>& GetAllRequestsMade() const { return m_requestsMade; }
 
     //these will be cleaned up by the aws client, so if you are testing an aws client, don't worry about freeing the memory

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>S3 parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3Parameters">AWS
    * API Reference</a></p>
    */
@@ -49,37 +39,37 @@ namespace Model
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline const ManifestFileLocation& GetManifestFileLocation() const{ return m_manifestFileLocation; }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline bool ManifestFileLocationHasBeenSet() const { return m_manifestFileLocationHasBeenSet; }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline void SetManifestFileLocation(const ManifestFileLocation& value) { m_manifestFileLocationHasBeenSet = true; m_manifestFileLocation = value; }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline void SetManifestFileLocation(ManifestFileLocation&& value) { m_manifestFileLocationHasBeenSet = true; m_manifestFileLocation = std::move(value); }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline S3Parameters& WithManifestFileLocation(const ManifestFileLocation& value) { SetManifestFileLocation(value); return *this;}
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline S3Parameters& WithManifestFileLocation(ManifestFileLocation&& value) { SetManifestFileLocation(std::move(value)); return *this;}
 

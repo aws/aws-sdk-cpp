@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/ConnectionPropertyKey.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -47,6 +37,19 @@ namespace Aws
         static const int SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH = HashingUtils::HashString("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
         static const int CUSTOM_JDBC_CERT_STRING_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
         static const int CONNECTION_URL_HASH = HashingUtils::HashString("CONNECTION_URL");
+        static const int KAFKA_BOOTSTRAP_SERVERS_HASH = HashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
+        static const int KAFKA_SSL_ENABLED_HASH = HashingUtils::HashString("KAFKA_SSL_ENABLED");
+        static const int KAFKA_CUSTOM_CERT_HASH = HashingUtils::HashString("KAFKA_CUSTOM_CERT");
+        static const int KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH = HashingUtils::HashString("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
+        static const int KAFKA_CLIENT_KEYSTORE_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEYSTORE");
+        static const int KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        static const int KAFKA_CLIENT_KEY_PASSWORD_HASH = HashingUtils::HashString("KAFKA_CLIENT_KEY_PASSWORD");
+        static const int ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
+        static const int ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD");
+        static const int SECRET_ID_HASH = HashingUtils::HashString("SECRET_ID");
+        static const int CONNECTOR_URL_HASH = HashingUtils::HashString("CONNECTOR_URL");
+        static const int CONNECTOR_TYPE_HASH = HashingUtils::HashString("CONNECTOR_TYPE");
+        static const int CONNECTOR_CLASS_NAME_HASH = HashingUtils::HashString("CONNECTOR_CLASS_NAME");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -120,6 +123,58 @@ namespace Aws
           {
             return ConnectionPropertyKey::CONNECTION_URL;
           }
+          else if (hashCode == KAFKA_BOOTSTRAP_SERVERS_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_BOOTSTRAP_SERVERS;
+          }
+          else if (hashCode == KAFKA_SSL_ENABLED_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_SSL_ENABLED;
+          }
+          else if (hashCode == KAFKA_CUSTOM_CERT_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CUSTOM_CERT;
+          }
+          else if (hashCode == KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_SKIP_CUSTOM_CERT_VALIDATION;
+          }
+          else if (hashCode == KAFKA_CLIENT_KEYSTORE_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE;
+          }
+          else if (hashCode == KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE_PASSWORD;
+          }
+          else if (hashCode == KAFKA_CLIENT_KEY_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CLIENT_KEY_PASSWORD;
+          }
+          else if (hashCode == ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD;
+          }
+          else if (hashCode == ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD;
+          }
+          else if (hashCode == SECRET_ID_HASH)
+          {
+            return ConnectionPropertyKey::SECRET_ID;
+          }
+          else if (hashCode == CONNECTOR_URL_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTOR_URL;
+          }
+          else if (hashCode == CONNECTOR_TYPE_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTOR_TYPE;
+          }
+          else if (hashCode == CONNECTOR_CLASS_NAME_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTOR_CLASS_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -168,6 +223,32 @@ namespace Aws
             return "CUSTOM_JDBC_CERT_STRING";
           case ConnectionPropertyKey::CONNECTION_URL:
             return "CONNECTION_URL";
+          case ConnectionPropertyKey::KAFKA_BOOTSTRAP_SERVERS:
+            return "KAFKA_BOOTSTRAP_SERVERS";
+          case ConnectionPropertyKey::KAFKA_SSL_ENABLED:
+            return "KAFKA_SSL_ENABLED";
+          case ConnectionPropertyKey::KAFKA_CUSTOM_CERT:
+            return "KAFKA_CUSTOM_CERT";
+          case ConnectionPropertyKey::KAFKA_SKIP_CUSTOM_CERT_VALIDATION:
+            return "KAFKA_SKIP_CUSTOM_CERT_VALIDATION";
+          case ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE:
+            return "KAFKA_CLIENT_KEYSTORE";
+          case ConnectionPropertyKey::KAFKA_CLIENT_KEYSTORE_PASSWORD:
+            return "KAFKA_CLIENT_KEYSTORE_PASSWORD";
+          case ConnectionPropertyKey::KAFKA_CLIENT_KEY_PASSWORD:
+            return "KAFKA_CLIENT_KEY_PASSWORD";
+          case ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD:
+            return "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD";
+          case ConnectionPropertyKey::ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD:
+            return "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD";
+          case ConnectionPropertyKey::SECRET_ID:
+            return "SECRET_ID";
+          case ConnectionPropertyKey::CONNECTOR_URL:
+            return "CONNECTOR_URL";
+          case ConnectionPropertyKey::CONNECTOR_TYPE:
+            return "CONNECTOR_TYPE";
+          case ConnectionPropertyKey::CONNECTOR_CLASS_NAME:
+            return "CONNECTOR_CLASS_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

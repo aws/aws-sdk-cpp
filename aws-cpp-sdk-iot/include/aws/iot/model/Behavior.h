@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -50,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline Behavior& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline Behavior& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name you have given to the behavior.</p>
+     * <p>The name you've given to the behavior.</p>
      */
     inline Behavior& WithName(const char* value) { SetName(value); return *this;}
 
@@ -134,42 +124,48 @@ namespace Model
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     * to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.</p>
      */
     inline const MetricDimension& GetMetricDimension() const{ return m_metricDimension; }
 
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     * to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.</p>
      */
     inline bool MetricDimensionHasBeenSet() const { return m_metricDimensionHasBeenSet; }
 
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     * to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.</p>
      */
     inline void SetMetricDimension(const MetricDimension& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = value; }
 
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     * to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.</p>
      */
     inline void SetMetricDimension(MetricDimension&& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = std::move(value); }
 
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     * to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.</p>
      */
     inline Behavior& WithMetricDimension(const MetricDimension& value) { SetMetricDimension(value); return *this;}
 
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     * to only MQTT topics where the name matches the pattern specified in the
+     * dimension. This can't be used with custom metrics.</p>
      */
     inline Behavior& WithMetricDimension(MetricDimension&& value) { SetMetricDimension(std::move(value)); return *this;}
 
@@ -210,6 +206,27 @@ namespace Model
      */
     inline Behavior& WithCriteria(BehaviorCriteria&& value) { SetCriteria(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Suppresses alerts. </p>
+     */
+    inline bool GetSuppressAlerts() const{ return m_suppressAlerts; }
+
+    /**
+     * <p> Suppresses alerts. </p>
+     */
+    inline bool SuppressAlertsHasBeenSet() const { return m_suppressAlertsHasBeenSet; }
+
+    /**
+     * <p> Suppresses alerts. </p>
+     */
+    inline void SetSuppressAlerts(bool value) { m_suppressAlertsHasBeenSet = true; m_suppressAlerts = value; }
+
+    /**
+     * <p> Suppresses alerts. </p>
+     */
+    inline Behavior& WithSuppressAlerts(bool value) { SetSuppressAlerts(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -223,6 +240,9 @@ namespace Model
 
     BehaviorCriteria m_criteria;
     bool m_criteriaHasBeenSet;
+
+    bool m_suppressAlerts;
+    bool m_suppressAlertsHasBeenSet;
   };
 
 } // namespace Model

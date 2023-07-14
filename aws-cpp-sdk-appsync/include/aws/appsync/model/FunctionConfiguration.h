@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/SyncConfig.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A function is a reusable entity. Multiple functions can be used to compose
+   * <p>A function is a reusable entity. You can use multiple functions to compose
    * the resolver logic.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FunctionConfiguration">AWS
    * API Reference</a></p>
@@ -90,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline FunctionConfiguration& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline FunctionConfiguration& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline FunctionConfiguration& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
@@ -344,52 +335,92 @@ namespace Model
 
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline void SetFunctionVersion(const char* value) { m_functionVersionHasBeenSet = true; m_functionVersion.assign(value); }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline FunctionConfiguration& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline FunctionConfiguration& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline FunctionConfiguration& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+
+
+    
+    inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
+
+    
+    inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
+
+    
+    inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
+
+    
+    inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
+
+    
+    inline FunctionConfiguration& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
+
+    
+    inline FunctionConfiguration& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline FunctionConfiguration& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
   private:
 
@@ -416,6 +447,12 @@ namespace Model
 
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
+    SyncConfig m_syncConfig;
+    bool m_syncConfigHasBeenSet;
+
+    int m_maxBatchSize;
+    bool m_maxBatchSizeHasBeenSet;
   };
 
 } // namespace Model

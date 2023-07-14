@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/Database.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ Database::Database() :
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_targetDatabaseHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ Database::Database(JsonView jsonValue) :
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_targetDatabaseHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +93,20 @@ Database& Database::operator =(JsonView jsonValue)
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetDatabase"))
+  {
+    m_targetDatabase = jsonValue.GetObject("TargetDatabase");
+
+    m_targetDatabaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +156,18 @@ JsonValue Database::Jsonize() const
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
    }
    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
+  }
+
+  if(m_targetDatabaseHasBeenSet)
+  {
+   payload.WithObject("TargetDatabase", m_targetDatabase.Jsonize());
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

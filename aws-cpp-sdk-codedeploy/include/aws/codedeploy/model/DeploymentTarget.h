@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/codedeploy/model/InstanceTarget.h>
 #include <aws/codedeploy/model/LambdaTarget.h>
 #include <aws/codedeploy/model/ECSTarget.h>
+#include <aws/codedeploy/model/CloudFormationTarget.h>
 #include <utility>
 
 namespace Aws
@@ -51,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p> The deployment type that is specific to the deployment's compute platform.
-     * </p>
+     * <p>The deployment type that is specific to the deployment's compute platform or
+     * deployments initiated by a CloudFormation stack update.</p>
      */
     inline const DeploymentTargetType& GetDeploymentTargetType() const{ return m_deploymentTargetType; }
 
     /**
-     * <p> The deployment type that is specific to the deployment's compute platform.
-     * </p>
+     * <p>The deployment type that is specific to the deployment's compute platform or
+     * deployments initiated by a CloudFormation stack update.</p>
      */
     inline bool DeploymentTargetTypeHasBeenSet() const { return m_deploymentTargetTypeHasBeenSet; }
 
     /**
-     * <p> The deployment type that is specific to the deployment's compute platform.
-     * </p>
+     * <p>The deployment type that is specific to the deployment's compute platform or
+     * deployments initiated by a CloudFormation stack update.</p>
      */
     inline void SetDeploymentTargetType(const DeploymentTargetType& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = value; }
 
     /**
-     * <p> The deployment type that is specific to the deployment's compute platform.
-     * </p>
+     * <p>The deployment type that is specific to the deployment's compute platform or
+     * deployments initiated by a CloudFormation stack update.</p>
      */
     inline void SetDeploymentTargetType(DeploymentTargetType&& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = std::move(value); }
 
     /**
-     * <p> The deployment type that is specific to the deployment's compute platform.
-     * </p>
+     * <p>The deployment type that is specific to the deployment's compute platform or
+     * deployments initiated by a CloudFormation stack update.</p>
      */
     inline DeploymentTarget& WithDeploymentTargetType(const DeploymentTargetType& value) { SetDeploymentTargetType(value); return *this;}
 
     /**
-     * <p> The deployment type that is specific to the deployment's compute platform.
-     * </p>
+     * <p>The deployment type that is specific to the deployment's compute platform or
+     * deployments initiated by a CloudFormation stack update.</p>
      */
     inline DeploymentTarget& WithDeploymentTargetType(DeploymentTargetType&& value) { SetDeploymentTargetType(std::move(value)); return *this;}
 
@@ -197,6 +188,25 @@ namespace Model
      */
     inline DeploymentTarget& WithEcsTarget(ECSTarget&& value) { SetEcsTarget(std::move(value)); return *this;}
 
+
+    
+    inline const CloudFormationTarget& GetCloudFormationTarget() const{ return m_cloudFormationTarget; }
+
+    
+    inline bool CloudFormationTargetHasBeenSet() const { return m_cloudFormationTargetHasBeenSet; }
+
+    
+    inline void SetCloudFormationTarget(const CloudFormationTarget& value) { m_cloudFormationTargetHasBeenSet = true; m_cloudFormationTarget = value; }
+
+    
+    inline void SetCloudFormationTarget(CloudFormationTarget&& value) { m_cloudFormationTargetHasBeenSet = true; m_cloudFormationTarget = std::move(value); }
+
+    
+    inline DeploymentTarget& WithCloudFormationTarget(const CloudFormationTarget& value) { SetCloudFormationTarget(value); return *this;}
+
+    
+    inline DeploymentTarget& WithCloudFormationTarget(CloudFormationTarget&& value) { SetCloudFormationTarget(std::move(value)); return *this;}
+
   private:
 
     DeploymentTargetType m_deploymentTargetType;
@@ -210,6 +220,9 @@ namespace Model
 
     ECSTarget m_ecsTarget;
     bool m_ecsTargetHasBeenSet;
+
+    CloudFormationTarget m_cloudFormationTarget;
+    bool m_cloudFormationTargetHasBeenSet;
   };
 
 } // namespace Model

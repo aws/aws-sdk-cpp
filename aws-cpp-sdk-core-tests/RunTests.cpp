@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
@@ -33,15 +23,19 @@ int main(int argc, char** argv)
 
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
-    Aws::SDKOptions options;	
+    Aws::SDKOptions options;
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     options.httpOptions.installSigPipeHandler = true;
     AWS_BEGIN_MEMORY_TEST_EX(options, 1024, 128);
 
     Aws::Testing::InitPlatformTest(options);
     Aws::InitAPI(options);
+    // Disable EC2 metadata in client configuration to avoid requests retrieving EC2 metadata in unit tests.
+    Aws::Testing::SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1/*override*/);
     ::testing::InitGoogleTest(&argc, argv);
     int retVal = RUN_ALL_TESTS();
+    Aws::Testing::RestoreEnvironmentVariables();
     Aws::ShutdownAPI(options);
     AWS_END_MEMORY_TEST_EX;
 

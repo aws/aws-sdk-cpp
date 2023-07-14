@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -19,6 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ResourceStatus.h>
+#include <aws/cloudformation/model/HookStatus.h>
+#include <aws/cloudformation/model/HookInvocationPoint.h>
+#include <aws/cloudformation/model/HookFailureMode.h>
 #include <utility>
 
 namespace Aws
@@ -266,57 +259,57 @@ namespace Model
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline StackEvent& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline StackEvent& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.)</p>
      */
     inline StackEvent& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -477,7 +470,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -493,7 +486,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -509,7 +502,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -525,7 +518,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -541,7 +534,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -557,7 +550,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline StackEvent& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -573,7 +566,7 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline StackEvent& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -589,9 +582,208 @@ namespace Model
      * <i>Console-StackOperation-ID</i>, which helps you easily identify the stack
      * operation . For example, if you create a stack using the console, each stack
      * event would be assigned the same token in the following format:
-     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
+     * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
     inline StackEvent& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline const Aws::String& GetHookType() const{ return m_hookType; }
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline bool HookTypeHasBeenSet() const { return m_hookTypeHasBeenSet; }
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline void SetHookType(const Aws::String& value) { m_hookTypeHasBeenSet = true; m_hookType = value; }
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline void SetHookType(Aws::String&& value) { m_hookTypeHasBeenSet = true; m_hookType = std::move(value); }
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline void SetHookType(const char* value) { m_hookTypeHasBeenSet = true; m_hookType.assign(value); }
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline StackEvent& WithHookType(const Aws::String& value) { SetHookType(value); return *this;}
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline StackEvent& WithHookType(Aws::String&& value) { SetHookType(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the hook.</p>
+     */
+    inline StackEvent& WithHookType(const char* value) { SetHookType(value); return *this;}
+
+
+    /**
+     * <p>Provides the status of the change set hook.</p>
+     */
+    inline const HookStatus& GetHookStatus() const{ return m_hookStatus; }
+
+    /**
+     * <p>Provides the status of the change set hook.</p>
+     */
+    inline bool HookStatusHasBeenSet() const { return m_hookStatusHasBeenSet; }
+
+    /**
+     * <p>Provides the status of the change set hook.</p>
+     */
+    inline void SetHookStatus(const HookStatus& value) { m_hookStatusHasBeenSet = true; m_hookStatus = value; }
+
+    /**
+     * <p>Provides the status of the change set hook.</p>
+     */
+    inline void SetHookStatus(HookStatus&& value) { m_hookStatusHasBeenSet = true; m_hookStatus = std::move(value); }
+
+    /**
+     * <p>Provides the status of the change set hook.</p>
+     */
+    inline StackEvent& WithHookStatus(const HookStatus& value) { SetHookStatus(value); return *this;}
+
+    /**
+     * <p>Provides the status of the change set hook.</p>
+     */
+    inline StackEvent& WithHookStatus(HookStatus&& value) { SetHookStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline const Aws::String& GetHookStatusReason() const{ return m_hookStatusReason; }
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline bool HookStatusReasonHasBeenSet() const { return m_hookStatusReasonHasBeenSet; }
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline void SetHookStatusReason(const Aws::String& value) { m_hookStatusReasonHasBeenSet = true; m_hookStatusReason = value; }
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline void SetHookStatusReason(Aws::String&& value) { m_hookStatusReasonHasBeenSet = true; m_hookStatusReason = std::move(value); }
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline void SetHookStatusReason(const char* value) { m_hookStatusReasonHasBeenSet = true; m_hookStatusReason.assign(value); }
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline StackEvent& WithHookStatusReason(const Aws::String& value) { SetHookStatusReason(value); return *this;}
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline StackEvent& WithHookStatusReason(Aws::String&& value) { SetHookStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides the reason for the hook status.</p>
+     */
+    inline StackEvent& WithHookStatusReason(const char* value) { SetHookStatusReason(value); return *this;}
+
+
+    /**
+     * <p>Invocation points are points in provisioning logic where hooks are
+     * initiated.</p>
+     */
+    inline const HookInvocationPoint& GetHookInvocationPoint() const{ return m_hookInvocationPoint; }
+
+    /**
+     * <p>Invocation points are points in provisioning logic where hooks are
+     * initiated.</p>
+     */
+    inline bool HookInvocationPointHasBeenSet() const { return m_hookInvocationPointHasBeenSet; }
+
+    /**
+     * <p>Invocation points are points in provisioning logic where hooks are
+     * initiated.</p>
+     */
+    inline void SetHookInvocationPoint(const HookInvocationPoint& value) { m_hookInvocationPointHasBeenSet = true; m_hookInvocationPoint = value; }
+
+    /**
+     * <p>Invocation points are points in provisioning logic where hooks are
+     * initiated.</p>
+     */
+    inline void SetHookInvocationPoint(HookInvocationPoint&& value) { m_hookInvocationPointHasBeenSet = true; m_hookInvocationPoint = std::move(value); }
+
+    /**
+     * <p>Invocation points are points in provisioning logic where hooks are
+     * initiated.</p>
+     */
+    inline StackEvent& WithHookInvocationPoint(const HookInvocationPoint& value) { SetHookInvocationPoint(value); return *this;}
+
+    /**
+     * <p>Invocation points are points in provisioning logic where hooks are
+     * initiated.</p>
+     */
+    inline StackEvent& WithHookInvocationPoint(HookInvocationPoint&& value) { SetHookInvocationPoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
+     * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
+     * message.</p> </li> </ul>
+     */
+    inline const HookFailureMode& GetHookFailureMode() const{ return m_hookFailureMode; }
+
+    /**
+     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
+     * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
+     * message.</p> </li> </ul>
+     */
+    inline bool HookFailureModeHasBeenSet() const { return m_hookFailureModeHasBeenSet; }
+
+    /**
+     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
+     * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
+     * message.</p> </li> </ul>
+     */
+    inline void SetHookFailureMode(const HookFailureMode& value) { m_hookFailureModeHasBeenSet = true; m_hookFailureMode = value; }
+
+    /**
+     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
+     * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
+     * message.</p> </li> </ul>
+     */
+    inline void SetHookFailureMode(HookFailureMode&& value) { m_hookFailureModeHasBeenSet = true; m_hookFailureMode = std::move(value); }
+
+    /**
+     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
+     * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
+     * message.</p> </li> </ul>
+     */
+    inline StackEvent& WithHookFailureMode(const HookFailureMode& value) { SetHookFailureMode(value); return *this;}
+
+    /**
+     * <p>Specify the hook failure mode for non-compliant resources in the followings
+     * ways.</p> <ul> <li> <p> <code>FAIL</code> Stops provisioning resources.</p>
+     * </li> <li> <p> <code>WARN</code> Allows provisioning to continue with a warning
+     * message.</p> </li> </ul>
+     */
+    inline StackEvent& WithHookFailureMode(HookFailureMode&& value) { SetHookFailureMode(std::move(value)); return *this;}
 
   private:
 
@@ -627,6 +819,21 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::String m_hookType;
+    bool m_hookTypeHasBeenSet;
+
+    HookStatus m_hookStatus;
+    bool m_hookStatusHasBeenSet;
+
+    Aws::String m_hookStatusReason;
+    bool m_hookStatusReasonHasBeenSet;
+
+    HookInvocationPoint m_hookInvocationPoint;
+    bool m_hookInvocationPointHasBeenSet;
+
+    HookFailureMode m_hookFailureMode;
+    bool m_hookFailureModeHasBeenSet;
   };
 
 } // namespace Model

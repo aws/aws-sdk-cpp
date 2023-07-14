@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker-runtime/model/InvokeEndpointRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -29,7 +19,10 @@ InvokeEndpointRequest::InvokeEndpointRequest() :
     m_endpointNameHasBeenSet(false),
     m_acceptHasBeenSet(false),
     m_customAttributesHasBeenSet(false),
-    m_targetModelHasBeenSet(false)
+    m_targetModelHasBeenSet(false),
+    m_targetVariantHasBeenSet(false),
+    m_targetContainerHostnameHasBeenSet(false),
+    m_inferenceIdHasBeenSet(false)
 {
 }
 
@@ -57,6 +50,27 @@ Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeader
   {
     ss << m_targetModel;
     headers.emplace("x-amzn-sagemaker-target-model",  ss.str());
+    ss.str("");
+  }
+
+  if(m_targetVariantHasBeenSet)
+  {
+    ss << m_targetVariant;
+    headers.emplace("x-amzn-sagemaker-target-variant",  ss.str());
+    ss.str("");
+  }
+
+  if(m_targetContainerHostnameHasBeenSet)
+  {
+    ss << m_targetContainerHostname;
+    headers.emplace("x-amzn-sagemaker-target-container-hostname",  ss.str());
+    ss.str("");
+  }
+
+  if(m_inferenceIdHasBeenSet)
+  {
+    ss << m_inferenceId;
+    headers.emplace("x-amzn-sagemaker-inference-id",  ss.str());
     ss.str("");
   }
 

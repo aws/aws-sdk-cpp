@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -49,214 +39,406 @@ namespace Model
 
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline const Aws::String& GetSmsMessage() const{ return m_smsMessage; }
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline void SetSmsMessage(Aws::String&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::move(value); }
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline void SetSmsMessage(const char* value) { m_smsMessageHasBeenSet = true; m_smsMessage.assign(value); }
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline VerificationMessageTemplateType& WithSmsMessage(const Aws::String& value) { SetSmsMessage(value); return *this;}
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline VerificationMessageTemplateType& WithSmsMessage(Aws::String&& value) { SetSmsMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The SMS message template.</p>
+     * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
     inline VerificationMessageTemplateType& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
 
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline const Aws::String& GetEmailMessage() const{ return m_emailMessage; }
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailMessage(const Aws::String& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailMessage(Aws::String&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailMessage(const char* value) { m_emailMessageHasBeenSet = true; m_emailMessage.assign(value); }
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessage(const Aws::String& value) { SetEmailMessage(value); return *this;}
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessage(Aws::String&& value) { SetEmailMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The email message template.</p>
+     * <p>The template for email messages that Amazon Cognito sends to your users. You
+     * can set an <code>EmailMessage</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessage(const char* value) { SetEmailMessage(value); return *this;}
 
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline const Aws::String& GetEmailSubject() const{ return m_emailSubject; }
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline bool EmailSubjectHasBeenSet() const { return m_emailSubjectHasBeenSet; }
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailSubject(const Aws::String& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = value; }
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailSubject(Aws::String&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::move(value); }
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailSubject(const char* value) { m_emailSubjectHasBeenSet = true; m_emailSubject.assign(value); }
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailSubject(const Aws::String& value) { SetEmailSubject(value); return *this;}
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailSubject(Aws::String&& value) { SetEmailSubject(std::move(value)); return *this;}
 
     /**
-     * <p>The subject line for the email message template.</p>
+     * <p>The subject line for the email message template. You can set an
+     * <code>EmailSubject</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailSubject(const char* value) { SetEmailSubject(value); return *this;}
 
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline const Aws::String& GetEmailMessageByLink() const{ return m_emailMessageByLink; }
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline bool EmailMessageByLinkHasBeenSet() const { return m_emailMessageByLinkHasBeenSet; }
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailMessageByLink(const Aws::String& value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink = value; }
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailMessageByLink(Aws::String&& value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink = std::move(value); }
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailMessageByLink(const char* value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink.assign(value); }
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessageByLink(const Aws::String& value) { SetEmailMessageByLink(value); return *this;}
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessageByLink(Aws::String&& value) { SetEmailMessageByLink(std::move(value)); return *this;}
 
     /**
-     * <p>The email message template for sending a confirmation link to the user.</p>
+     * <p>The email message template for sending a confirmation link to the user. You
+     * can set an <code>EmailMessageByLink</code> template only if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailMessageByLink(const char* value) { SetEmailMessageByLink(value); return *this;}
 
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline const Aws::String& GetEmailSubjectByLink() const{ return m_emailSubjectByLink; }
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline bool EmailSubjectByLinkHasBeenSet() const { return m_emailSubjectByLinkHasBeenSet; }
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailSubjectByLink(const Aws::String& value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink = value; }
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailSubjectByLink(Aws::String&& value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink = std::move(value); }
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline void SetEmailSubjectByLink(const char* value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink.assign(value); }
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailSubjectByLink(const Aws::String& value) { SetEmailSubjectByLink(value); return *this;}
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailSubjectByLink(Aws::String&& value) { SetEmailSubjectByLink(std::move(value)); return *this;}
 
     /**
      * <p>The subject line for the email message template for sending a confirmation
-     * link to the user.</p>
+     * link to the user. You can set an <code>EmailSubjectByLink</code> template only
+     * if the value of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">
+     * EmailSendingAccount</a> is <code>DEVELOPER</code>. When your <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+     * is <code>DEVELOPER</code>, your user pool sends email messages with your own
+     * Amazon SES configuration.</p>
      */
     inline VerificationMessageTemplateType& WithEmailSubjectByLink(const char* value) { SetEmailSubjectByLink(value); return *this;}
 

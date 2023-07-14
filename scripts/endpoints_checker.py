@@ -1,16 +1,5 @@
-#
-# Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# A copy of the License is located at
-#
-#  http://aws.amazon.com/apache2.0
-#
-# or in the "license" file accompanying this file. This file is distributed
-# on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-# express or implied. See the License for the specific language governing
-# permissions and limitations under the License.
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
 #
 
 # This script is used to check aws-cpp-sdk source file to identify hard coded endpoints in source code.
@@ -28,12 +17,15 @@ import re
 """
 endpoints = ["us-east-1", "us-east-2",
           "us-west-1", "us-west-2",
-          "eu-west-1", "eu-west-2", "eu-west-3", "eu-central-1",
-          "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ap-northeast-2", "ap-south-1",
+          "eu-west-1", "eu-west-2", "eu-west-3", "eu-central-1", "eu-north-1",
+          "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-east-1",
           "sa-east-1",
           "cn-north-1", "cn-northwest-1",
           "ca-central-1",
-          "us-gov-west-1"];
+          "us-gov-west-1","us-gov-east-1",
+          "us-iso-west-1",
+          "me-south-1",
+          "af-south-1"];
 """
 
 def RemoveCPPComments(text):
@@ -60,7 +52,7 @@ def SkipFile(fileName):
     return False;
 
 def ScanContent(content):
-    EndpointsPattern = re.compile(r'us-east-1|us-east-2|us-west-1|us-west-2|eu-west-1|eu-west-2|eu-west-3|eu-central-1|ap-southeast-1|ap-southeast-2|ap-northeast-1|ap-northeast-2|ap-south-1|sa-east-1|cn-north-1|cn-northwest-1|ca-central-1|us-gov-west-1');
+    EndpointsPattern = re.compile(r'us-east-1|us-east-2|us-west-1|us-west-2|eu-west-1|eu-west-2|eu-west-3|eu-central-1|eu-north-1|ap-southeast-1|ap-southeast-2|ap-northeast-1|ap-northeast-2|ap-northeast-3|ap-south-1|sa-east-1|sa-east-1|cn-north-1|cn-northwest-1|ca-central-1|us-gov-west-1|us-gov-east-1|me-south-1|af-south-1');
     return re.search(EndpointsPattern, content);
 
 def CheckFile(inputFile):
@@ -123,7 +115,7 @@ exitCode = 0;
 RootDir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)));
 for root, dirnames, fileNames in os.walk(RootDir):
     for fileName in fileNames:
-        if fileName.endswith(('.h', '.cpp')):
+        if not root.endswith('-tests') and fileName.endswith(('.h', '.cpp')):
             targetFile = os.path.join(root, fileName);
             exitCode |= CheckFile(targetFile);
 print "Finished checking hard coded endpoints in source files with exit code",exitCode,".";

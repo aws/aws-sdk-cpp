@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -32,15 +22,11 @@ namespace Model
 {
 
   /**
-   * <p>Current status of fleet capacity. The number of active instances should match
-   * or be in the process of matching the number of desired instances. Pending and
-   * terminating counts are non-zero only if fleet capacity is adjusting to an
-   * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily
-   * affected.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>
-   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a>
-   * </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2
+   * instances. Pending and terminating counts are non-zero when the fleet capacity
+   * is adjusting to a scaling event or if access to resources is temporarily
+   * affected.</p> <p>EC2 instance counts are part of
+   * <a>FleetCapacity</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
    * API Reference</a></p>
    */
@@ -54,156 +40,160 @@ namespace Model
 
 
     /**
-     * <p>Ideal number of active instances in the fleet.</p>
+     * <p>Ideal number of active instances. GameLift will always try to maintain the
+     * desired number of instances. Capacity is scaled up or down by changing the
+     * desired instances. </p>
      */
     inline int GetDESIRED() const{ return m_dESIRED; }
 
     /**
-     * <p>Ideal number of active instances in the fleet.</p>
+     * <p>Ideal number of active instances. GameLift will always try to maintain the
+     * desired number of instances. Capacity is scaled up or down by changing the
+     * desired instances. </p>
      */
     inline bool DESIREDHasBeenSet() const { return m_dESIREDHasBeenSet; }
 
     /**
-     * <p>Ideal number of active instances in the fleet.</p>
+     * <p>Ideal number of active instances. GameLift will always try to maintain the
+     * desired number of instances. Capacity is scaled up or down by changing the
+     * desired instances. </p>
      */
     inline void SetDESIRED(int value) { m_dESIREDHasBeenSet = true; m_dESIRED = value; }
 
     /**
-     * <p>Ideal number of active instances in the fleet.</p>
+     * <p>Ideal number of active instances. GameLift will always try to maintain the
+     * desired number of instances. Capacity is scaled up or down by changing the
+     * desired instances. </p>
      */
     inline EC2InstanceCounts& WithDESIRED(int value) { SetDESIRED(value); return *this;}
 
 
     /**
-     * <p>The minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum instance count value allowed.</p>
      */
     inline int GetMINIMUM() const{ return m_mINIMUM; }
 
     /**
-     * <p>The minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum instance count value allowed.</p>
      */
     inline bool MINIMUMHasBeenSet() const { return m_mINIMUMHasBeenSet; }
 
     /**
-     * <p>The minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum instance count value allowed.</p>
      */
     inline void SetMINIMUM(int value) { m_mINIMUMHasBeenSet = true; m_mINIMUM = value; }
 
     /**
-     * <p>The minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum instance count value allowed.</p>
      */
     inline EC2InstanceCounts& WithMINIMUM(int value) { SetMINIMUM(value); return *this;}
 
 
     /**
-     * <p>The maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum instance count value allowed.</p>
      */
     inline int GetMAXIMUM() const{ return m_mAXIMUM; }
 
     /**
-     * <p>The maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum instance count value allowed.</p>
      */
     inline bool MAXIMUMHasBeenSet() const { return m_mAXIMUMHasBeenSet; }
 
     /**
-     * <p>The maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum instance count value allowed.</p>
      */
     inline void SetMAXIMUM(int value) { m_mAXIMUMHasBeenSet = true; m_mAXIMUM = value; }
 
     /**
-     * <p>The maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum instance count value allowed.</p>
      */
     inline EC2InstanceCounts& WithMAXIMUM(int value) { SetMAXIMUM(value); return *this;}
 
 
     /**
-     * <p>Number of instances in the fleet that are starting but not yet active.</p>
+     * <p>Number of instances that are starting but not yet active.</p>
      */
     inline int GetPENDING() const{ return m_pENDING; }
 
     /**
-     * <p>Number of instances in the fleet that are starting but not yet active.</p>
+     * <p>Number of instances that are starting but not yet active.</p>
      */
     inline bool PENDINGHasBeenSet() const { return m_pENDINGHasBeenSet; }
 
     /**
-     * <p>Number of instances in the fleet that are starting but not yet active.</p>
+     * <p>Number of instances that are starting but not yet active.</p>
      */
     inline void SetPENDING(int value) { m_pENDINGHasBeenSet = true; m_pENDING = value; }
 
     /**
-     * <p>Number of instances in the fleet that are starting but not yet active.</p>
+     * <p>Number of instances that are starting but not yet active.</p>
      */
     inline EC2InstanceCounts& WithPENDING(int value) { SetPENDING(value); return *this;}
 
 
     /**
-     * <p>Actual number of active instances in the fleet.</p>
+     * <p>Actual number of instances that are ready to host game sessions.</p>
      */
     inline int GetACTIVE() const{ return m_aCTIVE; }
 
     /**
-     * <p>Actual number of active instances in the fleet.</p>
+     * <p>Actual number of instances that are ready to host game sessions.</p>
      */
     inline bool ACTIVEHasBeenSet() const { return m_aCTIVEHasBeenSet; }
 
     /**
-     * <p>Actual number of active instances in the fleet.</p>
+     * <p>Actual number of instances that are ready to host game sessions.</p>
      */
     inline void SetACTIVE(int value) { m_aCTIVEHasBeenSet = true; m_aCTIVE = value; }
 
     /**
-     * <p>Actual number of active instances in the fleet.</p>
+     * <p>Actual number of instances that are ready to host game sessions.</p>
      */
     inline EC2InstanceCounts& WithACTIVE(int value) { SetACTIVE(value); return *this;}
 
 
     /**
-     * <p>Number of active instances in the fleet that are not currently hosting a game
-     * session.</p>
+     * <p>Number of active instances that are not currently hosting a game session.</p>
      */
     inline int GetIDLE() const{ return m_iDLE; }
 
     /**
-     * <p>Number of active instances in the fleet that are not currently hosting a game
-     * session.</p>
+     * <p>Number of active instances that are not currently hosting a game session.</p>
      */
     inline bool IDLEHasBeenSet() const { return m_iDLEHasBeenSet; }
 
     /**
-     * <p>Number of active instances in the fleet that are not currently hosting a game
-     * session.</p>
+     * <p>Number of active instances that are not currently hosting a game session.</p>
      */
     inline void SetIDLE(int value) { m_iDLEHasBeenSet = true; m_iDLE = value; }
 
     /**
-     * <p>Number of active instances in the fleet that are not currently hosting a game
-     * session.</p>
+     * <p>Number of active instances that are not currently hosting a game session.</p>
      */
     inline EC2InstanceCounts& WithIDLE(int value) { SetIDLE(value); return *this;}
 
 
     /**
-     * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated.</p>
+     * <p>Number of instances that are no longer active but haven't yet been
+     * terminated.</p>
      */
     inline int GetTERMINATING() const{ return m_tERMINATING; }
 
     /**
-     * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated.</p>
+     * <p>Number of instances that are no longer active but haven't yet been
+     * terminated.</p>
      */
     inline bool TERMINATINGHasBeenSet() const { return m_tERMINATINGHasBeenSet; }
 
     /**
-     * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated.</p>
+     * <p>Number of instances that are no longer active but haven't yet been
+     * terminated.</p>
      */
     inline void SetTERMINATING(int value) { m_tERMINATINGHasBeenSet = true; m_tERMINATING = value; }
 
     /**
-     * <p>Number of instances in the fleet that are no longer active but haven't yet
-     * been terminated.</p>
+     * <p>Number of instances that are no longer active but haven't yet been
+     * terminated.</p>
      */
     inline EC2InstanceCounts& WithTERMINATING(int value) { SetTERMINATING(value); return *this;}
 

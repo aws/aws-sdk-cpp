@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -48,6 +38,14 @@ namespace Model
     c5_12xlarge,
     c5_18xlarge,
     c5_24xlarge,
+    c5a_large,
+    c5a_xlarge,
+    c5a_2xlarge,
+    c5a_4xlarge,
+    c5a_8xlarge,
+    c5a_12xlarge,
+    c5a_16xlarge,
+    c5a_24xlarge,
     r3_large,
     r3_xlarge,
     r3_2xlarge,
@@ -67,6 +65,14 @@ namespace Model
     r5_12xlarge,
     r5_16xlarge,
     r5_24xlarge,
+    r5a_large,
+    r5a_xlarge,
+    r5a_2xlarge,
+    r5a_4xlarge,
+    r5a_8xlarge,
+    r5a_12xlarge,
+    r5a_16xlarge,
+    r5a_24xlarge,
     m3_medium,
     m3_large,
     m3_xlarge,
@@ -83,7 +89,15 @@ namespace Model
     m5_8xlarge,
     m5_12xlarge,
     m5_16xlarge,
-    m5_24xlarge
+    m5_24xlarge,
+    m5a_large,
+    m5a_xlarge,
+    m5a_2xlarge,
+    m5a_4xlarge,
+    m5a_8xlarge,
+    m5a_12xlarge,
+    m5a_16xlarge,
+    m5a_24xlarge
   };
 
 namespace EC2InstanceTypeMapper

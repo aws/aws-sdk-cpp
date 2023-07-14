@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -48,11 +38,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -62,11 +52,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -76,11 +66,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -90,11 +80,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -104,11 +94,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -118,11 +108,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -132,11 +122,11 @@ namespace Model
     /**
      * <p>Drift information for the resources that have been checked for drift in the
      * specified stack. This includes actual and expected configuration values for
-     * resources where AWS CloudFormation detects drift.</p> <p>For a given stack,
-     * there will be one <code>StackResourceDrift</code> for each stack resource that
-     * has been checked for drift. Resources that have not yet been checked for drift
-     * are not included. Resources that do not currently support drift detection are
-     * not checked, and so not included. For a list of resources that support drift
+     * resources where CloudFormation detects drift.</p> <p>For a given stack, there
+     * will be one <code>StackResourceDrift</code> for each stack resource that has
+     * been checked for drift. Resources that haven't yet been checked for drift aren't
+     * included. Resources that do not currently support drift detection aren't
+     * checked, and so not included. For a list of resources that support drift
      * detection, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
@@ -145,7 +135,7 @@ namespace Model
 
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all
@@ -154,7 +144,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all
@@ -163,7 +153,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all
@@ -172,7 +162,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all
@@ -181,7 +171,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all
@@ -190,7 +180,7 @@ namespace Model
     inline DescribeStackResourceDriftsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all
@@ -199,7 +189,7 @@ namespace Model
     inline DescribeStackResourceDriftsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the request doesn't return all of the remaining results,
+     * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <code>DescribeStackResourceDrifts</code> again and assign that token to the
      * request object's <code>NextToken</code> parameter. If the request returns all

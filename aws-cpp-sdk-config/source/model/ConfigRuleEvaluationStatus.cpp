@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/config/model/ConfigRuleEvaluationStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,10 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() :
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
     m_firstEvaluationStarted(false),
-    m_firstEvaluationStartedHasBeenSet(false)
+    m_firstEvaluationStartedHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusReasonHasBeenSet(false),
+    m_lastDebugLogDeliveryTimeHasBeenSet(false)
 {
 }
 
@@ -58,7 +51,10 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue) :
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
     m_firstEvaluationStarted(false),
-    m_firstEvaluationStartedHasBeenSet(false)
+    m_firstEvaluationStartedHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusHasBeenSet(false),
+    m_lastDebugLogDeliveryStatusReasonHasBeenSet(false),
+    m_lastDebugLogDeliveryTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +145,27 @@ ConfigRuleEvaluationStatus& ConfigRuleEvaluationStatus::operator =(JsonView json
     m_firstEvaluationStartedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastDebugLogDeliveryStatus"))
+  {
+    m_lastDebugLogDeliveryStatus = jsonValue.GetString("LastDebugLogDeliveryStatus");
+
+    m_lastDebugLogDeliveryStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastDebugLogDeliveryStatusReason"))
+  {
+    m_lastDebugLogDeliveryStatusReason = jsonValue.GetString("LastDebugLogDeliveryStatusReason");
+
+    m_lastDebugLogDeliveryStatusReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastDebugLogDeliveryTime"))
+  {
+    m_lastDebugLogDeliveryTime = jsonValue.GetDouble("LastDebugLogDeliveryTime");
+
+    m_lastDebugLogDeliveryTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +237,23 @@ JsonValue ConfigRuleEvaluationStatus::Jsonize() const
   {
    payload.WithBool("FirstEvaluationStarted", m_firstEvaluationStarted);
 
+  }
+
+  if(m_lastDebugLogDeliveryStatusHasBeenSet)
+  {
+   payload.WithString("LastDebugLogDeliveryStatus", m_lastDebugLogDeliveryStatus);
+
+  }
+
+  if(m_lastDebugLogDeliveryStatusReasonHasBeenSet)
+  {
+   payload.WithString("LastDebugLogDeliveryStatusReason", m_lastDebugLogDeliveryStatusReason);
+
+  }
+
+  if(m_lastDebugLogDeliveryTimeHasBeenSet)
+  {
+   payload.WithDouble("LastDebugLogDeliveryTime", m_lastDebugLogDeliveryTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -1,16 +1,6 @@
-/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
  */
 
 #include <aws/external/gtest.h>
@@ -31,6 +21,7 @@
 #include <aws/ec2/model/DescribeVpcsRequest.h>
 #include <aws/ec2/model/DescribeVpcsResponse.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/core/utils/UUID.h>
 
 #include <chrono>
 #include <thread>
@@ -45,11 +36,6 @@ namespace
 static const char* ALLOCATION_TAG = "EC2Tests";
 static const char* BASE_SECURITY_GROUP_NAME = "CppSDKIntegrationTestSecurityGroup";
 
-Aws::String BuildResourceName(const char* baseName)
-{
-    return Aws::Testing::GetAwsResourcePrefix() + baseName;
-}
-
 class EC2OperationTest : public ::testing::Test
 {
 
@@ -61,6 +47,17 @@ protected:
     };
 
     static std::shared_ptr<Aws::EC2::EC2Client> m_EC2Client;
+
+    static Aws::String GetRandomUUID()
+    {
+        static const Aws::Utils::UUID resourceUUID = Aws::Utils::UUID::RandomUUID();
+        return resourceUUID;
+    }
+
+    static Aws::String BuildResourceName(const char* baseName)
+    {
+        return Aws::Testing::GetAwsResourcePrefix() + baseName + GetRandomUUID();
+    }
 
     static void SetUpTestCase()
     {
@@ -106,7 +103,7 @@ protected:
                 const Aws::Vector< Aws::EC2::Model::SecurityGroup >& groups = describeOutcome.GetResult().GetSecurityGroups();
                 bool exists = std::find_if(groups.cbegin(), groups.cend(), [](const Aws::EC2::Model::SecurityGroup& group){ return group.GetGroupName() == BuildResourceName(BASE_SECURITY_GROUP_NAME); }) != groups.cend();
                 finished = (objectState == ObjectState::Nonexistent && !exists) || (objectState == ObjectState::Ready && exists);
-            } 
+            }
             else if (describeOutcome.GetError().GetErrorType() == Aws::EC2::EC2Errors::INVALID_GROUP__NOT_FOUND)
             {
                 finished = objectState == ObjectState::Nonexistent;

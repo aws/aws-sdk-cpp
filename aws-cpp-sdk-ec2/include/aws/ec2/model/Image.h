@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -26,6 +16,8 @@
 #include <aws/ec2/model/DeviceType.h>
 #include <aws/ec2/model/StateReason.h>
 #include <aws/ec2/model/VirtualizationType.h>
+#include <aws/ec2/model/BootModeValues.h>
+#include <aws/ec2/model/TpmSupportValues.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/Tag.h>
@@ -325,42 +317,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline Image& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline Image& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the image owner.</p>
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
      */
     inline Image& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -405,72 +397,64 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformDetails() const{ return m_platformDetails; }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool PlatformDetailsHasBeenSet() const { return m_platformDetailsHasBeenSet; }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlatformDetails(const Aws::String& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = value; }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlatformDetails(Aws::String&& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = std::move(value); }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlatformDetails(const char* value) { m_platformDetailsHasBeenSet = true; m_platformDetails.assign(value); }
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(const Aws::String& value) { SetPlatformDetails(value); return *this;}
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(Aws::String&& value) { SetPlatformDetails(std::move(value)); return *this;}
 
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
+     * AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(const char* value) { SetPlatformDetails(value); return *this;}
 
@@ -479,12 +463,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
 
@@ -492,12 +479,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
 
@@ -505,12 +495,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
 
@@ -518,12 +511,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
 
@@ -531,12 +527,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
 
@@ -544,12 +543,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline Image& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
 
@@ -557,12 +559,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline Image& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
 
@@ -570,12 +575,15 @@ namespace Model
      * <p>The operation of the Amazon EC2 instance and the billing code that is
      * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report and in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
-     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
-     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * column on your Amazon Web Services Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
+     * Web Services Price List API</a>. You can view these fields on the
+     * <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the
+     * responses that are returned by the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>
+     * command in the Amazon EC2 API, or the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a>
+     * command in the CLI.</p>
      */
     inline Image& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
 
@@ -842,50 +850,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline const Aws::String& GetImageOwnerAlias() const{ return m_imageOwnerAlias; }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline bool ImageOwnerAliasHasBeenSet() const { return m_imageOwnerAliasHasBeenSet; }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline void SetImageOwnerAlias(const Aws::String& value) { m_imageOwnerAliasHasBeenSet = true; m_imageOwnerAlias = value; }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline void SetImageOwnerAlias(Aws::String&& value) { m_imageOwnerAliasHasBeenSet = true; m_imageOwnerAlias = std::move(value); }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline void SetImageOwnerAlias(const char* value) { m_imageOwnerAliasHasBeenSet = true; m_imageOwnerAlias.assign(value); }
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline Image& WithImageOwnerAlias(const Aws::String& value) { SetImageOwnerAlias(value); return *this;}
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline Image& WithImageOwnerAlias(Aws::String&& value) { SetImageOwnerAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
-     * or the AWS account ID of the AMI owner.</p>
+     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
+     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
      */
     inline Image& WithImageOwnerAlias(const char* value) { SetImageOwnerAlias(value); return *this;}
 
@@ -981,38 +989,38 @@ namespace Model
 
 
     /**
-     * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
+     * <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume
+     * or an instance store volume.</p>
      */
     inline const DeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
 
     /**
-     * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
+     * <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume
+     * or an instance store volume.</p>
      */
     inline bool RootDeviceTypeHasBeenSet() const { return m_rootDeviceTypeHasBeenSet; }
 
     /**
-     * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
+     * <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume
+     * or an instance store volume.</p>
      */
     inline void SetRootDeviceType(const DeviceType& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
 
     /**
-     * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
+     * <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume
+     * or an instance store volume.</p>
      */
     inline void SetRootDeviceType(DeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = std::move(value); }
 
     /**
-     * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
+     * <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume
+     * or an instance store volume.</p>
      */
     inline Image& WithRootDeviceType(const DeviceType& value) { SetRootDeviceType(value); return *this;}
 
     /**
-     * <p>The type of root device used by the AMI. The AMI can use an EBS volume or an
-     * instance store volume.</p>
+     * <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume
+     * or an instance store volume.</p>
      */
     inline Image& WithRootDeviceType(DeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
 
@@ -1168,6 +1176,155 @@ namespace Model
      */
     inline Image& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const TpmSupportValues& GetTpmSupport() const{ return m_tpmSupport; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(const TpmSupportValues& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetTpmSupport(TpmSupportValues&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithTpmSupport(const TpmSupportValues& value) { SetTpmSupport(value); return *this;}
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithTpmSupport(TpmSupportValues&& value) { SetTpmSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline const Aws::String& GetDeprecationTime() const{ return m_deprecationTime; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline bool DeprecationTimeHasBeenSet() const { return m_deprecationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(const Aws::String& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = value; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(Aws::String&& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = std::move(value); }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(const char* value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime.assign(value); }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(const Aws::String& value) { SetDeprecationTime(value); return *this;}
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(Aws::String&& value) { SetDeprecationTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(const char* value) { SetDeprecationTime(value); return *this;}
+
   private:
 
     ArchitectureValues m_architecture;
@@ -1247,6 +1404,15 @@ namespace Model
 
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
+
+    TpmSupportValues m_tpmSupport;
+    bool m_tpmSupportHasBeenSet;
+
+    Aws::String m_deprecationTime;
+    bool m_deprecationTimeHasBeenSet;
   };
 
 } // namespace Model

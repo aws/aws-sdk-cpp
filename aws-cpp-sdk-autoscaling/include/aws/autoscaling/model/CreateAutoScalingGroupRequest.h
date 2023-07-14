@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -101,375 +91,319 @@ namespace Model
 
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration.</p> <p>If you do not specify
-     * <code>LaunchConfigurationName</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The name of the launch configuration to use to launch instances. </p>
+     * <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
 
     /**
-     * <p>The launch template to use to launch instances.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
-     * specify <code>LaunchTemplate</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+     * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> 
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template to use to launch instances.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
-     * specify <code>LaunchTemplate</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+     * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> 
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>The launch template to use to launch instances.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
-     * specify <code>LaunchTemplate</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+     * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> 
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template to use to launch instances.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
-     * specify <code>LaunchTemplate</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+     * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> 
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template to use to launch instances.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
-     * specify <code>LaunchTemplate</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+     * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template to use to launch instances.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
-     * specify <code>LaunchTemplate</code>, you must specify one of the following
-     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>Parameters used to specify the launch template and version to use to launch
+     * instances. </p> <p>Conditional: You must specify either a launch template
+     * (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch
+     * configuration (<code>LaunchConfigurationName</code> or
+     * <code>InstanceId</code>).</p>  <p>The launch template that is specified
+     * must be configured for use with an Auto Scaling group. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+     * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> 
      */
     inline CreateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. The required
-     * parameters must be specified. If optional parameters are unspecified, their
-     * default values are used.</p> <p>The policy includes parameters that not only
-     * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot Instances, and how the Auto Scaling group allocates
-     * instance types to fulfill On-Demand and Spot capacity, but also the parameters
-     * that specify the instance configuration information—the launch template and
-     * instance types.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
-     * following parameters in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+     * Scaling groups with multiple instance types and purchase options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. The required
-     * parameters must be specified. If optional parameters are unspecified, their
-     * default values are used.</p> <p>The policy includes parameters that not only
-     * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot Instances, and how the Auto Scaling group allocates
-     * instance types to fulfill On-Demand and Spot capacity, but also the parameters
-     * that specify the instance configuration information—the launch template and
-     * instance types.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
-     * following parameters in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+     * Scaling groups with multiple instance types and purchase options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. The required
-     * parameters must be specified. If optional parameters are unspecified, their
-     * default values are used.</p> <p>The policy includes parameters that not only
-     * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot Instances, and how the Auto Scaling group allocates
-     * instance types to fulfill On-Demand and Spot capacity, but also the parameters
-     * that specify the instance configuration information—the launch template and
-     * instance types.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
-     * following parameters in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+     * Scaling groups with multiple instance types and purchase options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. The required
-     * parameters must be specified. If optional parameters are unspecified, their
-     * default values are used.</p> <p>The policy includes parameters that not only
-     * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot Instances, and how the Auto Scaling group allocates
-     * instance types to fulfill On-Demand and Spot capacity, but also the parameters
-     * that specify the instance configuration information—the launch template and
-     * instance types.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
-     * following parameters in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+     * Scaling groups with multiple instance types and purchase options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. The required
-     * parameters must be specified. If optional parameters are unspecified, their
-     * default values are used.</p> <p>The policy includes parameters that not only
-     * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot Instances, and how the Auto Scaling group allocates
-     * instance types to fulfill On-Demand and Spot capacity, but also the parameters
-     * that specify the instance configuration information—the launch template and
-     * instance types.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
-     * following parameters in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+     * Scaling groups with multiple instance types and purchase options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. The required
-     * parameters must be specified. If optional parameters are unspecified, their
-     * default values are used.</p> <p>The policy includes parameters that not only
-     * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot Instances, and how the Auto Scaling group allocates
-     * instance types to fulfill On-Demand and Spot capacity, but also the parameters
-     * that specify the instance configuration information—the launch template and
-     * instance types.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
-     * following parameters in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+     * Scaling groups with multiple instance types and purchase options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance used to create a launch configuration for the
-     * group.</p> <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling
-     * creates a new launch configuration and associates it with the group. This launch
-     * configuration derives its attributes from the specified instance, except for the
-     * block device mapping.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Create
-     * an Auto Scaling Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>You must specify one of the following parameters
-     * in your request: <code>LaunchConfigurationName</code>,
-     * <code>LaunchTemplate</code>, <code>InstanceId</code>, or
-     * <code>MixedInstancesPolicy</code>.</p>
+     * <p>The ID of the instance used to base the launch configuration on. If
+     * specified, Amazon EC2 Auto Scaling uses the configuration values from the
+     * specified instance to create a new launch configuration. To get the instance ID,
+     * use the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+     * API operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating
+     * an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -496,265 +430,270 @@ namespace Model
 
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
+     * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
+     * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
+     * largest instance weight (weights that define how many units each instance
+     * contributes to the desired capacity of the group).</p> 
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
+     * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
+     * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
+     * largest instance weight (weights that define how many units each instance
+     * contributes to the desired capacity of the group).</p> 
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
+     * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
+     * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
+     * largest instance weight (weights that define how many units each instance
+     * contributes to the desired capacity of the group).</p> 
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
+     * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
+     * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
+     * largest instance weight (weights that define how many units each instance
+     * contributes to the desired capacity of the group).</p> 
      */
     inline CreateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The number of Amazon EC2 instances that the Auto Scaling group attempts to
-     * maintain. This number must be greater than or equal to the minimum size of the
-     * group and less than or equal to the maximum size of the group. If you do not
-     * specify a desired capacity, the default is the minimum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group at the
+     * time of its creation and the capacity it attempts to maintain. It can scale
+     * beyond this capacity if you configure auto scaling. This number must be greater
+     * than or equal to the minimum size of the group and less than or equal to the
+     * maximum size of the group. If you do not specify a desired capacity, the default
+     * is the minimum size of the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of Amazon EC2 instances that the Auto Scaling group attempts to
-     * maintain. This number must be greater than or equal to the minimum size of the
-     * group and less than or equal to the maximum size of the group. If you do not
-     * specify a desired capacity, the default is the minimum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group at the
+     * time of its creation and the capacity it attempts to maintain. It can scale
+     * beyond this capacity if you configure auto scaling. This number must be greater
+     * than or equal to the minimum size of the group and less than or equal to the
+     * maximum size of the group. If you do not specify a desired capacity, the default
+     * is the minimum size of the group.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of Amazon EC2 instances that the Auto Scaling group attempts to
-     * maintain. This number must be greater than or equal to the minimum size of the
-     * group and less than or equal to the maximum size of the group. If you do not
-     * specify a desired capacity, the default is the minimum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group at the
+     * time of its creation and the capacity it attempts to maintain. It can scale
+     * beyond this capacity if you configure auto scaling. This number must be greater
+     * than or equal to the minimum size of the group and less than or equal to the
+     * maximum size of the group. If you do not specify a desired capacity, the default
+     * is the minimum size of the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of Amazon EC2 instances that the Auto Scaling group attempts to
-     * maintain. This number must be greater than or equal to the minimum size of the
-     * group and less than or equal to the maximum size of the group. If you do not
-     * specify a desired capacity, the default is the minimum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group at the
+     * time of its creation and the capacity it attempts to maintain. It can scale
+     * beyond this capacity if you configure auto scaling. This number must be greater
+     * than or equal to the minimum size of the group and less than or equal to the
+     * maximum size of the group. If you do not specify a desired capacity, the default
+     * is the minimum size of the group.</p>
      */
     inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
+     * time, in seconds, between one scaling activity ending and another one starting
+     * due to simple scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
     inline CreateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline CreateAutoScalingGroupRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline CreateAutoScalingGroupRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline CreateAutoScalingGroupRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline CreateAutoScalingGroupRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Availability Zones for the group. This parameter is optional if
-     * you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
-     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
-     * required to launch instances into EC2-Classic.</p>
+     * <p>A list of Availability Zones where instances in the Auto Scaling group can be
+     * created. This parameter is optional if you specify one or more subnets for
+     * <code>VPCZoneIdentifier</code>.</p> <p>Conditional: If your account supports
+     * EC2-Classic and VPC, this parameter is required to launch instances into
+     * EC2-Classic.</p>
      */
     inline CreateAutoScalingGroupRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers and Network Load Balancers, specify a list of target
-     * groups using the <code>TargetGroupARNs</code> property instead.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p>
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
+     * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
@@ -762,9 +701,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
@@ -772,9 +711,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
@@ -782,9 +721,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
@@ -792,9 +731,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
@@ -802,9 +741,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
@@ -812,9 +751,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
@@ -822,9 +761,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
@@ -832,9 +771,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
@@ -842,9 +781,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups to associate with the
      * Auto Scaling group. Instances are registered as targets in a target group, and
-     * traffic is routed to the target group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
-     * a Load Balancer with an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * traffic is routed to the target group. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+     * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
@@ -852,398 +791,410 @@ namespace Model
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. The default value is <code>EC2</code>. If
-     * you configure an Auto Scaling group to use ELB health checks, it considers the
+     * <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto
+     * Scaling group to use load balancer (ELB) health checks, it considers the
      * instance unhealthy if it fails either the EC2 status checks or the load balancer
-     * health checks.</p> <p>For more information, see <a
+     * health checks. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>.</p> <p>For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>.</p> <p>For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>.</p> <p>For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>.</p> <p>For more information, see <a
+     * <p> <i/> </p> <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling
+     * waits before checking the health status of an EC2 instance that has come into
+     * service and marking it unhealthy due to a failed Elastic Load Balancing or
+     * custom health check. This is useful if your instances do not immediately pass
+     * these health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Default: <code>0</code> seconds</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * A placement group is a logical grouping of instances within a single
-     * Availability Zone. You cannot specify multiple Availability Zones and a
-     * placement group. For more information, see <a
+     * <p>The name of an existing placement group into which to launch your instances.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
+     * <p>A <i>cluster</i> placement group is a logical grouping of instances within a
+     * single Availability Zone. You cannot specify multiple Availability Zones and a
+     * cluster placement group. </p> 
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline bool VPCZoneIdentifierHasBeenSet() const { return m_vPCZoneIdentifierHasBeenSet; }
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::move(value); }
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A comma-separated list of subnet IDs for your virtual private cloud
-     * (VPC).</p> <p>If you specify <code>VPCZoneIdentifier</code> with
-     * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
-     * must reside in those Availability Zones.</p> <p>Conditional: If your account
-     * supports EC2-Classic and VPC, this parameter is required to launch instances
-     * into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where
+     * instances in the Auto Scaling group can be created. If you specify
+     * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
+     * that you specify for this parameter must reside in those Availability Zones.</p>
+     * <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is
+     * required to launch instances into a VPC.</p>
      */
     inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
 
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline bool TerminationPoliciesHasBeenSet() const { return m_terminationPoliciesHasBeenSet; }
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::move(value); }
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more termination policies used to select the instance to terminate.
-     * These policies are executed in the order that they are listed.</p> <p>For more
+     * <p>A policy or a list of policies that are used to select the instance to
+     * terminate. These policies are executed in the order that you list them. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
@@ -1251,142 +1202,251 @@ namespace Model
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool NewInstancesProtectedFromScaleInHasBeenSet() const { return m_newInstancesProtectedFromScaleInHasBeenSet; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Amazon EC2 Auto Scaling when scaling in.</p> <p>For more information about
-     * preventing instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity
+     * Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto
+     * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
+     * Spot Instance is at an elevated risk of interruption. After launching a new
+     * instance, it then terminates an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity
+     * Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto
+     * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
+     * Spot Instance is at an elevated risk of interruption. After launching a new
+     * instance, it then terminates an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity
+     * Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto
+     * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
+     * Spot Instance is at an elevated risk of interruption. After launching a new
+     * instance, it then terminates an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity
+     * Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto
+     * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
+     * Spot Instance is at an elevated risk of interruption. After launching a new
+     * instance, it then terminates an old instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
+     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
+
+
+    /**
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline const Aws::Vector<LifecycleHookSpecification>& GetLifecycleHookSpecificationList() const{ return m_lifecycleHookSpecificationList; }
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline bool LifecycleHookSpecificationListHasBeenSet() const { return m_lifecycleHookSpecificationListHasBeenSet; }
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline void SetLifecycleHookSpecificationList(const Aws::Vector<LifecycleHookSpecification>& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = value; }
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline void SetLifecycleHookSpecificationList(Aws::Vector<LifecycleHookSpecification>&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = std::move(value); }
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(const Aws::Vector<LifecycleHookSpecification>& value) { SetLifecycleHookSpecificationList(value); return *this;}
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(Aws::Vector<LifecycleHookSpecification>&& value) { SetLifecycleHookSpecificationList(std::move(value)); return *this;}
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(const LifecycleHookSpecification& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.push_back(value); return *this; }
 
     /**
-     * <p>One or more lifecycle hooks.</p>
+     * <p>One or more lifecycle hooks for the group, which specify actions to perform
+     * when Amazon EC2 Auto Scaling launches or terminates instances.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(LifecycleHookSpecification&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>One or more tags.</p> <p>For more information, see <a
+     * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
+     * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
+     * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
+     * template but use caution. If the launch template specifies an instance tag with
+     * a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+     * overrides the value of that instance tag with the value specified by the Auto
+     * Scaling group. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
-     * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
@@ -1394,124 +1454,363 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool ServiceLinkedRoleARNHasBeenSet() const { return m_serviceLinkedRoleARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf. By default, Amazon
-     * EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
-     * which it creates if it does not exist. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-Linked
-     * Roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf. By default,
+     * Amazon EC2 Auto Scaling uses a service-linked role named
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+     * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null. If specified, the value must be either 0 or a number equal
+     * to or greater than 86,400 seconds (1 day). For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
-     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithContext(const char* value) { SetContext(value); return *this;}
+
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline const Aws::String& GetDesiredCapacityType() const{ return m_desiredCapacityType; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline bool DesiredCapacityTypeHasBeenSet() const { return m_desiredCapacityTypeHasBeenSet; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline void SetDesiredCapacityType(const Aws::String& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = value; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline void SetDesiredCapacityType(Aws::String&& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = std::move(value); }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline void SetDesiredCapacityType(const char* value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType.assign(value); }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(const Aws::String& value) { SetDesiredCapacityType(value); return *this;}
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(Aws::String&& value) { SetDesiredCapacityType(std::move(value)); return *this;}
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
+     * Scaling specifies <code>units</code>, which translates into number of
+     * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
+     * <code>memory-mib</code> </p>
+     */
+    inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(const char* value) { SetDesiredCapacityType(value); return *this;}
+
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline int GetDefaultInstanceWarmup() const{ return m_defaultInstanceWarmup; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline void SetDefaultInstanceWarmup(int value) { m_defaultInstanceWarmupHasBeenSet = true; m_defaultInstanceWarmup = value; }
+
+    /**
+     * <p>The amount of time, in seconds, until a newly launched instance can
+     * contribute to the Amazon CloudWatch metrics. This delay lets an instance finish
+     * initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
+     * resulting in more reliable usage data. Set this value equal to the amount of
+     * time that it takes for resource consumption to become stable after an instance
+     * reaches the <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+     * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>  <p>To manage your warm-up settings
+     * at the group level, we recommend that you set the default instance warmup,
+     * <i>even if its value is set to 0 seconds</i>. This also optimizes the
+     * performance of scaling policies that scale continuously, such as target tracking
+     * and step scaling policies. </p> <p>If you need to remove a value that you
+     * previously set, include the property but specify <code>-1</code> for the value.
+     * However, we strongly recommend keeping the default instance warmup enabled by
+     * specifying a minimum value of <code>0</code>.</p>  <p>Default: None
+     * </p>
+     */
+    inline CreateAutoScalingGroupRequest& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
 
   private:
 
@@ -1569,6 +1868,9 @@ namespace Model
     bool m_newInstancesProtectedFromScaleIn;
     bool m_newInstancesProtectedFromScaleInHasBeenSet;
 
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
+
     Aws::Vector<LifecycleHookSpecification> m_lifecycleHookSpecificationList;
     bool m_lifecycleHookSpecificationListHasBeenSet;
 
@@ -1580,6 +1882,15 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
+
+    Aws::String m_desiredCapacityType;
+    bool m_desiredCapacityTypeHasBeenSet;
+
+    int m_defaultInstanceWarmup;
+    bool m_defaultInstanceWarmupHasBeenSet;
   };
 
 } // namespace Model

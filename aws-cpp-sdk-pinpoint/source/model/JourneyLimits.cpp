@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/JourneyLimits.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ JourneyLimits::JourneyLimits() :
     m_endpointReentryCap(0),
     m_endpointReentryCapHasBeenSet(false),
     m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false)
+    m_messagesPerSecondHasBeenSet(false),
+    m_endpointReentryIntervalHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ JourneyLimits::JourneyLimits(JsonView jsonValue) :
     m_endpointReentryCap(0),
     m_endpointReentryCapHasBeenSet(false),
     m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false)
+    m_messagesPerSecondHasBeenSet(false),
+    m_endpointReentryIntervalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +64,13 @@ JourneyLimits& JourneyLimits::operator =(JsonView jsonValue)
     m_messagesPerSecondHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndpointReentryInterval"))
+  {
+    m_endpointReentryInterval = jsonValue.GetString("EndpointReentryInterval");
+
+    m_endpointReentryIntervalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +93,12 @@ JsonValue JourneyLimits::Jsonize() const
   if(m_messagesPerSecondHasBeenSet)
   {
    payload.WithInteger("MessagesPerSecond", m_messagesPerSecond);
+
+  }
+
+  if(m_endpointReentryIntervalHasBeenSet)
+  {
+   payload.WithString("EndpointReentryInterval", m_endpointReentryInterval);
 
   }
 

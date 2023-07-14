@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
@@ -41,17 +31,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the request succeeded.</p>
+     * <p>A return value of <code>true</code> indicates that the request succeeded. A
+     * value of <code>false</code> indicates that the request failed.</p>
      */
     inline bool GetReturnValue() const{ return m_returnValue; }
 
     /**
-     * <p>Indicates whether the request succeeded.</p>
+     * <p>A return value of <code>true</code> indicates that the request succeeded. A
+     * value of <code>false</code> indicates that the request failed.</p>
      */
     inline void SetReturnValue(bool value) { m_returnValue = value; }
 
     /**
-     * <p>Indicates whether the request succeeded.</p>
+     * <p>A return value of <code>true</code> indicates that the request succeeded. A
+     * value of <code>false</code> indicates that the request failed.</p>
      */
     inline PromoteResourceShareCreatedFromPolicyResult& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
 

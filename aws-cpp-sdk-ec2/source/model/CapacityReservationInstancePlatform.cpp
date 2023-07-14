@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/CapacityReservationInstancePlatform.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -41,6 +31,12 @@ namespace Aws
         static const int Linux_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Linux with SQL Server Standard");
         static const int Linux_with_SQL_Server_Web_HASH = HashingUtils::HashString("Linux with SQL Server Web");
         static const int Linux_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Linux with SQL Server Enterprise");
+        static const int RHEL_with_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with SQL Server Standard");
+        static const int RHEL_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with SQL Server Enterprise");
+        static const int RHEL_with_SQL_Server_Web_HASH = HashingUtils::HashString("RHEL with SQL Server Web");
+        static const int RHEL_with_HA_HASH = HashingUtils::HashString("RHEL with HA");
+        static const int RHEL_with_HA_and_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Standard");
+        static const int RHEL_with_HA_and_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Enterprise");
 
 
         CapacityReservationInstancePlatform GetCapacityReservationInstancePlatformForName(const Aws::String& name)
@@ -90,6 +86,30 @@ namespace Aws
           {
             return CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise;
           }
+          else if (hashCode == RHEL_with_SQL_Server_Standard_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Standard;
+          }
+          else if (hashCode == RHEL_with_SQL_Server_Enterprise_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Enterprise;
+          }
+          else if (hashCode == RHEL_with_SQL_Server_Web_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Web;
+          }
+          else if (hashCode == RHEL_with_HA_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_HA;
+          }
+          else if (hashCode == RHEL_with_HA_and_SQL_Server_Standard_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Standard;
+          }
+          else if (hashCode == RHEL_with_HA_and_SQL_Server_Enterprise_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Enterprise;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +146,18 @@ namespace Aws
             return "Linux with SQL Server Web";
           case CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise:
             return "Linux with SQL Server Enterprise";
+          case CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Standard:
+            return "RHEL with SQL Server Standard";
+          case CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Enterprise:
+            return "RHEL with SQL Server Enterprise";
+          case CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Web:
+            return "RHEL with SQL Server Web";
+          case CapacityReservationInstancePlatform::RHEL_with_HA:
+            return "RHEL with HA";
+          case CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Standard:
+            return "RHEL with HA and SQL Server Standard";
+          case CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Enterprise:
+            return "RHEL with HA and SQL Server Enterprise";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

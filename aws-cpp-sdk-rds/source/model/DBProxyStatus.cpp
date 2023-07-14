@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/DBProxyStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,9 @@ namespace Aws
         static const int insufficient_resource_limits_HASH = HashingUtils::HashString("insufficient-resource-limits");
         static const int creating_HASH = HashingUtils::HashString("creating");
         static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static const int suspended_HASH = HashingUtils::HashString("suspended");
+        static const int suspending_HASH = HashingUtils::HashString("suspending");
+        static const int reactivating_HASH = HashingUtils::HashString("reactivating");
 
 
         DBProxyStatus GetDBProxyStatusForName(const Aws::String& name)
@@ -65,6 +58,18 @@ namespace Aws
           {
             return DBProxyStatus::deleting;
           }
+          else if (hashCode == suspended_HASH)
+          {
+            return DBProxyStatus::suspended;
+          }
+          else if (hashCode == suspending_HASH)
+          {
+            return DBProxyStatus::suspending;
+          }
+          else if (hashCode == reactivating_HASH)
+          {
+            return DBProxyStatus::reactivating;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,12 @@ namespace Aws
             return "creating";
           case DBProxyStatus::deleting:
             return "deleting";
+          case DBProxyStatus::suspended:
+            return "suspended";
+          case DBProxyStatus::suspending:
+            return "suspending";
+          case DBProxyStatus::reactivating:
+            return "reactivating";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

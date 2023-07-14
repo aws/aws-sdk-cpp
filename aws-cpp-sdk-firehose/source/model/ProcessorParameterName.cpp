@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/firehose/model/ProcessorParameterName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,9 +22,13 @@ namespace Aws
 
         static const int LambdaArn_HASH = HashingUtils::HashString("LambdaArn");
         static const int NumberOfRetries_HASH = HashingUtils::HashString("NumberOfRetries");
+        static const int MetadataExtractionQuery_HASH = HashingUtils::HashString("MetadataExtractionQuery");
+        static const int JsonParsingEngine_HASH = HashingUtils::HashString("JsonParsingEngine");
         static const int RoleArn_HASH = HashingUtils::HashString("RoleArn");
         static const int BufferSizeInMBs_HASH = HashingUtils::HashString("BufferSizeInMBs");
         static const int BufferIntervalInSeconds_HASH = HashingUtils::HashString("BufferIntervalInSeconds");
+        static const int SubRecordType_HASH = HashingUtils::HashString("SubRecordType");
+        static const int Delimiter_HASH = HashingUtils::HashString("Delimiter");
 
 
         ProcessorParameterName GetProcessorParameterNameForName(const Aws::String& name)
@@ -48,6 +42,14 @@ namespace Aws
           {
             return ProcessorParameterName::NumberOfRetries;
           }
+          else if (hashCode == MetadataExtractionQuery_HASH)
+          {
+            return ProcessorParameterName::MetadataExtractionQuery;
+          }
+          else if (hashCode == JsonParsingEngine_HASH)
+          {
+            return ProcessorParameterName::JsonParsingEngine;
+          }
           else if (hashCode == RoleArn_HASH)
           {
             return ProcessorParameterName::RoleArn;
@@ -59,6 +61,14 @@ namespace Aws
           else if (hashCode == BufferIntervalInSeconds_HASH)
           {
             return ProcessorParameterName::BufferIntervalInSeconds;
+          }
+          else if (hashCode == SubRecordType_HASH)
+          {
+            return ProcessorParameterName::SubRecordType;
+          }
+          else if (hashCode == Delimiter_HASH)
+          {
+            return ProcessorParameterName::Delimiter;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -78,12 +88,20 @@ namespace Aws
             return "LambdaArn";
           case ProcessorParameterName::NumberOfRetries:
             return "NumberOfRetries";
+          case ProcessorParameterName::MetadataExtractionQuery:
+            return "MetadataExtractionQuery";
+          case ProcessorParameterName::JsonParsingEngine:
+            return "JsonParsingEngine";
           case ProcessorParameterName::RoleArn:
             return "RoleArn";
           case ProcessorParameterName::BufferSizeInMBs:
             return "BufferSizeInMBs";
           case ProcessorParameterName::BufferIntervalInSeconds:
             return "BufferIntervalInSeconds";
+          case ProcessorParameterName::SubRecordType:
+            return "SubRecordType";
+          case ProcessorParameterName::Delimiter:
+            return "Delimiter";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

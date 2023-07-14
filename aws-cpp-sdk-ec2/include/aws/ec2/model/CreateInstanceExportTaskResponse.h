@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -44,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline const ExportTask& GetExportTask() const{ return m_exportTask; }
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline void SetExportTask(const ExportTask& value) { m_exportTask = value; }
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline void SetExportTask(ExportTask&& value) { m_exportTask = std::move(value); }
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline CreateInstanceExportTaskResponse& WithExportTask(const ExportTask& value) { SetExportTask(value); return *this;}
 
     /**
-     * <p>Information about the instance export task.</p>
+     * <p>Information about the export instance task.</p>
      */
     inline CreateInstanceExportTaskResponse& WithExportTask(ExportTask&& value) { SetExportTask(std::move(value)); return *this;}
 

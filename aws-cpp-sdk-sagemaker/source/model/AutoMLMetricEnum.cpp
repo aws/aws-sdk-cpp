@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/AutoMLMetricEnum.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,7 @@ namespace Aws
         static const int MSE_HASH = HashingUtils::HashString("MSE");
         static const int F1_HASH = HashingUtils::HashString("F1");
         static const int F1macro_HASH = HashingUtils::HashString("F1macro");
+        static const int AUC_HASH = HashingUtils::HashString("AUC");
 
 
         AutoMLMetricEnum GetAutoMLMetricEnumForName(const Aws::String& name)
@@ -54,6 +45,10 @@ namespace Aws
           else if (hashCode == F1macro_HASH)
           {
             return AutoMLMetricEnum::F1macro;
+          }
+          else if (hashCode == AUC_HASH)
+          {
+            return AutoMLMetricEnum::AUC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +72,8 @@ namespace Aws
             return "F1";
           case AutoMLMetricEnum::F1macro:
             return "F1macro";
+          case AutoMLMetricEnum::AUC:
+            return "AUC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

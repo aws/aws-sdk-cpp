@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -133,32 +123,38 @@ namespace Model
 
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated. </p>
      */
     inline const TransitGatewayAttachmentResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated. </p>
      */
     inline void SetResourceType(const TransitGatewayAttachmentResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated. </p>
      */
     inline void SetResourceType(TransitGatewayAttachmentResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated. </p>
      */
     inline TransitGatewayRouteAttachment& WithResourceType(const TransitGatewayAttachmentResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated. </p>
      */
     inline TransitGatewayRouteAttachment& WithResourceType(TransitGatewayAttachmentResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -49,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline const Aws::Vector<NFSFileShareInfo>& GetNFSFileShareInfoList() const{ return m_nFSFileShareInfoList; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline void SetNFSFileShareInfoList(const Aws::Vector<NFSFileShareInfo>& value) { m_nFSFileShareInfoList = value; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline void SetNFSFileShareInfoList(Aws::Vector<NFSFileShareInfo>&& value) { m_nFSFileShareInfoList = std::move(value); }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& WithNFSFileShareInfoList(const Aws::Vector<NFSFileShareInfo>& value) { SetNFSFileShareInfoList(value); return *this;}
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& WithNFSFileShareInfoList(Aws::Vector<NFSFileShareInfo>&& value) { SetNFSFileShareInfoList(std::move(value)); return *this;}
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(const NFSFileShareInfo& value) { m_nFSFileShareInfoList.push_back(value); return *this; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(NFSFileShareInfo&& value) { m_nFSFileShareInfoList.push_back(std::move(value)); return *this; }
 

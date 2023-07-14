@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lakeformation/model/Permission.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,9 +26,12 @@ namespace Aws
         static const int DROP_HASH = HashingUtils::HashString("DROP");
         static const int DELETE__HASH = HashingUtils::HashString("DELETE");
         static const int INSERT_HASH = HashingUtils::HashString("INSERT");
+        static const int DESCRIBE_HASH = HashingUtils::HashString("DESCRIBE");
         static const int CREATE_DATABASE_HASH = HashingUtils::HashString("CREATE_DATABASE");
         static const int CREATE_TABLE_HASH = HashingUtils::HashString("CREATE_TABLE");
         static const int DATA_LOCATION_ACCESS_HASH = HashingUtils::HashString("DATA_LOCATION_ACCESS");
+        static const int CREATE_TAG_HASH = HashingUtils::HashString("CREATE_TAG");
+        static const int ASSOCIATE_HASH = HashingUtils::HashString("ASSOCIATE");
 
 
         Permission GetPermissionForName(const Aws::String& name)
@@ -68,6 +61,10 @@ namespace Aws
           {
             return Permission::INSERT;
           }
+          else if (hashCode == DESCRIBE_HASH)
+          {
+            return Permission::DESCRIBE;
+          }
           else if (hashCode == CREATE_DATABASE_HASH)
           {
             return Permission::CREATE_DATABASE;
@@ -79,6 +76,14 @@ namespace Aws
           else if (hashCode == DATA_LOCATION_ACCESS_HASH)
           {
             return Permission::DATA_LOCATION_ACCESS;
+          }
+          else if (hashCode == CREATE_TAG_HASH)
+          {
+            return Permission::CREATE_TAG;
+          }
+          else if (hashCode == ASSOCIATE_HASH)
+          {
+            return Permission::ASSOCIATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -106,12 +111,18 @@ namespace Aws
             return "DELETE";
           case Permission::INSERT:
             return "INSERT";
+          case Permission::DESCRIBE:
+            return "DESCRIBE";
           case Permission::CREATE_DATABASE:
             return "CREATE_DATABASE";
           case Permission::CREATE_TABLE:
             return "CREATE_TABLE";
           case Permission::DATA_LOCATION_ACCESS:
             return "DATA_LOCATION_ACCESS";
+          case Permission::CREATE_TAG:
+            return "CREATE_TAG";
+          case Permission::ASSOCIATE:
+            return "ASSOCIATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

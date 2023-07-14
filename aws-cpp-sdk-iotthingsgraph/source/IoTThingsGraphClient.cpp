@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -81,7 +71,7 @@ static const char* ALLOCATION_TAG = "IoTThingsGraphClient";
 IoTThingsGraphClient::IoTThingsGraphClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -91,7 +81,7 @@ IoTThingsGraphClient::IoTThingsGraphClient(const Client::ClientConfiguration& cl
 IoTThingsGraphClient::IoTThingsGraphClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -102,7 +92,7 @@ IoTThingsGraphClient::IoTThingsGraphClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -113,8 +103,9 @@ IoTThingsGraphClient::~IoTThingsGraphClient()
 {
 }
 
-void IoTThingsGraphClient::init(const ClientConfiguration& config)
+void IoTThingsGraphClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("IoTThingsGraph");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -141,18 +132,7 @@ void IoTThingsGraphClient::OverrideEndpoint(const Aws::String& endpoint)
 AssociateEntityToThingOutcome IoTThingsGraphClient::AssociateEntityToThing(const AssociateEntityToThingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateEntityToThingOutcome(AssociateEntityToThingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateEntityToThingOutcome(outcome.GetError());
-  }
+  return AssociateEntityToThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateEntityToThingOutcomeCallable IoTThingsGraphClient::AssociateEntityToThingCallable(const AssociateEntityToThingRequest& request) const
@@ -176,18 +156,7 @@ void IoTThingsGraphClient::AssociateEntityToThingAsyncHelper(const AssociateEnti
 CreateFlowTemplateOutcome IoTThingsGraphClient::CreateFlowTemplate(const CreateFlowTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFlowTemplateOutcome(CreateFlowTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFlowTemplateOutcome(outcome.GetError());
-  }
+  return CreateFlowTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFlowTemplateOutcomeCallable IoTThingsGraphClient::CreateFlowTemplateCallable(const CreateFlowTemplateRequest& request) const
@@ -211,18 +180,7 @@ void IoTThingsGraphClient::CreateFlowTemplateAsyncHelper(const CreateFlowTemplat
 CreateSystemInstanceOutcome IoTThingsGraphClient::CreateSystemInstance(const CreateSystemInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSystemInstanceOutcome(CreateSystemInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSystemInstanceOutcome(outcome.GetError());
-  }
+  return CreateSystemInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSystemInstanceOutcomeCallable IoTThingsGraphClient::CreateSystemInstanceCallable(const CreateSystemInstanceRequest& request) const
@@ -246,18 +204,7 @@ void IoTThingsGraphClient::CreateSystemInstanceAsyncHelper(const CreateSystemIns
 CreateSystemTemplateOutcome IoTThingsGraphClient::CreateSystemTemplate(const CreateSystemTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSystemTemplateOutcome(CreateSystemTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSystemTemplateOutcome(outcome.GetError());
-  }
+  return CreateSystemTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSystemTemplateOutcomeCallable IoTThingsGraphClient::CreateSystemTemplateCallable(const CreateSystemTemplateRequest& request) const
@@ -281,18 +228,7 @@ void IoTThingsGraphClient::CreateSystemTemplateAsyncHelper(const CreateSystemTem
 DeleteFlowTemplateOutcome IoTThingsGraphClient::DeleteFlowTemplate(const DeleteFlowTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFlowTemplateOutcome(DeleteFlowTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteFlowTemplateOutcome(outcome.GetError());
-  }
+  return DeleteFlowTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFlowTemplateOutcomeCallable IoTThingsGraphClient::DeleteFlowTemplateCallable(const DeleteFlowTemplateRequest& request) const
@@ -316,18 +252,7 @@ void IoTThingsGraphClient::DeleteFlowTemplateAsyncHelper(const DeleteFlowTemplat
 DeleteNamespaceOutcome IoTThingsGraphClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteNamespaceOutcome(DeleteNamespaceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteNamespaceOutcome(outcome.GetError());
-  }
+  return DeleteNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteNamespaceOutcomeCallable IoTThingsGraphClient::DeleteNamespaceCallable(const DeleteNamespaceRequest& request) const
@@ -351,18 +276,7 @@ void IoTThingsGraphClient::DeleteNamespaceAsyncHelper(const DeleteNamespaceReque
 DeleteSystemInstanceOutcome IoTThingsGraphClient::DeleteSystemInstance(const DeleteSystemInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSystemInstanceOutcome(DeleteSystemInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSystemInstanceOutcome(outcome.GetError());
-  }
+  return DeleteSystemInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSystemInstanceOutcomeCallable IoTThingsGraphClient::DeleteSystemInstanceCallable(const DeleteSystemInstanceRequest& request) const
@@ -386,18 +300,7 @@ void IoTThingsGraphClient::DeleteSystemInstanceAsyncHelper(const DeleteSystemIns
 DeleteSystemTemplateOutcome IoTThingsGraphClient::DeleteSystemTemplate(const DeleteSystemTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSystemTemplateOutcome(DeleteSystemTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSystemTemplateOutcome(outcome.GetError());
-  }
+  return DeleteSystemTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSystemTemplateOutcomeCallable IoTThingsGraphClient::DeleteSystemTemplateCallable(const DeleteSystemTemplateRequest& request) const
@@ -421,18 +324,7 @@ void IoTThingsGraphClient::DeleteSystemTemplateAsyncHelper(const DeleteSystemTem
 DeploySystemInstanceOutcome IoTThingsGraphClient::DeploySystemInstance(const DeploySystemInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeploySystemInstanceOutcome(DeploySystemInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeploySystemInstanceOutcome(outcome.GetError());
-  }
+  return DeploySystemInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeploySystemInstanceOutcomeCallable IoTThingsGraphClient::DeploySystemInstanceCallable(const DeploySystemInstanceRequest& request) const
@@ -456,18 +348,7 @@ void IoTThingsGraphClient::DeploySystemInstanceAsyncHelper(const DeploySystemIns
 DeprecateFlowTemplateOutcome IoTThingsGraphClient::DeprecateFlowTemplate(const DeprecateFlowTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeprecateFlowTemplateOutcome(DeprecateFlowTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeprecateFlowTemplateOutcome(outcome.GetError());
-  }
+  return DeprecateFlowTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeprecateFlowTemplateOutcomeCallable IoTThingsGraphClient::DeprecateFlowTemplateCallable(const DeprecateFlowTemplateRequest& request) const
@@ -491,18 +372,7 @@ void IoTThingsGraphClient::DeprecateFlowTemplateAsyncHelper(const DeprecateFlowT
 DeprecateSystemTemplateOutcome IoTThingsGraphClient::DeprecateSystemTemplate(const DeprecateSystemTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeprecateSystemTemplateOutcome(DeprecateSystemTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeprecateSystemTemplateOutcome(outcome.GetError());
-  }
+  return DeprecateSystemTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeprecateSystemTemplateOutcomeCallable IoTThingsGraphClient::DeprecateSystemTemplateCallable(const DeprecateSystemTemplateRequest& request) const
@@ -526,18 +396,7 @@ void IoTThingsGraphClient::DeprecateSystemTemplateAsyncHelper(const DeprecateSys
 DescribeNamespaceOutcome IoTThingsGraphClient::DescribeNamespace(const DescribeNamespaceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeNamespaceOutcome(DescribeNamespaceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeNamespaceOutcome(outcome.GetError());
-  }
+  return DescribeNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeNamespaceOutcomeCallable IoTThingsGraphClient::DescribeNamespaceCallable(const DescribeNamespaceRequest& request) const
@@ -561,18 +420,7 @@ void IoTThingsGraphClient::DescribeNamespaceAsyncHelper(const DescribeNamespaceR
 DissociateEntityFromThingOutcome IoTThingsGraphClient::DissociateEntityFromThing(const DissociateEntityFromThingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DissociateEntityFromThingOutcome(DissociateEntityFromThingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DissociateEntityFromThingOutcome(outcome.GetError());
-  }
+  return DissociateEntityFromThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DissociateEntityFromThingOutcomeCallable IoTThingsGraphClient::DissociateEntityFromThingCallable(const DissociateEntityFromThingRequest& request) const
@@ -596,18 +444,7 @@ void IoTThingsGraphClient::DissociateEntityFromThingAsyncHelper(const Dissociate
 GetEntitiesOutcome IoTThingsGraphClient::GetEntities(const GetEntitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEntitiesOutcome(GetEntitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEntitiesOutcome(outcome.GetError());
-  }
+  return GetEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEntitiesOutcomeCallable IoTThingsGraphClient::GetEntitiesCallable(const GetEntitiesRequest& request) const
@@ -631,18 +468,7 @@ void IoTThingsGraphClient::GetEntitiesAsyncHelper(const GetEntitiesRequest& requ
 GetFlowTemplateOutcome IoTThingsGraphClient::GetFlowTemplate(const GetFlowTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFlowTemplateOutcome(GetFlowTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFlowTemplateOutcome(outcome.GetError());
-  }
+  return GetFlowTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFlowTemplateOutcomeCallable IoTThingsGraphClient::GetFlowTemplateCallable(const GetFlowTemplateRequest& request) const
@@ -666,18 +492,7 @@ void IoTThingsGraphClient::GetFlowTemplateAsyncHelper(const GetFlowTemplateReque
 GetFlowTemplateRevisionsOutcome IoTThingsGraphClient::GetFlowTemplateRevisions(const GetFlowTemplateRevisionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFlowTemplateRevisionsOutcome(GetFlowTemplateRevisionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFlowTemplateRevisionsOutcome(outcome.GetError());
-  }
+  return GetFlowTemplateRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFlowTemplateRevisionsOutcomeCallable IoTThingsGraphClient::GetFlowTemplateRevisionsCallable(const GetFlowTemplateRevisionsRequest& request) const
@@ -701,18 +516,7 @@ void IoTThingsGraphClient::GetFlowTemplateRevisionsAsyncHelper(const GetFlowTemp
 GetNamespaceDeletionStatusOutcome IoTThingsGraphClient::GetNamespaceDeletionStatus(const GetNamespaceDeletionStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetNamespaceDeletionStatusOutcome(GetNamespaceDeletionStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetNamespaceDeletionStatusOutcome(outcome.GetError());
-  }
+  return GetNamespaceDeletionStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetNamespaceDeletionStatusOutcomeCallable IoTThingsGraphClient::GetNamespaceDeletionStatusCallable(const GetNamespaceDeletionStatusRequest& request) const
@@ -736,18 +540,7 @@ void IoTThingsGraphClient::GetNamespaceDeletionStatusAsyncHelper(const GetNamesp
 GetSystemInstanceOutcome IoTThingsGraphClient::GetSystemInstance(const GetSystemInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSystemInstanceOutcome(GetSystemInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSystemInstanceOutcome(outcome.GetError());
-  }
+  return GetSystemInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSystemInstanceOutcomeCallable IoTThingsGraphClient::GetSystemInstanceCallable(const GetSystemInstanceRequest& request) const
@@ -771,18 +564,7 @@ void IoTThingsGraphClient::GetSystemInstanceAsyncHelper(const GetSystemInstanceR
 GetSystemTemplateOutcome IoTThingsGraphClient::GetSystemTemplate(const GetSystemTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSystemTemplateOutcome(GetSystemTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSystemTemplateOutcome(outcome.GetError());
-  }
+  return GetSystemTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSystemTemplateOutcomeCallable IoTThingsGraphClient::GetSystemTemplateCallable(const GetSystemTemplateRequest& request) const
@@ -806,18 +588,7 @@ void IoTThingsGraphClient::GetSystemTemplateAsyncHelper(const GetSystemTemplateR
 GetSystemTemplateRevisionsOutcome IoTThingsGraphClient::GetSystemTemplateRevisions(const GetSystemTemplateRevisionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSystemTemplateRevisionsOutcome(GetSystemTemplateRevisionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSystemTemplateRevisionsOutcome(outcome.GetError());
-  }
+  return GetSystemTemplateRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSystemTemplateRevisionsOutcomeCallable IoTThingsGraphClient::GetSystemTemplateRevisionsCallable(const GetSystemTemplateRevisionsRequest& request) const
@@ -841,18 +612,7 @@ void IoTThingsGraphClient::GetSystemTemplateRevisionsAsyncHelper(const GetSystem
 GetUploadStatusOutcome IoTThingsGraphClient::GetUploadStatus(const GetUploadStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUploadStatusOutcome(GetUploadStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUploadStatusOutcome(outcome.GetError());
-  }
+  return GetUploadStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUploadStatusOutcomeCallable IoTThingsGraphClient::GetUploadStatusCallable(const GetUploadStatusRequest& request) const
@@ -876,18 +636,7 @@ void IoTThingsGraphClient::GetUploadStatusAsyncHelper(const GetUploadStatusReque
 ListFlowExecutionMessagesOutcome IoTThingsGraphClient::ListFlowExecutionMessages(const ListFlowExecutionMessagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFlowExecutionMessagesOutcome(ListFlowExecutionMessagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFlowExecutionMessagesOutcome(outcome.GetError());
-  }
+  return ListFlowExecutionMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFlowExecutionMessagesOutcomeCallable IoTThingsGraphClient::ListFlowExecutionMessagesCallable(const ListFlowExecutionMessagesRequest& request) const
@@ -911,18 +660,7 @@ void IoTThingsGraphClient::ListFlowExecutionMessagesAsyncHelper(const ListFlowEx
 ListTagsForResourceOutcome IoTThingsGraphClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable IoTThingsGraphClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -946,18 +684,7 @@ void IoTThingsGraphClient::ListTagsForResourceAsyncHelper(const ListTagsForResou
 SearchEntitiesOutcome IoTThingsGraphClient::SearchEntities(const SearchEntitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchEntitiesOutcome(SearchEntitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchEntitiesOutcome(outcome.GetError());
-  }
+  return SearchEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchEntitiesOutcomeCallable IoTThingsGraphClient::SearchEntitiesCallable(const SearchEntitiesRequest& request) const
@@ -981,18 +708,7 @@ void IoTThingsGraphClient::SearchEntitiesAsyncHelper(const SearchEntitiesRequest
 SearchFlowExecutionsOutcome IoTThingsGraphClient::SearchFlowExecutions(const SearchFlowExecutionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchFlowExecutionsOutcome(SearchFlowExecutionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchFlowExecutionsOutcome(outcome.GetError());
-  }
+  return SearchFlowExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchFlowExecutionsOutcomeCallable IoTThingsGraphClient::SearchFlowExecutionsCallable(const SearchFlowExecutionsRequest& request) const
@@ -1016,18 +732,7 @@ void IoTThingsGraphClient::SearchFlowExecutionsAsyncHelper(const SearchFlowExecu
 SearchFlowTemplatesOutcome IoTThingsGraphClient::SearchFlowTemplates(const SearchFlowTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchFlowTemplatesOutcome(SearchFlowTemplatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchFlowTemplatesOutcome(outcome.GetError());
-  }
+  return SearchFlowTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchFlowTemplatesOutcomeCallable IoTThingsGraphClient::SearchFlowTemplatesCallable(const SearchFlowTemplatesRequest& request) const
@@ -1051,18 +756,7 @@ void IoTThingsGraphClient::SearchFlowTemplatesAsyncHelper(const SearchFlowTempla
 SearchSystemInstancesOutcome IoTThingsGraphClient::SearchSystemInstances(const SearchSystemInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchSystemInstancesOutcome(SearchSystemInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchSystemInstancesOutcome(outcome.GetError());
-  }
+  return SearchSystemInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchSystemInstancesOutcomeCallable IoTThingsGraphClient::SearchSystemInstancesCallable(const SearchSystemInstancesRequest& request) const
@@ -1086,18 +780,7 @@ void IoTThingsGraphClient::SearchSystemInstancesAsyncHelper(const SearchSystemIn
 SearchSystemTemplatesOutcome IoTThingsGraphClient::SearchSystemTemplates(const SearchSystemTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchSystemTemplatesOutcome(SearchSystemTemplatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchSystemTemplatesOutcome(outcome.GetError());
-  }
+  return SearchSystemTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchSystemTemplatesOutcomeCallable IoTThingsGraphClient::SearchSystemTemplatesCallable(const SearchSystemTemplatesRequest& request) const
@@ -1121,18 +804,7 @@ void IoTThingsGraphClient::SearchSystemTemplatesAsyncHelper(const SearchSystemTe
 SearchThingsOutcome IoTThingsGraphClient::SearchThings(const SearchThingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchThingsOutcome(SearchThingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchThingsOutcome(outcome.GetError());
-  }
+  return SearchThingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchThingsOutcomeCallable IoTThingsGraphClient::SearchThingsCallable(const SearchThingsRequest& request) const
@@ -1156,18 +828,7 @@ void IoTThingsGraphClient::SearchThingsAsyncHelper(const SearchThingsRequest& re
 TagResourceOutcome IoTThingsGraphClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable IoTThingsGraphClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1191,18 +852,7 @@ void IoTThingsGraphClient::TagResourceAsyncHelper(const TagResourceRequest& requ
 UndeploySystemInstanceOutcome IoTThingsGraphClient::UndeploySystemInstance(const UndeploySystemInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UndeploySystemInstanceOutcome(UndeploySystemInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UndeploySystemInstanceOutcome(outcome.GetError());
-  }
+  return UndeploySystemInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UndeploySystemInstanceOutcomeCallable IoTThingsGraphClient::UndeploySystemInstanceCallable(const UndeploySystemInstanceRequest& request) const
@@ -1226,18 +876,7 @@ void IoTThingsGraphClient::UndeploySystemInstanceAsyncHelper(const UndeploySyste
 UntagResourceOutcome IoTThingsGraphClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable IoTThingsGraphClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1261,18 +900,7 @@ void IoTThingsGraphClient::UntagResourceAsyncHelper(const UntagResourceRequest& 
 UpdateFlowTemplateOutcome IoTThingsGraphClient::UpdateFlowTemplate(const UpdateFlowTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFlowTemplateOutcome(UpdateFlowTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFlowTemplateOutcome(outcome.GetError());
-  }
+  return UpdateFlowTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFlowTemplateOutcomeCallable IoTThingsGraphClient::UpdateFlowTemplateCallable(const UpdateFlowTemplateRequest& request) const
@@ -1296,18 +924,7 @@ void IoTThingsGraphClient::UpdateFlowTemplateAsyncHelper(const UpdateFlowTemplat
 UpdateSystemTemplateOutcome IoTThingsGraphClient::UpdateSystemTemplate(const UpdateSystemTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSystemTemplateOutcome(UpdateSystemTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSystemTemplateOutcome(outcome.GetError());
-  }
+  return UpdateSystemTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSystemTemplateOutcomeCallable IoTThingsGraphClient::UpdateSystemTemplateCallable(const UpdateSystemTemplateRequest& request) const
@@ -1331,18 +948,7 @@ void IoTThingsGraphClient::UpdateSystemTemplateAsyncHelper(const UpdateSystemTem
 UploadEntityDefinitionsOutcome IoTThingsGraphClient::UploadEntityDefinitions(const UploadEntityDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UploadEntityDefinitionsOutcome(UploadEntityDefinitionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UploadEntityDefinitionsOutcome(outcome.GetError());
-  }
+  return UploadEntityDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UploadEntityDefinitionsOutcomeCallable IoTThingsGraphClient::UploadEntityDefinitionsCallable(const UploadEntityDefinitionsRequest& request) const

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackSetOperation.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -45,7 +35,8 @@ StackSetOperation::StackSetOperation() :
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
     m_deploymentTargetsHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false)
+    m_stackSetDriftDetectionDetailsHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -64,7 +55,8 @@ StackSetOperation::StackSetOperation(const XmlNode& xmlNode) :
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
     m_deploymentTargetsHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false)
+    m_stackSetDriftDetectionDetailsHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -147,6 +139,12 @@ StackSetOperation& StackSetOperation::operator =(const XmlNode& xmlNode)
       m_stackSetDriftDetectionDetails = stackSetDriftDetectionDetailsNode;
       m_stackSetDriftDetectionDetailsHasBeenSet = true;
     }
+    XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
+    if(!statusReasonNode.IsNull())
+    {
+      m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
+      m_statusReasonHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -220,6 +218,11 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+
 }
 
 void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -277,6 +280,10 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::String stackSetDriftDetectionDetailsLocationAndMember(location);
       stackSetDriftDetectionDetailsLocationAndMember += ".StackSetDriftDetectionDetails";
       m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMember.c_str());
+  }
+  if(m_statusReasonHasBeenSet)
+  {
+      oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 }
 

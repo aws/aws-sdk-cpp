@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/CampaignConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -36,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a campaign update. For a complete
-   * listing, call the <a>DescribeCampaign</a> API.</p><p><h3>See Also:</h3>   <a
+   * listing, call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CampaignUpdateSummary">AWS
    * API Reference</a></p>
    */
@@ -113,6 +106,25 @@ namespace Model
      * per second that Amazon Personalize will support.</p>
      */
     inline CampaignUpdateSummary& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
+
+
+    
+    inline const CampaignConfig& GetCampaignConfig() const{ return m_campaignConfig; }
+
+    
+    inline bool CampaignConfigHasBeenSet() const { return m_campaignConfigHasBeenSet; }
+
+    
+    inline void SetCampaignConfig(const CampaignConfig& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = value; }
+
+    
+    inline void SetCampaignConfig(CampaignConfig&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::move(value); }
+
+    
+    inline CampaignUpdateSummary& WithCampaignConfig(const CampaignConfig& value) { SetCampaignConfig(value); return *this;}
+
+    
+    inline CampaignUpdateSummary& WithCampaignConfig(CampaignConfig&& value) { SetCampaignConfig(std::move(value)); return *this;}
 
 
     /**
@@ -295,6 +307,9 @@ namespace Model
 
     int m_minProvisionedTPS;
     bool m_minProvisionedTPSHasBeenSet;
+
+    CampaignConfig m_campaignConfig;
+    bool m_campaignConfigHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

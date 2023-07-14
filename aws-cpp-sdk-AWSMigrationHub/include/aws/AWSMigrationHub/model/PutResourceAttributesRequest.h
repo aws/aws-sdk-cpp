@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
@@ -139,12 +129,12 @@ namespace Model
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -155,19 +145,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline const Aws::Vector<ResourceAttribute>& GetResourceAttributeList() const{ return m_resourceAttributeList; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -178,19 +168,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline bool ResourceAttributeListHasBeenSet() const { return m_resourceAttributeListHasBeenSet; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -201,19 +191,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline void SetResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = value; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -224,19 +214,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline void SetResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = std::move(value); }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -247,19 +237,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline PutResourceAttributesRequest& WithResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { SetResourceAttributeList(value); return *this;}
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -270,19 +260,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline PutResourceAttributesRequest& WithResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { SetResourceAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -293,19 +283,19 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline PutResourceAttributesRequest& AddResourceAttributeList(const ResourceAttribute& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(value); return *this; }
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
      * to map the task to a resource in the Application Discovery Service
-     * repository.</p> <note> <p>Takes the object array of
+     * repository.</p>  <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
      * VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID |
      * MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
-     * to 256 characters.</p> </note> <important> <ul> <li> <p>If any "VM" related
+     * to 256 characters.</p>   <ul> <li> <p>If any "VM" related
      * value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -316,7 +306,7 @@ namespace Model
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
      * should provide as many as you know in separate type/value pairs passed to the
      * <code>ResourceAttributeList</code> parameter to maximize the chances of
-     * matching.</p> </li> </ul> </important>
+     * matching.</p> </li> </ul> 
      */
     inline PutResourceAttributesRequest& AddResourceAttributeList(ResourceAttribute&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(std::move(value)); return *this; }
 

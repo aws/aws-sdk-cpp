@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/robomaker/model/DataSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,20 @@ namespace Model
 DataSource::DataSource() : 
     m_nameHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false)
+    m_s3KeysHasBeenSet(false),
+    m_type(DataSourceType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_destinationHasBeenSet(false)
 {
 }
 
 DataSource::DataSource(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false)
+    m_s3KeysHasBeenSet(false),
+    m_type(DataSourceType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_destinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +65,20 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_s3KeysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("destination"))
+  {
+    m_destination = jsonValue.GetString("destination");
+
+    m_destinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +106,17 @@ JsonValue DataSource::Jsonize() const
      s3KeysJsonList[s3KeysIndex].AsObject(m_s3Keys[s3KeysIndex].Jsonize());
    }
    payload.WithArray("s3Keys", std::move(s3KeysJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
+  }
+
+  if(m_destinationHasBeenSet)
+  {
+   payload.WithString("destination", m_destination);
 
   }
 

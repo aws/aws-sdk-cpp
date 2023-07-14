@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
 #include <aws/guardduty/model/DetectorStatus.h>
+#include <aws/guardduty/model/DataSourceConfigurationsResult.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -46,63 +37,63 @@ namespace Model
 
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline GetDetectorResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline GetDetectorResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline GetDetectorResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline GetDetectorResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline GetDetectorResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
@@ -170,39 +161,65 @@ namespace Model
 
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAt = value; }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAt.assign(value); }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline GetDetectorResult& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline GetDetectorResult& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline GetDetectorResult& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
+
+
+    /**
+     * <p>Describes which data sources are enabled for the detector.</p>
+     */
+    inline const DataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>Describes which data sources are enabled for the detector.</p>
+     */
+    inline void SetDataSources(const DataSourceConfigurationsResult& value) { m_dataSources = value; }
+
+    /**
+     * <p>Describes which data sources are enabled for the detector.</p>
+     */
+    inline void SetDataSources(DataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
+
+    /**
+     * <p>Describes which data sources are enabled for the detector.</p>
+     */
+    inline GetDetectorResult& WithDataSources(const DataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>Describes which data sources are enabled for the detector.</p>
+     */
+    inline GetDetectorResult& WithDataSources(DataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
 
 
     /**
@@ -276,6 +293,8 @@ namespace Model
     DetectorStatus m_status;
 
     Aws::String m_updatedAt;
+
+    DataSourceConfigurationsResult m_dataSources;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

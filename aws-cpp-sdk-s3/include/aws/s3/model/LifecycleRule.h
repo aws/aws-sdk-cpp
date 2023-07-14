@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -142,22 +132,58 @@ namespace Model
     inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
 
 
-    
+    /**
+     * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+     * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
+     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
+     * element.</p>
+     */
     inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+     * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
+     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
+     * element.</p>
+     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    
+    /**
+     * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+     * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
+     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
+     * element.</p>
+     */
     inline void SetFilter(const LifecycleRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+     * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
+     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
+     * element.</p>
+     */
     inline void SetFilter(LifecycleRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+     * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
+     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
+     * element.</p>
+     */
     inline LifecycleRule& WithFilter(const LifecycleRuleFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+     * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+     * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
+     * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
+     * element.</p>
+     */
     inline LifecycleRule& WithFilter(LifecycleRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 

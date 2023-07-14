@@ -1,21 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/AwsIamPermissionsBoundary.h>
+#include <aws/securityhub/model/AwsIamAttachedManagedPolicy.h>
+#include <aws/securityhub/model/AwsIamInstanceProfile.h>
+#include <aws/securityhub/model/AwsIamRolePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -90,52 +85,177 @@ namespace Model
 
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline const Aws::Vector<AwsIamAttachedManagedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline void SetAttachedManagedPolicies(const Aws::Vector<AwsIamAttachedManagedPolicy>& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = value; }
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline void SetAttachedManagedPolicies(Aws::Vector<AwsIamAttachedManagedPolicy>&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::move(value); }
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline AwsIamRoleDetails& WithAttachedManagedPolicies(const Aws::Vector<AwsIamAttachedManagedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline AwsIamRoleDetails& WithAttachedManagedPolicies(Aws::Vector<AwsIamAttachedManagedPolicy>&& value) { SetAttachedManagedPolicies(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline AwsIamRoleDetails& AddAttachedManagedPolicies(const AwsIamAttachedManagedPolicy& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(value); return *this; }
+
+    /**
+     * <p>The list of the managed policies that are attached to the role.</p>
+     */
+    inline AwsIamRoleDetails& AddAttachedManagedPolicies(AwsIamAttachedManagedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreateDate() const{ return m_createDate; }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(const Aws::String& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(Aws::String&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreateDate(const char* value) { m_createDateHasBeenSet = true; m_createDate.assign(value); }
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamRoleDetails& WithCreateDate(const Aws::String& value) { SetCreateDate(value); return *this;}
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamRoleDetails& WithCreateDate(Aws::String&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time, in ISO 8601 date-time format, when the role was
-     * created.</p>
+     * <p>Indicates when the role was created.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsIamRoleDetails& WithCreateDate(const char* value) { SetCreateDate(value); return *this;}
+
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline const Aws::Vector<AwsIamInstanceProfile>& GetInstanceProfileList() const{ return m_instanceProfileList; }
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline bool InstanceProfileListHasBeenSet() const { return m_instanceProfileListHasBeenSet; }
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline void SetInstanceProfileList(const Aws::Vector<AwsIamInstanceProfile>& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = value; }
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline void SetInstanceProfileList(Aws::Vector<AwsIamInstanceProfile>&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = std::move(value); }
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline AwsIamRoleDetails& WithInstanceProfileList(const Aws::Vector<AwsIamInstanceProfile>& value) { SetInstanceProfileList(value); return *this;}
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline AwsIamRoleDetails& WithInstanceProfileList(Aws::Vector<AwsIamInstanceProfile>&& value) { SetInstanceProfileList(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline AwsIamRoleDetails& AddInstanceProfileList(const AwsIamInstanceProfile& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(value); return *this; }
+
+    /**
+     * <p>The list of instance profiles that contain this role.</p>
+     */
+    inline AwsIamRoleDetails& AddInstanceProfileList(AwsIamInstanceProfile&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AwsIamPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    
+    inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
+
+    
+    inline void SetPermissionsBoundary(const AwsIamPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    
+    inline void SetPermissionsBoundary(AwsIamPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    
+    inline AwsIamRoleDetails& WithPermissionsBoundary(const AwsIamPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
+
+    
+    inline AwsIamRoleDetails& WithPermissionsBoundary(AwsIamPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
 
 
     /**
@@ -221,6 +341,47 @@ namespace Model
 
 
     /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline const Aws::Vector<AwsIamRolePolicy>& GetRolePolicyList() const{ return m_rolePolicyList; }
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline bool RolePolicyListHasBeenSet() const { return m_rolePolicyListHasBeenSet; }
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline void SetRolePolicyList(const Aws::Vector<AwsIamRolePolicy>& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList = value; }
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline void SetRolePolicyList(Aws::Vector<AwsIamRolePolicy>&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList = std::move(value); }
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline AwsIamRoleDetails& WithRolePolicyList(const Aws::Vector<AwsIamRolePolicy>& value) { SetRolePolicyList(value); return *this;}
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline AwsIamRoleDetails& WithRolePolicyList(Aws::Vector<AwsIamRolePolicy>&& value) { SetRolePolicyList(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline AwsIamRoleDetails& AddRolePolicyList(const AwsIamRolePolicy& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList.push_back(value); return *this; }
+
+    /**
+     * <p>The list of inline policies that are embedded in the role.</p>
+     */
+    inline AwsIamRoleDetails& AddRolePolicyList(AwsIamRolePolicy&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role.</p>
      */
@@ -290,14 +451,26 @@ namespace Model
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
 
+    Aws::Vector<AwsIamAttachedManagedPolicy> m_attachedManagedPolicies;
+    bool m_attachedManagedPoliciesHasBeenSet;
+
     Aws::String m_createDate;
     bool m_createDateHasBeenSet;
+
+    Aws::Vector<AwsIamInstanceProfile> m_instanceProfileList;
+    bool m_instanceProfileListHasBeenSet;
+
+    AwsIamPermissionsBoundary m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
 
     Aws::String m_roleId;
     bool m_roleIdHasBeenSet;
 
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
+    Aws::Vector<AwsIamRolePolicy> m_rolePolicyList;
+    bool m_rolePolicyListHasBeenSet;
 
     int m_maxSessionDuration;
     bool m_maxSessionDurationHasBeenSet;

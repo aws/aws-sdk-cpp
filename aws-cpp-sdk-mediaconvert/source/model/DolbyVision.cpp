@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/DolbyVision.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,8 @@ DolbyVision::DolbyVision() :
     m_l6MetadataHasBeenSet(false),
     m_l6Mode(DolbyVisionLevel6Mode::NOT_SET),
     m_l6ModeHasBeenSet(false),
+    m_mapping(DolbyVisionMapping::NOT_SET),
+    m_mappingHasBeenSet(false),
     m_profile(DolbyVisionProfile::NOT_SET),
     m_profileHasBeenSet(false)
 {
@@ -41,6 +33,8 @@ DolbyVision::DolbyVision(JsonView jsonValue) :
     m_l6MetadataHasBeenSet(false),
     m_l6Mode(DolbyVisionLevel6Mode::NOT_SET),
     m_l6ModeHasBeenSet(false),
+    m_mapping(DolbyVisionMapping::NOT_SET),
+    m_mappingHasBeenSet(false),
     m_profile(DolbyVisionProfile::NOT_SET),
     m_profileHasBeenSet(false)
 {
@@ -61,6 +55,13 @@ DolbyVision& DolbyVision::operator =(JsonView jsonValue)
     m_l6Mode = DolbyVisionLevel6ModeMapper::GetDolbyVisionLevel6ModeForName(jsonValue.GetString("l6Mode"));
 
     m_l6ModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mapping"))
+  {
+    m_mapping = DolbyVisionMappingMapper::GetDolbyVisionMappingForName(jsonValue.GetString("mapping"));
+
+    m_mappingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("profile"))
@@ -86,6 +87,11 @@ JsonValue DolbyVision::Jsonize() const
   if(m_l6ModeHasBeenSet)
   {
    payload.WithString("l6Mode", DolbyVisionLevel6ModeMapper::GetNameForDolbyVisionLevel6Mode(m_l6Mode));
+  }
+
+  if(m_mappingHasBeenSet)
+  {
+   payload.WithString("mapping", DolbyVisionMappingMapper::GetNameForDolbyVisionMapping(m_mapping));
   }
 
   if(m_profileHasBeenSet)

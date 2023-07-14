@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
@@ -42,6 +32,8 @@ namespace Model
     SECURITY_GROUPS_NOT_FOUND,
     IGW_NOT_ATTACHED,
     IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
+    FLEET_STOPPED,
+    FLEET_INSTANCE_PROVISIONING_FAILURE,
     DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
     DOMAIN_JOIN_ERROR_ACCESS_DENIED,
     DOMAIN_JOIN_ERROR_LOGON_FAILURE,

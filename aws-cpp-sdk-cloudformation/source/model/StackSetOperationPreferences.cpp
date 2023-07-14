@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 {
 
 StackSetOperationPreferences::StackSetOperationPreferences() : 
+    m_regionConcurrencyType(RegionConcurrencyType::NOT_SET),
+    m_regionConcurrencyTypeHasBeenSet(false),
     m_regionOrderHasBeenSet(false),
     m_failureToleranceCount(0),
     m_failureToleranceCountHasBeenSet(false),
@@ -44,6 +36,8 @@ StackSetOperationPreferences::StackSetOperationPreferences() :
 }
 
 StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode) : 
+    m_regionConcurrencyType(RegionConcurrencyType::NOT_SET),
+    m_regionConcurrencyTypeHasBeenSet(false),
     m_regionOrderHasBeenSet(false),
     m_failureToleranceCount(0),
     m_failureToleranceCountHasBeenSet(false),
@@ -63,6 +57,12 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
 
   if(!resultNode.IsNull())
   {
+    XmlNode regionConcurrencyTypeNode = resultNode.FirstChild("RegionConcurrencyType");
+    if(!regionConcurrencyTypeNode.IsNull())
+    {
+      m_regionConcurrencyType = RegionConcurrencyTypeMapper::GetRegionConcurrencyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionConcurrencyTypeNode.GetText()).c_str()).c_str());
+      m_regionConcurrencyTypeHasBeenSet = true;
+    }
     XmlNode regionOrderNode = resultNode.FirstChild("RegionOrder");
     if(!regionOrderNode.IsNull())
     {
@@ -106,6 +106,11 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
 
 void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_regionConcurrencyTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RegionConcurrencyType=" << RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType) << "&";
+  }
+
   if(m_regionOrderHasBeenSet)
   {
       unsigned regionOrderIdx = 1;
@@ -139,6 +144,10 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
 
 void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_regionConcurrencyTypeHasBeenSet)
+  {
+      oStream << location << ".RegionConcurrencyType=" << RegionConcurrencyTypeMapper::GetNameForRegionConcurrencyType(m_regionConcurrencyType) << "&";
+  }
   if(m_regionOrderHasBeenSet)
   {
       unsigned regionOrderIdx = 1;

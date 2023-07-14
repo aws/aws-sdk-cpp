@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/Build.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -63,7 +53,9 @@ Build::Build() :
     m_encryptionKeyHasBeenSet(false),
     m_exportedEnvironmentVariablesHasBeenSet(false),
     m_reportArnsHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_debugSessionHasBeenSet(false),
+    m_buildBatchArnHasBeenSet(false)
 {
 }
 
@@ -102,7 +94,9 @@ Build::Build(JsonView jsonValue) :
     m_encryptionKeyHasBeenSet(false),
     m_exportedEnvironmentVariablesHasBeenSet(false),
     m_reportArnsHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_debugSessionHasBeenSet(false),
+    m_buildBatchArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -340,6 +334,20 @@ Build& Build::operator =(JsonView jsonValue)
     m_fileSystemLocationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("debugSession"))
+  {
+    m_debugSession = jsonValue.GetObject("debugSession");
+
+    m_debugSessionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("buildBatchArn"))
+  {
+    m_buildBatchArn = jsonValue.GetString("buildBatchArn");
+
+    m_buildBatchArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -556,6 +564,18 @@ JsonValue Build::Jsonize() const
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
    }
    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
+
+  }
+
+  if(m_debugSessionHasBeenSet)
+  {
+   payload.WithObject("debugSession", m_debugSession.Jsonize());
+
+  }
+
+  if(m_buildBatchArnHasBeenSet)
+  {
+   payload.WithString("buildBatchArn", m_buildBatchArn);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -32,6 +22,7 @@
 #include <aws/mediaconvert/model/H264QvbrSettings.h>
 #include <aws/mediaconvert/model/H264RateControlMode.h>
 #include <aws/mediaconvert/model/H264RepeatPps.h>
+#include <aws/mediaconvert/model/H264ScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/H264SceneChangeDetect.h>
 #include <aws/mediaconvert/model/H264SlowPal.h>
 #include <aws/mediaconvert/model/H264SpatialAdaptiveQuantization.h>
@@ -72,38 +63,86 @@ namespace Model
 
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline const H264AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline void SetAdaptiveQuantization(const H264AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline void SetAdaptiveQuantization(H264AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline H264Settings& WithAdaptiveQuantization(const H264AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * automatically apply the best types of quantization for your video content. When
+     * you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to
+     * specify the strength of any adaptive quantization filters that you enable. If
+     * you don't want MediaConvert to do any adaptive quantization in this transcode,
+     * set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related
+     * settings: The value that you choose here applies to the following settings:
+     * H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and
+     * H264TemporalAdaptiveQuantization.
      */
     inline H264Settings& WithAdaptiveQuantization(H264AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -304,63 +343,159 @@ namespace Model
 
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline const H264FieldEncoding& GetFieldEncoding() const{ return m_fieldEncoding; }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline bool FieldEncodingHasBeenSet() const { return m_fieldEncodingHasBeenSet; }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline void SetFieldEncoding(const H264FieldEncoding& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = value; }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline void SetFieldEncoding(H264FieldEncoding&& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = std::move(value); }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline H264Settings& WithFieldEncoding(const H264FieldEncoding& value) { SetFieldEncoding(value); return *this;}
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline H264Settings& WithFieldEncoding(H264FieldEncoding&& value) { SetFieldEncoding(std::move(value)); return *this;}
 
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline const H264FlickerAdaptiveQuantization& GetFlickerAdaptiveQuantization() const{ return m_flickerAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline bool FlickerAdaptiveQuantizationHasBeenSet() const { return m_flickerAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { SetFlickerAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled
+     * (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop.
+     * I-frame pop appears as a visual flicker that can arise when the encoder saves
+     * bits by copying some macroblocks many times from frame to frame, and then
+     * refreshes them at the I-frame. When you enable this setting, the encoder updates
+     * these macroblocks slightly more often to smooth out the flicker. To manually
+     * enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { SetFlickerAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -457,32 +592,86 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline const H264FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -529,22 +718,42 @@ namespace Model
 
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline H264Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 
@@ -581,88 +790,184 @@ namespace Model
 
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. We recommend that you have the transcoder automatically choose
+     * this value for you based on characteristics of your input video. To enable this
+     * automatic behavior, keep the default value by leaving this setting out of your
+     * JSON job specification. In the console, do this by keeping the default empty
+     * value. If you do explicitly specify a value, for segmented outputs, don't set
+     * this value to 0.
      */
     inline H264Settings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
 
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline double GetGopSize() const{ return m_gopSize; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Use this setting only when you set GOP mode control (GopSizeUnits) to Specified,
+     * frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a
+     * whole number of frames or a decimal value of seconds. MediaConvert will
+     * interpret this value as frames or seconds depending on the value you choose for
+     * GOP mode control (GopSizeUnits). If you want to allow MediaConvert to
+     * automatically determine GOP size, leave GOP size blank and set GOP mode control
+     * to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP
+     * size blank and set GOP mode control to Auto in each output in your output group.
      */
     inline H264Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
 
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline const H264GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline void SetGopSizeUnits(const H264GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline void SetGopSizeUnits(H264GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline H264Settings& WithGopSizeUnits(const H264GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
 
     /**
-     * Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify how the transcoder determines GOP size for this output. We recommend
+     * that you have the transcoder automatically choose this value for you based on
+     * characteristics of your input video. To enable this automatic behavior, choose
+     * Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't
+     * specify GOP mode control (GopSizeUnits), MediaConvert will use automatic
+     * behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode
+     * control to Auto and leave GOP size blank in each output in your output group. To
+     * explicitly specify the GOP length, choose Specified, frames (FRAMES) or
+     * Specified, seconds (SECONDS) and then provide the GOP length in the related
+     * setting GOP size (GopSize).
      */
     inline H264Settings& WithGopSizeUnits(H264GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
 
@@ -714,104 +1019,98 @@ namespace Model
 
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline const H264InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(const H264InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(H264InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline H264Settings& WithInterlaceMode(const H264InterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type, as follows.
-  - If the
-     * source is interlaced, the output will be interlaced with the same polarity as
-     * the source (it will follow the source). The output could therefore be a mix of
-     * "top field first" and "bottom field first".
-  - If the source is progressive,
-     * the output will be interlaced with "top field first" or "bottom field first"
-     * polarity, depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline H264Settings& WithInterlaceMode(H264InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
@@ -842,67 +1141,127 @@ namespace Model
 
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. We recommend that you have the
+     * transcoder automatically choose this value for you based on characteristics of
+     * your input video. To enable this automatic behavior, keep the default value by
+     * leaving this setting out of your JSON job specification. In the console, do this
+     * by keeping the default empty value. When you explicitly specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline H264Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
 
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Number of B-frames between reference frames.
+     * This setting to determines the number of B-frames that MediaConvert puts between
+     * reference frames in this output. We recommend that you use automatic behavior to
+     * allow the transcoder to choose the best value based on characteristics of your
+     * input video. In the console, choose AUTO to select this automatic behavior. When
+     * you manually edit your JSON job specification, leave this setting out to choose
+     * automatic behavior. When you want to specify this number explicitly, choose a
+     * whole number from 0 through 7.
      */
     inline H264Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 
@@ -933,178 +1292,230 @@ namespace Model
 
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline const H264ParControl& GetParControl() const{ return m_parControl; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline void SetParControl(const H264ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline void SetParControl(H264ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline H264Settings& WithParControl(const H264ParControl& value) { SetParControl(value); return *this;}
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline H264Settings& WithParControl(H264ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline int GetParDenominator() const{ return m_parDenominator; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline H264Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
 
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline int GetParNumerator() const{ return m_parNumerator; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline H264Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline const H264QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(const H264QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(H264QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline H264Settings& WithQualityTuningLevel(const H264QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline H264Settings& WithQualityTuningLevel(H264QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline const H264QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline bool QvbrSettingsHasBeenSet() const { return m_qvbrSettingsHasBeenSet; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(const H264QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(H264QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline H264Settings& WithQvbrSettings(const H264QvbrSettings& value) { SetQvbrSettings(value); return *this;}
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline H264Settings& WithQvbrSettings(H264QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
@@ -1175,6 +1586,109 @@ namespace Model
      * Places a PPS header on each encoded picture, even if repeated.
      */
     inline H264Settings& WithRepeatPps(H264RepeatPps&& value) { SetRepeatPps(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const H264ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const H264ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(H264ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline H264Settings& WithScanTypeConversionMode(const H264ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline H264Settings& WithScanTypeConversionMode(H264ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
 
 
     /**
@@ -1262,100 +1776,292 @@ namespace Model
 
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline const H264SlowPal& GetSlowPal() const{ return m_slowPal; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(const H264SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(H264SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline H264Settings& WithSlowPal(const H264SlowPal& value) { SetSlowPal(value); return *this;}
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline H264Settings& WithSlowPal(H264SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline int GetSoftness() const{ return m_softness; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening
+     * quantization matricies from the H.264 specification. Choose a value from 17 to
+     * 128 to use planar interpolation. Increasing values from 17 to 128 result in
+     * increasing reduction of high-frequency data. The value 128 results in the
+     * softest video.
      */
     inline H264Settings& WithSoftness(int value) { SetSoftness(value); return *this;}
 
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline const H264SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the
+     * setting H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on spatial variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable spatial adaptive quantization, set the value for Adaptive
+     * quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For
+     * content with a wider variety of textures, set it to High or Higher. To manually
+     * enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive
+     * quantization (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -1392,105 +2098,225 @@ namespace Model
 
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline const H264Telecine& GetTelecine() const{ return m_telecine; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline void SetTelecine(const H264Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline void SetTelecine(H264Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline H264Settings& WithTelecine(const H264Telecine& value) { SetTelecine(value); return *this;}
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
-     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
-     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
-     * Mode field (interlace_mode)  to identify the scan type for the output:
-     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
-     * output from 23.976 input. - Soft: produces 23.976; the player converts this
-     * output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline H264Settings& WithTelecine(H264Telecine&& value) { SetTelecine(std::move(value)); return *this;}
 
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline const H264TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline void SetTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting
+     * H264AdaptiveQuantization. When you keep all defaults, excluding
+     * H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization
+     * for your video content. When you set H264AdaptiveQuantization to a value other
+     * than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled
+     * (ENABLED). Keep this default value to adjust quantization within each frame
+     * based on temporal variation of content complexity. When you enable this feature,
+     * the encoder uses fewer bits on areas of the frame that aren't moving and uses
+     * more bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When
+     * you enable temporal quantization, adjust the strength of the filter with the
+     * setting Adaptive quantization (adaptiveQuantization). To manually enable or
+     * disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization
+     * (H264AdaptiveQuantization) to a value other than AUTO.
      */
     inline H264Settings& WithTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -1616,6 +2442,9 @@ namespace Model
 
     H264RepeatPps m_repeatPps;
     bool m_repeatPpsHasBeenSet;
+
+    H264ScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     H264SceneChangeDetect m_sceneChangeDetect;
     bool m_sceneChangeDetectHasBeenSet;

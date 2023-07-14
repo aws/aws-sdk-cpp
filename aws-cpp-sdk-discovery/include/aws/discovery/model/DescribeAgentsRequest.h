@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
@@ -49,63 +39,63 @@ namespace Model
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentIds() const{ return m_agentIds; }
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline void SetAgentIds(Aws::Vector<Aws::String>&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::move(value); }
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline DescribeAgentsRequest& WithAgentIds(const Aws::Vector<Aws::String>& value) { SetAgentIds(value); return *this;}
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline DescribeAgentsRequest& WithAgentIds(Aws::Vector<Aws::String>&& value) { SetAgentIds(std::move(value)); return *this;}
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline DescribeAgentsRequest& AddAgentIds(const Aws::String& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline DescribeAgentsRequest& AddAgentIds(Aws::String&& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
-     * with your AWS user account.</p>
+     * with your Amazon Web Services user account.</p>
      */
     inline DescribeAgentsRequest& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -90,49 +80,49 @@ namespace Model
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. Network Load Balancers must use
-     * <code>ipv4</code>.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. Network Load Balancers must use
-     * <code>ipv4</code>.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. Network Load Balancers must use
-     * <code>ipv4</code>.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. Network Load Balancers must use
-     * <code>ipv4</code>.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. Network Load Balancers must use
-     * <code>ipv4</code>.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline SetIpAddressTypeRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. Network Load Balancers must use
-     * <code>ipv4</code>.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

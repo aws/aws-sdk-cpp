@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -39,8 +29,8 @@ namespace Model
    * <code>PutMetricAlarm</code>. The supported use of this structure is different
    * for those two operations.</p> <p>When used in <code>GetMetricData</code>, it
    * indicates the metric data to return, and whether this call is just retrieving a
-   * batch set of data for one metric, or is performing a math expression on metric
-   * data. A single <code>GetMetricData</code> call can include up to 500
+   * batch set of data for one metric, or is performing a Metrics Insights query or a
+   * math expression. A single <code>GetMetricData</code> call can include up to 500
    * <code>MetricDataQuery</code> structures.</p> <p>When used in
    * <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric
    * math expression. Each <code>MetricDataQuery</code> in the array specifies either
@@ -211,11 +201,15 @@ namespace Model
 
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -224,11 +218,15 @@ namespace Model
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -237,11 +235,15 @@ namespace Model
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -250,11 +252,15 @@ namespace Model
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -263,11 +269,15 @@ namespace Model
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -276,11 +286,15 @@ namespace Model
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -289,11 +303,15 @@ namespace Model
     inline MetricDataQuery& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -302,11 +320,15 @@ namespace Model
     inline MetricDataQuery& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The math expression to be performed on the returned data, if this object is
-     * performing a math expression. This expression can use the <code>Id</code> of the
-     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. For more information
-     * about metric math expressions, see <a
+     * <p>This field can contain either a Metrics Insights query, or a metric math
+     * expression to be performed on the returned data. For more information about
+     * Metrics Insights queries, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage">Metrics
+     * Insights query components and syntax</a> in the <i>Amazon CloudWatch User
+     * Guide</i>.</p> <p>A math expression can use the <code>Id</code> of the other
+     * metrics or queries to refer to those metrics, and can also use the
+     * <code>Id</code> of other expressions to use the result of those expressions. For
+     * more information about metric math expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
@@ -319,7 +341,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
 
@@ -327,7 +353,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
@@ -335,7 +365,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
@@ -343,7 +377,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
@@ -351,7 +389,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
@@ -359,7 +401,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline MetricDataQuery& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
 
@@ -367,7 +413,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline MetricDataQuery& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
@@ -375,7 +425,11 @@ namespace Model
      * <p>A human-readable label for this metric or expression. This is especially
      * useful if this is an expression, so that you know what the value represents. If
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
-     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     * shown. If Label is omitted, CloudWatch generates a default.</p> <p>You can put
+     * dynamic expressions into a label, so that it is more descriptive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+     * Dynamic Labels</a>.</p>
      */
     inline MetricDataQuery& WithLabel(const char* value) { SetLabel(value); return *this;}
 
@@ -473,6 +527,63 @@ namespace Model
      */
     inline MetricDataQuery& WithPeriod(int value) { SetPeriod(value); return *this;}
 
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline MetricDataQuery& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline MetricDataQuery& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline MetricDataQuery& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -492,6 +603,9 @@ namespace Model
 
     int m_period;
     bool m_periodHasBeenSet;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
   };
 
 } // namespace Model

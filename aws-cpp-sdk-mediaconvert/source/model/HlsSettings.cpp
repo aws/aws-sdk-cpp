@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/HlsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,6 +25,8 @@ HlsSettings::HlsSettings() :
     m_audioRenditionSetsHasBeenSet(false),
     m_audioTrackType(HlsAudioTrackType::NOT_SET),
     m_audioTrackTypeHasBeenSet(false),
+    m_descriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag::NOT_SET),
+    m_descriptiveVideoServiceFlagHasBeenSet(false),
     m_iFrameOnlyManifest(HlsIFrameOnlyManifest::NOT_SET),
     m_iFrameOnlyManifestHasBeenSet(false),
     m_segmentModifierHasBeenSet(false)
@@ -48,6 +40,8 @@ HlsSettings::HlsSettings(JsonView jsonValue) :
     m_audioRenditionSetsHasBeenSet(false),
     m_audioTrackType(HlsAudioTrackType::NOT_SET),
     m_audioTrackTypeHasBeenSet(false),
+    m_descriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag::NOT_SET),
+    m_descriptiveVideoServiceFlagHasBeenSet(false),
     m_iFrameOnlyManifest(HlsIFrameOnlyManifest::NOT_SET),
     m_iFrameOnlyManifestHasBeenSet(false),
     m_segmentModifierHasBeenSet(false)
@@ -83,6 +77,13 @@ HlsSettings& HlsSettings::operator =(JsonView jsonValue)
     m_audioTrackType = HlsAudioTrackTypeMapper::GetHlsAudioTrackTypeForName(jsonValue.GetString("audioTrackType"));
 
     m_audioTrackTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("descriptiveVideoServiceFlag"))
+  {
+    m_descriptiveVideoServiceFlag = HlsDescriptiveVideoServiceFlagMapper::GetHlsDescriptiveVideoServiceFlagForName(jsonValue.GetString("descriptiveVideoServiceFlag"));
+
+    m_descriptiveVideoServiceFlagHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("iFrameOnlyManifest"))
@@ -126,6 +127,11 @@ JsonValue HlsSettings::Jsonize() const
   if(m_audioTrackTypeHasBeenSet)
   {
    payload.WithString("audioTrackType", HlsAudioTrackTypeMapper::GetNameForHlsAudioTrackType(m_audioTrackType));
+  }
+
+  if(m_descriptiveVideoServiceFlagHasBeenSet)
+  {
+   payload.WithString("descriptiveVideoServiceFlag", HlsDescriptiveVideoServiceFlagMapper::GetNameForHlsDescriptiveVideoServiceFlag(m_descriptiveVideoServiceFlag));
   }
 
   if(m_iFrameOnlyManifestHasBeenSet)

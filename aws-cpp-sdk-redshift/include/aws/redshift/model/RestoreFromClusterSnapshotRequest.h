@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/AquaConfigurationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -56,7 +47,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
@@ -66,7 +58,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
@@ -76,7 +69,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
@@ -86,7 +80,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
@@ -96,7 +91,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
@@ -106,7 +102,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
@@ -116,7 +113,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
@@ -126,7 +124,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
@@ -431,50 +430,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -944,9 +951,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
@@ -954,9 +962,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline bool AutomatedSnapshotRetentionPeriodHasBeenSet() const { return m_automatedSnapshotRetentionPeriodHasBeenSet; }
 
@@ -964,9 +973,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
@@ -974,9 +984,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the
-     * cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value
-     * from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: The value selected for the cluster from which the snapshot was
+     * taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
@@ -1015,58 +1026,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster that you restore from a shared
-     * snapshot.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that encrypts
+     * data in the cluster restored from a shared snapshot. You can also provide the
+     * key ID when you restore from an unencrypted snapshot to an encrypted cluster in
+     * the same account. Additionally, you can specify a new KMS key ID when you
+     * restore from an encrypted snapshot in the same account in order to change it. In
+     * that case, the restored cluster is encrypted with the new KMS key ID.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1080,7 +1115,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1097,7 +1132,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1114,7 +1149,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1131,7 +1166,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1148,7 +1183,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1165,7 +1200,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1182,7 +1217,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1199,7 +1234,7 @@ namespace Model
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
      * dc1.large instance type or dc2.large instance type. You can't restore
-     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
@@ -1295,83 +1330,101 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. </p> <p>The maximum number of
+     * IAM roles that you can associate is subject to a quota. For more information, go
+     * to <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+     * and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
@@ -1526,6 +1579,256 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline bool GetAvailabilityZoneRelocation() const{ return m_availabilityZoneRelocation; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline bool AvailabilityZoneRelocationHasBeenSet() const { return m_availabilityZoneRelocationHasBeenSet; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline void SetAvailabilityZoneRelocation(bool value) { m_availabilityZoneRelocationHasBeenSet = true; m_availabilityZoneRelocation = value; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster is restored.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
+
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) after the cluster is restored. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
+     */
+    inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) after the cluster is restored. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
+     */
+    inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) after the cluster is restored. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
+     */
+    inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) after the cluster is restored. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
+     */
+    inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) after the cluster is restored. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) after the cluster is restored. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const Aws::String& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(Aws::String&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const char* value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const Aws::String& value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(Aws::String&& value) { SetTargetReservedNodeOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted
+     * with Key Management Service (KMS) and a customer managed key.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1605,6 +1908,24 @@ namespace Model
 
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
+    bool m_availabilityZoneRelocation;
+    bool m_availabilityZoneRelocationHasBeenSet;
+
+    AquaConfigurationStatus m_aquaConfigurationStatus;
+    bool m_aquaConfigurationStatusHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
+
+    Aws::String m_reservedNodeId;
+    bool m_reservedNodeIdHasBeenSet;
+
+    Aws::String m_targetReservedNodeOfferingId;
+    bool m_targetReservedNodeOfferingIdHasBeenSet;
+
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

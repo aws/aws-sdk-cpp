@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 
@@ -52,13 +43,22 @@ enum class CloudTrailErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CLOUD_TRAIL_ACCESS_NOT_ENABLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLOUD_TRAIL_A_R_N_INVALID,
+  CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID,
   CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE,
+  CONFLICT,
+  EVENT_DATA_STORE_ALREADY_EXISTS,
+  EVENT_DATA_STORE_A_R_N_INVALID,
+  EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED,
+  EVENT_DATA_STORE_NOT_FOUND,
+  EVENT_DATA_STORE_TERMINATION_PROTECTED,
+  INACTIVE_EVENT_DATA_STORE,
+  INACTIVE_QUERY,
   INSIGHT_NOT_ENABLED,
   INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION,
   INSUFFICIENT_ENCRYPTION_POLICY,
@@ -66,7 +66,9 @@ enum class CloudTrailErrors
   INSUFFICIENT_SNS_TOPIC_POLICY,
   INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN,
   INVALID_CLOUD_WATCH_LOGS_ROLE_ARN,
+  INVALID_DATE_RANGE,
   INVALID_EVENT_CATEGORY,
+  INVALID_EVENT_DATA_STORE_STATUS,
   INVALID_EVENT_SELECTORS,
   INVALID_HOME_REGION,
   INVALID_INSIGHT_SELECTORS,
@@ -74,6 +76,9 @@ enum class CloudTrailErrors
   INVALID_LOOKUP_ATTRIBUTES,
   INVALID_MAX_RESULTS,
   INVALID_NEXT_TOKEN,
+  INVALID_PARAMETER,
+  INVALID_QUERY_STATEMENT,
+  INVALID_QUERY_STATUS,
   INVALID_S3_BUCKET_NAME,
   INVALID_S3_PREFIX,
   INVALID_SNS_TOPIC_NAME,
@@ -85,10 +90,12 @@ enum class CloudTrailErrors
   KMS_KEY_DISABLED,
   KMS_KEY_NOT_FOUND,
   MAXIMUM_NUMBER_OF_TRAILS_EXCEEDED,
+  MAX_CONCURRENT_QUERIES,
   NOT_ORGANIZATION_MASTER_ACCOUNT,
   OPERATION_NOT_PERMITTED,
   ORGANIZATIONS_NOT_IN_USE,
   ORGANIZATION_NOT_IN_ALL_FEATURES_MODE,
+  QUERY_ID_NOT_FOUND,
   RESOURCE_TYPE_NOT_SUPPORTED,
   S3_BUCKET_DOES_NOT_EXIST,
   TAGS_LIMIT_EXCEEDED,
@@ -97,6 +104,20 @@ enum class CloudTrailErrors
   TRAIL_NOT_PROVIDED,
   UNSUPPORTED_OPERATION
 };
+
+class AWS_CLOUDTRAIL_API CloudTrailError : public Aws::Client::AWSError<CloudTrailErrors>
+{
+public:
+  CloudTrailError() {}
+  CloudTrailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+  CloudTrailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+  CloudTrailError(const Aws::Client::AWSError<CloudTrailErrors>& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+  CloudTrailError(Aws::Client::AWSError<CloudTrailErrors>&& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudTrailErrorMapper
 {
   AWS_CLOUDTRAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

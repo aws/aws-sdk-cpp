@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -46,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline UpdateDashboardRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline UpdateDashboardRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the dashboard that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the dashboard that
+     * you're updating.</p>
      */
     inline UpdateDashboardRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -177,93 +167,147 @@ namespace Model
 
 
     /**
-     * <p>The template or analysis from which the dashboard is created. The
-     * <code>SouceTemplate</code> entity accepts the Amazon Resource Name (ARN) of the
-     * template and also references to replacement datasets for the placeholders set
-     * when creating the template. The replacement datasets need to follow the same
-     * schema as the datasets for which placeholders were created when creating the
-     * template.</p>
+     * <p>The entity that you are using as a source when you update the dashboard. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source. You can only update a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
-     * <p>The template or analysis from which the dashboard is created. The
-     * <code>SouceTemplate</code> entity accepts the Amazon Resource Name (ARN) of the
-     * template and also references to replacement datasets for the placeholders set
-     * when creating the template. The replacement datasets need to follow the same
-     * schema as the datasets for which placeholders were created when creating the
-     * template.</p>
+     * <p>The entity that you are using as a source when you update the dashboard. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source. You can only update a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
-     * <p>The template or analysis from which the dashboard is created. The
-     * <code>SouceTemplate</code> entity accepts the Amazon Resource Name (ARN) of the
-     * template and also references to replacement datasets for the placeholders set
-     * when creating the template. The replacement datasets need to follow the same
-     * schema as the datasets for which placeholders were created when creating the
-     * template.</p>
+     * <p>The entity that you are using as a source when you update the dashboard. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source. You can only update a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
-     * <p>The template or analysis from which the dashboard is created. The
-     * <code>SouceTemplate</code> entity accepts the Amazon Resource Name (ARN) of the
-     * template and also references to replacement datasets for the placeholders set
-     * when creating the template. The replacement datasets need to follow the same
-     * schema as the datasets for which placeholders were created when creating the
-     * template.</p>
+     * <p>The entity that you are using as a source when you update the dashboard. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source. You can only update a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
-     * <p>The template or analysis from which the dashboard is created. The
-     * <code>SouceTemplate</code> entity accepts the Amazon Resource Name (ARN) of the
-     * template and also references to replacement datasets for the placeholders set
-     * when creating the template. The replacement datasets need to follow the same
-     * schema as the datasets for which placeholders were created when creating the
-     * template.</p>
+     * <p>The entity that you are using as a source when you update the dashboard. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source. You can only update a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline UpdateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
-     * <p>The template or analysis from which the dashboard is created. The
-     * <code>SouceTemplate</code> entity accepts the Amazon Resource Name (ARN) of the
-     * template and also references to replacement datasets for the placeholders set
-     * when creating the template. The replacement datasets need to follow the same
-     * schema as the datasets for which placeholders were created when creating the
-     * template.</p>
+     * <p>The entity that you are using as a source when you update the dashboard. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source. You can only update a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline UpdateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
 
     /**
-     * <p>A structure that contains the parameters of the dashboard.</p>
+     * <p>A structure that contains the parameters of the dashboard. These are
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline const Parameters& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard.</p>
+     * <p>A structure that contains the parameters of the dashboard. These are
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard.</p>
+     * <p>A structure that contains the parameters of the dashboard. These are
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard.</p>
+     * <p>A structure that contains the parameters of the dashboard. These are
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard.</p>
+     * <p>A structure that contains the parameters of the dashboard. These are
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline UpdateDashboardRequest& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A structure that contains the parameters of the dashboard.</p>
+     * <p>A structure that contains the parameters of the dashboard. These are
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline UpdateDashboardRequest& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -313,17 +357,17 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
      */
     inline const DashboardPublishOptions& GetDashboardPublishOptions() const{ return m_dashboardPublishOptions; }
 
@@ -331,17 +375,17 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
      */
     inline bool DashboardPublishOptionsHasBeenSet() const { return m_dashboardPublishOptionsHasBeenSet; }
 
@@ -349,17 +393,17 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
      */
     inline void SetDashboardPublishOptions(const DashboardPublishOptions& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = value; }
 
@@ -367,17 +411,17 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
      */
     inline void SetDashboardPublishOptions(DashboardPublishOptions&& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = std::move(value); }
 
@@ -385,17 +429,17 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
      */
     inline UpdateDashboardRequest& WithDashboardPublishOptions(const DashboardPublishOptions& value) { SetDashboardPublishOptions(value); return *this;}
 
@@ -403,19 +447,84 @@ namespace Model
      * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
      * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
      * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
-     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
-     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on
+     * the published dashboard, which can be used for ad hoc (one-time) filtering. This
      * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
      * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
-     * to export data to .csv format isn't enabled when this is set to
+     * to export data to .CSV format isn't enabled when this is set to
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
+     * </li> </ul>
      */
     inline UpdateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline UpdateDashboardRequest& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline UpdateDashboardRequest& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same
+     * Amazon Web Services account where you create the dashboard.</p>
+     */
+    inline UpdateDashboardRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 
   private:
 
@@ -439,6 +548,9 @@ namespace Model
 
     DashboardPublishOptions m_dashboardPublishOptions;
     bool m_dashboardPublishOptionsHasBeenSet;
+
+    Aws::String m_themeArn;
+    bool m_themeArnHasBeenSet;
   };
 
 } // namespace Model

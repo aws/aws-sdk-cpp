@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/VideoSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,13 +25,19 @@ VideoSelector::VideoSelector() :
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
+    m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
+    m_embeddedTimecodeOverrideHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
+    m_padVideo(PadVideo::NOT_SET),
+    m_padVideoHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_rotate(InputRotate::NOT_SET),
-    m_rotateHasBeenSet(false)
+    m_rotateHasBeenSet(false),
+    m_sampleRange(InputSampleRange::NOT_SET),
+    m_sampleRangeHasBeenSet(false)
 {
 }
 
@@ -52,13 +48,19 @@ VideoSelector::VideoSelector(JsonView jsonValue) :
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
+    m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
+    m_embeddedTimecodeOverrideHasBeenSet(false),
     m_hdr10MetadataHasBeenSet(false),
+    m_padVideo(PadVideo::NOT_SET),
+    m_padVideoHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_rotate(InputRotate::NOT_SET),
-    m_rotateHasBeenSet(false)
+    m_rotateHasBeenSet(false),
+    m_sampleRange(InputSampleRange::NOT_SET),
+    m_sampleRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,11 +88,25 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_colorSpaceUsageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("embeddedTimecodeOverride"))
+  {
+    m_embeddedTimecodeOverride = EmbeddedTimecodeOverrideMapper::GetEmbeddedTimecodeOverrideForName(jsonValue.GetString("embeddedTimecodeOverride"));
+
+    m_embeddedTimecodeOverrideHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hdr10Metadata"))
   {
     m_hdr10Metadata = jsonValue.GetObject("hdr10Metadata");
 
     m_hdr10MetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("padVideo"))
+  {
+    m_padVideo = PadVideoMapper::GetPadVideoForName(jsonValue.GetString("padVideo"));
+
+    m_padVideoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pid"))
@@ -112,6 +128,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_rotate = InputRotateMapper::GetInputRotateForName(jsonValue.GetString("rotate"));
 
     m_rotateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sampleRange"))
+  {
+    m_sampleRange = InputSampleRangeMapper::GetInputSampleRangeForName(jsonValue.GetString("sampleRange"));
+
+    m_sampleRangeHasBeenSet = true;
   }
 
   return *this;
@@ -136,10 +159,20 @@ JsonValue VideoSelector::Jsonize() const
    payload.WithString("colorSpaceUsage", ColorSpaceUsageMapper::GetNameForColorSpaceUsage(m_colorSpaceUsage));
   }
 
+  if(m_embeddedTimecodeOverrideHasBeenSet)
+  {
+   payload.WithString("embeddedTimecodeOverride", EmbeddedTimecodeOverrideMapper::GetNameForEmbeddedTimecodeOverride(m_embeddedTimecodeOverride));
+  }
+
   if(m_hdr10MetadataHasBeenSet)
   {
    payload.WithObject("hdr10Metadata", m_hdr10Metadata.Jsonize());
 
+  }
+
+  if(m_padVideoHasBeenSet)
+  {
+   payload.WithString("padVideo", PadVideoMapper::GetNameForPadVideo(m_padVideo));
   }
 
   if(m_pidHasBeenSet)
@@ -157,6 +190,11 @@ JsonValue VideoSelector::Jsonize() const
   if(m_rotateHasBeenSet)
   {
    payload.WithString("rotate", InputRotateMapper::GetNameForInputRotate(m_rotate));
+  }
+
+  if(m_sampleRangeHasBeenSet)
+  {
+   payload.WithString("sampleRange", InputSampleRangeMapper::GetNameForInputSampleRange(m_sampleRange));
   }
 
   return payload;

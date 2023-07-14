@@ -1,24 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
+#include <aws/ssm/model/ReviewStatus.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
 #include <aws/ssm/model/DocumentRequires.h>
@@ -40,8 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the name of a Systems Manager document.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes the name of a SSM document.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier">AWS
    * API Reference</a></p>
    */
@@ -55,83 +46,171 @@ namespace Model
 
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DocumentIdentifier& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DocumentIdentifier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DocumentIdentifier& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The date the SSM document was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+
+    /**
+     * <p>The date the SSM document was created.</p>
+     */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date the SSM document was created.</p>
+     */
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+
+    /**
+     * <p>The date the SSM document was created.</p>
+     */
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
+
+    /**
+     * <p>The date the SSM document was created.</p>
+     */
+    inline DocumentIdentifier& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date the SSM document was created.</p>
+     */
+    inline DocumentIdentifier& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentIdentifier& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentIdentifier& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the SSM document.
+     * This value can differ for each version of the document. If you want to update
+     * this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentIdentifier& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline DocumentIdentifier& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline DocumentIdentifier& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS user account that created the document.</p>
+     * <p>The Amazon Web Services user account that created the document.</p>
      */
     inline DocumentIdentifier& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -139,56 +218,56 @@ namespace Model
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline DocumentIdentifier& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline DocumentIdentifier& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline DocumentIdentifier& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
@@ -380,65 +459,81 @@ namespace Model
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
-     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource
+     * types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
@@ -540,10 +635,88 @@ namespace Model
      */
     inline DocumentIdentifier& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline DocumentIdentifier& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
+
+    /**
+     * <p>The current status of a document review.</p>
+     */
+    inline DocumentIdentifier& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
+
+    /**
+     * <p>The user in your organization who created the document.</p>
+     */
+    inline DocumentIdentifier& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Utils::DateTime m_createdDate;
+    bool m_createdDateHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
@@ -574,6 +747,12 @@ namespace Model
 
     Aws::Vector<DocumentRequires> m_requires;
     bool m_requiresHasBeenSet;
+
+    ReviewStatus m_reviewStatus;
+    bool m_reviewStatusHasBeenSet;
+
+    Aws::String m_author;
+    bool m_authorHasBeenSet;
   };
 
 } // namespace Model

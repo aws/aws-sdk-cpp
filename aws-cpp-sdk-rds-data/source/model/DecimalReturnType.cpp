@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds-data/model/DecimalReturnType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,20 +20,20 @@ namespace Aws
       namespace DecimalReturnTypeMapper
       {
 
-        static const int DOUBLE_OR_LONG_HASH = HashingUtils::HashString("DOUBLE_OR_LONG");
         static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static const int DOUBLE_OR_LONG_HASH = HashingUtils::HashString("DOUBLE_OR_LONG");
 
 
         DecimalReturnType GetDecimalReturnTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DOUBLE_OR_LONG_HASH)
-          {
-            return DecimalReturnType::DOUBLE_OR_LONG;
-          }
-          else if (hashCode == STRING_HASH)
+          if (hashCode == STRING_HASH)
           {
             return DecimalReturnType::STRING;
+          }
+          else if (hashCode == DOUBLE_OR_LONG_HASH)
+          {
+            return DecimalReturnType::DOUBLE_OR_LONG;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case DecimalReturnType::DOUBLE_OR_LONG:
-            return "DOUBLE_OR_LONG";
           case DecimalReturnType::STRING:
             return "STRING";
+          case DecimalReturnType::DOUBLE_OR_LONG:
+            return "DOUBLE_OR_LONG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

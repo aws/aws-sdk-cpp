@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -30,7 +20,11 @@ ModifyVpcEndpointServiceConfigurationRequest::ModifyVpcEndpointServiceConfigurat
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
     m_addNetworkLoadBalancerArnsHasBeenSet(false),
-    m_removeNetworkLoadBalancerArnsHasBeenSet(false)
+    m_removeNetworkLoadBalancerArnsHasBeenSet(false),
+    m_addGatewayLoadBalancerArnsHasBeenSet(false),
+    m_removeGatewayLoadBalancerArnsHasBeenSet(false),
+    m_addSupportedIpAddressTypesHasBeenSet(false),
+    m_removeSupportedIpAddressTypesHasBeenSet(false)
 {
 }
 
@@ -82,6 +76,50 @@ Aws::String ModifyVpcEndpointServiceConfigurationRequest::SerializePayload() con
       ss << "RemoveNetworkLoadBalancerArn." << removeNetworkLoadBalancerArnsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       removeNetworkLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_addGatewayLoadBalancerArnsHasBeenSet)
+  {
+    unsigned addGatewayLoadBalancerArnsCount = 1;
+    for(auto& item : m_addGatewayLoadBalancerArns)
+    {
+      ss << "AddGatewayLoadBalancerArn." << addGatewayLoadBalancerArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      addGatewayLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_removeGatewayLoadBalancerArnsHasBeenSet)
+  {
+    unsigned removeGatewayLoadBalancerArnsCount = 1;
+    for(auto& item : m_removeGatewayLoadBalancerArns)
+    {
+      ss << "RemoveGatewayLoadBalancerArn." << removeGatewayLoadBalancerArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      removeGatewayLoadBalancerArnsCount++;
+    }
+  }
+
+  if(m_addSupportedIpAddressTypesHasBeenSet)
+  {
+    unsigned addSupportedIpAddressTypesCount = 1;
+    for(auto& item : m_addSupportedIpAddressTypes)
+    {
+      ss << "AddSupportedIpAddressType." << addSupportedIpAddressTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      addSupportedIpAddressTypesCount++;
+    }
+  }
+
+  if(m_removeSupportedIpAddressTypesHasBeenSet)
+  {
+    unsigned removeSupportedIpAddressTypesCount = 1;
+    for(auto& item : m_removeSupportedIpAddressTypes)
+    {
+      ss << "RemoveSupportedIpAddressType." << removeSupportedIpAddressTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      removeSupportedIpAddressTypesCount++;
     }
   }
 

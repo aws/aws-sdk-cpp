@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
@@ -273,94 +263,94 @@ namespace Model
 
 
     /**
-     * <p>The created timestamp, in ISO 8601 format.</p>
+     * <p>The created time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>The created timestamp, in ISO 8601 format.</p>
+     * <p>The created time stamp, in ISO 8601 format.</p>
      */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
-     * <p>The created timestamp, in ISO 8601 format.</p>
+     * <p>The created time stamp, in ISO 8601 format.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>The created timestamp, in ISO 8601 format.</p>
+     * <p>The created time stamp, in ISO 8601 format.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>The created timestamp, in ISO 8601 format.</p>
+     * <p>The created time stamp, in ISO 8601 format.</p>
      */
     inline ProxySession& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The created timestamp, in ISO 8601 format.</p>
+     * <p>The created time stamp, in ISO 8601 format.</p>
      */
     inline ProxySession& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The updated timestamp, in ISO 8601 format.</p>
+     * <p>The updated time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
 
     /**
-     * <p>The updated timestamp, in ISO 8601 format.</p>
+     * <p>The updated time stamp, in ISO 8601 format.</p>
      */
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
 
     /**
-     * <p>The updated timestamp, in ISO 8601 format.</p>
+     * <p>The updated time stamp, in ISO 8601 format.</p>
      */
     inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
 
     /**
-     * <p>The updated timestamp, in ISO 8601 format.</p>
+     * <p>The updated time stamp, in ISO 8601 format.</p>
      */
     inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
 
     /**
-     * <p>The updated timestamp, in ISO 8601 format.</p>
+     * <p>The updated time stamp, in ISO 8601 format.</p>
      */
     inline ProxySession& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>The updated timestamp, in ISO 8601 format.</p>
+     * <p>The updated time stamp, in ISO 8601 format.</p>
      */
     inline ProxySession& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ended timestamp, in ISO 8601 format.</p>
+     * <p>The ended time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetEndedTimestamp() const{ return m_endedTimestamp; }
 
     /**
-     * <p>The ended timestamp, in ISO 8601 format.</p>
+     * <p>The ended time stamp, in ISO 8601 format.</p>
      */
     inline bool EndedTimestampHasBeenSet() const { return m_endedTimestampHasBeenSet; }
 
     /**
-     * <p>The ended timestamp, in ISO 8601 format.</p>
+     * <p>The ended time stamp, in ISO 8601 format.</p>
      */
     inline void SetEndedTimestamp(const Aws::Utils::DateTime& value) { m_endedTimestampHasBeenSet = true; m_endedTimestamp = value; }
 
     /**
-     * <p>The ended timestamp, in ISO 8601 format.</p>
+     * <p>The ended time stamp, in ISO 8601 format.</p>
      */
     inline void SetEndedTimestamp(Aws::Utils::DateTime&& value) { m_endedTimestampHasBeenSet = true; m_endedTimestamp = std::move(value); }
 
     /**
-     * <p>The ended timestamp, in ISO 8601 format.</p>
+     * <p>The ended time stamp, in ISO 8601 format.</p>
      */
     inline ProxySession& WithEndedTimestamp(const Aws::Utils::DateTime& value) { SetEndedTimestamp(value); return *this;}
 
     /**
-     * <p>The ended timestamp, in ISO 8601 format.</p>
+     * <p>The ended time stamp, in ISO 8601 format.</p>
      */
     inline ProxySession& WithEndedTimestamp(Aws::Utils::DateTime&& value) { SetEndedTimestamp(std::move(value)); return *this;}
 

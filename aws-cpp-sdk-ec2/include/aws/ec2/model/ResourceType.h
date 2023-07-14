@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -26,39 +16,70 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
+    capacity_reservation,
     client_vpn_endpoint,
     customer_gateway,
+    carrier_gateway,
     dedicated_host,
     dhcp_options,
+    egress_only_internet_gateway,
     elastic_ip,
+    elastic_gpu,
+    export_image_task,
+    export_instance_task,
     fleet,
     fpga_image,
     host_reservation,
     image,
+    import_image_task,
+    import_snapshot_task,
     instance,
+    instance_event_window,
     internet_gateway,
+    ipam,
+    ipam_pool,
+    ipam_scope,
+    ipv4pool_ec2,
+    ipv6pool_ec2,
     key_pair,
     launch_template,
+    local_gateway,
+    local_gateway_route_table,
+    local_gateway_virtual_interface,
+    local_gateway_virtual_interface_group,
+    local_gateway_route_table_vpc_association,
+    local_gateway_route_table_virtual_interface_group_association,
     natgateway,
     network_acl,
     network_interface,
+    network_insights_analysis,
+    network_insights_path,
+    network_insights_access_scope,
+    network_insights_access_scope_analysis,
     placement_group,
+    prefix_list,
+    replace_root_volume_task,
     reserved_instances,
     route_table,
     security_group,
+    security_group_rule,
     snapshot,
     spot_fleet_request,
     spot_instances_request,
     subnet,
+    subnet_cidr_reservation,
     traffic_mirror_filter,
     traffic_mirror_session,
     traffic_mirror_target,
     transit_gateway,
     transit_gateway_attachment,
+    transit_gateway_connect_peer,
     transit_gateway_multicast_domain,
     transit_gateway_route_table,
     volume,
     vpc,
+    vpc_endpoint,
+    vpc_endpoint_service,
     vpc_peering_connection,
     vpn_connection,
     vpn_gateway,

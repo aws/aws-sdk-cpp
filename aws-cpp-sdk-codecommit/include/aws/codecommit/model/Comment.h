@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -365,6 +357,116 @@ namespace Model
      */
     inline Comment& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCallerReactions() const{ return m_callerReactions; }
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline bool CallerReactionsHasBeenSet() const { return m_callerReactionsHasBeenSet; }
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline void SetCallerReactions(const Aws::Vector<Aws::String>& value) { m_callerReactionsHasBeenSet = true; m_callerReactions = value; }
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline void SetCallerReactions(Aws::Vector<Aws::String>&& value) { m_callerReactionsHasBeenSet = true; m_callerReactions = std::move(value); }
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline Comment& WithCallerReactions(const Aws::Vector<Aws::String>& value) { SetCallerReactions(value); return *this;}
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline Comment& WithCallerReactions(Aws::Vector<Aws::String>&& value) { SetCallerReactions(std::move(value)); return *this;}
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline Comment& AddCallerReactions(const Aws::String& value) { m_callerReactionsHasBeenSet = true; m_callerReactions.push_back(value); return *this; }
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline Comment& AddCallerReactions(Aws::String&& value) { m_callerReactionsHasBeenSet = true; m_callerReactions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The emoji reactions to a comment, if any, submitted by the user whose
+     * credentials are associated with the call to the API.</p>
+     */
+    inline Comment& AddCallerReactions(const char* value) { m_callerReactionsHasBeenSet = true; m_callerReactions.push_back(value); return *this; }
+
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline const Aws::Map<Aws::String, int>& GetReactionCounts() const{ return m_reactionCounts; }
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline bool ReactionCountsHasBeenSet() const { return m_reactionCountsHasBeenSet; }
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline void SetReactionCounts(const Aws::Map<Aws::String, int>& value) { m_reactionCountsHasBeenSet = true; m_reactionCounts = value; }
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline void SetReactionCounts(Aws::Map<Aws::String, int>&& value) { m_reactionCountsHasBeenSet = true; m_reactionCounts = std::move(value); }
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline Comment& WithReactionCounts(const Aws::Map<Aws::String, int>& value) { SetReactionCounts(value); return *this;}
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline Comment& WithReactionCounts(Aws::Map<Aws::String, int>&& value) { SetReactionCounts(std::move(value)); return *this;}
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline Comment& AddReactionCounts(const Aws::String& key, int value) { m_reactionCountsHasBeenSet = true; m_reactionCounts.emplace(key, value); return *this; }
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline Comment& AddReactionCounts(Aws::String&& key, int value) { m_reactionCountsHasBeenSet = true; m_reactionCounts.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A string to integer map that represents the number of individual users who
+     * have responded to a comment with the specified reactions.</p>
+     */
+    inline Comment& AddReactionCounts(const char* key, int value) { m_reactionCountsHasBeenSet = true; m_reactionCounts.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_commentId;
@@ -390,6 +492,12 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Vector<Aws::String> m_callerReactions;
+    bool m_callerReactionsHasBeenSet;
+
+    Aws::Map<Aws::String, int> m_reactionCounts;
+    bool m_reactionCountsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/utils/crypto/Cipher.h>
@@ -42,6 +33,7 @@
 #include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
@@ -49,14 +41,19 @@
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/s3/model/SelectObjectContentRequest.h>
+#include <aws/s3/model/WriteGetObjectResponseRequest.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/testing/mocks/monitoring/TestingMonitoring.h>
 #include <fstream>
 
 #ifdef _WIN32
 #pragma warning(disable: 4127)
-#endif //_WIN32
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
 
@@ -75,24 +72,33 @@ namespace
     static std::string BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
     static std::string BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
     static std::string BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
+    static std::string BASE_OBJECTS_BUCKET_NAME = "objecttest";
+    static std::string BASE_OBJECTS_NEWLINE_BUCKET_NAME = "newlinetest";
     static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
     static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
     static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
     static std::string BASE_PUT_MULTIPART_BUCKET_NAME = "multiparttest";
+    static std::string BASE_OBJECT_LOCK_BUCKET_NAME = "objectlock";
     static std::string BASE_ERRORS_TESTING_BUCKET = "errorstest";
     static std::string BASE_INTERRUPT_TESTING_BUCKET = "interrupttest";
     static std::string BASE_EVENT_STREAM_TEST_BUCKET_NAME = "eventstream";
     static std::string BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME = "largeeventstream";
     static std::string BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME = "errorsinevent";
+    static std::string BASE_CHECKSUMS_BUCKET_NAME = "checksums";
+    static std::string BASE_CROSS_REGION_BUCKET_NAME = "crossregion";
+    static std::string BASE_ENDPOINT_OVERRIDE_BUCKET_NAME = "endpointoverride";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
+    static const char* TEST_NEWLINE_KEY = "TestNewlineKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
+    static const char* TEST_OBJECT_LOCK_OBJ_KEY = "TestObjectLock";
     static const char* TEST_DNS_UNFRIENDLY_OBJ_KEY = "WhySoHostile";
     static const char* TEST_EVENT_STREAM_OBJ_KEY = "TestEventStream.csv";
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
     static const char* URIESCAPE_KEY = "Esc ape+Me$";
+    static const char* CUSTOM_ENDPOINT_OVERRIDE = "beta.example.com";
 
     static const int TIMEOUT_MAX = 20;
 
@@ -109,15 +115,21 @@ namespace
         AppendUUID(BASE_CREATE_BUCKET_TEST_NAME);
         AppendUUID(BASE_DNS_UNFRIENDLY_TEST_NAME);
         AppendUUID(BASE_LOCATION_BUCKET_TEST_NAME);
+        AppendUUID(BASE_OBJECTS_BUCKET_NAME);
+        AppendUUID(BASE_OBJECTS_NEWLINE_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME);
         AppendUUID(BASE_PUT_MULTIPART_BUCKET_NAME);
+        AppendUUID(BASE_OBJECT_LOCK_BUCKET_NAME);
         AppendUUID(BASE_ERRORS_TESTING_BUCKET);
         AppendUUID(BASE_INTERRUPT_TESTING_BUCKET);
         AppendUUID(BASE_EVENT_STREAM_TEST_BUCKET_NAME);
         AppendUUID(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME);
         AppendUUID(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME);
+        AppendUUID(BASE_CHECKSUMS_BUCKET_NAME);
+        AppendUUID(BASE_CROSS_REGION_BUCKET_NAME);
+        AppendUUID(BASE_ENDPOINT_OVERRIDE_BUCKET_NAME);
     }
 
     class RetryFiveTimesRetryStrategy: public Aws::Client::RetryStrategy
@@ -131,6 +143,7 @@ namespace
     {
     public:
         static std::shared_ptr<S3Client> Client;
+        static std::shared_ptr<S3Client> globalClient;
         static std::shared_ptr<S3Client> oregonClient;
         static std::shared_ptr<S3Client> retryClient;
         static std::shared_ptr<HttpClientFactory> ClientFactory;
@@ -165,6 +178,10 @@ namespace
             Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
                     Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY);
+            config.region = Aws::Region::AWS_GLOBAL;
+            globalClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
+                Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
+                    AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
             config.region = Aws::Region::US_WEST_2;
             config.useDualStack = true;
             oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
@@ -176,24 +193,32 @@ namespace
             retryClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG,
                     Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config,
                         AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, true /*useVirtualAddressing*/);
+            // Using client side monitoring for endpoint override testing.
+            TestingMonitoringManager::InitTestingMonitoring();
         }
 
         static void TearDownTestCase()
         {
+            TestingMonitoringManager::CleanupTestingMonitoring();
             DeleteBucket(CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_OBJECTS_NEWLINE_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_OBJECT_LOCK_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_ERRORS_TESTING_BUCKET.c_str()));
             DeleteBucket(CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_LARGE_FILE_TEST_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_EVENT_STREAM_ERRORS_IN_EVENT_TEST_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str()));
             Limiter = nullptr;
             Client = nullptr;
+            globalClient = nullptr;
             oregonClient = nullptr;
             m_HttpClient = nullptr;
             retryClient = nullptr;
@@ -258,10 +283,10 @@ namespace
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
-                HeadBucketRequest headBucketRequest;
-                headBucketRequest.SetBucket(bucketName);
-                HeadBucketOutcome headBucketOutcome = client->HeadBucket(headBucketRequest);
-                if (headBucketOutcome.IsSuccess())
+                ListObjectsRequest listObjectsRequest;
+                listObjectsRequest.SetBucket(bucketName);
+                ListObjectsOutcome listObjectsOutcome = client->ListObjects(listObjectsRequest);
+                if (listObjectsOutcome.IsSuccess())
                 {
                     return true;
                 }
@@ -277,16 +302,40 @@ namespace
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
-                HeadObjectRequest headObjectRequest;
-                headObjectRequest.SetBucket(bucketName);
-                headObjectRequest.SetKey(objectKey);
-                HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-                if (headObjectOutcome.IsSuccess())
+                GetObjectRequest getObjectRequest;
+                getObjectRequest.SetBucket(bucketName);
+                getObjectRequest.SetKey(objectKey);
+                GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+                if (getObjectOutcome.IsSuccess())
                 {
                     return true;
                 }
 
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(5));
+            }
+
+            return false;
+        }
+
+        static bool WaitForObjectWithSSECToPropagate(const Aws::String& bucketName, const char* objectKey, const ByteBuffer& sseKey)
+        {
+            unsigned timeoutCount = 0;
+            Aws::String strBuffer(reinterpret_cast<char*>(sseKey.GetUnderlyingData()), sseKey.GetLength());
+            while (timeoutCount++ < TIMEOUT_MAX)
+            {
+                GetObjectRequest getObjectRequest;
+                getObjectRequest.SetBucket(bucketName);
+                getObjectRequest.SetKey(objectKey);
+                getObjectRequest.WithSSECustomerAlgorithm(Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256))
+                    .WithSSECustomerKey(HashingUtils::Base64Encode(sseKey))
+                    .WithSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+                GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+                if (getObjectOutcome.IsSuccess())
+                {
+                    return true;
+                }
+
+                std::this_thread::sleep_for(std::chrono::seconds(5));
             }
 
             return false;
@@ -324,7 +373,7 @@ namespace
 
                 if (listObjectsOutcome.GetResult().GetContents().size() > 0)
                 {
-                    std::this_thread::sleep_for(std::chrono::seconds(1));
+                    std::this_thread::sleep_for(std::chrono::seconds(5));
                 }
                 else
                 {
@@ -367,7 +416,7 @@ namespace
             EXPECT_TRUE(createBucketOutcome.IsSuccess());
             const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
             EXPECT_TRUE(!createBucketResult.GetLocation().empty());
-            WaitForBucketToPropagate(fullBucketName);
+            EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName));
             return fullBucketName;
         }
 
@@ -386,7 +435,7 @@ namespace
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
-            WaitForObjectToPropagate(bucketName, TEST_OBJ_KEY);
+            ASSERT_TRUE(WaitForObjectToPropagate(bucketName, TEST_OBJ_KEY));
 
             // GetObject with presigned url
             Aws::String presignedUrlGet = Client->GeneratePresignedUrl(bucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET);
@@ -466,7 +515,7 @@ namespace
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
-            WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
+            ASSERT_TRUE(WaitForObjectWithSSECToPropagate(fullBucketName, TEST_OBJ_KEY, sseKey));
 
             // Test GetObject with SSEC Presigned Url
             Aws::String presignedUrlGet = Client->GeneratePresignedUrlWithSSEC(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET, HashingUtils::Base64Encode(sseKey));
@@ -502,10 +551,69 @@ namespace
             CleanUpPresignedUrlTest();
         }
 
+        void DoTestGetObjectWithBucketARN(const ClientConfiguration& config, const Aws::String& bucketArn, const Aws::String& expectedEndpoint,
+            const Aws::String& expectedSignerRegion, const Aws::String& expectedSignerServiceName, bool arnExpectedToBeValid)
+        {
+            S3Client s3Client(config);
+            GetObjectRequest getObjectRequest;
+            getObjectRequest.SetBucket(bucketArn);
+            getObjectRequest.SetKey("fakeObjectKey");
+            auto getObjectOutcome = s3Client.GetObject(getObjectRequest);
+            ASSERT_FALSE(getObjectOutcome.IsSuccess());
+            if (arnExpectedToBeValid)
+            {
+                ASSERT_NE(S3Errors::VALIDATION, getObjectOutcome.GetError().GetErrorType());
+                Aws::StringStream ss;
+                ss << "https://" << expectedEndpoint << "/fakeObjectKey";
+                ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+                ASSERT_STREQ(expectedSignerRegion.c_str(), TestingMonitoringMetrics::s_lastSigningRegion.c_str());
+                ASSERT_STREQ(expectedSignerServiceName.c_str(), TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+            }
+            else
+            {
+                ASSERT_EQ(S3Errors::VALIDATION, getObjectOutcome.GetError().GetErrorType());
+            }
+        }
+
+        void DoTestWriteGetObjectResponse(const ClientConfiguration& config, const Aws::String& expectedEndpoint)
+        {
+            // Chunked encoding
+            S3Client s3Client(config);
+            WriteGetObjectResponseRequest writeGetObjectResponseRequest;
+            writeGetObjectResponseRequest.SetRequestRoute("fakeRoute");
+            writeGetObjectResponseRequest.SetRequestToken("fakeToken");
+            auto bodyStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+            *bodyStream << "fakeBody";
+            writeGetObjectResponseRequest.SetBody(bodyStream);
+            auto writeGetObjectResponseOutcome = s3Client.WriteGetObjectResponse(writeGetObjectResponseRequest);
+            ASSERT_FALSE(writeGetObjectResponseOutcome.IsSuccess());
+            Aws::StringStream ss;
+            ss << "https://" << "fakeRoute." << expectedEndpoint << "/WriteGetObjectResponse";
+            ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+            ASSERT_STREQ("s3-object-lambda", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+            ASSERT_EQ(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find(Aws::Http::CONTENT_LENGTH_HEADER));
+            ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find(Aws::Http::TRANSFER_ENCODING_HEADER));
+            ASSERT_STREQ(Aws::Http::CHUNKED_VALUE, TestingMonitoringMetrics::s_lastRequestHeaders[Aws::Http::TRANSFER_ENCODING_HEADER].c_str());
+
+            // Non checked when customers specify content-length
+            bodyStream->clear();
+            bodyStream->seekg(0, bodyStream->end);
+            writeGetObjectResponseRequest.SetContentLength(static_cast<long>(bodyStream->tellg()));
+            bodyStream->seekg(0);
+            writeGetObjectResponseOutcome = s3Client.WriteGetObjectResponse(writeGetObjectResponseRequest);
+            ASSERT_FALSE(writeGetObjectResponseOutcome.IsSuccess());
+            ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+            ASSERT_STREQ("s3-object-lambda", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+            ASSERT_EQ(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find(Aws::Http::TRANSFER_ENCODING_HEADER));
+            ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find(Aws::Http::CONTENT_LENGTH_HEADER));
+            ASSERT_STREQ("8" /* length of "fakeBody"*/, TestingMonitoringMetrics::s_lastRequestHeaders[Aws::Http::CONTENT_LENGTH_HEADER].c_str());
+        }
+
     };
 
 
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::Client(nullptr);
+    std::shared_ptr<S3Client> BucketAndObjectOperationTest::globalClient(nullptr);
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::oregonClient(nullptr);
     std::shared_ptr<S3Client> BucketAndObjectOperationTest::retryClient(nullptr);
     std::shared_ptr<HttpClientFactory> BucketAndObjectOperationTest::ClientFactory(nullptr);
@@ -656,7 +764,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -669,9 +777,9 @@ namespace
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
     }
 
-    TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
+    TEST_F(BucketAndObjectOperationTest, TestKeysWithNewlineCharacterSets)
     {
-        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_NEWLINE_BUCKET_NAME.c_str());
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -682,7 +790,75 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+
+        Aws::Vector<Aws::String> objectKeysWithNewlineCharacter;
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-\n-LF");
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-\r-CR");
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-" + StringUtils::URLDecode("%c2%85") + "-NEXTLINE");
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-" + StringUtils::URLDecode("%e2%80%a8") + "-LINESEPARATOR");
+
+        for (const Aws::String& key : objectKeysWithNewlineCharacter)
+        {
+            PutObjectRequest putObjectRequest;
+            putObjectRequest.SetBucket(fullBucketName);
+            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+            *objectStream << "Object Key: " << key;
+            putObjectRequest.SetBody(objectStream);
+            putObjectRequest.SetContentType("text/plain");
+            putObjectRequest.SetKey(key);
+            PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        }
+
+        for (const Aws::String& key : objectKeysWithNewlineCharacter)
+        {
+            GetObjectRequest getObjectRequest;
+            getObjectRequest.SetBucket(fullBucketName);
+            getObjectRequest.SetKey(key);
+            GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+            ASSERT_TRUE(getObjectOutcome.IsSuccess());
+            Aws::StringStream ss;
+            ss << getObjectOutcome.GetResult().GetBody().rdbuf();
+            ASSERT_NE(Aws::String::npos, ss.str().find(key));
+        }
+
+        Aws::Vector<ObjectIdentifier> objectIdentifiers;
+        for (const Aws::String& key : objectKeysWithNewlineCharacter)
+        {
+            ObjectIdentifier objectIdentifier;
+            objectIdentifier.SetKey(key);
+            objectIdentifiers.push_back(objectIdentifier);
+        }
+        DeleteObjectsRequest deleteObjectsRequest;
+        deleteObjectsRequest.SetBucket(fullBucketName);
+        S3::Model::Delete deleteObjects;
+        deleteObjects.SetObjects(objectIdentifiers);
+        deleteObjectsRequest.SetDelete(deleteObjects);
+        DeleteObjectsOutcome deleteObjectsOutcome = Client->DeleteObjects(deleteObjectsRequest);
+        ASSERT_TRUE(deleteObjectsOutcome.IsSuccess());
+
+        ListObjectsRequest listObjectsRequest;
+        listObjectsRequest.SetBucket(fullBucketName);
+        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(0u, listObjectsOutcome.GetResult().GetContents().size());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -769,7 +945,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         //test unicode
         {
@@ -933,7 +1109,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         CreateMultipartUploadRequest createMultipartUploadRequest;
         createMultipartUploadRequest.SetBucket(fullBucketName);
@@ -1001,7 +1177,7 @@ namespace
                 completeMultipartUploadRequest);
         ASSERT_TRUE(completeMultipartUploadOutcome.IsSuccess());
 
-        WaitForObjectToPropagate(fullBucketName, multipartKeyName);
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, multipartKeyName));
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -1154,6 +1330,10 @@ namespace
 
         ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(listObjectsOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(listObjectsOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3Errors::NO_SUCH_BUCKET, listObjectsOutcome.GetError().GetErrorType());
 
         CreateBucketRequest createBucketRequest;
@@ -1169,6 +1349,10 @@ namespace
         getObjectRequest.SetKey("non-Existent");
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         ASSERT_FALSE(getObjectOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(getObjectOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(getObjectOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3Errors::NO_SUCH_KEY, getObjectOutcome.GetError().GetErrorType());
     }
 
@@ -1180,7 +1364,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1214,7 +1398,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1243,7 +1427,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         auto objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
         *objectStream << "Test Japanese & Chinese Unicode keys";
@@ -1266,6 +1450,51 @@ namespace
 
         auto copyOutcome = Client->CopyObject(copyRequest);
         ASSERT_TRUE(copyOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestObjectLock)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECT_LOCK_BUCKET_NAME.c_str());
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        createBucketRequest.SetObjectLockEnabledForBucket(true);
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+        *objectStream << "Object Lock";
+        objectStream->flush();
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentLength(static_cast<long>(putObjectRequest.GetBody()->tellp()));
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.WithKey(TEST_OBJECT_LOCK_OBJ_KEY);
+        putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+        putObjectRequest.SetObjectLockMode(ObjectLockMode::GOVERNANCE);
+        putObjectRequest.SetObjectLockRetainUntilDate(Aws::Utils::DateTime::Now() + std::chrono::hours(1));
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        Aws::String versionId = putObjectOutcome.GetResult().GetVersionId();
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJECT_LOCK_OBJ_KEY);
+        getObjectRequest.SetVersionId(versionId);
+
+        GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+
+        DeleteObjectRequest deleteObjectRequest;
+        deleteObjectRequest.SetBucket(fullBucketName);
+        deleteObjectRequest.SetKey(TEST_OBJECT_LOCK_OBJ_KEY);
+        deleteObjectRequest.SetVersionId(versionId);
+        deleteObjectRequest.SetBypassGovernanceRetention(true);
+        DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+        ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStream)
@@ -1514,8 +1743,11 @@ namespace
 
         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
         ASSERT_FALSE(selectObjectContentOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3Errors::NO_SUCH_BUCKET, selectObjectContentOutcome.GetError().GetErrorType());
-
     }
 
     TEST_F(BucketAndObjectOperationTest, TestErrorsInEventStream)
@@ -1582,9 +1814,724 @@ namespace
 
         selectObjectContentRequest.SetEventStreamHandler(handler);
 
-        auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
+        Client->SelectObjectContent(selectObjectContentRequest);
 
         ASSERT_TRUE(isErrorEventReceived);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestFlexibleChecksums)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        WaitForBucketToPropagate(fullBucketName, Client);
+
+        // Checksums in request body using aws-chunked trailer
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << "Test Object";
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey(TEST_OBJ_KEY);
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
+        auto putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C);
+        putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256);
+        putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1);
+        putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        // Checksums in request headers
+        ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
+        S3Client s3ClientSigningBody(config, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Always, false);
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA256);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        objectStream->clear();
+        objectStream->seekg(0);
+        putObjectRequest.SetChecksumAlgorithm(ChecksumAlgorithm::SHA1);
+        putObjectOutcome = s3ClientSigningBody.PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+        // Response Checksums Validation
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(TEST_OBJ_KEY);
+        getObjectRequest.SetChecksumMode(ChecksumMode::ENABLED);
+
+        auto getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestMultipartFlexibleChecksums)
+    {
+        const char* multipartKeyName = "MultiPartKey";
+        Aws::String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+
+        CreateMultipartUploadRequest createMultipartUploadRequest;
+        createMultipartUploadRequest.SetBucket(fullBucketName);
+        createMultipartUploadRequest.SetKey(multipartKeyName);
+        createMultipartUploadRequest.SetContentType("text/plain");
+
+        CreateMultipartUploadOutcome createMultipartUploadOutcome = Client->CreateMultipartUpload(createMultipartUploadRequest);
+        ASSERT_TRUE(createMultipartUploadOutcome.IsSuccess());
+
+        std::shared_ptr<Aws::IOStream> part1Stream = Create5MbStreamForUploadPart("1");
+        std::shared_ptr<Aws::IOStream> part2Stream = Create5MbStreamForUploadPart("2");
+        std::shared_ptr<Aws::IOStream> part3Stream = Create5MbStreamForUploadPart("3");
+
+        UploadPartRequest uploadPartRequest;
+        uploadPartRequest.SetBucket(fullBucketName);
+        uploadPartRequest.SetKey(multipartKeyName);
+        uploadPartRequest.SetUploadId(createMultipartUploadOutcome.GetResult().GetUploadId());
+
+        uploadPartRequest.SetPartNumber(1);
+        uploadPartRequest.SetBody(part1Stream);
+        auto uploadPartOutcome1 = Client->UploadPart(uploadPartRequest);
+        ASSERT_TRUE(uploadPartOutcome1.IsSuccess());
+
+        uploadPartRequest.SetPartNumber(2);
+        uploadPartRequest.SetBody(part2Stream);
+        auto uploadPartOutcome2 = Client->UploadPart(uploadPartRequest);
+        ASSERT_TRUE(uploadPartOutcome2.IsSuccess());
+
+        uploadPartRequest.SetPartNumber(3);
+        uploadPartRequest.SetBody(part3Stream);
+        auto uploadPartOutcome3 = Client->UploadPart(uploadPartRequest);
+        ASSERT_TRUE(uploadPartOutcome3.IsSuccess());
+
+        CompletedPart completedPart1;
+        completedPart1.SetETag(uploadPartOutcome1.GetResult().GetETag());
+        completedPart1.SetPartNumber(1);
+
+        CompletedPart completedPart2;
+        completedPart2.SetETag(uploadPartOutcome2.GetResult().GetETag());
+        completedPart2.SetPartNumber(2);
+
+        CompletedPart completedPart3;
+        completedPart3.SetETag(uploadPartOutcome3.GetResult().GetETag());
+        completedPart3.SetPartNumber(3);
+
+        CompleteMultipartUploadRequest completeMultipartUploadRequest;
+        completeMultipartUploadRequest.SetBucket(fullBucketName);
+        completeMultipartUploadRequest.SetKey(multipartKeyName);
+        completeMultipartUploadRequest.SetUploadId(createMultipartUploadOutcome.GetResult().GetUploadId());
+
+        CompletedMultipartUpload completedMultipartUpload;
+        completedMultipartUpload.AddParts(completedPart1);
+        completedMultipartUpload.AddParts(completedPart2);
+        completedMultipartUpload.AddParts(completedPart3);
+        completeMultipartUploadRequest.SetMultipartUpload(completedMultipartUpload);
+
+        CompleteMultipartUploadOutcome completeMultipartUploadOutcome = Client->CompleteMultipartUpload(completeMultipartUploadRequest);
+        ASSERT_TRUE(completeMultipartUploadOutcome.IsSuccess());
+
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, multipartKeyName));
+
+        GetObjectRequest getObjectRequest;
+        getObjectRequest.SetBucket(fullBucketName);
+        getObjectRequest.SetKey(multipartKeyName);
+        getObjectRequest.SetChecksumMode(ChecksumMode::ENABLED);
+
+        GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+        ASSERT_TRUE(getObjectOutcome.IsSuccess());
+    }
+
+
+    TEST_F(BucketAndObjectOperationTest, TestCrossRegionOperations)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_CROSS_REGION_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        CreateBucketConfiguration bucketConfiguration;
+        bucketConfiguration.SetLocationConstraint(BucketLocationConstraint::us_west_2);
+        createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
+
+        CreateBucketOutcome createBucketOutcome = oregonClient->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+        WaitForBucketToPropagate(fullBucketName, oregonClient);
+
+        ListObjectsRequest listObjectsRequest;
+        listObjectsRequest.SetBucket(fullBucketName);
+        // Client in us-east-1 will not make cross-region request.
+        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        // Client in aws-global will make cross-region request.
+        listObjectsOutcome = globalClient->ListObjects(listObjectsRequest);
+        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+
+        DeleteBucketRequest deleteBucketRequest;
+        deleteBucketRequest.SetBucket(fullBucketName);
+        DeleteBucketOutcome deleteBucketOutcome = globalClient->DeleteBucket(deleteBucketRequest);
+        ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestCustomEndpointOverride)
+    {
+        // Access Point ARN without dualstack
+        ASSERT_STREQ("myendpoint-123456789012.beta.example.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), "", false /* useDualStack */, "beta.example.com").c_str());
+        // Outpost Access Point ARN without dualstack
+        ASSERT_STREQ("myaccesspoint-123456789012.op-01234567890123456.beta.example.com",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"), "",
+                false /* useDualStack */, "beta.example.com").c_str());
+
+        Aws::String fullBucketName = CalculateBucketName(BASE_ENDPOINT_OVERRIDE_BUCKET_NAME.c_str());
+        Aws::StringStream ss;
+
+        // Traditional bucket name with virtual addressing
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.endpointOverride = CUSTOM_ENDPOINT_OVERRIDE;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+        S3Client s3ClientWithVirtualAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+
+        ListObjectsRequest listObjectsRequest;
+        listObjectsRequest.SetBucket(fullBucketName);
+        auto listObjectsOutcome = s3ClientWithVirtualAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss << "https://" << fullBucketName << "." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Access Point Arn with virtual addressing
+        listObjectsRequest.SetBucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint");
+        listObjectsOutcome = s3ClientWithVirtualAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://myendpoint-123456789012." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Outposts Access Point Arn with virtual addressing
+        listObjectsRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
+        listObjectsOutcome = s3ClientWithVirtualAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://myaccesspoint-123456789012.op-01234567890123456." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // ListBuckets
+        auto listBucketsOutcome = s3ClientWithVirtualAddressing.ListBuckets();
+        ASSERT_FALSE(listBucketsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listBucketsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Tradition bucket name with path addressing
+        S3Client s3ClientWithPathAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, false /*useVirtualAddressing*/);
+        listObjectsRequest.SetBucket(fullBucketName);
+        listObjectsOutcome = s3ClientWithPathAddressing.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/" << fullBucketName;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+
+        // Use arn region, Access Point Arn with virtual addressing
+        Aws::String awsS3UseArnRegion = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        config.region = Aws::Region::EU_WEST_1;
+        S3Client s3ClientInEuWest1(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        if (awsS3UseArnRegion.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegion.c_str(), 1);
+        }
+        listObjectsRequest.SetBucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint");
+        listObjectsOutcome = s3ClientInEuWest1.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ss.str("");
+        ss << "https://myendpoint-123456789012." << CUSTOM_ENDPOINT_OVERRIDE;
+        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
+        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
+        ASSERT_STREQ("us-west-2", TestingMonitoringMetrics::s_lastSigningRegion.c_str());
+
+        // Failure case, dualstack endpoint is not compatible with custom endpoint override.
+        config.region = Aws::Region::US_WEST_2;
+        config.useDualStack = true;
+        S3Client s3ClientWithDualStack(config, AWSAuthV4Signer::PayloadSigningPolicy::Never, true /*useVirtualAddressing*/);
+        listObjectsRequest.SetBucket(fullBucketName);
+        listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
+
+        listObjectsRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
+        listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
+        ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+        ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARN)
+    {
+        Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+
+        // Invalid ARNs
+        DoTestGetObjectWithBucketARN(config, "arn:aws:sqs:us-west-2:123456789012:someresource", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:bucket_name:mybucket", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2::accesspoint:myendpoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123.45678.9012:accesspoint:mybucket", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:*", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:my.bucket", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:mybucket:object:foo", "", "", "", false);
+
+        // US regions
+        config.region = Aws::Region::US_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3, true);
+
+        // s3-external-1 and aws-global are not regional endpoints.
+        config.region = "s3-external-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // Cross region Access Point ARN
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3, true);
+
+        // US Gov regions
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+
+        // Cross US Gov region Access Point ARN
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
+
+        // Use ARN region
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+
+        // s3-external-1 and aws-global in client configuration.
+        config.region = "s3-external-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+
+        // US regions with dual-stack
+        config.region = Aws::Region::US_WEST_2;
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.dualstack.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3, true);
+        config.useDualStack = false;
+
+        // TODO Cross partition Access Point ARN
+        // config.region = Aws::Region::US_WEST_2;
+        // DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-northwest-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.cn-northwest-1.amazonaws.com.cn", Aws::Region::CN_NORTHWEST_1, ARNService::S3, true);
+
+        // US Gov regions
+        config.region = Aws::Region::US_GOV_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+
+        // Cross FIPS region Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
+
+        // US Gov regions with dual-stack
+        config.region = "fips-us-gov-east-1";
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint-fips.dualstack.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+
+        if (awsS3UseArnRegionBackup.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegionBackup.c_str(), 1);
+        }
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3MultiRegionAccessPointARN)
+    {
+        Aws::String awsS3DisableMultiregionAccessPointsBackup = Aws::Environment::GetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS");
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+
+        // US regions
+        config.region = Aws::Region::US_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap",
+            "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", "*", ARNService::S3, true);
+        ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find("x-amz-region-set"));
+        ASSERT_STREQ("*", TestingMonitoringMetrics::s_lastRequestHeaders["x-amz-region-set"].c_str());
+
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap",
+            "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", "*", ARNService::S3, true);
+        ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find("x-amz-region-set"));
+        ASSERT_STREQ("*", TestingMonitoringMetrics::s_lastRequestHeaders["x-amz-region-set"].c_str());
+
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:myendpoint",
+            "myendpoint.accesspoint.s3-global.amazonaws.com", "*", ARNService::S3, true);
+        ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find("x-amz-region-set"));
+        ASSERT_STREQ("*", TestingMonitoringMetrics::s_lastRequestHeaders["x-amz-region-set"].c_str());
+
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:my.bucket",
+            "my.bucket.accesspoint.s3-global.amazonaws.com", "*", ARNService::S3, true);
+        ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find("x-amz-region-set"));
+        ASSERT_STREQ("*", TestingMonitoringMetrics::s_lastRequestHeaders["x-amz-region-set"].c_str());
+
+        // Global region
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap",
+            "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com", "*", ARNService::S3, true);
+        ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find("x-amz-region-set"));
+        ASSERT_STREQ("*", TestingMonitoringMetrics::s_lastRequestHeaders["x-amz-region-set"].c_str());
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap",
+            "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com.cn", "*", ARNService::S3, true);
+        ASSERT_NE(TestingMonitoringMetrics::s_lastRequestHeaders.end(), TestingMonitoringMetrics::s_lastRequestHeaders.find("x-amz-region-set"));
+        ASSERT_STREQ("*", TestingMonitoringMetrics::s_lastRequestHeaders["x-amz-region-set"].c_str());
+
+        // dual-stack is not supported
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "", "", "", false);
+        config.useDualStack = false;
+
+        // custom endpoint override is not supported
+        config.endpointOverride = "my-endpoints.com";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "", "", "", false);
+        config.endpointOverride = "";
+
+        // Disable S3 Multi Region Access Points ARN
+        Aws::Environment::SetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS", "true", 1);
+
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:myendpoint", "", "", "", false);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "", "", "", false);
+
+        if (awsS3DisableMultiregionAccessPointsBackup.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS", awsS3DisableMultiregionAccessPointsBackup.c_str(), 1);
+        }
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3OutpostsAccessPointARN)
+    {
+        Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+
+        // Invalid ARN
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost::accesspoint:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:mybucket:object:foo", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-0123456.890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OUTPOSTS, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OUTPOSTS, true);
+
+        // dual-stack is not supported
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        config.useDualStack = false;
+
+        // Cross region Outposts Access Point ARN
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // FIPS regions are not supported.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // Use ARN region
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OUTPOSTS, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OUTPOSTS, true);
+
+        // TODO Cross partition Access Point ARN
+        // config.region = Aws::Region::US_WEST_2;
+        // DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // US Gov regions
+        config.region = Aws::Region::US_GOV_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OUTPOSTS, true);
+
+        // FIPS regions are not supported.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        if (awsS3UseArnRegionBackup.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegionBackup.c_str(), 1);
+        }
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3ObjectLambdaARN)
+    {
+        Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+
+        ClientConfiguration config;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+
+        // US regions
+        config.region = Aws::Region::US_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OBJECT_LAMBDA, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // Cross region Object Lambda Access Point ARN
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // Custom endpoint
+        config.endpointOverride = "my-endpoint.com";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.my-endpoint.com", Aws::Region::US_WEST_2, ARNService::S3_OBJECT_LAMBDA, true);
+        config.endpointOverride = "";
+
+        // s3-external-1 and aws-global are not regional endpoints.
+        config.region = "s3-external-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", "", false);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // US Gov regions
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // Cross US Gov region Lambda Object Access Point ARN
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // FIPS region
+        config.region = "us-east-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda-fips.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // Cross FIPS region Object Lambda Access Point ARN
+        config.region = "us-east-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
+
+        // Use ARN region
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // dual-stack is not supported
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "", "", "", false);
+        config.useDualStack = false;
+
+        // s3-external-1 and aws-global in client configuration.
+        config.region = "s3-external-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3_OBJECT_LAMBDA, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn", Aws::Region::CN_NORTHWEST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // US Gov regions
+        config.region = Aws::Region::US_GOV_EAST_1;
+         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // Cross FIPS region Object Lambda Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
+
+        config.region = Aws::Region::US_WEST_2;
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda.us-west-2.amazonaws.com");
+
+        config.region = "s3-external-1";
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda.us-east-1.amazonaws.com");
+
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda.us-east-1.amazonaws.com");
+
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda.cn-north-1.amazonaws.com.cn");
+
+        config.region = Aws::Region::US_GOV_EAST_1;
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda.us-gov-east-1.amazonaws.com");
+
+        config.region = "fips-us-gov-east-1";
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda-fips.us-gov-east-1.amazonaws.com");
+
+        config.region = "us-gov-west-1-fips";
+        DoTestWriteGetObjectResponse(config, "s3-object-lambda-fips.us-gov-west-1.amazonaws.com");
+
+        config.region = Aws::Region::US_WEST_2;
+        config.endpointOverride = "my-endpoint.com";
+        DoTestWriteGetObjectResponse(config, "my-endpoint.com");
+
+        if (awsS3UseArnRegionBackup.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegionBackup.c_str(), 1);
+        }
     }
 
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
@@ -1592,8 +2539,8 @@ namespace
         // The followings are examples for valid S3 ARN:
         ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate().IsSuccess());
-        // Pseudo region in client configuration
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        // FIPS region in client configuration
+        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips").IsSuccess());
 
         // The followings are examples for invalid S3 ARN:
@@ -1608,14 +2555,20 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:ec2:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
         // Empty service name
         ASSERT_FALSE(S3ARN("arn:aws::us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Invalid service name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
 
         // S3ARN region
+        // Non regional endpoints
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("s3-external-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("aws-global").IsSuccess());
         // Cross region ARN when useArnRegion = false
         ASSERT_FALSE(S3ARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
-        // Invalid region name with upper case
-        ASSERT_FALSE(S3ARN("arn:aws:S3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
-        // Empty region name
-        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Cross region ARN using FIPS regions
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-east-1").IsSuccess());
+        // FIPS region in ARN
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
 
         // S3ARN account id
         // Invalid account ID with non RFC 3986 Host label
@@ -1633,6 +2586,9 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:*").Validate().IsSuccess());
         // Invalid resource ID with qualifier, namely, the third part of the resource segments.
         ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:bucket:qualifier").Validate().IsSuccess());
+        // Non empty sub resource.
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint:bucket:bucket-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint::object-name").Validate().IsSuccess());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestS3EndpointForAccessPointARN)
@@ -1647,12 +2603,246 @@ namespace
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", false).c_str());
         ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.cn-north-1.amazonaws.com.cn",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", true).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1-fips.amazonaws.com",
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint-fips.us-east-1.amazonaws.com",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "us-east-1-fips", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.fips-us-gov-west-1.amazonaws.com",
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint-fips.us-gov-west-1.amazonaws.com",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.fips-us-gov-west-1.amazonaws.com",
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint-fips.dualstack.us-gov-west-1.amazonaws.com",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", true).c_str());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestS3MultiRegionAccessPointARNValidation)
+    {
+        // The followings are examples for valid S3 ARN:
+        ASSERT_TRUE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws-cn:s3::123456789012:accesspoint:myendpoint.mrap").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate("aws-global").IsSuccess());
+
+        // The followings are examples for invalid S3 ARN:
+        // S3ARN partition
+        // Invalid partition: cn-aws
+        ASSERT_FALSE(S3ARN("arn:cn-aws:s3::123456789120:accesspoint:myendpoint").Validate().IsSuccess());
+        // Empty partition name
+        ASSERT_FALSE(S3ARN("arn::s3::123456789120:accesspoint:myendpoint").Validate().IsSuccess());
+
+        // S3ARN service
+        // Invalid service: EC2
+        ASSERT_FALSE(S3ARN("arn:aws:ec2::123456789120:accesspoint:myendpoint").Validate().IsSuccess());
+        // Empty service name
+        ASSERT_FALSE(S3ARN("arn:aws:::123456789120:accesspoint:myendpoint").Validate().IsSuccess());
+        // Invalid service name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3::123456789120:accesspoint:myendpoint").Validate().IsSuccess());
+
+        // S3ARN region
+        // Multi Region Access Point ARN doesn't support fips region right now
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate("us-east-1-fips").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap").Validate("fips-us-gov-west-1").IsSuccess());
+
+        // S3ARN account id
+        // Invalid account ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3::12345.678912:accesspoint:myendpoint").Validate().IsSuccess());
+        // Empty account ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3:::accesspoint:myendpoint").Validate().IsSuccess());
+
+        // S3ARN resource type
+        // Invalid resource type: bucket_name
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:bucket_name:mybucket").Validate().IsSuccess());
+        // Empty resource ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:").Validate().IsSuccess());
+        // Invalid resource ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:*").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:my_endpoint.mrap").Validate().IsSuccess());
+        // Invalid resource ID with qualifier, namely, the third part of the resource segments.
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:bucket:qualifier").Validate().IsSuccess());
+        // Non empty sub resource.
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint:bucket:bucket-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint::object-name").Validate().IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForMultiRegionAccessPointARN)
+    {
+        ASSERT_STREQ("myendpoint.accesspoint.s3-global.amazonaws.com",
+            S3Endpoint::ForMultiRegionAccessPointArn(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint")).c_str());
+        ASSERT_STREQ("myendpoint.mrap.accesspoint.s3-global.amazonaws.com",
+            S3Endpoint::ForMultiRegionAccessPointArn(S3ARN("arn:aws:s3::123456789012:accesspoint:myendpoint.mrap")).c_str());
+        ASSERT_STREQ("myendpoint.mrap.accesspoint.s3-global.amazonaws.com.cn",
+            S3Endpoint::ForMultiRegionAccessPointArn(S3ARN("arn:aws-cn:s3::123456789012:accesspoint:myendpoint.mrap")).c_str());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3OutpostsARNValidation)
+    {
+        // The followings are examples for valid S3 ARN:
+        ASSERT_TRUE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost/outpost-id/accesspoint/access-point-name").Validate().IsSuccess());
+
+        // The followings are examples for invalid S3 ARN:
+        // S3ARN partition
+        // Invalid partition: cn-aws
+        ASSERT_FALSE(S3ARN("arn:cn-aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty partition name
+        ASSERT_FALSE(S3ARN("arn::s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN service
+        // Invalid service: EC2
+        ASSERT_FALSE(S3ARN("arn:aws:ec2:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty service name
+        ASSERT_FALSE(S3ARN("arn:aws::us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Invalid combination of service name and resource type
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Invalid service name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN region
+        // Non regional endpoints
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("s3-external-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("aws-global").IsSuccess());
+        // Outposts ARN doesn't support fips region right now
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("us-east-1-fips").IsSuccess());
+        // Cross region ARN when useArnRegion = false
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("us-east-1").IsSuccess());
+        // Empty region name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts::123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN account id
+        // Invalid account ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:12345.678912:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty account ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1::outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
+
+        // S3ARN resource type
+        // Invalid resource type: bucket_name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:bucket_name:bucket:accesspoint:access-point-name").Validate().IsSuccess());
+        // Empty outpost ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost::accesspoint:access-point-name").Validate().IsSuccess());
+        // Missing access point
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint").Validate().IsSuccess());
+        // Invalid outpost ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost.id:accesspoint:access-point-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:*:accesspoint:access-point-name").Validate().IsSuccess());
+        // Invalid sub resource type: access-point
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:access-point:access-point-name").Validate().IsSuccess());
+        // Invald access point name with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access.point.name").Validate().IsSuccess());
+        // Empty access point name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:").Validate().IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForOutpostsARN)
+    {
+        ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.us-east-1.amazonaws.com",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name"), "").c_str());
+        ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.us-east-1.amazonaws.com",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost/outpost-id/accesspoint/access-point-name"), "").c_str());
+        ASSERT_STREQ("access-point-name-123456789120.outpost-id.s3-outposts.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForOutpostsArn(S3ARN("arn:aws-cn:s3-outposts:cn-north-1:123456789120:outpost:outpost-id:accesspoint:access-point-name"), "").c_str());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3ObjectLambdaARNValidation)
+    {
+        // The followings are examples for valid S3 ARN:
+        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate("cn-north-1").IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        // FIPS region in client configuration
+        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("us-east-1-fips").IsSuccess());
+
+        // The followings are examples for invalid S3 ARN:
+        // S3ARN partition
+        // Invalid partition: cn-aws
+        ASSERT_FALSE(S3ARN("arn:cn-aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        // Empty partition name
+        ASSERT_FALSE(S3ARN("arn::s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+
+        // S3ARN service
+        // Invalid service: SQS
+        ASSERT_FALSE(S3ARN("arn:aws:sqs:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        // Empty service name
+        ASSERT_FALSE(S3ARN("arn:aws::us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        // Invalid service name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+
+        // S3ARN region
+        // Non regional endpoints
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("s3-external-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("aws-global").IsSuccess());
+        // Cross region ARN when useArnRegion = false
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate("us-east-1").IsSuccess());
+        // Cross region ARN when using FIPS regions
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        // FIPS region in ARN
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:fips-us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:fips-us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        // Empty region name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda::123456789012:accesspoint:mybanner").Validate().IsSuccess());
+
+        // S3ARN account id
+        // Invalid account ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:12345.6789012:accesspoint:mybanner").Validate().IsSuccess());
+        // Empty account ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2::accesspoint:mybanner").Validate().IsSuccess());
+
+        // S3ARN resource type
+        // Invalid resource type: bucket_name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket").Validate().IsSuccess());
+        // Empty Access Point name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:").Validate().IsSuccess());
+        // Missing Access Point name
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint").Validate().IsSuccess());
+        // Invalid outpost ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.banner").Validate().IsSuccess());
+        // Invalid sub resource
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner:qualifier").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner:bucket:bucket-name").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner::bucket-name").Validate().IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForObjectLambdaARN)
+    {
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner"), "us-east-1").c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner"), "us-west-2").c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"), "us-west-2").c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner"), "cn-north-1").c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner"), "fips-us-gov-east-1").c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner"), "us-gov-east-1-fips").c_str());
+        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner")).c_str());
+        ASSERT_STREQ("mybanner-123456789012.my-endpoint.com",
+            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"), "us-west-2", false, "my-endpoint.com").c_str());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointWithServiceNameOverride)
+    {
+        ASSERT_STREQ("s3-object-lambda.us-east-1.amazonaws.com", S3Endpoint::ForRegion("us-east-1", false, true, "s3-object-lambda").c_str());
+        ASSERT_STREQ("s3-object-lambda.us-west-2.amazonaws.com", S3Endpoint::ForRegion("us-west-2", false, true, "s3-object-lambda").c_str());
+        ASSERT_STREQ("s3-object-lambda.cn-north-1.amazonaws.com.cn", S3Endpoint::ForRegion("cn-north-1", false, true, "s3-object-lambda").c_str());
+        ASSERT_STREQ("s3-object-lambda.us-gov-east-1.amazonaws.com", S3Endpoint::ForRegion("us-gov-east-1", false, true, "s3-object-lambda").c_str());
+        ASSERT_STREQ("s3-object-lambda-fips.us-gov-east-1.amazonaws.com", S3Endpoint::ForRegion("fips-us-gov-east-1", false, true, "s3-object-lambda").c_str());
+        ASSERT_STREQ("s3-object-lambda-fips.us-gov-west-1.amazonaws.com", S3Endpoint::ForRegion("us-gov-west-1-fips", false, true, "s3-object-lambda").c_str());
+    }
 }

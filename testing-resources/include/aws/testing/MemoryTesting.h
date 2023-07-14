@@ -1,16 +1,6 @@
-/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
  */
 
 #pragma once
@@ -127,13 +117,13 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
 // Macros that can be used to bracket the inside of a gtest body
 #define AWS_BEGIN_MEMORY_TEST(x, y)   ExactTestMemorySystem memorySystem(x, y); \
                                       Aws::Utils::Memory::InitializeAWSMemorySystem(memorySystem); \
-                                      {  
+                                      {
 
 #define AWS_END_MEMORY_TEST           } \
                                       Aws::Utils::Memory::ShutdownAWSMemorySystem(); \
                                       ASSERT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL); \
                                       ASSERT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL); \
-                                      ASSERT_TRUE(memorySystem.IsClean()); 
+                                      ASSERT_TRUE(memorySystem.IsClean());
 
 #define AWS_END_MEMORY_OVERRIDE   } \
                                   Aws::Utils::Memory::ShutdownAWSMemorySystem();

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/medialive/model/InputDenoiseFilter.h>
 #include <aws/medialive/model/InputFilter.h>
 #include <aws/medialive/model/NetworkInputSettings.h>
+#include <aws/medialive/model/Smpte2038DataPreference.h>
 #include <aws/medialive/model/InputSourceEndBehavior.h>
 #include <aws/medialive/model/VideoSelector.h>
 #include <aws/medialive/model/AudioSelector.h>
@@ -328,6 +319,98 @@ namespace Model
 
 
     /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline int GetScte35Pid() const{ return m_scte35Pid; }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
+
+    /**
+     * PID from which to read SCTE-35 messages. If left undefined, EML will select the
+     * first SCTE-35 PID found in the input.
+     */
+    inline InputSettings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
+
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline const Smpte2038DataPreference& GetSmpte2038DataPreference() const{ return m_smpte2038DataPreference; }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline bool Smpte2038DataPreferenceHasBeenSet() const { return m_smpte2038DataPreferenceHasBeenSet; }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline void SetSmpte2038DataPreference(const Smpte2038DataPreference& value) { m_smpte2038DataPreferenceHasBeenSet = true; m_smpte2038DataPreference = value; }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline void SetSmpte2038DataPreference(Smpte2038DataPreference&& value) { m_smpte2038DataPreferenceHasBeenSet = true; m_smpte2038DataPreference = std::move(value); }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline InputSettings& WithSmpte2038DataPreference(const Smpte2038DataPreference& value) { SetSmpte2038DataPreference(value); return *this;}
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline InputSettings& WithSmpte2038DataPreference(Smpte2038DataPreference&& value) { SetSmpte2038DataPreference(std::move(value)); return *this;}
+
+
+    /**
      * Loop input if it is a file. This allows a file input to be streamed
      * indefinitely.
      */
@@ -422,6 +505,12 @@ namespace Model
 
     NetworkInputSettings m_networkInputSettings;
     bool m_networkInputSettingsHasBeenSet;
+
+    int m_scte35Pid;
+    bool m_scte35PidHasBeenSet;
+
+    Smpte2038DataPreference m_smpte2038DataPreference;
+    bool m_smpte2038DataPreferenceHasBeenSet;
 
     InputSourceEndBehavior m_sourceEndBehavior;
     bool m_sourceEndBehaviorHasBeenSet;

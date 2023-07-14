@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -31,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacementInput">AWS
    * API Reference</a></p>
    */
@@ -166,7 +156,7 @@ namespace Model
 
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -175,7 +165,7 @@ namespace Model
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -184,7 +174,7 @@ namespace Model
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -193,7 +183,7 @@ namespace Model
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -202,7 +192,7 @@ namespace Model
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -211,7 +201,7 @@ namespace Model
     inline StartGameSessionPlacementRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -220,7 +210,7 @@ namespace Model
     inline StartGameSessionPlacementRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -229,7 +219,7 @@ namespace Model
     inline StartGameSessionPlacementRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * <p>A set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -313,66 +303,66 @@ namespace Model
 
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline void SetPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline StartGameSessionPlacementRequest& WithPlayerLatencies(const Aws::Vector<PlayerLatency>& value) { SetPlayerLatencies(value); return *this;}
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline StartGameSessionPlacementRequest& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline StartGameSessionPlacementRequest& AddPlayerLatencies(const PlayerLatency& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
 
     /**
-     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS Regions. This information is
-     * used to try to place the new game session where it can offer the best possible
-     * gameplay experience for the players. </p>
+     * <p>A set of values, expressed in milliseconds, that indicates the amount of
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline StartGameSessionPlacementRequest& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
@@ -419,7 +409,7 @@ namespace Model
 
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -428,7 +418,7 @@ namespace Model
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -437,7 +427,7 @@ namespace Model
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -446,7 +436,7 @@ namespace Model
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -455,7 +445,7 @@ namespace Model
     inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -464,7 +454,7 @@ namespace Model
     inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -473,7 +463,7 @@ namespace Model
     inline StartGameSessionPlacementRequest& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
@@ -482,7 +472,7 @@ namespace Model
     inline StartGameSessionPlacementRequest& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
 
     /**
-     * <p>Set of custom game session properties, formatted as a single string value.
+     * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start

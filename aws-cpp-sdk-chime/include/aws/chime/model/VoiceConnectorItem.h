@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
@@ -94,28 +84,28 @@ namespace Model
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
      * <p>The priority associated with the Amazon Chime Voice Connector, with 1 being
      * the highest priority. Higher priority Amazon Chime Voice Connectors are
-     * attempted first. </p>
+     * attempted first.</p>
      */
     inline VoiceConnectorItem& WithPriority(int value) { SetPriority(value); return *this;}
 

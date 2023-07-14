@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iam/model/VirtualMFADevice.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -36,7 +26,8 @@ VirtualMFADevice::VirtualMFADevice() :
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_enableDateHasBeenSet(false)
+    m_enableDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,7 +36,8 @@ VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode) :
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_enableDateHasBeenSet(false)
+    m_enableDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -86,6 +78,18 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
       m_enableDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -120,6 +124,17 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -145,6 +160,16 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_enableDateHasBeenSet)
   {
       oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

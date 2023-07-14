@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -37,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a Session Manager connection to an instance.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a Session Manager connection to a managed
+   * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Session">AWS API
    * Reference</a></p>
    */
@@ -93,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline Session& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline Session& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline Session& WithTarget(const char* value) { SetTarget(value); return *this;}
 
@@ -290,44 +280,85 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline Session& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline Session& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS user account that started the session.</p>
+     * <p>The ID of the Amazon Web Services user account that started the session.</p>
      */
     inline Session& WithOwner(const char* value) { SetOwner(value); return *this;}
+
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline Session& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline Session& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline Session& WithReason(const char* value) { SetReason(value); return *this;}
 
 
     /**
@@ -401,6 +432,47 @@ namespace Model
      */
     inline Session& WithOutputUrl(SessionManagerOutputUrl&& value) { SetOutputUrl(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline const Aws::String& GetMaxSessionDuration() const{ return m_maxSessionDuration; }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline void SetMaxSessionDuration(const Aws::String& value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline void SetMaxSessionDuration(Aws::String&& value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = std::move(value); }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline void SetMaxSessionDuration(const char* value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration.assign(value); }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline Session& WithMaxSessionDuration(const Aws::String& value) { SetMaxSessionDuration(value); return *this;}
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline Session& WithMaxSessionDuration(Aws::String&& value) { SetMaxSessionDuration(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline Session& WithMaxSessionDuration(const char* value) { SetMaxSessionDuration(value); return *this;}
+
   private:
 
     Aws::String m_sessionId;
@@ -424,11 +496,17 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
 
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
 
     SessionManagerOutputUrl m_outputUrl;
     bool m_outputUrlHasBeenSet;
+
+    Aws::String m_maxSessionDuration;
+    bool m_maxSessionDurationHasBeenSet;
   };
 
 } // namespace Model

@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/GeoSpatialDataRole.h>
+#include <aws/quicksight/model/ColumnDescription.h>
 #include <utility>
 
 namespace Aws
@@ -34,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A tag for a column in a <code>TagColumnOperation</code> structure. This is a
-   * variant type structure. For this structure to be valid, only one of the
-   * attributes can be non-null.</p><p><h3>See Also:</h3>   <a
+   * <p>A tag for a column in a <code> <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a>
+   * </code> structure. This is a variant type structure. For this structure to be
+   * valid, only one of the attributes can be non-null.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnTag">AWS
    * API Reference</a></p>
    */
@@ -79,10 +71,44 @@ namespace Model
      */
     inline ColumnTag& WithColumnGeographicRole(GeoSpatialDataRole&& value) { SetColumnGeographicRole(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline const ColumnDescription& GetColumnDescription() const{ return m_columnDescription; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline bool ColumnDescriptionHasBeenSet() const { return m_columnDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetColumnDescription(const ColumnDescription& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = value; }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline void SetColumnDescription(ColumnDescription&& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = std::move(value); }
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline ColumnTag& WithColumnDescription(const ColumnDescription& value) { SetColumnDescription(value); return *this;}
+
+    /**
+     * <p>A description for a column.</p>
+     */
+    inline ColumnTag& WithColumnDescription(ColumnDescription&& value) { SetColumnDescription(std::move(value)); return *this;}
+
   private:
 
     GeoSpatialDataRole m_columnGeographicRole;
     bool m_columnGeographicRoleHasBeenSet;
+
+    ColumnDescription m_columnDescription;
+    bool m_columnDescriptionHasBeenSet;
   };
 
 } // namespace Model

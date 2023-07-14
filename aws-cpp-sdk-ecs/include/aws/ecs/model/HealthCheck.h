@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -38,36 +28,41 @@ namespace Model
    * <p>An object representing a container health check. Health check parameters that
    * are specified in a container definition override any Docker health checks that
    * exist in the container image (such as those specified in a parent image or from
-   * the image's Dockerfile).</p> <p>You can view the health status of both
-   * individual containers and a task with the DescribeTasks API operation or when
-   * viewing the task details in the console.</p> <p>The following describes the
-   * possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p>
-   * <code>HEALTHY</code>-The container health check has passed successfully.</p>
-   * </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p>
-   * </li> <li> <p> <code>UNKNOWN</code>-The container health check is being
-   * evaluated or there is no container health check defined.</p> </li> </ul> <p>The
-   * following describes the possible <code>healthStatus</code> values for a task.
-   * The container health check status of nonessential containers do not have an
-   * effect on the health status of a task.</p> <ul> <li> <p>
-   * <code>HEALTHY</code>-All essential containers within the task have passed their
-   * health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential
-   * containers have failed their health check.</p> </li> <li> <p>
-   * <code>UNKNOWN</code>-The essential containers within the task are still having
-   * their health checks evaluated or there are no container health checks
-   * defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a
-   * service, the task will continue its lifecycle regardless of its health status.
-   * For tasks that are part of a service, if the task reports as unhealthy then the
-   * task will be stopped and the service scheduler will replace it.</p> <p>The
-   * following are notes about container health check support:</p> <ul> <li>
-   * <p>Container health checks require version 1.17.0 or greater of the Amazon ECS
-   * container agent. For more information, see <a
+   * the image's Dockerfile).</p>  <p>The Amazon ECS container agent only
+   * monitors and reports on the health checks specified in the task definition.
+   * Amazon ECS does not monitor Docker health checks that are embedded in a
+   * container image and not specified in the container definition. Health check
+   * parameters that are specified in a container definition override any Docker
+   * health checks that exist in the container image.</p>  <p>You can view the
+   * health status of both individual containers and a task with the DescribeTasks
+   * API operation or when viewing the task details in the console.</p> <p>The
+   * following describes the possible <code>healthStatus</code> values for a
+   * container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has
+   * passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container
+   * health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container
+   * health check is being evaluated or there's no container health check
+   * defined.</p> </li> </ul> <p>The following describes the possible
+   * <code>healthStatus</code> values for a task. The container health check status
+   * of nonessential containers do not have an effect on the health status of a
+   * task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the
+   * task have passed their health checks.</p> </li> <li> <p>
+   * <code>UNHEALTHY</code>-One or more essential containers have failed their health
+   * check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within
+   * the task are still having their health checks evaluated or there are no
+   * container health checks defined.</p> </li> </ul> <p>If a task is run manually,
+   * and not as part of a service, the task will continue its lifecycle regardless of
+   * its health status. For tasks that are part of a service, if the task reports as
+   * unhealthy then the task will be stopped and the service scheduler will replace
+   * it.</p> <p>The following are notes about container health check support:</p>
+   * <ul> <li> <p>Container health checks require version 1.17.0 or greater of the
+   * Amazon ECS container agent. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
    * the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks
-   * are supported for Fargate tasks if you are using platform version 1.1.0 or
+   * are supported for Fargate tasks if you're using platform version 1.1.0 or
    * greater. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-   * Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not
-   * supported for tasks that are part of a service that is configured to use a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+   * Platform Versions</a>.</p> </li> <li> <p>Container health checks aren't
+   * supported for tasks that are part of a service that's configured to use a
    * Classic Load Balancer.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
    * Reference</a></p>
@@ -85,9 +80,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -99,9 +98,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -113,9 +116,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -127,9 +134,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -141,9 +152,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -155,9 +170,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -169,9 +188,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -183,9 +206,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -197,9 +224,13 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -292,42 +323,42 @@ namespace Model
 
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline int GetStartPeriod() const{ return m_startPeriod; }
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline HealthCheck& WithStartPeriod(int value) { SetStartPeriod(value); return *this;}
 

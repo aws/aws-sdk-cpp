@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -91,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline void SetPlayerData(const Aws::String& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline void SetPlayerData(const char* value) { m_playerDataHasBeenSet = true; m_playerData.assign(value); }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline DesiredPlayerSession& WithPlayerData(const Aws::String& value) { SetPlayerData(value); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline DesiredPlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline DesiredPlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 

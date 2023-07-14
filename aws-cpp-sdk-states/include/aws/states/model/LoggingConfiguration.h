@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
@@ -83,25 +73,25 @@ namespace Model
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
 
     /**
      * <p>Determines whether execution data is included in your log. When set to
-     * <code>FALSE</code>, data is excluded.</p>
+     * <code>false</code>, data is excluded.</p>
      */
     inline LoggingConfiguration& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
 

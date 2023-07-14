@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -35,11 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>The EffectivePatch structure defines metadata about a patch along with the
-   * approval state of the patch in a particular patch baseline. The approval state
-   * includes information about whether the patch is currently approved, due to be
-   * approved by a rule, explicitly approved, or explicitly rejected and the date the
-   * patch was or will be approved.</p><p><h3>See Also:</h3>   <a
+   * <p>The <code>EffectivePatch</code> structure defines metadata about a patch
+   * along with the approval state of the patch in a particular patch baseline. The
+   * approval state includes information about whether the patch is currently
+   * approved, due to be approved by a rule, explicitly approved, or explicitly
+   * rejected and the date the patch was or will be approved.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/EffectivePatch">AWS
    * API Reference</a></p>
    */

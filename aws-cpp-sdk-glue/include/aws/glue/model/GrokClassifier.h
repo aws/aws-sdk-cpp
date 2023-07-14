@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -225,7 +215,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline const Aws::String& GetGrokPattern() const{ return m_grokPattern; }
@@ -233,7 +223,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline bool GrokPatternHasBeenSet() const { return m_grokPatternHasBeenSet; }
@@ -241,7 +231,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline void SetGrokPattern(const Aws::String& value) { m_grokPatternHasBeenSet = true; m_grokPattern = value; }
@@ -249,7 +239,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline void SetGrokPattern(Aws::String&& value) { m_grokPatternHasBeenSet = true; m_grokPattern = std::move(value); }
@@ -257,7 +247,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline void SetGrokPattern(const char* value) { m_grokPatternHasBeenSet = true; m_grokPattern.assign(value); }
@@ -265,7 +255,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline GrokClassifier& WithGrokPattern(const Aws::String& value) { SetGrokPattern(value); return *this;}
@@ -273,7 +263,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline GrokClassifier& WithGrokPattern(Aws::String&& value) { SetGrokPattern(std::move(value)); return *this;}
@@ -281,7 +271,7 @@ namespace Model
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
      * information, see built-in patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline GrokClassifier& WithGrokPattern(const char* value) { SetGrokPattern(value); return *this;}
@@ -290,7 +280,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline const Aws::String& GetCustomPatterns() const{ return m_customPatterns; }
@@ -298,7 +288,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline bool CustomPatternsHasBeenSet() const { return m_customPatternsHasBeenSet; }
@@ -306,7 +296,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline void SetCustomPatterns(const Aws::String& value) { m_customPatternsHasBeenSet = true; m_customPatterns = value; }
@@ -314,7 +304,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline void SetCustomPatterns(Aws::String&& value) { m_customPatternsHasBeenSet = true; m_customPatterns = std::move(value); }
@@ -322,7 +312,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline void SetCustomPatterns(const char* value) { m_customPatternsHasBeenSet = true; m_customPatterns.assign(value); }
@@ -330,7 +320,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline GrokClassifier& WithCustomPatterns(const Aws::String& value) { SetCustomPatterns(value); return *this;}
@@ -338,7 +328,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline GrokClassifier& WithCustomPatterns(Aws::String&& value) { SetCustomPatterns(std::move(value)); return *this;}
@@ -346,7 +336,7 @@ namespace Model
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more
      * information, see custom patterns in <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
      * Custom Classifiers</a>.</p>
      */
     inline GrokClassifier& WithCustomPatterns(const char* value) { SetCustomPatterns(value); return *this;}

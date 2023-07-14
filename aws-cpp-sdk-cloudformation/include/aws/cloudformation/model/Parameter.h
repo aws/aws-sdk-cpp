@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -51,56 +41,56 @@ namespace Model
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline Parameter& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline Parameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that's
      * specified in your template.</p>
      */
     inline Parameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
@@ -177,66 +167,66 @@ namespace Model
 
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline const Aws::String& GetResolvedValue() const{ return m_resolvedValue; }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline bool ResolvedValueHasBeenSet() const { return m_resolvedValueHasBeenSet; }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline void SetResolvedValue(const Aws::String& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = value; }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline void SetResolvedValue(Aws::String&& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = std::move(value); }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline void SetResolvedValue(const char* value) { m_resolvedValueHasBeenSet = true; m_resolvedValue.assign(value); }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline Parameter& WithResolvedValue(const Aws::String& value) { SetResolvedValue(value); return *this;}
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline Parameter& WithResolvedValue(Aws::String&& value) { SetResolvedValue(std::move(value)); return *this;}
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. The value that corresponds to a SSM parameter key. This field is
+     * returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline Parameter& WithResolvedValue(const char* value) { SetResolvedValue(value); return *this;}
 

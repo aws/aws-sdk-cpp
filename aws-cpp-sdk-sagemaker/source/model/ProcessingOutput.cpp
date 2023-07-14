@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ProcessingOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,19 @@ namespace Model
 
 ProcessingOutput::ProcessingOutput() : 
     m_outputNameHasBeenSet(false),
-    m_s3OutputHasBeenSet(false)
+    m_s3OutputHasBeenSet(false),
+    m_featureStoreOutputHasBeenSet(false),
+    m_appManaged(false),
+    m_appManagedHasBeenSet(false)
 {
 }
 
 ProcessingOutput::ProcessingOutput(JsonView jsonValue) : 
     m_outputNameHasBeenSet(false),
-    m_s3OutputHasBeenSet(false)
+    m_s3OutputHasBeenSet(false),
+    m_featureStoreOutputHasBeenSet(false),
+    m_appManaged(false),
+    m_appManagedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +53,20 @@ ProcessingOutput& ProcessingOutput::operator =(JsonView jsonValue)
     m_s3OutputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FeatureStoreOutput"))
+  {
+    m_featureStoreOutput = jsonValue.GetObject("FeatureStoreOutput");
+
+    m_featureStoreOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppManaged"))
+  {
+    m_appManaged = jsonValue.GetBool("AppManaged");
+
+    m_appManagedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +83,18 @@ JsonValue ProcessingOutput::Jsonize() const
   if(m_s3OutputHasBeenSet)
   {
    payload.WithObject("S3Output", m_s3Output.Jsonize());
+
+  }
+
+  if(m_featureStoreOutputHasBeenSet)
+  {
+   payload.WithObject("FeatureStoreOutput", m_featureStoreOutput.Jsonize());
+
+  }
+
+  if(m_appManagedHasBeenSet)
+  {
+   payload.WithBool("AppManaged", m_appManaged);
 
   }
 

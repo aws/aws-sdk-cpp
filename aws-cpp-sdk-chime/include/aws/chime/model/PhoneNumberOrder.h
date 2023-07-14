@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
@@ -206,63 +196,63 @@ namespace Model
 
 
     /**
-     * <p>The phone number order creation timestamp, in ISO 8601 format.</p>
+     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>The phone number order creation timestamp, in ISO 8601 format.</p>
+     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
-     * <p>The phone number order creation timestamp, in ISO 8601 format.</p>
+     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>The phone number order creation timestamp, in ISO 8601 format.</p>
+     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>The phone number order creation timestamp, in ISO 8601 format.</p>
+     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline PhoneNumberOrder& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The phone number order creation timestamp, in ISO 8601 format.</p>
+     * <p>The phone number order creation time stamp, in ISO 8601 format.</p>
      */
     inline PhoneNumberOrder& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The updated phone number order timestamp, in ISO 8601 format.</p>
+     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
 
     /**
-     * <p>The updated phone number order timestamp, in ISO 8601 format.</p>
+     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
 
     /**
-     * <p>The updated phone number order timestamp, in ISO 8601 format.</p>
+     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
 
     /**
-     * <p>The updated phone number order timestamp, in ISO 8601 format.</p>
+     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
 
     /**
-     * <p>The updated phone number order timestamp, in ISO 8601 format.</p>
+     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline PhoneNumberOrder& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>The updated phone number order timestamp, in ISO 8601 format.</p>
+     * <p>The updated phone number order time stamp, in ISO 8601 format.</p>
      */
     inline PhoneNumberOrder& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 

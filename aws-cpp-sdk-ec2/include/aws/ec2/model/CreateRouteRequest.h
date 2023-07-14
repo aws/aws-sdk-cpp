@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -48,49 +38,65 @@ namespace Model
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -145,6 +151,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -175,6 +222,55 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline CreateRouteRequest& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline CreateRouteRequest& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints
+     * only.</p>
+     */
+    inline CreateRouteRequest& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
 
     /**
@@ -440,6 +536,55 @@ namespace Model
 
 
     /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline const Aws::String& GetCarrierGatewayId() const{ return m_carrierGatewayId; }
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline bool CarrierGatewayIdHasBeenSet() const { return m_carrierGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierGatewayId(const Aws::String& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = value; }
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierGatewayId(Aws::String&& value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline void SetCarrierGatewayId(const char* value) { m_carrierGatewayIdHasBeenSet = true; m_carrierGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline CreateRouteRequest& WithCarrierGatewayId(const Aws::String& value) { SetCarrierGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline CreateRouteRequest& WithCarrierGatewayId(Aws::String&& value) { SetCarrierGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the carrier gateway.</p> <p>You can only use this option when the
+     * VPC contains a subnet which is associated with a Wavelength Zone.</p>
+     */
+    inline CreateRouteRequest& WithCarrierGatewayId(const char* value) { SetCarrierGatewayId(value); return *this;}
+
+
+    /**
      * <p>The ID of a network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -561,6 +706,47 @@ namespace Model
      */
     inline CreateRouteRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline CreateRouteRequest& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline CreateRouteRequest& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
+    inline CreateRouteRequest& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidrBlock;
@@ -569,8 +755,14 @@ namespace Model
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
 
+    Aws::String m_destinationPrefixListId;
+    bool m_destinationPrefixListIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_vpcEndpointId;
+    bool m_vpcEndpointIdHasBeenSet;
 
     Aws::String m_egressOnlyInternetGatewayId;
     bool m_egressOnlyInternetGatewayIdHasBeenSet;
@@ -590,6 +782,9 @@ namespace Model
     Aws::String m_localGatewayId;
     bool m_localGatewayIdHasBeenSet;
 
+    Aws::String m_carrierGatewayId;
+    bool m_carrierGatewayIdHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
 
@@ -598,6 +793,9 @@ namespace Model
 
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
+
+    Aws::String m_coreNetworkArn;
+    bool m_coreNetworkArnHasBeenSet;
   };
 
 } // namespace Model

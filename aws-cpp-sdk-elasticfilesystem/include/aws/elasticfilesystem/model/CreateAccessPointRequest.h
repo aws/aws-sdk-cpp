@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -97,50 +87,74 @@ namespace Model
 
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateAccessPointRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateAccessPointRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateAccessPointRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Creates tags associated with the access point. Each tag is a key-value
-     * pair.</p>
+     * <p>Creates tags associated with the access point. Each tag is a key-value pair,
+     * each key must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateAccessPointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -230,8 +244,12 @@ namespace Model
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
      * specified does not exist, EFS creates it and applies the
      * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you need to provide the
-     * <code>Path</code>, and the <code>CreationInfo</code> is optional.</p>
+     * When specifying a <code>RootDirectory</code>, you must provide the
+     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
+     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     * permissions for the directory. If you do not provide this information, Amazon
+     * EFS does not create the root directory. If the root directory does not exist,
+     * attempts to mount using the access point will fail.</p>
      */
     inline const RootDirectory& GetRootDirectory() const{ return m_rootDirectory; }
 
@@ -242,8 +260,12 @@ namespace Model
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
      * specified does not exist, EFS creates it and applies the
      * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you need to provide the
-     * <code>Path</code>, and the <code>CreationInfo</code> is optional.</p>
+     * When specifying a <code>RootDirectory</code>, you must provide the
+     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
+     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     * permissions for the directory. If you do not provide this information, Amazon
+     * EFS does not create the root directory. If the root directory does not exist,
+     * attempts to mount using the access point will fail.</p>
      */
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
 
@@ -254,8 +276,12 @@ namespace Model
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
      * specified does not exist, EFS creates it and applies the
      * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you need to provide the
-     * <code>Path</code>, and the <code>CreationInfo</code> is optional.</p>
+     * When specifying a <code>RootDirectory</code>, you must provide the
+     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
+     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     * permissions for the directory. If you do not provide this information, Amazon
+     * EFS does not create the root directory. If the root directory does not exist,
+     * attempts to mount using the access point will fail.</p>
      */
     inline void SetRootDirectory(const RootDirectory& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
 
@@ -266,8 +292,12 @@ namespace Model
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
      * specified does not exist, EFS creates it and applies the
      * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you need to provide the
-     * <code>Path</code>, and the <code>CreationInfo</code> is optional.</p>
+     * When specifying a <code>RootDirectory</code>, you must provide the
+     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
+     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     * permissions for the directory. If you do not provide this information, Amazon
+     * EFS does not create the root directory. If the root directory does not exist,
+     * attempts to mount using the access point will fail.</p>
      */
     inline void SetRootDirectory(RootDirectory&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
 
@@ -278,8 +308,12 @@ namespace Model
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
      * specified does not exist, EFS creates it and applies the
      * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you need to provide the
-     * <code>Path</code>, and the <code>CreationInfo</code> is optional.</p>
+     * When specifying a <code>RootDirectory</code>, you must provide the
+     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
+     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     * permissions for the directory. If you do not provide this information, Amazon
+     * EFS does not create the root directory. If the root directory does not exist,
+     * attempts to mount using the access point will fail.</p>
      */
     inline CreateAccessPointRequest& WithRootDirectory(const RootDirectory& value) { SetRootDirectory(value); return *this;}
 
@@ -290,8 +324,12 @@ namespace Model
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code>
      * specified does not exist, EFS creates it and applies the
      * <code>CreationInfo</code> settings when a client connects to an access point.
-     * When specifying a <code>RootDirectory</code>, you need to provide the
-     * <code>Path</code>, and the <code>CreationInfo</code> is optional.</p>
+     * When specifying a <code>RootDirectory</code>, you must provide the
+     * <code>Path</code>, and the <code>CreationInfo</code>.</p> <p>Amazon EFS creates
+     * a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     * permissions for the directory. If you do not provide this information, Amazon
+     * EFS does not create the root directory. If the root directory does not exist,
+     * attempts to mount using the access point will fail.</p>
      */
     inline CreateAccessPointRequest& WithRootDirectory(RootDirectory&& value) { SetRootDirectory(std::move(value)); return *this;}
 

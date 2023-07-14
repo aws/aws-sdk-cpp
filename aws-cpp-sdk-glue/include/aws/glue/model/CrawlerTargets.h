@@ -1,25 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/S3Target.h>
 #include <aws/glue/model/JdbcTarget.h>
+#include <aws/glue/model/MongoDBTarget.h>
 #include <aws/glue/model/DynamoDBTarget.h>
 #include <aws/glue/model/CatalogTarget.h>
+#include <aws/glue/model/DeltaTarget.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +126,47 @@ namespace Model
 
 
     /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline const Aws::Vector<MongoDBTarget>& GetMongoDBTargets() const{ return m_mongoDBTargets; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline bool MongoDBTargetsHasBeenSet() const { return m_mongoDBTargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline void SetMongoDBTargets(const Aws::Vector<MongoDBTarget>& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets = value; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline void SetMongoDBTargets(Aws::Vector<MongoDBTarget>&& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets = std::move(value); }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& WithMongoDBTargets(const Aws::Vector<MongoDBTarget>& value) { SetMongoDBTargets(value); return *this;}
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& WithMongoDBTargets(Aws::Vector<MongoDBTarget>&& value) { SetMongoDBTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& AddMongoDBTargets(const MongoDBTarget& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
+     */
+    inline CrawlerTargets& AddMongoDBTargets(MongoDBTarget&& value) { m_mongoDBTargetsHasBeenSet = true; m_mongoDBTargets.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies Amazon DynamoDB targets.</p>
      */
     inline const Aws::Vector<DynamoDBTarget>& GetDynamoDBTargets() const{ return m_dynamoDBTargets; }
@@ -175,44 +208,85 @@ namespace Model
 
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline const Aws::Vector<CatalogTarget>& GetCatalogTargets() const{ return m_catalogTargets; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline bool CatalogTargetsHasBeenSet() const { return m_catalogTargetsHasBeenSet; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline void SetCatalogTargets(const Aws::Vector<CatalogTarget>& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets = value; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline void SetCatalogTargets(Aws::Vector<CatalogTarget>&& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets = std::move(value); }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& WithCatalogTargets(const Aws::Vector<CatalogTarget>& value) { SetCatalogTargets(value); return *this;}
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& WithCatalogTargets(Aws::Vector<CatalogTarget>&& value) { SetCatalogTargets(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& AddCatalogTargets(const CatalogTarget& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets.push_back(value); return *this; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& AddCatalogTargets(CatalogTarget&& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline const Aws::Vector<DeltaTarget>& GetDeltaTargets() const{ return m_deltaTargets; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline bool DeltaTargetsHasBeenSet() const { return m_deltaTargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline void SetDeltaTargets(const Aws::Vector<DeltaTarget>& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets = value; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline void SetDeltaTargets(Aws::Vector<DeltaTarget>&& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets = std::move(value); }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& WithDeltaTargets(const Aws::Vector<DeltaTarget>& value) { SetDeltaTargets(value); return *this;}
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& WithDeltaTargets(Aws::Vector<DeltaTarget>&& value) { SetDeltaTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& AddDeltaTargets(const DeltaTarget& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& AddDeltaTargets(DeltaTarget&& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -222,11 +296,17 @@ namespace Model
     Aws::Vector<JdbcTarget> m_jdbcTargets;
     bool m_jdbcTargetsHasBeenSet;
 
+    Aws::Vector<MongoDBTarget> m_mongoDBTargets;
+    bool m_mongoDBTargetsHasBeenSet;
+
     Aws::Vector<DynamoDBTarget> m_dynamoDBTargets;
     bool m_dynamoDBTargetsHasBeenSet;
 
     Aws::Vector<CatalogTarget> m_catalogTargets;
     bool m_catalogTargetsHasBeenSet;
+
+    Aws::Vector<DeltaTarget> m_deltaTargets;
+    bool m_deltaTargetsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,19 +1,8 @@
-#
-# Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# 
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# A copy of the License is located at
-# 
-#  http://aws.amazon.com/apache2.0
-# 
-# or in the "license" file accompanying this file. This file is distributed
-# on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-# express or implied. See the License for the specific language governing
-# permissions and limitations under the License.
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
 #
 
-add_project(testing-resources 
+add_project(testing-resources
     "Testing utility library for the AWS C++ SDK"
     aws-cpp-sdk-core)
 
@@ -25,6 +14,7 @@ file(GLOB AWS_TESTING_AUTH_MOCKS_HEADERS "include/aws/testing/mocks/aws/auth/*.h
 file(GLOB AWS_TESTING_EVENT_MOCKS_HEADERS "include/aws/testing/mocks/event/*.h")
 file(GLOB AWS_TESTING_HTTP_MOCKS_HEADERS "include/aws/testing/mocks/http/*.h")
 file(GLOB AWS_TESTING_CLIENT_MOCKS_HEADERS "include/aws/testing/mocks/aws/client/*.h")
+file(GLOB AWS_TESTING_MONITORING_MOCKS_HEADERS "include/aws/testing/mocks/monitoring/*.h")
 file(GLOB AWS_TESTING_PLATFORM_HEADERS "include/aws/testing/platform/*.h")
 
 file(GLOB AWS_TESTING_SOURCE "source/*.cpp")
@@ -37,10 +27,11 @@ file(GLOB TestingResources_SHARED_SRC
     ${AWS_TESTING_EVENT_MOCKS_HEADERS}
     ${AWS_TESTING_HTTP_MOCKS_HEADERS}
     ${AWS_TESTING_CLIENT_MOCKS_HEADERS}
+    ${AWS_TESTING_MONITORING_MOCKS_HEADERS}
     ${AWS_TESTING_PLATFORM_HEADERS}
     ${AWS_TESTING_SOURCE}
     ${AWS_TESTING_EXTERNAL_SOURCE}
-) 
+)
 
 if(PLATFORM_ANDROID)
     file(GLOB AWS_TESTING_PLATFORM_ANDROID_HEADERS "include/aws/testing/platform/android/*.h")
@@ -65,6 +56,7 @@ if(PLATFORM_WINDOWS)
         source_group("Header Files\\aws\\testing\\mocks\\event" FILES ${AWS_TESTING_EVENT_MOCKS_HEADERS})
         source_group("Header Files\\aws\\testing\\mocks\\http" FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS})
         source_group("Header Files\\aws\\testing\\mocks\\aws\\client" FILES ${AWS_TESTING_CLIENT_MOCKS_HEADERS})
+        source_group("Header Files\\aws\\testing\\mocks\\monitoring" FILES ${AWS_TESTING_MONITORING_MOCKS_HEADERS})
         source_group("Source Files" FILES ${AWS_TESTING_SOURCE})
         source_group("Source Files\\external" FILES ${AWS_TESTING_EXTERNAL_SOURCE})
         source_group("Source Files\\platform\\windows" FILES ${TestingResources_PLATFORM_SRC})
@@ -133,5 +125,6 @@ install (FILES ${AWS_TESTING_AUTH_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY
 install (FILES ${AWS_TESTING_CLIENT_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/aws/client)
 install (FILES ${AWS_TESTING_EVENT_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/event)
 install (FILES ${AWS_TESTING_HTTP_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/http)
- 
+install (FILES ${AWS_TESTING_MONITORING_MOCKS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/testing/mocks/monitoring)
+
 do_packaging()

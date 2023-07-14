@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about where and how you want to store the results of an
-   * processing job.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration for uploading output data to Amazon S3 from the processing
+   * container.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingS3Output">AWS
    * API Reference</a></p>
    */
@@ -99,58 +89,66 @@ namespace Model
 
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline const Aws::String& GetLocalPath() const{ return m_localPath; }
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline ProcessingS3Output& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline ProcessingS3Output& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
 
     /**
-     * <p>The local path to the Amazon S3 bucket where you want Amazon SageMaker to
-     * save the results of an processing job. <code>LocalPath</code> is an absolute
-     * path to the input data.</p>
+     * <p>The local path of a directory where you want Amazon SageMaker to upload its
+     * contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory
+     * containing output files. This directory will be created by the platform and
+     * exist when your container's entrypoint is invoked.</p>
      */
     inline ProcessingS3Output& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
 

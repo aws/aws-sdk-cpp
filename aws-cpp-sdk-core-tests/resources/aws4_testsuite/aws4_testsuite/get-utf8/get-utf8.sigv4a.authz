@@ -1,0 +1,1 @@
+AWS4-ECDSA-P256-SHA256 Credential=AKIDEXAMPLE/20150830/service/aws4_request, SignedHeaders=host;x-amz-date;x-amz-region-set, Signature=30460221009866da47ba3ea2ddfb60a606e37ec5cbcdb655b314c9a41b670898bff267aafc022100da6897c62c5d85149d786b68627329c3c6a00cc7e24ce50529b9f9a5eeab4cb1

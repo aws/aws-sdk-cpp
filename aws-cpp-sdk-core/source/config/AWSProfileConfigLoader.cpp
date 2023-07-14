@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
@@ -22,6 +12,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <fstream>
+#include <random>
 
 namespace Aws
 {
@@ -31,6 +22,10 @@ namespace Aws
         using namespace Aws::Auth;
 
         static const char* const CONFIG_LOADER_TAG = "Aws::Config::AWSProfileConfigLoader";
+        static const char* const INTERNAL_EXCEPTION_PHRASE = "InternalServiceException";
+        static const int64_t FIVE_MINUTE_MILLIS = 60000 * 5;
+        static const int64_t TEN_MINUTE_MILLIS = 60000 * 10;
+
         #ifdef _MSC_VER
             // VS2015 compiler's bug, warning s_CoreErrorsMapper: symbol will be dynamically initialized (implementation limitation)
             AWS_SUPPRESS_WARNING(4592,
@@ -77,11 +72,16 @@ namespace Aws
         static const char ACCESS_KEY_ID_KEY[]                = "aws_access_key_id";
         static const char SECRET_KEY_KEY[]                   = "aws_secret_access_key";
         static const char SESSION_TOKEN_KEY[]                = "aws_session_token";
+        static const char SSO_START_URL_KEY[]                = "sso_start_url";
+        static const char SSO_REGION_KEY[]                   = "sso_region";
+        static const char SSO_ACCOUNT_ID_KEY[]               = "sso_account_id";
+        static const char SSO_ROLE_NAME_KEY[]                = "sso_role_name";
         static const char ROLE_ARN_KEY[]                     = "role_arn";
         static const char EXTERNAL_ID_KEY[]                  = "external_id";
         static const char CREDENTIAL_PROCESS_COMMAND[]       = "credential_process";
         static const char SOURCE_PROFILE_KEY[]               = "source_profile";
         static const char PROFILE_PREFIX[]                   = "profile ";
+        static const char DEFAULTS_MODE[]                    = "defaults_mode";
         static const char EQ                                 = '=';
         static const char LEFT_BRACKET                       = '[';
         static const char RIGHT_BRACKET                      = ']';
@@ -194,6 +194,33 @@ namespace Aws
                         profile.SetCredentials(Aws::Auth::AWSCredentials(accessKey, secretKey, sessionToken));
                     }
 
+                    auto ssoStartUrlIter = m_profileKeyValuePairs.find(SSO_START_URL_KEY);
+                    auto ssoRegionIter = m_profileKeyValuePairs.find(SSO_REGION_KEY);
+                    auto ssoRoleNameIter = m_profileKeyValuePairs.find(SSO_ROLE_NAME_KEY);
+                    auto ssoAccountIdIter = m_profileKeyValuePairs.find(SSO_ACCOUNT_ID_KEY);
+                    if (ssoStartUrlIter != m_profileKeyValuePairs.end()
+                        || ssoRegionIter != m_profileKeyValuePairs.end()
+                        || ssoRoleNameIter != m_profileKeyValuePairs.end()
+                        || ssoAccountIdIter != m_profileKeyValuePairs.end())
+                    {
+                        if (ssoStartUrlIter != m_profileKeyValuePairs.end()
+                            && ssoRegionIter != m_profileKeyValuePairs.end()
+                            && ssoRoleNameIter != m_profileKeyValuePairs.end()
+                            && ssoAccountIdIter != m_profileKeyValuePairs.end())
+                        {
+                            AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found sso_start_url " << ssoStartUrlIter->second);
+                            profile.SetSsoStartUrl(ssoStartUrlIter->second);
+                            AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found sso_region " << ssoRegionIter->second);
+                            profile.SetSsoRegion(ssoRegionIter->second);
+                            AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found sso_account_id " << ssoAccountIdIter->second);
+                            profile.SetSsoAccountId(ssoAccountIdIter->second);
+                            AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found sso_role_name " << ssoRoleNameIter->second);
+                            profile.SetSsoRoleName(ssoRoleNameIter->second);
+                        } else {
+                            AWS_LOGSTREAM_ERROR(PARSER_TAG, "invalid configuration for sso profile " << profile.GetName());
+                        }
+                    }
+
                     auto assumeRoleArnIter = m_profileKeyValuePairs.find(ROLE_ARN_KEY);
                     if (assumeRoleArnIter != m_profileKeyValuePairs.end())
                     {
@@ -222,6 +249,13 @@ namespace Aws
                         profile.SetCredentialProcess(credentialProcessIter->second);
                     }
                     profile.SetAllKeyValPairs(m_profileKeyValuePairs);
+
+                    auto defaultsModeIter = m_profileKeyValuePairs.find(DEFAULTS_MODE);
+                    if (defaultsModeIter != m_profileKeyValuePairs.end())
+                    {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found defaults mode " << defaultsModeIter->second);
+                        profile.SetDefaultsMode(defaultsModeIter->second);
+                    }
 
                     m_foundProfiles[profile.GetName()] = std::move(profile);
                     m_currentWorkingProfile.clear();
@@ -329,12 +363,28 @@ namespace Aws
         static const char* const EC2_INSTANCE_PROFILE_LOG_TAG = "Aws::Config::EC2InstanceProfileConfigLoader";
 
         EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client)
-            : m_ec2metadataClient(client == nullptr ? Aws::MakeShared<Aws::Internal::EC2MetadataClient>(EC2_INSTANCE_PROFILE_LOG_TAG) : client)
         {
+            if(client == nullptr)
+            {
+                Aws::Internal::InitEC2MetadataClient();
+                m_ec2metadataClient = Aws::Internal::GetEC2MetadataClient();
+            }
+            else
+            {
+                m_ec2metadataClient = client;
+            }
         }
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {
+            // re-use old credentials until we need to call IMDS again.
+            if (DateTime::Now().Millis() < this->credentialsValidUntilMillis) {
+                AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
+                                    "Skipping IMDS call until " << this->credentialsValidUntilMillis);
+                return true;
+            }
+            this->credentialsValidUntilMillis = DateTime::Now().Millis();
+
             auto credentialsStr = m_ec2metadataClient->GetDefaultCredentialsSecurely();
             if(credentialsStr.empty()) return false;
 
@@ -345,11 +395,27 @@ namespace Aws
                         "Failed to parse output from EC2MetadataService.");
                 return false;
             }
+
             const char* accessKeyId = "AccessKeyId";
             const char* secretAccessKey = "SecretAccessKey";
+            const char* expiration = "Expiration";
+            const char* code = "Code";
             Aws::String accessKey, secretKey, token;
 
             auto credentialsView = credentialsDoc.View();
+            DateTime expirationTime(credentialsView.GetString(expiration), Aws::Utils::DateFormat::ISO_8601);
+            // re-use old credentials and not block if the IMDS call failed or if the lastest credential is in the past
+            if (expirationTime.WasParseSuccessful() && DateTime::Now() > expirationTime) {
+                AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
+                                    "Expiration Time of Credentials in the past, refusing to update credentials");
+                this->credentialsValidUntilMillis = DateTime::Now().Millis() + calculateRetryTime();
+                return true;
+            } else if (credentialsView.GetString(code) == INTERNAL_EXCEPTION_PHRASE) {
+                AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG,
+                                    "IMDS call failed, refusing to update credentials");
+                this->credentialsValidUntilMillis = DateTime::Now().Millis() + calculateRetryTime();
+                return true;
+            }
             accessKey = credentialsView.GetString(accessKeyId);
             AWS_LOGSTREAM_INFO(EC2_INSTANCE_PROFILE_LOG_TAG,
                     "Successfully pulled credentials from metadata service with access key " << accessKey);
@@ -367,6 +433,13 @@ namespace Aws
             m_profiles[INSTANCE_PROFILE_KEY] = profile;
 
             return true;
+        }
+
+        int64_t EC2InstanceProfileConfigLoader::calculateRetryTime() const {
+            std::random_device rd;
+            std::mt19937_64 gen(rd());
+            std::uniform_int_distribution<int64_t> dist(FIVE_MINUTE_MILLIS, TEN_MINUTE_MILLIS);
+            return dist(gen);
         }
 
         ConfigAndCredentialsCacheManager::ConfigAndCredentialsCacheManager() :
@@ -443,6 +516,12 @@ namespace Aws
                 return {};
             }
             return iter->second;
+        }
+
+        Aws::Map<Aws::String, Aws::Config::Profile> ConfigAndCredentialsCacheManager::GetCredentialsProfiles() const
+        {
+            Aws::Utils::Threading::ReaderLockGuard guard(m_credentialsLock);
+            return m_credentialsFileLoader.GetProfiles();
         }
 
         Aws::Auth::AWSCredentials ConfigAndCredentialsCacheManager::GetCredentials(const Aws::String& profileName) const
@@ -527,6 +606,12 @@ namespace Aws
         {
             assert(s_configManager);
             return s_configManager->GetCredentialsProfile(profileName);
+        }
+
+        Aws::Map<Aws::String, Aws::Config::Profile> GetCachedCredentialsProfiles()
+        {
+            assert(s_configManager);
+            return s_configManager->GetCredentialsProfiles();
         }
 
         Aws::Auth::AWSCredentials GetCachedCredentials(const Aws::String &profileName)

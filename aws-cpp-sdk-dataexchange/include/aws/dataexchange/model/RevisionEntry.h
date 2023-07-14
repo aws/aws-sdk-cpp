@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
@@ -376,6 +366,107 @@ namespace Model
      */
     inline RevisionEntry& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline const Aws::String& GetRevocationComment() const{ return m_revocationComment; }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline bool RevocationCommentHasBeenSet() const { return m_revocationCommentHasBeenSet; }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline void SetRevocationComment(const Aws::String& value) { m_revocationCommentHasBeenSet = true; m_revocationComment = value; }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline void SetRevocationComment(Aws::String&& value) { m_revocationCommentHasBeenSet = true; m_revocationComment = std::move(value); }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline void SetRevocationComment(const char* value) { m_revocationCommentHasBeenSet = true; m_revocationComment.assign(value); }
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline RevisionEntry& WithRevocationComment(const Aws::String& value) { SetRevocationComment(value); return *this;}
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline RevisionEntry& WithRevocationComment(Aws::String&& value) { SetRevocationComment(std::move(value)); return *this;}
+
+    /**
+     * <p>A required comment to inform subscribers of the reason their access to the
+     * revision was revoked.</p>
+     */
+    inline RevisionEntry& WithRevocationComment(const char* value) { SetRevocationComment(value); return *this;}
+
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline bool GetRevoked() const{ return m_revoked; }
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline bool RevokedHasBeenSet() const { return m_revokedHasBeenSet; }
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline void SetRevoked(bool value) { m_revokedHasBeenSet = true; m_revoked = value; }
+
+    /**
+     * <p>A status indicating that subscribers' access to the revision was revoked.</p>
+     */
+    inline RevisionEntry& WithRevoked(bool value) { SetRevoked(value); return *this;}
+
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline bool RevokedAtHasBeenSet() const { return m_revokedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::move(value); }
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline RevisionEntry& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
+
+    /**
+     * <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
+     */
+    inline RevisionEntry& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -401,6 +492,15 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
+
+    Aws::String m_revocationComment;
+    bool m_revocationCommentHasBeenSet;
+
+    bool m_revoked;
+    bool m_revokedHasBeenSet;
+
+    Aws::Utils::DateTime m_revokedAt;
+    bool m_revokedAtHasBeenSet;
   };
 
 } // namespace Model

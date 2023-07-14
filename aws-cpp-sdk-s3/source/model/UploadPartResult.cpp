@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/UploadPartResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -28,12 +18,14 @@ using namespace Aws;
 
 UploadPartResult::UploadPartResult() : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
 UploadPartResult::UploadPartResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
@@ -61,6 +53,30 @@ UploadPartResult& UploadPartResult::operator =(const Aws::AmazonWebServiceResult
     m_eTag = eTagIter->second;
   }
 
+  const auto& checksumCRC32Iter = headers.find("x-amz-checksum-crc32");
+  if(checksumCRC32Iter != headers.end())
+  {
+    m_checksumCRC32 = checksumCRC32Iter->second;
+  }
+
+  const auto& checksumCRC32CIter = headers.find("x-amz-checksum-crc32c");
+  if(checksumCRC32CIter != headers.end())
+  {
+    m_checksumCRC32C = checksumCRC32CIter->second;
+  }
+
+  const auto& checksumSHA1Iter = headers.find("x-amz-checksum-sha1");
+  if(checksumSHA1Iter != headers.end())
+  {
+    m_checksumSHA1 = checksumSHA1Iter->second;
+  }
+
+  const auto& checksumSHA256Iter = headers.find("x-amz-checksum-sha256");
+  if(checksumSHA256Iter != headers.end())
+  {
+    m_checksumSHA256 = checksumSHA256Iter->second;
+  }
+
   const auto& sSECustomerAlgorithmIter = headers.find("x-amz-server-side-encryption-customer-algorithm");
   if(sSECustomerAlgorithmIter != headers.end())
   {
@@ -77,6 +93,12 @@ UploadPartResult& UploadPartResult::operator =(const Aws::AmazonWebServiceResult
   if(sSEKMSKeyIdIter != headers.end())
   {
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
+  }
+
+  const auto& bucketKeyEnabledIter = headers.find("x-amz-server-side-encryption-bucket-key-enabled");
+  if(bucketKeyEnabledIter != headers.end())
+  {
+     m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
   }
 
   const auto& requestChargedIter = headers.find("x-amz-request-charged");

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -106,58 +96,58 @@ namespace Model
 
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline CreateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline CreateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
+     * value later. </p>
      */
     inline CreateScriptRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -238,165 +228,173 @@ namespace Model
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline CreateScriptRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline CreateScriptRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of labels to assign to the new script resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

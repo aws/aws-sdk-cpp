@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudfront/model/CacheBehavior.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,46 +23,44 @@ namespace Model
 CacheBehavior::CacheBehavior() : 
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
-    m_forwardedValuesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_trustedKeyGroupsHasBeenSet(false),
     m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
-    m_minTTL(0),
-    m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
     m_smoothStreamingHasBeenSet(false),
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_maxTTL(0),
-    m_maxTTLHasBeenSet(false),
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
-    m_fieldLevelEncryptionIdHasBeenSet(false)
+    m_functionAssociationsHasBeenSet(false),
+    m_fieldLevelEncryptionIdHasBeenSet(false),
+    m_realtimeLogConfigArnHasBeenSet(false),
+    m_cachePolicyIdHasBeenSet(false),
+    m_originRequestPolicyIdHasBeenSet(false),
+    m_responseHeadersPolicyIdHasBeenSet(false)
 {
 }
 
 CacheBehavior::CacheBehavior(const XmlNode& xmlNode) : 
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
-    m_forwardedValuesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
+    m_trustedKeyGroupsHasBeenSet(false),
     m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
-    m_minTTL(0),
-    m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
     m_smoothStreamingHasBeenSet(false),
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_maxTTL(0),
-    m_maxTTLHasBeenSet(false),
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
-    m_fieldLevelEncryptionIdHasBeenSet(false)
+    m_functionAssociationsHasBeenSet(false),
+    m_fieldLevelEncryptionIdHasBeenSet(false),
+    m_realtimeLogConfigArnHasBeenSet(false),
+    m_cachePolicyIdHasBeenSet(false),
+    m_originRequestPolicyIdHasBeenSet(false),
+    m_responseHeadersPolicyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,29 +83,23 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
       m_targetOriginId = Aws::Utils::Xml::DecodeEscapedXmlText(targetOriginIdNode.GetText());
       m_targetOriginIdHasBeenSet = true;
     }
-    XmlNode forwardedValuesNode = resultNode.FirstChild("ForwardedValues");
-    if(!forwardedValuesNode.IsNull())
-    {
-      m_forwardedValues = forwardedValuesNode;
-      m_forwardedValuesHasBeenSet = true;
-    }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
     if(!trustedSignersNode.IsNull())
     {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
     }
+    XmlNode trustedKeyGroupsNode = resultNode.FirstChild("TrustedKeyGroups");
+    if(!trustedKeyGroupsNode.IsNull())
+    {
+      m_trustedKeyGroups = trustedKeyGroupsNode;
+      m_trustedKeyGroupsHasBeenSet = true;
+    }
     XmlNode viewerProtocolPolicyNode = resultNode.FirstChild("ViewerProtocolPolicy");
     if(!viewerProtocolPolicyNode.IsNull())
     {
       m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(viewerProtocolPolicyNode.GetText()).c_str()).c_str());
       m_viewerProtocolPolicyHasBeenSet = true;
-    }
-    XmlNode minTTLNode = resultNode.FirstChild("MinTTL");
-    if(!minTTLNode.IsNull())
-    {
-      m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTTLNode.GetText()).c_str()).c_str());
-      m_minTTLHasBeenSet = true;
     }
     XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethods");
     if(!allowedMethodsNode.IsNull())
@@ -131,18 +113,6 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
       m_smoothStreaming = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(smoothStreamingNode.GetText()).c_str()).c_str());
       m_smoothStreamingHasBeenSet = true;
     }
-    XmlNode defaultTTLNode = resultNode.FirstChild("DefaultTTL");
-    if(!defaultTTLNode.IsNull())
-    {
-      m_defaultTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTTLNode.GetText()).c_str()).c_str());
-      m_defaultTTLHasBeenSet = true;
-    }
-    XmlNode maxTTLNode = resultNode.FirstChild("MaxTTL");
-    if(!maxTTLNode.IsNull())
-    {
-      m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxTTLNode.GetText()).c_str()).c_str());
-      m_maxTTLHasBeenSet = true;
-    }
     XmlNode compressNode = resultNode.FirstChild("Compress");
     if(!compressNode.IsNull())
     {
@@ -155,11 +125,41 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
       m_lambdaFunctionAssociations = lambdaFunctionAssociationsNode;
       m_lambdaFunctionAssociationsHasBeenSet = true;
     }
+    XmlNode functionAssociationsNode = resultNode.FirstChild("FunctionAssociations");
+    if(!functionAssociationsNode.IsNull())
+    {
+      m_functionAssociations = functionAssociationsNode;
+      m_functionAssociationsHasBeenSet = true;
+    }
     XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
     if(!fieldLevelEncryptionIdNode.IsNull())
     {
       m_fieldLevelEncryptionId = Aws::Utils::Xml::DecodeEscapedXmlText(fieldLevelEncryptionIdNode.GetText());
       m_fieldLevelEncryptionIdHasBeenSet = true;
+    }
+    XmlNode realtimeLogConfigArnNode = resultNode.FirstChild("RealtimeLogConfigArn");
+    if(!realtimeLogConfigArnNode.IsNull())
+    {
+      m_realtimeLogConfigArn = Aws::Utils::Xml::DecodeEscapedXmlText(realtimeLogConfigArnNode.GetText());
+      m_realtimeLogConfigArnHasBeenSet = true;
+    }
+    XmlNode cachePolicyIdNode = resultNode.FirstChild("CachePolicyId");
+    if(!cachePolicyIdNode.IsNull())
+    {
+      m_cachePolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(cachePolicyIdNode.GetText());
+      m_cachePolicyIdHasBeenSet = true;
+    }
+    XmlNode originRequestPolicyIdNode = resultNode.FirstChild("OriginRequestPolicyId");
+    if(!originRequestPolicyIdNode.IsNull())
+    {
+      m_originRequestPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(originRequestPolicyIdNode.GetText());
+      m_originRequestPolicyIdHasBeenSet = true;
+    }
+    XmlNode responseHeadersPolicyIdNode = resultNode.FirstChild("ResponseHeadersPolicyId");
+    if(!responseHeadersPolicyIdNode.IsNull())
+    {
+      m_responseHeadersPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(responseHeadersPolicyIdNode.GetText());
+      m_responseHeadersPolicyIdHasBeenSet = true;
     }
   }
 
@@ -181,30 +181,22 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
    targetOriginIdNode.SetText(m_targetOriginId);
   }
 
-  if(m_forwardedValuesHasBeenSet)
-  {
-   XmlNode forwardedValuesNode = parentNode.CreateChildElement("ForwardedValues");
-   m_forwardedValues.AddToNode(forwardedValuesNode);
-  }
-
   if(m_trustedSignersHasBeenSet)
   {
    XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
    m_trustedSigners.AddToNode(trustedSignersNode);
   }
 
+  if(m_trustedKeyGroupsHasBeenSet)
+  {
+   XmlNode trustedKeyGroupsNode = parentNode.CreateChildElement("TrustedKeyGroups");
+   m_trustedKeyGroups.AddToNode(trustedKeyGroupsNode);
+  }
+
   if(m_viewerProtocolPolicyHasBeenSet)
   {
    XmlNode viewerProtocolPolicyNode = parentNode.CreateChildElement("ViewerProtocolPolicy");
    viewerProtocolPolicyNode.SetText(ViewerProtocolPolicyMapper::GetNameForViewerProtocolPolicy(m_viewerProtocolPolicy));
-  }
-
-  if(m_minTTLHasBeenSet)
-  {
-   XmlNode minTTLNode = parentNode.CreateChildElement("MinTTL");
-   ss << m_minTTL;
-   minTTLNode.SetText(ss.str());
-   ss.str("");
   }
 
   if(m_allowedMethodsHasBeenSet)
@@ -218,22 +210,6 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
    XmlNode smoothStreamingNode = parentNode.CreateChildElement("SmoothStreaming");
    ss << std::boolalpha << m_smoothStreaming;
    smoothStreamingNode.SetText(ss.str());
-   ss.str("");
-  }
-
-  if(m_defaultTTLHasBeenSet)
-  {
-   XmlNode defaultTTLNode = parentNode.CreateChildElement("DefaultTTL");
-   ss << m_defaultTTL;
-   defaultTTLNode.SetText(ss.str());
-   ss.str("");
-  }
-
-  if(m_maxTTLHasBeenSet)
-  {
-   XmlNode maxTTLNode = parentNode.CreateChildElement("MaxTTL");
-   ss << m_maxTTL;
-   maxTTLNode.SetText(ss.str());
    ss.str("");
   }
 
@@ -251,10 +227,40 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
    m_lambdaFunctionAssociations.AddToNode(lambdaFunctionAssociationsNode);
   }
 
+  if(m_functionAssociationsHasBeenSet)
+  {
+   XmlNode functionAssociationsNode = parentNode.CreateChildElement("FunctionAssociations");
+   m_functionAssociations.AddToNode(functionAssociationsNode);
+  }
+
   if(m_fieldLevelEncryptionIdHasBeenSet)
   {
    XmlNode fieldLevelEncryptionIdNode = parentNode.CreateChildElement("FieldLevelEncryptionId");
    fieldLevelEncryptionIdNode.SetText(m_fieldLevelEncryptionId);
+  }
+
+  if(m_realtimeLogConfigArnHasBeenSet)
+  {
+   XmlNode realtimeLogConfigArnNode = parentNode.CreateChildElement("RealtimeLogConfigArn");
+   realtimeLogConfigArnNode.SetText(m_realtimeLogConfigArn);
+  }
+
+  if(m_cachePolicyIdHasBeenSet)
+  {
+   XmlNode cachePolicyIdNode = parentNode.CreateChildElement("CachePolicyId");
+   cachePolicyIdNode.SetText(m_cachePolicyId);
+  }
+
+  if(m_originRequestPolicyIdHasBeenSet)
+  {
+   XmlNode originRequestPolicyIdNode = parentNode.CreateChildElement("OriginRequestPolicyId");
+   originRequestPolicyIdNode.SetText(m_originRequestPolicyId);
+  }
+
+  if(m_responseHeadersPolicyIdHasBeenSet)
+  {
+   XmlNode responseHeadersPolicyIdNode = parentNode.CreateChildElement("ResponseHeadersPolicyId");
+   responseHeadersPolicyIdNode.SetText(m_responseHeadersPolicyId);
   }
 
 }

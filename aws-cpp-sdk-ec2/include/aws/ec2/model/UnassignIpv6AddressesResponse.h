@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -121,6 +111,47 @@ namespace Model
     inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Addresses(const char* value) { m_unassignedIpv6Addresses.push_back(value); return *this; }
 
 
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUnassignedIpv6Prefixes() const{ return m_unassignedIpv6Prefixes; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline void SetUnassignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_unassignedIpv6Prefixes = value; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline void SetUnassignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_unassignedIpv6Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& WithUnassignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetUnassignedIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& WithUnassignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetUnassignedIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Prefixes(const Aws::String& value) { m_unassignedIpv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Prefixes(Aws::String&& value) { m_unassignedIpv6Prefixes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesResponse& AddUnassignedIpv6Prefixes(const char* value) { m_unassignedIpv6Prefixes.push_back(value); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -141,6 +172,8 @@ namespace Model
     Aws::String m_networkInterfaceId;
 
     Aws::Vector<Aws::String> m_unassignedIpv6Addresses;
+
+    Aws::Vector<Aws::String> m_unassignedIpv6Prefixes;
 
     ResponseMetadata m_responseMetadata;
   };

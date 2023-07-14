@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -94,58 +84,90 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -340,48 +362,48 @@ namespace Model
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline const ReleaseStatusValues& GetReleaseStatus() const{ return m_releaseStatus; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline bool ReleaseStatusHasBeenSet() const { return m_releaseStatusHasBeenSet; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline void SetReleaseStatus(const ReleaseStatusValues& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = value; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline void SetReleaseStatus(ReleaseStatusValues&& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = std::move(value); }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline OrderableReplicationInstance& WithReleaseStatus(const ReleaseStatusValues& value) { SetReleaseStatus(value); return *this;}
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports the
-     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p>  <p>DMS supports the <code>ReleaseStatus</code>
+     * parameter in versions 3.1.4 and later.</p> 
      */
     inline OrderableReplicationInstance& WithReleaseStatus(ReleaseStatusValues&& value) { SetReleaseStatus(std::move(value)); return *this;}
 

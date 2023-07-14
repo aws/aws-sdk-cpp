@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -45,42 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline DescribeModelPackageRequest& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline DescribeModelPackageRequest& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model package to describe.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+     * <p>When you specify a name, the name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline DescribeModelPackageRequest& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
 

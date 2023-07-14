@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/directconnect/model/BGPPeer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,8 @@ BGPPeer::BGPPeer() :
     m_bgpPeerStateHasBeenSet(false),
     m_bgpStatus(BGPStatus::NOT_SET),
     m_bgpStatusHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false)
 {
 }
 
@@ -58,7 +49,8 @@ BGPPeer::BGPPeer(JsonView jsonValue) :
     m_bgpPeerStateHasBeenSet(false),
     m_bgpStatus(BGPStatus::NOT_SET),
     m_bgpStatusHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +120,13 @@ BGPPeer& BGPPeer::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +182,12 @@ JsonValue BGPPeer::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
 
   }
 

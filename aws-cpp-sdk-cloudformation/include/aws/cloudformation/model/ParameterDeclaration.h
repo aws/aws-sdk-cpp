@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -51,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
-     * <p>The name that is associated with the parameter.</p>
+     * <p>The name that's associated with the parameter.</p>
      */
     inline ParameterDeclaration& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
 
@@ -175,97 +165,97 @@ namespace Model
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline bool GetNoEcho() const{ return m_noEcho; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Amazon Web Services Management Console.</p>
      */
     inline ParameterDeclaration& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
 
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline ParameterDeclaration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline ParameterDeclaration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description that is associate with the parameter.</p>
+     * <p>The description that's associate with the parameter.</p>
      */
     inline ParameterDeclaration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline const ParameterConstraints& GetParameterConstraints() const{ return m_parameterConstraints; }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline bool ParameterConstraintsHasBeenSet() const { return m_parameterConstraintsHasBeenSet; }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline void SetParameterConstraints(const ParameterConstraints& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = value; }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline void SetParameterConstraints(ParameterConstraints&& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = std::move(value); }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline ParameterDeclaration& WithParameterConstraints(const ParameterConstraints& value) { SetParameterConstraints(value); return *this;}
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline ParameterDeclaration& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(std::move(value)); return *this;}
 

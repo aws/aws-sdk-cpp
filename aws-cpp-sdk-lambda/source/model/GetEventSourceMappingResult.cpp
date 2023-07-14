@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,22 +17,26 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEventSourceMappingResult::GetEventSourceMappingResult() : 
+    m_startingPosition(EventSourcePosition::NOT_SET),
     m_batchSize(0),
     m_maximumBatchingWindowInSeconds(0),
     m_parallelizationFactor(0),
     m_maximumRecordAgeInSeconds(0),
     m_bisectBatchOnFunctionError(false),
-    m_maximumRetryAttempts(0)
+    m_maximumRetryAttempts(0),
+    m_tumblingWindowInSeconds(0)
 {
 }
 
 GetEventSourceMappingResult::GetEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_startingPosition(EventSourcePosition::NOT_SET),
     m_batchSize(0),
     m_maximumBatchingWindowInSeconds(0),
     m_parallelizationFactor(0),
     m_maximumRecordAgeInSeconds(0),
     m_bisectBatchOnFunctionError(false),
-    m_maximumRetryAttempts(0)
+    m_maximumRetryAttempts(0),
+    m_tumblingWindowInSeconds(0)
 {
   *this = result;
 }
@@ -53,6 +47,18 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("UUID"))
   {
     m_uUID = jsonValue.GetString("UUID");
+
+  }
+
+  if(jsonValue.ValueExists("StartingPosition"))
+  {
+    m_startingPosition = EventSourcePositionMapper::GetEventSourcePositionForName(jsonValue.GetString("StartingPosition"));
+
+  }
+
+  if(jsonValue.ValueExists("StartingPositionTimestamp"))
+  {
+    m_startingPositionTimestamp = jsonValue.GetDouble("StartingPositionTimestamp");
 
   }
 
@@ -77,6 +83,12 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("EventSourceArn"))
   {
     m_eventSourceArn = jsonValue.GetString("EventSourceArn");
+
+  }
+
+  if(jsonValue.ValueExists("FilterCriteria"))
+  {
+    m_filterCriteria = jsonValue.GetObject("FilterCriteria");
 
   }
 
@@ -116,6 +128,39 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("Topics"))
+  {
+    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
+    {
+      m_topics.push_back(topicsJsonList[topicsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("Queues"))
+  {
+    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
+    {
+      m_queues.push_back(queuesJsonList[queuesIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("SourceAccessConfigurations"))
+  {
+    Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
+    for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+    {
+      m_sourceAccessConfigurations.push_back(sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("SelfManagedEventSource"))
+  {
+    m_selfManagedEventSource = jsonValue.GetObject("SelfManagedEventSource");
+
+  }
+
   if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
   {
     m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");
@@ -132,6 +177,21 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   {
     m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
 
+  }
+
+  if(jsonValue.ValueExists("TumblingWindowInSeconds"))
+  {
+    m_tumblingWindowInSeconds = jsonValue.GetInteger("TumblingWindowInSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("FunctionResponseTypes"))
+  {
+    Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
+    for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+    {
+      m_functionResponseTypes.push_back(FunctionResponseTypeMapper::GetFunctionResponseTypeForName(functionResponseTypesJsonList[functionResponseTypesIndex].AsString()));
+    }
   }
 
 

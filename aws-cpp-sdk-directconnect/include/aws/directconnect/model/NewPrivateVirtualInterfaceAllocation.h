@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -52,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline bool VirtualInterfaceNameHasBeenSet() const { return m_virtualInterfaceNameHasBeenSet; }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = value; }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = std::move(value); }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName.assign(value); }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline NewPrivateVirtualInterfaceAllocation& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline NewPrivateVirtualInterfaceAllocation& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>The name of the virtual interface assigned by the customer network. The name
+     * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
+     * and a hyphen (-).</p>
      */
     inline NewPrivateVirtualInterfaceAllocation& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 

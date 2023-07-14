@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/InputType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,9 @@ namespace Aws
         static const int URL_PULL_HASH = HashingUtils::HashString("URL_PULL");
         static const int MP4_FILE_HASH = HashingUtils::HashString("MP4_FILE");
         static const int MEDIACONNECT_HASH = HashingUtils::HashString("MEDIACONNECT");
+        static const int INPUT_DEVICE_HASH = HashingUtils::HashString("INPUT_DEVICE");
+        static const int AWS_CDI_HASH = HashingUtils::HashString("AWS_CDI");
+        static const int TS_FILE_HASH = HashingUtils::HashString("TS_FILE");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -70,6 +63,18 @@ namespace Aws
           {
             return InputType::MEDIACONNECT;
           }
+          else if (hashCode == INPUT_DEVICE_HASH)
+          {
+            return InputType::INPUT_DEVICE;
+          }
+          else if (hashCode == AWS_CDI_HASH)
+          {
+            return InputType::AWS_CDI;
+          }
+          else if (hashCode == TS_FILE_HASH)
+          {
+            return InputType::TS_FILE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,12 @@ namespace Aws
             return "MP4_FILE";
           case InputType::MEDIACONNECT:
             return "MEDIACONNECT";
+          case InputType::INPUT_DEVICE:
+            return "INPUT_DEVICE";
+          case InputType::AWS_CDI:
+            return "AWS_CDI";
+          case InputType::TS_FILE:
+            return "TS_FILE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

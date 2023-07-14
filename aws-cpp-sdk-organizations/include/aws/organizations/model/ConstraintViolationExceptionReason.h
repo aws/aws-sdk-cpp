@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -52,7 +42,13 @@ namespace Model
     MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED,
     CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR,
     CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG,
-    DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE
+    DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE,
+    MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE,
+    CANNOT_CLOSE_MANAGEMENT_ACCOUNT,
+    CLOSE_ACCOUNT_QUOTA_EXCEEDED,
+    CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED,
+    SERVICE_ACCESS_NOT_ENABLED,
+    INVALID_PAYMENT_INSTRUMENT
   };
 
 namespace ConstraintViolationExceptionReasonMapper

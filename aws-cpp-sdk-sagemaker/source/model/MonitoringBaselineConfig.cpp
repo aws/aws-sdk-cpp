@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/MonitoringBaselineConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 MonitoringBaselineConfig::MonitoringBaselineConfig() : 
+    m_baseliningJobNameHasBeenSet(false),
     m_constraintsResourceHasBeenSet(false),
     m_statisticsResourceHasBeenSet(false)
 {
 }
 
 MonitoringBaselineConfig::MonitoringBaselineConfig(JsonView jsonValue) : 
+    m_baseliningJobNameHasBeenSet(false),
     m_constraintsResourceHasBeenSet(false),
     m_statisticsResourceHasBeenSet(false)
 {
@@ -43,6 +35,13 @@ MonitoringBaselineConfig::MonitoringBaselineConfig(JsonView jsonValue) :
 
 MonitoringBaselineConfig& MonitoringBaselineConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("BaseliningJobName"))
+  {
+    m_baseliningJobName = jsonValue.GetString("BaseliningJobName");
+
+    m_baseliningJobNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ConstraintsResource"))
   {
     m_constraintsResource = jsonValue.GetObject("ConstraintsResource");
@@ -63,6 +62,12 @@ MonitoringBaselineConfig& MonitoringBaselineConfig::operator =(JsonView jsonValu
 JsonValue MonitoringBaselineConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_baseliningJobNameHasBeenSet)
+  {
+   payload.WithString("BaseliningJobName", m_baseliningJobName);
+
+  }
 
   if(m_constraintsResourceHasBeenSet)
   {

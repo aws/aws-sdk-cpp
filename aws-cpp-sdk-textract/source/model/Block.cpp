@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/textract/model/Block.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,8 @@ Block::Block() :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_textType(TextType::NOT_SET),
+    m_textTypeHasBeenSet(false),
     m_rowIndex(0),
     m_rowIndexHasBeenSet(false),
     m_columnIndex(0),
@@ -49,7 +41,8 @@ Block::Block() :
     m_selectionStatus(SelectionStatus::NOT_SET),
     m_selectionStatusHasBeenSet(false),
     m_page(0),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_queryHasBeenSet(false)
 {
 }
 
@@ -59,6 +52,8 @@ Block::Block(JsonView jsonValue) :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_textType(TextType::NOT_SET),
+    m_textTypeHasBeenSet(false),
     m_rowIndex(0),
     m_rowIndexHasBeenSet(false),
     m_columnIndex(0),
@@ -74,7 +69,8 @@ Block::Block(JsonView jsonValue) :
     m_selectionStatus(SelectionStatus::NOT_SET),
     m_selectionStatusHasBeenSet(false),
     m_page(0),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_queryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +96,13 @@ Block& Block::operator =(JsonView jsonValue)
     m_text = jsonValue.GetString("Text");
 
     m_textHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TextType"))
+  {
+    m_textType = TextTypeMapper::GetTextTypeForName(jsonValue.GetString("TextType"));
+
+    m_textTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RowIndex"))
@@ -178,6 +181,13 @@ Block& Block::operator =(JsonView jsonValue)
     m_pageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Query"))
+  {
+    m_query = jsonValue.GetObject("Query");
+
+    m_queryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +210,11 @@ JsonValue Block::Jsonize() const
   {
    payload.WithString("Text", m_text);
 
+  }
+
+  if(m_textTypeHasBeenSet)
+  {
+   payload.WithString("TextType", TextTypeMapper::GetNameForTextType(m_textType));
   }
 
   if(m_rowIndexHasBeenSet)
@@ -268,6 +283,12 @@ JsonValue Block::Jsonize() const
   if(m_pageHasBeenSet)
   {
    payload.WithInteger("Page", m_page);
+
+  }
+
+  if(m_queryHasBeenSet)
+  {
+   payload.WithObject("Query", m_query.Jsonize());
 
   }
 

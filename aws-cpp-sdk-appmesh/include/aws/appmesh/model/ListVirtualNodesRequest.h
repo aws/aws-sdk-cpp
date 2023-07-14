@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -31,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodesInput">AWS
    * API Reference</a></p>
    */
@@ -53,81 +43,49 @@ namespace Model
 
     /**
      * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
-     * paginated
-         output. When you use this parameter,
-     * <code>ListVirtualNodes</code> returns only
-            <code>limit</code>
-     * results in a single page along with a <code>nextToken</code> response
-        
-     * element. You can see the remaining results of the initial request by sending
-     * another
-            <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code> value.
-         This value can be between 1 and 100. If
-     * you don't use this
-         parameter, <code>ListVirtualNodes</code> returns up
-     * to 100 results and a
-            <code>nextToken</code> value if applicable.</p>
+     * paginated output. When you use this parameter, <code>ListVirtualNodes</code>
+     * returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of
+     * the initial request by sending another <code>ListVirtualNodes</code> request
+     * with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
-     * paginated
-         output. When you use this parameter,
-     * <code>ListVirtualNodes</code> returns only
-            <code>limit</code>
-     * results in a single page along with a <code>nextToken</code> response
-        
-     * element. You can see the remaining results of the initial request by sending
-     * another
-            <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code> value.
-         This value can be between 1 and 100. If
-     * you don't use this
-         parameter, <code>ListVirtualNodes</code> returns up
-     * to 100 results and a
-            <code>nextToken</code> value if applicable.</p>
+     * paginated output. When you use this parameter, <code>ListVirtualNodes</code>
+     * returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of
+     * the initial request by sending another <code>ListVirtualNodes</code> request
+     * with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
-     * paginated
-         output. When you use this parameter,
-     * <code>ListVirtualNodes</code> returns only
-            <code>limit</code>
-     * results in a single page along with a <code>nextToken</code> response
-        
-     * element. You can see the remaining results of the initial request by sending
-     * another
-            <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code> value.
-         This value can be between 1 and 100. If
-     * you don't use this
-         parameter, <code>ListVirtualNodes</code> returns up
-     * to 100 results and a
-            <code>nextToken</code> value if applicable.</p>
+     * paginated output. When you use this parameter, <code>ListVirtualNodes</code>
+     * returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of
+     * the initial request by sending another <code>ListVirtualNodes</code> request
+     * with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
-     * paginated
-         output. When you use this parameter,
-     * <code>ListVirtualNodes</code> returns only
-            <code>limit</code>
-     * results in a single page along with a <code>nextToken</code> response
-        
-     * element. You can see the remaining results of the initial request by sending
-     * another
-            <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code> value.
-         This value can be between 1 and 100. If
-     * you don't use this
-         parameter, <code>ListVirtualNodes</code> returns up
-     * to 100 results and a
-            <code>nextToken</code> value if applicable.</p>
+     * paginated output. When you use this parameter, <code>ListVirtualNodes</code>
+     * returns only <code>limit</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of
+     * the initial request by sending another <code>ListVirtualNodes</code> request
+     * with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListVirtualNodesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
@@ -174,179 +132,139 @@ namespace Model
 
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ListVirtualNodesRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ListVirtualNodesRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ListVirtualNodesRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
 
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline ListVirtualNodesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline ListVirtualNodesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-         
      * <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
-     * results
-         exceeded the value of that parameter. Pagination continues from
-     * the end of the previous
-         results that returned the
-     * <code>nextToken</code> value.</p>
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline ListVirtualNodesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

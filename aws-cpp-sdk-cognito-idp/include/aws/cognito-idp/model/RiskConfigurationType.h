@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -134,81 +124,81 @@ namespace Model
 
 
     /**
-     * <p>The compromised credentials risk configuration object including the
-     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     * <p>The compromised credentials risk configuration object, including the
+     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const{ return m_compromisedCredentialsRiskConfiguration; }
 
     /**
-     * <p>The compromised credentials risk configuration object including the
-     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     * <p>The compromised credentials risk configuration object, including the
+     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
 
     /**
-     * <p>The compromised credentials risk configuration object including the
-     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     * <p>The compromised credentials risk configuration object, including the
+     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline void SetCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = value; }
 
     /**
-     * <p>The compromised credentials risk configuration object including the
-     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     * <p>The compromised credentials risk configuration object, including the
+     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline void SetCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType&& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = std::move(value); }
 
     /**
-     * <p>The compromised credentials risk configuration object including the
-     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     * <p>The compromised credentials risk configuration object, including the
+     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline RiskConfigurationType& WithCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { SetCompromisedCredentialsRiskConfiguration(value); return *this;}
 
     /**
-     * <p>The compromised credentials risk configuration object including the
-     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     * <p>The compromised credentials risk configuration object, including the
+     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline RiskConfigurationType& WithCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType&& value) { SetCompromisedCredentialsRiskConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The account takeover risk configuration object including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
-     * case of an account takeover.</p>
+     * <p>The account takeover risk configuration object, including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
+     * there is an account takeover.</p>
      */
     inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
 
     /**
-     * <p>The account takeover risk configuration object including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
-     * case of an account takeover.</p>
+     * <p>The account takeover risk configuration object, including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
+     * there is an account takeover.</p>
      */
     inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
 
     /**
-     * <p>The account takeover risk configuration object including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
-     * case of an account takeover.</p>
+     * <p>The account takeover risk configuration object, including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
+     * there is an account takeover.</p>
      */
     inline void SetAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = value; }
 
     /**
-     * <p>The account takeover risk configuration object including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
-     * case of an account takeover.</p>
+     * <p>The account takeover risk configuration object, including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
+     * there is an account takeover.</p>
      */
     inline void SetAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType&& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = std::move(value); }
 
     /**
-     * <p>The account takeover risk configuration object including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
-     * case of an account takeover.</p>
+     * <p>The account takeover risk configuration object, including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
+     * there is an account takeover.</p>
      */
     inline RiskConfigurationType& WithAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { SetAccountTakeoverRiskConfiguration(value); return *this;}
 
     /**
-     * <p>The account takeover risk configuration object including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
-     * case of an account takeover.</p>
+     * <p>The account takeover risk configuration object, including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
+     * there is an account takeover.</p>
      */
     inline RiskConfigurationType& WithAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType&& value) { SetAccountTakeoverRiskConfiguration(std::move(value)); return *this;}
 

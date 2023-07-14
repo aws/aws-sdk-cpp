@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigateway/model/Integration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,7 +36,8 @@ Integration::Integration() :
     m_timeoutInMillisHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
-    m_integrationResponsesHasBeenSet(false)
+    m_integrationResponsesHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
 }
 
@@ -68,7 +59,8 @@ Integration::Integration(JsonView jsonValue) :
     m_timeoutInMillisHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
-    m_integrationResponsesHasBeenSet(false)
+    m_integrationResponsesHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -185,6 +177,13 @@ Integration& Integration::operator =(JsonView jsonValue)
     m_integrationResponsesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tlsConfig"))
+  {
+    m_tlsConfig = jsonValue.GetObject("tlsConfig");
+
+    m_tlsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +289,12 @@ JsonValue Integration::Jsonize() const
      integrationResponsesJsonMap.WithObject(integrationResponsesItem.first, integrationResponsesItem.second.Jsonize());
    }
    payload.WithObject("integrationResponses", std::move(integrationResponsesJsonMap));
+
+  }
+
+  if(m_tlsConfigHasBeenSet)
+  {
+   payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -68,51 +58,71 @@ namespace Model
 
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, that each training job is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the
+     * action.</p>
      */
     inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, that each training job is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the
+     * action.</p>
      */
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, that each training job is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the
+     * action.</p>
      */
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, that each training job is allowed to run as
+     * part of a hyperparameter tuning job. For more information, see the used by the
+     * action.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
 
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> <p>If an
+     * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
+     * processing is ended gracefully. The AutoML job identifies the best model whose
+     * training was completed and marks it as the best-performing model. Any unfinished
+     * steps of the job, such as automatic one-click Autopilot model deployment, will
+     * not be completed. </p>
      */
     inline int GetMaxAutoMLJobRuntimeInSeconds() const{ return m_maxAutoMLJobRuntimeInSeconds; }
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> <p>If an
+     * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
+     * processing is ended gracefully. The AutoML job identifies the best model whose
+     * training was completed and marks it as the best-performing model. Any unfinished
+     * steps of the job, such as automatic one-click Autopilot model deployment, will
+     * not be completed. </p>
      */
     inline bool MaxAutoMLJobRuntimeInSecondsHasBeenSet() const { return m_maxAutoMLJobRuntimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> <p>If an
+     * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
+     * processing is ended gracefully. The AutoML job identifies the best model whose
+     * training was completed and marks it as the best-performing model. Any unfinished
+     * steps of the job, such as automatic one-click Autopilot model deployment, will
+     * not be completed. </p>
      */
     inline void SetMaxAutoMLJobRuntimeInSeconds(int value) { m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true; m_maxAutoMLJobRuntimeInSeconds = value; }
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> <p>If an
+     * AutoML job exceeds the maximum runtime, the job is stopped automatically and its
+     * processing is ended gracefully. The AutoML job identifies the best model whose
+     * training was completed and marks it as the best-performing model. Any unfinished
+     * steps of the job, such as automatic one-click Autopilot model deployment, will
+     * not be completed. </p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxAutoMLJobRuntimeInSeconds(int value) { SetMaxAutoMLJobRuntimeInSeconds(value); return *this;}
 

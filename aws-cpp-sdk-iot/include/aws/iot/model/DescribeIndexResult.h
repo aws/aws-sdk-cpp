@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -112,7 +102,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
@@ -123,7 +117,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline void SetSchema(const Aws::String& value) { m_schema = value; }
 
@@ -134,7 +132,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
 
@@ -145,7 +147,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline void SetSchema(const char* value) { m_schema.assign(value); }
 
@@ -156,7 +162,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline DescribeIndexResult& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
@@ -167,7 +177,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline DescribeIndexResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
@@ -178,7 +192,11 @@ namespace Model
      * data and shadow data.</p> </li> <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your
      * thing index contains registry data and thing connectivity status data.</p> </li>
      * <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains
-     * registry data, shadow data, and thing connectivity status data.</p> </li> </ul>
+     * registry data, shadow data, and thing connectivity status data.</p> </li> <li>
+     * <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
+     * </li> </ul>
      */
     inline DescribeIndexResult& WithSchema(const char* value) { SetSchema(value); return *this;}
 

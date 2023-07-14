@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -172,114 +162,114 @@ namespace Model
 
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline GroupType& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline GroupType& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The role ARN for the group.</p>
+     * <p>The role Amazon Resource Name (ARN) for the group.</p>
      */
     inline GroupType& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>A nonnegative integer value that specifies the precedence of this group
-     * relative to the other groups that a user can belong to in the user pool. If a
-     * user belongs to two or more groups, it is the group with the highest precedence
-     * whose role ARN will be used in the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the user's tokens. Groups with
-     * higher <code>Precedence</code> values take precedence over groups with lower
-     * <code>Precedence</code> values or with null <code>Precedence</code> values.</p>
+     * <p>A non-negative integer value that specifies the precedence of this group
+     * relative to the other groups that a user can belong to in the user pool. Zero is
+     * the highest precedence value. Groups with lower <code>Precedence</code> values
+     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * If a user belongs to two or more groups, it is the group with the lowest
+     * precedence value whose role ARN is given in the user's tokens for the
+     * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
      * <p>Two groups can have the same <code>Precedence</code> value. If this happens,
      * neither group takes precedence over the other. If two groups with the same
      * <code>Precedence</code> have the same role ARN, that role is used in the
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
-     * claim is not set in users' tokens.</p> <p>The default <code>Precedence</code>
+     * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
      * value is null.</p>
      */
     inline int GetPrecedence() const{ return m_precedence; }
 
     /**
-     * <p>A nonnegative integer value that specifies the precedence of this group
-     * relative to the other groups that a user can belong to in the user pool. If a
-     * user belongs to two or more groups, it is the group with the highest precedence
-     * whose role ARN will be used in the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the user's tokens. Groups with
-     * higher <code>Precedence</code> values take precedence over groups with lower
-     * <code>Precedence</code> values or with null <code>Precedence</code> values.</p>
+     * <p>A non-negative integer value that specifies the precedence of this group
+     * relative to the other groups that a user can belong to in the user pool. Zero is
+     * the highest precedence value. Groups with lower <code>Precedence</code> values
+     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * If a user belongs to two or more groups, it is the group with the lowest
+     * precedence value whose role ARN is given in the user's tokens for the
+     * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
      * <p>Two groups can have the same <code>Precedence</code> value. If this happens,
      * neither group takes precedence over the other. If two groups with the same
      * <code>Precedence</code> have the same role ARN, that role is used in the
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
-     * claim is not set in users' tokens.</p> <p>The default <code>Precedence</code>
+     * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
      * value is null.</p>
      */
     inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }
 
     /**
-     * <p>A nonnegative integer value that specifies the precedence of this group
-     * relative to the other groups that a user can belong to in the user pool. If a
-     * user belongs to two or more groups, it is the group with the highest precedence
-     * whose role ARN will be used in the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the user's tokens. Groups with
-     * higher <code>Precedence</code> values take precedence over groups with lower
-     * <code>Precedence</code> values or with null <code>Precedence</code> values.</p>
+     * <p>A non-negative integer value that specifies the precedence of this group
+     * relative to the other groups that a user can belong to in the user pool. Zero is
+     * the highest precedence value. Groups with lower <code>Precedence</code> values
+     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * If a user belongs to two or more groups, it is the group with the lowest
+     * precedence value whose role ARN is given in the user's tokens for the
+     * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
      * <p>Two groups can have the same <code>Precedence</code> value. If this happens,
      * neither group takes precedence over the other. If two groups with the same
      * <code>Precedence</code> have the same role ARN, that role is used in the
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
-     * claim is not set in users' tokens.</p> <p>The default <code>Precedence</code>
+     * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
      * value is null.</p>
      */
     inline void SetPrecedence(int value) { m_precedenceHasBeenSet = true; m_precedence = value; }
 
     /**
-     * <p>A nonnegative integer value that specifies the precedence of this group
-     * relative to the other groups that a user can belong to in the user pool. If a
-     * user belongs to two or more groups, it is the group with the highest precedence
-     * whose role ARN will be used in the <code>cognito:roles</code> and
-     * <code>cognito:preferred_role</code> claims in the user's tokens. Groups with
-     * higher <code>Precedence</code> values take precedence over groups with lower
-     * <code>Precedence</code> values or with null <code>Precedence</code> values.</p>
+     * <p>A non-negative integer value that specifies the precedence of this group
+     * relative to the other groups that a user can belong to in the user pool. Zero is
+     * the highest precedence value. Groups with lower <code>Precedence</code> values
+     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * If a user belongs to two or more groups, it is the group with the lowest
+     * precedence value whose role ARN is given in the user's tokens for the
+     * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
      * <p>Two groups can have the same <code>Precedence</code> value. If this happens,
      * neither group takes precedence over the other. If two groups with the same
      * <code>Precedence</code> have the same role ARN, that role is used in the
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
-     * claim is not set in users' tokens.</p> <p>The default <code>Precedence</code>
+     * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
      * value is null.</p>
      */
     inline GroupType& WithPrecedence(int value) { SetPrecedence(value); return *this;}

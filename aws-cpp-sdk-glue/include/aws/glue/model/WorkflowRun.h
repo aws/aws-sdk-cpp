@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/glue/model/WorkflowRunStatus.h>
 #include <aws/glue/model/WorkflowRunStatistics.h>
 #include <aws/glue/model/WorkflowGraph.h>
+#include <aws/glue/model/StartingEventBatchCondition.h>
 #include <utility>
 
 namespace Aws
@@ -54,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline WorkflowRun& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline WorkflowRun& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was run.</p>
      */
     inline WorkflowRun& WithName(const char* value) { SetName(value); return *this;}
 
@@ -133,6 +124,47 @@ namespace Model
      * <p>The ID of this workflow run.</p>
      */
     inline WorkflowRun& WithWorkflowRunId(const char* value) { SetWorkflowRunId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline bool PreviousRunIdHasBeenSet() const { return m_previousRunIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline void SetPreviousRunId(const Aws::String& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = value; }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline void SetPreviousRunId(Aws::String&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::move(value); }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline void SetPreviousRunId(const char* value) { m_previousRunIdHasBeenSet = true; m_previousRunId.assign(value); }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline WorkflowRun& WithPreviousRunId(const Aws::String& value) { SetPreviousRunId(value); return *this;}
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline WorkflowRun& WithPreviousRunId(Aws::String&& value) { SetPreviousRunId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline WorkflowRun& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
 
 
     /**
@@ -295,6 +327,63 @@ namespace Model
 
 
     /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline WorkflowRun& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline WorkflowRun& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>This error message describes any error that may have occurred in starting the
+     * workflow run. Currently the only error message is "Concurrent runs exceeded for
+     * workflow: <code>foo</code>."</p>
+     */
+    inline WorkflowRun& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
+
+    /**
      * <p>The statistics of the run.</p>
      */
     inline const WorkflowRunStatistics& GetStatistics() const{ return m_statistics; }
@@ -326,40 +415,71 @@ namespace Model
 
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline const WorkflowGraph& GetGraph() const{ return m_graph; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline bool GraphHasBeenSet() const { return m_graphHasBeenSet; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(const WorkflowGraph& value) { m_graphHasBeenSet = true; m_graph = value; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(WorkflowGraph&& value) { m_graphHasBeenSet = true; m_graph = std::move(value); }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline WorkflowRun& WithGraph(const WorkflowGraph& value) { SetGraph(value); return *this;}
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline WorkflowRun& WithGraph(WorkflowGraph&& value) { SetGraph(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline const StartingEventBatchCondition& GetStartingEventBatchCondition() const{ return m_startingEventBatchCondition; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline bool StartingEventBatchConditionHasBeenSet() const { return m_startingEventBatchConditionHasBeenSet; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline void SetStartingEventBatchCondition(const StartingEventBatchCondition& value) { m_startingEventBatchConditionHasBeenSet = true; m_startingEventBatchCondition = value; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline void SetStartingEventBatchCondition(StartingEventBatchCondition&& value) { m_startingEventBatchConditionHasBeenSet = true; m_startingEventBatchCondition = std::move(value); }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline WorkflowRun& WithStartingEventBatchCondition(const StartingEventBatchCondition& value) { SetStartingEventBatchCondition(value); return *this;}
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline WorkflowRun& WithStartingEventBatchCondition(StartingEventBatchCondition&& value) { SetStartingEventBatchCondition(std::move(value)); return *this;}
 
   private:
 
@@ -368,6 +488,9 @@ namespace Model
 
     Aws::String m_workflowRunId;
     bool m_workflowRunIdHasBeenSet;
+
+    Aws::String m_previousRunId;
+    bool m_previousRunIdHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_workflowRunProperties;
     bool m_workflowRunPropertiesHasBeenSet;
@@ -381,11 +504,17 @@ namespace Model
     WorkflowRunStatus m_status;
     bool m_statusHasBeenSet;
 
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet;
+
     WorkflowRunStatistics m_statistics;
     bool m_statisticsHasBeenSet;
 
     WorkflowGraph m_graph;
     bool m_graphHasBeenSet;
+
+    StartingEventBatchCondition m_startingEventBatchCondition;
+    bool m_startingEventBatchConditionHasBeenSet;
   };
 
 } // namespace Model

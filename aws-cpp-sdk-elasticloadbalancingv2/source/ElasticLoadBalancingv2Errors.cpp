@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElasticLoadBalancingv2;
 using namespace Aws::Utils;
+using namespace Aws::ElasticLoadBalancingv2;
 
 namespace Aws
 {
@@ -35,6 +25,7 @@ static const int TOO_MANY_TARGETS_HASH = HashingUtils::HashString("TooManyTarget
 static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
 static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
+static const int A_L_P_N_POLICY_NOT_SUPPORTED_HASH = HashingUtils::HashString("ALPNPolicyNotFound");
 static const int HEALTH_UNAVAILABLE_HASH = HashingUtils::HashString("HealthUnavailable");
 static const int TOO_MANY_UNIQUE_TARGET_GROUPS_PER_LOAD_BALANCER_HASH = HashingUtils::HashString("TooManyUniqueTargetGroupsPerLoadBalancer");
 static const int TOO_MANY_ACTIONS_HASH = HashingUtils::HashString("TooManyActions");
@@ -97,6 +88,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LISTENER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::LISTENER_NOT_FOUND), false);
+  }
+  else if (hashCode == A_L_P_N_POLICY_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::A_L_P_N_POLICY_NOT_SUPPORTED), false);
   }
   else if (hashCode == HEALTH_UNAVAILABLE_HASH)
   {

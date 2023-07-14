@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DataSourceCredentials.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 DataSourceCredentials::DataSourceCredentials() : 
-    m_credentialPairHasBeenSet(false)
+    m_credentialPairHasBeenSet(false),
+    m_copySourceArnHasBeenSet(false)
 {
 }
 
 DataSourceCredentials::DataSourceCredentials(JsonView jsonValue) : 
-    m_credentialPairHasBeenSet(false)
+    m_credentialPairHasBeenSet(false),
+    m_copySourceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +40,13 @@ DataSourceCredentials& DataSourceCredentials::operator =(JsonView jsonValue)
     m_credentialPairHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CopySourceArn"))
+  {
+    m_copySourceArn = jsonValue.GetString("CopySourceArn");
+
+    m_copySourceArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +57,12 @@ JsonValue DataSourceCredentials::Jsonize() const
   if(m_credentialPairHasBeenSet)
   {
    payload.WithObject("CredentialPair", m_credentialPair.Jsonize());
+
+  }
+
+  if(m_copySourceArnHasBeenSet)
+  {
+   payload.WithString("CopySourceArn", m_copySourceArn);
 
   }
 

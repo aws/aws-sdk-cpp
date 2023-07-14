@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -37,7 +27,14 @@ namespace Model
    * <p>The order in which compute environments are tried for job placement within a
    * queue. Compute environments are tried in ascending order. For example, if two
    * compute environments are associated with a job queue, the compute environment
-   * with a lower order integer value is tried for job placement first.</p><p><h3>See
+   * with a lower order integer value is tried for job placement first. Compute
+   * environments must be in the <code>VALID</code> state before you can associate
+   * them with a job queue. All of the compute environments must be either EC2
+   * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+   * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+   * mixed.</p>  <p>All compute environments that are associated with a job
+   * queue must share the same architecture. Batch doesn't support mixing compute
+   * environment architecture types in a single job queue.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentOrder">AWS
    * API Reference</a></p>
@@ -52,22 +49,34 @@ namespace Model
 
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline int GetOrder() const{ return m_order; }
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
-     * <p>The order of the compute environment.</p>
+     * <p>The order of the compute environment. Compute environments are tried in
+     * ascending order. For example, if two compute environments are associated with a
+     * job queue, the compute environment with a lower <code>order</code> integer value
+     * is tried for job placement first.</p>
      */
     inline ComputeEnvironmentOrder& WithOrder(int value) { SetOrder(value); return *this;}
 

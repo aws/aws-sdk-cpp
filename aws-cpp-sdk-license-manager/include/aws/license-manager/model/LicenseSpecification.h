@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -88,10 +78,62 @@ namespace Model
      */
     inline LicenseSpecification& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
 
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline const Aws::String& GetAmiAssociationScope() const{ return m_amiAssociationScope; }
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline bool AmiAssociationScopeHasBeenSet() const { return m_amiAssociationScopeHasBeenSet; }
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline void SetAmiAssociationScope(const Aws::String& value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope = value; }
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline void SetAmiAssociationScope(Aws::String&& value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope = std::move(value); }
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline void SetAmiAssociationScope(const char* value) { m_amiAssociationScopeHasBeenSet = true; m_amiAssociationScope.assign(value); }
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline LicenseSpecification& WithAmiAssociationScope(const Aws::String& value) { SetAmiAssociationScope(value); return *this;}
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline LicenseSpecification& WithAmiAssociationScope(Aws::String&& value) { SetAmiAssociationScope(std::move(value)); return *this;}
+
+    /**
+     * <p>Scope of AMI associations. The possible value is
+     * <code>cross-account</code>.</p>
+     */
+    inline LicenseSpecification& WithAmiAssociationScope(const char* value) { SetAmiAssociationScope(value); return *this;}
+
   private:
 
     Aws::String m_licenseConfigurationArn;
     bool m_licenseConfigurationArnHasBeenSet;
+
+    Aws::String m_amiAssociationScope;
+    bool m_amiAssociationScopeHasBeenSet;
   };
 
 } // namespace Model

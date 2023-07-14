@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -140,58 +130,90 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class. For example to specify the instance
+     * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+     * <p>For more information on the settings and capacities for the available
+     * replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -387,42 +409,58 @@ namespace Model
 
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The engine version number of the replication instance.</p>
+     * <p>The engine version number of the replication instance.</p> <p>When modifying
+     * a major engine version of an instance, also set
+     * <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -467,48 +505,48 @@ namespace Model
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
      * <p>A value that indicates that minor version upgrades are applied automatically
      * to the replication instance during the maintenance window. Changing this
-     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * parameter doesn't result in an outage, except in the case described following.
      * The change is asynchronously applied as soon as possible. </p> <p>An outage does
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
-     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
-     * for the given engine version. </p> </li> </ul>
+     * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
+     * the given engine version. </p> </li> </ul>
      */
     inline ModifyReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

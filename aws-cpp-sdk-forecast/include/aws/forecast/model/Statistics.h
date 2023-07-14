@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -35,8 +25,9 @@ namespace Model
 
   /**
    * <p>Provides statistics for each data field imported into to an Amazon Forecast
-   * dataset with the <a>CreateDatasetImportJob</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * dataset with the <a
+   * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Statistics">AWS
    * API Reference</a></p>
    */
@@ -50,85 +41,101 @@ namespace Model
 
 
     /**
-     * <p>The number of values in the field.</p>
+     * <p>The number of values in the field. If the response value is -1, refer to
+     * <code>CountLong</code>.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>The number of values in the field.</p>
+     * <p>The number of values in the field. If the response value is -1, refer to
+     * <code>CountLong</code>.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The number of values in the field.</p>
+     * <p>The number of values in the field. If the response value is -1, refer to
+     * <code>CountLong</code>.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number of values in the field.</p>
+     * <p>The number of values in the field. If the response value is -1, refer to
+     * <code>CountLong</code>.</p>
      */
     inline Statistics& WithCount(int value) { SetCount(value); return *this;}
 
 
     /**
-     * <p>The number of distinct values in the field.</p>
+     * <p>The number of distinct values in the field. If the response value is -1,
+     * refer to <code>CountDistinctLong</code>.</p>
      */
     inline int GetCountDistinct() const{ return m_countDistinct; }
 
     /**
-     * <p>The number of distinct values in the field.</p>
+     * <p>The number of distinct values in the field. If the response value is -1,
+     * refer to <code>CountDistinctLong</code>.</p>
      */
     inline bool CountDistinctHasBeenSet() const { return m_countDistinctHasBeenSet; }
 
     /**
-     * <p>The number of distinct values in the field.</p>
+     * <p>The number of distinct values in the field. If the response value is -1,
+     * refer to <code>CountDistinctLong</code>.</p>
      */
     inline void SetCountDistinct(int value) { m_countDistinctHasBeenSet = true; m_countDistinct = value; }
 
     /**
-     * <p>The number of distinct values in the field.</p>
+     * <p>The number of distinct values in the field. If the response value is -1,
+     * refer to <code>CountDistinctLong</code>.</p>
      */
     inline Statistics& WithCountDistinct(int value) { SetCountDistinct(value); return *this;}
 
 
     /**
-     * <p>The number of null values in the field.</p>
+     * <p>The number of null values in the field. If the response value is -1, refer to
+     * <code>CountNullLong</code>.</p>
      */
     inline int GetCountNull() const{ return m_countNull; }
 
     /**
-     * <p>The number of null values in the field.</p>
+     * <p>The number of null values in the field. If the response value is -1, refer to
+     * <code>CountNullLong</code>.</p>
      */
     inline bool CountNullHasBeenSet() const { return m_countNullHasBeenSet; }
 
     /**
-     * <p>The number of null values in the field.</p>
+     * <p>The number of null values in the field. If the response value is -1, refer to
+     * <code>CountNullLong</code>.</p>
      */
     inline void SetCountNull(int value) { m_countNullHasBeenSet = true; m_countNull = value; }
 
     /**
-     * <p>The number of null values in the field.</p>
+     * <p>The number of null values in the field. If the response value is -1, refer to
+     * <code>CountNullLong</code>.</p>
      */
     inline Statistics& WithCountNull(int value) { SetCountNull(value); return *this;}
 
 
     /**
-     * <p>The number of NAN (not a number) values in the field.</p>
+     * <p>The number of NAN (not a number) values in the field. If the response value
+     * is -1, refer to <code>CountNanLong</code>.</p>
      */
     inline int GetCountNan() const{ return m_countNan; }
 
     /**
-     * <p>The number of NAN (not a number) values in the field.</p>
+     * <p>The number of NAN (not a number) values in the field. If the response value
+     * is -1, refer to <code>CountNanLong</code>.</p>
      */
     inline bool CountNanHasBeenSet() const { return m_countNanHasBeenSet; }
 
     /**
-     * <p>The number of NAN (not a number) values in the field.</p>
+     * <p>The number of NAN (not a number) values in the field. If the response value
+     * is -1, refer to <code>CountNanLong</code>.</p>
      */
     inline void SetCountNan(int value) { m_countNanHasBeenSet = true; m_countNan = value; }
 
     /**
-     * <p>The number of NAN (not a number) values in the field.</p>
+     * <p>The number of NAN (not a number) values in the field. If the response value
+     * is -1, refer to <code>CountNanLong</code>.</p>
      */
     inline Statistics& WithCountNan(int value) { SetCountNan(value); return *this;}
 
@@ -256,6 +263,118 @@ namespace Model
      */
     inline Statistics& WithStddev(double value) { SetStddev(value); return *this;}
 
+
+    /**
+     * <p>The number of values in the field. <code>CountLong</code> is used instead of
+     * <code>Count</code> if the value is greater than 2,147,483,647.</p>
+     */
+    inline long long GetCountLong() const{ return m_countLong; }
+
+    /**
+     * <p>The number of values in the field. <code>CountLong</code> is used instead of
+     * <code>Count</code> if the value is greater than 2,147,483,647.</p>
+     */
+    inline bool CountLongHasBeenSet() const { return m_countLongHasBeenSet; }
+
+    /**
+     * <p>The number of values in the field. <code>CountLong</code> is used instead of
+     * <code>Count</code> if the value is greater than 2,147,483,647.</p>
+     */
+    inline void SetCountLong(long long value) { m_countLongHasBeenSet = true; m_countLong = value; }
+
+    /**
+     * <p>The number of values in the field. <code>CountLong</code> is used instead of
+     * <code>Count</code> if the value is greater than 2,147,483,647.</p>
+     */
+    inline Statistics& WithCountLong(long long value) { SetCountLong(value); return *this;}
+
+
+    /**
+     * <p>The number of distinct values in the field. <code>CountDistinctLong</code> is
+     * used instead of <code>CountDistinct</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline long long GetCountDistinctLong() const{ return m_countDistinctLong; }
+
+    /**
+     * <p>The number of distinct values in the field. <code>CountDistinctLong</code> is
+     * used instead of <code>CountDistinct</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline bool CountDistinctLongHasBeenSet() const { return m_countDistinctLongHasBeenSet; }
+
+    /**
+     * <p>The number of distinct values in the field. <code>CountDistinctLong</code> is
+     * used instead of <code>CountDistinct</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline void SetCountDistinctLong(long long value) { m_countDistinctLongHasBeenSet = true; m_countDistinctLong = value; }
+
+    /**
+     * <p>The number of distinct values in the field. <code>CountDistinctLong</code> is
+     * used instead of <code>CountDistinct</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline Statistics& WithCountDistinctLong(long long value) { SetCountDistinctLong(value); return *this;}
+
+
+    /**
+     * <p>The number of null values in the field. <code>CountNullLong</code> is used
+     * instead of <code>CountNull</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline long long GetCountNullLong() const{ return m_countNullLong; }
+
+    /**
+     * <p>The number of null values in the field. <code>CountNullLong</code> is used
+     * instead of <code>CountNull</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline bool CountNullLongHasBeenSet() const { return m_countNullLongHasBeenSet; }
+
+    /**
+     * <p>The number of null values in the field. <code>CountNullLong</code> is used
+     * instead of <code>CountNull</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline void SetCountNullLong(long long value) { m_countNullLongHasBeenSet = true; m_countNullLong = value; }
+
+    /**
+     * <p>The number of null values in the field. <code>CountNullLong</code> is used
+     * instead of <code>CountNull</code> if the value is greater than
+     * 2,147,483,647.</p>
+     */
+    inline Statistics& WithCountNullLong(long long value) { SetCountNullLong(value); return *this;}
+
+
+    /**
+     * <p>The number of NAN (not a number) values in the field.
+     * <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value
+     * is greater than 2,147,483,647.</p>
+     */
+    inline long long GetCountNanLong() const{ return m_countNanLong; }
+
+    /**
+     * <p>The number of NAN (not a number) values in the field.
+     * <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value
+     * is greater than 2,147,483,647.</p>
+     */
+    inline bool CountNanLongHasBeenSet() const { return m_countNanLongHasBeenSet; }
+
+    /**
+     * <p>The number of NAN (not a number) values in the field.
+     * <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value
+     * is greater than 2,147,483,647.</p>
+     */
+    inline void SetCountNanLong(long long value) { m_countNanLongHasBeenSet = true; m_countNanLong = value; }
+
+    /**
+     * <p>The number of NAN (not a number) values in the field.
+     * <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value
+     * is greater than 2,147,483,647.</p>
+     */
+    inline Statistics& WithCountNanLong(long long value) { SetCountNanLong(value); return *this;}
+
   private:
 
     int m_count;
@@ -281,6 +400,18 @@ namespace Model
 
     double m_stddev;
     bool m_stddevHasBeenSet;
+
+    long long m_countLong;
+    bool m_countLongHasBeenSet;
+
+    long long m_countDistinctLong;
+    bool m_countDistinctLongHasBeenSet;
+
+    long long m_countNullLong;
+    bool m_countNullLongHasBeenSet;
+
+    long long m_countNanLong;
+    bool m_countNanLongHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -64,49 +54,49 @@ namespace Model
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline DescribeCollectionResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline DescribeCollectionResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the face model that's used by the collection for face
-     * detection.</p> <p>For more information, see Model Versioning in the Amazon
+     * detection.</p> <p>For more information, see Model versioning in the Amazon
      * Rekognition Developer Guide.</p>
      */
     inline DescribeCollectionResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}

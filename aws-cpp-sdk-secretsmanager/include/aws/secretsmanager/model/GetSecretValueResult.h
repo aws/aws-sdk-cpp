@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -154,159 +144,114 @@ namespace Model
 
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as binary data in the form of a byte array. The response parameter
-     * represents the binary data as a <a
+     * <p>The decrypted secret value, if the secret value was originally provided as
+     * binary data in the form of a byte array. The response parameter represents the
+     * binary data as a <a
      * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>This parameter is not used if the secret is created by the
-     * Secrets Manager console.</p> <p>If you store custom information in this field of
-     * the secret, then you must code your Lambda rotation function to parse and
-     * interpret whatever you store in the <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p>
+     * string.</p> <p>If the secret was created by using the Secrets Manager console,
+     * or if the secret value was originally provided as a string, then this field is
+     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as binary data in the form of a byte array. The response parameter
-     * represents the binary data as a <a
+     * <p>The decrypted secret value, if the secret value was originally provided as
+     * binary data in the form of a byte array. The response parameter represents the
+     * binary data as a <a
      * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>This parameter is not used if the secret is created by the
-     * Secrets Manager console.</p> <p>If you store custom information in this field of
-     * the secret, then you must code your Lambda rotation function to parse and
-     * interpret whatever you store in the <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p>
+     * string.</p> <p>If the secret was created by using the Secrets Manager console,
+     * or if the secret value was originally provided as a string, then this field is
+     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinary = value; }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as binary data in the form of a byte array. The response parameter
-     * represents the binary data as a <a
+     * <p>The decrypted secret value, if the secret value was originally provided as
+     * binary data in the form of a byte array. The response parameter represents the
+     * binary data as a <a
      * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>This parameter is not used if the secret is created by the
-     * Secrets Manager console.</p> <p>If you store custom information in this field of
-     * the secret, then you must code your Lambda rotation function to parse and
-     * interpret whatever you store in the <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p>
+     * string.</p> <p>If the secret was created by using the Secrets Manager console,
+     * or if the secret value was originally provided as a string, then this field is
+     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinary = std::move(value); }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as binary data in the form of a byte array. The response parameter
-     * represents the binary data as a <a
+     * <p>The decrypted secret value, if the secret value was originally provided as
+     * binary data in the form of a byte array. The response parameter represents the
+     * binary data as a <a
      * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>This parameter is not used if the secret is created by the
-     * Secrets Manager console.</p> <p>If you store custom information in this field of
-     * the secret, then you must code your Lambda rotation function to parse and
-     * interpret whatever you store in the <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p>
+     * string.</p> <p>If the secret was created by using the Secrets Manager console,
+     * or if the secret value was originally provided as a string, then this field is
+     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline GetSecretValueResult& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as binary data in the form of a byte array. The response parameter
-     * represents the binary data as a <a
+     * <p>The decrypted secret value, if the secret value was originally provided as
+     * binary data in the form of a byte array. The response parameter represents the
+     * binary data as a <a
      * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-     * string.</p> <p>This parameter is not used if the secret is created by the
-     * Secrets Manager console.</p> <p>If you store custom information in this field of
-     * the secret, then you must code your Lambda rotation function to parse and
-     * interpret whatever you store in the <code>SecretString</code> or
-     * <code>SecretBinary</code> fields.</p>
+     * string.</p> <p>If the secret was created by using the Secrets Manager console,
+     * or if the secret value was originally provided as a string, then this field is
+     * omitted. The secret value appears in <code>SecretString</code> instead.</p>
      */
     inline GetSecretValueResult& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
 
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline void SetSecretString(const Aws::String& value) { m_secretString = value; }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline void SetSecretString(Aws::String&& value) { m_secretString = std::move(value); }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline void SetSecretString(const char* value) { m_secretString.assign(value); }
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline GetSecretValueResult& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline GetSecretValueResult& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
 
     /**
-     * <p>The decrypted part of the protected secret information that was originally
-     * provided as a string.</p> <p>If you create this secret by using the Secrets
-     * Manager console then only the <code>SecretString</code> parameter contains data.
-     * Secrets Manager stores the information as a JSON structure of key/value pairs
-     * that the Lambda rotation function knows how to parse.</p> <p>If you store custom
-     * information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>,
-     * or <a>PutSecretValue</a> API operations instead of the Secrets Manager console,
-     * or by using the <b>Other secret type</b> in the console, then you must code your
-     * Lambda rotation function to parse and interpret those values.</p>
+     * <p>The decrypted secret value, if the secret value was originally provided as a
+     * string or through the Secrets Manager console.</p> <p>If this secret was created
+     * by using the console, then Secrets Manager stores the information as a JSON
+     * structure of key/value pairs. </p>
      */
     inline GetSecretValueResult& WithSecretString(const char* value) { SetSecretString(value); return *this;}
 
@@ -361,27 +306,37 @@ namespace Model
 
 
     /**
-     * <p>The date and time that this version of the secret was created.</p>
+     * <p>The date and time that this version of the secret was created. If you don't
+     * specify which version in <code>VersionId</code> or <code>VersionStage</code>,
+     * then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p>The date and time that this version of the secret was created.</p>
+     * <p>The date and time that this version of the secret was created. If you don't
+     * specify which version in <code>VersionId</code> or <code>VersionStage</code>,
+     * then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
 
     /**
-     * <p>The date and time that this version of the secret was created.</p>
+     * <p>The date and time that this version of the secret was created. If you don't
+     * specify which version in <code>VersionId</code> or <code>VersionStage</code>,
+     * then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
 
     /**
-     * <p>The date and time that this version of the secret was created.</p>
+     * <p>The date and time that this version of the secret was created. If you don't
+     * specify which version in <code>VersionId</code> or <code>VersionStage</code>,
+     * then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
      */
     inline GetSecretValueResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>The date and time that this version of the secret was created.</p>
+     * <p>The date and time that this version of the secret was created. If you don't
+     * specify which version in <code>VersionId</code> or <code>VersionStage</code>,
+     * then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
      */
     inline GetSecretValueResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 

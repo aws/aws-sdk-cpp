@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mq/model/DescribeBrokerResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,20 +17,24 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeBrokerResult::DescribeBrokerResult() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false),
     m_brokerState(BrokerState::NOT_SET),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_engineType(EngineType::NOT_SET),
+    m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_publiclyAccessible(false),
     m_storageType(BrokerStorageType::NOT_SET)
 {
 }
 
 DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false),
     m_brokerState(BrokerState::NOT_SET),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_engineType(EngineType::NOT_SET),
+    m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_publiclyAccessible(false),
     m_storageType(BrokerStorageType::NOT_SET)
 {
@@ -50,6 +44,21 @@ DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<Jso
 DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("actionsRequired"))
+  {
+    Array<JsonView> actionsRequiredJsonList = jsonValue.GetArray("actionsRequired");
+    for(unsigned actionsRequiredIndex = 0; actionsRequiredIndex < actionsRequiredJsonList.GetLength(); ++actionsRequiredIndex)
+    {
+      m_actionsRequired.push_back(actionsRequiredJsonList[actionsRequiredIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
+
+  }
+
   if(jsonValue.ValueExists("autoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("autoMinorVersionUpgrade");
@@ -131,6 +140,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("ldapServerMetadata"))
+  {
+    m_ldapServerMetadata = jsonValue.GetObject("ldapServerMetadata");
+
+  }
+
   if(jsonValue.ValueExists("logs"))
   {
     m_logs = jsonValue.GetObject("logs");
@@ -143,6 +158,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("pendingAuthenticationStrategy"))
+  {
+    m_pendingAuthenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("pendingAuthenticationStrategy"));
+
+  }
+
   if(jsonValue.ValueExists("pendingEngineVersion"))
   {
     m_pendingEngineVersion = jsonValue.GetString("pendingEngineVersion");
@@ -152,6 +173,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("pendingHostInstanceType"))
   {
     m_pendingHostInstanceType = jsonValue.GetString("pendingHostInstanceType");
+
+  }
+
+  if(jsonValue.ValueExists("pendingLdapServerMetadata"))
+  {
+    m_pendingLdapServerMetadata = jsonValue.GetObject("pendingLdapServerMetadata");
 
   }
 

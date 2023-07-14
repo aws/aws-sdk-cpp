@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lakeformation/model/TableResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,20 +19,31 @@ namespace Model
 {
 
 TableResource::TableResource() : 
+    m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tableWildcardHasBeenSet(false)
 {
 }
 
 TableResource::TableResource(JsonView jsonValue) : 
+    m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tableWildcardHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 TableResource& TableResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
@@ -57,12 +58,25 @@ TableResource& TableResource::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableWildcard"))
+  {
+    m_tableWildcard = jsonValue.GetObject("TableWildcard");
+
+    m_tableWildcardHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue TableResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
+
+  }
 
   if(m_databaseNameHasBeenSet)
   {
@@ -73,6 +87,12 @@ JsonValue TableResource::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_tableWildcardHasBeenSet)
+  {
+   payload.WithObject("TableWildcard", m_tableWildcard.Jsonize());
 
   }
 

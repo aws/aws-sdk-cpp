@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -40,7 +30,7 @@ namespace Model
   /**
    * <p>The RTMP distribution's configuration information.</p><p><h3>See Also:</h3>  
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionConfig
@@ -295,10 +285,11 @@ namespace Model
 
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -306,10 +297,11 @@ namespace Model
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -317,10 +309,11 @@ namespace Model
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -328,10 +321,11 @@ namespace Model
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -339,10 +333,11 @@ namespace Model
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -350,10 +345,11 @@ namespace Model
     inline StreamingDistributionConfig& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
     /**
-     * <p>A complex type that specifies any AWS accounts that you want to permit to
-     * create signed URLs for private content. If you want the distribution to use
-     * signed URLs, include this element; if you want the distribution to use public
-     * URLs, remove this element. For more information, see <a
+     * <p>A complex type that specifies any Amazon Web Services accounts that you want
+     * to permit to create signed URLs for private content. If you want the
+     * distribution to use signed URLs, include this element; if you want the
+     * distribution to use public URLs, remove this element. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>

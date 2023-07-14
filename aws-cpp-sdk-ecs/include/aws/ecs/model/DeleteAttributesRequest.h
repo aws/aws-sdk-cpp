@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -105,65 +95,65 @@ namespace Model
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline DeleteAttributesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline DeleteAttributesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
-     * attributes per request. For custom attributes, specify the attribute name and
-     * target ID, but do not specify the value. If you specify the target ID using the
-     * short form, you must also specify the target type.</p>
+     * attributes for each request. For custom attributes, specify the attribute name
+     * and target ID, but don't specify the value. If you specify the target ID using
+     * the short form, you must also specify the target type.</p>
      */
     inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iotanalytics/model/DatastoreSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,11 @@ DatastoreSummary::DatastoreSummary() :
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_lastMessageArrivalTimeHasBeenSet(false),
+    m_fileFormatType(FileFormatType::NOT_SET),
+    m_fileFormatTypeHasBeenSet(false),
+    m_datastorePartitionsHasBeenSet(false)
 {
 }
 
@@ -44,7 +38,11 @@ DatastoreSummary::DatastoreSummary(JsonView jsonValue) :
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_lastMessageArrivalTimeHasBeenSet(false),
+    m_fileFormatType(FileFormatType::NOT_SET),
+    m_fileFormatTypeHasBeenSet(false),
+    m_datastorePartitionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +84,27 @@ DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastMessageArrivalTime"))
+  {
+    m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
+
+    m_lastMessageArrivalTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fileFormatType"))
+  {
+    m_fileFormatType = FileFormatTypeMapper::GetFileFormatTypeForName(jsonValue.GetString("fileFormatType"));
+
+    m_fileFormatTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("datastorePartitions"))
+  {
+    m_datastorePartitions = jsonValue.GetObject("datastorePartitions");
+
+    m_datastorePartitionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +137,22 @@ JsonValue DatastoreSummary::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastMessageArrivalTimeHasBeenSet)
+  {
+   payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fileFormatTypeHasBeenSet)
+  {
+   payload.WithString("fileFormatType", FileFormatTypeMapper::GetNameForFileFormatType(m_fileFormatType));
+  }
+
+  if(m_datastorePartitionsHasBeenSet)
+  {
+   payload.WithObject("datastorePartitions", m_datastorePartitions.Jsonize());
+
   }
 
   return payload;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -88,65 +78,65 @@ namespace Model
 
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline UpdateClusterSettingsRequest& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline UpdateClusterSettingsRequest& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline UpdateClusterSettingsRequest& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 
     /**
-     * <p>The setting to use by default for a cluster. This parameter is used to enable
-     * CloudWatch Container Insights for a cluster. If this value is specified, it will
-     * override the <code>containerInsights</code> value set with
+     * <p>The setting to use by default for a cluster. This parameter is used to turn
+     * on CloudWatch Container Insights for a cluster. If this value is specified, it
+     * overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
      */
     inline UpdateClusterSettingsRequest& AddSettings(ClusterSetting&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }

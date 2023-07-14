@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
@@ -91,42 +81,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline TrustedAdvisorResourceDetail& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline TrustedAdvisorResourceDetail& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region in which the identified resource is located.</p>
+     * <p>The Amazon Web Services Region in which the identified resource is
+     * located.</p>
      */
     inline TrustedAdvisorResourceDetail& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -173,26 +171,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
-     * was marked as suppressed by the user.</p>
+     * <p>Specifies whether the Amazon Web Services resource was ignored by Trusted
+     * Advisor because it was marked as suppressed by the user.</p>
      */
     inline bool GetIsSuppressed() const{ return m_isSuppressed; }
 
     /**
-     * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
-     * was marked as suppressed by the user.</p>
+     * <p>Specifies whether the Amazon Web Services resource was ignored by Trusted
+     * Advisor because it was marked as suppressed by the user.</p>
      */
     inline bool IsSuppressedHasBeenSet() const { return m_isSuppressedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
-     * was marked as suppressed by the user.</p>
+     * <p>Specifies whether the Amazon Web Services resource was ignored by Trusted
+     * Advisor because it was marked as suppressed by the user.</p>
      */
     inline void SetIsSuppressed(bool value) { m_isSuppressedHasBeenSet = true; m_isSuppressed = value; }
 
     /**
-     * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
-     * was marked as suppressed by the user.</p>
+     * <p>Specifies whether the Amazon Web Services resource was ignored by Trusted
+     * Advisor because it was marked as suppressed by the user.</p>
      */
     inline TrustedAdvisorResourceDetail& WithIsSuppressed(bool value) { SetIsSuppressed(value); return *this;}
 

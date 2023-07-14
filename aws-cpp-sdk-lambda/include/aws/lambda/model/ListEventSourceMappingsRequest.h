@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -53,7 +43,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -62,7 +53,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -71,7 +63,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -80,7 +73,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -89,7 +83,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -98,7 +93,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -107,7 +103,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -116,7 +113,8 @@ namespace Model
      * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the
+     * cluster.</p> </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
@@ -276,22 +274,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of event source mappings to return.</p>
+     * <p>The maximum number of event source mappings to return. Note that
+     * ListEventSourceMappings returns a maximum of 100 items in each response, even if
+     * you set the number higher.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of event source mappings to return.</p>
+     * <p>The maximum number of event source mappings to return. Note that
+     * ListEventSourceMappings returns a maximum of 100 items in each response, even if
+     * you set the number higher.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of event source mappings to return.</p>
+     * <p>The maximum number of event source mappings to return. Note that
+     * ListEventSourceMappings returns a maximum of 100 items in each response, even if
+     * you set the number higher.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of event source mappings to return.</p>
+     * <p>The maximum number of event source mappings to return. Note that
+     * ListEventSourceMappings returns a maximum of 100 items in each response, even if
+     * you set the number higher.</p>
      */
     inline ListEventSourceMappingsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

@@ -1,30 +1,36 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
+#include <memory>
 
 namespace Aws
 {
+    namespace Http
+    {
+        class HttpResponse;
+    }
+
+    namespace Utils
+    {
+        template<typename R, typename E>
+        class Outcome;
+    }
+
     namespace Client
     {
+        static const int NO_RETRY_INCREMENT = 1;
 
         enum class CoreErrors;
         template<typename ERROR_TYPE>
         class AWSError;
+
+        typedef Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError<CoreErrors>> HttpResponseOutcome;
 
         /**
          * Interface for defining a Retry Strategy. Override this class to provide your own custom retry behavior.
@@ -43,7 +49,84 @@ namespace Aws
              */
             virtual long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const = 0;
 
+            /**
+             * Gets max number of attempts allowed for an operation.
+             * Returns non positive value if not defined.
+             */
+            virtual long GetMaxAttempts() const { return 0; }
+
+            /**
+             * Retrives send tokens from the bucket. Throws an exception if not available.
+             */
+            virtual void GetSendToken() {}
+
+            /**
+             * Retrives send tokens from the bucket. Returns true is send token is retrieved.
+             */
+            virtual bool HasSendToken()
+            {
+                GetSendToken();  // first call old method for backward compatibility
+                return true;
+            }
+
+            /**
+             * Update status, like the information of retry quota when receiving a response.
+             */
+            virtual void RequestBookkeeping(const HttpResponseOutcome& /* httpResponseOutcome */) {}
+            virtual void RequestBookkeeping(const HttpResponseOutcome& /* httpResponseOutcome */, const AWSError<CoreErrors>& /* lastError */) {}
         };
 
+        /**
+         * The container for retry quotas.
+         * A failed request will acquire retry quotas to retry.
+         * And a successful request will release quotas back.
+         * If running out of retry quotas, then the client is not able to retry.
+         */
+        class AWS_CORE_API RetryQuotaContainer
+        {
+        public:
+            virtual ~RetryQuotaContainer() = default;
+            virtual bool AcquireRetryQuota(int capacityAmount) = 0;
+            virtual bool AcquireRetryQuota(const AWSError<CoreErrors>& error) = 0;
+            virtual void ReleaseRetryQuota(int capacityAmount) = 0;
+            virtual void ReleaseRetryQuota(const AWSError<CoreErrors>& lastError) = 0;
+            virtual int GetRetryQuota() const = 0;
+        };
+
+        class AWS_CORE_API DefaultRetryQuotaContainer : public RetryQuotaContainer
+        {
+        public:
+            DefaultRetryQuotaContainer();
+            virtual ~DefaultRetryQuotaContainer() = default;
+            virtual bool AcquireRetryQuota(int capacityAmount) override;
+            virtual bool AcquireRetryQuota(const AWSError<CoreErrors>& error) override;
+            virtual void ReleaseRetryQuota(int capacityAmount) override;
+            virtual void ReleaseRetryQuota(const AWSError<CoreErrors>& lastError) override;
+            virtual int GetRetryQuota() const override { return m_retryQuota; }
+
+        protected:
+            mutable Aws::Utils::Threading::ReaderWriterLock m_retryQuotaLock;
+            int m_retryQuota;
+        };
+
+        class AWS_CORE_API StandardRetryStrategy : public RetryStrategy
+        {
+        public:
+            StandardRetryStrategy(long maxAttempts = 3);
+            StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
+
+            virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome) override;
+            virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome, const AWSError<CoreErrors>& lastError) override;
+
+            virtual bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override;
+
+            virtual long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override;
+
+            virtual long GetMaxAttempts() const override { return m_maxAttempts; }
+
+        protected:
+            std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;
+            long m_maxAttempts;
+        };
     } // namespace Client
 } // namespace Aws

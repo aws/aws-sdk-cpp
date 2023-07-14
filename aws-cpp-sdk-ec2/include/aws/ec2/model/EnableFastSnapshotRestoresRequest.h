@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -96,63 +86,63 @@ namespace Model
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceSnapshotIds() const{ return m_sourceSnapshotIds; }
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline bool SourceSnapshotIdsHasBeenSet() const { return m_sourceSnapshotIdsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline void SetSourceSnapshotIds(const Aws::Vector<Aws::String>& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds = value; }
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline void SetSourceSnapshotIds(Aws::Vector<Aws::String>&& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds = std::move(value); }
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline EnableFastSnapshotRestoresRequest& WithSourceSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSourceSnapshotIds(value); return *this;}
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline EnableFastSnapshotRestoresRequest& WithSourceSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSourceSnapshotIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline EnableFastSnapshotRestoresRequest& AddSourceSnapshotIds(const Aws::String& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline EnableFastSnapshotRestoresRequest& AddSourceSnapshotIds(Aws::String&& value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of one or more snapshots. For example,
      * <code>snap-1234567890abcdef0</code>. You can specify a snapshot that was shared
-     * with you from another AWS account.</p>
+     * with you from another Amazon Web Services account.</p>
      */
     inline EnableFastSnapshotRestoresRequest& AddSourceSnapshotIds(const char* value) { m_sourceSnapshotIdsHasBeenSet = true; m_sourceSnapshotIds.push_back(value); return *this; }
 

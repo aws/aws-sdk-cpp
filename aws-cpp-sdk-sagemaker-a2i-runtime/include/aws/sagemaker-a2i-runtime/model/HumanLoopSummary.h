@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
@@ -91,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the human loop. Valid values:</p>
+     * <p>The status of the human loop. </p>
      */
     inline const HumanLoopStatus& GetHumanLoopStatus() const{ return m_humanLoopStatus; }
 
     /**
-     * <p>The status of the human loop. Valid values:</p>
+     * <p>The status of the human loop. </p>
      */
     inline bool HumanLoopStatusHasBeenSet() const { return m_humanLoopStatusHasBeenSet; }
 
     /**
-     * <p>The status of the human loop. Valid values:</p>
+     * <p>The status of the human loop. </p>
      */
     inline void SetHumanLoopStatus(const HumanLoopStatus& value) { m_humanLoopStatusHasBeenSet = true; m_humanLoopStatus = value; }
 
     /**
-     * <p>The status of the human loop. Valid values:</p>
+     * <p>The status of the human loop. </p>
      */
     inline void SetHumanLoopStatus(HumanLoopStatus&& value) { m_humanLoopStatusHasBeenSet = true; m_humanLoopStatus = std::move(value); }
 
     /**
-     * <p>The status of the human loop. Valid values:</p>
+     * <p>The status of the human loop. </p>
      */
     inline HumanLoopSummary& WithHumanLoopStatus(const HumanLoopStatus& value) { SetHumanLoopStatus(value); return *this;}
 
     /**
-     * <p>The status of the human loop. Valid values:</p>
+     * <p>The status of the human loop. </p>
      */
     inline HumanLoopSummary& WithHumanLoopStatus(HumanLoopStatus&& value) { SetHumanLoopStatus(std::move(value)); return *this;}
 
@@ -153,91 +143,99 @@ namespace Model
 
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline HumanLoopSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline HumanLoopSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason why the human loop failed. A failure reason is returned only when
-     * the status of the human loop is <code>Failed</code>.</p>
+     * <p>The reason why the human loop failed. A failure reason is returned when the
+     * status of the human loop is <code>Failed</code>.</p>
      */
     inline HumanLoopSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline bool FlowDefinitionArnHasBeenSet() const { return m_flowDefinitionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline HumanLoopSummary& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline HumanLoopSummary& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition used to configure the
+     * human loop.</p>
      */
     inline HumanLoopSummary& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
 

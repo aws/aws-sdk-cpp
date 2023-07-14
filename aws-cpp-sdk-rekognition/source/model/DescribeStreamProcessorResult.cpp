@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rekognition/model/DescribeStreamProcessorResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -97,6 +87,33 @@ DescribeStreamProcessorResult& DescribeStreamProcessorResult::operator =(const A
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
+
+  }
+
+  if(jsonValue.ValueExists("NotificationChannel"))
+  {
+    m_notificationChannel = jsonValue.GetObject("NotificationChannel");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("RegionsOfInterest"))
+  {
+    Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
+    for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
+    {
+      m_regionsOfInterest.push_back(regionsOfInterestJsonList[regionsOfInterestIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("DataSharingPreference"))
+  {
+    m_dataSharingPreference = jsonValue.GetObject("DataSharingPreference");
 
   }
 

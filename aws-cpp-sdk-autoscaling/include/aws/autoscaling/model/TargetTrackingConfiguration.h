@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -126,22 +116,42 @@ namespace Model
 
 
     /**
-     * <p>The target value for the metric.</p>
+     * <p>The target value for the metric.</p>  <p>Some metrics are based on a
+     * count instead of a percentage, such as the request count for an Application Load
+     * Balancer or the number of messages in an SQS queue. If the scaling policy
+     * specifies one of these metrics, specify the target utilization as the optimal
+     * average request or message count per instance during any one-minute interval.
+     * </p> 
      */
     inline double GetTargetValue() const{ return m_targetValue; }
 
     /**
-     * <p>The target value for the metric.</p>
+     * <p>The target value for the metric.</p>  <p>Some metrics are based on a
+     * count instead of a percentage, such as the request count for an Application Load
+     * Balancer or the number of messages in an SQS queue. If the scaling policy
+     * specifies one of these metrics, specify the target utilization as the optimal
+     * average request or message count per instance during any one-minute interval.
+     * </p> 
      */
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
 
     /**
-     * <p>The target value for the metric.</p>
+     * <p>The target value for the metric.</p>  <p>Some metrics are based on a
+     * count instead of a percentage, such as the request count for an Application Load
+     * Balancer or the number of messages in an SQS queue. If the scaling policy
+     * specifies one of these metrics, specify the target utilization as the optimal
+     * average request or message count per instance during any one-minute interval.
+     * </p> 
      */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
 
     /**
-     * <p>The target value for the metric.</p>
+     * <p>The target value for the metric.</p>  <p>Some metrics are based on a
+     * count instead of a percentage, such as the request count for an Application Load
+     * Balancer or the number of messages in an SQS queue. If the scaling policy
+     * specifies one of these metrics, specify the target utilization as the optimal
+     * average request or message count per instance during any one-minute interval.
+     * </p> 
      */
     inline TargetTrackingConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
 

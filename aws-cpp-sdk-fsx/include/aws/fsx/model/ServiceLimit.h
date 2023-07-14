@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -29,7 +19,12 @@ namespace Model
     FILE_SYSTEM_COUNT,
     TOTAL_THROUGHPUT_CAPACITY,
     TOTAL_STORAGE,
-    TOTAL_USER_INITIATED_BACKUPS
+    TOTAL_USER_INITIATED_BACKUPS,
+    TOTAL_USER_TAGS,
+    TOTAL_IN_PROGRESS_COPY_BACKUPS,
+    STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM,
+    VOLUMES_PER_FILE_SYSTEM,
+    TOTAL_SSD_IOPS
   };
 
 namespace ServiceLimitMapper

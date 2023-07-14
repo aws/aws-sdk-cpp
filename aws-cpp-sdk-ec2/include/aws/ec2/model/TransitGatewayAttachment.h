@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -139,114 +129,120 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayOwnerId() const{ return m_transitGatewayOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline bool TransitGatewayOwnerIdHasBeenSet() const { return m_transitGatewayOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline void SetTransitGatewayOwnerId(const Aws::String& value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline void SetTransitGatewayOwnerId(Aws::String&& value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline void SetTransitGatewayOwnerId(const char* value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline TransitGatewayAttachment& WithTransitGatewayOwnerId(const Aws::String& value) { SetTransitGatewayOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline TransitGatewayAttachment& WithTransitGatewayOwnerId(Aws::String&& value) { SetTransitGatewayOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline TransitGatewayAttachment& WithTransitGatewayOwnerId(const char* value) { SetTransitGatewayOwnerId(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline TransitGatewayAttachment& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline TransitGatewayAttachment& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline TransitGatewayAttachment& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
 
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated.</p>
      */
     inline const TransitGatewayAttachmentResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated.</p>
      */
     inline void SetResourceType(const TransitGatewayAttachmentResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated.</p>
      */
     inline void SetResourceType(TransitGatewayAttachmentResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated.</p>
      */
     inline TransitGatewayAttachment& WithResourceType(const TransitGatewayAttachmentResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Note that the <code>tgw-peering</code> resource type has
+     * been deprecated.</p>
      */
     inline TransitGatewayAttachment& WithResourceType(TransitGatewayAttachmentResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -293,32 +289,38 @@ namespace Model
 
 
     /**
-     * <p>The attachment state.</p>
+     * <p>The attachment state. Note that the <code>initiating</code> state has been
+     * deprecated.</p>
      */
     inline const TransitGatewayAttachmentState& GetState() const{ return m_state; }
 
     /**
-     * <p>The attachment state.</p>
+     * <p>The attachment state. Note that the <code>initiating</code> state has been
+     * deprecated.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The attachment state.</p>
+     * <p>The attachment state. Note that the <code>initiating</code> state has been
+     * deprecated.</p>
      */
     inline void SetState(const TransitGatewayAttachmentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The attachment state.</p>
+     * <p>The attachment state. Note that the <code>initiating</code> state has been
+     * deprecated.</p>
      */
     inline void SetState(TransitGatewayAttachmentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The attachment state.</p>
+     * <p>The attachment state. Note that the <code>initiating</code> state has been
+     * deprecated.</p>
      */
     inline TransitGatewayAttachment& WithState(const TransitGatewayAttachmentState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The attachment state.</p>
+     * <p>The attachment state. Note that the <code>initiating</code> state has been
+     * deprecated.</p>
      */
     inline TransitGatewayAttachment& WithState(TransitGatewayAttachmentState&& value) { SetState(std::move(value)); return *this;}
 

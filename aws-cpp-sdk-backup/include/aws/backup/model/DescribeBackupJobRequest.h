@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -43,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline bool BackupJobIdHasBeenSet() const { return m_backupJobIdHasBeenSet; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const Aws::String& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = value; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(Aws::String&& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = std::move(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const char* value) { m_backupJobIdHasBeenSet = true; m_backupJobId.assign(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline DescribeBackupJobRequest& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline DescribeBackupJobRequest& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline DescribeBackupJobRequest& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
 

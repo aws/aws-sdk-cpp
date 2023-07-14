@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DataSourceErrorInfoType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,6 +20,8 @@ namespace Aws
       namespace DataSourceErrorInfoTypeMapper
       {
 
+        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static const int COPY_SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("COPY_SOURCE_NOT_FOUND");
         static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
         static const int ENGINE_VERSION_NOT_SUPPORTED_HASH = HashingUtils::HashString("ENGINE_VERSION_NOT_SUPPORTED");
         static const int UNKNOWN_HOST_HASH = HashingUtils::HashString("UNKNOWN_HOST");
@@ -41,7 +33,15 @@ namespace Aws
         DataSourceErrorInfoType GetDataSourceErrorInfoTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TIMEOUT_HASH)
+          if (hashCode == ACCESS_DENIED_HASH)
+          {
+            return DataSourceErrorInfoType::ACCESS_DENIED;
+          }
+          else if (hashCode == COPY_SOURCE_NOT_FOUND_HASH)
+          {
+            return DataSourceErrorInfoType::COPY_SOURCE_NOT_FOUND;
+          }
+          else if (hashCode == TIMEOUT_HASH)
           {
             return DataSourceErrorInfoType::TIMEOUT;
           }
@@ -79,6 +79,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceErrorInfoType::ACCESS_DENIED:
+            return "ACCESS_DENIED";
+          case DataSourceErrorInfoType::COPY_SOURCE_NOT_FOUND:
+            return "COPY_SOURCE_NOT_FOUND";
           case DataSourceErrorInfoType::TIMEOUT:
             return "TIMEOUT";
           case DataSourceErrorInfoType::ENGINE_VERSION_NOT_SUPPORTED:

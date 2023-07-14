@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -45,46 +35,46 @@ namespace Model
 
     /**
      * <p>A structure that contains information about the newly created
-     * service-specific credential.</p> <important> <p>This is the only time that the
+     * service-specific credential.</p>  <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
      * Instead, you must reset the password with
-     * <a>ResetServiceSpecificCredential</a>.</p> </important>
+     * <a>ResetServiceSpecificCredential</a>.</p> 
      */
     inline const ServiceSpecificCredential& GetServiceSpecificCredential() const{ return m_serviceSpecificCredential; }
 
     /**
      * <p>A structure that contains information about the newly created
-     * service-specific credential.</p> <important> <p>This is the only time that the
+     * service-specific credential.</p>  <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
      * Instead, you must reset the password with
-     * <a>ResetServiceSpecificCredential</a>.</p> </important>
+     * <a>ResetServiceSpecificCredential</a>.</p> 
      */
     inline void SetServiceSpecificCredential(const ServiceSpecificCredential& value) { m_serviceSpecificCredential = value; }
 
     /**
      * <p>A structure that contains information about the newly created
-     * service-specific credential.</p> <important> <p>This is the only time that the
+     * service-specific credential.</p>  <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
      * Instead, you must reset the password with
-     * <a>ResetServiceSpecificCredential</a>.</p> </important>
+     * <a>ResetServiceSpecificCredential</a>.</p> 
      */
     inline void SetServiceSpecificCredential(ServiceSpecificCredential&& value) { m_serviceSpecificCredential = std::move(value); }
 
     /**
      * <p>A structure that contains information about the newly created
-     * service-specific credential.</p> <important> <p>This is the only time that the
+     * service-specific credential.</p>  <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
      * Instead, you must reset the password with
-     * <a>ResetServiceSpecificCredential</a>.</p> </important>
+     * <a>ResetServiceSpecificCredential</a>.</p> 
      */
     inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(const ServiceSpecificCredential& value) { SetServiceSpecificCredential(value); return *this;}
 
     /**
      * <p>A structure that contains information about the newly created
-     * service-specific credential.</p> <important> <p>This is the only time that the
+     * service-specific credential.</p>  <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
      * Instead, you must reset the password with
-     * <a>ResetServiceSpecificCredential</a>.</p> </important>
+     * <a>ResetServiceSpecificCredential</a>.</p> 
      */
     inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredential&& value) { SetServiceSpecificCredential(std::move(value)); return *this;}
 

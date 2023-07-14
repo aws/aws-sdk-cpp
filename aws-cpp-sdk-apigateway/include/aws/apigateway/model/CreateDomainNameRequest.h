@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
+#include <aws/apigateway/model/MutualTlsAuthenticationInput.h>
 #include <utility>
 
 namespace Aws
@@ -49,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -497,38 +488,38 @@ namespace Model
 
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::move(value); }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name. </p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
@@ -627,45 +618,121 @@ namespace Model
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline const SecurityPolicy& GetSecurityPolicy() const{ return m_securityPolicy; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(const SecurityPolicy& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = value; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(SecurityPolicy&& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = std::move(value); }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(const SecurityPolicy& value) { SetSecurityPolicy(value); return *this;}
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
+
+
+    
+    inline const MutualTlsAuthenticationInput& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
+
+    
+    inline bool MutualTlsAuthenticationHasBeenSet() const { return m_mutualTlsAuthenticationHasBeenSet; }
+
+    
+    inline void SetMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = value; }
+
+    
+    inline void SetMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::move(value); }
+
+    
+    inline CreateDomainNameRequest& WithMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { SetMutualTlsAuthentication(value); return *this;}
+
+    
+    inline CreateDomainNameRequest& WithMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline const Aws::String& GetOwnershipVerificationCertificateArn() const{ return m_ownershipVerificationCertificateArn; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline bool OwnershipVerificationCertificateArnHasBeenSet() const { return m_ownershipVerificationCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const Aws::String& value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(Aws::String&& value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const char* value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(const Aws::String& value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
 
   private:
 
@@ -701,6 +768,12 @@ namespace Model
 
     SecurityPolicy m_securityPolicy;
     bool m_securityPolicyHasBeenSet;
+
+    MutualTlsAuthenticationInput m_mutualTlsAuthentication;
+    bool m_mutualTlsAuthenticationHasBeenSet;
+
+    Aws::String m_ownershipVerificationCertificateArn;
+    bool m_ownershipVerificationCertificateArnHasBeenSet;
   };
 
 } // namespace Model

@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
+#include <aws/kendra/model/HighlightType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -116,6 +108,37 @@ namespace Model
      */
     inline Highlight& WithTopAnswer(bool value) { SetTopAnswer(value); return *this;}
 
+
+    /**
+     * <p>The highlight type. </p>
+     */
+    inline const HighlightType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The highlight type. </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The highlight type. </p>
+     */
+    inline void SetType(const HighlightType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The highlight type. </p>
+     */
+    inline void SetType(HighlightType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The highlight type. </p>
+     */
+    inline Highlight& WithType(const HighlightType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The highlight type. </p>
+     */
+    inline Highlight& WithType(HighlightType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     int m_beginOffset;
@@ -126,6 +149,9 @@ namespace Model
 
     bool m_topAnswer;
     bool m_topAnswerHasBeenSet;
+
+    HighlightType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
@@ -48,28 +38,84 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline GetOutpostInstanceTypesRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline GetOutpostInstanceTypesRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline GetOutpostInstanceTypesRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
 

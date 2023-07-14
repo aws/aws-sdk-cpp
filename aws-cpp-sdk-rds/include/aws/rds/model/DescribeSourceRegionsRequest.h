@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,58 +42,58 @@ namespace Model
   public:
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline DescribeSourceRegionsRequest& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline DescribeSourceRegionsRequest& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
-     * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
-     * </ul>
+     * <p>The source Amazon Web Services Region name. For example,
+     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
+     * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline DescribeSourceRegionsRequest& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
@@ -112,7 +102,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -120,7 +110,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -128,7 +118,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -136,7 +126,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeSourceRegionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

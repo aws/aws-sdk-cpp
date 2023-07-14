@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -152,6 +142,55 @@ namespace Model
      */
     inline Principal& WithAccess(ReadAccessType&& value) { SetAccess(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline Principal& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline Principal& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the data source the principal should access documents
+     * from.</p>
+     */
+    inline Principal& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -162,6 +201,9 @@ namespace Model
 
     ReadAccessType m_access;
     bool m_accessHasBeenSet;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet;
   };
 
 } // namespace Model

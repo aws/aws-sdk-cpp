@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/CreateDomainRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,7 +20,12 @@ CreateDomainRequest::CreateDomainRequest() :
     m_subnetIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_homeEfsFileSystemKmsKeyIdHasBeenSet(false)
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appNetworkAccessTypeHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
+    m_appSecurityGroupManagementHasBeenSet(false),
+    m_domainSettingsHasBeenSet(false)
 {
 }
 
@@ -83,9 +78,25 @@ Aws::String CreateDomainRequest::SerializePayload() const
 
   }
 
-  if(m_homeEfsFileSystemKmsKeyIdHasBeenSet)
+  if(m_appNetworkAccessTypeHasBeenSet)
   {
-   payload.WithString("HomeEfsFileSystemKmsKeyId", m_homeEfsFileSystemKmsKeyId);
+   payload.WithString("AppNetworkAccessType", AppNetworkAccessTypeMapper::GetNameForAppNetworkAccessType(m_appNetworkAccessType));
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_appSecurityGroupManagementHasBeenSet)
+  {
+   payload.WithString("AppSecurityGroupManagement", AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
+  }
+
+  if(m_domainSettingsHasBeenSet)
+  {
+   payload.WithObject("DomainSettings", m_domainSettings.Jsonize());
 
   }
 

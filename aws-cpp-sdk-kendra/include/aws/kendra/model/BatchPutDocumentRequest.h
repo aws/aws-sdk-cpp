@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/CustomDocumentEnrichmentConfiguration.h>
 #include <aws/kendra/model/Document.h>
 #include <utility>
 
@@ -48,56 +39,56 @@ namespace Model
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> API.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -105,7 +96,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -113,7 +104,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -121,7 +112,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -129,7 +120,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -137,7 +128,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -145,7 +136,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -153,7 +144,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
-     * <code>BatchPutDocument</code> operation. For more information, see <a
+     * <code>BatchPutDocument</code> API. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
      * Amazon Kendra</a>.</p>
      */
@@ -161,52 +152,151 @@ namespace Model
 
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline const Aws::Vector<Document>& GetDocuments() const{ return m_documents; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetDocuments(const Aws::Vector<Document>& value) { m_documentsHasBeenSet = true; m_documents = value; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetDocuments(Aws::Vector<Document>&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& WithDocuments(const Aws::Vector<Document>& value) { SetDocuments(value); return *this;}
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& WithDocuments(Aws::Vector<Document>&& value) { SetDocuments(std::move(value)); return *this;}
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(const Document& value) { m_documentsHasBeenSet = true; m_documents.push_back(value); return *this; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Each document is limited
-     * to 5 Mb, the total size of the list is limited to 50 Mb.</p>
+     * <p>One or more documents to add to the index.</p> <p>Documents have the
+     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
+     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
+     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
+     * information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(Document&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Configuration information for altering your document metadata and content
+     * during the document ingestion process when you use the
+     * <code>BatchPutDocument</code> API.</p> <p>For more information on how to create,
+     * modify and delete document metadata, or make other content alterations when you
+     * ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline const CustomDocumentEnrichmentConfiguration& GetCustomDocumentEnrichmentConfiguration() const{ return m_customDocumentEnrichmentConfiguration; }
+
+    /**
+     * <p>Configuration information for altering your document metadata and content
+     * during the document ingestion process when you use the
+     * <code>BatchPutDocument</code> API.</p> <p>For more information on how to create,
+     * modify and delete document metadata, or make other content alterations when you
+     * ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline bool CustomDocumentEnrichmentConfigurationHasBeenSet() const { return m_customDocumentEnrichmentConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for altering your document metadata and content
+     * during the document ingestion process when you use the
+     * <code>BatchPutDocument</code> API.</p> <p>For more information on how to create,
+     * modify and delete document metadata, or make other content alterations when you
+     * ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { m_customDocumentEnrichmentConfigurationHasBeenSet = true; m_customDocumentEnrichmentConfiguration = value; }
+
+    /**
+     * <p>Configuration information for altering your document metadata and content
+     * during the document ingestion process when you use the
+     * <code>BatchPutDocument</code> API.</p> <p>For more information on how to create,
+     * modify and delete document metadata, or make other content alterations when you
+     * ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { m_customDocumentEnrichmentConfigurationHasBeenSet = true; m_customDocumentEnrichmentConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for altering your document metadata and content
+     * during the document ingestion process when you use the
+     * <code>BatchPutDocument</code> API.</p> <p>For more information on how to create,
+     * modify and delete document metadata, or make other content alterations when you
+     * ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline BatchPutDocumentRequest& WithCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { SetCustomDocumentEnrichmentConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for altering your document metadata and content
+     * during the document ingestion process when you use the
+     * <code>BatchPutDocument</code> API.</p> <p>For more information on how to create,
+     * modify and delete document metadata, or make other content alterations when you
+     * ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline BatchPutDocumentRequest& WithCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { SetCustomDocumentEnrichmentConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -218,6 +308,9 @@ namespace Model
 
     Aws::Vector<Document> m_documents;
     bool m_documentsHasBeenSet;
+
+    CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -29,74 +29,95 @@
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")
 #end
+#if($metadata.hasEndpointDiscoveryTrait)
+#set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
+#end
+#if($serviceNamespace == "S3Crt")
+#set($clientConfigurationNamespace = $serviceNamespace)
+#set($credentialsParam = ", &credentials")
+#set($getAWSCredentials = "Aws::Auth::AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
+  ")
+#set($credentialsArg = ", const Aws::Auth::AWSCredentials* credentials")
+#else
+#set($clientConfigurationNamespace = "Client")
+#set($credentialsParam = "")
+#set($getAWSCredentials = "")
+#set($credentialsArg = "")
+#end
+#set($hasEventStreamInputOperation = false)
+#foreach($operation in $serviceModel.operations)
+#if($operation.request.shape.hasEventStreamMembers())
+    #set($hasEventStreamInputOperation = true)
+#end
+#end
 
-#if($hasEventStreamInputOperation)
-${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+#if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
+${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration);
 }
 
-${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration);
+  init(clientConfiguration${credentialsParam});
 }
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration);
+  ${getAWSCredentials}init(clientConfiguration${credentialsParam});
 }
 #else
-${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration);
 }
 
-${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration);
+  init(clientConfiguration${credentialsParam});
 }
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
-  init(clientConfiguration);
+  ${getAWSCredentials}init(clientConfiguration${credentialsParam});
 }
 #end
 
 #if($metadata.standalone || $metadata.apigateway)
 ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
-  const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
+  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration, signerProvider,
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}
@@ -107,30 +128,37 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
 #end
 ${className}::~${className}()
 {
+#if($serviceNamespace == "S3Crt")
+  aws_s3_client_release(m_s3CrtClient);
+  m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
+#end
 }
 
-void ${className}::init(const ClientConfiguration& config)
+void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config${credentialsArg})
 {
+  SetServiceClientName("${metadata.serviceId}");
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end
   m_configScheme = SchemeMapper::ToString(config.scheme);
-#if($virtualAddressingSupported || $arnEndpointSupported || $accountIdInHostnameSupported || $metadata.hasEndpointTrait)
+#if($metadata.hasPreSignedUrl)
+  m_useDualStack = config.useDualStack;
+#end
+#if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
   m_scheme = m_configScheme;
 #if($arnEndpointSupported)
-  m_region = config.region;
   m_useDualStack = config.useDualStack;
 #end
   if (config.endpointOverride.empty())
   {
-#if($arnEndpointSupported)
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = false;
 #end
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
   }
   else
   {
-#if($arnEndpointSupported)
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = true;
 #end
       OverrideEndpoint(config.endpointOverride);
@@ -139,30 +167,134 @@ void ${className}::init(const ClientConfiguration& config)
   if (config.endpointOverride.empty())
   {
       m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+#if($customEndpointUsed)
+      m_useCustomEndpoint = false;
+#end
   }
   else
   {
       OverrideEndpoint(config.endpointOverride);
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = true;
+#end
   }
 #end
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 #end
-#if($metadata.hasEndpointDiscoveryTrait)
-  if (!config.endpointOverride.empty())
+#if($serviceNamespace == "S3Crt")
+
+  // initialize aws_s3_client;
+  aws_s3_client_config s3CrtConfig;
+  AWS_ZERO_STRUCT(s3CrtConfig);
+  s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
+  Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
+  s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
+
+  std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> provider(nullptr);
+  if (credentials)
   {
-    m_enableEndpointDiscovery = false;
+    Aws::Crt::Auth::CredentialsProviderStaticConfig staticCreds;
+    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromCString(credentials->GetAWSAccessKeyId().c_str());
+    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromCString(credentials->GetAWSSecretKey().c_str());
+    staticCreds.SessionToken = Aws::Crt::ByteCursorFromCString(credentials->GetSessionToken().c_str());
+    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderStatic(staticCreds);
   }
   else
   {
-    m_enableEndpointDiscovery = config.enableEndpointDiscovery;
+    Aws::Crt::Auth::CredentialsProviderChainDefaultConfig credsConfig;
+    credsConfig.Bootstrap = clientBootstrap;
+    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(credsConfig);
+  }
+
+  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), provider->GetUnderlyingHandle());
+  m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
+  s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
+
+  static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
+  s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
+
+  Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
+  aws_tls_connection_options tlsOptions;
+  AWS_ZERO_STRUCT(tlsOptions);
+  if (tlsConnectionOptions)
+  {
+    aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
+    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), m_baseUri.c_str());
+    s3CrtConfig.tls_connection_options = &tlsOptions;
+  }
+  else
+  {
+    s3CrtConfig.tls_connection_options = nullptr;
+  }
+
+  s3CrtConfig.tls_mode = config.scheme == Aws::Http::Scheme::HTTPS ? AWS_MR_TLS_ENABLED : AWS_MR_TLS_DISABLED;
+  s3CrtConfig.throughput_target_gbps = config.throughputTargetGbps;
+  m_clientShutdownSem = Aws::MakeShared<Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  m_wrappedData.data = config.shutdownCallbackUserData;
+  m_wrappedData.fn = config.clientShutdownCallback;
+  m_wrappedData.clientShutdownSem = m_clientShutdownSem;
+  s3CrtConfig.shutdown_callback = CrtClientShutdownCallback;
+  s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
+
+  m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
+  if (tlsConnectionOptions)
+  {
+    aws_tls_connection_options_clean_up(&tlsOptions);
+  }
+  if (!m_s3CrtClient)
+  {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
   }
 #end
 }
+#if($metadata.hasEndpointDiscoveryTrait)
+
+void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+{
+  if (!clientConfiguration.endpointOverride.empty())
+  {
+    m_enableEndpointDiscovery = false;
+  }
+  else if (clientConfiguration.enableEndpointDiscovery)
+  {
+    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
+  }
+  else
+  {
+#if($metadata.requireEndpointDiscovery)
+    m_enableEndpointDiscovery = true;
+#else
+    m_enableEndpointDiscovery = false;
+#end
+
+    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
+    if (enableEndpointDiscovery.empty())
+    {
+      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
+    }
+
+    if (enableEndpointDiscovery == "true")
+    {
+      m_enableEndpointDiscovery = true;
+    }
+    else if (enableEndpointDiscovery == "false")
+    {
+      m_enableEndpointDiscovery = false;
+    }
+    else if (!enableEndpointDiscovery.empty())
+    {
+      AWS_LOGSTREAM_WARN("${className}", R"(Using the SDK default configuration for Endpoint Discovery. )"
+        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
+        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
+    }
+  }
+}
+#end
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 {
-#if($virtualAddressingSupported || $arnEndpointSupported || $accountIdInHostnameSupported || $metadata.hasEndpointTrait)
+#if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
   if (endpoint.compare(0, 7, "http://") == 0)
   {
       m_scheme = "http";

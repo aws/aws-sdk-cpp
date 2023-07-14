@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
@@ -69,10 +59,10 @@ namespace Model
         class StartNextPendingJobExecutionRequest;
         class UpdateJobExecutionRequest;
 
-        typedef Aws::Utils::Outcome<DescribeJobExecutionResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> DescribeJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<GetPendingJobExecutionsResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> GetPendingJobExecutionsOutcome;
-        typedef Aws::Utils::Outcome<StartNextPendingJobExecutionResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> StartNextPendingJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobExecutionResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> UpdateJobExecutionOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobExecutionResult, IoTJobsDataPlaneError> DescribeJobExecutionOutcome;
+        typedef Aws::Utils::Outcome<GetPendingJobExecutionsResult, IoTJobsDataPlaneError> GetPendingJobExecutionsOutcome;
+        typedef Aws::Utils::Outcome<StartNextPendingJobExecutionResult, IoTJobsDataPlaneError> StartNextPendingJobExecutionOutcome;
+        typedef Aws::Utils::Outcome<UpdateJobExecutionResult, IoTJobsDataPlaneError> UpdateJobExecutionOutcome;
 
         typedef std::future<DescribeJobExecutionOutcome> DescribeJobExecutionOutcomeCallable;
         typedef std::future<GetPendingJobExecutionsOutcome> GetPendingJobExecutionsOutcomeCallable;
@@ -128,8 +118,6 @@ namespace Model
 
         virtual ~IoTJobsDataPlaneClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "IoT Jobs Data Plane"; }
-
 
         /**
          * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a
@@ -139,20 +127,12 @@ namespace Model
         virtual Model::DescribeJobExecutionOutcome DescribeJobExecution(const Model::DescribeJobExecutionRequest& request) const;
 
         /**
-         * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeJobExecutionOutcomeCallable DescribeJobExecutionCallable(const Model::DescribeJobExecutionRequest& request) const;
 
         /**
-         * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeJobExecutionAsync(const Model::DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -165,22 +145,12 @@ namespace Model
         virtual Model::GetPendingJobExecutionsOutcome GetPendingJobExecutions(const Model::GetPendingJobExecutionsRequest& request) const;
 
         /**
-         * <p>Gets the list of all jobs for a thing that are not in a terminal
-         * status.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetPendingJobExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetPendingJobExecutionsOutcomeCallable GetPendingJobExecutionsCallable(const Model::GetPendingJobExecutionsRequest& request) const;
 
         /**
-         * <p>Gets the list of all jobs for a thing that are not in a terminal
-         * status.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetPendingJobExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPendingJobExecutionsAsync(const Model::GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -193,22 +163,12 @@ namespace Model
         virtual Model::StartNextPendingJobExecutionOutcome StartNextPendingJobExecution(const Model::StartNextPendingJobExecutionRequest& request) const;
 
         /**
-         * <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
-         * for a thing.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartNextPendingJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartNextPendingJobExecutionOutcomeCallable StartNextPendingJobExecutionCallable(const Model::StartNextPendingJobExecutionRequest& request) const;
 
         /**
-         * <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
-         * for a thing.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartNextPendingJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartNextPendingJobExecutionAsync(const Model::StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -220,20 +180,12 @@ namespace Model
         virtual Model::UpdateJobExecutionOutcome UpdateJobExecution(const Model::UpdateJobExecutionRequest& request) const;
 
         /**
-         * <p>Updates the status of a job execution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateJobExecution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateJobExecutionOutcomeCallable UpdateJobExecutionCallable(const Model::UpdateJobExecutionRequest& request) const;
 
         /**
-         * <p>Updates the status of a job execution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateJobExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateJobExecutionAsync(const Model::UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

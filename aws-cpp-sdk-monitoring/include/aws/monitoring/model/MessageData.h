@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -35,7 +25,11 @@ namespace Model
 
   /**
    * <p>A message returned by the <code>GetMetricData</code>API, including a code and
-   * a description.</p><p><h3>See Also:</h3>   <a
+   * a description.</p> <p>If a cross-Region <code>GetMetricData</code> operation
+   * fails with a code of <code>Forbidden</code> and a value of <code>Authentication
+   * too complex to retrieve cross region data</code>, you can correct the problem by
+   * running the <code>GetMetricData</code> operation in the same Region where the
+   * metric data is.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MessageData">AWS
    * API Reference</a></p>
    */

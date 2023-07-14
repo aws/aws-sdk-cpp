@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -220,7 +210,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
@@ -229,7 +219,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
@@ -238,7 +228,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
@@ -247,7 +237,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
@@ -256,7 +246,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
@@ -265,7 +255,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline UpdatePolicyRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
@@ -274,7 +264,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline UpdatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
@@ -283,7 +273,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
      */
     inline UpdatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
@@ -48,49 +38,49 @@ namespace Model
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline CreateSignalingChannelRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline CreateSignalingChannelRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the signaling channel that you are creating. It must be unique for
-     * each account and region.</p>
+     * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
     inline CreateSignalingChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
@@ -170,49 +160,49 @@ namespace Model
 
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline CreateSignalingChannelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline CreateSignalingChannelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline CreateSignalingChannelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A set of tags (key/value pairs) that you want to associate with this
+     * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
     inline CreateSignalingChannelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -47,114 +37,106 @@ namespace Model
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline PutResourceConfigRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline PutResourceConfigRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
-     * AWS CloudFormation. </p> <note> <p>You cannot use the organization names “aws”,
-     * “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first
-     * part of the ResourceType up to the first ::.</p> </note>
+     * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
+     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
+     * the ResourceType up to the first ::.</p> 
      */
     inline PutResourceConfigRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline const Aws::String& GetSchemaVersionId() const{ return m_schemaVersionId; }
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline bool SchemaVersionIdHasBeenSet() const { return m_schemaVersionIdHasBeenSet; }
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline void SetSchemaVersionId(const Aws::String& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = value; }
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline void SetSchemaVersionId(Aws::String&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::move(value); }
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline void SetSchemaVersionId(const char* value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId.assign(value); }
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline PutResourceConfigRequest& WithSchemaVersionId(const Aws::String& value) { SetSchemaVersionId(value); return *this;}
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline PutResourceConfigRequest& WithSchemaVersionId(Aws::String&& value) { SetSchemaVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>Version of the schema registered for the ResourceType in AWS
-     * CloudFormation.</p>
+     * <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
      */
     inline PutResourceConfigRequest& WithSchemaVersionId(const char* value) { SetSchemaVersionId(value); return *this;}
 
@@ -243,57 +225,57 @@ namespace Model
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline PutResourceConfigRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline PutResourceConfigRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The configuration object of the resource in valid JSON format. It must match
-     * the schema registered with AWS CloudFormation.</p> <note> <p>The configuration
-     * JSON must not exceed 64 KB.</p> </note>
+     * the schema registered with CloudFormation.</p>  <p>The configuration JSON
+     * must not exceed 64 KB.</p> 
      */
     inline PutResourceConfigRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

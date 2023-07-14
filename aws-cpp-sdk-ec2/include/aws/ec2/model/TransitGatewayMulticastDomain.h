@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/TransitGatewayMulticastDomainOptions.h>
 #include <aws/ec2/model/TransitGatewayMulticastDomainState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -136,6 +127,127 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline const Aws::String& GetTransitGatewayMulticastDomainArn() const{ return m_transitGatewayMulticastDomainArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline bool TransitGatewayMulticastDomainArnHasBeenSet() const { return m_transitGatewayMulticastDomainArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline void SetTransitGatewayMulticastDomainArn(const Aws::String& value) { m_transitGatewayMulticastDomainArnHasBeenSet = true; m_transitGatewayMulticastDomainArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline void SetTransitGatewayMulticastDomainArn(Aws::String&& value) { m_transitGatewayMulticastDomainArnHasBeenSet = true; m_transitGatewayMulticastDomainArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline void SetTransitGatewayMulticastDomainArn(const char* value) { m_transitGatewayMulticastDomainArnHasBeenSet = true; m_transitGatewayMulticastDomainArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithTransitGatewayMulticastDomainArn(const Aws::String& value) { SetTransitGatewayMulticastDomainArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithTransitGatewayMulticastDomainArn(Aws::String&& value) { SetTransitGatewayMulticastDomainArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithTransitGatewayMulticastDomainArn(const char* value) { SetTransitGatewayMulticastDomainArn(value); return *this;}
+
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline const TransitGatewayMulticastDomainOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline void SetOptions(const TransitGatewayMulticastDomainOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline void SetOptions(TransitGatewayMulticastDomainOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithOptions(const TransitGatewayMulticastDomainOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>The options for the transit gateway multicast domain.</p>
+     */
+    inline TransitGatewayMulticastDomain& WithOptions(TransitGatewayMulticastDomainOptions&& value) { SetOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The state of the transit gateway multicast domain.</p>
      */
     inline const TransitGatewayMulticastDomainState& GetState() const{ return m_state; }
@@ -244,6 +356,15 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    Aws::String m_transitGatewayMulticastDomainArn;
+    bool m_transitGatewayMulticastDomainArnHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
+
+    TransitGatewayMulticastDomainOptions m_options;
+    bool m_optionsHasBeenSet;
 
     TransitGatewayMulticastDomainState m_state;
     bool m_stateHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -27,6 +17,10 @@ namespace Model
 {
 
   /**
+   * <p>Describes a resize cluster operation. For example, a scheduled action to run
+   * the <code>ResizeCluster</code> API operation. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeClusterMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API ResizeClusterRequest : public RedshiftRequest
   {
@@ -178,22 +172,26 @@ namespace Model
 
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The new number of nodes for the cluster.</p>
+     * <p>The new number of nodes for the cluster. If not specified, the cluster's
+     * current number of nodes is used.</p>
      */
     inline ResizeClusterRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
@@ -226,6 +224,88 @@ namespace Model
      */
     inline ResizeClusterRequest& WithClassic(bool value) { SetClassic(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline ResizeClusterRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline ResizeClusterRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the reserved node.</p>
+     */
+    inline ResizeClusterRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const Aws::String& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(Aws::String&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const char* value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline ResizeClusterRequest& WithTargetReservedNodeOfferingId(const Aws::String& value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline ResizeClusterRequest& WithTargetReservedNodeOfferingId(Aws::String&& value) { SetTargetReservedNodeOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline ResizeClusterRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -242,6 +322,12 @@ namespace Model
 
     bool m_classic;
     bool m_classicHasBeenSet;
+
+    Aws::String m_reservedNodeId;
+    bool m_reservedNodeIdHasBeenSet;
+
+    Aws::String m_targetReservedNodeOfferingId;
+    bool m_targetReservedNodeOfferingIdHasBeenSet;
   };
 
 } // namespace Model

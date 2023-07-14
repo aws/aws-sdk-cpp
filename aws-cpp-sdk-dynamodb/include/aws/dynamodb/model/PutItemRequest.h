@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -105,7 +95,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -121,7 +114,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -137,7 +133,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -153,7 +152,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -169,7 +171,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -185,7 +190,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -201,7 +209,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -217,7 +228,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -233,7 +247,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -249,7 +266,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -265,7 +285,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -281,7 +304,10 @@ namespace Model
      * provide both values for both the partition key and the sort key.</p> <p>If you
      * specify any attributes that are part of an index key, then the data types for
      * those attributes must match those of the schema in the table's attribute
-     * definition.</p> <p>For more information about primary keys, see <a
+     * definition.</p> <p>Empty String and Binary attribute values are allowed.
+     * Attribute values of type String and Binary must have a length greater than zero
+     * if the attribute is used as a key attribute for a table or index.</p> <p>For
+     * more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
      * the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -394,10 +420,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul> <note> <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> </note>
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
@@ -409,10 +435,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul> <note> <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> </note>
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline bool ReturnValuesHasBeenSet() const { return m_returnValuesHasBeenSet; }
 
@@ -424,10 +450,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul> <note> <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> </note>
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -439,10 +465,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul> <note> <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> </note>
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
@@ -454,10 +480,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul> <note> <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> </note>
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline PutItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
@@ -469,10 +495,10 @@ namespace Model
      * <code>NONE</code>, then nothing is returned. (This setting is the default for
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
-     * the old item is returned.</p> </li> </ul> <note> <p>The
-     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
-     * however, <code>PutItem</code> does not recognize any values other than
-     * <code>NONE</code> or <code>ALL_OLD</code>.</p> </note>
+     * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
+     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
+     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
+     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline PutItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
@@ -725,9 +751,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -752,9 +778,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -779,9 +805,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -806,9 +832,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -833,9 +859,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -860,9 +886,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -887,9 +913,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -914,9 +940,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -941,9 +967,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -968,9 +994,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -995,9 +1021,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1022,9 +1048,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1049,9 +1075,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>

@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/outposts/model/SupportedHardwareType.h>
 #include <utility>
 
 namespace Aws
@@ -92,28 +84,84 @@ namespace Model
     inline CreateOutpostRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline const Aws::String& GetSiteId() const{ return m_siteId; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline CreateOutpostRequest& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline CreateOutpostRequest& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
+     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
+     * an ID for Outposts and sites throughout the Outposts Query API. To address
+     * backwards compatibility, the parameter names <code>OutpostID</code> or
+     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
+     * request with an ARN.</p> 
+     */
     inline CreateOutpostRequest& WithSiteId(const char* value) { SetSiteId(value); return *this;}
 
 
@@ -166,6 +214,103 @@ namespace Model
     
     inline CreateOutpostRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to apply to the Outpost.</p>
+     */
+    inline CreateOutpostRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline CreateOutpostRequest& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
+
+    /**
+     * <p> The type of hardware for this Outpost. </p>
+     */
+    inline CreateOutpostRequest& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -182,6 +327,12 @@ namespace Model
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    SupportedHardwareType m_supportedHardwareType;
+    bool m_supportedHardwareTypeHasBeenSet;
   };
 
 } // namespace Model

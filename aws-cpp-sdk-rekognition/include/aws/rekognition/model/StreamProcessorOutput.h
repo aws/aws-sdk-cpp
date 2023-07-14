@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/KinesisDataStream.h>
+#include <aws/rekognition/model/S3Destination.h>
 #include <utility>
 
 namespace Aws
@@ -86,10 +77,50 @@ namespace Model
      */
     inline StreamProcessorOutput& WithKinesisDataStream(KinesisDataStream&& value) { SetKinesisDataStream(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
+     * detailed inference results of a video analysis operation. </p>
+     */
+    inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
+
+    /**
+     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
+     * detailed inference results of a video analysis operation. </p>
+     */
+    inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
+
+    /**
+     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
+     * detailed inference results of a video analysis operation. </p>
+     */
+    inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
+
+    /**
+     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
+     * detailed inference results of a video analysis operation. </p>
+     */
+    inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
+
+    /**
+     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
+     * detailed inference results of a video analysis operation. </p>
+     */
+    inline StreamProcessorOutput& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
+
+    /**
+     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
+     * detailed inference results of a video analysis operation. </p>
+     */
+    inline StreamProcessorOutput& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+
   private:
 
     KinesisDataStream m_kinesisDataStream;
     bool m_kinesisDataStreamHasBeenSet;
+
+    S3Destination m_s3Destination;
+    bool m_s3DestinationHasBeenSet;
   };
 
 } // namespace Model

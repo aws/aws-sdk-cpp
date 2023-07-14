@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -50,58 +40,58 @@ namespace Model
 
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline UserData& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline UserData& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The user data. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file.
-     * Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The user data. If you are using an Amazon Web Services SDK or command line
+     * tool, Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.</p>
      */
     inline UserData& WithData(const char* value) { SetData(value); return *this;}
 

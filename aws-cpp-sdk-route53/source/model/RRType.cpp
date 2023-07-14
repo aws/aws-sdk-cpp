@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/route53/model/RRType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -42,6 +32,7 @@ namespace Aws
         static const int SPF_HASH = HashingUtils::HashString("SPF");
         static const int AAAA_HASH = HashingUtils::HashString("AAAA");
         static const int CAA_HASH = HashingUtils::HashString("CAA");
+        static const int DS_HASH = HashingUtils::HashString("DS");
 
 
         RRType GetRRTypeForName(const Aws::String& name)
@@ -95,6 +86,10 @@ namespace Aws
           {
             return RRType::CAA;
           }
+          else if (hashCode == DS_HASH)
+          {
+            return RRType::DS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -133,6 +128,8 @@ namespace Aws
             return "AAAA";
           case RRType::CAA:
             return "CAA";
+          case RRType::DS:
+            return "DS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

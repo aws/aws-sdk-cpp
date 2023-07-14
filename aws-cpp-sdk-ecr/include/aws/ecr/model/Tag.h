@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -34,11 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The metadata that you apply to a resource to help you categorize and organize
-   * them. Each tag consists of a key and an optional value, both of which you
-   * define. Tag keys can have a maximum character length of 128 characters, and tag
-   * values can have a maximum length of 256 characters.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Tag">AWS API
+   * <p>The metadata to apply to a resource to help you categorize and organize them.
+   * Each tag consists of a key and a value, both of which you define. Tag keys can
+   * have a maximum character length of 128 characters, and tag values can have a
+   * maximum length of 256 characters.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Tag">AWS API
    * Reference</a></p>
    */
   class AWS_ECR_API Tag
@@ -100,50 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A
-     * <code>value</code> acts as a descriptor within a tag category (key).</p>
+     * <p>A <code>value</code> acts as a descriptor within a tag category (key).</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

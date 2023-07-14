@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -36,15 +26,10 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>Contains one or more regular
-   * expressions. </p> <p>AWS WAF assigns an ARN to each <code>RegexPatternSet</code>
-   * that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a>
-   * statement <a>RegexPatternSetReferenceStatement</a>. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains one or more regular expressions. </p> <p>WAF assigns an ARN to each
+   * <code>RegexPatternSet</code> that you create. To use a set in a rule, you
+   * provide the ARN to the <a>Rule</a> statement
+   * <a>RegexPatternSetReferenceStatement</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSet">AWS
    * API Reference</a></p>
    */
@@ -197,50 +182,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline RegexPatternSet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline RegexPatternSet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline RegexPatternSet& WithDescription(const char* value) { SetDescription(value); return *this;}
 

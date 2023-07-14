@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -43,83 +33,83 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRevisionRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRevisionRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRevisionRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline const Aws::String& GetConfigurationRevision() const{ return m_configurationRevision; }
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline bool ConfigurationRevisionHasBeenSet() const { return m_configurationRevisionHasBeenSet; }
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline void SetConfigurationRevision(const Aws::String& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = value; }
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline void SetConfigurationRevision(Aws::String&& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = std::move(value); }
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline void SetConfigurationRevision(const char* value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision.assign(value); }
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline DescribeConfigurationRevisionRequest& WithConfigurationRevision(const Aws::String& value) { SetConfigurationRevision(value); return *this;}
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline DescribeConfigurationRevisionRequest& WithConfigurationRevision(Aws::String&& value) { SetConfigurationRevision(std::move(value)); return *this;}
 
     /**
-     * The revision of the configuration.
+     * <p>The revision of the configuration.</p>
      */
     inline DescribeConfigurationRevisionRequest& WithConfigurationRevision(const char* value) { SetConfigurationRevision(value); return *this;}
 

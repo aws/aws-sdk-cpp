@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -196,8 +186,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -209,8 +199,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
@@ -222,8 +212,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -235,8 +225,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -248,8 +238,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -261,8 +251,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline ModifyClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -274,8 +264,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline ModifyClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -287,8 +277,8 @@ namespace Model
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline ModifyClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
@@ -490,130 +480,138 @@ namespace Model
 
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     *  <p>Operations never return the password, so this operation provides a way
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except '
-     * (single quote), " (double quote), \, /, @, or space.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -697,8 +695,10 @@ namespace Model
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot
      * retention period from its current value, existing automated snapshots that fall
-     * outside of the new retention period will be immediately deleted.</p> <p>Default:
-     * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
+     * outside of the new retention period will be immediately deleted.</p> <p>You
+     * can't disable automated snapshots for RA3 node types. Set the automated
+     * retention period from 1-35 days.</p> <p>Default: Uses existing setting.</p>
+     * <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
@@ -708,8 +708,10 @@ namespace Model
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot
      * retention period from its current value, existing automated snapshots that fall
-     * outside of the new retention period will be immediately deleted.</p> <p>Default:
-     * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
+     * outside of the new retention period will be immediately deleted.</p> <p>You
+     * can't disable automated snapshots for RA3 node types. Set the automated
+     * retention period from 1-35 days.</p> <p>Default: Uses existing setting.</p>
+     * <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline bool AutomatedSnapshotRetentionPeriodHasBeenSet() const { return m_automatedSnapshotRetentionPeriodHasBeenSet; }
 
@@ -719,8 +721,10 @@ namespace Model
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot
      * retention period from its current value, existing automated snapshots that fall
-     * outside of the new retention period will be immediately deleted.</p> <p>Default:
-     * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
+     * outside of the new retention period will be immediately deleted.</p> <p>You
+     * can't disable automated snapshots for RA3 node types. Set the automated
+     * retention period from 1-35 days.</p> <p>Default: Uses existing setting.</p>
+     * <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
@@ -730,8 +734,10 @@ namespace Model
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot
      * retention period from its current value, existing automated snapshots that fall
-     * outside of the new retention period will be immediately deleted.</p> <p>Default:
-     * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
+     * outside of the new retention period will be immediately deleted.</p> <p>You
+     * can't disable automated snapshots for RA3 node types. Set the automated
+     * retention period from 1-35 days.</p> <p>Default: Uses existing setting.</p>
+     * <p>Constraints: Must be a value from 0 to 35.</p>
      */
     inline ModifyClusterRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
@@ -1116,7 +1122,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline const Aws::String& GetNewClusterIdentifier() const{ return m_newClusterIdentifier; }
 
@@ -1126,7 +1133,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline bool NewClusterIdentifierHasBeenSet() const { return m_newClusterIdentifierHasBeenSet; }
 
@@ -1136,7 +1144,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(const Aws::String& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = value; }
 
@@ -1146,7 +1155,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(Aws::String&& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = std::move(value); }
 
@@ -1156,7 +1166,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(const char* value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier.assign(value); }
 
@@ -1166,7 +1177,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const Aws::String& value) { SetNewClusterIdentifier(value); return *this;}
 
@@ -1176,7 +1188,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(Aws::String&& value) { SetNewClusterIdentifier(std::move(value)); return *this;}
 
@@ -1186,7 +1199,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const char* value) { SetNewClusterIdentifier(value); return *this;}
 
@@ -1427,9 +1441,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -1437,9 +1450,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -1447,9 +1459,8 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -1457,60 +1468,154 @@ namespace Model
      * <p>Indicates whether the cluster is encrypted. If the value is encrypted (true)
      * and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the
      * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
-     * <code>KmsKeyId</code>, we encrypt with the default key. In the China region we
-     * use legacy encryption if you specify that the cluster is encrypted.</p> <p>If
-     * the value is not encrypted (false), then the cluster is decrypted. </p>
+     * <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is
+     * not encrypted (false), then the cluster is decrypted. </p>
      */
     inline ModifyClusterRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline ModifyClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline ModifyClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline ModifyClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline bool GetAvailabilityZoneRelocation() const{ return m_availabilityZoneRelocation; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline bool AvailabilityZoneRelocationHasBeenSet() const { return m_availabilityZoneRelocationHasBeenSet; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline void SetAvailabilityZoneRelocation(bool value) { m_availabilityZoneRelocationHasBeenSet = true; m_availabilityZoneRelocation = value; }
+
+    /**
+     * <p>The option to enable relocation for an Amazon Redshift cluster between
+     * Availability Zones after the cluster modification is complete.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
+
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * <p>The option to initiate relocation for an Amazon Redshift cluster to the
+     * target Availability Zone.</p>
+     */
+    inline ModifyClusterRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The option to change the port of an Amazon Redshift cluster.</p>
+     */
+    inline ModifyClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
   private:
 
@@ -1579,6 +1684,15 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    bool m_availabilityZoneRelocation;
+    bool m_availabilityZoneRelocationHasBeenSet;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
+
+    int m_port;
+    bool m_portHasBeenSet;
   };
 
 } // namespace Model

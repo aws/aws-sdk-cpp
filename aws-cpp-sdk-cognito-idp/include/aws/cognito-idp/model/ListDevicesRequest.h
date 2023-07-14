@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -48,42 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline ListDevicesRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline ListDevicesRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access tokens for the request to list devices.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose list of
+     * devices you want to view.</p>
      */
     inline ListDevicesRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

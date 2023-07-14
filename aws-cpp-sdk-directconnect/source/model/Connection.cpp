@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/directconnect/model/Connection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,10 +36,16 @@ Connection::Connection() :
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_macSecCapable(false),
+    m_macSecCapableHasBeenSet(false),
+    m_portEncryptionStatusHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false),
+    m_macSecKeysHasBeenSet(false)
 {
 }
 
@@ -71,10 +67,16 @@ Connection::Connection(JsonView jsonValue) :
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
+    m_providerNameHasBeenSet(false),
+    m_macSecCapable(false),
+    m_macSecCapableHasBeenSet(false),
+    m_portEncryptionStatusHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false),
+    m_macSecKeysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +181,13 @@ Connection& Connection::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
   {
     m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
@@ -201,6 +210,37 @@ Connection& Connection::operator =(JsonView jsonValue)
     m_providerName = jsonValue.GetString("providerName");
 
     m_providerNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("macSecCapable"))
+  {
+    m_macSecCapable = jsonValue.GetBool("macSecCapable");
+
+    m_macSecCapableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("portEncryptionStatus"))
+  {
+    m_portEncryptionStatus = jsonValue.GetString("portEncryptionStatus");
+
+    m_portEncryptionStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionMode"))
+  {
+    m_encryptionMode = jsonValue.GetString("encryptionMode");
+
+    m_encryptionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("macSecKeys"))
+  {
+    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+    {
+      m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
+    }
+    m_macSecKeysHasBeenSet = true;
   }
 
   return *this;
@@ -292,6 +332,12 @@ JsonValue Connection::Jsonize() const
 
   }
 
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
+
+  }
+
   if(m_hasLogicalRedundancyHasBeenSet)
   {
    payload.WithString("hasLogicalRedundancy", HasLogicalRedundancyMapper::GetNameForHasLogicalRedundancy(m_hasLogicalRedundancy));
@@ -311,6 +357,35 @@ JsonValue Connection::Jsonize() const
   if(m_providerNameHasBeenSet)
   {
    payload.WithString("providerName", m_providerName);
+
+  }
+
+  if(m_macSecCapableHasBeenSet)
+  {
+   payload.WithBool("macSecCapable", m_macSecCapable);
+
+  }
+
+  if(m_portEncryptionStatusHasBeenSet)
+  {
+   payload.WithString("portEncryptionStatus", m_portEncryptionStatus);
+
+  }
+
+  if(m_encryptionModeHasBeenSet)
+  {
+   payload.WithString("encryptionMode", m_encryptionMode);
+
+  }
+
+  if(m_macSecKeysHasBeenSet)
+  {
+   Array<JsonValue> macSecKeysJsonList(m_macSecKeys.size());
+   for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+   {
+     macSecKeysJsonList[macSecKeysIndex].AsObject(m_macSecKeys[macSecKeysIndex].Jsonize());
+   }
+   payload.WithArray("macSecKeys", std::move(macSecKeysJsonList));
 
   }
 

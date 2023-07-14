@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/frauddetector/model/Model.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,11 +23,10 @@ Model::Model() :
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_trainingDataSourceHasBeenSet(false),
-    m_modelVariablesHasBeenSet(false),
-    m_labelSchemaHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -46,11 +35,10 @@ Model::Model(JsonView jsonValue) :
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_trainingDataSourceHasBeenSet(false),
-    m_modelVariablesHasBeenSet(false),
-    m_labelSchemaHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,28 +66,18 @@ Model& Model::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("trainingDataSource"))
+  if(jsonValue.ValueExists("eventTypeName"))
   {
-    m_trainingDataSource = jsonValue.GetObject("trainingDataSource");
+    m_eventTypeName = jsonValue.GetString("eventTypeName");
 
-    m_trainingDataSourceHasBeenSet = true;
+    m_eventTypeNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("modelVariables"))
+  if(jsonValue.ValueExists("createdTime"))
   {
-    Array<JsonView> modelVariablesJsonList = jsonValue.GetArray("modelVariables");
-    for(unsigned modelVariablesIndex = 0; modelVariablesIndex < modelVariablesJsonList.GetLength(); ++modelVariablesIndex)
-    {
-      m_modelVariables.push_back(modelVariablesJsonList[modelVariablesIndex].AsObject());
-    }
-    m_modelVariablesHasBeenSet = true;
-  }
+    m_createdTime = jsonValue.GetString("createdTime");
 
-  if(jsonValue.ValueExists("labelSchema"))
-  {
-    m_labelSchema = jsonValue.GetObject("labelSchema");
-
-    m_labelSchemaHasBeenSet = true;
+    m_createdTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdatedTime"))
@@ -109,11 +87,11 @@ Model& Model::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createdTime"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_createdTime = jsonValue.GetString("createdTime");
+    m_arn = jsonValue.GetString("arn");
 
-    m_createdTimeHasBeenSet = true;
+    m_arnHasBeenSet = true;
   }
 
   return *this;
@@ -140,26 +118,15 @@ JsonValue Model::Jsonize() const
 
   }
 
-  if(m_trainingDataSourceHasBeenSet)
+  if(m_eventTypeNameHasBeenSet)
   {
-   payload.WithObject("trainingDataSource", m_trainingDataSource.Jsonize());
+   payload.WithString("eventTypeName", m_eventTypeName);
 
   }
 
-  if(m_modelVariablesHasBeenSet)
+  if(m_createdTimeHasBeenSet)
   {
-   Array<JsonValue> modelVariablesJsonList(m_modelVariables.size());
-   for(unsigned modelVariablesIndex = 0; modelVariablesIndex < modelVariablesJsonList.GetLength(); ++modelVariablesIndex)
-   {
-     modelVariablesJsonList[modelVariablesIndex].AsObject(m_modelVariables[modelVariablesIndex].Jsonize());
-   }
-   payload.WithArray("modelVariables", std::move(modelVariablesJsonList));
-
-  }
-
-  if(m_labelSchemaHasBeenSet)
-  {
-   payload.WithObject("labelSchema", m_labelSchema.Jsonize());
+   payload.WithString("createdTime", m_createdTime);
 
   }
 
@@ -169,9 +136,9 @@ JsonValue Model::Jsonize() const
 
   }
 
-  if(m_createdTimeHasBeenSet)
+  if(m_arnHasBeenSet)
   {
-   payload.WithString("createdTime", m_createdTime);
+   payload.WithString("arn", m_arn);
 
   }
 

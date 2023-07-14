@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
@@ -32,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>.
+   * <p>Represents a step adjustment for a <a
+   * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>.
    * Describes an adjustment based on the difference between the value of the
    * aggregated CloudWatch metric and the breach threshold that you've defined for
    * the alarm. </p> <p>For the following examples, suppose that you have an alarm
@@ -146,29 +137,29 @@ namespace Model
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current scalable dimension while a negative number
-     * removes from the current scalable dimension.</p>
+     * positive value adds to the current capacity while a negative number removes from
+     * the current capacity. For exact capacity, you must specify a positive value.</p>
      */
     inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current scalable dimension while a negative number
-     * removes from the current scalable dimension.</p>
+     * positive value adds to the current capacity while a negative number removes from
+     * the current capacity. For exact capacity, you must specify a positive value.</p>
      */
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current scalable dimension while a negative number
-     * removes from the current scalable dimension.</p>
+     * positive value adds to the current capacity while a negative number removes from
+     * the current capacity. For exact capacity, you must specify a positive value.</p>
      */
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
-     * positive value adds to the current scalable dimension while a negative number
-     * removes from the current scalable dimension.</p>
+     * positive value adds to the current capacity while a negative number removes from
+     * the current capacity. For exact capacity, you must specify a positive value.</p>
      */
     inline StepAdjustment& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 

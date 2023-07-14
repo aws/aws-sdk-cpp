@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/es/model/DomainPackageDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,6 +27,7 @@ DomainPackageDetails::DomainPackageDetails() :
     m_domainNameHasBeenSet(false),
     m_domainPackageStatus(DomainPackageStatus::NOT_SET),
     m_domainPackageStatusHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
     m_referencePathHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
@@ -51,6 +42,7 @@ DomainPackageDetails::DomainPackageDetails(JsonView jsonValue) :
     m_domainNameHasBeenSet(false),
     m_domainPackageStatus(DomainPackageStatus::NOT_SET),
     m_domainPackageStatusHasBeenSet(false),
+    m_packageVersionHasBeenSet(false),
     m_referencePathHasBeenSet(false),
     m_errorDetailsHasBeenSet(false)
 {
@@ -99,6 +91,13 @@ DomainPackageDetails& DomainPackageDetails::operator =(JsonView jsonValue)
     m_domainPackageStatus = DomainPackageStatusMapper::GetDomainPackageStatusForName(jsonValue.GetString("DomainPackageStatus"));
 
     m_domainPackageStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageVersion"))
+  {
+    m_packageVersion = jsonValue.GetString("PackageVersion");
+
+    m_packageVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReferencePath"))
@@ -153,6 +152,12 @@ JsonValue DomainPackageDetails::Jsonize() const
   if(m_domainPackageStatusHasBeenSet)
   {
    payload.WithString("DomainPackageStatus", DomainPackageStatusMapper::GetNameForDomainPackageStatus(m_domainPackageStatus));
+  }
+
+  if(m_packageVersionHasBeenSet)
+  {
+   payload.WithString("PackageVersion", m_packageVersion);
+
   }
 
   if(m_referencePathHasBeenSet)

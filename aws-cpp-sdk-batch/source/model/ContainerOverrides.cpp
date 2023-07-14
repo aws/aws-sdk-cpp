@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/ContainerOverrides.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,10 +19,6 @@ namespace Model
 {
 
 ContainerOverrides::ContainerOverrides() : 
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -41,10 +27,6 @@ ContainerOverrides::ContainerOverrides() :
 }
 
 ContainerOverrides::ContainerOverrides(JsonView jsonValue) : 
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -55,20 +37,6 @@ ContainerOverrides::ContainerOverrides(JsonView jsonValue) :
 
 ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("vcpus"))
-  {
-    m_vcpus = jsonValue.GetInteger("vcpus");
-
-    m_vcpusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("memory"))
-  {
-    m_memory = jsonValue.GetInteger("memory");
-
-    m_memoryHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("command"))
   {
     Array<JsonView> commandJsonList = jsonValue.GetArray("command");
@@ -112,18 +80,6 @@ ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 JsonValue ContainerOverrides::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_vcpusHasBeenSet)
-  {
-   payload.WithInteger("vcpus", m_vcpus);
-
-  }
-
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
-
-  }
 
   if(m_commandHasBeenSet)
   {

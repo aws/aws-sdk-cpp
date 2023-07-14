@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/CreateFunctionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,12 +27,19 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_publish(false),
     m_publishHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_packageType(PackageType::NOT_SET),
+    m_packageTypeHasBeenSet(false),
     m_deadLetterConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_layersHasBeenSet(false)
+    m_layersHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false),
+    m_imageConfigHasBeenSet(false),
+    m_codeSigningConfigArnHasBeenSet(false),
+    m_architecturesHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -109,6 +106,11 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
+  if(m_packageTypeHasBeenSet)
+  {
+   payload.WithString("PackageType", PackageTypeMapper::GetNameForPackageType(m_packageType));
+  }
+
   if(m_deadLetterConfigHasBeenSet)
   {
    payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
@@ -152,6 +154,46 @@ Aws::String CreateFunctionRequest::SerializePayload() const
      layersJsonList[layersIndex].AsString(m_layers[layersIndex]);
    }
    payload.WithArray("Layers", std::move(layersJsonList));
+
+  }
+
+  if(m_fileSystemConfigsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+   {
+     fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_imageConfigHasBeenSet)
+  {
+   payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
+
+  }
+
+  if(m_codeSigningConfigArnHasBeenSet)
+  {
+   payload.WithString("CodeSigningConfigArn", m_codeSigningConfigArn);
+
+  }
+
+  if(m_architecturesHasBeenSet)
+  {
+   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   {
+     architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
+   }
+   payload.WithArray("Architectures", std::move(architecturesJsonList));
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

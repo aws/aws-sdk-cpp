@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 
   /**
    * <p>A container for filter information for the selection of S3 objects encrypted
-   * with AWS KMS.</p><p><h3>See Also:</h3>   <a
+   * with Amazon Web Services KMS.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SseKmsEncryptedObjects">AWS
    * API Reference</a></p>
    */
@@ -50,43 +40,43 @@ namespace Model
 
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using a customer master key (CMK) stored in AWS Key Management
-     * Service.</p>
+     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
+     * Key Management Service.</p>
      */
     inline const SseKmsEncryptedObjectsStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using a customer master key (CMK) stored in AWS Key Management
-     * Service.</p>
+     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
+     * Key Management Service.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using a customer master key (CMK) stored in AWS Key Management
-     * Service.</p>
+     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
+     * Key Management Service.</p>
      */
     inline void SetStatus(const SseKmsEncryptedObjectsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using a customer master key (CMK) stored in AWS Key Management
-     * Service.</p>
+     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
+     * Key Management Service.</p>
      */
     inline void SetStatus(SseKmsEncryptedObjectsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using a customer master key (CMK) stored in AWS Key Management
-     * Service.</p>
+     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
+     * Key Management Service.</p>
      */
     inline SseKmsEncryptedObjects& WithStatus(const SseKmsEncryptedObjectsStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Specifies whether Amazon S3 replicates objects created with server-side
-     * encryption using a customer master key (CMK) stored in AWS Key Management
-     * Service.</p>
+     * encryption using an Amazon Web Services KMS key stored in Amazon Web Services
+     * Key Management Service.</p>
      */
     inline SseKmsEncryptedObjects& WithStatus(SseKmsEncryptedObjectsStatus&& value) { SetStatus(std::move(value)); return *this;}
 

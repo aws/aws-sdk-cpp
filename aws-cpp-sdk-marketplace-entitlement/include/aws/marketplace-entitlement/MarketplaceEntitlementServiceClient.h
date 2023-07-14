@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
@@ -63,7 +53,7 @@ namespace Model
 {
         class GetEntitlementsRequest;
 
-        typedef Aws::Utils::Outcome<GetEntitlementsResult, Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>> GetEntitlementsOutcome;
+        typedef Aws::Utils::Outcome<GetEntitlementsResult, MarketplaceEntitlementServiceError> GetEntitlementsOutcome;
 
         typedef std::future<GetEntitlementsOutcome> GetEntitlementsOutcomeCallable;
 } // namespace Model
@@ -109,8 +99,6 @@ namespace Model
 
         virtual ~MarketplaceEntitlementServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "entitlement.marketplace"; }
-
 
         /**
          * <p>GetEntitlements retrieves entitlement values for a given product. The results
@@ -122,24 +110,12 @@ namespace Model
         virtual Model::GetEntitlementsOutcome GetEntitlements(const Model::GetEntitlementsRequest& request) const;
 
         /**
-         * <p>GetEntitlements retrieves entitlement values for a given product. The results
-         * can be filtered based on customer identifier or product
-         * dimensions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetEntitlements that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEntitlementsOutcomeCallable GetEntitlementsCallable(const Model::GetEntitlementsRequest& request) const;
 
         /**
-         * <p>GetEntitlements retrieves entitlement values for a given product. The results
-         * can be filtered based on customer identifier or product
-         * dimensions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetEntitlements that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEntitlementsAsync(const Model::GetEntitlementsRequest& request, const GetEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

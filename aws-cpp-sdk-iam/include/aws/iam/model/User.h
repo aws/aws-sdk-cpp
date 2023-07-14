@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -59,56 +49,64 @@ namespace Model
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline User& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline User& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>The ARN of the policy used
+     * to set the permissions boundary for the user.</p>
      */
     inline User& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -158,7 +156,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
@@ -166,7 +164,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
@@ -174,7 +172,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
@@ -182,7 +180,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
@@ -190,7 +188,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
@@ -198,7 +196,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
@@ -206,7 +204,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
@@ -214,7 +212,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithUserId(const char* value) { SetUserId(value); return *this;}
 
@@ -324,10 +322,10 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
+     * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
@@ -343,10 +341,10 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
+     * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
@@ -362,10 +360,10 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
+     * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
@@ -381,10 +379,10 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
+     * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
@@ -400,10 +398,10 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
+     * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
@@ -419,10 +417,10 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
+     * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
@@ -437,115 +435,109 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(AttachedPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithPermissionsBoundary(const AttachedPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
 
     /**
-     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithPermissionsBoundary(AttachedPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags that are associated with the specified user. For more
-     * information about tagging, see <a
+     * <p>A list of tags that are associated with the user. For more information about
+     * tagging, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

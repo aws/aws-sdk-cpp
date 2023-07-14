@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -49,99 +39,93 @@ namespace Model
   public:
 
     /**
-     * <p>The kind of the type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The kind of the type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The kind of the type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The kind of the type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The kind of the type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The kind of the type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the type for which you want version summary information.</p>
+     * <p>The name of the extension for which you want version summary information.</p>
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
@@ -149,58 +133,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
-     * and <code>Type</code>, or <code>Arn</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the extension for which you want version
+     * summary information.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeVersionsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -320,70 +304,119 @@ namespace Model
 
 
     /**
-     * <p>The deprecation status of the type versions that you want to get summary
+     * <p>The deprecation status of the extension versions that you want to get summary
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>LIVE</code>: The type version is registered and can be used in
+     * <code>LIVE</code>: The extension version is registered and can be used in
      * CloudFormation operations, dependent on its provisioning behavior and visibility
-     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
-     * </ul> <p>The default is <code>LIVE</code>.</p>
+     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension version has
+     * been deregistered and can no longer be used in CloudFormation operations.</p>
+     * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
     inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
 
     /**
-     * <p>The deprecation status of the type versions that you want to get summary
+     * <p>The deprecation status of the extension versions that you want to get summary
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>LIVE</code>: The type version is registered and can be used in
+     * <code>LIVE</code>: The extension version is registered and can be used in
      * CloudFormation operations, dependent on its provisioning behavior and visibility
-     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
-     * </ul> <p>The default is <code>LIVE</code>.</p>
+     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension version has
+     * been deregistered and can no longer be used in CloudFormation operations.</p>
+     * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
     inline bool DeprecatedStatusHasBeenSet() const { return m_deprecatedStatusHasBeenSet; }
 
     /**
-     * <p>The deprecation status of the type versions that you want to get summary
+     * <p>The deprecation status of the extension versions that you want to get summary
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>LIVE</code>: The type version is registered and can be used in
+     * <code>LIVE</code>: The extension version is registered and can be used in
      * CloudFormation operations, dependent on its provisioning behavior and visibility
-     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
-     * </ul> <p>The default is <code>LIVE</code>.</p>
+     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension version has
+     * been deregistered and can no longer be used in CloudFormation operations.</p>
+     * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
     inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
 
     /**
-     * <p>The deprecation status of the type versions that you want to get summary
+     * <p>The deprecation status of the extension versions that you want to get summary
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>LIVE</code>: The type version is registered and can be used in
+     * <code>LIVE</code>: The extension version is registered and can be used in
      * CloudFormation operations, dependent on its provisioning behavior and visibility
-     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
-     * </ul> <p>The default is <code>LIVE</code>.</p>
+     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension version has
+     * been deregistered and can no longer be used in CloudFormation operations.</p>
+     * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
     inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = std::move(value); }
 
     /**
-     * <p>The deprecation status of the type versions that you want to get summary
+     * <p>The deprecation status of the extension versions that you want to get summary
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>LIVE</code>: The type version is registered and can be used in
+     * <code>LIVE</code>: The extension version is registered and can be used in
      * CloudFormation operations, dependent on its provisioning behavior and visibility
-     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
-     * </ul> <p>The default is <code>LIVE</code>.</p>
+     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension version has
+     * been deregistered and can no longer be used in CloudFormation operations.</p>
+     * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
     inline ListTypeVersionsRequest& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
 
     /**
-     * <p>The deprecation status of the type versions that you want to get summary
+     * <p>The deprecation status of the extension versions that you want to get summary
      * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>LIVE</code>: The type version is registered and can be used in
+     * <code>LIVE</code>: The extension version is registered and can be used in
      * CloudFormation operations, dependent on its provisioning behavior and visibility
-     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The type version has been
-     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
-     * </ul> <p>The default is <code>LIVE</code>.</p>
+     * scope.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension version has
+     * been deregistered and can no longer be used in CloudFormation operations.</p>
+     * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
     inline ListTypeVersionsRequest& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline ListTypeVersionsRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline ListTypeVersionsRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
+     * Amazon aren't assigned a publisher ID.</p>
+     */
+    inline ListTypeVersionsRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
 
   private:
 
@@ -404,6 +437,9 @@ namespace Model
 
     DeprecatedStatus m_deprecatedStatus;
     bool m_deprecatedStatusHasBeenSet;
+
+    Aws::String m_publisherId;
+    bool m_publisherIdHasBeenSet;
   };
 
 } // namespace Model

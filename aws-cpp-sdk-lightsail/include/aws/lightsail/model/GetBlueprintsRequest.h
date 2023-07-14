@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -45,26 +35,26 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value indicating whether to include inactive results in your
-     * request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * blueprints in the response of your request.</p>
      */
     inline bool GetIncludeInactive() const{ return m_includeInactive; }
 
     /**
-     * <p>A Boolean value indicating whether to include inactive results in your
-     * request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * blueprints in the response of your request.</p>
      */
     inline bool IncludeInactiveHasBeenSet() const { return m_includeInactiveHasBeenSet; }
 
     /**
-     * <p>A Boolean value indicating whether to include inactive results in your
-     * request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * blueprints in the response of your request.</p>
      */
     inline void SetIncludeInactive(bool value) { m_includeInactiveHasBeenSet = true; m_includeInactive = value; }
 
     /**
-     * <p>A Boolean value indicating whether to include inactive results in your
-     * request.</p>
+     * <p>A Boolean value that indicates whether to include inactive (unavailable)
+     * blueprints in the response of your request.</p>
      */
     inline GetBlueprintsRequest& WithIncludeInactive(bool value) { SetIncludeInactive(value); return *this;}
 

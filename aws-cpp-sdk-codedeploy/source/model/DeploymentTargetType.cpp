@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codedeploy/model/DeploymentTargetType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int InstanceTarget_HASH = HashingUtils::HashString("InstanceTarget");
         static const int LambdaTarget_HASH = HashingUtils::HashString("LambdaTarget");
         static const int ECSTarget_HASH = HashingUtils::HashString("ECSTarget");
+        static const int CloudFormationTarget_HASH = HashingUtils::HashString("CloudFormationTarget");
 
 
         DeploymentTargetType GetDeploymentTargetTypeForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == ECSTarget_HASH)
           {
             return DeploymentTargetType::ECSTarget;
+          }
+          else if (hashCode == CloudFormationTarget_HASH)
+          {
+            return DeploymentTargetType::CloudFormationTarget;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "LambdaTarget";
           case DeploymentTargetType::ECSTarget:
             return "ECSTarget";
+          case DeploymentTargetType::CloudFormationTarget:
+            return "CloudFormationTarget";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

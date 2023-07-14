@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -129,214 +119,206 @@ namespace Model
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
-     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
-     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
-     * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
-     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
-     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
-     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
-     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
-     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
-     * string representing the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
-     * JSON string that represents the splitting and rearrangement requirements for the
-     * <code>DataSource</code>.</p> <p> Sample - <code>
-     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
-     * </ul>
+     * <ul> <li> <p>DatabaseInformation -</p> <ul> <li> <p> <code>DatabaseName</code> -
+     * The name of the Amazon Redshift database.</p> </li> <li> <p> <code>
+     * ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+     * </li> </ul> </li> <li> <p>DatabaseCredentials - The AWS Identity and Access
+     * Management (IAM) credentials that are used to connect to the Amazon Redshift
+     * database.</p> </li> <li> <p>SelectSqlQuery - The query that is used to retrieve
+     * the observation data for the <code>Datasource</code>.</p> </li> <li>
+     * <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location
+     * for staging Amazon Redshift data. The data retrieved from Amazon Redshift using
+     * the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> <li>
+     * <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+     * </li> <li> <p>DataSchema - A JSON string representing the schema. This is not
+     * required if <code>DataSchemaUri</code> is specified. </p> </li> <li>
+     * <p>DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample -
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     * </li> </ul>
      */
     inline const RedshiftDataSpec& GetDataSpec() const{ return m_dataSpec; }
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
-     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
-     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
-     * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
-     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
-     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
-     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
-     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
-     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
-     * string representing the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
-     * JSON string that represents the splitting and rearrangement requirements for the
-     * <code>DataSource</code>.</p> <p> Sample - <code>
-     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
-     * </ul>
+     * <ul> <li> <p>DatabaseInformation -</p> <ul> <li> <p> <code>DatabaseName</code> -
+     * The name of the Amazon Redshift database.</p> </li> <li> <p> <code>
+     * ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+     * </li> </ul> </li> <li> <p>DatabaseCredentials - The AWS Identity and Access
+     * Management (IAM) credentials that are used to connect to the Amazon Redshift
+     * database.</p> </li> <li> <p>SelectSqlQuery - The query that is used to retrieve
+     * the observation data for the <code>Datasource</code>.</p> </li> <li>
+     * <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location
+     * for staging Amazon Redshift data. The data retrieved from Amazon Redshift using
+     * the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> <li>
+     * <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+     * </li> <li> <p>DataSchema - A JSON string representing the schema. This is not
+     * required if <code>DataSchemaUri</code> is specified. </p> </li> <li>
+     * <p>DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample -
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     * </li> </ul>
      */
     inline bool DataSpecHasBeenSet() const { return m_dataSpecHasBeenSet; }
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
-     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
-     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
-     * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
-     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
-     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
-     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
-     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
-     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
-     * string representing the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
-     * JSON string that represents the splitting and rearrangement requirements for the
-     * <code>DataSource</code>.</p> <p> Sample - <code>
-     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
-     * </ul>
+     * <ul> <li> <p>DatabaseInformation -</p> <ul> <li> <p> <code>DatabaseName</code> -
+     * The name of the Amazon Redshift database.</p> </li> <li> <p> <code>
+     * ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+     * </li> </ul> </li> <li> <p>DatabaseCredentials - The AWS Identity and Access
+     * Management (IAM) credentials that are used to connect to the Amazon Redshift
+     * database.</p> </li> <li> <p>SelectSqlQuery - The query that is used to retrieve
+     * the observation data for the <code>Datasource</code>.</p> </li> <li>
+     * <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location
+     * for staging Amazon Redshift data. The data retrieved from Amazon Redshift using
+     * the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> <li>
+     * <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+     * </li> <li> <p>DataSchema - A JSON string representing the schema. This is not
+     * required if <code>DataSchemaUri</code> is specified. </p> </li> <li>
+     * <p>DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample -
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     * </li> </ul>
      */
     inline void SetDataSpec(const RedshiftDataSpec& value) { m_dataSpecHasBeenSet = true; m_dataSpec = value; }
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
-     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
-     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
-     * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
-     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
-     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
-     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
-     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
-     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
-     * string representing the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
-     * JSON string that represents the splitting and rearrangement requirements for the
-     * <code>DataSource</code>.</p> <p> Sample - <code>
-     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
-     * </ul>
+     * <ul> <li> <p>DatabaseInformation -</p> <ul> <li> <p> <code>DatabaseName</code> -
+     * The name of the Amazon Redshift database.</p> </li> <li> <p> <code>
+     * ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+     * </li> </ul> </li> <li> <p>DatabaseCredentials - The AWS Identity and Access
+     * Management (IAM) credentials that are used to connect to the Amazon Redshift
+     * database.</p> </li> <li> <p>SelectSqlQuery - The query that is used to retrieve
+     * the observation data for the <code>Datasource</code>.</p> </li> <li>
+     * <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location
+     * for staging Amazon Redshift data. The data retrieved from Amazon Redshift using
+     * the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> <li>
+     * <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+     * </li> <li> <p>DataSchema - A JSON string representing the schema. This is not
+     * required if <code>DataSchemaUri</code> is specified. </p> </li> <li>
+     * <p>DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample -
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     * </li> </ul>
      */
     inline void SetDataSpec(RedshiftDataSpec&& value) { m_dataSpecHasBeenSet = true; m_dataSpec = std::move(value); }
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
-     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
-     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
-     * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
-     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
-     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
-     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
-     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
-     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
-     * string representing the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
-     * JSON string that represents the splitting and rearrangement requirements for the
-     * <code>DataSource</code>.</p> <p> Sample - <code>
-     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
-     * </ul>
+     * <ul> <li> <p>DatabaseInformation -</p> <ul> <li> <p> <code>DatabaseName</code> -
+     * The name of the Amazon Redshift database.</p> </li> <li> <p> <code>
+     * ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+     * </li> </ul> </li> <li> <p>DatabaseCredentials - The AWS Identity and Access
+     * Management (IAM) credentials that are used to connect to the Amazon Redshift
+     * database.</p> </li> <li> <p>SelectSqlQuery - The query that is used to retrieve
+     * the observation data for the <code>Datasource</code>.</p> </li> <li>
+     * <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location
+     * for staging Amazon Redshift data. The data retrieved from Amazon Redshift using
+     * the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> <li>
+     * <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+     * </li> <li> <p>DataSchema - A JSON string representing the schema. This is not
+     * required if <code>DataSchemaUri</code> is specified. </p> </li> <li>
+     * <p>DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample -
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     * </li> </ul>
      */
     inline CreateDataSourceFromRedshiftRequest& WithDataSpec(const RedshiftDataSpec& value) { SetDataSpec(value); return *this;}
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
-     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
-     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
-     * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
-     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
-     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
-     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
-     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
-     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
-     * string representing the schema. This is not required if
-     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
-     * JSON string that represents the splitting and rearrangement requirements for the
-     * <code>DataSource</code>.</p> <p> Sample - <code>
-     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
-     * </ul>
+     * <ul> <li> <p>DatabaseInformation -</p> <ul> <li> <p> <code>DatabaseName</code> -
+     * The name of the Amazon Redshift database.</p> </li> <li> <p> <code>
+     * ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p>
+     * </li> </ul> </li> <li> <p>DatabaseCredentials - The AWS Identity and Access
+     * Management (IAM) credentials that are used to connect to the Amazon Redshift
+     * database.</p> </li> <li> <p>SelectSqlQuery - The query that is used to retrieve
+     * the observation data for the <code>Datasource</code>.</p> </li> <li>
+     * <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location
+     * for staging Amazon Redshift data. The data retrieved from Amazon Redshift using
+     * the <code>SelectSqlQuery</code> query is stored in this location.</p> </li> <li>
+     * <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p>
+     * </li> <li> <p>DataSchema - A JSON string representing the schema. This is not
+     * required if <code>DataSchemaUri</code> is specified. </p> </li> <li>
+     * <p>DataRearrangement - A JSON string that represents the splitting and
+     * rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample -
+     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     * </li> </ul>
      */
     inline CreateDataSourceFromRedshiftRequest& WithDataSpec(RedshiftDataSpec&& value) { SetDataSpec(std::move(value)); return *this;}
 
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline CreateDataSourceFromRedshiftRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline CreateDataSourceFromRedshiftRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
-     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
-     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
-     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
-     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
-     * </ul> </p>
+     * on behalf of the user to create the following:</p> <ul> <li> <p>A security group
+     * to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon
+     * Redshift cluster</p> </li> <li> <p>An Amazon S3 bucket policy to grant Amazon ML
+     * read/write permissions on the <code>S3StagingLocation</code> </p> </li> </ul>
      */
     inline CreateDataSourceFromRedshiftRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

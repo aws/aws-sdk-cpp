@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/DescribeDomainResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,13 +18,17 @@ using namespace Aws;
 
 DescribeDomainResult::DescribeDomainResult() : 
     m_status(DomainStatus::NOT_SET),
-    m_authMode(AuthMode::NOT_SET)
+    m_authMode(AuthMode::NOT_SET),
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET)
 {
 }
 
 DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(DomainStatus::NOT_SET),
-    m_authMode(AuthMode::NOT_SET)
+    m_authMode(AuthMode::NOT_SET),
+    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET)
 {
   *this = result;
 }
@@ -108,9 +102,9 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("HomeEfsFileSystemKmsKeyId"))
+  if(jsonValue.ValueExists("AppNetworkAccessType"))
   {
-    m_homeEfsFileSystemKmsKeyId = jsonValue.GetString("HomeEfsFileSystemKmsKeyId");
+    m_appNetworkAccessType = AppNetworkAccessTypeMapper::GetAppNetworkAccessTypeForName(jsonValue.GetString("AppNetworkAccessType"));
 
   }
 
@@ -132,6 +126,30 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("DomainSettings"))
+  {
+    m_domainSettings = jsonValue.GetObject("DomainSettings");
+
+  }
+
+  if(jsonValue.ValueExists("AppSecurityGroupManagement"))
+  {
+    m_appSecurityGroupManagement = AppSecurityGroupManagementMapper::GetAppSecurityGroupManagementForName(jsonValue.GetString("AppSecurityGroupManagement"));
+
+  }
+
+  if(jsonValue.ValueExists("SecurityGroupIdForDomainBoundary"))
+  {
+    m_securityGroupIdForDomainBoundary = jsonValue.GetString("SecurityGroupIdForDomainBoundary");
 
   }
 

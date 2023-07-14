@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3/model/EventBridgeConfiguration.h>
 #include <aws/s3/model/TopicConfiguration.h>
 #include <aws/s3/model/QueueConfiguration.h>
 #include <aws/s3/model/LambdaFunctionConfiguration.h>
@@ -151,52 +142,83 @@ namespace Model
 
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline bool LambdaFunctionConfigurationsHasBeenSet() const { return m_lambdaFunctionConfigurationsHasBeenSet; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline void SetLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations = value; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline void SetLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations = std::move(value); }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline NotificationConfiguration& WithLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { SetLambdaFunctionConfigurations(value); return *this;}
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline NotificationConfiguration& WithLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { SetLambdaFunctionConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline NotificationConfiguration& AddLambdaFunctionConfigurations(const LambdaFunctionConfiguration& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline NotificationConfiguration& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const{ return m_eventBridgeConfiguration; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline bool EventBridgeConfigurationHasBeenSet() const { return m_eventBridgeConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline void SetEventBridgeConfiguration(const EventBridgeConfiguration& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = value; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline void SetEventBridgeConfiguration(EventBridgeConfiguration&& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline NotificationConfiguration& WithEventBridgeConfiguration(const EventBridgeConfiguration& value) { SetEventBridgeConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline NotificationConfiguration& WithEventBridgeConfiguration(EventBridgeConfiguration&& value) { SetEventBridgeConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -208,6 +230,9 @@ namespace Model
 
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
     bool m_lambdaFunctionConfigurationsHasBeenSet;
+
+    EventBridgeConfiguration m_eventBridgeConfiguration;
+    bool m_eventBridgeConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -44,82 +34,114 @@ namespace Model
 
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypes = value; }
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypes = std::move(value); }
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& AddResourceTypes(const Aws::String& value) { m_resourceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& AddResourceTypes(Aws::String&& value) { m_resourceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
-     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <p>Contains a string with the supported Amazon Web Services resource types:</p>
+     * <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
+     * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
+     * File System</p> </li> <li> <p> <code>FSX</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+     * <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> </ul>
      */
     inline GetSupportedResourceTypesResult& AddResourceTypes(const char* value) { m_resourceTypes.push_back(value); return *this; }
 

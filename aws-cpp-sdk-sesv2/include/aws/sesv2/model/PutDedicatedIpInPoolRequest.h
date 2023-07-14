@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -48,57 +38,57 @@ namespace Model
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline PutDedicatedIpInPoolRequest& WithIp(const Aws::String& value) { SetIp(value); return *this;}
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline PutDedicatedIpInPoolRequest& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
 
     /**
      * <p>The IP address that you want to move to the dedicated IP pool. The value you
-     * specify has to be a dedicated IP address that's associated with your AWS
-     * account.</p>
+     * specify has to be a dedicated IP address that's associated with your Amazon Web
+     * Services account.</p>
      */
     inline PutDedicatedIpInPoolRequest& WithIp(const char* value) { SetIp(value); return *this;}
 

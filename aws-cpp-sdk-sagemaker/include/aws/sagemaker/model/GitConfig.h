@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies configuration details for a Git repository in your AWS
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies configuration details for a Git repository in your Amazon Web
+   * Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GitConfig">AWS
    * API Reference</a></p>
    */
@@ -131,73 +121,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline GitConfig& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline GitConfig& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
-     * contains the credentials used to access the git repository. The secret must have
-     * a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret that contains the credentials used to access the git repository. The
+     * secret must have a staging label of <code>AWSCURRENT</code> and must be in the
+     * following format:</p> <p> <code>{"username": <i>UserName</i>, "password":
      * <i>Password</i>}</code> </p>
      */
     inline GitConfig& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}

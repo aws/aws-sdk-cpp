@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -50,8 +40,8 @@ namespace Model
 
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -63,8 +53,8 @@ namespace Model
     inline const DocumentationPartType& GetType() const{ return m_type; }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -76,8 +66,8 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -89,8 +79,8 @@ namespace Model
     inline void SetType(const DocumentationPartType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -102,8 +92,8 @@ namespace Model
     inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
@@ -115,8 +105,8 @@ namespace Model
     inline DocumentationPartLocation& WithType(const DocumentationPartType& value) { SetType(value); return *this;}
 
     /**
-     * <p>[Required] The type of API entity to which the documentation content applies.
-     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <p>The type of API entity to which the documentation content applies. Valid
+     * values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
      * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
      * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
      * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,

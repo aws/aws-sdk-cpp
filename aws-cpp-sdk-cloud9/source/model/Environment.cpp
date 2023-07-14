@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloud9/model/Environment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,9 +24,13 @@ Environment::Environment() :
     m_descriptionHasBeenSet(false),
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
+    m_lifecycleHasBeenSet(false),
+    m_managedCredentialsStatus(ManagedCredentialsStatus::NOT_SET),
+    m_managedCredentialsStatusHasBeenSet(false)
 {
 }
 
@@ -46,9 +40,13 @@ Environment::Environment(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
+    m_lifecycleHasBeenSet(false),
+    m_managedCredentialsStatus(ManagedCredentialsStatus::NOT_SET),
+    m_managedCredentialsStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +81,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectionType"))
+  {
+    m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("connectionType"));
+
+    m_connectionTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -102,6 +107,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_lifecycle = jsonValue.GetObject("lifecycle");
 
     m_lifecycleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("managedCredentialsStatus"))
+  {
+    m_managedCredentialsStatus = ManagedCredentialsStatusMapper::GetManagedCredentialsStatusForName(jsonValue.GetString("managedCredentialsStatus"));
+
+    m_managedCredentialsStatusHasBeenSet = true;
   }
 
   return *this;
@@ -134,6 +146,11 @@ JsonValue Environment::Jsonize() const
    payload.WithString("type", EnvironmentTypeMapper::GetNameForEnvironmentType(m_type));
   }
 
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
@@ -150,6 +167,11 @@ JsonValue Environment::Jsonize() const
   {
    payload.WithObject("lifecycle", m_lifecycle.Jsonize());
 
+  }
+
+  if(m_managedCredentialsStatusHasBeenSet)
+  {
+   payload.WithString("managedCredentialsStatus", ManagedCredentialsStatusMapper::GetNameForManagedCredentialsStatus(m_managedCredentialsStatus));
   }
 
   return payload;

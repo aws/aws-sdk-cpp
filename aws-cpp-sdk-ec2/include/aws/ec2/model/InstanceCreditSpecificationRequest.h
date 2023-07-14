@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -93,49 +83,65 @@ namespace Model
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
+     * option.</p>
      */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
 

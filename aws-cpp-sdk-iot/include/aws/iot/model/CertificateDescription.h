@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/TransferData.h>
 #include <aws/iot/model/CertificateValidity.h>
+#include <aws/iot/model/CertificateMode.h>
 #include <utility>
 
 namespace Aws
@@ -247,83 +238,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline const Aws::String& GetOwnedBy() const{ return m_ownedBy; }
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline bool OwnedByHasBeenSet() const { return m_ownedByHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline void SetOwnedBy(const Aws::String& value) { m_ownedByHasBeenSet = true; m_ownedBy = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline void SetOwnedBy(Aws::String&& value) { m_ownedByHasBeenSet = true; m_ownedBy = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline void SetOwnedBy(const char* value) { m_ownedByHasBeenSet = true; m_ownedBy.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline CertificateDescription& WithOwnedBy(const Aws::String& value) { SetOwnedBy(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline CertificateDescription& WithOwnedBy(Aws::String&& value) { SetOwnedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the certificate.</p>
+     * <p>The ID of the Amazon Web Services account that owns the certificate.</p>
      */
     inline CertificateDescription& WithOwnedBy(const char* value) { SetOwnedBy(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline const Aws::String& GetPreviousOwnedBy() const{ return m_previousOwnedBy; }
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline bool PreviousOwnedByHasBeenSet() const { return m_previousOwnedByHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline void SetPreviousOwnedBy(const Aws::String& value) { m_previousOwnedByHasBeenSet = true; m_previousOwnedBy = value; }
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline void SetPreviousOwnedBy(Aws::String&& value) { m_previousOwnedByHasBeenSet = true; m_previousOwnedBy = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline void SetPreviousOwnedBy(const char* value) { m_previousOwnedByHasBeenSet = true; m_previousOwnedBy.assign(value); }
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline CertificateDescription& WithPreviousOwnedBy(const Aws::String& value) { SetPreviousOwnedBy(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline CertificateDescription& WithPreviousOwnedBy(Aws::String&& value) { SetPreviousOwnedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     * <p>The ID of the Amazon Web Services account of the previous owner of the
+     * certificate.</p>
      */
     inline CertificateDescription& WithPreviousOwnedBy(const char* value) { SetPreviousOwnedBy(value); return *this;}
 
@@ -513,6 +512,37 @@ namespace Model
      */
     inline CertificateDescription& WithValidity(CertificateValidity&& value) { SetValidity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline CertificateDescription& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline CertificateDescription& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
@@ -553,6 +583,9 @@ namespace Model
 
     CertificateValidity m_validity;
     bool m_validityHasBeenSet;
+
+    CertificateMode m_certificateMode;
+    bool m_certificateModeHasBeenSet;
   };
 
 } // namespace Model

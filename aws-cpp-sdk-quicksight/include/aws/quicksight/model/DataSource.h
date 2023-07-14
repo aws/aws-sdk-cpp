@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/quicksight/model/DataSourceParameters.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/VpcConnectionProperties.h>
 #include <aws/quicksight/model/SslProperties.h>
 #include <aws/quicksight/model/DataSourceErrorInfo.h>
@@ -96,50 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DataSource& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DataSource& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
@@ -359,81 +350,194 @@ namespace Model
 
 
     /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline const Aws::Vector<DataSourceParameters>& GetAlternateDataSourceParameters() const{ return m_alternateDataSourceParameters; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline bool AlternateDataSourceParametersHasBeenSet() const { return m_alternateDataSourceParametersHasBeenSet; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline void SetAlternateDataSourceParameters(const Aws::Vector<DataSourceParameters>& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = value; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline void SetAlternateDataSourceParameters(Aws::Vector<DataSourceParameters>&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = std::move(value); }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& WithAlternateDataSourceParameters(const Aws::Vector<DataSourceParameters>& value) { SetAlternateDataSourceParameters(value); return *this;}
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& WithAlternateDataSourceParameters(Aws::Vector<DataSourceParameters>&& value) { SetAlternateDataSourceParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& AddAlternateDataSourceParameters(const DataSourceParameters& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.push_back(value); return *this; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API operation compares the <code>DataSourceParameters</code>
+     * structure that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allow list. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& AddAlternateDataSourceParameters(DataSourceParameters&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline const VpcConnectionProperties& GetVpcConnectionProperties() const{ return m_vpcConnectionProperties; }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline bool VpcConnectionPropertiesHasBeenSet() const { return m_vpcConnectionPropertiesHasBeenSet; }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline void SetVpcConnectionProperties(const VpcConnectionProperties& value) { m_vpcConnectionPropertiesHasBeenSet = true; m_vpcConnectionProperties = value; }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline void SetVpcConnectionProperties(VpcConnectionProperties&& value) { m_vpcConnectionPropertiesHasBeenSet = true; m_vpcConnectionProperties = std::move(value); }
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline DataSource& WithVpcConnectionProperties(const VpcConnectionProperties& value) { SetVpcConnectionProperties(value); return *this;}
 
     /**
      * <p>The VPC connection information. You need to use this parameter only when you
-     * want QuickSight to use a VPC connection when connecting to your underlying
-     * source.</p>
+     * want Amazon QuickSight to use a VPC connection when connecting to your
+     * underlying source.</p>
      */
     inline DataSource& WithVpcConnectionProperties(VpcConnectionProperties&& value) { SetVpcConnectionProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const{ return m_sslProperties; }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline bool SslPropertiesHasBeenSet() const { return m_sslPropertiesHasBeenSet; }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline void SetSslProperties(const SslProperties& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = value; }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline void SetSslProperties(SslProperties&& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = std::move(value); }
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline DataSource& WithSslProperties(const SslProperties& value) { SetSslProperties(value); return *this;}
 
     /**
-     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
-     * your underlying source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight
+     * connects to your underlying source.</p>
      */
     inline DataSource& WithSslProperties(SslProperties&& value) { SetSslProperties(std::move(value)); return *this;}
 
@@ -499,6 +603,9 @@ namespace Model
 
     DataSourceParameters m_dataSourceParameters;
     bool m_dataSourceParametersHasBeenSet;
+
+    Aws::Vector<DataSourceParameters> m_alternateDataSourceParameters;
+    bool m_alternateDataSourceParametersHasBeenSet;
 
     VpcConnectionProperties m_vpcConnectionProperties;
     bool m_vpcConnectionPropertiesHasBeenSet;

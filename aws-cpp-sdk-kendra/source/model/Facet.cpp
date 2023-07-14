@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/Facet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,18 @@ namespace Model
 {
 
 Facet::Facet() : 
-    m_documentAttributeKeyHasBeenSet(false)
+    m_documentAttributeKeyHasBeenSet(false),
+    m_facetsHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
 Facet::Facet(JsonView jsonValue) : 
-    m_documentAttributeKeyHasBeenSet(false)
+    m_documentAttributeKeyHasBeenSet(false),
+    m_facetsHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +44,23 @@ Facet& Facet::operator =(JsonView jsonValue)
     m_documentAttributeKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Facets"))
+  {
+    Array<JsonView> facetsJsonList = jsonValue.GetArray("Facets");
+    for(unsigned facetsIndex = 0; facetsIndex < facetsJsonList.GetLength(); ++facetsIndex)
+    {
+      m_facets.push_back(facetsJsonList[facetsIndex].AsObject());
+    }
+    m_facetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxResults"))
+  {
+    m_maxResults = jsonValue.GetInteger("MaxResults");
+
+    m_maxResultsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +71,23 @@ JsonValue Facet::Jsonize() const
   if(m_documentAttributeKeyHasBeenSet)
   {
    payload.WithString("DocumentAttributeKey", m_documentAttributeKey);
+
+  }
+
+  if(m_facetsHasBeenSet)
+  {
+   Array<JsonValue> facetsJsonList(m_facets.size());
+   for(unsigned facetsIndex = 0; facetsIndex < facetsJsonList.GetLength(); ++facetsIndex)
+   {
+     facetsJsonList[facetsIndex].AsObject(m_facets[facetsIndex].Jsonize());
+   }
+   payload.WithArray("Facets", std::move(facetsJsonList));
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

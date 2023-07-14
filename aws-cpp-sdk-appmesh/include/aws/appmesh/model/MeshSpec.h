@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/EgressFilter.h>
+#include <aws/appmesh/model/MeshServiceDiscovery.h>
 #include <utility>
 
 namespace Aws
@@ -78,10 +69,32 @@ namespace Model
      */
     inline MeshSpec& WithEgressFilter(EgressFilter&& value) { SetEgressFilter(std::move(value)); return *this;}
 
+
+    
+    inline const MeshServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
+
+    
+    inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
+
+    
+    inline void SetServiceDiscovery(const MeshServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
+
+    
+    inline void SetServiceDiscovery(MeshServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
+
+    
+    inline MeshSpec& WithServiceDiscovery(const MeshServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
+
+    
+    inline MeshSpec& WithServiceDiscovery(MeshServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
+
   private:
 
     EgressFilter m_egressFilter;
     bool m_egressFilterHasBeenSet;
+
+    MeshServiceDiscovery m_serviceDiscovery;
+    bool m_serviceDiscoveryHasBeenSet;
   };
 
 } // namespace Model

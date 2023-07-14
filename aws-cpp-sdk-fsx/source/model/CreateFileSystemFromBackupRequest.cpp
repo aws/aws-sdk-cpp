@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/CreateFileSystemFromBackupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,8 +20,12 @@ CreateFileSystemFromBackupRequest::CreateFileSystemFromBackupRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
+    m_lustreConfigurationHasBeenSet(false),
     m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -90,9 +84,33 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
 
   }
 
+  if(m_lustreConfigurationHasBeenSet)
+  {
+   payload.WithObject("LustreConfiguration", m_lustreConfiguration.Jsonize());
+
+  }
+
   if(m_storageTypeHasBeenSet)
   {
    payload.WithString("StorageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_fileSystemTypeVersionHasBeenSet)
+  {
+   payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/BackupLifecycle.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,8 +22,11 @@ namespace Aws
 
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int TRANSFERRING_HASH = HashingUtils::HashString("TRANSFERRING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int COPYING_HASH = HashingUtils::HashString("COPYING");
 
 
         BackupLifecycle GetBackupLifecycleForName(const Aws::String& name)
@@ -47,6 +40,10 @@ namespace Aws
           {
             return BackupLifecycle::CREATING;
           }
+          else if (hashCode == TRANSFERRING_HASH)
+          {
+            return BackupLifecycle::TRANSFERRING;
+          }
           else if (hashCode == DELETED_HASH)
           {
             return BackupLifecycle::DELETED;
@@ -54,6 +51,14 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return BackupLifecycle::FAILED;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return BackupLifecycle::PENDING;
+          }
+          else if (hashCode == COPYING_HASH)
+          {
+            return BackupLifecycle::COPYING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -73,10 +78,16 @@ namespace Aws
             return "AVAILABLE";
           case BackupLifecycle::CREATING:
             return "CREATING";
+          case BackupLifecycle::TRANSFERRING:
+            return "TRANSFERRING";
           case BackupLifecycle::DELETED:
             return "DELETED";
           case BackupLifecycle::FAILED:
             return "FAILED";
+          case BackupLifecycle::PENDING:
+            return "PENDING";
+          case BackupLifecycle::COPYING:
+            return "COPYING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

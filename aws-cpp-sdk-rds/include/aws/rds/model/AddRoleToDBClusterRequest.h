@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -146,56 +136,56 @@ namespace Model
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline AddRoleToDBClusterRequest& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline AddRoleToDBClusterRequest& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the feature for the DB cluster that the IAM role is to be
-     * associated with. For the list of supported feature names, see
+     * associated with. For information about supported feature names, see
      * <a>DBEngineVersion</a>.</p>
      */
     inline AddRoleToDBClusterRequest& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}

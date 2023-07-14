@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,7 +29,11 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation() :
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
@@ -54,7 +48,11 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValu
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +128,30 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     m_lastRefreshTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPerformanceRisk"))
+  {
+    m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
+
+    m_currentPerformanceRiskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inferredWorkloadTypes"))
+  {
+    Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
+    for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
+    {
+      m_inferredWorkloadTypes.push_back(InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
+    }
+    m_inferredWorkloadTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -197,6 +219,28 @@ JsonValue AutoScalingGroupRecommendation::Jsonize() const
   if(m_lastRefreshTimestampHasBeenSet)
   {
    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_currentPerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
+  }
+
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
+  }
+
+  if(m_inferredWorkloadTypesHasBeenSet)
+  {
+   Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
+   for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
+   {
+     inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));
+   }
+   payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
+
   }
 
   return payload;

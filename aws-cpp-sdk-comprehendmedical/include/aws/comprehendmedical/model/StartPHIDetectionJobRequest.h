@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
@@ -112,8 +102,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -121,8 +111,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -130,8 +120,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -139,8 +129,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -148,8 +138,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -157,8 +147,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -166,8 +156,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -175,8 +165,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -226,49 +216,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline StartPHIDetectionJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline StartPHIDetectionJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one.</p>
      */
     inline StartPHIDetectionJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

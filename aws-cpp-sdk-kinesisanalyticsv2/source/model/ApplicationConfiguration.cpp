@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesisanalyticsv2/model/ApplicationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ ApplicationConfiguration::ApplicationConfiguration() :
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
     m_applicationSnapshotConfigurationHasBeenSet(false),
-    m_vpcConfigurationsHasBeenSet(false)
+    m_vpcConfigurationsHasBeenSet(false),
+    m_zeppelinApplicationConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ ApplicationConfiguration::ApplicationConfiguration(JsonView jsonValue) :
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
     m_applicationSnapshotConfigurationHasBeenSet(false),
-    m_vpcConfigurationsHasBeenSet(false)
+    m_vpcConfigurationsHasBeenSet(false),
+    m_zeppelinApplicationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +88,13 @@ ApplicationConfiguration& ApplicationConfiguration::operator =(JsonView jsonValu
     m_vpcConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ZeppelinApplicationConfiguration"))
+  {
+    m_zeppelinApplicationConfiguration = jsonValue.GetObject("ZeppelinApplicationConfiguration");
+
+    m_zeppelinApplicationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +140,12 @@ JsonValue ApplicationConfiguration::Jsonize() const
      vpcConfigurationsJsonList[vpcConfigurationsIndex].AsObject(m_vpcConfigurations[vpcConfigurationsIndex].Jsonize());
    }
    payload.WithArray("VpcConfigurations", std::move(vpcConfigurationsJsonList));
+
+  }
+
+  if(m_zeppelinApplicationConfigurationHasBeenSet)
+  {
+   payload.WithObject("ZeppelinApplicationConfiguration", m_zeppelinApplicationConfiguration.Jsonize());
 
   }
 

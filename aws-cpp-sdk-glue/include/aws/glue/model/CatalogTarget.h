@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an AWS Glue Data Catalog target.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies an Glue Data Catalog target.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogTarget">AWS
    * API Reference</a></p>
    */
@@ -134,6 +124,63 @@ namespace Model
      */
     inline CatalogTarget& AddTables(const char* value) { m_tablesHasBeenSet = true; m_tables.push_back(value); return *this; }
 
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline CatalogTarget& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline CatalogTarget& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a
+     * target of the crawl when using a <code>Catalog</code> connection type paired
+     * with a <code>NETWORK</code> Connection type.</p>
+     */
+    inline CatalogTarget& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+
   private:
 
     Aws::String m_databaseName;
@@ -141,6 +188,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tables;
     bool m_tablesHasBeenSet;
+
+    Aws::String m_connectionName;
+    bool m_connectionNameHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -47,37 +37,37 @@ namespace Model
 
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline void SetAppArn(const char* value) { m_appArn.assign(value); }
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline DescribeAppResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline DescribeAppResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The app's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline DescribeAppResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
@@ -269,27 +259,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUserActivityTimestamp() const{ return m_lastUserActivityTimestamp; }
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline void SetLastUserActivityTimestamp(const Aws::Utils::DateTime& value) { m_lastUserActivityTimestamp = value; }
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline void SetLastUserActivityTimestamp(Aws::Utils::DateTime&& value) { m_lastUserActivityTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline DescribeAppResult& WithLastUserActivityTimestamp(const Aws::Utils::DateTime& value) { SetLastUserActivityTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp of the last user's activity.</p>
+     * <p>The timestamp of the last user's activity.
+     * <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs
+     * health checks without user activity. As a result, this value is set to the same
+     * value as <code>LastHealthCheckTimestamp</code>.</p>
      */
     inline DescribeAppResult& WithLastUserActivityTimestamp(Aws::Utils::DateTime&& value) { SetLastUserActivityTimestamp(std::move(value)); return *this;}
 
@@ -357,27 +362,32 @@ namespace Model
 
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline void SetResourceSpec(const ResourceSpec& value) { m_resourceSpec = value; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline void SetResourceSpec(ResourceSpec&& value) { m_resourceSpec = std::move(value); }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline DescribeAppResult& WithResourceSpec(const ResourceSpec& value) { SetResourceSpec(value); return *this;}
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline DescribeAppResult& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 

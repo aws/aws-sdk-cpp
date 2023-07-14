@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/CrawlerTargets.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,16 +21,20 @@ namespace Model
 CrawlerTargets::CrawlerTargets() : 
     m_s3TargetsHasBeenSet(false),
     m_jdbcTargetsHasBeenSet(false),
+    m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
-    m_catalogTargetsHasBeenSet(false)
+    m_catalogTargetsHasBeenSet(false),
+    m_deltaTargetsHasBeenSet(false)
 {
 }
 
 CrawlerTargets::CrawlerTargets(JsonView jsonValue) : 
     m_s3TargetsHasBeenSet(false),
     m_jdbcTargetsHasBeenSet(false),
+    m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
-    m_catalogTargetsHasBeenSet(false)
+    m_catalogTargetsHasBeenSet(false),
+    m_deltaTargetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +61,16 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
     m_jdbcTargetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MongoDBTargets"))
+  {
+    Array<JsonView> mongoDBTargetsJsonList = jsonValue.GetArray("MongoDBTargets");
+    for(unsigned mongoDBTargetsIndex = 0; mongoDBTargetsIndex < mongoDBTargetsJsonList.GetLength(); ++mongoDBTargetsIndex)
+    {
+      m_mongoDBTargets.push_back(mongoDBTargetsJsonList[mongoDBTargetsIndex].AsObject());
+    }
+    m_mongoDBTargetsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DynamoDBTargets"))
   {
     Array<JsonView> dynamoDBTargetsJsonList = jsonValue.GetArray("DynamoDBTargets");
@@ -85,6 +89,16 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
       m_catalogTargets.push_back(catalogTargetsJsonList[catalogTargetsIndex].AsObject());
     }
     m_catalogTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeltaTargets"))
+  {
+    Array<JsonView> deltaTargetsJsonList = jsonValue.GetArray("DeltaTargets");
+    for(unsigned deltaTargetsIndex = 0; deltaTargetsIndex < deltaTargetsJsonList.GetLength(); ++deltaTargetsIndex)
+    {
+      m_deltaTargets.push_back(deltaTargetsJsonList[deltaTargetsIndex].AsObject());
+    }
+    m_deltaTargetsHasBeenSet = true;
   }
 
   return *this;
@@ -116,6 +130,17 @@ JsonValue CrawlerTargets::Jsonize() const
 
   }
 
+  if(m_mongoDBTargetsHasBeenSet)
+  {
+   Array<JsonValue> mongoDBTargetsJsonList(m_mongoDBTargets.size());
+   for(unsigned mongoDBTargetsIndex = 0; mongoDBTargetsIndex < mongoDBTargetsJsonList.GetLength(); ++mongoDBTargetsIndex)
+   {
+     mongoDBTargetsJsonList[mongoDBTargetsIndex].AsObject(m_mongoDBTargets[mongoDBTargetsIndex].Jsonize());
+   }
+   payload.WithArray("MongoDBTargets", std::move(mongoDBTargetsJsonList));
+
+  }
+
   if(m_dynamoDBTargetsHasBeenSet)
   {
    Array<JsonValue> dynamoDBTargetsJsonList(m_dynamoDBTargets.size());
@@ -135,6 +160,17 @@ JsonValue CrawlerTargets::Jsonize() const
      catalogTargetsJsonList[catalogTargetsIndex].AsObject(m_catalogTargets[catalogTargetsIndex].Jsonize());
    }
    payload.WithArray("CatalogTargets", std::move(catalogTargetsJsonList));
+
+  }
+
+  if(m_deltaTargetsHasBeenSet)
+  {
+   Array<JsonValue> deltaTargetsJsonList(m_deltaTargets.size());
+   for(unsigned deltaTargetsIndex = 0; deltaTargetsIndex < deltaTargetsJsonList.GetLength(); ++deltaTargetsIndex)
+   {
+     deltaTargetsJsonList[deltaTargetsIndex].AsObject(m_deltaTargets[deltaTargetsIndex].Jsonize());
+   }
+   payload.WithArray("DeltaTargets", std::move(deltaTargetsJsonList));
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -36,7 +26,7 @@ namespace Model
 
   /**
    * <p>The configuration that Amazon FSx uses to join the Windows File Server
-   * instance to the self-managed Microsoft Active Directory (AD)
+   * instance to a self-managed Microsoft Active Directory (AD)
    * directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryConfigurationUpdates">AWS
    * API Reference</a></p>
@@ -165,56 +155,56 @@ namespace Model
 
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryConfigurationUpdates& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryConfigurationUpdates& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryConfigurationUpdates& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryConfigurationUpdates& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory.</p>
+     * <p>A list of up to three IP addresses of DNS servers or domain controllers in
+     * the self-managed AD directory.</p>
      */
     inline SelfManagedActiveDirectoryConfigurationUpdates& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 

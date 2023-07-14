@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
@@ -34,10 +24,20 @@ namespace Model
     Assets_per_import_job_from_Amazon_S3,
     Asset_per_export_job_from_Amazon_S3,
     Asset_size_in_GB,
+    Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3,
+    Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL,
     Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3,
     Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL,
-    Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3,
-    Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL
+    Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3,
+    Event_actions_per_account,
+    Auto_export_event_actions_per_data_set,
+    Amazon_Redshift_datashare_assets_per_import_job_from_Redshift,
+    Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares,
+    Revisions_per_Amazon_Redshift_datashare_data_set,
+    Amazon_Redshift_datashare_assets_per_revision,
+    Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API,
+    Amazon_API_Gateway_API_assets_per_revision,
+    Revisions_per_Amazon_API_Gateway_API_data_set
   };
 
 namespace LimitNameMapper

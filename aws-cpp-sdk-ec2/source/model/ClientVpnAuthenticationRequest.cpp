@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -34,7 +24,8 @@ ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest() :
     m_type(ClientVpnAuthenticationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
+    m_mutualAuthenticationHasBeenSet(false),
+    m_federatedAuthenticationHasBeenSet(false)
 {
 }
 
@@ -42,7 +33,8 @@ ClientVpnAuthenticationRequest::ClientVpnAuthenticationRequest(const XmlNode& xm
     m_type(ClientVpnAuthenticationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
+    m_mutualAuthenticationHasBeenSet(false),
+    m_federatedAuthenticationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +63,12 @@ ClientVpnAuthenticationRequest& ClientVpnAuthenticationRequest::operator =(const
       m_mutualAuthentication = mutualAuthenticationNode;
       m_mutualAuthenticationHasBeenSet = true;
     }
+    XmlNode federatedAuthenticationNode = resultNode.FirstChild("FederatedAuthentication");
+    if(!federatedAuthenticationNode.IsNull())
+    {
+      m_federatedAuthentication = federatedAuthenticationNode;
+      m_federatedAuthenticationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +95,13 @@ void ClientVpnAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const
       m_mutualAuthentication.OutputToStream(oStream, mutualAuthenticationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_federatedAuthenticationHasBeenSet)
+  {
+      Aws::StringStream federatedAuthenticationLocationAndMemberSs;
+      federatedAuthenticationLocationAndMemberSs << location << index << locationValue << ".FederatedAuthentication";
+      m_federatedAuthentication.OutputToStream(oStream, federatedAuthenticationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ClientVpnAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -116,6 +121,12 @@ void ClientVpnAuthenticationRequest::OutputToStream(Aws::OStream& oStream, const
       Aws::String mutualAuthenticationLocationAndMember(location);
       mutualAuthenticationLocationAndMember += ".MutualAuthentication";
       m_mutualAuthentication.OutputToStream(oStream, mutualAuthenticationLocationAndMember.c_str());
+  }
+  if(m_federatedAuthenticationHasBeenSet)
+  {
+      Aws::String federatedAuthenticationLocationAndMember(location);
+      federatedAuthenticationLocationAndMember += ".FederatedAuthentication";
+      m_federatedAuthentication.OutputToStream(oStream, federatedAuthenticationLocationAndMember.c_str());
   }
 }
 

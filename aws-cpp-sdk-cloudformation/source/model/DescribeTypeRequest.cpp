@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/DescribeTypeRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -25,7 +15,9 @@ DescribeTypeRequest::DescribeTypeRequest() :
     m_typeHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_publisherIdHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false)
 {
 }
 
@@ -51,6 +43,16 @@ Aws::String DescribeTypeRequest::SerializePayload() const
   if(m_versionIdHasBeenSet)
   {
     ss << "VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
+  }
+
+  if(m_publisherIdHasBeenSet)
+  {
+    ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
+  }
+
+  if(m_publicVersionNumberHasBeenSet)
+  {
+    ss << "PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mobileanalytics/MobileAnalytics_EXPORTS.h>
@@ -63,7 +53,7 @@ namespace Model
 {
         class PutEventsRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MobileAnalyticsErrors>> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MobileAnalyticsError> PutEventsOutcome;
 
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
 } // namespace Model
@@ -102,8 +92,6 @@ namespace Model
 
         virtual ~MobileAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mobileanalytics"; }
-
 
         /**
          * <p>The PutEvents operation records one or more events. You can have up to 1,500
@@ -113,20 +101,12 @@ namespace Model
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>The PutEvents operation records one or more events. You can have up to 1,500
-         * unique custom events per app, any combination of up to 40 attributes and metrics
-         * per custom event, and any number of attribute or metric values.</p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>The PutEvents operation records one or more events. You can have up to 1,500
-         * unique custom events per app, any combination of up to 40 attributes and metrics
-         * per custom event, and any number of attribute or metric values.</p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

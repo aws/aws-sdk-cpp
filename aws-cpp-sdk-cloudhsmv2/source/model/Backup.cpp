@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudhsmv2/model/Backup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,6 +25,8 @@ Backup::Backup() :
     m_clusterIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_copyTimestampHasBeenSet(false),
+    m_neverExpires(false),
+    m_neverExpiresHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
@@ -50,6 +42,8 @@ Backup::Backup(JsonView jsonValue) :
     m_clusterIdHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
     m_copyTimestampHasBeenSet(false),
+    m_neverExpires(false),
+    m_neverExpiresHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
@@ -94,6 +88,13 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_copyTimestamp = jsonValue.GetDouble("CopyTimestamp");
 
     m_copyTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NeverExpires"))
+  {
+    m_neverExpires = jsonValue.GetBool("NeverExpires");
+
+    m_neverExpiresHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceRegion"))
@@ -166,6 +167,12 @@ JsonValue Backup::Jsonize() const
   if(m_copyTimestampHasBeenSet)
   {
    payload.WithDouble("CopyTimestamp", m_copyTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_neverExpiresHasBeenSet)
+  {
+   payload.WithBool("NeverExpires", m_neverExpires);
+
   }
 
   if(m_sourceRegionHasBeenSet)

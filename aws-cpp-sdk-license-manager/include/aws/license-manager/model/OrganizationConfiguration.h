@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -32,8 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for AWS Organizations.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Configuration information for Organizations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/OrganizationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -47,22 +36,22 @@ namespace Model
 
 
     /**
-     * <p>Enables AWS Organization integration.</p>
+     * <p>Enables Organizations integration.</p>
      */
     inline bool GetEnableIntegration() const{ return m_enableIntegration; }
 
     /**
-     * <p>Enables AWS Organization integration.</p>
+     * <p>Enables Organizations integration.</p>
      */
     inline bool EnableIntegrationHasBeenSet() const { return m_enableIntegrationHasBeenSet; }
 
     /**
-     * <p>Enables AWS Organization integration.</p>
+     * <p>Enables Organizations integration.</p>
      */
     inline void SetEnableIntegration(bool value) { m_enableIntegrationHasBeenSet = true; m_enableIntegration = value; }
 
     /**
-     * <p>Enables AWS Organization integration.</p>
+     * <p>Enables Organizations integration.</p>
      */
     inline OrganizationConfiguration& WithEnableIntegration(bool value) { SetEnableIntegration(value); return *this;}
 

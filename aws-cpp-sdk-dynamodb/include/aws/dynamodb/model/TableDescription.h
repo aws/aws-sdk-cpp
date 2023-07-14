@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -25,6 +15,7 @@
 #include <aws/dynamodb/model/RestoreSummary.h>
 #include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/ArchivalSummary.h>
+#include <aws/dynamodb/model/TableClassSummary.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -188,14 +179,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -206,14 +197,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -224,14 +215,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -242,14 +233,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -260,14 +251,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -278,14 +269,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -296,14 +287,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -314,14 +305,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -334,11 +325,11 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
-     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
-     * process when a table's AWS KMS key remains inaccessible for more than seven
-     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
-     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
+     * to failure to use the KMS key. DynamoDB will initiate the table archival process
+     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
+     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
+     * not allowed until archival is complete. </p> </li> <li> <p>
      * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
      * more information. </p> </li> </ul>
      */
@@ -350,11 +341,11 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
-     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
-     * process when a table's AWS KMS key remains inaccessible for more than seven
-     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
-     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
+     * to failure to use the KMS key. DynamoDB will initiate the table archival process
+     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
+     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
+     * not allowed until archival is complete. </p> </li> <li> <p>
      * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
      * more information. </p> </li> </ul>
      */
@@ -366,11 +357,11 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
-     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
-     * process when a table's AWS KMS key remains inaccessible for more than seven
-     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
-     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
+     * to failure to use the KMS key. DynamoDB will initiate the table archival process
+     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
+     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
+     * not allowed until archival is complete. </p> </li> <li> <p>
      * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
      * more information. </p> </li> </ul>
      */
@@ -382,11 +373,11 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
-     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
-     * process when a table's AWS KMS key remains inaccessible for more than seven
-     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
-     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
+     * to failure to use the KMS key. DynamoDB will initiate the table archival process
+     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
+     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
+     * not allowed until archival is complete. </p> </li> <li> <p>
      * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
      * more information. </p> </li> </ul>
      */
@@ -398,11 +389,11 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
-     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
-     * process when a table's AWS KMS key remains inaccessible for more than seven
-     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
-     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
+     * to failure to use the KMS key. DynamoDB will initiate the table archival process
+     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
+     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
+     * not allowed until archival is complete. </p> </li> <li> <p>
      * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
      * more information. </p> </li> </ul>
      */
@@ -414,11 +405,11 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
      * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
-     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
-     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
-     * process when a table's AWS KMS key remains inaccessible for more than seven
-     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
-     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * KMS key used to encrypt the table in inaccessible. Table operations may fail due
+     * to failure to use the KMS key. DynamoDB will initiate the table archival process
+     * when a table's KMS key remains inaccessible for more than seven days. </p> </li>
+     * <li> <p> <code>ARCHIVING</code> - The table is being archived. Operations are
+     * not allowed until archival is complete. </p> </li> <li> <p>
      * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
      * more information. </p> </li> </ul>
      */
@@ -977,9 +968,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1028,9 +1019,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1079,9 +1070,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1130,9 +1121,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1181,9 +1172,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1232,9 +1223,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1283,9 +1274,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1334,9 +1325,9 @@ namespace Model
      * attributes, which are automatically projected. Each attribute specification is
      * composed of:</p> <ul> <li> <p> <code>ProjectionType</code> - One of the
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
-     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
-     * Only the specified table attributes are projected into the index. The list of
-     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In
+     * addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     * index will include other non-key attributes that you specify.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1388,8 +1379,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetLatestStreamLabel() const{ return m_latestStreamLabel; }
 
@@ -1398,8 +1390,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline bool LatestStreamLabelHasBeenSet() const { return m_latestStreamLabelHasBeenSet; }
 
@@ -1408,8 +1401,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline void SetLatestStreamLabel(const Aws::String& value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel = value; }
 
@@ -1418,8 +1412,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline void SetLatestStreamLabel(Aws::String&& value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel = std::move(value); }
 
@@ -1428,8 +1423,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline void SetLatestStreamLabel(const char* value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel.assign(value); }
 
@@ -1438,8 +1434,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline TableDescription& WithLatestStreamLabel(const Aws::String& value) { SetLatestStreamLabel(value); return *this;}
 
@@ -1448,8 +1445,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline TableDescription& WithLatestStreamLabel(Aws::String&& value) { SetLatestStreamLabel(std::move(value)); return *this;}
 
@@ -1458,8 +1456,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
-     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>Amazon Web Services customer ID</p>
+     * </li> <li> <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li>
+     * </ul>
      */
     inline TableDescription& WithLatestStreamLabel(const char* value) { SetLatestStreamLabel(value); return *this;}
 
@@ -1516,56 +1515,64 @@ namespace Model
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline const Aws::String& GetGlobalTableVersion() const{ return m_globalTableVersion; }
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline bool GlobalTableVersionHasBeenSet() const { return m_globalTableVersionHasBeenSet; }
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline void SetGlobalTableVersion(const Aws::String& value) { m_globalTableVersionHasBeenSet = true; m_globalTableVersion = value; }
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline void SetGlobalTableVersion(Aws::String&& value) { m_globalTableVersionHasBeenSet = true; m_globalTableVersion = std::move(value); }
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline void SetGlobalTableVersion(const char* value) { m_globalTableVersionHasBeenSet = true; m_globalTableVersion.assign(value); }
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline TableDescription& WithGlobalTableVersion(const Aws::String& value) { SetGlobalTableVersion(value); return *this;}
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline TableDescription& WithGlobalTableVersion(Aws::String&& value) { SetGlobalTableVersion(std::move(value)); return *this;}
 
     /**
      * <p>Represents the version of <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     * tables</a> in use, if the table is replicated across Amazon Web Services
+     * Regions.</p>
      */
     inline TableDescription& WithGlobalTableVersion(const char* value) { SetGlobalTableVersion(value); return *this;}
 
@@ -1709,6 +1716,37 @@ namespace Model
      */
     inline TableDescription& WithArchivalSummary(ArchivalSummary&& value) { SetArchivalSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline const TableClassSummary& GetTableClassSummary() const{ return m_tableClassSummary; }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline bool TableClassSummaryHasBeenSet() const { return m_tableClassSummaryHasBeenSet; }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline void SetTableClassSummary(const TableClassSummary& value) { m_tableClassSummaryHasBeenSet = true; m_tableClassSummary = value; }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline void SetTableClassSummary(TableClassSummary&& value) { m_tableClassSummaryHasBeenSet = true; m_tableClassSummary = std::move(value); }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline TableDescription& WithTableClassSummary(const TableClassSummary& value) { SetTableClassSummary(value); return *this;}
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline TableDescription& WithTableClassSummary(TableClassSummary&& value) { SetTableClassSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1773,6 +1811,9 @@ namespace Model
 
     ArchivalSummary m_archivalSummary;
     bool m_archivalSummaryHasBeenSet;
+
+    TableClassSummary m_tableClassSummary;
+    bool m_tableClassSummaryHasBeenSet;
   };
 
 } // namespace Model

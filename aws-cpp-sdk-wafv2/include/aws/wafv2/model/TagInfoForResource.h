@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -36,12 +26,17 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>The collection of tagging definitions
-   * for an AWS resource. </p><p><h3>See Also:</h3>   <a
+   * <p>The collection of tagging definitions for an Amazon Web Services resource.
+   * Tags are key:value pairs that you can use to categorize and manage your
+   * resources, for purposes like billing or other management. Typically, the tag key
+   * represents a category, such as "environment", and the tag value represents a
+   * specific value within that category, such as "test," "development," or
+   * "production". Or you might set the tag key to "customer" and the value to the
+   * customer name or ID. You can specify one or more tags to add to each Amazon Web
+   * Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon
+   * Web Services resources that you manage through WAF: web ACLs, rule groups, IP
+   * sets, and regex pattern sets. You can't manage or view tags through the WAF
+   * console. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagInfoForResource">AWS
    * API Reference</a></p>
    */

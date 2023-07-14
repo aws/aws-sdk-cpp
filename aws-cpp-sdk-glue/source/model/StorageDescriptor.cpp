@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 StorageDescriptor::StorageDescriptor() : 
     m_columnsHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_additionalLocationsHasBeenSet(false),
     m_inputFormatHasBeenSet(false),
     m_outputFormatHasBeenSet(false),
     m_compressed(false),
@@ -43,13 +34,15 @@ StorageDescriptor::StorageDescriptor() :
     m_parametersHasBeenSet(false),
     m_skewedInfoHasBeenSet(false),
     m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false)
+    m_storedAsSubDirectoriesHasBeenSet(false),
+    m_schemaReferenceHasBeenSet(false)
 {
 }
 
 StorageDescriptor::StorageDescriptor(JsonView jsonValue) : 
     m_columnsHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_additionalLocationsHasBeenSet(false),
     m_inputFormatHasBeenSet(false),
     m_outputFormatHasBeenSet(false),
     m_compressed(false),
@@ -62,7 +55,8 @@ StorageDescriptor::StorageDescriptor(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_skewedInfoHasBeenSet(false),
     m_storedAsSubDirectories(false),
-    m_storedAsSubDirectoriesHasBeenSet(false)
+    m_storedAsSubDirectoriesHasBeenSet(false),
+    m_schemaReferenceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +78,16 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     m_location = jsonValue.GetString("Location");
 
     m_locationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalLocations"))
+  {
+    Array<JsonView> additionalLocationsJsonList = jsonValue.GetArray("AdditionalLocations");
+    for(unsigned additionalLocationsIndex = 0; additionalLocationsIndex < additionalLocationsJsonList.GetLength(); ++additionalLocationsIndex)
+    {
+      m_additionalLocations.push_back(additionalLocationsJsonList[additionalLocationsIndex].AsString());
+    }
+    m_additionalLocationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InputFormat"))
@@ -165,6 +169,13 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
     m_storedAsSubDirectoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SchemaReference"))
+  {
+    m_schemaReference = jsonValue.GetObject("SchemaReference");
+
+    m_schemaReferenceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +197,17 @@ JsonValue StorageDescriptor::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("Location", m_location);
+
+  }
+
+  if(m_additionalLocationsHasBeenSet)
+  {
+   Array<JsonValue> additionalLocationsJsonList(m_additionalLocations.size());
+   for(unsigned additionalLocationsIndex = 0; additionalLocationsIndex < additionalLocationsJsonList.GetLength(); ++additionalLocationsIndex)
+   {
+     additionalLocationsJsonList[additionalLocationsIndex].AsString(m_additionalLocations[additionalLocationsIndex]);
+   }
+   payload.WithArray("AdditionalLocations", std::move(additionalLocationsJsonList));
 
   }
 
@@ -261,6 +283,12 @@ JsonValue StorageDescriptor::Jsonize() const
   if(m_storedAsSubDirectoriesHasBeenSet)
   {
    payload.WithBool("StoredAsSubDirectories", m_storedAsSubDirectories);
+
+  }
+
+  if(m_schemaReferenceHasBeenSet)
+  {
+   payload.WithObject("SchemaReference", m_schemaReference.Jsonize());
 
   }
 

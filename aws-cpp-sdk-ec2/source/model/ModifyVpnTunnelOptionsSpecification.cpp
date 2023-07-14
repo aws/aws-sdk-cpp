@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ModifyVpnTunnelOptionsSpecification.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -32,6 +22,7 @@ namespace Model
 
 ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification() : 
     m_tunnelInsideCidrHasBeenSet(false),
+    m_tunnelInsideIpv6CidrHasBeenSet(false),
     m_preSharedKeyHasBeenSet(false),
     m_phase1LifetimeSeconds(0),
     m_phase1LifetimeSecondsHasBeenSet(false),
@@ -45,18 +36,21 @@ ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification() :
     m_replayWindowSizeHasBeenSet(false),
     m_dPDTimeoutSeconds(0),
     m_dPDTimeoutSecondsHasBeenSet(false),
+    m_dPDTimeoutActionHasBeenSet(false),
     m_phase1EncryptionAlgorithmsHasBeenSet(false),
     m_phase2EncryptionAlgorithmsHasBeenSet(false),
     m_phase1IntegrityAlgorithmsHasBeenSet(false),
     m_phase2IntegrityAlgorithmsHasBeenSet(false),
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false)
+    m_iKEVersionsHasBeenSet(false),
+    m_startupActionHasBeenSet(false)
 {
 }
 
 ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification(const XmlNode& xmlNode) : 
     m_tunnelInsideCidrHasBeenSet(false),
+    m_tunnelInsideIpv6CidrHasBeenSet(false),
     m_preSharedKeyHasBeenSet(false),
     m_phase1LifetimeSeconds(0),
     m_phase1LifetimeSecondsHasBeenSet(false),
@@ -70,13 +64,15 @@ ModifyVpnTunnelOptionsSpecification::ModifyVpnTunnelOptionsSpecification(const X
     m_replayWindowSizeHasBeenSet(false),
     m_dPDTimeoutSeconds(0),
     m_dPDTimeoutSecondsHasBeenSet(false),
+    m_dPDTimeoutActionHasBeenSet(false),
     m_phase1EncryptionAlgorithmsHasBeenSet(false),
     m_phase2EncryptionAlgorithmsHasBeenSet(false),
     m_phase1IntegrityAlgorithmsHasBeenSet(false),
     m_phase2IntegrityAlgorithmsHasBeenSet(false),
     m_phase1DHGroupNumbersHasBeenSet(false),
     m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false)
+    m_iKEVersionsHasBeenSet(false),
+    m_startupActionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -92,6 +88,12 @@ ModifyVpnTunnelOptionsSpecification& ModifyVpnTunnelOptionsSpecification::operat
     {
       m_tunnelInsideCidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideCidrNode.GetText());
       m_tunnelInsideCidrHasBeenSet = true;
+    }
+    XmlNode tunnelInsideIpv6CidrNode = resultNode.FirstChild("TunnelInsideIpv6Cidr");
+    if(!tunnelInsideIpv6CidrNode.IsNull())
+    {
+      m_tunnelInsideIpv6Cidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpv6CidrNode.GetText());
+      m_tunnelInsideIpv6CidrHasBeenSet = true;
     }
     XmlNode preSharedKeyNode = resultNode.FirstChild("PreSharedKey");
     if(!preSharedKeyNode.IsNull())
@@ -134,6 +136,12 @@ ModifyVpnTunnelOptionsSpecification& ModifyVpnTunnelOptionsSpecification::operat
     {
       m_dPDTimeoutSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dPDTimeoutSecondsNode.GetText()).c_str()).c_str());
       m_dPDTimeoutSecondsHasBeenSet = true;
+    }
+    XmlNode dPDTimeoutActionNode = resultNode.FirstChild("DPDTimeoutAction");
+    if(!dPDTimeoutActionNode.IsNull())
+    {
+      m_dPDTimeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(dPDTimeoutActionNode.GetText());
+      m_dPDTimeoutActionHasBeenSet = true;
     }
     XmlNode phase1EncryptionAlgorithmsNode = resultNode.FirstChild("Phase1EncryptionAlgorithm");
     if(!phase1EncryptionAlgorithmsNode.IsNull())
@@ -219,6 +227,12 @@ ModifyVpnTunnelOptionsSpecification& ModifyVpnTunnelOptionsSpecification::operat
 
       m_iKEVersionsHasBeenSet = true;
     }
+    XmlNode startupActionNode = resultNode.FirstChild("StartupAction");
+    if(!startupActionNode.IsNull())
+    {
+      m_startupAction = Aws::Utils::Xml::DecodeEscapedXmlText(startupActionNode.GetText());
+      m_startupActionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -229,6 +243,11 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_tunnelInsideCidrHasBeenSet)
   {
       oStream << location << index << locationValue << ".TunnelInsideCidr=" << StringUtils::URLEncode(m_tunnelInsideCidr.c_str()) << "&";
+  }
+
+  if(m_tunnelInsideIpv6CidrHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TunnelInsideIpv6Cidr=" << StringUtils::URLEncode(m_tunnelInsideIpv6Cidr.c_str()) << "&";
   }
 
   if(m_preSharedKeyHasBeenSet)
@@ -264,6 +283,11 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_dPDTimeoutSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DPDTimeoutSeconds=" << m_dPDTimeoutSeconds << "&";
+  }
+
+  if(m_dPDTimeoutActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DPDTimeoutAction=" << StringUtils::URLEncode(m_dPDTimeoutAction.c_str()) << "&";
   }
 
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
@@ -343,6 +367,11 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
       }
   }
 
+  if(m_startupActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
+  }
+
 }
 
 void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -350,6 +379,10 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_tunnelInsideCidrHasBeenSet)
   {
       oStream << location << ".TunnelInsideCidr=" << StringUtils::URLEncode(m_tunnelInsideCidr.c_str()) << "&";
+  }
+  if(m_tunnelInsideIpv6CidrHasBeenSet)
+  {
+      oStream << location << ".TunnelInsideIpv6Cidr=" << StringUtils::URLEncode(m_tunnelInsideIpv6Cidr.c_str()) << "&";
   }
   if(m_preSharedKeyHasBeenSet)
   {
@@ -378,6 +411,10 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
   if(m_dPDTimeoutSecondsHasBeenSet)
   {
       oStream << location << ".DPDTimeoutSeconds=" << m_dPDTimeoutSeconds << "&";
+  }
+  if(m_dPDTimeoutActionHasBeenSet)
+  {
+      oStream << location << ".DPDTimeoutAction=" << StringUtils::URLEncode(m_dPDTimeoutAction.c_str()) << "&";
   }
   if(m_phase1EncryptionAlgorithmsHasBeenSet)
   {
@@ -448,6 +485,10 @@ void ModifyVpnTunnelOptionsSpecification::OutputToStream(Aws::OStream& oStream, 
         iKEVersionsSs << location <<  ".IKEVersion." << iKEVersionsIdx++;
         item.OutputToStream(oStream, iKEVersionsSs.str().c_str());
       }
+  }
+  if(m_startupActionHasBeenSet)
+  {
+      oStream << location << ".StartupAction=" << StringUtils::URLEncode(m_startupAction.c_str()) << "&";
   }
 }
 

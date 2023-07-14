@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
@@ -121,56 +111,56 @@ namespace Model
 
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline OutputDataConfig& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline OutputDataConfig& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */

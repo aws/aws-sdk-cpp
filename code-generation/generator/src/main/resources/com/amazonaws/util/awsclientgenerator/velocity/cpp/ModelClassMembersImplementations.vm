@@ -18,9 +18,9 @@
 #set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
 #if($member.value.shape.isMutuallyReferencedWith($shape))
-#set($getterBody = "{ return ${memberVariableName}[0]; }")
-#set($setterWithCopy = " { ${required}${memberVariableName}.resize(1); ${memberVariableName}[0] = value; }")
-#set($setterWithMove = " { ${required}${memberVariableName}.resize(1); ${memberVariableName}[0] = std::move(value); }")
+#set($getterBody = "{ return *${memberVariableName}; }")
+#set($setterWithCopy = " { ${required}${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.value.shape)>(" + '"' + ${typeInfo.className} + '", value); }')
+#set($setterWithMove = " { ${required}${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.value.shape)>(" + '"' + ${typeInfo.className} + '", std::move(value)); }')
 #set($witherWithCopy = " { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}")
 #set($witherWithMove = " { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}")
 #end

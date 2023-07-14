@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -335,9 +325,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -355,9 +345,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -375,9 +365,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -395,9 +385,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -415,9 +405,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -435,9 +425,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -477,8 +467,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -530,8 +520,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -583,8 +573,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -636,8 +626,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -689,8 +679,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -742,8 +732,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -792,8 +782,8 @@ namespace Model
      * object:</p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account.</p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -839,8 +829,8 @@ namespace Model
      * object:</p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account.</p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -886,8 +876,8 @@ namespace Model
      * object:</p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account.</p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -933,8 +923,8 @@ namespace Model
      * object:</p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account.</p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -980,8 +970,8 @@ namespace Model
      * object:</p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account.</p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -1027,8 +1017,8 @@ namespace Model
      * object:</p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account.</p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,

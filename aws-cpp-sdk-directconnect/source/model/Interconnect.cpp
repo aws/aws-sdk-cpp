@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/directconnect/model/Interconnect.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,6 +32,7 @@ Interconnect::Interconnect() :
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -63,6 +54,7 @@ Interconnect::Interconnect(JsonView jsonValue) :
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -148,6 +140,13 @@ Interconnect& Interconnect::operator =(JsonView jsonValue)
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
 
     m_awsDeviceV2HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
@@ -242,6 +241,12 @@ JsonValue Interconnect::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/forecast/model/Metrics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,29 +19,24 @@ namespace Model
 {
 
 Metrics::Metrics() : 
-    m_rMSE(0.0),
-    m_rMSEHasBeenSet(false),
-    m_weightedQuantileLossesHasBeenSet(false)
+    m_weightedQuantileLossesHasBeenSet(false),
+    m_errorMetricsHasBeenSet(false),
+    m_averageWeightedQuantileLoss(0.0),
+    m_averageWeightedQuantileLossHasBeenSet(false)
 {
 }
 
 Metrics::Metrics(JsonView jsonValue) : 
-    m_rMSE(0.0),
-    m_rMSEHasBeenSet(false),
-    m_weightedQuantileLossesHasBeenSet(false)
+    m_weightedQuantileLossesHasBeenSet(false),
+    m_errorMetricsHasBeenSet(false),
+    m_averageWeightedQuantileLoss(0.0),
+    m_averageWeightedQuantileLossHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Metrics& Metrics::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("RMSE"))
-  {
-    m_rMSE = jsonValue.GetDouble("RMSE");
-
-    m_rMSEHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("WeightedQuantileLosses"))
   {
     Array<JsonView> weightedQuantileLossesJsonList = jsonValue.GetArray("WeightedQuantileLosses");
@@ -62,18 +47,29 @@ Metrics& Metrics::operator =(JsonView jsonValue)
     m_weightedQuantileLossesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErrorMetrics"))
+  {
+    Array<JsonView> errorMetricsJsonList = jsonValue.GetArray("ErrorMetrics");
+    for(unsigned errorMetricsIndex = 0; errorMetricsIndex < errorMetricsJsonList.GetLength(); ++errorMetricsIndex)
+    {
+      m_errorMetrics.push_back(errorMetricsJsonList[errorMetricsIndex].AsObject());
+    }
+    m_errorMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AverageWeightedQuantileLoss"))
+  {
+    m_averageWeightedQuantileLoss = jsonValue.GetDouble("AverageWeightedQuantileLoss");
+
+    m_averageWeightedQuantileLossHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Metrics::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_rMSEHasBeenSet)
-  {
-   payload.WithDouble("RMSE", m_rMSE);
-
-  }
 
   if(m_weightedQuantileLossesHasBeenSet)
   {
@@ -83,6 +79,23 @@ JsonValue Metrics::Jsonize() const
      weightedQuantileLossesJsonList[weightedQuantileLossesIndex].AsObject(m_weightedQuantileLosses[weightedQuantileLossesIndex].Jsonize());
    }
    payload.WithArray("WeightedQuantileLosses", std::move(weightedQuantileLossesJsonList));
+
+  }
+
+  if(m_errorMetricsHasBeenSet)
+  {
+   Array<JsonValue> errorMetricsJsonList(m_errorMetrics.size());
+   for(unsigned errorMetricsIndex = 0; errorMetricsIndex < errorMetricsJsonList.GetLength(); ++errorMetricsIndex)
+   {
+     errorMetricsJsonList[errorMetricsIndex].AsObject(m_errorMetrics[errorMetricsIndex].Jsonize());
+   }
+   payload.WithArray("ErrorMetrics", std::move(errorMetricsJsonList));
+
+  }
+
+  if(m_averageWeightedQuantileLossHasBeenSet)
+  {
+   payload.WithDouble("AverageWeightedQuantileLoss", m_averageWeightedQuantileLoss);
 
   }
 

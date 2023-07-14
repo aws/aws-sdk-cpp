@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/FileSourceSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,18 +21,24 @@ namespace Model
 FileSourceSettings::FileSourceSettings() : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
+    m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
-    m_timeDeltaHasBeenSet(false)
+    m_timeDeltaHasBeenSet(false),
+    m_timeDeltaUnits(FileSourceTimeDeltaUnits::NOT_SET),
+    m_timeDeltaUnitsHasBeenSet(false)
 {
 }
 
 FileSourceSettings::FileSourceSettings(JsonView jsonValue) : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
+    m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
-    m_timeDeltaHasBeenSet(false)
+    m_timeDeltaHasBeenSet(false),
+    m_timeDeltaUnits(FileSourceTimeDeltaUnits::NOT_SET),
+    m_timeDeltaUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -54,6 +50,13 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
     m_convert608To708 = FileSourceConvert608To708Mapper::GetFileSourceConvert608To708ForName(jsonValue.GetString("convert608To708"));
 
     m_convert608To708HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("framerate"))
+  {
+    m_framerate = jsonValue.GetObject("framerate");
+
+    m_framerateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceFile"))
@@ -70,6 +73,13 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
     m_timeDeltaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeDeltaUnits"))
+  {
+    m_timeDeltaUnits = FileSourceTimeDeltaUnitsMapper::GetFileSourceTimeDeltaUnitsForName(jsonValue.GetString("timeDeltaUnits"));
+
+    m_timeDeltaUnitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +92,12 @@ JsonValue FileSourceSettings::Jsonize() const
    payload.WithString("convert608To708", FileSourceConvert608To708Mapper::GetNameForFileSourceConvert608To708(m_convert608To708));
   }
 
+  if(m_framerateHasBeenSet)
+  {
+   payload.WithObject("framerate", m_framerate.Jsonize());
+
+  }
+
   if(m_sourceFileHasBeenSet)
   {
    payload.WithString("sourceFile", m_sourceFile);
@@ -92,6 +108,11 @@ JsonValue FileSourceSettings::Jsonize() const
   {
    payload.WithInteger("timeDelta", m_timeDelta);
 
+  }
+
+  if(m_timeDeltaUnitsHasBeenSet)
+  {
+   payload.WithString("timeDeltaUnits", FileSourceTimeDeltaUnitsMapper::GetNameForFileSourceTimeDeltaUnits(m_timeDeltaUnits));
   }
 
   return payload;

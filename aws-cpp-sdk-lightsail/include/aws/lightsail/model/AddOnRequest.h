@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -36,10 +26,10 @@ namespace Model
 
   /**
    * <p>Describes a request to enable, modify, or disable an add-on for an Amazon
-   * Lightsail resource.</p> <note> <p>An additional cost may be associated with
+   * Lightsail resource.</p>  <p>An additional cost may be associated with
    * enabling add-ons. For more information, see the <a
    * href="https://aws.amazon.com/lightsail/pricing/">Lightsail pricing page</a>.</p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AddOnRequest">AWS
    * API Reference</a></p>
    */

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/application-insights/model/Status.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int IGNORE_HASH = HashingUtils::HashString("IGNORE");
         static const int RESOLVED_HASH = HashingUtils::HashString("RESOLVED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
 
 
         Status GetStatusForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == PENDING_HASH)
           {
             return Status::PENDING;
+          }
+          else if (hashCode == RECURRING_HASH)
+          {
+            return Status::RECURRING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "RESOLVED";
           case Status::PENDING:
             return "PENDING";
+          case Status::RECURRING:
+            return "RECURRING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

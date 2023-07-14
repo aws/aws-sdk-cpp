@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ScheduleConfig.h>
 #include <aws/sagemaker/model/MonitoringJobDefinition.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/MonitoringType.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +102,78 @@ namespace Model
      */
     inline MonitoringScheduleConfig& WithMonitoringJobDefinition(MonitoringJobDefinition&& value) { SetMonitoringJobDefinition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline const Aws::String& GetMonitoringJobDefinitionName() const{ return m_monitoringJobDefinitionName; }
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline bool MonitoringJobDefinitionNameHasBeenSet() const { return m_monitoringJobDefinitionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const Aws::String& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = value; }
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(Aws::String&& value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName = std::move(value); }
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringJobDefinitionName(const char* value) { m_monitoringJobDefinitionNameHasBeenSet = true; m_monitoringJobDefinitionName.assign(value); }
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringScheduleConfig& WithMonitoringJobDefinitionName(const Aws::String& value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringScheduleConfig& WithMonitoringJobDefinitionName(Aws::String&& value) { SetMonitoringJobDefinitionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringScheduleConfig& WithMonitoringJobDefinitionName(const char* value) { SetMonitoringJobDefinitionName(value); return *this;}
+
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline const MonitoringType& GetMonitoringType() const{ return m_monitoringType; }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline bool MonitoringTypeHasBeenSet() const { return m_monitoringTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringType(const MonitoringType& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = value; }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline void SetMonitoringType(MonitoringType&& value) { m_monitoringTypeHasBeenSet = true; m_monitoringType = std::move(value); }
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringScheduleConfig& WithMonitoringType(const MonitoringType& value) { SetMonitoringType(value); return *this;}
+
+    /**
+     * <p>The type of the monitoring job definition to schedule.</p>
+     */
+    inline MonitoringScheduleConfig& WithMonitoringType(MonitoringType&& value) { SetMonitoringType(std::move(value)); return *this;}
+
   private:
 
     ScheduleConfig m_scheduleConfig;
@@ -117,6 +181,12 @@ namespace Model
 
     MonitoringJobDefinition m_monitoringJobDefinition;
     bool m_monitoringJobDefinitionHasBeenSet;
+
+    Aws::String m_monitoringJobDefinitionName;
+    bool m_monitoringJobDefinitionNameHasBeenSet;
+
+    MonitoringType m_monitoringType;
+    bool m_monitoringTypeHasBeenSet;
   };
 
 } // namespace Model

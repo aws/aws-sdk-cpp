@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ce/model/Granularity.h>
 #include <aws/ce/model/Expression.h>
+#include <aws/ce/model/SortDefinition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ce/model/GroupDefinition.h>
 #include <utility>
@@ -50,62 +41,62 @@ namespace Model
 
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline GetReservationUtilizationRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>Sets the start and end dates for retrieving RI utilization. The start date is
-     * inclusive, but the end date is exclusive. For example, if <code>start</code> is
-     * <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
-     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
-     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-     * </p>
+     * <p>Sets the start and end dates for retrieving Reserved Instance (RI)
+     * utilization. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>. </p>
      */
     inline GetReservationUtilizationRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -310,60 +301,226 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
+     * <code>PurchasedHours</code> </p> </li> <li> <p> <code>PurchasedUnits</code> </p>
+     * </li> <li> <p> <code>TotalActualHours</code> </p> </li> <li> <p>
+     * <code>TotalActualUnits</code> </p> </li> <li> <p> <code>UnusedHours</code> </p>
+     * </li> <li> <p> <code>UnusedUnits</code> </p> </li> <li> <p>
+     * <code>OnDemandCostOfRIHoursUsed</code> </p> </li> <li> <p>
+     * <code>NetRISavings</code> </p> </li> <li> <p>
+     * <code>TotalPotentialRISavings</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontFee</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringFee</code> </p> </li> <li> <p>
+     * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
+     * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
+     * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+     */
+    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
+     * <code>PurchasedHours</code> </p> </li> <li> <p> <code>PurchasedUnits</code> </p>
+     * </li> <li> <p> <code>TotalActualHours</code> </p> </li> <li> <p>
+     * <code>TotalActualUnits</code> </p> </li> <li> <p> <code>UnusedHours</code> </p>
+     * </li> <li> <p> <code>UnusedUnits</code> </p> </li> <li> <p>
+     * <code>OnDemandCostOfRIHoursUsed</code> </p> </li> <li> <p>
+     * <code>NetRISavings</code> </p> </li> <li> <p>
+     * <code>TotalPotentialRISavings</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontFee</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringFee</code> </p> </li> <li> <p>
+     * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
+     * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
+     * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
+     * <code>PurchasedHours</code> </p> </li> <li> <p> <code>PurchasedUnits</code> </p>
+     * </li> <li> <p> <code>TotalActualHours</code> </p> </li> <li> <p>
+     * <code>TotalActualUnits</code> </p> </li> <li> <p> <code>UnusedHours</code> </p>
+     * </li> <li> <p> <code>UnusedUnits</code> </p> </li> <li> <p>
+     * <code>OnDemandCostOfRIHoursUsed</code> </p> </li> <li> <p>
+     * <code>NetRISavings</code> </p> </li> <li> <p>
+     * <code>TotalPotentialRISavings</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontFee</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringFee</code> </p> </li> <li> <p>
+     * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
+     * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
+     * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
+     * <code>PurchasedHours</code> </p> </li> <li> <p> <code>PurchasedUnits</code> </p>
+     * </li> <li> <p> <code>TotalActualHours</code> </p> </li> <li> <p>
+     * <code>TotalActualUnits</code> </p> </li> <li> <p> <code>UnusedHours</code> </p>
+     * </li> <li> <p> <code>UnusedUnits</code> </p> </li> <li> <p>
+     * <code>OnDemandCostOfRIHoursUsed</code> </p> </li> <li> <p>
+     * <code>NetRISavings</code> </p> </li> <li> <p>
+     * <code>TotalPotentialRISavings</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontFee</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringFee</code> </p> </li> <li> <p>
+     * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
+     * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
+     * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
+     * <code>PurchasedHours</code> </p> </li> <li> <p> <code>PurchasedUnits</code> </p>
+     * </li> <li> <p> <code>TotalActualHours</code> </p> </li> <li> <p>
+     * <code>TotalActualUnits</code> </p> </li> <li> <p> <code>UnusedHours</code> </p>
+     * </li> <li> <p> <code>UnusedUnits</code> </p> </li> <li> <p>
+     * <code>OnDemandCostOfRIHoursUsed</code> </p> </li> <li> <p>
+     * <code>NetRISavings</code> </p> </li> <li> <p>
+     * <code>TotalPotentialRISavings</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontFee</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringFee</code> </p> </li> <li> <p>
+     * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
+     * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
+     * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+     */
+    inline GetReservationUtilizationRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>UtilizationPercentageInUnits</code> </p> </li> <li> <p>
+     * <code>PurchasedHours</code> </p> </li> <li> <p> <code>PurchasedUnits</code> </p>
+     * </li> <li> <p> <code>TotalActualHours</code> </p> </li> <li> <p>
+     * <code>TotalActualUnits</code> </p> </li> <li> <p> <code>UnusedHours</code> </p>
+     * </li> <li> <p> <code>UnusedUnits</code> </p> </li> <li> <p>
+     * <code>OnDemandCostOfRIHoursUsed</code> </p> </li> <li> <p>
+     * <code>NetRISavings</code> </p> </li> <li> <p>
+     * <code>TotalPotentialRISavings</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontFee</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringFee</code> </p> </li> <li> <p>
+     * <code>TotalAmortizedFee</code> </p> </li> <li> <p>
+     * <code>RICostForUnusedHours</code> </p> </li> <li> <p>
+     * <code>RealizedSavings</code> </p> </li> <li> <p> <code>UnrealizedSavings</code>
+     * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
+     * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+     */
+    inline GetReservationUtilizationRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationUtilizationRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationUtilizationRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationUtilizationRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of objects that you returned for this request. If more
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
+     */
+    inline GetReservationUtilizationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
@@ -379,8 +536,14 @@ namespace Model
     Expression m_filter;
     bool m_filterHasBeenSet;
 
+    SortDefinition m_sortBy;
+    bool m_sortByHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

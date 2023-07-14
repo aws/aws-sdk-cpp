@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
 
@@ -369,59 +360,191 @@ namespace Model
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateLoadBalancerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateLoadBalancerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>To tag a resource after it has been created, see the <code>tag
-     * resource</code> operation.</p>
+     * <p>Use the <code>TagResource</code> action to tag a resource after it's
+     * created.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The IP address type for the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the load balancer.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetTlsPolicyName() const{ return m_tlsPolicyName; }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline bool TlsPolicyNameHasBeenSet() const { return m_tlsPolicyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetTlsPolicyName(const Aws::String& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = value; }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetTlsPolicyName(Aws::String&& value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName = std::move(value); }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetTlsPolicyName(const char* value) { m_tlsPolicyNameHasBeenSet = true; m_tlsPolicyName.assign(value); }
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithTlsPolicyName(const Aws::String& value) { SetTlsPolicyName(value); return *this;}
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithTlsPolicyName(Aws::String&& value) { SetTlsPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the TLS policy to apply to the load balancer.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+     * action to get a list of TLS policy names that you can specify.</p> <p>For more
+     * information about load balancer TLS policies, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+     * TLS security policies on your Amazon Lightsail load balancers</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithTlsPolicyName(const char* value) { SetTlsPolicyName(value); return *this;}
 
   private:
 
@@ -445,6 +568,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
+
+    Aws::String m_tlsPolicyName;
+    bool m_tlsPolicyNameHasBeenSet;
   };
 
 } // namespace Model

@@ -5,6 +5,7 @@
 #set($serviceNamespace = $metadata.namespace)
 #pragma once
 
+\#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/CoreErrors.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 
@@ -12,8 +13,8 @@ namespace ${rootNamespace}
 {
 namespace ${serviceNamespace}
 {
-#set($className = "${metadata.classNamePrefix}Errors")
-enum class $className
+#set($enumClassName = "${metadata.classNamePrefix}Errors")
+enum class $enumClassName
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -43,7 +44,7 @@ enum class $className
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -58,6 +59,21 @@ enum class $className
 #end
 
 };
+
+#set($className = "${metadata.classNamePrefix}Error")
+class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} $className : public Aws::Client::AWSError<$enumClassName>
+{
+public:
+  $className() {}
+  $className(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<$enumClassName>(rhs) {}
+  $className(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<$enumClassName>(rhs) {}
+  $className(const Aws::Client::AWSError<$enumClassName>& rhs) : Aws::Client::AWSError<$enumClassName>(rhs) {}
+  $className(Aws::Client::AWSError<$enumClassName>&& rhs) : Aws::Client::AWSError<$enumClassName>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ${metadata.classNamePrefix}ErrorMapper
 {
   ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ram/model/ResourceShareInvitation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,8 @@ ResourceShareInvitation::ResourceShareInvitation() :
     m_receiverAccountIdHasBeenSet(false),
     m_invitationTimestampHasBeenSet(false),
     m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_receiverArnHasBeenSet(false)
 {
 }
 
@@ -48,7 +39,8 @@ ResourceShareInvitation::ResourceShareInvitation(JsonView jsonValue) :
     m_receiverAccountIdHasBeenSet(false),
     m_invitationTimestampHasBeenSet(false),
     m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_receiverArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +96,13 @@ ResourceShareInvitation& ResourceShareInvitation::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("receiverArn"))
+  {
+    m_receiverArn = jsonValue.GetString("receiverArn");
+
+    m_receiverArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +148,12 @@ JsonValue ResourceShareInvitation::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ResourceShareInvitationStatusMapper::GetNameForResourceShareInvitationStatus(m_status));
+  }
+
+  if(m_receiverArnHasBeenSet)
+  {
+   payload.WithString("receiverArn", m_receiverArn);
+
   }
 
   return payload;

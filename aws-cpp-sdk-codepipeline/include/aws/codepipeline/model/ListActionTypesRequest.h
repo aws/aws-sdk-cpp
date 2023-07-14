@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
@@ -128,6 +118,47 @@ namespace Model
      */
     inline ListActionTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline const Aws::String& GetRegionFilter() const{ return m_regionFilter; }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline bool RegionFilterHasBeenSet() const { return m_regionFilterHasBeenSet; }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline void SetRegionFilter(const Aws::String& value) { m_regionFilterHasBeenSet = true; m_regionFilter = value; }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline void SetRegionFilter(Aws::String&& value) { m_regionFilterHasBeenSet = true; m_regionFilter = std::move(value); }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline void SetRegionFilter(const char* value) { m_regionFilterHasBeenSet = true; m_regionFilter.assign(value); }
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline ListActionTypesRequest& WithRegionFilter(const Aws::String& value) { SetRegionFilter(value); return *this;}
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline ListActionTypesRequest& WithRegionFilter(Aws::String&& value) { SetRegionFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region to filter on for the list of action types.</p>
+     */
+    inline ListActionTypesRequest& WithRegionFilter(const char* value) { SetRegionFilter(value); return *this;}
+
   private:
 
     ActionOwner m_actionOwnerFilter;
@@ -135,6 +166,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_regionFilter;
+    bool m_regionFilterHasBeenSet;
   };
 
 } // namespace Model

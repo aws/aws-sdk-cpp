@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -46,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline const Aws::Vector<DatasetEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline void SetEntries(const Aws::Vector<DatasetEntry>& value) { m_entries = value; }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline void SetEntries(Aws::Vector<DatasetEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& WithEntries(const Aws::Vector<DatasetEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& WithEntries(Aws::Vector<DatasetEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& AddEntries(const DatasetEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "DatasetEntry" objects.</p>
+     * <p>A list of <code>DatasetEntry</code> objects.</p>
      */
     inline GetDatasetContentResult& AddEntries(DatasetEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 
@@ -108,27 +98,27 @@ namespace Model
 
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline const DatasetContentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline void SetStatus(const DatasetContentStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline void SetStatus(DatasetContentStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline GetDatasetContentResult& WithStatus(const DatasetContentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the data set content.</p>
+     * <p>The status of the dataset content.</p>
      */
     inline GetDatasetContentResult& WithStatus(DatasetContentStatus&& value) { SetStatus(std::move(value)); return *this;}
 

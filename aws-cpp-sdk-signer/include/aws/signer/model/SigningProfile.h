@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/signer/model/SigningMaterial.h>
+#include <aws/signer/model/SignatureValidityPeriod.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/signer/model/SigningProfileStatus.h>
 #include <utility>
@@ -94,6 +85,88 @@ namespace Model
 
 
     /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline bool ProfileVersionHasBeenSet() const { return m_profileVersionHasBeenSet; }
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline void SetProfileVersion(const Aws::String& value) { m_profileVersionHasBeenSet = true; m_profileVersion = value; }
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline void SetProfileVersion(Aws::String&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::move(value); }
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline void SetProfileVersion(const char* value) { m_profileVersionHasBeenSet = true; m_profileVersion.assign(value); }
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline SigningProfile& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline SigningProfile& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of a signing profile.</p>
+     */
+    inline SigningProfile& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline const Aws::String& GetProfileVersionArn() const{ return m_profileVersionArn; }
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline bool ProfileVersionArnHasBeenSet() const { return m_profileVersionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline void SetProfileVersionArn(const Aws::String& value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn = value; }
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline void SetProfileVersionArn(Aws::String&& value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline void SetProfileVersionArn(const char* value) { m_profileVersionArnHasBeenSet = true; m_profileVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline SigningProfile& WithProfileVersionArn(const Aws::String& value) { SetProfileVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline SigningProfile& WithProfileVersionArn(Aws::String&& value) { SetProfileVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of a signing profile, including the profile version.</p>
+     */
+    inline SigningProfile& WithProfileVersionArn(const char* value) { SetProfileVersionArn(value); return *this;}
+
+
+    /**
      * <p>The ACM certificate that is available for use by a signing profile.</p>
      */
     inline const SigningMaterial& GetSigningMaterial() const{ return m_signingMaterial; }
@@ -122,6 +195,37 @@ namespace Model
      * <p>The ACM certificate that is available for use by a signing profile.</p>
      */
     inline SigningProfile& WithSigningMaterial(SigningMaterial&& value) { SetSigningMaterial(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The validity period for a signing job created using this signing profile.</p>
+     */
+    inline const SignatureValidityPeriod& GetSignatureValidityPeriod() const{ return m_signatureValidityPeriod; }
+
+    /**
+     * <p>The validity period for a signing job created using this signing profile.</p>
+     */
+    inline bool SignatureValidityPeriodHasBeenSet() const { return m_signatureValidityPeriodHasBeenSet; }
+
+    /**
+     * <p>The validity period for a signing job created using this signing profile.</p>
+     */
+    inline void SetSignatureValidityPeriod(const SignatureValidityPeriod& value) { m_signatureValidityPeriodHasBeenSet = true; m_signatureValidityPeriod = value; }
+
+    /**
+     * <p>The validity period for a signing job created using this signing profile.</p>
+     */
+    inline void SetSignatureValidityPeriod(SignatureValidityPeriod&& value) { m_signatureValidityPeriodHasBeenSet = true; m_signatureValidityPeriod = std::move(value); }
+
+    /**
+     * <p>The validity period for a signing job created using this signing profile.</p>
+     */
+    inline SigningProfile& WithSignatureValidityPeriod(const SignatureValidityPeriod& value) { SetSignatureValidityPeriod(value); return *this;}
+
+    /**
+     * <p>The validity period for a signing job created using this signing profile.</p>
+     */
+    inline SigningProfile& WithSignatureValidityPeriod(SignatureValidityPeriod&& value) { SetSignatureValidityPeriod(std::move(value)); return *this;}
 
 
     /**
@@ -163,6 +267,47 @@ namespace Model
      * <p>The ID of a platform that is available for use by a signing profile.</p>
      */
     inline SigningProfile& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline const Aws::String& GetPlatformDisplayName() const{ return m_platformDisplayName; }
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline bool PlatformDisplayNameHasBeenSet() const { return m_platformDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline void SetPlatformDisplayName(const Aws::String& value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName = value; }
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline void SetPlatformDisplayName(Aws::String&& value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName = std::move(value); }
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline void SetPlatformDisplayName(const char* value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName.assign(value); }
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline SigningProfile& WithPlatformDisplayName(const Aws::String& value) { SetPlatformDisplayName(value); return *this;}
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline SigningProfile& WithPlatformDisplayName(Aws::String&& value) { SetPlatformDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the signing platform.</p>
+     */
+    inline SigningProfile& WithPlatformDisplayName(const char* value) { SetPlatformDisplayName(value); return *this;}
 
 
     /**
@@ -373,11 +518,23 @@ namespace Model
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet;
 
+    Aws::String m_profileVersion;
+    bool m_profileVersionHasBeenSet;
+
+    Aws::String m_profileVersionArn;
+    bool m_profileVersionArnHasBeenSet;
+
     SigningMaterial m_signingMaterial;
     bool m_signingMaterialHasBeenSet;
 
+    SignatureValidityPeriod m_signatureValidityPeriod;
+    bool m_signatureValidityPeriodHasBeenSet;
+
     Aws::String m_platformId;
     bool m_platformIdHasBeenSet;
+
+    Aws::String m_platformDisplayName;
+    bool m_platformDisplayNameHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_signingParameters;
     bool m_signingParametersHasBeenSet;

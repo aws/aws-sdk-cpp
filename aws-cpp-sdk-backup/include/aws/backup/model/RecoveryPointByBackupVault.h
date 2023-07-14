@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -113,64 +103,64 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline RecoveryPointByBackupVault& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline RecoveryPointByBackupVault& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline RecoveryPointByBackupVault& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 
@@ -225,6 +215,63 @@ namespace Model
 
 
     /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline bool SourceBackupVaultArnHasBeenSet() const { return m_sourceBackupVaultArnHasBeenSet; }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const Aws::String& value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn = value; }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(Aws::String&& value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const char* value) { m_sourceBackupVaultArnHasBeenSet = true; m_sourceBackupVaultArn.assign(value); }
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline RecoveryPointByBackupVault& WithSourceBackupVaultArn(const Aws::String& value) { SetSourceBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline RecoveryPointByBackupVault& WithSourceBackupVaultArn(Aws::String&& value) { SetSourceBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The backup vault where the recovery point was originally copied from. If the
+     * recovery point is restored to the same account this value will be
+     * <code>null</code>.</p>
+     */
+    inline RecoveryPointByBackupVault& WithSourceBackupVaultArn(const char* value) { SetSourceBackupVaultArn(value); return *this;}
+
+
+    /**
      * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
      * the resource type.</p>
      */
@@ -274,58 +321,66 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline RecoveryPointByBackupVault& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline RecoveryPointByBackupVault& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database. For Windows Volume Shadow
+     * Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
      */
     inline RecoveryPointByBackupVault& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -457,6 +512,47 @@ namespace Model
      * <p>A status code specifying the state of the recovery point.</p>
      */
     inline RecoveryPointByBackupVault& WithStatus(RecoveryPointStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline RecoveryPointByBackupVault& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline RecoveryPointByBackupVault& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A message explaining the reason of the recovery point deletion failure.</p>
+     */
+    inline RecoveryPointByBackupVault& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
@@ -617,67 +713,103 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
+     * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
+     * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
+     * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
+     * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
+     * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline RecoveryPointByBackupVault& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
+     * storage and when it expires. Backup transitions and expires backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline RecoveryPointByBackupVault& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -827,6 +959,9 @@ namespace Model
     Aws::String m_backupVaultArn;
     bool m_backupVaultArnHasBeenSet;
 
+    Aws::String m_sourceBackupVaultArn;
+    bool m_sourceBackupVaultArnHasBeenSet;
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
 
@@ -841,6 +976,9 @@ namespace Model
 
     RecoveryPointStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet;
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;

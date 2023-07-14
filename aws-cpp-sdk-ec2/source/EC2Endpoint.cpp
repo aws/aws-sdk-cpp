@@ -1,19 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/EC2Endpoint.h>
+#include <aws/core/Region.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 
@@ -31,20 +24,29 @@ namespace EC2Endpoint
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
   static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
 
+  // https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Using_Endpoints.html#ipv6
+  static const Aws::UnorderedSet<Aws::String> EC2_DUALSTACK_REGIONS {
+          Aws::Region::US_EAST_1, Aws::Region::US_EAST_2, Aws::Region::US_WEST_2, Aws::Region::US_WEST_1,
+          Aws::Region::AP_SOUTH_1, Aws::Region::SA_EAST_1};
+  static const char* EC2_ENDPOINT_TAG = "EC2Endpoint";
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+    // Fallback to us-east-1 if global endpoint does not exists.
+    Aws::String region = regionName == Aws::Region::AWS_GLOBAL ? Aws::Region::US_EAST_1 : regionName;
+    auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
     Aws::StringStream ss;
-    ss << "ec2" << ".";
-
     if(useDualStack)
     {
-      ss << "dualstack.";
+      if ((EC2_DUALSTACK_REGIONS.find(regionName)) == EC2_DUALSTACK_REGIONS.end())
+      {
+        AWS_LOGSTREAM_WARN(EC2_ENDPOINT_TAG,
+                           "EC2 service does not support dualstack endpoint in the region: " << regionName);
+      }
+      ss << "api.";
     }
-
-    ss << regionName;
+    ss << "ec2." << region;
 
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {
@@ -60,7 +62,14 @@ namespace EC2Endpoint
     }
     else
     {
-      ss << ".amazonaws.com";
+      if(useDualStack)
+      {
+        ss << ".aws";
+      }
+      else
+      {
+        ss << ".amazonaws.com";
+      }
     }
 
     return ss.str();

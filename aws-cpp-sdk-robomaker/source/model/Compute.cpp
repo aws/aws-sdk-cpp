@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/robomaker/model/Compute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,21 @@ namespace Model
 
 Compute::Compute() : 
     m_simulationUnitLimit(0),
-    m_simulationUnitLimitHasBeenSet(false)
+    m_simulationUnitLimitHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_gpuUnitLimit(0),
+    m_gpuUnitLimitHasBeenSet(false)
 {
 }
 
 Compute::Compute(JsonView jsonValue) : 
     m_simulationUnitLimit(0),
-    m_simulationUnitLimitHasBeenSet(false)
+    m_simulationUnitLimitHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_gpuUnitLimit(0),
+    m_gpuUnitLimitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +48,20 @@ Compute& Compute::operator =(JsonView jsonValue)
     m_simulationUnitLimitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("computeType"))
+  {
+    m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
+
+    m_computeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("gpuUnitLimit"))
+  {
+    m_gpuUnitLimit = jsonValue.GetInteger("gpuUnitLimit");
+
+    m_gpuUnitLimitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +72,17 @@ JsonValue Compute::Jsonize() const
   if(m_simulationUnitLimitHasBeenSet)
   {
    payload.WithInteger("simulationUnitLimit", m_simulationUnitLimit);
+
+  }
+
+  if(m_computeTypeHasBeenSet)
+  {
+   payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  }
+
+  if(m_gpuUnitLimitHasBeenSet)
+  {
+   payload.WithInteger("gpuUnitLimit", m_gpuUnitLimit);
 
   }
 

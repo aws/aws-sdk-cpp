@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/cloudformation/model/Visibility.h>
 #include <aws/cloudformation/model/ProvisioningType.h>
 #include <aws/cloudformation/model/DeprecatedStatus.h>
+#include <aws/cloudformation/model/RegistryType.h>
+#include <aws/cloudformation/model/TypeFilters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -50,210 +42,332 @@ namespace Model
   public:
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extensions are visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
-     * default is <code>PRIVATE</code>.</p>
+     * Extensions that are visible and usable within this account and region. This
+     * includes:</p> <ul> <li> <p>Private extensions you have registered in this
+     * account and region.</p> </li> <li> <p>Public extensions that you have activated
+     * in this account and region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
+     * Extensions that are publicly visible and available to be activated within any
+     * Amazon Web Services account. This includes extensions from Amazon Web Services,
+     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * <code>PRIVATE</code>.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extensions are visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
-     * default is <code>PRIVATE</code>.</p>
+     * Extensions that are visible and usable within this account and region. This
+     * includes:</p> <ul> <li> <p>Private extensions you have registered in this
+     * account and region.</p> </li> <li> <p>Public extensions that you have activated
+     * in this account and region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
+     * Extensions that are publicly visible and available to be activated within any
+     * Amazon Web Services account. This includes extensions from Amazon Web Services,
+     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * <code>PRIVATE</code>.</p>
      */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extensions are visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
-     * default is <code>PRIVATE</code>.</p>
+     * Extensions that are visible and usable within this account and region. This
+     * includes:</p> <ul> <li> <p>Private extensions you have registered in this
+     * account and region.</p> </li> <li> <p>Public extensions that you have activated
+     * in this account and region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
+     * Extensions that are publicly visible and available to be activated within any
+     * Amazon Web Services account. This includes extensions from Amazon Web Services,
+     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * <code>PRIVATE</code>.</p>
      */
     inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extensions are visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
-     * default is <code>PRIVATE</code>.</p>
+     * Extensions that are visible and usable within this account and region. This
+     * includes:</p> <ul> <li> <p>Private extensions you have registered in this
+     * account and region.</p> </li> <li> <p>Public extensions that you have activated
+     * in this account and region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
+     * Extensions that are publicly visible and available to be activated within any
+     * Amazon Web Services account. This includes extensions from Amazon Web Services,
+     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * <code>PRIVATE</code>.</p>
      */
     inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extensions are visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
-     * default is <code>PRIVATE</code>.</p>
+     * Extensions that are visible and usable within this account and region. This
+     * includes:</p> <ul> <li> <p>Private extensions you have registered in this
+     * account and region.</p> </li> <li> <p>Public extensions that you have activated
+     * in this account and region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
+     * Extensions that are publicly visible and available to be activated within any
+     * Amazon Web Services account. This includes extensions from Amazon Web Services,
+     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * <code>PRIVATE</code>.</p>
      */
     inline ListTypesRequest& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extensions are visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
-     * default is <code>PRIVATE</code>.</p>
+     * Extensions that are visible and usable within this account and region. This
+     * includes:</p> <ul> <li> <p>Private extensions you have registered in this
+     * account and region.</p> </li> <li> <p>Public extensions that you have activated
+     * in this account and region.</p> </li> </ul> </li> <li> <p> <code>PUBLIC</code>:
+     * Extensions that are publicly visible and available to be activated within any
+     * Amazon Web Services account. This includes extensions from Amazon Web Services,
+     * in addition to third-party publishers.</p> </li> </ul> <p>The default is
+     * <code>PRIVATE</code>.</p>
      */
     inline ListTypesRequest& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
 
 
     /**
-     * <p>The provisioning behavior of the type. AWS CloudFormation determines the
-     * provisioning type during registration, based on the types of handlers in the
-     * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <p>For resource types, the provisioning behavior of the resource type.
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
+     * includes an update handler to process updates to the type during stack update
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
+     * replaced during stack update operations.</p> </li> <li> <p>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
+     * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
 
     /**
-     * <p>The provisioning behavior of the type. AWS CloudFormation determines the
-     * provisioning type during registration, based on the types of handlers in the
-     * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <p>For resource types, the provisioning behavior of the resource type.
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
+     * includes an update handler to process updates to the type during stack update
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
+     * replaced during stack update operations.</p> </li> <li> <p>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
+     * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline bool ProvisioningTypeHasBeenSet() const { return m_provisioningTypeHasBeenSet; }
 
     /**
-     * <p>The provisioning behavior of the type. AWS CloudFormation determines the
-     * provisioning type during registration, based on the types of handlers in the
-     * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <p>For resource types, the provisioning behavior of the resource type.
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
+     * includes an update handler to process updates to the type during stack update
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
+     * replaced during stack update operations.</p> </li> <li> <p>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
+     * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
 
     /**
-     * <p>The provisioning behavior of the type. AWS CloudFormation determines the
-     * provisioning type during registration, based on the types of handlers in the
-     * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <p>For resource types, the provisioning behavior of the resource type.
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
+     * includes an update handler to process updates to the type during stack update
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
+     * replaced during stack update operations.</p> </li> <li> <p>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
+     * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = std::move(value); }
 
     /**
-     * <p>The provisioning behavior of the type. AWS CloudFormation determines the
-     * provisioning type during registration, based on the types of handlers in the
-     * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <p>For resource types, the provisioning behavior of the resource type.
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
+     * includes an update handler to process updates to the type during stack update
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
+     * replaced during stack update operations.</p> </li> <li> <p>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
+     * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline ListTypesRequest& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
 
     /**
-     * <p>The provisioning behavior of the type. AWS CloudFormation determines the
-     * provisioning type during registration, based on the types of handlers in the
-     * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <p>For resource types, the provisioning behavior of the resource type.
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
+     * includes an update handler to process updates to the type during stack update
+     * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type doesn't
+     * include an update handler, so the type can't be updated and must instead be
+     * replaced during stack update operations.</p> </li> <li> <p>
+     * <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read,
+     * and delete handlers, and therefore can't actually be provisioned.</p> </li>
+     * </ul> <p>The default is <code>FULLY_MUTABLE</code>.</p>
      */
     inline ListTypesRequest& WithProvisioningType(ProvisioningType&& value) { SetProvisioningType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
+     * </ul>
      */
     inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
+     * </ul>
      */
     inline bool DeprecatedStatusHasBeenSet() const { return m_deprecatedStatusHasBeenSet; }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
+     * </ul>
      */
     inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
+     * </ul>
      */
     inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = std::move(value); }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
+     * </ul>
      */
     inline ListTypesRequest& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations.</p> </li>
+     * </ul>
      */
     inline ListTypesRequest& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline const RegistryType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline ListTypesRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of extension.</p>
+     */
+    inline ListTypesRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
+     */
+    inline const TypeFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
+     */
+    inline void SetFilters(const TypeFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
+     */
+    inline void SetFilters(TypeFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
+     */
+    inline ListTypesRequest& WithFilters(const TypeFilters& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
+     */
+    inline ListTypesRequest& WithFilters(TypeFilters&& value) { SetFilters(std::move(value)); return *this;}
 
 
     /**
@@ -290,7 +404,7 @@ namespace Model
 
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -300,7 +414,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -310,7 +424,7 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -320,7 +434,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -330,7 +444,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -340,7 +454,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -350,7 +464,7 @@ namespace Model
     inline ListTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -360,7 +474,7 @@ namespace Model
     inline ListTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -379,6 +493,12 @@ namespace Model
 
     DeprecatedStatus m_deprecatedStatus;
     bool m_deprecatedStatusHasBeenSet;
+
+    RegistryType m_type;
+    bool m_typeHasBeenSet;
+
+    TypeFilters m_filters;
+    bool m_filtersHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,15 +42,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBClusterParameterGroupIdentifier() const{ return m_sourceDBClusterParameterGroupIdentifier; }
 
@@ -68,15 +52,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline bool SourceDBClusterParameterGroupIdentifierHasBeenSet() const { return m_sourceDBClusterParameterGroupIdentifierHasBeenSet; }
 
@@ -84,15 +62,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = value; }
 
@@ -100,15 +72,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetSourceDBClusterParameterGroupIdentifier(Aws::String&& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = std::move(value); }
 
@@ -116,15 +82,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetSourceDBClusterParameterGroupIdentifier(const char* value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier.assign(value); }
 
@@ -132,15 +92,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
 
@@ -148,15 +102,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(Aws::String&& value) { SetSourceDBClusterParameterGroupIdentifier(std::move(value)); return *this;}
 
@@ -164,15 +112,9 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
-     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
-     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
-     * AWS Region as the copy, specify a valid DB parameter group identifier, for
-     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source DB parameter group is in a different AWS Region than the copy,
-     * specify a valid DB cluster parameter group ARN, for example
-     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
-     * </li> </ul>
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const char* value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/NetworkConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,8 @@ namespace Model
 {
 
 NetworkConfig::NetworkConfig() : 
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
@@ -36,6 +28,8 @@ NetworkConfig::NetworkConfig() :
 }
 
 NetworkConfig::NetworkConfig(JsonView jsonValue) : 
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
@@ -45,6 +39,13 @@ NetworkConfig::NetworkConfig(JsonView jsonValue) :
 
 NetworkConfig& NetworkConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
+  {
+    m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
+
+    m_enableInterContainerTrafficEncryptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EnableNetworkIsolation"))
   {
     m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
@@ -65,6 +66,12 @@ NetworkConfig& NetworkConfig::operator =(JsonView jsonValue)
 JsonValue NetworkConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_enableInterContainerTrafficEncryptionHasBeenSet)
+  {
+   payload.WithBool("EnableInterContainerTrafficEncryption", m_enableInterContainerTrafficEncryption);
+
+  }
 
   if(m_enableNetworkIsolationHasBeenSet)
   {

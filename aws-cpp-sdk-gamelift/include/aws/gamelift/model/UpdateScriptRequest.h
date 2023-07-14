@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -47,49 +37,49 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline const Aws::String& GetScriptId() const{ return m_scriptId; }
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline UpdateScriptRequest& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline UpdateScriptRequest& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a Realtime script to update. You can use either the
+     * <p>A unique identifier for the Realtime script to update. You can use either the
      * script ID or ARN value.</p>
      */
     inline UpdateScriptRequest& WithScriptId(const char* value) { SetScriptId(value); return *this;}
@@ -145,50 +135,50 @@ namespace Model
 
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline UpdateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline UpdateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version that is associated with a build or script. Version strings do not
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline UpdateScriptRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -269,60 +259,60 @@ namespace Model
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline UpdateScriptRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>A data object containing your Realtime scripts and dependencies as a zip
      * file. The zip file can have one or multiple files. Maximum size of a zip file is
-     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
-     * set to the zip file name. It must be prepended with the string "fileb://" to
-     * indicate that the file data is a binary object. For example: <code>--zip-file
-     * fileb://myRealtimeScript.zip</code>.</p>
+     * 5 MB.</p> <p>When using the Amazon Web Services CLI tool to create a script,
+     * this parameter is set to the zip file name. It must be prepended with the string
+     * "fileb://" to indicate that the file data is a binary object. For example:
+     * <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
      */
     inline UpdateScriptRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 

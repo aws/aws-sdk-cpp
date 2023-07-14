@@ -1,29 +1,22 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/snowball/model/JobType.h>
 #include <aws/snowball/model/JobResource.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/SnowballCapacity.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/SnowballType.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/DeviceConfiguration.h>
+#include <aws/snowball/model/RemoteManagement.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +149,55 @@ namespace Model
 
 
     /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
+     */
+    inline CreateJobRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
+     */
+    inline CreateJobRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Defines an optional description of this specific job, for example
      * <code>Important Photos 2016-08-11</code>.</p>
      */
@@ -205,42 +247,42 @@ namespace Model
 
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     * <p>The ID for the address that you want the Snow device shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
@@ -249,7 +291,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
 
@@ -257,7 +299,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
 
@@ -265,7 +307,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline void SetKmsKeyARN(const Aws::String& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
 
@@ -273,7 +315,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
 
@@ -281,7 +323,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline void SetKmsKeyARN(const char* value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN.assign(value); }
 
@@ -289,7 +331,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline CreateJobRequest& WithKmsKeyARN(const Aws::String& value) { SetKmsKeyARN(value); return *this;}
 
@@ -297,7 +339,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline CreateJobRequest& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
 
@@ -305,7 +347,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
      * <code>KmsKeyARN</code>s are created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * AWS Key Management Service (KMS) API action.</p>
+     * Key Management Service (KMS) API action.</p>
      */
     inline CreateJobRequest& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
@@ -314,7 +356,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -322,7 +364,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -330,7 +372,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -338,7 +380,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -346,7 +388,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -354,7 +396,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline CreateJobRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -362,7 +404,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline CreateJobRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -370,141 +412,165 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * AWS Identity and Access Management (IAM) API action.</p>
+     * Identity and Access Management (IAM) API action.</p>
      */
     inline CreateJobRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
-     * specifying what size Snowball you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateJobRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
-     * get the Snowball, rather it represents how quickly the Snowball moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p> <ul>
-     * <li> <p>In Australia, you have access to express shipping. Typically, Snowballs
-     * shipped express are delivered in about a day.</p> </li> <li> <p>In the European
-     * Union (EU), you have access to express shipping. Typically, Snowballs shipped
-     * express are delivered in about a day. In addition, most countries in the EU have
-     * access to standard shipping, which typically takes less than a week, one
-     * way.</p> </li> <li> <p>In India, Snowballs are delivered in one to seven
-     * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
-     * two-day shipping.</p> </li> </ul>
+     * get the Snow device, rather it represents how quickly the Snow device moves to
+     * its destination while in transit. Regional shipping speeds are as follows:</p>
+     * <ul> <li> <p>In Australia, you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day.</p> </li> <li> <p>In the
+     * European Union (EU), you have access to express shipping. Typically, Snow
+     * devices shipped express are delivered in about a day. In addition, most
+     * countries in the EU have access to standard shipping, which typically takes less
+     * than a week, one way.</p> </li> <li> <p>In India, Snow devices are delivered in
+     * one to seven days.</p> </li> <li> <p>In the US, you have access to one-day
+     * shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
@@ -604,138 +670,337 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of Snow Family Devices to use for this job. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p>  <p>The type of Amazon Web Services
+     * Snow device to use for this job. Currently, the only supported device type for
+     * cluster jobs is <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of Snow Family Devices to use for this job. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p>  <p>The type of Amazon Web Services
+     * Snow device to use for this job. Currently, the only supported device type for
+     * cluster jobs is <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of Snow Family Devices to use for this job. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p>  <p>The type of Amazon Web Services
+     * Snow device to use for this job. Currently, the only supported device type for
+     * cluster jobs is <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of Snow Family Devices to use for this job. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p>  <p>The type of Amazon Web Services
+     * Snow device to use for this job. Currently, the only supported device type for
+     * cluster jobs is <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of Snow Family Devices to use for this job. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p>  <p>The type of Amazon Web Services
+     * Snow device to use for this job. Currently, the only supported device type for
+     * cluster jobs is <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of Snow Family Devices to use for this job. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
+     * <code>EDGE</code> device type.</p>  <p>The type of Amazon Web Services
+     * Snow device to use for this job. Currently, the only supported device type for
+     * cluster jobs is <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline bool ForwardingAddressIdHasBeenSet() const { return m_forwardingAddressIdHasBeenSet; }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline CreateJobRequest& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline CreateJobRequest& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline CreateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline const TaxDocuments& GetTaxDocuments() const{ return m_taxDocuments; }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline bool TaxDocumentsHasBeenSet() const { return m_taxDocumentsHasBeenSet; }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline void SetTaxDocuments(const TaxDocuments& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = value; }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline void SetTaxDocuments(TaxDocuments&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::move(value); }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline CreateJobRequest& WithTaxDocuments(const TaxDocuments& value) { SetTaxDocuments(value); return *this;}
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline CreateJobRequest& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Defines the device configuration for an Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline const DeviceConfiguration& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    /**
+     * <p>Defines the device configuration for an Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Defines the device configuration for an Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline void SetDeviceConfiguration(const DeviceConfiguration& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>Defines the device configuration for an Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline void SetDeviceConfiguration(DeviceConfiguration&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
+
+    /**
+     * <p>Defines the device configuration for an Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline CreateJobRequest& WithDeviceConfiguration(const DeviceConfiguration& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
+     * <p>Defines the device configuration for an Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline CreateJobRequest& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline const RemoteManagement& GetRemoteManagement() const{ return m_remoteManagement; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline bool RemoteManagementHasBeenSet() const { return m_remoteManagementHasBeenSet; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(const RemoteManagement& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = value; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(RemoteManagement&& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = std::move(value); }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline CreateJobRequest& WithRemoteManagement(const RemoteManagement& value) { SetRemoteManagement(value); return *this;}
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline CreateJobRequest& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline bool LongTermPricingIdHasBeenSet() const { return m_longTermPricingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = value; }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::move(value); }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const char* value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId.assign(value); }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline CreateJobRequest& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline CreateJobRequest& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline CreateJobRequest& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
 
   private:
 
@@ -744,6 +1009,9 @@ namespace Model
 
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
@@ -777,6 +1045,15 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    DeviceConfiguration m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
+
+    RemoteManagement m_remoteManagement;
+    bool m_remoteManagementHasBeenSet;
+
+    Aws::String m_longTermPricingId;
+    bool m_longTermPricingIdHasBeenSet;
   };
 
 } // namespace Model

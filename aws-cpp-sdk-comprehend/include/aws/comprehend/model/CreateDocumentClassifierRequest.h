@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
@@ -91,6 +81,71 @@ namespace Model
      * <p>The name of the document classifier.</p>
      */
     inline CreateDocumentClassifierRequest& WithDocumentClassifierName(const char* value) { SetDocumentClassifierName(value); return *this;}
+
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline CreateDocumentClassifierRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline CreateDocumentClassifierRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version name given to the newly created classifier. Version names can
+     * have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
+     * underscores (_) are allowed. The version name must be unique among all models
+     * with the same classifier name in the account/AWS Region.</p>
+     */
+    inline CreateDocumentClassifierRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
 
     /**
@@ -585,10 +640,215 @@ namespace Model
      */
     inline CreateDocumentClassifierRequest& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline CreateDocumentClassifierRequest& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline CreateDocumentClassifierRequest& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline CreateDocumentClassifierRequest& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline const Aws::String& GetModelPolicy() const{ return m_modelPolicy; }
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline bool ModelPolicyHasBeenSet() const { return m_modelPolicyHasBeenSet; }
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline void SetModelPolicy(const Aws::String& value) { m_modelPolicyHasBeenSet = true; m_modelPolicy = value; }
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline void SetModelPolicy(Aws::String&& value) { m_modelPolicyHasBeenSet = true; m_modelPolicy = std::move(value); }
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline void SetModelPolicy(const char* value) { m_modelPolicyHasBeenSet = true; m_modelPolicy.assign(value); }
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline CreateDocumentClassifierRequest& WithModelPolicy(const Aws::String& value) { SetModelPolicy(value); return *this;}
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline CreateDocumentClassifierRequest& WithModelPolicy(Aws::String&& value) { SetModelPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource-based policy to attach to your custom document classifier model.
+     * You can use this policy to allow another AWS account to import your custom
+     * model.</p> <p>Provide your policy as a JSON body that you enter as a UTF-8
+     * encoded string without line breaks. To provide valid JSON, enclose the attribute
+     * names and values in double quotes. If the JSON body is also enclosed in double
+     * quotes, then you must escape the double quotes that are inside the policy:</p>
+     * <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+     * <p>To avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline CreateDocumentClassifierRequest& WithModelPolicy(const char* value) { SetModelPolicy(value); return *this;}
+
   private:
 
     Aws::String m_documentClassifierName;
     bool m_documentClassifierNameHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;
@@ -616,6 +876,12 @@ namespace Model
 
     DocumentClassifierMode m_mode;
     bool m_modeHasBeenSet;
+
+    Aws::String m_modelKmsKeyId;
+    bool m_modelKmsKeyIdHasBeenSet;
+
+    Aws::String m_modelPolicy;
+    bool m_modelPolicyHasBeenSet;
   };
 
 } // namespace Model

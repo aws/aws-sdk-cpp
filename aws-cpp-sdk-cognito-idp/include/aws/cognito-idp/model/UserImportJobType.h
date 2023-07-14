@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -326,7 +316,7 @@ namespace Model
      * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
      * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48
-     * hours. All data associated with the job was deleted, and the job cannot be
+     * hours. All data associated with the job was deleted, and the job can't be
      * started.</p> </li> </ul>
      */
     inline const UserImportJobStatusType& GetStatus() const{ return m_status; }
@@ -343,7 +333,7 @@ namespace Model
      * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
      * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48
-     * hours. All data associated with the job was deleted, and the job cannot be
+     * hours. All data associated with the job was deleted, and the job can't be
      * started.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -360,7 +350,7 @@ namespace Model
      * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
      * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48
-     * hours. All data associated with the job was deleted, and the job cannot be
+     * hours. All data associated with the job was deleted, and the job can't be
      * started.</p> </li> </ul>
      */
     inline void SetStatus(const UserImportJobStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -377,7 +367,7 @@ namespace Model
      * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
      * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48
-     * hours. All data associated with the job was deleted, and the job cannot be
+     * hours. All data associated with the job was deleted, and the job can't be
      * started.</p> </li> </ul>
      */
     inline void SetStatus(UserImportJobStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -394,7 +384,7 @@ namespace Model
      * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
      * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48
-     * hours. All data associated with the job was deleted, and the job cannot be
+     * hours. All data associated with the job was deleted, and the job can't be
      * started.</p> </li> </ul>
      */
     inline UserImportJobType& WithStatus(const UserImportJobStatusType& value) { SetStatus(value); return *this;}
@@ -411,65 +401,65 @@ namespace Model
      * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
      * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
      * <code>Expired</code> - You created a job, but did not start the job within 24-48
-     * hours. All data associated with the job was deleted, and the job cannot be
+     * hours. All data associated with the job was deleted, and the job can't be
      * started.</p> </li> </ul>
      */
     inline UserImportJobType& WithStatus(UserImportJobStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::move(value); }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline void SetCloudWatchLogsRoleArn(const char* value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn.assign(value); }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline UserImportJobType& WithCloudWatchLogsRoleArn(const Aws::String& value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline UserImportJobType& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
-     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
-     * Cognito Developer Guide.</p>
+     * <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role
+     * for the user import job. For more information, see "Creating the CloudWatch Logs
+     * IAM Role" in the Amazon Cognito Developer Guide.</p>
      */
     inline UserImportJobType& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
@@ -517,22 +507,22 @@ namespace Model
 
 
     /**
-     * <p>The number of users that could not be imported.</p>
+     * <p>The number of users that couldn't be imported.</p>
      */
     inline long long GetFailedUsers() const{ return m_failedUsers; }
 
     /**
-     * <p>The number of users that could not be imported.</p>
+     * <p>The number of users that couldn't be imported.</p>
      */
     inline bool FailedUsersHasBeenSet() const { return m_failedUsersHasBeenSet; }
 
     /**
-     * <p>The number of users that could not be imported.</p>
+     * <p>The number of users that couldn't be imported.</p>
      */
     inline void SetFailedUsers(long long value) { m_failedUsersHasBeenSet = true; m_failedUsers = value; }
 
     /**
-     * <p>The number of users that could not be imported.</p>
+     * <p>The number of users that couldn't be imported.</p>
      */
     inline UserImportJobType& WithFailedUsers(long long value) { SetFailedUsers(value); return *this;}
 

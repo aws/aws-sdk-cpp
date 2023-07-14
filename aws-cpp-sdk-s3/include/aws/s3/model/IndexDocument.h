@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -52,7 +42,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline const Aws::String& GetSuffix() const{ return m_suffix; }
 
@@ -61,7 +55,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
 
@@ -70,7 +68,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
 
@@ -79,7 +81,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
 
@@ -88,7 +94,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
 
@@ -97,7 +107,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline IndexDocument& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
 
@@ -106,7 +120,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline IndexDocument& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
 
@@ -115,7 +133,11 @@ namespace Model
      * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
-     * slash character.</p>
+     * slash character.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline IndexDocument& WithSuffix(const char* value) { SetSuffix(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -46,51 +36,47 @@ namespace Model
 
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline int GetBurstLimit() const{ return m_burstLimit; }
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline bool BurstLimitHasBeenSet() const { return m_burstLimitHasBeenSet; }
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline void SetBurstLimit(int value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline ThrottleSettings& WithBurstLimit(int value) { SetBurstLimit(value); return *this;}
 
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline double GetRateLimit() const{ return m_rateLimit; }
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline void SetRateLimit(double value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline ThrottleSettings& WithRateLimit(double value) { SetRateLimit(value); return *this;}
 

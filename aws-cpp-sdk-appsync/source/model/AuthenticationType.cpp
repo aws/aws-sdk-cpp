@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appsync/model/AuthenticationType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,7 @@ namespace Aws
         static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
         static const int AMAZON_COGNITO_USER_POOLS_HASH = HashingUtils::HashString("AMAZON_COGNITO_USER_POOLS");
         static const int OPENID_CONNECT_HASH = HashingUtils::HashString("OPENID_CONNECT");
+        static const int AWS_LAMBDA_HASH = HashingUtils::HashString("AWS_LAMBDA");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
@@ -54,6 +45,10 @@ namespace Aws
           else if (hashCode == OPENID_CONNECT_HASH)
           {
             return AuthenticationType::OPENID_CONNECT;
+          }
+          else if (hashCode == AWS_LAMBDA_HASH)
+          {
+            return AuthenticationType::AWS_LAMBDA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +72,8 @@ namespace Aws
             return "AMAZON_COGNITO_USER_POOLS";
           case AuthenticationType::OPENID_CONNECT:
             return "OPENID_CONNECT";
+          case AuthenticationType::AWS_LAMBDA:
+            return "AWS_LAMBDA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -87,6 +77,27 @@ namespace Model
      */
     inline RowInfo& WithRowsDropped(long long value) { SetRowsDropped(value); return *this;}
 
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline long long GetTotalRowsInDataset() const{ return m_totalRowsInDataset; }
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline bool TotalRowsInDatasetHasBeenSet() const { return m_totalRowsInDatasetHasBeenSet; }
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline void SetTotalRowsInDataset(long long value) { m_totalRowsInDatasetHasBeenSet = true; m_totalRowsInDataset = value; }
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline RowInfo& WithTotalRowsInDataset(long long value) { SetTotalRowsInDataset(value); return *this;}
+
   private:
 
     long long m_rowsIngested;
@@ -94,6 +105,9 @@ namespace Model
 
     long long m_rowsDropped;
     bool m_rowsDroppedHasBeenSet;
+
+    long long m_totalRowsInDataset;
+    bool m_totalRowsInDatasetHasBeenSet;
   };
 
 } // namespace Model

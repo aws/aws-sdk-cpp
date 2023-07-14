@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -412,67 +402,73 @@ namespace Model
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
-     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
-     * - The creation process is underway.</li> <li>FAILED - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
-     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * of the following values: </p> <ul> <li> <p>PENDING - Amazon Machine Learning
+     * (Amazon ML) submitted a request to create a <code>DataSource</code>.</p> </li>
+     * <li> <p>INPROGRESS - The creation process is underway.</p> </li> <li> <p>FAILED
+     * - The request to create a <code>DataSource</code> did not run to completion. It
+     * is not usable.</p> </li> <li> <p>COMPLETED - The creation process completed
+     * successfully.</p> </li> <li> <p>DELETED - The <code>DataSource</code> is marked
+     * as deleted. It is not usable.</p> </li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
-     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
-     * - The creation process is underway.</li> <li>FAILED - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
-     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * of the following values: </p> <ul> <li> <p>PENDING - Amazon Machine Learning
+     * (Amazon ML) submitted a request to create a <code>DataSource</code>.</p> </li>
+     * <li> <p>INPROGRESS - The creation process is underway.</p> </li> <li> <p>FAILED
+     * - The request to create a <code>DataSource</code> did not run to completion. It
+     * is not usable.</p> </li> <li> <p>COMPLETED - The creation process completed
+     * successfully.</p> </li> <li> <p>DELETED - The <code>DataSource</code> is marked
+     * as deleted. It is not usable.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
-     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
-     * - The creation process is underway.</li> <li>FAILED - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
-     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * of the following values: </p> <ul> <li> <p>PENDING - Amazon Machine Learning
+     * (Amazon ML) submitted a request to create a <code>DataSource</code>.</p> </li>
+     * <li> <p>INPROGRESS - The creation process is underway.</p> </li> <li> <p>FAILED
+     * - The request to create a <code>DataSource</code> did not run to completion. It
+     * is not usable.</p> </li> <li> <p>COMPLETED - The creation process completed
+     * successfully.</p> </li> <li> <p>DELETED - The <code>DataSource</code> is marked
+     * as deleted. It is not usable.</p> </li> </ul>
      */
     inline void SetStatus(const EntityStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
-     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
-     * - The creation process is underway.</li> <li>FAILED - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
-     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * of the following values: </p> <ul> <li> <p>PENDING - Amazon Machine Learning
+     * (Amazon ML) submitted a request to create a <code>DataSource</code>.</p> </li>
+     * <li> <p>INPROGRESS - The creation process is underway.</p> </li> <li> <p>FAILED
+     * - The request to create a <code>DataSource</code> did not run to completion. It
+     * is not usable.</p> </li> <li> <p>COMPLETED - The creation process completed
+     * successfully.</p> </li> <li> <p>DELETED - The <code>DataSource</code> is marked
+     * as deleted. It is not usable.</p> </li> </ul>
      */
     inline void SetStatus(EntityStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
-     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
-     * - The creation process is underway.</li> <li>FAILED - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
-     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * of the following values: </p> <ul> <li> <p>PENDING - Amazon Machine Learning
+     * (Amazon ML) submitted a request to create a <code>DataSource</code>.</p> </li>
+     * <li> <p>INPROGRESS - The creation process is underway.</p> </li> <li> <p>FAILED
+     * - The request to create a <code>DataSource</code> did not run to completion. It
+     * is not usable.</p> </li> <li> <p>COMPLETED - The creation process completed
+     * successfully.</p> </li> <li> <p>DELETED - The <code>DataSource</code> is marked
+     * as deleted. It is not usable.</p> </li> </ul>
      */
     inline DataSource& WithStatus(const EntityStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
-     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
-     * - The creation process is underway.</li> <li>FAILED - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
-     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * of the following values: </p> <ul> <li> <p>PENDING - Amazon Machine Learning
+     * (Amazon ML) submitted a request to create a <code>DataSource</code>.</p> </li>
+     * <li> <p>INPROGRESS - The creation process is underway.</p> </li> <li> <p>FAILED
+     * - The request to create a <code>DataSource</code> did not run to completion. It
+     * is not usable.</p> </li> <li> <p>COMPLETED - The creation process completed
+     * successfully.</p> </li> <li> <p>DELETED - The <code>DataSource</code> is marked
+     * as deleted. It is not usable.</p> </li> </ul>
      */
     inline DataSource& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 

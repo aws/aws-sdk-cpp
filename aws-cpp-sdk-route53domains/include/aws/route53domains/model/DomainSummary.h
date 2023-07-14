@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -136,32 +126,38 @@ namespace Model
 
 
     /**
-     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetExpiry() const{ return m_expiry; }
 
     /**
-     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
 
     /**
-     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline void SetExpiry(const Aws::Utils::DateTime& value) { m_expiryHasBeenSet = true; m_expiry = value; }
 
     /**
-     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
 
     /**
-     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline DomainSummary& WithExpiry(const Aws::Utils::DateTime& value) { SetExpiry(value); return *this;}
 
     /**
-     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
+     * Time (UTC).</p>
      */
     inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(std::move(value)); return *this;}
 

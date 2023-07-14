@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/HlsCdnSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ HlsCdnSettings::HlsCdnSettings() :
     m_hlsAkamaiSettingsHasBeenSet(false),
     m_hlsBasicPutSettingsHasBeenSet(false),
     m_hlsMediaStoreSettingsHasBeenSet(false),
+    m_hlsS3SettingsHasBeenSet(false),
     m_hlsWebdavSettingsHasBeenSet(false)
 {
 }
@@ -40,6 +31,7 @@ HlsCdnSettings::HlsCdnSettings(JsonView jsonValue) :
     m_hlsAkamaiSettingsHasBeenSet(false),
     m_hlsBasicPutSettingsHasBeenSet(false),
     m_hlsMediaStoreSettingsHasBeenSet(false),
+    m_hlsS3SettingsHasBeenSet(false),
     m_hlsWebdavSettingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -66,6 +58,13 @@ HlsCdnSettings& HlsCdnSettings::operator =(JsonView jsonValue)
     m_hlsMediaStoreSettings = jsonValue.GetObject("hlsMediaStoreSettings");
 
     m_hlsMediaStoreSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hlsS3Settings"))
+  {
+    m_hlsS3Settings = jsonValue.GetObject("hlsS3Settings");
+
+    m_hlsS3SettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hlsWebdavSettings"))
@@ -97,6 +96,12 @@ JsonValue HlsCdnSettings::Jsonize() const
   if(m_hlsMediaStoreSettingsHasBeenSet)
   {
    payload.WithObject("hlsMediaStoreSettings", m_hlsMediaStoreSettings.Jsonize());
+
+  }
+
+  if(m_hlsS3SettingsHasBeenSet)
+  {
+   payload.WithObject("hlsS3Settings", m_hlsS3Settings.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mq/model/UpdateBrokerResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,11 +17,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateBrokerResult::UpdateBrokerResult() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false)
 {
 }
 
 UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false)
 {
   *this = result;
@@ -40,6 +32,12 @@ UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonVal
 UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
+
+  }
+
   if(jsonValue.ValueExists("autoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("autoMinorVersionUpgrade");
@@ -70,9 +68,21 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("ldapServerMetadata"))
+  {
+    m_ldapServerMetadata = jsonValue.GetObject("ldapServerMetadata");
+
+  }
+
   if(jsonValue.ValueExists("logs"))
   {
     m_logs = jsonValue.GetObject("logs");
+
+  }
+
+  if(jsonValue.ValueExists("maintenanceWindowStartTime"))
+  {
+    m_maintenanceWindowStartTime = jsonValue.GetObject("maintenanceWindowStartTime");
 
   }
 

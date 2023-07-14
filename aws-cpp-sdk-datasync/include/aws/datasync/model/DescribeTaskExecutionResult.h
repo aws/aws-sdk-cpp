@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -140,35 +130,35 @@ namespace Model
 
     /**
      * <p>The status of the task execution. </p> <p>For detailed information about task
-     * execution statuses, see Understanding Task Statuses in the <i>AWS DataSync User
+     * execution statuses, see Understanding Task Statuses in the <i>DataSync User
      * Guide.</i> </p>
      */
     inline const TaskExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the task execution. </p> <p>For detailed information about task
-     * execution statuses, see Understanding Task Statuses in the <i>AWS DataSync User
+     * execution statuses, see Understanding Task Statuses in the <i>DataSync User
      * Guide.</i> </p>
      */
     inline void SetStatus(const TaskExecutionStatus& value) { m_status = value; }
 
     /**
      * <p>The status of the task execution. </p> <p>For detailed information about task
-     * execution statuses, see Understanding Task Statuses in the <i>AWS DataSync User
+     * execution statuses, see Understanding Task Statuses in the <i>DataSync User
      * Guide.</i> </p>
      */
     inline void SetStatus(TaskExecutionStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the task execution. </p> <p>For detailed information about task
-     * execution statuses, see Understanding Task Statuses in the <i>AWS DataSync User
+     * execution statuses, see Understanding Task Statuses in the <i>DataSync User
      * Guide.</i> </p>
      */
     inline DescribeTaskExecutionResult& WithStatus(const TaskExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the task execution. </p> <p>For detailed information about task
-     * execution statuses, see Understanding Task Statuses in the <i>AWS DataSync User
+     * execution statuses, see Understanding Task Statuses in the <i>DataSync User
      * Guide.</i> </p>
      */
     inline DescribeTaskExecutionResult& WithStatus(TaskExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -415,20 +405,20 @@ namespace Model
 
 
     /**
-     * <p>The number of logical bytes written to the destination AWS storage
-     * resource.</p>
+     * <p>The number of logical bytes written to the destination Amazon Web Services
+     * storage resource.</p>
      */
     inline long long GetBytesWritten() const{ return m_bytesWritten; }
 
     /**
-     * <p>The number of logical bytes written to the destination AWS storage
-     * resource.</p>
+     * <p>The number of logical bytes written to the destination Amazon Web Services
+     * storage resource.</p>
      */
     inline void SetBytesWritten(long long value) { m_bytesWritten = value; }
 
     /**
-     * <p>The number of logical bytes written to the destination AWS storage
-     * resource.</p>
+     * <p>The number of logical bytes written to the destination Amazon Web Services
+     * storage resource.</p>
      */
     inline DescribeTaskExecutionResult& WithBytesWritten(long long value) { SetBytesWritten(value); return *this;}
 

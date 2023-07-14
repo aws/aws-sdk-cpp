@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
@@ -30,13 +20,30 @@ public class Operation {
     private boolean supportsPresigning;
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
-    private boolean arnEndpointAllowed;
-    private String arnEndpointMemberName;
-    private boolean hasAccountIdInHostname;
-    private String accountIdMemberName;
     private String authtype;
     private String authorizer;
     private boolean eventStream;
+    private boolean supportsChunkedEncoding;
+
+    // ARN supports.
+    private boolean arnEndpointAllowed;
+    private String arnLocation; // uri | querystring | body
+    private String arnEndpointMemberName;
+
+    // For S3 Control.
+    private boolean hasAccountIdMember;
+    private String accountIdMemberName;
+    private boolean hasAccountIdInArn;
+
+    // For S3 Outposts.
+    private boolean hasOutpostIdMember;
+    private String outpostIdMemberName;
+    private boolean outpostUseNonArnEndpoint;
+    private boolean hasOutpostIdInArn;
+
+    // For S3 Object Lambda.
+    private boolean requiresServiceNameOverride;
+    private String serviceNameOverride;
 
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;
@@ -47,7 +54,15 @@ public class Operation {
     private boolean hasEndpointDiscoveryTrait;
     private boolean requireEndpointDiscovery;
 
-    public boolean hasEndpointDiscoveryTrait() {
-        return hasEndpointDiscoveryTrait;
-    }
+    // For pre-signed URL generation
+    private boolean hasPreSignedUrl;
+
+    // For S3 CRT
+    private boolean s3CrtSpecific;
+
+    // For flexible checksums
+    private boolean requestChecksumRequired;
+    private String requestAlgorithmMember;
+    private String requestValidationModeMember;
+    private List<String> responseAlgorithms;
 }

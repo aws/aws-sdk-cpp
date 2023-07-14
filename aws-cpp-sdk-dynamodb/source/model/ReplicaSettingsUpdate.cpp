@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dynamodb/model/ReplicaSettingsUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,9 @@ ReplicaSettingsUpdate::ReplicaSettingsUpdate() :
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
     m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false)
+    m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false),
+    m_replicaTableClass(TableClass::NOT_SET),
+    m_replicaTableClassHasBeenSet(false)
 {
 }
 
@@ -42,7 +34,9 @@ ReplicaSettingsUpdate::ReplicaSettingsUpdate(JsonView jsonValue) :
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
     m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false)
+    m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet(false),
+    m_replicaTableClass(TableClass::NOT_SET),
+    m_replicaTableClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +74,13 @@ ReplicaSettingsUpdate& ReplicaSettingsUpdate::operator =(JsonView jsonValue)
     m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaTableClass"))
+  {
+    m_replicaTableClass = TableClassMapper::GetTableClassForName(jsonValue.GetString("ReplicaTableClass"));
+
+    m_replicaTableClassHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,6 +115,11 @@ JsonValue ReplicaSettingsUpdate::Jsonize() const
    }
    payload.WithArray("ReplicaGlobalSecondaryIndexSettingsUpdate", std::move(replicaGlobalSecondaryIndexSettingsUpdateJsonList));
 
+  }
+
+  if(m_replicaTableClassHasBeenSet)
+  {
+   payload.WithString("ReplicaTableClass", TableClassMapper::GetNameForTableClass(m_replicaTableClass));
   }
 
   return payload;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/appsync/model/DynamodbDataSourceConfig.h>
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
+#include <aws/appsync/model/OpenSearchServiceDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <utility>
@@ -203,50 +194,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -283,65 +282,120 @@ namespace Model
 
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline CreateDataSourceRequest& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline CreateDataSourceRequest& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. For new data sources, use
+     * <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch
+     * data source.</p>
      */
     inline const ElasticsearchDataSourceConfig& GetElasticsearchConfig() const{ return m_elasticsearchConfig; }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. For new data sources, use
+     * <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch
+     * data source.</p>
      */
     inline bool ElasticsearchConfigHasBeenSet() const { return m_elasticsearchConfigHasBeenSet; }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. For new data sources, use
+     * <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch
+     * data source.</p>
      */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. For new data sources, use
+     * <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch
+     * data source.</p>
      */
     inline void SetElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = std::move(value); }
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. For new data sources, use
+     * <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch
+     * data source.</p>
      */
     inline CreateDataSourceRequest& WithElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { SetElasticsearchConfig(value); return *this;}
 
     /**
-     * <p>Amazon Elasticsearch Service settings.</p>
+     * <p>Amazon OpenSearch Service settings.</p> <p>As of September 2021, Amazon
+     * Elasticsearch service is Amazon OpenSearch Service. This configuration is
+     * deprecated. For new data sources, use
+     * <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch
+     * data source.</p>
      */
     inline CreateDataSourceRequest& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline const OpenSearchServiceDataSourceConfig& GetOpenSearchServiceConfig() const{ return m_openSearchServiceConfig; }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline bool OpenSearchServiceConfigHasBeenSet() const { return m_openSearchServiceConfigHasBeenSet; }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline void SetOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = value; }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline void SetOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { m_openSearchServiceConfigHasBeenSet = true; m_openSearchServiceConfig = std::move(value); }
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline CreateDataSourceRequest& WithOpenSearchServiceConfig(const OpenSearchServiceDataSourceConfig& value) { SetOpenSearchServiceConfig(value); return *this;}
+
+    /**
+     * <p>Amazon OpenSearch Service settings.</p>
+     */
+    inline CreateDataSourceRequest& WithOpenSearchServiceConfig(OpenSearchServiceDataSourceConfig&& value) { SetOpenSearchServiceConfig(std::move(value)); return *this;}
 
 
     /**
@@ -430,6 +484,9 @@ namespace Model
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
     bool m_elasticsearchConfigHasBeenSet;
+
+    OpenSearchServiceDataSourceConfig m_openSearchServiceConfig;
+    bool m_openSearchServiceConfigHasBeenSet;
 
     HttpDataSourceConfig m_httpConfig;
     bool m_httpConfigHasBeenSet;

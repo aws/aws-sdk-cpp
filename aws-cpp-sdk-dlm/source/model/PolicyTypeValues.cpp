@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dlm/model/PolicyTypeValues.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,8 @@ namespace Aws
       {
 
         static const int EBS_SNAPSHOT_MANAGEMENT_HASH = HashingUtils::HashString("EBS_SNAPSHOT_MANAGEMENT");
+        static const int IMAGE_MANAGEMENT_HASH = HashingUtils::HashString("IMAGE_MANAGEMENT");
+        static const int EVENT_BASED_POLICY_HASH = HashingUtils::HashString("EVENT_BASED_POLICY");
 
 
         PolicyTypeValues GetPolicyTypeValuesForName(const Aws::String& name)
@@ -39,6 +31,14 @@ namespace Aws
           if (hashCode == EBS_SNAPSHOT_MANAGEMENT_HASH)
           {
             return PolicyTypeValues::EBS_SNAPSHOT_MANAGEMENT;
+          }
+          else if (hashCode == IMAGE_MANAGEMENT_HASH)
+          {
+            return PolicyTypeValues::IMAGE_MANAGEMENT;
+          }
+          else if (hashCode == EVENT_BASED_POLICY_HASH)
+          {
+            return PolicyTypeValues::EVENT_BASED_POLICY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +56,10 @@ namespace Aws
           {
           case PolicyTypeValues::EBS_SNAPSHOT_MANAGEMENT:
             return "EBS_SNAPSHOT_MANAGEMENT";
+          case PolicyTypeValues::IMAGE_MANAGEMENT:
+            return "IMAGE_MANAGEMENT";
+          case PolicyTypeValues::EVENT_BASED_POLICY:
+            return "EVENT_BASED_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

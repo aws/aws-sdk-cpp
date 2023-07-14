@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesisanalyticsv2/model/ApplicationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,11 @@ namespace Aws
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int AUTOSCALING_HASH = HashingUtils::HashString("AUTOSCALING");
+        static const int FORCE_STOPPING_HASH = HashingUtils::HashString("FORCE_STOPPING");
+        static const int ROLLING_BACK_HASH = HashingUtils::HashString("ROLLING_BACK");
+        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
+        static const int ROLLED_BACK_HASH = HashingUtils::HashString("ROLLED_BACK");
 
 
         ApplicationStatus GetApplicationStatusForName(const Aws::String& name)
@@ -65,6 +60,26 @@ namespace Aws
           {
             return ApplicationStatus::UPDATING;
           }
+          else if (hashCode == AUTOSCALING_HASH)
+          {
+            return ApplicationStatus::AUTOSCALING;
+          }
+          else if (hashCode == FORCE_STOPPING_HASH)
+          {
+            return ApplicationStatus::FORCE_STOPPING;
+          }
+          else if (hashCode == ROLLING_BACK_HASH)
+          {
+            return ApplicationStatus::ROLLING_BACK;
+          }
+          else if (hashCode == MAINTENANCE_HASH)
+          {
+            return ApplicationStatus::MAINTENANCE;
+          }
+          else if (hashCode == ROLLED_BACK_HASH)
+          {
+            return ApplicationStatus::ROLLED_BACK;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +106,16 @@ namespace Aws
             return "RUNNING";
           case ApplicationStatus::UPDATING:
             return "UPDATING";
+          case ApplicationStatus::AUTOSCALING:
+            return "AUTOSCALING";
+          case ApplicationStatus::FORCE_STOPPING:
+            return "FORCE_STOPPING";
+          case ApplicationStatus::ROLLING_BACK:
+            return "ROLLING_BACK";
+          case ApplicationStatus::MAINTENANCE:
+            return "MAINTENANCE";
+          case ApplicationStatus::ROLLED_BACK:
+            return "ROLLED_BACK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

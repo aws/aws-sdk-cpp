@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -59,9 +49,9 @@ namespace Model
      * group list.</p> <p>If you are using <code>SendRawEmail</code> with sending
      * authorization, you can include X-headers in the raw message to specify the
      * "Source," "From," and "Return-Path" addresses. For more information, see the
-     * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
+     * documentation for <code>SendRawEmail</code>. </p>  <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
-     * before sending the email.</p> </important> <p>For more information, go to the <a
+     * before sending the email.</p>  <p>For more information, go to the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
@@ -77,9 +67,9 @@ namespace Model
      * group list.</p> <p>If you are using <code>SendRawEmail</code> with sending
      * authorization, you can include X-headers in the raw message to specify the
      * "Source," "From," and "Return-Path" addresses. For more information, see the
-     * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
+     * documentation for <code>SendRawEmail</code>. </p>  <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
-     * before sending the email.</p> </important> <p>For more information, go to the <a
+     * before sending the email.</p>  <p>For more information, go to the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
@@ -95,9 +85,9 @@ namespace Model
      * group list.</p> <p>If you are using <code>SendRawEmail</code> with sending
      * authorization, you can include X-headers in the raw message to specify the
      * "Source," "From," and "Return-Path" addresses. For more information, see the
-     * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
+     * documentation for <code>SendRawEmail</code>. </p>  <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
-     * before sending the email.</p> </important> <p>For more information, go to the <a
+     * before sending the email.</p>  <p>For more information, go to the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
@@ -113,9 +103,9 @@ namespace Model
      * group list.</p> <p>If you are using <code>SendRawEmail</code> with sending
      * authorization, you can include X-headers in the raw message to specify the
      * "Source," "From," and "Return-Path" addresses. For more information, see the
-     * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
+     * documentation for <code>SendRawEmail</code>. </p>  <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
-     * before sending the email.</p> </important> <p>For more information, go to the <a
+     * before sending the email.</p>  <p>For more information, go to the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
@@ -131,9 +121,9 @@ namespace Model
      * group list.</p> <p>If you are using <code>SendRawEmail</code> with sending
      * authorization, you can include X-headers in the raw message to specify the
      * "Source," "From," and "Return-Path" addresses. For more information, see the
-     * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
+     * documentation for <code>SendRawEmail</code>. </p>  <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
-     * before sending the email.</p> </important> <p>For more information, go to the <a
+     * before sending the email.</p>  <p>For more information, go to the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
@@ -149,9 +139,9 @@ namespace Model
      * group list.</p> <p>If you are using <code>SendRawEmail</code> with sending
      * authorization, you can include X-headers in the raw message to specify the
      * "Source," "From," and "Return-Path" addresses. For more information, see the
-     * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
+     * documentation for <code>SendRawEmail</code>. </p>  <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
-     * before sending the email.</p> </important> <p>For more information, go to the <a
+     * before sending the email.</p>  <p>For more information, go to the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */

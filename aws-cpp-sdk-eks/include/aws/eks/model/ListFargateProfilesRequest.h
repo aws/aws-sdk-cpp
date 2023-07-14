@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -49,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline ListFargateProfilesRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline ListFargateProfilesRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS cluster that you would like to listFargate
+     * <p>The name of the Amazon EKS cluster that you would like to list Fargate
      * profiles in.</p>
      */
     inline ListFargateProfilesRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}

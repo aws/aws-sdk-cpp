@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/outposts/model/SupportedHardwareType.h>
 #include <utility>
 
 namespace Aws
@@ -47,28 +39,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline Outpost& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline Outpost& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p> The ID of the Outpost. </p>
+     */
     inline Outpost& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
 
@@ -271,6 +279,128 @@ namespace Model
     
     inline Outpost& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The Outpost tags.</p>
+     */
+    inline Outpost& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    
+    inline const Aws::String& GetSiteArn() const{ return m_siteArn; }
+
+    
+    inline bool SiteArnHasBeenSet() const { return m_siteArnHasBeenSet; }
+
+    
+    inline void SetSiteArn(const Aws::String& value) { m_siteArnHasBeenSet = true; m_siteArn = value; }
+
+    
+    inline void SetSiteArn(Aws::String&& value) { m_siteArnHasBeenSet = true; m_siteArn = std::move(value); }
+
+    
+    inline void SetSiteArn(const char* value) { m_siteArnHasBeenSet = true; m_siteArn.assign(value); }
+
+    
+    inline Outpost& WithSiteArn(const Aws::String& value) { SetSiteArn(value); return *this;}
+
+    
+    inline Outpost& WithSiteArn(Aws::String&& value) { SetSiteArn(std::move(value)); return *this;}
+
+    
+    inline Outpost& WithSiteArn(const char* value) { SetSiteArn(value); return *this;}
+
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline Outpost& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline Outpost& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_outpostId;
@@ -299,6 +429,15 @@ namespace Model
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::String m_siteArn;
+    bool m_siteArnHasBeenSet;
+
+    SupportedHardwareType m_supportedHardwareType;
+    bool m_supportedHardwareTypeHasBeenSet;
   };
 
 } // namespace Model

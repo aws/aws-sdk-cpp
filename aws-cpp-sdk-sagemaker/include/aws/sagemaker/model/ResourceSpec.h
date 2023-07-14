@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -35,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The instance type and quantity.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the
+   * instance type that the version runs on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */
@@ -49,83 +40,197 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline const Aws::String& GetEnvironmentArn() const{ return m_environmentArn; }
+    inline const Aws::String& GetSageMakerImageArn() const{ return m_sageMakerImageArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline bool EnvironmentArnHasBeenSet() const { return m_environmentArnHasBeenSet; }
+    inline bool SageMakerImageArnHasBeenSet() const { return m_sageMakerImageArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline void SetEnvironmentArn(const Aws::String& value) { m_environmentArnHasBeenSet = true; m_environmentArn = value; }
+    inline void SetSageMakerImageArn(const Aws::String& value) { m_sageMakerImageArnHasBeenSet = true; m_sageMakerImageArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline void SetEnvironmentArn(Aws::String&& value) { m_environmentArnHasBeenSet = true; m_environmentArn = std::move(value); }
+    inline void SetSageMakerImageArn(Aws::String&& value) { m_sageMakerImageArnHasBeenSet = true; m_sageMakerImageArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline void SetEnvironmentArn(const char* value) { m_environmentArnHasBeenSet = true; m_environmentArn.assign(value); }
+    inline void SetSageMakerImageArn(const char* value) { m_sageMakerImageArnHasBeenSet = true; m_sageMakerImageArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline ResourceSpec& WithEnvironmentArn(const Aws::String& value) { SetEnvironmentArn(value); return *this;}
+    inline ResourceSpec& WithSageMakerImageArn(const Aws::String& value) { SetSageMakerImageArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline ResourceSpec& WithEnvironmentArn(Aws::String&& value) { SetEnvironmentArn(std::move(value)); return *this;}
+    inline ResourceSpec& WithSageMakerImageArn(Aws::String&& value) { SetSageMakerImageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     * <p>The ARN of the SageMaker image that the image version belongs to.</p>
      */
-    inline ResourceSpec& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
+    inline ResourceSpec& WithSageMakerImageArn(const char* value) { SetSageMakerImageArn(value); return *this;}
 
 
     /**
-     * <p>The instance type.</p>
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline const Aws::String& GetSageMakerImageVersionArn() const{ return m_sageMakerImageVersionArn; }
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline bool SageMakerImageVersionArnHasBeenSet() const { return m_sageMakerImageVersionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline void SetSageMakerImageVersionArn(const Aws::String& value) { m_sageMakerImageVersionArnHasBeenSet = true; m_sageMakerImageVersionArn = value; }
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline void SetSageMakerImageVersionArn(Aws::String&& value) { m_sageMakerImageVersionArnHasBeenSet = true; m_sageMakerImageVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline void SetSageMakerImageVersionArn(const char* value) { m_sageMakerImageVersionArnHasBeenSet = true; m_sageMakerImageVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline ResourceSpec& WithSageMakerImageVersionArn(const Aws::String& value) { SetSageMakerImageVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline ResourceSpec& WithSageMakerImageVersionArn(Aws::String&& value) { SetSageMakerImageVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the image version created on the instance.</p>
+     */
+    inline ResourceSpec& WithSageMakerImageVersionArn(const char* value) { SetSageMakerImageVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline const AppInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline void SetInstanceType(const AppInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline void SetInstanceType(AppInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline ResourceSpec& WithInstanceType(const AppInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline ResourceSpec& WithInstanceType(AppInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline const Aws::String& GetLifecycleConfigArn() const{ return m_lifecycleConfigArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline bool LifecycleConfigArnHasBeenSet() const { return m_lifecycleConfigArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline void SetLifecycleConfigArn(const Aws::String& value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline void SetLifecycleConfigArn(Aws::String&& value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline void SetLifecycleConfigArn(const char* value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline ResourceSpec& WithLifecycleConfigArn(const Aws::String& value) { SetLifecycleConfigArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline ResourceSpec& WithLifecycleConfigArn(Aws::String&& value) { SetLifecycleConfigArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline ResourceSpec& WithLifecycleConfigArn(const char* value) { SetLifecycleConfigArn(value); return *this;}
+
   private:
 
-    Aws::String m_environmentArn;
-    bool m_environmentArnHasBeenSet;
+    Aws::String m_sageMakerImageArn;
+    bool m_sageMakerImageArnHasBeenSet;
+
+    Aws::String m_sageMakerImageVersionArn;
+    bool m_sageMakerImageVersionArnHasBeenSet;
 
     AppInstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    Aws::String m_lifecycleConfigArn;
+    bool m_lifecycleConfigArnHasBeenSet;
   };
 
 } // namespace Model

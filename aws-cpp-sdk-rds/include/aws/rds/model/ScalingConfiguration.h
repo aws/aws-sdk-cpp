@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -34,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p>
+   * <p>Contains the scaling configuration of an Aurora Serverless v1 DB cluster.</p>
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-   * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User
+   * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ScalingConfiguration">AWS
    * API Reference</a></p>
@@ -154,65 +144,65 @@ namespace Model
     /**
      * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
+     * paused only when it's idle (it has no connections).</p>  <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
      * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it. </p> </note>
+     * request to connect to it.</p> 
      */
     inline bool GetAutoPause() const{ return m_autoPause; }
 
     /**
      * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
+     * paused only when it's idle (it has no connections).</p>  <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
      * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it. </p> </note>
+     * request to connect to it.</p> 
      */
     inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
+     * paused only when it's idle (it has no connections).</p>  <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
      * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it. </p> </note>
+     * request to connect to it.</p> 
      */
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
 
     /**
      * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
+     * paused only when it's idle (it has no connections).</p>  <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
      * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it. </p> </note>
+     * request to connect to it.</p> 
      */
     inline ScalingConfiguration& WithAutoPause(bool value) { SetAutoPause(value); return *this;}
 
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p>
+     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
      */
     inline int GetSecondsUntilAutoPause() const{ return m_secondsUntilAutoPause; }
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p>
+     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
      */
     inline bool SecondsUntilAutoPauseHasBeenSet() const { return m_secondsUntilAutoPauseHasBeenSet; }
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p>
+     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
      */
     inline void SetSecondsUntilAutoPause(int value) { m_secondsUntilAutoPauseHasBeenSet = true; m_secondsUntilAutoPause = value; }
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p>
+     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
      */
     inline ScalingConfiguration& WithSecondsUntilAutoPause(int value) { SetSecondsUntilAutoPause(value); return *this;}
 
@@ -224,11 +214,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetTimeoutAction() const{ return m_timeoutAction; }
@@ -240,11 +230,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline bool TimeoutActionHasBeenSet() const { return m_timeoutActionHasBeenSet; }
@@ -256,11 +246,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline void SetTimeoutAction(const Aws::String& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
@@ -272,11 +262,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline void SetTimeoutAction(Aws::String&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
@@ -288,11 +278,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline void SetTimeoutAction(const char* value) { m_timeoutActionHasBeenSet = true; m_timeoutAction.assign(value); }
@@ -304,11 +294,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline ScalingConfiguration& WithTimeoutAction(const Aws::String& value) { SetTimeoutAction(value); return *this;}
@@ -320,11 +310,11 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline ScalingConfiguration& WithTimeoutAction(Aws::String&& value) { SetTimeoutAction(std::move(value)); return *this;}
@@ -336,14 +326,43 @@ namespace Model
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point isn't found in the timeout
-     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
-     * connections that prevent Aurora Serverless from finding a scaling point might be
-     * dropped.</p> </important> <p>For more information, see <a
+     * period.</p>  <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless v1 from finding a scaling point might
+     * be dropped.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline ScalingConfiguration& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
+
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline int GetSecondsBeforeTimeout() const{ return m_secondsBeforeTimeout; }
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline bool SecondsBeforeTimeoutHasBeenSet() const { return m_secondsBeforeTimeoutHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline void SetSecondsBeforeTimeout(int value) { m_secondsBeforeTimeoutHasBeenSet = true; m_secondsBeforeTimeout = value; }
+
+    /**
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
+     * scaling point to perform seamless scaling before enforcing the timeout action.
+     * The default is 300.</p> <p>Specify a value between 60 and 600 seconds.</p>
+     */
+    inline ScalingConfiguration& WithSecondsBeforeTimeout(int value) { SetSecondsBeforeTimeout(value); return *this;}
 
   private:
 
@@ -361,6 +380,9 @@ namespace Model
 
     Aws::String m_timeoutAction;
     bool m_timeoutActionHasBeenSet;
+
+    int m_secondsBeforeTimeout;
+    bool m_secondsBeforeTimeoutHasBeenSet;
   };
 
 } // namespace Model

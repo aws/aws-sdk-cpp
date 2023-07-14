@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
@@ -247,99 +237,99 @@ namespace Model
         class UpdateRoomRequest;
         class UpdateSkillGroupRequest;
 
-        typedef Aws::Utils::Outcome<ApproveSkillResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ApproveSkillOutcome;
-        typedef Aws::Utils::Outcome<AssociateContactWithAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateContactWithAddressBookOutcome;
-        typedef Aws::Utils::Outcome<AssociateDeviceWithNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateDeviceWithNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<AssociateDeviceWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateDeviceWithRoomOutcome;
-        typedef Aws::Utils::Outcome<AssociateSkillGroupWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillGroupWithRoomOutcome;
-        typedef Aws::Utils::Outcome<AssociateSkillWithSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillWithSkillGroupOutcome;
-        typedef Aws::Utils::Outcome<AssociateSkillWithUsersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillWithUsersOutcome;
-        typedef Aws::Utils::Outcome<CreateAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateAddressBookOutcome;
-        typedef Aws::Utils::Outcome<CreateBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateBusinessReportScheduleOutcome;
-        typedef Aws::Utils::Outcome<CreateConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateConferenceProviderOutcome;
-        typedef Aws::Utils::Outcome<CreateContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateContactOutcome;
-        typedef Aws::Utils::Outcome<CreateGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateGatewayGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateRoomOutcome;
-        typedef Aws::Utils::Outcome<CreateSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateSkillGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<DeleteAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteAddressBookOutcome;
-        typedef Aws::Utils::Outcome<DeleteBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteBusinessReportScheduleOutcome;
-        typedef Aws::Utils::Outcome<DeleteConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteConferenceProviderOutcome;
-        typedef Aws::Utils::Outcome<DeleteContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteContactOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeviceUsageDataResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceUsageDataOutcome;
-        typedef Aws::Utils::Outcome<DeleteGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteGatewayGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteRoomOutcome;
-        typedef Aws::Utils::Outcome<DeleteRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteRoomSkillParameterOutcome;
-        typedef Aws::Utils::Outcome<DeleteSkillAuthorizationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteSkillAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<DeleteSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteSkillGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<DisassociateContactFromAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateContactFromAddressBookOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDeviceFromRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateDeviceFromRoomOutcome;
-        typedef Aws::Utils::Outcome<DisassociateSkillFromSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateSkillFromSkillGroupOutcome;
-        typedef Aws::Utils::Outcome<DisassociateSkillFromUsersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateSkillFromUsersOutcome;
-        typedef Aws::Utils::Outcome<DisassociateSkillGroupFromRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateSkillGroupFromRoomOutcome;
-        typedef Aws::Utils::Outcome<ForgetSmartHomeAppliancesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ForgetSmartHomeAppliancesOutcome;
-        typedef Aws::Utils::Outcome<GetAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetAddressBookOutcome;
-        typedef Aws::Utils::Outcome<GetConferencePreferenceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetConferencePreferenceOutcome;
-        typedef Aws::Utils::Outcome<GetConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetConferenceProviderOutcome;
-        typedef Aws::Utils::Outcome<GetContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetContactOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetDeviceOutcome;
-        typedef Aws::Utils::Outcome<GetGatewayResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetGatewayOutcome;
-        typedef Aws::Utils::Outcome<GetGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetGatewayGroupOutcome;
-        typedef Aws::Utils::Outcome<GetInvitationConfigurationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetInvitationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<GetProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetProfileOutcome;
-        typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomOutcome;
-        typedef Aws::Utils::Outcome<GetRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomSkillParameterOutcome;
-        typedef Aws::Utils::Outcome<GetSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetSkillGroupOutcome;
-        typedef Aws::Utils::Outcome<ListBusinessReportSchedulesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListBusinessReportSchedulesOutcome;
-        typedef Aws::Utils::Outcome<ListConferenceProvidersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListConferenceProvidersOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceEventsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListDeviceEventsOutcome;
-        typedef Aws::Utils::Outcome<ListGatewayGroupsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListGatewayGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListGatewaysResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListGatewaysOutcome;
-        typedef Aws::Utils::Outcome<ListSkillsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListSkillsOutcome;
-        typedef Aws::Utils::Outcome<ListSkillsStoreCategoriesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListSkillsStoreCategoriesOutcome;
-        typedef Aws::Utils::Outcome<ListSkillsStoreSkillsByCategoryResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListSkillsStoreSkillsByCategoryOutcome;
-        typedef Aws::Utils::Outcome<ListSmartHomeAppliancesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListSmartHomeAppliancesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<PutConferencePreferenceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> PutConferencePreferenceOutcome;
-        typedef Aws::Utils::Outcome<PutInvitationConfigurationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> PutInvitationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<PutRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> PutRoomSkillParameterOutcome;
-        typedef Aws::Utils::Outcome<PutSkillAuthorizationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> PutSkillAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<RegisterAVSDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> RegisterAVSDeviceOutcome;
-        typedef Aws::Utils::Outcome<RejectSkillResult, Aws::Client::AWSError<AlexaForBusinessErrors>> RejectSkillOutcome;
-        typedef Aws::Utils::Outcome<ResolveRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ResolveRoomOutcome;
-        typedef Aws::Utils::Outcome<RevokeInvitationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> RevokeInvitationOutcome;
-        typedef Aws::Utils::Outcome<SearchAddressBooksResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchAddressBooksOutcome;
-        typedef Aws::Utils::Outcome<SearchContactsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchContactsOutcome;
-        typedef Aws::Utils::Outcome<SearchDevicesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchDevicesOutcome;
-        typedef Aws::Utils::Outcome<SearchNetworkProfilesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchNetworkProfilesOutcome;
-        typedef Aws::Utils::Outcome<SearchProfilesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchProfilesOutcome;
-        typedef Aws::Utils::Outcome<SearchRoomsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchRoomsOutcome;
-        typedef Aws::Utils::Outcome<SearchSkillGroupsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchSkillGroupsOutcome;
-        typedef Aws::Utils::Outcome<SearchUsersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchUsersOutcome;
-        typedef Aws::Utils::Outcome<SendAnnouncementResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SendAnnouncementOutcome;
-        typedef Aws::Utils::Outcome<SendInvitationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SendInvitationOutcome;
-        typedef Aws::Utils::Outcome<StartDeviceSyncResult, Aws::Client::AWSError<AlexaForBusinessErrors>> StartDeviceSyncOutcome;
-        typedef Aws::Utils::Outcome<StartSmartHomeApplianceDiscoveryResult, Aws::Client::AWSError<AlexaForBusinessErrors>> StartSmartHomeApplianceDiscoveryOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateAddressBookOutcome;
-        typedef Aws::Utils::Outcome<UpdateBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateBusinessReportScheduleOutcome;
-        typedef Aws::Utils::Outcome<UpdateConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateConferenceProviderOutcome;
-        typedef Aws::Utils::Outcome<UpdateContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateContactOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateDeviceOutcome;
-        typedef Aws::Utils::Outcome<UpdateGatewayResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateGatewayOutcome;
-        typedef Aws::Utils::Outcome<UpdateGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateGatewayGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateNetworkProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateRoomOutcome;
-        typedef Aws::Utils::Outcome<UpdateSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<ApproveSkillResult, AlexaForBusinessError> ApproveSkillOutcome;
+        typedef Aws::Utils::Outcome<AssociateContactWithAddressBookResult, AlexaForBusinessError> AssociateContactWithAddressBookOutcome;
+        typedef Aws::Utils::Outcome<AssociateDeviceWithNetworkProfileResult, AlexaForBusinessError> AssociateDeviceWithNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<AssociateDeviceWithRoomResult, AlexaForBusinessError> AssociateDeviceWithRoomOutcome;
+        typedef Aws::Utils::Outcome<AssociateSkillGroupWithRoomResult, AlexaForBusinessError> AssociateSkillGroupWithRoomOutcome;
+        typedef Aws::Utils::Outcome<AssociateSkillWithSkillGroupResult, AlexaForBusinessError> AssociateSkillWithSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<AssociateSkillWithUsersResult, AlexaForBusinessError> AssociateSkillWithUsersOutcome;
+        typedef Aws::Utils::Outcome<CreateAddressBookResult, AlexaForBusinessError> CreateAddressBookOutcome;
+        typedef Aws::Utils::Outcome<CreateBusinessReportScheduleResult, AlexaForBusinessError> CreateBusinessReportScheduleOutcome;
+        typedef Aws::Utils::Outcome<CreateConferenceProviderResult, AlexaForBusinessError> CreateConferenceProviderOutcome;
+        typedef Aws::Utils::Outcome<CreateContactResult, AlexaForBusinessError> CreateContactOutcome;
+        typedef Aws::Utils::Outcome<CreateGatewayGroupResult, AlexaForBusinessError> CreateGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateNetworkProfileResult, AlexaForBusinessError> CreateNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateProfileResult, AlexaForBusinessError> CreateProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateRoomResult, AlexaForBusinessError> CreateRoomOutcome;
+        typedef Aws::Utils::Outcome<CreateSkillGroupResult, AlexaForBusinessError> CreateSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateUserResult, AlexaForBusinessError> CreateUserOutcome;
+        typedef Aws::Utils::Outcome<DeleteAddressBookResult, AlexaForBusinessError> DeleteAddressBookOutcome;
+        typedef Aws::Utils::Outcome<DeleteBusinessReportScheduleResult, AlexaForBusinessError> DeleteBusinessReportScheduleOutcome;
+        typedef Aws::Utils::Outcome<DeleteConferenceProviderResult, AlexaForBusinessError> DeleteConferenceProviderOutcome;
+        typedef Aws::Utils::Outcome<DeleteContactResult, AlexaForBusinessError> DeleteContactOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeviceResult, AlexaForBusinessError> DeleteDeviceOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeviceUsageDataResult, AlexaForBusinessError> DeleteDeviceUsageDataOutcome;
+        typedef Aws::Utils::Outcome<DeleteGatewayGroupResult, AlexaForBusinessError> DeleteGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, AlexaForBusinessError> DeleteNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteProfileResult, AlexaForBusinessError> DeleteProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteRoomResult, AlexaForBusinessError> DeleteRoomOutcome;
+        typedef Aws::Utils::Outcome<DeleteRoomSkillParameterResult, AlexaForBusinessError> DeleteRoomSkillParameterOutcome;
+        typedef Aws::Utils::Outcome<DeleteSkillAuthorizationResult, AlexaForBusinessError> DeleteSkillAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<DeleteSkillGroupResult, AlexaForBusinessError> DeleteSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserResult, AlexaForBusinessError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DisassociateContactFromAddressBookResult, AlexaForBusinessError> DisassociateContactFromAddressBookOutcome;
+        typedef Aws::Utils::Outcome<DisassociateDeviceFromRoomResult, AlexaForBusinessError> DisassociateDeviceFromRoomOutcome;
+        typedef Aws::Utils::Outcome<DisassociateSkillFromSkillGroupResult, AlexaForBusinessError> DisassociateSkillFromSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<DisassociateSkillFromUsersResult, AlexaForBusinessError> DisassociateSkillFromUsersOutcome;
+        typedef Aws::Utils::Outcome<DisassociateSkillGroupFromRoomResult, AlexaForBusinessError> DisassociateSkillGroupFromRoomOutcome;
+        typedef Aws::Utils::Outcome<ForgetSmartHomeAppliancesResult, AlexaForBusinessError> ForgetSmartHomeAppliancesOutcome;
+        typedef Aws::Utils::Outcome<GetAddressBookResult, AlexaForBusinessError> GetAddressBookOutcome;
+        typedef Aws::Utils::Outcome<GetConferencePreferenceResult, AlexaForBusinessError> GetConferencePreferenceOutcome;
+        typedef Aws::Utils::Outcome<GetConferenceProviderResult, AlexaForBusinessError> GetConferenceProviderOutcome;
+        typedef Aws::Utils::Outcome<GetContactResult, AlexaForBusinessError> GetContactOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceResult, AlexaForBusinessError> GetDeviceOutcome;
+        typedef Aws::Utils::Outcome<GetGatewayResult, AlexaForBusinessError> GetGatewayOutcome;
+        typedef Aws::Utils::Outcome<GetGatewayGroupResult, AlexaForBusinessError> GetGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<GetInvitationConfigurationResult, AlexaForBusinessError> GetInvitationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkProfileResult, AlexaForBusinessError> GetNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<GetProfileResult, AlexaForBusinessError> GetProfileOutcome;
+        typedef Aws::Utils::Outcome<GetRoomResult, AlexaForBusinessError> GetRoomOutcome;
+        typedef Aws::Utils::Outcome<GetRoomSkillParameterResult, AlexaForBusinessError> GetRoomSkillParameterOutcome;
+        typedef Aws::Utils::Outcome<GetSkillGroupResult, AlexaForBusinessError> GetSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<ListBusinessReportSchedulesResult, AlexaForBusinessError> ListBusinessReportSchedulesOutcome;
+        typedef Aws::Utils::Outcome<ListConferenceProvidersResult, AlexaForBusinessError> ListConferenceProvidersOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceEventsResult, AlexaForBusinessError> ListDeviceEventsOutcome;
+        typedef Aws::Utils::Outcome<ListGatewayGroupsResult, AlexaForBusinessError> ListGatewayGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListGatewaysResult, AlexaForBusinessError> ListGatewaysOutcome;
+        typedef Aws::Utils::Outcome<ListSkillsResult, AlexaForBusinessError> ListSkillsOutcome;
+        typedef Aws::Utils::Outcome<ListSkillsStoreCategoriesResult, AlexaForBusinessError> ListSkillsStoreCategoriesOutcome;
+        typedef Aws::Utils::Outcome<ListSkillsStoreSkillsByCategoryResult, AlexaForBusinessError> ListSkillsStoreSkillsByCategoryOutcome;
+        typedef Aws::Utils::Outcome<ListSmartHomeAppliancesResult, AlexaForBusinessError> ListSmartHomeAppliancesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, AlexaForBusinessError> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<PutConferencePreferenceResult, AlexaForBusinessError> PutConferencePreferenceOutcome;
+        typedef Aws::Utils::Outcome<PutInvitationConfigurationResult, AlexaForBusinessError> PutInvitationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutRoomSkillParameterResult, AlexaForBusinessError> PutRoomSkillParameterOutcome;
+        typedef Aws::Utils::Outcome<PutSkillAuthorizationResult, AlexaForBusinessError> PutSkillAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<RegisterAVSDeviceResult, AlexaForBusinessError> RegisterAVSDeviceOutcome;
+        typedef Aws::Utils::Outcome<RejectSkillResult, AlexaForBusinessError> RejectSkillOutcome;
+        typedef Aws::Utils::Outcome<ResolveRoomResult, AlexaForBusinessError> ResolveRoomOutcome;
+        typedef Aws::Utils::Outcome<RevokeInvitationResult, AlexaForBusinessError> RevokeInvitationOutcome;
+        typedef Aws::Utils::Outcome<SearchAddressBooksResult, AlexaForBusinessError> SearchAddressBooksOutcome;
+        typedef Aws::Utils::Outcome<SearchContactsResult, AlexaForBusinessError> SearchContactsOutcome;
+        typedef Aws::Utils::Outcome<SearchDevicesResult, AlexaForBusinessError> SearchDevicesOutcome;
+        typedef Aws::Utils::Outcome<SearchNetworkProfilesResult, AlexaForBusinessError> SearchNetworkProfilesOutcome;
+        typedef Aws::Utils::Outcome<SearchProfilesResult, AlexaForBusinessError> SearchProfilesOutcome;
+        typedef Aws::Utils::Outcome<SearchRoomsResult, AlexaForBusinessError> SearchRoomsOutcome;
+        typedef Aws::Utils::Outcome<SearchSkillGroupsResult, AlexaForBusinessError> SearchSkillGroupsOutcome;
+        typedef Aws::Utils::Outcome<SearchUsersResult, AlexaForBusinessError> SearchUsersOutcome;
+        typedef Aws::Utils::Outcome<SendAnnouncementResult, AlexaForBusinessError> SendAnnouncementOutcome;
+        typedef Aws::Utils::Outcome<SendInvitationResult, AlexaForBusinessError> SendInvitationOutcome;
+        typedef Aws::Utils::Outcome<StartDeviceSyncResult, AlexaForBusinessError> StartDeviceSyncOutcome;
+        typedef Aws::Utils::Outcome<StartSmartHomeApplianceDiscoveryResult, AlexaForBusinessError> StartSmartHomeApplianceDiscoveryOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, AlexaForBusinessError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, AlexaForBusinessError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAddressBookResult, AlexaForBusinessError> UpdateAddressBookOutcome;
+        typedef Aws::Utils::Outcome<UpdateBusinessReportScheduleResult, AlexaForBusinessError> UpdateBusinessReportScheduleOutcome;
+        typedef Aws::Utils::Outcome<UpdateConferenceProviderResult, AlexaForBusinessError> UpdateConferenceProviderOutcome;
+        typedef Aws::Utils::Outcome<UpdateContactResult, AlexaForBusinessError> UpdateContactOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceResult, AlexaForBusinessError> UpdateDeviceOutcome;
+        typedef Aws::Utils::Outcome<UpdateGatewayResult, AlexaForBusinessError> UpdateGatewayOutcome;
+        typedef Aws::Utils::Outcome<UpdateGatewayGroupResult, AlexaForBusinessError> UpdateGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, AlexaForBusinessError> UpdateNetworkProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateProfileResult, AlexaForBusinessError> UpdateProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateRoomResult, AlexaForBusinessError> UpdateRoomOutcome;
+        typedef Aws::Utils::Outcome<UpdateSkillGroupResult, AlexaForBusinessError> UpdateSkillGroupOutcome;
 
         typedef std::future<ApproveSkillOutcome> ApproveSkillOutcomeCallable;
         typedef std::future<AssociateContactWithAddressBookOutcome> AssociateContactWithAddressBookOutcomeCallable;
@@ -570,8 +560,6 @@ namespace Model
 
         virtual ~AlexaForBusinessClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Alexa For Business"; }
-
 
         /**
          * <p>Associates a skill with the organization under the customer's AWS account. If
@@ -583,24 +571,12 @@ namespace Model
         virtual Model::ApproveSkillOutcome ApproveSkill(const Model::ApproveSkillRequest& request) const;
 
         /**
-         * <p>Associates a skill with the organization under the customer's AWS account. If
-         * a skill is private, the user implicitly accepts access to this skill during
-         * enablement.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ApproveSkill that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ApproveSkillOutcomeCallable ApproveSkillCallable(const Model::ApproveSkillRequest& request) const;
 
         /**
-         * <p>Associates a skill with the organization under the customer's AWS account. If
-         * a skill is private, the user implicitly accepts access to this skill during
-         * enablement.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ApproveSkill that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ApproveSkillAsync(const Model::ApproveSkillRequest& request, const ApproveSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -612,20 +588,12 @@ namespace Model
         virtual Model::AssociateContactWithAddressBookOutcome AssociateContactWithAddressBook(const Model::AssociateContactWithAddressBookRequest& request) const;
 
         /**
-         * <p>Associates a contact with a given address book.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateContactWithAddressBook that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateContactWithAddressBookOutcomeCallable AssociateContactWithAddressBookCallable(const Model::AssociateContactWithAddressBookRequest& request) const;
 
         /**
-         * <p>Associates a contact with a given address book.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateContactWithAddressBook that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateContactWithAddressBookAsync(const Model::AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -638,22 +606,12 @@ namespace Model
         virtual Model::AssociateDeviceWithNetworkProfileOutcome AssociateDeviceWithNetworkProfile(const Model::AssociateDeviceWithNetworkProfileRequest& request) const;
 
         /**
-         * <p>Associates a device with the specified network profile.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateDeviceWithNetworkProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateDeviceWithNetworkProfileOutcomeCallable AssociateDeviceWithNetworkProfileCallable(const Model::AssociateDeviceWithNetworkProfileRequest& request) const;
 
         /**
-         * <p>Associates a device with the specified network profile.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateDeviceWithNetworkProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateDeviceWithNetworkProfileAsync(const Model::AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -668,26 +626,12 @@ namespace Model
         virtual Model::AssociateDeviceWithRoomOutcome AssociateDeviceWithRoom(const Model::AssociateDeviceWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a device with a given room. This applies all the settings from the
-         * room profile to the device, and all the skills in any skill groups added to that
-         * room. This operation requires the device to be online, or else a manual sync is
-         * required. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateDeviceWithRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateDeviceWithRoomOutcomeCallable AssociateDeviceWithRoomCallable(const Model::AssociateDeviceWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a device with a given room. This applies all the settings from the
-         * room profile to the device, and all the skills in any skill groups added to that
-         * room. This operation requires the device to be online, or else a manual sync is
-         * required. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateDeviceWithRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateDeviceWithRoomAsync(const Model::AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -700,22 +644,12 @@ namespace Model
         virtual Model::AssociateSkillGroupWithRoomOutcome AssociateSkillGroupWithRoom(const Model::AssociateSkillGroupWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a skill group with a given room. This enables all skills in the
-         * associated skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateSkillGroupWithRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateSkillGroupWithRoomOutcomeCallable AssociateSkillGroupWithRoomCallable(const Model::AssociateSkillGroupWithRoomRequest& request) const;
 
         /**
-         * <p>Associates a skill group with a given room. This enables all skills in the
-         * associated skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateSkillGroupWithRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateSkillGroupWithRoomAsync(const Model::AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -727,20 +661,12 @@ namespace Model
         virtual Model::AssociateSkillWithSkillGroupOutcome AssociateSkillWithSkillGroup(const Model::AssociateSkillWithSkillGroupRequest& request) const;
 
         /**
-         * <p>Associates a skill with a skill group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateSkillWithSkillGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateSkillWithSkillGroupOutcomeCallable AssociateSkillWithSkillGroupCallable(const Model::AssociateSkillWithSkillGroupRequest& request) const;
 
         /**
-         * <p>Associates a skill with a skill group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateSkillWithSkillGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateSkillWithSkillGroupAsync(const Model::AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -753,22 +679,12 @@ namespace Model
         virtual Model::AssociateSkillWithUsersOutcome AssociateSkillWithUsers(const Model::AssociateSkillWithUsersRequest& request) const;
 
         /**
-         * <p>Makes a private skill available for enrolled users to enable on their
-         * devices.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateSkillWithUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateSkillWithUsersOutcomeCallable AssociateSkillWithUsersCallable(const Model::AssociateSkillWithUsersRequest& request) const;
 
         /**
-         * <p>Makes a private skill available for enrolled users to enable on their
-         * devices.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateSkillWithUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateSkillWithUsersAsync(const Model::AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -781,22 +697,12 @@ namespace Model
         virtual Model::CreateAddressBookOutcome CreateAddressBook(const Model::CreateAddressBookRequest& request) const;
 
         /**
-         * <p>Creates an address book with the specified details.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAddressBook that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAddressBookOutcomeCallable CreateAddressBookCallable(const Model::CreateAddressBookRequest& request) const;
 
         /**
-         * <p>Creates an address book with the specified details.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAddressBook that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAddressBookAsync(const Model::CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -810,24 +716,12 @@ namespace Model
         virtual Model::CreateBusinessReportScheduleOutcome CreateBusinessReportSchedule(const Model::CreateBusinessReportScheduleRequest& request) const;
 
         /**
-         * <p>Creates a recurring schedule for usage reports to deliver to the specified S3
-         * location with a specified daily or weekly interval.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateBusinessReportSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateBusinessReportScheduleOutcomeCallable CreateBusinessReportScheduleCallable(const Model::CreateBusinessReportScheduleRequest& request) const;
 
         /**
-         * <p>Creates a recurring schedule for usage reports to deliver to the specified S3
-         * location with a specified daily or weekly interval.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateBusinessReportSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBusinessReportScheduleAsync(const Model::CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -840,22 +734,12 @@ namespace Model
         virtual Model::CreateConferenceProviderOutcome CreateConferenceProvider(const Model::CreateConferenceProviderRequest& request) const;
 
         /**
-         * <p>Adds a new conference provider under the user's AWS account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConferenceProvider that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConferenceProviderOutcomeCallable CreateConferenceProviderCallable(const Model::CreateConferenceProviderRequest& request) const;
 
         /**
-         * <p>Adds a new conference provider under the user's AWS account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConferenceProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConferenceProviderAsync(const Model::CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -867,20 +751,12 @@ namespace Model
         virtual Model::CreateContactOutcome CreateContact(const Model::CreateContactRequest& request) const;
 
         /**
-         * <p>Creates a contact with the specified details.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateContactOutcomeCallable CreateContactCallable(const Model::CreateContactRequest& request) const;
 
         /**
-         * <p>Creates a contact with the specified details.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateContactAsync(const Model::CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -893,22 +769,12 @@ namespace Model
         virtual Model::CreateGatewayGroupOutcome CreateGatewayGroup(const Model::CreateGatewayGroupRequest& request) const;
 
         /**
-         * <p>Creates a gateway group with the specified details.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateGatewayGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateGatewayGroupOutcomeCallable CreateGatewayGroupCallable(const Model::CreateGatewayGroupRequest& request) const;
 
         /**
-         * <p>Creates a gateway group with the specified details.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateGatewayGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateGatewayGroupAsync(const Model::CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -921,22 +787,12 @@ namespace Model
         virtual Model::CreateNetworkProfileOutcome CreateNetworkProfile(const Model::CreateNetworkProfileRequest& request) const;
 
         /**
-         * <p>Creates a network profile with the specified details.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateNetworkProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateNetworkProfileOutcomeCallable CreateNetworkProfileCallable(const Model::CreateNetworkProfileRequest& request) const;
 
         /**
-         * <p>Creates a network profile with the specified details.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateNetworkProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateNetworkProfileAsync(const Model::CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -949,22 +805,12 @@ namespace Model
         virtual Model::CreateProfileOutcome CreateProfile(const Model::CreateProfileRequest& request) const;
 
         /**
-         * <p>Creates a new room profile with the specified details.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProfileOutcomeCallable CreateProfileCallable(const Model::CreateProfileRequest& request) const;
 
         /**
-         * <p>Creates a new room profile with the specified details.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProfileAsync(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -976,20 +822,12 @@ namespace Model
         virtual Model::CreateRoomOutcome CreateRoom(const Model::CreateRoomRequest& request) const;
 
         /**
-         * <p>Creates a room with the specified details.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateRoomOutcomeCallable CreateRoomCallable(const Model::CreateRoomRequest& request) const;
 
         /**
-         * <p>Creates a room with the specified details.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRoomAsync(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1002,22 +840,12 @@ namespace Model
         virtual Model::CreateSkillGroupOutcome CreateSkillGroup(const Model::CreateSkillGroupRequest& request) const;
 
         /**
-         * <p>Creates a skill group with a specified name and description.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateSkillGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSkillGroupOutcomeCallable CreateSkillGroupCallable(const Model::CreateSkillGroupRequest& request) const;
 
         /**
-         * <p>Creates a skill group with a specified name and description.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateSkillGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSkillGroupAsync(const Model::CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1029,20 +857,12 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1055,22 +875,12 @@ namespace Model
         virtual Model::DeleteAddressBookOutcome DeleteAddressBook(const Model::DeleteAddressBookRequest& request) const;
 
         /**
-         * <p>Deletes an address book by the address book ARN.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAddressBook that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAddressBookOutcomeCallable DeleteAddressBookCallable(const Model::DeleteAddressBookRequest& request) const;
 
         /**
-         * <p>Deletes an address book by the address book ARN.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAddressBook that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAddressBookAsync(const Model::DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1083,22 +893,12 @@ namespace Model
         virtual Model::DeleteBusinessReportScheduleOutcome DeleteBusinessReportSchedule(const Model::DeleteBusinessReportScheduleRequest& request) const;
 
         /**
-         * <p>Deletes the recurring report delivery schedule with the specified schedule
-         * ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteBusinessReportSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBusinessReportScheduleOutcomeCallable DeleteBusinessReportScheduleCallable(const Model::DeleteBusinessReportScheduleRequest& request) const;
 
         /**
-         * <p>Deletes the recurring report delivery schedule with the specified schedule
-         * ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteBusinessReportSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBusinessReportScheduleAsync(const Model::DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1110,20 +910,12 @@ namespace Model
         virtual Model::DeleteConferenceProviderOutcome DeleteConferenceProvider(const Model::DeleteConferenceProviderRequest& request) const;
 
         /**
-         * <p>Deletes a conference provider.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConferenceProvider that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConferenceProviderOutcomeCallable DeleteConferenceProviderCallable(const Model::DeleteConferenceProviderRequest& request) const;
 
         /**
-         * <p>Deletes a conference provider.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConferenceProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConferenceProviderAsync(const Model::DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1135,20 +927,12 @@ namespace Model
         virtual Model::DeleteContactOutcome DeleteContact(const Model::DeleteContactRequest& request) const;
 
         /**
-         * <p>Deletes a contact by the contact ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteContactOutcomeCallable DeleteContactCallable(const Model::DeleteContactRequest& request) const;
 
         /**
-         * <p>Deletes a contact by the contact ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteContactAsync(const Model::DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1160,20 +944,12 @@ namespace Model
         virtual Model::DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest& request) const;
 
         /**
-         * <p>Removes a device from Alexa For Business.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
 
         /**
-         * <p>Removes a device from Alexa For Business.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1188,26 +964,12 @@ namespace Model
         virtual Model::DeleteDeviceUsageDataOutcome DeleteDeviceUsageData(const Model::DeleteDeviceUsageDataRequest& request) const;
 
         /**
-         * <p>When this action is called for a specified shared device, it allows
-         * authorized users to delete the device's entire previous history of voice input
-         * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteDeviceUsageData that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeviceUsageDataOutcomeCallable DeleteDeviceUsageDataCallable(const Model::DeleteDeviceUsageDataRequest& request) const;
 
         /**
-         * <p>When this action is called for a specified shared device, it allows
-         * authorized users to delete the device's entire previous history of voice input
-         * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteDeviceUsageData that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeviceUsageDataAsync(const Model::DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1219,20 +981,12 @@ namespace Model
         virtual Model::DeleteGatewayGroupOutcome DeleteGatewayGroup(const Model::DeleteGatewayGroupRequest& request) const;
 
         /**
-         * <p>Deletes a gateway group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteGatewayGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteGatewayGroupOutcomeCallable DeleteGatewayGroupCallable(const Model::DeleteGatewayGroupRequest& request) const;
 
         /**
-         * <p>Deletes a gateway group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteGatewayGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGatewayGroupAsync(const Model::DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1245,22 +999,12 @@ namespace Model
         virtual Model::DeleteNetworkProfileOutcome DeleteNetworkProfile(const Model::DeleteNetworkProfileRequest& request) const;
 
         /**
-         * <p>Deletes a network profile by the network profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteNetworkProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteNetworkProfileOutcomeCallable DeleteNetworkProfileCallable(const Model::DeleteNetworkProfileRequest& request) const;
 
         /**
-         * <p>Deletes a network profile by the network profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteNetworkProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteNetworkProfileAsync(const Model::DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1272,20 +1016,12 @@ namespace Model
         virtual Model::DeleteProfileOutcome DeleteProfile(const Model::DeleteProfileRequest& request) const;
 
         /**
-         * <p>Deletes a room profile by the profile ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProfileOutcomeCallable DeleteProfileCallable(const Model::DeleteProfileRequest& request) const;
 
         /**
-         * <p>Deletes a room profile by the profile ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProfileAsync(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1297,20 +1033,12 @@ namespace Model
         virtual Model::DeleteRoomOutcome DeleteRoom(const Model::DeleteRoomRequest& request) const;
 
         /**
-         * <p>Deletes a room by the room ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRoomOutcomeCallable DeleteRoomCallable(const Model::DeleteRoomRequest& request) const;
 
         /**
-         * <p>Deletes a room by the room ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRoomAsync(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1323,22 +1051,12 @@ namespace Model
         virtual Model::DeleteRoomSkillParameterOutcome DeleteRoomSkillParameter(const Model::DeleteRoomSkillParameterRequest& request) const;
 
         /**
-         * <p>Deletes room skill parameter details by room, skill, and parameter key
-         * ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteRoomSkillParameter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRoomSkillParameterOutcomeCallable DeleteRoomSkillParameterCallable(const Model::DeleteRoomSkillParameterRequest& request) const;
 
         /**
-         * <p>Deletes room skill parameter details by room, skill, and parameter key
-         * ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteRoomSkillParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRoomSkillParameterAsync(const Model::DeleteRoomSkillParameterRequest& request, const DeleteRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1350,20 +1068,12 @@ namespace Model
         virtual Model::DeleteSkillAuthorizationOutcome DeleteSkillAuthorization(const Model::DeleteSkillAuthorizationRequest& request) const;
 
         /**
-         * <p>Unlinks a third-party account from a skill.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteSkillAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSkillAuthorizationOutcomeCallable DeleteSkillAuthorizationCallable(const Model::DeleteSkillAuthorizationRequest& request) const;
 
         /**
-         * <p>Unlinks a third-party account from a skill.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteSkillAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSkillAuthorizationAsync(const Model::DeleteSkillAuthorizationRequest& request, const DeleteSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1375,20 +1085,12 @@ namespace Model
         virtual Model::DeleteSkillGroupOutcome DeleteSkillGroup(const Model::DeleteSkillGroupRequest& request) const;
 
         /**
-         * <p>Deletes a skill group by skill group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteSkillGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSkillGroupOutcomeCallable DeleteSkillGroupCallable(const Model::DeleteSkillGroupRequest& request) const;
 
         /**
-         * <p>Deletes a skill group by skill group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteSkillGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSkillGroupAsync(const Model::DeleteSkillGroupRequest& request, const DeleteSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1401,22 +1103,12 @@ namespace Model
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes a specified user by user ARN and enrollment ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes a specified user by user ARN and enrollment ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1429,22 +1121,12 @@ namespace Model
         virtual Model::DisassociateContactFromAddressBookOutcome DisassociateContactFromAddressBook(const Model::DisassociateContactFromAddressBookRequest& request) const;
 
         /**
-         * <p>Disassociates a contact from a given address book.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateContactFromAddressBook that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateContactFromAddressBookOutcomeCallable DisassociateContactFromAddressBookCallable(const Model::DisassociateContactFromAddressBookRequest& request) const;
 
         /**
-         * <p>Disassociates a contact from a given address book.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateContactFromAddressBook that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateContactFromAddressBookAsync(const Model::DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1459,26 +1141,12 @@ namespace Model
         virtual Model::DisassociateDeviceFromRoomOutcome DisassociateDeviceFromRoom(const Model::DisassociateDeviceFromRoomRequest& request) const;
 
         /**
-         * <p>Disassociates a device from its current room. The device continues to be
-         * connected to the Wi-Fi network and is still registered to the account. The
-         * device settings and skills are removed from the room.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateDeviceFromRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateDeviceFromRoomOutcomeCallable DisassociateDeviceFromRoomCallable(const Model::DisassociateDeviceFromRoomRequest& request) const;
 
         /**
-         * <p>Disassociates a device from its current room. The device continues to be
-         * connected to the Wi-Fi network and is still registered to the account. The
-         * device settings and skills are removed from the room.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateDeviceFromRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateDeviceFromRoomAsync(const Model::DisassociateDeviceFromRoomRequest& request, const DisassociateDeviceFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1490,20 +1158,12 @@ namespace Model
         virtual Model::DisassociateSkillFromSkillGroupOutcome DisassociateSkillFromSkillGroup(const Model::DisassociateSkillFromSkillGroupRequest& request) const;
 
         /**
-         * <p>Disassociates a skill from a skill group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateSkillFromSkillGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateSkillFromSkillGroupOutcomeCallable DisassociateSkillFromSkillGroupCallable(const Model::DisassociateSkillFromSkillGroupRequest& request) const;
 
         /**
-         * <p>Disassociates a skill from a skill group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateSkillFromSkillGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateSkillFromSkillGroupAsync(const Model::DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1516,22 +1176,12 @@ namespace Model
         virtual Model::DisassociateSkillFromUsersOutcome DisassociateSkillFromUsers(const Model::DisassociateSkillFromUsersRequest& request) const;
 
         /**
-         * <p>Makes a private skill unavailable for enrolled users and prevents them from
-         * enabling it on their devices.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateSkillFromUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateSkillFromUsersOutcomeCallable DisassociateSkillFromUsersCallable(const Model::DisassociateSkillFromUsersRequest& request) const;
 
         /**
-         * <p>Makes a private skill unavailable for enrolled users and prevents them from
-         * enabling it on their devices.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateSkillFromUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateSkillFromUsersAsync(const Model::DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1544,22 +1194,12 @@ namespace Model
         virtual Model::DisassociateSkillGroupFromRoomOutcome DisassociateSkillGroupFromRoom(const Model::DisassociateSkillGroupFromRoomRequest& request) const;
 
         /**
-         * <p>Disassociates a skill group from a specified room. This disables all skills
-         * in the skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateSkillGroupFromRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateSkillGroupFromRoomOutcomeCallable DisassociateSkillGroupFromRoomCallable(const Model::DisassociateSkillGroupFromRoomRequest& request) const;
 
         /**
-         * <p>Disassociates a skill group from a specified room. This disables all skills
-         * in the skill group on all devices in the room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateSkillGroupFromRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateSkillGroupFromRoomAsync(const Model::DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1572,22 +1212,12 @@ namespace Model
         virtual Model::ForgetSmartHomeAppliancesOutcome ForgetSmartHomeAppliances(const Model::ForgetSmartHomeAppliancesRequest& request) const;
 
         /**
-         * <p>Forgets smart home appliances associated to a room.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ForgetSmartHomeAppliances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ForgetSmartHomeAppliancesOutcomeCallable ForgetSmartHomeAppliancesCallable(const Model::ForgetSmartHomeAppliancesRequest& request) const;
 
         /**
-         * <p>Forgets smart home appliances associated to a room.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ForgetSmartHomeAppliances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ForgetSmartHomeAppliancesAsync(const Model::ForgetSmartHomeAppliancesRequest& request, const ForgetSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1600,22 +1230,12 @@ namespace Model
         virtual Model::GetAddressBookOutcome GetAddressBook(const Model::GetAddressBookRequest& request) const;
 
         /**
-         * <p>Gets address the book details by the address book ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAddressBook that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAddressBookOutcomeCallable GetAddressBookCallable(const Model::GetAddressBookRequest& request) const;
 
         /**
-         * <p>Gets address the book details by the address book ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAddressBook that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAddressBookAsync(const Model::GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1627,20 +1247,12 @@ namespace Model
         virtual Model::GetConferencePreferenceOutcome GetConferencePreference(const Model::GetConferencePreferenceRequest& request) const;
 
         /**
-         * <p>Retrieves the existing conference preferences.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConferencePreference that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConferencePreferenceOutcomeCallable GetConferencePreferenceCallable(const Model::GetConferencePreferenceRequest& request) const;
 
         /**
-         * <p>Retrieves the existing conference preferences.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConferencePreference that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConferencePreferenceAsync(const Model::GetConferencePreferenceRequest& request, const GetConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1653,22 +1265,12 @@ namespace Model
         virtual Model::GetConferenceProviderOutcome GetConferenceProvider(const Model::GetConferenceProviderRequest& request) const;
 
         /**
-         * <p>Gets details about a specific conference provider.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConferenceProvider that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConferenceProviderOutcomeCallable GetConferenceProviderCallable(const Model::GetConferenceProviderRequest& request) const;
 
         /**
-         * <p>Gets details about a specific conference provider.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConferenceProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConferenceProviderAsync(const Model::GetConferenceProviderRequest& request, const GetConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1680,20 +1282,12 @@ namespace Model
         virtual Model::GetContactOutcome GetContact(const Model::GetContactRequest& request) const;
 
         /**
-         * <p>Gets the contact details by the contact ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetContactOutcomeCallable GetContactCallable(const Model::GetContactRequest& request) const;
 
         /**
-         * <p>Gets the contact details by the contact ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetContactAsync(const Model::GetContactRequest& request, const GetContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1705,20 +1299,12 @@ namespace Model
         virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Gets the details of a device by device ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Gets the details of a device by device ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1730,20 +1316,12 @@ namespace Model
         virtual Model::GetGatewayOutcome GetGateway(const Model::GetGatewayRequest& request) const;
 
         /**
-         * <p>Retrieves the details of a gateway.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetGatewayOutcomeCallable GetGatewayCallable(const Model::GetGatewayRequest& request) const;
 
         /**
-         * <p>Retrieves the details of a gateway.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGatewayAsync(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1755,20 +1333,12 @@ namespace Model
         virtual Model::GetGatewayGroupOutcome GetGatewayGroup(const Model::GetGatewayGroupRequest& request) const;
 
         /**
-         * <p>Retrieves the details of a gateway group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetGatewayGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetGatewayGroupOutcomeCallable GetGatewayGroupCallable(const Model::GetGatewayGroupRequest& request) const;
 
         /**
-         * <p>Retrieves the details of a gateway group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetGatewayGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGatewayGroupAsync(const Model::GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1781,22 +1351,12 @@ namespace Model
         virtual Model::GetInvitationConfigurationOutcome GetInvitationConfiguration(const Model::GetInvitationConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the configured values for the user enrollment invitation email
-         * template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetInvitationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInvitationConfigurationOutcomeCallable GetInvitationConfigurationCallable(const Model::GetInvitationConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the configured values for the user enrollment invitation email
-         * template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetInvitationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInvitationConfigurationAsync(const Model::GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1809,22 +1369,12 @@ namespace Model
         virtual Model::GetNetworkProfileOutcome GetNetworkProfile(const Model::GetNetworkProfileRequest& request) const;
 
         /**
-         * <p>Gets the network profile details by the network profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetNetworkProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetNetworkProfileOutcomeCallable GetNetworkProfileCallable(const Model::GetNetworkProfileRequest& request) const;
 
         /**
-         * <p>Gets the network profile details by the network profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetNetworkProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetNetworkProfileAsync(const Model::GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1837,22 +1387,12 @@ namespace Model
         virtual Model::GetProfileOutcome GetProfile(const Model::GetProfileRequest& request) const;
 
         /**
-         * <p>Gets the details of a room profile by profile ARN.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetProfileOutcomeCallable GetProfileCallable(const Model::GetProfileRequest& request) const;
 
         /**
-         * <p>Gets the details of a room profile by profile ARN.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetProfileAsync(const Model::GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1864,20 +1404,12 @@ namespace Model
         virtual Model::GetRoomOutcome GetRoom(const Model::GetRoomRequest& request) const;
 
         /**
-         * <p>Gets room details by room ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRoomOutcomeCallable GetRoomCallable(const Model::GetRoomRequest& request) const;
 
         /**
-         * <p>Gets room details by room ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRoomAsync(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1890,22 +1422,12 @@ namespace Model
         virtual Model::GetRoomSkillParameterOutcome GetRoomSkillParameter(const Model::GetRoomSkillParameterRequest& request) const;
 
         /**
-         * <p>Gets room skill parameter details by room, skill, and parameter key
-         * ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRoomSkillParameter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRoomSkillParameterOutcomeCallable GetRoomSkillParameterCallable(const Model::GetRoomSkillParameterRequest& request) const;
 
         /**
-         * <p>Gets room skill parameter details by room, skill, and parameter key
-         * ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRoomSkillParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRoomSkillParameterAsync(const Model::GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1917,20 +1439,12 @@ namespace Model
         virtual Model::GetSkillGroupOutcome GetSkillGroup(const Model::GetSkillGroupRequest& request) const;
 
         /**
-         * <p>Gets skill group details by skill group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetSkillGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSkillGroupOutcomeCallable GetSkillGroupCallable(const Model::GetSkillGroupRequest& request) const;
 
         /**
-         * <p>Gets skill group details by skill group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetSkillGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSkillGroupAsync(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1945,26 +1459,12 @@ namespace Model
         virtual Model::ListBusinessReportSchedulesOutcome ListBusinessReportSchedules(const Model::ListBusinessReportSchedulesRequest& request) const;
 
         /**
-         * <p>Lists the details of the schedules that a user configured. A download URL of
-         * the report associated with each schedule is returned every time this action is
-         * called. A new download URL is returned each time, and is valid for 24
-         * hours.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListBusinessReportSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListBusinessReportSchedulesOutcomeCallable ListBusinessReportSchedulesCallable(const Model::ListBusinessReportSchedulesRequest& request) const;
 
         /**
-         * <p>Lists the details of the schedules that a user configured. A download URL of
-         * the report associated with each schedule is returned every time this action is
-         * called. A new download URL is returned each time, and is valid for 24
-         * hours.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListBusinessReportSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBusinessReportSchedulesAsync(const Model::ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1977,22 +1477,12 @@ namespace Model
         virtual Model::ListConferenceProvidersOutcome ListConferenceProviders(const Model::ListConferenceProvidersRequest& request) const;
 
         /**
-         * <p>Lists conference providers under a specific AWS account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConferenceProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConferenceProvidersOutcomeCallable ListConferenceProvidersCallable(const Model::ListConferenceProvidersRequest& request) const;
 
         /**
-         * <p>Lists conference providers under a specific AWS account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConferenceProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConferenceProvidersAsync(const Model::ListConferenceProvidersRequest& request, const ListConferenceProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2005,22 +1495,12 @@ namespace Model
         virtual Model::ListDeviceEventsOutcome ListDeviceEvents(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Lists the device event history, including device connection status, for up to
-         * 30 days.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeviceEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeviceEventsOutcomeCallable ListDeviceEventsCallable(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Lists the device event history, including device connection status, for up to
-         * 30 days.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeviceEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeviceEventsAsync(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2033,22 +1513,12 @@ namespace Model
         virtual Model::ListGatewayGroupsOutcome ListGatewayGroups(const Model::ListGatewayGroupsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve
-         * details of a specific gateway group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListGatewayGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGatewayGroupsOutcomeCallable ListGatewayGroupsCallable(const Model::ListGatewayGroupsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve
-         * details of a specific gateway group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListGatewayGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGatewayGroupsAsync(const Model::ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2063,26 +1533,12 @@ namespace Model
         virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
 
         /**
-         * <p>Retrieves a list of gateway summaries. Use GetGateway to retrieve details of
-         * a specific gateway. An optional gateway group ARN can be provided to only
-         * retrieve gateway summaries of gateways that are associated with that gateway
-         * group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const Model::ListGatewaysRequest& request) const;
 
         /**
-         * <p>Retrieves a list of gateway summaries. Use GetGateway to retrieve details of
-         * a specific gateway. An optional gateway group ARN can be provided to only
-         * retrieve gateway summaries of gateways that are associated with that gateway
-         * group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGatewaysAsync(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2095,22 +1551,12 @@ namespace Model
         virtual Model::ListSkillsOutcome ListSkills(const Model::ListSkillsRequest& request) const;
 
         /**
-         * <p>Lists all enabled skills in a specific skill group.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSkills that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSkillsOutcomeCallable ListSkillsCallable(const Model::ListSkillsRequest& request) const;
 
         /**
-         * <p>Lists all enabled skills in a specific skill group.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSkills that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSkillsAsync(const Model::ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2122,20 +1568,12 @@ namespace Model
         virtual Model::ListSkillsStoreCategoriesOutcome ListSkillsStoreCategories(const Model::ListSkillsStoreCategoriesRequest& request) const;
 
         /**
-         * <p>Lists all categories in the Alexa skill store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSkillsStoreCategories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSkillsStoreCategoriesOutcomeCallable ListSkillsStoreCategoriesCallable(const Model::ListSkillsStoreCategoriesRequest& request) const;
 
         /**
-         * <p>Lists all categories in the Alexa skill store.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSkillsStoreCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSkillsStoreCategoriesAsync(const Model::ListSkillsStoreCategoriesRequest& request, const ListSkillsStoreCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2148,22 +1586,12 @@ namespace Model
         virtual Model::ListSkillsStoreSkillsByCategoryOutcome ListSkillsStoreSkillsByCategory(const Model::ListSkillsStoreSkillsByCategoryRequest& request) const;
 
         /**
-         * <p>Lists all skills in the Alexa skill store by category.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSkillsStoreSkillsByCategory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSkillsStoreSkillsByCategoryOutcomeCallable ListSkillsStoreSkillsByCategoryCallable(const Model::ListSkillsStoreSkillsByCategoryRequest& request) const;
 
         /**
-         * <p>Lists all skills in the Alexa skill store by category.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSkillsStoreSkillsByCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSkillsStoreSkillsByCategoryAsync(const Model::ListSkillsStoreSkillsByCategoryRequest& request, const ListSkillsStoreSkillsByCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2176,22 +1604,12 @@ namespace Model
         virtual Model::ListSmartHomeAppliancesOutcome ListSmartHomeAppliances(const Model::ListSmartHomeAppliancesRequest& request) const;
 
         /**
-         * <p>Lists all of the smart home appliances associated with a room.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSmartHomeAppliances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSmartHomeAppliancesOutcomeCallable ListSmartHomeAppliancesCallable(const Model::ListSmartHomeAppliancesRequest& request) const;
 
         /**
-         * <p>Lists all of the smart home appliances associated with a room.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSmartHomeAppliances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSmartHomeAppliancesAsync(const Model::ListSmartHomeAppliancesRequest& request, const ListSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2203,20 +1621,12 @@ namespace Model
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists all tags for the specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists all tags for the specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2229,22 +1639,12 @@ namespace Model
         virtual Model::PutConferencePreferenceOutcome PutConferencePreference(const Model::PutConferencePreferenceRequest& request) const;
 
         /**
-         * <p>Sets the conference preferences on a specific conference provider at the
-         * account level.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutConferencePreference that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutConferencePreferenceOutcomeCallable PutConferencePreferenceCallable(const Model::PutConferencePreferenceRequest& request) const;
 
         /**
-         * <p>Sets the conference preferences on a specific conference provider at the
-         * account level.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutConferencePreference that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutConferencePreferenceAsync(const Model::PutConferencePreferenceRequest& request, const PutConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2257,22 +1657,12 @@ namespace Model
         virtual Model::PutInvitationConfigurationOutcome PutInvitationConfiguration(const Model::PutInvitationConfigurationRequest& request) const;
 
         /**
-         * <p>Configures the email template for the user enrollment invitation with the
-         * specified attributes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutInvitationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutInvitationConfigurationOutcomeCallable PutInvitationConfigurationCallable(const Model::PutInvitationConfigurationRequest& request) const;
 
         /**
-         * <p>Configures the email template for the user enrollment invitation with the
-         * specified attributes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutInvitationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutInvitationConfigurationAsync(const Model::PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2285,22 +1675,12 @@ namespace Model
         virtual Model::PutRoomSkillParameterOutcome PutRoomSkillParameter(const Model::PutRoomSkillParameterRequest& request) const;
 
         /**
-         * <p>Updates room skill parameter details by room, skill, and parameter key ID.
-         * Not all skills have a room skill parameter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutRoomSkillParameter that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutRoomSkillParameterOutcomeCallable PutRoomSkillParameterCallable(const Model::PutRoomSkillParameterRequest& request) const;
 
         /**
-         * <p>Updates room skill parameter details by room, skill, and parameter key ID.
-         * Not all skills have a room skill parameter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutRoomSkillParameter that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRoomSkillParameterAsync(const Model::PutRoomSkillParameterRequest& request, const PutRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2315,26 +1695,12 @@ namespace Model
         virtual Model::PutSkillAuthorizationOutcome PutSkillAuthorization(const Model::PutSkillAuthorizationRequest& request) const;
 
         /**
-         * <p>Links a user's account to a third-party skill provider. If this API operation
-         * is called by an assumed IAM role, the skill being linked must be a private
-         * skill. Also, the skill must be owned by the AWS account that assumed the IAM
-         * role.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutSkillAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutSkillAuthorizationOutcomeCallable PutSkillAuthorizationCallable(const Model::PutSkillAuthorizationRequest& request) const;
 
         /**
-         * <p>Links a user's account to a third-party skill provider. If this API operation
-         * is called by an assumed IAM role, the skill being linked must be a private
-         * skill. Also, the skill must be owned by the AWS account that assumed the IAM
-         * role.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutSkillAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutSkillAuthorizationAsync(const Model::PutSkillAuthorizationRequest& request, const PutSkillAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2347,22 +1713,12 @@ namespace Model
         virtual Model::RegisterAVSDeviceOutcome RegisterAVSDevice(const Model::RegisterAVSDeviceRequest& request) const;
 
         /**
-         * <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer
-         * (OEM) using Alexa Voice Service (AVS).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RegisterAVSDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RegisterAVSDeviceOutcomeCallable RegisterAVSDeviceCallable(const Model::RegisterAVSDeviceRequest& request) const;
 
         /**
-         * <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer
-         * (OEM) using Alexa Voice Service (AVS).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RegisterAVSDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterAVSDeviceAsync(const Model::RegisterAVSDeviceRequest& request, const RegisterAVSDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2377,54 +1733,36 @@ namespace Model
         virtual Model::RejectSkillOutcome RejectSkill(const Model::RejectSkillRequest& request) const;
 
         /**
-         * <p>Disassociates a skill from the organization under a user's AWS account. If
-         * the skill is a private skill, it moves to an AcceptStatus of PENDING. Any
-         * private or public skill that is rejected can be added later by calling the
-         * ApproveSkill API. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RejectSkill that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RejectSkillOutcomeCallable RejectSkillCallable(const Model::RejectSkillRequest& request) const;
 
         /**
-         * <p>Disassociates a skill from the organization under a user's AWS account. If
-         * the skill is a private skill, it moves to an AcceptStatus of PENDING. Any
-         * private or public skill that is rejected can be added later by calling the
-         * ApproveSkill API. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RejectSkill that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RejectSkillAsync(const Model::RejectSkillRequest& request, const RejectSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Determines the details for the room from which a skill request was invoked.
-         * This operation is used by skill developers.</p><p><h3>See Also:</h3>   <a
+         * This operation is used by skill developers.</p> <p>To query ResolveRoom from an
+         * Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+         * Lambda function, the skill is automatically authorized when you publish your
+         * skill as a private skill to your AWS account. Skills that are hosted using a
+         * custom web service must be manually authorized. To get your skill authorized,
+         * contact AWS Support with your AWS account ID that queries the ResolveRoom API
+         * and skill ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">AWS
          * API Reference</a></p>
          */
         virtual Model::ResolveRoomOutcome ResolveRoom(const Model::ResolveRoomRequest& request) const;
 
         /**
-         * <p>Determines the details for the room from which a skill request was invoked.
-         * This operation is used by skill developers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ResolveRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResolveRoomOutcomeCallable ResolveRoomCallable(const Model::ResolveRoomRequest& request) const;
 
         /**
-         * <p>Determines the details for the room from which a skill request was invoked.
-         * This operation is used by skill developers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ResolveRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResolveRoomAsync(const Model::ResolveRoomRequest& request, const ResolveRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2437,22 +1775,12 @@ namespace Model
         virtual Model::RevokeInvitationOutcome RevokeInvitation(const Model::RevokeInvitationRequest& request) const;
 
         /**
-         * <p>Revokes an invitation and invalidates the enrollment URL.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RevokeInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RevokeInvitationOutcomeCallable RevokeInvitationCallable(const Model::RevokeInvitationRequest& request) const;
 
         /**
-         * <p>Revokes an invitation and invalidates the enrollment URL.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RevokeInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RevokeInvitationAsync(const Model::RevokeInvitationRequest& request, const RevokeInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2465,22 +1793,12 @@ namespace Model
         virtual Model::SearchAddressBooksOutcome SearchAddressBooks(const Model::SearchAddressBooksRequest& request) const;
 
         /**
-         * <p>Searches address books and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchAddressBooks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchAddressBooksOutcomeCallable SearchAddressBooksCallable(const Model::SearchAddressBooksRequest& request) const;
 
         /**
-         * <p>Searches address books and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchAddressBooks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchAddressBooksAsync(const Model::SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2493,22 +1811,12 @@ namespace Model
         virtual Model::SearchContactsOutcome SearchContacts(const Model::SearchContactsRequest& request) const;
 
         /**
-         * <p>Searches contacts and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchContacts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchContactsOutcomeCallable SearchContactsCallable(const Model::SearchContactsRequest& request) const;
 
         /**
-         * <p>Searches contacts and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchContacts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchContactsAsync(const Model::SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2521,22 +1829,12 @@ namespace Model
         virtual Model::SearchDevicesOutcome SearchDevices(const Model::SearchDevicesRequest& request) const;
 
         /**
-         * <p>Searches devices and lists the ones that meet a set of filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchDevicesOutcomeCallable SearchDevicesCallable(const Model::SearchDevicesRequest& request) const;
 
         /**
-         * <p>Searches devices and lists the ones that meet a set of filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchDevicesAsync(const Model::SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2549,22 +1847,12 @@ namespace Model
         virtual Model::SearchNetworkProfilesOutcome SearchNetworkProfiles(const Model::SearchNetworkProfilesRequest& request) const;
 
         /**
-         * <p>Searches network profiles and lists the ones that meet a set of filter and
-         * sort criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchNetworkProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchNetworkProfilesOutcomeCallable SearchNetworkProfilesCallable(const Model::SearchNetworkProfilesRequest& request) const;
 
         /**
-         * <p>Searches network profiles and lists the ones that meet a set of filter and
-         * sort criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchNetworkProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchNetworkProfilesAsync(const Model::SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2577,22 +1865,12 @@ namespace Model
         virtual Model::SearchProfilesOutcome SearchProfiles(const Model::SearchProfilesRequest& request) const;
 
         /**
-         * <p>Searches room profiles and lists the ones that meet a set of filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchProfilesOutcomeCallable SearchProfilesCallable(const Model::SearchProfilesRequest& request) const;
 
         /**
-         * <p>Searches room profiles and lists the ones that meet a set of filter
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchProfilesAsync(const Model::SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2605,22 +1883,12 @@ namespace Model
         virtual Model::SearchRoomsOutcome SearchRooms(const Model::SearchRoomsRequest& request) const;
 
         /**
-         * <p>Searches rooms and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchRooms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchRoomsOutcomeCallable SearchRoomsCallable(const Model::SearchRoomsRequest& request) const;
 
         /**
-         * <p>Searches rooms and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchRooms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchRoomsAsync(const Model::SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2633,22 +1901,12 @@ namespace Model
         virtual Model::SearchSkillGroupsOutcome SearchSkillGroups(const Model::SearchSkillGroupsRequest& request) const;
 
         /**
-         * <p>Searches skill groups and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchSkillGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchSkillGroupsOutcomeCallable SearchSkillGroupsCallable(const Model::SearchSkillGroupsRequest& request) const;
 
         /**
-         * <p>Searches skill groups and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchSkillGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchSkillGroupsAsync(const Model::SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2661,22 +1919,12 @@ namespace Model
         virtual Model::SearchUsersOutcome SearchUsers(const Model::SearchUsersRequest& request) const;
 
         /**
-         * <p>Searches users and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchUsersOutcomeCallable SearchUsersCallable(const Model::SearchUsersRequest& request) const;
 
         /**
-         * <p>Searches users and lists the ones that meet a set of filter and sort
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchUsersAsync(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2689,22 +1937,12 @@ namespace Model
         virtual Model::SendAnnouncementOutcome SendAnnouncement(const Model::SendAnnouncementRequest& request) const;
 
         /**
-         * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
-         * rooms that are identified by a search or filter. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendAnnouncement that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendAnnouncementOutcomeCallable SendAnnouncementCallable(const Model::SendAnnouncementRequest& request) const;
 
         /**
-         * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
-         * rooms that are identified by a search or filter. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendAnnouncement that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendAnnouncementAsync(const Model::SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2718,24 +1956,12 @@ namespace Model
         virtual Model::SendInvitationOutcome SendInvitation(const Model::SendInvitationRequest& request) const;
 
         /**
-         * <p>Sends an enrollment invitation email with a URL to a user. The URL is valid
-         * for 30 days or until you call this operation again, whichever comes first.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SendInvitation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendInvitationOutcomeCallable SendInvitationCallable(const Model::SendInvitationRequest& request) const;
 
         /**
-         * <p>Sends an enrollment invitation email with a URL to a user. The URL is valid
-         * for 30 days or until you call this operation again, whichever comes first.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SendInvitation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendInvitationAsync(const Model::SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2756,38 +1982,12 @@ namespace Model
         virtual Model::StartDeviceSyncOutcome StartDeviceSync(const Model::StartDeviceSyncRequest& request) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings. This clears
-         * all information and settings set by previous users in the following ways:</p>
-         * <ul> <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your
-         * echo device.</p> </li> <li> <p>Volume - This resets the echo device's volume to
-         * the default value.</p> </li> <li> <p>Notifications - This clears all
-         * notifications from your echo device.</p> </li> <li> <p>Lists - This clears all
-         * to-do items from your echo device.</p> </li> <li> <p>Settings - This internally
-         * syncs the room's profile (if the device is assigned to a room), contacts,
-         * address books, delegation access for account linking, and communications (if
-         * enabled on the room profile).</p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartDeviceSync that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartDeviceSyncOutcomeCallable StartDeviceSyncCallable(const Model::StartDeviceSyncRequest& request) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings. This clears
-         * all information and settings set by previous users in the following ways:</p>
-         * <ul> <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your
-         * echo device.</p> </li> <li> <p>Volume - This resets the echo device's volume to
-         * the default value.</p> </li> <li> <p>Notifications - This clears all
-         * notifications from your echo device.</p> </li> <li> <p>Lists - This clears all
-         * to-do items from your echo device.</p> </li> <li> <p>Settings - This internally
-         * syncs the room's profile (if the device is assigned to a room), contacts,
-         * address books, delegation access for account linking, and communications (if
-         * enabled on the room profile).</p> </li> </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartDeviceSync that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartDeviceSyncAsync(const Model::StartDeviceSyncRequest& request, const StartDeviceSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2800,22 +2000,12 @@ namespace Model
         virtual Model::StartSmartHomeApplianceDiscoveryOutcome StartSmartHomeApplianceDiscovery(const Model::StartSmartHomeApplianceDiscoveryRequest& request) const;
 
         /**
-         * <p>Initiates the discovery of any smart home appliances associated with the
-         * room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartSmartHomeApplianceDiscovery that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartSmartHomeApplianceDiscoveryOutcomeCallable StartSmartHomeApplianceDiscoveryCallable(const Model::StartSmartHomeApplianceDiscoveryRequest& request) const;
 
         /**
-         * <p>Initiates the discovery of any smart home appliances associated with the
-         * room.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartSmartHomeApplianceDiscovery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartSmartHomeApplianceDiscoveryAsync(const Model::StartSmartHomeApplianceDiscoveryRequest& request, const StartSmartHomeApplianceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2827,20 +2017,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds metadata tags to a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds metadata tags to a specified resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2853,22 +2035,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes metadata tags from a specified resource.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes metadata tags from a specified resource.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2881,22 +2053,12 @@ namespace Model
         virtual Model::UpdateAddressBookOutcome UpdateAddressBook(const Model::UpdateAddressBookRequest& request) const;
 
         /**
-         * <p>Updates address book details by the address book ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAddressBook that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAddressBookOutcomeCallable UpdateAddressBookCallable(const Model::UpdateAddressBookRequest& request) const;
 
         /**
-         * <p>Updates address book details by the address book ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAddressBook that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAddressBookAsync(const Model::UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2909,22 +2071,12 @@ namespace Model
         virtual Model::UpdateBusinessReportScheduleOutcome UpdateBusinessReportSchedule(const Model::UpdateBusinessReportScheduleRequest& request) const;
 
         /**
-         * <p>Updates the configuration of the report delivery schedule with the specified
-         * schedule ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateBusinessReportSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateBusinessReportScheduleOutcomeCallable UpdateBusinessReportScheduleCallable(const Model::UpdateBusinessReportScheduleRequest& request) const;
 
         /**
-         * <p>Updates the configuration of the report delivery schedule with the specified
-         * schedule ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateBusinessReportSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBusinessReportScheduleAsync(const Model::UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2937,22 +2089,12 @@ namespace Model
         virtual Model::UpdateConferenceProviderOutcome UpdateConferenceProvider(const Model::UpdateConferenceProviderRequest& request) const;
 
         /**
-         * <p>Updates an existing conference provider's settings.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateConferenceProvider that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConferenceProviderOutcomeCallable UpdateConferenceProviderCallable(const Model::UpdateConferenceProviderRequest& request) const;
 
         /**
-         * <p>Updates an existing conference provider's settings.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateConferenceProvider that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConferenceProviderAsync(const Model::UpdateConferenceProviderRequest& request, const UpdateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2964,20 +2106,12 @@ namespace Model
         virtual Model::UpdateContactOutcome UpdateContact(const Model::UpdateContactRequest& request) const;
 
         /**
-         * <p>Updates the contact details by the contact ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateContact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateContactOutcomeCallable UpdateContactCallable(const Model::UpdateContactRequest& request) const;
 
         /**
-         * <p>Updates the contact details by the contact ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateContactAsync(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2989,20 +2123,12 @@ namespace Model
         virtual Model::UpdateDeviceOutcome UpdateDevice(const Model::UpdateDeviceRequest& request) const;
 
         /**
-         * <p>Updates the device name by device ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeviceOutcomeCallable UpdateDeviceCallable(const Model::UpdateDeviceRequest& request) const;
 
         /**
-         * <p>Updates the device name by device ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDeviceAsync(const Model::UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3015,22 +2141,12 @@ namespace Model
         virtual Model::UpdateGatewayOutcome UpdateGateway(const Model::UpdateGatewayRequest& request) const;
 
         /**
-         * <p>Updates the details of a gateway. If any optional field is not provided, the
-         * existing corresponding value is left unmodified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateGateway that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateGatewayOutcomeCallable UpdateGatewayCallable(const Model::UpdateGatewayRequest& request) const;
 
         /**
-         * <p>Updates the details of a gateway. If any optional field is not provided, the
-         * existing corresponding value is left unmodified.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateGatewayAsync(const Model::UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3044,24 +2160,12 @@ namespace Model
         virtual Model::UpdateGatewayGroupOutcome UpdateGatewayGroup(const Model::UpdateGatewayGroupRequest& request) const;
 
         /**
-         * <p>Updates the details of a gateway group. If any optional field is not
-         * provided, the existing corresponding value is left unmodified.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateGatewayGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateGatewayGroupOutcomeCallable UpdateGatewayGroupCallable(const Model::UpdateGatewayGroupRequest& request) const;
 
         /**
-         * <p>Updates the details of a gateway group. If any optional field is not
-         * provided, the existing corresponding value is left unmodified.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateGatewayGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateGatewayGroupAsync(const Model::UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3074,22 +2178,12 @@ namespace Model
         virtual Model::UpdateNetworkProfileOutcome UpdateNetworkProfile(const Model::UpdateNetworkProfileRequest& request) const;
 
         /**
-         * <p>Updates a network profile by the network profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateNetworkProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateNetworkProfileOutcomeCallable UpdateNetworkProfileCallable(const Model::UpdateNetworkProfileRequest& request) const;
 
         /**
-         * <p>Updates a network profile by the network profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateNetworkProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateNetworkProfileAsync(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3102,22 +2196,12 @@ namespace Model
         virtual Model::UpdateProfileOutcome UpdateProfile(const Model::UpdateProfileRequest& request) const;
 
         /**
-         * <p>Updates an existing room profile by room profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProfileOutcomeCallable UpdateProfileCallable(const Model::UpdateProfileRequest& request) const;
 
         /**
-         * <p>Updates an existing room profile by room profile ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProfileAsync(const Model::UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3129,20 +2213,12 @@ namespace Model
         virtual Model::UpdateRoomOutcome UpdateRoom(const Model::UpdateRoomRequest& request) const;
 
         /**
-         * <p>Updates room details by room ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateRoomOutcomeCallable UpdateRoomCallable(const Model::UpdateRoomRequest& request) const;
 
         /**
-         * <p>Updates room details by room ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRoomAsync(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3154,20 +2230,12 @@ namespace Model
         virtual Model::UpdateSkillGroupOutcome UpdateSkillGroup(const Model::UpdateSkillGroupRequest& request) const;
 
         /**
-         * <p>Updates skill group details by skill group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateSkillGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSkillGroupOutcomeCallable UpdateSkillGroupCallable(const Model::UpdateSkillGroupRequest& request) const;
 
         /**
-         * <p>Updates skill group details by skill group ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateSkillGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSkillGroupAsync(const Model::UpdateSkillGroupRequest& request, const UpdateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

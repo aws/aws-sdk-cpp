@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Metadata.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Mode.h>
+#include <aws/mediaconvert/model/DolbyVisionMapping.h>
 #include <aws/mediaconvert/model/DolbyVisionProfile.h>
 #include <utility>
 
@@ -36,7 +27,8 @@ namespace Model
 {
 
   /**
-   * Settings for Dolby Vision<p><h3>See Also:</h3>   <a
+   * With AWS Elemental MediaConvert, you can create profile 5 or 8.1 Dolby Vision
+   * outputs from MXF and IMF sources.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVision">AWS
    * API Reference</a></p>
    */
@@ -124,44 +116,129 @@ namespace Model
 
 
     /**
-     * In the current MediaConvert implementation, the Dolby Vision profile is always 5
-     * (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame
-     * interleaved data.
+     * Required when you set Dolby Vision Profile to Profile 8.1. When you set Content
+     * mapping to None, content mapping is not applied to the HDR10-compatible signal.
+     * Depending on the source peak nit level, clipping might occur on HDR devices
+     * without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder
+     * creates a 1,000 nits peak HDR10-compatible signal by applying static content
+     * mapping to the source. This mode is speed-optimized for PQ10 sources with
+     * metadata that is created from analysis. For graded Dolby Vision content, be
+     * aware that creative intent might not be guaranteed with extreme 1,000 nits
+     * trims.
+     */
+    inline const DolbyVisionMapping& GetMapping() const{ return m_mapping; }
+
+    /**
+     * Required when you set Dolby Vision Profile to Profile 8.1. When you set Content
+     * mapping to None, content mapping is not applied to the HDR10-compatible signal.
+     * Depending on the source peak nit level, clipping might occur on HDR devices
+     * without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder
+     * creates a 1,000 nits peak HDR10-compatible signal by applying static content
+     * mapping to the source. This mode is speed-optimized for PQ10 sources with
+     * metadata that is created from analysis. For graded Dolby Vision content, be
+     * aware that creative intent might not be guaranteed with extreme 1,000 nits
+     * trims.
+     */
+    inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
+
+    /**
+     * Required when you set Dolby Vision Profile to Profile 8.1. When you set Content
+     * mapping to None, content mapping is not applied to the HDR10-compatible signal.
+     * Depending on the source peak nit level, clipping might occur on HDR devices
+     * without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder
+     * creates a 1,000 nits peak HDR10-compatible signal by applying static content
+     * mapping to the source. This mode is speed-optimized for PQ10 sources with
+     * metadata that is created from analysis. For graded Dolby Vision content, be
+     * aware that creative intent might not be guaranteed with extreme 1,000 nits
+     * trims.
+     */
+    inline void SetMapping(const DolbyVisionMapping& value) { m_mappingHasBeenSet = true; m_mapping = value; }
+
+    /**
+     * Required when you set Dolby Vision Profile to Profile 8.1. When you set Content
+     * mapping to None, content mapping is not applied to the HDR10-compatible signal.
+     * Depending on the source peak nit level, clipping might occur on HDR devices
+     * without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder
+     * creates a 1,000 nits peak HDR10-compatible signal by applying static content
+     * mapping to the source. This mode is speed-optimized for PQ10 sources with
+     * metadata that is created from analysis. For graded Dolby Vision content, be
+     * aware that creative intent might not be guaranteed with extreme 1,000 nits
+     * trims.
+     */
+    inline void SetMapping(DolbyVisionMapping&& value) { m_mappingHasBeenSet = true; m_mapping = std::move(value); }
+
+    /**
+     * Required when you set Dolby Vision Profile to Profile 8.1. When you set Content
+     * mapping to None, content mapping is not applied to the HDR10-compatible signal.
+     * Depending on the source peak nit level, clipping might occur on HDR devices
+     * without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder
+     * creates a 1,000 nits peak HDR10-compatible signal by applying static content
+     * mapping to the source. This mode is speed-optimized for PQ10 sources with
+     * metadata that is created from analysis. For graded Dolby Vision content, be
+     * aware that creative intent might not be guaranteed with extreme 1,000 nits
+     * trims.
+     */
+    inline DolbyVision& WithMapping(const DolbyVisionMapping& value) { SetMapping(value); return *this;}
+
+    /**
+     * Required when you set Dolby Vision Profile to Profile 8.1. When you set Content
+     * mapping to None, content mapping is not applied to the HDR10-compatible signal.
+     * Depending on the source peak nit level, clipping might occur on HDR devices
+     * without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder
+     * creates a 1,000 nits peak HDR10-compatible signal by applying static content
+     * mapping to the source. This mode is speed-optimized for PQ10 sources with
+     * metadata that is created from analysis. For graded Dolby Vision content, be
+     * aware that creative intent might not be guaranteed with extreme 1,000 nits
+     * trims.
+     */
+    inline DolbyVision& WithMapping(DolbyVisionMapping&& value) { SetMapping(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
+     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
+     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
+     * metadata in your output.
      */
     inline const DolbyVisionProfile& GetProfile() const{ return m_profile; }
 
     /**
-     * In the current MediaConvert implementation, the Dolby Vision profile is always 5
-     * (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame
-     * interleaved data.
+     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
+     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
+     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
+     * metadata in your output.
      */
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
 
     /**
-     * In the current MediaConvert implementation, the Dolby Vision profile is always 5
-     * (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame
-     * interleaved data.
+     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
+     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
+     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
+     * metadata in your output.
      */
     inline void SetProfile(const DolbyVisionProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
-     * In the current MediaConvert implementation, the Dolby Vision profile is always 5
-     * (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame
-     * interleaved data.
+     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
+     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
+     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
+     * metadata in your output.
      */
     inline void SetProfile(DolbyVisionProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
 
     /**
-     * In the current MediaConvert implementation, the Dolby Vision profile is always 5
-     * (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame
-     * interleaved data.
+     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
+     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
+     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
+     * metadata in your output.
      */
     inline DolbyVision& WithProfile(const DolbyVisionProfile& value) { SetProfile(value); return *this;}
 
     /**
-     * In the current MediaConvert implementation, the Dolby Vision profile is always 5
-     * (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame
-     * interleaved data.
+     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
+     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
+     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
+     * metadata in your output.
      */
     inline DolbyVision& WithProfile(DolbyVisionProfile&& value) { SetProfile(std::move(value)); return *this;}
 
@@ -172,6 +249,9 @@ namespace Model
 
     DolbyVisionLevel6Mode m_l6Mode;
     bool m_l6ModeHasBeenSet;
+
+    DolbyVisionMapping m_mapping;
+    bool m_mappingHasBeenSet;
 
     DolbyVisionProfile m_profile;
     bool m_profileHasBeenSet;

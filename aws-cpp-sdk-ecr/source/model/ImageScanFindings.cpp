@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecr/model/ImageScanFindings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,16 +21,18 @@ namespace Model
 ImageScanFindings::ImageScanFindings() : 
     m_imageScanCompletedAtHasBeenSet(false),
     m_vulnerabilitySourceUpdatedAtHasBeenSet(false),
+    m_findingSeverityCountsHasBeenSet(false),
     m_findingsHasBeenSet(false),
-    m_findingSeverityCountsHasBeenSet(false)
+    m_enhancedFindingsHasBeenSet(false)
 {
 }
 
 ImageScanFindings::ImageScanFindings(JsonView jsonValue) : 
     m_imageScanCompletedAtHasBeenSet(false),
     m_vulnerabilitySourceUpdatedAtHasBeenSet(false),
+    m_findingSeverityCountsHasBeenSet(false),
     m_findingsHasBeenSet(false),
-    m_findingSeverityCountsHasBeenSet(false)
+    m_enhancedFindingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +53,16 @@ ImageScanFindings& ImageScanFindings::operator =(JsonView jsonValue)
     m_vulnerabilitySourceUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("findingSeverityCounts"))
+  {
+    Aws::Map<Aws::String, JsonView> findingSeverityCountsJsonMap = jsonValue.GetObject("findingSeverityCounts").GetAllObjects();
+    for(auto& findingSeverityCountsItem : findingSeverityCountsJsonMap)
+    {
+      m_findingSeverityCounts[FindingSeverityMapper::GetFindingSeverityForName(findingSeverityCountsItem.first)] = findingSeverityCountsItem.second.AsInteger();
+    }
+    m_findingSeverityCountsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("findings"))
   {
     Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
@@ -71,14 +73,14 @@ ImageScanFindings& ImageScanFindings::operator =(JsonView jsonValue)
     m_findingsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("findingSeverityCounts"))
+  if(jsonValue.ValueExists("enhancedFindings"))
   {
-    Aws::Map<Aws::String, JsonView> findingSeverityCountsJsonMap = jsonValue.GetObject("findingSeverityCounts").GetAllObjects();
-    for(auto& findingSeverityCountsItem : findingSeverityCountsJsonMap)
+    Array<JsonView> enhancedFindingsJsonList = jsonValue.GetArray("enhancedFindings");
+    for(unsigned enhancedFindingsIndex = 0; enhancedFindingsIndex < enhancedFindingsJsonList.GetLength(); ++enhancedFindingsIndex)
     {
-      m_findingSeverityCounts[FindingSeverityMapper::GetFindingSeverityForName(findingSeverityCountsItem.first)] = findingSeverityCountsItem.second.AsInteger();
+      m_enhancedFindings.push_back(enhancedFindingsJsonList[enhancedFindingsIndex].AsObject());
     }
-    m_findingSeverityCountsHasBeenSet = true;
+    m_enhancedFindingsHasBeenSet = true;
   }
 
   return *this;
@@ -98,6 +100,17 @@ JsonValue ImageScanFindings::Jsonize() const
    payload.WithDouble("vulnerabilitySourceUpdatedAt", m_vulnerabilitySourceUpdatedAt.SecondsWithMSPrecision());
   }
 
+  if(m_findingSeverityCountsHasBeenSet)
+  {
+   JsonValue findingSeverityCountsJsonMap;
+   for(auto& findingSeverityCountsItem : m_findingSeverityCounts)
+   {
+     findingSeverityCountsJsonMap.WithInteger(FindingSeverityMapper::GetNameForFindingSeverity(findingSeverityCountsItem.first), findingSeverityCountsItem.second);
+   }
+   payload.WithObject("findingSeverityCounts", std::move(findingSeverityCountsJsonMap));
+
+  }
+
   if(m_findingsHasBeenSet)
   {
    Array<JsonValue> findingsJsonList(m_findings.size());
@@ -109,14 +122,14 @@ JsonValue ImageScanFindings::Jsonize() const
 
   }
 
-  if(m_findingSeverityCountsHasBeenSet)
+  if(m_enhancedFindingsHasBeenSet)
   {
-   JsonValue findingSeverityCountsJsonMap;
-   for(auto& findingSeverityCountsItem : m_findingSeverityCounts)
+   Array<JsonValue> enhancedFindingsJsonList(m_enhancedFindings.size());
+   for(unsigned enhancedFindingsIndex = 0; enhancedFindingsIndex < enhancedFindingsJsonList.GetLength(); ++enhancedFindingsIndex)
    {
-     findingSeverityCountsJsonMap.WithInteger(FindingSeverityMapper::GetNameForFindingSeverity(findingSeverityCountsItem.first), findingSeverityCountsItem.second);
+     enhancedFindingsJsonList[enhancedFindingsIndex].AsObject(m_enhancedFindings[enhancedFindingsIndex].Jsonize());
    }
-   payload.WithObject("findingSeverityCounts", std::move(findingSeverityCountsJsonMap));
+   payload.WithArray("enhancedFindings", std::move(enhancedFindingsJsonList));
 
   }
 

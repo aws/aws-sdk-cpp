@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -48,44 +38,104 @@ namespace Model
 
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline const Aws::Vector<int>& GetInputChannels() const{ return m_inputChannels; }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline bool InputChannelsHasBeenSet() const { return m_inputChannelsHasBeenSet; }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline void SetInputChannels(const Aws::Vector<int>& value) { m_inputChannelsHasBeenSet = true; m_inputChannels = value; }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline void SetInputChannels(Aws::Vector<int>&& value) { m_inputChannelsHasBeenSet = true; m_inputChannels = std::move(value); }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline OutputChannelMapping& WithInputChannels(const Aws::Vector<int>& value) { SetInputChannels(value); return *this;}
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline OutputChannelMapping& WithInputChannels(Aws::Vector<int>&& value) { SetInputChannels(std::move(value)); return *this;}
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as
+     * -10, 0, or 4.
      */
     inline OutputChannelMapping& AddInputChannels(int value) { m_inputChannelsHasBeenSet = true; m_inputChannels.push_back(value); return *this; }
+
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline const Aws::Vector<double>& GetInputChannelsFineTune() const{ return m_inputChannelsFineTune; }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline bool InputChannelsFineTuneHasBeenSet() const { return m_inputChannelsFineTuneHasBeenSet; }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline void SetInputChannelsFineTune(const Aws::Vector<double>& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = value; }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline void SetInputChannelsFineTune(Aws::Vector<double>&& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = std::move(value); }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline OutputChannelMapping& WithInputChannelsFineTune(const Aws::Vector<double>& value) { SetInputChannelsFineTune(value); return *this;}
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline OutputChannelMapping& WithInputChannelsFineTune(Aws::Vector<double>&& value) { SetInputChannelsFineTune(std::move(value)); return *this;}
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal
+     * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
+     * values to the nearest thousandth.
+     */
+    inline OutputChannelMapping& AddInputChannelsFineTune(double value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune.push_back(value); return *this; }
 
   private:
 
     Aws::Vector<int> m_inputChannels;
     bool m_inputChannelsHasBeenSet;
+
+    Aws::Vector<double> m_inputChannelsFineTune;
+    bool m_inputChannelsFineTuneHasBeenSet;
   };
 
 } // namespace Model

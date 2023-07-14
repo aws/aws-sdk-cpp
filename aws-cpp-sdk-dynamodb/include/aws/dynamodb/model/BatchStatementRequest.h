@@ -1,0 +1,166 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dynamodb/model/AttributeValue.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace DynamoDB
+{
+namespace Model
+{
+
+  /**
+   * <p> A PartiQL batch statement request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchStatementRequest">AWS
+   * API Reference</a></p>
+   */
+  class AWS_DYNAMODB_API BatchStatementRequest
+  {
+  public:
+    BatchStatementRequest();
+    BatchStatementRequest(Aws::Utils::Json::JsonView jsonValue);
+    BatchStatementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline const Aws::String& GetStatement() const{ return m_statement; }
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline void SetStatement(const Aws::String& value) { m_statementHasBeenSet = true; m_statement = value; }
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline void SetStatement(Aws::String&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline void SetStatement(const char* value) { m_statementHasBeenSet = true; m_statement.assign(value); }
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline BatchStatementRequest& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline BatchStatementRequest& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
+
+    /**
+     * <p> A valid PartiQL statement. </p>
+     */
+    inline BatchStatementRequest& WithStatement(const char* value) { SetStatement(value); return *this;}
+
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline const Aws::Vector<AttributeValue>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline void SetParameters(const Aws::Vector<AttributeValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline void SetParameters(Aws::Vector<AttributeValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline BatchStatementRequest& WithParameters(const Aws::Vector<AttributeValue>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline BatchStatementRequest& WithParameters(Aws::Vector<AttributeValue>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline BatchStatementRequest& AddParameters(const AttributeValue& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p> The parameters associated with a PartiQL statement in the batch request.
+     * </p>
+     */
+    inline BatchStatementRequest& AddParameters(AttributeValue&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The read consistency of the PartiQL batch request. </p>
+     */
+    inline bool GetConsistentRead() const{ return m_consistentRead; }
+
+    /**
+     * <p> The read consistency of the PartiQL batch request. </p>
+     */
+    inline bool ConsistentReadHasBeenSet() const { return m_consistentReadHasBeenSet; }
+
+    /**
+     * <p> The read consistency of the PartiQL batch request. </p>
+     */
+    inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
+
+    /**
+     * <p> The read consistency of the PartiQL batch request. </p>
+     */
+    inline BatchStatementRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
+
+  private:
+
+    Aws::String m_statement;
+    bool m_statementHasBeenSet;
+
+    Aws::Vector<AttributeValue> m_parameters;
+    bool m_parametersHasBeenSet;
+
+    bool m_consistentRead;
+    bool m_consistentReadHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

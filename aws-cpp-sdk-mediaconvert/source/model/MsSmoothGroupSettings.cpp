@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/MsSmoothGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,6 +27,8 @@ MsSmoothGroupSettings::MsSmoothGroupSettings() :
     m_encryptionHasBeenSet(false),
     m_fragmentLength(0),
     m_fragmentLengthHasBeenSet(false),
+    m_fragmentLengthControl(MsSmoothFragmentLengthControl::NOT_SET),
+    m_fragmentLengthControlHasBeenSet(false),
     m_manifestEncoding(MsSmoothManifestEncoding::NOT_SET),
     m_manifestEncodingHasBeenSet(false)
 {
@@ -51,6 +43,8 @@ MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_fragmentLength(0),
     m_fragmentLengthHasBeenSet(false),
+    m_fragmentLengthControl(MsSmoothFragmentLengthControl::NOT_SET),
+    m_fragmentLengthControlHasBeenSet(false),
     m_manifestEncoding(MsSmoothManifestEncoding::NOT_SET),
     m_manifestEncodingHasBeenSet(false)
 {
@@ -102,6 +96,13 @@ MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(JsonView jsonValue)
     m_fragmentLength = jsonValue.GetInteger("fragmentLength");
 
     m_fragmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fragmentLengthControl"))
+  {
+    m_fragmentLengthControl = MsSmoothFragmentLengthControlMapper::GetMsSmoothFragmentLengthControlForName(jsonValue.GetString("fragmentLengthControl"));
+
+    m_fragmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestEncoding"))
@@ -156,6 +157,11 @@ JsonValue MsSmoothGroupSettings::Jsonize() const
   {
    payload.WithInteger("fragmentLength", m_fragmentLength);
 
+  }
+
+  if(m_fragmentLengthControlHasBeenSet)
+  {
+   payload.WithString("fragmentLengthControl", MsSmoothFragmentLengthControlMapper::GetNameForMsSmoothFragmentLengthControl(m_fragmentLengthControl));
   }
 
   if(m_manifestEncodingHasBeenSet)

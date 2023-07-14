@@ -1,10 +1,17 @@
 #foreach($operation in $serviceModel.operations)
+#if(!$operation.s3CrtSpecific)
 #if($arnEndpointSupported)
+#if($multiRegionAccessPointSupported)
+#set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
+#else
 #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
-#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/")
+#end
+#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
+#set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
 #else
 #set($signerName = "")
 #set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
 #end
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
@@ -16,87 +23,24 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
-  Aws::StringStream ss;
-#set($uriParts = $operation.http.requestUriParts)
-#set($uriVars = $operation.http.requestParameters)
-#set($partIndex = 1)
-#set($queryStart = false)
-#if($uriParts.size() > $startIndex)
-#set($uriPartString = ${uriParts.get($startIndex)})
-#if($uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-  uri.SetPath(uri.GetPath() + ss.str());
-#end
-  ss.str("${pathAndQuery.get(1)}");
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
+#if($operation.hasPreSignedUrl)
+#set($requestText = "newRequest")
 #else
-  ss << "$uriPartString";
-#end
-#foreach($var in $uriVars)
-#set($varIndex = $partIndex - 1)
-#if(!$skipFirst)
-#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
-#if($partShapeMember.shape.enum)
-  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
-#else
-  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
-#end
-#if($uriParts.size() > $partIndex)
-#set($uriPartString = "${uriParts.get($partIndex)}")
-#if(!$queryStart && $uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-#end
-  uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
-#end
-#end
-#end
-#set($partIndex = $partIndex + 1)
-#set($skipFirst = false)
-#end
-#end
-#if(!$queryStart)
-  uri.SetPath(uri.GetPath() + ss.str());
-#else
-  uri.SetQueryString(ss.str());
+#set($requestText = "request")
 #end
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequestWithEventStream(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #else
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequest(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-#if($operation.result.shape.hasEventStreamMembers())
-    return ${operation.name}Outcome(NoResult());
-#elseif($operation.result.shape.hasStreamMembers())
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
-#else
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#end
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
@@ -127,38 +71,15 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   {
     return ${operation.name}Outcome(computeEndpointOutcome.GetError());
   }
-  ss << computeEndpointOutcome.GetResult().first;
-#elseif($accountIdInHostnameSupported)
-  ss << ComputeEndpointString();
-#if($metadata.hasEndpointTrait)
-  ss << m_baseUri << "${operation.http.requestUri}";
-#else
-  ss << m_uri << "${operation.http.requestUri}";
-#end
+  ss << computeEndpointOutcome.GetResult().endpoint;
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.request)
-  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "{operation.name}"${signerRegionOverride})
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #else
-  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-#if($operation.result.shape.hasStreamMembers())
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
-#else
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#end
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
@@ -179,5 +100,6 @@ void ${className}::${operation.name}AsyncHelper(${constText}${operation.name}Res
   handler(this, ${operation.name}(), context);
 }
 
+#end
 #end
 #end

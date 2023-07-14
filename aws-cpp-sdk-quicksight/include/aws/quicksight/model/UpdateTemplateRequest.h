@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -44,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the template that you're
-     * updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the template that
+     * you're updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -134,38 +124,98 @@ namespace Model
 
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
+     * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
+     * replacement datasets for the placeholders listed in the original. The schema in
+     * each dataset must match its placeholder. </p>
      */
     inline const TemplateSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
+     * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
+     * replacement datasets for the placeholders listed in the original. The schema in
+     * each dataset must match its placeholder. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
+     * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
+     * replacement datasets for the placeholders listed in the original. The schema in
+     * each dataset must match its placeholder. </p>
      */
     inline void SetSourceEntity(const TemplateSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
+     * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
+     * replacement datasets for the placeholders listed in the original. The schema in
+     * each dataset must match its placeholder. </p>
      */
     inline void SetSourceEntity(TemplateSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
+     * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
+     * replacement datasets for the placeholders listed in the original. The schema in
+     * each dataset must match its placeholder. </p>
      */
     inline UpdateTemplateRequest& WithSourceEntity(const TemplateSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web
+     * Services account and any Amazon QuickSight-supported Amazon Web Services
+     * Region;. </p> <p>Use the <code>DataSetReferences</code> entity within
+     * <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the
+     * replacement datasets for the placeholders listed in the original. The schema in
+     * each dataset must match its placeholder. </p>
      */
     inline UpdateTemplateRequest& WithSourceEntity(TemplateSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -221,42 +211,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline const Aws::String& GetListingId() const{ return m_listingId; }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline void SetListingId(const Aws::String& value) { m_listingIdHasBeenSet = true; m_listingId = value; }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline void SetListingId(Aws::String&& value) { m_listingIdHasBeenSet = true; m_listingId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline void SetListingId(const char* value) { m_listingIdHasBeenSet = true; m_listingId.assign(value); }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline SubscribedWorkteam& WithListingId(const Aws::String& value) { SetListingId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline SubscribedWorkteam& WithListingId(Aws::String&& value) { SetListingId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline SubscribedWorkteam& WithListingId(const char* value) { SetListingId(value); return *this;}
 

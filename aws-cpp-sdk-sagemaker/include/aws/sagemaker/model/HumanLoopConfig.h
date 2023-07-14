@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -51,83 +41,179 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline void SetWorkteamArn(Aws::String&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline void SetWorkteamArn(const char* value) { m_workteamArnHasBeenSet = true; m_workteamArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline HumanLoopConfig& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline HumanLoopConfig& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of a team of workers.</p>
+     * <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the
+     * types of workforces and work teams you can create and use with Amazon A2I, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create
+     * and Manage Workforces</a>.</p>
      */
     inline HumanLoopConfig& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline HumanLoopConfig& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline HumanLoopConfig& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+     * <p>The Amazon Resource Name (ARN) of the human task user interface.</p> <p>You
+     * can use standard HTML and Crowd HTML Elements to create a custom worker task
+     * template. You use this template to create a human task UI.</p> <p>To learn how
+     * to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create
+     * Custom Worker Task Template</a>.</p> <p>To learn how to create a human task UI,
+     * which is a worker task template that can be used in a flow definition, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create
+     * and Delete a Worker Task Templates</a>.</p>
      */
     inline HumanLoopConfig& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
 
@@ -248,47 +334,51 @@ namespace Model
 
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
 
     /**
-     * <p>The length of time that a task remains available for labeling by human
+     * <p>The length of time that a task remains available for review by human
      * workers.</p>
      */
     inline HumanLoopConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
 
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour).</p>
      */
     inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour).</p>
      */
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour).</p>
      */
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. The default value is
+     * 3,600 seconds (1 hour).</p>
      */
     inline HumanLoopConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
 

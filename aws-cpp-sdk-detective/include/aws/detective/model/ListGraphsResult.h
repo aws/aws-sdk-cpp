@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
@@ -45,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline const Aws::Vector<Graph>& GetGraphList() const{ return m_graphList; }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline void SetGraphList(const Aws::Vector<Graph>& value) { m_graphList = value; }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline void SetGraphList(Aws::Vector<Graph>&& value) { m_graphList = std::move(value); }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& WithGraphList(const Aws::Vector<Graph>& value) { SetGraphList(value); return *this;}
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& WithGraphList(Aws::Vector<Graph>&& value) { SetGraphList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& AddGraphList(const Graph& value) { m_graphList.push_back(value); return *this; }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& AddGraphList(Graph&& value) { m_graphList.push_back(std::move(value)); return *this; }
 

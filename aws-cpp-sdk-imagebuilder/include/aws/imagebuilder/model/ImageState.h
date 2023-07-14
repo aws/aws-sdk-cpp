@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> Image state shows the image status and the reason for that status.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Image state shows the image status and the reason for that
+   * status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageState">AWS
    * API Reference</a></p>
    */
@@ -50,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p> The status of the image. </p>
+     * <p>The status of the image.</p>
      */
     inline const ImageStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of the image. </p>
+     * <p>The status of the image.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status of the image. </p>
+     * <p>The status of the image.</p>
      */
     inline void SetStatus(const ImageStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of the image. </p>
+     * <p>The status of the image.</p>
      */
     inline void SetStatus(ImageStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status of the image. </p>
+     * <p>The status of the image.</p>
      */
     inline ImageState& WithStatus(const ImageStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of the image. </p>
+     * <p>The status of the image.</p>
      */
     inline ImageState& WithStatus(ImageStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline ImageState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline ImageState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
-     * <p> The reason for the image's status. </p>
+     * <p>The reason for the image's status.</p>
      */
     inline ImageState& WithReason(const char* value) { SetReason(value); return *this;}
 

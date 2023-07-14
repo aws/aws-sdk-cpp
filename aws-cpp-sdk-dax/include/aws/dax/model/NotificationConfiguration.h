@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dax/DAX_EXPORTS.h>
@@ -91,42 +81,58 @@ namespace Model
 
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline const Aws::String& GetTopicStatus() const{ return m_topicStatus; }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline bool TopicStatusHasBeenSet() const { return m_topicStatusHasBeenSet; }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline void SetTopicStatus(const Aws::String& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline void SetTopicStatus(Aws::String&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = std::move(value); }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline void SetTopicStatus(const char* value) { m_topicStatusHasBeenSet = true; m_topicStatus.assign(value); }
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline NotificationConfiguration& WithTopicStatus(const Aws::String& value) { SetTopicStatus(value); return *this;}
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline NotificationConfiguration& WithTopicStatus(Aws::String&& value) { SetTopicStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the topic.</p>
+     * <p>The current state of the topic. A value of “active” means that notifications
+     * will be sent to the topic. A value of “inactive” means that notifications will
+     * not be sent to the topic.</p>
      */
     inline NotificationConfiguration& WithTopicStatus(const char* value) { SetTopicStatus(value); return *this;}
 

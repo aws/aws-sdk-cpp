@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecr/model/ImageTagMutability.h>
 #include <aws/ecr/model/ImageScanningConfiguration.h>
+#include <aws/ecr/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -53,8 +44,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline const Aws::String& GetRepositoryArn() const{ return m_repositoryArn; }
@@ -62,8 +53,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline bool RepositoryArnHasBeenSet() const { return m_repositoryArnHasBeenSet; }
@@ -71,8 +62,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline void SetRepositoryArn(const Aws::String& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = value; }
@@ -80,8 +71,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline void SetRepositoryArn(Aws::String&& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = std::move(value); }
@@ -89,8 +80,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline void SetRepositoryArn(const char* value) { m_repositoryArnHasBeenSet = true; m_repositoryArn.assign(value); }
@@ -98,8 +89,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline Repository& WithRepositoryArn(const Aws::String& value) { SetRepositoryArn(value); return *this;}
@@ -107,8 +98,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline Repository& WithRepositoryArn(Aws::String&& value) { SetRepositoryArn(std::move(value)); return *this;}
@@ -116,58 +107,58 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
      * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-     * repository, AWS account ID of the repository owner, repository namespace, and
-     * repository name. For example,
+     * repository, Amazon Web Services account ID of the repository owner, repository
+     * namespace, and repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
     inline Repository& WithRepositoryArn(const char* value) { SetRepositoryArn(value); return *this;}
 
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline Repository& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline Repository& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the
-     * repository.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository.</p>
      */
     inline Repository& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
@@ -214,50 +205,50 @@ namespace Model
 
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline const Aws::String& GetRepositoryUri() const{ return m_repositoryUri; }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline bool RepositoryUriHasBeenSet() const { return m_repositoryUriHasBeenSet; }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline void SetRepositoryUri(const Aws::String& value) { m_repositoryUriHasBeenSet = true; m_repositoryUri = value; }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline void SetRepositoryUri(Aws::String&& value) { m_repositoryUriHasBeenSet = true; m_repositoryUri = std::move(value); }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline void SetRepositoryUri(const char* value) { m_repositoryUriHasBeenSet = true; m_repositoryUri.assign(value); }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline Repository& WithRepositoryUri(const Aws::String& value) { SetRepositoryUri(value); return *this;}
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline Repository& WithRepositoryUri(Aws::String&& value) { SetRepositoryUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline Repository& WithRepositoryUri(const char* value) { SetRepositoryUri(value); return *this;}
 
@@ -348,6 +339,43 @@ namespace Model
     
     inline Repository& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline Repository& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline Repository& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_repositoryArn;
@@ -370,6 +398,9 @@ namespace Model
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

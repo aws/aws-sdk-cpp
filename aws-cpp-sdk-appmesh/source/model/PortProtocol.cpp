@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/PortProtocol.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,30 +20,30 @@ namespace Aws
       namespace PortProtocolMapper
       {
 
-        static const int grpc_HASH = HashingUtils::HashString("grpc");
         static const int http_HASH = HashingUtils::HashString("http");
-        static const int http2_HASH = HashingUtils::HashString("http2");
         static const int tcp_HASH = HashingUtils::HashString("tcp");
+        static const int http2_HASH = HashingUtils::HashString("http2");
+        static const int grpc_HASH = HashingUtils::HashString("grpc");
 
 
         PortProtocol GetPortProtocolForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == grpc_HASH)
-          {
-            return PortProtocol::grpc;
-          }
-          else if (hashCode == http_HASH)
+          if (hashCode == http_HASH)
           {
             return PortProtocol::http;
+          }
+          else if (hashCode == tcp_HASH)
+          {
+            return PortProtocol::tcp;
           }
           else if (hashCode == http2_HASH)
           {
             return PortProtocol::http2;
           }
-          else if (hashCode == tcp_HASH)
+          else if (hashCode == grpc_HASH)
           {
-            return PortProtocol::tcp;
+            return PortProtocol::grpc;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,14 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case PortProtocol::grpc:
-            return "grpc";
           case PortProtocol::http:
             return "http";
-          case PortProtocol::http2:
-            return "http2";
           case PortProtocol::tcp:
             return "tcp";
+          case PortProtocol::http2:
+            return "http2";
+          case PortProtocol::grpc:
+            return "grpc";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

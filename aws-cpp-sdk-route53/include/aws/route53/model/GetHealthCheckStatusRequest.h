@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
@@ -48,88 +38,88 @@ namespace Model
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline GetHealthCheckStatusRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline GetHealthCheckStatusRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the health check that you want the current status for. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
-     * response, in the <code>HealthCheckId</code> element.</p> <note> <p>If you want
+     * response, in the <code>HealthCheckId</code> element.</p>  <p>If you want
      * to check the status of a calculated health check, you must use the Amazon Route
      * 53 console or the CloudWatch console. You can't use
      * <code>GetHealthCheckStatus</code> to get the status of a calculated health
-     * check.</p> </note>
+     * check.</p> 
      */
     inline GetHealthCheckStatusRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 

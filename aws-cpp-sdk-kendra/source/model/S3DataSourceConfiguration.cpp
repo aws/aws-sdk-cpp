@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/S3DataSourceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 S3DataSourceConfiguration::S3DataSourceConfiguration() : 
     m_bucketNameHasBeenSet(false),
     m_inclusionPrefixesHasBeenSet(false),
+    m_inclusionPatternsHasBeenSet(false),
     m_exclusionPatternsHasBeenSet(false),
     m_documentsMetadataConfigurationHasBeenSet(false),
     m_accessControlListConfigurationHasBeenSet(false)
@@ -40,6 +31,7 @@ S3DataSourceConfiguration::S3DataSourceConfiguration() :
 S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
     m_inclusionPrefixesHasBeenSet(false),
+    m_inclusionPatternsHasBeenSet(false),
     m_exclusionPatternsHasBeenSet(false),
     m_documentsMetadataConfigurationHasBeenSet(false),
     m_accessControlListConfigurationHasBeenSet(false)
@@ -64,6 +56,16 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
       m_inclusionPrefixes.push_back(inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString());
     }
     m_inclusionPrefixesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InclusionPatterns"))
+  {
+    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
+    {
+      m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
+    }
+    m_inclusionPatternsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
@@ -111,6 +113,17 @@ JsonValue S3DataSourceConfiguration::Jsonize() const
      inclusionPrefixesJsonList[inclusionPrefixesIndex].AsString(m_inclusionPrefixes[inclusionPrefixesIndex]);
    }
    payload.WithArray("InclusionPrefixes", std::move(inclusionPrefixesJsonList));
+
+  }
+
+  if(m_inclusionPatternsHasBeenSet)
+  {
+   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
+   {
+     inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
+   }
+   payload.WithArray("InclusionPatterns", std::move(inclusionPatternsJsonList));
 
   }
 

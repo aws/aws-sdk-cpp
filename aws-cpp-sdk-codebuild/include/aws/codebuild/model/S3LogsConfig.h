@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/LogsConfigStatusType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/BucketOwnerAccess.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +186,25 @@ namespace Model
      */
     inline S3LogsConfig& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
 
+
+    
+    inline const BucketOwnerAccess& GetBucketOwnerAccess() const{ return m_bucketOwnerAccess; }
+
+    
+    inline bool BucketOwnerAccessHasBeenSet() const { return m_bucketOwnerAccessHasBeenSet; }
+
+    
+    inline void SetBucketOwnerAccess(const BucketOwnerAccess& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = value; }
+
+    
+    inline void SetBucketOwnerAccess(BucketOwnerAccess&& value) { m_bucketOwnerAccessHasBeenSet = true; m_bucketOwnerAccess = std::move(value); }
+
+    
+    inline S3LogsConfig& WithBucketOwnerAccess(const BucketOwnerAccess& value) { SetBucketOwnerAccess(value); return *this;}
+
+    
+    inline S3LogsConfig& WithBucketOwnerAccess(BucketOwnerAccess&& value) { SetBucketOwnerAccess(std::move(value)); return *this;}
+
   private:
 
     LogsConfigStatusType m_status;
@@ -205,6 +215,9 @@ namespace Model
 
     bool m_encryptionDisabled;
     bool m_encryptionDisabledHasBeenSet;
+
+    BucketOwnerAccess m_bucketOwnerAccess;
+    bool m_bucketOwnerAccessHasBeenSet;
   };
 
 } // namespace Model

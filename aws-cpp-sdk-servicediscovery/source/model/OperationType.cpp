@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/servicediscovery/model/OperationType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int CREATE_NAMESPACE_HASH = HashingUtils::HashString("CREATE_NAMESPACE");
         static const int DELETE_NAMESPACE_HASH = HashingUtils::HashString("DELETE_NAMESPACE");
+        static const int UPDATE_NAMESPACE_HASH = HashingUtils::HashString("UPDATE_NAMESPACE");
         static const int UPDATE_SERVICE_HASH = HashingUtils::HashString("UPDATE_SERVICE");
         static const int REGISTER_INSTANCE_HASH = HashingUtils::HashString("REGISTER_INSTANCE");
         static const int DEREGISTER_INSTANCE_HASH = HashingUtils::HashString("DEREGISTER_INSTANCE");
@@ -47,6 +38,10 @@ namespace Aws
           else if (hashCode == DELETE_NAMESPACE_HASH)
           {
             return OperationType::DELETE_NAMESPACE;
+          }
+          else if (hashCode == UPDATE_NAMESPACE_HASH)
+          {
+            return OperationType::UPDATE_NAMESPACE;
           }
           else if (hashCode == UPDATE_SERVICE_HASH)
           {
@@ -78,6 +73,8 @@ namespace Aws
             return "CREATE_NAMESPACE";
           case OperationType::DELETE_NAMESPACE:
             return "DELETE_NAMESPACE";
+          case OperationType::UPDATE_NAMESPACE:
+            return "UPDATE_NAMESPACE";
           case OperationType::UPDATE_SERVICE:
             return "UPDATE_SERVICE";
           case OperationType::REGISTER_INSTANCE:

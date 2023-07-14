@@ -1,25 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/ecr/model/ImageScanFinding.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/FindingSeverity.h>
+#include <aws/ecr/model/ImageScanFinding.h>
+#include <aws/ecr/model/EnhancedImageScanFinding.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +105,47 @@ namespace Model
 
 
     /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline const Aws::Map<FindingSeverity, int>& GetFindingSeverityCounts() const{ return m_findingSeverityCounts; }
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline bool FindingSeverityCountsHasBeenSet() const { return m_findingSeverityCountsHasBeenSet; }
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline void SetFindingSeverityCounts(const Aws::Map<FindingSeverity, int>& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = value; }
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline void SetFindingSeverityCounts(Aws::Map<FindingSeverity, int>&& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = std::move(value); }
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline ImageScanFindings& WithFindingSeverityCounts(const Aws::Map<FindingSeverity, int>& value) { SetFindingSeverityCounts(value); return *this;}
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline ImageScanFindings& WithFindingSeverityCounts(Aws::Map<FindingSeverity, int>&& value) { SetFindingSeverityCounts(std::move(value)); return *this;}
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline ImageScanFindings& AddFindingSeverityCounts(const FindingSeverity& key, int value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(key, value); return *this; }
+
+    /**
+     * <p>The image vulnerability counts, sorted by severity.</p>
+     */
+    inline ImageScanFindings& AddFindingSeverityCounts(FindingSeverity&& key, int value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(std::move(key), value); return *this; }
+
+
+    /**
      * <p>The findings from the image scan.</p>
      */
     inline const Aws::Vector<ImageScanFinding>& GetFindings() const{ return m_findings; }
@@ -155,44 +187,44 @@ namespace Model
 
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline const Aws::Map<FindingSeverity, int>& GetFindingSeverityCounts() const{ return m_findingSeverityCounts; }
+    inline const Aws::Vector<EnhancedImageScanFinding>& GetEnhancedFindings() const{ return m_enhancedFindings; }
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline bool FindingSeverityCountsHasBeenSet() const { return m_findingSeverityCountsHasBeenSet; }
+    inline bool EnhancedFindingsHasBeenSet() const { return m_enhancedFindingsHasBeenSet; }
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline void SetFindingSeverityCounts(const Aws::Map<FindingSeverity, int>& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = value; }
+    inline void SetEnhancedFindings(const Aws::Vector<EnhancedImageScanFinding>& value) { m_enhancedFindingsHasBeenSet = true; m_enhancedFindings = value; }
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline void SetFindingSeverityCounts(Aws::Map<FindingSeverity, int>&& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = std::move(value); }
+    inline void SetEnhancedFindings(Aws::Vector<EnhancedImageScanFinding>&& value) { m_enhancedFindingsHasBeenSet = true; m_enhancedFindings = std::move(value); }
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline ImageScanFindings& WithFindingSeverityCounts(const Aws::Map<FindingSeverity, int>& value) { SetFindingSeverityCounts(value); return *this;}
+    inline ImageScanFindings& WithEnhancedFindings(const Aws::Vector<EnhancedImageScanFinding>& value) { SetEnhancedFindings(value); return *this;}
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline ImageScanFindings& WithFindingSeverityCounts(Aws::Map<FindingSeverity, int>&& value) { SetFindingSeverityCounts(std::move(value)); return *this;}
+    inline ImageScanFindings& WithEnhancedFindings(Aws::Vector<EnhancedImageScanFinding>&& value) { SetEnhancedFindings(std::move(value)); return *this;}
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline ImageScanFindings& AddFindingSeverityCounts(const FindingSeverity& key, int value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(key, value); return *this; }
+    inline ImageScanFindings& AddEnhancedFindings(const EnhancedImageScanFinding& value) { m_enhancedFindingsHasBeenSet = true; m_enhancedFindings.push_back(value); return *this; }
 
     /**
-     * <p>The image vulnerability counts, sorted by severity.</p>
+     * <p>Details about the enhanced scan findings from Amazon Inspector.</p>
      */
-    inline ImageScanFindings& AddFindingSeverityCounts(FindingSeverity&& key, int value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(std::move(key), value); return *this; }
+    inline ImageScanFindings& AddEnhancedFindings(EnhancedImageScanFinding&& value) { m_enhancedFindingsHasBeenSet = true; m_enhancedFindings.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -202,11 +234,14 @@ namespace Model
     Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt;
     bool m_vulnerabilitySourceUpdatedAtHasBeenSet;
 
+    Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
+    bool m_findingSeverityCountsHasBeenSet;
+
     Aws::Vector<ImageScanFinding> m_findings;
     bool m_findingsHasBeenSet;
 
-    Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
-    bool m_findingSeverityCountsHasBeenSet;
+    Aws::Vector<EnhancedImageScanFinding> m_enhancedFindings;
+    bool m_enhancedFindingsHasBeenSet;
   };
 
 } // namespace Model

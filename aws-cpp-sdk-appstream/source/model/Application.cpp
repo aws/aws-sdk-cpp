@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appstream/model/Application.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,15 @@ Application::Application() :
     m_launchParametersHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_appBlockArnHasBeenSet(false),
+    m_iconS3LocationHasBeenSet(false),
+    m_platformsHasBeenSet(false),
+    m_instanceFamiliesHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
 }
 
@@ -48,7 +46,15 @@ Application::Application(JsonView jsonValue) :
     m_launchParametersHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_appBlockArnHasBeenSet(false),
+    m_iconS3LocationHasBeenSet(false),
+    m_platformsHasBeenSet(false),
+    m_instanceFamiliesHasBeenSet(false),
+    m_createdTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +113,68 @@ Application& Application::operator =(JsonView jsonValue)
     m_metadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkingDirectory"))
+  {
+    m_workingDirectory = jsonValue.GetString("WorkingDirectory");
+
+    m_workingDirectoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppBlockArn"))
+  {
+    m_appBlockArn = jsonValue.GetString("AppBlockArn");
+
+    m_appBlockArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IconS3Location"))
+  {
+    m_iconS3Location = jsonValue.GetObject("IconS3Location");
+
+    m_iconS3LocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Platforms"))
+  {
+    Array<JsonView> platformsJsonList = jsonValue.GetArray("Platforms");
+    for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
+    {
+      m_platforms.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformsJsonList[platformsIndex].AsString()));
+    }
+    m_platformsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceFamilies"))
+  {
+    Array<JsonView> instanceFamiliesJsonList = jsonValue.GetArray("InstanceFamilies");
+    for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
+    {
+      m_instanceFamilies.push_back(instanceFamiliesJsonList[instanceFamiliesIndex].AsString());
+    }
+    m_instanceFamiliesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedTime"))
+  {
+    m_createdTime = jsonValue.GetDouble("CreatedTime");
+
+    m_createdTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +227,63 @@ JsonValue Application::Jsonize() const
    }
    payload.WithObject("Metadata", std::move(metadataJsonMap));
 
+  }
+
+  if(m_workingDirectoryHasBeenSet)
+  {
+   payload.WithString("WorkingDirectory", m_workingDirectory);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_appBlockArnHasBeenSet)
+  {
+   payload.WithString("AppBlockArn", m_appBlockArn);
+
+  }
+
+  if(m_iconS3LocationHasBeenSet)
+  {
+   payload.WithObject("IconS3Location", m_iconS3Location.Jsonize());
+
+  }
+
+  if(m_platformsHasBeenSet)
+  {
+   Array<JsonValue> platformsJsonList(m_platforms.size());
+   for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
+   {
+     platformsJsonList[platformsIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platforms[platformsIndex]));
+   }
+   payload.WithArray("Platforms", std::move(platformsJsonList));
+
+  }
+
+  if(m_instanceFamiliesHasBeenSet)
+  {
+   Array<JsonValue> instanceFamiliesJsonList(m_instanceFamilies.size());
+   for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
+   {
+     instanceFamiliesJsonList[instanceFamiliesIndex].AsString(m_instanceFamilies[instanceFamiliesIndex]);
+   }
+   payload.WithArray("InstanceFamilies", std::move(instanceFamiliesJsonList));
+
+  }
+
+  if(m_createdTimeHasBeenSet)
+  {
+   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
   return payload;

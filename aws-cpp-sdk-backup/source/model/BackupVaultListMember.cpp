@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/BackupVaultListMember.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,14 @@ BackupVaultListMember::BackupVaultListMember() :
     m_encryptionKeyArnHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
     m_numberOfRecoveryPoints(0),
-    m_numberOfRecoveryPointsHasBeenSet(false)
+    m_numberOfRecoveryPointsHasBeenSet(false),
+    m_locked(false),
+    m_lockedHasBeenSet(false),
+    m_minRetentionDays(0),
+    m_minRetentionDaysHasBeenSet(false),
+    m_maxRetentionDays(0),
+    m_maxRetentionDaysHasBeenSet(false),
+    m_lockDateHasBeenSet(false)
 {
 }
 
@@ -46,7 +43,14 @@ BackupVaultListMember::BackupVaultListMember(JsonView jsonValue) :
     m_encryptionKeyArnHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
     m_numberOfRecoveryPoints(0),
-    m_numberOfRecoveryPointsHasBeenSet(false)
+    m_numberOfRecoveryPointsHasBeenSet(false),
+    m_locked(false),
+    m_lockedHasBeenSet(false),
+    m_minRetentionDays(0),
+    m_minRetentionDaysHasBeenSet(false),
+    m_maxRetentionDays(0),
+    m_maxRetentionDaysHasBeenSet(false),
+    m_lockDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +99,34 @@ BackupVaultListMember& BackupVaultListMember::operator =(JsonView jsonValue)
     m_numberOfRecoveryPointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Locked"))
+  {
+    m_locked = jsonValue.GetBool("Locked");
+
+    m_lockedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MinRetentionDays"))
+  {
+    m_minRetentionDays = jsonValue.GetInt64("MinRetentionDays");
+
+    m_minRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxRetentionDays"))
+  {
+    m_maxRetentionDays = jsonValue.GetInt64("MaxRetentionDays");
+
+    m_maxRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LockDate"))
+  {
+    m_lockDate = jsonValue.GetDouble("LockDate");
+
+    m_lockDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +167,29 @@ JsonValue BackupVaultListMember::Jsonize() const
   {
    payload.WithInt64("NumberOfRecoveryPoints", m_numberOfRecoveryPoints);
 
+  }
+
+  if(m_lockedHasBeenSet)
+  {
+   payload.WithBool("Locked", m_locked);
+
+  }
+
+  if(m_minRetentionDaysHasBeenSet)
+  {
+   payload.WithInt64("MinRetentionDays", m_minRetentionDays);
+
+  }
+
+  if(m_maxRetentionDaysHasBeenSet)
+  {
+   payload.WithInt64("MaxRetentionDays", m_maxRetentionDays);
+
+  }
+
+  if(m_lockDateHasBeenSet)
+  {
+   payload.WithDouble("LockDate", m_lockDate.SecondsWithMSPrecision());
   }
 
   return payload;

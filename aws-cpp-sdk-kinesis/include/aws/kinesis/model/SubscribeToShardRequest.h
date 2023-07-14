@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -165,22 +155,34 @@ namespace Model
     inline SubscribeToShardRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
 
 
-    
+    /**
+     * <p>The starting position in the data stream from which to start streaming.</p>
+     */
     inline const StartingPosition& GetStartingPosition() const{ return m_startingPosition; }
 
-    
+    /**
+     * <p>The starting position in the data stream from which to start streaming.</p>
+     */
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
 
-    
+    /**
+     * <p>The starting position in the data stream from which to start streaming.</p>
+     */
     inline void SetStartingPosition(const StartingPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
-    
+    /**
+     * <p>The starting position in the data stream from which to start streaming.</p>
+     */
     inline void SetStartingPosition(StartingPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
-    
+    /**
+     * <p>The starting position in the data stream from which to start streaming.</p>
+     */
     inline SubscribeToShardRequest& WithStartingPosition(const StartingPosition& value) { SetStartingPosition(value); return *this;}
 
-    
+    /**
+     * <p>The starting position in the data stream from which to start streaming.</p>
+     */
     inline SubscribeToShardRequest& WithStartingPosition(StartingPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
   private:

@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 #include <aws/core/http/URI.h>
@@ -70,6 +60,82 @@ TEST(URITest, TestSetPath)
     EXPECT_EQ("/path/with%20space/to/resource", uri.GetURLEncodedPath());
     //make sure we return an UnEncoded path properly
     EXPECT_EQ(path, uri.GetPath());
+}
+
+TEST(URITest, TestAddPathSegments)
+{
+    URI uri;
+
+    uri.AddPathSegment("//");
+    EXPECT_STREQ("/", uri.GetPath().c_str());
+    EXPECT_STREQ("/", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegment("/path/");
+    EXPECT_STREQ("/path", uri.GetPath().c_str());
+    EXPECT_STREQ("/path", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegment("/path/");
+    uri.AddPathSegment("to");
+    uri.AddPathSegment("/some");
+    uri.AddPathSegment("resource/");
+    EXPECT_STREQ("/path/to/some/resource", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/to/some/resource", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    // There is no way to tell the differences between slashes in path segment and slashed as delimiters before encoding.
+    uri.AddPathSegment("/path/segment/");
+    EXPECT_STREQ("/path/segment", uri.GetPath().c_str());
+    EXPECT_STREQ("/path%2Fsegment", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegments("//");
+    EXPECT_STREQ("/", uri.GetPath().c_str());
+    EXPECT_STREQ("/", uri.GetURLEncodedPath().c_str());
+
+    // Path without trailing slash
+    uri.SetPath("");
+    uri.AddPathSegments("path//to/resource");
+    EXPECT_STREQ("/path/to/resource", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/to/resource", uri.GetURLEncodedPath().c_str());
+
+    // Path with trailing slash
+    uri.SetPath("");
+    uri.AddPathSegments("//path/to//folder/");
+    EXPECT_STREQ("/path/to/folder/", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/to/folder/", uri.GetURLEncodedPath().c_str());
+
+    // Mixture of AddPathSegment() and AddPathSegments()
+    uri.SetPath("");
+    uri.AddPathSegments("path/int/");
+    uri.AddPathSegment(10);
+    uri.AddPathSegments("/float");
+    uri.AddPathSegment(12.34);
+    EXPECT_STREQ("/path/int/10/float/12.34", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/int/10/float/12.34", uri.GetURLEncodedPath().c_str());
+
+    // The last path segments decide if path has trailing slash
+    uri.SetPath("");
+    uri.AddPathSegments("/path/string");
+    uri.AddPathSegment("/value/");
+    uri.AddPathSegments("/path/to/folder/");
+    EXPECT_STREQ("/path/string/value/path/to/folder/", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/string/value/path/to/folder/", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegments("/path/string/");
+    uri.AddPathSegment("/value/");
+    uri.AddPathSegments("/path/to/resource");
+    EXPECT_STREQ("/path/string/value/path/to/resource", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/string/value/path/to/resource", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegments("/path/string/");
+    uri.AddPathSegment("/value/");
+    uri.AddPathSegment("/path/to/resource/");
+    EXPECT_STREQ("/path/string/value/path/to/resource", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/string/value/path%2Fto%2Fresource", uri.GetURLEncodedPath().c_str());
 }
 
 TEST(URITest, TestAddQueryStringParameters)
@@ -215,7 +281,20 @@ TEST(URITest, TestParseWithColon)
     EXPECT_EQ(80, complexUri.GetPort());
     EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
     EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
+}
 
+TEST(URITest, TestParseWithColonCompliant)
+{
+    Aws::Http::SetCompliantRfc3986Encoding(true);
+    const char* strComplexUri = "http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key";
+    URI complexUri(strComplexUri);
+    const char* compliantStrComplexUri = "http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject%3A1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject%3AKey";
+    EXPECT_EQ(Scheme::HTTP, complexUri.GetScheme());
+    EXPECT_STREQ("s3.us-east-1.amazonaws.com", complexUri.GetAuthority().c_str());
+    EXPECT_EQ(80, complexUri.GetPort());
+    EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
+    EXPECT_STREQ(compliantStrComplexUri, complexUri.GetURIString().c_str());
+    Aws::Http::SetCompliantRfc3986Encoding(false);
 }
 
 TEST(URITest, TestGetURLEncodedPath)
@@ -261,4 +340,32 @@ TEST(URITest, TestGetRFC3986URLEncodedPath)
 
     uri = "https://test.com/segment+other/b;jsession=1";
     EXPECT_STREQ("/segment%2Bother/b%3Bjsession=1", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+}
+
+TEST(URITest, TestGetRFC3986URLEncodedPathCompliant)
+{
+    Aws::Http::SetCompliantRfc3986Encoding(true);
+
+    URI uri = "https://test.com/path/1234/";
+    EXPECT_STREQ("/path/1234/", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/$omething";
+    EXPECT_STREQ("/path/%24omething", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/$omethingel$e";
+    EXPECT_STREQ("/path/%24omethingel%24e", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/~something.an0ther";
+    EXPECT_STREQ("/path/~something.an0ther", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/path/~something?an0ther";
+    EXPECT_STREQ("/path/~something", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/ሴ";
+    EXPECT_STREQ("/%E1%88%B4", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/segment+other/b;jsession=1";
+    EXPECT_STREQ("/segment%2Bother/b%3Bjsession%3D1", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    Aws::Http::SetCompliantRfc3986Encoding(false);
 }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dlm/model/PolicyDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,9 +22,12 @@ PolicyDetails::PolicyDetails() :
     m_policyType(PolicyTypeValues::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_resourceLocationsHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
     m_schedulesHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_eventSourceHasBeenSet(false),
+    m_actionsHasBeenSet(false)
 {
 }
 
@@ -42,9 +35,12 @@ PolicyDetails::PolicyDetails(JsonView jsonValue) :
     m_policyType(PolicyTypeValues::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_resourceLocationsHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
     m_schedulesHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_eventSourceHasBeenSet(false),
+    m_actionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +62,16 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
       m_resourceTypes.push_back(ResourceTypeValuesMapper::GetResourceTypeValuesForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
     }
     m_resourceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceLocations"))
+  {
+    Array<JsonView> resourceLocationsJsonList = jsonValue.GetArray("ResourceLocations");
+    for(unsigned resourceLocationsIndex = 0; resourceLocationsIndex < resourceLocationsJsonList.GetLength(); ++resourceLocationsIndex)
+    {
+      m_resourceLocations.push_back(ResourceLocationValuesMapper::GetResourceLocationValuesForName(resourceLocationsJsonList[resourceLocationsIndex].AsString()));
+    }
+    m_resourceLocationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TargetTags"))
@@ -95,6 +101,23 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventSource"))
+  {
+    m_eventSource = jsonValue.GetObject("EventSource");
+
+    m_eventSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Actions"))
+  {
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
+    }
+    m_actionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -115,6 +138,17 @@ JsonValue PolicyDetails::Jsonize() const
      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeValuesMapper::GetNameForResourceTypeValues(m_resourceTypes[resourceTypesIndex]));
    }
    payload.WithArray("ResourceTypes", std::move(resourceTypesJsonList));
+
+  }
+
+  if(m_resourceLocationsHasBeenSet)
+  {
+   Array<JsonValue> resourceLocationsJsonList(m_resourceLocations.size());
+   for(unsigned resourceLocationsIndex = 0; resourceLocationsIndex < resourceLocationsJsonList.GetLength(); ++resourceLocationsIndex)
+   {
+     resourceLocationsJsonList[resourceLocationsIndex].AsString(ResourceLocationValuesMapper::GetNameForResourceLocationValues(m_resourceLocations[resourceLocationsIndex]));
+   }
+   payload.WithArray("ResourceLocations", std::move(resourceLocationsJsonList));
 
   }
 
@@ -143,6 +177,23 @@ JsonValue PolicyDetails::Jsonize() const
   if(m_parametersHasBeenSet)
   {
    payload.WithObject("Parameters", m_parameters.Jsonize());
+
+  }
+
+  if(m_eventSourceHasBeenSet)
+  {
+   payload.WithObject("EventSource", m_eventSource.Jsonize());
+
+  }
+
+  if(m_actionsHasBeenSet)
+  {
+   Array<JsonValue> actionsJsonList(m_actions.size());
+   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+   {
+     actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
+   }
+   payload.WithArray("Actions", std::move(actionsJsonList));
 
   }
 

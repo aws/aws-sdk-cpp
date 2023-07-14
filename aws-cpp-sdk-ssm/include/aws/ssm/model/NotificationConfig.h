@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -108,125 +98,129 @@ namespace Model
 
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<NotificationEvent>& GetNotificationEvents() const{ return m_notificationEvents; }
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline bool NotificationEventsHasBeenSet() const { return m_notificationEventsHasBeenSet; }
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetNotificationEvents(const Aws::Vector<NotificationEvent>& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = value; }
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetNotificationEvents(Aws::Vector<NotificationEvent>&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = std::move(value); }
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& WithNotificationEvents(const Aws::Vector<NotificationEvent>& value) { SetNotificationEvents(value); return *this;}
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& WithNotificationEvents(Aws::Vector<NotificationEvent>&& value) { SetNotificationEvents(std::move(value)); return *this;}
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& AddNotificationEvents(const NotificationEvent& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(value); return *this; }
 
     /**
-     * <p>The different events for which you can receive notifications. These events
-     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
-     * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * <p>The different events for which you can receive notifications. To learn more
+     * about these events, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& AddNotificationEvents(NotificationEvent&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Command: Receive notification when the status of a command changes.
-     * Invocation: For commands sent to multiple instances, receive notification on a
-     * per-instance basis when the status of a command changes. </p>
+     * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
+     * notification when the status of a command changes.</p> </li> <li> <p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
+     * </li> </ul>
      */
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
 
     /**
-     * <p>Command: Receive notification when the status of a command changes.
-     * Invocation: For commands sent to multiple instances, receive notification on a
-     * per-instance basis when the status of a command changes. </p>
+     * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
+     * notification when the status of a command changes.</p> </li> <li> <p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
+     * </li> </ul>
      */
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
 
     /**
-     * <p>Command: Receive notification when the status of a command changes.
-     * Invocation: For commands sent to multiple instances, receive notification on a
-     * per-instance basis when the status of a command changes. </p>
+     * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
+     * notification when the status of a command changes.</p> </li> <li> <p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
+     * </li> </ul>
      */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
-     * <p>Command: Receive notification when the status of a command changes.
-     * Invocation: For commands sent to multiple instances, receive notification on a
-     * per-instance basis when the status of a command changes. </p>
+     * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
+     * notification when the status of a command changes.</p> </li> <li> <p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
+     * </li> </ul>
      */
     inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
 
     /**
-     * <p>Command: Receive notification when the status of a command changes.
-     * Invocation: For commands sent to multiple instances, receive notification on a
-     * per-instance basis when the status of a command changes. </p>
+     * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
+     * notification when the status of a command changes.</p> </li> <li> <p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
+     * </li> </ul>
      */
     inline NotificationConfig& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
 
     /**
-     * <p>Command: Receive notification when the status of a command changes.
-     * Invocation: For commands sent to multiple instances, receive notification on a
-     * per-instance basis when the status of a command changes. </p>
+     * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
+     * notification when the status of a command changes.</p> </li> <li> <p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
+     * </li> </ul>
      */
     inline NotificationConfig& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
 

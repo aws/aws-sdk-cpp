@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/TranscriptionJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,7 +30,15 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
     m_failureReasonHasBeenSet(false),
     m_outputLocationType(OutputLocationType::NOT_SET),
     m_outputLocationTypeHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
+    m_identifiedLanguageScore(0.0),
+    m_identifiedLanguageScoreHasBeenSet(false),
+    m_languageCodesHasBeenSet(false)
 {
 }
 
@@ -56,7 +54,15 @@ TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue) :
     m_failureReasonHasBeenSet(false),
     m_outputLocationType(OutputLocationType::NOT_SET),
     m_outputLocationTypeHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false)
+    m_contentRedactionHasBeenSet(false),
+    m_modelSettingsHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_identifyMultipleLanguages(false),
+    m_identifyMultipleLanguagesHasBeenSet(false),
+    m_identifiedLanguageScore(0.0),
+    m_identifiedLanguageScoreHasBeenSet(false),
+    m_languageCodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +132,44 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
     m_contentRedactionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelSettings"))
+  {
+    m_modelSettings = jsonValue.GetObject("ModelSettings");
+
+    m_modelSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentifyLanguage"))
+  {
+    m_identifyLanguage = jsonValue.GetBool("IdentifyLanguage");
+
+    m_identifyLanguageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentifyMultipleLanguages"))
+  {
+    m_identifyMultipleLanguages = jsonValue.GetBool("IdentifyMultipleLanguages");
+
+    m_identifyMultipleLanguagesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentifiedLanguageScore"))
+  {
+    m_identifiedLanguageScore = jsonValue.GetDouble("IdentifiedLanguageScore");
+
+    m_identifiedLanguageScoreHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LanguageCodes"))
+  {
+    Array<JsonView> languageCodesJsonList = jsonValue.GetArray("LanguageCodes");
+    for(unsigned languageCodesIndex = 0; languageCodesIndex < languageCodesJsonList.GetLength(); ++languageCodesIndex)
+    {
+      m_languageCodes.push_back(languageCodesJsonList[languageCodesIndex].AsObject());
+    }
+    m_languageCodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +222,41 @@ JsonValue TranscriptionJobSummary::Jsonize() const
   if(m_contentRedactionHasBeenSet)
   {
    payload.WithObject("ContentRedaction", m_contentRedaction.Jsonize());
+
+  }
+
+  if(m_modelSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelSettings", m_modelSettings.Jsonize());
+
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+   payload.WithBool("IdentifyLanguage", m_identifyLanguage);
+
+  }
+
+  if(m_identifyMultipleLanguagesHasBeenSet)
+  {
+   payload.WithBool("IdentifyMultipleLanguages", m_identifyMultipleLanguages);
+
+  }
+
+  if(m_identifiedLanguageScoreHasBeenSet)
+  {
+   payload.WithDouble("IdentifiedLanguageScore", m_identifiedLanguageScore);
+
+  }
+
+  if(m_languageCodesHasBeenSet)
+  {
+   Array<JsonValue> languageCodesJsonList(m_languageCodes.size());
+   for(unsigned languageCodesIndex = 0; languageCodesIndex < languageCodesJsonList.GetLength(); ++languageCodesIndex)
+   {
+     languageCodesJsonList[languageCodesIndex].AsObject(m_languageCodes[languageCodesIndex].Jsonize());
+   }
+   payload.WithArray("LanguageCodes", std::move(languageCodesJsonList));
 
   }
 

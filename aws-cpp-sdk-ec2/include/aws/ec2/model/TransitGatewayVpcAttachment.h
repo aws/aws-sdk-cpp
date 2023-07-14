@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -178,73 +168,79 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline const Aws::String& GetVpcOwnerId() const{ return m_vpcOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline bool VpcOwnerIdHasBeenSet() const { return m_vpcOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline void SetVpcOwnerId(const Aws::String& value) { m_vpcOwnerIdHasBeenSet = true; m_vpcOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline void SetVpcOwnerId(Aws::String&& value) { m_vpcOwnerIdHasBeenSet = true; m_vpcOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline void SetVpcOwnerId(const char* value) { m_vpcOwnerIdHasBeenSet = true; m_vpcOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline TransitGatewayVpcAttachment& WithVpcOwnerId(const Aws::String& value) { SetVpcOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline TransitGatewayVpcAttachment& WithVpcOwnerId(Aws::String&& value) { SetVpcOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the VPC.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC.</p>
      */
     inline TransitGatewayVpcAttachment& WithVpcOwnerId(const char* value) { SetVpcOwnerId(value); return *this;}
 
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline const TransitGatewayAttachmentState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline void SetState(const TransitGatewayAttachmentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline void SetState(TransitGatewayAttachmentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline TransitGatewayVpcAttachment& WithState(const TransitGatewayAttachmentState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the VPC attachment.</p>
+     * <p>The state of the VPC attachment. Note that the <code>initiating</code> state
+     * has been deprecated.</p>
      */
     inline TransitGatewayVpcAttachment& WithState(TransitGatewayAttachmentState&& value) { SetState(std::move(value)); return *this;}
 

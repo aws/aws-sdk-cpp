@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/athena/model/WorkGroupConfigurationUpdates.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,7 +29,8 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates() :
     m_removeBytesScannedCutoffPerQuery(false),
     m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
-    m_requesterPaysEnabledHasBeenSet(false)
+    m_requesterPaysEnabledHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
 }
 
@@ -54,7 +45,8 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates(JsonView jsonValue)
     m_removeBytesScannedCutoffPerQuery(false),
     m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
-    m_requesterPaysEnabledHasBeenSet(false)
+    m_requesterPaysEnabledHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +95,13 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator =(JsonVie
     m_requesterPaysEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineVersion"))
+  {
+    m_engineVersion = jsonValue.GetObject("EngineVersion");
+
+    m_engineVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +142,12 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const
   if(m_requesterPaysEnabledHasBeenSet)
   {
    payload.WithBool("RequesterPaysEnabled", m_requesterPaysEnabled);
+
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
 
   }
 

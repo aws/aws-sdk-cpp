@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/RightsizingRecommendation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ RightsizingRecommendation::RightsizingRecommendation() :
     m_rightsizingType(RightsizingType::NOT_SET),
     m_rightsizingTypeHasBeenSet(false),
     m_modifyRecommendationDetailHasBeenSet(false),
-    m_terminateRecommendationDetailHasBeenSet(false)
+    m_terminateRecommendationDetailHasBeenSet(false),
+    m_findingReasonCodesHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ RightsizingRecommendation::RightsizingRecommendation(JsonView jsonValue) :
     m_rightsizingType(RightsizingType::NOT_SET),
     m_rightsizingTypeHasBeenSet(false),
     m_modifyRecommendationDetailHasBeenSet(false),
-    m_terminateRecommendationDetailHasBeenSet(false)
+    m_terminateRecommendationDetailHasBeenSet(false),
+    m_findingReasonCodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +78,16 @@ RightsizingRecommendation& RightsizingRecommendation::operator =(JsonView jsonVa
     m_terminateRecommendationDetailHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FindingReasonCodes"))
+  {
+    Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("FindingReasonCodes");
+    for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
+    {
+      m_findingReasonCodes.push_back(FindingReasonCodeMapper::GetFindingReasonCodeForName(findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
+    }
+    m_findingReasonCodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +121,17 @@ JsonValue RightsizingRecommendation::Jsonize() const
   if(m_terminateRecommendationDetailHasBeenSet)
   {
    payload.WithObject("TerminateRecommendationDetail", m_terminateRecommendationDetail.Jsonize());
+
+  }
+
+  if(m_findingReasonCodesHasBeenSet)
+  {
+   Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
+   for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
+   {
+     findingReasonCodesJsonList[findingReasonCodesIndex].AsString(FindingReasonCodeMapper::GetNameForFindingReasonCode(m_findingReasonCodes[findingReasonCodesIndex]));
+   }
+   payload.WithArray("FindingReasonCodes", std::move(findingReasonCodesJsonList));
 
   }
 

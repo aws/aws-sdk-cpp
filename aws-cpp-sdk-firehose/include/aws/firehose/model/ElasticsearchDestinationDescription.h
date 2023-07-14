@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -23,6 +13,7 @@
 #include <aws/firehose/model/S3DestinationDescription.h>
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <aws/firehose/model/VpcConfigurationDescription.h>
 #include <utility>
 
 namespace Aws
@@ -555,6 +546,37 @@ namespace Model
      */
     inline ElasticsearchDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const{ return m_vpcConfigurationDescription; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline bool VpcConfigurationDescriptionHasBeenSet() const { return m_vpcConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline void SetVpcConfigurationDescription(const VpcConfigurationDescription& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = value; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline void SetVpcConfigurationDescription(VpcConfigurationDescription&& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = std::move(value); }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline ElasticsearchDestinationDescription& WithVpcConfigurationDescription(const VpcConfigurationDescription& value) { SetVpcConfigurationDescription(value); return *this;}
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline ElasticsearchDestinationDescription& WithVpcConfigurationDescription(VpcConfigurationDescription&& value) { SetVpcConfigurationDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -592,6 +614,9 @@ namespace Model
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
+
+    VpcConfigurationDescription m_vpcConfigurationDescription;
+    bool m_vpcConfigurationDescriptionHasBeenSet;
   };
 
 } // namespace Model

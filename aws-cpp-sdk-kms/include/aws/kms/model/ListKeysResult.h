@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline const Aws::Vector<KeyListEntry>& GetKeys() const{ return m_keys; }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline void SetKeys(const Aws::Vector<KeyListEntry>& value) { m_keys = value; }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline void SetKeys(Aws::Vector<KeyListEntry>&& value) { m_keys = std::move(value); }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& WithKeys(const Aws::Vector<KeyListEntry>& value) { SetKeys(value); return *this;}
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& WithKeys(Aws::Vector<KeyListEntry>&& value) { SetKeys(std::move(value)); return *this;}
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& AddKeys(const KeyListEntry& value) { m_keys.push_back(value); return *this; }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& AddKeys(KeyListEntry&& value) { m_keys.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rekognition/model/ProjectVersionDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,9 @@ ProjectVersionDescription::ProjectVersionDescription() :
     m_outputConfigHasBeenSet(false),
     m_trainingDataResultHasBeenSet(false),
     m_testingDataResultHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false)
+    m_evaluationResultHasBeenSet(false),
+    m_manifestSummaryHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -60,7 +52,9 @@ ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue) :
     m_outputConfigHasBeenSet(false),
     m_trainingDataResultHasBeenSet(false),
     m_testingDataResultHasBeenSet(false),
-    m_evaluationResultHasBeenSet(false)
+    m_evaluationResultHasBeenSet(false),
+    m_manifestSummaryHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +138,20 @@ ProjectVersionDescription& ProjectVersionDescription::operator =(JsonView jsonVa
     m_evaluationResultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManifestSummary"))
+  {
+    m_manifestSummary = jsonValue.GetObject("ManifestSummary");
+
+    m_manifestSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -211,6 +219,18 @@ JsonValue ProjectVersionDescription::Jsonize() const
   if(m_evaluationResultHasBeenSet)
   {
    payload.WithObject("EvaluationResult", m_evaluationResult.Jsonize());
+
+  }
+
+  if(m_manifestSummaryHasBeenSet)
+  {
+   payload.WithObject("ManifestSummary", m_manifestSummary.Jsonize());
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

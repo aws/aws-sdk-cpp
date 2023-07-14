@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -24,6 +14,7 @@
 #include <aws/firehose/model/S3BackupMode.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
 #include <aws/firehose/model/DataFormatConversionConfiguration.h>
+#include <aws/firehose/model/DynamicPartitioningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -580,6 +571,67 @@ namespace Model
      */
     inline ExtendedS3DestinationDescription& WithDataFormatConversionConfiguration(DataFormatConversionConfiguration&& value) { SetDataFormatConversionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline const DynamicPartitioningConfiguration& GetDynamicPartitioningConfiguration() const{ return m_dynamicPartitioningConfiguration; }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline bool DynamicPartitioningConfigurationHasBeenSet() const { return m_dynamicPartitioningConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline void SetDynamicPartitioningConfiguration(const DynamicPartitioningConfiguration& value) { m_dynamicPartitioningConfigurationHasBeenSet = true; m_dynamicPartitioningConfiguration = value; }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline void SetDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { m_dynamicPartitioningConfigurationHasBeenSet = true; m_dynamicPartitioningConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline ExtendedS3DestinationDescription& WithDynamicPartitioningConfiguration(const DynamicPartitioningConfiguration& value) { SetDynamicPartitioningConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline ExtendedS3DestinationDescription& WithDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { SetDynamicPartitioningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -617,6 +669,9 @@ namespace Model
 
     DataFormatConversionConfiguration m_dataFormatConversionConfiguration;
     bool m_dataFormatConversionConfigurationHasBeenSet;
+
+    DynamicPartitioningConfiguration m_dynamicPartitioningConfiguration;
+    bool m_dynamicPartitioningConfigurationHasBeenSet;
   };
 
 } // namespace Model

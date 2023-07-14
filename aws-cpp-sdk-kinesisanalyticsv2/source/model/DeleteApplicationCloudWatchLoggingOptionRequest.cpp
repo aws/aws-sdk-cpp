@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationCloudWatchLoggingOptionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,7 +16,8 @@ DeleteApplicationCloudWatchLoggingOptionRequest::DeleteApplicationCloudWatchLogg
     m_applicationNameHasBeenSet(false),
     m_currentApplicationVersionId(0),
     m_currentApplicationVersionIdHasBeenSet(false),
-    m_cloudWatchLoggingOptionIdHasBeenSet(false)
+    m_cloudWatchLoggingOptionIdHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -49,6 +40,12 @@ Aws::String DeleteApplicationCloudWatchLoggingOptionRequest::SerializePayload() 
   if(m_cloudWatchLoggingOptionIdHasBeenSet)
   {
    payload.WithString("CloudWatchLoggingOptionId", m_cloudWatchLoggingOptionId);
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

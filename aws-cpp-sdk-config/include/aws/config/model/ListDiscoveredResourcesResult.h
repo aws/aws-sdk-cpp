@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -50,51 +40,44 @@ namespace Model
 
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline const Aws::Vector<ResourceIdentifier>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline void SetResourceIdentifiers(const Aws::Vector<ResourceIdentifier>& value) { m_resourceIdentifiers = value; }
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline void SetResourceIdentifiers(Aws::Vector<ResourceIdentifier>&& value) { m_resourceIdentifiers = std::move(value); }
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline ListDiscoveredResourcesResult& WithResourceIdentifiers(const Aws::Vector<ResourceIdentifier>& value) { SetResourceIdentifiers(value); return *this;}
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline ListDiscoveredResourcesResult& WithResourceIdentifiers(Aws::Vector<ResourceIdentifier>&& value) { SetResourceIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline ListDiscoveredResourcesResult& AddResourceIdentifiers(const ResourceIdentifier& value) { m_resourceIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>The details that identify a resource that is discovered by AWS Config,
-     * including the resource type, ID, and (if available) the custom resource
-     * name.</p>
+     * <p>The details that identify a resource that is discovered by Config, including
+     * the resource type, ID, and (if available) the custom resource name.</p>
      */
     inline ListDiscoveredResourcesResult& AddResourceIdentifiers(ResourceIdentifier&& value) { m_resourceIdentifiers.push_back(std::move(value)); return *this; }
 

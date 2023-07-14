@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -36,22 +26,19 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a player session. Player session objects are created
-   * either by creating a player session for a specific game session, or as part of a
-   * game session placement. A player session represents either a player reservation
-   * for a game session (status <code>RESERVED</code>) or actual player activity in a
-   * game session (status <code>ACTIVE</code>). A player session object (including
-   * player data) is automatically passed to a game session when the player connects
-   * to the game session and is validated.</p> <p>When a player disconnects, the
-   * player session status changes to <code>COMPLETED</code>. Once the session ends,
-   * the player session object is retained for 30 days and then removed.</p> <ul>
-   * <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
-   * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
-   * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
-   * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-   * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
-   * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents a player session. Player sessions are created either for a
+   * specific game session, or as part of a game session placement or matchmaking
+   * request. A player session can represents a reserved player slot in a game
+   * session (when status is <code>RESERVED</code>) or actual player activity in a
+   * game session (when status is <code>ACTIVE</code>). A player session object,
+   * including player data, is automatically passed to a game session when the player
+   * connects to the game session and is validated. After the game session ends,
+   * player sessions information is retained for 30 days and then removed.</p> <p>
+   * <b>Related actions</b> </p> <p> <a>CreatePlayerSession</a> |
+   * <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a> |
+   * <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS
    * API Reference</a></p>
    */
@@ -204,49 +191,49 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline PlayerSession& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline PlayerSession& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that the player's game session is running
+     * <p>A unique identifier for the fleet that the player's game session is running
      * on.</p>
      */
     inline PlayerSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
@@ -254,7 +241,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -262,7 +249,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -270,7 +257,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -278,7 +265,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -286,7 +273,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -294,7 +281,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -302,7 +289,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -310,7 +297,7 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that the player's game session is running on.
      * </p>
      */
@@ -318,81 +305,87 @@ namespace Model
 
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline PlayerSession& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * <p>A time stamp indicating when this data object was terminated. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
-     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * <p>A time stamp indicating when this data object was terminated. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool TerminationTimeHasBeenSet() const { return m_terminationTimeHasBeenSet; }
 
     /**
-     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * <p>A time stamp indicating when this data object was terminated. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * <p>A time stamp indicating when this data object was terminated. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::move(value); }
 
     /**
-     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * <p>A time stamp indicating when this data object was terminated. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline PlayerSession& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * <p>A time stamp indicating when this data object was terminated. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
 
@@ -477,64 +470,56 @@ namespace Model
 
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -548,7 +533,7 @@ namespace Model
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -562,7 +547,7 @@ namespace Model
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -576,7 +561,7 @@ namespace Model
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -590,7 +575,7 @@ namespace Model
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -604,7 +589,7 @@ namespace Model
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -618,7 +603,7 @@ namespace Model
     inline PlayerSession& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -632,7 +617,7 @@ namespace Model
     inline PlayerSession& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -672,50 +657,50 @@ namespace Model
 
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline void SetPlayerData(const Aws::String& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline void SetPlayerData(const char* value) { m_playerDataHasBeenSet = true; m_playerData.assign(value); }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline PlayerSession& WithPlayerData(const Aws::String& value) { SetPlayerData(value); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline PlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game. </p>
      */
     inline PlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -49,42 +39,58 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline DescribeDBProxiesRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline DescribeDBProxiesRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB proxy.</p>
+     * <p>The name of the DB proxy. If you omit this parameter, the output includes
+     * information about all DB proxies owned by your Amazon Web Services account
+     * ID.</p>
      */
     inline DescribeDBProxiesRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 
@@ -131,58 +137,58 @@ namespace Model
 
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBProxiesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBProxiesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBProxiesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -191,7 +197,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -199,7 +205,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -207,7 +213,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -215,7 +221,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBProxiesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

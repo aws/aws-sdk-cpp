@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
@@ -67,9 +57,9 @@ namespace Model
         class DescribeHomeRegionControlsRequest;
         class GetHomeRegionRequest;
 
-        typedef Aws::Utils::Outcome<CreateHomeRegionControlResult, Aws::Client::AWSError<MigrationHubConfigErrors>> CreateHomeRegionControlOutcome;
-        typedef Aws::Utils::Outcome<DescribeHomeRegionControlsResult, Aws::Client::AWSError<MigrationHubConfigErrors>> DescribeHomeRegionControlsOutcome;
-        typedef Aws::Utils::Outcome<GetHomeRegionResult, Aws::Client::AWSError<MigrationHubConfigErrors>> GetHomeRegionOutcome;
+        typedef Aws::Utils::Outcome<CreateHomeRegionControlResult, MigrationHubConfigError> CreateHomeRegionControlOutcome;
+        typedef Aws::Utils::Outcome<DescribeHomeRegionControlsResult, MigrationHubConfigError> DescribeHomeRegionControlsOutcome;
+        typedef Aws::Utils::Outcome<GetHomeRegionResult, MigrationHubConfigError> GetHomeRegionOutcome;
 
         typedef std::future<CreateHomeRegionControlOutcome> CreateHomeRegionControlOutcomeCallable;
         typedef std::future<DescribeHomeRegionControlsOutcome> DescribeHomeRegionControlsOutcomeCallable;
@@ -122,8 +112,6 @@ namespace Model
 
         virtual ~MigrationHubConfigClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "MigrationHub Config"; }
-
 
         /**
          * <p>This API sets up the home region for the calling account only.</p><p><h3>See
@@ -134,22 +122,12 @@ namespace Model
         virtual Model::CreateHomeRegionControlOutcome CreateHomeRegionControl(const Model::CreateHomeRegionControlRequest& request) const;
 
         /**
-         * <p>This API sets up the home region for the calling account only.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/CreateHomeRegionControl">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateHomeRegionControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateHomeRegionControlOutcomeCallable CreateHomeRegionControlCallable(const Model::CreateHomeRegionControlRequest& request) const;
 
         /**
-         * <p>This API sets up the home region for the calling account only.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/CreateHomeRegionControl">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateHomeRegionControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHomeRegionControlAsync(const Model::CreateHomeRegionControlRequest& request, const CreateHomeRegionControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -162,22 +140,12 @@ namespace Model
         virtual Model::DescribeHomeRegionControlsOutcome DescribeHomeRegionControls(const Model::DescribeHomeRegionControlsRequest& request) const;
 
         /**
-         * <p>This API permits filtering on the <code>ControlId</code> and
-         * <code>HomeRegion</code> fields.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DescribeHomeRegionControls">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeHomeRegionControls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeHomeRegionControlsOutcomeCallable DescribeHomeRegionControlsCallable(const Model::DescribeHomeRegionControlsRequest& request) const;
 
         /**
-         * <p>This API permits filtering on the <code>ControlId</code> and
-         * <code>HomeRegion</code> fields.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DescribeHomeRegionControls">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeHomeRegionControls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeHomeRegionControlsAsync(const Model::DescribeHomeRegionControlsRequest& request, const DescribeHomeRegionControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -194,30 +162,12 @@ namespace Model
         virtual Model::GetHomeRegionOutcome GetHomeRegion(const Model::GetHomeRegionRequest& request) const;
 
         /**
-         * <p>Returns the calling account’s home region, if configured. This API is used by
-         * other AWS services to determine the regional endpoint for calling AWS
-         * Application Discovery Service and Migration Hub. You must call
-         * <code>GetHomeRegion</code> at least once before you call any other AWS
-         * Application Discovery Service and AWS Migration Hub APIs, to obtain the
-         * account's Migration Hub home region.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/GetHomeRegion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetHomeRegion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetHomeRegionOutcomeCallable GetHomeRegionCallable(const Model::GetHomeRegionRequest& request) const;
 
         /**
-         * <p>Returns the calling account’s home region, if configured. This API is used by
-         * other AWS services to determine the regional endpoint for calling AWS
-         * Application Discovery Service and Migration Hub. You must call
-         * <code>GetHomeRegion</code> at least once before you call any other AWS
-         * Application Discovery Service and AWS Migration Hub APIs, to obtain the
-         * account's Migration Hub home region.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/GetHomeRegion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetHomeRegion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetHomeRegionAsync(const Model::GetHomeRegionRequest& request, const GetHomeRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

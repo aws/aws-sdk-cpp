@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/securityhub/model/StandardsStatus.h>
+#include <aws/securityhub/model/StandardsStatusReason.h>
 #include <utility>
 
 namespace Aws
@@ -207,34 +198,101 @@ namespace Model
 
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline const StandardsStatus& GetStandardsStatus() const{ return m_standardsStatus; }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline void SetStandardsStatus(const StandardsStatus& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = value; }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline void SetStandardsStatus(StandardsStatus&& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = std::move(value); }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline StandardsSubscription& WithStandardsStatus(const StandardsStatus& value) { SetStandardsStatus(value); return *this;}
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline StandardsSubscription& WithStandardsStatus(StandardsStatus&& value) { SetStandardsStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline const StandardsStatusReason& GetStandardsStatusReason() const{ return m_standardsStatusReason; }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline bool StandardsStatusReasonHasBeenSet() const { return m_standardsStatusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline void SetStandardsStatusReason(const StandardsStatusReason& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = value; }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline void SetStandardsStatusReason(StandardsStatusReason&& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = std::move(value); }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline StandardsSubscription& WithStandardsStatusReason(const StandardsStatusReason& value) { SetStandardsStatusReason(value); return *this;}
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline StandardsSubscription& WithStandardsStatusReason(StandardsStatusReason&& value) { SetStandardsStatusReason(std::move(value)); return *this;}
 
   private:
 
@@ -249,6 +307,9 @@ namespace Model
 
     StandardsStatus m_standardsStatus;
     bool m_standardsStatusHasBeenSet;
+
+    StandardsStatusReason m_standardsStatusReason;
+    bool m_standardsStatusReasonHasBeenSet;
   };
 
 } // namespace Model

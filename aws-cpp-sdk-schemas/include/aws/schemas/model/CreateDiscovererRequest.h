@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
@@ -28,6 +18,9 @@ namespace Model
 {
 
   /**
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscovererRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SCHEMAS_API CreateDiscovererRequest : public SchemasRequest
   {
@@ -126,6 +119,31 @@ namespace Model
 
 
     /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline bool CrossAccountHasBeenSet() const { return m_crossAccountHasBeenSet; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccountHasBeenSet = true; m_crossAccount = value; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline CreateDiscovererRequest& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
+
+
+    /**
      * <p>Tags associated with the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -197,6 +215,9 @@ namespace Model
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
+
+    bool m_crossAccount;
+    bool m_crossAccountHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

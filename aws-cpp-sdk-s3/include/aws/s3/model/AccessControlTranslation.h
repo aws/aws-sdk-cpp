@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -51,48 +41,42 @@ namespace Model
     /**
      * <p>Specifies the replica ownership. For default and valid values, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon Simple Storage Service API
-     * Reference</i>.</p>
+     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
      */
     inline const OwnerOverride& GetOwner() const{ return m_owner; }
 
     /**
      * <p>Specifies the replica ownership. For default and valid values, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon Simple Storage Service API
-     * Reference</i>.</p>
+     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>Specifies the replica ownership. For default and valid values, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon Simple Storage Service API
-     * Reference</i>.</p>
+     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
      */
     inline void SetOwner(const OwnerOverride& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>Specifies the replica ownership. For default and valid values, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon Simple Storage Service API
-     * Reference</i>.</p>
+     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
      */
     inline void SetOwner(OwnerOverride&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>Specifies the replica ownership. For default and valid values, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon Simple Storage Service API
-     * Reference</i>.</p>
+     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
      */
     inline AccessControlTranslation& WithOwner(const OwnerOverride& value) { SetOwner(value); return *this;}
 
     /**
      * <p>Specifies the replica ownership. For default and valid values, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon Simple Storage Service API
-     * Reference</i>.</p>
+     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
      */
     inline AccessControlTranslation& WithOwner(OwnerOverride&& value) { SetOwner(std::move(value)); return *this;}
 

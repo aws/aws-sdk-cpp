@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eks/model/UpdateType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,10 @@ namespace Aws
         static const int EndpointAccessUpdate_HASH = HashingUtils::HashString("EndpointAccessUpdate");
         static const int LoggingUpdate_HASH = HashingUtils::HashString("LoggingUpdate");
         static const int ConfigUpdate_HASH = HashingUtils::HashString("ConfigUpdate");
+        static const int AssociateIdentityProviderConfig_HASH = HashingUtils::HashString("AssociateIdentityProviderConfig");
+        static const int DisassociateIdentityProviderConfig_HASH = HashingUtils::HashString("DisassociateIdentityProviderConfig");
+        static const int AssociateEncryptionConfig_HASH = HashingUtils::HashString("AssociateEncryptionConfig");
+        static const int AddonUpdate_HASH = HashingUtils::HashString("AddonUpdate");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
@@ -54,6 +48,22 @@ namespace Aws
           else if (hashCode == ConfigUpdate_HASH)
           {
             return UpdateType::ConfigUpdate;
+          }
+          else if (hashCode == AssociateIdentityProviderConfig_HASH)
+          {
+            return UpdateType::AssociateIdentityProviderConfig;
+          }
+          else if (hashCode == DisassociateIdentityProviderConfig_HASH)
+          {
+            return UpdateType::DisassociateIdentityProviderConfig;
+          }
+          else if (hashCode == AssociateEncryptionConfig_HASH)
+          {
+            return UpdateType::AssociateEncryptionConfig;
+          }
+          else if (hashCode == AddonUpdate_HASH)
+          {
+            return UpdateType::AddonUpdate;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +87,14 @@ namespace Aws
             return "LoggingUpdate";
           case UpdateType::ConfigUpdate:
             return "ConfigUpdate";
+          case UpdateType::AssociateIdentityProviderConfig:
+            return "AssociateIdentityProviderConfig";
+          case UpdateType::DisassociateIdentityProviderConfig:
+            return "DisassociateIdentityProviderConfig";
+          case UpdateType::AssociateEncryptionConfig:
+            return "AssociateEncryptionConfig";
+          case UpdateType::AddonUpdate:
+            return "AddonUpdate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

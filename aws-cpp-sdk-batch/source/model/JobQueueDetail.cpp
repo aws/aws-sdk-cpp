@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/JobQueueDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,12 +23,14 @@ JobQueueDetail::JobQueueDetail() :
     m_jobQueueArnHasBeenSet(false),
     m_state(JQState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_schedulingPolicyArnHasBeenSet(false),
     m_status(JQStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false)
+    m_computeEnvironmentOrderHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -47,12 +39,14 @@ JobQueueDetail::JobQueueDetail(JsonView jsonValue) :
     m_jobQueueArnHasBeenSet(false),
     m_state(JQState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_schedulingPolicyArnHasBeenSet(false),
     m_status(JQStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false)
+    m_computeEnvironmentOrderHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +72,13 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
     m_state = JQStateMapper::GetJQStateForName(jsonValue.GetString("state"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schedulingPolicyArn"))
+  {
+    m_schedulingPolicyArn = jsonValue.GetString("schedulingPolicyArn");
+
+    m_schedulingPolicyArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -111,6 +112,16 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
     m_computeEnvironmentOrderHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +144,12 @@ JsonValue JobQueueDetail::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", JQStateMapper::GetNameForJQState(m_state));
+  }
+
+  if(m_schedulingPolicyArnHasBeenSet)
+  {
+   payload.WithString("schedulingPolicyArn", m_schedulingPolicyArn);
+
   }
 
   if(m_statusHasBeenSet)
@@ -160,6 +177,17 @@ JsonValue JobQueueDetail::Jsonize() const
      computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject(m_computeEnvironmentOrder[computeEnvironmentOrderIndex].Jsonize());
    }
    payload.WithArray("computeEnvironmentOrder", std::move(computeEnvironmentOrderJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ebs/EBS_EXPORTS.h>
@@ -90,63 +80,91 @@ namespace Model
 
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline ListSnapshotBlocksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline ListSnapshotBlocksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to request the next page of results.</p>
+     * <p>The token to request the next page of results.</p> <p>If you specify
+     * <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
      */
     inline ListSnapshotBlocksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The number of results to return.</p>
+     * <p>The maximum number of blocks to be returned by the request.</p> <p>Even if
+     * additional blocks can be retrieved from the snapshot, the request can return
+     * less blocks than <b>MaxResults</b> or an empty array of blocks.</p> <p>To
+     * retrieve the next set of blocks from the snapshot, make another request with the
+     * returned <b>NextToken</b> value. The value of <b>NextToken</b> is
+     * <code>null</code> when there are no more blocks to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The number of results to return.</p>
+     * <p>The maximum number of blocks to be returned by the request.</p> <p>Even if
+     * additional blocks can be retrieved from the snapshot, the request can return
+     * less blocks than <b>MaxResults</b> or an empty array of blocks.</p> <p>To
+     * retrieve the next set of blocks from the snapshot, make another request with the
+     * returned <b>NextToken</b> value. The value of <b>NextToken</b> is
+     * <code>null</code> when there are no more blocks to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The number of results to return.</p>
+     * <p>The maximum number of blocks to be returned by the request.</p> <p>Even if
+     * additional blocks can be retrieved from the snapshot, the request can return
+     * less blocks than <b>MaxResults</b> or an empty array of blocks.</p> <p>To
+     * retrieve the next set of blocks from the snapshot, make another request with the
+     * returned <b>NextToken</b> value. The value of <b>NextToken</b> is
+     * <code>null</code> when there are no more blocks to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The number of results to return.</p>
+     * <p>The maximum number of blocks to be returned by the request.</p> <p>Even if
+     * additional blocks can be retrieved from the snapshot, the request can return
+     * less blocks than <b>MaxResults</b> or an empty array of blocks.</p> <p>To
+     * retrieve the next set of blocks from the snapshot, make another request with the
+     * returned <b>NextToken</b> value. The value of <b>NextToken</b> is
+     * <code>null</code> when there are no more blocks to return.</p>
      */
     inline ListSnapshotBlocksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -154,28 +172,32 @@ namespace Model
     /**
      * <p>The block index from which the list should start. The list in the response
      * will start from this block index or the next valid block index in the
-     * snapshot.</p>
+     * snapshot.</p> <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b>
+     * is ignored.</p>
      */
     inline int GetStartingBlockIndex() const{ return m_startingBlockIndex; }
 
     /**
      * <p>The block index from which the list should start. The list in the response
      * will start from this block index or the next valid block index in the
-     * snapshot.</p>
+     * snapshot.</p> <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b>
+     * is ignored.</p>
      */
     inline bool StartingBlockIndexHasBeenSet() const { return m_startingBlockIndexHasBeenSet; }
 
     /**
      * <p>The block index from which the list should start. The list in the response
      * will start from this block index or the next valid block index in the
-     * snapshot.</p>
+     * snapshot.</p> <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b>
+     * is ignored.</p>
      */
     inline void SetStartingBlockIndex(int value) { m_startingBlockIndexHasBeenSet = true; m_startingBlockIndex = value; }
 
     /**
      * <p>The block index from which the list should start. The list in the response
      * will start from this block index or the next valid block index in the
-     * snapshot.</p>
+     * snapshot.</p> <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b>
+     * is ignored.</p>
      */
     inline ListSnapshotBlocksRequest& WithStartingBlockIndex(int value) { SetStartingBlockIndex(value); return *this;}
 

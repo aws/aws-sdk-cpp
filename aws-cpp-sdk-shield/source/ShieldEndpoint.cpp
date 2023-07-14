@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/shield/ShieldEndpoint.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -31,11 +21,21 @@ namespace ShieldEndpoint
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
   static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
 
+  static const int FIPS_AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("fips-aws-global");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+    // Fallback to us-east-1 if global endpoint does not exists.
+    Aws::String region = regionName == Aws::Region::AWS_GLOBAL ? Aws::Region::US_EAST_1 : regionName;
+    auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
+    if(!useDualStack)
+    {
+      if(hash == FIPS_AWS_GLOBAL_HASH)
+      {
+        return "shield-fips.us-east-1.amazonaws.com";
+      }
+    }
     Aws::StringStream ss;
     ss << "shield" << ".";
 
@@ -44,7 +44,7 @@ namespace ShieldEndpoint
       ss << "dualstack.";
     }
 
-    ss << regionName;
+    ss << region;
 
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {

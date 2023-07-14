@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class ComprehendErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72,6 +63,20 @@ enum class ComprehendErrors
   TOO_MANY_TAG_KEYS,
   UNSUPPORTED_LANGUAGE
 };
+
+class AWS_COMPREHEND_API ComprehendError : public Aws::Client::AWSError<ComprehendErrors>
+{
+public:
+  ComprehendError() {}
+  ComprehendError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ComprehendErrors>(rhs) {}
+  ComprehendError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ComprehendErrors>(rhs) {}
+  ComprehendError(const Aws::Client::AWSError<ComprehendErrors>& rhs) : Aws::Client::AWSError<ComprehendErrors>(rhs) {}
+  ComprehendError(Aws::Client::AWSError<ComprehendErrors>&& rhs) : Aws::Client::AWSError<ComprehendErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ComprehendErrorMapper
 {
   AWS_COMPREHEND_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

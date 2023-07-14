@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/model/ConfigurationRevision.h>
+#include <aws/kafka/model/ConfigurationState.h>
 #include <utility>
 
 namespace Aws
@@ -408,6 +399,55 @@ namespace Model
      */
     inline Configuration& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline const ConfigurationState& GetState() const{ return m_state; }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline void SetState(const ConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline void SetState(ConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline Configuration& WithState(const ConfigurationState& value) { SetState(value); return *this;}
+
+    /**
+     * 
+            <p>The state of the configuration. The possible states are ACTIVE,
+     * DELETING, and DELETE_FAILED. </p>
+         
+     */
+    inline Configuration& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -427,6 +467,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    ConfigurationState m_state;
+    bool m_stateHasBeenSet;
   };
 
 } // namespace Model

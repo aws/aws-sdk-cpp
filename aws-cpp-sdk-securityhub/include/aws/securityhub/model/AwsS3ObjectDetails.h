@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about an AWS S3 object.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an Amazon S3 object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3ObjectDetails">AWS
    * API Reference</a></p>
    */
@@ -48,42 +38,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsS3ObjectDetails& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsS3ObjectDetails& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time when the object was last modified.</p>
+     * <p>Indicates when the object was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsS3ObjectDetails& WithLastModified(const char* value) { SetLastModified(value); return *this;}
 
@@ -269,50 +291,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline AwsS3ObjectDetails& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline AwsS3ObjectDetails& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline AwsS3ObjectDetails& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

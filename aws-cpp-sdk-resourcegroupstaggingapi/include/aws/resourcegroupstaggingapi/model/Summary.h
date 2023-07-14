@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
@@ -91,64 +81,64 @@ namespace Model
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline Summary& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline Summary& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The account identifier or the root identifier of the organization. If you
-     * don't know the root ID, you can call the AWS Organizations <a
-     * href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+     * don't know the root ID, you can call the Organizations <a
+     * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
     inline Summary& WithTargetId(const char* value) { SetTargetId(value); return *this;}
@@ -186,83 +176,83 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline Summary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline Summary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that the summary applies to.</p>
+     * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
     inline Summary& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline Summary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline Summary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resource type.</p>
+     * <p>The Amazon Web Services resource type.</p>
      */
     inline Summary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

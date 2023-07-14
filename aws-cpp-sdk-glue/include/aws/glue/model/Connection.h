@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -136,38 +126,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
-     * supported.</p>
+     * <p>The type of the connection. Currently, SFTP is not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
-     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
-     * supported.</p>
+     * <p>The type of the connection. Currently, SFTP is not supported.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
-     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
-     * supported.</p>
+     * <p>The type of the connection. Currently, SFTP is not supported.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
-     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
-     * supported.</p>
+     * <p>The type of the connection. Currently, SFTP is not supported.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
-     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
-     * supported.</p>
+     * <p>The type of the connection. Currently, SFTP is not supported.</p>
      */
     inline Connection& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
-     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
-     * supported.</p>
+     * <p>The type of the connection. Currently, SFTP is not supported.</p>
      */
     inline Connection& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 
@@ -243,24 +227,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -289,24 +301,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -335,24 +375,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -381,24 +449,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -427,24 +523,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -473,24 +597,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -519,24 +671,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -565,24 +745,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -611,24 +819,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -657,24 +893,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -703,24 +967,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -749,24 +1041,52 @@ namespace Model
      * whether Secure Sockets Layer (SSL) with hostname matching is enforced for the
      * JDBC connection on the client. The default is false.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's
-     * root certificate. AWS Glue uses this root certificate to validate the customer’s
-     * certificate when connecting to the customer database. AWS Glue only handles
-     * X.509 certificates. The certificate provided must be DER-encoded and supplied in
+     * root certificate. Glue uses this root certificate to validate the customer’s
+     * certificate when connecting to the customer database. Glue only handles X.509
+     * certificates. The certificate provided must be DER-encoded and supplied in
      * Base64 encoding PEM format.</p> </li> <li> <p>
      * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is
-     * <code>false</code>. AWS Glue validates the Signature algorithm and Subject
-     * Public Key Algorithm for the customer certificate. The only permitted algorithms
-     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA.
-     * For the Subject Public Key Algorithm, the key length must be at least 2048. You
-     * can set the value of this property to <code>true</code> to skip AWS Glue’s
-     * validation of the customer certificate.</p> </li> <li> <p>
+     * <code>false</code>. Glue validates the Signature algorithm and Subject Public
+     * Key Algorithm for the customer certificate. The only permitted algorithms for
+     * the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     * the Subject Public Key Algorithm, the key length must be at least 2048. You can
+     * set the value of this property to <code>true</code> to skip Glue’s validation of
+     * the customer certificate.</p> </li> <li> <p>
      * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is
      * used for domain match or distinguished name match to prevent a man-in-the-middle
      * attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>;
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
+     * enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
+     * for the private CA cert file (.pem format). The default is an empty string.</p>
+     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
+     * the validation of the CA cert file or not. Glue validates for three algorithms:
+     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
+     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
+     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
+     * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the Glue encrypt passwords
+     * setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

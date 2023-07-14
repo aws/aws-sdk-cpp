@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The amount of savings you're accumulating, against the public On-Demand rate
-   * of the usage accrued in an account.</p><p><h3>See Also:</h3>   <a
+   * <p>The amount of savings that you're accumulating, against the public On-Demand
+   * rate of the usage accrued in an account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansSavings">AWS
    * API Reference</a></p>
    */
@@ -49,58 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline const Aws::String& GetNetSavings() const{ return m_netSavings; }
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline bool NetSavingsHasBeenSet() const { return m_netSavingsHasBeenSet; }
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline void SetNetSavings(const Aws::String& value) { m_netSavingsHasBeenSet = true; m_netSavings = value; }
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline void SetNetSavings(Aws::String&& value) { m_netSavingsHasBeenSet = true; m_netSavings = std::move(value); }
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline void SetNetSavings(const char* value) { m_netSavingsHasBeenSet = true; m_netSavings.assign(value); }
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline SavingsPlansSavings& WithNetSavings(const Aws::String& value) { SetNetSavings(value); return *this;}
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline SavingsPlansSavings& WithNetSavings(Aws::String&& value) { SetNetSavings(std::move(value)); return *this;}
 
     /**
-     * <p>The savings amount that you are accumulating for the usage that is covered by
-     * a Savings Plans, when compared to the On-Demand equivalent of the same
-     * usage.</p>
+     * <p>The savings amount that you're accumulating for the usage that's covered by a
+     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline SavingsPlansSavings& WithNetSavings(const char* value) { SetNetSavings(value); return *this;}
 

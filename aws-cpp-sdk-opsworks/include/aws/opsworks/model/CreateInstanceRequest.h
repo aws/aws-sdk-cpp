@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -572,8 +562,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
 
@@ -581,8 +571,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
@@ -590,8 +580,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
@@ -599,8 +589,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
 
@@ -608,8 +598,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
 
@@ -617,8 +607,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline CreateInstanceRequest& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
 
@@ -626,8 +616,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline CreateInstanceRequest& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
 
@@ -635,8 +625,8 @@ namespace Model
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.</p> <note> <p>If you specify a custom AMI, you must set
-     * <code>Os</code> to <code>Custom</code>.</p> </note>
+     * Custom AMIs</a>.</p>  <p>If you specify a custom AMI, you must set
+     * <code>Os</code> to <code>Custom</code>.</p> 
      */
     inline CreateInstanceRequest& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
@@ -1023,9 +1013,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code> to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
 
@@ -1036,9 +1026,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code> to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
 
@@ -1049,9 +1039,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code> to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
 
@@ -1062,9 +1052,9 @@ namespace Model
      * instances manually by using <a>CreateDeployment</a> to run the
      * <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-     * instances. </p> <note> <p>We strongly recommend using the default value of
+     * instances. </p>  <p>We strongly recommend using the default value of
      * <code>true</code> to ensure that your instances have the latest security
-     * updates.</p> </note>
+     * updates.</p> 
      */
     inline CreateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 

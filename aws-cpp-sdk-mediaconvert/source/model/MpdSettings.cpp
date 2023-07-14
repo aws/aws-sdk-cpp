@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/MpdSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,33 +19,70 @@ namespace Model
 {
 
 MpdSettings::MpdSettings() : 
+    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
+    m_accessibilityCaptionHintsHasBeenSet(false),
+    m_audioDuration(MpdAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
+    m_klvMetadata(MpdKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(MpdScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(MpdTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
 }
 
 MpdSettings::MpdSettings(JsonView jsonValue) : 
+    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
+    m_accessibilityCaptionHintsHasBeenSet(false),
+    m_audioDuration(MpdAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_captionContainerType(MpdCaptionContainerType::NOT_SET),
     m_captionContainerTypeHasBeenSet(false),
+    m_klvMetadata(MpdKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_scte35Esam(MpdScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(MpdScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(MpdTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 MpdSettings& MpdSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessibilityCaptionHints"))
+  {
+    m_accessibilityCaptionHints = MpdAccessibilityCaptionHintsMapper::GetMpdAccessibilityCaptionHintsForName(jsonValue.GetString("accessibilityCaptionHints"));
+
+    m_accessibilityCaptionHintsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = MpdAudioDurationMapper::GetMpdAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("captionContainerType"))
   {
     m_captionContainerType = MpdCaptionContainerTypeMapper::GetMpdCaptionContainerTypeForName(jsonValue.GetString("captionContainerType"));
 
     m_captionContainerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = MpdKlvMetadataMapper::GetMpdKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Esam"))
@@ -72,6 +99,13 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
     m_scte35SourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timedMetadata"))
+  {
+    m_timedMetadata = MpdTimedMetadataMapper::GetMpdTimedMetadataForName(jsonValue.GetString("timedMetadata"));
+
+    m_timedMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,9 +113,24 @@ JsonValue MpdSettings::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_accessibilityCaptionHintsHasBeenSet)
+  {
+   payload.WithString("accessibilityCaptionHints", MpdAccessibilityCaptionHintsMapper::GetNameForMpdAccessibilityCaptionHints(m_accessibilityCaptionHints));
+  }
+
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", MpdAudioDurationMapper::GetNameForMpdAudioDuration(m_audioDuration));
+  }
+
   if(m_captionContainerTypeHasBeenSet)
   {
    payload.WithString("captionContainerType", MpdCaptionContainerTypeMapper::GetNameForMpdCaptionContainerType(m_captionContainerType));
+  }
+
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", MpdKlvMetadataMapper::GetNameForMpdKlvMetadata(m_klvMetadata));
   }
 
   if(m_scte35EsamHasBeenSet)
@@ -92,6 +141,11 @@ JsonValue MpdSettings::Jsonize() const
   if(m_scte35SourceHasBeenSet)
   {
    payload.WithString("scte35Source", MpdScte35SourceMapper::GetNameForMpdScte35Source(m_scte35Source));
+  }
+
+  if(m_timedMetadataHasBeenSet)
+  {
+   payload.WithString("timedMetadata", MpdTimedMetadataMapper::GetNameForMpdTimedMetadata(m_timedMetadata));
   }
 
   return payload;

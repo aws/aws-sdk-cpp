@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -147,61 +137,61 @@ namespace Model
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomerDnsIps() const{ return m_customerDnsIps; }
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline bool CustomerDnsIpsHasBeenSet() const { return m_customerDnsIpsHasBeenSet; }
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline void SetCustomerDnsIps(const Aws::Vector<Aws::String>& value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps = value; }
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline void SetCustomerDnsIps(Aws::Vector<Aws::String>&& value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps = std::move(value); }
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline DirectoryConnectSettings& WithCustomerDnsIps(const Aws::Vector<Aws::String>& value) { SetCustomerDnsIps(value); return *this;}
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline DirectoryConnectSettings& WithCustomerDnsIps(Aws::Vector<Aws::String>&& value) { SetCustomerDnsIps(std::move(value)); return *this;}
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline DirectoryConnectSettings& AddCustomerDnsIps(const Aws::String& value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps.push_back(value); return *this; }
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline DirectoryConnectSettings& AddCustomerDnsIps(Aws::String&& value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
-     * the on-premises directory.</p>
+     * your self-managed directory.</p>
      */
     inline DirectoryConnectSettings& AddCustomerDnsIps(const char* value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps.push_back(value); return *this; }
 
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -209,7 +199,7 @@ namespace Model
     inline const Aws::String& GetCustomerUserName() const{ return m_customerUserName; }
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -217,7 +207,7 @@ namespace Model
     inline bool CustomerUserNameHasBeenSet() const { return m_customerUserNameHasBeenSet; }
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -225,7 +215,7 @@ namespace Model
     inline void SetCustomerUserName(const Aws::String& value) { m_customerUserNameHasBeenSet = true; m_customerUserName = value; }
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -233,7 +223,7 @@ namespace Model
     inline void SetCustomerUserName(Aws::String&& value) { m_customerUserNameHasBeenSet = true; m_customerUserName = std::move(value); }
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -241,7 +231,7 @@ namespace Model
     inline void SetCustomerUserName(const char* value) { m_customerUserNameHasBeenSet = true; m_customerUserName.assign(value); }
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -249,7 +239,7 @@ namespace Model
     inline DirectoryConnectSettings& WithCustomerUserName(const Aws::String& value) { SetCustomerUserName(value); return *this;}
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
@@ -257,7 +247,7 @@ namespace Model
     inline DirectoryConnectSettings& WithCustomerUserName(Aws::String&& value) { SetCustomerUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of an account in the on-premises directory that is used to
+     * <p>The user name of an account in your self-managed directory that is used to
      * connect to the directory. This account must have the following permissions:</p>
      * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>

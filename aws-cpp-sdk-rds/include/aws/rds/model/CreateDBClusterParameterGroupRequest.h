@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -53,57 +43,57 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline CreateDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline CreateDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must match the name of an existing DB cluster parameter group.</p> </li>
-     * </ul> <note> <p>This value is stored as a lowercase string.</p> </note>
+     * <p>Must not match the name of an existing DB cluster parameter group.</p> </li>
+     * </ul>  <p>This value is stored as a lowercase string.</p> 
      */
     inline CreateDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -113,9 +103,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
@@ -124,9 +128,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
@@ -135,9 +153,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
@@ -146,9 +178,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
@@ -157,9 +203,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
@@ -168,9 +228,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline CreateDBClusterParameterGroupRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -179,9 +253,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline CreateDBClusterParameterGroupRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
@@ -190,9 +278,23 @@ namespace Model
      * be associated with one and only one DB cluster parameter group family, and can
      * be applied only to a DB cluster running a database engine and engine version
      * compatible with that DB cluster parameter group family.</p> <p> <b>Aurora
-     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
-     * </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
-     * <code>aurora-postgresql9.6</code> </p>
+     * MySQL</b> </p> <p>Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>,
+     * <code>aurora-mysql8.0</code> </p> <p> <b>Aurora PostgreSQL</b> </p> <p>Example:
+     * <code>aurora-postgresql9.6</code> </p> <p> <b>RDS for MySQL</b> </p> <p>Example:
+     * <code>mysql8.0</code> </p> <p> <b>RDS for PostgreSQL</b> </p> <p>Example:
+     * <code>postgres12</code> </p> <p>To list all of the available parameter group
+     * families for a DB engine, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+     * --engine &lt;engine&gt;</code> </p> <p>For example, to list all of the available
+     * parameter group families for the Aurora PostgreSQL DB engine, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql</code>
+     * </p>  <p>The output contains duplicates.</p>  <p>The following are
+     * the valid DB engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul>
      */
     inline CreateDBClusterParameterGroupRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 

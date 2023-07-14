@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackInstance.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -38,6 +28,7 @@ StackInstance::StackInstance() :
     m_parameterOverridesHasBeenSet(false),
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_stackInstanceStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
@@ -54,6 +45,7 @@ StackInstance::StackInstance(const XmlNode& xmlNode) :
     m_parameterOverridesHasBeenSet(false),
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_stackInstanceStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
@@ -110,6 +102,12 @@ StackInstance& StackInstance::operator =(const XmlNode& xmlNode)
     {
       m_status = StackInstanceStatusMapper::GetStackInstanceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
+    }
+    XmlNode stackInstanceStatusNode = resultNode.FirstChild("StackInstanceStatus");
+    if(!stackInstanceStatusNode.IsNull())
+    {
+      m_stackInstanceStatus = stackInstanceStatusNode;
+      m_stackInstanceStatusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
@@ -178,6 +176,13 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
   }
 
+  if(m_stackInstanceStatusHasBeenSet)
+  {
+      Aws::StringStream stackInstanceStatusLocationAndMemberSs;
+      stackInstanceStatusLocationAndMemberSs << location << index << locationValue << ".StackInstanceStatus";
+      m_stackInstanceStatus.OutputToStream(oStream, stackInstanceStatusLocationAndMemberSs.str().c_str());
+  }
+
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
@@ -231,6 +236,12 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
+  }
+  if(m_stackInstanceStatusHasBeenSet)
+  {
+      Aws::String stackInstanceStatusLocationAndMember(location);
+      stackInstanceStatusLocationAndMember += ".StackInstanceStatus";
+      m_stackInstanceStatus.OutputToStream(oStream, stackInstanceStatusLocationAndMember.c_str());
   }
   if(m_statusReasonHasBeenSet)
   {

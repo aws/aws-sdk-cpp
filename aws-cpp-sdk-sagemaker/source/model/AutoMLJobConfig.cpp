@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/AutoMLJobConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,17 @@ namespace Model
 
 AutoMLJobConfig::AutoMLJobConfig() : 
     m_completionCriteriaHasBeenSet(false),
-    m_securityConfigHasBeenSet(false)
+    m_securityConfigHasBeenSet(false),
+    m_dataSplitConfigHasBeenSet(false),
+    m_candidateGenerationConfigHasBeenSet(false)
 {
 }
 
 AutoMLJobConfig::AutoMLJobConfig(JsonView jsonValue) : 
     m_completionCriteriaHasBeenSet(false),
-    m_securityConfigHasBeenSet(false)
+    m_securityConfigHasBeenSet(false),
+    m_dataSplitConfigHasBeenSet(false),
+    m_candidateGenerationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +51,20 @@ AutoMLJobConfig& AutoMLJobConfig::operator =(JsonView jsonValue)
     m_securityConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataSplitConfig"))
+  {
+    m_dataSplitConfig = jsonValue.GetObject("DataSplitConfig");
+
+    m_dataSplitConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CandidateGenerationConfig"))
+  {
+    m_candidateGenerationConfig = jsonValue.GetObject("CandidateGenerationConfig");
+
+    m_candidateGenerationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +81,18 @@ JsonValue AutoMLJobConfig::Jsonize() const
   if(m_securityConfigHasBeenSet)
   {
    payload.WithObject("SecurityConfig", m_securityConfig.Jsonize());
+
+  }
+
+  if(m_dataSplitConfigHasBeenSet)
+  {
+   payload.WithObject("DataSplitConfig", m_dataSplitConfig.Jsonize());
+
+  }
+
+  if(m_candidateGenerationConfigHasBeenSet)
+  {
+   payload.WithObject("CandidateGenerationConfig", m_candidateGenerationConfig.Jsonize());
 
   }
 

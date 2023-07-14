@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/acm-pca/model/CertificateAuthority.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 CertificateAuthority::CertificateAuthority() : 
     m_arnHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastStateChangeAtHasBeenSet(false),
     m_type(CertificateAuthorityType::NOT_SET),
@@ -43,12 +34,15 @@ CertificateAuthority::CertificateAuthority() :
     m_failureReasonHasBeenSet(false),
     m_certificateAuthorityConfigurationHasBeenSet(false),
     m_revocationConfigurationHasBeenSet(false),
-    m_restorableUntilHasBeenSet(false)
+    m_restorableUntilHasBeenSet(false),
+    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
+    m_keyStorageSecurityStandardHasBeenSet(false)
 {
 }
 
 CertificateAuthority::CertificateAuthority(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastStateChangeAtHasBeenSet(false),
     m_type(CertificateAuthorityType::NOT_SET),
@@ -62,7 +56,9 @@ CertificateAuthority::CertificateAuthority(JsonView jsonValue) :
     m_failureReasonHasBeenSet(false),
     m_certificateAuthorityConfigurationHasBeenSet(false),
     m_revocationConfigurationHasBeenSet(false),
-    m_restorableUntilHasBeenSet(false)
+    m_restorableUntilHasBeenSet(false),
+    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
+    m_keyStorageSecurityStandardHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +70,13 @@ CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OwnerAccount"))
+  {
+    m_ownerAccount = jsonValue.GetString("OwnerAccount");
+
+    m_ownerAccountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedAt"))
@@ -153,6 +156,13 @@ CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
     m_restorableUntilHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyStorageSecurityStandard"))
+  {
+    m_keyStorageSecurityStandard = KeyStorageSecurityStandardMapper::GetKeyStorageSecurityStandardForName(jsonValue.GetString("KeyStorageSecurityStandard"));
+
+    m_keyStorageSecurityStandardHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +173,12 @@ JsonValue CertificateAuthority::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("OwnerAccount", m_ownerAccount);
 
   }
 
@@ -222,6 +238,11 @@ JsonValue CertificateAuthority::Jsonize() const
   if(m_restorableUntilHasBeenSet)
   {
    payload.WithDouble("RestorableUntil", m_restorableUntil.SecondsWithMSPrecision());
+  }
+
+  if(m_keyStorageSecurityStandardHasBeenSet)
+  {
+   payload.WithString("KeyStorageSecurityStandard", KeyStorageSecurityStandardMapper::GetNameForKeyStorageSecurityStandard(m_keyStorageSecurityStandard));
   }
 
   return payload;

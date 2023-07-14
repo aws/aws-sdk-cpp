@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/guardduty/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,14 +20,20 @@ namespace Model
 
 Resource::Resource() : 
     m_accessKeyDetailsHasBeenSet(false),
+    m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
+    m_eksClusterDetailsHasBeenSet(false),
+    m_kubernetesDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
 }
 
 Resource::Resource(JsonView jsonValue) : 
     m_accessKeyDetailsHasBeenSet(false),
+    m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
+    m_eksClusterDetailsHasBeenSet(false),
+    m_kubernetesDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -52,11 +48,35 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_accessKeyDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3BucketDetails"))
+  {
+    Array<JsonView> s3BucketDetailsJsonList = jsonValue.GetArray("s3BucketDetails");
+    for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
+    {
+      m_s3BucketDetails.push_back(s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject());
+    }
+    m_s3BucketDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("instanceDetails"))
   {
     m_instanceDetails = jsonValue.GetObject("instanceDetails");
 
     m_instanceDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eksClusterDetails"))
+  {
+    m_eksClusterDetails = jsonValue.GetObject("eksClusterDetails");
+
+    m_eksClusterDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kubernetesDetails"))
+  {
+    m_kubernetesDetails = jsonValue.GetObject("kubernetesDetails");
+
+    m_kubernetesDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -79,9 +99,32 @@ JsonValue Resource::Jsonize() const
 
   }
 
+  if(m_s3BucketDetailsHasBeenSet)
+  {
+   Array<JsonValue> s3BucketDetailsJsonList(m_s3BucketDetails.size());
+   for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
+   {
+     s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject(m_s3BucketDetails[s3BucketDetailsIndex].Jsonize());
+   }
+   payload.WithArray("s3BucketDetails", std::move(s3BucketDetailsJsonList));
+
+  }
+
   if(m_instanceDetailsHasBeenSet)
   {
    payload.WithObject("instanceDetails", m_instanceDetails.Jsonize());
+
+  }
+
+  if(m_eksClusterDetailsHasBeenSet)
+  {
+   payload.WithObject("eksClusterDetails", m_eksClusterDetails.Jsonize());
+
+  }
+
+  if(m_kubernetesDetailsHasBeenSet)
+  {
+   payload.WithObject("kubernetesDetails", m_kubernetesDetails.Jsonize());
 
   }
 

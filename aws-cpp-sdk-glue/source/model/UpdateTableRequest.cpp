@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/UpdateTableRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,7 +17,9 @@ UpdateTableRequest::UpdateTableRequest() :
     m_databaseNameHasBeenSet(false),
     m_tableInputHasBeenSet(false),
     m_skipArchive(false),
-    m_skipArchiveHasBeenSet(false)
+    m_skipArchiveHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -56,6 +48,18 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_skipArchiveHasBeenSet)
   {
    payload.WithBool("SkipArchive", m_skipArchive);
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_versionIdHasBeenSet)
+  {
+   payload.WithString("VersionId", m_versionId);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 
   /**
    * <p>IP address block. This is often the address block of the DNS server used for
-   * your on-premises domain. </p><p><h3>See Also:</h3>   <a
+   * your self-managed domain. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRoute">AWS API
    * Reference</a></p>
    */
@@ -50,7 +40,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -58,7 +48,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -66,7 +56,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -74,7 +64,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -82,7 +72,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -90,7 +80,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -98,7 +88,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
@@ -106,7 +96,7 @@ namespace Model
 
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
-     * the address block of the DNS server used for your on-premises domain. For a
+     * the address block of the DNS server used for your self-managed domain. For a
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */

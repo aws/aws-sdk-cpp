@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/UpdateFailoverConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,16 +19,22 @@ namespace Model
 {
 
 UpdateFailoverConfig::UpdateFailoverConfig() : 
+    m_failoverMode(FailoverMode::NOT_SET),
+    m_failoverModeHasBeenSet(false),
     m_recoveryWindow(0),
     m_recoveryWindowHasBeenSet(false),
+    m_sourcePriorityHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false)
 {
 }
 
 UpdateFailoverConfig::UpdateFailoverConfig(JsonView jsonValue) : 
+    m_failoverMode(FailoverMode::NOT_SET),
+    m_failoverModeHasBeenSet(false),
     m_recoveryWindow(0),
     m_recoveryWindowHasBeenSet(false),
+    m_sourcePriorityHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false)
 {
@@ -47,11 +43,25 @@ UpdateFailoverConfig::UpdateFailoverConfig(JsonView jsonValue) :
 
 UpdateFailoverConfig& UpdateFailoverConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("failoverMode"))
+  {
+    m_failoverMode = FailoverModeMapper::GetFailoverModeForName(jsonValue.GetString("failoverMode"));
+
+    m_failoverModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("recoveryWindow"))
   {
     m_recoveryWindow = jsonValue.GetInteger("recoveryWindow");
 
     m_recoveryWindowHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourcePriority"))
+  {
+    m_sourcePriority = jsonValue.GetObject("sourcePriority");
+
+    m_sourcePriorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -68,9 +78,20 @@ JsonValue UpdateFailoverConfig::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_failoverModeHasBeenSet)
+  {
+   payload.WithString("failoverMode", FailoverModeMapper::GetNameForFailoverMode(m_failoverMode));
+  }
+
   if(m_recoveryWindowHasBeenSet)
   {
    payload.WithInteger("recoveryWindow", m_recoveryWindow);
+
+  }
+
+  if(m_sourcePriorityHasBeenSet)
+  {
+   payload.WithObject("sourcePriority", m_sourcePriority.Jsonize());
 
   }
 

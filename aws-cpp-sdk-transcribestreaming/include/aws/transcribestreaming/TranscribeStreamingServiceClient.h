@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
@@ -66,16 +56,22 @@ namespace TranscribeStreamingService
 
 namespace Model
 {
+        class StartMedicalStreamTranscriptionRequest;
+        class AudioStream;
         class StartStreamTranscriptionRequest;
         class AudioStream;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeStreamingServiceErrors>> StartStreamTranscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartMedicalStreamTranscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartStreamTranscriptionOutcome;
 
+        typedef std::future<StartMedicalStreamTranscriptionOutcome> StartMedicalStreamTranscriptionOutcomeCallable;
         typedef std::future<StartStreamTranscriptionOutcome> StartStreamTranscriptionOutcomeCallable;
 } // namespace Model
 
   class TranscribeStreamingServiceClient;
 
+    typedef std::function<void(Model::AudioStream&)> StartMedicalStreamTranscriptionStreamReadyHandler;
+    typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartMedicalStreamTranscriptionRequest&, const Model::StartMedicalStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalStreamTranscriptionResponseReceivedHandler;
     typedef std::function<void(Model::AudioStream&)> StartStreamTranscriptionStreamReadyHandler;
     typedef std::function<void(const TranscribeStreamingServiceClient*, const Model::StartStreamTranscriptionRequest&, const Model::StartStreamTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamTranscriptionResponseReceivedHandler;
 
@@ -108,17 +104,33 @@ namespace Model
 
         virtual ~TranscribeStreamingServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Transcribe Streaming"; }
-
 
         /**
-         * <p>Starts a bidirectional HTTP2 stream where audio is streamed to Amazon
+         * <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon
+         * Transcribe Medical and the transcription results are streamed to your
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartMedicalStreamTranscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The responseHandler is triggered when the request is finished.
+         */
+        virtual void StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
+                const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
+                const StartMedicalStreamTranscriptionResponseReceivedHandler& responseHandler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+        /**
+         * <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon
          * Transcribe and the transcription results are streamed to your application.</p>
-         * <p>The following are encoded as HTTP2 headers:</p> <ul> <li>
+         * <p>The following are encoded as HTTP/2 headers:</p> <ul> <li>
          * <p>x-amzn-transcribe-language-code</p> </li> <li>
          * <p>x-amzn-transcribe-media-encoding</p> </li> <li>
          * <p>x-amzn-transcribe-sample-rate</p> </li> <li>
-         * <p>x-amzn-transcribe-session-id</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>x-amzn-transcribe-session-id</p> </li> </ul> <p>See the <a
+         * href="https://docs.aws.amazon.com/sdk-for-go/api/service/transcribestreamingservice/#TranscribeStreamingService.StartStreamTranscription">
+         * SDK for Go API Reference</a> for more detail.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartStreamTranscription">AWS
          * API Reference</a></p>
          *

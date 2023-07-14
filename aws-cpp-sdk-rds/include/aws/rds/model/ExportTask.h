@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -37,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of a snapshot export to Amazon S3. </p> <p>This data
-   * type is used as a response element in the <code>DescribeExportTasks</code>
-   * action. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of a snapshot export to Amazon S3.</p> <p>This data type
+   * is used as a response element in the <code>DescribeExportTasks</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ExportTask">AWS API
    * Reference</a></p>
    */
@@ -56,49 +46,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline const Aws::String& GetExportTaskIdentifier() const{ return m_exportTaskIdentifier; }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline bool ExportTaskIdentifierHasBeenSet() const { return m_exportTaskIdentifierHasBeenSet; }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline void SetExportTaskIdentifier(const Aws::String& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = value; }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline void SetExportTaskIdentifier(Aws::String&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::move(value); }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline void SetExportTaskIdentifier(const char* value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier.assign(value); }
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline ExportTask& WithExportTaskIdentifier(const Aws::String& value) { SetExportTaskIdentifier(value); return *this;}
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline ExportTask& WithExportTaskIdentifier(Aws::String&& value) { SetExportTaskIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the snapshot export task. This ID isn't an identifier
-     * for the Amazon S3 bucket where the snapshot is exported to. </p>
+     * for the Amazon S3 bucket where the snapshot is exported to.</p>
      */
     inline ExportTask& WithExportTaskIdentifier(const char* value) { SetExportTaskIdentifier(value); return *this;}
 
@@ -146,109 +136,127 @@ namespace Model
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetExportOnly() const{ return m_exportOnly; }
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline bool ExportOnlyHasBeenSet() const { return m_exportOnlyHasBeenSet; }
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline void SetExportOnly(const Aws::Vector<Aws::String>& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = value; }
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline void SetExportOnly(Aws::Vector<Aws::String>&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = std::move(value); }
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline ExportTask& WithExportOnly(const Aws::Vector<Aws::String>& value) { SetExportOnly(value); return *this;}
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline ExportTask& WithExportOnly(Aws::Vector<Aws::String>&& value) { SetExportOnly(std::move(value)); return *this;}
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline ExportTask& AddExportOnly(const Aws::String& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline ExportTask& AddExportOnly(Aws::String&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The data exported from the snapshot. Valid values are the following:</p> <ul>
-     * <li> <p> <code>database</code> - Export all the data of the snapshot.</p> </li>
-     * <li> <p> <code>database.table [table-name]</code> - Export a table of the
-     * snapshot.</p> </li> <li> <p> <code>database.schema [schema-name]</code> - Export
-     * a database schema of the snapshot. This value isn't valid for RDS for MySQL, RDS
-     * for MariaDB, or Aurora MySQL.</p> </li> <li> <p> <code>database.schema.table
-     * [table-name]</code> - Export a table of the database schema. This value isn't
-     * valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.</p> </li> </ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS
+     * for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code>
+     * <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p>
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the
+     * database schema. This format is valid only for RDS for PostgreSQL and Aurora
+     * PostgreSQL.</p> </li> </ul>
      */
     inline ExportTask& AddExportOnly(const char* value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
 
@@ -438,122 +446,114 @@ namespace Model
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline ExportTask& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline ExportTask& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM role that is used to write to Amazon S3 when exporting a
-     * snapshot. </p>
+     * snapshot.</p>
      */
     inline ExportTask& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline ExportTask& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline ExportTask& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS
-     * key identifier, or the KMS key alias for the KMS encryption key. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to
-     * use this KMS key. </p>
+     * <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt
+     * the snapshot when it's exported to Amazon S3. The KMS key identifier is its key
+     * ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+     * must have encryption and decryption permissions to use this KMS key.</p>
      */
     inline ExportTask& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

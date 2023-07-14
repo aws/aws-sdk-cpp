@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesisvideo/model/APIName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,8 @@ namespace Aws
         static const int GET_MEDIA_FOR_FRAGMENT_LIST_HASH = HashingUtils::HashString("GET_MEDIA_FOR_FRAGMENT_LIST");
         static const int GET_HLS_STREAMING_SESSION_URL_HASH = HashingUtils::HashString("GET_HLS_STREAMING_SESSION_URL");
         static const int GET_DASH_STREAMING_SESSION_URL_HASH = HashingUtils::HashString("GET_DASH_STREAMING_SESSION_URL");
+        static const int GET_CLIP_HASH = HashingUtils::HashString("GET_CLIP");
+        static const int GET_IMAGES_HASH = HashingUtils::HashString("GET_IMAGES");
 
 
         APIName GetAPINameForName(const Aws::String& name)
@@ -65,6 +57,14 @@ namespace Aws
           {
             return APIName::GET_DASH_STREAMING_SESSION_URL;
           }
+          else if (hashCode == GET_CLIP_HASH)
+          {
+            return APIName::GET_CLIP;
+          }
+          else if (hashCode == GET_IMAGES_HASH)
+          {
+            return APIName::GET_IMAGES;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +91,10 @@ namespace Aws
             return "GET_HLS_STREAMING_SESSION_URL";
           case APIName::GET_DASH_STREAMING_SESSION_URL:
             return "GET_DASH_STREAMING_SESSION_URL";
+          case APIName::GET_CLIP:
+            return "GET_CLIP";
+          case APIName::GET_IMAGES:
+            return "GET_IMAGES";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

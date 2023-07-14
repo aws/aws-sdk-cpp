@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -45,105 +35,153 @@ namespace Model
 
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetGrantToken() const{ return m_grantToken; }
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline bool GrantTokenHasBeenSet() const { return m_grantTokenHasBeenSet; }
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(const Aws::String& value) { m_grantTokenHasBeenSet = true; m_grantToken = value; }
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(Aws::String&& value) { m_grantTokenHasBeenSet = true; m_grantToken = std::move(value); }
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(const char* value) { m_grantTokenHasBeenSet = true; m_grantToken.assign(value); }
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline RetireGrantRequest& WithGrantToken(const Aws::String& value) { SetGrantToken(value); return *this;}
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline RetireGrantRequest& WithGrantToken(Aws::String&& value) { SetGrantToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that identifies the grant to be retired.</p>
+     * <p>Identifies the grant to be retired. You can use a grant token to identify a
+     * new grant even before it has achieved eventual consistency.</p> <p>Only the
+     * <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline RetireGrantRequest& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline RetireGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
     inline RetireGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
-     * <p>For example:
+     * <p>The key ARN KMS key associated with the grant. To find the key ARN, use the
+     * <a>ListKeys</a> operation.</p> <p>For example:
      * <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      */
@@ -151,64 +189,64 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline bool GrantIdHasBeenSet() const { return m_grantIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = std::move(value); }
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline RetireGrantRequest& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */
     inline RetireGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
-     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p> <ul> <li> <p>Grant ID
      * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
      * </li> </ul>
      */

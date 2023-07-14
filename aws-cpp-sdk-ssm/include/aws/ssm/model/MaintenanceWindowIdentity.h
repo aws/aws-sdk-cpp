@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -213,26 +203,26 @@ namespace Model
 
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline int GetCutoff() const{ return m_cutoff; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline bool CutoffHasBeenSet() const { return m_cutoffHasBeenSet; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline void SetCutoff(int value) { m_cutoffHasBeenSet = true; m_cutoff = value; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline MaintenanceWindowIdentity& WithCutoff(int value) { SetCutoff(value); return *this;}
 
@@ -333,6 +323,31 @@ namespace Model
      * in Internet Assigned Numbers Authority (IANA) format.</p>
      */
     inline MaintenanceWindowIdentity& WithScheduleTimezone(const char* value) { SetScheduleTimezone(value); return *this;}
+
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * cron expression date and time.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * cron expression date and time.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * cron expression date and time.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * cron expression date and time.</p>
+     */
+    inline MaintenanceWindowIdentity& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
 
 
     /**
@@ -506,6 +521,9 @@ namespace Model
 
     Aws::String m_scheduleTimezone;
     bool m_scheduleTimezoneHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
 
     Aws::String m_endDate;
     bool m_endDateHasBeenSet;

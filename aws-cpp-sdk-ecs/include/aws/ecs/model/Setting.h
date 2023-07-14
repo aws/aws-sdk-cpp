@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -80,99 +70,99 @@ namespace Model
 
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline Setting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline Setting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Whether the account setting is enabled or disabled for the specified
-     * resource.</p>
+     * <p>Determines whether the account setting is enabled or disabled for the
+     * specified resource.</p>
      */
     inline Setting& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline Setting& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline Setting& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If this field is omitted, the authenticated user is assumed.</p>
+     * <p>The ARN of the principal. It can be an IAM user, IAM role, or the root user.
+     * If this field is omitted, the authenticated user is assumed.</p>
      */
     inline Setting& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 

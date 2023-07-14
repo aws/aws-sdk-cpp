@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
+#include <aws/mediaconnect/model/EntitlementStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -183,6 +174,55 @@ namespace Model
 
 
     /**
+     * An indication of whether you want to enable the entitlement to allow access, or
+     * disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the entitlementStatus field in your request, MediaConnect
+     * leaves the value unchanged.
+     */
+    inline const EntitlementStatus& GetEntitlementStatus() const{ return m_entitlementStatus; }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or
+     * disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the entitlementStatus field in your request, MediaConnect
+     * leaves the value unchanged.
+     */
+    inline bool EntitlementStatusHasBeenSet() const { return m_entitlementStatusHasBeenSet; }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or
+     * disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the entitlementStatus field in your request, MediaConnect
+     * leaves the value unchanged.
+     */
+    inline void SetEntitlementStatus(const EntitlementStatus& value) { m_entitlementStatusHasBeenSet = true; m_entitlementStatus = value; }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or
+     * disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the entitlementStatus field in your request, MediaConnect
+     * leaves the value unchanged.
+     */
+    inline void SetEntitlementStatus(EntitlementStatus&& value) { m_entitlementStatusHasBeenSet = true; m_entitlementStatus = std::move(value); }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or
+     * disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the entitlementStatus field in your request, MediaConnect
+     * leaves the value unchanged.
+     */
+    inline UpdateFlowEntitlementRequest& WithEntitlementStatus(const EntitlementStatus& value) { SetEntitlementStatus(value); return *this;}
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or
+     * disable it to stop streaming content to the subscriber’s flow temporarily. If
+     * you don’t specify the entitlementStatus field in your request, MediaConnect
+     * leaves the value unchanged.
+     */
+    inline UpdateFlowEntitlementRequest& WithEntitlementStatus(EntitlementStatus&& value) { SetEntitlementStatus(std::move(value)); return *this;}
+
+
+    /**
      * The flow that is associated with the entitlement that you want to update.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
@@ -296,6 +336,9 @@ namespace Model
 
     Aws::String m_entitlementArn;
     bool m_entitlementArnHasBeenSet;
+
+    EntitlementStatus m_entitlementStatus;
+    bool m_entitlementStatusHasBeenSet;
 
     Aws::String m_flowArn;
     bool m_flowArnHasBeenSet;

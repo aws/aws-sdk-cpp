@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -52,44 +42,32 @@ namespace Model
 
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
-     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline const AutomationExecutionFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
-     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
-     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline void SetKey(const AutomationExecutionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
-     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline void SetKey(AutomationExecutionFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
-     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline AutomationExecutionFilter& WithKey(const AutomationExecutionFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>One or more keys to limit the results. Valid filter keys include the
-     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
-     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     * <p>One or more keys to limit the results.</p>
      */
     inline AutomationExecutionFilter& WithKey(AutomationExecutionFilterKey&& value) { SetKey(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -86,16 +76,16 @@ namespace Model
 
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -103,16 +93,16 @@ namespace Model
     inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -120,16 +110,16 @@ namespace Model
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -137,16 +127,16 @@ namespace Model
     inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -154,16 +144,16 @@ namespace Model
     inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -171,16 +161,16 @@ namespace Model
     inline BatchPutMessageRequest& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -188,16 +178,16 @@ namespace Model
     inline BatchPutMessageRequest& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>
@@ -205,16 +195,16 @@ namespace Model
     inline BatchPutMessageRequest& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 
     /**
-     * <p>The list of messages to be sent. Each message has format: '{ "messageId":
-     * "string", "payload": "string"}'.</p> <p>Note that the field names of message
-     * payloads (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters and undescores (_); no other special
-     * characters are allowed.</p> </li> <li> <p>Must begin with an alphabetic
-     * character or single underscore (_).</p> </li> <li> <p>Cannot contain hyphens
-     * (-).</p> </li> <li> <p>In regular expression terms:
+     * <p>The list of messages to be sent. Each message has the format: { "messageId":
+     * "string", "payload": "string"}.</p> <p>The field names of message payloads
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * alphanumeric characters and undescores (_). No other special characters are
+     * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
+     * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
+     * <p>In regular expression terms:
      * "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li> <li> <p>Cannot
-     * be greater than 255 characters.</p> </li> <li> <p>Are case-insensitive. (Fields
-     * named "foo" and "FOO" in the same payload are considered duplicates.)</p> </li>
+     * be more than 255 characters.</p> </li> <li> <p>Are case insensitive. (Fields
+     * named foo and FOO in the same payload are considered duplicates.)</p> </li>
      * </ul> <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but
      * {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message
      * payloads. </p>

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -39,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <important> <p>Outputs recommended instead.</p> </important> <p>If you specified
+   *  <p>Outputs recommended instead.</p>  <p>If you specified
    * one output for a job, information about that output. If you specified multiple
    * outputs for a job, the <code>Output</code> object lists information about the
    * first output. This duplicates the information that is listed for the first
@@ -174,9 +164,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -203,9 +193,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -232,9 +222,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -261,9 +251,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -290,9 +280,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -319,9 +309,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -348,9 +338,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -377,9 +367,9 @@ namespace Model
      * specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence
      * number (beginning with <b>00001</b>) to thumbnail file names. The number
      * indicates where a given thumbnail appears in the sequence of thumbnails for a
-     * transcoded file. </p> <important> <p>If you specify a literal value and/or
+     * transcoded file. </p>  <p>If you specify a literal value and/or
      * <code>{resolution}</code> but you omit <code>{count}</code>, Elastic Transcoder
-     * returns a validation error and does not create the job.</p> </important> </li>
+     * returns a validation error and does not create the job.</p>  </li>
      * <li> <p> <b>Literal values (Optional)</b>: You can specify literal values
      * anywhere in the <code>ThumbnailPattern</code> object. For example, you can
      * include them as a file name prefix or as a delimiter between
@@ -587,8 +577,8 @@ namespace Model
 
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -607,8 +597,8 @@ namespace Model
     inline const Aws::String& GetSegmentDuration() const{ return m_segmentDuration; }
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -627,8 +617,8 @@ namespace Model
     inline bool SegmentDurationHasBeenSet() const { return m_segmentDurationHasBeenSet; }
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -647,8 +637,8 @@ namespace Model
     inline void SetSegmentDuration(const Aws::String& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = value; }
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -667,8 +657,8 @@ namespace Model
     inline void SetSegmentDuration(Aws::String&& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = std::move(value); }
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -687,8 +677,8 @@ namespace Model
     inline void SetSegmentDuration(const char* value) { m_segmentDurationHasBeenSet = true; m_segmentDuration.assign(value); }
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -707,8 +697,8 @@ namespace Model
     inline JobOutput& WithSegmentDuration(const Aws::String& value) { SetSegmentDuration(value); return *this;}
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,
@@ -727,8 +717,8 @@ namespace Model
     inline JobOutput& WithSegmentDuration(Aws::String&& value) { SetSegmentDuration(std::move(value)); return *this;}
 
     /**
-     * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or
      * <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum
      * duration of each segment in seconds. For <code>HLSv3</code> format playlists,

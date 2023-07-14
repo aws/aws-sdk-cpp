@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -135,49 +125,57 @@ namespace Model
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline ImageDiskContainer& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     * <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> |
+     * <code>RAW</code> </p>
      */
     inline ImageDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
 

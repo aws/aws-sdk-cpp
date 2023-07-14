@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -98,50 +88,66 @@ namespace Model
 
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline EmailChannelResponse& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline EmailChannelResponse& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration set that's applied to email that's sent through the channel
-     * by using the <a href="emailAPIreference.html">Amazon Pinpoint Email API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that's applied to messages that are sent through the
+     * channel.</p>
      */
     inline EmailChannelResponse& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
 
@@ -217,49 +223,49 @@ namespace Model
 
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline void SetFromAddress(Aws::String&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::move(value); }
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline void SetFromAddress(const char* value) { m_fromAddressHasBeenSet = true; m_fromAddress.assign(value); }
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline EmailChannelResponse& WithFromAddress(const Aws::String& value) { SetFromAddress(value); return *this;}
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline EmailChannelResponse& WithFromAddress(Aws::String&& value) { SetFromAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The verified email address that you send email from when you send email
+     * <p>The verified email address that email is sent from when you send email
      * through the channel.</p>
      */
     inline EmailChannelResponse& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
@@ -337,56 +343,56 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline EmailChannelResponse& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline EmailChannelResponse& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple
-     * Email Service (Amazon SES), that you use when you send email through the
+     * Email Service (Amazon SES), that's used when you send email through the
      * channel.</p>
      */
     inline EmailChannelResponse& WithIdentity(const char* value) { SetIdentity(value); return *this;}
@@ -504,25 +510,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of emails that you can send through the channel each
+     * <p>The maximum number of emails that can be sent through the channel each
      * second.</p>
      */
     inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
 
     /**
-     * <p>The maximum number of emails that you can send through the channel each
+     * <p>The maximum number of emails that can be sent through the channel each
      * second.</p>
      */
     inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
 
     /**
-     * <p>The maximum number of emails that you can send through the channel each
+     * <p>The maximum number of emails that can be sent through the channel each
      * second.</p>
      */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
-     * <p>The maximum number of emails that you can send through the channel each
+     * <p>The maximum number of emails that can be sent through the channel each
      * second.</p>
      */
     inline EmailChannelResponse& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}

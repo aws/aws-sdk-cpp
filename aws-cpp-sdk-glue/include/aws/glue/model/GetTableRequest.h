@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -46,49 +37,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline GetTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline GetTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline GetTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -190,6 +181,90 @@ namespace Model
      */
     inline GetTableRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline GetTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline GetTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transaction ID at which to read the table contents. </p>
+     */
+    inline GetTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
+
+    /**
+     * <p>The time as of when to read the table contents. If not set, the most recent
+     * transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetQueryAsOfTime() const{ return m_queryAsOfTime; }
+
+    /**
+     * <p>The time as of when to read the table contents. If not set, the most recent
+     * transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline bool QueryAsOfTimeHasBeenSet() const { return m_queryAsOfTimeHasBeenSet; }
+
+    /**
+     * <p>The time as of when to read the table contents. If not set, the most recent
+     * transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline void SetQueryAsOfTime(const Aws::Utils::DateTime& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = value; }
+
+    /**
+     * <p>The time as of when to read the table contents. If not set, the most recent
+     * transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline void SetQueryAsOfTime(Aws::Utils::DateTime&& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = std::move(value); }
+
+    /**
+     * <p>The time as of when to read the table contents. If not set, the most recent
+     * transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline GetTableRequest& WithQueryAsOfTime(const Aws::Utils::DateTime& value) { SetQueryAsOfTime(value); return *this;}
+
+    /**
+     * <p>The time as of when to read the table contents. If not set, the most recent
+     * transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline GetTableRequest& WithQueryAsOfTime(Aws::Utils::DateTime&& value) { SetQueryAsOfTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -200,6 +275,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
+
+    Aws::Utils::DateTime m_queryAsOfTime;
+    bool m_queryAsOfTimeHasBeenSet;
   };
 
 } // namespace Model

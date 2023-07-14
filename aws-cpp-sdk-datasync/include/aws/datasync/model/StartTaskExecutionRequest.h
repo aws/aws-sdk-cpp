@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -113,66 +103,131 @@ namespace Model
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline StartTaskExecutionRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline StartTaskExecutionRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline StartTaskExecutionRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list contains a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code>. </p>
+     */
+    inline StartTaskExecutionRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -184,6 +239,9 @@ namespace Model
 
     Aws::Vector<FilterRule> m_includes;
     bool m_includesHasBeenSet;
+
+    Aws::Vector<FilterRule> m_excludes;
+    bool m_excludesHasBeenSet;
   };
 
 } // namespace Model

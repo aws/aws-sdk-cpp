@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/JobDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,11 +25,17 @@ JobDefinition::JobDefinition() :
     m_revisionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false)
+    m_nodePropertiesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
+    m_platformCapabilitiesHasBeenSet(false)
 {
 }
 
@@ -50,11 +46,17 @@ JobDefinition::JobDefinition(JsonView jsonValue) :
     m_revisionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false)
+    m_nodePropertiesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
+    m_platformCapabilitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,13 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schedulingPriority"))
+  {
+    m_schedulingPriority = jsonValue.GetInteger("schedulingPriority");
+
+    m_schedulingPriorityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -132,6 +141,33 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_nodeProperties = jsonValue.GetObject("nodeProperties");
 
     m_nodePropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("propagateTags"))
+  {
+    m_propagateTags = jsonValue.GetBool("propagateTags");
+
+    m_propagateTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformCapabilities"))
+  {
+    Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
+    for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
+    {
+      m_platformCapabilities.push_back(PlatformCapabilityMapper::GetPlatformCapabilityForName(platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString()));
+    }
+    m_platformCapabilitiesHasBeenSet = true;
   }
 
   return *this;
@@ -171,6 +207,12 @@ JsonValue JobDefinition::Jsonize() const
 
   }
 
+  if(m_schedulingPriorityHasBeenSet)
+  {
+   payload.WithInteger("schedulingPriority", m_schedulingPriority);
+
+  }
+
   if(m_parametersHasBeenSet)
   {
    JsonValue parametersJsonMap;
@@ -203,6 +245,34 @@ JsonValue JobDefinition::Jsonize() const
   if(m_nodePropertiesHasBeenSet)
   {
    payload.WithObject("nodeProperties", m_nodeProperties.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithBool("propagateTags", m_propagateTags);
+
+  }
+
+  if(m_platformCapabilitiesHasBeenSet)
+  {
+   Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
+   for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
+   {
+     platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));
+   }
+   payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
 
   }
 

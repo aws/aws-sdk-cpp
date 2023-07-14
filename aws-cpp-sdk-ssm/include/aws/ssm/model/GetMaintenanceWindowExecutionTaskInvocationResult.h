@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -190,32 +180,27 @@ namespace Model
 
 
     /**
-     * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
+     * <p>Retrieves the task type for a maintenance window.</p>
      */
     inline const MaintenanceWindowTaskType& GetTaskType() const{ return m_taskType; }
 
     /**
-     * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
+     * <p>Retrieves the task type for a maintenance window.</p>
      */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskType = value; }
 
     /**
-     * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
+     * <p>Retrieves the task type for a maintenance window.</p>
      */
     inline void SetTaskType(MaintenanceWindowTaskType&& value) { m_taskType = std::move(value); }
 
     /**
-     * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
+     * <p>Retrieves the task type for a maintenance window.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(const MaintenanceWindowTaskType& value) { SetTaskType(value); return *this;}
 
     /**
-     * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
+     * <p>Retrieves the task type for a maintenance window.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 
@@ -378,44 +363,51 @@ namespace Model
 
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformation = value; }
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformation = std::move(value); }
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformation.assign(value); }
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this maintenance window. </p>
+     * <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon
+     * EventBridge events raised while running tasks for these targets in this
+     * maintenance window.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 

@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #pragma once
 #include <aws/core/Aws.h>
 #include <aws/core/utils/crypto/ContentCryptoMaterial.h>
@@ -25,6 +15,7 @@ namespace Aws
     namespace S3Encryption
     {
         static const char* const MetadataHandler_Tag = "MetadataHandler";
+        static const char* const DEPRECATED_CONTENT_KEY_HEADER = "x-amz-key";
         static const char* const CONTENT_KEY_HEADER = "x-amz-key-v2";
         static const char* const IV_HEADER = "x-amz-iv";
         static const char* const MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";
@@ -32,6 +23,10 @@ namespace Aws
         static const char* const CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
         static const char* const KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
         static const char* const INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";
+        static const size_t AES_GCM_IV_BYTES = 12;
+        static const size_t AES_GCM_KEY_BYTES = 32;
+        static const size_t AES_GCM_TAG_BYTES = 16;
+        static const size_t AES_KEY_WRAP_ENCRYPTED_CEK_BYTES = 40;
 
         namespace Handlers
         {

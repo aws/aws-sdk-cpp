@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/comprehendmedical/model/EntitySubType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static const int DX_NAME_HASH = HashingUtils::HashString("DX_NAME");
         static const int DOSAGE_HASH = HashingUtils::HashString("DOSAGE");
         static const int ROUTE_OR_MODE_HASH = HashingUtils::HashString("ROUTE_OR_MODE");
         static const int FORM_HASH = HashingUtils::HashString("FORM");
@@ -44,13 +35,16 @@ namespace Aws
         static const int TEST_NAME_HASH = HashingUtils::HashString("TEST_NAME");
         static const int TEST_VALUE_HASH = HashingUtils::HashString("TEST_VALUE");
         static const int TEST_UNITS_HASH = HashingUtils::HashString("TEST_UNITS");
+        static const int TEST_UNIT_HASH = HashingUtils::HashString("TEST_UNIT");
         static const int PROCEDURE_NAME_HASH = HashingUtils::HashString("PROCEDURE_NAME");
         static const int TREATMENT_NAME_HASH = HashingUtils::HashString("TREATMENT_NAME");
         static const int DATE_HASH = HashingUtils::HashString("DATE");
         static const int AGE_HASH = HashingUtils::HashString("AGE");
         static const int CONTACT_POINT_HASH = HashingUtils::HashString("CONTACT_POINT");
+        static const int PHONE_OR_FAX_HASH = HashingUtils::HashString("PHONE_OR_FAX");
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
         static const int IDENTIFIER_HASH = HashingUtils::HashString("IDENTIFIER");
+        static const int ID_HASH = HashingUtils::HashString("ID");
         static const int URL_HASH = HashingUtils::HashString("URL");
         static const int ADDRESS_HASH = HashingUtils::HashString("ADDRESS");
         static const int PROFESSION_HASH = HashingUtils::HashString("PROFESSION");
@@ -72,6 +66,10 @@ namespace Aws
           if (hashCode == NAME_HASH)
           {
             return EntitySubType::NAME;
+          }
+          else if (hashCode == DX_NAME_HASH)
+          {
+            return EntitySubType::DX_NAME;
           }
           else if (hashCode == DOSAGE_HASH)
           {
@@ -125,6 +123,10 @@ namespace Aws
           {
             return EntitySubType::TEST_UNITS;
           }
+          else if (hashCode == TEST_UNIT_HASH)
+          {
+            return EntitySubType::TEST_UNIT;
+          }
           else if (hashCode == PROCEDURE_NAME_HASH)
           {
             return EntitySubType::PROCEDURE_NAME;
@@ -145,6 +147,10 @@ namespace Aws
           {
             return EntitySubType::CONTACT_POINT;
           }
+          else if (hashCode == PHONE_OR_FAX_HASH)
+          {
+            return EntitySubType::PHONE_OR_FAX;
+          }
           else if (hashCode == EMAIL_HASH)
           {
             return EntitySubType::EMAIL;
@@ -152,6 +158,10 @@ namespace Aws
           else if (hashCode == IDENTIFIER_HASH)
           {
             return EntitySubType::IDENTIFIER;
+          }
+          else if (hashCode == ID_HASH)
+          {
+            return EntitySubType::ID;
           }
           else if (hashCode == URL_HASH)
           {
@@ -221,6 +231,8 @@ namespace Aws
           {
           case EntitySubType::NAME:
             return "NAME";
+          case EntitySubType::DX_NAME:
+            return "DX_NAME";
           case EntitySubType::DOSAGE:
             return "DOSAGE";
           case EntitySubType::ROUTE_OR_MODE:
@@ -247,6 +259,8 @@ namespace Aws
             return "TEST_VALUE";
           case EntitySubType::TEST_UNITS:
             return "TEST_UNITS";
+          case EntitySubType::TEST_UNIT:
+            return "TEST_UNIT";
           case EntitySubType::PROCEDURE_NAME:
             return "PROCEDURE_NAME";
           case EntitySubType::TREATMENT_NAME:
@@ -257,10 +271,14 @@ namespace Aws
             return "AGE";
           case EntitySubType::CONTACT_POINT:
             return "CONTACT_POINT";
+          case EntitySubType::PHONE_OR_FAX:
+            return "PHONE_OR_FAX";
           case EntitySubType::EMAIL:
             return "EMAIL";
           case EntitySubType::IDENTIFIER:
             return "IDENTIFIER";
+          case EntitySubType::ID:
+            return "ID";
           case EntitySubType::URL:
             return "URL";
           case EntitySubType::ADDRESS:

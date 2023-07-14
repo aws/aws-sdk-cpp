@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
@@ -50,65 +40,65 @@ namespace Model
 
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline bool RepositoryNamesHasBeenSet() const { return m_repositoryNamesHasBeenSet; }
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::move(value); }
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline BatchGetRepositoriesRequest& WithRepositoryNames(const Aws::Vector<Aws::String>& value) { SetRepositoryNames(value); return *this;}
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline BatchGetRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline BatchGetRepositoriesRequest& AddRepositoryNames(const Aws::String& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline BatchGetRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the repositories to get information about.</p> <note> <p>The
+     * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> </note>
+     * empty.</p> 
      */
     inline BatchGetRepositoriesRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
 

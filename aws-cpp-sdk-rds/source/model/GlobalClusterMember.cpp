@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/GlobalClusterMember.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -34,7 +24,9 @@ GlobalClusterMember::GlobalClusterMember() :
     m_dBClusterArnHasBeenSet(false),
     m_readersHasBeenSet(false),
     m_isWriter(false),
-    m_isWriterHasBeenSet(false)
+    m_isWriterHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false)
 {
 }
 
@@ -42,7 +34,9 @@ GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode) :
     m_dBClusterArnHasBeenSet(false),
     m_readersHasBeenSet(false),
     m_isWriter(false),
-    m_isWriterHasBeenSet(false)
+    m_isWriterHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +71,12 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
       m_isWriter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isWriterNode.GetText()).c_str()).c_str());
       m_isWriterHasBeenSet = true;
     }
+    XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
+    if(!globalWriteForwardingStatusNode.IsNull())
+    {
+      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -103,6 +103,11 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".IsWriter=" << std::boolalpha << m_isWriter << "&";
   }
 
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+
 }
 
 void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -122,6 +127,10 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_isWriterHasBeenSet)
   {
       oStream << location << ".IsWriter=" << std::boolalpha << m_isWriter << "&";
+  }
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
   }
 }
 

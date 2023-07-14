@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/Image.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,12 +20,18 @@ namespace Model
 
 Image::Image() : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_imageRecipeHasBeenSet(false),
+    m_containerRecipeHasBeenSet(false),
     m_sourcePipelineNameHasBeenSet(false),
     m_sourcePipelineArnHasBeenSet(false),
     m_infrastructureConfigurationHasBeenSet(false),
@@ -43,18 +39,26 @@ Image::Image() :
     m_imageTestsConfigurationHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_outputResourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_buildType(BuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
 }
 
 Image::Image(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_type(ImageType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_imageRecipeHasBeenSet(false),
+    m_containerRecipeHasBeenSet(false),
     m_sourcePipelineNameHasBeenSet(false),
     m_sourcePipelineArnHasBeenSet(false),
     m_infrastructureConfigurationHasBeenSet(false),
@@ -62,7 +66,9 @@ Image::Image(JsonView jsonValue) :
     m_imageTestsConfigurationHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_outputResourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_buildType(BuildType::NOT_SET),
+    m_buildTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +80,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -97,6 +110,20 @@ Image& Image::operator =(JsonView jsonValue)
     m_platformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enhancedImageMetadataEnabled"))
+  {
+    m_enhancedImageMetadataEnabled = jsonValue.GetBool("enhancedImageMetadataEnabled");
+
+    m_enhancedImageMetadataEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("osVersion"))
+  {
+    m_osVersion = jsonValue.GetString("osVersion");
+
+    m_osVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
@@ -109,6 +136,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageRecipe = jsonValue.GetObject("imageRecipe");
 
     m_imageRecipeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerRecipe"))
+  {
+    m_containerRecipe = jsonValue.GetObject("containerRecipe");
+
+    m_containerRecipeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourcePipelineName"))
@@ -170,6 +204,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("buildType"))
+  {
+    m_buildType = BuildTypeMapper::GetBuildTypeForName(jsonValue.GetString("buildType"));
+
+    m_buildTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +222,11 @@ JsonValue Image::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ImageTypeMapper::GetNameForImageType(m_type));
   }
 
   if(m_nameHasBeenSet)
@@ -200,6 +246,18 @@ JsonValue Image::Jsonize() const
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
   }
 
+  if(m_enhancedImageMetadataEnabledHasBeenSet)
+  {
+   payload.WithBool("enhancedImageMetadataEnabled", m_enhancedImageMetadataEnabled);
+
+  }
+
+  if(m_osVersionHasBeenSet)
+  {
+   payload.WithString("osVersion", m_osVersion);
+
+  }
+
   if(m_stateHasBeenSet)
   {
    payload.WithObject("state", m_state.Jsonize());
@@ -209,6 +267,12 @@ JsonValue Image::Jsonize() const
   if(m_imageRecipeHasBeenSet)
   {
    payload.WithObject("imageRecipe", m_imageRecipe.Jsonize());
+
+  }
+
+  if(m_containerRecipeHasBeenSet)
+  {
+   payload.WithObject("containerRecipe", m_containerRecipe.Jsonize());
 
   }
 
@@ -263,6 +327,11 @@ JsonValue Image::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_buildTypeHasBeenSet)
+  {
+   payload.WithString("buildType", BuildTypeMapper::GetNameForBuildType(m_buildType));
   }
 
   return payload;

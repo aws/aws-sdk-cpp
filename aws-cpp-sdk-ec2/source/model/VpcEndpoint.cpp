@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/VpcEndpoint.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,6 +32,9 @@ VpcEndpoint::VpcEndpoint() :
     m_routeTableIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_groupsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
+    m_dnsOptionsHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false),
     m_requesterManaged(false),
@@ -67,6 +60,9 @@ VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) :
     m_routeTableIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_groupsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
+    m_dnsOptionsHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false),
     m_requesterManaged(false),
@@ -158,6 +154,18 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       }
 
       m_groupsHasBeenSet = true;
+    }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressTypeHasBeenSet = true;
+    }
+    XmlNode dnsOptionsNode = resultNode.FirstChild("dnsOptions");
+    if(!dnsOptionsNode.IsNull())
+    {
+      m_dnsOptions = dnsOptionsNode;
+      m_dnsOptionsHasBeenSet = true;
     }
     XmlNode privateDnsEnabledNode = resultNode.FirstChild("privateDnsEnabled");
     if(!privateDnsEnabledNode.IsNull())
@@ -291,6 +299,18 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
+  if(m_dnsOptionsHasBeenSet)
+  {
+      Aws::StringStream dnsOptionsLocationAndMemberSs;
+      dnsOptionsLocationAndMemberSs << location << index << locationValue << ".DnsOptions";
+      m_dnsOptions.OutputToStream(oStream, dnsOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_privateDnsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
@@ -402,6 +422,16 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
         groupsSs << location <<  ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+  if(m_dnsOptionsHasBeenSet)
+  {
+      Aws::String dnsOptionsLocationAndMember(location);
+      dnsOptionsLocationAndMember += ".DnsOptions";
+      m_dnsOptions.OutputToStream(oStream, dnsOptionsLocationAndMember.c_str());
   }
   if(m_privateDnsEnabledHasBeenSet)
   {

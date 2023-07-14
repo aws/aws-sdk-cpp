@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/CaptionSourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -39,9 +29,11 @@ namespace Aws
         static const int STL_HASH = HashingUtils::HashString("STL");
         static const int SRT_HASH = HashingUtils::HashString("SRT");
         static const int SMI_HASH = HashingUtils::HashString("SMI");
+        static const int SMPTE_TT_HASH = HashingUtils::HashString("SMPTE_TT");
         static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
         static const int NULL_SOURCE_HASH = HashingUtils::HashString("NULL_SOURCE");
         static const int IMSC_HASH = HashingUtils::HashString("IMSC");
+        static const int WEBVTT_HASH = HashingUtils::HashString("WEBVTT");
 
 
         CaptionSourceType GetCaptionSourceTypeForName(const Aws::String& name)
@@ -83,6 +75,10 @@ namespace Aws
           {
             return CaptionSourceType::SMI;
           }
+          else if (hashCode == SMPTE_TT_HASH)
+          {
+            return CaptionSourceType::SMPTE_TT;
+          }
           else if (hashCode == TELETEXT_HASH)
           {
             return CaptionSourceType::TELETEXT;
@@ -94,6 +90,10 @@ namespace Aws
           else if (hashCode == IMSC_HASH)
           {
             return CaptionSourceType::IMSC;
+          }
+          else if (hashCode == WEBVTT_HASH)
+          {
+            return CaptionSourceType::WEBVTT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -127,12 +127,16 @@ namespace Aws
             return "SRT";
           case CaptionSourceType::SMI:
             return "SMI";
+          case CaptionSourceType::SMPTE_TT:
+            return "SMPTE_TT";
           case CaptionSourceType::TELETEXT:
             return "TELETEXT";
           case CaptionSourceType::NULL_SOURCE:
             return "NULL_SOURCE";
           case CaptionSourceType::IMSC:
             return "IMSC";
+          case CaptionSourceType::WEBVTT:
+            return "WEBVTT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
@@ -87,25 +77,25 @@ namespace Model
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries.</p>
+     * contains any named queries or query executions.</p>
      */
     inline bool GetRecursiveDeleteOption() const{ return m_recursiveDeleteOption; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries.</p>
+     * contains any named queries or query executions.</p>
      */
     inline bool RecursiveDeleteOptionHasBeenSet() const { return m_recursiveDeleteOptionHasBeenSet; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries.</p>
+     * contains any named queries or query executions.</p>
      */
     inline void SetRecursiveDeleteOption(bool value) { m_recursiveDeleteOptionHasBeenSet = true; m_recursiveDeleteOption = value; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries.</p>
+     * contains any named queries or query executions.</p>
      */
     inline DeleteWorkGroupRequest& WithRecursiveDeleteOption(bool value) { SetRecursiveDeleteOption(value); return *this;}
 

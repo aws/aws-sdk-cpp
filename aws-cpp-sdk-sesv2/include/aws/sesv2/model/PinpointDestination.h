@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -54,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline PinpointDestination& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline PinpointDestination& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
-     * to send email events to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email
+     * events to.</p>
      */
     inline PinpointDestination& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 

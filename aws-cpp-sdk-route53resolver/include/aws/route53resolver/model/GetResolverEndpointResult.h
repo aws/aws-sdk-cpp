@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
@@ -43,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline const ResolverEndpoint& GetResolverEndpoint() const{ return m_resolverEndpoint; }
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline void SetResolverEndpoint(const ResolverEndpoint& value) { m_resolverEndpoint = value; }
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline void SetResolverEndpoint(ResolverEndpoint&& value) { m_resolverEndpoint = std::move(value); }
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline GetResolverEndpointResult& WithResolverEndpoint(const ResolverEndpoint& value) { SetResolverEndpoint(value); return *this;}
 
     /**
-     * <p>Information about the resolver endpoint that you specified in a
+     * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline GetResolverEndpointResult& WithResolverEndpoint(ResolverEndpoint&& value) { SetResolverEndpoint(std::move(value)); return *this;}

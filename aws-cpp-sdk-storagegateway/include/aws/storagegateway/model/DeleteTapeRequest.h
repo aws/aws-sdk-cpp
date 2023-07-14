@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -50,56 +40,56 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline DeleteTapeRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline DeleteTapeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
-     * list of gateways for your account and AWS Region.</p>
+     * list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline DeleteTapeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
@@ -144,6 +134,39 @@ namespace Model
      */
     inline DeleteTapeRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom
+     * pool with tape retention lock. Only archived tapes with tape retention lock set
+     * to <code>governance</code> can be deleted. Archived tapes with tape retention
+     * lock set to <code>compliance</code> can't be deleted.</p>
+     */
+    inline DeleteTapeRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -151,6 +174,9 @@ namespace Model
 
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
+    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetentionHasBeenSet;
   };
 
 } // namespace Model

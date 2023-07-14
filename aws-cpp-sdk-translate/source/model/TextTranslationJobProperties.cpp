@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/translate/model/TextTranslationJobProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,12 +27,14 @@ TextTranslationJobProperties::TextTranslationJobProperties() :
     m_sourceLanguageCodeHasBeenSet(false),
     m_targetLanguageCodesHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
+    m_parallelDataNamesHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_submittedTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -55,12 +47,14 @@ TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue) :
     m_sourceLanguageCodeHasBeenSet(false),
     m_targetLanguageCodesHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
+    m_parallelDataNamesHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_submittedTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +116,16 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
     m_terminologyNamesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParallelDataNames"))
+  {
+    Array<JsonView> parallelDataNamesJsonList = jsonValue.GetArray("ParallelDataNames");
+    for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
+    {
+      m_parallelDataNames.push_back(parallelDataNamesJsonList[parallelDataNamesIndex].AsString());
+    }
+    m_parallelDataNamesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
@@ -162,6 +166,13 @@ TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView 
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
 
     m_dataAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Settings"))
+  {
+    m_settings = jsonValue.GetObject("Settings");
+
+    m_settingsHasBeenSet = true;
   }
 
   return *this;
@@ -222,6 +233,17 @@ JsonValue TextTranslationJobProperties::Jsonize() const
 
   }
 
+  if(m_parallelDataNamesHasBeenSet)
+  {
+   Array<JsonValue> parallelDataNamesJsonList(m_parallelDataNames.size());
+   for(unsigned parallelDataNamesIndex = 0; parallelDataNamesIndex < parallelDataNamesJsonList.GetLength(); ++parallelDataNamesIndex)
+   {
+     parallelDataNamesJsonList[parallelDataNamesIndex].AsString(m_parallelDataNames[parallelDataNamesIndex]);
+   }
+   payload.WithArray("ParallelDataNames", std::move(parallelDataNamesJsonList));
+
+  }
+
   if(m_messageHasBeenSet)
   {
    payload.WithString("Message", m_message);
@@ -253,6 +275,12 @@ JsonValue TextTranslationJobProperties::Jsonize() const
   if(m_dataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

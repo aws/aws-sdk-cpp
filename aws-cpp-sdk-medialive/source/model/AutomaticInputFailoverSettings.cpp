@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/AutomaticInputFailoverSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,9 @@ namespace Model
 {
 
 AutomaticInputFailoverSettings::AutomaticInputFailoverSettings() : 
+    m_errorClearTimeMsec(0),
+    m_errorClearTimeMsecHasBeenSet(false),
+    m_failoverConditionsHasBeenSet(false),
     m_inputPreference(InputPreference::NOT_SET),
     m_inputPreferenceHasBeenSet(false),
     m_secondaryInputIdHasBeenSet(false)
@@ -36,6 +29,9 @@ AutomaticInputFailoverSettings::AutomaticInputFailoverSettings() :
 }
 
 AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValue) : 
+    m_errorClearTimeMsec(0),
+    m_errorClearTimeMsecHasBeenSet(false),
+    m_failoverConditionsHasBeenSet(false),
     m_inputPreference(InputPreference::NOT_SET),
     m_inputPreferenceHasBeenSet(false),
     m_secondaryInputIdHasBeenSet(false)
@@ -45,6 +41,23 @@ AutomaticInputFailoverSettings::AutomaticInputFailoverSettings(JsonView jsonValu
 
 AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("errorClearTimeMsec"))
+  {
+    m_errorClearTimeMsec = jsonValue.GetInteger("errorClearTimeMsec");
+
+    m_errorClearTimeMsecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failoverConditions"))
+  {
+    Array<JsonView> failoverConditionsJsonList = jsonValue.GetArray("failoverConditions");
+    for(unsigned failoverConditionsIndex = 0; failoverConditionsIndex < failoverConditionsJsonList.GetLength(); ++failoverConditionsIndex)
+    {
+      m_failoverConditions.push_back(failoverConditionsJsonList[failoverConditionsIndex].AsObject());
+    }
+    m_failoverConditionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputPreference"))
   {
     m_inputPreference = InputPreferenceMapper::GetInputPreferenceForName(jsonValue.GetString("inputPreference"));
@@ -65,6 +78,23 @@ AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonV
 JsonValue AutomaticInputFailoverSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_errorClearTimeMsecHasBeenSet)
+  {
+   payload.WithInteger("errorClearTimeMsec", m_errorClearTimeMsec);
+
+  }
+
+  if(m_failoverConditionsHasBeenSet)
+  {
+   Array<JsonValue> failoverConditionsJsonList(m_failoverConditions.size());
+   for(unsigned failoverConditionsIndex = 0; failoverConditionsIndex < failoverConditionsJsonList.GetLength(); ++failoverConditionsIndex)
+   {
+     failoverConditionsJsonList[failoverConditionsIndex].AsObject(m_failoverConditions[failoverConditionsIndex].Jsonize());
+   }
+   payload.WithArray("failoverConditions", std::move(failoverConditionsJsonList));
+
+  }
 
   if(m_inputPreferenceHasBeenSet)
   {

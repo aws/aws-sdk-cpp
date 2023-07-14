@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/cognito-idp/model/LambdaConfigType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
+#include <aws/cognito-idp/model/UserAttributeUpdateSettingsType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
@@ -102,118 +93,118 @@ namespace Model
 
 
     /**
-     * <p>A container with the policies you wish to update in a user pool.</p>
+     * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
 
     /**
-     * <p>A container with the policies you wish to update in a user pool.</p>
+     * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
 
     /**
-     * <p>A container with the policies you wish to update in a user pool.</p>
+     * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline void SetPolicies(const UserPoolPolicyType& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
-     * <p>A container with the policies you wish to update in a user pool.</p>
+     * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline void SetPolicies(UserPoolPolicyType&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
     /**
-     * <p>A container with the policies you wish to update in a user pool.</p>
+     * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline UpdateUserPoolRequest& WithPolicies(const UserPoolPolicyType& value) { SetPolicies(value); return *this;}
 
     /**
-     * <p>A container with the policies you wish to update in a user pool.</p>
+     * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline UpdateUserPoolRequest& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline UpdateUserPoolRequest& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline UpdateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline const Aws::Vector<VerifiedAttributeType>& GetAutoVerifiedAttributes() const{ return m_autoVerifiedAttributes; }
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline void SetAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = value; }
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline void SetAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = std::move(value); }
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline UpdateUserPoolRequest& WithAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { SetAutoVerifiedAttributes(value); return *this;}
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline UpdateUserPoolRequest& WithAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { SetAutoVerifiedAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline UpdateUserPoolRequest& AddAutoVerifiedAttributes(const VerifiedAttributeType& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(value); return *this; }
 
     /**
-     * <p>The attributes that are automatically verified when the Amazon Cognito
-     * service makes a request to update user pools.</p>
+     * <p>The attributes that are automatically verified when Amazon Cognito requests
+     * to update user pools.</p>
      */
     inline UpdateUserPoolRequest& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
 
@@ -414,62 +405,141 @@ namespace Model
 
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
-     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const{ return m_userAttributeUpdateSettings; }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline bool UserAttributeUpdateSettingsHasBeenSet() const { return m_userAttributeUpdateSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline void SetUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = value; }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::move(value); }
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline UpdateUserPoolRequest& WithUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { SetUserAttributeUpdateSettings(value); return *this;}
+
+    /**
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
+     */
+    inline UpdateUserPoolRequest& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { SetUserAttributeUpdateSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
+     * aren't required and can't be specified during user registration.</p> </li> <li>
+     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
+     * can only specify ON when you're initially creating a user pool. You can use the
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
-     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
+     * aren't required and can't be specified during user registration.</p> </li> <li>
+     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
+     * can only specify ON when you're initially creating a user pool. You can use the
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
-     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
+     * aren't required and can't be specified during user registration.</p> </li> <li>
+     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
+     * can only specify ON when you're initially creating a user pool. You can use the
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
-     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
+     * aren't required and can't be specified during user registration.</p> </li> <li>
+     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
+     * can only specify ON when you're initially creating a user pool. You can use the
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = std::move(value); }
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
-     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
+     * aren't required and can't be specified during user registration.</p> </li> <li>
+     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
+     * can only specify ON when you're initially creating a user pool. You can use the
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
 
     /**
-     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
-     * tokens are not required and cannot be specified during user registration.</p>
-     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * <p>Possible values include:</p> <ul> <li> <p> <code>OFF</code> - MFA tokens
+     * aren't required and can't be specified during user registration.</p> </li> <li>
+     * <p> <code>ON</code> - MFA tokens are required for all user registrations. You
+     * can only specify ON when you're initially creating a user pool. You can use the
+     * <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 
@@ -506,63 +576,105 @@ namespace Model
 
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::move(value); }
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline UpdateUserPoolRequest& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
 
     /**
-     * <p>Email configuration.</p>
+     * <p>The email configuration of your user pool. The email configuration type sets
+     * your preferred sending method, Amazon Web Services Region, and sender for email
+     * invitation and verification messages from your user pool.</p>
      */
     inline UpdateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline UpdateUserPoolRequest& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
 
     /**
-     * <p>SMS configuration.</p>
+     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
+     * must use to send an SMS message from your Amazon Web Services account through
+     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
+     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
+     * Identity and Access Management (IAM) role in your Amazon Web Services
+     * account.</p>
      */
     inline UpdateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
 
@@ -691,105 +803,105 @@ namespace Model
 
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline UpdateUserPoolRequest& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline UpdateUserPoolRequest& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
 
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline UpdateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline UpdateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
 
@@ -821,6 +933,9 @@ namespace Model
 
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
+
+    UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
+    bool m_userAttributeUpdateSettingsHasBeenSet;
 
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;

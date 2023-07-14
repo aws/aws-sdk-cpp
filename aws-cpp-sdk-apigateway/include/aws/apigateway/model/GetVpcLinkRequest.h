@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -47,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline const Aws::String& GetVpcLinkId() const{ return m_vpcLinkId; }
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline bool VpcLinkIdHasBeenSet() const { return m_vpcLinkIdHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline void SetVpcLinkId(const Aws::String& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = value; }
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline void SetVpcLinkId(Aws::String&& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline void SetVpcLinkId(const char* value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline GetVpcLinkRequest& WithVpcLinkId(const Aws::String& value) { SetVpcLinkId(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline GetVpcLinkRequest& WithVpcLinkId(Aws::String&& value) { SetVpcLinkId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
-     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     * <p>The identifier of the VpcLink. It is used in an Integration to reference this
+     * VpcLink.</p>
      */
     inline GetVpcLinkRequest& WithVpcLinkId(const char* value) { SetVpcLinkId(value); return *this;}
 

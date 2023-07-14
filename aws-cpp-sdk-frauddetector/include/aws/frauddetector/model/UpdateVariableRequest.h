@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
@@ -168,42 +158,58 @@ namespace Model
 
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline const Aws::String& GetVariableType() const{ return m_variableType; }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline UpdateVariableRequest& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline UpdateVariableRequest& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline UpdateVariableRequest& WithVariableType(const char* value) { SetVariableType(value); return *this;}
 

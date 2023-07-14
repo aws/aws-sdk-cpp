@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -33,7 +23,9 @@ namespace Model
 
   /**
    * <p>An object representing the scaling configuration details for the Auto Scaling
-   * group that is associated with your node group.</p><p><h3>See Also:</h3>   <a
+   * group that is associated with your node group. When creating a node group, you
+   * must specify all or none of the properties. When updating a node group, you can
+   * specify any or none of the properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupScalingConfig">AWS
    * API Reference</a></p>
    */
@@ -47,76 +39,136 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum number of worker nodes that the managed node group can scale in
-     * to. This number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline NodegroupScalingConfig& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum number of worker nodes that the managed node group can scale out
-     * to. Managed node groups can support up to 100 nodes by default.</p>
+     * <p>The maximum number of nodes that the managed node group can scale out to. For
+     * information about the maximum number that you can specify, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
+     * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline NodegroupScalingConfig& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
+     *  <p>If you use Cluster Autoscaler, you shouldn't change the
+     * desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly
+     * scale up or scale down.</p>  <p>Whenever this parameter changes, the
+     * number of worker nodes in the node group is updated to the specified size. If
+     * this parameter is given a value that is smaller than the current number of
+     * running worker nodes, the necessary number of worker nodes are terminated to
+     * match the given value. When using CloudFormation, no action occurs if you remove
+     * this parameter from your CFN template.</p> <p>This parameter can be different
+     * from minSize in some cases, such as when starting with extra hosts for testing.
+     * This parameter can also be different when you want to start with an estimated
+     * number of needed hosts, but let Cluster Autoscaler reduce the number if there
+     * are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+     * altered by Cluster Autoscaler (but can be out-of-date for short periods of
+     * time). Cluster Autoscaler doesn't scale a managed node group lower than minSize
+     * or higher than maxSize.</p>
      */
     inline int GetDesiredSize() const{ return m_desiredSize; }
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
+     *  <p>If you use Cluster Autoscaler, you shouldn't change the
+     * desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly
+     * scale up or scale down.</p>  <p>Whenever this parameter changes, the
+     * number of worker nodes in the node group is updated to the specified size. If
+     * this parameter is given a value that is smaller than the current number of
+     * running worker nodes, the necessary number of worker nodes are terminated to
+     * match the given value. When using CloudFormation, no action occurs if you remove
+     * this parameter from your CFN template.</p> <p>This parameter can be different
+     * from minSize in some cases, such as when starting with extra hosts for testing.
+     * This parameter can also be different when you want to start with an estimated
+     * number of needed hosts, but let Cluster Autoscaler reduce the number if there
+     * are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+     * altered by Cluster Autoscaler (but can be out-of-date for short periods of
+     * time). Cluster Autoscaler doesn't scale a managed node group lower than minSize
+     * or higher than maxSize.</p>
      */
     inline bool DesiredSizeHasBeenSet() const { return m_desiredSizeHasBeenSet; }
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
+     *  <p>If you use Cluster Autoscaler, you shouldn't change the
+     * desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly
+     * scale up or scale down.</p>  <p>Whenever this parameter changes, the
+     * number of worker nodes in the node group is updated to the specified size. If
+     * this parameter is given a value that is smaller than the current number of
+     * running worker nodes, the necessary number of worker nodes are terminated to
+     * match the given value. When using CloudFormation, no action occurs if you remove
+     * this parameter from your CFN template.</p> <p>This parameter can be different
+     * from minSize in some cases, such as when starting with extra hosts for testing.
+     * This parameter can also be different when you want to start with an estimated
+     * number of needed hosts, but let Cluster Autoscaler reduce the number if there
+     * are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+     * altered by Cluster Autoscaler (but can be out-of-date for short periods of
+     * time). Cluster Autoscaler doesn't scale a managed node group lower than minSize
+     * or higher than maxSize.</p>
      */
     inline void SetDesiredSize(int value) { m_desiredSizeHasBeenSet = true; m_desiredSize = value; }
 
     /**
-     * <p>The current number of worker nodes that the managed node group should
-     * maintain.</p>
+     * <p>The current number of nodes that the managed node group should maintain.</p>
+     *  <p>If you use Cluster Autoscaler, you shouldn't change the
+     * desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly
+     * scale up or scale down.</p>  <p>Whenever this parameter changes, the
+     * number of worker nodes in the node group is updated to the specified size. If
+     * this parameter is given a value that is smaller than the current number of
+     * running worker nodes, the necessary number of worker nodes are terminated to
+     * match the given value. When using CloudFormation, no action occurs if you remove
+     * this parameter from your CFN template.</p> <p>This parameter can be different
+     * from minSize in some cases, such as when starting with extra hosts for testing.
+     * This parameter can also be different when you want to start with an estimated
+     * number of needed hosts, but let Cluster Autoscaler reduce the number if there
+     * are too many. When Cluster Autoscaler is used, the desiredSize parameter is
+     * altered by Cluster Autoscaler (but can be out-of-date for short periods of
+     * time). Cluster Autoscaler doesn't scale a managed node group lower than minSize
+     * or higher than maxSize.</p>
      */
     inline NodegroupScalingConfig& WithDesiredSize(int value) { SetDesiredSize(value); return *this;}
 

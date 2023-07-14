@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
@@ -21,6 +11,9 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorOfferingsResult.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorTypesResult.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorsResult.h>
 #include <aws/elastic-inference/model/ListTagsForResourceResult.h>
 #include <aws/elastic-inference/model/TagResourceResult.h>
 #include <aws/elastic-inference/model/UntagResourceResult.h>
@@ -63,14 +56,23 @@ namespace ElasticInference
 
 namespace Model
 {
+        class DescribeAcceleratorOfferingsRequest;
+        class DescribeAcceleratorTypesRequest;
+        class DescribeAcceleratorsRequest;
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorOfferingsResult, ElasticInferenceError> DescribeAcceleratorOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorTypesResult, ElasticInferenceError> DescribeAcceleratorTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorsResult, ElasticInferenceError> DescribeAcceleratorsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElasticInferenceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ElasticInferenceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ElasticInferenceError> UntagResourceOutcome;
 
+        typedef std::future<DescribeAcceleratorOfferingsOutcome> DescribeAcceleratorOfferingsOutcomeCallable;
+        typedef std::future<DescribeAcceleratorTypesOutcome> DescribeAcceleratorTypesOutcomeCallable;
+        typedef std::future<DescribeAcceleratorsOutcome> DescribeAcceleratorsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -78,12 +80,15 @@ namespace Model
 
   class ElasticInferenceClient;
 
+    typedef std::function<void(const ElasticInferenceClient*, const Model::DescribeAcceleratorOfferingsRequest&, const Model::DescribeAcceleratorOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorOfferingsResponseReceivedHandler;
+    typedef std::function<void(const ElasticInferenceClient*, const Model::DescribeAcceleratorTypesRequest&, const Model::DescribeAcceleratorTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorTypesResponseReceivedHandler;
+    typedef std::function<void(const ElasticInferenceClient*, const Model::DescribeAcceleratorsRequest&, const Model::DescribeAcceleratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAcceleratorsResponseReceivedHandler;
     typedef std::function<void(const ElasticInferenceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ElasticInferenceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ElasticInferenceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
-   * Elastic Inference public APIs.
+   * <p> Elastic Inference public APIs. </p>
    */
   class AWS_ELASTICINFERENCE_API ElasticInferenceClient : public Aws::Client::AWSJsonClient
   {
@@ -111,36 +116,82 @@ namespace Model
 
         virtual ~ElasticInferenceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Elastic Inference"; }
-
 
         /**
-         * Returns all tags of an Elastic Inference Accelerator.<p><h3>See Also:</h3>   <a
+         * <p> Describes the locations in which a given accelerator type or set of types is
+         * present in a given region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAcceleratorOfferingsOutcome DescribeAcceleratorOfferings(const Model::DescribeAcceleratorOfferingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAcceleratorOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAcceleratorOfferingsOutcomeCallable DescribeAcceleratorOfferingsCallable(const Model::DescribeAcceleratorOfferingsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAcceleratorOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAcceleratorOfferingsAsync(const Model::DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Describes the accelerator types available in a given region, as well as
+         * their characteristics, such as memory and throughput. </p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAcceleratorTypesOutcome DescribeAcceleratorTypes(const Model::DescribeAcceleratorTypesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAcceleratorTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAcceleratorTypesOutcomeCallable DescribeAcceleratorTypesCallable(const Model::DescribeAcceleratorTypesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAcceleratorTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAcceleratorTypesAsync(const Model::DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Describes information over a provided set of accelerators belonging to an
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAcceleratorsOutcome DescribeAccelerators(const Model::DescribeAcceleratorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccelerators that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAcceleratorsOutcomeCallable DescribeAcceleratorsCallable(const Model::DescribeAcceleratorsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAccelerators that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAcceleratorsAsync(const Model::DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns all tags of an Elastic Inference Accelerator. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * Returns all tags of an Elastic Inference Accelerator.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * Returns all tags of an Elastic Inference Accelerator.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Adds the specified tag(s) to an Elastic Inference Accelerator.<p><h3>See
+         * <p> Adds the specified tags to an Elastic Inference Accelerator. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/TagResource">AWS
          * API Reference</a></p>
@@ -148,50 +199,30 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * Adds the specified tag(s) to an Elastic Inference Accelerator.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * Adds the specified tag(s) to an Elastic Inference Accelerator.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Removes the specified tag(s) from an Elastic Inference Accelerator.<p><h3>See
-         * Also:</h3>   <a
+         * <p> Removes the specified tags from an Elastic Inference Accelerator.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Removes the specified tag(s) from an Elastic Inference Accelerator.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Removes the specified tag(s) from an Elastic Inference Accelerator.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -199,6 +230,9 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void DescribeAcceleratorOfferingsAsyncHelper(const Model::DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAcceleratorTypesAsyncHelper(const Model::DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAcceleratorsAsyncHelper(const Model::DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

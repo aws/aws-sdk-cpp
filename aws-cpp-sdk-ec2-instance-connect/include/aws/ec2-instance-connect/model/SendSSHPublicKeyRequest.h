@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
@@ -45,181 +35,181 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline SendSSHPublicKeyRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline SendSSHPublicKeyRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance you wish to publish the SSH key to.</p>
+     * <p>The ID of the EC2 instance.</p>
      */
     inline SendSSHPublicKeyRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline const Aws::String& GetInstanceOSUser() const{ return m_instanceOSUser; }
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline bool InstanceOSUserHasBeenSet() const { return m_instanceOSUserHasBeenSet; }
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline void SetInstanceOSUser(const Aws::String& value) { m_instanceOSUserHasBeenSet = true; m_instanceOSUser = value; }
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline void SetInstanceOSUser(Aws::String&& value) { m_instanceOSUserHasBeenSet = true; m_instanceOSUser = std::move(value); }
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline void SetInstanceOSUser(const char* value) { m_instanceOSUserHasBeenSet = true; m_instanceOSUser.assign(value); }
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline SendSSHPublicKeyRequest& WithInstanceOSUser(const Aws::String& value) { SetInstanceOSUser(value); return *this;}
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline SendSSHPublicKeyRequest& WithInstanceOSUser(Aws::String&& value) { SetInstanceOSUser(std::move(value)); return *this;}
 
     /**
-     * <p>The OS user on the EC2 instance whom the key may be used to authenticate
-     * as.</p>
+     * <p>The OS user on the EC2 instance for whom the key can be used to
+     * authenticate.</p>
      */
     inline SendSSHPublicKeyRequest& WithInstanceOSUser(const char* value) { SetInstanceOSUser(value); return *this;}
 
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline const Aws::String& GetSSHPublicKey() const{ return m_sSHPublicKey; }
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline bool SSHPublicKeyHasBeenSet() const { return m_sSHPublicKeyHasBeenSet; }
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline void SetSSHPublicKey(const Aws::String& value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey = value; }
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline void SetSSHPublicKey(Aws::String&& value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey = std::move(value); }
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline void SetSSHPublicKey(const char* value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey.assign(value); }
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline SendSSHPublicKeyRequest& WithSSHPublicKey(const Aws::String& value) { SetSSHPublicKey(value); return *this;}
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline SendSSHPublicKeyRequest& WithSSHPublicKey(Aws::String&& value) { SetSSHPublicKey(std::move(value)); return *this;}
 
     /**
-     * <p>The public key to be published to the instance. To use it after publication
-     * you must have the matching private key.</p>
+     * <p>The public key material. To use the public key, you must have the matching
+     * private key.</p>
      */
     inline SendSSHPublicKeyRequest& WithSSHPublicKey(const char* value) { SetSSHPublicKey(value); return *this;}
 
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline SendSSHPublicKeyRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline SendSSHPublicKeyRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The availability zone the EC2 instance was launched in.</p>
+     * <p>The Availability Zone in which the EC2 instance was launched.</p>
      */
     inline SendSSHPublicKeyRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

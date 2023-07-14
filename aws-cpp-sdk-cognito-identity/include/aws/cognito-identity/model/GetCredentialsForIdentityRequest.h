@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
@@ -96,9 +86,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogins() const{ return m_logins; }
@@ -109,9 +99,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline bool LoginsHasBeenSet() const { return m_loginsHasBeenSet; }
@@ -122,9 +112,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline void SetLogins(const Aws::Map<Aws::String, Aws::String>& value) { m_loginsHasBeenSet = true; m_logins = value; }
@@ -135,9 +125,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = std::move(value); }
@@ -148,9 +138,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
@@ -161,9 +151,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(std::move(value)); return *this;}
@@ -174,9 +164,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
@@ -187,9 +177,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins.emplace(std::move(key), value); return *this; }
@@ -200,9 +190,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.emplace(key, std::move(value)); return *this; }
@@ -213,9 +203,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.emplace(std::move(key), std::move(value)); return *this; }
@@ -226,9 +216,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.emplace(key, std::move(value)); return *this; }
@@ -239,9 +229,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(std::move(key), value); return *this; }
@@ -252,9 +242,9 @@ namespace Model
      * "provider_user_identifier".</p> <p>Logins should not be specified when trying to
      * get credentials for an unauthenticated identity.</p> <p>The Logins parameter is
      * required when using identities associated with external identity providers such
-     * as FaceBook. For examples of <code>Logins</code> maps, see the code examples in
+     * as Facebook. For examples of <code>Logins</code> maps, see the code examples in
      * the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
      */
     inline GetCredentialsForIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }

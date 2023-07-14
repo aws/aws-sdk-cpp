@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -37,11 +27,13 @@ namespace Model
    * <p> A label that can be assigned to a GameLift resource. </p> <p> <b>Learn
    * more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-   * AWS Resources</a> in the <i>AWS General Reference</i> </p> <p> <a
+   * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+   * Reference</i> </p> <p> <a
    * href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-   * AWS Tagging Strategies</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-   * <a>TagResource</a> </p> </li> <li> <p> <a>UntagResource</a> </p> </li> <li> <p>
-   * <a>ListTagsForResource</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Amazon Web Services Tagging Strategies</a> </p> <p> <b>Related actions</b> </p>
+   * <p> <a>TagResource</a> | <a>UntagResource</a> | <a>ListTagsForResource</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Tag">AWS API
    * Reference</a></p>
    */
@@ -55,99 +47,99 @@ namespace Model
 
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p> The key for a developer-defined key:value pair for tagging an AWS resource.
-     * </p>
+     * <p> The key for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p> The value for a developer-defined key:value pair for tagging an AWS
-     * resource. </p>
+     * <p> The value for a developer-defined key:value pair for tagging an Amazon Web
+     * Services resource. </p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

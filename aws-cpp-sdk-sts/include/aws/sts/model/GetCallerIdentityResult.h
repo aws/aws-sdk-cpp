@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sts/STS_EXPORTS.h>
@@ -122,80 +112,80 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_account = value; }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_account = std::move(value); }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline void SetAccount(const char* value) { m_account.assign(value); }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithAccount(const char* value) { SetAccount(value); return *this;}
 
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithArn(const char* value) { SetArn(value); return *this;}
 

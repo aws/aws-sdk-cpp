@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -47,64 +37,64 @@ namespace Model
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetConformancePackNames() const{ return m_conformancePackNames; }
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline bool ConformancePackNamesHasBeenSet() const { return m_conformancePackNamesHasBeenSet; }
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline void SetConformancePackNames(const Aws::Vector<Aws::String>& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = value; }
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline void SetConformancePackNames(Aws::Vector<Aws::String>&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = std::move(value); }
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline DescribeConformancePacksRequest& WithConformancePackNames(const Aws::Vector<Aws::String>& value) { SetConformancePackNames(value); return *this;}
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline DescribeConformancePacksRequest& WithConformancePackNames(Aws::Vector<Aws::String>&& value) { SetConformancePackNames(std::move(value)); return *this;}
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline DescribeConformancePacksRequest& AddConformancePackNames(const Aws::String& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(value); return *this; }
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline DescribeConformancePacksRequest& AddConformancePackNames(Aws::String&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Comma-separated list of conformance pack names for which you want details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * conformance packs. </p>
+     * you do not specify any names, Config returns details for all your conformance
+     * packs. </p>
      */
     inline DescribeConformancePacksRequest& AddConformancePackNames(const char* value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(value); return *this; }
 

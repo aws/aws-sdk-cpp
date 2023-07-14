@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -48,79 +38,79 @@ namespace Model
 
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline DescribeMaintenanceWindowsForTargetRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline DescribeMaintenanceWindowsForTargetRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline DescribeMaintenanceWindowsForTargetRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The instance ID or key/value pair to retrieve information about.</p>
+     * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
     inline DescribeMaintenanceWindowsForTargetRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The type of resource you want to retrieve information about. For example,
-     * "INSTANCE".</p>
+     * <code>INSTANCE</code>.</p>
      */
     inline const MaintenanceWindowResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource you want to retrieve information about. For example,
-     * "INSTANCE".</p>
+     * <code>INSTANCE</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource you want to retrieve information about. For example,
-     * "INSTANCE".</p>
+     * <code>INSTANCE</code>.</p>
      */
     inline void SetResourceType(const MaintenanceWindowResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource you want to retrieve information about. For example,
-     * "INSTANCE".</p>
+     * <code>INSTANCE</code>.</p>
      */
     inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource you want to retrieve information about. For example,
-     * "INSTANCE".</p>
+     * <code>INSTANCE</code>.</p>
      */
     inline DescribeMaintenanceWindowsForTargetRequest& WithResourceType(const MaintenanceWindowResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource you want to retrieve information about. For example,
-     * "INSTANCE".</p>
+     * <code>INSTANCE</code>.</p>
      */
     inline DescribeMaintenanceWindowsForTargetRequest& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
@@ -111,6 +101,43 @@ namespace Model
      */
     inline PublishRequest& WithQos(int value) { SetQos(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value that determines whether to set the RETAIN flag when the
+     * message is published.</p> <p>Setting the RETAIN flag causes the message to be
+     * retained and sent to new subscribers to the topic.</p> <p>Valid values:
+     * <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code>
+     * </p>
+     */
+    inline bool GetRetain() const{ return m_retain; }
+
+    /**
+     * <p>A Boolean value that determines whether to set the RETAIN flag when the
+     * message is published.</p> <p>Setting the RETAIN flag causes the message to be
+     * retained and sent to new subscribers to the topic.</p> <p>Valid values:
+     * <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code>
+     * </p>
+     */
+    inline bool RetainHasBeenSet() const { return m_retainHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that determines whether to set the RETAIN flag when the
+     * message is published.</p> <p>Setting the RETAIN flag causes the message to be
+     * retained and sent to new subscribers to the topic.</p> <p>Valid values:
+     * <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code>
+     * </p>
+     */
+    inline void SetRetain(bool value) { m_retainHasBeenSet = true; m_retain = value; }
+
+    /**
+     * <p>A Boolean value that determines whether to set the RETAIN flag when the
+     * message is published.</p> <p>Setting the RETAIN flag causes the message to be
+     * retained and sent to new subscribers to the topic.</p> <p>Valid values:
+     * <code>true</code> | <code>false</code> </p> <p>Default value: <code>false</code>
+     * </p>
+     */
+    inline PublishRequest& WithRetain(bool value) { SetRetain(value); return *this;}
+
   private:
 
     Aws::String m_topic;
@@ -118,6 +145,9 @@ namespace Model
 
     int m_qos;
     bool m_qosHasBeenSet;
+
+    bool m_retain;
+    bool m_retainHasBeenSet;
 
   };
 

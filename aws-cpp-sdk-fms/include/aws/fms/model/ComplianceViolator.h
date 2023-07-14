@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/model/ViolationReason.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -123,75 +114,149 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline ComplianceViolator& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline ComplianceViolator& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::CloudFront::Distribution</code>, or
+     * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
      */
     inline ComplianceViolator& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+     */
+    inline ComplianceViolator& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
   private:
 
@@ -203,6 +268,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet;
   };
 
 } // namespace Model

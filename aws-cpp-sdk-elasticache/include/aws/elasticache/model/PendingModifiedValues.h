@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/AuthTokenUpdateStatus.h>
+#include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -55,28 +46,28 @@ namespace Model
     /**
      * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
 
     /**
      * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline PendingModifiedValues& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
@@ -248,6 +239,47 @@ namespace Model
      */
     inline PendingModifiedValues& WithAuthTokenStatus(AuthTokenUpdateStatus&& value) { SetAuthTokenStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline const Aws::Vector<PendingLogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<PendingLogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<PendingLogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline PendingModifiedValues& WithLogDeliveryConfigurations(const Aws::Vector<PendingLogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline PendingModifiedValues& WithLogDeliveryConfigurations(Aws::Vector<PendingLogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline PendingModifiedValues& AddLogDeliveryConfigurations(const PendingLogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline PendingModifiedValues& AddLogDeliveryConfigurations(PendingLogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_numCacheNodes;
@@ -264,6 +296,9 @@ namespace Model
 
     AuthTokenUpdateStatus m_authTokenStatus;
     bool m_authTokenStatusHasBeenSet;
+
+    Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/Session.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,8 +27,10 @@ Session::Session() :
     m_endDateHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_outputUrlHasBeenSet(false)
+    m_outputUrlHasBeenSet(false),
+    m_maxSessionDurationHasBeenSet(false)
 {
 }
 
@@ -51,8 +43,10 @@ Session::Session(JsonView jsonValue) :
     m_endDateHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_outputUrlHasBeenSet(false)
+    m_outputUrlHasBeenSet(false),
+    m_maxSessionDurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +102,13 @@ Session& Session::operator =(JsonView jsonValue)
     m_ownerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Reason"))
+  {
+    m_reason = jsonValue.GetString("Reason");
+
+    m_reasonHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetString("Details");
@@ -120,6 +121,13 @@ Session& Session::operator =(JsonView jsonValue)
     m_outputUrl = jsonValue.GetObject("OutputUrl");
 
     m_outputUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxSessionDuration"))
+  {
+    m_maxSessionDuration = jsonValue.GetString("MaxSessionDuration");
+
+    m_maxSessionDurationHasBeenSet = true;
   }
 
   return *this;
@@ -168,6 +176,12 @@ JsonValue Session::Jsonize() const
 
   }
 
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", m_reason);
+
+  }
+
   if(m_detailsHasBeenSet)
   {
    payload.WithString("Details", m_details);
@@ -177,6 +191,12 @@ JsonValue Session::Jsonize() const
   if(m_outputUrlHasBeenSet)
   {
    payload.WithObject("OutputUrl", m_outputUrl.Jsonize());
+
+  }
+
+  if(m_maxSessionDurationHasBeenSet)
+  {
+   payload.WithString("MaxSessionDuration", m_maxSessionDuration);
 
   }
 

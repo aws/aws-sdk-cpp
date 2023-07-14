@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -52,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
@@ -430,50 +420,42 @@ namespace Model
 
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline const Aws::String& GetEncryptionType() const{ return m_encryptionType; }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline void SetEncryptionType(const Aws::String& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline void SetEncryptionType(Aws::String&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline void SetEncryptionType(const char* value) { m_encryptionTypeHasBeenSet = true; m_encryptionType.assign(value); }
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline PendingModifiedValues& WithEncryptionType(const Aws::String& value) { SetEncryptionType(value); return *this;}
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline PendingModifiedValues& WithEncryptionType(Aws::String&& value) { SetEncryptionType(std::move(value)); return *this;}
 
     /**
-     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
-     * China region the possible values are None, and Legacy. </p>
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
      */
     inline PendingModifiedValues& WithEncryptionType(const char* value) { SetEncryptionType(value); return *this;}
 

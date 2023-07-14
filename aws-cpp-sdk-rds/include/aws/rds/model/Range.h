@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -93,7 +83,7 @@ namespace Model
      * <p>The step value for the range. For example, if you have a range of 5,000 to
      * 10,000, with a step value of 1,000, the valid values start at 5,000 and step up
      * by 1,000. Even though 7,500 is within the range, it isn't a valid value for the
-     * range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+     * range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
      */
     inline int GetStep() const{ return m_step; }
 
@@ -101,7 +91,7 @@ namespace Model
      * <p>The step value for the range. For example, if you have a range of 5,000 to
      * 10,000, with a step value of 1,000, the valid values start at 5,000 and step up
      * by 1,000. Even though 7,500 is within the range, it isn't a valid value for the
-     * range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+     * range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
      */
     inline bool StepHasBeenSet() const { return m_stepHasBeenSet; }
 
@@ -109,7 +99,7 @@ namespace Model
      * <p>The step value for the range. For example, if you have a range of 5,000 to
      * 10,000, with a step value of 1,000, the valid values start at 5,000 and step up
      * by 1,000. Even though 7,500 is within the range, it isn't a valid value for the
-     * range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+     * range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
      */
     inline void SetStep(int value) { m_stepHasBeenSet = true; m_step = value; }
 
@@ -117,7 +107,7 @@ namespace Model
      * <p>The step value for the range. For example, if you have a range of 5,000 to
      * 10,000, with a step value of 1,000, the valid values start at 5,000 and step up
      * by 1,000. Even though 7,500 is within the range, it isn't a valid value for the
-     * range. The valid values are 5,000, 6,000, 7,000, 8,000... </p>
+     * range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
      */
     inline Range& WithStep(int value) { SetStep(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -89,57 +79,57 @@ namespace Model
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& AddFilters(const MaintenanceWindowFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Optional filters that can be used to narrow down the scope of the returned
-     * window targets. The supported filter keys are Type, WindowTargetId and
-     * OwnerInformation.</p>
+     * window targets. The supported filter keys are <code>Type</code>,
+     * <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

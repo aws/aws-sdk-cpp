@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/DescribeInputResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -80,6 +70,24 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
   {
     m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
 
+  }
+
+  if(jsonValue.ValueExists("inputDevices"))
+  {
+    Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
+    for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+    {
+      m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("inputPartnerIds"))
+  {
+    Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
+    for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
+    {
+      m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
+    }
   }
 
   if(jsonValue.ValueExists("inputSourceType"))

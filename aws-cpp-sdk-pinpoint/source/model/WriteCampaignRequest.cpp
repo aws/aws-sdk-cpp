@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/WriteCampaignRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 WriteCampaignRequest::WriteCampaignRequest() : 
     m_additionalTreatmentsHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
@@ -46,12 +37,15 @@ WriteCampaignRequest::WriteCampaignRequest() :
     m_tagsHasBeenSet(false),
     m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+    m_treatmentNameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
 WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue) : 
     m_additionalTreatmentsHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
@@ -68,7 +62,9 @@ WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
+    m_treatmentNameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +79,13 @@ WriteCampaignRequest& WriteCampaignRequest::operator =(JsonView jsonValue)
       m_additionalTreatments.push_back(additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject());
     }
     m_additionalTreatmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
+  {
+    m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
+
+    m_customDeliveryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -186,6 +189,13 @@ WriteCampaignRequest& WriteCampaignRequest::operator =(JsonView jsonValue)
     m_treatmentNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetInteger("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -201,6 +211,12 @@ JsonValue WriteCampaignRequest::Jsonize() const
      additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject(m_additionalTreatments[additionalTreatmentsIndex].Jsonize());
    }
    payload.WithArray("AdditionalTreatments", std::move(additionalTreatmentsJsonList));
+
+  }
+
+  if(m_customDeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDeliveryConfiguration", m_customDeliveryConfiguration.Jsonize());
 
   }
 
@@ -290,6 +306,12 @@ JsonValue WriteCampaignRequest::Jsonize() const
   if(m_treatmentNameHasBeenSet)
   {
    payload.WithString("TreatmentName", m_treatmentName);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("Priority", m_priority);
 
   }
 

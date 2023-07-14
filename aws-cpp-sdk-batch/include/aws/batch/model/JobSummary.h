@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -49,6 +39,47 @@ namespace Model
     JobSummary(Aws::Utils::Json::JsonView jsonValue);
     JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job.</p>
+     */
+    inline JobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
 
 
     /**
@@ -134,38 +165,38 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the job was created. For non-array jobs and
-     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
-     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
-     * the child job was spawned by its parent and entered the <code>PENDING</code>
-     * state.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and
+     * entered the <code>PENDING</code> state.</p>
      */
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the job was created. For non-array jobs and
-     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
-     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
-     * the child job was spawned by its parent and entered the <code>PENDING</code>
-     * state.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and
+     * entered the <code>PENDING</code> state.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the job was created. For non-array jobs and
-     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
-     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
-     * the child job was spawned by its parent and entered the <code>PENDING</code>
-     * state.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and
+     * entered the <code>PENDING</code> state.</p>
      */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the job was created. For non-array jobs and
-     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
-     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
-     * the child job was spawned by its parent and entered the <code>PENDING</code>
-     * state.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was created. For
+     * non-array jobs and parent array jobs, this is when the job entered the
+     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and
+     * entered the <code>PENDING</code> state.</p>
      */
     inline JobSummary& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
 
@@ -305,37 +336,37 @@ namespace Model
 
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline const ContainerSummary& GetContainer() const{ return m_container; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline void SetContainer(const ContainerSummary& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline void SetContainer(ContainerSummary&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline JobSummary& WithContainer(const ContainerSummary& value) { SetContainer(value); return *this;}
 
     /**
-     * <p>An object representing the details of the container that is associated with
+     * <p>An object representing the details of the container that's associated with
      * the job.</p>
      */
     inline JobSummary& WithContainer(ContainerSummary&& value) { SetContainer(std::move(value)); return *this;}
@@ -373,36 +404,92 @@ namespace Model
 
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline const NodePropertiesSummary& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline void SetNodeProperties(const NodePropertiesSummary& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline void SetNodeProperties(NodePropertiesSummary&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline JobSummary& WithNodeProperties(const NodePropertiesSummary& value) { SetNodeProperties(value); return *this;}
 
     /**
-     * <p>The node properties for a single node in a job summary list.</p>
+     * <p>The node properties for a single node in a job summary list.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline JobSummary& WithNodeProperties(NodePropertiesSummary&& value) { SetNodeProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline JobSummary& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline JobSummary& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline JobSummary& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
+
   private:
+
+    Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
@@ -433,6 +520,9 @@ namespace Model
 
     NodePropertiesSummary m_nodeProperties;
     bool m_nodePropertiesHasBeenSet;
+
+    Aws::String m_jobDefinition;
+    bool m_jobDefinitionHasBeenSet;
   };
 
 } // namespace Model

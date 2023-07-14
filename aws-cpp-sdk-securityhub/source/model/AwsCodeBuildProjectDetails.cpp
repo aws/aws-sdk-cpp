@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsCodeBuildProjectDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,21 +20,27 @@ namespace Model
 
 AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails() : 
     m_encryptionKeyHasBeenSet(false),
+    m_artifactsHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_logsConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false)
 {
 }
 
 AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails(JsonView jsonValue) : 
     m_encryptionKeyHasBeenSet(false),
+    m_artifactsHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_logsConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +52,16 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     m_encryptionKey = jsonValue.GetString("EncryptionKey");
 
     m_encryptionKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Artifacts"))
+  {
+    Array<JsonView> artifactsJsonList = jsonValue.GetArray("Artifacts");
+    for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
+    {
+      m_artifacts.push_back(artifactsJsonList[artifactsIndex].AsObject());
+    }
+    m_artifactsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Environment"))
@@ -86,11 +92,28 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     m_serviceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogsConfig"))
+  {
+    m_logsConfig = jsonValue.GetObject("LogsConfig");
+
+    m_logsConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
 
     m_vpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecondaryArtifacts"))
+  {
+    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("SecondaryArtifacts");
+    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+    {
+      m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
+    }
+    m_secondaryArtifactsHasBeenSet = true;
   }
 
   return *this;
@@ -103,6 +126,17 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
   if(m_encryptionKeyHasBeenSet)
   {
    payload.WithString("EncryptionKey", m_encryptionKey);
+
+  }
+
+  if(m_artifactsHasBeenSet)
+  {
+   Array<JsonValue> artifactsJsonList(m_artifacts.size());
+   for(unsigned artifactsIndex = 0; artifactsIndex < artifactsJsonList.GetLength(); ++artifactsIndex)
+   {
+     artifactsJsonList[artifactsIndex].AsObject(m_artifacts[artifactsIndex].Jsonize());
+   }
+   payload.WithArray("Artifacts", std::move(artifactsJsonList));
 
   }
 
@@ -130,9 +164,26 @@ JsonValue AwsCodeBuildProjectDetails::Jsonize() const
 
   }
 
+  if(m_logsConfigHasBeenSet)
+  {
+   payload.WithObject("LogsConfig", m_logsConfig.Jsonize());
+
+  }
+
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_secondaryArtifactsHasBeenSet)
+  {
+   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+   {
+     secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
+   }
+   payload.WithArray("SecondaryArtifacts", std::move(secondaryArtifactsJsonList));
 
   }
 

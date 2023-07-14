@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/ContainerStateChange.h>
 #include <aws/ecs/model/AttachmentStateChange.h>
+#include <aws/ecs/model/ManagedAgentStateChange.h>
 #include <utility>
 
 namespace Aws
@@ -221,42 +212,42 @@ namespace Model
 
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline const Aws::Vector<ContainerStateChange>& GetContainers() const{ return m_containers; }
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline void SetContainers(const Aws::Vector<ContainerStateChange>& value) { m_containersHasBeenSet = true; m_containers = value; }
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline void SetContainers(Aws::Vector<ContainerStateChange>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithContainers(const Aws::Vector<ContainerStateChange>& value) { SetContainers(value); return *this;}
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithContainers(Aws::Vector<ContainerStateChange>&& value) { SetContainers(std::move(value)); return *this;}
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& AddContainers(const ContainerStateChange& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
 
     /**
-     * <p>Any containers associated with the state change request.</p>
+     * <p>Any containers that's associated with the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& AddContainers(ContainerStateChange&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
 
@@ -303,94 +294,135 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the container image pull began.</p>
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline const Aws::Vector<ManagedAgentStateChange>& GetManagedAgents() const{ return m_managedAgents; }
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline bool ManagedAgentsHasBeenSet() const { return m_managedAgentsHasBeenSet; }
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline void SetManagedAgents(const Aws::Vector<ManagedAgentStateChange>& value) { m_managedAgentsHasBeenSet = true; m_managedAgents = value; }
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline void SetManagedAgents(Aws::Vector<ManagedAgentStateChange>&& value) { m_managedAgentsHasBeenSet = true; m_managedAgents = std::move(value); }
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithManagedAgents(const Aws::Vector<ManagedAgentStateChange>& value) { SetManagedAgents(value); return *this;}
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithManagedAgents(Aws::Vector<ManagedAgentStateChange>&& value) { SetManagedAgents(std::move(value)); return *this;}
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddManagedAgents(const ManagedAgentStateChange& value) { m_managedAgentsHasBeenSet = true; m_managedAgents.push_back(value); return *this; }
+
+    /**
+     * <p>The details for the managed agent that's associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddManagedAgents(ManagedAgentStateChange&& value) { m_managedAgentsHasBeenSet = true; m_managedAgents.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Unix timestamp for the time when the container image pull started.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStartedAt() const{ return m_pullStartedAt; }
 
     /**
-     * <p>The Unix timestamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for the time when the container image pull started.</p>
      */
     inline bool PullStartedAtHasBeenSet() const { return m_pullStartedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for the time when the container image pull started.</p>
      */
     inline void SetPullStartedAt(const Aws::Utils::DateTime& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for the time when the container image pull started.</p>
      */
     inline void SetPullStartedAt(Aws::Utils::DateTime&& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for the time when the container image pull started.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStartedAt(const Aws::Utils::DateTime& value) { SetPullStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for the time when the container image pull started.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStartedAt(Aws::Utils::DateTime&& value) { SetPullStartedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for the time when the container image pull completed.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStoppedAt() const{ return m_pullStoppedAt; }
 
     /**
-     * <p>The Unix timestamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for the time when the container image pull completed.</p>
      */
     inline bool PullStoppedAtHasBeenSet() const { return m_pullStoppedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for the time when the container image pull completed.</p>
      */
     inline void SetPullStoppedAt(const Aws::Utils::DateTime& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for the time when the container image pull completed.</p>
      */
     inline void SetPullStoppedAt(Aws::Utils::DateTime&& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for the time when the container image pull completed.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStoppedAt(const Aws::Utils::DateTime& value) { SetPullStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for the time when the container image pull completed.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStoppedAt(Aws::Utils::DateTime&& value) { SetPullStoppedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for the time when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for the time when the task execution stopped.</p>
      */
     inline bool ExecutionStoppedAtHasBeenSet() const { return m_executionStoppedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for the time when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(const Aws::Utils::DateTime& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for the time when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(Aws::Utils::DateTime&& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for the time when the task execution stopped.</p>
      */
     inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(const Aws::Utils::DateTime& value) { SetExecutionStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for the time when the task execution stopped.</p>
      */
     inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(Aws::Utils::DateTime&& value) { SetExecutionStoppedAt(std::move(value)); return *this;}
 
@@ -413,6 +445,9 @@ namespace Model
 
     Aws::Vector<AttachmentStateChange> m_attachments;
     bool m_attachmentsHasBeenSet;
+
+    Aws::Vector<ManagedAgentStateChange> m_managedAgents;
+    bool m_managedAgentsHasBeenSet;
 
     Aws::Utils::DateTime m_pullStartedAt;
     bool m_pullStartedAtHasBeenSet;

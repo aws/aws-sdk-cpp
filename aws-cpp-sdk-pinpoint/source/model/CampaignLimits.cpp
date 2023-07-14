@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,9 @@ CampaignLimits::CampaignLimits() :
     m_messagesPerSecond(0),
     m_messagesPerSecondHasBeenSet(false),
     m_total(0),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_session(0),
+    m_sessionHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ CampaignLimits::CampaignLimits(JsonView jsonValue) :
     m_messagesPerSecond(0),
     m_messagesPerSecondHasBeenSet(false),
     m_total(0),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_session(0),
+    m_sessionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +77,13 @@ CampaignLimits& CampaignLimits::operator =(JsonView jsonValue)
     m_totalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Session"))
+  {
+    m_session = jsonValue.GetInteger("Session");
+
+    m_sessionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +112,12 @@ JsonValue CampaignLimits::Jsonize() const
   if(m_totalHasBeenSet)
   {
    payload.WithInteger("Total", m_total);
+
+  }
+
+  if(m_sessionHasBeenSet)
+  {
+   payload.WithInteger("Session", m_session);
 
   }
 

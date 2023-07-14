@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline const Aws::Vector<DatasetSummary>& GetDatasetSummaries() const{ return m_datasetSummaries; }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline void SetDatasetSummaries(const Aws::Vector<DatasetSummary>& value) { m_datasetSummaries = value; }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline void SetDatasetSummaries(Aws::Vector<DatasetSummary>&& value) { m_datasetSummaries = std::move(value); }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& WithDatasetSummaries(const Aws::Vector<DatasetSummary>& value) { SetDatasetSummaries(value); return *this;}
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& WithDatasetSummaries(Aws::Vector<DatasetSummary>&& value) { SetDatasetSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& AddDatasetSummaries(const DatasetSummary& value) { m_datasetSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of "DatasetSummary" objects.</p>
+     * <p>A list of <code>DatasetSummary</code> objects.</p>
      */
     inline ListDatasetsResult& AddDatasetSummaries(DatasetSummary&& value) { m_datasetSummaries.push_back(std::move(value)); return *this; }
 

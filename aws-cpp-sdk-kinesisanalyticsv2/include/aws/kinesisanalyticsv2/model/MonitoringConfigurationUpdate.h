@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -37,8 +27,7 @@ namespace Model
 
   /**
    * <p>Describes updates to configuration parameters for Amazon CloudWatch logging
-   * for a Java-based Kinesis Data Analytics application.</p><p><h3>See Also:</h3>  
-   * <a
+   * for an application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MonitoringConfigurationUpdate">AWS
    * API Reference</a></p>
    */
@@ -102,37 +91,43 @@ namespace Model
 
     /**
      * <p>Describes updates to the granularity of the CloudWatch Logs for an
-     * application.</p>
+     * application. The <code>Parallelism</code> level is not recommended for
+     * applications with a Parallelism over 64 due to excessive costs.</p>
      */
     inline const MetricsLevel& GetMetricsLevelUpdate() const{ return m_metricsLevelUpdate; }
 
     /**
      * <p>Describes updates to the granularity of the CloudWatch Logs for an
-     * application.</p>
+     * application. The <code>Parallelism</code> level is not recommended for
+     * applications with a Parallelism over 64 due to excessive costs.</p>
      */
     inline bool MetricsLevelUpdateHasBeenSet() const { return m_metricsLevelUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the granularity of the CloudWatch Logs for an
-     * application.</p>
+     * application. The <code>Parallelism</code> level is not recommended for
+     * applications with a Parallelism over 64 due to excessive costs.</p>
      */
     inline void SetMetricsLevelUpdate(const MetricsLevel& value) { m_metricsLevelUpdateHasBeenSet = true; m_metricsLevelUpdate = value; }
 
     /**
      * <p>Describes updates to the granularity of the CloudWatch Logs for an
-     * application.</p>
+     * application. The <code>Parallelism</code> level is not recommended for
+     * applications with a Parallelism over 64 due to excessive costs.</p>
      */
     inline void SetMetricsLevelUpdate(MetricsLevel&& value) { m_metricsLevelUpdateHasBeenSet = true; m_metricsLevelUpdate = std::move(value); }
 
     /**
      * <p>Describes updates to the granularity of the CloudWatch Logs for an
-     * application.</p>
+     * application. The <code>Parallelism</code> level is not recommended for
+     * applications with a Parallelism over 64 due to excessive costs.</p>
      */
     inline MonitoringConfigurationUpdate& WithMetricsLevelUpdate(const MetricsLevel& value) { SetMetricsLevelUpdate(value); return *this;}
 
     /**
      * <p>Describes updates to the granularity of the CloudWatch Logs for an
-     * application.</p>
+     * application. The <code>Parallelism</code> level is not recommended for
+     * applications with a Parallelism over 64 due to excessive costs.</p>
      */
     inline MonitoringConfigurationUpdate& WithMetricsLevelUpdate(MetricsLevel&& value) { SetMetricsLevelUpdate(std::move(value)); return *this;}
 

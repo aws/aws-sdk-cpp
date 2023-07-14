@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -47,55 +37,64 @@ namespace Model
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline void SetCalendarNames(const Aws::Vector<Aws::String>& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = value; }
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline void SetCalendarNames(Aws::Vector<Aws::String>&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::move(value); }
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline GetCalendarStateRequest& WithCalendarNames(const Aws::Vector<Aws::String>& value) { SetCalendarNames(value); return *this;}
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline GetCalendarStateRequest& WithCalendarNames(Aws::Vector<Aws::String>&& value) { SetCalendarNames(std::move(value)); return *this;}
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline GetCalendarStateRequest& AddCalendarNames(const Aws::String& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline GetCalendarStateRequest& AddCalendarNames(Aws::String&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents
-     * that represent the calendar entries for which you want to get the state.</p>
+     * (SSM documents) that represent the calendar entries for which you want to get
+     * the state.</p>
      */
     inline GetCalendarStateRequest& AddCalendarNames(const char* value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
 
@@ -103,56 +102,64 @@ namespace Model
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline const Aws::String& GetAtTime() const{ return m_atTime; }
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline bool AtTimeHasBeenSet() const { return m_atTimeHasBeenSet; }
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline void SetAtTime(const Aws::String& value) { m_atTimeHasBeenSet = true; m_atTime = value; }
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline void SetAtTime(Aws::String&& value) { m_atTimeHasBeenSet = true; m_atTime = std::move(value); }
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline void SetAtTime(const char* value) { m_atTimeHasBeenSet = true; m_atTime.assign(value); }
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline GetCalendarStateRequest& WithAtTime(const Aws::String& value) { SetAtTime(value); return *this;}
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline GetCalendarStateRequest& WithAtTime(Aws::String&& value) { SetAtTime(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The specific time for which you want to get calendar state
      * information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>
-     * format. If you do not add <code>AtTime</code>, the current time is assumed.</p>
+     * format. If you don't specify a value or <code>AtTime</code>, the current time is
+     * used.</p>
      */
     inline GetCalendarStateRequest& WithAtTime(const char* value) { SetAtTime(value); return *this;}
 

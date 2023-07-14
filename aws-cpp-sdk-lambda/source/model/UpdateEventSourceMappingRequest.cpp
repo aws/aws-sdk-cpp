@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,7 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_enabledHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
+    m_filterCriteriaHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_destinationConfigHasBeenSet(false),
@@ -39,7 +30,11 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
     m_parallelizationFactor(0),
-    m_parallelizationFactorHasBeenSet(false)
+    m_parallelizationFactorHasBeenSet(false),
+    m_sourceAccessConfigurationsHasBeenSet(false),
+    m_tumblingWindowInSeconds(0),
+    m_tumblingWindowInSecondsHasBeenSet(false),
+    m_functionResponseTypesHasBeenSet(false)
 {
 }
 
@@ -62,6 +57,12 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_batchSizeHasBeenSet)
   {
    payload.WithInteger("BatchSize", m_batchSize);
+
+  }
+
+  if(m_filterCriteriaHasBeenSet)
+  {
+   payload.WithObject("FilterCriteria", m_filterCriteria.Jsonize());
 
   }
 
@@ -98,6 +99,34 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_parallelizationFactorHasBeenSet)
   {
    payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
+
+  }
+
+  if(m_sourceAccessConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> sourceAccessConfigurationsJsonList(m_sourceAccessConfigurations.size());
+   for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
+   {
+     sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject(m_sourceAccessConfigurations[sourceAccessConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SourceAccessConfigurations", std::move(sourceAccessConfigurationsJsonList));
+
+  }
+
+  if(m_tumblingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TumblingWindowInSeconds", m_tumblingWindowInSeconds);
+
+  }
+
+  if(m_functionResponseTypesHasBeenSet)
+  {
+   Array<JsonValue> functionResponseTypesJsonList(m_functionResponseTypes.size());
+   for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
+   {
+     functionResponseTypesJsonList[functionResponseTypesIndex].AsString(FunctionResponseTypeMapper::GetNameForFunctionResponseType(m_functionResponseTypes[functionResponseTypesIndex]));
+   }
+   payload.WithArray("FunctionResponseTypes", std::move(functionResponseTypesJsonList));
 
   }
 

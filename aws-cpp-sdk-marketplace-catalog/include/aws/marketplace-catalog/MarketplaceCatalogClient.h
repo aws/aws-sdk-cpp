@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
@@ -73,12 +63,12 @@ namespace Model
         class ListEntitiesRequest;
         class StartChangeSetRequest;
 
-        typedef Aws::Utils::Outcome<CancelChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> CancelChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> DescribeChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeEntityResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> DescribeEntityOutcome;
-        typedef Aws::Utils::Outcome<ListChangeSetsResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> ListChangeSetsOutcome;
-        typedef Aws::Utils::Outcome<ListEntitiesResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> ListEntitiesOutcome;
-        typedef Aws::Utils::Outcome<StartChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> StartChangeSetOutcome;
+        typedef Aws::Utils::Outcome<CancelChangeSetResult, MarketplaceCatalogError> CancelChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeChangeSetResult, MarketplaceCatalogError> DescribeChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntityResult, MarketplaceCatalogError> DescribeEntityOutcome;
+        typedef Aws::Utils::Outcome<ListChangeSetsResult, MarketplaceCatalogError> ListChangeSetsOutcome;
+        typedef Aws::Utils::Outcome<ListEntitiesResult, MarketplaceCatalogError> ListEntitiesOutcome;
+        typedef Aws::Utils::Outcome<StartChangeSetResult, MarketplaceCatalogError> StartChangeSetOutcome;
 
         typedef std::future<CancelChangeSetOutcome> CancelChangeSetOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
@@ -98,9 +88,9 @@ namespace Model
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::StartChangeSetRequest&, const Model::StartChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChangeSetResponseReceivedHandler;
 
   /**
-   * <p>Catalog API actions allow you to create, describe, list, and delete changes
-   * to your published entities. An entity is a product or an offer on AWS
-   * Marketplace.</p> <p>You can automate your entity update process by integrating
+   * <p>Catalog API actions allow you to manage your entities through list, describe,
+   * and update capabilities. An entity can be a product or an offer on AWS
+   * Marketplace. </p> <p>You can automate your entity update process by integrating
    * the AWS Marketplace Catalog API with your AWS Marketplace product build or
    * deployment pipelines. You can also create your own applications on top of the
    * Catalog API to manage your products on AWS Marketplace.</p>
@@ -131,8 +121,6 @@ namespace Model
 
         virtual ~MarketplaceCatalogClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Marketplace Catalog"; }
-
 
         /**
          * <p>Used to cancel an open change request. Must be sent before the status of the
@@ -145,26 +133,12 @@ namespace Model
         virtual Model::CancelChangeSetOutcome CancelChangeSet(const Model::CancelChangeSetRequest& request) const;
 
         /**
-         * <p>Used to cancel an open change request. Must be sent before the status of the
-         * request changes to <code>APPLYING</code>, the final stage of completing your
-         * change request. You can describe a change during the 60-day request history
-         * retention period for API calls.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/CancelChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CancelChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CancelChangeSetOutcomeCallable CancelChangeSetCallable(const Model::CancelChangeSetRequest& request) const;
 
         /**
-         * <p>Used to cancel an open change request. Must be sent before the status of the
-         * request changes to <code>APPLYING</code>, the final stage of completing your
-         * change request. You can describe a change during the 60-day request history
-         * retention period for API calls.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/CancelChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CancelChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelChangeSetAsync(const Model::CancelChangeSetRequest& request, const CancelChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -176,20 +150,12 @@ namespace Model
         virtual Model::DescribeChangeSetOutcome DescribeChangeSet(const Model::DescribeChangeSetRequest& request) const;
 
         /**
-         * <p>Provides information about a given change set.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeChangeSetOutcomeCallable DescribeChangeSetCallable(const Model::DescribeChangeSetRequest& request) const;
 
         /**
-         * <p>Provides information about a given change set.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeChangeSetAsync(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -201,20 +167,12 @@ namespace Model
         virtual Model::DescribeEntityOutcome DescribeEntity(const Model::DescribeEntityRequest& request) const;
 
         /**
-         * <p>Returns the metadata and content of the entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeEntity">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeEntity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEntityOutcomeCallable DescribeEntityCallable(const Model::DescribeEntityRequest& request) const;
 
         /**
-         * <p>Returns the metadata and content of the entity.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeEntity">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEntityAsync(const Model::DescribeEntityRequest& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -231,30 +189,12 @@ namespace Model
         virtual Model::ListChangeSetsOutcome ListChangeSets(const Model::ListChangeSetsRequest& request) const;
 
         /**
-         * <p>Returns the list of change sets owned by the account being used to make the
-         * call. You can filter this list by providing any combination of
-         * <code>entityId</code>, <code>ChangeSetName</code>, and status. If you provide
-         * more than one filter, the API operation applies a logical AND between the
-         * filters.</p> <p>You can describe a change during the 60-day request history
-         * retention period for API calls.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListChangeSets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListChangeSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListChangeSetsOutcomeCallable ListChangeSetsCallable(const Model::ListChangeSetsRequest& request) const;
 
         /**
-         * <p>Returns the list of change sets owned by the account being used to make the
-         * call. You can filter this list by providing any combination of
-         * <code>entityId</code>, <code>ChangeSetName</code>, and status. If you provide
-         * more than one filter, the API operation applies a logical AND between the
-         * filters.</p> <p>You can describe a change during the 60-day request history
-         * retention period for API calls.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListChangeSets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListChangeSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListChangeSetsAsync(const Model::ListChangeSetsRequest& request, const ListChangeSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -266,48 +206,43 @@ namespace Model
         virtual Model::ListEntitiesOutcome ListEntities(const Model::ListEntitiesRequest& request) const;
 
         /**
-         * <p>Provides the list of entities of a given type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListEntities">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEntities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEntitiesOutcomeCallable ListEntitiesCallable(const Model::ListEntitiesRequest& request) const;
 
         /**
-         * <p>Provides the list of entities of a given type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListEntities">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEntitiesAsync(const Model::ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation allows you to request changes in your entities.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation allows you to request changes for your entities. Within a
+         * single ChangeSet, you cannot start the same change type against the same entity
+         * multiple times. Additionally, when a ChangeSet is running, all the entities
+         * targeted by the different changes are locked until the ChangeSet has completed
+         * (either succeeded, cancelled, or failed). If you try to start a ChangeSet
+         * containing a change against an entity that is already locked, you will receive a
+         * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
+         * ChangeSet described in the <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+         * later in this topic, because it contains two changes to execute the same change
+         * type (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p> <p>For more information about working with
+         * change sets, see <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
+         * Working with change sets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          */
         virtual Model::StartChangeSetOutcome StartChangeSet(const Model::StartChangeSetRequest& request) const;
 
         /**
-         * <p>This operation allows you to request changes in your entities.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for StartChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartChangeSetOutcomeCallable StartChangeSetCallable(const Model::StartChangeSetRequest& request) const;
 
         /**
-         * <p>This operation allows you to request changes in your entities.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for StartChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartChangeSetAsync(const Model::StartChangeSetRequest& request, const StartChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

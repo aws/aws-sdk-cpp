@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/TrainingJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -70,6 +60,8 @@ TrainingJob::TrainingJob() :
     m_debugRuleConfigurationsHasBeenSet(false),
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_debugRuleEvaluationStatusesHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -116,6 +108,8 @@ TrainingJob::TrainingJob(JsonView jsonValue) :
     m_debugRuleConfigurationsHasBeenSet(false),
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_debugRuleEvaluationStatusesHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -379,6 +373,23 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     m_debugRuleEvaluationStatusesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Environment"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for(auto& environmentItem : environmentJsonMap)
+    {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
+    }
+    m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -621,6 +632,23 @@ JsonValue TrainingJob::Jsonize() const
      debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject(m_debugRuleEvaluationStatuses[debugRuleEvaluationStatusesIndex].Jsonize());
    }
    payload.WithArray("DebugRuleEvaluationStatuses", std::move(debugRuleEvaluationStatusesJsonList));
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   JsonValue environmentJsonMap;
+   for(auto& environmentItem : m_environment)
+   {
+     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+   }
+   payload.WithObject("Environment", std::move(environmentJsonMap));
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

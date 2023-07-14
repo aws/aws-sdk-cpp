@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
@@ -36,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A UsageRecordResult indicates the status of a given UsageRecord processed by
-   * BatchMeterUsage.</p><p><h3>See Also:</h3>   <a
+   * <p>A <code>UsageRecordResult</code> indicates the status of a given
+   * <code>UsageRecord</code> processed by
+   * <code>BatchMeterUsage</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecordResult">AWS
    * API Reference</a></p>
    */
@@ -51,152 +42,208 @@ namespace Model
 
 
     /**
-     * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+     * <p>The <code>UsageRecord</code> that was part of the
+     * <code>BatchMeterUsage</code> request.</p>
      */
     inline const UsageRecord& GetUsageRecord() const{ return m_usageRecord; }
 
     /**
-     * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+     * <p>The <code>UsageRecord</code> that was part of the
+     * <code>BatchMeterUsage</code> request.</p>
      */
     inline bool UsageRecordHasBeenSet() const { return m_usageRecordHasBeenSet; }
 
     /**
-     * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+     * <p>The <code>UsageRecord</code> that was part of the
+     * <code>BatchMeterUsage</code> request.</p>
      */
     inline void SetUsageRecord(const UsageRecord& value) { m_usageRecordHasBeenSet = true; m_usageRecord = value; }
 
     /**
-     * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+     * <p>The <code>UsageRecord</code> that was part of the
+     * <code>BatchMeterUsage</code> request.</p>
      */
     inline void SetUsageRecord(UsageRecord&& value) { m_usageRecordHasBeenSet = true; m_usageRecord = std::move(value); }
 
     /**
-     * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+     * <p>The <code>UsageRecord</code> that was part of the
+     * <code>BatchMeterUsage</code> request.</p>
      */
     inline UsageRecordResult& WithUsageRecord(const UsageRecord& value) { SetUsageRecord(value); return *this;}
 
     /**
-     * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
+     * <p>The <code>UsageRecord</code> that was part of the
+     * <code>BatchMeterUsage</code> request.</p>
      */
     inline UsageRecordResult& WithUsageRecord(UsageRecord&& value) { SetUsageRecord(std::move(value)); return *this;}
 
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline const Aws::String& GetMeteringRecordId() const{ return m_meteringRecordId; }
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline bool MeteringRecordIdHasBeenSet() const { return m_meteringRecordIdHasBeenSet; }
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline void SetMeteringRecordId(const Aws::String& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = value; }
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId = std::move(value); }
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline void SetMeteringRecordId(const char* value) { m_meteringRecordIdHasBeenSet = true; m_meteringRecordId.assign(value); }
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline UsageRecordResult& WithMeteringRecordId(const Aws::String& value) { SetMeteringRecordId(value); return *this;}
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline UsageRecordResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(std::move(value)); return *this;}
 
     /**
-     * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
+     * <p>The <code>MeteringRecordId</code> is a unique identifier for this metering
+     * event.</p>
      */
     inline UsageRecordResult& WithMeteringRecordId(const char* value) { SetMeteringRecordId(value); return *this;}
 
 
     /**
-     * <p>The UsageRecordResult Status indicates the status of an individual
-     * UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The
-     * UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p>
-     * <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
-     * to your product. The UsageRecord was not honored. Future UsageRecords for this
-     * customer will fail until the customer subscribes to your product.</p> </li> <li>
-     * <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not
-     * honored. A previously metered UsageRecord had the same customer, dimension, and
-     * time, but a different quantity.</p> </li> </ul>
+     * <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status
+     * of an individual <code>UsageRecord</code> processed by
+     * <code>BatchMeterUsage</code>.</p> <ul> <li> <p> <i>Success</i>- The
+     * <code>UsageRecord</code> was accepted and honored by
+     * <code>BatchMeterUsage</code>.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>-
+     * The <code>CustomerIdentifier</code> specified is not able to use your product.
+     * The <code>UsageRecord</code> was not honored. There are three causes for this
+     * result:</p> <ul> <li> <p>The customer identifier is invalid.</p> </li> <li>
+     * <p>The customer identifier provided in the metering record does not have an
+     * active agreement or subscription with this product. Future
+     * <code>UsageRecords</code> for this customer will fail until the customer
+     * subscribes to your product.</p> </li> <li> <p>The customer's AWS account was
+     * suspended.</p> </li> </ul> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that
+     * the <code>UsageRecord</code> was invalid and not honored. A previously metered
+     * <code>UsageRecord</code> had the same customer, dimension, and time, but a
+     * different quantity.</p> </li> </ul>
      */
     inline const UsageRecordResultStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The UsageRecordResult Status indicates the status of an individual
-     * UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The
-     * UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p>
-     * <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
-     * to your product. The UsageRecord was not honored. Future UsageRecords for this
-     * customer will fail until the customer subscribes to your product.</p> </li> <li>
-     * <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not
-     * honored. A previously metered UsageRecord had the same customer, dimension, and
-     * time, but a different quantity.</p> </li> </ul>
+     * <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status
+     * of an individual <code>UsageRecord</code> processed by
+     * <code>BatchMeterUsage</code>.</p> <ul> <li> <p> <i>Success</i>- The
+     * <code>UsageRecord</code> was accepted and honored by
+     * <code>BatchMeterUsage</code>.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>-
+     * The <code>CustomerIdentifier</code> specified is not able to use your product.
+     * The <code>UsageRecord</code> was not honored. There are three causes for this
+     * result:</p> <ul> <li> <p>The customer identifier is invalid.</p> </li> <li>
+     * <p>The customer identifier provided in the metering record does not have an
+     * active agreement or subscription with this product. Future
+     * <code>UsageRecords</code> for this customer will fail until the customer
+     * subscribes to your product.</p> </li> <li> <p>The customer's AWS account was
+     * suspended.</p> </li> </ul> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that
+     * the <code>UsageRecord</code> was invalid and not honored. A previously metered
+     * <code>UsageRecord</code> had the same customer, dimension, and time, but a
+     * different quantity.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The UsageRecordResult Status indicates the status of an individual
-     * UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The
-     * UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p>
-     * <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
-     * to your product. The UsageRecord was not honored. Future UsageRecords for this
-     * customer will fail until the customer subscribes to your product.</p> </li> <li>
-     * <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not
-     * honored. A previously metered UsageRecord had the same customer, dimension, and
-     * time, but a different quantity.</p> </li> </ul>
+     * <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status
+     * of an individual <code>UsageRecord</code> processed by
+     * <code>BatchMeterUsage</code>.</p> <ul> <li> <p> <i>Success</i>- The
+     * <code>UsageRecord</code> was accepted and honored by
+     * <code>BatchMeterUsage</code>.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>-
+     * The <code>CustomerIdentifier</code> specified is not able to use your product.
+     * The <code>UsageRecord</code> was not honored. There are three causes for this
+     * result:</p> <ul> <li> <p>The customer identifier is invalid.</p> </li> <li>
+     * <p>The customer identifier provided in the metering record does not have an
+     * active agreement or subscription with this product. Future
+     * <code>UsageRecords</code> for this customer will fail until the customer
+     * subscribes to your product.</p> </li> <li> <p>The customer's AWS account was
+     * suspended.</p> </li> </ul> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that
+     * the <code>UsageRecord</code> was invalid and not honored. A previously metered
+     * <code>UsageRecord</code> had the same customer, dimension, and time, but a
+     * different quantity.</p> </li> </ul>
      */
     inline void SetStatus(const UsageRecordResultStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The UsageRecordResult Status indicates the status of an individual
-     * UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The
-     * UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p>
-     * <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
-     * to your product. The UsageRecord was not honored. Future UsageRecords for this
-     * customer will fail until the customer subscribes to your product.</p> </li> <li>
-     * <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not
-     * honored. A previously metered UsageRecord had the same customer, dimension, and
-     * time, but a different quantity.</p> </li> </ul>
+     * <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status
+     * of an individual <code>UsageRecord</code> processed by
+     * <code>BatchMeterUsage</code>.</p> <ul> <li> <p> <i>Success</i>- The
+     * <code>UsageRecord</code> was accepted and honored by
+     * <code>BatchMeterUsage</code>.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>-
+     * The <code>CustomerIdentifier</code> specified is not able to use your product.
+     * The <code>UsageRecord</code> was not honored. There are three causes for this
+     * result:</p> <ul> <li> <p>The customer identifier is invalid.</p> </li> <li>
+     * <p>The customer identifier provided in the metering record does not have an
+     * active agreement or subscription with this product. Future
+     * <code>UsageRecords</code> for this customer will fail until the customer
+     * subscribes to your product.</p> </li> <li> <p>The customer's AWS account was
+     * suspended.</p> </li> </ul> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that
+     * the <code>UsageRecord</code> was invalid and not honored. A previously metered
+     * <code>UsageRecord</code> had the same customer, dimension, and time, but a
+     * different quantity.</p> </li> </ul>
      */
     inline void SetStatus(UsageRecordResultStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The UsageRecordResult Status indicates the status of an individual
-     * UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The
-     * UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p>
-     * <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
-     * to your product. The UsageRecord was not honored. Future UsageRecords for this
-     * customer will fail until the customer subscribes to your product.</p> </li> <li>
-     * <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not
-     * honored. A previously metered UsageRecord had the same customer, dimension, and
-     * time, but a different quantity.</p> </li> </ul>
+     * <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status
+     * of an individual <code>UsageRecord</code> processed by
+     * <code>BatchMeterUsage</code>.</p> <ul> <li> <p> <i>Success</i>- The
+     * <code>UsageRecord</code> was accepted and honored by
+     * <code>BatchMeterUsage</code>.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>-
+     * The <code>CustomerIdentifier</code> specified is not able to use your product.
+     * The <code>UsageRecord</code> was not honored. There are three causes for this
+     * result:</p> <ul> <li> <p>The customer identifier is invalid.</p> </li> <li>
+     * <p>The customer identifier provided in the metering record does not have an
+     * active agreement or subscription with this product. Future
+     * <code>UsageRecords</code> for this customer will fail until the customer
+     * subscribes to your product.</p> </li> <li> <p>The customer's AWS account was
+     * suspended.</p> </li> </ul> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that
+     * the <code>UsageRecord</code> was invalid and not honored. A previously metered
+     * <code>UsageRecord</code> had the same customer, dimension, and time, but a
+     * different quantity.</p> </li> </ul>
      */
     inline UsageRecordResult& WithStatus(const UsageRecordResultStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The UsageRecordResult Status indicates the status of an individual
-     * UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The
-     * UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p>
-     * <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed
-     * to your product. The UsageRecord was not honored. Future UsageRecords for this
-     * customer will fail until the customer subscribes to your product.</p> </li> <li>
-     * <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not
-     * honored. A previously metered UsageRecord had the same customer, dimension, and
-     * time, but a different quantity.</p> </li> </ul>
+     * <p>The <code>UsageRecordResult</code> <code>Status</code> indicates the status
+     * of an individual <code>UsageRecord</code> processed by
+     * <code>BatchMeterUsage</code>.</p> <ul> <li> <p> <i>Success</i>- The
+     * <code>UsageRecord</code> was accepted and honored by
+     * <code>BatchMeterUsage</code>.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>-
+     * The <code>CustomerIdentifier</code> specified is not able to use your product.
+     * The <code>UsageRecord</code> was not honored. There are three causes for this
+     * result:</p> <ul> <li> <p>The customer identifier is invalid.</p> </li> <li>
+     * <p>The customer identifier provided in the metering record does not have an
+     * active agreement or subscription with this product. Future
+     * <code>UsageRecords</code> for this customer will fail until the customer
+     * subscribes to your product.</p> </li> <li> <p>The customer's AWS account was
+     * suspended.</p> </li> </ul> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that
+     * the <code>UsageRecord</code> was invalid and not honored. A previously metered
+     * <code>UsageRecord</code> had the same customer, dimension, and time, but a
+     * different quantity.</p> </li> </ul>
      */
     inline UsageRecordResult& WithStatus(UsageRecordResultStatus&& value) { SetStatus(std::move(value)); return *this;}
 

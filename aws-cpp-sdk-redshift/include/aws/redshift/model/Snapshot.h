@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -347,42 +337,42 @@ namespace Model
 
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline Snapshot& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline Snapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The master user name for the cluster.</p>
+     * <p>The admin user name for the cluster.</p>
      */
     inline Snapshot& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -434,6 +424,55 @@ namespace Model
      * cluster.</p>
      */
     inline Snapshot& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
+
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline const Aws::String& GetEngineFullVersion() const{ return m_engineFullVersion; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline bool EngineFullVersionHasBeenSet() const { return m_engineFullVersionHasBeenSet; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(const Aws::String& value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion = value; }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(Aws::String&& value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion = std::move(value); }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline void SetEngineFullVersion(const char* value) { m_engineFullVersionHasBeenSet = true; m_engineFullVersion.assign(value); }
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(const Aws::String& value) { SetEngineFullVersion(value); return *this;}
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(Aws::String&& value) { SetEngineFullVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The cluster version of the cluster used to create the snapshot. For example,
+     * 1.0.15503. </p>
+     */
+    inline Snapshot& WithEngineFullVersion(const char* value) { SetEngineFullVersion(value); return *this;}
 
 
     /**
@@ -659,50 +698,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline Snapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline Snapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
-     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that was used
+     * to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -737,114 +776,114 @@ namespace Model
 
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline const Aws::Vector<AccountWithRestoreAccess>& GetAccountsWithRestoreAccess() const{ return m_accountsWithRestoreAccess; }
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline bool AccountsWithRestoreAccessHasBeenSet() const { return m_accountsWithRestoreAccessHasBeenSet; }
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline void SetAccountsWithRestoreAccess(const Aws::Vector<AccountWithRestoreAccess>& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess = value; }
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline void SetAccountsWithRestoreAccess(Aws::Vector<AccountWithRestoreAccess>&& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess = std::move(value); }
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& WithAccountsWithRestoreAccess(const Aws::Vector<AccountWithRestoreAccess>& value) { SetAccountsWithRestoreAccess(value); return *this;}
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& WithAccountsWithRestoreAccess(Aws::Vector<AccountWithRestoreAccess>&& value) { SetAccountsWithRestoreAccess(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& AddAccountsWithRestoreAccess(const AccountWithRestoreAccess& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess.push_back(value); return *this; }
 
     /**
-     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
-     * Returns <code>null</code> if no accounts are authorized. Visible only to the
-     * snapshot owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& AddAccountsWithRestoreAccess(AccountWithRestoreAccess&& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline Snapshot& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline Snapshot& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>For manual snapshots, the AWS customer account used to create or copy the
-     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline Snapshot& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
@@ -1337,6 +1376,9 @@ namespace Model
 
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
+    Aws::String m_engineFullVersion;
+    bool m_engineFullVersionHasBeenSet;
 
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;

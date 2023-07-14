@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -37,7 +27,7 @@ namespace Model
 
   /**
    * <p>Describes an action to send data from an MQTT message that triggered the rule
-   * to AWS IoT SiteWise asset properties.</p><p><h3>See Also:</h3>   <a
+   * to IoT SiteWise asset properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotSiteWiseAction">AWS
    * API Reference</a></p>
    */
@@ -92,64 +82,64 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline IotSiteWiseAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
     inline IotSiteWiseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT permission to send an asset property
-     * value to AWS IoTSiteWise. (<code>"Action":
+     * <p>The ARN of the role that grants IoT permission to send an asset property
+     * value to IoT SiteWise. (<code>"Action":
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */

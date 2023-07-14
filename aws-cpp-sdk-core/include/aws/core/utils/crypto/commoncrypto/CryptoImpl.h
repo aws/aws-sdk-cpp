@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -19,6 +9,15 @@
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/crypto/Cipher.h>
+#include <CommonCrypto/CommonDigest.h>
+
+#if defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
+#if defined(__MAC_10_13) && (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_13)
+#define MAC_13_AVAILABLE  1
+#elif defined(__MAC_10_14_4) && (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_14_4)
+#define MAC_14_4_AVAILABLE  1
+#endif
+#endif
 
 struct _CCCryptor;
 
@@ -58,25 +57,59 @@ namespace Aws
             {
             public:
 
-                MD5CommonCryptoImpl() {}
+                MD5CommonCryptoImpl();
                 virtual ~MD5CommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const Aws::String& str) override;
 
                 virtual HashResult Calculate(Aws::IStream& stream) override;
 
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+// AWS_SUPPRESS_DEPRECATION(
+                CC_MD5_CTX m_ctx;
+                // )
+            };
+
+            class Sha1CommonCryptoImpl : public Hash
+            {
+            public:
+
+                Sha1CommonCryptoImpl();
+                virtual ~Sha1CommonCryptoImpl() {}
+
+                virtual HashResult Calculate(const Aws::String& str) override;
+
+                virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+                CC_SHA1_CTX m_ctx;
             };
 
             class Sha256CommonCryptoImpl : public Hash
             {
             public:
 
-                Sha256CommonCryptoImpl() {}
+                Sha256CommonCryptoImpl();
                 virtual ~Sha256CommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const Aws::String& str) override;
 
                 virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+                CC_SHA256_CTX m_ctx;
             };
 
             class Sha256HMACCommonCryptoImpl : public HMAC
@@ -87,8 +120,6 @@ namespace Aws
                 virtual ~Sha256HMACCommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
-
-
             };
 
             /**
@@ -167,6 +198,8 @@ namespace Aws
                 virtual size_t GetBlockSizeBytes() const = 0;
 
                 virtual size_t GetKeyLengthBits() const = 0;
+
+                bool CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength);
 
                 _CCCryptor* m_encryptorHandle;
                 _CCCryptor* m_decryptorHandle;
@@ -256,6 +289,62 @@ namespace Aws
 
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;
+            };
+
+            /**
+             * CommonCrypto implementation for AES in GCM mode
+             */
+            class AES_GCM_Cipher_CommonCrypto : public CommonCryptoCipher
+            {
+            public:
+                /**
+                 * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 bytes IV.
+                 */
+                AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key);
+
+                /**
+                * Create AES in GCM mode off of a 256 bit key and AAD. Auto Generates a 12 byte IV in the format
+                */
+                AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key, const CryptoBuffer* aad);
+
+                /**
+                 * Create AES in GCM mode off of a 256 bit key and 12 byte IV, tag and additional authentication data (AAD),
+                 * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
+                 */
+                AES_GCM_Cipher_CommonCrypto(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                    CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
+
+                /**
+                 * Create AES in GCM mode off of a 256 bit key and 12 byte IV, tag and additional authentication data (AAD)
+                 * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
+                 */
+                AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
+                    const CryptoBuffer& tag = CryptoBuffer(), const CryptoBuffer& aad = CryptoBuffer());
+
+                AES_GCM_Cipher_CommonCrypto(const AES_GCM_Cipher_CommonCrypto& other) = delete;
+
+                AES_GCM_Cipher_CommonCrypto& operator=(const AES_GCM_Cipher_CommonCrypto& other) = delete;
+
+                AES_GCM_Cipher_CommonCrypto(AES_GCM_Cipher_CommonCrypto&& toMove) = default;
+
+                CryptoBuffer FinalizeEncryption() override;
+                CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
+
+            protected:
+                size_t GetBlockSizeBytes() const override;
+
+                size_t GetKeyLengthBits() const override;
+
+            private:
+                void InitCipher();
+
+                CryptoBuffer m_aad;
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+                static size_t TagLengthBytes;
+                static size_t IVLengthBytes;
             };
 
             /**

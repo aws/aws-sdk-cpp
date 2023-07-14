@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/mediapackage-vod/model/ManifestLayout.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage-vod/model/Profile.h>
+#include <aws/mediapackage-vod/model/ScteMarkersSource.h>
 #include <aws/mediapackage-vod/model/StreamSelection.h>
 #include <utility>
 
@@ -202,6 +193,49 @@ namespace Model
     inline DashManifest& WithProfile(Profile&& value) { SetProfile(std::move(value)); return *this;}
 
 
+    /**
+     * The source of scte markers used. When set to SEGMENTS, the scte markers are
+     * sourced from the segments of the ingested content. When set to MANIFEST, the
+     * scte markers are sourced from the manifest of the ingested content.
+     */
+    inline const ScteMarkersSource& GetScteMarkersSource() const{ return m_scteMarkersSource; }
+
+    /**
+     * The source of scte markers used. When set to SEGMENTS, the scte markers are
+     * sourced from the segments of the ingested content. When set to MANIFEST, the
+     * scte markers are sourced from the manifest of the ingested content.
+     */
+    inline bool ScteMarkersSourceHasBeenSet() const { return m_scteMarkersSourceHasBeenSet; }
+
+    /**
+     * The source of scte markers used. When set to SEGMENTS, the scte markers are
+     * sourced from the segments of the ingested content. When set to MANIFEST, the
+     * scte markers are sourced from the manifest of the ingested content.
+     */
+    inline void SetScteMarkersSource(const ScteMarkersSource& value) { m_scteMarkersSourceHasBeenSet = true; m_scteMarkersSource = value; }
+
+    /**
+     * The source of scte markers used. When set to SEGMENTS, the scte markers are
+     * sourced from the segments of the ingested content. When set to MANIFEST, the
+     * scte markers are sourced from the manifest of the ingested content.
+     */
+    inline void SetScteMarkersSource(ScteMarkersSource&& value) { m_scteMarkersSourceHasBeenSet = true; m_scteMarkersSource = std::move(value); }
+
+    /**
+     * The source of scte markers used. When set to SEGMENTS, the scte markers are
+     * sourced from the segments of the ingested content. When set to MANIFEST, the
+     * scte markers are sourced from the manifest of the ingested content.
+     */
+    inline DashManifest& WithScteMarkersSource(const ScteMarkersSource& value) { SetScteMarkersSource(value); return *this;}
+
+    /**
+     * The source of scte markers used. When set to SEGMENTS, the scte markers are
+     * sourced from the segments of the ingested content. When set to MANIFEST, the
+     * scte markers are sourced from the manifest of the ingested content.
+     */
+    inline DashManifest& WithScteMarkersSource(ScteMarkersSource&& value) { SetScteMarkersSource(std::move(value)); return *this;}
+
+
     
     inline const StreamSelection& GetStreamSelection() const{ return m_streamSelection; }
 
@@ -233,6 +267,9 @@ namespace Model
 
     Profile m_profile;
     bool m_profileHasBeenSet;
+
+    ScteMarkersSource m_scteMarkersSource;
+    bool m_scteMarkersSourceHasBeenSet;
 
     StreamSelection m_streamSelection;
     bool m_streamSelectionHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -40,10 +30,10 @@ namespace Model
   /**
    * <p>A description of the Amazon EC2 instance on which the cluster (job flow)
    * runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or
-   * InstanceFleets, which is the recommended configuration. They cannot be used
-   * together. You may also have MasterInstanceType, SlaveInstanceType, and
-   * InstanceCount (all three must be present), but we don't recommend this
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * InstanceFleets. They cannot be used together. You may also have
+   * MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be
+   * present), but we don't recommend this configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowInstancesConfig">AWS
    * API Reference</a></p>
    */
@@ -201,64 +191,64 @@ namespace Model
 
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline const Aws::Vector<InstanceFleetConfig>& GetInstanceFleets() const{ return m_instanceFleets; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline bool InstanceFleetsHasBeenSet() const { return m_instanceFleetsHasBeenSet; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline void SetInstanceFleets(const Aws::Vector<InstanceFleetConfig>& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = value; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline void SetInstanceFleets(Aws::Vector<InstanceFleetConfig>&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = std::move(value); }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& WithInstanceFleets(const Aws::Vector<InstanceFleetConfig>& value) { SetInstanceFleets(value); return *this;}
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& WithInstanceFleets(Aws::Vector<InstanceFleetConfig>&& value) { SetInstanceFleets(std::move(value)); return *this;}
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
     inline JobFlowInstancesConfig& AddInstanceFleets(const InstanceFleetConfig& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.push_back(value); return *this; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>Describes the
      * EC2 instances and instance configurations for clusters that use the instance
      * fleet configuration.</p>
      */
@@ -266,50 +256,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::move(value); }
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline void SetEc2KeyName(const char* value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName.assign(value); }
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
-     * the user called "hadoop."</p>
+     * <p>The name of the EC2 key pair that can be used to connect to the master node
+     * using SSH as the user called "hadoop."</p>
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
 
@@ -347,25 +337,37 @@ namespace Model
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline bool GetKeepJobFlowAliveWhenNoSteps() const{ return m_keepJobFlowAliveWhenNoSteps; }
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline bool KeepJobFlowAliveWhenNoStepsHasBeenSet() const { return m_keepJobFlowAliveWhenNoStepsHasBeenSet; }
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKeepJobFlowAliveWhenNoSteps(bool value) { m_keepJobFlowAliveWhenNoStepsHasBeenSet = true; m_keepJobFlowAliveWhenNoSteps = value; }
 
     /**
      * <p>Specifies whether the cluster should remain available after completing all
-     * steps.</p>
+     * steps. Defaults to <code>true</code>. For more information about configuring
+     * cluster termination, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+     * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline JobFlowInstancesConfig& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
 
@@ -401,9 +403,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -411,9 +413,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -421,9 +423,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -431,9 +433,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -441,9 +443,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -451,9 +453,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -461,9 +463,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -471,9 +473,9 @@ namespace Model
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
-     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
-     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
-     * not set this value, the default of 0.18 is used, unless the
+     * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
+     * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
+     * "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
@@ -556,171 +558,195 @@ namespace Model
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetEc2SubnetIds() const{ return m_ec2SubnetIds; }
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline bool Ec2SubnetIdsHasBeenSet() const { return m_ec2SubnetIdsHasBeenSet; }
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline void SetEc2SubnetIds(const Aws::Vector<Aws::String>& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = value; }
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline void SetEc2SubnetIds(Aws::Vector<Aws::String>&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = std::move(value); }
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline JobFlowInstancesConfig& WithEc2SubnetIds(const Aws::Vector<Aws::String>& value) { SetEc2SubnetIds(value); return *this;}
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline JobFlowInstancesConfig& WithEc2SubnetIds(Aws::Vector<Aws::String>&& value) { SetEc2SubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(const Aws::String& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(Aws::String&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
-     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * in the optimal subnet.</p>  <p>The instance fleet configuration is
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions.</p> </note>
+     * versions.</p> 
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(const char* value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline const Aws::String& GetEmrManagedMasterSecurityGroup() const{ return m_emrManagedMasterSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline bool EmrManagedMasterSecurityGroupHasBeenSet() const { return m_emrManagedMasterSecurityGroupHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(const char* value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node. If you
+     * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
+     * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const char* value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline bool EmrManagedSlaveSecurityGroupHasBeenSet() const { return m_emrManagedSlaveSecurityGroupHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const char* value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the core and task
-     * nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task nodes.
+     * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
+     * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 

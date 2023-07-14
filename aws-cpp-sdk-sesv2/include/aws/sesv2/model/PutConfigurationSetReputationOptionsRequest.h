@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -47,50 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to enable or disable
-     * reputation metric tracking for.</p>
+     * <p>The name of the configuration set.</p>
      */
     inline PutConfigurationSetReputationOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 

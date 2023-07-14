@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -172,80 +162,88 @@ namespace Model
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline const Aws::String& GetSequenceToken() const{ return m_sequenceToken; }
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline bool SequenceTokenHasBeenSet() const { return m_sequenceTokenHasBeenSet; }
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline void SetSequenceToken(const Aws::String& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = std::move(value); }
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline void SetSequenceToken(const char* value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken.assign(value); }
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const Aws::String& value) { SetSequenceToken(value); return *this;}
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(std::move(value)); return *this;}
 
     /**
      * <p>The sequence token obtained from the response of the previous
      * <code>PutLogEvents</code> call. An upload in a newly created log stream does not
-     * require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a
-     * narrow time period using the same value for <code>sequenceToken</code>, both
-     * calls may be successful, or one may be rejected.</p>
+     * require a sequence token. You can also get the sequence token using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+     * If you call <code>PutLogEvents</code> twice within a narrow time period using
+     * the same value for <code>sequenceToken</code>, both calls might be successful or
+     * one might be rejected.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
 

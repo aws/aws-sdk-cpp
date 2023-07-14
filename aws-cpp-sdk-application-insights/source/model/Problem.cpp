@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/application-insights/model/Problem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,7 +30,10 @@ Problem::Problem() :
     m_severityLevel(SeverityLevel::NOT_SET),
     m_severityLevelHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_feedbackHasBeenSet(false)
+    m_feedbackHasBeenSet(false),
+    m_recurringCount(0),
+    m_recurringCountHasBeenSet(false),
+    m_lastRecurrenceTimeHasBeenSet(false)
 {
 }
 
@@ -56,7 +49,10 @@ Problem::Problem(JsonView jsonValue) :
     m_severityLevel(SeverityLevel::NOT_SET),
     m_severityLevelHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_feedbackHasBeenSet(false)
+    m_feedbackHasBeenSet(false),
+    m_recurringCount(0),
+    m_recurringCountHasBeenSet(false),
+    m_lastRecurrenceTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +132,20 @@ Problem& Problem::operator =(JsonView jsonValue)
     m_feedbackHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecurringCount"))
+  {
+    m_recurringCount = jsonValue.GetInt64("RecurringCount");
+
+    m_recurringCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastRecurrenceTime"))
+  {
+    m_lastRecurrenceTime = jsonValue.GetDouble("LastRecurrenceTime");
+
+    m_lastRecurrenceTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -202,6 +212,17 @@ JsonValue Problem::Jsonize() const
    }
    payload.WithObject("Feedback", std::move(feedbackJsonMap));
 
+  }
+
+  if(m_recurringCountHasBeenSet)
+  {
+   payload.WithInt64("RecurringCount", m_recurringCount);
+
+  }
+
+  if(m_lastRecurrenceTimeHasBeenSet)
+  {
+   payload.WithDouble("LastRecurrenceTime", m_lastRecurrenceTime.SecondsWithMSPrecision());
   }
 
   return payload;

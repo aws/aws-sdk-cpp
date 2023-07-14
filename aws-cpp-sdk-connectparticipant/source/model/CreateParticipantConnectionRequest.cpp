@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,7 +15,9 @@ using namespace Aws::Utils;
 
 CreateParticipantConnectionRequest::CreateParticipantConnectionRequest() : 
     m_typeHasBeenSet(false),
-    m_participantTokenHasBeenSet(false)
+    m_participantTokenHasBeenSet(false),
+    m_connectParticipant(false),
+    m_connectParticipantHasBeenSet(false)
 {
 }
 
@@ -41,6 +33,12 @@ Aws::String CreateParticipantConnectionRequest::SerializePayload() const
      typeJsonList[typeIndex].AsString(ConnectionTypeMapper::GetNameForConnectionType(m_type[typeIndex]));
    }
    payload.WithArray("Type", std::move(typeJsonList));
+
+  }
+
+  if(m_connectParticipantHasBeenSet)
+  {
+   payload.WithBool("ConnectParticipant", m_connectParticipant);
 
   }
 

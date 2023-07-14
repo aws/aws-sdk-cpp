@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -248,6 +238,55 @@ namespace Model
 
 
     /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline TransitGatewayMulticastGroup& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline TransitGatewayMulticastGroup& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
+     */
+    inline TransitGatewayMulticastGroup& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
+
+
+    /**
      * <p>The ID of the transit gateway attachment.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -407,6 +446,9 @@ namespace Model
 
     TransitGatewayAttachmentResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::String m_resourceOwnerId;
+    bool m_resourceOwnerIdHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

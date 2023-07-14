@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/NotificationConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,14 +23,16 @@ namespace Model
 NotificationConfiguration::NotificationConfiguration() : 
     m_topicConfigurationsHasBeenSet(false),
     m_queueConfigurationsHasBeenSet(false),
-    m_lambdaFunctionConfigurationsHasBeenSet(false)
+    m_lambdaFunctionConfigurationsHasBeenSet(false),
+    m_eventBridgeConfigurationHasBeenSet(false)
 {
 }
 
 NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode) : 
     m_topicConfigurationsHasBeenSet(false),
     m_queueConfigurationsHasBeenSet(false),
-    m_lambdaFunctionConfigurationsHasBeenSet(false)
+    m_lambdaFunctionConfigurationsHasBeenSet(false),
+    m_eventBridgeConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -87,6 +79,12 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
 
       m_lambdaFunctionConfigurationsHasBeenSet = true;
     }
+    XmlNode eventBridgeConfigurationNode = resultNode.FirstChild("EventBridgeConfiguration");
+    if(!eventBridgeConfigurationNode.IsNull())
+    {
+      m_eventBridgeConfiguration = eventBridgeConfigurationNode;
+      m_eventBridgeConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -120,6 +118,12 @@ void NotificationConfiguration::AddToNode(XmlNode& parentNode) const
      XmlNode lambdaFunctionConfigurationsNode = parentNode.CreateChildElement("CloudFunctionConfiguration");
      item.AddToNode(lambdaFunctionConfigurationsNode);
    }
+  }
+
+  if(m_eventBridgeConfigurationHasBeenSet)
+  {
+   XmlNode eventBridgeConfigurationNode = parentNode.CreateChildElement("EventBridgeConfiguration");
+   m_eventBridgeConfiguration.AddToNode(eventBridgeConfigurationNode);
   }
 
 }

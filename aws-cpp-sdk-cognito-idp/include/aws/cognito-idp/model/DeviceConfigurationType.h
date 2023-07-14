@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -32,8 +22,10 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for the user pool's device tracking.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The device tracking configuration for a user pool. A user pool with device
+   * tracking deactivated returns a null value.</p>  <p>When you provide values
+   * for any DeviceConfiguration field, you activate device tracking.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -47,47 +39,67 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether a challenge is required on a new device. Only applicable to
-     * a new device.</p>
+     * <p>When true, device authentication can replace SMS and time-based one-time
+     * password (TOTP) factors for multi-factor authentication (MFA).</p> 
+     * <p>Users that sign in with devices that have not been confirmed or remembered
+     * will still have to provide a second factor, whether or not
+     * ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+     * 
      */
     inline bool GetChallengeRequiredOnNewDevice() const{ return m_challengeRequiredOnNewDevice; }
 
     /**
-     * <p>Indicates whether a challenge is required on a new device. Only applicable to
-     * a new device.</p>
+     * <p>When true, device authentication can replace SMS and time-based one-time
+     * password (TOTP) factors for multi-factor authentication (MFA).</p> 
+     * <p>Users that sign in with devices that have not been confirmed or remembered
+     * will still have to provide a second factor, whether or not
+     * ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+     * 
      */
     inline bool ChallengeRequiredOnNewDeviceHasBeenSet() const { return m_challengeRequiredOnNewDeviceHasBeenSet; }
 
     /**
-     * <p>Indicates whether a challenge is required on a new device. Only applicable to
-     * a new device.</p>
+     * <p>When true, device authentication can replace SMS and time-based one-time
+     * password (TOTP) factors for multi-factor authentication (MFA).</p> 
+     * <p>Users that sign in with devices that have not been confirmed or remembered
+     * will still have to provide a second factor, whether or not
+     * ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+     * 
      */
     inline void SetChallengeRequiredOnNewDevice(bool value) { m_challengeRequiredOnNewDeviceHasBeenSet = true; m_challengeRequiredOnNewDevice = value; }
 
     /**
-     * <p>Indicates whether a challenge is required on a new device. Only applicable to
-     * a new device.</p>
+     * <p>When true, device authentication can replace SMS and time-based one-time
+     * password (TOTP) factors for multi-factor authentication (MFA).</p> 
+     * <p>Users that sign in with devices that have not been confirmed or remembered
+     * will still have to provide a second factor, whether or not
+     * ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+     * 
      */
     inline DeviceConfigurationType& WithChallengeRequiredOnNewDevice(bool value) { SetChallengeRequiredOnNewDevice(value); return *this;}
 
 
     /**
-     * <p>If true, a device is only remembered on user prompt.</p>
+     * <p>When true, users can opt in to remembering their device. Your app code must
+     * use callback functions to return the user's choice.</p>
      */
     inline bool GetDeviceOnlyRememberedOnUserPrompt() const{ return m_deviceOnlyRememberedOnUserPrompt; }
 
     /**
-     * <p>If true, a device is only remembered on user prompt.</p>
+     * <p>When true, users can opt in to remembering their device. Your app code must
+     * use callback functions to return the user's choice.</p>
      */
     inline bool DeviceOnlyRememberedOnUserPromptHasBeenSet() const { return m_deviceOnlyRememberedOnUserPromptHasBeenSet; }
 
     /**
-     * <p>If true, a device is only remembered on user prompt.</p>
+     * <p>When true, users can opt in to remembering their device. Your app code must
+     * use callback functions to return the user's choice.</p>
      */
     inline void SetDeviceOnlyRememberedOnUserPrompt(bool value) { m_deviceOnlyRememberedOnUserPromptHasBeenSet = true; m_deviceOnlyRememberedOnUserPrompt = value; }
 
     /**
-     * <p>If true, a device is only remembered on user prompt.</p>
+     * <p>When true, users can opt in to remembering their device. Your app code must
+     * use callback functions to return the user's choice.</p>
      */
     inline DeviceConfigurationType& WithDeviceOnlyRememberedOnUserPrompt(bool value) { SetDeviceOnlyRememberedOnUserPrompt(value); return *this;}
 

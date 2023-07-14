@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
@@ -45,83 +35,115 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline TagResourceRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline TagResourceRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>Specifies the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
      */
     inline TagResourceRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>A list of one or more tag key and value pairs. The tag key must be present
+     * and not be an empty string. The tag value must be present but can be an empty
+     * string.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

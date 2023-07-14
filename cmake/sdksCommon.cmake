@@ -1,16 +1,5 @@
-#
-# Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# A copy of the License is located at
-#
-#  http://aws.amazon.com/apache2.0
-#
-# or in the "license" file accompanying this file. This file is distributed
-# on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-# express or implied. See the License for the specific language governing
-# permissions and limitations under the License.
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
 #
 
 # helper function that that gives primitive map functionality by treating a colon as the key-value separator, while the list semi-colon separates pairs
@@ -92,12 +81,21 @@ function(build_sdk_list)
         if ("${svc}" STREQUAL "runtime.lex")
             LIST(APPEND C2J_SPECIAL_NAME_LIST "lex:runtime.lex")
             set(svc "lex")
+        elseif("${svc}" STREQUAL "runtime.lex.v2")
+            LIST(APPEND C2J_SPECIAL_NAME_LIST "lexv2-runtime:runtime.lex.v2")
+            set(svc "lexv2-runtime")
+        elseif("${svc}" STREQUAL "models.lex.v2")
+            LIST(APPEND C2J_SPECIAL_NAME_LIST "lexv2-models:models.lex.v2")
+            set(svc "lexv2-models")
         elseif ("${svc}" STREQUAL "transfer")
             LIST(APPEND C2J_SPECIAL_NAME_LIST "awstransfer:transfer")
             set(svc "awstransfer")
         elseif ("${svc}" STREQUAL "transcribe-streaming")
             LIST(APPEND C2J_SPECIAL_NAME_LIST "transcribestreaming:transcribe-streaming")
             set(svc "transcribestreaming")
+        elseif ("${svc}" STREQUAL "streams.dynamodb")
+            LIST(APPEND C2J_SPECIAL_NAME_LIST "dynamodbstreams:streams.dynamodb")
+            set (svc "dynamodbstreams")
         elseif("${svc}" MATCHES "\\.")
             string(REPLACE "." ";" nameParts ${svc})
             LIST(REVERSE nameParts)
@@ -108,13 +106,23 @@ function(build_sdk_list)
             if(PLATFORM_ANDROID AND CMAKE_HOST_WIN32)  # ec2 isn't building for android on windows atm due to an internal compiler error, TODO: investigate further
                 continue()
             endif()
+        elseif("${svc}" STREQUAL "s3")
+            LIST(APPEND C2J_SPECIAL_NAME_LIST "s3-crt:s3")
+            message(STATUS "Add s3-crt:s3 to C2J_SPECIAL_NAME_LIST")
         endif()
         get_map_element(${svc} existingDate ${C2J_LIST})
         if ("${existingDate}" STREQUAL "")
             LIST(APPEND C2J_LIST "${svc}:${date}")
+            if ("${svc}" STREQUAL "s3")
+                LIST(APPEND C2J_LIST "s3-crt:${date}")
+            endif()
         elseif(${existingDate} STRLESS ${date})
             LIST(REMOVE_ITEM C2J_LIST "${svc}:${existingDate}")
             LIST(APPEND C2J_LIST "${svc}:${date}")
+            if ("${svc}" STREQUAL "s3")
+                LIST(REMOVE_ITEM C2J_LIST "s3-crt:${existingDate}")
+                LIST(APPEND C2J_LIST "s3-crt:${date}")
+            endif()
         endif()
     endforeach()
     set(C2J_LIST "${C2J_LIST}" PARENT_SCOPE)
@@ -135,19 +143,23 @@ list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:aws-cpp-sdk-cognitoidentity-
 list(APPEND SDK_TEST_PROJECT_LIST "core:aws-cpp-sdk-core-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "dynamodb:aws-cpp-sdk-dynamodb-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "ec2:aws-cpp-sdk-ec2-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "elasticfilesystem:aws-cpp-sdk-elasticfilesystem-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "identity-management:aws-cpp-sdk-identity-management-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "kinesis:aws-cpp-sdk-kinesis-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "lambda:aws-cpp-sdk-lambda-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "logs:aws-cpp-sdk-logs-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "mediastore-data:aws-cpp-sdk-mediastore-data-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "rds:aws-cpp-sdk-rds-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "redshift:aws-cpp-sdk-redshift-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3:aws-cpp-sdk-s3-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "s3-crt:aws-cpp-sdk-s3-crt-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3-encryption:aws-cpp-sdk-s3-encryption-tests,aws-cpp-sdk-s3-encryption-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3control:aws-cpp-sdk-s3control-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sqs:aws-cpp-sdk-sqs-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "transfer:aws-cpp-sdk-transfer-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "text-to-speech:aws-cpp-sdk-text-to-speech-tests,aws-cpp-sdk-polly-sample")
 list(APPEND SDK_TEST_PROJECT_LIST "transcribestreaming:aws-cpp-sdk-transcribestreaming-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "eventbridge:aws-cpp-sdk-eventbridge-tests")
 
 set(SDK_DEPENDENCY_LIST "")
 list(APPEND SDK_DEPENDENCY_LIST "access-management:iam,cognito-identity,core")

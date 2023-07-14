@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
@@ -69,10 +59,10 @@ namespace Model
         class ModifyReportDefinitionRequest;
         class PutReportDefinitionRequest;
 
-        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DeleteReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DescribeReportDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> ModifyReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> PutReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, CostandUsageReportServiceError> DeleteReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, CostandUsageReportServiceError> DescribeReportDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, CostandUsageReportServiceError> ModifyReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<PutReportDefinitionResult, CostandUsageReportServiceError> PutReportDefinitionOutcome;
 
         typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
         typedef std::future<DescribeReportDefinitionsOutcome> DescribeReportDefinitionsOutcomeCallable;
@@ -124,8 +114,6 @@ namespace Model
 
         virtual ~CostandUsageReportServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Cost and Usage Report Service"; }
-
 
         /**
          * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
@@ -135,20 +123,12 @@ namespace Model
         virtual Model::DeleteReportDefinitionOutcome DeleteReportDefinition(const Model::DeleteReportDefinitionRequest& request) const;
 
         /**
-         * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReportDefinitionOutcomeCallable DeleteReportDefinitionCallable(const Model::DeleteReportDefinitionRequest& request) const;
 
         /**
-         * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteReportDefinitionAsync(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -161,22 +141,12 @@ namespace Model
         virtual Model::DescribeReportDefinitionsOutcome DescribeReportDefinitions(const Model::DescribeReportDefinitionsRequest& request) const;
 
         /**
-         * <p>Lists the AWS Cost and Usage reports available to this account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeReportDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReportDefinitionsOutcomeCallable DescribeReportDefinitionsCallable(const Model::DescribeReportDefinitionsRequest& request) const;
 
         /**
-         * <p>Lists the AWS Cost and Usage reports available to this account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeReportDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReportDefinitionsAsync(const Model::DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -189,22 +159,12 @@ namespace Model
         virtual Model::ModifyReportDefinitionOutcome ModifyReportDefinition(const Model::ModifyReportDefinitionRequest& request) const;
 
         /**
-         * <p>Allows you to programatically update your report preferences.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ModifyReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyReportDefinitionOutcomeCallable ModifyReportDefinitionCallable(const Model::ModifyReportDefinitionRequest& request) const;
 
         /**
-         * <p>Allows you to programatically update your report preferences.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ModifyReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyReportDefinitionAsync(const Model::ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -217,22 +177,12 @@ namespace Model
         virtual Model::PutReportDefinitionOutcome PutReportDefinition(const Model::PutReportDefinitionRequest& request) const;
 
         /**
-         * <p>Creates a new report using the description that you provide.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutReportDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutReportDefinitionOutcomeCallable PutReportDefinitionCallable(const Model::PutReportDefinitionRequest& request) const;
 
         /**
-         * <p>Creates a new report using the description that you provide.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutReportDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutReportDefinitionAsync(const Model::PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

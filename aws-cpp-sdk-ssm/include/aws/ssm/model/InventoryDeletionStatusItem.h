@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -38,7 +28,7 @@ namespace Model
 
   /**
    * <p>Status information returned by the <code>DeleteInventory</code>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryDeletionStatusItem">AWS
    * API Reference</a></p>
    */
@@ -52,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline const Aws::String& GetDeletionId() const{ return m_deletionId; }
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline bool DeletionIdHasBeenSet() const { return m_deletionIdHasBeenSet; }
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline void SetDeletionId(const Aws::String& value) { m_deletionIdHasBeenSet = true; m_deletionId = value; }
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline void SetDeletionId(Aws::String&& value) { m_deletionIdHasBeenSet = true; m_deletionId = std::move(value); }
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline void SetDeletionId(const char* value) { m_deletionIdHasBeenSet = true; m_deletionId.assign(value); }
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionId(const Aws::String& value) { SetDeletionId(value); return *this;}
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionId(Aws::String&& value) { SetDeletionId(std::move(value)); return *this;}
 
     /**
-     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionId(const char* value) { SetDeletionId(value); return *this;}
 
@@ -239,54 +229,54 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p>
      */
     inline const InventoryDeletionSummary& GetDeletionSummary() const{ return m_deletionSummary; }
 
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p>
      */
     inline bool DeletionSummaryHasBeenSet() const { return m_deletionSummaryHasBeenSet; }
 
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetDeletionSummary(const InventoryDeletionSummary& value) { m_deletionSummaryHasBeenSet = true; m_deletionSummary = value; }
 
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetDeletionSummary(InventoryDeletionSummary&& value) { m_deletionSummaryHasBeenSet = true; m_deletionSummary = std::move(value); }
 
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionSummary(const InventoryDeletionSummary& value) { SetDeletionSummary(value); return *this;}
 
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionSummary(InventoryDeletionSummary&& value) { SetDeletionSummary(std::move(value)); return *this;}
 

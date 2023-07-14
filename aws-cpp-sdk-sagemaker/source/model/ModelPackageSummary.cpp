@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ModelPackageSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,21 +20,31 @@ namespace Model
 
 ModelPackageSummary::ModelPackageSummary() : 
     m_modelPackageNameHasBeenSet(false),
+    m_modelPackageGroupNameHasBeenSet(false),
+    m_modelPackageVersion(0),
+    m_modelPackageVersionHasBeenSet(false),
     m_modelPackageArnHasBeenSet(false),
     m_modelPackageDescriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_modelPackageStatusHasBeenSet(false)
+    m_modelPackageStatusHasBeenSet(false),
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_modelApprovalStatusHasBeenSet(false)
 {
 }
 
 ModelPackageSummary::ModelPackageSummary(JsonView jsonValue) : 
     m_modelPackageNameHasBeenSet(false),
+    m_modelPackageGroupNameHasBeenSet(false),
+    m_modelPackageVersion(0),
+    m_modelPackageVersionHasBeenSet(false),
     m_modelPackageArnHasBeenSet(false),
     m_modelPackageDescriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
-    m_modelPackageStatusHasBeenSet(false)
+    m_modelPackageStatusHasBeenSet(false),
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_modelApprovalStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +56,20 @@ ModelPackageSummary& ModelPackageSummary::operator =(JsonView jsonValue)
     m_modelPackageName = jsonValue.GetString("ModelPackageName");
 
     m_modelPackageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelPackageGroupName"))
+  {
+    m_modelPackageGroupName = jsonValue.GetString("ModelPackageGroupName");
+
+    m_modelPackageGroupNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelPackageVersion"))
+  {
+    m_modelPackageVersion = jsonValue.GetInteger("ModelPackageVersion");
+
+    m_modelPackageVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ModelPackageArn"))
@@ -86,6 +100,13 @@ ModelPackageSummary& ModelPackageSummary::operator =(JsonView jsonValue)
     m_modelPackageStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelApprovalStatus"))
+  {
+    m_modelApprovalStatus = ModelApprovalStatusMapper::GetModelApprovalStatusForName(jsonValue.GetString("ModelApprovalStatus"));
+
+    m_modelApprovalStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +117,18 @@ JsonValue ModelPackageSummary::Jsonize() const
   if(m_modelPackageNameHasBeenSet)
   {
    payload.WithString("ModelPackageName", m_modelPackageName);
+
+  }
+
+  if(m_modelPackageGroupNameHasBeenSet)
+  {
+   payload.WithString("ModelPackageGroupName", m_modelPackageGroupName);
+
+  }
+
+  if(m_modelPackageVersionHasBeenSet)
+  {
+   payload.WithInteger("ModelPackageVersion", m_modelPackageVersion);
 
   }
 
@@ -119,6 +152,11 @@ JsonValue ModelPackageSummary::Jsonize() const
   if(m_modelPackageStatusHasBeenSet)
   {
    payload.WithString("ModelPackageStatus", ModelPackageStatusMapper::GetNameForModelPackageStatus(m_modelPackageStatus));
+  }
+
+  if(m_modelApprovalStatusHasBeenSet)
+  {
+   payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
   }
 
   return payload;

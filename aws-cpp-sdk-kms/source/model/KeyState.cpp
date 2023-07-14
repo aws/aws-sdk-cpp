@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kms/model/KeyState.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,17 +20,24 @@ namespace Aws
       namespace KeyStateMapper
       {
 
+        static const int Creating_HASH = HashingUtils::HashString("Creating");
         static const int Enabled_HASH = HashingUtils::HashString("Enabled");
         static const int Disabled_HASH = HashingUtils::HashString("Disabled");
         static const int PendingDeletion_HASH = HashingUtils::HashString("PendingDeletion");
         static const int PendingImport_HASH = HashingUtils::HashString("PendingImport");
+        static const int PendingReplicaDeletion_HASH = HashingUtils::HashString("PendingReplicaDeletion");
         static const int Unavailable_HASH = HashingUtils::HashString("Unavailable");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
 
 
         KeyState GetKeyStateForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Enabled_HASH)
+          if (hashCode == Creating_HASH)
+          {
+            return KeyState::Creating;
+          }
+          else if (hashCode == Enabled_HASH)
           {
             return KeyState::Enabled;
           }
@@ -56,9 +53,17 @@ namespace Aws
           {
             return KeyState::PendingImport;
           }
+          else if (hashCode == PendingReplicaDeletion_HASH)
+          {
+            return KeyState::PendingReplicaDeletion;
+          }
           else if (hashCode == Unavailable_HASH)
           {
             return KeyState::Unavailable;
+          }
+          else if (hashCode == Updating_HASH)
+          {
+            return KeyState::Updating;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -74,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyState::Creating:
+            return "Creating";
           case KeyState::Enabled:
             return "Enabled";
           case KeyState::Disabled:
@@ -82,8 +89,12 @@ namespace Aws
             return "PendingDeletion";
           case KeyState::PendingImport:
             return "PendingImport";
+          case KeyState::PendingReplicaDeletion:
+            return "PendingReplicaDeletion";
           case KeyState::Unavailable:
             return "Unavailable";
+          case KeyState::Updating:
+            return "Updating";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

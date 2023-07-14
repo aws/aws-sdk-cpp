@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -46,107 +36,99 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline CreateIPSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline CreateIPSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create an IPSet.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * create an IPSet for.</p>
      */
     inline CreateIPSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline CreateIPSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline CreateIPSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are
+     * alphanumerics, spaces, hyphens (-), and underscores (_).</p>
      */
     inline CreateIPSetRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -183,74 +165,66 @@ namespace Model
 
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline CreateIPSetRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline CreateIPSetRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
+     * <p>The URI of the file that contains the IPSet. </p>
      */
     inline CreateIPSetRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
     /**
-     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * <p>A Boolean value that indicates whether GuardDuty is to start using the
      * uploaded IPSet.</p>
      */
     inline bool GetActivate() const{ return m_activate; }
 
     /**
-     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * <p>A Boolean value that indicates whether GuardDuty is to start using the
      * uploaded IPSet.</p>
      */
     inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
 
     /**
-     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * <p>A Boolean value that indicates whether GuardDuty is to start using the
      * uploaded IPSet.</p>
      */
     inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
 
     /**
-     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * <p>A Boolean value that indicates whether GuardDuty is to start using the
      * uploaded IPSet.</p>
      */
     inline CreateIPSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}

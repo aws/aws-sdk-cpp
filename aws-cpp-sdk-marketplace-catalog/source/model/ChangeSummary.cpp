@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/marketplace-catalog/model/ChangeSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,18 @@ namespace Model
 ChangeSummary::ChangeSummary() : 
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
-    m_errorDetailListHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_errorDetailListHasBeenSet(false),
+    m_changeNameHasBeenSet(false)
 {
 }
 
 ChangeSummary::ChangeSummary(JsonView jsonValue) : 
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
-    m_errorDetailListHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_errorDetailListHasBeenSet(false),
+    m_changeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +53,13 @@ ChangeSummary& ChangeSummary::operator =(JsonView jsonValue)
     m_entityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Details"))
+  {
+    m_details = jsonValue.GetString("Details");
+
+    m_detailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ErrorDetailList"))
   {
     Array<JsonView> errorDetailListJsonList = jsonValue.GetArray("ErrorDetailList");
@@ -67,6 +68,13 @@ ChangeSummary& ChangeSummary::operator =(JsonView jsonValue)
       m_errorDetailList.push_back(errorDetailListJsonList[errorDetailListIndex].AsObject());
     }
     m_errorDetailListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChangeName"))
+  {
+    m_changeName = jsonValue.GetString("ChangeName");
+
+    m_changeNameHasBeenSet = true;
   }
 
   return *this;
@@ -88,6 +96,12 @@ JsonValue ChangeSummary::Jsonize() const
 
   }
 
+  if(m_detailsHasBeenSet)
+  {
+   payload.WithString("Details", m_details);
+
+  }
+
   if(m_errorDetailListHasBeenSet)
   {
    Array<JsonValue> errorDetailListJsonList(m_errorDetailList.size());
@@ -96,6 +110,12 @@ JsonValue ChangeSummary::Jsonize() const
      errorDetailListJsonList[errorDetailListIndex].AsObject(m_errorDetailList[errorDetailListIndex].Jsonize());
    }
    payload.WithArray("ErrorDetailList", std::move(errorDetailListJsonList));
+
+  }
+
+  if(m_changeNameHasBeenSet)
+  {
+   payload.WithString("ChangeName", m_changeName);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/OutputChannelMapping.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 OutputChannelMapping::OutputChannelMapping() : 
-    m_inputChannelsHasBeenSet(false)
+    m_inputChannelsHasBeenSet(false),
+    m_inputChannelsFineTuneHasBeenSet(false)
 {
 }
 
 OutputChannelMapping::OutputChannelMapping(JsonView jsonValue) : 
-    m_inputChannelsHasBeenSet(false)
+    m_inputChannelsHasBeenSet(false),
+    m_inputChannelsFineTuneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +41,16 @@ OutputChannelMapping& OutputChannelMapping::operator =(JsonView jsonValue)
       m_inputChannels.push_back(inputChannelsJsonList[inputChannelsIndex].AsInteger());
     }
     m_inputChannelsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputChannelsFineTune"))
+  {
+    Array<JsonView> inputChannelsFineTuneJsonList = jsonValue.GetArray("inputChannelsFineTune");
+    for(unsigned inputChannelsFineTuneIndex = 0; inputChannelsFineTuneIndex < inputChannelsFineTuneJsonList.GetLength(); ++inputChannelsFineTuneIndex)
+    {
+      m_inputChannelsFineTune.push_back(inputChannelsFineTuneJsonList[inputChannelsFineTuneIndex].AsDouble());
+    }
+    m_inputChannelsFineTuneHasBeenSet = true;
   }
 
   return *this;
@@ -66,6 +68,17 @@ JsonValue OutputChannelMapping::Jsonize() const
      inputChannelsJsonList[inputChannelsIndex].AsInteger(m_inputChannels[inputChannelsIndex]);
    }
    payload.WithArray("inputChannels", std::move(inputChannelsJsonList));
+
+  }
+
+  if(m_inputChannelsFineTuneHasBeenSet)
+  {
+   Array<JsonValue> inputChannelsFineTuneJsonList(m_inputChannelsFineTune.size());
+   for(unsigned inputChannelsFineTuneIndex = 0; inputChannelsFineTuneIndex < inputChannelsFineTuneJsonList.GetLength(); ++inputChannelsFineTuneIndex)
+   {
+     inputChannelsFineTuneJsonList[inputChannelsFineTuneIndex].AsDouble(m_inputChannelsFineTune[inputChannelsFineTuneIndex]);
+   }
+   payload.WithArray("inputChannelsFineTune", std::move(inputChannelsFineTuneJsonList));
 
   }
 

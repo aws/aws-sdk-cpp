@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
@@ -228,50 +218,50 @@ namespace Model
 
 
     /**
-     * <p>The status of the domain name migration. The valid values are AVAILABLE and
-     * UPDATING. If the status is UPDATING, the domain cannot be modified further until
-     * the existing operation is complete. If it is AVAILABLE, the domain can be
-     * updated.</p>
+     * <p>The status of the domain name migration. The valid values are AVAILABLE,
+     * UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If
+     * the status is UPDATING, the domain cannot be modified further until the existing
+     * operation is complete. If it is AVAILABLE, the domain can be updated.</p>
      */
     inline const DomainNameStatus& GetDomainNameStatus() const{ return m_domainNameStatus; }
 
     /**
-     * <p>The status of the domain name migration. The valid values are AVAILABLE and
-     * UPDATING. If the status is UPDATING, the domain cannot be modified further until
-     * the existing operation is complete. If it is AVAILABLE, the domain can be
-     * updated.</p>
+     * <p>The status of the domain name migration. The valid values are AVAILABLE,
+     * UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If
+     * the status is UPDATING, the domain cannot be modified further until the existing
+     * operation is complete. If it is AVAILABLE, the domain can be updated.</p>
      */
     inline bool DomainNameStatusHasBeenSet() const { return m_domainNameStatusHasBeenSet; }
 
     /**
-     * <p>The status of the domain name migration. The valid values are AVAILABLE and
-     * UPDATING. If the status is UPDATING, the domain cannot be modified further until
-     * the existing operation is complete. If it is AVAILABLE, the domain can be
-     * updated.</p>
+     * <p>The status of the domain name migration. The valid values are AVAILABLE,
+     * UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If
+     * the status is UPDATING, the domain cannot be modified further until the existing
+     * operation is complete. If it is AVAILABLE, the domain can be updated.</p>
      */
     inline void SetDomainNameStatus(const DomainNameStatus& value) { m_domainNameStatusHasBeenSet = true; m_domainNameStatus = value; }
 
     /**
-     * <p>The status of the domain name migration. The valid values are AVAILABLE and
-     * UPDATING. If the status is UPDATING, the domain cannot be modified further until
-     * the existing operation is complete. If it is AVAILABLE, the domain can be
-     * updated.</p>
+     * <p>The status of the domain name migration. The valid values are AVAILABLE,
+     * UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If
+     * the status is UPDATING, the domain cannot be modified further until the existing
+     * operation is complete. If it is AVAILABLE, the domain can be updated.</p>
      */
     inline void SetDomainNameStatus(DomainNameStatus&& value) { m_domainNameStatusHasBeenSet = true; m_domainNameStatus = std::move(value); }
 
     /**
-     * <p>The status of the domain name migration. The valid values are AVAILABLE and
-     * UPDATING. If the status is UPDATING, the domain cannot be modified further until
-     * the existing operation is complete. If it is AVAILABLE, the domain can be
-     * updated.</p>
+     * <p>The status of the domain name migration. The valid values are AVAILABLE,
+     * UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If
+     * the status is UPDATING, the domain cannot be modified further until the existing
+     * operation is complete. If it is AVAILABLE, the domain can be updated.</p>
      */
     inline DomainNameConfiguration& WithDomainNameStatus(const DomainNameStatus& value) { SetDomainNameStatus(value); return *this;}
 
     /**
-     * <p>The status of the domain name migration. The valid values are AVAILABLE and
-     * UPDATING. If the status is UPDATING, the domain cannot be modified further until
-     * the existing operation is complete. If it is AVAILABLE, the domain can be
-     * updated.</p>
+     * <p>The status of the domain name migration. The valid values are AVAILABLE,
+     * UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If
+     * the status is UPDATING, the domain cannot be modified further until the existing
+     * operation is complete. If it is AVAILABLE, the domain can be updated.</p>
      */
     inline DomainNameConfiguration& WithDomainNameStatus(DomainNameStatus&& value) { SetDomainNameStatus(std::move(value)); return *this;}
 
@@ -433,6 +423,63 @@ namespace Model
      */
     inline DomainNameConfiguration& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline const Aws::String& GetOwnershipVerificationCertificateArn() const{ return m_ownershipVerificationCertificateArn; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline bool OwnershipVerificationCertificateArnHasBeenSet() const { return m_ownershipVerificationCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const Aws::String& value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(Aws::String&& value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const char* value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline DomainNameConfiguration& WithOwnershipVerificationCertificateArn(const Aws::String& value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline DomainNameConfiguration& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn</p>
+     */
+    inline DomainNameConfiguration& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_apiGatewayDomainName;
@@ -461,6 +508,9 @@ namespace Model
 
     SecurityPolicy m_securityPolicy;
     bool m_securityPolicyHasBeenSet;
+
+    Aws::String m_ownershipVerificationCertificateArn;
+    bool m_ownershipVerificationCertificateArnHasBeenSet;
   };
 
 } // namespace Model

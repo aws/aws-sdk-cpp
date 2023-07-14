@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/s3/model/ObjectCannedACL.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/s3/model/ServerSideEncryption.h>
@@ -56,159 +47,217 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    Aws::String GetChecksumAlgorithmName() const override;
+
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-     * ACL</a>.</p>
+     * ACL</a>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-     * ACL</a>.</p>
+     * ACL</a>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-     * ACL</a>.</p>
+     * ACL</a>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-     * ACL</a>.</p>
+     * ACL</a>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-     * ACL</a>.</p>
+     * ACL</a>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-     * ACL</a>.</p>
+     * ACL</a>.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * <p>The bucket name to which the PUT action was initiated. </p> <p>When using
+     * this action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation using an access point through the AWS SDKs, you
-     * provide the access point ARN in place of the bucket name. For more information
-     * about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -552,6 +601,407 @@ namespace Model
 
 
     /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline PutObjectRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline PutObjectRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = value; }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::move(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256.assign(value); }
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
+
+    /**
+     * <p>This header can be used as a data integrity check to verify that the data
+     * received is the same data that was originally sent. This header specifies the
+     * base64-encoded, 256-bit SHA-256 digest of the object. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline PutObjectRequest& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+
+
+    /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
@@ -596,213 +1046,237 @@ namespace Model
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
      * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-     * object.</p>
+     * object.</p> <p>This action is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the object data and its metadata.</p>
+     * <p>Allows grantee to read the object data and its metadata.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to read the object ACL.</p>
+     * <p>Allows grantee to read the object ACL.</p> <p>This action is not supported by
+     * Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to write the ACL for the applicable object.</p>
+     * <p>Allows grantee to write the ACL for the applicable object.</p> <p>This action
+     * is not supported by Amazon S3 on Outposts.</p>
      */
     inline PutObjectRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline PutObjectRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline PutObjectRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Object key for which the PUT operation was initiated.</p>
+     * <p>Object key for which the PUT action was initiated.</p>
      */
     inline PutObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -911,38 +1385,68 @@ namespace Model
 
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
-     * supports other storage classes.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
-     * supports other storage classes.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
-     * supports other storage classes.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
-     * supports other storage classes.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
-     * supports other storage classes.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
-     * supports other storage classes.</p>
+     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
+     * objects. The STANDARD storage class provides high durability and high
+     * availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -1162,7 +1666,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
@@ -1171,7 +1675,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
@@ -1180,7 +1684,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
@@ -1189,7 +1693,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
@@ -1198,7 +1702,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
@@ -1207,7 +1711,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline PutObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
@@ -1216,7 +1720,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline PutObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
@@ -1225,7 +1729,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon S3 does not store the encryption key. The key must be
      * appropriate for use with the algorithm specified in the
-     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
+     * <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
      */
     inline PutObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
@@ -1289,172 +1793,201 @@ namespace Model
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object.</p> <p> If the value of
-     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
-     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
-     * for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data.</p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed key to protect the data. If the KMS key does not exist in
+     * the same account issuing the command, you must use the full ARN and not just the
+     * ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS.</p> <p>Specifying this header with a PUT action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS.</p> <p>Specifying this header with a PUT action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS.</p> <p>Specifying this header with a PUT action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
+     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
+     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
+     * with SSE-KMS.</p> <p>Specifying this header with a PUT action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
+     */
+    inline PutObjectRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 
 
     
@@ -1557,32 +2090,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 
@@ -1634,6 +2173,63 @@ namespace Model
      * Lock</a>.</p>
      */
     inline PutObjectRequest& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline PutObjectRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline PutObjectRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline PutObjectRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
 
     
@@ -1702,6 +2298,21 @@ namespace Model
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
 
+    ChecksumAlgorithm m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
+
+    Aws::String m_checksumCRC32;
+    bool m_checksumCRC32HasBeenSet;
+
+    Aws::String m_checksumCRC32C;
+    bool m_checksumCRC32CHasBeenSet;
+
+    Aws::String m_checksumSHA1;
+    bool m_checksumSHA1HasBeenSet;
+
+    Aws::String m_checksumSHA256;
+    bool m_checksumSHA256HasBeenSet;
+
     Aws::Utils::DateTime m_expires;
     bool m_expiresHasBeenSet;
 
@@ -1747,6 +2358,9 @@ namespace Model
     Aws::String m_sSEKMSEncryptionContext;
     bool m_sSEKMSEncryptionContextHasBeenSet;
 
+    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabledHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
 
@@ -1761,6 +2375,9 @@ namespace Model
 
     ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
     bool m_objectLockLegalHoldStatusHasBeenSet;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

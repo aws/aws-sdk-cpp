@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
@@ -110,6 +100,47 @@ namespace Model
 
 
     /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline bool GetIncludeEncoderConfigurationInSegments() const{ return m_includeEncoderConfigurationInSegments; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline bool IncludeEncoderConfigurationInSegmentsHasBeenSet() const { return m_includeEncoderConfigurationInSegmentsHasBeenSet; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline void SetIncludeEncoderConfigurationInSegments(bool value) { m_includeEncoderConfigurationInSegmentsHasBeenSet = true; m_includeEncoderConfigurationInSegments = value; }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places
+     * your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and
+     * Video Parameter Set (VPS) metadata in every video segment instead of in the init
+     * fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     * during content playback.
+
+     */
+    inline CmafPackage& WithIncludeEncoderConfigurationInSegments(bool value) { SetIncludeEncoderConfigurationInSegments(value); return *this;}
+
+
+    /**
      * Duration (in seconds) of each fragment. Actual fragments will be
 rounded to the
      * nearest multiple of the source fragment duration.
@@ -148,6 +179,9 @@ rounded to the
 
     Aws::Vector<HlsManifest> m_hlsManifests;
     bool m_hlsManifestsHasBeenSet;
+
+    bool m_includeEncoderConfigurationInSegments;
+    bool m_includeEncoderConfigurationInSegmentsHasBeenSet;
 
     int m_segmentDurationSeconds;
     bool m_segmentDurationSecondsHasBeenSet;

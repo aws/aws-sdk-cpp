@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -125,7 +115,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -136,12 +126,12 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -152,12 +142,12 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -168,12 +158,12 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -184,7 +174,7 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline DetachNetworkInterfaceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

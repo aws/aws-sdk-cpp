@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -210,33 +201,97 @@ namespace Model
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the AWS account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the AWS account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the AWS account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = std::move(value); }
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the AWS account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
-     * the AWS account.</p>
+     * the Amazon Web Services account.</p>
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline GetOpenIDConnectProviderResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline GetOpenIDConnectProviderResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline GetOpenIDConnectProviderResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that are attached to the specified IAM OIDC provider. The
+     * returned list of tags is sorted by tag key. For more information about tagging,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline GetOpenIDConnectProviderResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
     
@@ -263,6 +318,8 @@ namespace Model
     Aws::Vector<Aws::String> m_thumbprintList;
 
     Aws::Utils::DateTime m_createDate;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

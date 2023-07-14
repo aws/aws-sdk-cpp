@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/StartActivityStreamRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,7 +16,9 @@ StartActivityStreamRequest::StartActivityStreamRequest() :
     m_modeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
+    m_applyImmediatelyHasBeenSet(false),
+    m_engineNativeAuditFieldsIncluded(false),
+    m_engineNativeAuditFieldsIncludedHasBeenSet(false)
 {
 }
 
@@ -52,6 +44,11 @@ Aws::String StartActivityStreamRequest::SerializePayload() const
   if(m_applyImmediatelyHasBeenSet)
   {
     ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
+  }
+
+  if(m_engineNativeAuditFieldsIncludedHasBeenSet)
+  {
+    ss << "EngineNativeAuditFieldsIncluded=" << std::boolalpha << m_engineNativeAuditFieldsIncluded << "&";
   }
 
   ss << "Version=2014-10-31";

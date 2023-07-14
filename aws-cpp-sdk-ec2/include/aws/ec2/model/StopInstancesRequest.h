@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -98,8 +88,8 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
-     * Default: <code>false</code> </p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p> Default:
+     * <code>false</code> </p>
      */
     inline bool GetHibernate() const{ return m_hibernate; }
 
@@ -108,8 +98,8 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
-     * Default: <code>false</code> </p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p> Default:
+     * <code>false</code> </p>
      */
     inline bool HibernateHasBeenSet() const { return m_hibernateHasBeenSet; }
 
@@ -118,8 +108,8 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
-     * Default: <code>false</code> </p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p> Default:
+     * <code>false</code> </p>
      */
     inline void SetHibernate(bool value) { m_hibernateHasBeenSet = true; m_hibernate = value; }
 
@@ -128,8 +118,8 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
-     * Default: <code>false</code> </p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p> Default:
+     * <code>false</code> </p>
      */
     inline StopInstancesRequest& WithHibernate(bool value) { SetHibernate(value); return *this;}
 

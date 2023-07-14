@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -47,14 +37,15 @@ namespace Model
    * The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys
    * and values are case sensitive.</p> </li> <li> <p>For each associated resource,
    * each tag key must be unique and it can have only one value.</p> </li> <li>
-   * <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in
-   * any tag keys or values that you define. In addition, you can't edit or remove
-   * tag keys or values that use this prefix. Tags that use this prefix don’t count
-   * against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate
-   * tags with public or shared resources, but the tags are available only for your
-   * AWS account, not any other accounts that share the resource. In addition, the
-   * tags are available only for resources that are located in the specified AWS
-   * Region for your AWS account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you
+   * can’t use it in any tag keys or values that you define. In addition, you can't
+   * edit or remove tag keys or values that use this prefix. Tags that use this
+   * prefix don’t count against the limit of 50 tags per resource.</p> </li> <li>
+   * <p>You can associate tags with public or shared resources, but the tags are
+   * available only for your Amazon Web Services account, not any other accounts that
+   * share the resource. In addition, the tags are available only for resources that
+   * are located in the specified Amazon Web Services Region for your Amazon Web
+   * Services account.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Tag">AWS API
    * Reference</a></p>
    */

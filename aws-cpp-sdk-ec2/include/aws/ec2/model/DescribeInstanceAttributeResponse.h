@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -181,6 +172,37 @@ namespace Model
      * <p>Indicates whether enhanced networking with ENA is enabled.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptions = value; }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetEnclaveOptions(EnclaveOptions&& value) { m_enclaveOptions = std::move(value); }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnclaveOptions(const EnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
 
     /**
@@ -422,42 +444,52 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheck = value; }
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheck = std::move(value); }
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline DescribeInstanceAttributeResponse& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
 
     /**
-     * <p>Indicates whether source/destination checking is enabled. A value of
-     * <code>true</code> means that checking is enabled, and <code>false</code> means
-     * that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.</p>
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
      */
     inline DescribeInstanceAttributeResponse& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
@@ -519,6 +551,37 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithUserData(AttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 
 
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStop = value; }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline void SetDisableApiStop(AttributeBooleanValue&& value) { m_disableApiStop = std::move(value); }
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithDisableApiStop(const AttributeBooleanValue& value) { SetDisableApiStop(value); return *this;}
+
+    /**
+     * <p>To enable the instance for Amazon Web Services Stop Protection, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     */
+    inline DescribeInstanceAttributeResponse& WithDisableApiStop(AttributeBooleanValue&& value) { SetDisableApiStop(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -544,6 +607,8 @@ namespace Model
 
     AttributeBooleanValue m_enaSupport;
 
+    EnclaveOptions m_enclaveOptions;
+
     AttributeBooleanValue m_ebsOptimized;
 
     Aws::String m_instanceId;
@@ -565,6 +630,8 @@ namespace Model
     AttributeValue m_sriovNetSupport;
 
     AttributeValue m_userData;
+
+    AttributeBooleanValue m_disableApiStop;
 
     ResponseMetadata m_responseMetadata;
   };

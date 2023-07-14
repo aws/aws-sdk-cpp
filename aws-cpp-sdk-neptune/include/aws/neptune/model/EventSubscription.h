@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -52,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline const Aws::String& GetCustomerAwsId() const{ return m_customerAwsId; }
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline bool CustomerAwsIdHasBeenSet() const { return m_customerAwsIdHasBeenSet; }
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline void SetCustomerAwsId(const Aws::String& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = value; }
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline void SetCustomerAwsId(Aws::String&& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = std::move(value); }
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline void SetCustomerAwsId(const char* value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId.assign(value); }
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline EventSubscription& WithCustomerAwsId(const Aws::String& value) { SetCustomerAwsId(value); return *this;}
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline EventSubscription& WithCustomerAwsId(Aws::String&& value) { SetCustomerAwsId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS customer account associated with the event notification
+     * <p>The Amazon customer account associated with the event notification
      * subscription.</p>
      */
     inline EventSubscription& WithCustomerAwsId(const char* value) { SetCustomerAwsId(value); return *this;}

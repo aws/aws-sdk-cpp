@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon RDS HTTP endpoint configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Relational Database Service (Amazon RDS) HTTP endpoint
+   * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/RdsHttpEndpointConfig">AWS
    * API Reference</a></p>
    */
@@ -48,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline void SetDbClusterIdentifier(const Aws::String& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = value; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline void SetDbClusterIdentifier(Aws::String&& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = std::move(value); }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline void SetDbClusterIdentifier(const char* value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier.assign(value); }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(const Aws::String& value) { SetDbClusterIdentifier(value); return *this;}
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(Aws::String&& value) { SetDbClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(const char* value) { SetDbClusterIdentifier(value); return *this;}
 
@@ -212,42 +203,50 @@ namespace Model
 
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline const Aws::String& GetAwsSecretStoreArn() const{ return m_awsSecretStoreArn; }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline bool AwsSecretStoreArnHasBeenSet() const { return m_awsSecretStoreArnHasBeenSet; }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline void SetAwsSecretStoreArn(const Aws::String& value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn = value; }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline void SetAwsSecretStoreArn(Aws::String&& value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn = std::move(value); }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline void SetAwsSecretStoreArn(const char* value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn.assign(value); }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsSecretStoreArn(const Aws::String& value) { SetAwsSecretStoreArn(value); return *this;}
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsSecretStoreArn(Aws::String&& value) { SetAwsSecretStoreArn(std::move(value)); return *this;}
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database
+     * credentials.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsSecretStoreArn(const char* value) { SetAwsSecretStoreArn(value); return *this;}
 

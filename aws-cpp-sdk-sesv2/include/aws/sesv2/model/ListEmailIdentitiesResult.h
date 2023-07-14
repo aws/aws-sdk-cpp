@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -52,44 +42,44 @@ namespace Model
 
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline const Aws::Vector<IdentityInfo>& GetEmailIdentities() const{ return m_emailIdentities; }
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline void SetEmailIdentities(const Aws::Vector<IdentityInfo>& value) { m_emailIdentities = value; }
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline void SetEmailIdentities(Aws::Vector<IdentityInfo>&& value) { m_emailIdentities = std::move(value); }
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline ListEmailIdentitiesResult& WithEmailIdentities(const Aws::Vector<IdentityInfo>& value) { SetEmailIdentities(value); return *this;}
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline ListEmailIdentitiesResult& WithEmailIdentities(Aws::Vector<IdentityInfo>&& value) { SetEmailIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline ListEmailIdentitiesResult& AddEmailIdentities(const IdentityInfo& value) { m_emailIdentities.push_back(value); return *this; }
 
     /**
-     * <p>An array that includes all of the email identities associated with your AWS
-     * account.</p>
+     * <p>An array that includes all of the email identities associated with your
+     * Amazon Web Services account.</p>
      */
     inline ListEmailIdentitiesResult& AddEmailIdentities(IdentityInfo&& value) { m_emailIdentities.push_back(std::move(value)); return *this; }
 

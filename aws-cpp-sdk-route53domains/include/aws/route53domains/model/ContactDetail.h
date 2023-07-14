@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -135,49 +125,91 @@ namespace Model
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
-     * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
-     * contact.</p>
+     * organization. Note the following:</p> <ul> <li> <p>If you specify a value other
+     * than <code>PERSON</code>, you must also specify a value for
+     * <code>OrganizationName</code>.</p> </li> <li> <p>For some TLDs, the privacy
+     * protection available depends on the value that you specify for <code>Contact
+     * Type</code>. For the privacy protection settings for your TLD, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline const ContactType& GetContactType() const{ return m_contactType; }
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
-     * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
-     * contact.</p>
+     * organization. Note the following:</p> <ul> <li> <p>If you specify a value other
+     * than <code>PERSON</code>, you must also specify a value for
+     * <code>OrganizationName</code>.</p> </li> <li> <p>For some TLDs, the privacy
+     * protection available depends on the value that you specify for <code>Contact
+     * Type</code>. For the privacy protection settings for your TLD, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline bool ContactTypeHasBeenSet() const { return m_contactTypeHasBeenSet; }
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
-     * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
-     * contact.</p>
+     * organization. Note the following:</p> <ul> <li> <p>If you specify a value other
+     * than <code>PERSON</code>, you must also specify a value for
+     * <code>OrganizationName</code>.</p> </li> <li> <p>For some TLDs, the privacy
+     * protection available depends on the value that you specify for <code>Contact
+     * Type</code>. For the privacy protection settings for your TLD, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline void SetContactType(const ContactType& value) { m_contactTypeHasBeenSet = true; m_contactType = value; }
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
-     * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
-     * contact.</p>
+     * organization. Note the following:</p> <ul> <li> <p>If you specify a value other
+     * than <code>PERSON</code>, you must also specify a value for
+     * <code>OrganizationName</code>.</p> </li> <li> <p>For some TLDs, the privacy
+     * protection available depends on the value that you specify for <code>Contact
+     * Type</code>. For the privacy protection settings for your TLD, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline void SetContactType(ContactType&& value) { m_contactTypeHasBeenSet = true; m_contactType = std::move(value); }
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
-     * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
-     * contact.</p>
+     * organization. Note the following:</p> <ul> <li> <p>If you specify a value other
+     * than <code>PERSON</code>, you must also specify a value for
+     * <code>OrganizationName</code>.</p> </li> <li> <p>For some TLDs, the privacy
+     * protection available depends on the value that you specify for <code>Contact
+     * Type</code>. For the privacy protection settings for your TLD, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline ContactDetail& WithContactType(const ContactType& value) { SetContactType(value); return *this;}
 
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
-     * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
-     * contact.</p>
+     * organization. Note the following:</p> <ul> <li> <p>If you specify a value other
+     * than <code>PERSON</code>, you must also specify a value for
+     * <code>OrganizationName</code>.</p> </li> <li> <p>For some TLDs, the privacy
+     * protection available depends on the value that you specify for <code>Contact
+     * Type</code>. For the privacy protection settings for your TLD, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i> </p> </li> <li> <p>For .es domains, the value of
+     * <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p>
+     * </li> </ul>
      */
     inline ContactDetail& WithContactType(ContactType&& value) { SetContactType(std::move(value)); return *this;}
 

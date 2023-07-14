@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -45,7 +35,7 @@ namespace Model
 
   /**
    * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfig
@@ -565,74 +555,50 @@ namespace Model
 
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline DistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline DistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline DistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
@@ -699,9 +665,8 @@ namespace Model
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     * For price class information, scroll down to see the table at the bottom of the
-     * page.</p>
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     * Pricing</a>.</p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
@@ -718,9 +683,8 @@ namespace Model
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     * For price class information, scroll down to see the table at the bottom of the
-     * page.</p>
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     * Pricing</a>.</p>
      */
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
 
@@ -737,9 +701,8 @@ namespace Model
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     * For price class information, scroll down to see the table at the bottom of the
-     * page.</p>
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     * Pricing</a>.</p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
@@ -756,9 +719,8 @@ namespace Model
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     * For price class information, scroll down to see the table at the bottom of the
-     * page.</p>
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     * Pricing</a>.</p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
@@ -775,9 +737,8 @@ namespace Model
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     * For price class information, scroll down to see the table at the bottom of the
-     * page.</p>
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     * Pricing</a>.</p>
      */
     inline DistributionConfig& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
@@ -794,9 +755,8 @@ namespace Model
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     * For price class information, scroll down to see the table at the bottom of the
-     * page.</p>
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     * Pricing</a>.</p>
      */
     inline DistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
@@ -897,154 +857,154 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline DistributionConfig& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline DistributionConfig& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution. To specify a web ACL created using the latest version of
-     * AWS WAF, use the ACL ARN, for example
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution. To specify a web ACL created using the latest version of WAF,
+     * use the ACL ARN, for example
      * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-     * To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>AWS WAF is a web
+     * To specify a web ACL created using WAF Classic, use the ACL ID, for example
+     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p> <p>WAF is a web
      * application firewall that lets you monitor the HTTP and HTTPS requests that are
      * forwarded to CloudFront, and lets you control access to your content. Based on
      * conditions that you specify, such as the IP addresses that requests originate
      * from or the values of query strings, CloudFront responds to requests either with
      * the requested content or with an HTTP 403 status code (Forbidden). You can also
      * configure CloudFront to return a custom error page when a request is blocked.
-     * For more information about AWS WAF, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * For more information about WAF, see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline DistributionConfig& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
@@ -1138,18 +1098,19 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
-     * to route traffic to your CloudFront distribution, you need to create a second
-     * alias resource record set when both of the following are true:</p> <ul> <li>
-     * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
-     * domain names in the URLs for your objects</p> </li> </ul> <p>For more
-     * information, see <a
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * alias resource record set to route traffic to your CloudFront distribution, you
+     * need to create a second alias resource record set when both of the following are
+     * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
+     * <p>You're using alternate domain names in the URLs for your objects</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
-     * resource record set, either with Amazon Route 53 or with another DNS service,
-     * you don't need to make any changes. A CNAME record will route traffic to your
-     * distribution regardless of the IP address format of the viewer request.</p>
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * Services Integration or with another DNS service, you don't need to make any
+     * changes. A CNAME record will route traffic to your distribution regardless of
+     * the IP address format of the viewer request.</p>
      */
     inline bool GetIsIPV6Enabled() const{ return m_isIPV6Enabled; }
 
@@ -1169,18 +1130,19 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
-     * to route traffic to your CloudFront distribution, you need to create a second
-     * alias resource record set when both of the following are true:</p> <ul> <li>
-     * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
-     * domain names in the URLs for your objects</p> </li> </ul> <p>For more
-     * information, see <a
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * alias resource record set to route traffic to your CloudFront distribution, you
+     * need to create a second alias resource record set when both of the following are
+     * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
+     * <p>You're using alternate domain names in the URLs for your objects</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
-     * resource record set, either with Amazon Route 53 or with another DNS service,
-     * you don't need to make any changes. A CNAME record will route traffic to your
-     * distribution regardless of the IP address format of the viewer request.</p>
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * Services Integration or with another DNS service, you don't need to make any
+     * changes. A CNAME record will route traffic to your distribution regardless of
+     * the IP address format of the viewer request.</p>
      */
     inline bool IsIPV6EnabledHasBeenSet() const { return m_isIPV6EnabledHasBeenSet; }
 
@@ -1200,18 +1162,19 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
-     * to route traffic to your CloudFront distribution, you need to create a second
-     * alias resource record set when both of the following are true:</p> <ul> <li>
-     * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
-     * domain names in the URLs for your objects</p> </li> </ul> <p>For more
-     * information, see <a
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * alias resource record set to route traffic to your CloudFront distribution, you
+     * need to create a second alias resource record set when both of the following are
+     * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
+     * <p>You're using alternate domain names in the URLs for your objects</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
-     * resource record set, either with Amazon Route 53 or with another DNS service,
-     * you don't need to make any changes. A CNAME record will route traffic to your
-     * distribution regardless of the IP address format of the viewer request.</p>
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * Services Integration or with another DNS service, you don't need to make any
+     * changes. A CNAME record will route traffic to your distribution regardless of
+     * the IP address format of the viewer request.</p>
      */
     inline void SetIsIPV6Enabled(bool value) { m_isIPV6EnabledHasBeenSet = true; m_isIPV6Enabled = value; }
 
@@ -1231,18 +1194,19 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
-     * to route traffic to your CloudFront distribution, you need to create a second
-     * alias resource record set when both of the following are true:</p> <ul> <li>
-     * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
-     * domain names in the URLs for your objects</p> </li> </ul> <p>For more
-     * information, see <a
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * alias resource record set to route traffic to your CloudFront distribution, you
+     * need to create a second alias resource record set when both of the following are
+     * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
+     * <p>You're using alternate domain names in the URLs for your objects</p> </li>
+     * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
-     * resource record set, either with Amazon Route 53 or with another DNS service,
-     * you don't need to make any changes. A CNAME record will route traffic to your
-     * distribution regardless of the IP address format of the viewer request.</p>
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * Services Integration or with another DNS service, you don't need to make any
+     * changes. A CNAME record will route traffic to your distribution regardless of
+     * the IP address format of the viewer request.</p>
      */
     inline DistributionConfig& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/ScheduledUpdateGroupActionRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -40,7 +30,8 @@ ScheduledUpdateGroupActionRequest::ScheduledUpdateGroupActionRequest() :
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+    m_desiredCapacityHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -54,7 +45,8 @@ ScheduledUpdateGroupActionRequest::ScheduledUpdateGroupActionRequest(const XmlNo
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
+    m_desiredCapacityHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -107,6 +99,12 @@ ScheduledUpdateGroupActionRequest& ScheduledUpdateGroupActionRequest::operator =
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
     }
+    XmlNode timeZoneNode = resultNode.FirstChild("TimeZone");
+    if(!timeZoneNode.IsNull())
+    {
+      m_timeZone = Aws::Utils::Xml::DecodeEscapedXmlText(timeZoneNode.GetText());
+      m_timeZoneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -149,6 +147,11 @@ void ScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
   }
 
+  if(m_timeZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TimeZone=" << StringUtils::URLEncode(m_timeZone.c_str()) << "&";
+  }
+
 }
 
 void ScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -180,6 +183,10 @@ void ScheduledUpdateGroupActionRequest::OutputToStream(Aws::OStream& oStream, co
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+  if(m_timeZoneHasBeenSet)
+  {
+      oStream << location << ".TimeZone=" << StringUtils::URLEncode(m_timeZone.c_str()) << "&";
   }
 }
 

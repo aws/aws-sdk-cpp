@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -88,42 +78,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline AllocateHostedConnectionRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline AllocateHostedConnectionRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     * <p>The ID of the Amazon Web Services account ID of the customer for the
+     * connection.</p>
      */
     inline AllocateHostedConnectionRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -131,7 +129,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
@@ -139,7 +137,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
@@ -147,7 +145,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
@@ -155,7 +153,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
@@ -163,7 +161,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
@@ -171,7 +169,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
@@ -179,7 +177,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
@@ -187,7 +185,7 @@ namespace Model
     /**
      * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
      * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
-     * only those AWS Direct Connect Partners who have met specific requirements are
+     * only those Direct Connect Partners who have met specific requirements are
      * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}

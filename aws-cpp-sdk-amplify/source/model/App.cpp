@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/amplify/model/App.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,16 +34,21 @@ App::App() :
     m_defaultDomainHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
+    m_enableBranchAutoDeletion(false),
+    m_enableBranchAutoDeletionHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
     m_productionBranchHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false)
+    m_autoBranchCreationConfigHasBeenSet(false),
+    m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
+    m_repositoryCloneMethodHasBeenSet(false)
 {
 }
 
@@ -73,16 +68,21 @@ App::App(JsonView jsonValue) :
     m_defaultDomainHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
+    m_enableBranchAutoDeletion(false),
+    m_enableBranchAutoDeletionHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
     m_productionBranchHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false)
+    m_autoBranchCreationConfigHasBeenSet(false),
+    m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
+    m_repositoryCloneMethodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -186,6 +186,13 @@ App& App::operator =(JsonView jsonValue)
     m_enableBranchAutoBuildHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableBranchAutoDeletion"))
+  {
+    m_enableBranchAutoDeletion = jsonValue.GetBool("enableBranchAutoDeletion");
+
+    m_enableBranchAutoDeletionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("enableBasicAuth"))
   {
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
@@ -224,6 +231,13 @@ App& App::operator =(JsonView jsonValue)
     m_buildSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customHeaders"))
+  {
+    m_customHeaders = jsonValue.GetString("customHeaders");
+
+    m_customHeadersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("enableAutoBranchCreation"))
   {
     m_enableAutoBranchCreation = jsonValue.GetBool("enableAutoBranchCreation");
@@ -246,6 +260,13 @@ App& App::operator =(JsonView jsonValue)
     m_autoBranchCreationConfig = jsonValue.GetObject("autoBranchCreationConfig");
 
     m_autoBranchCreationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("repositoryCloneMethod"))
+  {
+    m_repositoryCloneMethod = RepositoryCloneMethodMapper::GetRepositoryCloneMethodForName(jsonValue.GetString("repositoryCloneMethod"));
+
+    m_repositoryCloneMethodHasBeenSet = true;
   }
 
   return *this;
@@ -340,6 +361,12 @@ JsonValue App::Jsonize() const
 
   }
 
+  if(m_enableBranchAutoDeletionHasBeenSet)
+  {
+   payload.WithBool("enableBranchAutoDeletion", m_enableBranchAutoDeletion);
+
+  }
+
   if(m_enableBasicAuthHasBeenSet)
   {
    payload.WithBool("enableBasicAuth", m_enableBasicAuth);
@@ -375,6 +402,12 @@ JsonValue App::Jsonize() const
 
   }
 
+  if(m_customHeadersHasBeenSet)
+  {
+   payload.WithString("customHeaders", m_customHeaders);
+
+  }
+
   if(m_enableAutoBranchCreationHasBeenSet)
   {
    payload.WithBool("enableAutoBranchCreation", m_enableAutoBranchCreation);
@@ -396,6 +429,11 @@ JsonValue App::Jsonize() const
   {
    payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
 
+  }
+
+  if(m_repositoryCloneMethodHasBeenSet)
+  {
+   payload.WithString("repositoryCloneMethod", RepositoryCloneMethodMapper::GetNameForRepositoryCloneMethod(m_repositoryCloneMethod));
   }
 
   return payload;

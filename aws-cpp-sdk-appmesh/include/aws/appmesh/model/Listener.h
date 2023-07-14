@@ -1,22 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/VirtualNodeConnectionPool.h>
 #include <aws/appmesh/model/HealthCheckPolicy.h>
+#include <aws/appmesh/model/OutlierDetection.h>
 #include <aws/appmesh/model/PortMapping.h>
+#include <aws/appmesh/model/ListenerTimeout.h>
 #include <aws/appmesh/model/ListenerTls.h>
 #include <utility>
 
@@ -51,6 +44,37 @@ namespace Model
 
 
     /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline const VirtualNodeConnectionPool& GetConnectionPool() const{ return m_connectionPool; }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline bool ConnectionPoolHasBeenSet() const { return m_connectionPoolHasBeenSet; }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline void SetConnectionPool(const VirtualNodeConnectionPool& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = value; }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline void SetConnectionPool(VirtualNodeConnectionPool&& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = std::move(value); }
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline Listener& WithConnectionPool(const VirtualNodeConnectionPool& value) { SetConnectionPool(value); return *this;}
+
+    /**
+     * <p>The connection pool information for the listener.</p>
+     */
+    inline Listener& WithConnectionPool(VirtualNodeConnectionPool&& value) { SetConnectionPool(std::move(value)); return *this;}
+
+
+    /**
      * <p>The health check information for the listener.</p>
      */
     inline const HealthCheckPolicy& GetHealthCheck() const{ return m_healthCheck; }
@@ -82,6 +106,37 @@ namespace Model
 
 
     /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline const OutlierDetection& GetOutlierDetection() const{ return m_outlierDetection; }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline bool OutlierDetectionHasBeenSet() const { return m_outlierDetectionHasBeenSet; }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline void SetOutlierDetection(const OutlierDetection& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = value; }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline void SetOutlierDetection(OutlierDetection&& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = std::move(value); }
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline Listener& WithOutlierDetection(const OutlierDetection& value) { SetOutlierDetection(value); return *this;}
+
+    /**
+     * <p>The outlier detection information for the listener.</p>
+     */
+    inline Listener& WithOutlierDetection(OutlierDetection&& value) { SetOutlierDetection(std::move(value)); return *this;}
+
+
+    /**
      * <p>The port mapping information for the listener.</p>
      */
     inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
@@ -110,6 +165,37 @@ namespace Model
      * <p>The port mapping information for the listener.</p>
      */
     inline Listener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
+    inline const ListenerTimeout& GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
+    inline void SetTimeout(const ListenerTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
+    inline void SetTimeout(ListenerTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
+    inline Listener& WithTimeout(const ListenerTimeout& value) { SetTimeout(value); return *this;}
+
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
+    inline Listener& WithTimeout(ListenerTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
 
     /**
@@ -150,11 +236,20 @@ namespace Model
 
   private:
 
+    VirtualNodeConnectionPool m_connectionPool;
+    bool m_connectionPoolHasBeenSet;
+
     HealthCheckPolicy m_healthCheck;
     bool m_healthCheckHasBeenSet;
 
+    OutlierDetection m_outlierDetection;
+    bool m_outlierDetectionHasBeenSet;
+
     PortMapping m_portMapping;
     bool m_portMappingHasBeenSet;
+
+    ListenerTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
 
     ListenerTls m_tls;
     bool m_tlsHasBeenSet;

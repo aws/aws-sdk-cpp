@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -35,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an AWS Direct Connect location.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about an Direct Connect location.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Location">AWS
    * API Reference</a></p>
    */
@@ -140,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Amazon Web Services Region for the location.</p>
      */
     inline Location& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -271,6 +260,52 @@ namespace Model
      */
     inline Location& AddAvailableProviders(const char* value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(value); return *this; }
 
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailableMacSecPortSpeeds() const{ return m_availableMacSecPortSpeeds; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline bool AvailableMacSecPortSpeedsHasBeenSet() const { return m_availableMacSecPortSpeedsHasBeenSet; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline void SetAvailableMacSecPortSpeeds(const Aws::Vector<Aws::String>& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = value; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline void SetAvailableMacSecPortSpeeds(Aws::Vector<Aws::String>&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds = std::move(value); }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& WithAvailableMacSecPortSpeeds(const Aws::Vector<Aws::String>& value) { SetAvailableMacSecPortSpeeds(value); return *this;}
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& WithAvailableMacSecPortSpeeds(Aws::Vector<Aws::String>&& value) { SetAvailableMacSecPortSpeeds(std::move(value)); return *this;}
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& AddAvailableMacSecPortSpeeds(const Aws::String& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(value); return *this; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& AddAvailableMacSecPortSpeeds(Aws::String&& value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The available MAC Security (MACsec) port speeds for the location.</p>
+     */
+    inline Location& AddAvailableMacSecPortSpeeds(const char* value) { m_availableMacSecPortSpeedsHasBeenSet = true; m_availableMacSecPortSpeeds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_locationCode;
@@ -287,6 +322,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_availableProviders;
     bool m_availableProvidersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_availableMacSecPortSpeeds;
+    bool m_availableMacSecPortSpeedsHasBeenSet;
   };
 
 } // namespace Model

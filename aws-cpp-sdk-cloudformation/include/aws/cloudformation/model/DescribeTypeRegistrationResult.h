@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -45,111 +35,111 @@ namespace Model
 
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the extension registration request.</p>
      */
     inline const RegistrationStatus& GetProgressStatus() const{ return m_progressStatus; }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the extension registration request.</p>
      */
     inline void SetProgressStatus(const RegistrationStatus& value) { m_progressStatus = value; }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the extension registration request.</p>
      */
     inline void SetProgressStatus(RegistrationStatus&& value) { m_progressStatus = std::move(value); }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the extension registration request.</p>
      */
     inline DescribeTypeRegistrationResult& WithProgressStatus(const RegistrationStatus& value) { SetProgressStatus(value); return *this;}
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the extension registration request.</p>
      */
     inline DescribeTypeRegistrationResult& WithProgressStatus(RegistrationStatus&& value) { SetProgressStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline DescribeTypeRegistrationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline DescribeTypeRegistrationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the type registration request.</p>
+     * <p>The description of the extension registration request.</p>
      */
     inline DescribeTypeRegistrationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
     inline DescribeTypeRegistrationResult& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
     inline DescribeTypeRegistrationResult& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type being registered.</p> <p>For
+     * <p>The Amazon Resource Name (ARN) of the extension being registered.</p> <p>For
      * registration requests with a <code>ProgressStatus</code> of other than
      * <code>COMPLETE</code>, this will be <code>null</code>.</p>
      */
@@ -157,51 +147,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline const Aws::String& GetTypeVersionArn() const{ return m_typeVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline void SetTypeVersionArn(const Aws::String& value) { m_typeVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline void SetTypeVersionArn(Aws::String&& value) { m_typeVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline void SetTypeVersionArn(const char* value) { m_typeVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline DescribeTypeRegistrationResult& WithTypeVersionArn(const Aws::String& value) { SetTypeVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline DescribeTypeRegistrationResult& WithTypeVersionArn(Aws::String&& value) { SetTypeVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this specific version of the type being
-     * registered.</p> <p>For registration requests with a <code>ProgressStatus</code>
-     * of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of this specific version of the extension
+     * being registered.</p> <p>For registration requests with a
+     * <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be
+     * <code>null</code>.</p>
      */
     inline DescribeTypeRegistrationResult& WithTypeVersionArn(const char* value) { SetTypeVersionArn(value); return *this;}
 

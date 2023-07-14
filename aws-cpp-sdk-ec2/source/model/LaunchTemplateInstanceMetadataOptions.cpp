@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -38,7 +28,11 @@ LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions() :
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(LaunchTemplateInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false),
+    m_instanceMetadataTags(LaunchTemplateInstanceMetadataTagsState::NOT_SET),
+    m_instanceMetadataTagsHasBeenSet(false)
 {
 }
 
@@ -50,7 +44,11 @@ LaunchTemplateInstanceMetadataOptions::LaunchTemplateInstanceMetadataOptions(con
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(LaunchTemplateInstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false),
+    m_instanceMetadataTags(LaunchTemplateInstanceMetadataTagsState::NOT_SET),
+    m_instanceMetadataTagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +83,18 @@ LaunchTemplateInstanceMetadataOptions& LaunchTemplateInstanceMetadataOptions::op
       m_httpEndpoint = LaunchTemplateInstanceMetadataEndpointStateMapper::GetLaunchTemplateInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
       m_httpEndpointHasBeenSet = true;
     }
+    XmlNode httpProtocolIpv6Node = resultNode.FirstChild("httpProtocolIpv6");
+    if(!httpProtocolIpv6Node.IsNull())
+    {
+      m_httpProtocolIpv6 = LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetLaunchTemplateInstanceMetadataProtocolIpv6ForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpProtocolIpv6Node.GetText()).c_str()).c_str());
+      m_httpProtocolIpv6HasBeenSet = true;
+    }
+    XmlNode instanceMetadataTagsNode = resultNode.FirstChild("instanceMetadataTags");
+    if(!instanceMetadataTagsNode.IsNull())
+    {
+      m_instanceMetadataTags = LaunchTemplateInstanceMetadataTagsStateMapper::GetLaunchTemplateInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()).c_str());
+      m_instanceMetadataTagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +122,16 @@ void LaunchTemplateInstanceMetadataOptions::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".HttpEndpoint=" << LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint) << "&";
   }
 
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6) << "&";
+  }
+
+  if(m_instanceMetadataTagsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceMetadataTags=" << LaunchTemplateInstanceMetadataTagsStateMapper::GetNameForLaunchTemplateInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+  }
+
 }
 
 void LaunchTemplateInstanceMetadataOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,6 +151,14 @@ void LaunchTemplateInstanceMetadataOptions::OutputToStream(Aws::OStream& oStream
   if(m_httpEndpointHasBeenSet)
   {
       oStream << location << ".HttpEndpoint=" << LaunchTemplateInstanceMetadataEndpointStateMapper::GetNameForLaunchTemplateInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+  }
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << ".HttpProtocolIpv6=" << LaunchTemplateInstanceMetadataProtocolIpv6Mapper::GetNameForLaunchTemplateInstanceMetadataProtocolIpv6(m_httpProtocolIpv6) << "&";
+  }
+  if(m_instanceMetadataTagsHasBeenSet)
+  {
+      oStream << location << ".InstanceMetadataTags=" << LaunchTemplateInstanceMetadataTagsStateMapper::GetNameForLaunchTemplateInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
   }
 }
 

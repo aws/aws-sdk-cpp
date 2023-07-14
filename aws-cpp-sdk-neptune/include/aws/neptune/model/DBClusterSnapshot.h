@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -530,42 +520,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -736,50 +726,50 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -883,25 +873,25 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline DBClusterSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}

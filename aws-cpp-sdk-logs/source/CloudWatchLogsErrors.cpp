@@ -1,30 +1,42 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/logs/CloudWatchLogsErrors.h>
+#include <aws/logs/model/InvalidSequenceTokenException.h>
+#include <aws/logs/model/DataAlreadyAcceptedException.h>
+#include <aws/logs/model/MalformedQueryException.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudWatchLogs;
 using namespace Aws::Utils;
+using namespace Aws::CloudWatchLogs;
+using namespace Aws::CloudWatchLogs::Model;
 
 namespace Aws
 {
 namespace CloudWatchLogs
 {
+template<> AWS_CLOUDWATCHLOGS_API InvalidSequenceTokenException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::INVALID_SEQUENCE_TOKEN);
+  return InvalidSequenceTokenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::DATA_ALREADY_ACCEPTED);
+  return DataAlreadyAcceptedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CLOUDWATCHLOGS_API MalformedQueryException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::MALFORMED_QUERY);
+  return MalformedQueryException(this->GetJsonPayload().View());
+}
+
 namespace CloudWatchLogsErrorMapper
 {
 
@@ -68,7 +80,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == INVALID_OPERATION_HASH)
   {

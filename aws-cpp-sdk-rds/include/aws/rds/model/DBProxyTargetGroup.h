@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -36,12 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Represents a set of RDS
-   * DB instances, Aurora DB clusters, or both that a proxy can connect to.
-   * Currently, each target group is associated with exactly one RDS DB instance or
-   * Aurora DB cluster.</p> <p>This data type is used as a response element in the
-   * <code>DescribeDBProxyTargetGroups</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a set of RDS DB instances, Aurora DB clusters, or both that a
+   * proxy can connect to. Currently, each target group is associated with exactly
+   * one RDS DB instance or Aurora DB cluster.</p> <p>This data type is used as a
+   * response element in the <code>DescribeDBProxyTargetGroups</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxyTargetGroup">AWS
    * API Reference</a></p>
    */
@@ -99,49 +88,57 @@ namespace Model
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline DBProxyTargetGroup& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline DBProxyTargetGroup& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the target group. This name must be unique for all target
-     * groups owned by your AWS account in the specified AWS Region.</p>
+     * groups owned by your Amazon Web Services account in the specified Amazon Web
+     * Services Region.</p>
      */
     inline DBProxyTargetGroup& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
 

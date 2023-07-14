@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb/QLDB_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/qldb/model/ExportStatus.h>
 #include <aws/qldb/model/S3ExportConfiguration.h>
+#include <aws/qldb/model/OutputFormat.h>
 #include <utility>
 
 namespace Aws
@@ -37,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>The information about a journal export job, including the ledger name, export
-   * ID, when it was created, current status, and its start and end time export
-   * parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a journal export job, including the ledger name, export ID,
+   * creation time, current status, and the parameters of the original export
+   * creation request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/JournalS3ExportDescription">AWS
    * API Reference</a></p>
    */
@@ -94,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline const Aws::String& GetExportId() const{ return m_exportId; }
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline void SetExportId(Aws::String&& value) { m_exportIdHasBeenSet = true; m_exportId = std::move(value); }
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline void SetExportId(const char* value) { m_exportIdHasBeenSet = true; m_exportId.assign(value); }
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline JournalS3ExportDescription& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline JournalS3ExportDescription& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the journal export job.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
     inline JournalS3ExportDescription& WithExportId(const char* value) { SetExportId(value); return *this;}
 
@@ -209,74 +200,74 @@ namespace Model
 
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that are
+     * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline const Aws::Utils::DateTime& GetInclusiveStartTime() const{ return m_inclusiveStartTime; }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that are
+     * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline bool InclusiveStartTimeHasBeenSet() const { return m_inclusiveStartTimeHasBeenSet; }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that are
+     * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline void SetInclusiveStartTime(const Aws::Utils::DateTime& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = value; }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that are
+     * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline void SetInclusiveStartTime(Aws::Utils::DateTime&& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = std::move(value); }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that are
+     * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline JournalS3ExportDescription& WithInclusiveStartTime(const Aws::Utils::DateTime& value) { SetInclusiveStartTime(value); return *this;}
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that are
+     * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline JournalS3ExportDescription& WithInclusiveStartTime(Aws::Utils::DateTime&& value) { SetInclusiveStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that are
+     * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that are
+     * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that are
+     * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that are
+     * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that are
+     * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline JournalS3ExportDescription& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that are
+     * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
     inline JournalS3ExportDescription& WithExclusiveEndTime(Aws::Utils::DateTime&& value) { SetExclusiveEndTime(std::move(value)); return *this;}
@@ -305,8 +296,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -314,8 +305,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
@@ -323,8 +314,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -332,8 +323,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -341,8 +332,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -350,8 +341,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline JournalS3ExportDescription& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -359,8 +350,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline JournalS3ExportDescription& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -368,10 +359,41 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service
-     * (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul>
      */
     inline JournalS3ExportDescription& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The output format of the exported journal data.</p>
+     */
+    inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+
+    /**
+     * <p>The output format of the exported journal data.</p>
+     */
+    inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
+
+    /**
+     * <p>The output format of the exported journal data.</p>
+     */
+    inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+
+    /**
+     * <p>The output format of the exported journal data.</p>
+     */
+    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
+
+    /**
+     * <p>The output format of the exported journal data.</p>
+     */
+    inline JournalS3ExportDescription& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
+
+    /**
+     * <p>The output format of the exported journal data.</p>
+     */
+    inline JournalS3ExportDescription& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 
   private:
 
@@ -398,6 +420,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    OutputFormat m_outputFormat;
+    bool m_outputFormatHasBeenSet;
   };
 
 } // namespace Model

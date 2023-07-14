@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -127,24 +117,49 @@ namespace Model
 
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline void SetSessionExpirationDurationInSeconds(int value) { m_sessionExpirationDurationInSecondsHasBeenSet = true; m_sessionExpirationDurationInSeconds = value; }
 
     /**
-     * <p>The session expiration duration in seconds.</p>
+     * <p>The session expiration duration in seconds. This value defaults to 43200.</p>
      */
     inline CreatePresignedDomainUrlRequest& WithSessionExpirationDurationInSeconds(int value) { SetSessionExpirationDurationInSeconds(value); return *this;}
+
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline int GetExpiresInSeconds() const{ return m_expiresInSeconds; }
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline bool ExpiresInSecondsHasBeenSet() const { return m_expiresInSecondsHasBeenSet; }
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline void SetExpiresInSeconds(int value) { m_expiresInSecondsHasBeenSet = true; m_expiresInSeconds = value; }
+
+    /**
+     * <p>The number of seconds until the pre-signed URL expires. This value defaults
+     * to 300.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
 
   private:
 
@@ -156,6 +171,9 @@ namespace Model
 
     int m_sessionExpirationDurationInSeconds;
     bool m_sessionExpirationDurationInSecondsHasBeenSet;
+
+    int m_expiresInSeconds;
+    bool m_expiresInSecondsHasBeenSet;
   };
 
 } // namespace Model

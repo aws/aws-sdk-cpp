@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
@@ -90,6 +80,63 @@ namespace Model
 
 
     /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline EgressEndpoint& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline EgressEndpoint& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * The current processing status of the asset used for the packaging configuration.
+     * The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status
+     * information won't be available for most assets ingested before 2021-09-30.
+     */
+    inline EgressEndpoint& WithStatus(const char* value) { SetStatus(value); return *this;}
+
+
+    /**
      * The URL of the parent manifest for the repackaged Asset.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
@@ -133,6 +180,9 @@ namespace Model
 
     Aws::String m_packagingConfigurationId;
     bool m_packagingConfigurationIdHasBeenSet;
+
+    Aws::String m_status;
+    bool m_statusHasBeenSet;
 
     Aws::String m_url;
     bool m_urlHasBeenSet;

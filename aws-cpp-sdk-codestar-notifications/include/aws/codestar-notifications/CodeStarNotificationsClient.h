@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
@@ -87,19 +77,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateNotificationRuleRequest;
 
-        typedef Aws::Utils::Outcome<CreateNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> CreateNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DeleteNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteTargetResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DeleteTargetOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DescribeNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<ListEventTypesResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListEventTypesOutcome;
-        typedef Aws::Utils::Outcome<ListNotificationRulesResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListNotificationRulesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTargetsResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListTargetsOutcome;
-        typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> SubscribeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UnsubscribeResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UnsubscribeOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UpdateNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<CreateNotificationRuleResult, CodeStarNotificationsError> CreateNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteNotificationRuleResult, CodeStarNotificationsError> DeleteNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteTargetResult, CodeStarNotificationsError> DeleteTargetOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotificationRuleResult, CodeStarNotificationsError> DescribeNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<ListEventTypesResult, CodeStarNotificationsError> ListEventTypesOutcome;
+        typedef Aws::Utils::Outcome<ListNotificationRulesResult, CodeStarNotificationsError> ListNotificationRulesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeStarNotificationsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTargetsResult, CodeStarNotificationsError> ListTargetsOutcome;
+        typedef Aws::Utils::Outcome<SubscribeResult, CodeStarNotificationsError> SubscribeOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeStarNotificationsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UnsubscribeResult, CodeStarNotificationsError> UnsubscribeOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeStarNotificationsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotificationRuleResult, CodeStarNotificationsError> UpdateNotificationRuleOutcome;
 
         typedef std::future<CreateNotificationRuleOutcome> CreateNotificationRuleOutcomeCallable;
         typedef std::future<DeleteNotificationRuleOutcome> DeleteNotificationRuleOutcomeCallable;
@@ -187,8 +177,6 @@ namespace Model
 
         virtual ~CodeStarNotificationsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codestar notifications"; }
-
 
         /**
          * <p>Creates a notification rule for a resource. The rule specifies the events you
@@ -200,24 +188,12 @@ namespace Model
         virtual Model::CreateNotificationRuleOutcome CreateNotificationRule(const Model::CreateNotificationRuleRequest& request) const;
 
         /**
-         * <p>Creates a notification rule for a resource. The rule specifies the events you
-         * want notifications about and the targets (such as SNS topics) where you want to
-         * receive them.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/CreateNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateNotificationRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateNotificationRuleOutcomeCallable CreateNotificationRuleCallable(const Model::CreateNotificationRuleRequest& request) const;
 
         /**
-         * <p>Creates a notification rule for a resource. The rule specifies the events you
-         * want notifications about and the targets (such as SNS topics) where you want to
-         * receive them.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/CreateNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateNotificationRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateNotificationRuleAsync(const Model::CreateNotificationRuleRequest& request, const CreateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -229,20 +205,12 @@ namespace Model
         virtual Model::DeleteNotificationRuleOutcome DeleteNotificationRule(const Model::DeleteNotificationRuleRequest& request) const;
 
         /**
-         * <p>Deletes a notification rule for a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteNotificationRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteNotificationRuleOutcomeCallable DeleteNotificationRuleCallable(const Model::DeleteNotificationRuleRequest& request) const;
 
         /**
-         * <p>Deletes a notification rule for a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteNotificationRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteNotificationRuleAsync(const Model::DeleteNotificationRuleRequest& request, const DeleteNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -254,20 +222,12 @@ namespace Model
         virtual Model::DeleteTargetOutcome DeleteTarget(const Model::DeleteTargetRequest& request) const;
 
         /**
-         * <p>Deletes a specified target for notifications.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteTarget">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteTarget that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTargetOutcomeCallable DeleteTargetCallable(const Model::DeleteTargetRequest& request) const;
 
         /**
-         * <p>Deletes a specified target for notifications.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteTarget">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteTarget that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTargetAsync(const Model::DeleteTargetRequest& request, const DeleteTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -280,22 +240,12 @@ namespace Model
         virtual Model::DescribeNotificationRuleOutcome DescribeNotificationRule(const Model::DescribeNotificationRuleRequest& request) const;
 
         /**
-         * <p>Returns information about a specified notification rule.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DescribeNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeNotificationRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeNotificationRuleOutcomeCallable DescribeNotificationRuleCallable(const Model::DescribeNotificationRuleRequest& request) const;
 
         /**
-         * <p>Returns information about a specified notification rule.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DescribeNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeNotificationRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeNotificationRuleAsync(const Model::DescribeNotificationRuleRequest& request, const DescribeNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -308,22 +258,12 @@ namespace Model
         virtual Model::ListEventTypesOutcome ListEventTypes(const Model::ListEventTypesRequest& request) const;
 
         /**
-         * <p>Returns information about the event types available for configuring
-         * notifications.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListEventTypes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListEventTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEventTypesOutcomeCallable ListEventTypesCallable(const Model::ListEventTypesRequest& request) const;
 
         /**
-         * <p>Returns information about the event types available for configuring
-         * notifications.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListEventTypes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListEventTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEventTypesAsync(const Model::ListEventTypesRequest& request, const ListEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -336,22 +276,12 @@ namespace Model
         virtual Model::ListNotificationRulesOutcome ListNotificationRules(const Model::ListNotificationRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of the notification rules for an AWS account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListNotificationRules">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListNotificationRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListNotificationRulesOutcomeCallable ListNotificationRulesCallable(const Model::ListNotificationRulesRequest& request) const;
 
         /**
-         * <p>Returns a list of the notification rules for an AWS account.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListNotificationRules">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListNotificationRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListNotificationRulesAsync(const Model::ListNotificationRulesRequest& request, const ListNotificationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -364,22 +294,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of the tags associated with a notification rule.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of the tags associated with a notification rule.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -392,22 +312,12 @@ namespace Model
         virtual Model::ListTargetsOutcome ListTargets(const Model::ListTargetsRequest& request) const;
 
         /**
-         * <p>Returns a list of the notification rule targets for an AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargets">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTargets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTargetsOutcomeCallable ListTargetsCallable(const Model::ListTargetsRequest& request) const;
 
         /**
-         * <p>Returns a list of the notification rule targets for an AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargets">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTargetsAsync(const Model::ListTargetsRequest& request, const ListTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -421,24 +331,12 @@ namespace Model
         virtual Model::SubscribeOutcome Subscribe(const Model::SubscribeRequest& request) const;
 
         /**
-         * <p>Creates an association between a notification rule and an SNS topic so that
-         * the associated target can receive notifications when the events described in the
-         * rule are triggered.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for Subscribe that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SubscribeOutcomeCallable SubscribeCallable(const Model::SubscribeRequest& request) const;
 
         /**
-         * <p>Creates an association between a notification rule and an SNS topic so that
-         * the associated target can receive notifications when the events described in the
-         * rule are triggered.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for Subscribe that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SubscribeAsync(const Model::SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -451,22 +349,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Associates a set of provided tags with a notification rule.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Associates a set of provided tags with a notification rule.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -480,24 +368,12 @@ namespace Model
         virtual Model::UnsubscribeOutcome Unsubscribe(const Model::UnsubscribeRequest& request) const;
 
         /**
-         * <p>Removes an association between a notification rule and an Amazon SNS topic so
-         * that subscribers to that topic stop receiving notifications when the events
-         * described in the rule are triggered.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Unsubscribe">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for Unsubscribe that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UnsubscribeOutcomeCallable UnsubscribeCallable(const Model::UnsubscribeRequest& request) const;
 
         /**
-         * <p>Removes an association between a notification rule and an Amazon SNS topic so
-         * that subscribers to that topic stop receiving notifications when the events
-         * described in the rule are triggered.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Unsubscribe">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for Unsubscribe that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnsubscribeAsync(const Model::UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -510,59 +386,33 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the association between one or more provided tags and a notification
-         * rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the association between one or more provided tags and a notification
-         * rule.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateNotificationRuleOutcome UpdateNotificationRule(const Model::UpdateNotificationRuleRequest& request) const;
 
         /**
-         * <p>Updates a notification rule for a resource. You can change the events that
-         * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
-         * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateNotificationRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateNotificationRuleOutcomeCallable UpdateNotificationRuleCallable(const Model::UpdateNotificationRuleRequest& request) const;
 
         /**
-         * <p>Updates a notification rule for a resource. You can change the events that
-         * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
-         * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateNotificationRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateNotificationRuleAsync(const Model::UpdateNotificationRuleRequest& request, const UpdateNotificationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

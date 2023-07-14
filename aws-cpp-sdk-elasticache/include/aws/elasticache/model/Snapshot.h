@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/DataTieringStatus.h>
 #include <aws/elasticache/model/NodeSnapshot.h>
 #include <utility>
 
@@ -338,13 +329,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -356,12 +357,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -386,13 +402,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -404,12 +430,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -434,13 +475,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -452,12 +503,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -482,13 +548,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -500,12 +576,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -530,13 +621,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -548,12 +649,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -578,13 +694,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -596,12 +722,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -626,13 +767,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -644,12 +795,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -674,13 +840,23 @@ namespace Model
      * speaking, the current generation types provide more memory and computational
      * power at lower cost when compared to their equivalent previous generation
      * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
-     * generation: </p> <p> <b>M5 node types:</b> <code>cache.m5.large</code>,
-     * <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
-     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-     * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
-     * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * generation: </p> <p> <b>M6g node types</b> (available only for Redis engine
+     * version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     * <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>,
+     * <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code> </p>  <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>M5 node types:</b>
+     * <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     * <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>,
+     * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
+     * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
+     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
+     * onward):</p> <p> <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
@@ -692,12 +868,27 @@ namespace Model
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
-     * </p> <p> <b>R5 node types:</b> <code>cache.r5.large</code>,
-     * <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
-     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-     * <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b>
-     * <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
+     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
+     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
+     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
+     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
+     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
+     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
+     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
+     * <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>   <p>For region availability, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * Node Types</a> </p>  <p> <b>R5 node types:</b>
+     * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     * <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>,
+     * <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4
+     * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
@@ -818,28 +1009,28 @@ namespace Model
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
 
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline Snapshot& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
@@ -883,6 +1074,47 @@ namespace Model
      * <p>The name of the Availability Zone in which the source cluster is located.</p>
      */
     inline Snapshot& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
+
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline const Aws::String& GetPreferredOutpostArn() const{ return m_preferredOutpostArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline bool PreferredOutpostArnHasBeenSet() const { return m_preferredOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline void SetPreferredOutpostArn(const Aws::String& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline void SetPreferredOutpostArn(Aws::String&& value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline void SetPreferredOutpostArn(const char* value) { m_preferredOutpostArnHasBeenSet = true; m_preferredOutpostArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline Snapshot& WithPreferredOutpostArn(const Aws::String& value) { SetPreferredOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline Snapshot& WithPreferredOutpostArn(Aws::String&& value) { SetPreferredOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
+     */
+    inline Snapshot& WithPreferredOutpostArn(const char* value) { SetPreferredOutpostArn(value); return *this;}
 
 
     /**
@@ -1215,22 +1447,30 @@ namespace Model
 
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline Snapshot& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1359,56 +1599,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline bool AutomaticFailoverHasBeenSet() const { return m_automaticFailoverHasBeenSet; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailover(const AutomaticFailoverStatus& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline Snapshot& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline Snapshot& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 
@@ -1494,6 +1716,102 @@ namespace Model
      */
     inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline Snapshot& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline Snapshot& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+     */
+    inline Snapshot& WithARN(const char* value) { SetARN(value); return *this;}
+
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline Snapshot& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline Snapshot& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_snapshotName;
@@ -1528,6 +1846,9 @@ namespace Model
 
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
+    Aws::String m_preferredOutpostArn;
+    bool m_preferredOutpostArnHasBeenSet;
 
     Aws::Utils::DateTime m_cacheClusterCreateTime;
     bool m_cacheClusterCreateTimeHasBeenSet;
@@ -1570,6 +1891,12 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
+
+    DataTieringStatus m_dataTiering;
+    bool m_dataTieringHasBeenSet;
   };
 
 } // namespace Model

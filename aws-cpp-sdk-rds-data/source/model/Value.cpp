@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds-data/model/Value.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rds-data/model/StructValue.h>
 #include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
@@ -69,6 +60,13 @@ Value::Value(JsonView jsonValue) :
 {
   *this = jsonValue;
 }
+
+const StructValue& Value::GetStructValue() const{ return *m_structValue; }
+bool Value::StructValueHasBeenSet() const { return m_structValueHasBeenSet; }
+void Value::SetStructValue(const StructValue& value) { m_structValueHasBeenSet = true; m_structValue = Aws::MakeShared<StructValue>("Value", value); }
+void Value::SetStructValue(StructValue&& value) { m_structValueHasBeenSet = true; m_structValue = Aws::MakeShared<StructValue>("Value", std::move(value)); }
+Value& Value::WithStructValue(const StructValue& value) { SetStructValue(value); return *this;}
+Value& Value::WithStructValue(StructValue&& value) { SetStructValue(std::move(value)); return *this;}
 
 Value& Value::operator =(JsonView jsonValue)
 {
@@ -139,7 +137,7 @@ Value& Value::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("structValue"))
   {
-    m_structValue = jsonValue.GetObject("structValue");
+    m_structValue = Aws::MakeShared<StructValue>("Value", jsonValue.GetObject("structValue"));
 
     m_structValueHasBeenSet = true;
   }
@@ -211,7 +209,7 @@ JsonValue Value::Jsonize() const
 
   if(m_structValueHasBeenSet)
   {
-   payload.WithObject("structValue", m_structValue.Jsonize());
+   payload.WithObject("structValue", m_structValue->Jsonize());
 
   }
 

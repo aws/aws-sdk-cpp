@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -29,6 +19,7 @@
 #include <aws/ds/model/RadiusSettings.h>
 #include <aws/ds/model/RadiusStatus.h>
 #include <aws/ds/model/OwnerDirectoryDescription.h>
+#include <aws/ds/model/RegionsInfo.h>
 #include <utility>
 
 namespace Aws
@@ -47,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS Directory Service directory.</p><p><h3>See
+   * <p>Contains information about an Directory Service directory.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryDescription">AWS
    * API Reference</a></p>
@@ -405,7 +396,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIpAddrs() const{ return m_dnsIpAddrs; }
@@ -414,7 +405,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline bool DnsIpAddrsHasBeenSet() const { return m_dnsIpAddrsHasBeenSet; }
@@ -423,7 +414,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline void SetDnsIpAddrs(const Aws::Vector<Aws::String>& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = value; }
@@ -432,7 +423,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline void SetDnsIpAddrs(Aws::Vector<Aws::String>&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs = std::move(value); }
@@ -441,7 +432,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline DirectoryDescription& WithDnsIpAddrs(const Aws::Vector<Aws::String>& value) { SetDnsIpAddrs(value); return *this;}
@@ -450,7 +441,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline DirectoryDescription& WithDnsIpAddrs(Aws::Vector<Aws::String>&& value) { SetDnsIpAddrs(std::move(value)); return *this;}
@@ -459,7 +450,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline DirectoryDescription& AddDnsIpAddrs(const Aws::String& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
@@ -468,7 +459,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline DirectoryDescription& AddDnsIpAddrs(Aws::String&& value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(std::move(value)); return *this; }
@@ -477,7 +468,7 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
      * Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft
      * AD directory servers. For an AD Connector directory, these are the IP addresses
-     * of the DNS servers or domain controllers in the on-premises directory to which
+     * of the DNS servers or domain controllers in your self-managed directory to which
      * the AD Connector is connected.</p>
      */
     inline DirectoryDescription& AddDnsIpAddrs(const char* value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
@@ -515,87 +506,81 @@ namespace Model
 
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline DirectoryDescription& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline DirectoryDescription& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
 
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline const ShareMethod& GetShareMethod() const{ return m_shareMethod; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline bool ShareMethodHasBeenSet() const { return m_shareMethodHasBeenSet; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline void SetShareMethod(const ShareMethod& value) { m_shareMethodHasBeenSet = true; m_shareMethod = value; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline void SetShareMethod(ShareMethod&& value) { m_shareMethodHasBeenSet = true; m_shareMethod = std::move(value); }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline DirectoryDescription& WithShareMethod(const ShareMethod& value) { SetShareMethod(value); return *this;}
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline DirectoryDescription& WithShareMethod(ShareMethod&& value) { SetShareMethod(std::move(value)); return *this;}
 
@@ -761,42 +746,42 @@ namespace Model
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
      * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed AD directory.</p>
+     * Simple AD or Managed Microsoft AD directory.</p>
      */
     inline const DirectoryVpcSettingsDescription& GetVpcSettings() const{ return m_vpcSettings; }
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
      * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed AD directory.</p>
+     * Simple AD or Managed Microsoft AD directory.</p>
      */
     inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
      * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed AD directory.</p>
+     * Simple AD or Managed Microsoft AD directory.</p>
      */
     inline void SetVpcSettings(const DirectoryVpcSettingsDescription& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
      * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed AD directory.</p>
+     * Simple AD or Managed Microsoft AD directory.</p>
      */
     inline void SetVpcSettings(DirectoryVpcSettingsDescription&& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = std::move(value); }
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
      * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed AD directory.</p>
+     * Simple AD or Managed Microsoft AD directory.</p>
      */
     inline DirectoryDescription& WithVpcSettings(const DirectoryVpcSettingsDescription& value) { SetVpcSettings(value); return *this;}
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
      * information about a directory. This member is only present if the directory is a
-     * Simple AD or Managed AD directory.</p>
+     * Simple AD or Managed Microsoft AD directory.</p>
      */
     inline DirectoryDescription& WithVpcSettings(DirectoryVpcSettingsDescription&& value) { SetVpcSettings(std::move(value)); return *this;}
 
@@ -1004,40 +989,71 @@ namespace Model
 
 
     /**
-     * <p>Describes the AWS Managed Microsoft AD directory in the directory owner
+     * <p>Describes the Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
     inline const OwnerDirectoryDescription& GetOwnerDirectoryDescription() const{ return m_ownerDirectoryDescription; }
 
     /**
-     * <p>Describes the AWS Managed Microsoft AD directory in the directory owner
+     * <p>Describes the Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
     inline bool OwnerDirectoryDescriptionHasBeenSet() const { return m_ownerDirectoryDescriptionHasBeenSet; }
 
     /**
-     * <p>Describes the AWS Managed Microsoft AD directory in the directory owner
+     * <p>Describes the Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
     inline void SetOwnerDirectoryDescription(const OwnerDirectoryDescription& value) { m_ownerDirectoryDescriptionHasBeenSet = true; m_ownerDirectoryDescription = value; }
 
     /**
-     * <p>Describes the AWS Managed Microsoft AD directory in the directory owner
+     * <p>Describes the Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
     inline void SetOwnerDirectoryDescription(OwnerDirectoryDescription&& value) { m_ownerDirectoryDescriptionHasBeenSet = true; m_ownerDirectoryDescription = std::move(value); }
 
     /**
-     * <p>Describes the AWS Managed Microsoft AD directory in the directory owner
+     * <p>Describes the Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
     inline DirectoryDescription& WithOwnerDirectoryDescription(const OwnerDirectoryDescription& value) { SetOwnerDirectoryDescription(value); return *this;}
 
     /**
-     * <p>Describes the AWS Managed Microsoft AD directory in the directory owner
+     * <p>Describes the Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
     inline DirectoryDescription& WithOwnerDirectoryDescription(OwnerDirectoryDescription&& value) { SetOwnerDirectoryDescription(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline const RegionsInfo& GetRegionsInfo() const{ return m_regionsInfo; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline bool RegionsInfoHasBeenSet() const { return m_regionsInfoHasBeenSet; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline void SetRegionsInfo(const RegionsInfo& value) { m_regionsInfoHasBeenSet = true; m_regionsInfo = value; }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline void SetRegionsInfo(RegionsInfo&& value) { m_regionsInfoHasBeenSet = true; m_regionsInfo = std::move(value); }
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline DirectoryDescription& WithRegionsInfo(const RegionsInfo& value) { SetRegionsInfo(value); return *this;}
+
+    /**
+     * <p>Lists the Regions where the directory has replicated.</p>
+     */
+    inline DirectoryDescription& WithRegionsInfo(RegionsInfo&& value) { SetRegionsInfo(std::move(value)); return *this;}
 
   private:
 
@@ -1112,6 +1128,9 @@ namespace Model
 
     OwnerDirectoryDescription m_ownerDirectoryDescription;
     bool m_ownerDirectoryDescriptionHasBeenSet;
+
+    RegionsInfo m_regionsInfo;
+    bool m_regionsInfoHasBeenSet;
   };
 
 } // namespace Model

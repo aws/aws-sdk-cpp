@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -52,42 +42,42 @@ namespace Model
     /**
      * <p>An optional parameter that lets you get information about all the operations
      * that you submitted after a specified date and time. Specify the date and time in
-     * Coordinated Universal time (UTC).</p>
+     * Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedSince() const{ return m_submittedSince; }
 
     /**
      * <p>An optional parameter that lets you get information about all the operations
      * that you submitted after a specified date and time. Specify the date and time in
-     * Coordinated Universal time (UTC).</p>
+     * Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline bool SubmittedSinceHasBeenSet() const { return m_submittedSinceHasBeenSet; }
 
     /**
      * <p>An optional parameter that lets you get information about all the operations
      * that you submitted after a specified date and time. Specify the date and time in
-     * Coordinated Universal time (UTC).</p>
+     * Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline void SetSubmittedSince(const Aws::Utils::DateTime& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = value; }
 
     /**
      * <p>An optional parameter that lets you get information about all the operations
      * that you submitted after a specified date and time. Specify the date and time in
-     * Coordinated Universal time (UTC).</p>
+     * Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline void SetSubmittedSince(Aws::Utils::DateTime&& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = std::move(value); }
 
     /**
      * <p>An optional parameter that lets you get information about all the operations
      * that you submitted after a specified date and time. Specify the date and time in
-     * Coordinated Universal time (UTC).</p>
+     * Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline ListOperationsRequest& WithSubmittedSince(const Aws::Utils::DateTime& value) { SetSubmittedSince(value); return *this;}
 
     /**
      * <p>An optional parameter that lets you get information about all the operations
      * that you submitted after a specified date and time. Specify the date and time in
-     * Coordinated Universal time (UTC).</p>
+     * Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline ListOperationsRequest& WithSubmittedSince(Aws::Utils::DateTime&& value) { SetSubmittedSince(std::move(value)); return *this;}
 

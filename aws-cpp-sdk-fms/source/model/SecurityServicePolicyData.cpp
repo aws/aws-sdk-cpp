@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fms/model/SecurityServicePolicyData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 SecurityServicePolicyData::SecurityServicePolicyData() : 
     m_type(SecurityServiceType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_managedServiceDataHasBeenSet(false)
+    m_managedServiceDataHasBeenSet(false),
+    m_policyOptionHasBeenSet(false)
 {
 }
 
 SecurityServicePolicyData::SecurityServicePolicyData(JsonView jsonValue) : 
     m_type(SecurityServiceType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_managedServiceDataHasBeenSet(false)
+    m_managedServiceDataHasBeenSet(false),
+    m_policyOptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +51,13 @@ SecurityServicePolicyData& SecurityServicePolicyData::operator =(JsonView jsonVa
     m_managedServiceDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PolicyOption"))
+  {
+    m_policyOption = jsonValue.GetObject("PolicyOption");
+
+    m_policyOptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +73,12 @@ JsonValue SecurityServicePolicyData::Jsonize() const
   if(m_managedServiceDataHasBeenSet)
   {
    payload.WithString("ManagedServiceData", m_managedServiceData);
+
+  }
+
+  if(m_policyOptionHasBeenSet)
+  {
+   payload.WithObject("PolicyOption", m_policyOption.Jsonize());
 
   }
 

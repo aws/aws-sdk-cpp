@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/CRType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,8 @@ namespace Aws
 
         static const int EC2_HASH = HashingUtils::HashString("EC2");
         static const int SPOT_HASH = HashingUtils::HashString("SPOT");
+        static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
+        static const int FARGATE_SPOT_HASH = HashingUtils::HashString("FARGATE_SPOT");
 
 
         CRType GetCRTypeForName(const Aws::String& name)
@@ -44,6 +36,14 @@ namespace Aws
           else if (hashCode == SPOT_HASH)
           {
             return CRType::SPOT;
+          }
+          else if (hashCode == FARGATE_HASH)
+          {
+            return CRType::FARGATE;
+          }
+          else if (hashCode == FARGATE_SPOT_HASH)
+          {
+            return CRType::FARGATE_SPOT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +63,10 @@ namespace Aws
             return "EC2";
           case CRType::SPOT:
             return "SPOT";
+          case CRType::FARGATE:
+            return "FARGATE";
+          case CRType::FARGATE_SPOT:
+            return "FARGATE_SPOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

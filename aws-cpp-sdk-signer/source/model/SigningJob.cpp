@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/signer/model/SigningJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,16 @@ SigningJob::SigningJob() :
     m_signingMaterialHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_status(SigningStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isRevoked(false),
+    m_isRevokedHasBeenSet(false),
+    m_profileNameHasBeenSet(false),
+    m_profileVersionHasBeenSet(false),
+    m_platformIdHasBeenSet(false),
+    m_platformDisplayNameHasBeenSet(false),
+    m_signatureExpiresAtHasBeenSet(false),
+    m_jobOwnerHasBeenSet(false),
+    m_jobInvokerHasBeenSet(false)
 {
 }
 
@@ -46,7 +45,16 @@ SigningJob::SigningJob(JsonView jsonValue) :
     m_signingMaterialHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_status(SigningStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isRevoked(false),
+    m_isRevokedHasBeenSet(false),
+    m_profileNameHasBeenSet(false),
+    m_profileVersionHasBeenSet(false),
+    m_platformIdHasBeenSet(false),
+    m_platformDisplayNameHasBeenSet(false),
+    m_signatureExpiresAtHasBeenSet(false),
+    m_jobOwnerHasBeenSet(false),
+    m_jobInvokerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +103,62 @@ SigningJob& SigningJob::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isRevoked"))
+  {
+    m_isRevoked = jsonValue.GetBool("isRevoked");
+
+    m_isRevokedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("profileName"))
+  {
+    m_profileName = jsonValue.GetString("profileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
+
+    m_profileVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformId"))
+  {
+    m_platformId = jsonValue.GetString("platformId");
+
+    m_platformIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+    m_platformDisplayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("signatureExpiresAt"))
+  {
+    m_signatureExpiresAt = jsonValue.GetDouble("signatureExpiresAt");
+
+    m_signatureExpiresAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobOwner"))
+  {
+    m_jobOwner = jsonValue.GetString("jobOwner");
+
+    m_jobOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobInvoker"))
+  {
+    m_jobInvoker = jsonValue.GetString("jobInvoker");
+
+    m_jobInvokerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +198,53 @@ JsonValue SigningJob::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", SigningStatusMapper::GetNameForSigningStatus(m_status));
+  }
+
+  if(m_isRevokedHasBeenSet)
+  {
+   payload.WithBool("isRevoked", m_isRevoked);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("profileName", m_profileName);
+
+  }
+
+  if(m_profileVersionHasBeenSet)
+  {
+   payload.WithString("profileVersion", m_profileVersion);
+
+  }
+
+  if(m_platformIdHasBeenSet)
+  {
+   payload.WithString("platformId", m_platformId);
+
+  }
+
+  if(m_platformDisplayNameHasBeenSet)
+  {
+   payload.WithString("platformDisplayName", m_platformDisplayName);
+
+  }
+
+  if(m_signatureExpiresAtHasBeenSet)
+  {
+   payload.WithDouble("signatureExpiresAt", m_signatureExpiresAt.SecondsWithMSPrecision());
+  }
+
+  if(m_jobOwnerHasBeenSet)
+  {
+   payload.WithString("jobOwner", m_jobOwner);
+
+  }
+
+  if(m_jobInvokerHasBeenSet)
+  {
+   payload.WithString("jobInvoker", m_jobInvoker);
+
   }
 
   return payload;

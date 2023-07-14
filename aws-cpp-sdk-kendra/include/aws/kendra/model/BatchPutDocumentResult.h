@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -47,8 +37,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline const Aws::Vector<BatchPutDocumentResponseFailedDocument>& GetFailedDocuments() const{ return m_failedDocuments; }
 
@@ -56,8 +48,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline void SetFailedDocuments(const Aws::Vector<BatchPutDocumentResponseFailedDocument>& value) { m_failedDocuments = value; }
 
@@ -65,8 +59,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline void SetFailedDocuments(Aws::Vector<BatchPutDocumentResponseFailedDocument>&& value) { m_failedDocuments = std::move(value); }
 
@@ -74,8 +70,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline BatchPutDocumentResult& WithFailedDocuments(const Aws::Vector<BatchPutDocumentResponseFailedDocument>& value) { SetFailedDocuments(value); return *this;}
 
@@ -83,8 +81,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline BatchPutDocumentResult& WithFailedDocuments(Aws::Vector<BatchPutDocumentResponseFailedDocument>&& value) { SetFailedDocuments(std::move(value)); return *this;}
 
@@ -92,8 +92,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline BatchPutDocumentResult& AddFailedDocuments(const BatchPutDocumentResponseFailedDocument& value) { m_failedDocuments.push_back(value); return *this; }
 
@@ -101,8 +103,10 @@ namespace Model
      * <p>A list of documents that were not added to the index because the document
      * failed a validation check. Each document contains an error message that
      * indicates why the document couldn't be added to the index.</p> <p>If there was
-     * an error adding a document to an index the error is reported in your AWS
-     * CloudWatch log.</p>
+     * an error adding a document to an index the error is reported in your Amazon Web
+     * Services CloudWatch log. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+     * Amazon Kendra with Amazon CloudWatch Logs</a> </p>
      */
     inline BatchPutDocumentResult& AddFailedDocuments(BatchPutDocumentResponseFailedDocument&& value) { m_failedDocuments.push_back(std::move(value)); return *this; }
 

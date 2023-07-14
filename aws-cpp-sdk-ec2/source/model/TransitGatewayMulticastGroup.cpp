@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/TransitGatewayMulticastGroup.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,6 +27,7 @@ TransitGatewayMulticastGroup::TransitGatewayMulticastGroup() :
     m_resourceIdHasBeenSet(false),
     m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_resourceOwnerIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_groupMember(false),
     m_groupMemberHasBeenSet(false),
@@ -56,6 +47,7 @@ TransitGatewayMulticastGroup::TransitGatewayMulticastGroup(const XmlNode& xmlNod
     m_resourceIdHasBeenSet(false),
     m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_resourceOwnerIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_groupMember(false),
     m_groupMemberHasBeenSet(false),
@@ -104,6 +96,12 @@ TransitGatewayMulticastGroup& TransitGatewayMulticastGroup::operator =(const Xml
     {
       m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
       m_resourceTypeHasBeenSet = true;
+    }
+    XmlNode resourceOwnerIdNode = resultNode.FirstChild("resourceOwnerId");
+    if(!resourceOwnerIdNode.IsNull())
+    {
+      m_resourceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerIdNode.GetText());
+      m_resourceOwnerIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
@@ -167,6 +165,11 @@ void TransitGatewayMulticastGroup::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
   }
 
+  if(m_resourceOwnerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceOwnerId=" << StringUtils::URLEncode(m_resourceOwnerId.c_str()) << "&";
+  }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
@@ -215,6 +218,10 @@ void TransitGatewayMulticastGroup::OutputToStream(Aws::OStream& oStream, const c
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << ".ResourceType=" << TransitGatewayAttachmentResourceTypeMapper::GetNameForTransitGatewayAttachmentResourceType(m_resourceType) << "&";
+  }
+  if(m_resourceOwnerIdHasBeenSet)
+  {
+      oStream << location << ".ResourceOwnerId=" << StringUtils::URLEncode(m_resourceOwnerId.c_str()) << "&";
   }
   if(m_networkInterfaceIdHasBeenSet)
   {

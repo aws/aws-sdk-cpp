@@ -1240,7 +1240,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance. </p>",
+      "documentation":"<p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>",
       "error":{
         "code":"DBInstanceNotFound",
         "httpStatusCode":404,
@@ -1293,7 +1293,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group. </p>",
+      "documentation":"<p> <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>",
       "error":{
         "code":"DBParameterGroupNotFound",
         "httpStatusCode":404,
@@ -1350,7 +1350,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists. </p>",
+      "documentation":"<p>A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists.</p>",
       "error":{
         "code":"DBSecurityGroupAlreadyExists",
         "httpStatusCode":400,
@@ -1390,7 +1390,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group. </p>",
+      "documentation":"<p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>",
       "error":{
         "code":"DBSecurityGroupNotFound",
         "httpStatusCode":404,
@@ -1454,7 +1454,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot. </p>",
+      "documentation":"<p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>",
       "error":{
         "code":"DBSnapshotAlreadyExists",
         "httpStatusCode":400,
@@ -1480,7 +1480,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot. </p>",
+      "documentation":"<p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>",
       "error":{
         "code":"DBSnapshotNotFound",
         "httpStatusCode":404,
@@ -1503,7 +1503,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group. </p>",
+      "documentation":"<p> <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.</p>",
       "error":{
         "code":"DBSubnetGroupAlreadyExists",
         "httpStatusCode":400,
@@ -1534,7 +1534,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group. </p>",
+      "documentation":"<p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>",
       "error":{
         "code":"DBSubnetGroupNotFoundFault",
         "httpStatusCode":404,
@@ -2051,7 +2051,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> The DB subnet isn't in the <i>available</i> state. </p>",
+      "documentation":"<p>The DB subnet isn't in the <i>available</i> state.</p>",
       "error":{
         "code":"InvalidDBSubnetStateFault",
         "httpStatusCode":400,
@@ -2075,7 +2075,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> The option group isn't in the <i>available</i> state. </p>",
+      "documentation":"<p>The option group isn't in the <i>available</i> state.</p>",
       "error":{
         "code":"InvalidOptionGroupStateFault",
         "httpStatusCode":400,
@@ -2324,7 +2324,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>The quota of 20 option groups was exceeded for this AWS account.</p>",
+      "documentation":"<p>The quota of 20 option groups was exceeded for this Amazon Web Services account.</p>",
       "error":{
         "code":"OptionGroupQuotaExceededFault",
         "httpStatusCode":400,
@@ -2432,7 +2432,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0. </p>",
+      "documentation":"<p> <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code> equal to 0.</p>",
       "error":{
         "code":"PointInTimeRestoreNotEnabled",
         "httpStatusCode":400,
@@ -2748,7 +2748,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>SNS has responded that there is a problem with the SND topic specified.</p>",
+      "documentation":"<p>SNS has responded that there is a problem with the SNS topic specified.</p>",
       "error":{
         "code":"SNSInvalidTopic",
         "httpStatusCode":400,

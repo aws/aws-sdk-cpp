@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/JobTimers.h>
+#include <utility>
 
 namespace Aws
 {
@@ -31,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the total number of tasks that the specified job has executed, the
+   * <p>Describes the total number of tasks that the specified job has started, the
    * number of tasks that succeeded, and the number of tasks that
    * failed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobProgressSummary">AWS
@@ -109,6 +101,37 @@ namespace Model
      */
     inline JobProgressSummary& WithNumberOfTasksFailed(long long value) { SetNumberOfTasksFailed(value); return *this;}
 
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline const JobTimers& GetTimers() const{ return m_timers; }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline bool TimersHasBeenSet() const { return m_timersHasBeenSet; }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline void SetTimers(const JobTimers& value) { m_timersHasBeenSet = true; m_timers = value; }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline void SetTimers(JobTimers&& value) { m_timersHasBeenSet = true; m_timers = std::move(value); }
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline JobProgressSummary& WithTimers(const JobTimers& value) { SetTimers(value); return *this;}
+
+    /**
+     * <p>The JobTimers attribute of a job's progress summary.</p>
+     */
+    inline JobProgressSummary& WithTimers(JobTimers&& value) { SetTimers(std::move(value)); return *this;}
+
   private:
 
     long long m_totalNumberOfTasks;
@@ -119,6 +142,9 @@ namespace Model
 
     long long m_numberOfTasksFailed;
     bool m_numberOfTasksFailedHasBeenSet;
+
+    JobTimers m_timers;
+    bool m_timersHasBeenSet;
   };
 
 } // namespace Model

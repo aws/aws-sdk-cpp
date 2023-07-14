@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -90,90 +80,227 @@ namespace Model
 
 
     /**
+     * <p>The name of the workforce.</p>
+     */
+    inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline CreateWorkteamRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline CreateWorkteamRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline CreateWorkteamRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
+
+
+    /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline void SetMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = value; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline void SetMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = std::move(value); }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& WithMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { SetMemberDefinitions(value); return *this;}
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& WithMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { SetMemberDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& AddMemberDefinitions(const MemberDefinition& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
-     * identify the Amazon Cognito user pool that makes up the work team. For more
-     * information, see <a
+     * identify the workers that make up the work team. </p> <p>Workforces can be
+     * created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
+     * private workforces created using Amazon Cognito use
+     * <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide
+     * input for both of these parameters in a single request.</p> <p>For workforces
+     * created using Amazon Cognito, private work teams correspond to Amazon Cognito
+     * <i>user groups</i> within the user pool used to create a workforce. All of the
+     * <code>CognitoMemberDefinition</code> objects that make up the member definition
+     * must have the same <code>ClientId</code> and <code>UserPool</code> values. To
+     * add a Amazon Cognito user group to an existing worker pool, see <a
+     * href="">Adding groups to a User Pool</a>. For more information about user pools,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
-     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
-     * objects that make up the member definition must have the same
-     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     * Cognito User Pools</a>.</p> <p>For workforces created using your own OIDC IdP,
+     * specify the user groups that you want to include in your private work team in
+     * <code>OidcMemberDefinition</code> by listing those groups in
+     * <code>Groups</code>.</p>
      */
     inline CreateWorkteamRequest& AddMemberDefinitions(MemberDefinition&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(std::move(value)); return *this; }
 
@@ -261,8 +388,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -271,8 +398,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -281,8 +408,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -291,8 +418,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -301,8 +428,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateWorkteamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -311,8 +438,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateWorkteamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -321,8 +448,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateWorkteamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -331,8 +458,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
      * Tag</a> and <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateWorkteamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -340,6 +467,9 @@ namespace Model
 
     Aws::String m_workteamName;
     bool m_workteamNameHasBeenSet;
+
+    Aws::String m_workforceName;
+    bool m_workforceNameHasBeenSet;
 
     Aws::Vector<MemberDefinition> m_memberDefinitions;
     bool m_memberDefinitionsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -51,29 +41,25 @@ namespace Model
 
     /**
      * <p>The number of consecutive successful health checks that must occur before
-     * declaring
-         listener healthy.</p>
+     * declaring listener healthy.</p>
      */
     inline int GetHealthyThreshold() const{ return m_healthyThreshold; }
 
     /**
      * <p>The number of consecutive successful health checks that must occur before
-     * declaring
-         listener healthy.</p>
+     * declaring listener healthy.</p>
      */
     inline bool HealthyThresholdHasBeenSet() const { return m_healthyThresholdHasBeenSet; }
 
     /**
      * <p>The number of consecutive successful health checks that must occur before
-     * declaring
-         listener healthy.</p>
+     * declaring listener healthy.</p>
      */
     inline void SetHealthyThreshold(int value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
 
     /**
      * <p>The number of consecutive successful health checks that must occur before
-     * declaring
-         listener healthy.</p>
+     * declaring listener healthy.</p>
      */
     inline HealthCheckPolicy& WithHealthyThreshold(int value) { SetHealthyThreshold(value); return *this;}
 
@@ -101,94 +87,82 @@ namespace Model
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The destination path for the health check request. This value is only used if
-     * the specified 
-         protocol is HTTP or HTTP/2. For any other protocol, this
-     * value is ignored.</p>
+     * the specified protocol is HTTP or HTTP/2. For any other protocol, this value is
+     * ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const char* value) { SetPath(value); return *this;}
 
 
     /**
      * <p>The destination port for the health check request. This port must match the
-     * port defined
-         in the <a>PortMapping</a> for the listener.</p>
+     * port defined in the <a>PortMapping</a> for the listener.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The destination port for the health check request. This port must match the
-     * port defined
-         in the <a>PortMapping</a> for the listener.</p>
+     * port defined in the <a>PortMapping</a> for the listener.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The destination port for the health check request. This port must match the
-     * port defined
-         in the <a>PortMapping</a> for the listener.</p>
+     * port defined in the <a>PortMapping</a> for the listener.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The destination port for the health check request. This port must match the
-     * port defined
-         in the <a>PortMapping</a> for the listener.</p>
+     * port defined in the <a>PortMapping</a> for the listener.</p>
      */
     inline HealthCheckPolicy& WithPort(int value) { SetPort(value); return *this;}
 
@@ -244,58 +218,50 @@ namespace Model
 
     /**
      * <p>The amount of time to wait when receiving a response from the health check,
-     * in
-         milliseconds.</p>
+     * in milliseconds.</p>
      */
     inline long long GetTimeoutMillis() const{ return m_timeoutMillis; }
 
     /**
      * <p>The amount of time to wait when receiving a response from the health check,
-     * in
-         milliseconds.</p>
+     * in milliseconds.</p>
      */
     inline bool TimeoutMillisHasBeenSet() const { return m_timeoutMillisHasBeenSet; }
 
     /**
      * <p>The amount of time to wait when receiving a response from the health check,
-     * in
-         milliseconds.</p>
+     * in milliseconds.</p>
      */
     inline void SetTimeoutMillis(long long value) { m_timeoutMillisHasBeenSet = true; m_timeoutMillis = value; }
 
     /**
      * <p>The amount of time to wait when receiving a response from the health check,
-     * in
-         milliseconds.</p>
+     * in milliseconds.</p>
      */
     inline HealthCheckPolicy& WithTimeoutMillis(long long value) { SetTimeoutMillis(value); return *this;}
 
 
     /**
      * <p>The number of consecutive failed health checks that must occur before
-     * declaring a
-         virtual node unhealthy. </p>
+     * declaring a virtual node unhealthy. </p>
      */
     inline int GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
 
     /**
      * <p>The number of consecutive failed health checks that must occur before
-     * declaring a
-         virtual node unhealthy. </p>
+     * declaring a virtual node unhealthy. </p>
      */
     inline bool UnhealthyThresholdHasBeenSet() const { return m_unhealthyThresholdHasBeenSet; }
 
     /**
      * <p>The number of consecutive failed health checks that must occur before
-     * declaring a
-         virtual node unhealthy. </p>
+     * declaring a virtual node unhealthy. </p>
      */
     inline void SetUnhealthyThreshold(int value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
 
     /**
      * <p>The number of consecutive failed health checks that must occur before
-     * declaring a
-         virtual node unhealthy. </p>
+     * declaring a virtual node unhealthy. </p>
      */
     inline HealthCheckPolicy& WithUnhealthyThreshold(int value) { SetUnhealthyThreshold(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -40,9 +30,7 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a REST API.</p> <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
-   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * <p>Represents a REST API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApi">AWS
    * API Reference</a></p>
    */
@@ -281,50 +269,50 @@ namespace Model
 
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBinaryMediaTypes() const{ return m_binaryMediaTypes; }
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline void SetBinaryMediaTypes(const Aws::Vector<Aws::String>& value) { m_binaryMediaTypes = value; }
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypes = std::move(value); }
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline PutRestApiResult& WithBinaryMediaTypes(const Aws::Vector<Aws::String>& value) { SetBinaryMediaTypes(value); return *this;}
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline PutRestApiResult& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline PutRestApiResult& AddBinaryMediaTypes(const Aws::String& value) { m_binaryMediaTypes.push_back(value); return *this; }
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline PutRestApiResult& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
-     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     * <p>The list of binary media types supported by the RestApi. By default, the
+     * RestApi supports only UTF-8-encoded text payloads.</p>
      */
     inline PutRestApiResult& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypes.push_back(value); return *this; }
 
@@ -359,120 +347,115 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
-     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
-     * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
+     * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
     inline const ApiKeySourceType& GetApiKeySource() const{ return m_apiKeySource; }
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
-     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
-     * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
+     * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
     inline void SetApiKeySource(const ApiKeySourceType& value) { m_apiKeySource = value; }
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
-     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
-     * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
+     * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
     inline void SetApiKeySource(ApiKeySourceType&& value) { m_apiKeySource = std::move(value); }
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
-     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
-     * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
+     * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
     inline PutRestApiResult& WithApiKeySource(const ApiKeySourceType& value) { SetApiKeySource(value); return *this;}
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
-     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
-     * read the API key from the <code>UsageIdentifierKey</code> from a custom
-     * authorizer.</li></ul> </p>
+     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
+     * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
     inline PutRestApiResult& WithApiKeySource(ApiKeySourceType&& value) { SetApiKeySource(std::move(value)); return *this;}
 
 
     /**
-     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * <p>The endpoint configuration of this RestApi showing the endpoint types of the
+     * API. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
-     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * <p>The endpoint configuration of this RestApi showing the endpoint types of the
+     * API. </p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfiguration = value; }
 
     /**
-     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * <p>The endpoint configuration of this RestApi showing the endpoint types of the
+     * API. </p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfiguration = std::move(value); }
 
     /**
-     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * <p>The endpoint configuration of this RestApi showing the endpoint types of the
+     * API. </p>
      */
     inline PutRestApiResult& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
-     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
-     * of the API. </p>
+     * <p>The endpoint configuration of this RestApi showing the endpoint types of the
+     * API. </p>
      */
     inline PutRestApiResult& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline PutRestApiResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline PutRestApiResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * A stringified JSON policy document that applies to this RestApi regardless of
-     * the caller and <a>Method</a> configuration.
+     * <p>A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and Method configuration.</p>
      */
     inline PutRestApiResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -549,6 +532,34 @@ namespace Model
      */
     inline PutRestApiResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API,
+     * disable the default endpoint.</p>
+     */
+    inline bool GetDisableExecuteApiEndpoint() const{ return m_disableExecuteApiEndpoint; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API,
+     * disable the default endpoint.</p>
+     */
+    inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpoint = value; }
+
+    /**
+     * <p>Specifies whether clients can invoke your API by using the default
+     * <code>execute-api</code> endpoint. By default, clients can invoke your API with
+     * the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code>
+     * endpoint. To require that clients use a custom domain name to invoke your API,
+     * disable the default endpoint.</p>
+     */
+    inline PutRestApiResult& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -574,6 +585,8 @@ namespace Model
     Aws::String m_policy;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    bool m_disableExecuteApiEndpoint;
   };
 
 } // namespace Model

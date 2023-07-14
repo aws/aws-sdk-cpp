@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -170,27 +160,27 @@ namespace Model
 
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline const Aws::Utils::DateTime& GetLastConnectionTime() const{ return m_lastConnectionTime; }
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline void SetLastConnectionTime(const Aws::Utils::DateTime& value) { m_lastConnectionTime = value; }
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline void SetLastConnectionTime(Aws::Utils::DateTime&& value) { m_lastConnectionTime = std::move(value); }
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline DescribeAgentResult& WithLastConnectionTime(const Aws::Utils::DateTime& value) { SetLastConnectionTime(value); return *this;}
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline DescribeAgentResult& WithLastConnectionTime(Aws::Utils::DateTime&& value) { SetLastConnectionTime(std::move(value)); return *this;}
 
@@ -223,31 +213,31 @@ namespace Model
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline void SetEndpointType(const EndpointType& value) { m_endpointType = value; }
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline void SetEndpointType(EndpointType&& value) { m_endpointType = std::move(value); }
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline DescribeAgentResult& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline DescribeAgentResult& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 

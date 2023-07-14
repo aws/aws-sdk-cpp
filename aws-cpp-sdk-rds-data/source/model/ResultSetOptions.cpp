@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds-data/model/ResultSetOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,17 @@ namespace Model
 
 ResultSetOptions::ResultSetOptions() : 
     m_decimalReturnType(DecimalReturnType::NOT_SET),
-    m_decimalReturnTypeHasBeenSet(false)
+    m_decimalReturnTypeHasBeenSet(false),
+    m_longReturnType(LongReturnType::NOT_SET),
+    m_longReturnTypeHasBeenSet(false)
 {
 }
 
 ResultSetOptions::ResultSetOptions(JsonView jsonValue) : 
     m_decimalReturnType(DecimalReturnType::NOT_SET),
-    m_decimalReturnTypeHasBeenSet(false)
+    m_decimalReturnTypeHasBeenSet(false),
+    m_longReturnType(LongReturnType::NOT_SET),
+    m_longReturnTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +44,13 @@ ResultSetOptions& ResultSetOptions::operator =(JsonView jsonValue)
     m_decimalReturnTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("longReturnType"))
+  {
+    m_longReturnType = LongReturnTypeMapper::GetLongReturnTypeForName(jsonValue.GetString("longReturnType"));
+
+    m_longReturnTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +61,11 @@ JsonValue ResultSetOptions::Jsonize() const
   if(m_decimalReturnTypeHasBeenSet)
   {
    payload.WithString("decimalReturnType", DecimalReturnTypeMapper::GetNameForDecimalReturnType(m_decimalReturnType));
+  }
+
+  if(m_longReturnTypeHasBeenSet)
+  {
+   payload.WithString("longReturnType", LongReturnTypeMapper::GetNameForLongReturnType(m_longReturnType));
   }
 
   return payload;

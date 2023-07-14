@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -89,56 +79,56 @@ namespace Model
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline CreateResourceServerRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline CreateResourceServerRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
-     * HTTPS endpoint where the resource server is located. For example,
+     * HTTPS endpoint where the resource server is located, such as
      * <code>https://my-weather-api.example.com</code>.</p>
      */
     inline CreateResourceServerRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
@@ -186,50 +176,50 @@ namespace Model
 
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline const Aws::Vector<ResourceServerScopeType>& GetScopes() const{ return m_scopes; }
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline void SetScopes(const Aws::Vector<ResourceServerScopeType>& value) { m_scopesHasBeenSet = true; m_scopes = value; }
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline void SetScopes(Aws::Vector<ResourceServerScopeType>&& value) { m_scopesHasBeenSet = true; m_scopes = std::move(value); }
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline CreateResourceServerRequest& WithScopes(const Aws::Vector<ResourceServerScopeType>& value) { SetScopes(value); return *this;}
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline CreateResourceServerRequest& WithScopes(Aws::Vector<ResourceServerScopeType>&& value) { SetScopes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline CreateResourceServerRequest& AddScopes(const ResourceServerScopeType& value) { m_scopesHasBeenSet = true; m_scopes.push_back(value); return *this; }
 
     /**
-     * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
-     * <code>description</code>.</p>
+     * <p>A list of scopes. Each scope is a key-value map with the keys
+     * <code>name</code> and <code>description</code>.</p>
      */
     inline CreateResourceServerRequest& AddScopes(ResourceServerScopeType&& value) { m_scopesHasBeenSet = true; m_scopes.push_back(std::move(value)); return *this; }
 

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SuppressionAttributes.h>
+#include <aws/sesv2/model/AccountDetails.h>
 #include <utility>
 
 namespace Aws
@@ -38,7 +29,7 @@ namespace Model
 {
   /**
    * <p>A list of details about the email-sending capabilities of your Amazon SES
-   * account in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+   * account in the current Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetAccountResponse">AWS
    * API Reference</a></p>
    */
@@ -163,126 +154,157 @@ namespace Model
 
     /**
      * <p>Indicates whether or not your account has production access in the current
-     * AWS Region.</p> <p>If the value is <code>false</code>, then your account is in
-     * the <i>sandbox</i>. When your account is in the sandbox, you can only send email
-     * to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * Amazon Web Services Region.</p> <p>If the value is <code>false</code>, then your
+     * account is in the <i>sandbox</i>. When your account is in the sandbox, you can
+     * only send email to verified identities. Additionally, the maximum number of
+     * emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline bool GetProductionAccessEnabled() const{ return m_productionAccessEnabled; }
 
     /**
      * <p>Indicates whether or not your account has production access in the current
-     * AWS Region.</p> <p>If the value is <code>false</code>, then your account is in
-     * the <i>sandbox</i>. When your account is in the sandbox, you can only send email
-     * to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * Amazon Web Services Region.</p> <p>If the value is <code>false</code>, then your
+     * account is in the <i>sandbox</i>. When your account is in the sandbox, you can
+     * only send email to verified identities. Additionally, the maximum number of
+     * emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline void SetProductionAccessEnabled(bool value) { m_productionAccessEnabled = value; }
 
     /**
      * <p>Indicates whether or not your account has production access in the current
-     * AWS Region.</p> <p>If the value is <code>false</code>, then your account is in
-     * the <i>sandbox</i>. When your account is in the sandbox, you can only send email
-     * to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of
-     * emails you can send per second (your maximum sending rate) is 1.</p> <p>If the
-     * value is <code>true</code>, then your account has production access. When your
-     * account has production access, you can send email to any address. The sending
-     * quota and maximum sending rate for your account vary based on your specific use
-     * case.</p>
+     * Amazon Web Services Region.</p> <p>If the value is <code>false</code>, then your
+     * account is in the <i>sandbox</i>. When your account is in the sandbox, you can
+     * only send email to verified identities. Additionally, the maximum number of
+     * emails you can send in a 24-hour period (your sending quota) is 200, and the
+     * maximum number of emails you can send per second (your maximum sending rate) is
+     * 1.</p> <p>If the value is <code>true</code>, then your account has production
+     * access. When your account has production access, you can send email to any
+     * address. The sending quota and maximum sending rate for your account vary based
+     * on your specific use case.</p>
      */
     inline GetAccountResult& WithProductionAccessEnabled(bool value) { SetProductionAccessEnabled(value); return *this;}
 
 
     /**
      * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
+     * limits for your Amazon SES account in the current Amazon Web Services
+     * Region.</p>
      */
     inline const SendQuota& GetSendQuota() const{ return m_sendQuota; }
 
     /**
      * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
+     * limits for your Amazon SES account in the current Amazon Web Services
+     * Region.</p>
      */
     inline void SetSendQuota(const SendQuota& value) { m_sendQuota = value; }
 
     /**
      * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
+     * limits for your Amazon SES account in the current Amazon Web Services
+     * Region.</p>
      */
     inline void SetSendQuota(SendQuota&& value) { m_sendQuota = std::move(value); }
 
     /**
      * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
+     * limits for your Amazon SES account in the current Amazon Web Services
+     * Region.</p>
      */
     inline GetAccountResult& WithSendQuota(const SendQuota& value) { SetSendQuota(value); return *this;}
 
     /**
      * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
+     * limits for your Amazon SES account in the current Amazon Web Services
+     * Region.</p>
      */
     inline GetAccountResult& WithSendQuota(SendQuota&& value) { SetSendQuota(std::move(value)); return *this;}
 
 
     /**
      * <p>Indicates whether or not email sending is enabled for your Amazon SES account
-     * in the current AWS Region.</p>
+     * in the current Amazon Web Services Region.</p>
      */
     inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
 
     /**
      * <p>Indicates whether or not email sending is enabled for your Amazon SES account
-     * in the current AWS Region.</p>
+     * in the current Amazon Web Services Region.</p>
      */
     inline void SetSendingEnabled(bool value) { m_sendingEnabled = value; }
 
     /**
      * <p>Indicates whether or not email sending is enabled for your Amazon SES account
-     * in the current AWS Region.</p>
+     * in the current Amazon Web Services Region.</p>
      */
     inline GetAccountResult& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
 
 
     /**
      * <p>An object that contains information about the email address suppression
-     * preferences for your account in the current AWS Region.</p>
+     * preferences for your account in the current Amazon Web Services Region.</p>
      */
     inline const SuppressionAttributes& GetSuppressionAttributes() const{ return m_suppressionAttributes; }
 
     /**
      * <p>An object that contains information about the email address suppression
-     * preferences for your account in the current AWS Region.</p>
+     * preferences for your account in the current Amazon Web Services Region.</p>
      */
     inline void SetSuppressionAttributes(const SuppressionAttributes& value) { m_suppressionAttributes = value; }
 
     /**
      * <p>An object that contains information about the email address suppression
-     * preferences for your account in the current AWS Region.</p>
+     * preferences for your account in the current Amazon Web Services Region.</p>
      */
     inline void SetSuppressionAttributes(SuppressionAttributes&& value) { m_suppressionAttributes = std::move(value); }
 
     /**
      * <p>An object that contains information about the email address suppression
-     * preferences for your account in the current AWS Region.</p>
+     * preferences for your account in the current Amazon Web Services Region.</p>
      */
     inline GetAccountResult& WithSuppressionAttributes(const SuppressionAttributes& value) { SetSuppressionAttributes(value); return *this;}
 
     /**
      * <p>An object that contains information about the email address suppression
-     * preferences for your account in the current AWS Region.</p>
+     * preferences for your account in the current Amazon Web Services Region.</p>
      */
     inline GetAccountResult& WithSuppressionAttributes(SuppressionAttributes&& value) { SetSuppressionAttributes(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline const AccountDetails& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline void SetDetails(const AccountDetails& value) { m_details = value; }
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline void SetDetails(AccountDetails&& value) { m_details = std::move(value); }
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline GetAccountResult& WithDetails(const AccountDetails& value) { SetDetails(value); return *this;}
+
+    /**
+     * <p>An object that defines your account details.</p>
+     */
+    inline GetAccountResult& WithDetails(AccountDetails&& value) { SetDetails(std::move(value)); return *this;}
 
   private:
 
@@ -297,6 +319,8 @@ namespace Model
     bool m_sendingEnabled;
 
     SuppressionAttributes m_suppressionAttributes;
+
+    AccountDetails m_details;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -51,58 +41,58 @@ namespace Model
 
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline DocumentsMetadataConfiguration& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline DocumentsMetadataConfiguration& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
 
     /**
-     * <p>A prefix used to filter metadata configuration files in the AWS S3 bucket.
-     * The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code>
-     * to include only the desired metadata files.</p>
+     * <p>A prefix used to filter metadata configuration files in the Amazon Web
+     * Services S3 bucket. The S3 bucket might contain multiple metadata files. Use
+     * <code>S3Prefix</code> to include only the desired metadata files.</p>
      */
     inline DocumentsMetadataConfiguration& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/DvbSubDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,10 +21,20 @@ namespace Model
 DvbSubDestinationSettings::DvbSubDestinationSettings() : 
     m_alignment(DvbSubtitleAlignment::NOT_SET),
     m_alignmentHasBeenSet(false),
+    m_applyFontColor(DvbSubtitleApplyFontColor::NOT_SET),
+    m_applyFontColorHasBeenSet(false),
     m_backgroundColor(DvbSubtitleBackgroundColor::NOT_SET),
     m_backgroundColorHasBeenSet(false),
     m_backgroundOpacity(0),
     m_backgroundOpacityHasBeenSet(false),
+    m_ddsHandling(DvbddsHandling::NOT_SET),
+    m_ddsHandlingHasBeenSet(false),
+    m_ddsXCoordinate(0),
+    m_ddsXCoordinateHasBeenSet(false),
+    m_ddsYCoordinate(0),
+    m_ddsYCoordinateHasBeenSet(false),
+    m_fallbackFont(DvbSubSubtitleFallbackFont::NOT_SET),
+    m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
     m_fontOpacity(0),
@@ -45,6 +45,9 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_fontScriptHasBeenSet(false),
     m_fontSize(0),
     m_fontSizeHasBeenSet(false),
+    m_height(0),
+    m_heightHasBeenSet(false),
+    m_hexFontColorHasBeenSet(false),
     m_outlineColor(DvbSubtitleOutlineColor::NOT_SET),
     m_outlineColorHasBeenSet(false),
     m_outlineSize(0),
@@ -57,10 +60,14 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_shadowXOffsetHasBeenSet(false),
     m_shadowYOffset(0),
     m_shadowYOffsetHasBeenSet(false),
+    m_stylePassthrough(DvbSubtitleStylePassthrough::NOT_SET),
+    m_stylePassthroughHasBeenSet(false),
     m_subtitlingType(DvbSubtitlingType::NOT_SET),
     m_subtitlingTypeHasBeenSet(false),
     m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
     m_teletextSpacingHasBeenSet(false),
+    m_width(0),
+    m_widthHasBeenSet(false),
     m_xPosition(0),
     m_xPositionHasBeenSet(false),
     m_yPosition(0),
@@ -71,10 +78,20 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
 DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) : 
     m_alignment(DvbSubtitleAlignment::NOT_SET),
     m_alignmentHasBeenSet(false),
+    m_applyFontColor(DvbSubtitleApplyFontColor::NOT_SET),
+    m_applyFontColorHasBeenSet(false),
     m_backgroundColor(DvbSubtitleBackgroundColor::NOT_SET),
     m_backgroundColorHasBeenSet(false),
     m_backgroundOpacity(0),
     m_backgroundOpacityHasBeenSet(false),
+    m_ddsHandling(DvbddsHandling::NOT_SET),
+    m_ddsHandlingHasBeenSet(false),
+    m_ddsXCoordinate(0),
+    m_ddsXCoordinateHasBeenSet(false),
+    m_ddsYCoordinate(0),
+    m_ddsYCoordinateHasBeenSet(false),
+    m_fallbackFont(DvbSubSubtitleFallbackFont::NOT_SET),
+    m_fallbackFontHasBeenSet(false),
     m_fontColor(DvbSubtitleFontColor::NOT_SET),
     m_fontColorHasBeenSet(false),
     m_fontOpacity(0),
@@ -85,6 +102,9 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_fontScriptHasBeenSet(false),
     m_fontSize(0),
     m_fontSizeHasBeenSet(false),
+    m_height(0),
+    m_heightHasBeenSet(false),
+    m_hexFontColorHasBeenSet(false),
     m_outlineColor(DvbSubtitleOutlineColor::NOT_SET),
     m_outlineColorHasBeenSet(false),
     m_outlineSize(0),
@@ -97,10 +117,14 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_shadowXOffsetHasBeenSet(false),
     m_shadowYOffset(0),
     m_shadowYOffsetHasBeenSet(false),
+    m_stylePassthrough(DvbSubtitleStylePassthrough::NOT_SET),
+    m_stylePassthroughHasBeenSet(false),
     m_subtitlingType(DvbSubtitlingType::NOT_SET),
     m_subtitlingTypeHasBeenSet(false),
     m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
     m_teletextSpacingHasBeenSet(false),
+    m_width(0),
+    m_widthHasBeenSet(false),
     m_xPosition(0),
     m_xPositionHasBeenSet(false),
     m_yPosition(0),
@@ -118,6 +142,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_alignmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("applyFontColor"))
+  {
+    m_applyFontColor = DvbSubtitleApplyFontColorMapper::GetDvbSubtitleApplyFontColorForName(jsonValue.GetString("applyFontColor"));
+
+    m_applyFontColorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("backgroundColor"))
   {
     m_backgroundColor = DvbSubtitleBackgroundColorMapper::GetDvbSubtitleBackgroundColorForName(jsonValue.GetString("backgroundColor"));
@@ -130,6 +161,34 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_backgroundOpacity = jsonValue.GetInteger("backgroundOpacity");
 
     m_backgroundOpacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ddsHandling"))
+  {
+    m_ddsHandling = DvbddsHandlingMapper::GetDvbddsHandlingForName(jsonValue.GetString("ddsHandling"));
+
+    m_ddsHandlingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ddsXCoordinate"))
+  {
+    m_ddsXCoordinate = jsonValue.GetInteger("ddsXCoordinate");
+
+    m_ddsXCoordinateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ddsYCoordinate"))
+  {
+    m_ddsYCoordinate = jsonValue.GetInteger("ddsYCoordinate");
+
+    m_ddsYCoordinateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fallbackFont"))
+  {
+    m_fallbackFont = DvbSubSubtitleFallbackFontMapper::GetDvbSubSubtitleFallbackFontForName(jsonValue.GetString("fallbackFont"));
+
+    m_fallbackFontHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fontColor"))
@@ -165,6 +224,20 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_fontSize = jsonValue.GetInteger("fontSize");
 
     m_fontSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("height"))
+  {
+    m_height = jsonValue.GetInteger("height");
+
+    m_heightHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hexFontColor"))
+  {
+    m_hexFontColor = jsonValue.GetString("hexFontColor");
+
+    m_hexFontColorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("outlineColor"))
@@ -209,6 +282,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_shadowYOffsetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stylePassthrough"))
+  {
+    m_stylePassthrough = DvbSubtitleStylePassthroughMapper::GetDvbSubtitleStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
+
+    m_stylePassthroughHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("subtitlingType"))
   {
     m_subtitlingType = DvbSubtitlingTypeMapper::GetDvbSubtitlingTypeForName(jsonValue.GetString("subtitlingType"));
@@ -221,6 +301,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_teletextSpacing = DvbSubtitleTeletextSpacingMapper::GetDvbSubtitleTeletextSpacingForName(jsonValue.GetString("teletextSpacing"));
 
     m_teletextSpacingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("width"))
+  {
+    m_width = jsonValue.GetInteger("width");
+
+    m_widthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("xPosition"))
@@ -249,6 +336,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
    payload.WithString("alignment", DvbSubtitleAlignmentMapper::GetNameForDvbSubtitleAlignment(m_alignment));
   }
 
+  if(m_applyFontColorHasBeenSet)
+  {
+   payload.WithString("applyFontColor", DvbSubtitleApplyFontColorMapper::GetNameForDvbSubtitleApplyFontColor(m_applyFontColor));
+  }
+
   if(m_backgroundColorHasBeenSet)
   {
    payload.WithString("backgroundColor", DvbSubtitleBackgroundColorMapper::GetNameForDvbSubtitleBackgroundColor(m_backgroundColor));
@@ -258,6 +350,28 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   {
    payload.WithInteger("backgroundOpacity", m_backgroundOpacity);
 
+  }
+
+  if(m_ddsHandlingHasBeenSet)
+  {
+   payload.WithString("ddsHandling", DvbddsHandlingMapper::GetNameForDvbddsHandling(m_ddsHandling));
+  }
+
+  if(m_ddsXCoordinateHasBeenSet)
+  {
+   payload.WithInteger("ddsXCoordinate", m_ddsXCoordinate);
+
+  }
+
+  if(m_ddsYCoordinateHasBeenSet)
+  {
+   payload.WithInteger("ddsYCoordinate", m_ddsYCoordinate);
+
+  }
+
+  if(m_fallbackFontHasBeenSet)
+  {
+   payload.WithString("fallbackFont", DvbSubSubtitleFallbackFontMapper::GetNameForDvbSubSubtitleFallbackFont(m_fallbackFont));
   }
 
   if(m_fontColorHasBeenSet)
@@ -285,6 +399,18 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   if(m_fontSizeHasBeenSet)
   {
    payload.WithInteger("fontSize", m_fontSize);
+
+  }
+
+  if(m_heightHasBeenSet)
+  {
+   payload.WithInteger("height", m_height);
+
+  }
+
+  if(m_hexFontColorHasBeenSet)
+  {
+   payload.WithString("hexFontColor", m_hexFontColor);
 
   }
 
@@ -322,6 +448,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
 
   }
 
+  if(m_stylePassthroughHasBeenSet)
+  {
+   payload.WithString("stylePassthrough", DvbSubtitleStylePassthroughMapper::GetNameForDvbSubtitleStylePassthrough(m_stylePassthrough));
+  }
+
   if(m_subtitlingTypeHasBeenSet)
   {
    payload.WithString("subtitlingType", DvbSubtitlingTypeMapper::GetNameForDvbSubtitlingType(m_subtitlingType));
@@ -330,6 +461,12 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   if(m_teletextSpacingHasBeenSet)
   {
    payload.WithString("teletextSpacing", DvbSubtitleTeletextSpacingMapper::GetNameForDvbSubtitleTeletextSpacing(m_teletextSpacing));
+  }
+
+  if(m_widthHasBeenSet)
+  {
+   payload.WithInteger("width", m_width);
+
   }
 
   if(m_xPositionHasBeenSet)

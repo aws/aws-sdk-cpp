@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/CreateEndpointConfigRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,7 +17,8 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_productionVariantsHasBeenSet(false),
     m_dataCaptureConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_asyncInferenceConfigHasBeenSet(false)
 {
 }
 
@@ -72,6 +63,12 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_asyncInferenceConfigHasBeenSet)
+  {
+   payload.WithObject("AsyncInferenceConfig", m_asyncInferenceConfig.Jsonize());
 
   }
 

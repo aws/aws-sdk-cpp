@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -46,37 +36,44 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline DescribeInsightRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline DescribeInsightRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>If this parameter is present, it is a token that marks the start of the next
+     * batch of returned results. </p>
      */
     inline DescribeInsightRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

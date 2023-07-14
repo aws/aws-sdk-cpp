@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/DBProxy.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -36,6 +26,7 @@ DBProxy::DBProxy() :
     m_status(DBProxyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_engineFamilyHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_vpcSubnetIdsHasBeenSet(false),
     m_authHasBeenSet(false),
@@ -58,6 +49,7 @@ DBProxy::DBProxy(const XmlNode& xmlNode) :
     m_status(DBProxyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_engineFamilyHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_vpcSubnetIdsHasBeenSet(false),
     m_authHasBeenSet(false),
@@ -104,6 +96,12 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     {
       m_engineFamily = Aws::Utils::Xml::DecodeEscapedXmlText(engineFamilyNode.GetText());
       m_engineFamilyHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
+      m_vpcIdHasBeenSet = true;
     }
     XmlNode vpcSecurityGroupIdsNode = resultNode.FirstChild("VpcSecurityGroupIds");
     if(!vpcSecurityGroupIdsNode.IsNull())
@@ -210,6 +208,11 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".EngineFamily=" << StringUtils::URLEncode(m_engineFamily.c_str()) << "&";
   }
 
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
       unsigned vpcSecurityGroupIdsIdx = 1;
@@ -293,6 +296,10 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_engineFamilyHasBeenSet)
   {
       oStream << location << ".EngineFamily=" << StringUtils::URLEncode(m_engineFamily.c_str()) << "&";
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {

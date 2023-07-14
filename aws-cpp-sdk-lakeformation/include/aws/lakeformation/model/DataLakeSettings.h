@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/PrincipalPermissions.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure representing a list of Lake Formation principals designated as
+   * data lake administrators and lists of principal permission entries for default
+   * create database and default create table permissions.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DataLakeSettings">AWS
    * API Reference</a></p>
    */
@@ -50,142 +44,569 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline const Aws::Vector<DataLakePrincipal>& GetDataLakeAdmins() const{ return m_dataLakeAdmins; }
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline bool DataLakeAdminsHasBeenSet() const { return m_dataLakeAdminsHasBeenSet; }
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline void SetDataLakeAdmins(const Aws::Vector<DataLakePrincipal>& value) { m_dataLakeAdminsHasBeenSet = true; m_dataLakeAdmins = value; }
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline void SetDataLakeAdmins(Aws::Vector<DataLakePrincipal>&& value) { m_dataLakeAdminsHasBeenSet = true; m_dataLakeAdmins = std::move(value); }
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline DataLakeSettings& WithDataLakeAdmins(const Aws::Vector<DataLakePrincipal>& value) { SetDataLakeAdmins(value); return *this;}
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline DataLakeSettings& WithDataLakeAdmins(Aws::Vector<DataLakePrincipal>&& value) { SetDataLakeAdmins(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline DataLakeSettings& AddDataLakeAdmins(const DataLakePrincipal& value) { m_dataLakeAdminsHasBeenSet = true; m_dataLakeAdmins.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Lake Formation principals.</p>
+     * <p>A list of Lake Formation principals. Supported principals are IAM users or
+     * IAM roles.</p>
      */
     inline DataLakeSettings& AddDataLakeAdmins(DataLakePrincipal&& value) { m_dataLakeAdminsHasBeenSet = true; m_dataLakeAdmins.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline const Aws::Vector<PrincipalPermissions>& GetCreateDatabaseDefaultPermissions() const{ return m_createDatabaseDefaultPermissions; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline bool CreateDatabaseDefaultPermissionsHasBeenSet() const { return m_createDatabaseDefaultPermissionsHasBeenSet; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline void SetCreateDatabaseDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions = value; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline void SetCreateDatabaseDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions = std::move(value); }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& WithCreateDatabaseDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { SetCreateDatabaseDefaultPermissions(value); return *this;}
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& WithCreateDatabaseDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { SetCreateDatabaseDefaultPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& AddCreateDatabaseDefaultPermissions(const PrincipalPermissions& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create
-     * database permissions.</p>
+     * <p>Specifies whether access control on newly created database is managed by Lake
+     * Formation permissions or exclusively by IAM permissions. You can override this
+     * default setting when you create a database.</p> <p>A null value indicates access
+     * control by Lake Formation permissions. A value that assigns ALL to
+     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& AddCreateDatabaseDefaultPermissions(PrincipalPermissions&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline const Aws::Vector<PrincipalPermissions>& GetCreateTableDefaultPermissions() const{ return m_createTableDefaultPermissions; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline bool CreateTableDefaultPermissionsHasBeenSet() const { return m_createTableDefaultPermissionsHasBeenSet; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline void SetCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = value; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline void SetCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = std::move(value); }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& WithCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { SetCreateTableDefaultPermissions(value); return *this;}
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& WithCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { SetCreateTableDefaultPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& AddCreateTableDefaultPermissions(const PrincipalPermissions& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to three principal permissions entries for default create table
-     * permissions.</p>
+     * <p>Specifies whether access control on newly created table is managed by Lake
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * referred to as the setting "Use only IAM access control," and is for backward
+     * compatibility with the Glue permission model implemented by IAM permissions.</p>
+     * <p>The only permitted values are an empty array or an array that contains a
+     * single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+     * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTrustedResourceOwners() const{ return m_trustedResourceOwners; }
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline bool TrustedResourceOwnersHasBeenSet() const { return m_trustedResourceOwnersHasBeenSet; }
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline void SetTrustedResourceOwners(const Aws::Vector<Aws::String>& value) { m_trustedResourceOwnersHasBeenSet = true; m_trustedResourceOwners = value; }
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline void SetTrustedResourceOwners(Aws::Vector<Aws::String>&& value) { m_trustedResourceOwnersHasBeenSet = true; m_trustedResourceOwners = std::move(value); }
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline DataLakeSettings& WithTrustedResourceOwners(const Aws::Vector<Aws::String>& value) { SetTrustedResourceOwners(value); return *this;}
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline DataLakeSettings& WithTrustedResourceOwners(Aws::Vector<Aws::String>&& value) { SetTrustedResourceOwners(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline DataLakeSettings& AddTrustedResourceOwners(const Aws::String& value) { m_trustedResourceOwnersHasBeenSet = true; m_trustedResourceOwners.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline DataLakeSettings& AddTrustedResourceOwners(Aws::String&& value) { m_trustedResourceOwnersHasBeenSet = true; m_trustedResourceOwners.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the resource-owning account IDs that the caller's account can use
+     * to share their user access details (user ARNs). The user ARNs can be logged in
+     * the resource owner's CloudTrail log.</p> <p>You may want to specify this
+     * property when you are in a high-trust boundary, such as the same team or
+     * company. </p>
+     */
+    inline DataLakeSettings& AddTrustedResourceOwners(const char* value) { m_trustedResourceOwnersHasBeenSet = true; m_trustedResourceOwners.push_back(value); return *this; }
+
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline bool GetAllowExternalDataFiltering() const{ return m_allowExternalDataFiltering; }
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline bool AllowExternalDataFilteringHasBeenSet() const { return m_allowExternalDataFilteringHasBeenSet; }
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline void SetAllowExternalDataFiltering(bool value) { m_allowExternalDataFilteringHasBeenSet = true; m_allowExternalDataFiltering = value; }
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline DataLakeSettings& WithAllowExternalDataFiltering(bool value) { SetAllowExternalDataFiltering(value); return *this;}
+
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline const Aws::Vector<DataLakePrincipal>& GetExternalDataFilteringAllowList() const{ return m_externalDataFilteringAllowList; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline bool ExternalDataFilteringAllowListHasBeenSet() const { return m_externalDataFilteringAllowListHasBeenSet; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline void SetExternalDataFilteringAllowList(const Aws::Vector<DataLakePrincipal>& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList = value; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline void SetExternalDataFilteringAllowList(Aws::Vector<DataLakePrincipal>&& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList = std::move(value); }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& WithExternalDataFilteringAllowList(const Aws::Vector<DataLakePrincipal>& value) { SetExternalDataFilteringAllowList(value); return *this;}
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& WithExternalDataFilteringAllowList(Aws::Vector<DataLakePrincipal>&& value) { SetExternalDataFilteringAllowList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& AddExternalDataFilteringAllowList(const DataLakePrincipal& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& AddExternalDataFilteringAllowList(DataLakePrincipal&& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAuthorizedSessionTagValueList() const{ return m_authorizedSessionTagValueList; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline bool AuthorizedSessionTagValueListHasBeenSet() const { return m_authorizedSessionTagValueListHasBeenSet; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline void SetAuthorizedSessionTagValueList(const Aws::Vector<Aws::String>& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList = value; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline void SetAuthorizedSessionTagValueList(Aws::Vector<Aws::String>&& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList = std::move(value); }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& WithAuthorizedSessionTagValueList(const Aws::Vector<Aws::String>& value) { SetAuthorizedSessionTagValueList(value); return *this;}
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& WithAuthorizedSessionTagValueList(Aws::Vector<Aws::String>&& value) { SetAuthorizedSessionTagValueList(std::move(value)); return *this;}
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& AddAuthorizedSessionTagValueList(const Aws::String& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList.push_back(value); return *this; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& AddAuthorizedSessionTagValueList(Aws::String&& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& AddAuthorizedSessionTagValueList(const char* value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList.push_back(value); return *this; }
 
   private:
 
@@ -197,6 +618,18 @@ namespace Model
 
     Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
     bool m_createTableDefaultPermissionsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_trustedResourceOwners;
+    bool m_trustedResourceOwnersHasBeenSet;
+
+    bool m_allowExternalDataFiltering;
+    bool m_allowExternalDataFilteringHasBeenSet;
+
+    Aws::Vector<DataLakePrincipal> m_externalDataFilteringAllowList;
+    bool m_externalDataFilteringAllowListHasBeenSet;
+
+    Aws::Vector<Aws::String> m_authorizedSessionTagValueList;
+    bool m_authorizedSessionTagValueListHasBeenSet;
   };
 
 } // namespace Model

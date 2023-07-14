@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -90,65 +80,74 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline bool ScheduledActionNamesHasBeenSet() const { return m_scheduledActionNamesHasBeenSet; }
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::move(value); }
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more scheduled actions. You can specify up to 50 actions.
-     * If you omit this parameter, all scheduled actions are described. If you specify
-     * an unknown scheduled action, it is ignored with no error.</p>
+     * <p>The names of one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
+     * is ignored with no error.</p> <p>Array Members: Maximum number of 50
+     * actions.</p>
      */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const char* value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 

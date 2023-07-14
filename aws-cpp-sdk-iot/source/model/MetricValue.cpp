@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/MetricValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,11 @@ MetricValue::MetricValue() :
     m_count(0),
     m_countHasBeenSet(false),
     m_cidrsHasBeenSet(false),
-    m_portsHasBeenSet(false)
+    m_portsHasBeenSet(false),
+    m_number(0.0),
+    m_numberHasBeenSet(false),
+    m_numbersHasBeenSet(false),
+    m_stringsHasBeenSet(false)
 {
 }
 
@@ -40,7 +34,11 @@ MetricValue::MetricValue(JsonView jsonValue) :
     m_count(0),
     m_countHasBeenSet(false),
     m_cidrsHasBeenSet(false),
-    m_portsHasBeenSet(false)
+    m_portsHasBeenSet(false),
+    m_number(0.0),
+    m_numberHasBeenSet(false),
+    m_numbersHasBeenSet(false),
+    m_stringsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +70,33 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
       m_ports.push_back(portsJsonList[portsIndex].AsInteger());
     }
     m_portsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("number"))
+  {
+    m_number = jsonValue.GetDouble("number");
+
+    m_numberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("numbers"))
+  {
+    Array<JsonView> numbersJsonList = jsonValue.GetArray("numbers");
+    for(unsigned numbersIndex = 0; numbersIndex < numbersJsonList.GetLength(); ++numbersIndex)
+    {
+      m_numbers.push_back(numbersJsonList[numbersIndex].AsDouble());
+    }
+    m_numbersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("strings"))
+  {
+    Array<JsonView> stringsJsonList = jsonValue.GetArray("strings");
+    for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
+    {
+      m_strings.push_back(stringsJsonList[stringsIndex].AsString());
+    }
+    m_stringsHasBeenSet = true;
   }
 
   return *this;
@@ -106,6 +131,34 @@ JsonValue MetricValue::Jsonize() const
      portsJsonList[portsIndex].AsInteger(m_ports[portsIndex]);
    }
    payload.WithArray("ports", std::move(portsJsonList));
+
+  }
+
+  if(m_numberHasBeenSet)
+  {
+   payload.WithDouble("number", m_number);
+
+  }
+
+  if(m_numbersHasBeenSet)
+  {
+   Array<JsonValue> numbersJsonList(m_numbers.size());
+   for(unsigned numbersIndex = 0; numbersIndex < numbersJsonList.GetLength(); ++numbersIndex)
+   {
+     numbersJsonList[numbersIndex].AsDouble(m_numbers[numbersIndex]);
+   }
+   payload.WithArray("numbers", std::move(numbersJsonList));
+
+  }
+
+  if(m_stringsHasBeenSet)
+  {
+   Array<JsonValue> stringsJsonList(m_strings.size());
+   for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
+   {
+     stringsJsonList[stringsIndex].AsString(m_strings[stringsIndex]);
+   }
+   payload.WithArray("strings", std::move(stringsJsonList));
 
   }
 

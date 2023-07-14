@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dax/model/Cluster.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -47,7 +37,9 @@ Cluster::Cluster() :
     m_securityGroupsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_parameterGroupHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+    m_sSEDescriptionHasBeenSet(false),
+    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
+    m_clusterEndpointEncryptionTypeHasBeenSet(false)
 {
 }
 
@@ -70,7 +62,9 @@ Cluster::Cluster(JsonView jsonValue) :
     m_securityGroupsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_parameterGroupHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+    m_sSEDescriptionHasBeenSet(false),
+    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
+    m_clusterEndpointEncryptionTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -205,6 +199,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_sSEDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterEndpointEncryptionType"))
+  {
+    m_clusterEndpointEncryptionType = ClusterEndpointEncryptionTypeMapper::GetClusterEndpointEncryptionTypeForName(jsonValue.GetString("ClusterEndpointEncryptionType"));
+
+    m_clusterEndpointEncryptionTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -327,6 +328,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
+  }
+
+  if(m_clusterEndpointEncryptionTypeHasBeenSet)
+  {
+   payload.WithString("ClusterEndpointEncryptionType", ClusterEndpointEncryptionTypeMapper::GetNameForClusterEndpointEncryptionType(m_clusterEndpointEncryptionType));
   }
 
   return payload;

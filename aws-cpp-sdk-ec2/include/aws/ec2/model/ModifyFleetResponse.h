@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -43,17 +33,23 @@ namespace Model
 
 
     /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+     * <p>If the request succeeds, the response returns <code>true</code>. If the
+     * request fails, no response is returned, and instead an error message is
+     * returned.</p>
      */
     inline bool GetReturn() const{ return m_return; }
 
     /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+     * <p>If the request succeeds, the response returns <code>true</code>. If the
+     * request fails, no response is returned, and instead an error message is
+     * returned.</p>
      */
     inline void SetReturn(bool value) { m_return = value; }
 
     /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+     * <p>If the request succeeds, the response returns <code>true</code>. If the
+     * request fails, no response is returned, and instead an error message is
+     * returned.</p>
      */
     inline ModifyFleetResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 

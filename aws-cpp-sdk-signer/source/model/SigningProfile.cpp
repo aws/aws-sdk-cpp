@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/signer/model/SigningProfile.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,8 +20,12 @@ namespace Model
 
 SigningProfile::SigningProfile() : 
     m_profileNameHasBeenSet(false),
+    m_profileVersionHasBeenSet(false),
+    m_profileVersionArnHasBeenSet(false),
     m_signingMaterialHasBeenSet(false),
+    m_signatureValidityPeriodHasBeenSet(false),
     m_platformIdHasBeenSet(false),
+    m_platformDisplayNameHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
     m_status(SigningProfileStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -42,8 +36,12 @@ SigningProfile::SigningProfile() :
 
 SigningProfile::SigningProfile(JsonView jsonValue) : 
     m_profileNameHasBeenSet(false),
+    m_profileVersionHasBeenSet(false),
+    m_profileVersionArnHasBeenSet(false),
     m_signingMaterialHasBeenSet(false),
+    m_signatureValidityPeriodHasBeenSet(false),
     m_platformIdHasBeenSet(false),
+    m_platformDisplayNameHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
     m_status(SigningProfileStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -62,6 +60,20 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     m_profileNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
+
+    m_profileVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("profileVersionArn"))
+  {
+    m_profileVersionArn = jsonValue.GetString("profileVersionArn");
+
+    m_profileVersionArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("signingMaterial"))
   {
     m_signingMaterial = jsonValue.GetObject("signingMaterial");
@@ -69,11 +81,25 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     m_signingMaterialHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("signatureValidityPeriod"))
+  {
+    m_signatureValidityPeriod = jsonValue.GetObject("signatureValidityPeriod");
+
+    m_signatureValidityPeriodHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
 
     m_platformIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+    m_platformDisplayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("signingParameters"))
@@ -123,15 +149,39 @@ JsonValue SigningProfile::Jsonize() const
 
   }
 
+  if(m_profileVersionHasBeenSet)
+  {
+   payload.WithString("profileVersion", m_profileVersion);
+
+  }
+
+  if(m_profileVersionArnHasBeenSet)
+  {
+   payload.WithString("profileVersionArn", m_profileVersionArn);
+
+  }
+
   if(m_signingMaterialHasBeenSet)
   {
    payload.WithObject("signingMaterial", m_signingMaterial.Jsonize());
 
   }
 
+  if(m_signatureValidityPeriodHasBeenSet)
+  {
+   payload.WithObject("signatureValidityPeriod", m_signatureValidityPeriod.Jsonize());
+
+  }
+
   if(m_platformIdHasBeenSet)
   {
    payload.WithString("platformId", m_platformId);
+
+  }
+
+  if(m_platformDisplayNameHasBeenSet)
+  {
+   payload.WithString("platformDisplayName", m_platformDisplayName);
 
   }
 

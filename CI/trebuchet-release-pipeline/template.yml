@@ -3,16 +3,16 @@
 #         |  The message contains an S3 presigned |
 #         |  url to the models, release notes and |
 #         |  release id updated with this release |
-#         +-------------------+-------------------+
-#                             |
-#         +-------------------v-------------------+
-#         |   Lambda reads the message from SNS,  |
-#         |   put release notes, release id and   |
-#         |   the message itself into files and   |
-#         |   upload them in zip to Amazon S3     |
-#         +-------------------+-------------------+
-#                             |
-#         +-------------------v-------------------+
+#         +-------------------+-------------------+           +----------------------------------------+
+#                             |                               | The PipelineExecutionNotification      |
+#         +-------------------v-------------------+           | function will send message to Chime    |
+#         |   Lambda reads the message from SNS,  |           | room when                              |
+#         |   put release notes, release id and   |           | 1. Failed at any stage                 |
+#         |   the message itself into files and   |           | 2. Or succeeded at Source stage        |
+#         |   upload them in zip to Amazon S3     |           |    indicating the release started.     |
+#         +-------------------+-------------------+           | 3. Or succeeded at Prod stage          |
+#                             |                               |    indicating the release finished.    |
+#         +-------------------v-------------------+           +----------------------------------------+
 #         |       S3 triggers CodePipeline        |
 #         +-------------------+-------------------+
 #                             |
@@ -34,7 +34,7 @@
 # |   1. Bump the patch part of the version               |
 # |   2. Commit the changes to release-candidate branch   |
 # |   3. Tag the release candidate branch                 |
-# |   4. Merge release-candidate to master                |
+# |   4. Merge release-candidate to main branch           |
 # |   5. Push the changes to private repo                 |
 # |   6. Push the changes to public repo                  |
 # +-------------------------------------------------------+
@@ -167,6 +167,22 @@ Parameters:
     Type: String
     Default: <UpdateStatusFunctionRoleName>
     Description: Name of the execution role used by UpdateStatus Lambda function.
+  PipelineExecutionNotificationFunctionName:
+    Type: String
+    Default: <PipelineExecutionNotificationFunctionName>
+    Description: Name of the lambda function, used to send notifications about pipeline execution status.
+  PipelineExecutionNotificationFunctionRoleName:
+    Type: String
+    Default: <PipelineExecutionNotificationFunctionRoleName>
+    Description: Name of the execution role used by PipelineExecutionNotification Lambda function.
+  PipelineExecutionCodeStarNotificationRuleName:
+    Type: String
+    Default: <PipelineExecutionCodeStarNotificationRuleName>
+    Description: Name of the CodeStar Notifications rule, used to define the behaviors when the pipeline execution fails or succeeds.
+  PipelineExecutionSNSTopicName:
+    Type: String
+    Default: <PipelineExecutionSNSTopicName>
+    Description: Topic name of the SNS associated with the CodeStar Notifications rule.
   TrebuchetQueueUrl:
     Type: String
     Default: <TrebuchetQueueUrl>
@@ -235,6 +251,7 @@ Mappings:
     Lambda:
       HandleTrebuchetReleaseNotificationFunction: lambda/HandleTrebuchetReleaseNotification.zip
       UpdateStatusFunction: lambda/UpdateTrebuchetReleaseStatus.zip
+      PipelineExecutionNotificationFunction: lambda/PipelineExecutionNotification.zip
   Scripts:
     CodeBuildBuildSpec:
       RegenerateCode: |
@@ -252,6 +269,7 @@ Mappings:
               - mkdir build
               - cd build
               - cmake .. -DREGENERATE_CLIENTS=ON
+              - cmake .. -DREGENERATE_DEFAULTS=ON
               - cd ..
               - rm -rf build
           post_build:
@@ -304,6 +322,22 @@ Resources:
     Type: 'AWS::IAM::Role'
     Properties:
       RoleName: !Ref UpdateStatusFunctionRoleName
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+  PipelineExecutionNotificationFunctionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: !Ref PipelineExecutionNotificationFunctionRoleName
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
@@ -427,6 +461,7 @@ Resources:
         - !Ref TrebuchetReleasePipelineRole
         - !Ref HandleTrebuchetReleaseNotificationFunctionRole
         - !Ref UpdateStatusFunctionRole
+        - !Ref PipelineExecutionNotificationFunctionRole
         - !Ref TrebuchetReleaseCodeBuildRole
   TrebuchetReleaseCloudWatchMetricsPolicy:
     Type: 'AWS::IAM::Policy'
@@ -489,6 +524,22 @@ Resources:
         Variables:
           TREBUCHET_QUEUE_URL: !Ref TrebuchetQueueUrl
           CHIME_BOT_URL: !Ref ChimeBotUrl
+  PipelineExecutionNotificationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Ref PipelineExecutionNotificationFunctionName
+      Handler: lambda_pipeline_execution_notification.lambda_handler
+      Role: !GetAtt PipelineExecutionNotificationFunctionRole.Arn
+      Runtime: python3.6
+      Code:
+        S3Bucket: !Ref TrebuchetReleaseS3BucketName
+        S3Key: !FindInMap [ScriptLocations, Lambda, PipelineExecutionNotificationFunction]
+      Environment:
+        Variables:
+          CHIME_BOT_URL: !Ref ChimeBotUrl
+          TREBUCHET_RELEASE_PIPELINE_NAME: !Ref TrebuchetReleasePipelineName
+          SOURCE_STAGE_NAME: Source
+          PROD_STAGE_NAME: Prod
   TrebuchetReleaseBucket:
     Type: AWS::S3::Bucket
     Properties:
@@ -501,6 +552,40 @@ Resources:
       BucketName: !Ref PipelineCacheS3BucketName
       VersioningConfiguration:
         Status: Enabled
+  PipelineExecutionSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: !Ref PipelineExecutionSNSTopicName
+      Subscription:
+        - Protocol: lambda
+          Endpoint: !GetAtt PipelineExecutionNotificationFunction.Arn
+  TopicPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      Topics:
+        - !Ref PipelineExecutionSNSTopic
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          -
+            Sid: AllCodeStar
+            Effect: Allow
+            Action: 'SNS:Publish'
+            Principal:
+              Service: 'codestar-notifications.amazonaws.com'
+            Resource: !Ref PipelineExecutionSNSTopic
+  PipelineExecutionCodeStarNotificationRule:
+    Type: AWS::CodeStarNotifications::NotificationRule
+    Properties:
+      Name: !Ref PipelineExecutionCodeStarNotificationRuleName
+      DetailType: FULL
+      Resource: !Sub 'arn:aws:codepipeline:${AWS::Region}:${AWS::AccountId}:${TrebuchetReleasePipeline}'
+      EventTypeIds:
+        - codepipeline-pipeline-stage-execution-failed
+        - codepipeline-pipeline-stage-execution-succeeded
+      Targets:
+        - TargetType: SNS
+          TargetAddress: !Ref PipelineExecutionSNSTopic
   RegenerateCodeProject:
     Type: AWS::CodeBuild::Project
     Properties:

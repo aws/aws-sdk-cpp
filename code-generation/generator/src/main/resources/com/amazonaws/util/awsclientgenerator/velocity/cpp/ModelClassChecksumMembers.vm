@@ -1,0 +1,37 @@
+#if($operation.requestAlgorithmMember)
+#set($checksumAlgorithmMember = $shape.members.get($operation.requestAlgorithmMember))
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($operation.requestAlgorithmMember))
+
+Aws::String ${typeInfo.className}::GetChecksumAlgorithmName() const
+{
+  if (m_${lowerCaseVarName} == ${checksumAlgorithmMember.shape.name}::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ${checksumAlgorithmMember.shape.name}Mapper::GetNameFor${checksumAlgorithmMember.shape.name}(m_${lowerCaseVarName});
+  }
+}
+
+#end
+#if($operation.requestValidationModeMember)
+#set($requestValidationModeMember = $shape.members.get($operation.requestValidationModeMember))
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($operation.requestValidationModeMember))
+bool ${typeInfo.className}::ShouldValidateResponseChecksum() const
+{
+  return m_${lowerCaseVarName} == ${requestValidationModeMember.shape.name}::ENABLED;
+}
+
+#end
+#if($operation.responseAlgorithms)
+Aws::Vector<Aws::String> ${typeInfo.className}::GetResponseChecksumAlgorithmNames() const
+{
+  Aws::Vector<Aws::String> responseChecksumAlgorithmNames;
+#foreach($responseAlgorithm in $operation.responseAlgorithms)
+  responseChecksumAlgorithmNames.push_back("${responseAlgorithm}");
+#end
+  return responseChecksumAlgorithmNames;
+}
+
+#end

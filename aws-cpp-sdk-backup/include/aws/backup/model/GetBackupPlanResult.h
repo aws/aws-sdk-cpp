@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/BackupPlan.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/backup/model/AdvancedBackupSetting.h>
 #include <utility>
 
 namespace Aws
@@ -206,43 +198,43 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline GetBackupPlanResult& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline GetBackupPlanResult& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline GetBackupPlanResult& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -290,7 +282,7 @@ namespace Model
 
     /**
      * <p>The date and time that a backup plan is deleted, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
@@ -298,7 +290,7 @@ namespace Model
 
     /**
      * <p>The date and time that a backup plan is deleted, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
@@ -306,7 +298,7 @@ namespace Model
 
     /**
      * <p>The date and time that a backup plan is deleted, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
@@ -314,7 +306,7 @@ namespace Model
 
     /**
      * <p>The date and time that a backup plan is deleted, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
@@ -322,7 +314,7 @@ namespace Model
 
     /**
      * <p>The date and time that a backup plan is deleted, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
@@ -330,44 +322,87 @@ namespace Model
 
 
     /**
-     * <p>The last time a job to back up resources was executed with this backup plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * <p>The last time a job to back up resources was run with this backup plan. A
+     * date and time, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetLastExecutionDate() const{ return m_lastExecutionDate; }
 
     /**
-     * <p>The last time a job to back up resources was executed with this backup plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * <p>The last time a job to back up resources was run with this backup plan. A
+     * date and time, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetLastExecutionDate(const Aws::Utils::DateTime& value) { m_lastExecutionDate = value; }
 
     /**
-     * <p>The last time a job to back up resources was executed with this backup plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * <p>The last time a job to back up resources was run with this backup plan. A
+     * date and time, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetLastExecutionDate(Aws::Utils::DateTime&& value) { m_lastExecutionDate = std::move(value); }
 
     /**
-     * <p>The last time a job to back up resources was executed with this backup plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * <p>The last time a job to back up resources was run with this backup plan. A
+     * date and time, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline GetBackupPlanResult& WithLastExecutionDate(const Aws::Utils::DateTime& value) { SetLastExecutionDate(value); return *this;}
 
     /**
-     * <p>The last time a job to back up resources was executed with this backup plan.
-     * A date and time, in Unix format and Coordinated Universal Time (UTC). The value
-     * of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * <p>The last time a job to back up resources was run with this backup plan. A
+     * date and time, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline GetBackupPlanResult& WithLastExecutionDate(Aws::Utils::DateTime&& value) { SetLastExecutionDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettings = value; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline void SetAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { m_advancedBackupSettings = std::move(value); }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline GetBackupPlanResult& WithAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { SetAdvancedBackupSettings(value); return *this;}
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline GetBackupPlanResult& WithAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { SetAdvancedBackupSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline GetBackupPlanResult& AddAdvancedBackupSettings(const AdvancedBackupSetting& value) { m_advancedBackupSettings.push_back(value); return *this; }
+
+    /**
+     * <p>Contains a list of <code>BackupOptions</code> for each resource type. The
+     * list is populated only if the advanced option is set for the backup plan.</p>
+     */
+    inline GetBackupPlanResult& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettings.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -386,6 +421,8 @@ namespace Model
     Aws::Utils::DateTime m_deletionDate;
 
     Aws::Utils::DateTime m_lastExecutionDate;
+
+    Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
   };
 
 } // namespace Model

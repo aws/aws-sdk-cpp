@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -45,7 +35,7 @@ namespace Model
 
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -53,7 +43,7 @@ namespace Model
     inline const Aws::Vector<ResourceComplianceSummaryItem>& GetResourceComplianceSummaryItems() const{ return m_resourceComplianceSummaryItems; }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -61,7 +51,7 @@ namespace Model
     inline void SetResourceComplianceSummaryItems(const Aws::Vector<ResourceComplianceSummaryItem>& value) { m_resourceComplianceSummaryItems = value; }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -69,7 +59,7 @@ namespace Model
     inline void SetResourceComplianceSummaryItems(Aws::Vector<ResourceComplianceSummaryItem>&& value) { m_resourceComplianceSummaryItems = std::move(value); }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -77,7 +67,7 @@ namespace Model
     inline ListResourceComplianceSummariesResult& WithResourceComplianceSummaryItems(const Aws::Vector<ResourceComplianceSummaryItem>& value) { SetResourceComplianceSummaryItems(value); return *this;}
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -85,7 +75,7 @@ namespace Model
     inline ListResourceComplianceSummariesResult& WithResourceComplianceSummaryItems(Aws::Vector<ResourceComplianceSummaryItem>&& value) { SetResourceComplianceSummaryItems(std::move(value)); return *this;}
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>
@@ -93,7 +83,7 @@ namespace Model
     inline ListResourceComplianceSummariesResult& AddResourceComplianceSummaryItems(const ResourceComplianceSummaryItem& value) { m_resourceComplianceSummaryItems.push_back(value); return *this; }
 
     /**
-     * <p>A summary count for specified or targeted managed instances. Summary count
+     * <p>A summary count for specified or targeted managed nodes. Summary count
      * includes information about compliant and non-compliant State Manager
      * associations, patch status, or custom items according to the filter criteria
      * that you specify. </p>

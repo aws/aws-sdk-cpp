@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/ListenerTlsAcmCertificate.h>
 #include <aws/appmesh/model/ListenerTlsFileCertificate.h>
+#include <aws/appmesh/model/ListenerTlsSdsCertificate.h>
 #include <utility>
 
 namespace Aws
@@ -50,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline const ListenerTlsAcmCertificate& GetAcm() const{ return m_acm; }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline bool AcmHasBeenSet() const { return m_acmHasBeenSet; }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline void SetAcm(const ListenerTlsAcmCertificate& value) { m_acmHasBeenSet = true; m_acm = value; }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline void SetAcm(ListenerTlsAcmCertificate&& value) { m_acmHasBeenSet = true; m_acm = std::move(value); }
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline ListenerTlsCertificate& WithAcm(const ListenerTlsAcmCertificate& value) { SetAcm(value); return *this;}
 
     /**
-     * <p>A reference to an object that represents an AWS Certicate Manager (ACM)
+     * <p>A reference to an object that represents an Certificate Manager
      * certificate.</p>
      */
     inline ListenerTlsCertificate& WithAcm(ListenerTlsAcmCertificate&& value) { SetAcm(std::move(value)); return *this;}
@@ -116,6 +107,43 @@ namespace Model
      */
     inline ListenerTlsCertificate& WithFile(ListenerTlsFileCertificate&& value) { SetFile(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline const ListenerTlsSdsCertificate& GetSds() const{ return m_sds; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline bool SdsHasBeenSet() const { return m_sdsHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline void SetSds(const ListenerTlsSdsCertificate& value) { m_sdsHasBeenSet = true; m_sds = value; }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline void SetSds(ListenerTlsSdsCertificate&& value) { m_sdsHasBeenSet = true; m_sds = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline ListenerTlsCertificate& WithSds(const ListenerTlsSdsCertificate& value) { SetSds(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents a listener's Secret Discovery
+     * Service certificate.</p>
+     */
+    inline ListenerTlsCertificate& WithSds(ListenerTlsSdsCertificate&& value) { SetSds(std::move(value)); return *this;}
+
   private:
 
     ListenerTlsAcmCertificate m_acm;
@@ -123,6 +151,9 @@ namespace Model
 
     ListenerTlsFileCertificate m_file;
     bool m_fileHasBeenSet;
+
+    ListenerTlsSdsCertificate m_sds;
+    bool m_sdsHasBeenSet;
   };
 
 } // namespace Model

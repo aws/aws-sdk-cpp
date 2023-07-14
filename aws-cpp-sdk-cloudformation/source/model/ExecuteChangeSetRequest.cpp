@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/ExecuteChangeSetRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -23,7 +13,9 @@ using namespace Aws::Utils;
 ExecuteChangeSetRequest::ExecuteChangeSetRequest() : 
     m_changeSetNameHasBeenSet(false),
     m_stackNameHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_disableRollback(false),
+    m_disableRollbackHasBeenSet(false)
 {
 }
 
@@ -44,6 +36,11 @@ Aws::String ExecuteChangeSetRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_disableRollbackHasBeenSet)
+  {
+    ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
   ss << "Version=2010-05-15";

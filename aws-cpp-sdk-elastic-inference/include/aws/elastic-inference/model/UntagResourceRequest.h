@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
@@ -50,88 +40,88 @@ namespace Model
 
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the Elastic Inference Accelerator to untag.
+     * <p> The ARN of the Elastic Inference Accelerator to untag. </p>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of tags to remove from the Elastic Inference Accelerator.
+     * <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

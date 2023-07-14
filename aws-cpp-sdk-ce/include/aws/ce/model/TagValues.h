@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ce/model/MatchOption.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>The values that are available for a tag.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagValues">AWS API
+   * <p>The values that are available for a tag.</p> <p>If <code>Values</code> and
+   * <code>Key</code> aren't specified, the <code>ABSENT</code>
+   * <code>MatchOption</code> is applied to all tags. That is, it's filtered on
+   * resources with no tags.</p> <p>If <code>Values</code> is provided and
+   * <code>Key</code> isn't specified, the <code>ABSENT</code>
+   * <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is,
+   * it's filtered on resources without the given tag key.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagValues">AWS API
    * Reference</a></p>
    */
   class AWS_COSTEXPLORER_API TagValues
@@ -134,6 +131,71 @@ namespace Model
      */
     inline TagValues& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline const Aws::Vector<MatchOption>& GetMatchOptions() const{ return m_matchOptions; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline void SetMatchOptions(const Aws::Vector<MatchOption>& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = value; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline void SetMatchOptions(Aws::Vector<MatchOption>&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::move(value); }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& WithMatchOptions(const Aws::Vector<MatchOption>& value) { SetMatchOptions(value); return *this;}
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& WithMatchOptions(Aws::Vector<MatchOption>&& value) { SetMatchOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& AddMatchOptions(const MatchOption& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> are
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& AddMatchOptions(MatchOption&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_key;
@@ -141,6 +203,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
+    Aws::Vector<MatchOption> m_matchOptions;
+    bool m_matchOptionsHasBeenSet;
   };
 
 } // namespace Model

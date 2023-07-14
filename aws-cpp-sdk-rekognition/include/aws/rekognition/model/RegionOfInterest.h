@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/BoundingBox.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/Point.h>
 #include <utility>
 
 namespace Aws
@@ -34,12 +26,13 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a location within the frame that Rekognition checks for text. Uses
-   * a <code>BoundingBox</code> object to set a region of the screen.</p> <p>A word
-   * is included in the region if the word is more than half in that region. If there
-   * is more than one region, the word will be compared with all regions of the
-   * screen. Any word more than half in a region is kept in the
-   * results.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a location within the frame that Rekognition checks for objects of
+   * interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or
+   * object or <code>Polygon</code> to set a region of the screen.</p> <p>A word,
+   * face, or label is included in the region if it is more than half in that region.
+   * If there is more than one region, the word, face, or label is compared with all
+   * regions of the screen. Any object of interest that is more than half in a region
+   * is kept in the results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RegionOfInterest">AWS
    * API Reference</a></p>
    */
@@ -82,10 +75,62 @@ namespace Model
      */
     inline RegionOfInterest& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline void SetPolygon(const Aws::Vector<Point>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline void SetPolygon(Aws::Vector<Point>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline RegionOfInterest& WithPolygon(const Aws::Vector<Point>& value) { SetPolygon(value); return *this;}
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline RegionOfInterest& WithPolygon(Aws::Vector<Point>&& value) { SetPolygon(std::move(value)); return *this;}
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline RegionOfInterest& AddPolygon(const Point& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
+
+    /**
+     * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
+     * region of interest. </p>
+     */
+    inline RegionOfInterest& AddPolygon(Point&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+
   private:
 
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
+
+    Aws::Vector<Point> m_polygon;
+    bool m_polygonHasBeenSet;
   };
 
 } // namespace Model

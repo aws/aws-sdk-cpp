@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -36,13 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS access key.</p> <p> This data type is used
-   * as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a>
-   * operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned
-   * only in response to <a>CreateAccessKey</a>. You can get a secret access key only
-   * when you first create an access key; you cannot recover the secret access key
-   * later. If you lose a secret access key, you must create a new access key.</p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an Amazon Web Services access key.</p> <p> This
+   * data type is used as a response element in the <a>CreateAccessKey</a> and
+   * <a>ListAccessKeys</a> operations. </p>  <p>The
+   * <code>SecretAccessKey</code> value is returned only in response to
+   * <a>CreateAccessKey</a>. You can get a secret access key only when you first
+   * create an access key; you cannot recover the secret access key later. If you
+   * lose a secret access key, you must create a new access key.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKey">AWS API
    * Reference</a></p>
    */

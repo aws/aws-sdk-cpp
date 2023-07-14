@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
@@ -82,97 +72,106 @@ namespace Model
 
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline PutPartnerEventsRequestEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline PutPartnerEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The event source that is generating the evntry.</p>
+     * <p>The event source that is generating the entry.</p>
      */
     inline PutPartnerEventsRequestEntry& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutPartnerEventsRequestEntry& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutPartnerEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutPartnerEventsRequestEntry& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutPartnerEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
-     * primarily concerns. Any number, including zero, may be present.</p>
+     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
+     * which the event primarily concerns. Any number, including zero, may be
+     * present.</p>
      */
     inline PutPartnerEventsRequestEntry& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 

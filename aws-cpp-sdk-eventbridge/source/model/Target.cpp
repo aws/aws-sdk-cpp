@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eventbridge/model/Target.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,7 +29,12 @@ Target::Target() :
     m_runCommandParametersHasBeenSet(false),
     m_ecsParametersHasBeenSet(false),
     m_batchParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false)
+    m_sqsParametersHasBeenSet(false),
+    m_httpParametersHasBeenSet(false),
+    m_redshiftDataParametersHasBeenSet(false),
+    m_sageMakerPipelineParametersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -54,7 +49,12 @@ Target::Target(JsonView jsonValue) :
     m_runCommandParametersHasBeenSet(false),
     m_ecsParametersHasBeenSet(false),
     m_batchParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false)
+    m_sqsParametersHasBeenSet(false),
+    m_httpParametersHasBeenSet(false),
+    m_redshiftDataParametersHasBeenSet(false),
+    m_sageMakerPipelineParametersHasBeenSet(false),
+    m_deadLetterConfigHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -138,6 +138,41 @@ Target& Target::operator =(JsonView jsonValue)
     m_sqsParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HttpParameters"))
+  {
+    m_httpParameters = jsonValue.GetObject("HttpParameters");
+
+    m_httpParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RedshiftDataParameters"))
+  {
+    m_redshiftDataParameters = jsonValue.GetObject("RedshiftDataParameters");
+
+    m_redshiftDataParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SageMakerPipelineParameters"))
+  {
+    m_sageMakerPipelineParameters = jsonValue.GetObject("SageMakerPipelineParameters");
+
+    m_sageMakerPipelineParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeadLetterConfig"))
+  {
+    m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
+
+    m_deadLetterConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryPolicy"))
+  {
+    m_retryPolicy = jsonValue.GetObject("RetryPolicy");
+
+    m_retryPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -208,6 +243,36 @@ JsonValue Target::Jsonize() const
   if(m_sqsParametersHasBeenSet)
   {
    payload.WithObject("SqsParameters", m_sqsParameters.Jsonize());
+
+  }
+
+  if(m_httpParametersHasBeenSet)
+  {
+   payload.WithObject("HttpParameters", m_httpParameters.Jsonize());
+
+  }
+
+  if(m_redshiftDataParametersHasBeenSet)
+  {
+   payload.WithObject("RedshiftDataParameters", m_redshiftDataParameters.Jsonize());
+
+  }
+
+  if(m_sageMakerPipelineParametersHasBeenSet)
+  {
+   payload.WithObject("SageMakerPipelineParameters", m_sageMakerPipelineParameters.Jsonize());
+
+  }
+
+  if(m_deadLetterConfigHasBeenSet)
+  {
+   payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
+
+  }
+
+  if(m_retryPolicyHasBeenSet)
+  {
+   payload.WithObject("RetryPolicy", m_retryPolicy.Jsonize());
 
   }
 

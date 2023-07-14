@@ -1,34 +1,61 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/organizations/OrganizationsErrors.h>
+#include <aws/organizations/model/ConstraintViolationException.h>
+#include <aws/organizations/model/HandshakeConstraintViolationException.h>
+#include <aws/organizations/model/InvalidInputException.h>
+#include <aws/organizations/model/AccessDeniedForDependencyException.h>
+#include <aws/organizations/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Organizations;
 using namespace Aws::Utils;
+using namespace Aws::Organizations;
+using namespace Aws::Organizations::Model;
 
 namespace Aws
 {
 namespace Organizations
 {
+template<> AWS_ORGANIZATIONS_API ConstraintViolationException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::CONSTRAINT_VIOLATION);
+  return ConstraintViolationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API HandshakeConstraintViolationException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION);
+  return HandshakeConstraintViolationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API InvalidInputException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API AccessDeniedForDependencyException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY);
+  return AccessDeniedForDependencyException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API TooManyRequestsException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
 namespace OrganizationsErrorMapper
 {
 
 static const int UNSUPPORTED_A_P_I_ENDPOINT_HASH = HashingUtils::HashString("UnsupportedAPIEndpointException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH = HashingUtils::HashString("PolicyTypeNotAvailableForOrganizationException");
 static const int A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH = HashingUtils::HashString("AWSOrganizationsNotInUseException");
 static const int DUPLICATE_POLICY_ATTACHMENT_HASH = HashingUtils::HashString("DuplicatePolicyAttachmentException");
@@ -48,8 +75,8 @@ static const int ROOT_NOT_FOUND_HASH = HashingUtils::HashString("RootNotFoundExc
 static const int CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("ConstraintViolationException");
 static const int ORGANIZATIONAL_UNIT_NOT_FOUND_HASH = HashingUtils::HashString("OrganizationalUnitNotFoundException");
 static const int HANDSHAKE_CONSTRAINT_VIOLATION_HASH = HashingUtils::HashString("HandshakeConstraintViolationException");
-static const int DUPLICATE_ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("DuplicateOrganizationalUnitException");
 static const int ACCOUNT_NOT_FOUND_HASH = HashingUtils::HashString("AccountNotFoundException");
+static const int DUPLICATE_ORGANIZATIONAL_UNIT_HASH = HashingUtils::HashString("DuplicateOrganizationalUnitException");
 static const int POLICY_TYPE_ALREADY_ENABLED_HASH = HashingUtils::HashString("PolicyTypeAlreadyEnabledException");
 static const int DUPLICATE_HANDSHAKE_HASH = HashingUtils::HashString("DuplicateHandshakeException");
 static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
@@ -69,6 +96,7 @@ static const int DUPLICATE_POLICY_HASH = HashingUtils::HashString("DuplicatePoli
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int POLICY_IN_USE_HASH = HashingUtils::HashString("PolicyInUseException");
 static const int POLICY_NOT_ATTACHED_HASH = HashingUtils::HashString("PolicyNotAttachedException");
+static const int ACCOUNT_ALREADY_CLOSED_HASH = HashingUtils::HashString("AccountAlreadyClosedException");
 static const int ALREADY_IN_ORGANIZATION_HASH = HashingUtils::HashString("AlreadyInOrganizationException");
 static const int ACCOUNT_OWNER_NOT_VERIFIED_HASH = HashingUtils::HashString("AccountOwnerNotVerifiedException");
 
@@ -80,6 +108,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == UNSUPPORTED_A_P_I_ENDPOINT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::UNSUPPORTED_A_P_I_ENDPOINT), false);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONFLICT), false);
   }
   else if (hashCode == POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH)
   {
@@ -157,13 +189,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION), false);
   }
-  else if (hashCode == DUPLICATE_ORGANIZATIONAL_UNIT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ORGANIZATIONAL_UNIT), false);
-  }
   else if (hashCode == ACCOUNT_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_FOUND), false);
+  }
+  else if (hashCode == DUPLICATE_ORGANIZATIONAL_UNIT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ORGANIZATIONAL_UNIT), false);
   }
   else if (hashCode == POLICY_TYPE_ALREADY_ENABLED_HASH)
   {
@@ -223,7 +255,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == DUPLICATE_POLICY_HASH)
   {
@@ -240,6 +272,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == POLICY_NOT_ATTACHED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_ATTACHED), false);
+  }
+  else if (hashCode == ACCOUNT_ALREADY_CLOSED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_CLOSED), false);
   }
   else if (hashCode == ALREADY_IN_ORGANIZATION_HASH)
   {

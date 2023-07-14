@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sns/SNS_EXPORTS.h>
 
@@ -52,15 +43,19 @@ enum class SNSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_ENTRY_IDS_NOT_DISTINCT,
+  BATCH_REQUEST_TOO_LONG,
   CONCURRENT_ACCESS,
+  EMPTY_BATCH_REQUEST,
   ENDPOINT_DISABLED,
   FILTER_POLICY_LIMIT_EXCEEDED,
   INTERNAL_ERROR,
+  INVALID_BATCH_ENTRY_ID,
   INVALID_PARAMETER,
   INVALID_SECURITY,
   K_M_S_ACCESS_DENIED,
@@ -70,13 +65,31 @@ enum class SNSErrors
   K_M_S_OPT_IN_REQUIRED,
   K_M_S_THROTTLING,
   NOT_FOUND,
+  OPTED_OUT,
   PLATFORM_APPLICATION_DISABLED,
   STALE_TAG,
   SUBSCRIPTION_LIMIT_EXCEEDED,
   TAG_LIMIT_EXCEEDED,
   TAG_POLICY,
-  TOPIC_LIMIT_EXCEEDED
+  TOO_MANY_ENTRIES_IN_BATCH_REQUEST,
+  TOPIC_LIMIT_EXCEEDED,
+  USER_ERROR,
+  VERIFICATION
 };
+
+class AWS_SNS_API SNSError : public Aws::Client::AWSError<SNSErrors>
+{
+public:
+  SNSError() {}
+  SNSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+  SNSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+  SNSError(const Aws::Client::AWSError<SNSErrors>& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+  SNSError(Aws::Client::AWSError<SNSErrors>&& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SNSErrorMapper
 {
   AWS_SNS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

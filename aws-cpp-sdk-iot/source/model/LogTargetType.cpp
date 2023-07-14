@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/LogTargetType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,9 @@ namespace Aws
 
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int THING_GROUP_HASH = HashingUtils::HashString("THING_GROUP");
+        static const int CLIENT_ID_HASH = HashingUtils::HashString("CLIENT_ID");
+        static const int SOURCE_IP_HASH = HashingUtils::HashString("SOURCE_IP");
+        static const int PRINCIPAL_ID_HASH = HashingUtils::HashString("PRINCIPAL_ID");
 
 
         LogTargetType GetLogTargetTypeForName(const Aws::String& name)
@@ -44,6 +37,18 @@ namespace Aws
           else if (hashCode == THING_GROUP_HASH)
           {
             return LogTargetType::THING_GROUP;
+          }
+          else if (hashCode == CLIENT_ID_HASH)
+          {
+            return LogTargetType::CLIENT_ID;
+          }
+          else if (hashCode == SOURCE_IP_HASH)
+          {
+            return LogTargetType::SOURCE_IP;
+          }
+          else if (hashCode == PRINCIPAL_ID_HASH)
+          {
+            return LogTargetType::PRINCIPAL_ID;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,12 @@ namespace Aws
             return "DEFAULT";
           case LogTargetType::THING_GROUP:
             return "THING_GROUP";
+          case LogTargetType::CLIENT_ID:
+            return "CLIENT_ID";
+          case LogTargetType::SOURCE_IP:
+            return "SOURCE_IP";
+          case LogTargetType::PRINCIPAL_ID:
+            return "PRINCIPAL_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

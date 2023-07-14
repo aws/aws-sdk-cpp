@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -53,127 +43,127 @@ namespace Model
 
 
     /**
-     * <p>The order of the launch template overrides to use in fulfilling On-Demand
-     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
-     * determine the order, launching the lowest price first. If you specify
-     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
-     * launch template override, launching the highest priority first. If you do not
-     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     * <p>The strategy that determines the order of the launch template overrides to
+     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
+     * Fleet uses price to determine the order, launching the lowest price first.</p>
+     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
+     * each launch template override, launching the highest priority first.</p>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline const FleetOnDemandAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
     /**
-     * <p>The order of the launch template overrides to use in fulfilling On-Demand
-     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
-     * determine the order, launching the lowest price first. If you specify
-     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
-     * launch template override, launching the highest priority first. If you do not
-     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     * <p>The strategy that determines the order of the launch template overrides to
+     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
+     * Fleet uses price to determine the order, launching the lowest price first.</p>
+     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
+     * each launch template override, launching the highest priority first.</p>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
     /**
-     * <p>The order of the launch template overrides to use in fulfilling On-Demand
-     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
-     * determine the order, launching the lowest price first. If you specify
-     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
-     * launch template override, launching the highest priority first. If you do not
-     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     * <p>The strategy that determines the order of the launch template overrides to
+     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
+     * Fleet uses price to determine the order, launching the lowest price first.</p>
+     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
+     * each launch template override, launching the highest priority first.</p>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline void SetAllocationStrategy(const FleetOnDemandAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
-     * <p>The order of the launch template overrides to use in fulfilling On-Demand
-     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
-     * determine the order, launching the lowest price first. If you specify
-     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
-     * launch template override, launching the highest priority first. If you do not
-     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     * <p>The strategy that determines the order of the launch template overrides to
+     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
+     * Fleet uses price to determine the order, launching the lowest price first.</p>
+     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
+     * each launch template override, launching the highest priority first.</p>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline void SetAllocationStrategy(FleetOnDemandAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
     /**
-     * <p>The order of the launch template overrides to use in fulfilling On-Demand
-     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
-     * determine the order, launching the lowest price first. If you specify
-     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
-     * launch template override, launching the highest priority first. If you do not
-     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     * <p>The strategy that determines the order of the launch template overrides to
+     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
+     * Fleet uses price to determine the order, launching the lowest price first.</p>
+     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
+     * each launch template override, launching the highest priority first.</p>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline OnDemandOptions& WithAllocationStrategy(const FleetOnDemandAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
     /**
-     * <p>The order of the launch template overrides to use in fulfilling On-Demand
-     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
-     * determine the order, launching the lowest price first. If you specify
-     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
-     * launch template override, launching the highest priority first. If you do not
-     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     * <p>The strategy that determines the order of the launch template overrides to
+     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
+     * Fleet uses price to determine the order, launching the lowest price first.</p>
+     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
+     * each launch template override, launching the highest priority first.</p>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline OnDemandOptions& WithAllocationStrategy(FleetOnDemandAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Supported only for fleets of type <code>instant</code>.</p>
+     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline const CapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Supported only for fleets of type <code>instant</code>.</p>
+     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Supported only for fleets of type <code>instant</code>.</p>
+     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline void SetCapacityReservationOptions(const CapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Supported only for fleets of type <code>instant</code>.</p>
+     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline void SetCapacityReservationOptions(CapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Supported only for fleets of type <code>instant</code>.</p>
+     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithCapacityReservationOptions(const CapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Supported only for fleets of type <code>instant</code>.</p>
+     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithCapacityReservationOptions(CapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
 
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet. Supported only for fleets of type
+     * Instances in the fleet.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
     inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet. Supported only for fleets of type
+     * Instances in the fleet.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
     inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet. Supported only for fleets of type
+     * Instances in the fleet.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
     inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet. Supported only for fleets of type
+     * Instances in the fleet.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithSingleInstanceType(bool value) { SetSingleInstanceType(value); return *this;}
@@ -181,25 +171,29 @@ namespace Model
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
+     * Availability Zone.</p> <p>Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
+     * Availability Zone.</p> <p>Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
+     * Availability Zone.</p> <p>Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
+     * Availability Zone.</p> <p>Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
 
@@ -207,24 +201,36 @@ namespace Model
     /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
+     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
+     * of the following must be specified: <code>SingleAvailabilityZone</code> |
+     * <code>SingleInstanceType</code> </p>
      */
     inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
 
     /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
+     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
+     * of the following must be specified: <code>SingleAvailabilityZone</code> |
+     * <code>SingleInstanceType</code> </p>
      */
     inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
 
     /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
+     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
+     * of the following must be specified: <code>SingleAvailabilityZone</code> |
+     * <code>SingleInstanceType</code> </p>
      */
     inline void SetMinTargetCapacity(int value) { m_minTargetCapacityHasBeenSet = true; m_minTargetCapacity = value; }
 
     /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
+     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
+     * of the following must be specified: <code>SingleAvailabilityZone</code> |
+     * <code>SingleInstanceType</code> </p>
      */
     inline OnDemandOptions& WithMinTargetCapacity(int value) { SetMinTargetCapacity(value); return *this;}
 

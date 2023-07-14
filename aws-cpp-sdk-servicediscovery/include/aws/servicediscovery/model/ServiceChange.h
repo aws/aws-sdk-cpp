@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -92,58 +82,82 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * when you register an instance.</p>
      */
     inline const DnsConfigChange& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * when you register an instance.</p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfigChange& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfigChange&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(const DnsConfigChange& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(DnsConfigChange&& value) { SetDnsConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline ServiceChange& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline ServiceChange& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
   private:

@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/signer/SignerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/signer/model/SigningProfileStatus.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +150,104 @@ namespace Model
      */
     inline ListSigningProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline void SetPlatformId(Aws::String&& value) { m_platformIdHasBeenSet = true; m_platformId = std::move(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline void SetPlatformId(const char* value) { m_platformIdHasBeenSet = true; m_platformId.assign(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline ListSigningProfilesRequest& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline ListSigningProfilesRequest& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs initiated for a specified signing
+     * platform.</p>
+     */
+    inline ListSigningProfilesRequest& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline const Aws::Vector<SigningProfileStatus>& GetStatuses() const{ return m_statuses; }
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline void SetStatuses(const Aws::Vector<SigningProfileStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline void SetStatuses(Aws::Vector<SigningProfileStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline ListSigningProfilesRequest& WithStatuses(const Aws::Vector<SigningProfileStatus>& value) { SetStatuses(value); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline ListSigningProfilesRequest& WithStatuses(Aws::Vector<SigningProfileStatus>&& value) { SetStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline ListSigningProfilesRequest& AddStatuses(const SigningProfileStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
+
+    /**
+     * <p>Filters results to return only signing jobs with statuses in the specified
+     * list.</p>
+     */
+    inline ListSigningProfilesRequest& AddStatuses(SigningProfileStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_includeCanceled;
@@ -168,6 +258,12 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_platformId;
+    bool m_platformIdHasBeenSet;
+
+    Aws::Vector<SigningProfileStatus> m_statuses;
+    bool m_statusesHasBeenSet;
   };
 
 } // namespace Model

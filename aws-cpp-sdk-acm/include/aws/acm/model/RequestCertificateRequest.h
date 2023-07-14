@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
@@ -608,9 +598,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -621,9 +611,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -634,9 +624,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -647,9 +637,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -660,9 +650,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -673,9 +663,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -686,9 +676,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -699,9 +689,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN
-     * must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
+     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
+     * guide. The ARN must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */

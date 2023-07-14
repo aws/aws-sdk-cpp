@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -49,57 +39,57 @@ namespace Model
   public:
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline PutMetricDataRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline PutMetricDataRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with AWS service
-     * namespaces, you should not specify a namespace that begins with
+     * <p>The namespace for the metric data.</p> <p>To avoid conflicts with Amazon Web
+     * Services service namespaces, you should not specify a namespace that begins with
      * <code>AWS/</code> </p>
      */
     inline PutMetricDataRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}

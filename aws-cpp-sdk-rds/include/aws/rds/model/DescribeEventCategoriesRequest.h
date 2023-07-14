@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,50 +42,74 @@ namespace Model
   public:
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of source that is generating the events.</p> <p>Valid values:
-     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     * <p>The type of source that is generating the events. For RDS Proxy events,
+     * specify <code>db-proxy</code>.</p> <p>Valid values: <code>db-instance</code> |
+     * <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * <code>db-security-group</code> | <code>db-snapshot</code> |
+     * <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

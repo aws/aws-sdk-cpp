@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/UnassignIpv6AddressesRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -22,6 +12,7 @@ using namespace Aws::Utils;
 
 UnassignIpv6AddressesRequest::UnassignIpv6AddressesRequest() : 
     m_ipv6AddressesHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)
 {
 }
@@ -38,6 +29,17 @@ Aws::String UnassignIpv6AddressesRequest::SerializePayload() const
       ss << "Ipv6Addresses." << ipv6AddressesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       ipv6AddressesCount++;
+    }
+  }
+
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+    unsigned ipv6PrefixesCount = 1;
+    for(auto& item : m_ipv6Prefixes)
+    {
+      ss << "Ipv6Prefix." << ipv6PrefixesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      ipv6PrefixesCount++;
     }
   }
 

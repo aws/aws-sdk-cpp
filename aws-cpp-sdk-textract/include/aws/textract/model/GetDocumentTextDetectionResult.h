@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
@@ -239,44 +229,44 @@ namespace Model
 
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of an asynchronous text-detection operation for the
-     * document. </p>
+     * <p>Returns if the detection job could not be completed. Contains explanation for
+     * what error occured. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 

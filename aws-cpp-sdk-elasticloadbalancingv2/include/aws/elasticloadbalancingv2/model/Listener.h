@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -317,6 +307,61 @@ namespace Model
      */
     inline Listener& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAlpnPolicy() const{ return m_alpnPolicy; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline bool AlpnPolicyHasBeenSet() const { return m_alpnPolicyHasBeenSet; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline void SetAlpnPolicy(const Aws::Vector<Aws::String>& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = value; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline void SetAlpnPolicy(Aws::Vector<Aws::String>&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = std::move(value); }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& WithAlpnPolicy(const Aws::Vector<Aws::String>& value) { SetAlpnPolicy(value); return *this;}
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& WithAlpnPolicy(Aws::Vector<Aws::String>&& value) { SetAlpnPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& AddAlpnPolicy(const Aws::String& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& AddAlpnPolicy(Aws::String&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& AddAlpnPolicy(const char* value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
+
   private:
 
     Aws::String m_listenerArn;
@@ -339,6 +384,9 @@ namespace Model
 
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_alpnPolicy;
+    bool m_alpnPolicyHasBeenSet;
   };
 
 } // namespace Model

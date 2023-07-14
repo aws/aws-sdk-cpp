@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/SubjectAlternativeNames.h>
 #include <aws/appmesh/model/TlsValidationContextTrust.h>
 #include <utility>
 
@@ -34,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a Transport Layer Security (TLS) validation
-   * context.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents how the proxy will validate its peer during
+   * Transport Layer Security (TLS) negotiation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TlsValidationContext">AWS
    * API Reference</a></p>
    */
@@ -49,36 +40,82 @@ namespace Model
 
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust.</p>
+     * <p>A reference to an object that represents the SANs for a Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline const SubjectAlternativeNames& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
+
+    /**
+     * <p>A reference to an object that represents the SANs for a Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents the SANs for a Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline void SetSubjectAlternativeNames(const SubjectAlternativeNames& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
+
+    /**
+     * <p>A reference to an object that represents the SANs for a Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline void SetSubjectAlternativeNames(SubjectAlternativeNames&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents the SANs for a Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline TlsValidationContext& WithSubjectAlternativeNames(const SubjectAlternativeNames& value) { SetSubjectAlternativeNames(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents the SANs for a Transport Layer
+     * Security (TLS) validation context.</p>
+     */
+    inline TlsValidationContext& WithSubjectAlternativeNames(SubjectAlternativeNames&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A reference to where to retrieve the trust chain when validating a peer’s
+     * Transport Layer Security (TLS) certificate.</p>
      */
     inline const TlsValidationContextTrust& GetTrust() const{ return m_trust; }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust.</p>
+     * <p>A reference to where to retrieve the trust chain when validating a peer’s
+     * Transport Layer Security (TLS) certificate.</p>
      */
     inline bool TrustHasBeenSet() const { return m_trustHasBeenSet; }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust.</p>
+     * <p>A reference to where to retrieve the trust chain when validating a peer’s
+     * Transport Layer Security (TLS) certificate.</p>
      */
     inline void SetTrust(const TlsValidationContextTrust& value) { m_trustHasBeenSet = true; m_trust = value; }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust.</p>
+     * <p>A reference to where to retrieve the trust chain when validating a peer’s
+     * Transport Layer Security (TLS) certificate.</p>
      */
     inline void SetTrust(TlsValidationContextTrust&& value) { m_trustHasBeenSet = true; m_trust = std::move(value); }
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust.</p>
+     * <p>A reference to where to retrieve the trust chain when validating a peer’s
+     * Transport Layer Security (TLS) certificate.</p>
      */
     inline TlsValidationContext& WithTrust(const TlsValidationContextTrust& value) { SetTrust(value); return *this;}
 
     /**
-     * <p>A reference to an object that represents a TLS validation context trust.</p>
+     * <p>A reference to where to retrieve the trust chain when validating a peer’s
+     * Transport Layer Security (TLS) certificate.</p>
      */
     inline TlsValidationContext& WithTrust(TlsValidationContextTrust&& value) { SetTrust(std::move(value)); return *this;}
 
   private:
+
+    SubjectAlternativeNames m_subjectAlternativeNames;
+    bool m_subjectAlternativeNamesHasBeenSet;
 
     TlsValidationContextTrust m_trust;
     bool m_trustHasBeenSet;

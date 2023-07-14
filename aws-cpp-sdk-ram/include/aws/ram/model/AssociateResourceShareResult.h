@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
@@ -45,80 +35,101 @@ namespace Model
 
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline const Aws::Vector<ResourceShareAssociation>& GetResourceShareAssociations() const{ return m_resourceShareAssociations; }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline void SetResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { m_resourceShareAssociations = value; }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline void SetResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { m_resourceShareAssociations = std::move(value); }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline AssociateResourceShareResult& WithResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { SetResourceShareAssociations(value); return *this;}
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline AssociateResourceShareResult& WithResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { SetResourceShareAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline AssociateResourceShareResult& AddResourceShareAssociations(const ResourceShareAssociation& value) { m_resourceShareAssociations.push_back(value); return *this; }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>An array of objects that contain information about the associations.</p>
      */
     inline AssociateResourceShareResult& AddResourceShareAssociations(ResourceShareAssociation&& value) { m_resourceShareAssociations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline AssociateResourceShareResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline AssociateResourceShareResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>The idempotency identifier associated with this request. If you want to
+     * repeat the same operation in an idempotent manner then you must include this
+     * value in the <code>clientToken</code> request parameter of that later call. All
+     * other parameters must also have the same values that you used in the first
+     * call.</p>
      */
     inline AssociateResourceShareResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

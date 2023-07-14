@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/AutoMLChannel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,10 @@ AutoMLChannel::AutoMLChannel() :
     m_dataSourceHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false)
+    m_targetAttributeNameHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
+    m_channelType(AutoMLChannelType::NOT_SET),
+    m_channelTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +33,10 @@ AutoMLChannel::AutoMLChannel(JsonView jsonValue) :
     m_dataSourceHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false)
+    m_targetAttributeNameHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
+    m_channelType(AutoMLChannelType::NOT_SET),
+    m_channelTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +64,20 @@ AutoMLChannel& AutoMLChannel::operator =(JsonView jsonValue)
     m_targetAttributeNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentType"))
+  {
+    m_contentType = jsonValue.GetString("ContentType");
+
+    m_contentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChannelType"))
+  {
+    m_channelType = AutoMLChannelTypeMapper::GetAutoMLChannelTypeForName(jsonValue.GetString("ChannelType"));
+
+    m_channelTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +100,17 @@ JsonValue AutoMLChannel::Jsonize() const
   {
    payload.WithString("TargetAttributeName", m_targetAttributeName);
 
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("ContentType", m_contentType);
+
+  }
+
+  if(m_channelTypeHasBeenSet)
+  {
+   payload.WithString("ChannelType", AutoMLChannelTypeMapper::GetNameForAutoMLChannelType(m_channelType));
   }
 
   return payload;

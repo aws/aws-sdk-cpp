@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -47,136 +37,136 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline ListClustersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline ListClustersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a <code>ListClusters</code>
      * request indicating that more results are available to fulfill the request and
-     * further calls will be needed. If <code>maxResults</code> was provided, it is
-     * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
-     * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * further calls are needed. If <code>maxResults</code> was provided, it's possible
+     * the number of results to be fewer than <code>maxResults</code>.</p> 
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * 
      */
     inline ListClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of cluster results returned by <code>ListClusters</code>
+     * <p>The maximum number of cluster results that <code>ListClusters</code> returned
      * in paginated output. When this parameter is used, <code>ListClusters</code> only
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListClusters</code> request with
      * the returned <code>nextToken</code> value. This value can be between 1 and 100.
-     * If this parameter is not used, then <code>ListClusters</code> returns up to 100
+     * If this parameter isn't used, then <code>ListClusters</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of cluster results returned by <code>ListClusters</code>
+     * <p>The maximum number of cluster results that <code>ListClusters</code> returned
      * in paginated output. When this parameter is used, <code>ListClusters</code> only
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListClusters</code> request with
      * the returned <code>nextToken</code> value. This value can be between 1 and 100.
-     * If this parameter is not used, then <code>ListClusters</code> returns up to 100
+     * If this parameter isn't used, then <code>ListClusters</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of cluster results returned by <code>ListClusters</code>
+     * <p>The maximum number of cluster results that <code>ListClusters</code> returned
      * in paginated output. When this parameter is used, <code>ListClusters</code> only
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListClusters</code> request with
      * the returned <code>nextToken</code> value. This value can be between 1 and 100.
-     * If this parameter is not used, then <code>ListClusters</code> returns up to 100
+     * If this parameter isn't used, then <code>ListClusters</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of cluster results returned by <code>ListClusters</code>
+     * <p>The maximum number of cluster results that <code>ListClusters</code> returned
      * in paginated output. When this parameter is used, <code>ListClusters</code> only
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListClusters</code> request with
      * the returned <code>nextToken</code> value. This value can be between 1 and 100.
-     * If this parameter is not used, then <code>ListClusters</code> returns up to 100
+     * If this parameter isn't used, then <code>ListClusters</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

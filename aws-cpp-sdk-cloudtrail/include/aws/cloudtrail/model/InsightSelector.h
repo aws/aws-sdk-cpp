@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -49,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The type of insights to log on a trail. In this release, only
-     * <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+     * <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid insight types.</p>
      */
     inline const InsightType& GetInsightType() const{ return m_insightType; }
 
     /**
-     * <p>The type of insights to log on a trail. In this release, only
-     * <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+     * <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid insight types.</p>
      */
     inline bool InsightTypeHasBeenSet() const { return m_insightTypeHasBeenSet; }
 
     /**
-     * <p>The type of insights to log on a trail. In this release, only
-     * <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+     * <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid insight types.</p>
      */
     inline void SetInsightType(const InsightType& value) { m_insightTypeHasBeenSet = true; m_insightType = value; }
 
     /**
-     * <p>The type of insights to log on a trail. In this release, only
-     * <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+     * <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid insight types.</p>
      */
     inline void SetInsightType(InsightType&& value) { m_insightTypeHasBeenSet = true; m_insightType = std::move(value); }
 
     /**
-     * <p>The type of insights to log on a trail. In this release, only
-     * <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+     * <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid insight types.</p>
      */
     inline InsightSelector& WithInsightType(const InsightType& value) { SetInsightType(value); return *this;}
 
     /**
-     * <p>The type of insights to log on a trail. In this release, only
-     * <code>ApiCallRateInsight</code> is supported as an insight type.</p>
+     * <p>The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid insight types.</p>
      */
     inline InsightSelector& WithInsightType(InsightType&& value) { SetInsightType(std::move(value)); return *this;}
 

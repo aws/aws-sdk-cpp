@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -91,52 +81,125 @@ namespace Model
 
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline CampaignSmsMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The type of SMS message. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message isn't critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline CampaignSmsMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline CampaignSmsMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline CampaignSmsMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>The long code to send the SMS message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code using an E.164 format to
+     * ensure prompt and accurate delivery of the message. For example,
+     * +12065550100.</p>
+     */
+    inline CampaignSmsMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
 
 
     /**
@@ -187,6 +250,104 @@ namespace Model
      */
     inline CampaignSmsMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline CampaignSmsMessage& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline CampaignSmsMessage& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline CampaignSmsMessage& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline CampaignSmsMessage& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline CampaignSmsMessage& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline CampaignSmsMessage& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+
   private:
 
     Aws::String m_body;
@@ -195,8 +356,17 @@ namespace Model
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;
 
+    Aws::String m_originationNumber;
+    bool m_originationNumberHasBeenSet;
+
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet;
+
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet;
   };
 
 } // namespace Model

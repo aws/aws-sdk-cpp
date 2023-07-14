@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -51,26 +41,26 @@ namespace Model
 
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the PREPARING
-     * phase. </p>
+     * <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
+     * </p>
      */
     inline long long GetPrepareDuration() const{ return m_prepareDuration; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the PREPARING
-     * phase. </p>
+     * <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
+     * </p>
      */
     inline bool PrepareDurationHasBeenSet() const { return m_prepareDurationHasBeenSet; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the PREPARING
-     * phase. </p>
+     * <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
+     * </p>
      */
     inline void SetPrepareDuration(long long value) { m_prepareDurationHasBeenSet = true; m_prepareDuration = value; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the PREPARING
-     * phase. </p>
+     * <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
+     * </p>
      */
     inline TaskExecutionResultDetail& WithPrepareDuration(long long value) { SetPrepareDuration(value); return *this;}
 
@@ -107,187 +97,187 @@ namespace Model
 
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
-     * from the source to the destination location.</p>
+     * <p>The total time in milliseconds that DataSync took to transfer the file from
+     * the source to the destination location.</p>
      */
     inline long long GetTotalDuration() const{ return m_totalDuration; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
-     * from the source to the destination location.</p>
+     * <p>The total time in milliseconds that DataSync took to transfer the file from
+     * the source to the destination location.</p>
      */
     inline bool TotalDurationHasBeenSet() const { return m_totalDurationHasBeenSet; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
-     * from the source to the destination location.</p>
+     * <p>The total time in milliseconds that DataSync took to transfer the file from
+     * the source to the destination location.</p>
      */
     inline void SetTotalDuration(long long value) { m_totalDurationHasBeenSet = true; m_totalDuration = value; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
-     * from the source to the destination location.</p>
+     * <p>The total time in milliseconds that DataSync took to transfer the file from
+     * the source to the destination location.</p>
      */
     inline TaskExecutionResultDetail& WithTotalDuration(long long value) { SetTotalDuration(value); return *this;}
 
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+     * <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
      * phase.</p>
      */
     inline long long GetTransferDuration() const{ return m_transferDuration; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+     * <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
      * phase.</p>
      */
     inline bool TransferDurationHasBeenSet() const { return m_transferDurationHasBeenSet; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+     * <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
      * phase.</p>
      */
     inline void SetTransferDuration(long long value) { m_transferDurationHasBeenSet = true; m_transferDuration = value; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+     * <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
      * phase.</p>
      */
     inline TaskExecutionResultDetail& WithTransferDuration(long long value) { SetTransferDuration(value); return *this;}
 
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline const PhaseStatus& GetTransferStatus() const{ return m_transferStatus; }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline bool TransferStatusHasBeenSet() const { return m_transferStatusHasBeenSet; }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline void SetTransferStatus(const PhaseStatus& value) { m_transferStatusHasBeenSet = true; m_transferStatus = value; }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline void SetTransferStatus(PhaseStatus&& value) { m_transferStatusHasBeenSet = true; m_transferStatus = std::move(value); }
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline TaskExecutionResultDetail& WithTransferStatus(const PhaseStatus& value) { SetTransferStatus(value); return *this;}
 
     /**
-     * <p>The status of the TRANSFERRING Phase.</p>
+     * <p>The status of the TRANSFERRING phase.</p>
      */
     inline TaskExecutionResultDetail& WithTransferStatus(PhaseStatus&& value) { SetTransferStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+     * <p>The total time in milliseconds that DataSync spent in the VERIFYING
      * phase.</p>
      */
     inline long long GetVerifyDuration() const{ return m_verifyDuration; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+     * <p>The total time in milliseconds that DataSync spent in the VERIFYING
      * phase.</p>
      */
     inline bool VerifyDurationHasBeenSet() const { return m_verifyDurationHasBeenSet; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+     * <p>The total time in milliseconds that DataSync spent in the VERIFYING
      * phase.</p>
      */
     inline void SetVerifyDuration(long long value) { m_verifyDurationHasBeenSet = true; m_verifyDuration = value; }
 
     /**
-     * <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+     * <p>The total time in milliseconds that DataSync spent in the VERIFYING
      * phase.</p>
      */
     inline TaskExecutionResultDetail& WithVerifyDuration(long long value) { SetVerifyDuration(value); return *this;}
 
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline const PhaseStatus& GetVerifyStatus() const{ return m_verifyStatus; }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline bool VerifyStatusHasBeenSet() const { return m_verifyStatusHasBeenSet; }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline void SetVerifyStatus(const PhaseStatus& value) { m_verifyStatusHasBeenSet = true; m_verifyStatus = value; }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline void SetVerifyStatus(PhaseStatus&& value) { m_verifyStatusHasBeenSet = true; m_verifyStatus = std::move(value); }
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline TaskExecutionResultDetail& WithVerifyStatus(const PhaseStatus& value) { SetVerifyStatus(value); return *this;}
 
     /**
-     * <p>The status of the VERIFYING Phase.</p>
+     * <p>The status of the VERIFYING phase.</p>
      */
     inline TaskExecutionResultDetail& WithVerifyStatus(PhaseStatus&& value) { SetVerifyStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline TaskExecutionResultDetail& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline TaskExecutionResultDetail& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>Errors that AWS DataSync encountered during execution of the task. You can
-     * use this error code to help troubleshoot issues.</p>
+     * <p>Errors that DataSync encountered during execution of the task. You can use
+     * this error code to help troubleshoot issues.</p>
      */
     inline TaskExecutionResultDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 

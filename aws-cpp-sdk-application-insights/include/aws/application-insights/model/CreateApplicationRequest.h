@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-insights/model/GroupingType.h>
 #include <aws/application-insights/model/Tag.h>
 #include <utility>
 
@@ -254,6 +245,99 @@ namespace Model
      */
     inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Indicates whether Application Insights automatically configures unmonitored
+     * resources in the resource group. </p>
+     */
+    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+
+    /**
+     * <p> Indicates whether Application Insights automatically configures unmonitored
+     * resources in the resource group. </p>
+     */
+    inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
+
+    /**
+     * <p> Indicates whether Application Insights automatically configures unmonitored
+     * resources in the resource group. </p>
+     */
+    inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
+
+    /**
+     * <p> Indicates whether Application Insights automatically configures unmonitored
+     * resources in the resource group. </p>
+     */
+    inline CreateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+
+
+    /**
+     * <p> Configures all of the resources in the resource group by applying the
+     * recommended configurations. </p>
+     */
+    inline bool GetAutoCreate() const{ return m_autoCreate; }
+
+    /**
+     * <p> Configures all of the resources in the resource group by applying the
+     * recommended configurations. </p>
+     */
+    inline bool AutoCreateHasBeenSet() const { return m_autoCreateHasBeenSet; }
+
+    /**
+     * <p> Configures all of the resources in the resource group by applying the
+     * recommended configurations. </p>
+     */
+    inline void SetAutoCreate(bool value) { m_autoCreateHasBeenSet = true; m_autoCreate = value; }
+
+    /**
+     * <p> Configures all of the resources in the resource group by applying the
+     * recommended configurations. </p>
+     */
+    inline CreateApplicationRequest& WithAutoCreate(bool value) { SetAutoCreate(value); return *this;}
+
+
+    /**
+     * <p>Application Insights can create applications based on a resource group or on
+     * an account. To create an account-based application using all of the resources in
+     * the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+     */
+    inline const GroupingType& GetGroupingType() const{ return m_groupingType; }
+
+    /**
+     * <p>Application Insights can create applications based on a resource group or on
+     * an account. To create an account-based application using all of the resources in
+     * the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+     */
+    inline bool GroupingTypeHasBeenSet() const { return m_groupingTypeHasBeenSet; }
+
+    /**
+     * <p>Application Insights can create applications based on a resource group or on
+     * an account. To create an account-based application using all of the resources in
+     * the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+     */
+    inline void SetGroupingType(const GroupingType& value) { m_groupingTypeHasBeenSet = true; m_groupingType = value; }
+
+    /**
+     * <p>Application Insights can create applications based on a resource group or on
+     * an account. To create an account-based application using all of the resources in
+     * the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+     */
+    inline void SetGroupingType(GroupingType&& value) { m_groupingTypeHasBeenSet = true; m_groupingType = std::move(value); }
+
+    /**
+     * <p>Application Insights can create applications based on a resource group or on
+     * an account. To create an account-based application using all of the resources in
+     * the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+     */
+    inline CreateApplicationRequest& WithGroupingType(const GroupingType& value) { SetGroupingType(value); return *this;}
+
+    /**
+     * <p>Application Insights can create applications based on a resource group or on
+     * an account. To create an account-based application using all of the resources in
+     * the account, set this parameter to <code>ACCOUNT_BASED</code>. </p>
+     */
+    inline CreateApplicationRequest& WithGroupingType(GroupingType&& value) { SetGroupingType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -270,6 +354,15 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabledHasBeenSet;
+
+    bool m_autoCreate;
+    bool m_autoCreateHasBeenSet;
+
+    GroupingType m_groupingType;
+    bool m_groupingTypeHasBeenSet;
   };
 
 } // namespace Model

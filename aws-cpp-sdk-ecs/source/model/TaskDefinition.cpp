@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/TaskDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,6 +34,7 @@ TaskDefinition::TaskDefinition() :
     m_requiresAttributesHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
@@ -52,7 +43,11 @@ TaskDefinition::TaskDefinition() :
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
     m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
+    m_proxyConfigurationHasBeenSet(false),
+    m_registeredAtHasBeenSet(false),
+    m_deregisteredAtHasBeenSet(false),
+    m_registeredByHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -72,6 +67,7 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_requiresAttributesHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
@@ -80,7 +76,11 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
     m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
+    m_proxyConfigurationHasBeenSet(false),
+    m_registeredAtHasBeenSet(false),
+    m_deregisteredAtHasBeenSet(false),
+    m_registeredByHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -186,6 +186,13 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_compatibilitiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimePlatform"))
+  {
+    m_runtimePlatform = jsonValue.GetObject("runtimePlatform");
+
+    m_runtimePlatformHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("requiresCompatibilities"))
   {
     Array<JsonView> requiresCompatibilitiesJsonList = jsonValue.GetArray("requiresCompatibilities");
@@ -239,6 +246,34 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
 
     m_proxyConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("registeredAt"))
+  {
+    m_registeredAt = jsonValue.GetDouble("registeredAt");
+
+    m_registeredAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deregisteredAt"))
+  {
+    m_deregisteredAt = jsonValue.GetDouble("deregisteredAt");
+
+    m_deregisteredAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("registeredBy"))
+  {
+    m_registeredBy = jsonValue.GetString("registeredBy");
+
+    m_registeredByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
   }
 
   return *this;
@@ -343,6 +378,12 @@ JsonValue TaskDefinition::Jsonize() const
 
   }
 
+  if(m_runtimePlatformHasBeenSet)
+  {
+   payload.WithObject("runtimePlatform", m_runtimePlatform.Jsonize());
+
+  }
+
   if(m_requiresCompatibilitiesHasBeenSet)
   {
    Array<JsonValue> requiresCompatibilitiesJsonList(m_requiresCompatibilities.size());
@@ -390,6 +431,28 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_proxyConfigurationHasBeenSet)
   {
    payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+
+  }
+
+  if(m_registeredAtHasBeenSet)
+  {
+   payload.WithDouble("registeredAt", m_registeredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_deregisteredAtHasBeenSet)
+  {
+   payload.WithDouble("deregisteredAt", m_deregisteredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_registeredByHasBeenSet)
+  {
+   payload.WithString("registeredBy", m_registeredBy);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

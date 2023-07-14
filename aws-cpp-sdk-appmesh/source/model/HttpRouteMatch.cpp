@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/HttpRouteMatch.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,9 @@ HttpRouteMatch::HttpRouteMatch() :
     m_headersHasBeenSet(false),
     m_method(HttpMethod::NOT_SET),
     m_methodHasBeenSet(false),
+    m_pathHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_queryParametersHasBeenSet(false),
     m_scheme(HttpScheme::NOT_SET),
     m_schemeHasBeenSet(false)
 {
@@ -42,7 +34,9 @@ HttpRouteMatch::HttpRouteMatch(JsonView jsonValue) :
     m_headersHasBeenSet(false),
     m_method(HttpMethod::NOT_SET),
     m_methodHasBeenSet(false),
+    m_pathHasBeenSet(false),
     m_prefixHasBeenSet(false),
+    m_queryParametersHasBeenSet(false),
     m_scheme(HttpScheme::NOT_SET),
     m_schemeHasBeenSet(false)
 {
@@ -68,11 +62,28 @@ HttpRouteMatch& HttpRouteMatch::operator =(JsonView jsonValue)
     m_methodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("path"))
+  {
+    m_path = jsonValue.GetObject("path");
+
+    m_pathHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
 
     m_prefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queryParameters"))
+  {
+    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("queryParameters");
+    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+    {
+      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
+    }
+    m_queryParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scheme"))
@@ -105,9 +116,26 @@ JsonValue HttpRouteMatch::Jsonize() const
    payload.WithString("method", HttpMethodMapper::GetNameForHttpMethod(m_method));
   }
 
+  if(m_pathHasBeenSet)
+  {
+   payload.WithObject("path", m_path.Jsonize());
+
+  }
+
   if(m_prefixHasBeenSet)
   {
    payload.WithString("prefix", m_prefix);
+
+  }
+
+  if(m_queryParametersHasBeenSet)
+  {
+   Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+   for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+   {
+     queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());
+   }
+   payload.WithArray("queryParameters", std::move(queryParametersJsonList));
 
   }
 

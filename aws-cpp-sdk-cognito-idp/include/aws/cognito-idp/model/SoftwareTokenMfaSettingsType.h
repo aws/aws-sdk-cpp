@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -32,8 +22,12 @@ namespace Model
 {
 
   /**
-   * <p>The type used for enabling software token MFA at the user
-   * level.</p><p><h3>See Also:</h3>   <a
+   * <p>The type used for enabling software token MFA at the user level. If an MFA
+   * type is activated for a user, the user will be prompted for MFA during all
+   * sign-in attempts, unless device tracking is turned on and the device has been
+   * trusted. If you want MFA to be applied selectively based on the assessed risk
+   * level of sign-in attempts, deactivate MFA for users and turn on Adaptive
+   * Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SoftwareTokenMfaSettingsType">AWS
    * API Reference</a></p>
    */
@@ -47,22 +41,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated. If an MFA type is
+     * activated for a user, the user will be prompted for MFA during all sign-in
+     * attempts, unless device tracking is turned on and the device has been
+     * trusted.</p>
      */
     inline SoftwareTokenMfaSettingsType& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

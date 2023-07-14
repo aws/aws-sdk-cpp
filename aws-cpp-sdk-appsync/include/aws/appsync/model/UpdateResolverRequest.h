@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -211,42 +201,82 @@ namespace Model
 
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline void SetRequestMappingTemplate(const Aws::String& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = value; }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline void SetRequestMappingTemplate(Aws::String&& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = std::move(value); }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline void SetRequestMappingTemplate(const char* value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate.assign(value); }
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline UpdateResolverRequest& WithRequestMappingTemplate(const Aws::String& value) { SetRequestMappingTemplate(value); return *this;}
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline UpdateResolverRequest& WithRequestMappingTemplate(Aws::String&& value) { SetRequestMappingTemplate(std::move(value)); return *this;}
 
     /**
-     * <p>The new request mapping template.</p>
+     * <p>The new request mapping template.</p> <p>A resolver uses a request mapping
+     * template to convert a GraphQL expression into a format that a data source can
+     * understand. Mapping templates are written in Apache Velocity Template Language
+     * (VTL).</p> <p>VTL request mapping templates are optional when using an Lambda
+     * data source. For all other data sources, VTL request and response mapping
+     * templates are required.</p>
      */
     inline UpdateResolverRequest& WithRequestMappingTemplate(const char* value) { SetRequestMappingTemplate(value); return *this;}
 
@@ -294,67 +324,61 @@ namespace Model
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline const ResolverKind& GetKind() const{ return m_kind; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline void SetKind(const ResolverKind& value) { m_kindHasBeenSet = true; m_kind = value; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline void SetKind(ResolverKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline UpdateResolverRequest& WithKind(const ResolverKind& value) { SetKind(value); return *this;}
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
-     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
-     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
-     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
-     * execute a series of <code>Function</code> in a serial manner. You can use a
-     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
-     * </li> </ul>
+     * UNIT resolver is the default resolver type. You can use a UNIT resolver to run a
+     * GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>:
+     * A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of
+     * <code>Function</code> objects in a serial manner. You can use a pipeline
+     * resolver to run a GraphQL query against multiple data sources.</p> </li> </ul>
      */
     inline UpdateResolverRequest& WithKind(ResolverKind&& value) { SetKind(std::move(value)); return *this;}
 
@@ -391,38 +415,38 @@ namespace Model
 
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline UpdateResolverRequest& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
 
     /**
-     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
-     * datasource.</p>
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned data
+     * source.</p>
      */
     inline UpdateResolverRequest& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
 
@@ -457,6 +481,27 @@ namespace Model
      */
     inline UpdateResolverRequest& WithCachingConfig(CachingConfig&& value) { SetCachingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline UpdateResolverRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -488,6 +533,9 @@ namespace Model
 
     CachingConfig m_cachingConfig;
     bool m_cachingConfigHasBeenSet;
+
+    int m_maxBatchSize;
+    bool m_maxBatchSizeHasBeenSet;
   };
 
 } // namespace Model

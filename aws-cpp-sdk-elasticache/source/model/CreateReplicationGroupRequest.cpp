@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/CreateReplicationGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -27,6 +17,8 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false),
+    m_multiAZEnabled(false),
+    m_multiAZEnabledHasBeenSet(false),
     m_numCacheClusters(0),
     m_numCacheClustersHasBeenSet(false),
     m_preferredCacheClusterAZsHasBeenSet(false),
@@ -59,7 +51,11 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_dataTieringEnabled(false),
+    m_dataTieringEnabledHasBeenSet(false)
 {
 }
 
@@ -90,6 +86,11 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_automaticFailoverEnabledHasBeenSet)
   {
     ss << "AutomaticFailoverEnabled=" << std::boolalpha << m_automaticFailoverEnabled << "&";
+  }
+
+  if(m_multiAZEnabledHasBeenSet)
+  {
+    ss << "MultiAZEnabled=" << std::boolalpha << m_multiAZEnabled << "&";
   }
 
   if(m_numCacheClustersHasBeenSet)
@@ -249,6 +250,32 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_userGroupIdsHasBeenSet)
+  {
+    unsigned userGroupIdsCount = 1;
+    for(auto& item : m_userGroupIds)
+    {
+      ss << "UserGroupIds.member." << userGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      userGroupIdsCount++;
+    }
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
+    }
+  }
+
+  if(m_dataTieringEnabledHasBeenSet)
+  {
+    ss << "DataTieringEnabled=" << std::boolalpha << m_dataTieringEnabled << "&";
   }
 
   ss << "Version=2015-02-02";

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -23,6 +13,8 @@
 #include <aws/mediaconvert/model/Eac3Settings.h>
 #include <aws/mediaconvert/model/Mp2Settings.h>
 #include <aws/mediaconvert/model/Mp3Settings.h>
+#include <aws/mediaconvert/model/OpusSettings.h>
+#include <aws/mediaconvert/model/VorbisSettings.h>
 #include <aws/mediaconvert/model/WavSettings.h>
 #include <utility>
 
@@ -42,14 +34,8 @@ namespace Model
 {
 
   /**
-   * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-   * group of settings related to audio encoding. The settings in this group vary
-   * depending on the value that you choose for Audio codec (Codec). For each codec
-   * enum that you choose, define the corresponding settings object. The following
-   * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-   * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-   * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings<p><h3>See
-   * Also:</h3>   <a
+   * Settings related to audio encoding. The settings in this group vary depending on
+   * the value that you choose for your audio codec.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -204,32 +190,92 @@ namespace Model
 
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline const AudioCodec& GetCodec() const{ return m_codec; }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline void SetCodec(const AudioCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline void SetCodec(AudioCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline AudioCodecSettings& WithCodec(const AudioCodec& value) { SetCodec(value); return *this;}
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline AudioCodecSettings& WithCodec(AudioCodec&& value) { SetCodec(std::move(value)); return *this;}
 
@@ -383,6 +429,80 @@ namespace Model
 
 
     /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * OPUS.
+     */
+    inline const OpusSettings& GetOpusSettings() const{ return m_opusSettings; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * OPUS.
+     */
+    inline bool OpusSettingsHasBeenSet() const { return m_opusSettingsHasBeenSet; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * OPUS.
+     */
+    inline void SetOpusSettings(const OpusSettings& value) { m_opusSettingsHasBeenSet = true; m_opusSettings = value; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * OPUS.
+     */
+    inline void SetOpusSettings(OpusSettings&& value) { m_opusSettingsHasBeenSet = true; m_opusSettings = std::move(value); }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * OPUS.
+     */
+    inline AudioCodecSettings& WithOpusSettings(const OpusSettings& value) { SetOpusSettings(value); return *this;}
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * OPUS.
+     */
+    inline AudioCodecSettings& WithOpusSettings(OpusSettings&& value) { SetOpusSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * Vorbis.
+     */
+    inline const VorbisSettings& GetVorbisSettings() const{ return m_vorbisSettings; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * Vorbis.
+     */
+    inline bool VorbisSettingsHasBeenSet() const { return m_vorbisSettingsHasBeenSet; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * Vorbis.
+     */
+    inline void SetVorbisSettings(const VorbisSettings& value) { m_vorbisSettingsHasBeenSet = true; m_vorbisSettings = value; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * Vorbis.
+     */
+    inline void SetVorbisSettings(VorbisSettings&& value) { m_vorbisSettingsHasBeenSet = true; m_vorbisSettings = std::move(value); }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * Vorbis.
+     */
+    inline AudioCodecSettings& WithVorbisSettings(const VorbisSettings& value) { SetVorbisSettings(value); return *this;}
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * Vorbis.
+     */
+    inline AudioCodecSettings& WithVorbisSettings(VorbisSettings&& value) { SetVorbisSettings(std::move(value)); return *this;}
+
+
+    /**
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value WAV.
      */
@@ -443,6 +563,12 @@ namespace Model
 
     Mp3Settings m_mp3Settings;
     bool m_mp3SettingsHasBeenSet;
+
+    OpusSettings m_opusSettings;
+    bool m_opusSettingsHasBeenSet;
+
+    VorbisSettings m_vorbisSettings;
+    bool m_vorbisSettingsHasBeenSet;
 
     WavSettings m_wavSettings;
     bool m_wavSettingsHasBeenSet;

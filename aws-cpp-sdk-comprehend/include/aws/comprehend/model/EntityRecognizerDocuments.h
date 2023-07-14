@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/comprehend/model/InputFormat.h>
 #include <utility>
 
 namespace Aws
@@ -104,10 +95,134 @@ namespace Model
      */
     inline EntityRecognizerDocuments& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline EntityRecognizerDocuments& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline EntityRecognizerDocuments& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p> Specifies the Amazon S3 location where the test documents for an entity
+     * recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline EntityRecognizerDocuments& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
+
+
+    /**
+     * <p> Specifies how the text in an input file should be processed. This is
+     * optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is
+     * considered a separate document. Use this option when you are processing large
+     * documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE -
+     * Each line in a file is considered a separate document. Use this option when you
+     * are processing many short documents, such as text messages.</p>
+     */
+    inline const InputFormat& GetInputFormat() const{ return m_inputFormat; }
+
+    /**
+     * <p> Specifies how the text in an input file should be processed. This is
+     * optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is
+     * considered a separate document. Use this option when you are processing large
+     * documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE -
+     * Each line in a file is considered a separate document. Use this option when you
+     * are processing many short documents, such as text messages.</p>
+     */
+    inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
+
+    /**
+     * <p> Specifies how the text in an input file should be processed. This is
+     * optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is
+     * considered a separate document. Use this option when you are processing large
+     * documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE -
+     * Each line in a file is considered a separate document. Use this option when you
+     * are processing many short documents, such as text messages.</p>
+     */
+    inline void SetInputFormat(const InputFormat& value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
+
+    /**
+     * <p> Specifies how the text in an input file should be processed. This is
+     * optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is
+     * considered a separate document. Use this option when you are processing large
+     * documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE -
+     * Each line in a file is considered a separate document. Use this option when you
+     * are processing many short documents, such as text messages.</p>
+     */
+    inline void SetInputFormat(InputFormat&& value) { m_inputFormatHasBeenSet = true; m_inputFormat = std::move(value); }
+
+    /**
+     * <p> Specifies how the text in an input file should be processed. This is
+     * optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is
+     * considered a separate document. Use this option when you are processing large
+     * documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE -
+     * Each line in a file is considered a separate document. Use this option when you
+     * are processing many short documents, such as text messages.</p>
+     */
+    inline EntityRecognizerDocuments& WithInputFormat(const InputFormat& value) { SetInputFormat(value); return *this;}
+
+    /**
+     * <p> Specifies how the text in an input file should be processed. This is
+     * optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is
+     * considered a separate document. Use this option when you are processing large
+     * documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE -
+     * Each line in a file is considered a separate document. Use this option when you
+     * are processing many short documents, such as text messages.</p>
+     */
+    inline EntityRecognizerDocuments& WithInputFormat(InputFormat&& value) { SetInputFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet;
+
+    Aws::String m_testS3Uri;
+    bool m_testS3UriHasBeenSet;
+
+    InputFormat m_inputFormat;
+    bool m_inputFormatHasBeenSet;
   };
 
 } // namespace Model

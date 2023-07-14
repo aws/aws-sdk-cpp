@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -58,7 +48,7 @@ namespace Model
 
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -71,7 +61,7 @@ namespace Model
     inline const Aws::String& GetTunnelInsideCidr() const{ return m_tunnelInsideCidr; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -84,7 +74,7 @@ namespace Model
     inline bool TunnelInsideCidrHasBeenSet() const { return m_tunnelInsideCidrHasBeenSet; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -97,7 +87,7 @@ namespace Model
     inline void SetTunnelInsideCidr(const Aws::String& value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr = value; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -110,7 +100,7 @@ namespace Model
     inline void SetTunnelInsideCidr(Aws::String&& value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr = std::move(value); }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -123,7 +113,7 @@ namespace Model
     inline void SetTunnelInsideCidr(const char* value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr.assign(value); }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -136,7 +126,7 @@ namespace Model
     inline VpnTunnelOptionsSpecification& WithTunnelInsideCidr(const Aws::String& value) { SetTunnelInsideCidr(value); return *this;}
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -149,7 +139,7 @@ namespace Model
     inline VpnTunnelOptionsSpecification& WithTunnelInsideCidr(Aws::String&& value) { SetTunnelInsideCidr(std::move(value)); return *this;}
 
     /**
-     * <p>The range of inside IP addresses for the tunnel. Any specified CIDR blocks
+     * <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks
      * must be unique across all VPN connections that use the same virtual private
      * gateway. </p> <p>Constraints: A size /30 CIDR block from the
      * <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and
@@ -160,6 +150,71 @@ namespace Model
      * </li> <li> <p> <code>169.254.169.252/30</code> </p> </li> </ul>
      */
     inline VpnTunnelOptionsSpecification& WithTunnelInsideCidr(const char* value) { SetTunnelInsideCidr(value); return *this;}
+
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline const Aws::String& GetTunnelInsideIpv6Cidr() const{ return m_tunnelInsideIpv6Cidr; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline bool TunnelInsideIpv6CidrHasBeenSet() const { return m_tunnelInsideIpv6CidrHasBeenSet; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(const Aws::String& value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr = value; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(Aws::String&& value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr = std::move(value); }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(const char* value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr.assign(value); }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline VpnTunnelOptionsSpecification& WithTunnelInsideIpv6Cidr(const Aws::String& value) { SetTunnelInsideIpv6Cidr(value); return *this;}
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline VpnTunnelOptionsSpecification& WithTunnelInsideIpv6Cidr(Aws::String&& value) { SetTunnelInsideIpv6Cidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks
+     * must be unique across all VPN connections that use the same transit gateway.</p>
+     * <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code>
+     * range.</p>
+     */
+    inline VpnTunnelOptionsSpecification& WithTunnelInsideIpv6Cidr(const char* value) { SetTunnelInsideIpv6Cidr(value); return *this;}
 
 
     /**
@@ -291,8 +346,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -301,8 +356,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -311,8 +366,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -321,8 +376,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -390,82 +445,155 @@ namespace Model
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline int GetDPDTimeoutSeconds() const{ return m_dPDTimeoutSeconds; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline bool DPDTimeoutSecondsHasBeenSet() const { return m_dPDTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline void SetDPDTimeoutSeconds(int value) { m_dPDTimeoutSecondsHasBeenSet = true; m_dPDTimeoutSeconds = value; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithDPDTimeoutSeconds(int value) { SetDPDTimeoutSeconds(value); return *this;}
 
 
     /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline const Aws::String& GetDPDTimeoutAction() const{ return m_dPDTimeoutAction; }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline bool DPDTimeoutActionHasBeenSet() const { return m_dPDTimeoutActionHasBeenSet; }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline void SetDPDTimeoutAction(const Aws::String& value) { m_dPDTimeoutActionHasBeenSet = true; m_dPDTimeoutAction = value; }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline void SetDPDTimeoutAction(Aws::String&& value) { m_dPDTimeoutActionHasBeenSet = true; m_dPDTimeoutAction = std::move(value); }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline void SetDPDTimeoutAction(const char* value) { m_dPDTimeoutActionHasBeenSet = true; m_dPDTimeoutAction.assign(value); }
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline VpnTunnelOptionsSpecification& WithDPDTimeoutAction(const Aws::String& value) { SetDPDTimeoutAction(value); return *this;}
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline VpnTunnelOptionsSpecification& WithDPDTimeoutAction(Aws::String&& value) { SetDPDTimeoutAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to
+     * restart the IKE initiation. Specify <code>clear</code> to end the IKE
+     * session.</p> <p>Valid Values: <code>clear</code> | <code>none</code> |
+     * <code>restart</code> </p> <p>Default: <code>clear</code> </p>
+     */
+    inline VpnTunnelOptionsSpecification& WithDPDTimeoutAction(const char* value) { SetDPDTimeoutAction(value); return *this;}
+
+
+    /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline const Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue>& GetPhase1EncryptionAlgorithms() const{ return m_phase1EncryptionAlgorithms; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline bool Phase1EncryptionAlgorithmsHasBeenSet() const { return m_phase1EncryptionAlgorithmsHasBeenSet; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline void SetPhase1EncryptionAlgorithms(const Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue>& value) { m_phase1EncryptionAlgorithmsHasBeenSet = true; m_phase1EncryptionAlgorithms = value; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline void SetPhase1EncryptionAlgorithms(Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue>&& value) { m_phase1EncryptionAlgorithmsHasBeenSet = true; m_phase1EncryptionAlgorithms = std::move(value); }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase1EncryptionAlgorithms(const Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue>& value) { SetPhase1EncryptionAlgorithms(value); return *this;}
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase1EncryptionAlgorithms(Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue>&& value) { SetPhase1EncryptionAlgorithms(std::move(value)); return *this;}
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase1EncryptionAlgorithms(const Phase1EncryptionAlgorithmsRequestListValue& value) { m_phase1EncryptionAlgorithmsHasBeenSet = true; m_phase1EncryptionAlgorithms.push_back(value); return *this; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase1EncryptionAlgorithms(Phase1EncryptionAlgorithmsRequestListValue&& value) { m_phase1EncryptionAlgorithmsHasBeenSet = true; m_phase1EncryptionAlgorithms.push_back(std::move(value)); return *this; }
 
@@ -473,56 +601,64 @@ namespace Model
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline const Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue>& GetPhase2EncryptionAlgorithms() const{ return m_phase2EncryptionAlgorithms; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline bool Phase2EncryptionAlgorithmsHasBeenSet() const { return m_phase2EncryptionAlgorithmsHasBeenSet; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline void SetPhase2EncryptionAlgorithms(const Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue>& value) { m_phase2EncryptionAlgorithmsHasBeenSet = true; m_phase2EncryptionAlgorithms = value; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline void SetPhase2EncryptionAlgorithms(Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue>&& value) { m_phase2EncryptionAlgorithmsHasBeenSet = true; m_phase2EncryptionAlgorithms = std::move(value); }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase2EncryptionAlgorithms(const Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue>& value) { SetPhase2EncryptionAlgorithms(value); return *this;}
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase2EncryptionAlgorithms(Aws::Vector<Phase2EncryptionAlgorithmsRequestListValue>&& value) { SetPhase2EncryptionAlgorithms(std::move(value)); return *this;}
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase2EncryptionAlgorithms(const Phase2EncryptionAlgorithmsRequestListValue& value) { m_phase2EncryptionAlgorithmsHasBeenSet = true; m_phase2EncryptionAlgorithms.push_back(value); return *this; }
 
     /**
      * <p>One or more encryption algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>AES128</code> |
-     * <code>AES256</code> </p>
+     * <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
+     * </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase2EncryptionAlgorithms(Phase2EncryptionAlgorithmsRequestListValue&& value) { m_phase2EncryptionAlgorithmsHasBeenSet = true; m_phase2EncryptionAlgorithms.push_back(std::move(value)); return *this; }
 
@@ -530,56 +666,56 @@ namespace Model
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline const Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue>& GetPhase1IntegrityAlgorithms() const{ return m_phase1IntegrityAlgorithms; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline bool Phase1IntegrityAlgorithmsHasBeenSet() const { return m_phase1IntegrityAlgorithmsHasBeenSet; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline void SetPhase1IntegrityAlgorithms(const Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue>& value) { m_phase1IntegrityAlgorithmsHasBeenSet = true; m_phase1IntegrityAlgorithms = value; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline void SetPhase1IntegrityAlgorithms(Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue>&& value) { m_phase1IntegrityAlgorithmsHasBeenSet = true; m_phase1IntegrityAlgorithms = std::move(value); }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase1IntegrityAlgorithms(const Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue>& value) { SetPhase1IntegrityAlgorithms(value); return *this;}
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase1IntegrityAlgorithms(Aws::Vector<Phase1IntegrityAlgorithmsRequestListValue>&& value) { SetPhase1IntegrityAlgorithms(std::move(value)); return *this;}
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase1IntegrityAlgorithms(const Phase1IntegrityAlgorithmsRequestListValue& value) { m_phase1IntegrityAlgorithmsHasBeenSet = true; m_phase1IntegrityAlgorithms.push_back(value); return *this; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 1 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase1IntegrityAlgorithms(Phase1IntegrityAlgorithmsRequestListValue&& value) { m_phase1IntegrityAlgorithmsHasBeenSet = true; m_phase1IntegrityAlgorithms.push_back(std::move(value)); return *this; }
 
@@ -587,56 +723,56 @@ namespace Model
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline const Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue>& GetPhase2IntegrityAlgorithms() const{ return m_phase2IntegrityAlgorithms; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline bool Phase2IntegrityAlgorithmsHasBeenSet() const { return m_phase2IntegrityAlgorithmsHasBeenSet; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline void SetPhase2IntegrityAlgorithms(const Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue>& value) { m_phase2IntegrityAlgorithmsHasBeenSet = true; m_phase2IntegrityAlgorithms = value; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline void SetPhase2IntegrityAlgorithms(Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue>&& value) { m_phase2IntegrityAlgorithmsHasBeenSet = true; m_phase2IntegrityAlgorithms = std::move(value); }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase2IntegrityAlgorithms(const Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue>& value) { SetPhase2IntegrityAlgorithms(value); return *this;}
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase2IntegrityAlgorithms(Aws::Vector<Phase2IntegrityAlgorithmsRequestListValue>&& value) { SetPhase2IntegrityAlgorithms(std::move(value)); return *this;}
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase2IntegrityAlgorithms(const Phase2IntegrityAlgorithmsRequestListValue& value) { m_phase2IntegrityAlgorithmsHasBeenSet = true; m_phase2IntegrityAlgorithms.push_back(value); return *this; }
 
     /**
      * <p>One or more integrity algorithms that are permitted for the VPN tunnel for
      * phase 2 IKE negotiations.</p> <p>Valid values: <code>SHA1</code> |
-     * <code>SHA2-256</code> </p>
+     * <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase2IntegrityAlgorithms(Phase2IntegrityAlgorithmsRequestListValue&& value) { m_phase2IntegrityAlgorithmsHasBeenSet = true; m_phase2IntegrityAlgorithms.push_back(std::move(value)); return *this; }
 
@@ -645,7 +781,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline const Aws::Vector<Phase1DHGroupNumbersRequestListValue>& GetPhase1DHGroupNumbers() const{ return m_phase1DHGroupNumbers; }
 
@@ -653,7 +790,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline bool Phase1DHGroupNumbersHasBeenSet() const { return m_phase1DHGroupNumbersHasBeenSet; }
 
@@ -661,7 +799,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline void SetPhase1DHGroupNumbers(const Aws::Vector<Phase1DHGroupNumbersRequestListValue>& value) { m_phase1DHGroupNumbersHasBeenSet = true; m_phase1DHGroupNumbers = value; }
 
@@ -669,7 +808,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline void SetPhase1DHGroupNumbers(Aws::Vector<Phase1DHGroupNumbersRequestListValue>&& value) { m_phase1DHGroupNumbersHasBeenSet = true; m_phase1DHGroupNumbers = std::move(value); }
 
@@ -677,7 +817,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase1DHGroupNumbers(const Aws::Vector<Phase1DHGroupNumbersRequestListValue>& value) { SetPhase1DHGroupNumbers(value); return *this;}
 
@@ -685,7 +826,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase1DHGroupNumbers(Aws::Vector<Phase1DHGroupNumbersRequestListValue>&& value) { SetPhase1DHGroupNumbers(std::move(value)); return *this;}
 
@@ -693,7 +835,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase1DHGroupNumbers(const Phase1DHGroupNumbersRequestListValue& value) { m_phase1DHGroupNumbersHasBeenSet = true; m_phase1DHGroupNumbers.push_back(value); return *this; }
 
@@ -701,7 +844,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 1 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> |
+     * <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase1DHGroupNumbers(Phase1DHGroupNumbersRequestListValue&& value) { m_phase1DHGroupNumbersHasBeenSet = true; m_phase1DHGroupNumbers.push_back(std::move(value)); return *this; }
 
@@ -710,8 +854,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline const Aws::Vector<Phase2DHGroupNumbersRequestListValue>& GetPhase2DHGroupNumbers() const{ return m_phase2DHGroupNumbers; }
 
@@ -719,8 +863,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline bool Phase2DHGroupNumbersHasBeenSet() const { return m_phase2DHGroupNumbersHasBeenSet; }
 
@@ -728,8 +872,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline void SetPhase2DHGroupNumbers(const Aws::Vector<Phase2DHGroupNumbersRequestListValue>& value) { m_phase2DHGroupNumbersHasBeenSet = true; m_phase2DHGroupNumbers = value; }
 
@@ -737,8 +881,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline void SetPhase2DHGroupNumbers(Aws::Vector<Phase2DHGroupNumbersRequestListValue>&& value) { m_phase2DHGroupNumbersHasBeenSet = true; m_phase2DHGroupNumbers = std::move(value); }
 
@@ -746,8 +890,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase2DHGroupNumbers(const Aws::Vector<Phase2DHGroupNumbersRequestListValue>& value) { SetPhase2DHGroupNumbers(value); return *this;}
 
@@ -755,8 +899,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithPhase2DHGroupNumbers(Aws::Vector<Phase2DHGroupNumbersRequestListValue>&& value) { SetPhase2DHGroupNumbers(std::move(value)); return *this;}
 
@@ -764,8 +908,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase2DHGroupNumbers(const Phase2DHGroupNumbersRequestListValue& value) { m_phase2DHGroupNumbersHasBeenSet = true; m_phase2DHGroupNumbers.push_back(value); return *this; }
 
@@ -773,8 +917,8 @@ namespace Model
      * <p>One or more Diffie-Hellman group numbers that are permitted for the VPN
      * tunnel for phase 2 IKE negotiations.</p> <p>Valid values: <code>2</code> |
      * <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> |
-     * <code>24</code> </p>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> |
+     * <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
      */
     inline VpnTunnelOptionsSpecification& AddPhase2DHGroupNumbers(Phase2DHGroupNumbersRequestListValue&& value) { m_phase2DHGroupNumbersHasBeenSet = true; m_phase2DHGroupNumbers.push_back(std::move(value)); return *this; }
 
@@ -827,10 +971,86 @@ namespace Model
      */
     inline VpnTunnelOptionsSpecification& AddIKEVersions(IKEVersionsRequestListValue&& value) { m_iKEVersionsHasBeenSet = true; m_iKEVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline const Aws::String& GetStartupAction() const{ return m_startupAction; }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline bool StartupActionHasBeenSet() const { return m_startupActionHasBeenSet; }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline void SetStartupAction(const Aws::String& value) { m_startupActionHasBeenSet = true; m_startupAction = value; }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline void SetStartupAction(Aws::String&& value) { m_startupActionHasBeenSet = true; m_startupAction = std::move(value); }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline void SetStartupAction(const char* value) { m_startupActionHasBeenSet = true; m_startupAction.assign(value); }
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline VpnTunnelOptionsSpecification& WithStartupAction(const Aws::String& value) { SetStartupAction(value); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline VpnTunnelOptionsSpecification& WithStartupAction(Aws::String&& value) { SetStartupAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the tunnel for the VPN connection.
+     * By default, your customer gateway device must initiate the IKE negotiation and
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
+     */
+    inline VpnTunnelOptionsSpecification& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
+
   private:
 
     Aws::String m_tunnelInsideCidr;
     bool m_tunnelInsideCidrHasBeenSet;
+
+    Aws::String m_tunnelInsideIpv6Cidr;
+    bool m_tunnelInsideIpv6CidrHasBeenSet;
 
     Aws::String m_preSharedKey;
     bool m_preSharedKeyHasBeenSet;
@@ -853,6 +1073,9 @@ namespace Model
     int m_dPDTimeoutSeconds;
     bool m_dPDTimeoutSecondsHasBeenSet;
 
+    Aws::String m_dPDTimeoutAction;
+    bool m_dPDTimeoutActionHasBeenSet;
+
     Aws::Vector<Phase1EncryptionAlgorithmsRequestListValue> m_phase1EncryptionAlgorithms;
     bool m_phase1EncryptionAlgorithmsHasBeenSet;
 
@@ -873,6 +1096,9 @@ namespace Model
 
     Aws::Vector<IKEVersionsRequestListValue> m_iKEVersions;
     bool m_iKEVersionsHasBeenSet;
+
+    Aws::String m_startupAction;
+    bool m_startupActionHasBeenSet;
   };
 
 } // namespace Model

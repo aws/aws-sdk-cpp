@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
@@ -122,11 +112,49 @@ namespace Model
      */
     inline ListProblemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupName = value; }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupName = std::move(value); }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline void SetResourceGroupName(const char* value) { m_resourceGroupName.assign(value); }
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline ListProblemsResult& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline ListProblemsResult& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the resource group. </p>
+     */
+    inline ListProblemsResult& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+
   private:
 
     Aws::Vector<Problem> m_problemList;
 
     Aws::String m_nextToken;
+
+    Aws::String m_resourceGroupName;
   };
 
 } // namespace Model

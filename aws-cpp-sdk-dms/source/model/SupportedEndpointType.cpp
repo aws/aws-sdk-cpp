@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dms/model/SupportedEndpointType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,7 @@ SupportedEndpointType::SupportedEndpointType() :
     m_supportsCDCHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
+    m_replicationInstanceEngineMinimumVersionHasBeenSet(false),
     m_engineDisplayNameHasBeenSet(false)
 {
 }
@@ -44,6 +35,7 @@ SupportedEndpointType::SupportedEndpointType(JsonView jsonValue) :
     m_supportsCDCHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
+    m_replicationInstanceEngineMinimumVersionHasBeenSet(false),
     m_engineDisplayNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -70,6 +62,13 @@ SupportedEndpointType& SupportedEndpointType::operator =(JsonView jsonValue)
     m_endpointType = ReplicationEndpointTypeValueMapper::GetReplicationEndpointTypeValueForName(jsonValue.GetString("EndpointType"));
 
     m_endpointTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicationInstanceEngineMinimumVersion"))
+  {
+    m_replicationInstanceEngineMinimumVersion = jsonValue.GetString("ReplicationInstanceEngineMinimumVersion");
+
+    m_replicationInstanceEngineMinimumVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EngineDisplayName"))
@@ -101,6 +100,12 @@ JsonValue SupportedEndpointType::Jsonize() const
   if(m_endpointTypeHasBeenSet)
   {
    payload.WithString("EndpointType", ReplicationEndpointTypeValueMapper::GetNameForReplicationEndpointTypeValue(m_endpointType));
+  }
+
+  if(m_replicationInstanceEngineMinimumVersionHasBeenSet)
+  {
+   payload.WithString("ReplicationInstanceEngineMinimumVersion", m_replicationInstanceEngineMinimumVersion);
+
   }
 
   if(m_engineDisplayNameHasBeenSet)

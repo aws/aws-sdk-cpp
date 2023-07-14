@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/ChannelType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,6 +20,7 @@ namespace Aws
       namespace ChannelTypeMapper
       {
 
+        static const int PUSH_HASH = HashingUtils::HashString("PUSH");
         static const int GCM_HASH = HashingUtils::HashString("GCM");
         static const int APNS_HASH = HashingUtils::HashString("APNS");
         static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
@@ -41,12 +32,17 @@ namespace Aws
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
         static const int BAIDU_HASH = HashingUtils::HashString("BAIDU");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int IN_APP_HASH = HashingUtils::HashString("IN_APP");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == GCM_HASH)
+          if (hashCode == PUSH_HASH)
+          {
+            return ChannelType::PUSH;
+          }
+          else if (hashCode == GCM_HASH)
           {
             return ChannelType::GCM;
           }
@@ -90,6 +86,10 @@ namespace Aws
           {
             return ChannelType::CUSTOM;
           }
+          else if (hashCode == IN_APP_HASH)
+          {
+            return ChannelType::IN_APP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelType::PUSH:
+            return "PUSH";
           case ChannelType::GCM:
             return "GCM";
           case ChannelType::APNS:
@@ -126,6 +128,8 @@ namespace Aws
             return "BAIDU";
           case ChannelType::CUSTOM:
             return "CUSTOM";
+          case ChannelType::IN_APP:
+            return "IN_APP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

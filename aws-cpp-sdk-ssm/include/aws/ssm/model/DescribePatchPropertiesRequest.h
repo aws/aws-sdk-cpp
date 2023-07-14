@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -111,37 +101,43 @@ namespace Model
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for Linux operating systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline const PatchSet& GetPatchSet() const{ return m_patchSet; }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for Linux operating systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline bool PatchSetHasBeenSet() const { return m_patchSetHasBeenSet; }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for Linux operating systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline void SetPatchSet(const PatchSet& value) { m_patchSetHasBeenSet = true; m_patchSet = value; }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for Linux operating systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline void SetPatchSet(PatchSet&& value) { m_patchSetHasBeenSet = true; m_patchSet = std::move(value); }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for Linux operating systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline DescribePatchPropertiesRequest& WithPatchSet(const PatchSet& value) { SetPatchSet(value); return *this;}
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for Linux operating systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline DescribePatchPropertiesRequest& WithPatchSet(PatchSet&& value) { SetPatchSet(std::move(value)); return *this;}
 

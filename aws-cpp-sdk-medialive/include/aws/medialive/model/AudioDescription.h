@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/AudioType.h>
 #include <aws/medialive/model/AudioDescriptionAudioTypeControl.h>
+#include <aws/medialive/model/AudioWatermarkSettings.h>
 #include <aws/medialive/model/AudioCodecSettings.h>
 #include <aws/medialive/model/AudioDescriptionLanguageCodeControl.h>
 #include <aws/medialive/model/RemixSettings.h>
@@ -242,6 +233,43 @@ Note
 
 
     /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline const AudioWatermarkSettings& GetAudioWatermarkingSettings() const{ return m_audioWatermarkingSettings; }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline bool AudioWatermarkingSettingsHasBeenSet() const { return m_audioWatermarkingSettingsHasBeenSet; }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline void SetAudioWatermarkingSettings(const AudioWatermarkSettings& value) { m_audioWatermarkingSettingsHasBeenSet = true; m_audioWatermarkingSettings = value; }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline void SetAudioWatermarkingSettings(AudioWatermarkSettings&& value) { m_audioWatermarkingSettingsHasBeenSet = true; m_audioWatermarkingSettings = std::move(value); }
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline AudioDescription& WithAudioWatermarkingSettings(const AudioWatermarkSettings& value) { SetAudioWatermarkingSettings(value); return *this;}
+
+    /**
+     * Settings to configure one or more solutions that insert audio watermarks in the
+     * audio encode
+     */
+    inline AudioDescription& WithAudioWatermarkingSettings(AudioWatermarkSettings&& value) { SetAudioWatermarkingSettings(std::move(value)); return *this;}
+
+
+    /**
      * Audio codec settings.
      */
     inline const AudioCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
@@ -273,58 +301,58 @@ Note
 
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline AudioDescription& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline AudioDescription& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline AudioDescription& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 
@@ -533,6 +561,9 @@ Note
 
     AudioDescriptionAudioTypeControl m_audioTypeControl;
     bool m_audioTypeControlHasBeenSet;
+
+    AudioWatermarkSettings m_audioWatermarkingSettings;
+    bool m_audioWatermarkingSettingsHasBeenSet;
 
     AudioCodecSettings m_codecSettings;
     bool m_codecSettingsHasBeenSet;

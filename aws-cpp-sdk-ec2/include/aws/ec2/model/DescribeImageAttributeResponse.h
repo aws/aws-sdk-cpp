@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -306,6 +296,170 @@ namespace Model
     inline DescribeImageAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The boot mode.</p>
+     */
+    inline const AttributeValue& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode.</p>
+     */
+    inline void SetBootMode(const AttributeValue& value) { m_bootMode = value; }
+
+    /**
+     * <p>The boot mode.</p>
+     */
+    inline void SetBootMode(AttributeValue&& value) { m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode.</p>
+     */
+    inline DescribeImageAttributeResponse& WithBootMode(const AttributeValue& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode.</p>
+     */
+    inline DescribeImageAttributeResponse& WithBootMode(AttributeValue&& value) { SetBootMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>.</p>
+     */
+    inline const AttributeValue& GetTpmSupport() const{ return m_tpmSupport; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>.</p>
+     */
+    inline void SetTpmSupport(const AttributeValue& value) { m_tpmSupport = value; }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>.</p>
+     */
+    inline void SetTpmSupport(AttributeValue&& value) { m_tpmSupport = std::move(value); }
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithTpmSupport(const AttributeValue& value) { SetTpmSupport(value); return *this;}
+
+    /**
+     * <p>If the image is configured for NitroTPM support, the value is
+     * <code>v2.0</code>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithTpmSupport(AttributeValue&& value) { SetTpmSupport(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const AttributeValue& GetUefiData() const{ return m_uefiData; }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetUefiData(const AttributeValue& value) { m_uefiData = value; }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetUefiData(AttributeValue&& value) { m_uefiData = std::move(value); }
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithUefiData(const AttributeValue& value) { SetUefiData(value); return *this;}
+
+    /**
+     * <p>Base64 representation of the non-volatile UEFI variable store. To retrieve
+     * the UEFI data, use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+     * command. You can inspect and modify the UEFI data by using the <a
+     * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
+     * GitHub. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline DescribeImageAttributeResponse& WithUefiData(AttributeValue&& value) { SetUefiData(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline const AttributeValue& GetLastLaunchedTime() const{ return m_lastLaunchedTime; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(const AttributeValue& value) { m_lastLaunchedTime = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline void SetLastLaunchedTime(AttributeValue&& value) { m_lastLaunchedTime = std::move(value); }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline DescribeImageAttributeResponse& WithLastLaunchedTime(const AttributeValue& value) { SetLastLaunchedTime(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the AMI was last used to launch an EC2 instance. When
+     * the AMI is used, there is a 24-hour delay before that usage is reported.</p>
+     *  <p> <code>lastLaunchedTime</code> data is available starting April
+     * 2017.</p> 
+     */
+    inline DescribeImageAttributeResponse& WithLastLaunchedTime(AttributeValue&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -338,6 +492,14 @@ namespace Model
     AttributeValue m_ramdiskId;
 
     AttributeValue m_sriovNetSupport;
+
+    AttributeValue m_bootMode;
+
+    AttributeValue m_tpmSupport;
+
+    AttributeValue m_uefiData;
+
+    AttributeValue m_lastLaunchedTime;
 
     ResponseMetadata m_responseMetadata;
   };

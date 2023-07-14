@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/cloudformation/model/PermissionModels.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/ManagedExecution.h>
 #include <utility>
 
 namespace Aws
@@ -218,44 +209,44 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to Organizations accounts that are added to a target organizational unit
+     * (OU).</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to Organizations accounts that are added to a target organizational unit
+     * (OU).</p>
      */
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to Organizations accounts that are added to a target organizational unit
+     * (OU).</p>
      */
     inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to Organizations accounts that are added to a target organizational unit
+     * (OU).</p>
      */
     inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to Organizations accounts that are added to a target organizational unit
+     * (OU).</p>
      */
     inline StackSetSummary& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-     * automatically deploys to AWS Organizations accounts that are added to a target
-     * organizational unit (OU).</p>
+     * <p>[Service-managed permissions] Describes whether StackSets automatically
+     * deploys to Organizations accounts that are added to a target organizational unit
+     * (OU).</p>
      */
     inline StackSetSummary& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
 
@@ -268,7 +259,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -283,7 +274,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -298,7 +289,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -313,7 +304,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -328,7 +319,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -343,7 +334,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -359,8 +350,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -375,8 +366,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -391,8 +382,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -407,8 +398,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -423,8 +414,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -439,8 +430,8 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
-     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't
+     * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> <li> <p> <code>UNKNOWN</code>:
      * This value is reserved for future use.</p> </li> </ul>
@@ -451,44 +442,81 @@ namespace Model
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline StackSetSummary& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack set. This value will be <code>NULL</code> for any stack set on which
-     * drift detection has not yet been performed.</p>
+     * drift detection hasn't yet been performed.</p>
      */
     inline StackSetSummary& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline StackSetSummary& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline StackSetSummary& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
 
   private:
 
@@ -515,6 +543,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
     bool m_lastDriftCheckTimestampHasBeenSet;
+
+    ManagedExecution m_managedExecution;
+    bool m_managedExecutionHasBeenSet;
   };
 
 } // namespace Model

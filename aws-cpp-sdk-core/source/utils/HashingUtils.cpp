@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -19,7 +9,9 @@
 #include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
+#include <aws/core/utils/crypto/Sha1.h>
 #include <aws/core/utils/crypto/MD5.h>
+#include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
@@ -219,6 +211,18 @@ ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
     return hexBuffer;
 }
 
+ByteBuffer HashingUtils::CalculateSHA1(const Aws::String& str)
+{
+    Sha1 hash;
+    return hash.Calculate(str).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateSHA1(Aws::IOStream& stream)
+{
+    Sha1 hash;
+    return hash.Calculate(stream).GetResult();
+}
+
 ByteBuffer HashingUtils::CalculateMD5(const Aws::String& str)
 {
     MD5 hash;
@@ -231,6 +235,30 @@ ByteBuffer HashingUtils::CalculateMD5(Aws::IOStream& stream)
     return hash.Calculate(stream).GetResult();
 }
 
+ByteBuffer HashingUtils::CalculateCRC32(const Aws::String& str)
+{
+    CRC32 hash;
+    return hash.Calculate(str).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateCRC32(Aws::IOStream& stream)
+{
+    CRC32 hash;
+    return hash.Calculate(stream).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateCRC32C(const Aws::String& str)
+{
+    CRC32C hash;
+    return hash.Calculate(str).GetResult();
+}
+
+ByteBuffer HashingUtils::CalculateCRC32C(Aws::IOStream& stream)
+{
+    CRC32C hash;
+    return hash.Calculate(stream).GetResult();
+}
+
 int HashingUtils::HashString(const char* strToHash)
 {
     if (!strToHash)
@@ -239,7 +267,7 @@ int HashingUtils::HashString(const char* strToHash)
     unsigned hash = 0;
     while (char charValue = *strToHash++)
     {
-        hash = charValue + 31 * hash;    
+        hash = charValue + 31 * hash;
     }
 
     return hash;

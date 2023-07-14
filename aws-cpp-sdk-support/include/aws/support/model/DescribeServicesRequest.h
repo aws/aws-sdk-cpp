@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
@@ -46,104 +36,121 @@ namespace Model
 
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceCodeList() const{ return m_serviceCodeList; }
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline bool ServiceCodeListHasBeenSet() const { return m_serviceCodeListHasBeenSet; }
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline void SetServiceCodeList(const Aws::Vector<Aws::String>& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = value; }
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline void SetServiceCodeList(Aws::Vector<Aws::String>&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = std::move(value); }
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline DescribeServicesRequest& WithServiceCodeList(const Aws::Vector<Aws::String>& value) { SetServiceCodeList(value); return *this;}
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline DescribeServicesRequest& WithServiceCodeList(Aws::Vector<Aws::String>&& value) { SetServiceCodeList(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline DescribeServicesRequest& AddServiceCodeList(const Aws::String& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(value); return *this; }
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline DescribeServicesRequest& AddServiceCodeList(Aws::String&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     * <p>A JSON-formatted list of service codes available for Amazon Web Services
+     * services.</p>
      */
     inline DescribeServicesRequest& AddServiceCodeList(const char* value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(value); return *this; }
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeServicesRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeServicesRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeServicesRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

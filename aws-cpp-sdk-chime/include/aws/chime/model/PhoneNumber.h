@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
@@ -136,6 +126,47 @@ namespace Model
      * <p>The phone number, in E.164 format.</p>
      */
     inline PhoneNumber& WithE164PhoneNumber(const char* value) { SetE164PhoneNumber(value); return *this;}
+
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline const Aws::String& GetCountry() const{ return m_country; }
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline PhoneNumber& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline PhoneNumber& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
+
+    /**
+     * <p>The phone number country. Format: ISO 3166-1 alpha-2.</p>
+     */
+    inline PhoneNumber& WithCountry(const char* value) { SetCountry(value); return *this;}
 
 
     /**
@@ -474,6 +505,9 @@ namespace Model
 
     Aws::String m_e164PhoneNumber;
     bool m_e164PhoneNumberHasBeenSet;
+
+    Aws::String m_country;
+    bool m_countryHasBeenSet;
 
     PhoneNumberType m_type;
     bool m_typeHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/ce/model/DateInterval.h>
 #include <aws/ce/model/Granularity.h>
 #include <aws/ce/model/Expression.h>
+#include <aws/ce/model/SortDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -222,6 +213,79 @@ namespace Model
      */
     inline GetSavingsPlansUtilizationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline GetSavingsPlansUtilizationRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline GetSavingsPlansUtilizationRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+
   private:
 
     DateInterval m_timePeriod;
@@ -232,6 +296,9 @@ namespace Model
 
     Expression m_filter;
     bool m_filterHasBeenSet;
+
+    SortDefinition m_sortBy;
+    bool m_sortByHasBeenSet;
   };
 
 } // namespace Model

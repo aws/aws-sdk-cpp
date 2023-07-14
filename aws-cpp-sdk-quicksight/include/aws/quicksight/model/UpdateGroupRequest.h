@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -125,91 +115,99 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline UpdateGroupRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline UpdateGroupRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline UpdateGroupRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline UpdateGroupRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline UpdateGroupRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace of the group that you want to update.</p>
      */
     inline UpdateGroupRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

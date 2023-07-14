@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -46,124 +36,139 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary that was updated.</p>
+     * <p>The name of the updated custom vocabulary.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code you selected for your custom vocabulary.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code you selected for your custom vocabulary.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code you selected for your custom vocabulary.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code you selected for your custom vocabulary.</p>
      */
     inline UpdateVocabularyResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code you selected for your custom vocabulary.</p>
      */
     inline UpdateVocabularyResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the vocabulary was updated.</p>
+     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time that the vocabulary was updated.</p>
+     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time that the vocabulary was updated.</p>
+     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time that the vocabulary was updated.</p>
+     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline UpdateVocabularyResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the vocabulary was updated.</p>
+     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline UpdateVocabularyResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The processing state of the vocabulary. When the <code>VocabularyState</code>
-     * field contains <code>READY</code> the vocabulary is ready to be used in a
+     * <p>The processing state of your custom vocabulary. If the state is
+     * <code>READY</code>, you can use the vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
-     * <p>The processing state of the vocabulary. When the <code>VocabularyState</code>
-     * field contains <code>READY</code> the vocabulary is ready to be used in a
+     * <p>The processing state of your custom vocabulary. If the state is
+     * <code>READY</code>, you can use the vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
-     * <p>The processing state of the vocabulary. When the <code>VocabularyState</code>
-     * field contains <code>READY</code> the vocabulary is ready to be used in a
+     * <p>The processing state of your custom vocabulary. If the state is
+     * <code>READY</code>, you can use the vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
-     * <p>The processing state of the vocabulary. When the <code>VocabularyState</code>
-     * field contains <code>READY</code> the vocabulary is ready to be used in a
+     * <p>The processing state of your custom vocabulary. If the state is
+     * <code>READY</code>, you can use the vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
-     * <p>The processing state of the vocabulary. When the <code>VocabularyState</code>
-     * field contains <code>READY</code> the vocabulary is ready to be used in a
+     * <p>The processing state of your custom vocabulary. If the state is
+     * <code>READY</code>, you can use the vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}

@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.transform;
 
@@ -35,7 +25,17 @@ public class C2jModelToGeneratorModelTransformer {
     boolean standalone;
     boolean hasEndpointTrait;
     boolean hasEndpointDiscoveryTrait;
+    boolean requireEndpointDiscovery;
     String endpointOperationName;
+
+    public static final HashSet<String> UNSUPPORTEDHTMLTAGS = new HashSet<>();
+
+    static {
+        UNSUPPORTEDHTMLTAGS.add("<note>");
+        UNSUPPORTEDHTMLTAGS.add("</note>");
+        UNSUPPORTEDHTMLTAGS.add("<important>");
+        UNSUPPORTEDHTMLTAGS.add("</important>");
+    }
 
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
@@ -57,9 +57,10 @@ public class C2jModelToGeneratorModelTransformer {
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
-        serviceModel.setServiceErrors(filterOutCoreErrors(allErrors));
+        serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
+        serviceModel.getMetadata().setRequireEndpointDiscovery(requireEndpointDiscovery);
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
 
         return serviceModel;
@@ -71,8 +72,12 @@ public class C2jModelToGeneratorModelTransformer {
             for(int i = 0; i < indentDepth; ++i) {
                 tabString += " ";
             }
-            String wrappedString = WordUtils.wrap(documentation, 80, "\n" + tabString + "* ", false);
-            return wrappedString.replace("/*", "/ *").replace("*/", "* /");
+            String wrappedString = WordUtils.wrap(documentation, 80, System.lineSeparator() + tabString + "* ", false);
+            wrappedString = wrappedString.replace("/*", "/ *").replace("*/", "* /");
+            for (String s : UNSUPPORTEDHTMLTAGS) {
+                wrappedString = wrappedString.replace(s, "");
+            }
+            return wrappedString;
         }
         return null;
     }
@@ -129,6 +134,10 @@ public class C2jModelToGeneratorModelTransformer {
             metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getNamespace()));
         }
 
+        if ("S3-CRT".equalsIgnoreCase(c2jServiceModel.getServiceName())) {
+            metadata.setNamespace("S3Crt");
+        }
+
         metadata.setClassNamePrefix(CppViewHelper.convertToUpperCamel(ifNotNullOrEmpty(c2jMetadata.getClientClassNamePrefix(), metadata.getNamespace())));
 
         c2jServiceModel.setServiceName(ifNotNullOrEmpty(c2jServiceModel.getServiceName(), c2jMetadata.getEndpointPrefix()));
@@ -161,6 +170,33 @@ public class C2jModelToGeneratorModelTransformer {
             if (shape.hasStreamMembers() && shape.isRequest()) {
                 shape.RemoveMember("contentType");
                 shape.RemoveMember("ContentType");
+            }
+
+            /**
+             * Decide event payload type, should be one of them: "blob" | "string" | "structure" | null
+             */
+            if (shape.isEvent()) {
+                if (!shape.getMembers().values().stream().anyMatch(member -> !member.isEventHeader())) {
+                    // Header only event
+                    shape.setEventPayloadType(null);
+                } else if (shape.hasEventPayloadMembers() || shape.getMembers().size() == 1) {
+                    if (shape.getMembers().size() == 1) {
+                        shape.getMembers().entrySet().stream().forEach(memberEntry -> {
+                            memberEntry.getValue().setEventPayload(true);
+                            shape.setEventPayloadMemberName(memberEntry.getKey());
+                            shape.setEventPayloadType(memberEntry.getValue().getShape().getType());
+                        });
+                    } else {
+                        throw new RuntimeException("Event shape used in Event Stream should only has one member if it has event payload member.");
+                    }
+                } else if (shape.getMembers().size() > 1) {
+                    if (!shape.getType().equals("structure")) {
+                        throw new RuntimeException("Event shape should always has \"structure\" type if has multiple members.");
+                    }
+                    shape.setEventPayloadType(shape.getType());
+                } else {
+                    shape.setEventPayloadType(null);
+                }
             }
         }
     }
@@ -213,6 +249,7 @@ public class C2jModelToGeneratorModelTransformer {
         shape.setEventStream(c2jShape.isEventstream());
         shape.setEvent(c2jShape.isEvent());
         shape.setException(c2jShape.isException());
+        shape.setDocument(c2jShape.isDocument());
 
         if (c2jShape.getXmlNamespace() != null) {
             XmlNamespace xmlns = new XmlNamespace();
@@ -283,6 +320,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setStreaming(c2jShapeMember.isStreaming());
         shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
         shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
+        shapeMember.setEventHeader(c2jShapeMember.isEventheader());
         shapeMember.setHostLabel(c2jShapeMember.isHostLabel());
         shapeMember.setEndpointDiscoveryId(c2jShapeMember.isEndpointdiscoveryid());
         shapeMember.setXmlAttribute(c2jShapeMember.isXmlAttribute());
@@ -365,13 +403,16 @@ public class C2jModelToGeneratorModelTransformer {
 
         operation.setEndpointOperation(c2jOperation.isEndpointoperation());
         operation.setHasEndpointDiscoveryTrait(c2jOperation.getEndpointdiscovery() == null ? false :true);
-        operation.setRequireEndpointDiscovery(operation.hasEndpointDiscoveryTrait() ? c2jOperation.getEndpointdiscovery().isRequired() : false);
+        operation.setRequireEndpointDiscovery(operation.isHasEndpointDiscoveryTrait() ? c2jOperation.getEndpointdiscovery().isRequired() : false);
 
         if (operation.isEndpointOperation()) {
             endpointOperationName = operation.getName();
         }
-        if (operation.hasEndpointDiscoveryTrait()) {
+        if (operation.isHasEndpointDiscoveryTrait()) {
             hasEndpointDiscoveryTrait = true;
+        }
+        if (operation.isRequireEndpointDiscovery()) {
+            requireEndpointDiscovery = true;
         }
 
         // Documentation
@@ -419,6 +460,12 @@ public class C2jModelToGeneratorModelTransformer {
                 requestShape.setSignerName("Aws::Auth::NULL_SIGNER");
             }
 
+            if(c2jOperation.isHttpChecksumRequired()) {
+                requestShape.setComputeContentMd5(true);
+            }
+
+            requestShape.getMembers().values().stream().filter(member -> member.getShape().isEventStream()).forEach(member -> member.getShape().setOutgoingEventStream(true));
+
             ShapeMember requestMember = new ShapeMember();
             requestMember.setShape(requestShape);
             requestMember.setDocumentation(formatDocumentation(c2jOperation.getInput().getDocumentation(), 3));
@@ -453,11 +500,23 @@ public class C2jModelToGeneratorModelTransformer {
         // http
         operation.setHttp(convertHttp(c2jOperation.getHttp()));
 
+        // http checksum
+        if (c2jOperation.getHttpChecksum() != null) {
+            C2jHttpChecksum c2jHttpChecksum = c2jOperation.getHttpChecksum();
+
+            operation.setRequestChecksumRequired(c2jHttpChecksum.isRequestChecksumRequired());
+            operation.setRequestAlgorithmMember(c2jHttpChecksum.getRequestAlgorithmMember());
+            operation.setRequestValidationModeMember(c2jHttpChecksum.getRequestValidationModeMember());
+            if (c2jHttpChecksum.getResponseAlgorithms() != null) {
+                operation.setResponseAlgorithms(new ArrayList<>(c2jHttpChecksum.getResponseAlgorithms()));
+            }
+        }
+
         // errors
 
         List<Error> operationErrors = new ArrayList<>();
         if (c2jOperation.getErrors() != null) {
-            operationErrors.addAll(c2jOperation.getErrors().stream().map(this::convertError).collect(Collectors.toList()));
+            operationErrors.addAll(c2jOperation.getErrors().stream().map(c2jError -> convertError(c2jError, c2jOperation.getName())).collect(Collectors.toList()));
         }
 
         operation.setErrors(operationErrors);
@@ -469,16 +528,29 @@ public class C2jModelToGeneratorModelTransformer {
         if (shape.getName().equals(name)) {
             return shape;
         }
-        if (shapes.containsKey(name)) {
-            // Conflict with shape name defined by service team, need to rename it.
-            String newName = "";
-            switch(name) {
+
+        // Detect any conflicts with shape name defined by service team, need to rename it if so.
+        Optional<String> conflicted = shapes.keySet().stream().filter(shapeName ->
+            name.equals(shapeName) || shape.getMembers().values().stream().anyMatch(shapeMember ->
+                shapeMember.getShape().getName().equals(shapeName) && (name.equals("Get" + shapeName) || name.equals("Set" + shapeName)))).findFirst();
+        if (conflicted.isPresent()) {
+            String originalShapeName = conflicted.get();
+            String newShapeName = "";
+            switch(originalShapeName) {
                 case "CopyObjectResult":
-                    newName = "CopyObjectResultDetails";
-                    renameShapeMember(shape, name, newName);
+                    newShapeName = "CopyObjectResultDetails";
+                    renameShapeMember(shape, "CopyObjectResult", originalShapeName, newShapeName, newShapeName, true);
                     break;
                 case "BatchUpdateScheduleResult":
-                    shapes.remove(name);
+                    shapes.remove(originalShapeName);
+                    break;
+                case "GeneratedPolicyResult":
+                    newShapeName = "GeneratedPolicyResults";
+                    renameShapeMember(shape, "generatedPolicyResult", originalShapeName, newShapeName, newShapeName, false);
+                    break;
+                case "SearchResult":
+                    newShapeName = "SearchResultDetails";
+                    renameShapeMember(shape, "results", originalShapeName, "results", newShapeName, true);
                     break;
                 default:
                     throw new RuntimeException("Unhandled shape name conflict: " + name);
@@ -516,15 +588,39 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setEvent(shape.isEvent());
         cloned.setException(shape.isException());
         cloned.setXmlNamespace(shape.getXmlNamespace());
+        cloned.setDocument(shape.isDocument());
         return cloned;
     }
-    void renameShapeMember(Shape parentShape, String originalName, String newName) {
-        shapes.get(originalName).setName(newName);
-        shapes.put(newName, shapes.get(originalName));
-        shapes.remove(originalName);
-        parentShape.getMembers().put(newName, parentShape.getMembers().get(originalName));
-        parentShape.RemoveMember(originalName);
-        parentShape.setPayload(newName);
+
+    /**
+     * Renames shape in the model tree
+     *
+     * @param parentShape - current parent in which renamed Shape being located
+     * @param originalMemberKey - original key name in the parent of the Shape being renamed
+     * @param originalShapeName - original name of the Shape
+     * @param newMemberKey - new key name in the parent of the Shape being renamed
+     * @param newShapeName - new Shape name
+     * @param isPayload - if the current Shape being renamed is a payload of a parent
+     */
+    void renameShapeMember(Shape parentShape,
+                           String originalMemberKey, String originalShapeName,
+                           String newMemberKey, String newShapeName, boolean isPayload) {
+        if (!shapes.containsKey(originalShapeName)) {
+            throw new NoSuchElementException("Shape to rename was not found in all shapes: " + originalShapeName);
+        }
+        if (!parentShape.getMembers().containsKey(originalMemberKey)) {
+            throw new NoSuchElementException("Requested to rename non-existent child shape key "
+                    + originalMemberKey + " of a Shape type " + originalShapeName);
+        }
+        shapes.get(originalShapeName).setName(newShapeName);
+        shapes.put(newShapeName, shapes.get(originalShapeName));
+        shapes.remove(originalShapeName);
+        parentShape.getMembers().put(newMemberKey, parentShape.getMembers().get(originalMemberKey));
+        parentShape.RemoveMember(originalMemberKey);
+        if (isPayload)
+        {
+            parentShape.setPayload(newMemberKey);
+        }
     }
 
     Http convertHttp(C2jHttp c2jHttp) {
@@ -541,19 +637,37 @@ public class C2jModelToGeneratorModelTransformer {
         return endpoint;
     }
 
-    Error convertError(C2jError c2jError) {
+    Error convertError(C2jError c2jError, String operationName) {
+        Error error = new Error();
+        error.setModeled(false);
         if(c2jServiceModel.getShapes().get(c2jError.getShape()) != null) {
             C2jShape shape = c2jServiceModel.getShapes().get(c2jError.getShape());
             c2jError.setError(shape.getError());
             c2jError.setException(shape.isException());
-        }
 
-        Error error = new Error();
+            Shape referencedShape = shapes.get(CppViewHelper.convertToUpperCamel(c2jError.getShape()));
+            referencedShape.getReferencedBy().add(operationName);
+            referencedShape.setReferenced(true);
+            // We define an error as a modeled error if:
+            // 1. Its shape is defined in C2J model.
+            // 2. For XML payload type, it has extra member other than "message" and "code" (case insensitive).
+            // 3. For JSON payload type, it has extra member other than "message" (case insensitive).
+            String errorPayloadType = CppViewHelper.computeServicePayloadType(this.c2jServiceModel.getMetadata().getProtocol());
+            if (errorPayloadType.equals("xml") && referencedShape.isXmlModeledException() ||
+                errorPayloadType.equals("json") && referencedShape.isJsonModeledException()) {
+                error.setModeled(true);
+            }
+
+            if (shape.getRetryable() != null && shape.getRetryable().getOrDefault("throttling", false)) {
+                error.setRetryable(true);
+            }
+        }
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));
-        error.setName(c2jError.getShape());
+        error.setName(CppViewHelper.convertToUpperCamel(c2jError.getShape()));
         error.setText(c2jError.getShape());
         error.setException(c2jError.isException());
         error.setFault(c2jError.isFault());
+        error.setCoreError(CoreErrors.VARIANTS.containsKey(error.getName()));
 
         //query xml loads this inner structure to do this work.
         if (c2jError.getError() != null && c2jError.getError().getCode() != null) {
@@ -566,10 +680,6 @@ public class C2jModelToGeneratorModelTransformer {
 
         allErrors.add(error);
         return error;
-    }
-
-    Set<Error> filterOutCoreErrors(Set<Error> errors) {
-        return errors.stream().filter(e -> !CoreErrors.VARIANTS.contains(e.getName())).collect(Collectors.toSet());
     }
 
     String sanitizeServiceAbbreviation(String serviceAbbreviation) {

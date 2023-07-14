@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -48,181 +38,173 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline PutIntegrationResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline PutIntegrationResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline PutIntegrationResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline PutIntegrationResponseRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline PutIntegrationResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a put integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a put integration response request's resource identifier.</p>
      */
     inline PutIntegrationResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline PutIntegrationResponseRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline PutIntegrationResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     * <p>Specifies a put integration response request's HTTP method.</p>
      */
     inline PutIntegrationResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline PutIntegrationResponseRequest& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline PutIntegrationResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies the status code that is used to map the integration
-     * response to an existing <a>MethodResponse</a>.</p>
+     * <p>Specifies the status code that is used to map the integration response to an
+     * existing MethodResponse.</p>
      */
     inline PutIntegrationResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
@@ -546,72 +528,54 @@ namespace Model
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline bool ContentHandlingHasBeenSet() const { return m_contentHandlingHasBeenSet; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline void SetContentHandling(const ContentHandlingStrategy& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline void SetContentHandling(ContentHandlingStrategy&& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = std::move(value); }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline PutIntegrationResponseRequest& WithContentHandling(const ContentHandlingStrategy& value) { SetContentHandling(value); return *this;}
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
-     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
-     * Converts a response payload from a Base64-encoded string to the corresponding
-     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
-     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
-     * property is not defined, the response payload will be passed through from the
-     * integration response to the method response without modification.</p>
+     * the following behaviors:</p> <p>If this property is not defined, the response
+     * payload will be passed through from the integration response to the method
+     * response without modification.</p>
      */
     inline PutIntegrationResponseRequest& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 

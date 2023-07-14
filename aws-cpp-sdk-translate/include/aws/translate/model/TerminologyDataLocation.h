@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -89,42 +79,114 @@ namespace Model
 
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline TerminologyDataLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline TerminologyDataLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The location of the custom terminology data.</p>
+     * <p>The Amazon S3 location of the most recent custom terminology input file that
+     * was successfully imported into Amazon Translate. The location is returned as a
+     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * Translate doesn't scan all input files for the risk of CSV injection attacks.
+     * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
+     * record contains malicious code. The record begins with a special character, such
+     * as =, +, -, or @. When the file is opened in a spreadsheet program, the program
+     * might interpret the record as a formula and run the code within it.</p>
+     * <p>Before you download an input file from Amazon S3, ensure that you recognize
+     * the file and trust its creator.</p> 
      */
     inline TerminologyDataLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 

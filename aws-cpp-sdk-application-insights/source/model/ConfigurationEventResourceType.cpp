@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/application-insights/model/ConfigurationEventResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int CLOUDWATCH_ALARM_HASH = HashingUtils::HashString("CLOUDWATCH_ALARM");
+        static const int CLOUDWATCH_LOG_HASH = HashingUtils::HashString("CLOUDWATCH_LOG");
         static const int CLOUDFORMATION_HASH = HashingUtils::HashString("CLOUDFORMATION");
         static const int SSM_ASSOCIATION_HASH = HashingUtils::HashString("SSM_ASSOCIATION");
 
@@ -41,6 +32,10 @@ namespace Aws
           if (hashCode == CLOUDWATCH_ALARM_HASH)
           {
             return ConfigurationEventResourceType::CLOUDWATCH_ALARM;
+          }
+          else if (hashCode == CLOUDWATCH_LOG_HASH)
+          {
+            return ConfigurationEventResourceType::CLOUDWATCH_LOG;
           }
           else if (hashCode == CLOUDFORMATION_HASH)
           {
@@ -66,6 +61,8 @@ namespace Aws
           {
           case ConfigurationEventResourceType::CLOUDWATCH_ALARM:
             return "CLOUDWATCH_ALARM";
+          case ConfigurationEventResourceType::CLOUDWATCH_LOG:
+            return "CLOUDWATCH_LOG";
           case ConfigurationEventResourceType::CLOUDFORMATION:
             return "CLOUDFORMATION";
           case ConfigurationEventResourceType::SSM_ASSOCIATION:

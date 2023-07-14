@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
@@ -101,42 +91,50 @@ namespace Model
 
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline const Aws::String& GetDisplayId() const{ return m_displayId; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline bool DisplayIdHasBeenSet() const { return m_displayIdHasBeenSet; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline void SetDisplayId(const Aws::String& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline void SetDisplayId(Aws::String&& value) { m_displayIdHasBeenSet = true; m_displayId = std::move(value); }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline void SetDisplayId(const char* value) { m_displayIdHasBeenSet = true; m_displayId.assign(value); }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(const Aws::String& value) { SetDisplayId(value); return *this;}
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(Aws::String&& value) { SetDisplayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     * <p>The ID displayed for a case in the Amazon Web Services Support Center user
+     * interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(const char* value) { SetDisplayId(value); return *this;}
 
@@ -240,26 +238,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline bool GetIncludeResolvedCases() const{ return m_includeResolvedCases; }
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline bool IncludeResolvedCasesHasBeenSet() const { return m_includeResolvedCasesHasBeenSet; }
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline void SetIncludeResolvedCases(bool value) { m_includeResolvedCasesHasBeenSet = true; m_includeResolvedCases = value; }
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline DescribeCasesRequest& WithIncludeResolvedCases(bool value) { SetIncludeResolvedCases(value); return *this;}
 
@@ -327,83 +329,91 @@ namespace Model
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeCasesRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeCasesRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeCasesRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are included.</p>
      */
     inline bool GetIncludeCommunications() const{ return m_includeCommunications; }
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are included.</p>
      */
     inline bool IncludeCommunicationsHasBeenSet() const { return m_includeCommunicationsHasBeenSet; }
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are included.</p>
      */
     inline void SetIncludeCommunications(bool value) { m_includeCommunicationsHasBeenSet = true; m_includeCommunications = value; }
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are included.</p>
      */
     inline DescribeCasesRequest& WithIncludeCommunications(bool value) { SetIncludeCommunications(value); return *this;}
 

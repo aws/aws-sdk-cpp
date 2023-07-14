@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
@@ -118,44 +108,51 @@ namespace Model
 
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline const Aws::Vector<IpAddressResponse>& GetIpAddresses() const{ return m_ipAddresses; }
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline void SetIpAddresses(const Aws::Vector<IpAddressResponse>& value) { m_ipAddresses = value; }
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline void SetIpAddresses(Aws::Vector<IpAddressResponse>&& value) { m_ipAddresses = std::move(value); }
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline ListResolverEndpointIpAddressesResult& WithIpAddresses(const Aws::Vector<IpAddressResponse>& value) { SetIpAddresses(value); return *this;}
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline ListResolverEndpointIpAddressesResult& WithIpAddresses(Aws::Vector<IpAddressResponse>&& value) { SetIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline ListResolverEndpointIpAddressesResult& AddIpAddresses(const IpAddressResponse& value) { m_ipAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The IP addresses that DNS queries pass through on their way to your network
-     * (outbound endpoint) or on the way to Resolver (inbound endpoint).</p>
+     * <p>Information about the IP addresses in your VPC that DNS queries originate
+     * from (for outbound endpoints) or that you forward DNS queries to (for inbound
+     * endpoints).</p>
      */
     inline ListResolverEndpointIpAddressesResult& AddIpAddresses(IpAddressResponse&& value) { m_ipAddresses.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -262,188 +252,252 @@ namespace Model
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline Rule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline Rule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * minutes)". For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating
+     * an Amazon EventBridge rule that runs on a schedule</a>.</p>
      */
     inline Rule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline Rule& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline Rule& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
-     * invocation.</p>
+     * invocation.</p> <p>If you're setting an event bus in another account as the
+     * target and that account granted permission to your account through an
+     * organization instead of directly by the account ID, you must specify a
+     * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+     * structure, instead of here in this parameter.</p>
      */
     inline Rule& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline void SetManagedBy(const Aws::String& value) { m_managedByHasBeenSet = true; m_managedBy = value; }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline void SetManagedBy(Aws::String&& value) { m_managedByHasBeenSet = true; m_managedBy = std::move(value); }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline void SetManagedBy(const char* value) { m_managedByHasBeenSet = true; m_managedBy.assign(value); }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline Rule& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline Rule& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If the rule was created on behalf of your account by an Amazon Web Services
+     * service, this field displays the principal name of the service that created the
+     * rule.</p>
      */
     inline Rule& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
 
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline Rule& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline Rule& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
     /**
-     * <p>The event bus associated with the rule.</p>
+     * <p>The name or ARN of the event bus associated with the rule. If you omit this,
+     * the default event bus is used.</p>
      */
     inline Rule& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 

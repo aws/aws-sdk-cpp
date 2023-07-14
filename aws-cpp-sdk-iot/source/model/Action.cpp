@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/Action.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -47,7 +37,10 @@ Action::Action() :
     m_iotEventsHasBeenSet(false),
     m_iotSiteWiseHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
-    m_httpHasBeenSet(false)
+    m_timestreamHasBeenSet(false),
+    m_httpHasBeenSet(false),
+    m_kafkaHasBeenSet(false),
+    m_openSearchHasBeenSet(false)
 {
 }
 
@@ -70,7 +63,10 @@ Action::Action(JsonView jsonValue) :
     m_iotEventsHasBeenSet(false),
     m_iotSiteWiseHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
-    m_httpHasBeenSet(false)
+    m_timestreamHasBeenSet(false),
+    m_httpHasBeenSet(false),
+    m_kafkaHasBeenSet(false),
+    m_openSearchHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -203,11 +199,32 @@ Action& Action::operator =(JsonView jsonValue)
     m_stepFunctionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timestream"))
+  {
+    m_timestream = jsonValue.GetObject("timestream");
+
+    m_timestreamHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("http"))
   {
     m_http = jsonValue.GetObject("http");
 
     m_httpHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kafka"))
+  {
+    m_kafka = jsonValue.GetObject("kafka");
+
+    m_kafkaHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("openSearch"))
+  {
+    m_openSearch = jsonValue.GetObject("openSearch");
+
+    m_openSearchHasBeenSet = true;
   }
 
   return *this;
@@ -325,9 +342,27 @@ JsonValue Action::Jsonize() const
 
   }
 
+  if(m_timestreamHasBeenSet)
+  {
+   payload.WithObject("timestream", m_timestream.Jsonize());
+
+  }
+
   if(m_httpHasBeenSet)
   {
    payload.WithObject("http", m_http.Jsonize());
+
+  }
+
+  if(m_kafkaHasBeenSet)
+  {
+   payload.WithObject("kafka", m_kafka.Jsonize());
+
+  }
+
+  if(m_openSearchHasBeenSet)
+  {
+   payload.WithObject("openSearch", m_openSearch.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -108,15 +98,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -125,15 +116,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -142,15 +134,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -159,15 +152,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -176,15 +170,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline DescribeDhcpOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -193,15 +188,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline DescribeDhcpOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -210,15 +206,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline DescribeDhcpOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -227,15 +224,16 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
-     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
-     * of a tag assigned to the resource. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all resources that have a
-     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
      */
     inline DescribeDhcpOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

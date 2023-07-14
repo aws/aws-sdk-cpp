@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
@@ -52,18 +43,20 @@ enum class ECRErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   EMPTY_UPLOAD= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   IMAGE_ALREADY_EXISTS,
+  IMAGE_DIGEST_DOES_NOT_MATCH,
   IMAGE_NOT_FOUND,
   IMAGE_TAG_ALREADY_EXISTS,
   INVALID_LAYER,
   INVALID_LAYER_PART,
   INVALID_PARAMETER,
   INVALID_TAG_PARAMETER,
+  KMS,
   LAYERS_NOT_FOUND,
   LAYER_ALREADY_EXISTS,
   LAYER_INACCESSIBLE,
@@ -72,6 +65,10 @@ enum class ECRErrors
   LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS,
   LIFECYCLE_POLICY_PREVIEW_NOT_FOUND,
   LIMIT_EXCEEDED,
+  PULL_THROUGH_CACHE_RULE_ALREADY_EXISTS,
+  PULL_THROUGH_CACHE_RULE_NOT_FOUND,
+  REFERENCED_IMAGES_NOT_FOUND,
+  REGISTRY_POLICY_NOT_FOUND,
   REPOSITORY_ALREADY_EXISTS,
   REPOSITORY_NOT_EMPTY,
   REPOSITORY_NOT_FOUND,
@@ -79,8 +76,24 @@ enum class ECRErrors
   SCAN_NOT_FOUND,
   SERVER,
   TOO_MANY_TAGS,
+  UNSUPPORTED_IMAGE_TYPE,
+  UNSUPPORTED_UPSTREAM_REGISTRY,
   UPLOAD_NOT_FOUND
 };
+
+class AWS_ECR_API ECRError : public Aws::Client::AWSError<ECRErrors>
+{
+public:
+  ECRError() {}
+  ECRError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+  ECRError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+  ECRError(const Aws::Client::AWSError<ECRErrors>& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+  ECRError(Aws::Client::AWSError<ECRErrors>&& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ECRErrorMapper
 {
   AWS_ECR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

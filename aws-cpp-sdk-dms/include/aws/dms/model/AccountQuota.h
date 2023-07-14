@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a quota for an AWS account, for example, the number of replication
-   * instances allowed.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a quota for an Amazon Web Services account, for example the number
+   * of replication instances allowed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AccountQuota">AWS
    * API Reference</a></p>
    */
@@ -49,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountQuotaName() const{ return m_accountQuotaName; }
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline bool AccountQuotaNameHasBeenSet() const { return m_accountQuotaNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline void SetAccountQuotaName(const Aws::String& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline void SetAccountQuotaName(Aws::String&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = std::move(value); }
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline void SetAccountQuotaName(const char* value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName.assign(value); }
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline AccountQuota& WithAccountQuotaName(const Aws::String& value) { SetAccountQuotaName(value); return *this;}
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline AccountQuota& WithAccountQuotaName(Aws::String&& value) { SetAccountQuotaName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS DMS quota for this AWS account.</p>
+     * <p>The name of the DMS quota for this Amazon Web Services account.</p>
      */
     inline AccountQuota& WithAccountQuotaName(const char* value) { SetAccountQuotaName(value); return *this;}
 

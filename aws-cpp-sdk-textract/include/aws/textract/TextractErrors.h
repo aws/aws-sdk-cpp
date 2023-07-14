@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class TextractErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,12 +52,27 @@ enum class TextractErrors
   HUMAN_LOOP_QUOTA_EXCEEDED,
   IDEMPOTENT_PARAMETER_MISMATCH,
   INVALID_JOB_ID,
+  INVALID_K_M_S_KEY,
   INVALID_PARAMETER,
   INVALID_S3_OBJECT,
   LIMIT_EXCEEDED,
   PROVISIONED_THROUGHPUT_EXCEEDED,
   UNSUPPORTED_DOCUMENT
 };
+
+class AWS_TEXTRACT_API TextractError : public Aws::Client::AWSError<TextractErrors>
+{
+public:
+  TextractError() {}
+  TextractError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+  TextractError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+  TextractError(const Aws::Client::AWSError<TextractErrors>& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+  TextractError(Aws::Client::AWSError<TextractErrors>&& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace TextractErrorMapper
 {
   AWS_TEXTRACT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

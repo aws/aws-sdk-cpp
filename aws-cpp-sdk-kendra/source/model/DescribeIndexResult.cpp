@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DescribeIndexResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,12 +17,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeIndexResult::DescribeIndexResult() : 
-    m_status(IndexStatus::NOT_SET)
+    m_edition(IndexEdition::NOT_SET),
+    m_status(IndexStatus::NOT_SET),
+    m_userContextPolicy(UserContextPolicy::NOT_SET)
 {
 }
 
 DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(IndexStatus::NOT_SET)
+    m_edition(IndexEdition::NOT_SET),
+    m_status(IndexStatus::NOT_SET),
+    m_userContextPolicy(UserContextPolicy::NOT_SET)
 {
   *this = result;
 }
@@ -49,6 +43,12 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
+
+  }
+
+  if(jsonValue.ValueExists("Edition"))
+  {
+    m_edition = IndexEditionMapper::GetIndexEditionForName(jsonValue.GetString("Edition"));
 
   }
 
@@ -106,6 +106,33 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+  }
+
+  if(jsonValue.ValueExists("CapacityUnits"))
+  {
+    m_capacityUnits = jsonValue.GetObject("CapacityUnits");
+
+  }
+
+  if(jsonValue.ValueExists("UserTokenConfigurations"))
+  {
+    Array<JsonView> userTokenConfigurationsJsonList = jsonValue.GetArray("UserTokenConfigurations");
+    for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
+    {
+      m_userTokenConfigurations.push_back(userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("UserContextPolicy"))
+  {
+    m_userContextPolicy = UserContextPolicyMapper::GetUserContextPolicyForName(jsonValue.GetString("UserContextPolicy"));
+
+  }
+
+  if(jsonValue.ValueExists("UserGroupResolutionConfiguration"))
+  {
+    m_userGroupResolutionConfiguration = jsonValue.GetObject("UserGroupResolutionConfiguration");
 
   }
 

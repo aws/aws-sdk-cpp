@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/acm-pca/ACMPCARequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/acm-pca/model/ResourceOwner.h>
 #include <utility>
 
 namespace Aws
@@ -137,6 +128,43 @@ namespace Model
      */
     inline ListCertificateAuthoritiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline const ResourceOwner& GetResourceOwner() const{ return m_resourceOwner; }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline void SetResourceOwner(ResourceOwner&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline ListCertificateAuthoritiesRequest& WithResourceOwner(const ResourceOwner& value) { SetResourceOwner(value); return *this;}
+
+    /**
+     * <p>Use this parameter to filter the returned set of certificate authorities
+     * based on their owner. The default is SELF.</p>
+     */
+    inline ListCertificateAuthoritiesRequest& WithResourceOwner(ResourceOwner&& value) { SetResourceOwner(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -144,6 +172,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    ResourceOwner m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet;
   };
 
 } // namespace Model

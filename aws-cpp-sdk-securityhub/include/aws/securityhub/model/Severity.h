@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/SeverityLabel.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>The severity of the finding.</p><p><h3>See Also:</h3>   <a
+   * <p>The severity of the finding.</p> <p>The finding provider can provide the
+   * initial severity. The finding provider can only update the severity if it has
+   * not been updated using <code>BatchUpdateFindings</code>.</p> <p>The finding must
+   * have either <code>Label</code> or <code>Normalized</code> populated. If only one
+   * of these attributes is populated, then Security Hub automatically populates the
+   * other one. If neither attribute is populated, then the finding is invalid.
+   * <code>Label</code> is the preferred attribute.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Severity">AWS
    * API Reference</a></p>
    */
@@ -48,26 +45,34 @@ namespace Model
 
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
 
@@ -79,7 +84,12 @@ namespace Model
      * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul>
+     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
+     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
+     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
+     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
+     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline const SeverityLabel& GetLabel() const{ return m_label; }
 
@@ -90,7 +100,12 @@ namespace Model
      * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul>
+     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
+     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
+     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
+     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
+     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
@@ -101,7 +116,12 @@ namespace Model
      * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul>
+     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
+     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
+     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
+     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
+     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline void SetLabel(const SeverityLabel& value) { m_labelHasBeenSet = true; m_label = value; }
 
@@ -112,7 +132,12 @@ namespace Model
      * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul>
+     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
+     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
+     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
+     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
+     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline void SetLabel(SeverityLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
@@ -123,7 +148,12 @@ namespace Model
      * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul>
+     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
+     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
+     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
+     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
+     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline Severity& WithLabel(const SeverityLabel& value) { SetLabel(value); return *this;}
 
@@ -134,54 +164,104 @@ namespace Model
      * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul>
+     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
+     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
+     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
+     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
+     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline Severity& WithLabel(SeverityLabel&& value) { SetLabel(std::move(value)); return *this;}
 
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>,
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. This attribute is being
+     * deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
+     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
+     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
+     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
+     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
+     * </li> </ul>
      */
     inline int GetNormalized() const{ return m_normalized; }
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>,
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. This attribute is being
+     * deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
+     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
+     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
+     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
+     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
+     * </li> </ul>
      */
     inline bool NormalizedHasBeenSet() const { return m_normalizedHasBeenSet; }
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>,
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. This attribute is being
+     * deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
+     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
+     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
+     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
+     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
+     * </li> </ul>
      */
     inline void SetNormalized(int value) { m_normalizedHasBeenSet = true; m_normalized = value; }
 
     /**
-     * <p>Deprecated. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>,
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
+     * <p>Deprecated. The normalized severity of a finding. This attribute is being
+     * deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.</p> <p>If you provide <code>Label</code> and do not provide
+     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
+     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
+     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
+     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
+     * </li> </ul>
      */
     inline Severity& WithNormalized(int value) { SetNormalized(value); return *this;}
+
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline const Aws::String& GetOriginal() const{ return m_original; }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline Severity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline Severity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline Severity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
 
   private:
 
@@ -193,6 +273,9 @@ namespace Model
 
     int m_normalized;
     bool m_normalizedHasBeenSet;
+
+    Aws::String m_original;
+    bool m_originalHasBeenSet;
   };
 
 } // namespace Model

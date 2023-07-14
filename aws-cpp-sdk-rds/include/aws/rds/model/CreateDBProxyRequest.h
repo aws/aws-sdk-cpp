@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,65 +42,73 @@ namespace Model
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline CreateDBProxyRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline CreateDBProxyRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline CreateDBProxyRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 
@@ -118,54 +116,48 @@ namespace Model
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline const EngineFamily& GetEngineFamily() const{ return m_engineFamily; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline void SetEngineFamily(const EngineFamily& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline void SetEngineFamily(EngineFamily&& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = std::move(value); }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline CreateDBProxyRequest& WithEngineFamily(const EngineFamily& value) { SetEngineFamily(value); return *this;}
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline CreateDBProxyRequest& WithEngineFamily(EngineFamily&& value) { SetEngineFamily(std::move(value)); return *this;}
 
@@ -213,49 +205,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline CreateDBProxyRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline CreateDBProxyRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline CreateDBProxyRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/ThingIndexingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,6 +23,10 @@ ThingIndexingConfiguration::ThingIndexingConfiguration() :
     m_thingIndexingModeHasBeenSet(false),
     m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
     m_thingConnectivityIndexingModeHasBeenSet(false),
+    m_deviceDefenderIndexingMode(DeviceDefenderIndexingMode::NOT_SET),
+    m_deviceDefenderIndexingModeHasBeenSet(false),
+    m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
+    m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false)
 {
@@ -43,6 +37,10 @@ ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) :
     m_thingIndexingModeHasBeenSet(false),
     m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
     m_thingConnectivityIndexingModeHasBeenSet(false),
+    m_deviceDefenderIndexingMode(DeviceDefenderIndexingMode::NOT_SET),
+    m_deviceDefenderIndexingModeHasBeenSet(false),
+    m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
+    m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false)
 {
@@ -63,6 +61,20 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
     m_thingConnectivityIndexingMode = ThingConnectivityIndexingModeMapper::GetThingConnectivityIndexingModeForName(jsonValue.GetString("thingConnectivityIndexingMode"));
 
     m_thingConnectivityIndexingModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceDefenderIndexingMode"))
+  {
+    m_deviceDefenderIndexingMode = DeviceDefenderIndexingModeMapper::GetDeviceDefenderIndexingModeForName(jsonValue.GetString("deviceDefenderIndexingMode"));
+
+    m_deviceDefenderIndexingModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("namedShadowIndexingMode"))
+  {
+    m_namedShadowIndexingMode = NamedShadowIndexingModeMapper::GetNamedShadowIndexingModeForName(jsonValue.GetString("namedShadowIndexingMode"));
+
+    m_namedShadowIndexingModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("managedFields"))
@@ -100,6 +112,16 @@ JsonValue ThingIndexingConfiguration::Jsonize() const
   if(m_thingConnectivityIndexingModeHasBeenSet)
   {
    payload.WithString("thingConnectivityIndexingMode", ThingConnectivityIndexingModeMapper::GetNameForThingConnectivityIndexingMode(m_thingConnectivityIndexingMode));
+  }
+
+  if(m_deviceDefenderIndexingModeHasBeenSet)
+  {
+   payload.WithString("deviceDefenderIndexingMode", DeviceDefenderIndexingModeMapper::GetNameForDeviceDefenderIndexingMode(m_deviceDefenderIndexingMode));
+  }
+
+  if(m_namedShadowIndexingModeHasBeenSet)
+  {
+   payload.WithString("namedShadowIndexingMode", NamedShadowIndexingModeMapper::GetNameForNamedShadowIndexingMode(m_namedShadowIndexingMode));
   }
 
   if(m_managedFieldsHasBeenSet)

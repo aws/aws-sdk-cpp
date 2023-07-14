@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
@@ -167,23 +157,60 @@ namespace Model
     inline DiscovererSummary& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline const DiscovererState& GetState() const{ return m_state; }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline void SetState(const DiscovererState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline void SetState(DiscovererState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline DiscovererSummary& WithState(const DiscovererState& value) { SetState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline DiscovererSummary& WithState(DiscovererState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline bool CrossAccountHasBeenSet() const { return m_crossAccountHasBeenSet; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccountHasBeenSet = true; m_crossAccount = value; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline DiscovererSummary& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
 
 
     /**
@@ -264,6 +291,9 @@ namespace Model
 
     DiscovererState m_state;
     bool m_stateHasBeenSet;
+
+    bool m_crossAccount;
+    bool m_crossAccountHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

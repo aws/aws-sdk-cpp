@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -626,6 +616,47 @@ namespace Model
      */
     inline RecordDetail& AddRecordTags(RecordTag&& value) { m_recordTagsHasBeenSet = true; m_recordTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline const Aws::String& GetLaunchRoleArn() const{ return m_launchRoleArn; }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline bool LaunchRoleArnHasBeenSet() const { return m_launchRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline void SetLaunchRoleArn(const Aws::String& value) { m_launchRoleArnHasBeenSet = true; m_launchRoleArn = value; }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline void SetLaunchRoleArn(Aws::String&& value) { m_launchRoleArnHasBeenSet = true; m_launchRoleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline void SetLaunchRoleArn(const char* value) { m_launchRoleArnHasBeenSet = true; m_launchRoleArn.assign(value); }
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline RecordDetail& WithLaunchRoleArn(const Aws::String& value) { SetLaunchRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline RecordDetail& WithLaunchRoleArn(Aws::String&& value) { SetLaunchRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the launch role associated with the provisioned product.</p>
+     */
+    inline RecordDetail& WithLaunchRoleArn(const char* value) { SetLaunchRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_recordId;
@@ -666,6 +697,9 @@ namespace Model
 
     Aws::Vector<RecordTag> m_recordTags;
     bool m_recordTagsHasBeenSet;
+
+    Aws::String m_launchRoleArn;
+    bool m_launchRoleArnHasBeenSet;
   };
 
 } // namespace Model

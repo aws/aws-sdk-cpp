@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/text-to-speech/TextToSpeechManager.h>
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
@@ -82,9 +72,15 @@ namespace Aws
             context->callback = handler;
 
             auto self = shared_from_this();
-            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [self](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
-                const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
-            {self -> OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);}, context);
+            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest,
+                                                 [self](const Polly::PollyClient* client,
+                                                        const Polly::Model::SynthesizeSpeechRequest& request,
+                                                        const Polly::Model::SynthesizeSpeechOutcome& speechOutcome,
+                                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
+                                                        {
+                                                            self->OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, lambdaContext);
+                                                        },
+                                                        context);
         }
 
         OutputDeviceList TextToSpeechManager::EnumerateDevices() const
@@ -156,7 +152,6 @@ namespace Aws
                 AWS_LOGSTREAM_TRACE(CLASS_TAG, "Audio retrieved from Polly. " << result.GetContentType() << " with " 
                     << result.GetRequestCharacters() << " characters syntesized");
 
-                std::streamsize amountRead(0);
                 unsigned char buffer[BUFF_SIZE];
 
                 std::lock_guard<std::mutex> m(m_driverLock);
@@ -169,7 +164,6 @@ namespace Aws
                     AWS_LOGSTREAM_TRACE(CLASS_TAG, "Writing " << read << " bytes to device.");
 
                     successfullyPlayed = m_activeDriver->WriteBufferToDevice(buffer, (std::size_t)read);
-                    amountRead += read;
                     played = successfullyPlayed;
                 }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/CreateAssociationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,16 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_maxErrorsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
-    m_complianceSeverityHasBeenSet(false)
+    m_complianceSeverityHasBeenSet(false),
+    m_syncCompliance(AssociationSyncCompliance::NOT_SET),
+    m_syncComplianceHasBeenSet(false),
+    m_applyOnlyAtCronInterval(false),
+    m_applyOnlyAtCronIntervalHasBeenSet(false),
+    m_calendarNamesHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_targetMapsHasBeenSet(false)
 {
 }
 
@@ -127,6 +126,66 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_complianceSeverityHasBeenSet)
   {
    payload.WithString("ComplianceSeverity", AssociationComplianceSeverityMapper::GetNameForAssociationComplianceSeverity(m_complianceSeverity));
+  }
+
+  if(m_syncComplianceHasBeenSet)
+  {
+   payload.WithString("SyncCompliance", AssociationSyncComplianceMapper::GetNameForAssociationSyncCompliance(m_syncCompliance));
+  }
+
+  if(m_applyOnlyAtCronIntervalHasBeenSet)
+  {
+   payload.WithBool("ApplyOnlyAtCronInterval", m_applyOnlyAtCronInterval);
+
+  }
+
+  if(m_calendarNamesHasBeenSet)
+  {
+   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+   {
+     calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
+   }
+   payload.WithArray("CalendarNames", std::move(calendarNamesJsonList));
+
+  }
+
+  if(m_targetLocationsHasBeenSet)
+  {
+   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
+   {
+     targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
+   }
+   payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_targetMapsHasBeenSet)
+  {
+   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
+   {
+     JsonValue targetMapJsonMap;
+     for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
+     {
+       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
+       {
+         targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
+       }
+       targetMapJsonMap.WithArray(targetMapItem.first, std::move(targetMapValueListJsonList));
+     }
+     targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
+   }
+   payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
+
   }
 
   return payload.View().WriteReadable();

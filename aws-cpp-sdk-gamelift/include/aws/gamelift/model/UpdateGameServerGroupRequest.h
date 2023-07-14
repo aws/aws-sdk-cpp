@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -49,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the game server group to update. Use either the
+     * <p>A unique identifier for the game server group. Use either the
      * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
@@ -100,161 +90,201 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline UpdateGameServerGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline UpdateGameServerGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling
-     * groups. The submitted role is validated to ensure that it contains the necessary
-     * permissions for game server groups.</p>
+     * for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto
+     * Scaling groups.</p>
      */
     inline UpdateGameServerGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline const Aws::Vector<InstanceDefinition>& GetInstanceDefinitions() const{ return m_instanceDefinitions; }
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline bool InstanceDefinitionsHasBeenSet() const { return m_instanceDefinitionsHasBeenSet; }
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline void SetInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = value; }
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline void SetInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions = std::move(value); }
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline UpdateGameServerGroupRequest& WithInstanceDefinitions(const Aws::Vector<InstanceDefinition>& value) { SetInstanceDefinitions(value); return *this;}
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline UpdateGameServerGroupRequest& WithInstanceDefinitions(Aws::Vector<InstanceDefinition>&& value) { SetInstanceDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline UpdateGameServerGroupRequest& AddInstanceDefinitions(const InstanceDefinition& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>An updated list of EC2 instance types to use when creating instances in the
-     * group. The instance definition must specify instance types that are supported by
-     * GameLift FleetIQ, and must include at least two instance types. This updated
-     * list replaces the entire current list of instance definitions for the game
-     * server group. For more information on instance types, see <a
+     * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
+     * group. The instance definitions must specify at least two different instance
+     * types that are supported by GameLift FleetIQ. This updated list replaces the
+     * entire current list of instance definitions for the game server group. For more
+     * information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>..</p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+     * specify capacity weighting for each instance type. If no weight value is
+     * specified for an instance type, it is set to the default value "1". For more
+     * information about capacity weighting, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto
+     * Scaling User Guide.</p>
      */
     inline UpdateGameServerGroupRequest& AddInstanceDefinitions(InstanceDefinition&& value) { m_instanceDefinitionsHasBeenSet = true; m_instanceDefinitions.push_back(std::move(value)); return *this; }
 
@@ -262,157 +292,193 @@ namespace Model
     /**
      * <p>A flag that indicates whether instances in the game server group are
      * protected from early termination. Unprotected instances that have active game
-     * servers running may by terminated during a scale-down event, causing players to
-     * be dropped from the game. Protected instances cannot be terminated while there
-     * are active game servers running. An exception to this is Spot Instances, which
-     * may be terminated by AWS regardless of protection status. This property is set
-     * to NO_PROTECTION by default.</p>
+     * servers running might be terminated during a scale-down event, causing players
+     * to be dropped from the game. Protected instances cannot be terminated while
+     * there are active game servers running except in the event of a forced game
+     * server group deletion (see ). An exception to this is with Spot Instances, which
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline const GameServerProtectionPolicy& GetGameServerProtectionPolicy() const{ return m_gameServerProtectionPolicy; }
 
     /**
      * <p>A flag that indicates whether instances in the game server group are
      * protected from early termination. Unprotected instances that have active game
-     * servers running may by terminated during a scale-down event, causing players to
-     * be dropped from the game. Protected instances cannot be terminated while there
-     * are active game servers running. An exception to this is Spot Instances, which
-     * may be terminated by AWS regardless of protection status. This property is set
-     * to NO_PROTECTION by default.</p>
+     * servers running might be terminated during a scale-down event, causing players
+     * to be dropped from the game. Protected instances cannot be terminated while
+     * there are active game servers running except in the event of a forced game
+     * server group deletion (see ). An exception to this is with Spot Instances, which
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline bool GameServerProtectionPolicyHasBeenSet() const { return m_gameServerProtectionPolicyHasBeenSet; }
 
     /**
      * <p>A flag that indicates whether instances in the game server group are
      * protected from early termination. Unprotected instances that have active game
-     * servers running may by terminated during a scale-down event, causing players to
-     * be dropped from the game. Protected instances cannot be terminated while there
-     * are active game servers running. An exception to this is Spot Instances, which
-     * may be terminated by AWS regardless of protection status. This property is set
-     * to NO_PROTECTION by default.</p>
+     * servers running might be terminated during a scale-down event, causing players
+     * to be dropped from the game. Protected instances cannot be terminated while
+     * there are active game servers running except in the event of a forced game
+     * server group deletion (see ). An exception to this is with Spot Instances, which
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline void SetGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = value; }
 
     /**
      * <p>A flag that indicates whether instances in the game server group are
      * protected from early termination. Unprotected instances that have active game
-     * servers running may by terminated during a scale-down event, causing players to
-     * be dropped from the game. Protected instances cannot be terminated while there
-     * are active game servers running. An exception to this is Spot Instances, which
-     * may be terminated by AWS regardless of protection status. This property is set
-     * to NO_PROTECTION by default.</p>
+     * servers running might be terminated during a scale-down event, causing players
+     * to be dropped from the game. Protected instances cannot be terminated while
+     * there are active game servers running except in the event of a forced game
+     * server group deletion (see ). An exception to this is with Spot Instances, which
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline void SetGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { m_gameServerProtectionPolicyHasBeenSet = true; m_gameServerProtectionPolicy = std::move(value); }
 
     /**
      * <p>A flag that indicates whether instances in the game server group are
      * protected from early termination. Unprotected instances that have active game
-     * servers running may by terminated during a scale-down event, causing players to
-     * be dropped from the game. Protected instances cannot be terminated while there
-     * are active game servers running. An exception to this is Spot Instances, which
-     * may be terminated by AWS regardless of protection status. This property is set
-     * to NO_PROTECTION by default.</p>
+     * servers running might be terminated during a scale-down event, causing players
+     * to be dropped from the game. Protected instances cannot be terminated while
+     * there are active game servers running except in the event of a forced game
+     * server group deletion (see ). An exception to this is with Spot Instances, which
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerProtectionPolicy(const GameServerProtectionPolicy& value) { SetGameServerProtectionPolicy(value); return *this;}
 
     /**
      * <p>A flag that indicates whether instances in the game server group are
      * protected from early termination. Unprotected instances that have active game
-     * servers running may by terminated during a scale-down event, causing players to
-     * be dropped from the game. Protected instances cannot be terminated while there
-     * are active game servers running. An exception to this is Spot Instances, which
-     * may be terminated by AWS regardless of protection status. This property is set
-     * to NO_PROTECTION by default.</p>
+     * servers running might be terminated during a scale-down event, causing players
+     * to be dropped from the game. Protected instances cannot be terminated while
+     * there are active game servers running except in the event of a forced game
+     * server group deletion (see ). An exception to this is with Spot Instances, which
+     * can be terminated by Amazon Web Services regardless of protection status. This
+     * property is set to <code>NO_PROTECTION</code> by default.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerProtectionPolicy(GameServerProtectionPolicy&& value) { SetGameServerProtectionPolicy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The fallback balancing method to use for the game server group when Spot
-     * instances in a Region become unavailable or are not viable for game hosting.
-     * Once triggered, this method remains active until Spot instances can once again
-     * be used. Method options include:</p> <ul> <li> <p>SPOT_ONLY -- If Spot instances
-     * are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated
-     * (once current gameplay ends) and not replaced.</p> </li> <li> <p>SPOT_PREFERRED
-     * -- If Spot instances are unavailable, the game server group continues to provide
-     * hosting capacity by using On-Demand instances. Existing nonviable Spot instances
-     * are terminated (once current gameplay ends) and replaced with new On-Demand
-     * instances. </p> </li> </ul>
+     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * On-Demand Instances in the game server group. Method options include the
+     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
+     * used in the game server group. If Spot Instances are unavailable or not viable
+     * for game hosting, the game server group provides no hosting capacity until Spot
+     * Instances can again be used. Until then, no new instances are started, and the
+     * existing nonviable Spot Instances are terminated (after current gameplay ends)
+     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
+     * value) Spot Instances are used whenever available in the game server group. If
+     * Spot Instances are unavailable, the game server group continues to provide
+     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
+     * Instances are terminated (after current gameplay ends) and are replaced with new
+     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
+     * On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.</p> </li>
+     * </ul>
      */
     inline const BalancingStrategy& GetBalancingStrategy() const{ return m_balancingStrategy; }
 
     /**
-     * <p>The fallback balancing method to use for the game server group when Spot
-     * instances in a Region become unavailable or are not viable for game hosting.
-     * Once triggered, this method remains active until Spot instances can once again
-     * be used. Method options include:</p> <ul> <li> <p>SPOT_ONLY -- If Spot instances
-     * are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated
-     * (once current gameplay ends) and not replaced.</p> </li> <li> <p>SPOT_PREFERRED
-     * -- If Spot instances are unavailable, the game server group continues to provide
-     * hosting capacity by using On-Demand instances. Existing nonviable Spot instances
-     * are terminated (once current gameplay ends) and replaced with new On-Demand
-     * instances. </p> </li> </ul>
+     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * On-Demand Instances in the game server group. Method options include the
+     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
+     * used in the game server group. If Spot Instances are unavailable or not viable
+     * for game hosting, the game server group provides no hosting capacity until Spot
+     * Instances can again be used. Until then, no new instances are started, and the
+     * existing nonviable Spot Instances are terminated (after current gameplay ends)
+     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
+     * value) Spot Instances are used whenever available in the game server group. If
+     * Spot Instances are unavailable, the game server group continues to provide
+     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
+     * Instances are terminated (after current gameplay ends) and are replaced with new
+     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
+     * On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.</p> </li>
+     * </ul>
      */
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
 
     /**
-     * <p>The fallback balancing method to use for the game server group when Spot
-     * instances in a Region become unavailable or are not viable for game hosting.
-     * Once triggered, this method remains active until Spot instances can once again
-     * be used. Method options include:</p> <ul> <li> <p>SPOT_ONLY -- If Spot instances
-     * are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated
-     * (once current gameplay ends) and not replaced.</p> </li> <li> <p>SPOT_PREFERRED
-     * -- If Spot instances are unavailable, the game server group continues to provide
-     * hosting capacity by using On-Demand instances. Existing nonviable Spot instances
-     * are terminated (once current gameplay ends) and replaced with new On-Demand
-     * instances. </p> </li> </ul>
+     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * On-Demand Instances in the game server group. Method options include the
+     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
+     * used in the game server group. If Spot Instances are unavailable or not viable
+     * for game hosting, the game server group provides no hosting capacity until Spot
+     * Instances can again be used. Until then, no new instances are started, and the
+     * existing nonviable Spot Instances are terminated (after current gameplay ends)
+     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
+     * value) Spot Instances are used whenever available in the game server group. If
+     * Spot Instances are unavailable, the game server group continues to provide
+     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
+     * Instances are terminated (after current gameplay ends) and are replaced with new
+     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
+     * On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.</p> </li>
+     * </ul>
      */
     inline void SetBalancingStrategy(const BalancingStrategy& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
 
     /**
-     * <p>The fallback balancing method to use for the game server group when Spot
-     * instances in a Region become unavailable or are not viable for game hosting.
-     * Once triggered, this method remains active until Spot instances can once again
-     * be used. Method options include:</p> <ul> <li> <p>SPOT_ONLY -- If Spot instances
-     * are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated
-     * (once current gameplay ends) and not replaced.</p> </li> <li> <p>SPOT_PREFERRED
-     * -- If Spot instances are unavailable, the game server group continues to provide
-     * hosting capacity by using On-Demand instances. Existing nonviable Spot instances
-     * are terminated (once current gameplay ends) and replaced with new On-Demand
-     * instances. </p> </li> </ul>
+     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * On-Demand Instances in the game server group. Method options include the
+     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
+     * used in the game server group. If Spot Instances are unavailable or not viable
+     * for game hosting, the game server group provides no hosting capacity until Spot
+     * Instances can again be used. Until then, no new instances are started, and the
+     * existing nonviable Spot Instances are terminated (after current gameplay ends)
+     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
+     * value) Spot Instances are used whenever available in the game server group. If
+     * Spot Instances are unavailable, the game server group continues to provide
+     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
+     * Instances are terminated (after current gameplay ends) and are replaced with new
+     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
+     * On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.</p> </li>
+     * </ul>
      */
     inline void SetBalancingStrategy(BalancingStrategy&& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = std::move(value); }
 
     /**
-     * <p>The fallback balancing method to use for the game server group when Spot
-     * instances in a Region become unavailable or are not viable for game hosting.
-     * Once triggered, this method remains active until Spot instances can once again
-     * be used. Method options include:</p> <ul> <li> <p>SPOT_ONLY -- If Spot instances
-     * are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated
-     * (once current gameplay ends) and not replaced.</p> </li> <li> <p>SPOT_PREFERRED
-     * -- If Spot instances are unavailable, the game server group continues to provide
-     * hosting capacity by using On-Demand instances. Existing nonviable Spot instances
-     * are terminated (once current gameplay ends) and replaced with new On-Demand
-     * instances. </p> </li> </ul>
+     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * On-Demand Instances in the game server group. Method options include the
+     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
+     * used in the game server group. If Spot Instances are unavailable or not viable
+     * for game hosting, the game server group provides no hosting capacity until Spot
+     * Instances can again be used. Until then, no new instances are started, and the
+     * existing nonviable Spot Instances are terminated (after current gameplay ends)
+     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
+     * value) Spot Instances are used whenever available in the game server group. If
+     * Spot Instances are unavailable, the game server group continues to provide
+     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
+     * Instances are terminated (after current gameplay ends) and are replaced with new
+     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
+     * On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.</p> </li>
+     * </ul>
      */
     inline UpdateGameServerGroupRequest& WithBalancingStrategy(const BalancingStrategy& value) { SetBalancingStrategy(value); return *this;}
 
     /**
-     * <p>The fallback balancing method to use for the game server group when Spot
-     * instances in a Region become unavailable or are not viable for game hosting.
-     * Once triggered, this method remains active until Spot instances can once again
-     * be used. Method options include:</p> <ul> <li> <p>SPOT_ONLY -- If Spot instances
-     * are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated
-     * (once current gameplay ends) and not replaced.</p> </li> <li> <p>SPOT_PREFERRED
-     * -- If Spot instances are unavailable, the game server group continues to provide
-     * hosting capacity by using On-Demand instances. Existing nonviable Spot instances
-     * are terminated (once current gameplay ends) and replaced with new On-Demand
-     * instances. </p> </li> </ul>
+     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * On-Demand Instances in the game server group. Method options include the
+     * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
+     * used in the game server group. If Spot Instances are unavailable or not viable
+     * for game hosting, the game server group provides no hosting capacity until Spot
+     * Instances can again be used. Until then, no new instances are started, and the
+     * existing nonviable Spot Instances are terminated (after current gameplay ends)
+     * and are not replaced.</p> </li> <li> <p> <code>SPOT_PREFERRED</code> - (default
+     * value) Spot Instances are used whenever available in the game server group. If
+     * Spot Instances are unavailable, the game server group continues to provide
+     * hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot
+     * Instances are terminated (after current gameplay ends) and are replaced with new
+     * On-Demand Instances.</p> </li> <li> <p> <code>ON_DEMAND_ONLY</code> - Only
+     * On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.</p> </li>
+     * </ul>
      */
     inline UpdateGameServerGroupRequest& WithBalancingStrategy(BalancingStrategy&& value) { SetBalancingStrategy(std::move(value)); return *this;}
 

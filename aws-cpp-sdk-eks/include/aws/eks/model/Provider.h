@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK)
-   * used to encrypt the secrets.</p><p><h3>See Also:</h3>   <a
+   * <p>Identifies the Key Management Service (KMS) key used to encrypt the
+   * secrets.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Provider">AWS API
    * Reference</a></p>
    */
@@ -49,89 +39,89 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline Provider& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline Provider& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK
-     * must be symmetric, created in the same region as the cluster, and if the CMK was
-     * created in a different account, the user must have access to the CMK. For more
-     * information, see <a
+     * <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be
+     * symmetric, created in the same region as the cluster, and if the KMS key was
+     * created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service
+     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
     inline Provider& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}

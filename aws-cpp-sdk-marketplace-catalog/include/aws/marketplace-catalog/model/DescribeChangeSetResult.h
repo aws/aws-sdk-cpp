@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/model/ChangeStatus.h>
+#include <aws/marketplace-catalog/model/FailureCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/model/ChangeSummary.h>
 #include <utility>
@@ -294,6 +285,52 @@ namespace Model
 
 
     /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which
+     * means that there is a problem in the system, and you should retry your
+     * request.</p>
+     */
+    inline const FailureCode& GetFailureCode() const{ return m_failureCode; }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which
+     * means that there is a problem in the system, and you should retry your
+     * request.</p>
+     */
+    inline void SetFailureCode(const FailureCode& value) { m_failureCode = value; }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which
+     * means that there is a problem in the system, and you should retry your
+     * request.</p>
+     */
+    inline void SetFailureCode(FailureCode&& value) { m_failureCode = std::move(value); }
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which
+     * means that there is a problem in the system, and you should retry your
+     * request.</p>
+     */
+    inline DescribeChangeSetResult& WithFailureCode(const FailureCode& value) { SetFailureCode(value); return *this;}
+
+    /**
+     * <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+     * <code>CLIENT_ERROR</code>, which means that there are issues with the request
+     * (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which
+     * means that there is a problem in the system, and you should retry your
+     * request.</p>
+     */
+    inline DescribeChangeSetResult& WithFailureCode(FailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
+
+    /**
      * <p>Returned if there is a failure on the change set, but that failure is not
      * related to any of the changes in the request.</p>
      */
@@ -384,6 +421,8 @@ namespace Model
     Aws::String m_endTime;
 
     ChangeStatus m_status;
+
+    FailureCode m_failureCode;
 
     Aws::String m_failureDescription;
 

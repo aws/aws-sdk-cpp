@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/FieldToMatch.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,10 @@ FieldToMatch::FieldToMatch() :
     m_uriPathHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_methodHasBeenSet(false)
+    m_methodHasBeenSet(false),
+    m_jsonBodyHasBeenSet(false),
+    m_headersHasBeenSet(false),
+    m_cookiesHasBeenSet(false)
 {
 }
 
@@ -46,7 +39,10 @@ FieldToMatch::FieldToMatch(JsonView jsonValue) :
     m_uriPathHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_methodHasBeenSet(false)
+    m_methodHasBeenSet(false),
+    m_jsonBodyHasBeenSet(false),
+    m_headersHasBeenSet(false),
+    m_cookiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +98,27 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
     m_methodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JsonBody"))
+  {
+    m_jsonBody = jsonValue.GetObject("JsonBody");
+
+    m_jsonBodyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Headers"))
+  {
+    m_headers = jsonValue.GetObject("Headers");
+
+    m_headersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Cookies"))
+  {
+    m_cookies = jsonValue.GetObject("Cookies");
+
+    m_cookiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +165,24 @@ JsonValue FieldToMatch::Jsonize() const
   if(m_methodHasBeenSet)
   {
    payload.WithObject("Method", m_method.Jsonize());
+
+  }
+
+  if(m_jsonBodyHasBeenSet)
+  {
+   payload.WithObject("JsonBody", m_jsonBody.Jsonize());
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   payload.WithObject("Headers", m_headers.Jsonize());
+
+  }
+
+  if(m_cookiesHasBeenSet)
+  {
+   payload.WithObject("Cookies", m_cookies.Jsonize());
 
   }
 

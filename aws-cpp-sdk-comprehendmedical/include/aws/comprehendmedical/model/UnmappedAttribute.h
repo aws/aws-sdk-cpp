@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> An attribute that we extracted, but were unable to relate to an entity.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> An attribute that was extracted, but Comprehend Medical; was unable to
+   * relate to an entity. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/UnmappedAttribute">AWS
    * API Reference</a></p>
    */
@@ -50,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p> The type of the attribute, could be one of the following values:
+     * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline const EntityType& GetType() const{ return m_type; }
 
     /**
-     * <p> The type of the attribute, could be one of the following values:
+     * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The type of the attribute, could be one of the following values:
+     * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline void SetType(const EntityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The type of the attribute, could be one of the following values:
+     * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline void SetType(EntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The type of the attribute, could be one of the following values:
+     * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline UnmappedAttribute& WithType(const EntityType& value) { SetType(value); return *this;}
 
     /**
-     * <p> The type of the attribute, could be one of the following values:
+     * <p> The type of the unmapped attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */

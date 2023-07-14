@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -47,49 +37,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline BatchDeleteTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline BatchDeleteTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline BatchDeleteTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -188,6 +178,47 @@ namespace Model
      */
     inline BatchDeleteTableRequest& AddTablesToDelete(const char* value) { m_tablesToDeleteHasBeenSet = true; m_tablesToDelete.push_back(value); return *this; }
 
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline BatchDeleteTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline BatchDeleteTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline BatchDeleteTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -198,6 +229,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tablesToDelete;
     bool m_tablesToDeleteHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
   };
 
 } // namespace Model

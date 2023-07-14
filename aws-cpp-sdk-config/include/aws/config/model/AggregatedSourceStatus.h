@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -245,50 +235,50 @@ namespace Model
 
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline void SetLastErrorCode(const Aws::String& value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode = value; }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline void SetLastErrorCode(Aws::String&& value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode = std::move(value); }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline void SetLastErrorCode(const char* value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode.assign(value); }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline AggregatedSourceStatus& WithLastErrorCode(const Aws::String& value) { SetLastErrorCode(value); return *this;}
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline AggregatedSourceStatus& WithLastErrorCode(Aws::String&& value) { SetLastErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline AggregatedSourceStatus& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
 

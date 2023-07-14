@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/Instance.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -88,7 +78,17 @@ Instance::Instance() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_licensesHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false),
+    m_platformDetailsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
+    m_usageOperationUpdateTimeHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false),
+    m_tpmSupportHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
 }
 
@@ -150,7 +150,17 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_licensesHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false),
+    m_platformDetailsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
+    m_usageOperationUpdateTimeHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false),
+    m_tpmSupportHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -491,6 +501,60 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_metadataOptions = metadataOptionsNode;
       m_metadataOptionsHasBeenSet = true;
     }
+    XmlNode enclaveOptionsNode = resultNode.FirstChild("enclaveOptions");
+    if(!enclaveOptionsNode.IsNull())
+    {
+      m_enclaveOptions = enclaveOptionsNode;
+      m_enclaveOptionsHasBeenSet = true;
+    }
+    XmlNode bootModeNode = resultNode.FirstChild("bootMode");
+    if(!bootModeNode.IsNull())
+    {
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootModeHasBeenSet = true;
+    }
+    XmlNode platformDetailsNode = resultNode.FirstChild("platformDetails");
+    if(!platformDetailsNode.IsNull())
+    {
+      m_platformDetails = Aws::Utils::Xml::DecodeEscapedXmlText(platformDetailsNode.GetText());
+      m_platformDetailsHasBeenSet = true;
+    }
+    XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
+    if(!usageOperationNode.IsNull())
+    {
+      m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
+      m_usageOperationHasBeenSet = true;
+    }
+    XmlNode usageOperationUpdateTimeNode = resultNode.FirstChild("usageOperationUpdateTime");
+    if(!usageOperationUpdateTimeNode.IsNull())
+    {
+      m_usageOperationUpdateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationUpdateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_usageOperationUpdateTimeHasBeenSet = true;
+    }
+    XmlNode privateDnsNameOptionsNode = resultNode.FirstChild("privateDnsNameOptions");
+    if(!privateDnsNameOptionsNode.IsNull())
+    {
+      m_privateDnsNameOptions = privateDnsNameOptionsNode;
+      m_privateDnsNameOptionsHasBeenSet = true;
+    }
+    XmlNode ipv6AddressNode = resultNode.FirstChild("ipv6Address");
+    if(!ipv6AddressNode.IsNull())
+    {
+      m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
+      m_ipv6AddressHasBeenSet = true;
+    }
+    XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
+    if(!tpmSupportNode.IsNull())
+    {
+      m_tpmSupport = Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText());
+      m_tpmSupportHasBeenSet = true;
+    }
+    XmlNode maintenanceOptionsNode = resultNode.FirstChild("maintenanceOptions");
+    if(!maintenanceOptionsNode.IsNull())
+    {
+      m_maintenanceOptions = maintenanceOptionsNode;
+      m_maintenanceOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -799,6 +863,57 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::StringStream enclaveOptionsLocationAndMemberSs;
+      enclaveOptionsLocationAndMemberSs << location << index << locationValue << ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+
+  if(m_platformDetailsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
+  }
+
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+
+  if(m_usageOperationUpdateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameOptionsLocationAndMemberSs;
+      privateDnsNameOptionsLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TpmSupport=" << StringUtils::URLEncode(m_tpmSupport.c_str()) << "&";
+  }
+
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::StringStream maintenanceOptionsLocationAndMemberSs;
+      maintenanceOptionsLocationAndMemberSs << location << index << locationValue << ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1056,6 +1171,48 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String metadataOptionsLocationAndMember(location);
       metadataOptionsLocationAndMember += ".MetadataOptions";
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
+  }
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::String enclaveOptionsLocationAndMember(location);
+      enclaveOptionsLocationAndMember += ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
+  }
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+  if(m_platformDetailsHasBeenSet)
+  {
+      oStream << location << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
+  }
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+  if(m_usageOperationUpdateTimeHasBeenSet)
+  {
+      oStream << location << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::String privateDnsNameOptionsLocationAndMember(location);
+      privateDnsNameOptionsLocationAndMember += ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMember.c_str());
+  }
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << ".TpmSupport=" << StringUtils::URLEncode(m_tpmSupport.c_str()) << "&";
+  }
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::String maintenanceOptionsLocationAndMember(location);
+      maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
   }
 }
 

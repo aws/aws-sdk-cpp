@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -38,8 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about an identity provider.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A container for information about an IdP.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/IdentityProviderType">AWS
    * API Reference</a></p>
    */
@@ -94,547 +83,573 @@ namespace Model
 
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline IdentityProviderType& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline IdentityProviderType& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
-     * <p>The identity provider name.</p>
+     * <p>The IdP name.</p>
      */
     inline IdentityProviderType& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline const IdentityProviderTypeType& GetProviderType() const{ return m_providerType; }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline void SetProviderType(const IdentityProviderTypeType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline void SetProviderType(IdentityProviderTypeType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline IdentityProviderType& WithProviderType(const IdentityProviderTypeType& value) { SetProviderType(value); return *this;}
 
     /**
-     * <p>The identity provider type.</p>
+     * <p>The IdP type.</p>
      */
     inline IdentityProviderType& WithProviderType(IdentityProviderTypeType&& value) { SetProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const{ return m_providerDetails; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline bool ProviderDetailsHasBeenSet() const { return m_providerDetailsHasBeenSet; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = value; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = std::move(value); }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& WithProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetProviderDetails(value); return *this;}
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& WithProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetProviderDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const Aws::String& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const Aws::String& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The identity provider details. The following list describes the provider
-     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
-     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>The IdP details. The following list describes the provider detail keys for
+     * each IdP type.</p> <ul> <li> <p>For Google and Login with Amazon:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For Facebook:</p> <ul> <li>
+     * <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>api_version</p> </li> </ul> </li> <li>
      * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
-     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
-     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
-     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
-     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
-     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
-     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
-     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> <p> <i>You
+     * can submit a private_key when you add or update an IdP. Describe operations
+     * don't return the private key.</i> </p> </li> <li> <p>authorize_scopes</p> </li>
+     * </ul> </li> <li> <p>For OIDC providers:</p> <ul> <li> <p>client_id</p> </li>
+     * <li> <p>client_secret</p> </li> <li> <p>attributes_request_method</p> </li> <li>
+     * <p>oidc_issuer</p> </li> <li> <p>authorize_scopes</p> </li> <li> <p>The
+     * following keys are only present if Amazon Cognito didn't discover them at the
+     * <code>oidc_issuer</code> URL.</p> <ul> <li> <p>authorize_url </p> </li> <li>
+     * <p>token_url </p> </li> <li> <p>attributes_url </p> </li> <li> <p>jwks_uri </p>
+     * </li> </ul> </li> <li> <p>Amazon Cognito sets the value of the following keys
+     * automatically. They are read-only.</p> <ul> <li>
+     * <p>attributes_url_add_attributes </p> </li> </ul> </li> </ul> </li> <li> <p>For
+     * SAML providers:</p> <ul> <li> <p>MetadataFile or MetadataURL</p> </li> <li>
+     * <p>IDPSignout <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributeMapping() const{ return m_attributeMapping; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline bool AttributeMappingHasBeenSet() const { return m_attributeMappingHasBeenSet; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline void SetAttributeMapping(const Aws::Map<Aws::String, Aws::String>& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = value; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline void SetAttributeMapping(Aws::Map<Aws::String, Aws::String>&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = std::move(value); }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& WithAttributeMapping(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributeMapping(value); return *this;}
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& WithAttributeMapping(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributeMapping(std::move(value)); return *this;}
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(const Aws::String& key, const Aws::String& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(Aws::String&& key, const Aws::String& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(const Aws::String& key, Aws::String&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(Aws::String&& key, Aws::String&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(const char* key, Aws::String&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(Aws::String&& key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A mapping of identity provider attributes to standard and custom user pool
-     * attributes.</p>
+     * <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
      */
     inline IdentityProviderType& AddAttributeMapping(const char* key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
 
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const{ return m_idpIdentifiers; }
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline bool IdpIdentifiersHasBeenSet() const { return m_idpIdentifiersHasBeenSet; }
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline void SetIdpIdentifiers(const Aws::Vector<Aws::String>& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers = value; }
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline void SetIdpIdentifiers(Aws::Vector<Aws::String>&& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers = std::move(value); }
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline IdentityProviderType& WithIdpIdentifiers(const Aws::Vector<Aws::String>& value) { SetIdpIdentifiers(value); return *this;}
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline IdentityProviderType& WithIdpIdentifiers(Aws::Vector<Aws::String>&& value) { SetIdpIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline IdentityProviderType& AddIdpIdentifiers(const Aws::String& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline IdentityProviderType& AddIdpIdentifiers(Aws::String&& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of identity provider identifiers.</p>
+     * <p>A list of IdP identifiers.</p>
      */
     inline IdentityProviderType& AddIdpIdentifiers(const char* value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
 
 
     /**
-     * <p>The date the identity provider was last modified.</p>
+     * <p>The date the IdP was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The date the identity provider was last modified.</p>
+     * <p>The date the IdP was last modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The date the identity provider was last modified.</p>
+     * <p>The date the IdP was last modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The date the identity provider was last modified.</p>
+     * <p>The date the IdP was last modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The date the identity provider was last modified.</p>
+     * <p>The date the IdP was last modified.</p>
      */
     inline IdentityProviderType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The date the identity provider was last modified.</p>
+     * <p>The date the IdP was last modified.</p>
      */
     inline IdentityProviderType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date the identity provider was created.</p>
+     * <p>The date the IdP was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the identity provider was created.</p>
+     * <p>The date the IdP was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date the identity provider was created.</p>
+     * <p>The date the IdP was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date the identity provider was created.</p>
+     * <p>The date the IdP was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the identity provider was created.</p>
+     * <p>The date the IdP was created.</p>
      */
     inline IdentityProviderType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the identity provider was created.</p>
+     * <p>The date the IdP was created.</p>
      */
     inline IdentityProviderType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

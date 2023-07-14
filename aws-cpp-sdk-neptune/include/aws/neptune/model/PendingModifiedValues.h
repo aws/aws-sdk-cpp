@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -126,50 +116,42 @@ namespace Model
 
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the pending or currently-in-progress change of the master
-     * credentials for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -287,58 +269,42 @@ namespace Model
 
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline PendingModifiedValues& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline PendingModifiedValues& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline PendingModifiedValues& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 

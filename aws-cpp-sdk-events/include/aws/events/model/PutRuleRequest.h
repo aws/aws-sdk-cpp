@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
@@ -268,41 +258,81 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline PutRuleRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline PutRuleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline PutRuleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -349,50 +379,50 @@ namespace Model
 
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline PutRuleRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline PutRuleRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
 
     /**
-     * <p>The event bus to associate with this rule. If you omit this, the default
-     * event bus is used.</p>
+     * <p>The name or ARN of the event bus to associate with this rule. If you omit
+     * this, the default event bus is used.</p>
      */
     inline PutRuleRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 

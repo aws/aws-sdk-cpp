@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -48,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>Utilization of current Amazon EC2 Instance </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline const EC2ResourceUtilization& GetEC2ResourceUtilization() const{ return m_eC2ResourceUtilization; }
 
     /**
-     * <p>Utilization of current Amazon EC2 Instance </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline bool EC2ResourceUtilizationHasBeenSet() const { return m_eC2ResourceUtilizationHasBeenSet; }
 
     /**
-     * <p>Utilization of current Amazon EC2 Instance </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline void SetEC2ResourceUtilization(const EC2ResourceUtilization& value) { m_eC2ResourceUtilizationHasBeenSet = true; m_eC2ResourceUtilization = value; }
 
     /**
-     * <p>Utilization of current Amazon EC2 Instance </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline void SetEC2ResourceUtilization(EC2ResourceUtilization&& value) { m_eC2ResourceUtilizationHasBeenSet = true; m_eC2ResourceUtilization = std::move(value); }
 
     /**
-     * <p>Utilization of current Amazon EC2 Instance </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline ResourceUtilization& WithEC2ResourceUtilization(const EC2ResourceUtilization& value) { SetEC2ResourceUtilization(value); return *this;}
 
     /**
-     * <p>Utilization of current Amazon EC2 Instance </p>
+     * <p>The utilization of current Amazon EC2 instance. </p>
      */
     inline ResourceUtilization& WithEC2ResourceUtilization(EC2ResourceUtilization&& value) { SetEC2ResourceUtilization(std::move(value)); return *this;}
 

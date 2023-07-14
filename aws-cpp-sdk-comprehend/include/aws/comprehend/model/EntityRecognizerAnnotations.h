@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
@@ -104,10 +94,70 @@ namespace Model
      */
     inline EntityRecognizerAnnotations& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline EntityRecognizerAnnotations& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline EntityRecognizerAnnotations& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling.</p>
+     */
+    inline EntityRecognizerAnnotations& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet;
+
+    Aws::String m_testS3Uri;
+    bool m_testS3UriHasBeenSet;
   };
 
 } // namespace Model

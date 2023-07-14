@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appstream/model/FleetErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -46,6 +36,8 @@ namespace Aws
         static const int SECURITY_GROUPS_NOT_FOUND_HASH = HashingUtils::HashString("SECURITY_GROUPS_NOT_FOUND");
         static const int IGW_NOT_ATTACHED_HASH = HashingUtils::HashString("IGW_NOT_ATTACHED");
         static const int IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION");
+        static const int FLEET_STOPPED_HASH = HashingUtils::HashString("FLEET_STOPPED");
+        static const int FLEET_INSTANCE_PROVISIONING_FAILURE_HASH = HashingUtils::HashString("FLEET_INSTANCE_PROVISIONING_FAILURE");
         static const int DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_FILE_NOT_FOUND");
         static const int DOMAIN_JOIN_ERROR_ACCESS_DENIED_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_ACCESS_DENIED");
         static const int DOMAIN_JOIN_ERROR_LOGON_FAILURE_HASH = HashingUtils::HashString("DOMAIN_JOIN_ERROR_LOGON_FAILURE");
@@ -126,6 +118,14 @@ namespace Aws
           else if (hashCode == IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION_HASH)
           {
             return FleetErrorCode::IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION;
+          }
+          else if (hashCode == FLEET_STOPPED_HASH)
+          {
+            return FleetErrorCode::FLEET_STOPPED;
+          }
+          else if (hashCode == FLEET_INSTANCE_PROVISIONING_FAILURE_HASH)
+          {
+            return FleetErrorCode::FLEET_INSTANCE_PROVISIONING_FAILURE;
           }
           else if (hashCode == DOMAIN_JOIN_ERROR_FILE_NOT_FOUND_HASH)
           {
@@ -221,6 +221,10 @@ namespace Aws
             return "IGW_NOT_ATTACHED";
           case FleetErrorCode::IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION:
             return "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION";
+          case FleetErrorCode::FLEET_STOPPED:
+            return "FLEET_STOPPED";
+          case FleetErrorCode::FLEET_INSTANCE_PROVISIONING_FAILURE:
+            return "FLEET_INSTANCE_PROVISIONING_FAILURE";
           case FleetErrorCode::DOMAIN_JOIN_ERROR_FILE_NOT_FOUND:
             return "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND";
           case FleetErrorCode::DOMAIN_JOIN_ERROR_ACCESS_DENIED:

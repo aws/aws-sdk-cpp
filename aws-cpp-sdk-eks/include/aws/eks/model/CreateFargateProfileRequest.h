@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -381,118 +371,105 @@ namespace Model
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata to apply to the Fargate profile to assist with categorization
-     * and organization. Each tag consists of a key and an optional value, both of
-     * which you define. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with
-     * it.</p>
+     * and organization. Each tag consists of a key and an optional value. You define
+     * both. Fargate profile tags do not propagate to any other resources associated
+     * with the Fargate profile, such as the pods that are scheduled with it.</p>
      */
     inline CreateFargateProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

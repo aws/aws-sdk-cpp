@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/snowball/model/CreateJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,6 +16,7 @@ CreateJobRequest::CreateJobRequest() :
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_resourcesHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_kmsKeyARNHasBeenSet(false),
@@ -39,7 +30,11 @@ CreateJobRequest::CreateJobRequest() :
     m_snowballType(SnowballType::NOT_SET),
     m_snowballTypeHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false)
+    m_taxDocumentsHasBeenSet(false),
+    m_deviceConfigurationHasBeenSet(false),
+    m_remoteManagement(RemoteManagement::NOT_SET),
+    m_remoteManagementHasBeenSet(false),
+    m_longTermPricingIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +50,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_resourcesHasBeenSet)
   {
    payload.WithObject("Resources", m_resources.Jsonize());
+
+  }
+
+  if(m_onDeviceServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
 
   }
 
@@ -118,6 +119,23 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_taxDocumentsHasBeenSet)
   {
    payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
+
+  }
+
+  if(m_deviceConfigurationHasBeenSet)
+  {
+   payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
+
+  }
+
+  if(m_remoteManagementHasBeenSet)
+  {
+   payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
+  }
+
+  if(m_longTermPricingIdHasBeenSet)
+  {
+   payload.WithString("LongTermPricingId", m_longTermPricingId);
 
   }
 

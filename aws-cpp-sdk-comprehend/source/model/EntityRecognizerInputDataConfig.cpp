@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/comprehend/model/EntityRecognizerInputDataConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,24 +19,37 @@ namespace Model
 {
 
 EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig() : 
+    m_dataFormat(EntityRecognizerDataFormat::NOT_SET),
+    m_dataFormatHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
     m_documentsHasBeenSet(false),
     m_annotationsHasBeenSet(false),
-    m_entityListHasBeenSet(false)
+    m_entityListHasBeenSet(false),
+    m_augmentedManifestsHasBeenSet(false)
 {
 }
 
 EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig(JsonView jsonValue) : 
+    m_dataFormat(EntityRecognizerDataFormat::NOT_SET),
+    m_dataFormatHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
     m_documentsHasBeenSet(false),
     m_annotationsHasBeenSet(false),
-    m_entityListHasBeenSet(false)
+    m_entityListHasBeenSet(false),
+    m_augmentedManifestsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DataFormat"))
+  {
+    m_dataFormat = EntityRecognizerDataFormatMapper::GetEntityRecognizerDataFormatForName(jsonValue.GetString("DataFormat"));
+
+    m_dataFormatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EntityTypes"))
   {
     Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
@@ -78,12 +81,27 @@ EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(Jso
     m_entityListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AugmentedManifests"))
+  {
+    Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
+    for(unsigned augmentedManifestsIndex = 0; augmentedManifestsIndex < augmentedManifestsJsonList.GetLength(); ++augmentedManifestsIndex)
+    {
+      m_augmentedManifests.push_back(augmentedManifestsJsonList[augmentedManifestsIndex].AsObject());
+    }
+    m_augmentedManifestsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue EntityRecognizerInputDataConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_dataFormatHasBeenSet)
+  {
+   payload.WithString("DataFormat", EntityRecognizerDataFormatMapper::GetNameForEntityRecognizerDataFormat(m_dataFormat));
+  }
 
   if(m_entityTypesHasBeenSet)
   {
@@ -111,6 +129,17 @@ JsonValue EntityRecognizerInputDataConfig::Jsonize() const
   if(m_entityListHasBeenSet)
   {
    payload.WithObject("EntityList", m_entityList.Jsonize());
+
+  }
+
+  if(m_augmentedManifestsHasBeenSet)
+  {
+   Array<JsonValue> augmentedManifestsJsonList(m_augmentedManifests.size());
+   for(unsigned augmentedManifestsIndex = 0; augmentedManifestsIndex < augmentedManifestsJsonList.GetLength(); ++augmentedManifestsIndex)
+   {
+     augmentedManifestsJsonList[augmentedManifestsIndex].AsObject(m_augmentedManifests[augmentedManifestsIndex].Jsonize());
+   }
+   payload.WithArray("AugmentedManifests", std::move(augmentedManifestsJsonList));
 
   }
 

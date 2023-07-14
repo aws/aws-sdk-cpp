@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigateway/model/GatewayResponseType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -50,6 +40,7 @@ namespace Aws
         static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("REQUEST_TOO_LARGE");
         static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
         static const int QUOTA_EXCEEDED_HASH = HashingUtils::HashString("QUOTA_EXCEEDED");
+        static const int WAF_FILTERED_HASH = HashingUtils::HashString("WAF_FILTERED");
 
 
         GatewayResponseType GetGatewayResponseTypeForName(const Aws::String& name)
@@ -135,6 +126,10 @@ namespace Aws
           {
             return GatewayResponseType::QUOTA_EXCEEDED;
           }
+          else if (hashCode == WAF_FILTERED_HASH)
+          {
+            return GatewayResponseType::WAF_FILTERED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -189,6 +184,8 @@ namespace Aws
             return "THROTTLED";
           case GatewayResponseType::QUOTA_EXCEEDED:
             return "QUOTA_EXCEEDED";
+          case GatewayResponseType::WAF_FILTERED:
+            return "WAF_FILTERED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

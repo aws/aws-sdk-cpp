@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DataSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,6 +29,7 @@ DataSource::DataSource() :
     m_createdTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_dataSourceParametersHasBeenSet(false),
+    m_alternateDataSourceParametersHasBeenSet(false),
     m_vpcConnectionPropertiesHasBeenSet(false),
     m_sslPropertiesHasBeenSet(false),
     m_errorInfoHasBeenSet(false)
@@ -56,6 +47,7 @@ DataSource::DataSource(JsonView jsonValue) :
     m_createdTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_dataSourceParametersHasBeenSet(false),
+    m_alternateDataSourceParametersHasBeenSet(false),
     m_vpcConnectionPropertiesHasBeenSet(false),
     m_sslPropertiesHasBeenSet(false),
     m_errorInfoHasBeenSet(false)
@@ -119,6 +111,16 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_dataSourceParameters = jsonValue.GetObject("DataSourceParameters");
 
     m_dataSourceParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AlternateDataSourceParameters"))
+  {
+    Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
+    for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
+    {
+      m_alternateDataSourceParameters.push_back(alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject());
+    }
+    m_alternateDataSourceParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VpcConnectionProperties"))
@@ -190,6 +192,17 @@ JsonValue DataSource::Jsonize() const
   if(m_dataSourceParametersHasBeenSet)
   {
    payload.WithObject("DataSourceParameters", m_dataSourceParameters.Jsonize());
+
+  }
+
+  if(m_alternateDataSourceParametersHasBeenSet)
+  {
+   Array<JsonValue> alternateDataSourceParametersJsonList(m_alternateDataSourceParameters.size());
+   for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
+   {
+     alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject(m_alternateDataSourceParameters[alternateDataSourceParametersIndex].Jsonize());
+   }
+   payload.WithArray("AlternateDataSourceParameters", std::move(alternateDataSourceParametersJsonList));
 
   }
 

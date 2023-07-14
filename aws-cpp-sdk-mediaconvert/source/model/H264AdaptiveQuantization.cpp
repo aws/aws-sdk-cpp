@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/H264AdaptiveQuantization.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int OFF_HASH = HashingUtils::HashString("OFF");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
         static const int LOW_HASH = HashingUtils::HashString("LOW");
         static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
@@ -44,6 +35,10 @@ namespace Aws
           if (hashCode == OFF_HASH)
           {
             return H264AdaptiveQuantization::OFF;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return H264AdaptiveQuantization::AUTO;
           }
           else if (hashCode == LOW_HASH)
           {
@@ -81,6 +76,8 @@ namespace Aws
           {
           case H264AdaptiveQuantization::OFF:
             return "OFF";
+          case H264AdaptiveQuantization::AUTO:
+            return "AUTO";
           case H264AdaptiveQuantization::LOW:
             return "LOW";
           case H264AdaptiveQuantization::MEDIUM:

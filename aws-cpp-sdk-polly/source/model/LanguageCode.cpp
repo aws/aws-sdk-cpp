@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/polly/model/LanguageCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -59,6 +49,10 @@ namespace Aws
         static const int ru_RU_HASH = HashingUtils::HashString("ru-RU");
         static const int sv_SE_HASH = HashingUtils::HashString("sv-SE");
         static const int tr_TR_HASH = HashingUtils::HashString("tr-TR");
+        static const int en_NZ_HASH = HashingUtils::HashString("en-NZ");
+        static const int en_ZA_HASH = HashingUtils::HashString("en-ZA");
+        static const int ca_ES_HASH = HashingUtils::HashString("ca-ES");
+        static const int de_AT_HASH = HashingUtils::HashString("de-AT");
 
 
         LanguageCode GetLanguageCodeForName(const Aws::String& name)
@@ -180,6 +174,22 @@ namespace Aws
           {
             return LanguageCode::tr_TR;
           }
+          else if (hashCode == en_NZ_HASH)
+          {
+            return LanguageCode::en_NZ;
+          }
+          else if (hashCode == en_ZA_HASH)
+          {
+            return LanguageCode::en_ZA;
+          }
+          else if (hashCode == ca_ES_HASH)
+          {
+            return LanguageCode::ca_ES;
+          }
+          else if (hashCode == de_AT_HASH)
+          {
+            return LanguageCode::de_AT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -252,6 +262,14 @@ namespace Aws
             return "sv-SE";
           case LanguageCode::tr_TR:
             return "tr-TR";
+          case LanguageCode::en_NZ:
+            return "en-NZ";
+          case LanguageCode::en_ZA:
+            return "en-ZA";
+          case LanguageCode::ca_ES:
+            return "ca-ES";
+          case LanguageCode::de_AT:
+            return "de-AT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

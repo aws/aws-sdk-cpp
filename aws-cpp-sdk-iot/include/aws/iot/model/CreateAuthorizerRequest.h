@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/AuthorizerStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -286,28 +278,142 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline CreateAuthorizerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline CreateAuthorizerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline CreateAuthorizerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage the custom authorizer.</p>  <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
+     */
+    inline CreateAuthorizerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline bool GetSigningDisabled() const{ return m_signingDisabled; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline bool SigningDisabledHasBeenSet() const { return m_signingDisabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline void SetSigningDisabled(bool value) { m_signingDisabledHasBeenSet = true; m_signingDisabled = value; }
 
     /**
-     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * <p>Specifies whether IoT validates the token signature in an authorization
      * request.</p>
      */
     inline CreateAuthorizerRequest& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}
+
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool GetEnableCachingForHttp() const{ return m_enableCachingForHttp; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool EnableCachingForHttpHasBeenSet() const { return m_enableCachingForHttpHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline void SetEnableCachingForHttp(bool value) { m_enableCachingForHttpHasBeenSet = true; m_enableCachingForHttp = value; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline CreateAuthorizerRequest& WithEnableCachingForHttp(bool value) { SetEnableCachingForHttp(value); return *this;}
 
   private:
 
@@ -326,8 +432,14 @@ namespace Model
     AuthorizerStatus m_status;
     bool m_statusHasBeenSet;
 
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
     bool m_signingDisabled;
     bool m_signingDisabledHasBeenSet;
+
+    bool m_enableCachingForHttp;
+    bool m_enableCachingForHttpHasBeenSet;
   };
 
 } // namespace Model

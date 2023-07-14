@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -36,8 +26,11 @@ namespace Model
 
   /**
    * <p>Specifies a metrics configuration filter. The metrics configuration only
-   * includes objects that meet the filter's criteria. A filter must be a prefix, a
-   * tag, or a conjunction (MetricsAndOperator).</p><p><h3>See Also:</h3>   <a
+   * includes objects that meet the filter's criteria. A filter must be a prefix, an
+   * object tag, an access point ARN, or a conjunction (MetricsAndOperator). For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsFilter">AWS
    * API Reference</a></p>
    */
@@ -124,6 +117,47 @@ namespace Model
 
 
     /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline MetricsFilter& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline MetricsFilter& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The access point ARN used when evaluating a metrics filter.</p>
+     */
+    inline MetricsFilter& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+
+
+    /**
      * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
      * metrics filter. The operator must have at least two predicates, and an object
      * must match all of the predicates in order for the filter to apply.</p>
@@ -172,6 +206,9 @@ namespace Model
 
     Tag m_tag;
     bool m_tagHasBeenSet;
+
+    Aws::String m_accessPointArn;
+    bool m_accessPointArnHasBeenSet;
 
     MetricsAndOperator m_and;
     bool m_andHasBeenSet;

@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/BackupRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/backup/model/RestoreJobStatus.h>
 #include <utility>
 
 namespace Aws
@@ -133,6 +125,222 @@ namespace Model
      */
     inline ListRestoreJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline const Aws::String& GetByAccountId() const{ return m_byAccountId; }
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline bool ByAccountIdHasBeenSet() const { return m_byAccountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline void SetByAccountId(const Aws::String& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = value; }
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline void SetByAccountId(Aws::String&& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = std::move(value); }
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline void SetByAccountId(const char* value) { m_byAccountIdHasBeenSet = true; m_byAccountId.assign(value); }
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline ListRestoreJobsRequest& WithByAccountId(const Aws::String& value) { SetByAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline ListRestoreJobsRequest& WithByAccountId(Aws::String&& value) { SetByAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID to list the jobs from. Returns only restore jobs associated
+     * with the specified account ID.</p>
+     */
+    inline ListRestoreJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
+
+
+    /**
+     * <p>Returns only restore jobs that were created before the specified date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCreatedBefore() const{ return m_byCreatedBefore; }
+
+    /**
+     * <p>Returns only restore jobs that were created before the specified date.</p>
+     */
+    inline bool ByCreatedBeforeHasBeenSet() const { return m_byCreatedBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only restore jobs that were created before the specified date.</p>
+     */
+    inline void SetByCreatedBefore(const Aws::Utils::DateTime& value) { m_byCreatedBeforeHasBeenSet = true; m_byCreatedBefore = value; }
+
+    /**
+     * <p>Returns only restore jobs that were created before the specified date.</p>
+     */
+    inline void SetByCreatedBefore(Aws::Utils::DateTime&& value) { m_byCreatedBeforeHasBeenSet = true; m_byCreatedBefore = std::move(value); }
+
+    /**
+     * <p>Returns only restore jobs that were created before the specified date.</p>
+     */
+    inline ListRestoreJobsRequest& WithByCreatedBefore(const Aws::Utils::DateTime& value) { SetByCreatedBefore(value); return *this;}
+
+    /**
+     * <p>Returns only restore jobs that were created before the specified date.</p>
+     */
+    inline ListRestoreJobsRequest& WithByCreatedBefore(Aws::Utils::DateTime&& value) { SetByCreatedBefore(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only restore jobs that were created after the specified date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCreatedAfter() const{ return m_byCreatedAfter; }
+
+    /**
+     * <p>Returns only restore jobs that were created after the specified date.</p>
+     */
+    inline bool ByCreatedAfterHasBeenSet() const { return m_byCreatedAfterHasBeenSet; }
+
+    /**
+     * <p>Returns only restore jobs that were created after the specified date.</p>
+     */
+    inline void SetByCreatedAfter(const Aws::Utils::DateTime& value) { m_byCreatedAfterHasBeenSet = true; m_byCreatedAfter = value; }
+
+    /**
+     * <p>Returns only restore jobs that were created after the specified date.</p>
+     */
+    inline void SetByCreatedAfter(Aws::Utils::DateTime&& value) { m_byCreatedAfterHasBeenSet = true; m_byCreatedAfter = std::move(value); }
+
+    /**
+     * <p>Returns only restore jobs that were created after the specified date.</p>
+     */
+    inline ListRestoreJobsRequest& WithByCreatedAfter(const Aws::Utils::DateTime& value) { SetByCreatedAfter(value); return *this;}
+
+    /**
+     * <p>Returns only restore jobs that were created after the specified date.</p>
+     */
+    inline ListRestoreJobsRequest& WithByCreatedAfter(Aws::Utils::DateTime&& value) { SetByCreatedAfter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only restore jobs associated with the specified job status.</p>
+     */
+    inline const RestoreJobStatus& GetByStatus() const{ return m_byStatus; }
+
+    /**
+     * <p>Returns only restore jobs associated with the specified job status.</p>
+     */
+    inline bool ByStatusHasBeenSet() const { return m_byStatusHasBeenSet; }
+
+    /**
+     * <p>Returns only restore jobs associated with the specified job status.</p>
+     */
+    inline void SetByStatus(const RestoreJobStatus& value) { m_byStatusHasBeenSet = true; m_byStatus = value; }
+
+    /**
+     * <p>Returns only restore jobs associated with the specified job status.</p>
+     */
+    inline void SetByStatus(RestoreJobStatus&& value) { m_byStatusHasBeenSet = true; m_byStatus = std::move(value); }
+
+    /**
+     * <p>Returns only restore jobs associated with the specified job status.</p>
+     */
+    inline ListRestoreJobsRequest& WithByStatus(const RestoreJobStatus& value) { SetByStatus(value); return *this;}
+
+    /**
+     * <p>Returns only restore jobs associated with the specified job status.</p>
+     */
+    inline ListRestoreJobsRequest& WithByStatus(RestoreJobStatus&& value) { SetByStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteBefore() const{ return m_byCompleteBefore; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteBeforeHasBeenSet() const { return m_byCompleteBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(const Aws::Utils::DateTime& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = value; }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(Aws::Utils::DateTime&& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = std::move(value); }
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteBefore(const Aws::Utils::DateTime& value) { SetByCompleteBefore(value); return *this;}
+
+    /**
+     * <p>Returns only copy jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteBefore(Aws::Utils::DateTime&& value) { SetByCompleteBefore(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteAfter() const{ return m_byCompleteAfter; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteAfterHasBeenSet() const { return m_byCompleteAfterHasBeenSet; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(const Aws::Utils::DateTime& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = value; }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(Aws::Utils::DateTime&& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = std::move(value); }
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteAfter(const Aws::Utils::DateTime& value) { SetByCompleteAfter(value); return *this;}
+
+    /**
+     * <p>Returns only copy jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListRestoreJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -140,6 +348,24 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_byAccountId;
+    bool m_byAccountIdHasBeenSet;
+
+    Aws::Utils::DateTime m_byCreatedBefore;
+    bool m_byCreatedBeforeHasBeenSet;
+
+    Aws::Utils::DateTime m_byCreatedAfter;
+    bool m_byCreatedAfterHasBeenSet;
+
+    RestoreJobStatus m_byStatus;
+    bool m_byStatusHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteBefore;
+    bool m_byCompleteBeforeHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteAfter;
+    bool m_byCompleteAfterHasBeenSet;
   };
 
 } // namespace Model

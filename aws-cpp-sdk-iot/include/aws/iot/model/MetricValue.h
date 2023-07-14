@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -171,6 +161,109 @@ namespace Model
      */
     inline MetricValue& AddPorts(int value) { m_portsHasBeenSet = true; m_ports.push_back(value); return *this; }
 
+
+    /**
+     * <p> The numeral value of a metric. </p>
+     */
+    inline double GetNumber() const{ return m_number; }
+
+    /**
+     * <p> The numeral value of a metric. </p>
+     */
+    inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
+
+    /**
+     * <p> The numeral value of a metric. </p>
+     */
+    inline void SetNumber(double value) { m_numberHasBeenSet = true; m_number = value; }
+
+    /**
+     * <p> The numeral value of a metric. </p>
+     */
+    inline MetricValue& WithNumber(double value) { SetNumber(value); return *this;}
+
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline const Aws::Vector<double>& GetNumbers() const{ return m_numbers; }
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline bool NumbersHasBeenSet() const { return m_numbersHasBeenSet; }
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline void SetNumbers(const Aws::Vector<double>& value) { m_numbersHasBeenSet = true; m_numbers = value; }
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline void SetNumbers(Aws::Vector<double>&& value) { m_numbersHasBeenSet = true; m_numbers = std::move(value); }
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline MetricValue& WithNumbers(const Aws::Vector<double>& value) { SetNumbers(value); return *this;}
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline MetricValue& WithNumbers(Aws::Vector<double>&& value) { SetNumbers(std::move(value)); return *this;}
+
+    /**
+     * <p> The numeral values of a metric. </p>
+     */
+    inline MetricValue& AddNumbers(double value) { m_numbersHasBeenSet = true; m_numbers.push_back(value); return *this; }
+
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStrings() const{ return m_strings; }
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline bool StringsHasBeenSet() const { return m_stringsHasBeenSet; }
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline void SetStrings(const Aws::Vector<Aws::String>& value) { m_stringsHasBeenSet = true; m_strings = value; }
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline void SetStrings(Aws::Vector<Aws::String>&& value) { m_stringsHasBeenSet = true; m_strings = std::move(value); }
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline MetricValue& WithStrings(const Aws::Vector<Aws::String>& value) { SetStrings(value); return *this;}
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline MetricValue& WithStrings(Aws::Vector<Aws::String>&& value) { SetStrings(std::move(value)); return *this;}
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline MetricValue& AddStrings(const Aws::String& value) { m_stringsHasBeenSet = true; m_strings.push_back(value); return *this; }
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline MetricValue& AddStrings(Aws::String&& value) { m_stringsHasBeenSet = true; m_strings.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The string values of a metric. </p>
+     */
+    inline MetricValue& AddStrings(const char* value) { m_stringsHasBeenSet = true; m_strings.push_back(value); return *this; }
+
   private:
 
     long long m_count;
@@ -181,6 +274,15 @@ namespace Model
 
     Aws::Vector<int> m_ports;
     bool m_portsHasBeenSet;
+
+    double m_number;
+    bool m_numberHasBeenSet;
+
+    Aws::Vector<double> m_numbers;
+    bool m_numbersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_strings;
+    bool m_stringsHasBeenSet;
   };
 
 } // namespace Model

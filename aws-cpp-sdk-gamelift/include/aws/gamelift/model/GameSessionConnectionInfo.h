@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -36,13 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Connection information for the new game session that is created with
-   * matchmaking. (with <a>StartMatchmaking</a>). Once a match is set, the FlexMatch
-   * engine places the match and creates a new game session for it. This information,
-   * including the game session endpoint and player sessions for each player in the
-   * original matchmaking request, is added to the <a>MatchmakingTicket</a>, which
-   * can be retrieved by calling <a>DescribeMatchmaking</a>.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Connection information for a new game session that is created in response to
+   * a <a>StartMatchmaking</a> request. Once a match is made, the FlexMatch engine
+   * creates a new game session for it. This information, including the game session
+   * endpoint and player sessions for each player in the original matchmaking
+   * request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by
+   * calling <a>DescribeMatchmaking</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionConnectionInfo">AWS
    * API Reference</a></p>
    */
@@ -56,121 +45,97 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline void SetGameSessionArn(const char* value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline GameSessionConnectionInfo& WithGameSessionArn(const Aws::String& value) { SetGameSessionArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline GameSessionConnectionInfo& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
-     * that is assigned to a game session and uniquely identifies it.</p>
+     * <p>A unique identifier for the game session. Use the game session ID.</p>
      */
     inline GameSessionConnectionInfo& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
 
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline GameSessionConnectionInfo& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline GameSessionConnectionInfo& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address of the instance that is running the game session. When connecting
-     * to a Amazon GameLift game server, a client needs to reference an IP address (or
-     * DNS name) and port number.</p>
+     * <p>The IP address of the game session. To connect to a GameLift game server, an
+     * app needs both the IP address and port number.</p>
      */
     inline GameSessionConnectionInfo& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -184,7 +149,7 @@ namespace Model
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -198,7 +163,7 @@ namespace Model
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -212,7 +177,7 @@ namespace Model
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -226,7 +191,7 @@ namespace Model
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -240,7 +205,7 @@ namespace Model
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -254,7 +219,7 @@ namespace Model
     inline GameSessionConnectionInfo& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -268,7 +233,7 @@ namespace Model
     inline GameSessionConnectionInfo& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>DNS identifier assigned to the instance that is running the game session.
+     * <p>The DNS identifier assigned to the instance that is running the game session.
      * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
      * <code>&lt;unique identifier&gt;.&lt;region
      * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
@@ -283,26 +248,26 @@ namespace Model
 
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift game
-     * server, an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline GameSessionConnectionInfo& WithPort(int value) { SetPort(value); return *this;}
 

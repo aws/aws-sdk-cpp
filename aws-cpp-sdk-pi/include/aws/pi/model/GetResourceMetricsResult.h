@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pi/PI_EXPORTS.h>
@@ -128,101 +118,108 @@ namespace Model
 
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline GetResourceMetricsResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline GetResourceMetricsResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
-     * instance as a data source, you specify its <code>DbiResourceId</code> value -
-     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable identifier for a data source that is unique for an Amazon Web
+     * Services Region. Performance Insights gathers metrics from this data source. In
+     * the console, the identifier is shown as <i>ResourceID</i>. When you call
+     * <code>DescribeDBInstances</code>, the identifier is returned as
+     * <code>DbiResourceId</code>.</p>
      */
     inline GetResourceMetricsResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline const Aws::Vector<MetricKeyDataPoints>& GetMetricList() const{ return m_metricList; }
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline void SetMetricList(const Aws::Vector<MetricKeyDataPoints>& value) { m_metricList = value; }
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline void SetMetricList(Aws::Vector<MetricKeyDataPoints>&& value) { m_metricList = std::move(value); }
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline GetResourceMetricsResult& WithMetricList(const Aws::Vector<MetricKeyDataPoints>& value) { SetMetricList(value); return *this;}
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline GetResourceMetricsResult& WithMetricList(Aws::Vector<MetricKeyDataPoints>&& value) { SetMetricList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline GetResourceMetricsResult& AddMetricList(const MetricKeyDataPoints& value) { m_metricList.push_back(value); return *this; }
 
     /**
-     * <p>An array of metric results,, where each array element contains all of the
-     * data points for a particular dimension.</p>
+     * <p>An array of metric results, where each array element contains all of the data
+     * points for a particular dimension.</p>
      */
     inline GetResourceMetricsResult& AddMetricList(MetricKeyDataPoints&& value) { m_metricList.push_back(std::move(value)); return *this; }
 
@@ -230,49 +227,49 @@ namespace Model
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline GetResourceMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline GetResourceMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline GetResourceMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

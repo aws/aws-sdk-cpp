@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -91,165 +81,181 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline void SetAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline DomainDescriptionType& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline DomainDescriptionType& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The Amazon Web Services ID for the user pool owner.</p>
      */
     inline DomainDescriptionType& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
 
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline DomainDescriptionType& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline DomainDescriptionType& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The domain string.</p>
+     * <p>The domain string. For custom domains, this is the fully-qualified domain
+     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
+     * this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline DomainDescriptionType& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline DomainDescriptionType& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline DomainDescriptionType& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     * <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
      */
     inline DomainDescriptionType& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline const Aws::String& GetCloudFrontDistribution() const{ return m_cloudFrontDistribution; }
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline bool CloudFrontDistributionHasBeenSet() const { return m_cloudFrontDistributionHasBeenSet; }
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline void SetCloudFrontDistribution(const Aws::String& value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution = value; }
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline void SetCloudFrontDistribution(Aws::String&& value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution = std::move(value); }
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline void SetCloudFrontDistribution(const char* value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution.assign(value); }
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(const Aws::String& value) { SetCloudFrontDistribution(value); return *this;}
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(Aws::String&& value) { SetCloudFrontDistribution(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the CloudFront distribution.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(const char* value) { SetCloudFrontDistribution(value); return *this;}
 

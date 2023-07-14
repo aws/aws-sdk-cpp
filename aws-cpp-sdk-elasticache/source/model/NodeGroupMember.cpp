@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/NodeGroupMember.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -35,6 +25,7 @@ NodeGroupMember::NodeGroupMember() :
     m_cacheNodeIdHasBeenSet(false),
     m_readEndpointHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
     m_currentRoleHasBeenSet(false)
 {
 }
@@ -44,6 +35,7 @@ NodeGroupMember::NodeGroupMember(const XmlNode& xmlNode) :
     m_cacheNodeIdHasBeenSet(false),
     m_readEndpointHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
+    m_preferredOutpostArnHasBeenSet(false),
     m_currentRoleHasBeenSet(false)
 {
   *this = xmlNode;
@@ -78,6 +70,12 @@ NodeGroupMember& NodeGroupMember::operator =(const XmlNode& xmlNode)
     {
       m_preferredAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(preferredAvailabilityZoneNode.GetText());
       m_preferredAvailabilityZoneHasBeenSet = true;
+    }
+    XmlNode preferredOutpostArnNode = resultNode.FirstChild("PreferredOutpostArn");
+    if(!preferredOutpostArnNode.IsNull())
+    {
+      m_preferredOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(preferredOutpostArnNode.GetText());
+      m_preferredOutpostArnHasBeenSet = true;
     }
     XmlNode currentRoleNode = resultNode.FirstChild("CurrentRole");
     if(!currentRoleNode.IsNull())
@@ -114,6 +112,11 @@ void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
   }
 
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
+  }
+
   if(m_currentRoleHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrentRole=" << StringUtils::URLEncode(m_currentRole.c_str()) << "&";
@@ -140,6 +143,10 @@ void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
+  }
+  if(m_preferredOutpostArnHasBeenSet)
+  {
+      oStream << location << ".PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
   }
   if(m_currentRoleHasBeenSet)
   {

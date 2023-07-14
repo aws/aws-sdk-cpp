@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -34,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes status of a security group associated with the virtual private
-   * cloud hosting your replication and DB instances.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the status of a security group associated with the virtual private
+   * cloud (VPC) hosting your replication and DB instances.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
@@ -49,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline const Aws::String& GetVpcSecurityGroupId() const{ return m_vpcSecurityGroupId; }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline bool VpcSecurityGroupIdHasBeenSet() const { return m_vpcSecurityGroupIdHasBeenSet; }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline void SetVpcSecurityGroupId(const Aws::String& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline void SetVpcSecurityGroupId(Aws::String&& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = std::move(value); }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline void SetVpcSecurityGroupId(const char* value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId.assign(value); }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const Aws::String& value) { SetVpcSecurityGroupId(value); return *this;}
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(Aws::String&& value) { SetVpcSecurityGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const char* value) { SetVpcSecurityGroupId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
@@ -62,18 +52,30 @@ namespace PersonalizeEvents
 namespace Model
 {
         class PutEventsRequest;
+        class PutItemsRequest;
+        class PutUsersRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeEventsErrors>> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutItemsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeEventsError> PutUsersOutcome;
 
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
+        typedef std::future<PutItemsOutcome> PutItemsOutcomeCallable;
+        typedef std::future<PutUsersOutcome> PutUsersOutcomeCallable;
 } // namespace Model
 
   class PersonalizeEventsClient;
 
     typedef std::function<void(const PersonalizeEventsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeEventsClient*, const Model::PutItemsRequest&, const Model::PutItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutItemsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeEventsClient*, const Model::PutUsersRequest&, const Model::PutUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUsersResponseReceivedHandler;
 
   /**
-   * <p/>
+   * <p>Amazon Personalize can consume real-time user event data, such as
+   * <i>stream</i> or <i>click</i> data, and use it for model training either alone
+   * or combined with historical data. For more information see <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+   * Events</a>.</p>
    */
   class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient
   {
@@ -101,39 +103,71 @@ namespace Model
 
         virtual ~PersonalizeEventsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Personalize Events"; }
-
 
         /**
-         * <p>Records user interaction event data.</p><p><h3>See Also:</h3>   <a
+         * <p>Records user interaction event data. For more information see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+         * Events</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
          * API Reference</a></p>
          */
         virtual Model::PutEventsOutcome PutEvents(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>Records user interaction event data.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request) const;
 
         /**
-         * <p>Records user interaction event data.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds one or more items to an Items dataset. For more information see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+         * Items Incrementally</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutItemsOutcome PutItems(const Model::PutItemsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutItems that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutItemsOutcomeCallable PutItemsCallable(const Model::PutItemsRequest& request) const;
+
+        /**
+         * An Async wrapper for PutItems that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutItemsAsync(const Model::PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds one or more users to a Users dataset. For more information see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
+         * Users Incrementally</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutUsersOutcome PutUsers(const Model::PutUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutUsersOutcomeCallable PutUsersCallable(const Model::PutUsersRequest& request) const;
+
+        /**
+         * An Async wrapper for PutUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutUsersAsync(const Model::PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutItemsAsyncHelper(const Model::PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutUsersAsyncHelper(const Model::PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -87,7 +77,7 @@ static const char* ALLOCATION_TAG = "WorkDocsClient";
 WorkDocsClient::WorkDocsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkDocsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -97,7 +87,7 @@ WorkDocsClient::WorkDocsClient(const Client::ClientConfiguration& clientConfigur
 WorkDocsClient::WorkDocsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkDocsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,7 +98,7 @@ WorkDocsClient::WorkDocsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkDocsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -119,8 +109,9 @@ WorkDocsClient::~WorkDocsClient()
 {
 }
 
-void WorkDocsClient::init(const ClientConfiguration& config)
+void WorkDocsClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("WorkDocs");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -157,21 +148,11 @@ AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(con
     return AbortDocumentVersionUploadOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions/";
-  ss << request.GetVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AbortDocumentVersionUploadOutcome(NoResult());
-  }
-  else
-  {
-    return AbortDocumentVersionUploadOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionId());
+  return AbortDocumentVersionUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 AbortDocumentVersionUploadOutcomeCallable WorkDocsClient::AbortDocumentVersionUploadCallable(const AbortDocumentVersionUploadRequest& request) const
@@ -200,20 +181,10 @@ ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& requ
     return ActivateUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/users/";
-  ss << request.GetUserId();
-  ss << "/activation";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ActivateUserOutcome(ActivateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ActivateUserOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/users/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/activation");
+  return ActivateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ActivateUserOutcomeCallable WorkDocsClient::ActivateUserCallable(const ActivateUserRequest& request) const
@@ -242,20 +213,10 @@ AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddRe
     return AddResourcePermissionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddResourcePermissionsOutcome(AddResourcePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddResourcePermissionsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/permissions");
+  return AddResourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddResourcePermissionsOutcomeCallable WorkDocsClient::AddResourcePermissionsCallable(const AddResourcePermissionsRequest& request) const
@@ -289,22 +250,12 @@ CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& r
     return CreateCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions/";
-  ss << request.GetVersionId();
-  ss << "/comment";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCommentOutcome(CreateCommentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCommentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionId());
+  uri.AddPathSegments("/comment");
+  return CreateCommentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCommentOutcomeCallable WorkDocsClient::CreateCommentCallable(const CreateCommentRequest& request) const
@@ -333,20 +284,10 @@ CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCus
     return CreateCustomMetadataOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/customMetadata";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCustomMetadataOutcome(CreateCustomMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCustomMetadataOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/customMetadata");
+  return CreateCustomMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCustomMetadataOutcomeCallable WorkDocsClient::CreateCustomMetadataCallable(const CreateCustomMetadataRequest& request) const
@@ -370,18 +311,8 @@ void WorkDocsClient::CreateCustomMetadataAsyncHelper(const CreateCustomMetadataR
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFolderOutcome(CreateFolderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFolderOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders");
+  return CreateFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFolderOutcomeCallable WorkDocsClient::CreateFolderCallable(const CreateFolderRequest& request) const
@@ -410,20 +341,10 @@ CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& requ
     return CreateLabelsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/labels";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateLabelsOutcome(CreateLabelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateLabelsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/labels");
+  return CreateLabelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLabelsOutcomeCallable WorkDocsClient::CreateLabelsCallable(const CreateLabelsRequest& request) const
@@ -452,20 +373,10 @@ CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscrip
     return CreateNotificationSubscriptionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/organizations/";
-  ss << request.GetOrganizationId();
-  ss << "/subscriptions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateNotificationSubscriptionOutcome(CreateNotificationSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateNotificationSubscriptionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/organizations/");
+  uri.AddPathSegment(request.GetOrganizationId());
+  uri.AddPathSegments("/subscriptions");
+  return CreateNotificationSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateNotificationSubscriptionOutcomeCallable WorkDocsClient::CreateNotificationSubscriptionCallable(const CreateNotificationSubscriptionRequest& request) const
@@ -489,18 +400,8 @@ void WorkDocsClient::CreateNotificationSubscriptionAsyncHelper(const CreateNotif
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/users";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/users");
+  return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserOutcomeCallable WorkDocsClient::CreateUserCallable(const CreateUserRequest& request) const
@@ -529,20 +430,10 @@ DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest
     return DeactivateUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/users/";
-  ss << request.GetUserId();
-  ss << "/activation";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeactivateUserOutcome(NoResult());
-  }
-  else
-  {
-    return DeactivateUserOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/users/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/activation");
+  return DeactivateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeactivateUserOutcomeCallable WorkDocsClient::DeactivateUserCallable(const DeactivateUserRequest& request) const
@@ -581,23 +472,13 @@ DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& r
     return DeleteCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CommentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions/";
-  ss << request.GetVersionId();
-  ss << "/comment/";
-  ss << request.GetCommentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCommentOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteCommentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionId());
+  uri.AddPathSegments("/comment/");
+  uri.AddPathSegment(request.GetCommentId());
+  return DeleteCommentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCommentOutcomeCallable WorkDocsClient::DeleteCommentCallable(const DeleteCommentRequest& request) const
@@ -626,20 +507,10 @@ DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCus
     return DeleteCustomMetadataOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/customMetadata";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCustomMetadataOutcome(DeleteCustomMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteCustomMetadataOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/customMetadata");
+  return DeleteCustomMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCustomMetadataOutcomeCallable WorkDocsClient::DeleteCustomMetadataCallable(const DeleteCustomMetadataRequest& request) const
@@ -668,19 +539,9 @@ DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest
     return DeleteDocumentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDocumentOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDocumentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  return DeleteDocumentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDocumentOutcomeCallable WorkDocsClient::DeleteDocumentCallable(const DeleteDocumentRequest& request) const
@@ -709,19 +570,9 @@ DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& requ
     return DeleteFolderOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders/";
-  ss << request.GetFolderId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFolderOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteFolderOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return DeleteFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFolderOutcomeCallable WorkDocsClient::DeleteFolderCallable(const DeleteFolderRequest& request) const
@@ -750,20 +601,10 @@ DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFol
     return DeleteFolderContentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders/";
-  ss << request.GetFolderId();
-  ss << "/contents";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFolderContentsOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteFolderContentsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/contents");
+  return DeleteFolderContentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFolderContentsOutcomeCallable WorkDocsClient::DeleteFolderContentsCallable(const DeleteFolderContentsRequest& request) const
@@ -792,20 +633,10 @@ DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& requ
     return DeleteLabelsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/labels";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLabelsOutcome(DeleteLabelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLabelsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/labels");
+  return DeleteLabelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLabelsOutcomeCallable WorkDocsClient::DeleteLabelsCallable(const DeleteLabelsRequest& request) const
@@ -839,21 +670,11 @@ DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscrip
     return DeleteNotificationSubscriptionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/organizations/";
-  ss << request.GetOrganizationId();
-  ss << "/subscriptions/";
-  ss << request.GetSubscriptionId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteNotificationSubscriptionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteNotificationSubscriptionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/organizations/");
+  uri.AddPathSegment(request.GetOrganizationId());
+  uri.AddPathSegments("/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionId());
+  return DeleteNotificationSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteNotificationSubscriptionOutcomeCallable WorkDocsClient::DeleteNotificationSubscriptionCallable(const DeleteNotificationSubscriptionRequest& request) const
@@ -882,19 +703,9 @@ DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) c
     return DeleteUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUserOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/users/");
+  uri.AddPathSegment(request.GetUserId());
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserOutcomeCallable WorkDocsClient::DeleteUserCallable(const DeleteUserRequest& request) const
@@ -918,18 +729,8 @@ void WorkDocsClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, con
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/activities";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeActivitiesOutcome(DescribeActivitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeActivitiesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/activities");
+  return DescribeActivitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeActivitiesOutcomeCallable WorkDocsClient::DescribeActivitiesCallable(const DescribeActivitiesRequest& request) const
@@ -963,22 +764,12 @@ DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsR
     return DescribeCommentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions/";
-  ss << request.GetVersionId();
-  ss << "/comments";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCommentsOutcome(DescribeCommentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCommentsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionId());
+  uri.AddPathSegments("/comments");
+  return DescribeCommentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCommentsOutcomeCallable WorkDocsClient::DescribeCommentsCallable(const DescribeCommentsRequest& request) const
@@ -1007,20 +798,10 @@ DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const D
     return DescribeDocumentVersionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDocumentVersionsOutcome(DescribeDocumentVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDocumentVersionsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions");
+  return DescribeDocumentVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDocumentVersionsOutcomeCallable WorkDocsClient::DescribeDocumentVersionsCallable(const DescribeDocumentVersionsRequest& request) const
@@ -1049,20 +830,10 @@ DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const Descr
     return DescribeFolderContentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders/";
-  ss << request.GetFolderId();
-  ss << "/contents";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeFolderContentsOutcome(DescribeFolderContentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeFolderContentsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/contents");
+  return DescribeFolderContentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeFolderContentsOutcomeCallable WorkDocsClient::DescribeFolderContentsCallable(const DescribeFolderContentsRequest& request) const
@@ -1091,18 +862,8 @@ DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest
     return DescribeGroupsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SearchQuery]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeGroupsOutcome(DescribeGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeGroupsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/groups");
+  return DescribeGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGroupsOutcomeCallable WorkDocsClient::DescribeGroupsCallable(const DescribeGroupsRequest& request) const
@@ -1131,20 +892,10 @@ DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSub
     return DescribeNotificationSubscriptionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/organizations/";
-  ss << request.GetOrganizationId();
-  ss << "/subscriptions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeNotificationSubscriptionsOutcome(DescribeNotificationSubscriptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeNotificationSubscriptionsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/organizations/");
+  uri.AddPathSegment(request.GetOrganizationId());
+  uri.AddPathSegments("/subscriptions");
+  return DescribeNotificationSubscriptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeNotificationSubscriptionsOutcomeCallable WorkDocsClient::DescribeNotificationSubscriptionsCallable(const DescribeNotificationSubscriptionsRequest& request) const
@@ -1173,20 +924,10 @@ DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(c
     return DescribeResourcePermissionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeResourcePermissionsOutcome(DescribeResourcePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeResourcePermissionsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/permissions");
+  return DescribeResourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeResourcePermissionsOutcomeCallable WorkDocsClient::DescribeResourcePermissionsCallable(const DescribeResourcePermissionsRequest& request) const
@@ -1215,18 +956,8 @@ DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRoo
     return DescribeRootFoldersOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthenticationToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/me/root";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRootFoldersOutcome(DescribeRootFoldersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRootFoldersOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/me/root");
+  return DescribeRootFoldersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRootFoldersOutcomeCallable WorkDocsClient::DescribeRootFoldersCallable(const DescribeRootFoldersRequest& request) const
@@ -1250,18 +981,8 @@ void WorkDocsClient::DescribeRootFoldersAsyncHelper(const DescribeRootFoldersReq
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/users";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUsersOutcome(DescribeUsersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUsersOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/users");
+  return DescribeUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUsersOutcomeCallable WorkDocsClient::DescribeUsersCallable(const DescribeUsersRequest& request) const
@@ -1290,18 +1011,8 @@ GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest
     return GetCurrentUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthenticationToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/me";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCurrentUserOutcome(GetCurrentUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCurrentUserOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/me");
+  return GetCurrentUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCurrentUserOutcomeCallable WorkDocsClient::GetCurrentUserCallable(const GetCurrentUserRequest& request) const
@@ -1330,19 +1041,9 @@ GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request
     return GetDocumentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentOutcome(GetDocumentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  return GetDocumentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentOutcomeCallable WorkDocsClient::GetDocumentCallable(const GetDocumentRequest& request) const
@@ -1371,20 +1072,10 @@ GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequ
     return GetDocumentPathOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/path";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentPathOutcome(GetDocumentPathResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentPathOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/path");
+  return GetDocumentPathOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentPathOutcomeCallable WorkDocsClient::GetDocumentPathCallable(const GetDocumentPathRequest& request) const
@@ -1418,21 +1109,11 @@ GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVe
     return GetDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions/";
-  ss << request.GetVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentVersionOutcome(GetDocumentVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentVersionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionId());
+  return GetDocumentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentVersionOutcomeCallable WorkDocsClient::GetDocumentVersionCallable(const GetDocumentVersionRequest& request) const
@@ -1461,19 +1142,9 @@ GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) cons
     return GetFolderOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders/";
-  ss << request.GetFolderId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFolderOutcome(GetFolderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFolderOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return GetFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFolderOutcomeCallable WorkDocsClient::GetFolderCallable(const GetFolderRequest& request) const
@@ -1502,20 +1173,10 @@ GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& r
     return GetFolderPathOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders/";
-  ss << request.GetFolderId();
-  ss << "/path";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFolderPathOutcome(GetFolderPathResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFolderPathOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/path");
+  return GetFolderPathOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFolderPathOutcomeCallable WorkDocsClient::GetFolderPathCallable(const GetFolderPathRequest& request) const
@@ -1539,18 +1200,8 @@ void WorkDocsClient::GetFolderPathAsyncHelper(const GetFolderPathRequest& reques
 GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourcesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources");
+  return GetResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourcesOutcomeCallable WorkDocsClient::GetResourcesCallable(const GetResourcesRequest& request) const
@@ -1574,18 +1225,8 @@ void WorkDocsClient::GetResourcesAsyncHelper(const GetResourcesRequest& request,
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return InitiateDocumentVersionUploadOutcome(InitiateDocumentVersionUploadResult(outcome.GetResult()));
-  }
-  else
-  {
-    return InitiateDocumentVersionUploadOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents");
+  return InitiateDocumentVersionUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InitiateDocumentVersionUploadOutcomeCallable WorkDocsClient::InitiateDocumentVersionUploadCallable(const InitiateDocumentVersionUploadRequest& request) const
@@ -1614,20 +1255,10 @@ RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions
     return RemoveAllResourcePermissionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveAllResourcePermissionsOutcome(NoResult());
-  }
-  else
-  {
-    return RemoveAllResourcePermissionsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/permissions");
+  return RemoveAllResourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveAllResourcePermissionsOutcomeCallable WorkDocsClient::RemoveAllResourcePermissionsCallable(const RemoveAllResourcePermissionsRequest& request) const
@@ -1661,21 +1292,11 @@ RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const R
     return RemoveResourcePermissionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/resources/";
-  ss << request.GetResourceId();
-  ss << "/permissions/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveResourcePermissionOutcome(NoResult());
-  }
-  else
-  {
-    return RemoveResourcePermissionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/permissions/");
+  uri.AddPathSegment(request.GetPrincipalId());
+  return RemoveResourcePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveResourcePermissionOutcomeCallable WorkDocsClient::RemoveResourcePermissionCallable(const RemoveResourcePermissionRequest& request) const
@@ -1704,19 +1325,9 @@ UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest
     return UpdateDocumentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDocumentOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateDocumentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  return UpdateDocumentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentOutcomeCallable WorkDocsClient::UpdateDocumentCallable(const UpdateDocumentRequest& request) const
@@ -1750,21 +1361,11 @@ UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateD
     return UpdateDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/documents/";
-  ss << request.GetDocumentId();
-  ss << "/versions/";
-  ss << request.GetVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDocumentVersionOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateDocumentVersionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/documents/");
+  uri.AddPathSegment(request.GetDocumentId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionId());
+  return UpdateDocumentVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentVersionOutcomeCallable WorkDocsClient::UpdateDocumentVersionCallable(const UpdateDocumentVersionRequest& request) const
@@ -1793,19 +1394,9 @@ UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& requ
     return UpdateFolderOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/folders/";
-  ss << request.GetFolderId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFolderOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateFolderOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return UpdateFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFolderOutcomeCallable WorkDocsClient::UpdateFolderCallable(const UpdateFolderRequest& request) const
@@ -1834,19 +1425,9 @@ UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) c
     return UpdateUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/v1/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserOutcome(UpdateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUserOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/api/v1/users/");
+  uri.AddPathSegment(request.GetUserId());
+  return UpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserOutcomeCallable WorkDocsClient::UpdateUserCallable(const UpdateUserRequest& request) const

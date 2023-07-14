@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/M2tsAudioBufferModel.h>
+#include <aws/mediaconvert/model/M2tsAudioDuration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/M2tsBufferModel.h>
+#include <aws/mediaconvert/model/M2tsDataPtsControl.h>
 #include <aws/mediaconvert/model/DvbNitSettings.h>
 #include <aws/mediaconvert/model/DvbSdtSettings.h>
 #include <aws/mediaconvert/model/DvbTdtSettings.h>
@@ -25,6 +17,7 @@
 #include <aws/mediaconvert/model/M2tsEbpPlacement.h>
 #include <aws/mediaconvert/model/M2tsEsRateInPes.h>
 #include <aws/mediaconvert/model/M2tsForceTsVideoEbpOrder.h>
+#include <aws/mediaconvert/model/M2tsKlvMetadata.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
@@ -101,6 +94,109 @@ namespace Model
      * Selects between the DVB and ATSC buffer models for Dolby Digital audio.
      */
     inline M2tsSettings& WithAudioBufferModel(M2tsAudioBufferModel&& value) { SetAudioBufferModel(std::move(value)); return *this;}
+
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline const M2tsAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(const M2tsAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(M2tsAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline M2tsSettings& WithAudioDuration(const M2tsAudioDuration& value) { SetAudioDuration(value); return *this;}
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline M2tsSettings& WithAudioDuration(M2tsAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
 
 
     /**
@@ -253,75 +349,148 @@ namespace Model
 
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline const M2tsDataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(const M2tsDataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(M2tsDataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M2tsSettings& WithDataPTSControl(const M2tsDataPtsControl& value) { SetDataPTSControl(value); return *this;}
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M2tsSettings& WithDataPTSControl(M2tsDataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
+
+
+    /**
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline const DvbNitSettings& GetDvbNitSettings() const{ return m_dvbNitSettings; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline bool DvbNitSettingsHasBeenSet() const { return m_dvbNitSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbNitSettings(const DvbNitSettings& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = value; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbNitSettings(DvbNitSettings&& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = std::move(value); }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbNitSettings(const DvbNitSettings& value) { SetDvbNitSettings(value); return *this;}
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbNitSettings(DvbNitSettings&& value) { SetDvbNitSettings(std::move(value)); return *this;}
 
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline const DvbSdtSettings& GetDvbSdtSettings() const{ return m_dvbSdtSettings; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline bool DvbSdtSettingsHasBeenSet() const { return m_dvbSdtSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbSdtSettings(const DvbSdtSettings& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = value; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbSdtSettings(DvbSdtSettings&& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = std::move(value); }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbSdtSettings(const DvbSdtSettings& value) { SetDvbSdtSettings(value); return *this;}
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbSdtSettings(DvbSdtSettings&& value) { SetDvbSdtSettings(std::move(value)); return *this;}
 
@@ -370,38 +539,50 @@ namespace Model
 
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline const DvbTdtSettings& GetDvbTdtSettings() const{ return m_dvbTdtSettings; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline bool DvbTdtSettingsHasBeenSet() const { return m_dvbTdtSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline void SetDvbTdtSettings(const DvbTdtSettings& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = value; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline void SetDvbTdtSettings(DvbTdtSettings&& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = std::move(value); }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbTdtSettings(const DvbTdtSettings& value) { SetDvbTdtSettings(value); return *this;}
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbTdtSettings(DvbTdtSettings&& value) { SetDvbTdtSettings(std::move(value)); return *this;}
 
@@ -634,6 +815,55 @@ namespace Model
      * The length, in seconds, of each fragment. Only used with EBP markers.
      */
     inline M2tsSettings& WithFragmentTime(double value) { SetFragmentTime(value); return *this;}
+
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline const M2tsKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline void SetKlvMetadata(const M2tsKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline void SetKlvMetadata(M2tsKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline M2tsSettings& WithKlvMetadata(const M2tsKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and passes
+     * it through to the output transport stream. To exclude this KLV metadata: Set KLV
+     * metadata insertion to None or leave blank.
+     */
+    inline M2tsSettings& WithKlvMetadata(M2tsKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -1329,26 +1559,22 @@ namespace Model
 
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
-     * Specify the packet identifier (PID) for timed metadata in this output. Default
-     * is 502.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline M2tsSettings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
 
@@ -1411,6 +1637,9 @@ namespace Model
     M2tsAudioBufferModel m_audioBufferModel;
     bool m_audioBufferModelHasBeenSet;
 
+    M2tsAudioDuration m_audioDuration;
+    bool m_audioDurationHasBeenSet;
+
     int m_audioFramesPerPes;
     bool m_audioFramesPerPesHasBeenSet;
 
@@ -1422,6 +1651,9 @@ namespace Model
 
     M2tsBufferModel m_bufferModel;
     bool m_bufferModelHasBeenSet;
+
+    M2tsDataPtsControl m_dataPTSControl;
+    bool m_dataPTSControlHasBeenSet;
 
     DvbNitSettings m_dvbNitSettings;
     bool m_dvbNitSettingsHasBeenSet;
@@ -1452,6 +1684,9 @@ namespace Model
 
     double m_fragmentTime;
     bool m_fragmentTimeHasBeenSet;
+
+    M2tsKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     int m_maxPcrInterval;
     bool m_maxPcrIntervalHasBeenSet;

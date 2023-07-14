@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/LayerVersionContentOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,9 @@ LayerVersionContentOutput::LayerVersionContentOutput() :
     m_locationHasBeenSet(false),
     m_codeSha256HasBeenSet(false),
     m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
+    m_codeSizeHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +32,9 @@ LayerVersionContentOutput::LayerVersionContentOutput(JsonView jsonValue) :
     m_locationHasBeenSet(false),
     m_codeSha256HasBeenSet(false),
     m_codeSize(0),
-    m_codeSizeHasBeenSet(false)
+    m_codeSizeHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +62,20 @@ LayerVersionContentOutput& LayerVersionContentOutput::operator =(JsonView jsonVa
     m_codeSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SigningProfileVersionArn"))
+  {
+    m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
+
+    m_signingProfileVersionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SigningJobArn"))
+  {
+    m_signingJobArn = jsonValue.GetString("SigningJobArn");
+
+    m_signingJobArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +98,18 @@ JsonValue LayerVersionContentOutput::Jsonize() const
   if(m_codeSizeHasBeenSet)
   {
    payload.WithInt64("CodeSize", m_codeSize);
+
+  }
+
+  if(m_signingProfileVersionArnHasBeenSet)
+  {
+   payload.WithString("SigningProfileVersionArn", m_signingProfileVersionArn);
+
+  }
+
+  if(m_signingJobArnHasBeenSet)
+  {
+   payload.WithString("SigningJobArn", m_signingJobArn);
 
   }
 

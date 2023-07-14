@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -49,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline const UserPoolClientType& GetUserPoolClient() const{ return m_userPoolClient; }
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline void SetUserPoolClient(const UserPoolClientType& value) { m_userPoolClient = value; }
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline void SetUserPoolClient(UserPoolClientType&& value) { m_userPoolClient = std::move(value); }
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline UpdateUserPoolClientResult& WithUserPoolClient(const UserPoolClientType& value) { SetUserPoolClient(value); return *this;}
 
     /**
-     * <p>The user pool client value from the response from the server when an update
-     * user pool client request is made.</p>
+     * <p>The user pool client value from the response from the server when you request
+     * to update the user pool client.</p>
      */
     inline UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DataSourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -40,6 +30,7 @@ namespace Aws
         static const int JIRA_HASH = HashingUtils::HashString("JIRA");
         static const int MARIADB_HASH = HashingUtils::HashString("MARIADB");
         static const int MYSQL_HASH = HashingUtils::HashString("MYSQL");
+        static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
         static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
         static const int PRESTO_HASH = HashingUtils::HashString("PRESTO");
         static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
@@ -51,6 +42,9 @@ namespace Aws
         static const int SQLSERVER_HASH = HashingUtils::HashString("SQLSERVER");
         static const int TERADATA_HASH = HashingUtils::HashString("TERADATA");
         static const int TWITTER_HASH = HashingUtils::HashString("TWITTER");
+        static const int TIMESTREAM_HASH = HashingUtils::HashString("TIMESTREAM");
+        static const int AMAZON_OPENSEARCH_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH");
+        static const int EXASOL_HASH = HashingUtils::HashString("EXASOL");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -96,6 +90,10 @@ namespace Aws
           {
             return DataSourceType::MYSQL;
           }
+          else if (hashCode == ORACLE_HASH)
+          {
+            return DataSourceType::ORACLE;
+          }
           else if (hashCode == POSTGRESQL_HASH)
           {
             return DataSourceType::POSTGRESQL;
@@ -140,6 +138,18 @@ namespace Aws
           {
             return DataSourceType::TWITTER;
           }
+          else if (hashCode == TIMESTREAM_HASH)
+          {
+            return DataSourceType::TIMESTREAM;
+          }
+          else if (hashCode == AMAZON_OPENSEARCH_HASH)
+          {
+            return DataSourceType::AMAZON_OPENSEARCH;
+          }
+          else if (hashCode == EXASOL_HASH)
+          {
+            return DataSourceType::EXASOL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -174,6 +184,8 @@ namespace Aws
             return "MARIADB";
           case DataSourceType::MYSQL:
             return "MYSQL";
+          case DataSourceType::ORACLE:
+            return "ORACLE";
           case DataSourceType::POSTGRESQL:
             return "POSTGRESQL";
           case DataSourceType::PRESTO:
@@ -196,6 +208,12 @@ namespace Aws
             return "TERADATA";
           case DataSourceType::TWITTER:
             return "TWITTER";
+          case DataSourceType::TIMESTREAM:
+            return "TIMESTREAM";
+          case DataSourceType::AMAZON_OPENSEARCH:
+            return "AMAZON_OPENSEARCH";
+          case DataSourceType::EXASOL:
+            return "EXASOL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

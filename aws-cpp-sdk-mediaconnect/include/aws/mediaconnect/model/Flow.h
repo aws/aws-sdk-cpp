@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
@@ -20,7 +10,9 @@
 #include <aws/mediaconnect/model/Source.h>
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/Status.h>
+#include <aws/mediaconnect/model/Maintenance.h>
 #include <aws/mediaconnect/model/Entitlement.h>
+#include <aws/mediaconnect/model/MediaStream.h>
 #include <aws/mediaconnect/model/Output.h>
 #include <aws/mediaconnect/model/VpcInterface.h>
 #include <utility>
@@ -285,6 +277,55 @@ namespace Model
 
 
     /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline const Aws::Vector<MediaStream>& GetMediaStreams() const{ return m_mediaStreams; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline bool MediaStreamsHasBeenSet() const { return m_mediaStreamsHasBeenSet; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline void SetMediaStreams(const Aws::Vector<MediaStream>& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = value; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline void SetMediaStreams(Aws::Vector<MediaStream>&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = std::move(value); }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& WithMediaStreams(const Aws::Vector<MediaStream>& value) { SetMediaStreams(value); return *this;}
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& WithMediaStreams(Aws::Vector<MediaStream>&& value) { SetMediaStreams(std::move(value)); return *this;}
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& AddMediaStreams(const MediaStream& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(value); return *this; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& AddMediaStreams(MediaStream&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The name of the flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -500,6 +541,25 @@ namespace Model
      */
     inline Flow& AddVpcInterfaces(VpcInterface&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Maintenance& GetMaintenance() const{ return m_maintenance; }
+
+    
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    
+    inline void SetMaintenance(const Maintenance& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    
+    inline void SetMaintenance(Maintenance&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    
+    inline Flow& WithMaintenance(const Maintenance& value) { SetMaintenance(value); return *this;}
+
+    
+    inline Flow& WithMaintenance(Maintenance&& value) { SetMaintenance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -516,6 +576,9 @@ namespace Model
 
     Aws::String m_flowArn;
     bool m_flowArnHasBeenSet;
+
+    Aws::Vector<MediaStream> m_mediaStreams;
+    bool m_mediaStreamsHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -537,6 +600,9 @@ namespace Model
 
     Aws::Vector<VpcInterface> m_vpcInterfaces;
     bool m_vpcInterfacesHasBeenSet;
+
+    Maintenance m_maintenance;
+    bool m_maintenanceHasBeenSet;
   };
 
 } // namespace Model

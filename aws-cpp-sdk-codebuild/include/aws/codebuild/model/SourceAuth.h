@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -35,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about the authorization settings for AWS CodeBuild to access the
-   * source code to be built.</p> <p>This information is for the AWS CodeBuild
-   * console's use only. Your code should not get or set this information
+   * <p>Information about the authorization settings for CodeBuild to access the
+   * source code to be built.</p> <p>This information is for the CodeBuild console's
+   * use only. Your code should not get or set this information
    * directly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth">AWS
    * API Reference</a></p>
@@ -52,43 +42,43 @@ namespace Model
 
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline const SourceAuthType& GetType() const{ return m_type; }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline void SetType(const SourceAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline void SetType(SourceAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(const SourceAuthType& value) { SetType(value); return *this;}
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}

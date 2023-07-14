@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -132,198 +122,238 @@ namespace Model
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters specify one or more snapshot exports to describe. The filters are
-     * specified as name-value pairs that define what to include in the output.</p>
-     * <p>Supported filters include the following: </p> <ul> <li> <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export
-     * task.</p> </li> <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the
-     * snapshot is exported to.</p> </li> <li> <p> <code>source-arn</code> - The Amazon
-     * Resource Name (ARN) of the snapshot exported to Amazon S3</p> </li> <li> <p>
-     * <code>status</code> - The status of the export task.</p> </li> </ul>
+     * specified as name-value pairs that define what to include in the output. Filter
+     * names and values are case-sensitive.</p> <p>Supported filters include the
+     * following:</p> <ul> <li> <p> <code>export-task-identifier</code> - An identifier
+     * for the snapshot export task.</p> </li> <li> <p> <code>s3-bucket</code> - The
+     * Amazon S3 bucket the snapshot is exported to.</p> </li> <li> <p>
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot
+     * exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The status of the
+     * export task. Must be lowercase. Valid statuses are the following:</p> <ul> <li>
+     * <p> <code>canceled</code> </p> </li> <li> <p> <code>canceling</code> </p> </li>
+     * <li> <p> <code>complete</code> </p> </li> <li> <p> <code>failed</code> </p>
+     * </li> <li> <p> <code>in_progress</code> </p> </li> <li> <p>
+     * <code>starting</code> </p> </li> </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline DescribeExportTasksRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline DescribeExportTasksRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeExportTasks</code> request. If you specify this parameter, the
      * response includes only records beyond the marker, up to the value specified by
-     * the <code>MaxRecords</code> parameter. </p>
+     * the <code>MaxRecords</code> parameter.</p>
      */
     inline DescribeExportTasksRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified value, a pagination token called a marker is included
      * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
+     * <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified value, a pagination token called a marker is included
      * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
+     * <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified value, a pagination token called a marker is included
      * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
+     * <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified value, a pagination token called a marker is included
      * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
+     * <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeExportTasksRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}

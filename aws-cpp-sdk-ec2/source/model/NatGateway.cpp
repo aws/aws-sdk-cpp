@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/NatGateway.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,7 +32,9 @@ NatGateway::NatGateway() :
     m_stateHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_connectivityType(ConnectivityType::NOT_SET),
+    m_connectivityTypeHasBeenSet(false)
 {
 }
 
@@ -58,7 +50,9 @@ NatGateway::NatGateway(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_connectivityType(ConnectivityType::NOT_SET),
+    m_connectivityTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -147,6 +141,12 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode connectivityTypeNode = resultNode.FirstChild("connectivityType");
+    if(!connectivityTypeNode.IsNull())
+    {
+      m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectivityTypeNode.GetText()).c_str()).c_str());
+      m_connectivityTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -223,6 +223,11 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_connectivityTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
+  }
+
 }
 
 void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -284,6 +289,10 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_connectivityTypeHasBeenSet)
+  {
+      oStream << location << ".ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
   }
 }
 

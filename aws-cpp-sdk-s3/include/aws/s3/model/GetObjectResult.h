@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -123,126 +113,126 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline void SetExpiration(const char* value) { m_expiration.assign(value); }
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline GetObjectResult& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline GetObjectResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key-value
-     * pairs providing object expiration information. The value of the rule-id is URL
-     * encoded.</p>
+     * response includes this header. It includes the <code>expiry-date</code> and
+     * <code>rule-id</code> key-value pairs providing object expiration information.
+     * The value of the <code>rule-id</code> is URL-encoded.</p>
      */
     inline GetObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline const Aws::String& GetRestore() const{ return m_restore; }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline void SetRestore(const Aws::String& value) { m_restore = value; }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline void SetRestore(Aws::String&& value) { m_restore = std::move(value); }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline void SetRestore(const char* value) { m_restore.assign(value); }
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline GetObjectResult& WithRestore(const Aws::String& value) { SetRestore(value); return *this;}
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline GetObjectResult& WithRestore(Aws::String&& value) { SetRestore(std::move(value)); return *this;}
 
     /**
-     * <p>Provides information about object restoration operation and expiration time
-     * of the restored object copy.</p>
+     * <p>Provides information about object restoration action and expiration time of
+     * the restored object copy.</p>
      */
     inline GetObjectResult& WithRestore(const char* value) { SetRestore(value); return *this;}
 
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline GetObjectResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>Last modified date of the object</p>
+     * <p>Creation date of the object.</p>
      */
     inline GetObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
@@ -264,46 +254,330 @@ namespace Model
 
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline GetObjectResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline GetObjectResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL.</p>
+     * <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a
+     * specific version of a resource found at a URL.</p>
      */
     inline GetObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
+
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32 = value; }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32 = std::move(value); }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32.assign(value); }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32C = value; }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32C = std::move(value); }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32C.assign(value); }
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
+
+    /**
+     * <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1 = value; }
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1 = std::move(value); }
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1.assign(value); }
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
+
+    /**
+     * <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256 = value; }
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256 = std::move(value); }
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256.assign(value); }
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
+
+    /**
+     * <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be
+     * present if it was uploaded with the object. With multipart uploads, this may not
+     * be a checksum value of the object. For more information about how checksums are
+     * calculated with multipart uploads, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+     * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline GetObjectResult& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
 
 
     /**
@@ -869,82 +1143,101 @@ namespace Model
 
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline GetObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline GetObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for the
-     * object.</p>
+     * <p>If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
+     * for the object.</p>
      */
     inline GetObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
     /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with Amazon Web Services KMS (SSE-KMS).</p>
+     */
+    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with Amazon Web Services KMS (SSE-KMS).</p>
+     */
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+
+    /**
+     * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
+     * with Amazon Web Services KMS (SSE-KMS).</p>
+     */
+    inline GetObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
+
+
+    /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline GetObjectResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline GetObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -997,17 +1290,23 @@ namespace Model
 
 
     /**
-     * <p>The count of parts this object has.</p>
+     * <p>The count of parts this object has. This value is only returned if you
+     * specify <code>partNumber</code> in your request and the object was uploaded as a
+     * multipart upload.</p>
      */
     inline int GetPartsCount() const{ return m_partsCount; }
 
     /**
-     * <p>The count of parts this object has.</p>
+     * <p>The count of parts this object has. This value is only returned if you
+     * specify <code>partNumber</code> in your request and the object was uploaded as a
+     * multipart upload.</p>
      */
     inline void SetPartsCount(int value) { m_partsCount = value; }
 
     /**
-     * <p>The count of parts this object has.</p>
+     * <p>The count of parts this object has. This value is only returned if you
+     * specify <code>partNumber</code> in your request and the object was uploaded as a
+     * multipart upload.</p>
      */
     inline GetObjectResult& WithPartsCount(int value) { SetPartsCount(value); return *this;}
 
@@ -1172,6 +1471,14 @@ namespace Model
 
     Aws::String m_eTag;
 
+    Aws::String m_checksumCRC32;
+
+    Aws::String m_checksumCRC32C;
+
+    Aws::String m_checksumSHA1;
+
+    Aws::String m_checksumSHA256;
+
     int m_missingMeta;
 
     Aws::String m_versionId;
@@ -1201,6 +1508,8 @@ namespace Model
     Aws::String m_sSECustomerKeyMD5;
 
     Aws::String m_sSEKMSKeyId;
+
+    bool m_bucketKeyEnabled;
 
     StorageClass m_storageClass;
 

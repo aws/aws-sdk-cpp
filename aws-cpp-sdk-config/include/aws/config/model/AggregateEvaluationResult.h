@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -37,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The details of an AWS Config evaluation for an account ID and region in an
-   * aggregator. Provides the AWS resource that was evaluated, the compliance of the
-   * resource, related time stamps, and supplementary information. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The details of an Config evaluation for an account ID and region in an
+   * aggregator. Provides the Amazon Web Services resource that was evaluated, the
+   * compliance of the resource, related time stamps, and supplementary information.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateEvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -86,117 +76,111 @@ namespace Model
 
     /**
      * <p>The resource compliance status.</p> <p>For the
-     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
-     * value.</p>
+     * <code>AggregationEvaluationResult</code> data type, Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
      * <p>The resource compliance status.</p> <p>For the
-     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
-     * value.</p>
+     * <code>AggregationEvaluationResult</code> data type, Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The resource compliance status.</p> <p>For the
-     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
-     * value.</p>
+     * <code>AggregationEvaluationResult</code> data type, Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
      * <p>The resource compliance status.</p> <p>For the
-     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
-     * value.</p>
+     * <code>AggregationEvaluationResult</code> data type, Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
      * <p>The resource compliance status.</p> <p>For the
-     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
-     * value.</p>
+     * <code>AggregationEvaluationResult</code> data type, Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
      */
     inline AggregateEvaluationResult& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
      * <p>The resource compliance status.</p> <p>For the
-     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
-     * value.</p>
+     * <code>AggregationEvaluationResult</code> data type, Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
      */
     inline AggregateEvaluationResult& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     * <p>The time when Config recorded the aggregate evaluation result.</p>
      */
     inline const Aws::Utils::DateTime& GetResultRecordedTime() const{ return m_resultRecordedTime; }
 
     /**
-     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     * <p>The time when Config recorded the aggregate evaluation result.</p>
      */
     inline bool ResultRecordedTimeHasBeenSet() const { return m_resultRecordedTimeHasBeenSet; }
 
     /**
-     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     * <p>The time when Config recorded the aggregate evaluation result.</p>
      */
     inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
-     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     * <p>The time when Config recorded the aggregate evaluation result.</p>
      */
     inline void SetResultRecordedTime(Aws::Utils::DateTime&& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = std::move(value); }
 
     /**
-     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     * <p>The time when Config recorded the aggregate evaluation result.</p>
      */
     inline AggregateEvaluationResult& WithResultRecordedTime(const Aws::Utils::DateTime& value) { SetResultRecordedTime(value); return *this;}
 
     /**
-     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     * <p>The time when Config recorded the aggregate evaluation result.</p>
      */
     inline AggregateEvaluationResult& WithResultRecordedTime(Aws::Utils::DateTime&& value) { SetResultRecordedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline bool ConfigRuleInvokedTimeHasBeenSet() const { return m_configRuleInvokedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = std::move(value); }
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline AggregateEvaluationResult& WithConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { SetConfigRuleInvokedTime(value); return *this;}
 
     /**
-     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     * <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
      */
     inline AggregateEvaluationResult& WithConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { SetConfigRuleInvokedTime(std::move(value)); return *this;}
 

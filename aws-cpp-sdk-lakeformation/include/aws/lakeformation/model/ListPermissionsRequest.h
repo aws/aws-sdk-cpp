@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -44,70 +34,68 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline ListPermissionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline ListPermissionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline ListPermissionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -292,6 +280,47 @@ namespace Model
      */
     inline ListPermissionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline const Aws::String& GetIncludeRelated() const{ return m_includeRelated; }
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline bool IncludeRelatedHasBeenSet() const { return m_includeRelatedHasBeenSet; }
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline void SetIncludeRelated(const Aws::String& value) { m_includeRelatedHasBeenSet = true; m_includeRelated = value; }
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline void SetIncludeRelated(Aws::String&& value) { m_includeRelatedHasBeenSet = true; m_includeRelated = std::move(value); }
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline void SetIncludeRelated(const char* value) { m_includeRelatedHasBeenSet = true; m_includeRelated.assign(value); }
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline ListPermissionsRequest& WithIncludeRelated(const Aws::String& value) { SetIncludeRelated(value); return *this;}
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline ListPermissionsRequest& WithIncludeRelated(Aws::String&& value) { SetIncludeRelated(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates that related permissions should be included in the results.</p>
+     */
+    inline ListPermissionsRequest& WithIncludeRelated(const char* value) { SetIncludeRelated(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -311,6 +340,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_includeRelated;
+    bool m_includeRelatedHasBeenSet;
   };
 
 } // namespace Model

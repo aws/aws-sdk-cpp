@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -131,7 +121,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline const Output& GetOutput() const{ return m_output; }
@@ -140,7 +130,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
@@ -149,7 +139,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline void SetOutput(const Output& value) { m_outputHasBeenSet = true; m_output = value; }
@@ -158,7 +148,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline void SetOutput(Output&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
@@ -167,7 +157,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline AddApplicationOutputRequest& WithOutput(const Output& value) { SetOutput(value); return *this;}
@@ -176,7 +166,7 @@ namespace Model
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
      * (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an
-     * AWS Lambda function), and record the formation to use when writing to the
+     * Amazon Lambda function), and record the formation to use when writing to the
      * destination.</p>
      */
     inline AddApplicationOutputRequest& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}

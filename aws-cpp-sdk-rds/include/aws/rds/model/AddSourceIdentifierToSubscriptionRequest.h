@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -100,97 +90,129 @@ namespace Model
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event source to be added.</p> <p>Constraints:</p> <ul>
-     * <li> <p>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
-     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</p> </li> </ul>
+     * <li> <p>If the source type is a DB instance, a <code>DBInstanceIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster, a
+     * <code>DBClusterIdentifier</code> value must be supplied.</p> </li> <li> <p>If
+     * the source type is a DB parameter group, a <code>DBParameterGroupName</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB security
+     * group, a <code>DBSecurityGroupName</code> value must be supplied.</p> </li> <li>
+     * <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code>
+     * value must be supplied.</p> </li> <li> <p>If the source type is a DB cluster
+     * snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
+     * </li> <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code>
+     * value must be supplied.</p> </li> </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 

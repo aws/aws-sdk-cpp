@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -51,8 +41,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */
@@ -60,8 +51,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */
@@ -69,8 +61,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */
@@ -78,8 +71,9 @@ namespace Model
 
     /**
      * <p>Specifies the start of the byte range. This parameter is optional. Valid
-     * values: non-negative integers. The default value is 0. If only start is
-     * supplied, it means scan from that point to the end of the file.For example;
+     * values: non-negative integers. The default value is 0. If only
+     * <code>start</code> is supplied, it means scan from that point to the end of the
+     * file. For example,
      * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code>
      * means scan from byte 50 until the end of the file.</p>
      */

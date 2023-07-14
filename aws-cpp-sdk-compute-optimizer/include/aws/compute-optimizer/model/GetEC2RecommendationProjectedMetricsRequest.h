@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/compute-optimizer/model/MetricStatistic.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/compute-optimizer/model/RecommendationPreferences.h>
 #include <utility>
 
 namespace Aws
@@ -148,65 +139,102 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of the first projected metrics data point to return.</p>
+     * <p>The timestamp of the first projected metrics data point to return.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time stamp of the first projected metrics data point to return.</p>
+     * <p>The timestamp of the first projected metrics data point to return.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The time stamp of the first projected metrics data point to return.</p>
+     * <p>The timestamp of the first projected metrics data point to return.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time stamp of the first projected metrics data point to return.</p>
+     * <p>The timestamp of the first projected metrics data point to return.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time stamp of the first projected metrics data point to return.</p>
+     * <p>The timestamp of the first projected metrics data point to return.</p>
      */
     inline GetEC2RecommendationProjectedMetricsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time stamp of the first projected metrics data point to return.</p>
+     * <p>The timestamp of the first projected metrics data point to return.</p>
      */
     inline GetEC2RecommendationProjectedMetricsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp of the last projected metrics data point to return.</p>
+     * <p>The timestamp of the last projected metrics data point to return.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time stamp of the last projected metrics data point to return.</p>
+     * <p>The timestamp of the last projected metrics data point to return.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The time stamp of the last projected metrics data point to return.</p>
+     * <p>The timestamp of the last projected metrics data point to return.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The time stamp of the last projected metrics data point to return.</p>
+     * <p>The timestamp of the last projected metrics data point to return.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The time stamp of the last projected metrics data point to return.</p>
+     * <p>The timestamp of the last projected metrics data point to return.</p>
      */
     inline GetEC2RecommendationProjectedMetricsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time stamp of the last projected metrics data point to return.</p>
+     * <p>The timestamp of the last projected metrics data point to return.</p>
      */
     inline GetEC2RecommendationProjectedMetricsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object to specify the preferences for the Amazon EC2 recommendation
+     * projected metrics to return in the response.</p>
+     */
+    inline const RecommendationPreferences& GetRecommendationPreferences() const{ return m_recommendationPreferences; }
+
+    /**
+     * <p>An object to specify the preferences for the Amazon EC2 recommendation
+     * projected metrics to return in the response.</p>
+     */
+    inline bool RecommendationPreferencesHasBeenSet() const { return m_recommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p>An object to specify the preferences for the Amazon EC2 recommendation
+     * projected metrics to return in the response.</p>
+     */
+    inline void SetRecommendationPreferences(const RecommendationPreferences& value) { m_recommendationPreferencesHasBeenSet = true; m_recommendationPreferences = value; }
+
+    /**
+     * <p>An object to specify the preferences for the Amazon EC2 recommendation
+     * projected metrics to return in the response.</p>
+     */
+    inline void SetRecommendationPreferences(RecommendationPreferences&& value) { m_recommendationPreferencesHasBeenSet = true; m_recommendationPreferences = std::move(value); }
+
+    /**
+     * <p>An object to specify the preferences for the Amazon EC2 recommendation
+     * projected metrics to return in the response.</p>
+     */
+    inline GetEC2RecommendationProjectedMetricsRequest& WithRecommendationPreferences(const RecommendationPreferences& value) { SetRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p>An object to specify the preferences for the Amazon EC2 recommendation
+     * projected metrics to return in the response.</p>
+     */
+    inline GetEC2RecommendationProjectedMetricsRequest& WithRecommendationPreferences(RecommendationPreferences&& value) { SetRecommendationPreferences(std::move(value)); return *this;}
 
   private:
 
@@ -224,6 +252,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    RecommendationPreferences m_recommendationPreferences;
+    bool m_recommendationPreferencesHasBeenSet;
   };
 
 } // namespace Model

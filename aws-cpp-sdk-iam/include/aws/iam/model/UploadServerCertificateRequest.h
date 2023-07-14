@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -49,144 +41,144 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline UploadServerCertificateRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline UploadServerCertificateRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p> <note> <p> If you are uploading a server certificate
+     * and lowercased letters.</p>  <p> If you are uploading a server certificate
      * specifically for use with Amazon CloudFront distributions, you must specify a
      * path using the <code>path</code> parameter. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>).</p> </note>
+     * <code>/cloudfront/test/</code>).</p> 
      */
     inline UploadServerCertificateRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -594,6 +586,95 @@ namespace Model
      */
     inline UploadServerCertificateRequest& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_path;
@@ -610,6 +691,9 @@ namespace Model
 
     Aws::String m_certificateChain;
     bool m_certificateChainHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -53,49 +43,49 @@ namespace Model
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline const Aws::Vector<KeyValue>& GetProperties() const{ return m_properties; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline void SetProperties(const Aws::Vector<KeyValue>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline void SetProperties(Aws::Vector<KeyValue>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& WithProperties(const Aws::Vector<KeyValue>& value) { SetProperties(value); return *this;}
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& WithProperties(Aws::Vector<KeyValue>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& AddProperties(const KeyValue& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
 
     /**
      * <p>A list of Java properties that are set when the step runs. You can use these
-     * properties to pass key value pairs to your main function.</p>
+     * properties to pass key-value pairs to your main function.</p>
      */
     inline HadoopJarStepConfig& AddProperties(KeyValue&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
 

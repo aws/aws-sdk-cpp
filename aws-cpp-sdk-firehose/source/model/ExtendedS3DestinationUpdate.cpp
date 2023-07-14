@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/firehose/model/ExtendedS3DestinationUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,8 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate() :
     m_s3BackupMode(S3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
-    m_dataFormatConversionConfigurationHasBeenSet(false)
+    m_dataFormatConversionConfigurationHasBeenSet(false),
+    m_dynamicPartitioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -60,7 +51,8 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate(JsonView jsonValue) :
     m_s3BackupMode(S3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
-    m_dataFormatConversionConfigurationHasBeenSet(false)
+    m_dataFormatConversionConfigurationHasBeenSet(false),
+    m_dynamicPartitioningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +143,13 @@ ExtendedS3DestinationUpdate& ExtendedS3DestinationUpdate::operator =(JsonView js
     m_dataFormatConversionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DynamicPartitioningConfiguration"))
+  {
+    m_dynamicPartitioningConfiguration = jsonValue.GetObject("DynamicPartitioningConfiguration");
+
+    m_dynamicPartitioningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +224,12 @@ JsonValue ExtendedS3DestinationUpdate::Jsonize() const
   if(m_dataFormatConversionConfigurationHasBeenSet)
   {
    payload.WithObject("DataFormatConversionConfiguration", m_dataFormatConversionConfiguration.Jsonize());
+
+  }
+
+  if(m_dynamicPartitioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("DynamicPartitioningConfiguration", m_dynamicPartitioningConfiguration.Jsonize());
 
   }
 

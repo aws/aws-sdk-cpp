@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -194,27 +184,27 @@ namespace Model
 
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline const LicenseCountingType& GetLicenseCountingType() const{ return m_licenseCountingType; }
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline void SetLicenseCountingType(const LicenseCountingType& value) { m_licenseCountingType = value; }
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline void SetLicenseCountingType(LicenseCountingType&& value) { m_licenseCountingType = std::move(value); }
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline GetLicenseConfigurationResult& WithLicenseCountingType(const LicenseCountingType& value) { SetLicenseCountingType(value); return *this;}
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline GetLicenseConfigurationResult& WithLicenseCountingType(LicenseCountingType&& value) { SetLicenseCountingType(std::move(value)); return *this;}
 
@@ -549,6 +539,22 @@ namespace Model
      */
     inline GetLicenseConfigurationResult& WithAutomatedDiscoveryInformation(AutomatedDiscoveryInformation&& value) { SetAutomatedDiscoveryInformation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool GetDisassociateWhenNotFound() const{ return m_disassociateWhenNotFound; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline void SetDisassociateWhenNotFound(bool value) { m_disassociateWhenNotFound = value; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline GetLicenseConfigurationResult& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
+
   private:
 
     Aws::String m_licenseConfigurationId;
@@ -582,6 +588,8 @@ namespace Model
     Aws::Vector<ProductInformation> m_productInformationList;
 
     AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
+
+    bool m_disassociateWhenNotFound;
   };
 
 } // namespace Model

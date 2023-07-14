@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -87,38 +77,62 @@ namespace Model
 
 
     /**
-     * <p>The data format of the custom terminology being retrieved, either CSV or
-     * TMX.</p>
+     * <p>The data format of the custom terminology being retrieved.</p> <p>If you
+     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * format as the file that was imported to create the terminology. </p> <p>If you
+     * specify this parameter when you retrieve a multi-directional terminology
+     * resource, you must specify the same format as that of the input file that was
+     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline const TerminologyDataFormat& GetTerminologyDataFormat() const{ return m_terminologyDataFormat; }
 
     /**
-     * <p>The data format of the custom terminology being retrieved, either CSV or
-     * TMX.</p>
+     * <p>The data format of the custom terminology being retrieved.</p> <p>If you
+     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * format as the file that was imported to create the terminology. </p> <p>If you
+     * specify this parameter when you retrieve a multi-directional terminology
+     * resource, you must specify the same format as that of the input file that was
+     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline bool TerminologyDataFormatHasBeenSet() const { return m_terminologyDataFormatHasBeenSet; }
 
     /**
-     * <p>The data format of the custom terminology being retrieved, either CSV or
-     * TMX.</p>
+     * <p>The data format of the custom terminology being retrieved.</p> <p>If you
+     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * format as the file that was imported to create the terminology. </p> <p>If you
+     * specify this parameter when you retrieve a multi-directional terminology
+     * resource, you must specify the same format as that of the input file that was
+     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline void SetTerminologyDataFormat(const TerminologyDataFormat& value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = value; }
 
     /**
-     * <p>The data format of the custom terminology being retrieved, either CSV or
-     * TMX.</p>
+     * <p>The data format of the custom terminology being retrieved.</p> <p>If you
+     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * format as the file that was imported to create the terminology. </p> <p>If you
+     * specify this parameter when you retrieve a multi-directional terminology
+     * resource, you must specify the same format as that of the input file that was
+     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline void SetTerminologyDataFormat(TerminologyDataFormat&& value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = std::move(value); }
 
     /**
-     * <p>The data format of the custom terminology being retrieved, either CSV or
-     * TMX.</p>
+     * <p>The data format of the custom terminology being retrieved.</p> <p>If you
+     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * format as the file that was imported to create the terminology. </p> <p>If you
+     * specify this parameter when you retrieve a multi-directional terminology
+     * resource, you must specify the same format as that of the input file that was
+     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline GetTerminologyRequest& WithTerminologyDataFormat(const TerminologyDataFormat& value) { SetTerminologyDataFormat(value); return *this;}
 
     /**
-     * <p>The data format of the custom terminology being retrieved, either CSV or
-     * TMX.</p>
+     * <p>The data format of the custom terminology being retrieved.</p> <p>If you
+     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * format as the file that was imported to create the terminology. </p> <p>If you
+     * specify this parameter when you retrieve a multi-directional terminology
+     * resource, you must specify the same format as that of the input file that was
+     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline GetTerminologyRequest& WithTerminologyDataFormat(TerminologyDataFormat&& value) { SetTerminologyDataFormat(std::move(value)); return *this;}
 

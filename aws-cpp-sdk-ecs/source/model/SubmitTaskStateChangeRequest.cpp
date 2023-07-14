@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/SubmitTaskStateChangeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,7 @@ SubmitTaskStateChangeRequest::SubmitTaskStateChangeRequest() :
     m_reasonHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
+    m_managedAgentsHasBeenSet(false),
     m_pullStartedAtHasBeenSet(false),
     m_pullStoppedAtHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false)
@@ -82,6 +73,17 @@ Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
    }
    payload.WithArray("attachments", std::move(attachmentsJsonList));
+
+  }
+
+  if(m_managedAgentsHasBeenSet)
+  {
+   Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
+   for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
+   {
+     managedAgentsJsonList[managedAgentsIndex].AsObject(m_managedAgents[managedAgentsIndex].Jsonize());
+   }
+   payload.WithArray("managedAgents", std::move(managedAgentsJsonList));
 
   }
 

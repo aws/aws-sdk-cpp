@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/DBProxyTarget.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -38,7 +28,10 @@ DBProxyTarget::DBProxyTarget() :
     m_port(0),
     m_portHasBeenSet(false),
     m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_role(TargetRole::NOT_SET),
+    m_roleHasBeenSet(false),
+    m_targetHealthHasBeenSet(false)
 {
 }
 
@@ -50,7 +43,10 @@ DBProxyTarget::DBProxyTarget(const XmlNode& xmlNode) :
     m_port(0),
     m_portHasBeenSet(false),
     m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_role(TargetRole::NOT_SET),
+    m_roleHasBeenSet(false),
+    m_targetHealthHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -97,6 +93,18 @@ DBProxyTarget& DBProxyTarget::operator =(const XmlNode& xmlNode)
       m_type = TargetTypeMapper::GetTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
+    XmlNode roleNode = resultNode.FirstChild("Role");
+    if(!roleNode.IsNull())
+    {
+      m_role = TargetRoleMapper::GetTargetRoleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText()).c_str()).c_str());
+      m_roleHasBeenSet = true;
+    }
+    XmlNode targetHealthNode = resultNode.FirstChild("TargetHealth");
+    if(!targetHealthNode.IsNull())
+    {
+      m_targetHealth = targetHealthNode;
+      m_targetHealthHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -134,6 +142,18 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
   }
 
+  if(m_roleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Role=" << TargetRoleMapper::GetNameForTargetRole(m_role) << "&";
+  }
+
+  if(m_targetHealthHasBeenSet)
+  {
+      Aws::StringStream targetHealthLocationAndMemberSs;
+      targetHealthLocationAndMemberSs << location << index << locationValue << ".TargetHealth";
+      m_targetHealth.OutputToStream(oStream, targetHealthLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -161,6 +181,16 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
+  }
+  if(m_roleHasBeenSet)
+  {
+      oStream << location << ".Role=" << TargetRoleMapper::GetNameForTargetRole(m_role) << "&";
+  }
+  if(m_targetHealthHasBeenSet)
+  {
+      Aws::String targetHealthLocationAndMember(location);
+      targetHealthLocationAndMember += ".TargetHealth";
+      m_targetHealth.OutputToStream(oStream, targetHealthLocationAndMember.c_str());
   }
 }
 

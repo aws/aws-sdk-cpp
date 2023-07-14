@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/health/model/Event.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,7 +30,9 @@ Event::Event() :
     m_endTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false)
 {
 }
 
@@ -56,7 +48,9 @@ Event::Event(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +127,13 @@ Event& Event::operator =(JsonView jsonValue)
     m_statusCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eventScopeCode"))
+  {
+    m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
+
+    m_eventScopeCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +194,11 @@ JsonValue Event::Jsonize() const
   if(m_statusCodeHasBeenSet)
   {
    payload.WithString("statusCode", EventStatusCodeMapper::GetNameForEventStatusCode(m_statusCode));
+  }
+
+  if(m_eventScopeCodeHasBeenSet)
+  {
+   payload.WithString("eventScopeCode", EventScopeCodeMapper::GetNameForEventScopeCode(m_eventScopeCode));
   }
 
   return payload;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -50,72 +40,64 @@ namespace Model
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline Schedule& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline Schedule& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline Schedule& WithExpression(const char* value) { SetExpression(value); return *this;}
 

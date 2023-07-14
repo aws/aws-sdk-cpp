@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -89,68 +79,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline UpdateRegexPatternSetRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline UpdateRegexPatternSetRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -213,50 +209,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline UpdateRegexPatternSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline UpdateRegexPatternSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline UpdateRegexPatternSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -303,98 +291,98 @@ namespace Model
 
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline const Aws::String& GetLockToken() const{ return m_lockToken; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline bool LockTokenHasBeenSet() const { return m_lockTokenHasBeenSet; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline void SetLockToken(const Aws::String& value) { m_lockTokenHasBeenSet = true; m_lockToken = value; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline void SetLockToken(Aws::String&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::move(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline void SetLockToken(const char* value) { m_lockTokenHasBeenSet = true; m_lockToken.assign(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline UpdateRegexPatternSetRequest& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline UpdateRegexPatternSetRequest& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your
+     * <code>get</code> and <code>list</code> requests, to mark the state of the entity
+     * at the time of the request. To make changes to the entity associated with the
+     * token, you provide the token to operations like <code>update</code> and
+     * <code>delete</code>. WAF uses the token to ensure that no changes have been made
+     * to the entity since you last retrieved it. If a change has been made, the update
+     * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
+     * another <code>get</code>, and use the new token returned by that operation. </p>
      */
     inline UpdateRegexPatternSetRequest& WithLockToken(const char* value) { SetLockToken(value); return *this;}
 

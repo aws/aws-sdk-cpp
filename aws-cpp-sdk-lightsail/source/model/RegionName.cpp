@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lightsail/model/RegionName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -44,6 +34,7 @@ namespace Aws
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
         static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
         static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
+        static const int eu_north_1_HASH = HashingUtils::HashString("eu-north-1");
 
 
         RegionName GetRegionNameForName(const Aws::String& name)
@@ -105,6 +96,10 @@ namespace Aws
           {
             return RegionName::ap_northeast_2;
           }
+          else if (hashCode == eu_north_1_HASH)
+          {
+            return RegionName::eu_north_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -147,6 +142,8 @@ namespace Aws
             return "ap-northeast-1";
           case RegionName::ap_northeast_2:
             return "ap-northeast-2";
+          case RegionName::eu_north_1:
+            return "eu-north-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

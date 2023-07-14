@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
@@ -44,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline const Aws::Vector<RecommendedOptionProjectedMetric>& GetRecommendedOptionProjectedMetrics() const{ return m_recommendedOptionProjectedMetrics; }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline void SetRecommendedOptionProjectedMetrics(const Aws::Vector<RecommendedOptionProjectedMetric>& value) { m_recommendedOptionProjectedMetrics = value; }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline void SetRecommendedOptionProjectedMetrics(Aws::Vector<RecommendedOptionProjectedMetric>&& value) { m_recommendedOptionProjectedMetrics = std::move(value); }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(const Aws::Vector<RecommendedOptionProjectedMetric>& value) { SetRecommendedOptionProjectedMetrics(value); return *this;}
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(Aws::Vector<RecommendedOptionProjectedMetric>&& value) { SetRecommendedOptionProjectedMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(const RecommendedOptionProjectedMetric& value) { m_recommendedOptionProjectedMetrics.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetric&& value) { m_recommendedOptionProjectedMetrics.push_back(std::move(value)); return *this; }
 

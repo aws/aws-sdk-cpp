@@ -1,85 +1,75 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.transform;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CoreErrors
 {
-    public static final Set<String> VARIANTS = new HashSet<>();
+    public static final HashMap<String, String> VARIANTS = new HashMap<>();
 
     static {
-        VARIANTS.add("IncompleteSignature");
-        VARIANTS.add("IncompleteSignatureException");
-        VARIANTS.add("InternalFailure");
-        VARIANTS.add("InternalError");
-        VARIANTS.add("InternalFailureException");
-        VARIANTS.add("InvalidAction");
-        VARIANTS.add("InvalidActionException");
-        VARIANTS.add("InvalidClientTokenId");
-        VARIANTS.add("InvalidClientTokenIdException");
-        VARIANTS.add("InvalidParameterCombination");
-        VARIANTS.add("InvalidParameterCombinationException");
-        VARIANTS.add("InvalidParameterValue");
-        VARIANTS.add("InvalidParameterValueException");
-        VARIANTS.add("InvalidQueryParameter");
-        VARIANTS.add("InvalidQueryParameterException");
-        VARIANTS.add("MalformedQueryString");
-        VARIANTS.add("MalformedQueryStringException");
-        VARIANTS.add("MissingAction");
-        VARIANTS.add("MissingActionException");
-        VARIANTS.add("MissingAuthenticationToken");
-        VARIANTS.add("MissingAuthenticationTokenException");
-        VARIANTS.add("MissingParameter");
-        VARIANTS.add("MissingParameterException");
-        VARIANTS.add("OptInRequired");
-        VARIANTS.add("OptInRequiredException");
-        VARIANTS.add("RequestExpired");
-        VARIANTS.add("RequestExpiredException");
-        VARIANTS.add("ServiceUnavailable");
-        VARIANTS.add("ServiceUnavailableException");
-        VARIANTS.add("ServiceUnavailableError");
-        VARIANTS.add("Throttling");
-        VARIANTS.add("ThrottlingException");
-        VARIANTS.add("ThrottledException");
-        VARIANTS.add("RequestThrottledException");
-        VARIANTS.add("RequestThrottled");
-        VARIANTS.add("ValidationError");
-        VARIANTS.add("ValidationErrorException");
-        VARIANTS.add("ValidationException");
-        VARIANTS.add("AccessDenied");
-        VARIANTS.add("AccessDeniedException");
-        VARIANTS.add("ResourceNotFound");
-        VARIANTS.add("ResourceNotFoundException");
-        VARIANTS.add("UnrecognizedClient");
-        VARIANTS.add("UnrecognizedClientException");
-        VARIANTS.add("InternalServerError");
-        VARIANTS.add("SlowDown");
-        VARIANTS.add("SlowDownException");
-        VARIANTS.add("RequestTimeTooSkewed");
-        VARIANTS.add("RequestTimeTooSkewedException");
-        VARIANTS.add("InvalidSignature");
-        VARIANTS.add("InvalidSignatureException");
-        VARIANTS.add("SignatureDoesNotMatch");
-        VARIANTS.add("SignatureDoesNotMatchException");
-        VARIANTS.add("InvalidAccessKeyId");
-        VARIANTS.add("InvalidAccessKeyIdException");
-        VARIANTS.add("RequestTimeout");
-        VARIANTS.add("RequestTimeoutException");
+        VARIANTS.put("IncompleteSignature", "INCOMPLETE_SIGNATURE");
+        VARIANTS.put("IncompleteSignatureException", "INCOMPLETE_SIGNATURE");
+        VARIANTS.put("InternalFailure", "INTERNAL_FAILURE");
+        VARIANTS.put("InternalError", "INTERNAL_FAILURE");
+        VARIANTS.put("InternalFailureException", "INTERNAL_FAILURE");
+        VARIANTS.put("InvalidAction", "INVALID_ACTION");
+        VARIANTS.put("InvalidActionException", "INVALID_ACTION");
+        VARIANTS.put("InvalidClientTokenId", "INVALID_CLIENT_TOKEN_ID");
+        VARIANTS.put("InvalidClientTokenIdException", "INVALID_CLIENT_TOKEN_ID");
+        VARIANTS.put("InvalidParameterCombination", "INVALID_PARAMETER_COMBINATION");
+        VARIANTS.put("InvalidParameterCombinationException", "INVALID_PARAMETER_COMBINATION");
+        VARIANTS.put("InvalidParameterValue", "INVALID_PARAMETER_VALUE");
+        VARIANTS.put("InvalidParameterValueException", "INVALID_PARAMETER_VALUE");
+        VARIANTS.put("InvalidQueryParameter", "INVALID_QUERY_PARAMETER");
+        VARIANTS.put("InvalidQueryParameterException", "INVALID_QUERY_PARAMETER");
+        VARIANTS.put("MalformedQueryString", "MALFORMED_QUERY_STRING");
+        VARIANTS.put("MalformedQueryStringException", "MALFORMED_QUERY_STRING");
+        VARIANTS.put("MissingAction", "MISSING_ACTION");
+        VARIANTS.put("MissingActionException", "MISSING_ACTION");
+        VARIANTS.put("MissingAuthenticationToken", "MISSING_AUTHENTICATION_TOKEN");
+        VARIANTS.put("MissingAuthenticationTokenException", "MISSING_AUTHENTICATION_TOKEN");
+        VARIANTS.put("MissingParameter", "MISSING_PARAMETER");
+        VARIANTS.put("MissingParameterException", "MISSING_PARAMETER");
+        VARIANTS.put("OptInRequired", "OPT_IN_REQUIRED");
+        VARIANTS.put("OptInRequiredException", "OPT_IN_REQUIRED");
+        VARIANTS.put("RequestExpired", "REQUEST_EXPIRED");
+        VARIANTS.put("RequestExpiredException", "REQUEST_EXPIRED");
+        VARIANTS.put("ServiceUnavailable", "SERVICE_UNAVAILABLE");
+        VARIANTS.put("ServiceUnavailableException", "SERVICE_UNAVAILABLE");
+        VARIANTS.put("ServiceUnavailableError", "SERVICE_UNAVAILABLE");
+        VARIANTS.put("Throttling", "THROTTLING");
+        VARIANTS.put("ThrottlingException", "THROTTLING");
+        VARIANTS.put("ThrottledException", "THROTTLING");
+        VARIANTS.put("RequestThrottledException", "THROTTLING");
+        VARIANTS.put("RequestThrottled", "THROTTLING");
+        VARIANTS.put("ValidationError", "VALIDATION");
+        VARIANTS.put("ValidationErrorException", "VALIDATION");
+        VARIANTS.put("ValidationException", "VALIDATION");
+        VARIANTS.put("AccessDenied", "ACCESS_DENIED");
+        VARIANTS.put("AccessDeniedException", "ACCESS_DENIED");
+        VARIANTS.put("ResourceNotFound", "RESOURCE_NOT_FOUND");
+        VARIANTS.put("ResourceNotFoundException", "RESOURCE_NOT_FOUND");
+        VARIANTS.put("UnrecognizedClient", "UNRECOGNIZED_CLIENT");
+        VARIANTS.put("UnrecognizedClientException", "UNRECOGNIZED_CLIENT");
+        VARIANTS.put("InternalServerError", "INTERNAL_FAILURE");
+        VARIANTS.put("SlowDown", "SLOW_DOWN");
+        VARIANTS.put("SlowDownException", "SLOW_DOWN");
+        VARIANTS.put("RequestTimeTooSkewed", "REQUEST_TIME_TOO_SKEWED");
+        VARIANTS.put("RequestTimeTooSkewedException", "REQUEST_TIME_TOO_SKEWED");
+        VARIANTS.put("InvalidSignature", "INVALID_SIGNATURE");
+        VARIANTS.put("InvalidSignatureException", "INVALID_SIGNATURE");
+        VARIANTS.put("SignatureDoesNotMatch", "SIGNATURE_DOES_NOT_MATCH");
+        VARIANTS.put("SignatureDoesNotMatchException", "SIGNATURE_DOES_NOT_MATCH");
+        VARIANTS.put("InvalidAccessKeyId", "INVALID_ACCESS_KEY_ID");
+        VARIANTS.put("InvalidAccessKeyIdException", "INVALID_ACCESS_KEY_ID");
+        VARIANTS.put("RequestTimeout", "REQUEST_TIMEOUT");
+        VARIANTS.put("RequestTimeoutException", "REQUEST_TIMEOUT");
     }
 
 }

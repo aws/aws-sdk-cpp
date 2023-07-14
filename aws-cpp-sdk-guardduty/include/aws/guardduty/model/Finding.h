@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -92,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline Finding& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline Finding& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the finding.</p>
+     * <p>The ARN of the finding.</p>
      */
     inline Finding& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -154,42 +144,42 @@ namespace Model
 
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline Finding& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline Finding& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The time and date at which the finding was created.</p>
+     * <p>The time and date when the finding was created.</p>
      */
     inline Finding& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
@@ -318,42 +308,42 @@ namespace Model
 
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline Finding& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline Finding& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region in which the finding was generated.</p>
+     * <p>The Region where the finding was generated.</p>
      */
     inline Finding& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -459,124 +449,124 @@ namespace Model
 
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline Finding& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline Finding& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The title for the finding.</p>
+     * <p>The title of the finding.</p>
      */
     inline Finding& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline Finding& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline Finding& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the finding.</p>
+     * <p>The type of finding.</p>
      */
     inline Finding& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline Finding& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline Finding& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The time and date at which the finding was laste updated.</p>
+     * <p>The time and date when the finding was last updated.</p>
      */
     inline Finding& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 

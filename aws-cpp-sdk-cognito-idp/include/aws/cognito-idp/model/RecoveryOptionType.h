@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -74,32 +64,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline const RecoveryOptionNameType& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline void SetName(const RecoveryOptionNameType& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline void SetName(RecoveryOptionNameType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline RecoveryOptionType& WithName(const RecoveryOptionNameType& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the recovery method for a user.</p>
+     * <p>The recovery method for a user.</p>
      */
     inline RecoveryOptionType& WithName(RecoveryOptionNameType&& value) { SetName(std::move(value)); return *this;}
 

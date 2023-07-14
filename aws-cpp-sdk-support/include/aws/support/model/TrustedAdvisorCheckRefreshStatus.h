@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
@@ -90,97 +80,97 @@ namespace Model
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline TrustedAdvisorCheckRefreshStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline TrustedAdvisorCheckRefreshStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
-     * requested: </p> <ul> <li> <p> <code>none:</code> The check is not refreshed or
+     * requested: </p> <ul> <li> <p> <code>none</code> - The check is not refreshed or
      * the non-success status exceeds the timeout</p> </li> <li> <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh
-     * queue</p> </li> <li> <p> <code>processing:</code> The check refresh request is
-     * picked up by the rule processing engine</p> </li> <li> <p> <code>success:</code>
-     * The check is successfully refreshed</p> </li> <li> <p> <code>abandoned:</code>
-     * The check refresh has failed</p> </li> </ul>
+     * <code>enqueued</code> - The check refresh requests has entered the refresh
+     * queue</p> </li> <li> <p> <code>processing</code> - The check refresh request is
+     * picked up by the rule processing engine</p> </li> <li> <p> <code>success</code>
+     * - The check is successfully refreshed</p> </li> <li> <p> <code>abandoned</code>
+     * - The check refresh has failed</p> </li> </ul>
      */
     inline TrustedAdvisorCheckRefreshStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 

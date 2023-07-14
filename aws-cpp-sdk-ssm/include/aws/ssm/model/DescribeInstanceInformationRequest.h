@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -49,146 +39,146 @@ namespace Model
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline const Aws::Vector<InstanceInformationFilter>& GetInstanceInformationFilterList() const{ return m_instanceInformationFilterList; }
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline bool InstanceInformationFilterListHasBeenSet() const { return m_instanceInformationFilterListHasBeenSet; }
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline void SetInstanceInformationFilterList(const Aws::Vector<InstanceInformationFilter>& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = value; }
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline void SetInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = std::move(value); }
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(const Aws::Vector<InstanceInformationFilter>& value) { SetInstanceInformationFilterList(value); return *this;}
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { SetInstanceInformationFilterList(std::move(value)); return *this;}
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(const InstanceInformationFilter& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(value); return *this; }
 
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
-     * Instead, use the <a>InstanceInformationFilter</a> action. The
-     * <code>InstanceInformationFilter</code> action enables you to return instance
-     * information by using tags that are specified as a key-value mapping. </p> <p>If
-     * you do use this method, then you can't use the
-     * <code>InstanceInformationFilter</code> action. Using this method and the
-     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
+     * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
+     * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(InstanceInformationFilter&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline const Aws::Vector<InstanceInformationStringFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline void SetFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline void SetFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(const InstanceInformationStringFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
-     * mapping.</p>
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * <code>Filters</code> data type instead of
+     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(InstanceInformationStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

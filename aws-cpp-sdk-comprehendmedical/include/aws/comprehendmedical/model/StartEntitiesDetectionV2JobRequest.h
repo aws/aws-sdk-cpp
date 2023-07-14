@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
@@ -49,71 +39,77 @@ namespace Model
 
 
     /**
-     * <p>Specifies the format and location of the input data for the job.</p>
+     * <p>The input configuration that specifies the format and location of the input
+     * data for the job.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
-     * <p>Specifies the format and location of the input data for the job.</p>
+     * <p>The input configuration that specifies the format and location of the input
+     * data for the job.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
-     * <p>Specifies the format and location of the input data for the job.</p>
+     * <p>The input configuration that specifies the format and location of the input
+     * data for the job.</p>
      */
     inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
-     * <p>Specifies the format and location of the input data for the job.</p>
+     * <p>The input configuration that specifies the format and location of the input
+     * data for the job.</p>
      */
     inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
-     * <p>Specifies the format and location of the input data for the job.</p>
+     * <p>The input configuration that specifies the format and location of the input
+     * data for the job.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
 
     /**
-     * <p>Specifies the format and location of the input data for the job.</p>
+     * <p>The input configuration that specifies the format and location of the input
+     * data for the job.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>The output configuration that specifies where to send the output files.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>The output configuration that specifies where to send the output files.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>The output configuration that specifies where to send the output files.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>The output configuration that specifies where to send the output files.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>The output configuration that specifies where to send the output files.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>The output configuration that specifies where to send the output files.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -121,8 +117,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -130,8 +126,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -139,8 +135,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -148,8 +144,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -157,8 +153,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -166,8 +162,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -175,8 +171,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
-     * For more information, see <a
+     * (IAM) role that grants Comprehend Medical; read access to your input data. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
      * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
      */
@@ -226,49 +222,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Amazon Comprehend Medical generates one.</p>
+     * token, Comprehend Medical; generates one for you.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -324,37 +320,37 @@ namespace Model
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * language. Comprehend Medical; processes files in US English (en).</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * language. Comprehend Medical; processes files in US English (en).</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * language. Comprehend Medical; processes files in US English (en).</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * language. Comprehend Medical; processes files in US English (en).</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * language. Comprehend Medical; processes files in US English (en).</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language.</p>
+     * language. Comprehend Medical; processes files in US English (en).</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

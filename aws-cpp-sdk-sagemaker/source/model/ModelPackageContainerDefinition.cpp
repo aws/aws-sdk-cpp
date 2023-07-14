@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ModelPackageContainerDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,12 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition() :
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_modelInputHasBeenSet(false),
+    m_frameworkHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false),
+    m_nearestModelNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +37,12 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonVa
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_modelInputHasBeenSet(false),
+    m_frameworkHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false),
+    m_nearestModelNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +84,44 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator =(Jso
     m_productIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Environment"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for(auto& environmentItem : environmentJsonMap)
+    {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
+    }
+    m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelInput"))
+  {
+    m_modelInput = jsonValue.GetObject("ModelInput");
+
+    m_modelInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Framework"))
+  {
+    m_framework = jsonValue.GetString("Framework");
+
+    m_frameworkHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FrameworkVersion"))
+  {
+    m_frameworkVersion = jsonValue.GetString("FrameworkVersion");
+
+    m_frameworkVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NearestModelName"))
+  {
+    m_nearestModelName = jsonValue.GetString("NearestModelName");
+
+    m_nearestModelNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +156,41 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   JsonValue environmentJsonMap;
+   for(auto& environmentItem : m_environment)
+   {
+     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+   }
+   payload.WithObject("Environment", std::move(environmentJsonMap));
+
+  }
+
+  if(m_modelInputHasBeenSet)
+  {
+   payload.WithObject("ModelInput", m_modelInput.Jsonize());
+
+  }
+
+  if(m_frameworkHasBeenSet)
+  {
+   payload.WithString("Framework", m_framework);
+
+  }
+
+  if(m_frameworkVersionHasBeenSet)
+  {
+   payload.WithString("FrameworkVersion", m_frameworkVersion);
+
+  }
+
+  if(m_nearestModelNameHasBeenSet)
+  {
+   payload.WithString("NearestModelName", m_nearestModelName);
 
   }
 

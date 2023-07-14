@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/model/LogDestinationType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -243,6 +235,98 @@ namespace Model
      */
     inline EnableLoggingRequest& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline EnableLoggingRequest& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
+
+    /**
+     * <p>The log destination type. An enum with possible values of <code>s3</code> and
+     * <code>cloudwatch</code>.</p>
+     */
+    inline EnableLoggingRequest& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLogExports() const{ return m_logExports; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline bool LogExportsHasBeenSet() const { return m_logExportsHasBeenSet; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline void SetLogExports(const Aws::Vector<Aws::String>& value) { m_logExportsHasBeenSet = true; m_logExports = value; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline void SetLogExports(Aws::Vector<Aws::String>&& value) { m_logExportsHasBeenSet = true; m_logExports = std::move(value); }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingRequest& WithLogExports(const Aws::Vector<Aws::String>& value) { SetLogExports(value); return *this;}
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingRequest& WithLogExports(Aws::Vector<Aws::String>&& value) { SetLogExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingRequest& AddLogExports(const Aws::String& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingRequest& AddLogExports(Aws::String&& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of exported log types. Log types include the connection log,
+     * user log and user activity log.</p>
+     */
+    inline EnableLoggingRequest& AddLogExports(const char* value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -253,6 +337,12 @@ namespace Model
 
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
+    LogDestinationType m_logDestinationType;
+    bool m_logDestinationTypeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_logExports;
+    bool m_logExportsHasBeenSet;
   };
 
 } // namespace Model

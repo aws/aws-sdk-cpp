@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>How much it cost to run an instance.</p><p><h3>See Also:</h3>   <a
+   * <p>How much it costs to run an instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageCost">AWS API
    * Reference</a></p>
    */
@@ -48,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline const Aws::String& GetOnDemandCost() const{ return m_onDemandCost; }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline bool OnDemandCostHasBeenSet() const { return m_onDemandCostHasBeenSet; }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline void SetOnDemandCost(const Aws::String& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = value; }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline void SetOnDemandCost(Aws::String&& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = std::move(value); }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline void SetOnDemandCost(const char* value) { m_onDemandCostHasBeenSet = true; m_onDemandCost.assign(value); }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline CoverageCost& WithOnDemandCost(const Aws::String& value) { SetOnDemandCost(value); return *this;}
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline CoverageCost& WithOnDemandCost(Aws::String&& value) { SetOnDemandCost(std::move(value)); return *this;}
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline CoverageCost& WithOnDemandCost(const char* value) { SetOnDemandCost(value); return *this;}
 

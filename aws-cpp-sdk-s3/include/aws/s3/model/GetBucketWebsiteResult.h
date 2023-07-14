@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -78,53 +68,63 @@ namespace Model
 
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline void SetIndexDocument(const IndexDocument& value) { m_indexDocument = value; }
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline void SetIndexDocument(IndexDocument&& value) { m_indexDocument = std::move(value); }
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline GetBucketWebsiteResult& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline GetBucketWebsiteResult& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocument = value; }
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocument = std::move(value); }
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline GetBucketWebsiteResult& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline GetBucketWebsiteResult& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
 

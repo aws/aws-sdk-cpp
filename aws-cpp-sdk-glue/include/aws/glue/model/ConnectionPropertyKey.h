@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -42,7 +32,20 @@ namespace Model
     CUSTOM_JDBC_CERT,
     SKIP_CUSTOM_JDBC_CERT_VALIDATION,
     CUSTOM_JDBC_CERT_STRING,
-    CONNECTION_URL
+    CONNECTION_URL,
+    KAFKA_BOOTSTRAP_SERVERS,
+    KAFKA_SSL_ENABLED,
+    KAFKA_CUSTOM_CERT,
+    KAFKA_SKIP_CUSTOM_CERT_VALIDATION,
+    KAFKA_CLIENT_KEYSTORE,
+    KAFKA_CLIENT_KEYSTORE_PASSWORD,
+    KAFKA_CLIENT_KEY_PASSWORD,
+    ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD,
+    ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD,
+    SECRET_ID,
+    CONNECTOR_URL,
+    CONNECTOR_TYPE,
+    CONNECTOR_CLASS_NAME
   };
 
 namespace ConnectionPropertyKeyMapper

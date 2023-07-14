@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codepipeline/model/StageExecutionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,6 +20,7 @@ namespace Aws
       namespace StageExecutionStatusMapper
       {
 
+        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
@@ -40,7 +31,11 @@ namespace Aws
         StageExecutionStatus GetStageExecutionStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == InProgress_HASH)
+          if (hashCode == Cancelled_HASH)
+          {
+            return StageExecutionStatus::Cancelled;
+          }
+          else if (hashCode == InProgress_HASH)
           {
             return StageExecutionStatus::InProgress;
           }
@@ -74,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StageExecutionStatus::Cancelled:
+            return "Cancelled";
           case StageExecutionStatus::InProgress:
             return "InProgress";
           case StageExecutionStatus::Failed:

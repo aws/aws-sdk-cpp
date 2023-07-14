@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -62,7 +52,15 @@ FunctionConfiguration::FunctionConfiguration() :
     m_lastUpdateStatusHasBeenSet(false),
     m_lastUpdateStatusReasonHasBeenSet(false),
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
-    m_lastUpdateStatusReasonCodeHasBeenSet(false)
+    m_lastUpdateStatusReasonCodeHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false),
+    m_packageType(PackageType::NOT_SET),
+    m_packageTypeHasBeenSet(false),
+    m_imageConfigResponseHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false),
+    m_architecturesHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -100,7 +98,15 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_lastUpdateStatusHasBeenSet(false),
     m_lastUpdateStatusReasonHasBeenSet(false),
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
-    m_lastUpdateStatusReasonCodeHasBeenSet(false)
+    m_lastUpdateStatusReasonCodeHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false),
+    m_packageType(PackageType::NOT_SET),
+    m_packageTypeHasBeenSet(false),
+    m_imageConfigResponseHasBeenSet(false),
+    m_signingProfileVersionArnHasBeenSet(false),
+    m_signingJobArnHasBeenSet(false),
+    m_architecturesHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -292,6 +298,61 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_lastUpdateStatusReasonCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemConfigs"))
+  {
+    Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
+    for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+    {
+      m_fileSystemConfigs.push_back(fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject());
+    }
+    m_fileSystemConfigsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageType"))
+  {
+    m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
+
+    m_packageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageConfigResponse"))
+  {
+    m_imageConfigResponse = jsonValue.GetObject("ImageConfigResponse");
+
+    m_imageConfigResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SigningProfileVersionArn"))
+  {
+    m_signingProfileVersionArn = jsonValue.GetString("SigningProfileVersionArn");
+
+    m_signingProfileVersionArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SigningJobArn"))
+  {
+    m_signingJobArn = jsonValue.GetString("SigningJobArn");
+
+    m_signingJobArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Architectures"))
+  {
+    Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    {
+      m_architectures.push_back(ArchitectureMapper::GetArchitectureForName(architecturesJsonList[architecturesIndex].AsString()));
+    }
+    m_architecturesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -453,6 +514,57 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_lastUpdateStatusReasonCodeHasBeenSet)
   {
    payload.WithString("LastUpdateStatusReasonCode", LastUpdateStatusReasonCodeMapper::GetNameForLastUpdateStatusReasonCode(m_lastUpdateStatusReasonCode));
+  }
+
+  if(m_fileSystemConfigsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+   {
+     fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_packageTypeHasBeenSet)
+  {
+   payload.WithString("PackageType", PackageTypeMapper::GetNameForPackageType(m_packageType));
+  }
+
+  if(m_imageConfigResponseHasBeenSet)
+  {
+   payload.WithObject("ImageConfigResponse", m_imageConfigResponse.Jsonize());
+
+  }
+
+  if(m_signingProfileVersionArnHasBeenSet)
+  {
+   payload.WithString("SigningProfileVersionArn", m_signingProfileVersionArn);
+
+  }
+
+  if(m_signingJobArnHasBeenSet)
+  {
+   payload.WithString("SigningJobArn", m_signingJobArn);
+
+  }
+
+  if(m_architecturesHasBeenSet)
+  {
+   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   {
+     architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
+   }
+   payload.WithArray("Architectures", std::move(architecturesJsonList));
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
+
   }
 
   return payload;

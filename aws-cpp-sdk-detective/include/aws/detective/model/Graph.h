@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
@@ -90,38 +80,44 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the behavior graph was created. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the behavior graph was created. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The date and time that the behavior graph was created. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the behavior graph was created. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the behavior graph was created. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the behavior graph was created. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The date and time that the behavior graph was created. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the behavior graph was created. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The date and time that the behavior graph was created. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the behavior graph was created. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline Graph& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the behavior graph was created. The value is in
-     * milliseconds since the epoch.</p>
+     * <p>The date and time that the behavior graph was created. The value is an
+     * ISO8601 formatted string. For example,
+     * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline Graph& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

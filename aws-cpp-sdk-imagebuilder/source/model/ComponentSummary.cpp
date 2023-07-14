@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/ComponentSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,8 @@ ComponentSummary::ComponentSummary() :
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_supportedOsVersionsHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_type(ComponentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_ownerHasBeenSet(false),
@@ -50,6 +42,8 @@ ComponentSummary::ComponentSummary(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_supportedOsVersionsHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_type(ComponentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_ownerHasBeenSet(false),
@@ -89,6 +83,23 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
 
     m_platformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedOsVersions"))
+  {
+    Array<JsonView> supportedOsVersionsJsonList = jsonValue.GetArray("supportedOsVersions");
+    for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
+    {
+      m_supportedOsVersions.push_back(supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString());
+    }
+    m_supportedOsVersionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = jsonValue.GetObject("state");
+
+    m_stateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -164,6 +175,23 @@ JsonValue ComponentSummary::Jsonize() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_supportedOsVersionsHasBeenSet)
+  {
+   Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
+   for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
+   {
+     supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);
+   }
+   payload.WithArray("supportedOsVersions", std::move(supportedOsVersionsJsonList));
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithObject("state", m_state.Jsonize());
+
   }
 
   if(m_typeHasBeenSet)

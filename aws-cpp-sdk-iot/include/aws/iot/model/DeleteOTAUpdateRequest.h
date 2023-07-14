@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -49,92 +39,100 @@ namespace Model
 
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline const Aws::String& GetOtaUpdateId() const{ return m_otaUpdateId; }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline void SetOtaUpdateId(Aws::String&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::move(value); }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline void SetOtaUpdateId(const char* value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId.assign(value); }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline DeleteOTAUpdateRequest& WithOtaUpdateId(const Aws::String& value) { SetOtaUpdateId(value); return *this;}
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline DeleteOTAUpdateRequest& WithOtaUpdateId(Aws::String&& value) { SetOtaUpdateId(std::move(value)); return *this;}
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline DeleteOTAUpdateRequest& WithOtaUpdateId(const char* value) { SetOtaUpdateId(value); return *this;}
 
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline bool GetDeleteStream() const{ return m_deleteStream; }
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline bool DeleteStreamHasBeenSet() const { return m_deleteStreamHasBeenSet; }
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline void SetDeleteStream(bool value) { m_deleteStreamHasBeenSet = true; m_deleteStream = value; }
 
     /**
-     * <p>Specifies if the stream associated with an OTA update should be deleted when
-     * the OTA update is deleted.</p>
+     * <p>When true, the stream created by the OTAUpdate process is deleted when the
+     * OTA update is deleted. Ignored if the stream specified in the OTAUpdate is
+     * supplied by the user.</p>
      */
     inline DeleteOTAUpdateRequest& WithDeleteStream(bool value) { SetDeleteStream(value); return *this;}
 
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline bool GetForceDeleteAWSJob() const{ return m_forceDeleteAWSJob; }
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline bool ForceDeleteAWSJobHasBeenSet() const { return m_forceDeleteAWSJobHasBeenSet; }
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline void SetForceDeleteAWSJob(bool value) { m_forceDeleteAWSJobHasBeenSet = true; m_forceDeleteAWSJob = value; }
 
     /**
-     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * <p>When true, deletes the IoT job created by the OTAUpdate process even if it is
+     * "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or
+     * "CANCELED") an exception will occur. The default is false.</p>
      */
     inline DeleteOTAUpdateRequest& WithForceDeleteAWSJob(bool value) { SetForceDeleteAWSJob(value); return *this;}
 

@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/backup/model/AdvancedBackupSetting.h>
 #include <utility>
 
 namespace Aws
@@ -172,45 +164,95 @@ namespace Model
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline CreateBackupPlanResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline CreateBackupPlanResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline CreateBackupPlanResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettings = value; }
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline void SetAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { m_advancedBackupSettings = std::move(value); }
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline CreateBackupPlanResult& WithAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { SetAdvancedBackupSettings(value); return *this;}
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline CreateBackupPlanResult& WithAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { SetAdvancedBackupSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline CreateBackupPlanResult& AddAdvancedBackupSettings(const AdvancedBackupSetting& value) { m_advancedBackupSettings.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>BackupOptions</code> settings for a resource type. This
+     * option is only available for Windows Volume Shadow Copy Service (VSS) backup
+     * jobs.</p>
+     */
+    inline CreateBackupPlanResult& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettings.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -221,6 +263,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
 
     Aws::String m_versionId;
+
+    Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
   };
 
 } // namespace Model

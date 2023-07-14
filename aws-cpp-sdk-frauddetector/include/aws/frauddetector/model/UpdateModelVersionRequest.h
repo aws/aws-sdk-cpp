@@ -1,24 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/ModelTypeEnum.h>
-#include <aws/frauddetector/model/ModelVersionStatus.h>
+#include <aws/frauddetector/model/ExternalEventsDetail.h>
+#include <aws/frauddetector/model/IngestedEventsDetail.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -119,116 +112,165 @@ namespace Model
 
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline const Aws::String& GetModelVersionNumber() const{ return m_modelVersionNumber; }
+    inline const Aws::String& GetMajorVersionNumber() const{ return m_majorVersionNumber; }
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline bool ModelVersionNumberHasBeenSet() const { return m_modelVersionNumberHasBeenSet; }
+    inline bool MajorVersionNumberHasBeenSet() const { return m_majorVersionNumberHasBeenSet; }
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline void SetModelVersionNumber(const Aws::String& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = value; }
+    inline void SetMajorVersionNumber(const Aws::String& value) { m_majorVersionNumberHasBeenSet = true; m_majorVersionNumber = value; }
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline void SetModelVersionNumber(Aws::String&& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = std::move(value); }
+    inline void SetMajorVersionNumber(Aws::String&& value) { m_majorVersionNumberHasBeenSet = true; m_majorVersionNumber = std::move(value); }
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline void SetModelVersionNumber(const char* value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber.assign(value); }
+    inline void SetMajorVersionNumber(const char* value) { m_majorVersionNumberHasBeenSet = true; m_majorVersionNumber.assign(value); }
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline UpdateModelVersionRequest& WithModelVersionNumber(const Aws::String& value) { SetModelVersionNumber(value); return *this;}
+    inline UpdateModelVersionRequest& WithMajorVersionNumber(const Aws::String& value) { SetMajorVersionNumber(value); return *this;}
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline UpdateModelVersionRequest& WithModelVersionNumber(Aws::String&& value) { SetModelVersionNumber(std::move(value)); return *this;}
+    inline UpdateModelVersionRequest& WithMajorVersionNumber(Aws::String&& value) { SetMajorVersionNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The model version.</p>
+     * <p>The major version number.</p>
      */
-    inline UpdateModelVersionRequest& WithModelVersionNumber(const char* value) { SetModelVersionNumber(value); return *this;}
-
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline UpdateModelVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline UpdateModelVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The model description.</p>
-     */
-    inline UpdateModelVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline UpdateModelVersionRequest& WithMajorVersionNumber(const char* value) { SetMajorVersionNumber(value); return *this;}
 
 
     /**
-     * <p>The new model status.</p>
+     * <p>The details of the external events data used for training the model version.
+     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
-    inline const ModelVersionStatus& GetStatus() const{ return m_status; }
+    inline const ExternalEventsDetail& GetExternalEventsDetail() const{ return m_externalEventsDetail; }
 
     /**
-     * <p>The new model status.</p>
+     * <p>The details of the external events data used for training the model version.
+     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool ExternalEventsDetailHasBeenSet() const { return m_externalEventsDetailHasBeenSet; }
 
     /**
-     * <p>The new model status.</p>
+     * <p>The details of the external events data used for training the model version.
+     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
-    inline void SetStatus(const ModelVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetExternalEventsDetail(const ExternalEventsDetail& value) { m_externalEventsDetailHasBeenSet = true; m_externalEventsDetail = value; }
 
     /**
-     * <p>The new model status.</p>
+     * <p>The details of the external events data used for training the model version.
+     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
-    inline void SetStatus(ModelVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetExternalEventsDetail(ExternalEventsDetail&& value) { m_externalEventsDetailHasBeenSet = true; m_externalEventsDetail = std::move(value); }
 
     /**
-     * <p>The new model status.</p>
+     * <p>The details of the external events data used for training the model version.
+     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
-    inline UpdateModelVersionRequest& WithStatus(const ModelVersionStatus& value) { SetStatus(value); return *this;}
+    inline UpdateModelVersionRequest& WithExternalEventsDetail(const ExternalEventsDetail& value) { SetExternalEventsDetail(value); return *this;}
 
     /**
-     * <p>The new model status.</p>
+     * <p>The details of the external events data used for training the model version.
+     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
-    inline UpdateModelVersionRequest& WithStatus(ModelVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline UpdateModelVersionRequest& WithExternalEventsDetail(ExternalEventsDetail&& value) { SetExternalEventsDetail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The details of the ingested event used for training the model version.
+     * Required if your <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline const IngestedEventsDetail& GetIngestedEventsDetail() const{ return m_ingestedEventsDetail; }
+
+    /**
+     * <p>The details of the ingested event used for training the model version.
+     * Required if your <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline bool IngestedEventsDetailHasBeenSet() const { return m_ingestedEventsDetailHasBeenSet; }
+
+    /**
+     * <p>The details of the ingested event used for training the model version.
+     * Required if your <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(const IngestedEventsDetail& value) { m_ingestedEventsDetailHasBeenSet = true; m_ingestedEventsDetail = value; }
+
+    /**
+     * <p>The details of the ingested event used for training the model version.
+     * Required if your <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(IngestedEventsDetail&& value) { m_ingestedEventsDetailHasBeenSet = true; m_ingestedEventsDetail = std::move(value); }
+
+    /**
+     * <p>The details of the ingested event used for training the model version.
+     * Required if your <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline UpdateModelVersionRequest& WithIngestedEventsDetail(const IngestedEventsDetail& value) { SetIngestedEventsDetail(value); return *this;}
+
+    /**
+     * <p>The details of the ingested event used for training the model version.
+     * Required if your <code>trainingDataSource</code> is
+     * <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline UpdateModelVersionRequest& WithIngestedEventsDetail(IngestedEventsDetail&& value) { SetIngestedEventsDetail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline UpdateModelVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline UpdateModelVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline UpdateModelVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline UpdateModelVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -238,14 +280,17 @@ namespace Model
     ModelTypeEnum m_modelType;
     bool m_modelTypeHasBeenSet;
 
-    Aws::String m_modelVersionNumber;
-    bool m_modelVersionNumberHasBeenSet;
+    Aws::String m_majorVersionNumber;
+    bool m_majorVersionNumberHasBeenSet;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    ExternalEventsDetail m_externalEventsDetail;
+    bool m_externalEventsDetailHasBeenSet;
 
-    ModelVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    IngestedEventsDetail m_ingestedEventsDetail;
+    bool m_ingestedEventsDetailHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

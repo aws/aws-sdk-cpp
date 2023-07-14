@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb/QLDB_EXPORTS.h>
@@ -88,7 +78,7 @@ namespace Model
      * <p>The block location of the document revision to be verified. An address is an
      * Amazon Ion structure that has two fields: <code>strandId</code> and
      * <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
      */
     inline const ValueHolder& GetBlockAddress() const{ return m_blockAddress; }
 
@@ -96,7 +86,7 @@ namespace Model
      * <p>The block location of the document revision to be verified. An address is an
      * Amazon Ion structure that has two fields: <code>strandId</code> and
      * <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
      */
     inline bool BlockAddressHasBeenSet() const { return m_blockAddressHasBeenSet; }
 
@@ -104,7 +94,7 @@ namespace Model
      * <p>The block location of the document revision to be verified. An address is an
      * Amazon Ion structure that has two fields: <code>strandId</code> and
      * <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
      */
     inline void SetBlockAddress(const ValueHolder& value) { m_blockAddressHasBeenSet = true; m_blockAddress = value; }
 
@@ -112,7 +102,7 @@ namespace Model
      * <p>The block location of the document revision to be verified. An address is an
      * Amazon Ion structure that has two fields: <code>strandId</code> and
      * <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
      */
     inline void SetBlockAddress(ValueHolder&& value) { m_blockAddressHasBeenSet = true; m_blockAddress = std::move(value); }
 
@@ -120,7 +110,7 @@ namespace Model
      * <p>The block location of the document revision to be verified. An address is an
      * Amazon Ion structure that has two fields: <code>strandId</code> and
      * <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
      */
     inline GetRevisionRequest& WithBlockAddress(const ValueHolder& value) { SetBlockAddress(value); return *this;}
 
@@ -128,48 +118,56 @@ namespace Model
      * <p>The block location of the document revision to be verified. An address is an
      * Amazon Ion structure that has two fields: <code>strandId</code> and
      * <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
      */
     inline GetRevisionRequest& WithBlockAddress(ValueHolder&& value) { SetBlockAddress(std::move(value)); return *this;}
 
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline GetRevisionRequest& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline GetRevisionRequest& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the document to be verified.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the document to be
+     * verified.</p>
      */
     inline GetRevisionRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 
@@ -178,7 +176,7 @@ namespace Model
      * <p>The latest block location covered by the digest for which to request a proof.
      * An address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
      */
     inline const ValueHolder& GetDigestTipAddress() const{ return m_digestTipAddress; }
 
@@ -186,7 +184,7 @@ namespace Model
      * <p>The latest block location covered by the digest for which to request a proof.
      * An address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
      */
     inline bool DigestTipAddressHasBeenSet() const { return m_digestTipAddressHasBeenSet; }
 
@@ -194,7 +192,7 @@ namespace Model
      * <p>The latest block location covered by the digest for which to request a proof.
      * An address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
      */
     inline void SetDigestTipAddress(const ValueHolder& value) { m_digestTipAddressHasBeenSet = true; m_digestTipAddress = value; }
 
@@ -202,7 +200,7 @@ namespace Model
      * <p>The latest block location covered by the digest for which to request a proof.
      * An address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
      */
     inline void SetDigestTipAddress(ValueHolder&& value) { m_digestTipAddressHasBeenSet = true; m_digestTipAddress = std::move(value); }
 
@@ -210,7 +208,7 @@ namespace Model
      * <p>The latest block location covered by the digest for which to request a proof.
      * An address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
      */
     inline GetRevisionRequest& WithDigestTipAddress(const ValueHolder& value) { SetDigestTipAddress(value); return *this;}
 
@@ -218,7 +216,7 @@ namespace Model
      * <p>The latest block location covered by the digest for which to request a proof.
      * An address is an Amazon Ion structure that has two fields: <code>strandId</code>
      * and <code>sequenceNo</code>.</p> <p>For example:
-     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> </p>
+     * <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
      */
     inline GetRevisionRequest& WithDigestTipAddress(ValueHolder&& value) { SetDigestTipAddress(std::move(value)); return *this;}
 

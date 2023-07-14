@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -144,49 +134,49 @@ namespace Model
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline const ShareMethod& GetShareMethod() const{ return m_shareMethod; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline bool ShareMethodHasBeenSet() const { return m_shareMethodHasBeenSet; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline void SetShareMethod(const ShareMethod& value) { m_shareMethodHasBeenSet = true; m_shareMethod = value; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline void SetShareMethod(ShareMethod&& value) { m_shareMethodHasBeenSet = true; m_shareMethod = std::move(value); }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline SharedDirectory& WithShareMethod(const ShareMethod& value) { SetShareMethod(value); return *this;}
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a shared directory request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a shared directory request (<code>HANDSHAKE</code>).</p>
      */
     inline SharedDirectory& WithShareMethod(ShareMethod&& value) { SetShareMethod(std::move(value)); return *this;}
 
@@ -290,38 +280,32 @@ namespace Model
 
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline SharedDirectory& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
 
     /**
-     * <p>Current directory status of the shared AWS Managed Microsoft AD
-     * directory.</p>
+     * <p>Current directory status of the shared Managed Microsoft AD directory.</p>
      */
     inline SharedDirectory& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
 

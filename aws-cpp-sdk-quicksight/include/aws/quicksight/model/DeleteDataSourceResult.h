@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -79,80 +69,80 @@ namespace Model
 
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DeleteDataSourceResult& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DeleteDataSourceResult& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
+     * for each Amazon Web Services account.</p>
      */
     inline DeleteDataSourceResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteDataSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteDataSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteDataSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

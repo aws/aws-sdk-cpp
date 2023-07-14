@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -45,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DescribeDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DescribeDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DescribeDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -137,56 +127,56 @@ namespace Model
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline DescribeDocumentRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline DescribeDocumentRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
      * document. For example, "Release 12, Update 6". This value is unique across all
-     * versions of a document, and cannot be changed.</p>
+     * versions of a document, and can't be changed.</p>
      */
     inline DescribeDocumentRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 

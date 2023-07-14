@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -46,47 +36,47 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAppIds() const{ return m_appIds; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline bool AppIdsHasBeenSet() const { return m_appIdsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline void SetAppIds(const Aws::Vector<Aws::String>& value) { m_appIdsHasBeenSet = true; m_appIds = value; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline void SetAppIds(Aws::Vector<Aws::String>&& value) { m_appIdsHasBeenSet = true; m_appIds = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& WithAppIds(const Aws::Vector<Aws::String>& value) { SetAppIds(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& WithAppIds(Aws::Vector<Aws::String>&& value) { SetAppIds(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& AddAppIds(const Aws::String& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& AddAppIds(Aws::String&& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The unique application IDs.</p>
      */
     inline ListAppsRequest& AddAppIds(const char* value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
 
@@ -134,28 +124,28 @@ namespace Model
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value
-     * is 50. To retrieve the remaining results, make another call with the returned
+     * is 100. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value. </p>
      */
     inline ListAppsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

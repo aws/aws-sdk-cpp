@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -243,24 +234,114 @@ namespace Model
 
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline int GetMaxLatency() const{ return m_maxLatency; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline AddOutputRequest& WithMaxLatency(int value) { SetMaxLatency(value); return *this;}
+
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline const Aws::Vector<MediaStreamOutputConfigurationRequest>& GetMediaStreamOutputConfigurations() const{ return m_mediaStreamOutputConfigurations; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfigurationRequest>& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = value; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfigurationRequest>&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::move(value); }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline AddOutputRequest& WithMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfigurationRequest>& value) { SetMediaStreamOutputConfigurations(value); return *this;}
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline AddOutputRequest& WithMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfigurationRequest>&& value) { SetMediaStreamOutputConfigurations(std::move(value)); return *this;}
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline AddOutputRequest& AddMediaStreamOutputConfigurations(const MediaStreamOutputConfigurationRequest& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(value); return *this; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline AddOutputRequest& AddMediaStreamOutputConfigurations(MediaStreamOutputConfigurationRequest&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline int GetMinLatency() const{ return m_minLatency; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline bool MinLatencyHasBeenSet() const { return m_minLatencyHasBeenSet; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline void SetMinLatency(int value) { m_minLatencyHasBeenSet = true; m_minLatency = value; }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use
+     * the SRT protocol, this value that you set on your MediaConnect source or output
+     * represents the minimal potential latency of that connection. The latency of the
+     * stream is set to the highest number between the sender’s minimum latency and the
+     * receiver’s minimum latency.
+     */
+    inline AddOutputRequest& WithMinLatency(int value) { SetMinLatency(value); return *this;}
 
 
     /**
@@ -398,6 +479,31 @@ namespace Model
 
 
     /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline int GetSenderControlPort() const{ return m_senderControlPort; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline void SetSenderControlPort(int value) { m_senderControlPortHasBeenSet = true; m_senderControlPort = value; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline AddOutputRequest& WithSenderControlPort(int value) { SetSenderControlPort(value); return *this;}
+
+
+    /**
      * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetSmoothingLatency() const{ return m_smoothingLatency; }
@@ -514,6 +620,12 @@ namespace Model
     int m_maxLatency;
     bool m_maxLatencyHasBeenSet;
 
+    Aws::Vector<MediaStreamOutputConfigurationRequest> m_mediaStreamOutputConfigurations;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet;
+
+    int m_minLatency;
+    bool m_minLatencyHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
@@ -525,6 +637,9 @@ namespace Model
 
     Aws::String m_remoteId;
     bool m_remoteIdHasBeenSet;
+
+    int m_senderControlPort;
+    bool m_senderControlPortHasBeenSet;
 
     int m_smoothingLatency;
     bool m_smoothingLatencyHasBeenSet;

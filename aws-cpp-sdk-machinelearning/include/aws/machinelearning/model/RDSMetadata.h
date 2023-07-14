@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -158,7 +148,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
@@ -167,7 +157,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
@@ -176,7 +166,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
@@ -185,7 +175,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
@@ -194,7 +184,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
@@ -203,7 +193,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline RDSMetadata& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
@@ -212,7 +202,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline RDSMetadata& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
@@ -221,7 +211,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
      * to carry out the copy task from Amazon RDS to Amazon S3. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline RDSMetadata& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
@@ -231,7 +221,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
@@ -240,7 +230,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
@@ -249,7 +239,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
@@ -258,7 +248,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
@@ -267,7 +257,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
@@ -276,7 +266,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline RDSMetadata& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
@@ -285,7 +275,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline RDSMetadata& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
@@ -294,7 +284,7 @@ namespace Model
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
     inline RDSMetadata& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}

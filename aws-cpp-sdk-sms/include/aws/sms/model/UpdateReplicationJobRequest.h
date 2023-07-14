@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -47,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline UpdateReplicationJobRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline UpdateReplicationJobRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the replication job.</p>
+     * <p>The ID of the replication job.</p>
      */
     inline UpdateReplicationJobRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
@@ -177,42 +167,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline UpdateReplicationJobRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline UpdateReplicationJobRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline UpdateReplicationJobRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
@@ -259,132 +249,132 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of SMS-created AMIs to retain. The oldest will be deleted
-     * once the maximum number is reached and a new AMI is created.</p>
+     * <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after
+     * the maximum number is reached and a new AMI is created.</p>
      */
     inline int GetNumberOfRecentAmisToKeep() const{ return m_numberOfRecentAmisToKeep; }
 
     /**
-     * <p>The maximum number of SMS-created AMIs to retain. The oldest will be deleted
-     * once the maximum number is reached and a new AMI is created.</p>
+     * <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after
+     * the maximum number is reached and a new AMI is created.</p>
      */
     inline bool NumberOfRecentAmisToKeepHasBeenSet() const { return m_numberOfRecentAmisToKeepHasBeenSet; }
 
     /**
-     * <p>The maximum number of SMS-created AMIs to retain. The oldest will be deleted
-     * once the maximum number is reached and a new AMI is created.</p>
+     * <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after
+     * the maximum number is reached and a new AMI is created.</p>
      */
     inline void SetNumberOfRecentAmisToKeep(int value) { m_numberOfRecentAmisToKeepHasBeenSet = true; m_numberOfRecentAmisToKeep = value; }
 
     /**
-     * <p>The maximum number of SMS-created AMIs to retain. The oldest will be deleted
-     * once the maximum number is reached and a new AMI is created.</p>
+     * <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after
+     * the maximum number is reached and a new AMI is created.</p>
      */
     inline UpdateReplicationJobRequest& WithNumberOfRecentAmisToKeep(int value) { SetNumberOfRecentAmisToKeep(value); return *this;}
 
 
     /**
-     * <p>When true, the replication job produces encrypted AMIs . See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>When true, the replication job produces encrypted AMIs. For more information,
+     * <code>KmsKeyId</code>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>When true, the replication job produces encrypted AMIs . See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>When true, the replication job produces encrypted AMIs. For more information,
+     * <code>KmsKeyId</code>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>When true, the replication job produces encrypted AMIs . See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>When true, the replication job produces encrypted AMIs. For more information,
+     * <code>KmsKeyId</code>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>When true, the replication job produces encrypted AMIs . See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>When true, the replication job produces encrypted AMIs. For more information,
+     * <code>KmsKeyId</code>.</p>
      */
     inline UpdateReplicationJobRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline UpdateReplicationJobRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline UpdateReplicationJobRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
-     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
-     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
-     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
-     * KMS key id is not specified, the customer's default KMS key for EBS is used.
-     * </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p>If encrypted is
+     * enabled but a KMS key ID is not specified, the customer's default KMS key for
+     * Amazon EBS is used.</p>
      */
     inline UpdateReplicationJobRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
@@ -58,7 +48,8 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
      * A relationship of type VALUE is a list that contains the ID of the VALUE block
      * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks.</p>
+     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
+     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
      */
     inline const RelationshipType& GetType() const{ return m_type; }
 
@@ -67,7 +58,8 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
      * A relationship of type VALUE is a list that contains the ID of the VALUE block
      * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks.</p>
+     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
+     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -76,7 +68,8 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
      * A relationship of type VALUE is a list that contains the ID of the VALUE block
      * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks.</p>
+     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
+     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
      */
     inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -85,7 +78,8 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
      * A relationship of type VALUE is a list that contains the ID of the VALUE block
      * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks.</p>
+     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
+     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
      */
     inline void SetType(RelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -94,7 +88,8 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
      * A relationship of type VALUE is a list that contains the ID of the VALUE block
      * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks.</p>
+     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
+     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
      */
     inline Relationship& WithType(const RelationshipType& value) { SetType(value); return *this;}
 
@@ -103,7 +98,8 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
      * A relationship of type VALUE is a list that contains the ID of the VALUE block
      * that's associated with the KEY of a key-value pair. A relationship of type CHILD
-     * is a list of IDs that identify WORD blocks.</p>
+     * is a list of IDs that identify WORD blocks in the case of lines Cell blocks in
+     * the case of Tables, and WORD blocks in the case of Selection Elements.</p>
      */
     inline Relationship& WithType(RelationshipType&& value) { SetType(std::move(value)); return *this;}
 

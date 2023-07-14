@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -35,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Configuration specifying how to treat different headers. If no headers are
+   * specified SageMaker will by default base64 encode when capturing the
+   * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureContentTypeHeader">AWS
    * API Reference</a></p>
    */
@@ -49,93 +41,111 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCsvContentTypes() const{ return m_csvContentTypes; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline bool CsvContentTypesHasBeenSet() const { return m_csvContentTypesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline void SetCsvContentTypes(const Aws::Vector<Aws::String>& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes = value; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline void SetCsvContentTypes(Aws::Vector<Aws::String>&& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& WithCsvContentTypes(const Aws::Vector<Aws::String>& value) { SetCsvContentTypes(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& WithCsvContentTypes(Aws::Vector<Aws::String>&& value) { SetCsvContentTypes(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& AddCsvContentTypes(const Aws::String& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& AddCsvContentTypes(Aws::String&& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as CSV and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& AddCsvContentTypes(const char* value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.push_back(value); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJsonContentTypes() const{ return m_jsonContentTypes; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline bool JsonContentTypesHasBeenSet() const { return m_jsonContentTypesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline void SetJsonContentTypes(const Aws::Vector<Aws::String>& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes = value; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline void SetJsonContentTypes(Aws::Vector<Aws::String>&& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& WithJsonContentTypes(const Aws::Vector<Aws::String>& value) { SetJsonContentTypes(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& WithJsonContentTypes(Aws::Vector<Aws::String>&& value) { SetJsonContentTypes(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& AddJsonContentTypes(const Aws::String& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& AddJsonContentTypes(Aws::String&& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * capture accordingly.</p>
      */
     inline CaptureContentTypeHeader& AddJsonContentTypes(const char* value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.push_back(value); return *this; }
 

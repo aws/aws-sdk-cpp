@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/managedblockchain/model/NodeFrameworkAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 NodeFrameworkAttributes::NodeFrameworkAttributes() : 
-    m_fabricHasBeenSet(false)
+    m_fabricHasBeenSet(false),
+    m_ethereumHasBeenSet(false)
 {
 }
 
 NodeFrameworkAttributes::NodeFrameworkAttributes(JsonView jsonValue) : 
-    m_fabricHasBeenSet(false)
+    m_fabricHasBeenSet(false),
+    m_ethereumHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +40,13 @@ NodeFrameworkAttributes& NodeFrameworkAttributes::operator =(JsonView jsonValue)
     m_fabricHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ethereum"))
+  {
+    m_ethereum = jsonValue.GetObject("Ethereum");
+
+    m_ethereumHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +57,12 @@ JsonValue NodeFrameworkAttributes::Jsonize() const
   if(m_fabricHasBeenSet)
   {
    payload.WithObject("Fabric", m_fabric.Jsonize());
+
+  }
+
+  if(m_ethereumHasBeenSet)
+  {
+   payload.WithObject("Ethereum", m_ethereum.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/GetObjectResult.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -31,6 +21,7 @@ GetObjectResult::GetObjectResult() :
     m_contentLength(0),
     m_missingMeta(0),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
     m_replicationStatus(ReplicationStatus::NOT_SET),
@@ -50,6 +41,10 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_lastModified(std::move(toMove.m_lastModified)),
     m_contentLength(toMove.m_contentLength),
     m_eTag(std::move(toMove.m_eTag)),
+    m_checksumCRC32(std::move(toMove.m_checksumCRC32)),
+    m_checksumCRC32C(std::move(toMove.m_checksumCRC32C)),
+    m_checksumSHA1(std::move(toMove.m_checksumSHA1)),
+    m_checksumSHA256(std::move(toMove.m_checksumSHA256)),
     m_missingMeta(toMove.m_missingMeta),
     m_versionId(std::move(toMove.m_versionId)),
     m_cacheControl(std::move(toMove.m_cacheControl)),
@@ -65,6 +60,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_sSECustomerAlgorithm(std::move(toMove.m_sSECustomerAlgorithm)),
     m_sSECustomerKeyMD5(std::move(toMove.m_sSECustomerKeyMD5)),
     m_sSEKMSKeyId(std::move(toMove.m_sSEKMSKeyId)),
+    m_bucketKeyEnabled(toMove.m_bucketKeyEnabled),
     m_storageClass(toMove.m_storageClass),
     m_requestCharged(toMove.m_requestCharged),
     m_replicationStatus(toMove.m_replicationStatus),
@@ -93,6 +89,10 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_lastModified = std::move(toMove.m_lastModified);
    m_contentLength = toMove.m_contentLength;
    m_eTag = std::move(toMove.m_eTag);
+   m_checksumCRC32 = std::move(toMove.m_checksumCRC32);
+   m_checksumCRC32C = std::move(toMove.m_checksumCRC32C);
+   m_checksumSHA1 = std::move(toMove.m_checksumSHA1);
+   m_checksumSHA256 = std::move(toMove.m_checksumSHA256);
    m_missingMeta = toMove.m_missingMeta;
    m_versionId = std::move(toMove.m_versionId);
    m_cacheControl = std::move(toMove.m_cacheControl);
@@ -108,6 +108,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_sSECustomerAlgorithm = std::move(toMove.m_sSECustomerAlgorithm);
    m_sSECustomerKeyMD5 = std::move(toMove.m_sSECustomerKeyMD5);
    m_sSEKMSKeyId = std::move(toMove.m_sSEKMSKeyId);
+   m_bucketKeyEnabled = toMove.m_bucketKeyEnabled;
    m_storageClass = toMove.m_storageClass;
    m_requestCharged = toMove.m_requestCharged;
    m_replicationStatus = toMove.m_replicationStatus;
@@ -127,6 +128,7 @@ GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& r
     m_contentLength(0),
     m_missingMeta(0),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_bucketKeyEnabled(false),
     m_storageClass(StorageClass::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET),
     m_replicationStatus(ReplicationStatus::NOT_SET),
@@ -183,6 +185,30 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+  }
+
+  const auto& checksumCRC32Iter = headers.find("x-amz-checksum-crc32");
+  if(checksumCRC32Iter != headers.end())
+  {
+    m_checksumCRC32 = checksumCRC32Iter->second;
+  }
+
+  const auto& checksumCRC32CIter = headers.find("x-amz-checksum-crc32c");
+  if(checksumCRC32CIter != headers.end())
+  {
+    m_checksumCRC32C = checksumCRC32CIter->second;
+  }
+
+  const auto& checksumSHA1Iter = headers.find("x-amz-checksum-sha1");
+  if(checksumSHA1Iter != headers.end())
+  {
+    m_checksumSHA1 = checksumSHA1Iter->second;
+  }
+
+  const auto& checksumSHA256Iter = headers.find("x-amz-checksum-sha256");
+  if(checksumSHA256Iter != headers.end())
+  {
+    m_checksumSHA256 = checksumSHA256Iter->second;
   }
 
   const auto& missingMetaIter = headers.find("x-amz-missing-meta");
@@ -280,6 +306,12 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
   }
 
+  const auto& bucketKeyEnabledIter = headers.find("x-amz-server-side-encryption-bucket-key-enabled");
+  if(bucketKeyEnabledIter != headers.end())
+  {
+     m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
+  }
+
   const auto& storageClassIter = headers.find("x-amz-storage-class");
   if(storageClassIter != headers.end())
   {
@@ -319,7 +351,7 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   const auto& objectLockRetainUntilDateIter = headers.find("x-amz-object-lock-retain-until-date");
   if(objectLockRetainUntilDateIter != headers.end())
   {
-    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, DateFormat::RFC822);
+    m_objectLockRetainUntilDate = DateTime(objectLockRetainUntilDateIter->second, DateFormat::ISO_8601);
   }
 
   const auto& objectLockLegalHoldStatusIter = headers.find("x-amz-object-lock-legal-hold");

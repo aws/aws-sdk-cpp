@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -19,7 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/Pose.h>
 #include <aws/rekognition/model/ImageQuality.h>
+#include <aws/rekognition/model/Smile.h>
 #include <aws/rekognition/model/Landmark.h>
+#include <aws/rekognition/model/Emotion.h>
 #include <utility>
 
 namespace Aws
@@ -207,6 +199,100 @@ namespace Model
      */
     inline ComparedFace& WithQuality(ImageQuality&& value) { SetQuality(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline const Aws::Vector<Emotion>& GetEmotions() const{ return m_emotions; }
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline bool EmotionsHasBeenSet() const { return m_emotionsHasBeenSet; }
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline void SetEmotions(const Aws::Vector<Emotion>& value) { m_emotionsHasBeenSet = true; m_emotions = value; }
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline void SetEmotions(Aws::Vector<Emotion>&& value) { m_emotionsHasBeenSet = true; m_emotions = std::move(value); }
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline ComparedFace& WithEmotions(const Aws::Vector<Emotion>& value) { SetEmotions(value); return *this;}
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline ComparedFace& WithEmotions(Aws::Vector<Emotion>&& value) { SetEmotions(std::move(value)); return *this;}
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline ComparedFace& AddEmotions(const Emotion& value) { m_emotionsHasBeenSet = true; m_emotions.push_back(value); return *this; }
+
+    /**
+     * <p> The emotions that appear to be expressed on the face, and the confidence
+     * level in the determination. Valid values include "Happy", "Sad", "Angry",
+     * "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear". </p>
+     */
+    inline ComparedFace& AddEmotions(Emotion&& value) { m_emotionsHasBeenSet = true; m_emotions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Indicates whether or not the face is smiling, and the confidence level in
+     * the determination. </p>
+     */
+    inline const Smile& GetSmile() const{ return m_smile; }
+
+    /**
+     * <p> Indicates whether or not the face is smiling, and the confidence level in
+     * the determination. </p>
+     */
+    inline bool SmileHasBeenSet() const { return m_smileHasBeenSet; }
+
+    /**
+     * <p> Indicates whether or not the face is smiling, and the confidence level in
+     * the determination. </p>
+     */
+    inline void SetSmile(const Smile& value) { m_smileHasBeenSet = true; m_smile = value; }
+
+    /**
+     * <p> Indicates whether or not the face is smiling, and the confidence level in
+     * the determination. </p>
+     */
+    inline void SetSmile(Smile&& value) { m_smileHasBeenSet = true; m_smile = std::move(value); }
+
+    /**
+     * <p> Indicates whether or not the face is smiling, and the confidence level in
+     * the determination. </p>
+     */
+    inline ComparedFace& WithSmile(const Smile& value) { SetSmile(value); return *this;}
+
+    /**
+     * <p> Indicates whether or not the face is smiling, and the confidence level in
+     * the determination. </p>
+     */
+    inline ComparedFace& WithSmile(Smile&& value) { SetSmile(std::move(value)); return *this;}
+
   private:
 
     BoundingBox m_boundingBox;
@@ -223,6 +309,12 @@ namespace Model
 
     ImageQuality m_quality;
     bool m_qualityHasBeenSet;
+
+    Aws::Vector<Emotion> m_emotions;
+    bool m_emotionsHasBeenSet;
+
+    Smile m_smile;
+    bool m_smileHasBeenSet;
   };
 
 } // namespace Model

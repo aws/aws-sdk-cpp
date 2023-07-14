@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -34,12 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Fleet designated in a game session queue. Requests for new game sessions in
-   * the queue are fulfilled by starting a new game session on any destination that
-   * is configured for a queue. </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p>
-   * </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
-   * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
-   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>A fleet or alias designated in a game session queue. Queues fulfill requests
+   * for new game sessions by placing a new game session on any of the queue's
+   * destinations. </p> <p>Destinations are part of a
+   * <a>GameSessionQueue</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueueDestination">AWS
    * API Reference</a></p>
    */

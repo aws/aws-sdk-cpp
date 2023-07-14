@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/robomaker/model/DeploymentJobErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -49,7 +39,11 @@ namespace Aws
         static const int PostLaunchFileFailure_HASH = HashingUtils::HashString("PostLaunchFileFailure");
         static const int BadPermissionError_HASH = HashingUtils::HashString("BadPermissionError");
         static const int DownloadConditionFailed_HASH = HashingUtils::HashString("DownloadConditionFailed");
+        static const int BadLambdaAssociated_HASH = HashingUtils::HashString("BadLambdaAssociated");
         static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
+        static const int RobotApplicationDoesNotExist_HASH = HashingUtils::HashString("RobotApplicationDoesNotExist");
+        static const int DeploymentFleetDoesNotExist_HASH = HashingUtils::HashString("DeploymentFleetDoesNotExist");
+        static const int FleetDeploymentTimeout_HASH = HashingUtils::HashString("FleetDeploymentTimeout");
 
 
         DeploymentJobErrorCode GetDeploymentJobErrorCodeForName(const Aws::String& name)
@@ -131,9 +125,25 @@ namespace Aws
           {
             return DeploymentJobErrorCode::DownloadConditionFailed;
           }
+          else if (hashCode == BadLambdaAssociated_HASH)
+          {
+            return DeploymentJobErrorCode::BadLambdaAssociated;
+          }
           else if (hashCode == InternalServerError_HASH)
           {
             return DeploymentJobErrorCode::InternalServerError;
+          }
+          else if (hashCode == RobotApplicationDoesNotExist_HASH)
+          {
+            return DeploymentJobErrorCode::RobotApplicationDoesNotExist;
+          }
+          else if (hashCode == DeploymentFleetDoesNotExist_HASH)
+          {
+            return DeploymentJobErrorCode::DeploymentFleetDoesNotExist;
+          }
+          else if (hashCode == FleetDeploymentTimeout_HASH)
+          {
+            return DeploymentJobErrorCode::FleetDeploymentTimeout;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -187,8 +197,16 @@ namespace Aws
             return "BadPermissionError";
           case DeploymentJobErrorCode::DownloadConditionFailed:
             return "DownloadConditionFailed";
+          case DeploymentJobErrorCode::BadLambdaAssociated:
+            return "BadLambdaAssociated";
           case DeploymentJobErrorCode::InternalServerError:
             return "InternalServerError";
+          case DeploymentJobErrorCode::RobotApplicationDoesNotExist:
+            return "RobotApplicationDoesNotExist";
+          case DeploymentJobErrorCode::DeploymentFleetDoesNotExist:
+            return "DeploymentFleetDoesNotExist";
+          case DeploymentJobErrorCode::FleetDeploymentTimeout:
+            return "FleetDeploymentTimeout";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/CreateTransitGatewayVpcAttachmentRequestOptions.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -34,7 +24,9 @@ CreateTransitGatewayVpcAttachmentRequestOptions::CreateTransitGatewayVpcAttachme
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
     m_ipv6Support(Ipv6SupportValue::NOT_SET),
-    m_ipv6SupportHasBeenSet(false)
+    m_ipv6SupportHasBeenSet(false),
+    m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
+    m_applianceModeSupportHasBeenSet(false)
 {
 }
 
@@ -42,7 +34,9 @@ CreateTransitGatewayVpcAttachmentRequestOptions::CreateTransitGatewayVpcAttachme
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
     m_ipv6Support(Ipv6SupportValue::NOT_SET),
-    m_ipv6SupportHasBeenSet(false)
+    m_ipv6SupportHasBeenSet(false),
+    m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
+    m_applianceModeSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +59,12 @@ CreateTransitGatewayVpcAttachmentRequestOptions& CreateTransitGatewayVpcAttachme
       m_ipv6Support = Ipv6SupportValueMapper::GetIpv6SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportNode.GetText()).c_str()).c_str());
       m_ipv6SupportHasBeenSet = true;
     }
+    XmlNode applianceModeSupportNode = resultNode.FirstChild("ApplianceModeSupport");
+    if(!applianceModeSupportNode.IsNull())
+    {
+      m_applianceModeSupport = ApplianceModeSupportValueMapper::GetApplianceModeSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applianceModeSupportNode.GetText()).c_str()).c_str());
+      m_applianceModeSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -82,6 +82,11 @@ void CreateTransitGatewayVpcAttachmentRequestOptions::OutputToStream(Aws::OStrea
       oStream << location << index << locationValue << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
   }
 
+  if(m_applianceModeSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ApplianceModeSupport=" << ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport) << "&";
+  }
+
 }
 
 void CreateTransitGatewayVpcAttachmentRequestOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -93,6 +98,10 @@ void CreateTransitGatewayVpcAttachmentRequestOptions::OutputToStream(Aws::OStrea
   if(m_ipv6SupportHasBeenSet)
   {
       oStream << location << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
+  }
+  if(m_applianceModeSupportHasBeenSet)
+  {
+      oStream << location << ".ApplianceModeSupport=" << ApplianceModeSupportValueMapper::GetNameForApplianceModeSupportValue(m_applianceModeSupport) << "&";
   }
 }
 

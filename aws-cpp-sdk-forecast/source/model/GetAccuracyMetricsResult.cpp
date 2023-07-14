@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/forecast/model/GetAccuracyMetricsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,11 +16,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccuracyMetricsResult::GetAccuracyMetricsResult()
+GetAccuracyMetricsResult::GetAccuracyMetricsResult() : 
+    m_isAutoPredictor(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
 }
 
-GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_isAutoPredictor(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
   *this = result;
 }
@@ -45,6 +41,24 @@ GetAccuracyMetricsResult& GetAccuracyMetricsResult::operator =(const Aws::Amazon
     {
       m_predictorEvaluationResults.push_back(predictorEvaluationResultsJsonList[predictorEvaluationResultsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("IsAutoPredictor"))
+  {
+    m_isAutoPredictor = jsonValue.GetBool("IsAutoPredictor");
+
+  }
+
+  if(jsonValue.ValueExists("AutoMLOverrideStrategy"))
+  {
+    m_autoMLOverrideStrategy = AutoMLOverrideStrategyMapper::GetAutoMLOverrideStrategyForName(jsonValue.GetString("AutoMLOverrideStrategy"));
+
+  }
+
+  if(jsonValue.ValueExists("OptimizationMetric"))
+  {
+    m_optimizationMetric = OptimizationMetricMapper::GetOptimizationMetricForName(jsonValue.GetString("OptimizationMetric"));
+
   }
 
 

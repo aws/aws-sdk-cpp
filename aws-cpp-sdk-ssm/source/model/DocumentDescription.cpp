@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/DocumentDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,7 @@ DocumentDescription::DocumentDescription() :
     m_hashType(DocumentHashType::NOT_SET),
     m_hashTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -54,7 +45,15 @@ DocumentDescription::DocumentDescription() :
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_attachmentsInformationHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_authorHasBeenSet(false),
+    m_reviewInformationHasBeenSet(false),
+    m_approvedVersionHasBeenSet(false),
+    m_pendingReviewVersionHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_categoryEnumHasBeenSet(false)
 {
 }
 
@@ -64,6 +63,7 @@ DocumentDescription::DocumentDescription(JsonView jsonValue) :
     m_hashType(DocumentHashType::NOT_SET),
     m_hashTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -84,7 +84,15 @@ DocumentDescription::DocumentDescription(JsonView jsonValue) :
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_attachmentsInformationHasBeenSet(false),
-    m_requiresHasBeenSet(false)
+    m_requiresHasBeenSet(false),
+    m_authorHasBeenSet(false),
+    m_reviewInformationHasBeenSet(false),
+    m_approvedVersionHasBeenSet(false),
+    m_pendingReviewVersionHasBeenSet(false),
+    m_reviewStatus(ReviewStatus::NOT_SET),
+    m_reviewStatusHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_categoryEnumHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +125,13 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VersionName"))
@@ -260,6 +275,64 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     m_requiresHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Author"))
+  {
+    m_author = jsonValue.GetString("Author");
+
+    m_authorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReviewInformation"))
+  {
+    Array<JsonView> reviewInformationJsonList = jsonValue.GetArray("ReviewInformation");
+    for(unsigned reviewInformationIndex = 0; reviewInformationIndex < reviewInformationJsonList.GetLength(); ++reviewInformationIndex)
+    {
+      m_reviewInformation.push_back(reviewInformationJsonList[reviewInformationIndex].AsObject());
+    }
+    m_reviewInformationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApprovedVersion"))
+  {
+    m_approvedVersion = jsonValue.GetString("ApprovedVersion");
+
+    m_approvedVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PendingReviewVersion"))
+  {
+    m_pendingReviewVersion = jsonValue.GetString("PendingReviewVersion");
+
+    m_pendingReviewVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReviewStatus"))
+  {
+    m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
+
+    m_reviewStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Category"))
+  {
+    Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
+    for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+    {
+      m_category.push_back(categoryJsonList[categoryIndex].AsString());
+    }
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CategoryEnum"))
+  {
+    Array<JsonView> categoryEnumJsonList = jsonValue.GetArray("CategoryEnum");
+    for(unsigned categoryEnumIndex = 0; categoryEnumIndex < categoryEnumJsonList.GetLength(); ++categoryEnumIndex)
+    {
+      m_categoryEnum.push_back(categoryEnumJsonList[categoryEnumIndex].AsString());
+    }
+    m_categoryEnumHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -287,6 +360,12 @@ JsonValue DocumentDescription::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 
@@ -416,6 +495,62 @@ JsonValue DocumentDescription::Jsonize() const
      requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
    }
    payload.WithArray("Requires", std::move(requiresJsonList));
+
+  }
+
+  if(m_authorHasBeenSet)
+  {
+   payload.WithString("Author", m_author);
+
+  }
+
+  if(m_reviewInformationHasBeenSet)
+  {
+   Array<JsonValue> reviewInformationJsonList(m_reviewInformation.size());
+   for(unsigned reviewInformationIndex = 0; reviewInformationIndex < reviewInformationJsonList.GetLength(); ++reviewInformationIndex)
+   {
+     reviewInformationJsonList[reviewInformationIndex].AsObject(m_reviewInformation[reviewInformationIndex].Jsonize());
+   }
+   payload.WithArray("ReviewInformation", std::move(reviewInformationJsonList));
+
+  }
+
+  if(m_approvedVersionHasBeenSet)
+  {
+   payload.WithString("ApprovedVersion", m_approvedVersion);
+
+  }
+
+  if(m_pendingReviewVersionHasBeenSet)
+  {
+   payload.WithString("PendingReviewVersion", m_pendingReviewVersion);
+
+  }
+
+  if(m_reviewStatusHasBeenSet)
+  {
+   payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   Array<JsonValue> categoryJsonList(m_category.size());
+   for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+   {
+     categoryJsonList[categoryIndex].AsString(m_category[categoryIndex]);
+   }
+   payload.WithArray("Category", std::move(categoryJsonList));
+
+  }
+
+  if(m_categoryEnumHasBeenSet)
+  {
+   Array<JsonValue> categoryEnumJsonList(m_categoryEnum.size());
+   for(unsigned categoryEnumIndex = 0; categoryEnumIndex < categoryEnumJsonList.GetLength(); ++categoryEnumIndex)
+   {
+     categoryEnumJsonList[categoryEnumIndex].AsString(m_categoryEnum[categoryEnumIndex]);
+   }
+   payload.WithArray("CategoryEnum", std::move(categoryEnumJsonList));
 
   }
 

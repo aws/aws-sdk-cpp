@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -80,50 +72,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline bool PeerOwnerIdHasBeenSet() const { return m_peerOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline void SetPeerOwnerId(const Aws::String& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline void SetPeerOwnerId(const char* value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const Aws::String& value) { SetPeerOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
 
@@ -282,6 +274,47 @@ namespace Model
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerRegion(const char* value) { SetPeerRegion(value); return *this;}
 
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to assign to the peering connection.</p>
+     */
+    inline CreateVpcPeeringConnectionRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_dryRun;
@@ -298,6 +331,9 @@ namespace Model
 
     Aws::String m_peerRegion;
     bool m_peerRegionHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

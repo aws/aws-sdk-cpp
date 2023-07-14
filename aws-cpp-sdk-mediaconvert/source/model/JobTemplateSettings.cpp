@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/JobTemplateSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,9 +23,12 @@ JobTemplateSettings::JobTemplateSettings() :
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
+    m_extendedDataServicesHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
+    m_nielsenNonLinearWatermarkHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_timedMetadataInsertionHasBeenSet(false)
@@ -47,9 +40,12 @@ JobTemplateSettings::JobTemplateSettings(JsonView jsonValue) :
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
+    m_extendedDataServicesHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
+    m_nielsenNonLinearWatermarkHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_timedMetadataInsertionHasBeenSet(false)
@@ -80,6 +76,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
     m_esamHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("extendedDataServices"))
+  {
+    m_extendedDataServices = jsonValue.GetObject("extendedDataServices");
+
+    m_extendedDataServicesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputs"))
   {
     Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -88,6 +91,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
     }
     m_inputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kantarWatermark"))
+  {
+    m_kantarWatermark = jsonValue.GetObject("kantarWatermark");
+
+    m_kantarWatermarkHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("motionImageInserter"))
@@ -102,6 +112,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
     m_nielsenConfiguration = jsonValue.GetObject("nielsenConfiguration");
 
     m_nielsenConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nielsenNonLinearWatermark"))
+  {
+    m_nielsenNonLinearWatermark = jsonValue.GetObject("nielsenNonLinearWatermark");
+
+    m_nielsenNonLinearWatermarkHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("outputGroups"))
@@ -153,6 +170,12 @@ JsonValue JobTemplateSettings::Jsonize() const
 
   }
 
+  if(m_extendedDataServicesHasBeenSet)
+  {
+   payload.WithObject("extendedDataServices", m_extendedDataServices.Jsonize());
+
+  }
+
   if(m_inputsHasBeenSet)
   {
    Array<JsonValue> inputsJsonList(m_inputs.size());
@@ -161,6 +184,12 @@ JsonValue JobTemplateSettings::Jsonize() const
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
    }
    payload.WithArray("inputs", std::move(inputsJsonList));
+
+  }
+
+  if(m_kantarWatermarkHasBeenSet)
+  {
+   payload.WithObject("kantarWatermark", m_kantarWatermark.Jsonize());
 
   }
 
@@ -173,6 +202,12 @@ JsonValue JobTemplateSettings::Jsonize() const
   if(m_nielsenConfigurationHasBeenSet)
   {
    payload.WithObject("nielsenConfiguration", m_nielsenConfiguration.Jsonize());
+
+  }
+
+  if(m_nielsenNonLinearWatermarkHasBeenSet)
+  {
+   payload.WithObject("nielsenNonLinearWatermark", m_nielsenNonLinearWatermark.Jsonize());
 
   }
 

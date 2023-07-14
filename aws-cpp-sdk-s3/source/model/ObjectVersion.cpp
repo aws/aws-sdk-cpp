@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/ObjectVersion.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -32,6 +22,7 @@ namespace Model
 
 ObjectVersion::ObjectVersion() : 
     m_eTagHasBeenSet(false),
+    m_checksumAlgorithmHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_storageClass(ObjectVersionStorageClass::NOT_SET),
@@ -47,6 +38,7 @@ ObjectVersion::ObjectVersion() :
 
 ObjectVersion::ObjectVersion(const XmlNode& xmlNode) : 
     m_eTagHasBeenSet(false),
+    m_checksumAlgorithmHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_storageClass(ObjectVersionStorageClass::NOT_SET),
@@ -72,6 +64,18 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     {
       m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
+    }
+    XmlNode checksumAlgorithmNode = resultNode.FirstChild("ChecksumAlgorithm");
+    if(!checksumAlgorithmNode.IsNull())
+    {
+      XmlNode checksumAlgorithmMember = checksumAlgorithmNode;
+      while(!checksumAlgorithmMember.IsNull())
+      {
+        m_checksumAlgorithm.push_back(ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(checksumAlgorithmMember.GetText().c_str())));
+        checksumAlgorithmMember = checksumAlgorithmMember.NextNode("ChecksumAlgorithm");
+      }
+
+      m_checksumAlgorithmHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
@@ -127,6 +131,16 @@ void ObjectVersion::AddToNode(XmlNode& parentNode) const
   {
    XmlNode eTagNode = parentNode.CreateChildElement("ETag");
    eTagNode.SetText(m_eTag);
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+   XmlNode checksumAlgorithmParentNode = parentNode.CreateChildElement("ChecksumAlgorithm");
+   for(const auto& item : m_checksumAlgorithm)
+   {
+     XmlNode checksumAlgorithmNode = checksumAlgorithmParentNode.CreateChildElement("ChecksumAlgorithm");
+     checksumAlgorithmNode.SetText(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(item));
+   }
   }
 
   if(m_sizeHasBeenSet)

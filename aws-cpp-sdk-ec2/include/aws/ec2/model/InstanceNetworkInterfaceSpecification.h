@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -20,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
+#include <aws/ec2/model/Ipv4PrefixSpecificationRequest.h>
+#include <aws/ec2/model/Ipv6PrefixSpecificationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -647,84 +639,310 @@ namespace Model
 
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
+     */
+    inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
+     */
+    inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
+     */
+    inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
+
+    /**
+     * <p>Indicates whether to assign a carrier IP address to the network
+     * interface.</p> <p>You can only assign a carrier IP address to a network
+     * interface that is in a subnet in a Wavelength Zone. For more information about
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
+
+
+    /**
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
+     * <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
+
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
+
+    /**
+     * <p>The index of the network card. Some instance types support multiple network
+     * cards. The primary network interface must be assigned to network card index 0.
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline const Aws::Vector<Ipv4PrefixSpecificationRequest>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { SetIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv4Prefixes(const Ipv4PrefixSpecificationRequest& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv4Prefixes(Ipv4PrefixSpecificationRequest&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
+
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline const Aws::Vector<Ipv6PrefixSpecificationRequest>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { SetIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Prefixes(const Ipv6PrefixSpecificationRequest& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Prefixes(Ipv6PrefixSpecificationRequest&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline int GetIpv6PrefixCount() const{ return m_ipv6PrefixCount; }
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline bool Ipv6PrefixCountHasBeenSet() const { return m_ipv6PrefixCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline void SetIpv6PrefixCount(int value) { m_ipv6PrefixCountHasBeenSet = true; m_ipv6PrefixCount = value; }
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6PrefixCount(int value) { SetIpv6PrefixCount(value); return *this;}
 
   private:
 
@@ -764,8 +982,26 @@ namespace Model
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
 
+    bool m_associateCarrierIpAddress;
+    bool m_associateCarrierIpAddressHasBeenSet;
+
     Aws::String m_interfaceType;
     bool m_interfaceTypeHasBeenSet;
+
+    int m_networkCardIndex;
+    bool m_networkCardIndexHasBeenSet;
+
+    Aws::Vector<Ipv4PrefixSpecificationRequest> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet;
+
+    int m_ipv4PrefixCount;
+    bool m_ipv4PrefixCountHasBeenSet;
+
+    Aws::Vector<Ipv6PrefixSpecificationRequest> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet;
+
+    int m_ipv6PrefixCount;
+    bool m_ipv6PrefixCountHasBeenSet;
   };
 
 } // namespace Model

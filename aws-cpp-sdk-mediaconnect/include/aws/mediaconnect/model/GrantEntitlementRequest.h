@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/Encryption.h>
+#include <aws/mediaconnect/model/EntitlementStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -165,6 +156,49 @@ namespace Model
 
 
     /**
+     * An indication of whether the new entitlement should be enabled or disabled as
+     * soon as it is created. If you don’t specify the entitlementStatus field in your
+     * request, MediaConnect sets it to ENABLED.
+     */
+    inline const EntitlementStatus& GetEntitlementStatus() const{ return m_entitlementStatus; }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as
+     * soon as it is created. If you don’t specify the entitlementStatus field in your
+     * request, MediaConnect sets it to ENABLED.
+     */
+    inline bool EntitlementStatusHasBeenSet() const { return m_entitlementStatusHasBeenSet; }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as
+     * soon as it is created. If you don’t specify the entitlementStatus field in your
+     * request, MediaConnect sets it to ENABLED.
+     */
+    inline void SetEntitlementStatus(const EntitlementStatus& value) { m_entitlementStatusHasBeenSet = true; m_entitlementStatus = value; }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as
+     * soon as it is created. If you don’t specify the entitlementStatus field in your
+     * request, MediaConnect sets it to ENABLED.
+     */
+    inline void SetEntitlementStatus(EntitlementStatus&& value) { m_entitlementStatusHasBeenSet = true; m_entitlementStatus = std::move(value); }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as
+     * soon as it is created. If you don’t specify the entitlementStatus field in your
+     * request, MediaConnect sets it to ENABLED.
+     */
+    inline GrantEntitlementRequest& WithEntitlementStatus(const EntitlementStatus& value) { SetEntitlementStatus(value); return *this;}
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as
+     * soon as it is created. If you don’t specify the entitlementStatus field in your
+     * request, MediaConnect sets it to ENABLED.
+     */
+    inline GrantEntitlementRequest& WithEntitlementStatus(EntitlementStatus&& value) { SetEntitlementStatus(std::move(value)); return *this;}
+
+
+    /**
      * The name of the entitlement. This value must be unique within the current flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -278,6 +312,9 @@ namespace Model
 
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
+
+    EntitlementStatus m_entitlementStatus;
+    bool m_entitlementStatusHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

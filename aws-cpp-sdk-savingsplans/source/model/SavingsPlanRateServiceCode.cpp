@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/savingsplans/model/SavingsPlanRateServiceCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,7 +22,9 @@ namespace Aws
 
         static const int AmazonEC2_HASH = HashingUtils::HashString("AmazonEC2");
         static const int AmazonECS_HASH = HashingUtils::HashString("AmazonECS");
+        static const int AmazonEKS_HASH = HashingUtils::HashString("AmazonEKS");
         static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
+        static const int AmazonSageMaker_HASH = HashingUtils::HashString("AmazonSageMaker");
 
 
         SavingsPlanRateServiceCode GetSavingsPlanRateServiceCodeForName(const Aws::String& name)
@@ -46,9 +38,17 @@ namespace Aws
           {
             return SavingsPlanRateServiceCode::AmazonECS;
           }
+          else if (hashCode == AmazonEKS_HASH)
+          {
+            return SavingsPlanRateServiceCode::AmazonEKS;
+          }
           else if (hashCode == AWSLambda_HASH)
           {
             return SavingsPlanRateServiceCode::AWSLambda;
+          }
+          else if (hashCode == AmazonSageMaker_HASH)
+          {
+            return SavingsPlanRateServiceCode::AmazonSageMaker;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -68,8 +68,12 @@ namespace Aws
             return "AmazonEC2";
           case SavingsPlanRateServiceCode::AmazonECS:
             return "AmazonECS";
+          case SavingsPlanRateServiceCode::AmazonEKS:
+            return "AmazonEKS";
           case SavingsPlanRateServiceCode::AWSLambda:
             return "AWSLambda";
+          case SavingsPlanRateServiceCode::AmazonSageMaker:
+            return "AmazonSageMaker";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

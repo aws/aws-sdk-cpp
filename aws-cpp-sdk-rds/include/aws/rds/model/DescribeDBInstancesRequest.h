@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -120,18 +110,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -139,18 +129,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -158,18 +148,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -177,18 +167,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -196,18 +186,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -215,18 +205,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -234,18 +224,18 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -253,120 +243,120 @@ namespace Model
      * <p>A filter that specifies one or more DB instances to describe.</p>
      * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB instances associated with the DB
+     * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * Amazon Resource Names (ARNs). The results list will only include information
-     * about the DB instances identified by these ARNs.</p> </li> <li> <p>
+     * Amazon Resource Names (ARNs). The results list only includes information about
+     * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
-     * Accepts Active Directory directory IDs. The results list will only include
+     * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
-     * <p> <code>engine</code> - Accepts engine names. The results list will only
-     * include information about the DB instances for these engines.</p> </li> </ul>
+     * <p> <code>engine</code> - Accepts engine names. The results list only includes
+     * information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline DescribeDBInstancesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBInstancesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBInstancesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBInstancesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

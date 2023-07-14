@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -213,38 +203,38 @@ namespace Model
 
 
     /**
-     * <p>Creates a new message using only the specified attributes from the original
-     * message. </p>
+     * <p>Used to create a new message using only the specified attributes from the
+     * original message. </p>
      */
     inline const SelectAttributesActivity& GetSelectAttributes() const{ return m_selectAttributes; }
 
     /**
-     * <p>Creates a new message using only the specified attributes from the original
-     * message. </p>
+     * <p>Used to create a new message using only the specified attributes from the
+     * original message. </p>
      */
     inline bool SelectAttributesHasBeenSet() const { return m_selectAttributesHasBeenSet; }
 
     /**
-     * <p>Creates a new message using only the specified attributes from the original
-     * message. </p>
+     * <p>Used to create a new message using only the specified attributes from the
+     * original message. </p>
      */
     inline void SetSelectAttributes(const SelectAttributesActivity& value) { m_selectAttributesHasBeenSet = true; m_selectAttributes = value; }
 
     /**
-     * <p>Creates a new message using only the specified attributes from the original
-     * message. </p>
+     * <p>Used to create a new message using only the specified attributes from the
+     * original message. </p>
      */
     inline void SetSelectAttributes(SelectAttributesActivity&& value) { m_selectAttributesHasBeenSet = true; m_selectAttributes = std::move(value); }
 
     /**
-     * <p>Creates a new message using only the specified attributes from the original
-     * message. </p>
+     * <p>Used to create a new message using only the specified attributes from the
+     * original message. </p>
      */
     inline PipelineActivity& WithSelectAttributes(const SelectAttributesActivity& value) { SetSelectAttributes(value); return *this;}
 
     /**
-     * <p>Creates a new message using only the specified attributes from the original
-     * message. </p>
+     * <p>Used to create a new message using only the specified attributes from the
+     * original message. </p>
      */
     inline PipelineActivity& WithSelectAttributes(SelectAttributesActivity&& value) { SetSelectAttributes(std::move(value)); return *this;}
 
@@ -318,63 +308,63 @@ namespace Model
 
 
     /**
-     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     * <p>Adds data from the IoT device registry to your message.</p>
      */
     inline const DeviceRegistryEnrichActivity& GetDeviceRegistryEnrich() const{ return m_deviceRegistryEnrich; }
 
     /**
-     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     * <p>Adds data from the IoT device registry to your message.</p>
      */
     inline bool DeviceRegistryEnrichHasBeenSet() const { return m_deviceRegistryEnrichHasBeenSet; }
 
     /**
-     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     * <p>Adds data from the IoT device registry to your message.</p>
      */
     inline void SetDeviceRegistryEnrich(const DeviceRegistryEnrichActivity& value) { m_deviceRegistryEnrichHasBeenSet = true; m_deviceRegistryEnrich = value; }
 
     /**
-     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     * <p>Adds data from the IoT device registry to your message.</p>
      */
     inline void SetDeviceRegistryEnrich(DeviceRegistryEnrichActivity&& value) { m_deviceRegistryEnrichHasBeenSet = true; m_deviceRegistryEnrich = std::move(value); }
 
     /**
-     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     * <p>Adds data from the IoT device registry to your message.</p>
      */
     inline PipelineActivity& WithDeviceRegistryEnrich(const DeviceRegistryEnrichActivity& value) { SetDeviceRegistryEnrich(value); return *this;}
 
     /**
-     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     * <p>Adds data from the IoT device registry to your message.</p>
      */
     inline PipelineActivity& WithDeviceRegistryEnrich(DeviceRegistryEnrichActivity&& value) { SetDeviceRegistryEnrich(std::move(value)); return *this;}
 
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the IoT Device Shadow service to a message.</p>
      */
     inline const DeviceShadowEnrichActivity& GetDeviceShadowEnrich() const{ return m_deviceShadowEnrich; }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the IoT Device Shadow service to a message.</p>
      */
     inline bool DeviceShadowEnrichHasBeenSet() const { return m_deviceShadowEnrichHasBeenSet; }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the IoT Device Shadow service to a message.</p>
      */
     inline void SetDeviceShadowEnrich(const DeviceShadowEnrichActivity& value) { m_deviceShadowEnrichHasBeenSet = true; m_deviceShadowEnrich = value; }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the IoT Device Shadow service to a message.</p>
      */
     inline void SetDeviceShadowEnrich(DeviceShadowEnrichActivity&& value) { m_deviceShadowEnrichHasBeenSet = true; m_deviceShadowEnrich = std::move(value); }
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the IoT Device Shadow service to a message.</p>
      */
     inline PipelineActivity& WithDeviceShadowEnrich(const DeviceShadowEnrichActivity& value) { SetDeviceShadowEnrich(value); return *this;}
 
     /**
-     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     * <p>Adds information from the IoT Device Shadow service to a message.</p>
      */
     inline PipelineActivity& WithDeviceShadowEnrich(DeviceShadowEnrichActivity&& value) { SetDeviceShadowEnrich(std::move(value)); return *this;}
 

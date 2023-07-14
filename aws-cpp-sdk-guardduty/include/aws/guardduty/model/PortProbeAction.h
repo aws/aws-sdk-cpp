@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -50,63 +40,67 @@ namespace Model
 
 
     /**
-     * <p>Port probe blocked information.</p>
+     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
+     * ACL.</p>
      */
     inline bool GetBlocked() const{ return m_blocked; }
 
     /**
-     * <p>Port probe blocked information.</p>
+     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
+     * ACL.</p>
      */
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
 
     /**
-     * <p>Port probe blocked information.</p>
+     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
+     * ACL.</p>
      */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
 
     /**
-     * <p>Port probe blocked information.</p>
+     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
+     * ACL.</p>
      */
     inline PortProbeAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
 
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline const Aws::Vector<PortProbeDetail>& GetPortProbeDetails() const{ return m_portProbeDetails; }
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline bool PortProbeDetailsHasBeenSet() const { return m_portProbeDetailsHasBeenSet; }
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline void SetPortProbeDetails(const Aws::Vector<PortProbeDetail>& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = value; }
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline void SetPortProbeDetails(Aws::Vector<PortProbeDetail>&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = std::move(value); }
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline PortProbeAction& WithPortProbeDetails(const Aws::Vector<PortProbeDetail>& value) { SetPortProbeDetails(value); return *this;}
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline PortProbeAction& WithPortProbeDetails(Aws::Vector<PortProbeDetail>&& value) { SetPortProbeDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline PortProbeAction& AddPortProbeDetails(const PortProbeDetail& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.push_back(value); return *this; }
 
     /**
-     * <p>A list of port probe details objects.</p>
+     * <p>A list of objects related to port probe details.</p>
      */
     inline PortProbeAction& AddPortProbeDetails(PortProbeDetail&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.push_back(std::move(value)); return *this; }
 

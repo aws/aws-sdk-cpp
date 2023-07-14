@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -47,91 +37,107 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline CreateFilterRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline CreateFilterRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account for which you want to
-     * create a filter.</p>
+     * <p>The ID of the detector belonging to the GuardDuty account that you want to
+     * create a filter for.</p>
      */
     inline CreateFilterRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline CreateFilterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline CreateFilterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid
+     * characters include alphanumeric characters, dot (.), underscore (_), and dash
+     * (-). Spaces are not allowed.</p>
      */
     inline CreateFilterRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -241,31 +247,397 @@ namespace Model
 
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     * <p>You can only use the following attributes to query findings:</p> <ul> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
+     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>resource.accessKeyDetails.userName</p> </li> <li>
+     * <p>resource.accessKeyDetails.userType</p> </li> <li>
+     * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
+     * <p>resource.instanceDetails.imageId</p> </li> <li>
+     * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li> <li>
+     * <p>resource.instanceDetails.tags.key</p> </li> <li>
+     * <p>resource.instanceDetails.tags.value</p> </li> <li>
+     * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
+     * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
+     * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
+     * <p>service.action.awsApiCallAction.userAgent</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+     * <li> <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
+     * <p>service.action.dnsRequestAction.domain</p> </li> <li>
+     * <p>service.action.networkConnectionAction.blocked</p> </li> <li>
+     * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
+     * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+     * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+     * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
 
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     * <p>You can only use the following attributes to query findings:</p> <ul> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
+     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>resource.accessKeyDetails.userName</p> </li> <li>
+     * <p>resource.accessKeyDetails.userType</p> </li> <li>
+     * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
+     * <p>resource.instanceDetails.imageId</p> </li> <li>
+     * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li> <li>
+     * <p>resource.instanceDetails.tags.key</p> </li> <li>
+     * <p>resource.instanceDetails.tags.value</p> </li> <li>
+     * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
+     * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
+     * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
+     * <p>service.action.awsApiCallAction.userAgent</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+     * <li> <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
+     * <p>service.action.dnsRequestAction.domain</p> </li> <li>
+     * <p>service.action.networkConnectionAction.blocked</p> </li> <li>
+     * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
+     * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+     * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+     * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
 
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     * <p>You can only use the following attributes to query findings:</p> <ul> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
+     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>resource.accessKeyDetails.userName</p> </li> <li>
+     * <p>resource.accessKeyDetails.userType</p> </li> <li>
+     * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
+     * <p>resource.instanceDetails.imageId</p> </li> <li>
+     * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li> <li>
+     * <p>resource.instanceDetails.tags.key</p> </li> <li>
+     * <p>resource.instanceDetails.tags.value</p> </li> <li>
+     * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
+     * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
+     * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
+     * <p>service.action.awsApiCallAction.userAgent</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+     * <li> <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
+     * <p>service.action.dnsRequestAction.domain</p> </li> <li>
+     * <p>service.action.networkConnectionAction.blocked</p> </li> <li>
+     * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
+     * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+     * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+     * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
 
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     * <p>You can only use the following attributes to query findings:</p> <ul> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
+     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>resource.accessKeyDetails.userName</p> </li> <li>
+     * <p>resource.accessKeyDetails.userType</p> </li> <li>
+     * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
+     * <p>resource.instanceDetails.imageId</p> </li> <li>
+     * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li> <li>
+     * <p>resource.instanceDetails.tags.key</p> </li> <li>
+     * <p>resource.instanceDetails.tags.value</p> </li> <li>
+     * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
+     * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
+     * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
+     * <p>service.action.awsApiCallAction.userAgent</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+     * <li> <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
+     * <p>service.action.dnsRequestAction.domain</p> </li> <li>
+     * <p>service.action.networkConnectionAction.blocked</p> </li> <li>
+     * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
+     * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+     * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+     * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
 
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     * <p>You can only use the following attributes to query findings:</p> <ul> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
+     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>resource.accessKeyDetails.userName</p> </li> <li>
+     * <p>resource.accessKeyDetails.userType</p> </li> <li>
+     * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
+     * <p>resource.instanceDetails.imageId</p> </li> <li>
+     * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li> <li>
+     * <p>resource.instanceDetails.tags.key</p> </li> <li>
+     * <p>resource.instanceDetails.tags.value</p> </li> <li>
+     * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
+     * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
+     * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
+     * <p>service.action.awsApiCallAction.userAgent</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+     * <li> <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
+     * <p>service.action.dnsRequestAction.domain</p> </li> <li>
+     * <p>service.action.networkConnectionAction.blocked</p> </li> <li>
+     * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
+     * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+     * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+     * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline CreateFilterRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
 
     /**
      * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     * <p>You can only use the following attributes to query findings:</p> <ul> <li>
+     * <p>accountId</p> </li> <li> <p>region</p> </li> <li> <p>confidence</p> </li>
+     * <li> <p>id</p> </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+     * <li> <p>resource.accessKeyDetails.principalId</p> </li> <li>
+     * <p>resource.accessKeyDetails.userName</p> </li> <li>
+     * <p>resource.accessKeyDetails.userType</p> </li> <li>
+     * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
+     * <p>resource.instanceDetails.imageId</p> </li> <li>
+     * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+     * <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+     * </li> <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li> <li>
+     * <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li> <li>
+     * <p>resource.instanceDetails.tags.key</p> </li> <li>
+     * <p>resource.instanceDetails.tags.value</p> </li> <li>
+     * <p>resource.resourceType</p> </li> <li> <p>service.action.actionType</p> </li>
+     * <li> <p>service.action.awsApiCallAction.api</p> </li> <li>
+     * <p>service.action.awsApiCallAction.callerType</p> </li> <li>
+     * <p>service.action.awsApiCallAction.errorCode</p> </li> <li>
+     * <p>service.action.awsApiCallAction.userAgent</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+     * <li> <p>service.action.awsApiCallAction.serviceName</p> </li> <li>
+     * <p>service.action.dnsRequestAction.domain</p> </li> <li>
+     * <p>service.action.networkConnectionAction.blocked</p> </li> <li>
+     * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
+     * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+     * <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+     * </li> <li>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+     * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+     * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline CreateFilterRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
 

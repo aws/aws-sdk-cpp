@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -49,7 +39,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
 
@@ -57,7 +47,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
@@ -65,7 +55,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
@@ -73,7 +63,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
 
@@ -81,7 +71,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
 
@@ -89,7 +79,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ListStreamConsumersRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
 
@@ -97,7 +87,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ListStreamConsumersRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
 
@@ -105,7 +95,7 @@ namespace Model
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
      * consumers. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ListStreamConsumersRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
 
@@ -127,11 +117,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -152,11 +142,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -177,11 +167,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -202,11 +192,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -227,11 +217,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -252,11 +242,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListStreamConsumersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -277,11 +267,11 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListStreamConsumersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -302,36 +292,40 @@ namespace Model
      * don't specify <code>MaxResults</code>, the response will contain a new
      * <code>NextToken</code> value. You can use the new <code>NextToken</code> value
      * in a subsequent call to the <code>ListStreamConsumers</code> operation to list
-     * the next set of consumers.</p> <important> <p>Tokens expire after 300 seconds.
+     * the next set of consumers.</p>  <p>Tokens expire after 300 seconds.
      * When you obtain a value for <code>NextToken</code> in the response to a call to
      * <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListStreamConsumersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
      * <p>The maximum number of consumers that you want a single call of
-     * <code>ListStreamConsumers</code> to return.</p>
+     * <code>ListStreamConsumers</code> to return. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of consumers that you want a single call of
-     * <code>ListStreamConsumers</code> to return.</p>
+     * <code>ListStreamConsumers</code> to return. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of consumers that you want a single call of
-     * <code>ListStreamConsumers</code> to return.</p>
+     * <code>ListStreamConsumers</code> to return. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of consumers that you want a single call of
-     * <code>ListStreamConsumers</code> to return.</p>
+     * <code>ListStreamConsumers</code> to return. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned. </p>
      */
     inline ListStreamConsumersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

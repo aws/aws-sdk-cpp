@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -21,6 +11,9 @@
 #include <aws/dms/model/DataFormatValue.h>
 #include <aws/dms/model/EncodingTypeValue.h>
 #include <aws/dms/model/ParquetVersionValue.h>
+#include <aws/dms/model/DatePartitionSequenceValue.h>
+#include <aws/dms/model/DatePartitionDelimiterValue.h>
+#include <aws/dms/model/CannedAclForObjectsValue.h>
 #include <utility>
 
 namespace Aws
@@ -53,181 +46,197 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     * <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action. It is a required
+     * parameter that enables DMS to write and read objects from an S3 bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline bool ExternalTableDefinitionHasBeenSet() const { return m_externalTableDefinitionHasBeenSet; }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline S3Settings& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline S3Settings& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
 
     /**
-     * <p> The external table definition. </p>
+     * <p> Specifies how tables are defined in the S3 source files only. </p>
      */
     inline S3Settings& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
 
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline const Aws::String& GetCsvRowDelimiter() const{ return m_csvRowDelimiter; }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline bool CsvRowDelimiterHasBeenSet() const { return m_csvRowDelimiterHasBeenSet; }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline void SetCsvRowDelimiter(const Aws::String& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = value; }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline void SetCsvRowDelimiter(Aws::String&& value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter = std::move(value); }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline void SetCsvRowDelimiter(const char* value) { m_csvRowDelimiterHasBeenSet = true; m_csvRowDelimiter.assign(value); }
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline S3Settings& WithCsvRowDelimiter(const Aws::String& value) { SetCsvRowDelimiter(value); return *this;}
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline S3Settings& WithCsvRowDelimiter(Aws::String&& value) { SetCsvRowDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p> The delimiter used to separate rows in the source files. The default is a
-     * carriage return (<code>\n</code>). </p>
+     * <p> The delimiter used to separate rows in the .csv file for both source and
+     * target. The default is a carriage return (<code>\n</code>). </p>
      */
     inline S3Settings& WithCsvRowDelimiter(const char* value) { SetCsvRowDelimiter(value); return *this;}
 
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline const Aws::String& GetCsvDelimiter() const{ return m_csvDelimiter; }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline bool CsvDelimiterHasBeenSet() const { return m_csvDelimiterHasBeenSet; }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline void SetCsvDelimiter(const Aws::String& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = value; }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline void SetCsvDelimiter(Aws::String&& value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter = std::move(value); }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline void SetCsvDelimiter(const char* value) { m_csvDelimiterHasBeenSet = true; m_csvDelimiter.assign(value); }
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(const Aws::String& value) { SetCsvDelimiter(value); return *this;}
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(Aws::String&& value) { SetCsvDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p> The delimiter used to separate columns in the source files. The default is a
-     * comma. </p>
+     * <p> The delimiter used to separate columns in the .csv file for both source and
+     * target. The default is a comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(const char* value) { SetCsvDelimiter(value); return *this;}
 
@@ -399,14 +408,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with
+     * permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -418,14 +431,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with
+     * permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -437,14 +454,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with
+     * permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -456,14 +477,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with
+     * permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -475,14 +500,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with
+     * permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -494,14 +523,18 @@ namespace Model
      * <p>The type of server-side encryption that you want to use for your data. This
      * encryption type is part of the endpoint settings or the extra connections
      * attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the
-     * default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     * Identity and Access Management (IAM) role with permission to allow
-     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:</p> <ul> <li>
-     * <p> <code>s3:CreateBucket</code> </p> </li> <li> <p> <code>s3:ListBucket</code>
-     * </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p> </li> <li> <p>
-     * <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:GetObject</code>
-     * </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
-     * <code>s3:DeleteObject</code> </p> </li> <li> <p>
+     * default) or <code>SSE_KMS</code>. </p>  <p>For the
+     * <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+     * <code>SSE_S3</code>. But you can’t change the existing value from
+     * <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>  <p>To use
+     * <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with
+     * permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+     * actions:</p> <ul> <li> <p> <code>s3:CreateBucket</code> </p> </li> <li> <p>
+     * <code>s3:ListBucket</code> </p> </li> <li> <p> <code>s3:DeleteBucket</code> </p>
+     * </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p>
+     * <code>s3:GetObject</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p>
+     * </li> <li> <p> <code>s3:DeleteObject</code> </p> </li> <li> <p>
      * <code>s3:GetObjectVersion</code> </p> </li> <li> <p>
      * <code>s3:GetBucketPolicy</code> </p> </li> <li> <p>
      * <code>s3:PutBucketPolicy</code> </p> </li> <li> <p>
@@ -512,9 +545,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -524,9 +557,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -536,9 +569,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -548,9 +581,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -560,9 +593,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -572,9 +605,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -584,9 +617,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -596,9 +629,9 @@ namespace Model
 
     /**
      * <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-     * provide the AWS KMS key ID. The key that you use needs an attached policy that
-     * enables AWS Identity and Access Management (IAM) user permissions and allows use
-     * of the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
+     * provide the KMS key ID. The key that you use needs an attached policy that
+     * enables Identity and Access Management (IAM) user permissions and allows use of
+     * the key.</p> <p>Here is a CLI example: <code>aws dms create-endpoint
      * --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3
      * --s3-settings
      * ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
@@ -915,84 +948,84 @@ namespace Model
     /**
      * <p>A value that enables a full load to write INSERT operations to the
      * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p> <note> <p>AWS DMS supports the
+     * added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
-     * </note> <p>For full load, records can only be inserted. By default (the
+     *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
      * If <code>IncludeOpForFullLoad</code> is set to <code>true</code> or
      * <code>y</code>, the INSERT is recorded as an I annotation in the first field of
      * the .csv file. This allows the format of your target records from a full load to
-     * be consistent with the target records from a CDC load.</p> <note> <p>This
+     * be consistent with the target records from a CDC load.</p>  <p>This
      * setting works together with the <code>CdcInsertsOnly</code> and the
      * <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> </note>
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p> 
      */
     inline bool GetIncludeOpForFullLoad() const{ return m_includeOpForFullLoad; }
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
      * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p> <note> <p>AWS DMS supports the
+     * added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
-     * </note> <p>For full load, records can only be inserted. By default (the
+     *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
      * If <code>IncludeOpForFullLoad</code> is set to <code>true</code> or
      * <code>y</code>, the INSERT is recorded as an I annotation in the first field of
      * the .csv file. This allows the format of your target records from a full load to
-     * be consistent with the target records from a CDC load.</p> <note> <p>This
+     * be consistent with the target records from a CDC load.</p>  <p>This
      * setting works together with the <code>CdcInsertsOnly</code> and the
      * <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> </note>
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p> 
      */
     inline bool IncludeOpForFullLoadHasBeenSet() const { return m_includeOpForFullLoadHasBeenSet; }
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
      * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p> <note> <p>AWS DMS supports the
+     * added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
-     * </note> <p>For full load, records can only be inserted. By default (the
+     *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
      * If <code>IncludeOpForFullLoad</code> is set to <code>true</code> or
      * <code>y</code>, the INSERT is recorded as an I annotation in the first field of
      * the .csv file. This allows the format of your target records from a full load to
-     * be consistent with the target records from a CDC load.</p> <note> <p>This
+     * be consistent with the target records from a CDC load.</p>  <p>This
      * setting works together with the <code>CdcInsertsOnly</code> and the
      * <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> </note>
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p> 
      */
     inline void SetIncludeOpForFullLoad(bool value) { m_includeOpForFullLoadHasBeenSet = true; m_includeOpForFullLoad = value; }
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
      * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p> <note> <p>AWS DMS supports the
+     * added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
-     * </note> <p>For full load, records can only be inserted. By default (the
+     *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
      * If <code>IncludeOpForFullLoad</code> is set to <code>true</code> or
      * <code>y</code>, the INSERT is recorded as an I annotation in the first field of
      * the .csv file. This allows the format of your target records from a full load to
-     * be consistent with the target records from a CDC load.</p> <note> <p>This
+     * be consistent with the target records from a CDC load.</p>  <p>This
      * setting works together with the <code>CdcInsertsOnly</code> and the
      * <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> </note>
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p> 
      */
     inline S3Settings& WithIncludeOpForFullLoad(bool value) { SetIncludeOpForFullLoad(value); return *this;}
 
@@ -1013,14 +1046,14 @@ namespace Model
      * record is written without a first field to indicate the INSERT operation at the
      * source. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the interaction
-     * described preceding between the <code>CdcInsertsOnly</code> and
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the interaction described
+     * preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. </p>
      * <p> <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both
      * be set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline bool GetCdcInsertsOnly() const{ return m_cdcInsertsOnly; }
 
@@ -1040,14 +1073,14 @@ namespace Model
      * record is written without a first field to indicate the INSERT operation at the
      * source. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the interaction
-     * described preceding between the <code>CdcInsertsOnly</code> and
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the interaction described
+     * preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. </p>
      * <p> <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both
      * be set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline bool CdcInsertsOnlyHasBeenSet() const { return m_cdcInsertsOnlyHasBeenSet; }
 
@@ -1067,14 +1100,14 @@ namespace Model
      * record is written without a first field to indicate the INSERT operation at the
      * source. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the interaction
-     * described preceding between the <code>CdcInsertsOnly</code> and
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the interaction described
+     * preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. </p>
      * <p> <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both
      * be set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline void SetCdcInsertsOnly(bool value) { m_cdcInsertsOnlyHasBeenSet = true; m_cdcInsertsOnly = value; }
 
@@ -1094,23 +1127,23 @@ namespace Model
      * record is written without a first field to indicate the INSERT operation at the
      * source. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the interaction
-     * described preceding between the <code>CdcInsertsOnly</code> and
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the interaction described
+     * preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later. </p>
      * <p> <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both
      * be set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline S3Settings& WithCdcInsertsOnly(bool value) { SetCdcInsertsOnly(value); return *this;}
 
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1127,10 +1160,10 @@ namespace Model
     inline const Aws::String& GetTimestampColumnName() const{ return m_timestampColumnName; }
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1147,10 +1180,10 @@ namespace Model
     inline bool TimestampColumnNameHasBeenSet() const { return m_timestampColumnNameHasBeenSet; }
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1167,10 +1200,10 @@ namespace Model
     inline void SetTimestampColumnName(const Aws::String& value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName = value; }
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1187,10 +1220,10 @@ namespace Model
     inline void SetTimestampColumnName(Aws::String&& value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName = std::move(value); }
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1207,10 +1240,10 @@ namespace Model
     inline void SetTimestampColumnName(const char* value) { m_timestampColumnNameHasBeenSet = true; m_timestampColumnName.assign(value); }
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1227,10 +1260,10 @@ namespace Model
     inline S3Settings& WithTimestampColumnName(const Aws::String& value) { SetTimestampColumnName(value); return *this;}
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1247,10 +1280,10 @@ namespace Model
     inline S3Settings& WithTimestampColumnName(Aws::String&& value) { SetTimestampColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>A value that when nonblank causes AWS DMS to add a column with timestamp
-     * information to the endpoint data for an Amazon S3 target.</p> <note> <p>AWS DMS
+     * <p>A value that when nonblank causes DMS to add a column with timestamp
+     * information to the endpoint data for an Amazon S3 target.</p>  <p>DMS
      * supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and
-     * later.</p> </note> <p>DMS includes an additional <code>STRING</code> column in
+     * later.</p>  <p>DMS includes an additional <code>STRING</code> column in
      * the .csv or .parquet object files of your migrated data when you set
      * <code>TimestampColumnName</code> to a nonblank value.</p> <p>For a full load,
      * each row of this timestamp column contains a timestamp for when the data was
@@ -1270,80 +1303,80 @@ namespace Model
     /**
      * <p>A value that specifies the precision of any <code>TIMESTAMP</code> column
      * values that are written to an Amazon S3 object file in .parquet format.</p>
-     * <note> <p>AWS DMS supports the <code>ParquetTimestampInMillisecond</code>
-     * parameter in versions 3.1.4 and later.</p> </note> <p>When
+     *  <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter
+     * in versions 3.1.4 and later.</p>  <p>When
      * <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or
-     * <code>y</code>, AWS DMS writes all <code>TIMESTAMP</code> columns in a .parquet
+     * <code>y</code>, DMS writes all <code>TIMESTAMP</code> columns in a .parquet
      * formatted file with millisecond precision. Otherwise, DMS writes them with
-     * microsecond precision.</p> <p>Currently, Amazon Athena and AWS Glue can handle
-     * only millisecond precision for <code>TIMESTAMP</code> values. Set this parameter
-     * to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     * only if you plan to query or process the data with Athena or AWS Glue.</p>
-     * <note> <p>AWS DMS writes any <code>TIMESTAMP</code> column values written to an
-     * S3 file in .csv format with microsecond precision.</p> <p>Setting
+     * microsecond precision.</p> <p>Currently, Amazon Athena and Glue can handle only
+     * millisecond precision for <code>TIMESTAMP</code> values. Set this parameter to
+     * <code>true</code> for S3 endpoint object files that are .parquet formatted only
+     * if you plan to query or process the data with Athena or Glue.</p>  <p>DMS
+     * writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv
+     * format with microsecond precision.</p> <p>Setting
      * <code>ParquetTimestampInMillisecond</code> has no effect on the string format of
      * the timestamp column value that is inserted by setting the
-     * <code>TimestampColumnName</code> parameter.</p> </note>
+     * <code>TimestampColumnName</code> parameter.</p> 
      */
     inline bool GetParquetTimestampInMillisecond() const{ return m_parquetTimestampInMillisecond; }
 
     /**
      * <p>A value that specifies the precision of any <code>TIMESTAMP</code> column
      * values that are written to an Amazon S3 object file in .parquet format.</p>
-     * <note> <p>AWS DMS supports the <code>ParquetTimestampInMillisecond</code>
-     * parameter in versions 3.1.4 and later.</p> </note> <p>When
+     *  <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter
+     * in versions 3.1.4 and later.</p>  <p>When
      * <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or
-     * <code>y</code>, AWS DMS writes all <code>TIMESTAMP</code> columns in a .parquet
+     * <code>y</code>, DMS writes all <code>TIMESTAMP</code> columns in a .parquet
      * formatted file with millisecond precision. Otherwise, DMS writes them with
-     * microsecond precision.</p> <p>Currently, Amazon Athena and AWS Glue can handle
-     * only millisecond precision for <code>TIMESTAMP</code> values. Set this parameter
-     * to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     * only if you plan to query or process the data with Athena or AWS Glue.</p>
-     * <note> <p>AWS DMS writes any <code>TIMESTAMP</code> column values written to an
-     * S3 file in .csv format with microsecond precision.</p> <p>Setting
+     * microsecond precision.</p> <p>Currently, Amazon Athena and Glue can handle only
+     * millisecond precision for <code>TIMESTAMP</code> values. Set this parameter to
+     * <code>true</code> for S3 endpoint object files that are .parquet formatted only
+     * if you plan to query or process the data with Athena or Glue.</p>  <p>DMS
+     * writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv
+     * format with microsecond precision.</p> <p>Setting
      * <code>ParquetTimestampInMillisecond</code> has no effect on the string format of
      * the timestamp column value that is inserted by setting the
-     * <code>TimestampColumnName</code> parameter.</p> </note>
+     * <code>TimestampColumnName</code> parameter.</p> 
      */
     inline bool ParquetTimestampInMillisecondHasBeenSet() const { return m_parquetTimestampInMillisecondHasBeenSet; }
 
     /**
      * <p>A value that specifies the precision of any <code>TIMESTAMP</code> column
      * values that are written to an Amazon S3 object file in .parquet format.</p>
-     * <note> <p>AWS DMS supports the <code>ParquetTimestampInMillisecond</code>
-     * parameter in versions 3.1.4 and later.</p> </note> <p>When
+     *  <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter
+     * in versions 3.1.4 and later.</p>  <p>When
      * <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or
-     * <code>y</code>, AWS DMS writes all <code>TIMESTAMP</code> columns in a .parquet
+     * <code>y</code>, DMS writes all <code>TIMESTAMP</code> columns in a .parquet
      * formatted file with millisecond precision. Otherwise, DMS writes them with
-     * microsecond precision.</p> <p>Currently, Amazon Athena and AWS Glue can handle
-     * only millisecond precision for <code>TIMESTAMP</code> values. Set this parameter
-     * to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     * only if you plan to query or process the data with Athena or AWS Glue.</p>
-     * <note> <p>AWS DMS writes any <code>TIMESTAMP</code> column values written to an
-     * S3 file in .csv format with microsecond precision.</p> <p>Setting
+     * microsecond precision.</p> <p>Currently, Amazon Athena and Glue can handle only
+     * millisecond precision for <code>TIMESTAMP</code> values. Set this parameter to
+     * <code>true</code> for S3 endpoint object files that are .parquet formatted only
+     * if you plan to query or process the data with Athena or Glue.</p>  <p>DMS
+     * writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv
+     * format with microsecond precision.</p> <p>Setting
      * <code>ParquetTimestampInMillisecond</code> has no effect on the string format of
      * the timestamp column value that is inserted by setting the
-     * <code>TimestampColumnName</code> parameter.</p> </note>
+     * <code>TimestampColumnName</code> parameter.</p> 
      */
     inline void SetParquetTimestampInMillisecond(bool value) { m_parquetTimestampInMillisecondHasBeenSet = true; m_parquetTimestampInMillisecond = value; }
 
     /**
      * <p>A value that specifies the precision of any <code>TIMESTAMP</code> column
      * values that are written to an Amazon S3 object file in .parquet format.</p>
-     * <note> <p>AWS DMS supports the <code>ParquetTimestampInMillisecond</code>
-     * parameter in versions 3.1.4 and later.</p> </note> <p>When
+     *  <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter
+     * in versions 3.1.4 and later.</p>  <p>When
      * <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or
-     * <code>y</code>, AWS DMS writes all <code>TIMESTAMP</code> columns in a .parquet
+     * <code>y</code>, DMS writes all <code>TIMESTAMP</code> columns in a .parquet
      * formatted file with millisecond precision. Otherwise, DMS writes them with
-     * microsecond precision.</p> <p>Currently, Amazon Athena and AWS Glue can handle
-     * only millisecond precision for <code>TIMESTAMP</code> values. Set this parameter
-     * to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     * only if you plan to query or process the data with Athena or AWS Glue.</p>
-     * <note> <p>AWS DMS writes any <code>TIMESTAMP</code> column values written to an
-     * S3 file in .csv format with microsecond precision.</p> <p>Setting
+     * microsecond precision.</p> <p>Currently, Amazon Athena and Glue can handle only
+     * millisecond precision for <code>TIMESTAMP</code> values. Set this parameter to
+     * <code>true</code> for S3 endpoint object files that are .parquet formatted only
+     * if you plan to query or process the data with Athena or Glue.</p>  <p>DMS
+     * writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv
+     * format with microsecond precision.</p> <p>Setting
      * <code>ParquetTimestampInMillisecond</code> has no effect on the string format of
      * the timestamp column value that is inserted by setting the
-     * <code>TimestampColumnName</code> parameter.</p> </note>
+     * <code>TimestampColumnName</code> parameter.</p> 
      */
     inline S3Settings& WithParquetTimestampInMillisecond(bool value) { SetParquetTimestampInMillisecond(value); return *this;}
 
@@ -1352,8 +1385,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1363,13 +1396,13 @@ namespace Model
      * written without an indication of INSERT or UPDATE operations at the source. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the use of the
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the use of the
      * <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.</p> <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be
      * set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline bool GetCdcInsertsAndUpdates() const{ return m_cdcInsertsAndUpdates; }
 
@@ -1377,8 +1410,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1388,13 +1421,13 @@ namespace Model
      * written without an indication of INSERT or UPDATE operations at the source. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the use of the
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the use of the
      * <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.</p> <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be
      * set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline bool CdcInsertsAndUpdatesHasBeenSet() const { return m_cdcInsertsAndUpdatesHasBeenSet; }
 
@@ -1402,8 +1435,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1413,13 +1446,13 @@ namespace Model
      * written without an indication of INSERT or UPDATE operations at the source. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the use of the
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the use of the
      * <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.</p> <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be
      * set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline void SetCdcInsertsAndUpdates(bool value) { m_cdcInsertsAndUpdatesHasBeenSet = true; m_cdcInsertsAndUpdates = value; }
 
@@ -1427,8 +1460,8 @@ namespace Model
      * <p>A value that enables a change data capture (CDC) load to write INSERT and
      * UPDATE operations to .csv or .parquet (columnar storage) output files. The
      * default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>,
-     * INSERTs and UPDATEs from the source database are migrated to the .csv or
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
+     * only INSERTs and UPDATEs from the source database are migrated to the .csv or
      * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
      * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
@@ -1438,15 +1471,1128 @@ namespace Model
      * written without an indication of INSERT or UPDATE operations at the source. For
      * more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating
-     * Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration
-     * Service User Guide.</i>.</p> <note> <p>AWS DMS supports the use of the
+     * Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration
+     * Service User Guide.</i>.</p>  <p>DMS supports the use of the
      * <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.</p> <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be
      * set to <code>true</code> for the same endpoint. Set either
      * <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
-     * <code>true</code> for the same endpoint, but not both.</p> </note>
+     * <code>true</code> for the same endpoint, but not both.</p> 
      */
     inline S3Settings& WithCdcInsertsAndUpdates(bool value) { SetCdcInsertsAndUpdates(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitioning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
+     */
+    inline bool GetDatePartitionEnabled() const{ return m_datePartitionEnabled; }
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitioning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
+     */
+    inline bool DatePartitionEnabledHasBeenSet() const { return m_datePartitionEnabledHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitioning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
+     */
+    inline void SetDatePartitionEnabled(bool value) { m_datePartitionEnabledHasBeenSet = true; m_datePartitionEnabled = value; }
+
+    /**
+     * <p>When set to <code>true</code>, this parameter partitions S3 bucket folders
+     * based on transaction commit dates. The default value is <code>false</code>. For
+     * more information about date-based folder partitioning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.</p>
+     */
+    inline S3Settings& WithDatePartitionEnabled(bool value) { SetDatePartitionEnabled(value); return *this;}
+
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline const DatePartitionSequenceValue& GetDatePartitionSequence() const{ return m_datePartitionSequence; }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline bool DatePartitionSequenceHasBeenSet() const { return m_datePartitionSequenceHasBeenSet; }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionSequence(const DatePartitionSequenceValue& value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = value; }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionSequence(DatePartitionSequenceValue&& value) { m_datePartitionSequenceHasBeenSet = true; m_datePartitionSequence = std::move(value); }
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionSequence(const DatePartitionSequenceValue& value) { SetDatePartitionSequence(value); return *this;}
+
+    /**
+     * <p>Identifies the sequence of the date format to use during folder partitioning.
+     * The default value is <code>YYYYMMDD</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionSequence(DatePartitionSequenceValue&& value) { SetDatePartitionSequence(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline const DatePartitionDelimiterValue& GetDatePartitionDelimiter() const{ return m_datePartitionDelimiter; }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline bool DatePartitionDelimiterHasBeenSet() const { return m_datePartitionDelimiterHasBeenSet; }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = value; }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { m_datePartitionDelimiterHasBeenSet = true; m_datePartitionDelimiter = std::move(value); }
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionDelimiter(const DatePartitionDelimiterValue& value) { SetDatePartitionDelimiter(value); return *this;}
+
+    /**
+     * <p>Specifies a date separating delimiter to use during folder partitioning. The
+     * default value is <code>SLASH</code>. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline S3Settings& WithDatePartitionDelimiter(DatePartitionDelimiterValue&& value) { SetDatePartitionDelimiter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This setting applies if the S3 output files during a change data capture
+     * (CDC) load are written in .csv format. If set to <code>true</code> for columns
+     * not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS
+     * uses the null value for these columns.</p>  <p>This setting is supported
+     * in DMS versions 3.4.1 and later.</p> 
+     */
+    inline bool GetUseCsvNoSupValue() const{ return m_useCsvNoSupValue; }
+
+    /**
+     * <p>This setting applies if the S3 output files during a change data capture
+     * (CDC) load are written in .csv format. If set to <code>true</code> for columns
+     * not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS
+     * uses the null value for these columns.</p>  <p>This setting is supported
+     * in DMS versions 3.4.1 and later.</p> 
+     */
+    inline bool UseCsvNoSupValueHasBeenSet() const { return m_useCsvNoSupValueHasBeenSet; }
+
+    /**
+     * <p>This setting applies if the S3 output files during a change data capture
+     * (CDC) load are written in .csv format. If set to <code>true</code> for columns
+     * not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS
+     * uses the null value for these columns.</p>  <p>This setting is supported
+     * in DMS versions 3.4.1 and later.</p> 
+     */
+    inline void SetUseCsvNoSupValue(bool value) { m_useCsvNoSupValueHasBeenSet = true; m_useCsvNoSupValue = value; }
+
+    /**
+     * <p>This setting applies if the S3 output files during a change data capture
+     * (CDC) load are written in .csv format. If set to <code>true</code> for columns
+     * not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS
+     * uses the null value for these columns.</p>  <p>This setting is supported
+     * in DMS versions 3.4.1 and later.</p> 
+     */
+    inline S3Settings& WithUseCsvNoSupValue(bool value) { SetUseCsvNoSupValue(value); return *this;}
+
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline const Aws::String& GetCsvNoSupValue() const{ return m_csvNoSupValue; }
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline bool CsvNoSupValueHasBeenSet() const { return m_csvNoSupValueHasBeenSet; }
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline void SetCsvNoSupValue(const Aws::String& value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue = value; }
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline void SetCsvNoSupValue(Aws::String&& value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue = std::move(value); }
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline void SetCsvNoSupValue(const char* value) { m_csvNoSupValueHasBeenSet = true; m_csvNoSupValue.assign(value); }
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline S3Settings& WithCsvNoSupValue(const Aws::String& value) { SetCsvNoSupValue(value); return *this;}
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline S3Settings& WithCsvNoSupValue(Aws::String&& value) { SetCsvNoSupValue(std::move(value)); return *this;}
+
+    /**
+     * <p>This setting only applies if your Amazon S3 output files during a change data
+     * capture (CDC) load are written in .csv format. If <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that
+     * you want DMS to use for all columns not included in the supplemental log. If you
+     * do not specify a string value, DMS uses the null value for these columns
+     * regardless of the <code>UseCsvNoSupValue</code> setting.</p>  <p>This
+     * setting is supported in DMS versions 3.4.1 and later.</p> 
+     */
+    inline S3Settings& WithCsvNoSupValue(const char* value) { SetCsvNoSupValue(value); return *this;}
+
+
+    /**
+     * <p>If set to <code>true</code>, DMS saves the transaction order for a change
+     * data capture (CDC) load on the Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline bool GetPreserveTransactions() const{ return m_preserveTransactions; }
+
+    /**
+     * <p>If set to <code>true</code>, DMS saves the transaction order for a change
+     * data capture (CDC) load on the Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline bool PreserveTransactionsHasBeenSet() const { return m_preserveTransactionsHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, DMS saves the transaction order for a change
+     * data capture (CDC) load on the Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline void SetPreserveTransactions(bool value) { m_preserveTransactionsHasBeenSet = true; m_preserveTransactions = value; }
+
+    /**
+     * <p>If set to <code>true</code>, DMS saves the transaction order for a change
+     * data capture (CDC) load on the Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline S3Settings& WithPreserveTransactions(bool value) { SetPreserveTransactions(value); return *this;}
+
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline const Aws::String& GetCdcPath() const{ return m_cdcPath; }
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline bool CdcPathHasBeenSet() const { return m_cdcPathHasBeenSet; }
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline void SetCdcPath(const Aws::String& value) { m_cdcPathHasBeenSet = true; m_cdcPath = value; }
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline void SetCdcPath(Aws::String&& value) { m_cdcPathHasBeenSet = true; m_cdcPath = std::move(value); }
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline void SetCdcPath(const char* value) { m_cdcPathHasBeenSet = true; m_cdcPath.assign(value); }
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline S3Settings& WithCdcPath(const Aws::String& value) { SetCdcPath(value); return *this;}
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline S3Settings& WithCdcPath(Aws::String&& value) { SetCdcPath(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the folder path of CDC files. For an S3 source, this setting is
+     * required if a task captures change data; otherwise, it's optional. If
+     * <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+     * <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that
+     * you have set this parameter to a folder path on your S3 target where DMS can
+     * save the transaction order for the CDC load. DMS creates this CDC folder path in
+     * either your S3 target working directory or the S3 target location specified by
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.</p> <p>For example, if you specify
+     * <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+     * <code>BucketFolder</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyChangedData</code>.</p> <p>If you specify the same
+     * <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as
+     * <code>MyTargetData</code>, DMS creates the CDC folder path following:
+     * <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p> <p>For more
+     * information on CDC including transaction order on an S3 target, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+     * data changes (CDC) including transaction order on the S3 target</a>.</p> 
+     * <p>This setting is supported in DMS versions 3.4.2 and later.</p> 
+     */
+    inline S3Settings& WithCdcPath(const char* value) { SetCdcPath(value); return *this;}
+
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline bool GetUseTaskStartTimeForFullLoadTimestamp() const{ return m_useTaskStartTimeForFullLoadTimestamp; }
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline bool UseTaskStartTimeForFullLoadTimestampHasBeenSet() const { return m_useTaskStartTimeForFullLoadTimestampHasBeenSet; }
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline void SetUseTaskStartTimeForFullLoadTimestamp(bool value) { m_useTaskStartTimeForFullLoadTimestampHasBeenSet = true; m_useTaskStartTimeForFullLoadTimestamp = value; }
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline S3Settings& WithUseTaskStartTimeForFullLoadTimestamp(bool value) { SetUseTaskStartTimeForFullLoadTimestamp(value); return *this;}
+
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline const CannedAclForObjectsValue& GetCannedAclForObjects() const{ return m_cannedAclForObjects; }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline bool CannedAclForObjectsHasBeenSet() const { return m_cannedAclForObjectsHasBeenSet; }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline void SetCannedAclForObjects(const CannedAclForObjectsValue& value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = value; }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline void SetCannedAclForObjects(CannedAclForObjectsValue&& value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = std::move(value); }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline S3Settings& WithCannedAclForObjects(const CannedAclForObjectsValue& value) { SetCannedAclForObjects(value); return *this;}
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline S3Settings& WithCannedAclForObjects(CannedAclForObjectsValue&& value) { SetCannedAclForObjects(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool GetAddColumnName() const{ return m_addColumnName; }
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool AddColumnNameHasBeenSet() const { return m_addColumnNameHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline void SetAddColumnName(bool value) { m_addColumnNameHasBeenSet = true; m_addColumnName = value; }
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline S3Settings& WithAddColumnName(bool value) { SetAddColumnName(value); return *this;}
+
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline int GetCdcMaxBatchInterval() const{ return m_cdcMaxBatchInterval; }
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline bool CdcMaxBatchIntervalHasBeenSet() const { return m_cdcMaxBatchIntervalHasBeenSet; }
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline void SetCdcMaxBatchInterval(int value) { m_cdcMaxBatchIntervalHasBeenSet = true; m_cdcMaxBatchInterval = value; }
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline S3Settings& WithCdcMaxBatchInterval(int value) { SetCdcMaxBatchInterval(value); return *this;}
+
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline int GetCdcMinFileSize() const{ return m_cdcMinFileSize; }
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline bool CdcMinFileSizeHasBeenSet() const { return m_cdcMinFileSizeHasBeenSet; }
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline void SetCdcMinFileSize(int value) { m_cdcMinFileSizeHasBeenSet = true; m_cdcMinFileSize = value; }
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline S3Settings& WithCdcMinFileSize(int value) { SetCdcMinFileSize(value); return *this;}
+
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline const Aws::String& GetCsvNullValue() const{ return m_csvNullValue; }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline bool CsvNullValueHasBeenSet() const { return m_csvNullValueHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline void SetCsvNullValue(const Aws::String& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = value; }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline void SetCsvNullValue(Aws::String&& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = std::move(value); }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline void SetCsvNullValue(const char* value) { m_csvNullValueHasBeenSet = true; m_csvNullValue.assign(value); }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline S3Settings& WithCsvNullValue(const Aws::String& value) { SetCsvNullValue(value); return *this;}
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline S3Settings& WithCsvNullValue(Aws::String&& value) { SetCsvNullValue(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline S3Settings& WithCsvNullValue(const char* value) { SetCsvNullValue(value); return *this;}
+
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline int GetIgnoreHeaderRows() const{ return m_ignoreHeaderRows; }
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline bool IgnoreHeaderRowsHasBeenSet() const { return m_ignoreHeaderRowsHasBeenSet; }
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline void SetIgnoreHeaderRows(int value) { m_ignoreHeaderRowsHasBeenSet = true; m_ignoreHeaderRows = value; }
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline S3Settings& WithIgnoreHeaderRows(int value) { SetIgnoreHeaderRows(value); return *this;}
+
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline int GetMaxFileSize() const{ return m_maxFileSize; }
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline S3Settings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
+
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool GetRfc4180() const{ return m_rfc4180; }
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool Rfc4180HasBeenSet() const { return m_rfc4180HasBeenSet; }
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline void SetRfc4180(bool value) { m_rfc4180HasBeenSet = true; m_rfc4180 = value; }
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline S3Settings& WithRfc4180(bool value) { SetRfc4180(value); return *this;}
+
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline const Aws::String& GetDatePartitionTimezone() const{ return m_datePartitionTimezone; }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline bool DatePartitionTimezoneHasBeenSet() const { return m_datePartitionTimezoneHasBeenSet; }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline void SetDatePartitionTimezone(const Aws::String& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = value; }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline void SetDatePartitionTimezone(Aws::String&& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = std::move(value); }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline void SetDatePartitionTimezone(const char* value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone.assign(value); }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline S3Settings& WithDatePartitionTimezone(const Aws::String& value) { SetDatePartitionTimezone(value); return *this;}
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline S3Settings& WithDatePartitionTimezone(Aws::String&& value) { SetDatePartitionTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline S3Settings& WithDatePartitionTimezone(const char* value) { SetDatePartitionTimezone(value); return *this;}
 
   private:
 
@@ -1512,6 +2658,57 @@ namespace Model
 
     bool m_cdcInsertsAndUpdates;
     bool m_cdcInsertsAndUpdatesHasBeenSet;
+
+    bool m_datePartitionEnabled;
+    bool m_datePartitionEnabledHasBeenSet;
+
+    DatePartitionSequenceValue m_datePartitionSequence;
+    bool m_datePartitionSequenceHasBeenSet;
+
+    DatePartitionDelimiterValue m_datePartitionDelimiter;
+    bool m_datePartitionDelimiterHasBeenSet;
+
+    bool m_useCsvNoSupValue;
+    bool m_useCsvNoSupValueHasBeenSet;
+
+    Aws::String m_csvNoSupValue;
+    bool m_csvNoSupValueHasBeenSet;
+
+    bool m_preserveTransactions;
+    bool m_preserveTransactionsHasBeenSet;
+
+    Aws::String m_cdcPath;
+    bool m_cdcPathHasBeenSet;
+
+    bool m_useTaskStartTimeForFullLoadTimestamp;
+    bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet;
+
+    CannedAclForObjectsValue m_cannedAclForObjects;
+    bool m_cannedAclForObjectsHasBeenSet;
+
+    bool m_addColumnName;
+    bool m_addColumnNameHasBeenSet;
+
+    int m_cdcMaxBatchInterval;
+    bool m_cdcMaxBatchIntervalHasBeenSet;
+
+    int m_cdcMinFileSize;
+    bool m_cdcMinFileSizeHasBeenSet;
+
+    Aws::String m_csvNullValue;
+    bool m_csvNullValueHasBeenSet;
+
+    int m_ignoreHeaderRows;
+    bool m_ignoreHeaderRowsHasBeenSet;
+
+    int m_maxFileSize;
+    bool m_maxFileSizeHasBeenSet;
+
+    bool m_rfc4180;
+    bool m_rfc4180HasBeenSet;
+
+    Aws::String m_datePartitionTimezone;
+    bool m_datePartitionTimezoneHasBeenSet;
   };
 
 } // namespace Model

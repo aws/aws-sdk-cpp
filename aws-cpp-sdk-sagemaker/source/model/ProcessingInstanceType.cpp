@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ProcessingInstanceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -68,6 +58,12 @@ namespace Aws
         static const int ml_r5_12xlarge_HASH = HashingUtils::HashString("ml.r5.12xlarge");
         static const int ml_r5_16xlarge_HASH = HashingUtils::HashString("ml.r5.16xlarge");
         static const int ml_r5_24xlarge_HASH = HashingUtils::HashString("ml.r5.24xlarge");
+        static const int ml_g4dn_xlarge_HASH = HashingUtils::HashString("ml.g4dn.xlarge");
+        static const int ml_g4dn_2xlarge_HASH = HashingUtils::HashString("ml.g4dn.2xlarge");
+        static const int ml_g4dn_4xlarge_HASH = HashingUtils::HashString("ml.g4dn.4xlarge");
+        static const int ml_g4dn_8xlarge_HASH = HashingUtils::HashString("ml.g4dn.8xlarge");
+        static const int ml_g4dn_12xlarge_HASH = HashingUtils::HashString("ml.g4dn.12xlarge");
+        static const int ml_g4dn_16xlarge_HASH = HashingUtils::HashString("ml.g4dn.16xlarge");
 
 
         ProcessingInstanceType GetProcessingInstanceTypeForName(const Aws::String& name)
@@ -225,6 +221,30 @@ namespace Aws
           {
             return ProcessingInstanceType::ml_r5_24xlarge;
           }
+          else if (hashCode == ml_g4dn_xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g4dn_xlarge;
+          }
+          else if (hashCode == ml_g4dn_2xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g4dn_2xlarge;
+          }
+          else if (hashCode == ml_g4dn_4xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g4dn_4xlarge;
+          }
+          else if (hashCode == ml_g4dn_8xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g4dn_8xlarge;
+          }
+          else if (hashCode == ml_g4dn_12xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g4dn_12xlarge;
+          }
+          else if (hashCode == ml_g4dn_16xlarge_HASH)
+          {
+            return ProcessingInstanceType::ml_g4dn_16xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -315,6 +335,18 @@ namespace Aws
             return "ml.r5.16xlarge";
           case ProcessingInstanceType::ml_r5_24xlarge:
             return "ml.r5.24xlarge";
+          case ProcessingInstanceType::ml_g4dn_xlarge:
+            return "ml.g4dn.xlarge";
+          case ProcessingInstanceType::ml_g4dn_2xlarge:
+            return "ml.g4dn.2xlarge";
+          case ProcessingInstanceType::ml_g4dn_4xlarge:
+            return "ml.g4dn.4xlarge";
+          case ProcessingInstanceType::ml_g4dn_8xlarge:
+            return "ml.g4dn.8xlarge";
+          case ProcessingInstanceType::ml_g4dn_12xlarge:
+            return "ml.g4dn.12xlarge";
+          case ProcessingInstanceType::ml_g4dn_16xlarge:
+            return "ml.g4dn.16xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

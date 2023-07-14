@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/MedicalTranscriptionJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,6 +32,8 @@ MedicalTranscriptionJobSummary::MedicalTranscriptionJobSummary() :
     m_outputLocationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -61,6 +53,8 @@ MedicalTranscriptionJobSummary::MedicalTranscriptionJobSummary(JsonView jsonValu
     m_outputLocationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -132,6 +126,13 @@ MedicalTranscriptionJobSummary& MedicalTranscriptionJobSummary::operator =(JsonV
     m_specialtyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentIdentificationType"))
+  {
+    m_contentIdentificationType = MedicalContentIdentificationTypeMapper::GetMedicalContentIdentificationTypeForName(jsonValue.GetString("ContentIdentificationType"));
+
+    m_contentIdentificationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
@@ -191,6 +192,11 @@ JsonValue MedicalTranscriptionJobSummary::Jsonize() const
   if(m_specialtyHasBeenSet)
   {
    payload.WithString("Specialty", SpecialtyMapper::GetNameForSpecialty(m_specialty));
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   if(m_typeHasBeenSet)

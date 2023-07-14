@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 #pragma once
 
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
@@ -52,46 +42,51 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, Aws::Client::AWSError<S3EncryptionErrors>> S3EncryptionPutObjectOutcome;
         typedef Aws::Utils::Outcome<Aws::S3::Model::GetObjectResult, Aws::Client::AWSError<S3EncryptionErrors>> S3EncryptionGetObjectOutcome;
 
-        class AWS_S3ENCRYPTION_API S3EncryptionClient
+        class AWS_S3ENCRYPTION_API S3EncryptionClientBase
         {
         public:
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, and a client configuration. If no client configuration is supplied,
+            * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
-            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+            S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied,
+            * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
-            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+            S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
                 const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied,
+            * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
-            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+            S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
                 const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
-            S3EncryptionClient(const S3EncryptionClient&) = delete;
-            S3EncryptionClient& operator=(const S3EncryptionClient&) = delete;
+            S3EncryptionClientBase(const S3EncryptionClientBase&) = delete;
+            S3EncryptionClientBase& operator=(const S3EncryptionClientBase&) = delete;
 
             /*
             * Function to put an object encrypted to S3.
+            * For KMSWithContext encryption materials, you can provide a context map as the KMS context for encrypting the CEK.
+            * For other encryption materials, this context map must be an empty map.
             */
-            S3EncryptionPutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const;
+            S3EncryptionPutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request, const Aws::Map<Aws::String, Aws::String>& contextMap) const;
 
             /*
             * Function to get an object decrypted from S3.
+            *
+            * Range gets using this method are deprecated. Please see
+            * <https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html> for more information
             */
             S3EncryptionGetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const;
 
             inline bool MultipartUploadSupported() const { return false; }
 
-        private:
+        protected:
             /*
             * Function to get the instruction file object of a encrypted object from S3. This instruction file object will be used to assist decryption.
             */
@@ -100,7 +95,96 @@ namespace Aws
             Aws::UniquePtr<Aws::S3::S3Client> m_s3Client;
             Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
             std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
-            const Aws::S3Encryption::CryptoConfiguration m_cryptoConfig;
+            Aws::S3Encryption::CryptoConfiguration m_cryptoConfig;
+        };
+
+        /**
+         * @deprecated This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV2.
+         */
+        class
+        AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV2. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")
+        AWS_S3ENCRYPTION_API S3EncryptionClient : public S3EncryptionClientBase
+        {
+        public:
+            /*
+            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(encryptionMaterials, cryptoConfig, clientConfiguration)
+            {}
+
+            /*
+            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+                const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(encryptionMaterials, cryptoConfig, credentials, clientConfiguration)
+            {}
+
+            /*
+            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
+                const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(encryptionMaterials, cryptoConfig, credentialsProvider, clientConfiguration)
+            {}
+
+            /*
+            * Function to put an object encrypted to S3.
+            */
+            S3EncryptionPutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const { return S3EncryptionClientBase::PutObject(request, {}); }
+        };
+
+        /**
+         * S3EncryptionClientV2 enforce the secure postures for customers. See https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html
+         * Examples: https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/cpp/example_code/s3encryption/s3Encryption.cpp
+         */
+        class AWS_S3ENCRYPTION_API S3EncryptionClientV2 : public S3EncryptionClientBase
+        {
+        public:
+            /*
+            * Initialize the S3 Encryption Client V2 with crypto configuration v2, and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig,
+                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+
+            /*
+            * Initialize the S3 Encryption Client V2 with crypto configuration v2, AWS credentials and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig, const Aws::Auth::AWSCredentials& credentials,
+                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentials, clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+            /*
+            * Initialize the S3 Encryption Client V2 with crypto configuration v2, AWS credentials provider and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentialsProvider, clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+            S3EncryptionClientV2(const S3EncryptionClientV2&) = delete;
+            S3EncryptionClientV2& operator=(const S3EncryptionClientV2&) = delete;
+
+        private:
+            void Init(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig);
         };
     }
 }

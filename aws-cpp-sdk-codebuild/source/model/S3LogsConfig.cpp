@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/S3LogsConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,9 @@ S3LogsConfig::S3LogsConfig() :
     m_statusHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false)
+    m_encryptionDisabledHasBeenSet(false),
+    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
+    m_bucketOwnerAccessHasBeenSet(false)
 {
 }
 
@@ -42,7 +34,9 @@ S3LogsConfig::S3LogsConfig(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false)
+    m_encryptionDisabledHasBeenSet(false),
+    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
+    m_bucketOwnerAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +64,13 @@ S3LogsConfig& S3LogsConfig::operator =(JsonView jsonValue)
     m_encryptionDisabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("bucketOwnerAccess"))
+  {
+    m_bucketOwnerAccess = BucketOwnerAccessMapper::GetBucketOwnerAccessForName(jsonValue.GetString("bucketOwnerAccess"));
+
+    m_bucketOwnerAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +93,11 @@ JsonValue S3LogsConfig::Jsonize() const
   {
    payload.WithBool("encryptionDisabled", m_encryptionDisabled);
 
+  }
+
+  if(m_bucketOwnerAccessHasBeenSet)
+  {
+   payload.WithString("bucketOwnerAccess", BucketOwnerAccessMapper::GetNameForBucketOwnerAccess(m_bucketOwnerAccess));
   }
 
   return payload;

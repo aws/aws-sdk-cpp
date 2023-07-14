@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/KeyRange.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/snowball/model/TargetOnDeviceService.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +134,63 @@ namespace Model
      */
     inline S3Resource& WithKeyRange(KeyRange&& value) { SetKeyRange(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline const Aws::Vector<TargetOnDeviceService>& GetTargetOnDeviceServices() const{ return m_targetOnDeviceServices; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline bool TargetOnDeviceServicesHasBeenSet() const { return m_targetOnDeviceServicesHasBeenSet; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetTargetOnDeviceServices(const Aws::Vector<TargetOnDeviceService>& value) { m_targetOnDeviceServicesHasBeenSet = true; m_targetOnDeviceServices = value; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetTargetOnDeviceServices(Aws::Vector<TargetOnDeviceService>&& value) { m_targetOnDeviceServicesHasBeenSet = true; m_targetOnDeviceServices = std::move(value); }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline S3Resource& WithTargetOnDeviceServices(const Aws::Vector<TargetOnDeviceService>& value) { SetTargetOnDeviceServices(value); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline S3Resource& WithTargetOnDeviceServices(Aws::Vector<TargetOnDeviceService>&& value) { SetTargetOnDeviceServices(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline S3Resource& AddTargetOnDeviceServices(const TargetOnDeviceService& value) { m_targetOnDeviceServicesHasBeenSet = true; m_targetOnDeviceServices.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline S3Resource& AddTargetOnDeviceServices(TargetOnDeviceService&& value) { m_targetOnDeviceServicesHasBeenSet = true; m_targetOnDeviceServices.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_bucketArn;
@@ -149,6 +198,9 @@ namespace Model
 
     KeyRange m_keyRange;
     bool m_keyRangeHasBeenSet;
+
+    Aws::Vector<TargetOnDeviceService> m_targetOnDeviceServices;
+    bool m_targetOnDeviceServicesHasBeenSet;
   };
 
 } // namespace Model

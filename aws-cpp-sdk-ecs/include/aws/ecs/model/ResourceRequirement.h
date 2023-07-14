@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -40,7 +30,7 @@ namespace Model
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
    * with GPUs on Amazon ECS</a> or <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working
    * with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic
    * Container Service Developer Guide</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ResourceRequirement">AWS
@@ -58,96 +48,96 @@ namespace Model
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline ResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline ResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value for the specified resource type.</p> <p>If the <code>GPU</code>
      * type is used, the value is the number of physical <code>GPUs</code> the Amazon
-     * ECS container agent will reserve for the container. The number of GPUs reserved
-     * for all containers in a task should not exceed the number of available GPUs on
-     * the container instance the task is launched on.</p> <p>If the
-     * <code>InferenceAccelerator</code> type is used, the <code>value</code> should
-     * match the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified
-     * in a task definition.</p>
+     * ECS container agent reserves for the container. The number of GPUs that's
+     * reserved for all containers in a task can't exceed the number of available GPUs
+     * on the container instance that the task is launched on.</p> <p>If the
+     * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
+     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
+     * task definition.</p>
      */
     inline ResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DataSourceSyncJobStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,7 @@ namespace Aws
         static const int INCOMPLETE_HASH = HashingUtils::HashString("INCOMPLETE");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
+        static const int SYNCING_INDEXING_HASH = HashingUtils::HashString("SYNCING_INDEXING");
 
 
         DataSourceSyncJobStatus GetDataSourceSyncJobStatusForName(const Aws::String& name)
@@ -65,6 +56,10 @@ namespace Aws
           {
             return DataSourceSyncJobStatus::ABORTED;
           }
+          else if (hashCode == SYNCING_INDEXING_HASH)
+          {
+            return DataSourceSyncJobStatus::SYNCING_INDEXING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +86,8 @@ namespace Aws
             return "STOPPING";
           case DataSourceSyncJobStatus::ABORTED:
             return "ABORTED";
+          case DataSourceSyncJobStatus::SYNCING_INDEXING:
+            return "SYNCING_INDEXING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

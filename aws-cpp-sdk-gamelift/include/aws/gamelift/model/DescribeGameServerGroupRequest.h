@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -45,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline DescribeGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline DescribeGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the game server group being requested. Use either
-     * the <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the
+     * <a>GameServerGroup</a> name or ARN value.</p>
      */
     inline DescribeGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

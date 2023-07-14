@@ -1,25 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/BlockType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/model/TextType.h>
 #include <aws/textract/model/Geometry.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/SelectionStatus.h>
+#include <aws/textract/model/Query.h>
 #include <aws/textract/model/Relationship.h>
 #include <aws/textract/model/EntityType.h>
 #include <utility>
@@ -91,7 +83,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline const BlockType& GetBlockType() const{ return m_blockType; }
 
@@ -120,7 +116,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline bool BlockTypeHasBeenSet() const { return m_blockTypeHasBeenSet; }
 
@@ -149,7 +149,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline void SetBlockType(const BlockType& value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
 
@@ -178,7 +182,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline void SetBlockType(BlockType&& value) { m_blockTypeHasBeenSet = true; m_blockType = std::move(value); }
 
@@ -207,7 +215,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline Block& WithBlockType(const BlockType& value) { SetBlockType(value); return *this;}
 
@@ -236,7 +248,11 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> </ul>
+     * element.</p> </li> <li> <p> <i>QUERY</i> - A question asked during the call of
+     * AnalyzeDocument. Contains an alias and an ID that attachs it to its answer.</p>
+     * </li> <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the
+     * call of analyze document. Comes with an alias and ID for ease of locating in a
+     * response. Also contains location and confidence score.</p> </li> </ul>
      */
     inline Block& WithBlockType(BlockType&& value) { SetBlockType(std::move(value)); return *this;}
 
@@ -309,6 +325,43 @@ namespace Model
      * <p>The word or line of text that's recognized by Amazon Textract. </p>
      */
     inline Block& WithText(const char* value) { SetText(value); return *this;}
+
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline const TextType& GetTextType() const{ return m_textType; }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline bool TextTypeHasBeenSet() const { return m_textTypeHasBeenSet; }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline void SetTextType(const TextType& value) { m_textTypeHasBeenSet = true; m_textType = value; }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline void SetTextType(TextType&& value) { m_textTypeHasBeenSet = true; m_textType = std::move(value); }
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline Block& WithTextType(const TextType& value) { SetTextType(value); return *this;}
+
+    /**
+     * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
+     * text and printed text.</p>
+     */
+    inline Block& WithTextType(TextType&& value) { SetTextType(std::move(value)); return *this;}
 
 
     /**
@@ -721,46 +774,77 @@ namespace Model
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline int GetPage() const{ return m_page; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const Query& GetQuery() const{ return m_query; }
+
+    /**
+     * <p/>
+     */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetQuery(const Query& value) { m_queryHasBeenSet = true; m_query = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetQuery(Query&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline Block& WithQuery(const Query& value) { SetQuery(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Block& WithQuery(Query&& value) { SetQuery(std::move(value)); return *this;}
 
   private:
 
@@ -772,6 +856,9 @@ namespace Model
 
     Aws::String m_text;
     bool m_textHasBeenSet;
+
+    TextType m_textType;
+    bool m_textTypeHasBeenSet;
 
     int m_rowIndex;
     bool m_rowIndexHasBeenSet;
@@ -802,6 +889,9 @@ namespace Model
 
     int m_page;
     bool m_pageHasBeenSet;
+
+    Query m_query;
+    bool m_queryHasBeenSet;
   };
 
 } // namespace Model

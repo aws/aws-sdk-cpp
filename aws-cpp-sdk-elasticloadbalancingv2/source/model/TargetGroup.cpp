@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticloadbalancingv2/model/TargetGroup.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -55,7 +45,10 @@ TargetGroup::TargetGroup() :
     m_matcherHasBeenSet(false),
     m_loadBalancerArnsHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_protocolVersionHasBeenSet(false),
+    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -84,7 +77,10 @@ TargetGroup::TargetGroup(const XmlNode& xmlNode) :
     m_matcherHasBeenSet(false),
     m_loadBalancerArnsHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_protocolVersionHasBeenSet(false),
+    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -197,6 +193,18 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
       m_targetType = TargetTypeEnumMapper::GetTargetTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()).c_str());
       m_targetTypeHasBeenSet = true;
     }
+    XmlNode protocolVersionNode = resultNode.FirstChild("ProtocolVersion");
+    if(!protocolVersionNode.IsNull())
+    {
+      m_protocolVersion = Aws::Utils::Xml::DecodeEscapedXmlText(protocolVersionNode.GetText());
+      m_protocolVersionHasBeenSet = true;
+    }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = TargetGroupIpAddressTypeEnumMapper::GetTargetGroupIpAddressTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -290,6 +298,16 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
   }
 
+  if(m_protocolVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
+  }
+
 }
 
 void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -363,6 +381,14 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_targetTypeHasBeenSet)
   {
       oStream << location << ".TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+  }
+  if(m_protocolVersionHasBeenSet)
+  {
+      oStream << location << ".ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
   }
 }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -52,42 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     * <p>The name of the Amazon S3 bucket where the Spot Instance data feed is
+     * located.</p>
      */
     inline SpotDatafeedSubscription& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -124,83 +122,83 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline SpotDatafeedSubscription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline SpotDatafeedSubscription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the account.</p>
+     * <p>The Amazon Web Services account ID of the account.</p>
      */
     inline SpotDatafeedSubscription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline SpotDatafeedSubscription& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline SpotDatafeedSubscription& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix that is prepended to data feed files.</p>
+     * <p>The prefix for the data feed files.</p>
      */
     inline SpotDatafeedSubscription& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

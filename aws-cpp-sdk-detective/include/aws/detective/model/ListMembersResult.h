@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
@@ -45,101 +35,122 @@ namespace Model
 
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline const Aws::Vector<MemberDetail>& GetMemberDetails() const{ return m_memberDetails; }
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline void SetMemberDetails(const Aws::Vector<MemberDetail>& value) { m_memberDetails = value; }
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline void SetMemberDetails(Aws::Vector<MemberDetail>&& value) { m_memberDetails = std::move(value); }
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline ListMembersResult& WithMemberDetails(const Aws::Vector<MemberDetail>& value) { SetMemberDetails(value); return *this;}
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline ListMembersResult& WithMemberDetails(Aws::Vector<MemberDetail>&& value) { SetMemberDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline ListMembersResult& AddMemberDetails(const MemberDetail& value) { m_memberDetails.push_back(value); return *this; }
 
     /**
-     * <p>The list of member accounts in the behavior graph.</p> <p>The results include
-     * member accounts that did not pass verification and member accounts that have not
-     * yet accepted the invitation to the behavior graph. The results do not include
-     * member accounts that were removed from the behavior graph.</p>
+     * <p>The list of member accounts in the behavior graph.</p> <p>For invited
+     * accounts, the results include member accounts that did not pass verification and
+     * member accounts that have not yet accepted the invitation to the behavior graph.
+     * The results do not include member accounts that were removed from the behavior
+     * graph.</p> <p>For the organization behavior graph, the results do not include
+     * organization accounts that the Detective administrator account has not enabled
+     * as member accounts.</p>
      */
     inline ListMembersResult& AddMemberDetails(MemberDetail&& value) { m_memberDetails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline ListMembersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline ListMembersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If there are more member accounts remaining in the results, then this is the
-     * pagination token to use to request the next page of member accounts.</p>
+     * <p>If there are more member accounts remaining in the results, then use this
+     * pagination token to request the next page of member accounts.</p>
      */
     inline ListMembersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

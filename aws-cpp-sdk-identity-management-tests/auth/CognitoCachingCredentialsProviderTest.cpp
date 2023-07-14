@@ -1,18 +1,8 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
-#define AWS_DISABLE_DEPRECATION
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 #include <aws/external/gtest.h>
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
 #include <aws/identity-management/auth/CognitoCachingCredentialsProvider.h>
@@ -52,9 +42,9 @@ public:
     void SetAccountId(const Aws::String& accountId) { m_accountId = accountId; }
     Aws::String GetIdentityPoolId() const override { return m_identityPoolId; }
     void SetIdentityPoolId(const Aws::String& identityPoolId) { m_identityPoolId = identityPoolId; }
-    void PersistIdentityId(const Aws::String& identityId) override 
-    { 
-        SetIdentityId(identityId); 
+    void PersistIdentityId(const Aws::String& identityId) override
+    {
+        SetIdentityId(identityId);
         m_identityIdPersisted = !identityId.empty();
 
         if (m_identityIdUpdatedCallback)
@@ -64,8 +54,8 @@ public:
     }
 
     void PersistLogins(const Aws::Map<Aws::String, LoginAccessTokens>& logins) override
-    { 
-        SetLogins(logins); 
+    {
+        SetLogins(logins);
         m_loginsPersisted = !logins.empty();
 
         if (m_loginsUpdatedCallback)
@@ -103,7 +93,7 @@ namespace
             ClientConfiguration config;
             config.scheme = Scheme::HTTP;
             config.connectTimeoutMs = 30000;
-            config.requestTimeoutMs = 30000;           
+            config.requestTimeoutMs = 30000;
 
             mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
             mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
@@ -124,7 +114,7 @@ namespace
             mockHttpClientFactory = nullptr;
             mockIdentityRepository = nullptr;
 
-            // On Android we run all integration tests within a single process, which means we need to be careful with any testing setup that modifies global state.  
+            // On Android we run all integration tests within a single process, which means we need to be careful with any testing setup that modifies global state.
             // We override the global http factory in Setup() here, so reset back to the default state as we leave this test suite.
             CleanupHttp();
             InitHttp();
@@ -135,7 +125,7 @@ namespace
             stream << "{ \"IdentityId\" : \"" << identity << "\" }";
         }
 
-        void AddMockGetCredentialsForIdentityToStream(Aws::IOStream& stream, const char* identityId = IDENTITY_1, 
+        void AddMockGetCredentialsForIdentityToStream(Aws::IOStream& stream, const char* identityId = IDENTITY_1,
             const char* accessKey = ACCESS_KEY_ID_1, const char* secretKey = SECRET_KEY_ID_1, const char* expiry = A_HUNDRED_YEARS_FROM_THE_MOMENT_I_WROTE_THIS)
         {
             stream << "{ \"IdentityId\" : \"" << identityId << "\", \"Credentials\" : { \"AccessKeyId\" : \"" << accessKey
@@ -147,7 +137,7 @@ namespace
     {
         std::shared_ptr<HttpRequest> getIdrequest =
                 CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
+        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getIdrequest);
 
         getIdResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetIdResultToStream(getIdResponse->GetResponseBody());
@@ -156,7 +146,7 @@ namespace
 
         std::shared_ptr<HttpRequest> getCredsrequest =
                 CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getCredsrequest);
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody());
@@ -186,7 +176,7 @@ namespace
     {
         std::shared_ptr<HttpRequest> getCredsrequest =
                 mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getCredsrequest);
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody());
@@ -217,7 +207,7 @@ namespace
     {
         std::shared_ptr<HttpRequest> getIdrequest =
                 mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
+        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getIdrequest);
 
         getIdResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
         getIdResponse->GetResponseBody() << "{ \"_type\" : \"Unknown\" }";
@@ -250,7 +240,7 @@ namespace
     {
         std::shared_ptr<HttpRequest> getIdrequest =
                 mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
+        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getIdrequest);
 
         getIdResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetIdResultToStream(getIdResponse->GetResponseBody());
@@ -259,7 +249,7 @@ namespace
 
         std::shared_ptr<HttpRequest> getCredsrequest =
                 mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getCredsrequest);
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody());
@@ -303,7 +293,7 @@ namespace
         //do an anoymous auth run
         std::shared_ptr<HttpRequest> getIdrequest =
             mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
+        std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getIdrequest);
 
         getIdResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetIdResultToStream(getIdResponse->GetResponseBody());
@@ -312,19 +302,19 @@ namespace
 
         std::shared_ptr<HttpRequest> getCredsrequest =
             mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+        std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getCredsrequest);
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody());
 
-        mockHttpClient->AddResponseToReturn(getCredsResponse);        
+        mockHttpClient->AddResponseToReturn(getCredsResponse);
 
         CognitoCachingAuthenticatedCredentialsProvider cognitoCachingAuthenticatedCredentialsProvider(mockIdentityRepository, cognitoIdentityClient);
         AWSCredentials credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
         ASSERT_EQ(ACCESS_KEY_ID_1, credentials.GetAWSAccessKeyId());
         ASSERT_EQ(SECRET_KEY_ID_1, credentials.GetAWSSecretKey());
         ASSERT_EQ(IDENTITY_1, mockIdentityRepository->GetIdentityId());
-        ASSERT_EQ(0u, mockIdentityRepository->GetLogins().size());        
+        ASSERT_EQ(0u, mockIdentityRepository->GetLogins().size());
         ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
         ASSERT_FALSE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
@@ -338,22 +328,22 @@ namespace
         ASSERT_EQ(ACCESS_KEY_ID_1, credentials.GetAWSAccessKeyId());
         ASSERT_EQ(SECRET_KEY_ID_1, credentials.GetAWSSecretKey());
         ASSERT_EQ(IDENTITY_1, mockIdentityRepository->GetIdentityId());
-        ASSERT_EQ(0u, mockIdentityRepository->GetLogins().size());       
+        ASSERT_EQ(0u, mockIdentityRepository->GetLogins().size());
         ASSERT_TRUE(mockIdentityRepository->IsIdentityIdPersisted());
         ASSERT_FALSE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
-        
+
         //now do an auth run and make sure two things happen.
         //1st make sure that when we pass a new identity, it gets updated in the cache.
         //2nd make sure that adding logins invalidates the credentials cache.
-        mockHttpClient->Reset();       
+        mockHttpClient->Reset();
         Aws::String PARENT_ID = "ANewParentIdentityId";
         Aws::String ACCESS_KEY_ID = "AccessKey2";
         Aws::String SECRET_KEY_ID = "SecretKey2";
 
         getCredsrequest =
             mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
+        getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, getCredsrequest);
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
         AddMockGetCredentialsForIdentityToStream(getCredsResponse->GetResponseBody(), PARENT_ID.c_str(), ACCESS_KEY_ID.c_str(), SECRET_KEY_ID.c_str());
@@ -364,7 +354,7 @@ namespace
         LoginAccessTokens loginAccessTokens;
         loginAccessTokens.accessToken = LOGIN_ID;
         logins[LOGIN_KEY] = loginAccessTokens;
-        mockIdentityRepository->PersistLogins(logins);        
+        mockIdentityRepository->PersistLogins(logins);
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
 
         ASSERT_EQ(ACCESS_KEY_ID, credentials.GetAWSAccessKeyId());

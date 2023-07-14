@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
@@ -45,82 +35,74 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline const Aws::String& GetAdminAccount() const{ return m_adminAccount; }
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline bool AdminAccountHasBeenSet() const { return m_adminAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline void SetAdminAccount(const Aws::String& value) { m_adminAccountHasBeenSet = true; m_adminAccount = value; }
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline void SetAdminAccount(Aws::String&& value) { m_adminAccountHasBeenSet = true; m_adminAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline void SetAdminAccount(const char* value) { m_adminAccountHasBeenSet = true; m_adminAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline AssociateAdminAccountRequest& WithAdminAccount(const Aws::String& value) { SetAdminAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline AssociateAdminAccountRequest& WithAdminAccount(Aws::String&& value) { SetAdminAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator account. This can be an AWS Organizations master account
-     * or a member account. For more information about AWS Organizations and master
-     * accounts, see <a
+     * <p>The Amazon Web Services account ID to associate with Firewall Manager as the
+     * Firewall Manager administrator account. This must be an Organizations member
+     * account. For more information about Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>. </p>
+     * the Amazon Web Services Accounts in Your Organization</a>. </p>
      */
     inline AssociateAdminAccountRequest& WithAdminAccount(const char* value) { SetAdminAccount(value); return *this;}
 

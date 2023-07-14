@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/FacetResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,12 +20,16 @@ namespace Model
 
 FacetResult::FacetResult() : 
     m_documentAttributeKeyHasBeenSet(false),
+    m_documentAttributeValueType(DocumentAttributeValueType::NOT_SET),
+    m_documentAttributeValueTypeHasBeenSet(false),
     m_documentAttributeValueCountPairsHasBeenSet(false)
 {
 }
 
 FacetResult::FacetResult(JsonView jsonValue) : 
     m_documentAttributeKeyHasBeenSet(false),
+    m_documentAttributeValueType(DocumentAttributeValueType::NOT_SET),
+    m_documentAttributeValueTypeHasBeenSet(false),
     m_documentAttributeValueCountPairsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +42,13 @@ FacetResult& FacetResult::operator =(JsonView jsonValue)
     m_documentAttributeKey = jsonValue.GetString("DocumentAttributeKey");
 
     m_documentAttributeKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentAttributeValueType"))
+  {
+    m_documentAttributeValueType = DocumentAttributeValueTypeMapper::GetDocumentAttributeValueTypeForName(jsonValue.GetString("DocumentAttributeValueType"));
+
+    m_documentAttributeValueTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DocumentAttributeValueCountPairs"))
@@ -71,6 +72,11 @@ JsonValue FacetResult::Jsonize() const
   {
    payload.WithString("DocumentAttributeKey", m_documentAttributeKey);
 
+  }
+
+  if(m_documentAttributeValueTypeHasBeenSet)
+  {
+   payload.WithString("DocumentAttributeValueType", DocumentAttributeValueTypeMapper::GetNameForDocumentAttributeValueType(m_documentAttributeValueType));
   }
 
   if(m_documentAttributeValueCountPairsHasBeenSet)

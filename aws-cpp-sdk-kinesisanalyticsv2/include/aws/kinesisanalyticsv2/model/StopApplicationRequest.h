@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -84,10 +74,70 @@ namespace Model
      */
     inline StopApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>true</code> to force the application to stop. If you set
+     * <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the
+     * application without taking a snapshot. </p>  <p>Force-stopping your
+     * application may lead to data loss or duplication. To prevent data loss or
+     * duplicate processing of data during application restarts, we recommend you to
+     * take frequent snapshots of your application.</p>  <p>You can only force
+     * stop a Flink-based Kinesis Data Analytics application. You can't force stop a
+     * SQL-based Kinesis Data Analytics application.</p> <p>The application must be in
+     * the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>Set to <code>true</code> to force the application to stop. If you set
+     * <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the
+     * application without taking a snapshot. </p>  <p>Force-stopping your
+     * application may lead to data loss or duplication. To prevent data loss or
+     * duplicate processing of data during application restarts, we recommend you to
+     * take frequent snapshots of your application.</p>  <p>You can only force
+     * stop a Flink-based Kinesis Data Analytics application. You can't force stop a
+     * SQL-based Kinesis Data Analytics application.</p> <p>The application must be in
+     * the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to force the application to stop. If you set
+     * <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the
+     * application without taking a snapshot. </p>  <p>Force-stopping your
+     * application may lead to data loss or duplication. To prevent data loss or
+     * duplicate processing of data during application restarts, we recommend you to
+     * take frequent snapshots of your application.</p>  <p>You can only force
+     * stop a Flink-based Kinesis Data Analytics application. You can't force stop a
+     * SQL-based Kinesis Data Analytics application.</p> <p>The application must be in
+     * the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>Set to <code>true</code> to force the application to stop. If you set
+     * <code>Force</code> to <code>true</code>, Kinesis Data Analytics stops the
+     * application without taking a snapshot. </p>  <p>Force-stopping your
+     * application may lead to data loss or duplication. To prevent data loss or
+     * duplicate processing of data during application restarts, we recommend you to
+     * take frequent snapshots of your application.</p>  <p>You can only force
+     * stop a Flink-based Kinesis Data Analytics application. You can't force stop a
+     * SQL-based Kinesis Data Analytics application.</p> <p>The application must be in
+     * the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+     * <code>AUTOSCALING</code>, or <code>RUNNING</code> status. </p>
+     */
+    inline StopApplicationRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model

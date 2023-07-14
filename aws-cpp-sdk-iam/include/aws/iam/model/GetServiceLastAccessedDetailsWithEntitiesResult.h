@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -149,49 +139,49 @@ namespace Model
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline const Aws::Vector<EntityDetails>& GetEntityDetailsList() const{ return m_entityDetailsList; }
 
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline void SetEntityDetailsList(const Aws::Vector<EntityDetails>& value) { m_entityDetailsList = value; }
 
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline void SetEntityDetailsList(Aws::Vector<EntityDetails>&& value) { m_entityDetailsList = std::move(value); }
 
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesResult& WithEntityDetailsList(const Aws::Vector<EntityDetails>& value) { SetEntityDetailsList(value); return *this;}
 
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesResult& WithEntityDetailsList(Aws::Vector<EntityDetails>&& value) { SetEntityDetailsList(std::move(value)); return *this;}
 
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesResult& AddEntityDetailsList(const EntityDetails& value) { m_entityDetailsList.push_back(value); return *this; }
 
     /**
      * <p>An <code>EntityDetailsList</code> object that contains details about when an
      * IAM entity (user or role) used group or policy permissions in an attempt to
-     * access the specified AWS service.</p>
+     * access the specified Amazon Web Services service.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesResult& AddEntityDetailsList(EntityDetails&& value) { m_entityDetailsList.push_back(std::move(value)); return *this; }
 

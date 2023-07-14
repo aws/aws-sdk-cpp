@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/AttributeType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,11 @@ namespace Aws
 
         static const int INCLUSIVE_HASH = HashingUtils::HashString("INCLUSIVE");
         static const int EXCLUSIVE_HASH = HashingUtils::HashString("EXCLUSIVE");
+        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static const int BEFORE_HASH = HashingUtils::HashString("BEFORE");
+        static const int AFTER_HASH = HashingUtils::HashString("AFTER");
+        static const int ON_HASH = HashingUtils::HashString("ON");
+        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
 
 
         AttributeType GetAttributeTypeForName(const Aws::String& name)
@@ -44,6 +39,26 @@ namespace Aws
           else if (hashCode == EXCLUSIVE_HASH)
           {
             return AttributeType::EXCLUSIVE;
+          }
+          else if (hashCode == CONTAINS_HASH)
+          {
+            return AttributeType::CONTAINS;
+          }
+          else if (hashCode == BEFORE_HASH)
+          {
+            return AttributeType::BEFORE;
+          }
+          else if (hashCode == AFTER_HASH)
+          {
+            return AttributeType::AFTER;
+          }
+          else if (hashCode == ON_HASH)
+          {
+            return AttributeType::ON;
+          }
+          else if (hashCode == BETWEEN_HASH)
+          {
+            return AttributeType::BETWEEN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +78,16 @@ namespace Aws
             return "INCLUSIVE";
           case AttributeType::EXCLUSIVE:
             return "EXCLUSIVE";
+          case AttributeType::CONTAINS:
+            return "CONTAINS";
+          case AttributeType::BEFORE:
+            return "BEFORE";
+          case AttributeType::AFTER:
+            return "AFTER";
+          case AttributeType::ON:
+            return "ON";
+          case AttributeType::BETWEEN:
+            return "BETWEEN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

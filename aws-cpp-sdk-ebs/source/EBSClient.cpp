@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -30,9 +20,12 @@
 #include <aws/ebs/EBSClient.h>
 #include <aws/ebs/EBSEndpoint.h>
 #include <aws/ebs/EBSErrorMarshaller.h>
+#include <aws/ebs/model/CompleteSnapshotRequest.h>
 #include <aws/ebs/model/GetSnapshotBlockRequest.h>
 #include <aws/ebs/model/ListChangedBlocksRequest.h>
 #include <aws/ebs/model/ListSnapshotBlocksRequest.h>
+#include <aws/ebs/model/PutSnapshotBlockRequest.h>
+#include <aws/ebs/model/StartSnapshotRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -49,7 +42,7 @@ static const char* ALLOCATION_TAG = "EBSClient";
 EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -59,7 +52,7 @@ EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
 EBSClient::EBSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +63,7 @@ EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -81,8 +74,9 @@ EBSClient::~EBSClient()
 {
 }
 
-void EBSClient::init(const ClientConfiguration& config)
+void EBSClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("EBS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -106,6 +100,42 @@ void EBSClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CompleteSnapshotOutcome EBSClient::CompleteSnapshot(const CompleteSnapshotRequest& request) const
+{
+  if (!request.SnapshotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteSnapshot", "Required field: SnapshotId, is not set");
+    return CompleteSnapshotOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
+  }
+  if (!request.ChangedBlocksCountHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteSnapshot", "Required field: ChangedBlocksCount, is not set");
+    return CompleteSnapshotOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangedBlocksCount]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/snapshots/completion/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  return CompleteSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CompleteSnapshotOutcomeCallable EBSClient::CompleteSnapshotCallable(const CompleteSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CompleteSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CompleteSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EBSClient::CompleteSnapshotAsync(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void EBSClient::CompleteSnapshotAsyncHelper(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CompleteSnapshot(request), context);
+}
+
 GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockRequest& request) const
 {
   if (!request.SnapshotIdHasBeenSet())
@@ -124,21 +154,11 @@ GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockReques
     return GetSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BlockToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSnapshotId();
-  ss << "/blocks/";
-  ss << request.GetBlockIndex();
-  uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetSnapshotBlockOutcome(GetSnapshotBlockResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetSnapshotBlockOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  uri.AddPathSegments("/blocks/");
+  uri.AddPathSegment(request.GetBlockIndex());
+  return GetSnapshotBlockOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetSnapshotBlockOutcomeCallable EBSClient::GetSnapshotBlockCallable(const GetSnapshotBlockRequest& request) const
@@ -167,20 +187,10 @@ ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksReq
     return ListChangedBlocksOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecondSnapshotId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSecondSnapshotId();
-  ss << "/changedblocks";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListChangedBlocksOutcome(ListChangedBlocksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListChangedBlocksOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSecondSnapshotId());
+  uri.AddPathSegments("/changedblocks");
+  return ListChangedBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChangedBlocksOutcomeCallable EBSClient::ListChangedBlocksCallable(const ListChangedBlocksRequest& request) const
@@ -209,20 +219,10 @@ ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocks
     return ListSnapshotBlocksOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/snapshots/";
-  ss << request.GetSnapshotId();
-  ss << "/blocks";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSnapshotBlocksOutcome(ListSnapshotBlocksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSnapshotBlocksOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  uri.AddPathSegments("/blocks");
+  return ListSnapshotBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSnapshotBlocksOutcomeCallable EBSClient::ListSnapshotBlocksCallable(const ListSnapshotBlocksRequest& request) const
@@ -241,5 +241,83 @@ void EBSClient::ListSnapshotBlocksAsync(const ListSnapshotBlocksRequest& request
 void EBSClient::ListSnapshotBlocksAsyncHelper(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListSnapshotBlocks(request), context);
+}
+
+PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockRequest& request) const
+{
+  if (!request.SnapshotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSnapshotBlock", "Required field: SnapshotId, is not set");
+    return PutSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
+  }
+  if (!request.BlockIndexHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSnapshotBlock", "Required field: BlockIndex, is not set");
+    return PutSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BlockIndex]", false));
+  }
+  if (!request.DataLengthHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSnapshotBlock", "Required field: DataLength, is not set");
+    return PutSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataLength]", false));
+  }
+  if (!request.ChecksumHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSnapshotBlock", "Required field: Checksum, is not set");
+    return PutSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Checksum]", false));
+  }
+  if (!request.ChecksumAlgorithmHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSnapshotBlock", "Required field: ChecksumAlgorithm, is not set");
+    return PutSnapshotBlockOutcome(Aws::Client::AWSError<EBSErrors>(EBSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChecksumAlgorithm]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/snapshots/");
+  uri.AddPathSegment(request.GetSnapshotId());
+  uri.AddPathSegments("/blocks/");
+  uri.AddPathSegment(request.GetBlockIndex());
+  return PutSnapshotBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutSnapshotBlockOutcomeCallable EBSClient::PutSnapshotBlockCallable(const PutSnapshotBlockRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutSnapshotBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSnapshotBlock(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EBSClient::PutSnapshotBlockAsync(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutSnapshotBlockAsyncHelper( request, handler, context ); } );
+}
+
+void EBSClient::PutSnapshotBlockAsyncHelper(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutSnapshotBlock(request), context);
+}
+
+StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/snapshots");
+  return StartSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSnapshotOutcomeCallable EBSClient::StartSnapshotCallable(const StartSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EBSClient::StartSnapshotAsync(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void EBSClient::StartSnapshotAsyncHelper(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSnapshot(request), context);
 }
 

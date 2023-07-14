@@ -1,30 +1,56 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/machinelearning/MachineLearningErrors.h>
+#include <aws/machinelearning/model/ResourceNotFoundException.h>
+#include <aws/machinelearning/model/InternalServerException.h>
+#include <aws/machinelearning/model/IdempotentParameterMismatchException.h>
+#include <aws/machinelearning/model/LimitExceededException.h>
+#include <aws/machinelearning/model/InvalidInputException.h>
 
 using namespace Aws::Client;
-using namespace Aws::MachineLearning;
 using namespace Aws::Utils;
+using namespace Aws::MachineLearning;
+using namespace Aws::MachineLearning::Model;
 
 namespace Aws
 {
 namespace MachineLearning
 {
+template<> AWS_MACHINELEARNING_API ResourceNotFoundException MachineLearningError::GetModeledError()
+{
+  assert(this->GetErrorType() == MachineLearningErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACHINELEARNING_API InternalServerException MachineLearningError::GetModeledError()
+{
+  assert(this->GetErrorType() == MachineLearningErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACHINELEARNING_API IdempotentParameterMismatchException MachineLearningError::GetModeledError()
+{
+  assert(this->GetErrorType() == MachineLearningErrors::IDEMPOTENT_PARAMETER_MISMATCH);
+  return IdempotentParameterMismatchException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACHINELEARNING_API LimitExceededException MachineLearningError::GetModeledError()
+{
+  assert(this->GetErrorType() == MachineLearningErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACHINELEARNING_API InvalidInputException MachineLearningError::GetModeledError()
+{
+  assert(this->GetErrorType() == MachineLearningErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
 namespace MachineLearningErrorMapper
 {
 
@@ -55,7 +81,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MachineLearningErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MachineLearningErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == PREDICTOR_NOT_MOUNTED_HASH)
   {

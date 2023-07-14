@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class SSMErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +54,7 @@ enum class SSMErrors
   ASSOCIATION_EXECUTION_DOES_NOT_EXIST,
   ASSOCIATION_LIMIT_EXCEEDED,
   ASSOCIATION_VERSION_LIMIT_EXCEEDED,
+  AUTOMATION_DEFINITION_NOT_APPROVED,
   AUTOMATION_DEFINITION_NOT_FOUND,
   AUTOMATION_DEFINITION_VERSION_NOT_FOUND,
   AUTOMATION_EXECUTION_LIMIT_EXCEEDED,
@@ -128,6 +120,7 @@ enum class SSMErrors
   INVALID_ROLE,
   INVALID_SCHEDULE,
   INVALID_TARGET,
+  INVALID_TARGET_MAPS,
   INVALID_TYPE_NAME,
   INVALID_UPDATE,
   INVOCATION_DOES_NOT_EXIST,
@@ -138,6 +131,14 @@ enum class SSMErrors
   OPS_ITEM_INVALID_PARAMETER,
   OPS_ITEM_LIMIT_EXCEEDED,
   OPS_ITEM_NOT_FOUND,
+  OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS,
+  OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND,
+  OPS_METADATA_ALREADY_EXISTS,
+  OPS_METADATA_INVALID_ARGUMENT,
+  OPS_METADATA_KEY_LIMIT_EXCEEDED,
+  OPS_METADATA_LIMIT_EXCEEDED,
+  OPS_METADATA_NOT_FOUND,
+  OPS_METADATA_TOO_MANY_UPDATES,
   PARAMETER_ALREADY_EXISTS,
   PARAMETER_LIMIT_EXCEEDED,
   PARAMETER_MAX_VERSION_LIMIT_EXCEEDED,
@@ -169,6 +170,20 @@ enum class SSMErrors
   UNSUPPORTED_PARAMETER_TYPE,
   UNSUPPORTED_PLATFORM_TYPE
 };
+
+class AWS_SSM_API SSMError : public Aws::Client::AWSError<SSMErrors>
+{
+public:
+  SSMError() {}
+  SSMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SSMErrors>(rhs) {}
+  SSMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SSMErrors>(rhs) {}
+  SSMError(const Aws::Client::AWSError<SSMErrors>& rhs) : Aws::Client::AWSError<SSMErrors>(rhs) {}
+  SSMError(Aws::Client::AWSError<SSMErrors>&& rhs) : Aws::Client::AWSError<SSMErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SSMErrorMapper
 {
   AWS_SSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

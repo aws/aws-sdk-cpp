@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
@@ -36,16 +26,24 @@ namespace Model
 {
 
   /**
-   * <p>The regular expression pattern that you want AWS WAF to search for in web
-   * requests, the location in requests that you want AWS WAF to search, and other
-   * settings. Each <code>RegexMatchTuple</code> object contains: </p> <ul> <li>
-   * <p>The part of a web request that you want AWS WAF to inspect, such as a query
-   * string or the value of the <code>User-Agent</code> header. </p> </li> <li>
-   * <p>The identifier of the pattern (a regular expression) that you want AWS WAF to
-   * look for. For more information, see <a>RegexPatternSet</a>. </p> </li> <li>
-   * <p>Whether to perform any conversions on the request, such as converting it to
-   * lowercase, before inspecting it for the specified string.</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+   * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
+   * WAF</b>, use the AWS WAFV2 API and see the <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+   * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
+   * endpoints for regional and global use. </p>  <p>The regular expression
+   * pattern that you want AWS WAF to search for in web requests, the location in
+   * requests that you want AWS WAF to search, and other settings. Each
+   * <code>RegexMatchTuple</code> object contains: </p> <ul> <li> <p>The part of a
+   * web request that you want AWS WAF to inspect, such as a query string or the
+   * value of the <code>User-Agent</code> header. </p> </li> <li> <p>The identifier
+   * of the pattern (a regular expression) that you want AWS WAF to look for. For
+   * more information, see <a>RegexPatternSet</a>. </p> </li> <li> <p>Whether to
+   * perform any conversions on the request, such as converting it to lowercase,
+   * before inspecting it for the specified string.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RegexMatchTuple">AWS
    * API Reference</a></p>
    */

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -187,62 +177,91 @@ namespace Model
     /**
      * <p>The organization node to whom you are going to share. If
      * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
-     * created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the
-     * administrator to monitor the status of the <code>PortfolioShare</code> creation
-     * process.</p>
+     * created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output
+     * in order for the administrator to monitor the status of the
+     * <code>PortfolioShare</code> creation process.</p>
      */
     inline const OrganizationNode& GetOrganizationNode() const{ return m_organizationNode; }
 
     /**
      * <p>The organization node to whom you are going to share. If
      * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
-     * created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the
-     * administrator to monitor the status of the <code>PortfolioShare</code> creation
-     * process.</p>
+     * created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output
+     * in order for the administrator to monitor the status of the
+     * <code>PortfolioShare</code> creation process.</p>
      */
     inline bool OrganizationNodeHasBeenSet() const { return m_organizationNodeHasBeenSet; }
 
     /**
      * <p>The organization node to whom you are going to share. If
      * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
-     * created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the
-     * administrator to monitor the status of the <code>PortfolioShare</code> creation
-     * process.</p>
+     * created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output
+     * in order for the administrator to monitor the status of the
+     * <code>PortfolioShare</code> creation process.</p>
      */
     inline void SetOrganizationNode(const OrganizationNode& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = value; }
 
     /**
      * <p>The organization node to whom you are going to share. If
      * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
-     * created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the
-     * administrator to monitor the status of the <code>PortfolioShare</code> creation
-     * process.</p>
+     * created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output
+     * in order for the administrator to monitor the status of the
+     * <code>PortfolioShare</code> creation process.</p>
      */
     inline void SetOrganizationNode(OrganizationNode&& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = std::move(value); }
 
     /**
      * <p>The organization node to whom you are going to share. If
      * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
-     * created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the
-     * administrator to monitor the status of the <code>PortfolioShare</code> creation
-     * process.</p>
+     * created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output
+     * in order for the administrator to monitor the status of the
+     * <code>PortfolioShare</code> creation process.</p>
      */
     inline CreatePortfolioShareRequest& WithOrganizationNode(const OrganizationNode& value) { SetOrganizationNode(value); return *this;}
 
     /**
      * <p>The organization node to whom you are going to share. If
      * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
-     * created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the
-     * administrator to monitor the status of the <code>PortfolioShare</code> creation
-     * process.</p>
+     * created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output
+     * in order for the administrator to monitor the status of the
+     * <code>PortfolioShare</code> creation process.</p>
      */
     inline CreatePortfolioShareRequest& WithOrganizationNode(OrganizationNode&& value) { SetOrganizationNode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline bool GetShareTagOptions() const{ return m_shareTagOptions; }
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline bool ShareTagOptionsHasBeenSet() const { return m_shareTagOptionsHasBeenSet; }
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline void SetShareTagOptions(bool value) { m_shareTagOptionsHasBeenSet = true; m_shareTagOptions = value; }
+
+    /**
+     * <p>Enables or disables <code>TagOptions </code> sharing when creating the
+     * portfolio share. If this flag is not provided, TagOptions sharing is
+     * disabled.</p>
+     */
+    inline CreatePortfolioShareRequest& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
 
   private:
 
@@ -257,6 +276,9 @@ namespace Model
 
     OrganizationNode m_organizationNode;
     bool m_organizationNodeHasBeenSet;
+
+    bool m_shareTagOptions;
+    bool m_shareTagOptionsHasBeenSet;
   };
 
 } // namespace Model

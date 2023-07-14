@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Attribute details on a specific Savings Plan.</p><p><h3>See Also:</h3>   <a
+   * <p>The attribute details on a specific Savings Plan.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansDetails">AWS
    * API Reference</a></p>
    */
@@ -48,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline SavingsPlansDetails& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline SavingsPlansDetails& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
-     * isolated and independent of the other Regions.</p>
+     * <p>A collection of Amazon Web Services resources in a geographic area. Each
+     * Amazon Web Services Region is isolated and independent of the other Regions.</p>
      */
     inline SavingsPlansDetails& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -138,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline SavingsPlansDetails& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline SavingsPlansDetails& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID used to distinguish Savings Plans from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
      */
     inline SavingsPlansDetails& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 

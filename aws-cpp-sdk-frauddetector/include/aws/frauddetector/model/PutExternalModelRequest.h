@@ -1,27 +1,18 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/ModelSource.h>
-#include <aws/frauddetector/model/Role.h>
 #include <aws/frauddetector/model/ModelInputConfiguration.h>
 #include <aws/frauddetector/model/ModelOutputConfiguration.h>
 #include <aws/frauddetector/model/ModelEndpointStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -124,32 +115,42 @@ namespace Model
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
+    inline const Aws::String& GetInvokeModelEndpointRoleArn() const{ return m_invokeModelEndpointRoleArn; }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+    inline bool InvokeModelEndpointRoleArnHasBeenSet() const { return m_invokeModelEndpointRoleArnHasBeenSet; }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetInvokeModelEndpointRoleArn(const Aws::String& value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn = value; }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+    inline void SetInvokeModelEndpointRoleArn(Aws::String&& value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn = std::move(value); }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline PutExternalModelRequest& WithRole(const Role& value) { SetRole(value); return *this;}
+    inline void SetInvokeModelEndpointRoleArn(const char* value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn.assign(value); }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline PutExternalModelRequest& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline PutExternalModelRequest& WithInvokeModelEndpointRoleArn(const Aws::String& value) { SetInvokeModelEndpointRoleArn(value); return *this;}
+
+    /**
+     * <p>The IAM role used to invoke the model endpoint.</p>
+     */
+    inline PutExternalModelRequest& WithInvokeModelEndpointRoleArn(Aws::String&& value) { SetInvokeModelEndpointRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The IAM role used to invoke the model endpoint.</p>
+     */
+    inline PutExternalModelRequest& WithInvokeModelEndpointRoleArn(const char* value) { SetInvokeModelEndpointRoleArn(value); return *this;}
 
 
     /**
@@ -244,6 +245,47 @@ namespace Model
      */
     inline PutExternalModelRequest& WithModelEndpointStatus(ModelEndpointStatus&& value) { SetModelEndpointStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_modelEndpoint;
@@ -252,8 +294,8 @@ namespace Model
     ModelSource m_modelSource;
     bool m_modelSourceHasBeenSet;
 
-    Role m_role;
-    bool m_roleHasBeenSet;
+    Aws::String m_invokeModelEndpointRoleArn;
+    bool m_invokeModelEndpointRoleArnHasBeenSet;
 
     ModelInputConfiguration m_inputConfiguration;
     bool m_inputConfigurationHasBeenSet;
@@ -263,6 +305,9 @@ namespace Model
 
     ModelEndpointStatus m_modelEndpointStatus;
     bool m_modelEndpointStatusHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

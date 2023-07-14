@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/amplify/Amplify_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Custom rewrite / redirect rule. </p><p><h3>See Also:</h3>   <a
+   * <p> Describes a custom rewrite or redirect rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CustomRule">AWS
    * API Reference</a></p>
    */
@@ -130,83 +120,139 @@ namespace Model
 
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline CustomRule& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline CustomRule& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p> The status code for a URL rewrite or redirect rule. </p>
+     * <p> The status code for a URL rewrite or redirect rule. </p> <dl> <dt>200</dt>
+     * <dd> <p>Represents a 200 rewrite rule.</p> </dd> <dt>301</dt> <dd> <p>Represents
+     * a 301 (moved pemanently) redirect rule. This and all future requests should be
+     * directed to the target URL. </p> </dd> <dt>302</dt> <dd> <p>Represents a 302
+     * temporary redirect rule.</p> </dd> <dt>404</dt> <dd> <p>Represents a 404
+     * redirect rule.</p> </dd> <dt>404-200</dt> <dd> <p>Represents a 404 rewrite
+     * rule.</p> </dd> </dl>
      */
     inline CustomRule& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline CustomRule& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline CustomRule& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline CustomRule& WithCondition(const char* value) { SetCondition(value); return *this;}
 

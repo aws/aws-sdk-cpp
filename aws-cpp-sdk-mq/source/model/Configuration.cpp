@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mq/model/Configuration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,8 @@ namespace Model
 
 Configuration::Configuration() : 
     m_arnHasBeenSet(false),
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
@@ -44,6 +36,8 @@ Configuration::Configuration() :
 
 Configuration::Configuration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
@@ -64,6 +58,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
+
+    m_authenticationStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("created"))
@@ -136,6 +137,11 @@ JsonValue Configuration::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_authenticationStrategyHasBeenSet)
+  {
+   payload.WithString("authenticationStrategy", AuthenticationStrategyMapper::GetNameForAuthenticationStrategy(m_authenticationStrategy));
   }
 
   if(m_createdHasBeenSet)

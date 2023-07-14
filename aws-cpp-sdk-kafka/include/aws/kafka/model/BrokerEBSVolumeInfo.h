@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/model/ProvisionedThroughput.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +100,37 @@ namespace Model
 
 
     /**
+     * EBS volume provisioned throughput information.
+     */
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline BrokerEBSVolumeInfo& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline BrokerEBSVolumeInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+
+
+    /**
      * 
             <p>Size of the EBS volume to update.</p>
          
@@ -140,6 +162,9 @@ namespace Model
 
     Aws::String m_kafkaBrokerNodeId;
     bool m_kafkaBrokerNodeIdHasBeenSet;
+
+    ProvisionedThroughput m_provisionedThroughput;
+    bool m_provisionedThroughputHasBeenSet;
 
     int m_volumeSizeGB;
     bool m_volumeSizeGBHasBeenSet;

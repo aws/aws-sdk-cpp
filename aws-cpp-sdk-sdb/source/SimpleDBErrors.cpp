@@ -1,30 +1,140 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/sdb/SimpleDBErrors.h>
+#include <aws/sdb/model/MissingParameter.h>
+#include <aws/sdb/model/NumberSubmittedItemsExceeded.h>
+#include <aws/sdb/model/NumberDomainAttributesExceeded.h>
+#include <aws/sdb/model/InvalidNumberPredicates.h>
+#include <aws/sdb/model/InvalidParameterValue.h>
+#include <aws/sdb/model/TooManyRequestedAttributes.h>
+#include <aws/sdb/model/NoSuchDomain.h>
+#include <aws/sdb/model/InvalidNumberValueTests.h>
+#include <aws/sdb/model/NumberItemAttributesExceeded.h>
+#include <aws/sdb/model/NumberDomainsExceeded.h>
+#include <aws/sdb/model/InvalidQueryExpression.h>
+#include <aws/sdb/model/DuplicateItemName.h>
+#include <aws/sdb/model/InvalidNextToken.h>
+#include <aws/sdb/model/AttributeDoesNotExist.h>
+#include <aws/sdb/model/NumberDomainBytesExceeded.h>
+#include <aws/sdb/model/NumberSubmittedAttributesExceeded.h>
+#include <aws/sdb/model/RequestTimeout.h>
 
 using namespace Aws::Client;
-using namespace Aws::SimpleDB;
 using namespace Aws::Utils;
+using namespace Aws::SimpleDB;
+using namespace Aws::SimpleDB::Model;
 
 namespace Aws
 {
 namespace SimpleDB
 {
+template<> AWS_SIMPLEDB_API MissingParameter SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::MISSING_PARAMETER);
+  return MissingParameter(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NumberSubmittedItemsExceeded SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NUMBER_SUBMITTED_ITEMS_EXCEEDED);
+  return NumberSubmittedItemsExceeded(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NumberDomainAttributesExceeded SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED);
+  return NumberDomainAttributesExceeded(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API InvalidNumberPredicates SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::INVALID_NUMBER_PREDICATES);
+  return InvalidNumberPredicates(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API InvalidParameterValue SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::INVALID_PARAMETER_VALUE);
+  return InvalidParameterValue(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API TooManyRequestedAttributes SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::TOO_MANY_REQUESTED_ATTRIBUTES);
+  return TooManyRequestedAttributes(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NoSuchDomain SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NO_SUCH_DOMAIN);
+  return NoSuchDomain(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API InvalidNumberValueTests SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::INVALID_NUMBER_VALUE_TESTS);
+  return InvalidNumberValueTests(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NumberItemAttributesExceeded SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NUMBER_ITEM_ATTRIBUTES_EXCEEDED);
+  return NumberItemAttributesExceeded(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NumberDomainsExceeded SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NUMBER_DOMAINS_EXCEEDED);
+  return NumberDomainsExceeded(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API InvalidQueryExpression SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::INVALID_QUERY_EXPRESSION);
+  return InvalidQueryExpression(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API DuplicateItemName SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::DUPLICATE_ITEM_NAME);
+  return DuplicateItemName(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API InvalidNextToken SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::INVALID_NEXT_TOKEN);
+  return InvalidNextToken(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API AttributeDoesNotExist SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::ATTRIBUTE_DOES_NOT_EXIST);
+  return AttributeDoesNotExist(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NumberDomainBytesExceeded SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NUMBER_DOMAIN_BYTES_EXCEEDED);
+  return NumberDomainBytesExceeded(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API NumberSubmittedAttributesExceeded SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::NUMBER_SUBMITTED_ATTRIBUTES_EXCEEDED);
+  return NumberSubmittedAttributesExceeded(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_SIMPLEDB_API RequestTimeout SimpleDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == SimpleDBErrors::REQUEST_TIMEOUT);
+  return RequestTimeout(this->GetXmlPayload().GetRootElement());
+}
+
 namespace SimpleDBErrorMapper
 {
 

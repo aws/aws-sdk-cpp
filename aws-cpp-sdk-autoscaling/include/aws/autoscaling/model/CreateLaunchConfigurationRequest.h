@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/InstanceMonitoring.h>
+#include <aws/autoscaling/model/InstanceMetadataOptions.h>
 #include <aws/autoscaling/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -364,280 +355,279 @@ namespace Model
 
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The ID of a ClassicLink-enabled VPC to link your
+     * EC2-Classic instances to. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
-     * VPC. For more information, see <a
+     * <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported
+     * after that date.</i> </p> <p>The IDs of one or more security groups for the
+     * specified ClassicLink-enabled VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>If you specify
+     * the <code>ClassicLinkVPCId</code> parameter, you must specify this
+     * parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * For more information, see <a
+     * <p>The user data to make available to the launched EC2 instances. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * metadata and user data</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance
+     * metadata and user data</a> (Windows). If you are using a command line tool,
+     * base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -648,8 +638,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -661,8 +651,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -674,8 +664,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -687,8 +677,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -700,8 +690,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -713,8 +703,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -726,8 +716,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -739,8 +729,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
-     * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
+     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
      * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
@@ -751,7 +741,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -761,7 +751,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -771,7 +761,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -781,7 +771,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -791,7 +781,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -801,7 +791,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -811,7 +801,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -821,7 +811,7 @@ namespace Model
      * <p>Specifies the instance type of the EC2 instance.</p> <p>For information about
      * available instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you do not specify <code>InstanceId</code>, you must specify
      * <code>InstanceType</code>.</p>
      */
@@ -978,78 +968,78 @@ namespace Model
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline bool InstanceMonitoringHasBeenSet() const { return m_instanceMonitoringHasBeenSet; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::move(value); }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
+     * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
 
@@ -1058,12 +1048,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
@@ -1071,12 +1060,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
@@ -1084,12 +1072,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
@@ -1097,12 +1084,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
@@ -1110,12 +1096,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
@@ -1123,12 +1108,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
@@ -1136,12 +1120,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
@@ -1149,12 +1132,11 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
-     * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
-     * new launch configuration, running instances will continue to run as long as the
-     * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
+     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+     * <p>When you change your maximum price by creating a new launch configuration,
+     * running instances will continue to run as long as the maximum price for those
+     * running instances is higher than the current Spot price.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
@@ -1164,7 +1146,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
@@ -1174,7 +1156,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
@@ -1184,7 +1166,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
@@ -1194,7 +1176,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
@@ -1204,7 +1186,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline void SetIamInstanceProfile(const char* value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile.assign(value); }
@@ -1214,7 +1196,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
@@ -1224,7 +1206,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
@@ -1234,7 +1216,7 @@ namespace Model
      * with the IAM role for the instance. The instance profile contains the IAM
      * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
-     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
@@ -1249,7 +1231,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
@@ -1263,7 +1245,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
@@ -1277,7 +1259,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
@@ -1291,7 +1273,7 @@ namespace Model
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -1303,14 +1285,14 @@ namespace Model
      * specify <code>true</code>, each instance in the Auto Scaling group receives a
      * unique public IP address. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
@@ -1320,14 +1302,14 @@ namespace Model
      * specify <code>true</code>, each instance in the Auto Scaling group receives a
      * unique public IP address. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
@@ -1337,14 +1319,14 @@ namespace Model
      * specify <code>true</code>, each instance in the Auto Scaling group receives a
      * unique public IP address. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
@@ -1354,14 +1336,14 @@ namespace Model
      * specify <code>true</code>, each instance in the Auto Scaling group receives a
      * unique public IP address. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
@@ -1375,9 +1357,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
 
@@ -1390,9 +1373,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline bool PlacementTenancyHasBeenSet() const { return m_placementTenancyHasBeenSet; }
 
@@ -1405,9 +1389,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
 
@@ -1420,9 +1405,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(Aws::String&& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = std::move(value); }
 
@@ -1435,9 +1421,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
 
@@ -1450,9 +1437,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
 
@@ -1465,9 +1453,10 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(Aws::String&& value) { SetPlacementTenancy(std::move(value)); return *this;}
 
@@ -1480,11 +1469,61 @@ namespace Model
      * <code>PlacementTenancy</code>, you must specify at least one subnet for
      * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
-     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> |
+     * <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
+
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetMetadataOptions(const InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline void SetMetadataOptions(InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline CreateLaunchConfigurationRequest& WithMetadataOptions(const InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
+     */
+    inline CreateLaunchConfigurationRequest& WithMetadataOptions(InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
   private:
 
@@ -1541,6 +1580,9 @@ namespace Model
 
     Aws::String m_placementTenancy;
     bool m_placementTenancyHasBeenSet;
+
+    InstanceMetadataOptions m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet;
   };
 
 } // namespace Model

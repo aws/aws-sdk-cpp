@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationStatus.h>
 #include <aws/kinesisanalyticsv2/model/RuntimeEnvironment.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationMode.h>
 #include <utility>
 
 namespace Aws
@@ -185,40 +176,77 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline ApplicationSummary& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline ApplicationSummary& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
+
+
+    /**
+     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
+     * <code>INTERACTIVE</code>.</p>
+     */
+    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+
+    /**
+     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
+     * <code>INTERACTIVE</code>.</p>
+     */
+    inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
+
+    /**
+     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
+     * <code>INTERACTIVE</code>.</p>
+     */
+    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+
+    /**
+     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
+     * <code>INTERACTIVE</code>.</p>
+     */
+    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
+
+    /**
+     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
+     * <code>INTERACTIVE</code>.</p>
+     */
+    inline ApplicationSummary& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
+
+    /**
+     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
+     * <code>INTERACTIVE</code>.</p>
+     */
+    inline ApplicationSummary& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
 
   private:
 
@@ -236,6 +264,9 @@ namespace Model
 
     RuntimeEnvironment m_runtimeEnvironment;
     bool m_runtimeEnvironmentHasBeenSet;
+
+    ApplicationMode m_applicationMode;
+    bool m_applicationModeHasBeenSet;
   };
 
 } // namespace Model

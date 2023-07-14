@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/storagegateway/model/DescribeGatewayInformationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeGatewayInformationResult::DescribeGatewayInformationResult() : 
-    m_hostEnvironment(HostEnvironment::NOT_SET)
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_gatewayCapacity(GatewayCapacity::NOT_SET)
 {
 }
 
 DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hostEnvironment(HostEnvironment::NOT_SET)
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_gatewayCapacity(GatewayCapacity::NOT_SET)
 {
   *this = result;
 }
@@ -133,6 +125,45 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
   if(jsonValue.ValueExists("HostEnvironment"))
   {
     m_hostEnvironment = HostEnvironmentMapper::GetHostEnvironmentForName(jsonValue.GetString("HostEnvironment"));
+
+  }
+
+  if(jsonValue.ValueExists("EndpointType"))
+  {
+    m_endpointType = jsonValue.GetString("EndpointType");
+
+  }
+
+  if(jsonValue.ValueExists("SoftwareUpdatesEndDate"))
+  {
+    m_softwareUpdatesEndDate = jsonValue.GetString("SoftwareUpdatesEndDate");
+
+  }
+
+  if(jsonValue.ValueExists("DeprecationDate"))
+  {
+    m_deprecationDate = jsonValue.GetString("DeprecationDate");
+
+  }
+
+  if(jsonValue.ValueExists("GatewayCapacity"))
+  {
+    m_gatewayCapacity = GatewayCapacityMapper::GetGatewayCapacityForName(jsonValue.GetString("GatewayCapacity"));
+
+  }
+
+  if(jsonValue.ValueExists("SupportedGatewayCapacities"))
+  {
+    Array<JsonView> supportedGatewayCapacitiesJsonList = jsonValue.GetArray("SupportedGatewayCapacities");
+    for(unsigned supportedGatewayCapacitiesIndex = 0; supportedGatewayCapacitiesIndex < supportedGatewayCapacitiesJsonList.GetLength(); ++supportedGatewayCapacitiesIndex)
+    {
+      m_supportedGatewayCapacities.push_back(GatewayCapacityMapper::GetGatewayCapacityForName(supportedGatewayCapacitiesJsonList[supportedGatewayCapacitiesIndex].AsString()));
+    }
+  }
+
+  if(jsonValue.ValueExists("HostEnvironmentId"))
+  {
+    m_hostEnvironmentId = jsonValue.GetString("HostEnvironmentId");
 
   }
 

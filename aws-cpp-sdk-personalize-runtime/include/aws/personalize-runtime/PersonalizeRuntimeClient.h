@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
@@ -65,8 +55,8 @@ namespace Model
         class GetPersonalizedRankingRequest;
         class GetRecommendationsRequest;
 
-        typedef Aws::Utils::Outcome<GetPersonalizedRankingResult, Aws::Client::AWSError<PersonalizeRuntimeErrors>> GetPersonalizedRankingOutcome;
-        typedef Aws::Utils::Outcome<GetRecommendationsResult, Aws::Client::AWSError<PersonalizeRuntimeErrors>> GetRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<GetPersonalizedRankingResult, PersonalizeRuntimeError> GetPersonalizedRankingOutcome;
+        typedef Aws::Utils::Outcome<GetRecommendationsResult, PersonalizeRuntimeError> GetRecommendationsOutcome;
 
         typedef std::future<GetPersonalizedRankingOutcome> GetPersonalizedRankingOutcomeCallable;
         typedef std::future<GetRecommendationsOutcome> GetRecommendationsOutcomeCallable;
@@ -106,83 +96,53 @@ namespace Model
 
         virtual ~PersonalizeRuntimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Personalize Runtime"; }
-
 
         /**
          * <p>Re-ranks a list of recommended items for the given user. The first item in
          * the list is deemed the most likely item to be of interest to the user.</p>
-         * <note> <p>The solution backing the campaign must have been created using a
-         * recipe of type PERSONALIZED_RANKING.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>The solution backing the campaign must have been created using a
+         * recipe of type PERSONALIZED_RANKING.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">AWS
          * API Reference</a></p>
          */
         virtual Model::GetPersonalizedRankingOutcome GetPersonalizedRanking(const Model::GetPersonalizedRankingRequest& request) const;
 
         /**
-         * <p>Re-ranks a list of recommended items for the given user. The first item in
-         * the list is deemed the most likely item to be of interest to the user.</p>
-         * <note> <p>The solution backing the campaign must have been created using a
-         * recipe of type PERSONALIZED_RANKING.</p> </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetPersonalizedRanking that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetPersonalizedRankingOutcomeCallable GetPersonalizedRankingCallable(const Model::GetPersonalizedRankingRequest& request) const;
 
         /**
-         * <p>Re-ranks a list of recommended items for the given user. The first item in
-         * the list is deemed the most likely item to be of interest to the user.</p>
-         * <note> <p>The solution backing the campaign must have been created using a
-         * recipe of type PERSONALIZED_RANKING.</p> </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetPersonalizedRanking that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPersonalizedRankingAsync(const Model::GetPersonalizedRankingRequest& request, const GetPersonalizedRankingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of recommended items. The required input depends on the recipe
-         * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
-         * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
-         * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul> <note> <p>Campaigns that are backed
-         * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of recommended items. For campaigns, the campaign's Amazon
+         * Resource Name (ARN) is required and the required user and item input depends on
+         * the recipe type used to create the solution backing the campaign as follows:</p>
+         * <ul> <li> <p>USER_PERSONALIZATION - <code>userId</code> required,
+         * <code>itemId</code> not used</p> </li> <li> <p>RELATED_ITEMS -
+         * <code>itemId</code> required, <code>userId</code> not used</p> </li> </ul>
+         *  <p>Campaigns that are backed by a solution created using a recipe of type
+         * PERSONALIZED_RANKING use the API.</p>  <p> For recommenders, the
+         * recommender's ARN is required and the required item and user input depends on
+         * the use case (domain-based recipe) backing the recommender. For information on
+         * use case requirements see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+         * recommender use cases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRecommendationsOutcome GetRecommendations(const Model::GetRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns a list of recommended items. The required input depends on the recipe
-         * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
-         * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
-         * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul> <note> <p>Campaigns that are backed
-         * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRecommendationsOutcomeCallable GetRecommendationsCallable(const Model::GetRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns a list of recommended items. The required input depends on the recipe
-         * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
-         * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
-         * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul> <note> <p>Campaigns that are backed
-         * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRecommendationsAsync(const Model::GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

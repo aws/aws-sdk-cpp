@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -233,38 +223,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline bool TrafficRoutingConfigHasBeenSet() const { return m_trafficRoutingConfigHasBeenSet; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
 

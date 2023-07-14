@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/connect/model/StartOutboundVoiceContactRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,7 +20,11 @@ StartOutboundVoiceContactRequest::StartOutboundVoiceContactRequest() :
     m_clientTokenHasBeenSet(true),
     m_sourcePhoneNumberHasBeenSet(false),
     m_queueIdHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_answerMachineDetectionConfigHasBeenSet(false),
+    m_campaignIdHasBeenSet(false),
+    m_trafficType(TrafficType::NOT_SET),
+    m_trafficTypeHasBeenSet(false)
 {
 }
 
@@ -83,6 +77,23 @@ Aws::String StartOutboundVoiceContactRequest::SerializePayload() const
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
 
+  }
+
+  if(m_answerMachineDetectionConfigHasBeenSet)
+  {
+   payload.WithObject("AnswerMachineDetectionConfig", m_answerMachineDetectionConfig.Jsonize());
+
+  }
+
+  if(m_campaignIdHasBeenSet)
+  {
+   payload.WithString("CampaignId", m_campaignId);
+
+  }
+
+  if(m_trafficTypeHasBeenSet)
+  {
+   payload.WithString("TrafficType", TrafficTypeMapper::GetNameForTrafficType(m_trafficType));
   }
 
   return payload.View().WriteReadable();

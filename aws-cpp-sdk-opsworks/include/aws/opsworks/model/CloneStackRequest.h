@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -480,10 +470,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
@@ -495,10 +485,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
@@ -510,10 +500,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
@@ -525,10 +515,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
@@ -540,10 +530,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
@@ -555,10 +545,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline CloneStackRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
@@ -570,10 +560,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline CloneStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
@@ -585,10 +575,10 @@ namespace Model
      * you. You can obtain an existing stack's IAM ARN programmatically by calling
      * <a>DescribePermissions</a>. For more information about IAM ARNs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p> <note> <p>You must set this parameter to a valid service
+     * Identifiers</a>.</p>  <p>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can specify the
      * source stack's service role ARN, if you prefer, but you must do so
-     * explicitly.</p> </note>
+     * explicitly.</p> 
      */
     inline CloneStackRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -687,9 +677,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline const Aws::String& GetDefaultOs() const{ return m_defaultOs; }
 
@@ -714,9 +704,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline bool DefaultOsHasBeenSet() const { return m_defaultOsHasBeenSet; }
 
@@ -741,9 +731,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline void SetDefaultOs(const Aws::String& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
 
@@ -768,9 +758,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::move(value); }
 
@@ -795,9 +785,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline void SetDefaultOs(const char* value) { m_defaultOsHasBeenSet = true; m_defaultOs.assign(value); }
 
@@ -822,9 +812,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline CloneStackRequest& WithDefaultOs(const Aws::String& value) { SetDefaultOs(value); return *this;}
 
@@ -849,9 +839,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline CloneStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(std::move(value)); return *this;}
 
@@ -876,9 +866,9 @@ namespace Model
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information about supported operating systems, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Stacks Operating Systems</a>.</p> <note> <p>You can specify a different
+     * OpsWorks Stacks Operating Systems</a>.</p>  <p>You can specify a different
      * Linux operating system for the cloned stack, but you cannot change from Linux to
-     * Windows or Windows to Linux.</p> </note>
+     * Windows or Windows to Linux.</p> 
      */
     inline CloneStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
 
@@ -1805,9 +1795,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
@@ -1823,9 +1813,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
 
@@ -1841,9 +1831,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
@@ -1859,9 +1849,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
@@ -1877,9 +1867,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
@@ -1895,9 +1885,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline CloneStackRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
@@ -1913,9 +1903,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline CloneStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
@@ -1931,9 +1921,9 @@ namespace Model
      * <code>LATEST</code>. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline CloneStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 

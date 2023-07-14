@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -20,6 +10,9 @@
 #include <aws/sagemaker/model/AuthMode.h>
 #include <aws/sagemaker/model/UserSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AppNetworkAccessType.h>
+#include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -90,250 +83,465 @@ namespace Model
 
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline CreateDomainRequest& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline CreateDomainRequest& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline const UserSettings& GetDefaultUserSettings() const{ return m_defaultUserSettings; }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline bool DefaultUserSettingsHasBeenSet() const { return m_defaultUserSettingsHasBeenSet; }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline void SetDefaultUserSettings(const UserSettings& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = value; }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline void SetDefaultUserSettings(UserSettings&& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = std::move(value); }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline CreateDomainRequest& WithDefaultUserSettings(const UserSettings& value) { SetDefaultUserSettings(value); return *this;}
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline CreateDomainRequest& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets that Studio uses for communication.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for
+     * communication.</p>
      */
     inline CreateDomainRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
+    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline bool HomeEfsFileSystemKmsKeyIdHasBeenSet() const { return m_homeEfsFileSystemKmsKeyIdHasBeenSet; }
+    inline bool AppNetworkAccessTypeHasBeenSet() const { return m_appNetworkAccessTypeHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const Aws::String& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = value; }
+    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = value; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(Aws::String&& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = std::move(value); }
+    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline void SetHomeEfsFileSystemKmsKeyId(const char* value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId.assign(value); }
+    inline CreateDomainRequest& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>Specifies the VPC used for non-EFS traffic. The default value is
+     * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
+     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and
+     * subnets</p> </li> </ul>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const Aws::String& value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline CreateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
+
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(Aws::String&& value) { SetHomeEfsFileSystemKmsKeyId(std::move(value)); return *this;}
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
      */
-    inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const char* value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed key by default. For more control,
+     * specify a customer managed key.</p>
+     */
+    inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline const AppSecurityGroupManagement& GetAppSecurityGroupManagement() const{ return m_appSecurityGroupManagement; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline bool AppSecurityGroupManagementHasBeenSet() const { return m_appSecurityGroupManagementHasBeenSet; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline void SetAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = value; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline void SetAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = std::move(value); }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline CreateDomainRequest& WithAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { SetAppSecurityGroupManagement(value); return *this;}
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline CreateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
 
   private:
 
@@ -355,8 +563,17 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
 
-    Aws::String m_homeEfsFileSystemKmsKeyId;
-    bool m_homeEfsFileSystemKmsKeyIdHasBeenSet;
+    AppNetworkAccessType m_appNetworkAccessType;
+    bool m_appNetworkAccessTypeHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
+
+    AppSecurityGroupManagement m_appSecurityGroupManagement;
+    bool m_appSecurityGroupManagementHasBeenSet;
+
+    DomainSettings m_domainSettings;
+    bool m_domainSettingsHasBeenSet;
   };
 
 } // namespace Model

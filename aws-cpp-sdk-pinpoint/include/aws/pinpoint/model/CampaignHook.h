@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the AWS Lambda function to use as a code hook for a
-   * campaign.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies settings for invoking an AWS Lambda function that customizes a
+   * segment for a campaign.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignHook">AWS
    * API Reference</a></p>
    */
@@ -51,80 +41,116 @@ namespace Model
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline const Aws::String& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline void SetLambdaFunctionName(const Aws::String& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline void SetLambdaFunctionName(Aws::String&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline void SetLambdaFunctionName(const char* value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.assign(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline CampaignHook& WithLambdaFunctionName(const Aws::String& value) { SetLambdaFunctionName(value); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline CampaignHook& WithLambdaFunctionName(Aws::String&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
-     * Pinpoint invokes to send messages for a campaign.</p>
+     * Pinpoint invokes to customize a segment for a campaign.</p>
      */
     inline CampaignHook& WithLambdaFunctionName(const char* value) { SetLambdaFunctionName(value); return *this;}
 
 
     /**
-     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
+     * <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function.
+     * Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize
+     * the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated)
+     * Previously, invoked the function to send a campaign through a custom channel.
+     * This functionality is not supported anymore. To send a campaign through a custom
+     * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
+     * of the campaign.</p></li></ul>
      */
     inline const Mode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
+     * <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function.
+     * Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize
+     * the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated)
+     * Previously, invoked the function to send a campaign through a custom channel.
+     * This functionality is not supported anymore. To send a campaign through a custom
+     * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
+     * of the campaign.</p></li></ul>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
+     * <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function.
+     * Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize
+     * the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated)
+     * Previously, invoked the function to send a campaign through a custom channel.
+     * This functionality is not supported anymore. To send a campaign through a custom
+     * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
+     * of the campaign.</p></li></ul>
      */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
+     * <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function.
+     * Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize
+     * the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated)
+     * Previously, invoked the function to send a campaign through a custom channel.
+     * This functionality is not supported anymore. To send a campaign through a custom
+     * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
+     * of the campaign.</p></li></ul>
      */
     inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
+     * <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function.
+     * Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize
+     * the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated)
+     * Previously, invoked the function to send a campaign through a custom channel.
+     * This functionality is not supported anymore. To send a campaign through a custom
+     * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
+     * of the campaign.</p></li></ul>
      */
     inline CampaignHook& WithMode(const Mode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
+     * <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function.
+     * Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize
+     * the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated)
+     * Previously, invoked the function to send a campaign through a custom channel.
+     * This functionality is not supported anymore. To send a campaign through a custom
+     * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
+     * of the campaign.</p></li></ul>
      */
     inline CampaignHook& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
 

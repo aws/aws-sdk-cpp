@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -46,7 +36,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>
@@ -55,7 +45,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>
@@ -64,7 +54,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>
@@ -73,7 +63,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>

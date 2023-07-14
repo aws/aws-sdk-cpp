@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -91,22 +81,40 @@ namespace Model
     inline CreateFlowDefinitionRequest& WithFlowDefinitionName(const char* value) { SetFlowDefinitionName(value); return *this;}
 
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline const HumanLoopRequestSource& GetHumanLoopRequestSource() const{ return m_humanLoopRequestSource; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline bool HumanLoopRequestSourceHasBeenSet() const { return m_humanLoopRequestSourceHasBeenSet; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline void SetHumanLoopRequestSource(const HumanLoopRequestSource& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = value; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline void SetHumanLoopRequestSource(HumanLoopRequestSource&& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = std::move(value); }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline CreateFlowDefinitionRequest& WithHumanLoopRequestSource(const HumanLoopRequestSource& value) { SetHumanLoopRequestSource(value); return *this;}
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline CreateFlowDefinitionRequest& WithHumanLoopRequestSource(HumanLoopRequestSource&& value) { SetHumanLoopRequestSource(std::move(value)); return *this;}
 
 

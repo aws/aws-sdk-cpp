@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp;
 
@@ -19,13 +9,15 @@ import org.junit.Test;
 
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class EnumModelTest {
 
     @Test
     public void invalidChars() {
 
-        EnumModel testEnum = new EnumModel("TESTENUM",
+        EnumModel testEnum = new EnumModel("TestNamespace", "TESTENUM",
                 asList("PACKAGE.NAME", "HYPHENS-ROCK", "OH:DARK:THIRTY"));
 
         assertEquals(3, testEnum.getMembers().size());
@@ -37,9 +29,27 @@ public class EnumModelTest {
     @Test
     public void invalidWord() {
 
-        EnumModel testEnum = new EnumModel("TESTENUM", asList("DELETE"));
+        EnumModel testEnum = new EnumModel("TestNamespace", "TESTENUM", asList("DELETE"));
 
         assertEquals(1, testEnum.getMembers().size());
         assertEquals("DELETE_", testEnum.getMembers().get(0).getMemberName());
+    }
+
+    @Test
+    public void predefinedSymbols() {
+
+        EnumModel testEnum = new EnumModel("DynamoDB", "TESTENUM", asList("IN"));
+
+        assertTrue(testEnum.getMembers().get(0).isPredefined());
+
+        testEnum = new EnumModel("EC2", "TESTENUM", asList("NOT_SET", "interface"));
+
+        assertFalse(testEnum.getMembers().get(0).isPredefined());
+        assertTrue(testEnum.getMembers().get(1).isPredefined());
+
+        testEnum = new EnumModel("S3Crt", "TESTENUM", asList("IGNORE", "NOT_SET"));
+
+        assertTrue(testEnum.getMembers().get(0).isPredefined());
+        assertFalse(testEnum.getMembers().get(1).isPredefined());
     }
 }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/ComparisonOperator.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -38,6 +28,8 @@ namespace Aws
         static const int not_in_cidr_set_HASH = HashingUtils::HashString("not-in-cidr-set");
         static const int in_port_set_HASH = HashingUtils::HashString("in-port-set");
         static const int not_in_port_set_HASH = HashingUtils::HashString("not-in-port-set");
+        static const int in_set_HASH = HashingUtils::HashString("in-set");
+        static const int not_in_set_HASH = HashingUtils::HashString("not-in-set");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
@@ -75,6 +67,14 @@ namespace Aws
           {
             return ComparisonOperator::not_in_port_set;
           }
+          else if (hashCode == in_set_HASH)
+          {
+            return ComparisonOperator::in_set;
+          }
+          else if (hashCode == not_in_set_HASH)
+          {
+            return ComparisonOperator::not_in_set;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +105,10 @@ namespace Aws
             return "in-port-set";
           case ComparisonOperator::not_in_port_set:
             return "not-in-port-set";
+          case ComparisonOperator::in_set:
+            return "in-set";
+          case ComparisonOperator::not_in_set:
+            return "not-in-set";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

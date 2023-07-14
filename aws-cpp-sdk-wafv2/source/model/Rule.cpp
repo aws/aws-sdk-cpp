@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/Rule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,9 @@ Rule::Rule() :
     m_statementHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_overrideActionHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+    m_ruleLabelsHasBeenSet(false),
+    m_visibilityConfigHasBeenSet(false),
+    m_captchaConfigHasBeenSet(false)
 {
 }
 
@@ -46,7 +38,9 @@ Rule::Rule(JsonView jsonValue) :
     m_statementHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_overrideActionHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
+    m_ruleLabelsHasBeenSet(false),
+    m_visibilityConfigHasBeenSet(false),
+    m_captchaConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,11 +82,28 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_overrideActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuleLabels"))
+  {
+    Array<JsonView> ruleLabelsJsonList = jsonValue.GetArray("RuleLabels");
+    for(unsigned ruleLabelsIndex = 0; ruleLabelsIndex < ruleLabelsJsonList.GetLength(); ++ruleLabelsIndex)
+    {
+      m_ruleLabels.push_back(ruleLabelsJsonList[ruleLabelsIndex].AsObject());
+    }
+    m_ruleLabelsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VisibilityConfig"))
   {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
 
     m_visibilityConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CaptchaConfig"))
+  {
+    m_captchaConfig = jsonValue.GetObject("CaptchaConfig");
+
+    m_captchaConfigHasBeenSet = true;
   }
 
   return *this;
@@ -132,9 +143,26 @@ JsonValue Rule::Jsonize() const
 
   }
 
+  if(m_ruleLabelsHasBeenSet)
+  {
+   Array<JsonValue> ruleLabelsJsonList(m_ruleLabels.size());
+   for(unsigned ruleLabelsIndex = 0; ruleLabelsIndex < ruleLabelsJsonList.GetLength(); ++ruleLabelsIndex)
+   {
+     ruleLabelsJsonList[ruleLabelsIndex].AsObject(m_ruleLabels[ruleLabelsIndex].Jsonize());
+   }
+   payload.WithArray("RuleLabels", std::move(ruleLabelsJsonList));
+
+  }
+
   if(m_visibilityConfigHasBeenSet)
   {
    payload.WithObject("VisibilityConfig", m_visibilityConfig.Jsonize());
+
+  }
+
+  if(m_captchaConfigHasBeenSet)
+  {
+   payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
 
   }
 

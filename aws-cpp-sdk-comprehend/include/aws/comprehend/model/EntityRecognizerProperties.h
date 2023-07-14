@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
@@ -590,6 +580,193 @@ namespace Model
      */
     inline EntityRecognizerProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline EntityRecognizerProperties& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline EntityRecognizerProperties& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt trained custom models. The ModelKmsKeyId can be either of the
+     * following formats: </p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline EntityRecognizerProperties& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline EntityRecognizerProperties& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline EntityRecognizerProperties& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version name you assigned to the entity recognizer.</p>
+     */
+    inline EntityRecognizerProperties& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline const Aws::String& GetSourceModelArn() const{ return m_sourceModelArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline bool SourceModelArnHasBeenSet() const { return m_sourceModelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(const Aws::String& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(Aws::String&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline void SetSourceModelArn(const char* value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline EntityRecognizerProperties& WithSourceModelArn(const Aws::String& value) { SetSourceModelArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline EntityRecognizerProperties& WithSourceModelArn(Aws::String&& value) { SetSourceModelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model. This model was imported
+     * from a different AWS account to create the entity recognizer model in your AWS
+     * account.</p>
+     */
+    inline EntityRecognizerProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
+
   private:
 
     Aws::String m_entityRecognizerArn;
@@ -630,6 +807,15 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    Aws::String m_modelKmsKeyId;
+    bool m_modelKmsKeyIdHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
+
+    Aws::String m_sourceModelArn;
+    bool m_sourceModelArnHasBeenSet;
   };
 
 } // namespace Model

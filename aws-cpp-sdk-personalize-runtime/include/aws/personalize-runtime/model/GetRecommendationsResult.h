@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize-runtime/model/PredictedItem.h>
 #include <utility>
 
@@ -44,50 +35,88 @@ namespace Model
 
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline const Aws::Vector<PredictedItem>& GetItemList() const{ return m_itemList; }
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline void SetItemList(const Aws::Vector<PredictedItem>& value) { m_itemList = value; }
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline void SetItemList(Aws::Vector<PredictedItem>&& value) { m_itemList = std::move(value); }
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& WithItemList(const Aws::Vector<PredictedItem>& value) { SetItemList(value); return *this;}
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& WithItemList(Aws::Vector<PredictedItem>&& value) { SetItemList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& AddItemList(const PredictedItem& value) { m_itemList.push_back(value); return *this; }
 
     /**
-     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * <p>A list of recommendations sorted in descending order by prediction score.
      * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& AddItemList(PredictedItem&& value) { m_itemList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline GetRecommendationsResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline GetRecommendationsResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the recommendation.</p>
+     */
+    inline GetRecommendationsResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+
   private:
 
     Aws::Vector<PredictedItem> m_itemList;
+
+    Aws::String m_recommendationId;
   };
 
 } // namespace Model

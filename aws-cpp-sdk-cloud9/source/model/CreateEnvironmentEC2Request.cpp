@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloud9/model/CreateEnvironmentEC2Request.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,10 +18,15 @@ CreateEnvironmentEC2Request::CreateEnvironmentEC2Request() :
     m_clientRequestTokenHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_automaticStopTimeMinutes(0),
     m_automaticStopTimeMinutesHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -69,6 +64,12 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
 
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
+
+  }
+
   if(m_automaticStopTimeMinutesHasBeenSet)
   {
    payload.WithInteger("automaticStopTimeMinutes", m_automaticStopTimeMinutes);
@@ -89,6 +90,17 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("dryRun", m_dryRun);
 
   }
 

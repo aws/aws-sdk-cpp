@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -42,6 +32,42 @@ namespace Model
     DescribeRestoreJobResult();
     DescribeRestoreJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeRestoreJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the account ID that owns the restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
@@ -206,75 +232,68 @@ namespace Model
 
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline const RestoreJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline void SetStatus(const RestoreJobStatus& value) { m_status = value; }
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline void SetStatus(RestoreJobStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatus(const RestoreJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status code specifying the state of the job that is initiated by AWS Backup
-     * to restore a recovery point.</p>
+     * <p>Status code specifying the state of the job that is initiated by Backup to
+     * restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatus(RestoreJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A detailed message explaining the status of a job to restore a recovery
-     * point.</p>
+     * <p>A message showing the status of a job to restore a recovery point.</p>
      */
     inline DescribeRestoreJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
@@ -449,7 +468,45 @@ namespace Model
      */
     inline DescribeRestoreJobResult& WithCreatedResourceArn(const char* value) { SetCreatedResourceArn(value); return *this;}
 
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline DescribeRestoreJobResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline DescribeRestoreJobResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns metadata associated with a restore job listed by resource type.</p>
+     */
+    inline DescribeRestoreJobResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
   private:
+
+    Aws::String m_accountId;
 
     Aws::String m_restoreJobId;
 
@@ -472,6 +529,8 @@ namespace Model
     long long m_expectedCompletionTimeMinutes;
 
     Aws::String m_createdResourceArn;
+
+    Aws::String m_resourceType;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -51,125 +41,125 @@ namespace Model
 
 
     /**
-     * <p>The parameters for a RUN_COMMAND task type.</p>
+     * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
      */
     inline const MaintenanceWindowRunCommandParameters& GetRunCommand() const{ return m_runCommand; }
 
     /**
-     * <p>The parameters for a RUN_COMMAND task type.</p>
+     * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
      */
     inline bool RunCommandHasBeenSet() const { return m_runCommandHasBeenSet; }
 
     /**
-     * <p>The parameters for a RUN_COMMAND task type.</p>
+     * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
      */
     inline void SetRunCommand(const MaintenanceWindowRunCommandParameters& value) { m_runCommandHasBeenSet = true; m_runCommand = value; }
 
     /**
-     * <p>The parameters for a RUN_COMMAND task type.</p>
+     * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
      */
     inline void SetRunCommand(MaintenanceWindowRunCommandParameters&& value) { m_runCommandHasBeenSet = true; m_runCommand = std::move(value); }
 
     /**
-     * <p>The parameters for a RUN_COMMAND task type.</p>
+     * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithRunCommand(const MaintenanceWindowRunCommandParameters& value) { SetRunCommand(value); return *this;}
 
     /**
-     * <p>The parameters for a RUN_COMMAND task type.</p>
+     * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithRunCommand(MaintenanceWindowRunCommandParameters&& value) { SetRunCommand(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters for an AUTOMATION task type.</p>
+     * <p>The parameters for an <code>AUTOMATION</code> task type.</p>
      */
     inline const MaintenanceWindowAutomationParameters& GetAutomation() const{ return m_automation; }
 
     /**
-     * <p>The parameters for an AUTOMATION task type.</p>
+     * <p>The parameters for an <code>AUTOMATION</code> task type.</p>
      */
     inline bool AutomationHasBeenSet() const { return m_automationHasBeenSet; }
 
     /**
-     * <p>The parameters for an AUTOMATION task type.</p>
+     * <p>The parameters for an <code>AUTOMATION</code> task type.</p>
      */
     inline void SetAutomation(const MaintenanceWindowAutomationParameters& value) { m_automationHasBeenSet = true; m_automation = value; }
 
     /**
-     * <p>The parameters for an AUTOMATION task type.</p>
+     * <p>The parameters for an <code>AUTOMATION</code> task type.</p>
      */
     inline void SetAutomation(MaintenanceWindowAutomationParameters&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
 
     /**
-     * <p>The parameters for an AUTOMATION task type.</p>
+     * <p>The parameters for an <code>AUTOMATION</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(const MaintenanceWindowAutomationParameters& value) { SetAutomation(value); return *this;}
 
     /**
-     * <p>The parameters for an AUTOMATION task type.</p>
+     * <p>The parameters for an <code>AUTOMATION</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(MaintenanceWindowAutomationParameters&& value) { SetAutomation(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters for a STEP_FUNCTIONS task type.</p>
+     * <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
      */
     inline const MaintenanceWindowStepFunctionsParameters& GetStepFunctions() const{ return m_stepFunctions; }
 
     /**
-     * <p>The parameters for a STEP_FUNCTIONS task type.</p>
+     * <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
      */
     inline bool StepFunctionsHasBeenSet() const { return m_stepFunctionsHasBeenSet; }
 
     /**
-     * <p>The parameters for a STEP_FUNCTIONS task type.</p>
+     * <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
      */
     inline void SetStepFunctions(const MaintenanceWindowStepFunctionsParameters& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = value; }
 
     /**
-     * <p>The parameters for a STEP_FUNCTIONS task type.</p>
+     * <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
      */
     inline void SetStepFunctions(MaintenanceWindowStepFunctionsParameters&& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = std::move(value); }
 
     /**
-     * <p>The parameters for a STEP_FUNCTIONS task type.</p>
+     * <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithStepFunctions(const MaintenanceWindowStepFunctionsParameters& value) { SetStepFunctions(value); return *this;}
 
     /**
-     * <p>The parameters for a STEP_FUNCTIONS task type.</p>
+     * <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithStepFunctions(MaintenanceWindowStepFunctionsParameters&& value) { SetStepFunctions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters for a LAMBDA task type.</p>
+     * <p>The parameters for a <code>LAMBDA</code> task type.</p>
      */
     inline const MaintenanceWindowLambdaParameters& GetLambda() const{ return m_lambda; }
 
     /**
-     * <p>The parameters for a LAMBDA task type.</p>
+     * <p>The parameters for a <code>LAMBDA</code> task type.</p>
      */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
-     * <p>The parameters for a LAMBDA task type.</p>
+     * <p>The parameters for a <code>LAMBDA</code> task type.</p>
      */
     inline void SetLambda(const MaintenanceWindowLambdaParameters& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
     /**
-     * <p>The parameters for a LAMBDA task type.</p>
+     * <p>The parameters for a <code>LAMBDA</code> task type.</p>
      */
     inline void SetLambda(MaintenanceWindowLambdaParameters&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
 
     /**
-     * <p>The parameters for a LAMBDA task type.</p>
+     * <p>The parameters for a <code>LAMBDA</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithLambda(const MaintenanceWindowLambdaParameters& value) { SetLambda(value); return *this;}
 
     /**
-     * <p>The parameters for a LAMBDA task type.</p>
+     * <p>The parameters for a <code>LAMBDA</code> task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithLambda(MaintenanceWindowLambdaParameters&& value) { SetLambda(std::move(value)); return *this;}
 

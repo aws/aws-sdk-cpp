@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sms/model/ConnectorCapability.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,7 @@ namespace Aws
         static const int SCVMM_HASH = HashingUtils::HashString("SCVMM");
         static const int HYPERV_MANAGER_HASH = HashingUtils::HashString("HYPERV-MANAGER");
         static const int SNAPSHOT_BATCHING_HASH = HashingUtils::HashString("SNAPSHOT_BATCHING");
+        static const int SMS_OPTIMIZED_HASH = HashingUtils::HashString("SMS_OPTIMIZED");
 
 
         ConnectorCapability GetConnectorCapabilityForName(const Aws::String& name)
@@ -54,6 +45,10 @@ namespace Aws
           else if (hashCode == SNAPSHOT_BATCHING_HASH)
           {
             return ConnectorCapability::SNAPSHOT_BATCHING;
+          }
+          else if (hashCode == SMS_OPTIMIZED_HASH)
+          {
+            return ConnectorCapability::SMS_OPTIMIZED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +72,8 @@ namespace Aws
             return "HYPERV-MANAGER";
           case ConnectorCapability::SNAPSHOT_BATCHING:
             return "SNAPSHOT_BATCHING";
+          case ConnectorCapability::SMS_OPTIMIZED:
+            return "SMS_OPTIMIZED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

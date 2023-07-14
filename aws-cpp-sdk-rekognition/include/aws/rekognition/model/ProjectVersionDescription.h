@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/rekognition/model/TrainingDataResult.h>
 #include <aws/rekognition/model/TestingDataResult.h>
 #include <aws/rekognition/model/EvaluationResult.h>
+#include <aws/rekognition/model/GroundTruthManifest.h>
 #include <utility>
 
 namespace Aws
@@ -40,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>The description of a version of a model.</p><p><h3>See Also:</h3>   <a
+   * <p>A description of a version of an Amazon Rekognition Custom Labels
+   * model.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProjectVersionDescription">AWS
    * API Reference</a></p>
    */
@@ -223,30 +215,30 @@ namespace Model
 
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline long long GetBillableTrainingTimeInSeconds() const{ return m_billableTrainingTimeInSeconds; }
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline bool BillableTrainingTimeInSecondsHasBeenSet() const { return m_billableTrainingTimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline void SetBillableTrainingTimeInSeconds(long long value) { m_billableTrainingTimeInSecondsHasBeenSet = true; m_billableTrainingTimeInSeconds = value; }
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline ProjectVersionDescription& WithBillableTrainingTimeInSeconds(long long value) { SetBillableTrainingTimeInSeconds(value); return *this;}
 
@@ -314,63 +306,63 @@ namespace Model
 
 
     /**
-     * <p>The manifest file that represents the training results.</p>
+     * <p>Contains information about the training results.</p>
      */
     inline const TrainingDataResult& GetTrainingDataResult() const{ return m_trainingDataResult; }
 
     /**
-     * <p>The manifest file that represents the training results.</p>
+     * <p>Contains information about the training results.</p>
      */
     inline bool TrainingDataResultHasBeenSet() const { return m_trainingDataResultHasBeenSet; }
 
     /**
-     * <p>The manifest file that represents the training results.</p>
+     * <p>Contains information about the training results.</p>
      */
     inline void SetTrainingDataResult(const TrainingDataResult& value) { m_trainingDataResultHasBeenSet = true; m_trainingDataResult = value; }
 
     /**
-     * <p>The manifest file that represents the training results.</p>
+     * <p>Contains information about the training results.</p>
      */
     inline void SetTrainingDataResult(TrainingDataResult&& value) { m_trainingDataResultHasBeenSet = true; m_trainingDataResult = std::move(value); }
 
     /**
-     * <p>The manifest file that represents the training results.</p>
+     * <p>Contains information about the training results.</p>
      */
     inline ProjectVersionDescription& WithTrainingDataResult(const TrainingDataResult& value) { SetTrainingDataResult(value); return *this;}
 
     /**
-     * <p>The manifest file that represents the training results.</p>
+     * <p>Contains information about the training results.</p>
      */
     inline ProjectVersionDescription& WithTrainingDataResult(TrainingDataResult&& value) { SetTrainingDataResult(std::move(value)); return *this;}
 
 
     /**
-     * <p>The manifest file that represents the testing results.</p>
+     * <p>Contains information about the testing results.</p>
      */
     inline const TestingDataResult& GetTestingDataResult() const{ return m_testingDataResult; }
 
     /**
-     * <p>The manifest file that represents the testing results.</p>
+     * <p>Contains information about the testing results.</p>
      */
     inline bool TestingDataResultHasBeenSet() const { return m_testingDataResultHasBeenSet; }
 
     /**
-     * <p>The manifest file that represents the testing results.</p>
+     * <p>Contains information about the testing results.</p>
      */
     inline void SetTestingDataResult(const TestingDataResult& value) { m_testingDataResultHasBeenSet = true; m_testingDataResult = value; }
 
     /**
-     * <p>The manifest file that represents the testing results.</p>
+     * <p>Contains information about the testing results.</p>
      */
     inline void SetTestingDataResult(TestingDataResult&& value) { m_testingDataResultHasBeenSet = true; m_testingDataResult = std::move(value); }
 
     /**
-     * <p>The manifest file that represents the testing results.</p>
+     * <p>Contains information about the testing results.</p>
      */
     inline ProjectVersionDescription& WithTestingDataResult(const TestingDataResult& value) { SetTestingDataResult(value); return *this;}
 
     /**
-     * <p>The manifest file that represents the testing results.</p>
+     * <p>Contains information about the testing results.</p>
      */
     inline ProjectVersionDescription& WithTestingDataResult(TestingDataResult&& value) { SetTestingDataResult(std::move(value)); return *this;}
 
@@ -411,6 +403,92 @@ namespace Model
      */
     inline ProjectVersionDescription& WithEvaluationResult(EvaluationResult&& value) { SetEvaluationResult(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The location of the summary manifest. The summary manifest provides aggregate
+     * data validation results for the training and test datasets.</p>
+     */
+    inline const GroundTruthManifest& GetManifestSummary() const{ return m_manifestSummary; }
+
+    /**
+     * <p>The location of the summary manifest. The summary manifest provides aggregate
+     * data validation results for the training and test datasets.</p>
+     */
+    inline bool ManifestSummaryHasBeenSet() const { return m_manifestSummaryHasBeenSet; }
+
+    /**
+     * <p>The location of the summary manifest. The summary manifest provides aggregate
+     * data validation results for the training and test datasets.</p>
+     */
+    inline void SetManifestSummary(const GroundTruthManifest& value) { m_manifestSummaryHasBeenSet = true; m_manifestSummary = value; }
+
+    /**
+     * <p>The location of the summary manifest. The summary manifest provides aggregate
+     * data validation results for the training and test datasets.</p>
+     */
+    inline void SetManifestSummary(GroundTruthManifest&& value) { m_manifestSummaryHasBeenSet = true; m_manifestSummary = std::move(value); }
+
+    /**
+     * <p>The location of the summary manifest. The summary manifest provides aggregate
+     * data validation results for the training and test datasets.</p>
+     */
+    inline ProjectVersionDescription& WithManifestSummary(const GroundTruthManifest& value) { SetManifestSummary(value); return *this;}
+
+    /**
+     * <p>The location of the summary manifest. The summary manifest provides aggregate
+     * data validation results for the training and test datasets.</p>
+     */
+    inline ProjectVersionDescription& WithManifestSummary(GroundTruthManifest&& value) { SetManifestSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
@@ -445,6 +523,12 @@ namespace Model
 
     EvaluationResult m_evaluationResult;
     bool m_evaluationResultHasBeenSet;
+
+    GroundTruthManifest m_manifestSummary;
+    bool m_manifestSummaryHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

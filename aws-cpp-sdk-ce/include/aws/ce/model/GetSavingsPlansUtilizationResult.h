@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -45,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline const Aws::Vector<SavingsPlansUtilizationByTime>& GetSavingsPlansUtilizationsByTime() const{ return m_savingsPlansUtilizationsByTime; }
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline void SetSavingsPlansUtilizationsByTime(const Aws::Vector<SavingsPlansUtilizationByTime>& value) { m_savingsPlansUtilizationsByTime = value; }
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline void SetSavingsPlansUtilizationsByTime(Aws::Vector<SavingsPlansUtilizationByTime>&& value) { m_savingsPlansUtilizationsByTime = std::move(value); }
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(const Aws::Vector<SavingsPlansUtilizationByTime>& value) { SetSavingsPlansUtilizationsByTime(value); return *this;}
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(Aws::Vector<SavingsPlansUtilizationByTime>&& value) { SetSavingsPlansUtilizationsByTime(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(const SavingsPlansUtilizationByTime& value) { m_savingsPlansUtilizationsByTime.push_back(value); return *this; }
 
     /**
-     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
-     * specify date ranges.</p>
+     * <p>The amount of cost/commitment that you used your Savings Plans. You can use
+     * it to specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(SavingsPlansUtilizationByTime&& value) { m_savingsPlansUtilizationsByTime.push_back(std::move(value)); return *this; }
 

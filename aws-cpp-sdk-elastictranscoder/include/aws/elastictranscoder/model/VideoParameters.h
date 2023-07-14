@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -200,10 +190,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -292,10 +282,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -384,10 +374,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -476,10 +466,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -568,10 +558,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -660,10 +650,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -752,10 +742,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -844,10 +834,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -936,10 +926,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -1028,10 +1018,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -1120,10 +1110,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -1212,10 +1202,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -1304,10 +1294,10 @@ namespace Model
      * <code>Bt601ToBt709</code> </p> </li> <li> <p> <i>HD to Standard, 1920x1080 to
      * 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code> </p> </li>
      * <li> <p> <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder
-     * applies <code>Bt709ToBt601</code> </p> </li> </ul> <note> <p>Elastic Transcoder
+     * applies <code>Bt709ToBt601</code> </p> </li> </ul>  <p>Elastic Transcoder
      * may change the behavior of the <code>ColorspaceConversionMode</code>
      * <code>Auto</code> mode in the future. All outputs in a playlist must use the
-     * same <code>ColorSpaceConversionMode</code>.</p> </note> <p>If you do not specify
+     * same <code>ColorSpaceConversionMode</code>.</p>  <p>If you do not specify
      * a <code>ColorSpaceConversionMode</code>, Elastic Transcoder does not change the
      * color space of a file. If you are unsure what
      * <code>ColorSpaceConversionMode</code> was applied to your output file, you can
@@ -1505,8 +1495,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline const Aws::String& GetFixedGOP() const{ return m_fixedGOP; }
 
@@ -1518,8 +1508,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline bool FixedGOPHasBeenSet() const { return m_fixedGOPHasBeenSet; }
 
@@ -1531,8 +1521,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline void SetFixedGOP(const Aws::String& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = value; }
 
@@ -1544,8 +1534,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline void SetFixedGOP(Aws::String&& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = std::move(value); }
 
@@ -1557,8 +1547,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline void SetFixedGOP(const char* value) { m_fixedGOPHasBeenSet = true; m_fixedGOP.assign(value); }
 
@@ -1570,8 +1560,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline VideoParameters& WithFixedGOP(const Aws::String& value) { SetFixedGOP(value); return *this;}
 
@@ -1583,8 +1573,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline VideoParameters& WithFixedGOP(Aws::String&& value) { SetFixedGOP(std::move(value)); return *this;}
 
@@ -1596,8 +1586,8 @@ namespace Model
      * the value of <code>KeyframesMaxDist</code> for the distance between key frames
      * (the number of frames in a group of pictures, or GOP).</p> </li> <li> <p>
      * <code>false</code>: The distance between key frames can vary.</p> </li> </ul>
-     * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
-     * <code>fmp4</code> containers.</p> </important>
+     *  <p> <code>FixedGOP</code> must be set to <code>true</code> for
+     * <code>fmp4</code> containers.</p> 
      */
     inline VideoParameters& WithFixedGOP(const char* value) { SetFixedGOP(value); return *this;}
 
@@ -2022,12 +2012,12 @@ namespace Model
 
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2052,12 +2042,12 @@ namespace Model
     inline const Aws::String& GetResolution() const{ return m_resolution; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2082,12 +2072,12 @@ namespace Model
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2112,12 +2102,12 @@ namespace Model
     inline void SetResolution(const Aws::String& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2142,12 +2132,12 @@ namespace Model
     inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2172,12 +2162,12 @@ namespace Model
     inline void SetResolution(const char* value) { m_resolutionHasBeenSet = true; m_resolution.assign(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2202,12 +2192,12 @@ namespace Model
     inline VideoParameters& WithResolution(const Aws::String& value) { SetResolution(value); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2232,12 +2222,12 @@ namespace Model
     inline VideoParameters& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The width and height of the video in
+     * not use them together.</p>  <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
      * x <i>height</i>:</p> <ul> <li> <p> <code>auto</code>: Elastic Transcoder
      * attempts to preserve the width and height of the input file, subject to the
@@ -2263,12 +2253,12 @@ namespace Model
 
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2281,12 +2271,12 @@ namespace Model
     inline const Aws::String& GetAspectRatio() const{ return m_aspectRatio; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2299,12 +2289,12 @@ namespace Model
     inline bool AspectRatioHasBeenSet() const { return m_aspectRatioHasBeenSet; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2317,12 +2307,12 @@ namespace Model
     inline void SetAspectRatio(const Aws::String& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = value; }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2335,12 +2325,12 @@ namespace Model
     inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::move(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2353,12 +2343,12 @@ namespace Model
     inline void SetAspectRatio(const char* value) { m_aspectRatioHasBeenSet = true; m_aspectRatio.assign(value); }
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2371,12 +2361,12 @@ namespace Model
     inline VideoParameters& WithAspectRatio(const Aws::String& value) { SetAspectRatio(value); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
@@ -2389,12 +2379,12 @@ namespace Model
     inline VideoParameters& WithAspectRatio(Aws::String&& value) { SetAspectRatio(std::move(value)); return *this;}
 
     /**
-     * <important> <p>To better control resolution and aspect ratio of output videos,
+     *  <p>To better control resolution and aspect ratio of output videos,
      * we recommend that you use the values <code>MaxWidth</code>,
      * <code>MaxHeight</code>, <code>SizingPolicy</code>, <code>PaddingPolicy</code>,
      * and <code>DisplayAspectRatio</code> instead of <code>Resolution</code> and
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-     * not use them together.</p> </important> <p>The display aspect ratio of the video
+     * not use them together.</p>  <p>The display aspect ratio of the video
      * in the output file. Valid values include:</p> <p> <code>auto</code>,
      * <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the

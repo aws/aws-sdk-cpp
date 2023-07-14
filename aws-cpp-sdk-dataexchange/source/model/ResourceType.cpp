@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dataexchange/model/ResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,7 @@ namespace Aws
         static const int REVISION_HASH = HashingUtils::HashString("REVISION");
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
         static const int JOB_HASH = HashingUtils::HashString("JOB");
+        static const int EVENT_ACTION_HASH = HashingUtils::HashString("EVENT_ACTION");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -54,6 +45,10 @@ namespace Aws
           else if (hashCode == JOB_HASH)
           {
             return ResourceType::JOB;
+          }
+          else if (hashCode == EVENT_ACTION_HASH)
+          {
+            return ResourceType::EVENT_ACTION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +72,8 @@ namespace Aws
             return "ASSET";
           case ResourceType::JOB:
             return "JOB";
+          case ResourceType::EVENT_ACTION:
+            return "EVENT_ACTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

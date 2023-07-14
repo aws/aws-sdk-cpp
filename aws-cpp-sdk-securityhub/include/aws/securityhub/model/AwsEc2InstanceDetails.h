@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/AwsEc2InstanceNetworkInterfacesDetails.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an EC2 instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails">AWS
    * API Reference</a></p>
    */
@@ -387,44 +378,133 @@ namespace Model
 
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(const Aws::String& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(Aws::String&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::move(value); }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLaunchedAt(const char* value) { m_launchedAtHasBeenSet = true; m_launchedAt.assign(value); }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(const Aws::String& value) { SetLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(Aws::String&& value) { SetLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>Indicates when the instance was launched.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2InstanceDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
+
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline const Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& WithNetworkInterfaces(const Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& WithNetworkInterfaces(Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& AddNetworkInterfaces(const AwsEc2InstanceNetworkInterfacesDetails& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>The identifiers of the network interfaces for the EC2 instance. The details
+     * for each network interface are in a corresponding
+     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
+     */
+    inline AwsEc2InstanceDetails& AddNetworkInterfaces(AwsEc2InstanceNetworkInterfacesDetails&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -454,6 +534,9 @@ namespace Model
 
     Aws::String m_launchedAt;
     bool m_launchedAtHasBeenSet;
+
+    Aws::Vector<AwsEc2InstanceNetworkInterfacesDetails> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
   };
 
 } // namespace Model

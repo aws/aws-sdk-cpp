@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/UpdateFunctionConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,7 +29,10 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
-    m_layersHasBeenSet(false)
+    m_layersHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false),
+    m_imageConfigHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -126,6 +119,29 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
      layersJsonList[layersIndex].AsString(m_layers[layersIndex]);
    }
    payload.WithArray("Layers", std::move(layersJsonList));
+
+  }
+
+  if(m_fileSystemConfigsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+   {
+     fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
+  }
+
+  if(m_imageConfigHasBeenSet)
+  {
+   payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

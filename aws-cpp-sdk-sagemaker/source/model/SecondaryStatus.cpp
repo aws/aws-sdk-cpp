@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/SecondaryStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -44,6 +34,8 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Interrupted_HASH = HashingUtils::HashString("Interrupted");
         static const int MaxWaitTimeExceeded_HASH = HashingUtils::HashString("MaxWaitTimeExceeded");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static const int Restarting_HASH = HashingUtils::HashString("Restarting");
 
 
         SecondaryStatus GetSecondaryStatusForName(const Aws::String& name)
@@ -105,6 +97,14 @@ namespace Aws
           {
             return SecondaryStatus::MaxWaitTimeExceeded;
           }
+          else if (hashCode == Updating_HASH)
+          {
+            return SecondaryStatus::Updating;
+          }
+          else if (hashCode == Restarting_HASH)
+          {
+            return SecondaryStatus::Restarting;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -147,6 +147,10 @@ namespace Aws
             return "Interrupted";
           case SecondaryStatus::MaxWaitTimeExceeded:
             return "MaxWaitTimeExceeded";
+          case SecondaryStatus::Updating:
+            return "Updating";
+          case SecondaryStatus::Restarting:
+            return "Restarting";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

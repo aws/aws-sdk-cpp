@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -152,44 +142,50 @@ namespace Model
 
 
     /**
-     * <p>The date when the maintenance action is automatically applied. The
-     * maintenance action is applied to the resource on this date regardless of the
-     * maintenance window for the resource.</p>
+     * <p>The date when the maintenance action is automatically applied.</p> <p>On this
+     * date, the maintenance action is applied to the resource as soon as possible,
+     * regardless of the maintenance window for the resource. There might be a delay of
+     * one or more days from this date before the maintenance action is applied.</p>
      */
     inline const Aws::Utils::DateTime& GetForcedApplyDate() const{ return m_forcedApplyDate; }
 
     /**
-     * <p>The date when the maintenance action is automatically applied. The
-     * maintenance action is applied to the resource on this date regardless of the
-     * maintenance window for the resource.</p>
+     * <p>The date when the maintenance action is automatically applied.</p> <p>On this
+     * date, the maintenance action is applied to the resource as soon as possible,
+     * regardless of the maintenance window for the resource. There might be a delay of
+     * one or more days from this date before the maintenance action is applied.</p>
      */
     inline bool ForcedApplyDateHasBeenSet() const { return m_forcedApplyDateHasBeenSet; }
 
     /**
-     * <p>The date when the maintenance action is automatically applied. The
-     * maintenance action is applied to the resource on this date regardless of the
-     * maintenance window for the resource.</p>
+     * <p>The date when the maintenance action is automatically applied.</p> <p>On this
+     * date, the maintenance action is applied to the resource as soon as possible,
+     * regardless of the maintenance window for the resource. There might be a delay of
+     * one or more days from this date before the maintenance action is applied.</p>
      */
     inline void SetForcedApplyDate(const Aws::Utils::DateTime& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
 
     /**
-     * <p>The date when the maintenance action is automatically applied. The
-     * maintenance action is applied to the resource on this date regardless of the
-     * maintenance window for the resource.</p>
+     * <p>The date when the maintenance action is automatically applied.</p> <p>On this
+     * date, the maintenance action is applied to the resource as soon as possible,
+     * regardless of the maintenance window for the resource. There might be a delay of
+     * one or more days from this date before the maintenance action is applied.</p>
      */
     inline void SetForcedApplyDate(Aws::Utils::DateTime&& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = std::move(value); }
 
     /**
-     * <p>The date when the maintenance action is automatically applied. The
-     * maintenance action is applied to the resource on this date regardless of the
-     * maintenance window for the resource.</p>
+     * <p>The date when the maintenance action is automatically applied.</p> <p>On this
+     * date, the maintenance action is applied to the resource as soon as possible,
+     * regardless of the maintenance window for the resource. There might be a delay of
+     * one or more days from this date before the maintenance action is applied.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(const Aws::Utils::DateTime& value) { SetForcedApplyDate(value); return *this;}
 
     /**
-     * <p>The date when the maintenance action is automatically applied. The
-     * maintenance action is applied to the resource on this date regardless of the
-     * maintenance window for the resource.</p>
+     * <p>The date when the maintenance action is automatically applied.</p> <p>On this
+     * date, the maintenance action is applied to the resource as soon as possible,
+     * regardless of the maintenance window for the resource. There might be a delay of
+     * one or more days from this date before the maintenance action is applied.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(std::move(value)); return *this;}
 

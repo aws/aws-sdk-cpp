@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/Credentials.h>
 #include <aws/sts/model/AssumedRoleUser.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/model/ResponseMetadata.h>
 #include <utility>
 
@@ -38,8 +29,8 @@ namespace Model
 {
   /**
    * <p>Contains the response to a successful <a>AssumeRole</a> request, including
-   * temporary AWS credentials that can be used to make AWS requests. </p><p><h3>See
-   * Also:</h3>   <a
+   * temporary Amazon Web Services credentials that can be used to make Amazon Web
+   * Services requests. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleResponse">AWS
    * API Reference</a></p>
    */
@@ -53,41 +44,41 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <note> <p>The size of the
+     * access key, and a security (or session) token.</p>  <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> 
      */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <note> <p>The size of the
+     * access key, and a security (or session) token.</p>  <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> 
      */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <note> <p>The size of the
+     * access key, and a security (or session) token.</p>  <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> 
      */
     inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <note> <p>The size of the
+     * access key, and a security (or session) token.</p>  <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> 
      */
     inline AssumeRoleResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <note> <p>The size of the
+     * access key, and a security (or session) token.</p>  <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> 
      */
     inline AssumeRoleResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
@@ -168,6 +159,133 @@ namespace Model
     inline AssumeRoleResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 
 
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentity = value; }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentity = std::move(value); }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline void SetSourceIdentity(const char* value) { m_sourceIdentity.assign(value); }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline AssumeRoleResult& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline AssumeRoleResult& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in CloudTrail logs to determine who took actions
+     * with a role. You can use the <code>aws:SourceIdentity</code> condition key to
+     * further control access to Amazon Web Services resources based on the value of
+     * source identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
+     */
+    inline AssumeRoleResult& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -190,6 +308,8 @@ namespace Model
     AssumedRoleUser m_assumedRoleUser;
 
     int m_packedPolicySize;
+
+    Aws::String m_sourceIdentity;
 
     ResponseMetadata m_responseMetadata;
   };

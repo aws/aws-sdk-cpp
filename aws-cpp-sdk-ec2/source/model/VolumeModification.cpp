@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/VolumeModification.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -41,12 +31,20 @@ VolumeModification::VolumeModification() :
     m_targetIopsHasBeenSet(false),
     m_targetVolumeType(VolumeType::NOT_SET),
     m_targetVolumeTypeHasBeenSet(false),
+    m_targetThroughput(0),
+    m_targetThroughputHasBeenSet(false),
+    m_targetMultiAttachEnabled(false),
+    m_targetMultiAttachEnabledHasBeenSet(false),
     m_originalSize(0),
     m_originalSizeHasBeenSet(false),
     m_originalIops(0),
     m_originalIopsHasBeenSet(false),
     m_originalVolumeType(VolumeType::NOT_SET),
     m_originalVolumeTypeHasBeenSet(false),
+    m_originalThroughput(0),
+    m_originalThroughputHasBeenSet(false),
+    m_originalMultiAttachEnabled(false),
+    m_originalMultiAttachEnabledHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -65,12 +63,20 @@ VolumeModification::VolumeModification(const XmlNode& xmlNode) :
     m_targetIopsHasBeenSet(false),
     m_targetVolumeType(VolumeType::NOT_SET),
     m_targetVolumeTypeHasBeenSet(false),
+    m_targetThroughput(0),
+    m_targetThroughputHasBeenSet(false),
+    m_targetMultiAttachEnabled(false),
+    m_targetMultiAttachEnabledHasBeenSet(false),
     m_originalSize(0),
     m_originalSizeHasBeenSet(false),
     m_originalIops(0),
     m_originalIopsHasBeenSet(false),
     m_originalVolumeType(VolumeType::NOT_SET),
     m_originalVolumeTypeHasBeenSet(false),
+    m_originalThroughput(0),
+    m_originalThroughputHasBeenSet(false),
+    m_originalMultiAttachEnabled(false),
+    m_originalMultiAttachEnabledHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -121,6 +127,18 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
       m_targetVolumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetVolumeTypeNode.GetText()).c_str()).c_str());
       m_targetVolumeTypeHasBeenSet = true;
     }
+    XmlNode targetThroughputNode = resultNode.FirstChild("targetThroughput");
+    if(!targetThroughputNode.IsNull())
+    {
+      m_targetThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetThroughputNode.GetText()).c_str()).c_str());
+      m_targetThroughputHasBeenSet = true;
+    }
+    XmlNode targetMultiAttachEnabledNode = resultNode.FirstChild("targetMultiAttachEnabled");
+    if(!targetMultiAttachEnabledNode.IsNull())
+    {
+      m_targetMultiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetMultiAttachEnabledNode.GetText()).c_str()).c_str());
+      m_targetMultiAttachEnabledHasBeenSet = true;
+    }
     XmlNode originalSizeNode = resultNode.FirstChild("originalSize");
     if(!originalSizeNode.IsNull())
     {
@@ -138,6 +156,18 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
     {
       m_originalVolumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalVolumeTypeNode.GetText()).c_str()).c_str());
       m_originalVolumeTypeHasBeenSet = true;
+    }
+    XmlNode originalThroughputNode = resultNode.FirstChild("originalThroughput");
+    if(!originalThroughputNode.IsNull())
+    {
+      m_originalThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalThroughputNode.GetText()).c_str()).c_str());
+      m_originalThroughputHasBeenSet = true;
+    }
+    XmlNode originalMultiAttachEnabledNode = resultNode.FirstChild("originalMultiAttachEnabled");
+    if(!originalMultiAttachEnabledNode.IsNull())
+    {
+      m_originalMultiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalMultiAttachEnabledNode.GetText()).c_str()).c_str());
+      m_originalMultiAttachEnabledHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
@@ -194,6 +224,16 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".TargetVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_targetVolumeType) << "&";
   }
 
+  if(m_targetThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetThroughput=" << m_targetThroughput << "&";
+  }
+
+  if(m_targetMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetMultiAttachEnabled=" << std::boolalpha << m_targetMultiAttachEnabled << "&";
+  }
+
   if(m_originalSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".OriginalSize=" << m_originalSize << "&";
@@ -207,6 +247,16 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_originalVolumeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".OriginalVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_originalVolumeType) << "&";
+  }
+
+  if(m_originalThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OriginalThroughput=" << m_originalThroughput << "&";
+  }
+
+  if(m_originalMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OriginalMultiAttachEnabled=" << std::boolalpha << m_originalMultiAttachEnabled << "&";
   }
 
   if(m_progressHasBeenSet)
@@ -252,6 +302,14 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << ".TargetVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_targetVolumeType) << "&";
   }
+  if(m_targetThroughputHasBeenSet)
+  {
+      oStream << location << ".TargetThroughput=" << m_targetThroughput << "&";
+  }
+  if(m_targetMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << ".TargetMultiAttachEnabled=" << std::boolalpha << m_targetMultiAttachEnabled << "&";
+  }
   if(m_originalSizeHasBeenSet)
   {
       oStream << location << ".OriginalSize=" << m_originalSize << "&";
@@ -263,6 +321,14 @@ void VolumeModification::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_originalVolumeTypeHasBeenSet)
   {
       oStream << location << ".OriginalVolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_originalVolumeType) << "&";
+  }
+  if(m_originalThroughputHasBeenSet)
+  {
+      oStream << location << ".OriginalThroughput=" << m_originalThroughput << "&";
+  }
+  if(m_originalMultiAttachEnabledHasBeenSet)
+  {
+      oStream << location << ".OriginalMultiAttachEnabled=" << std::boolalpha << m_originalMultiAttachEnabled << "&";
   }
   if(m_progressHasBeenSet)
   {

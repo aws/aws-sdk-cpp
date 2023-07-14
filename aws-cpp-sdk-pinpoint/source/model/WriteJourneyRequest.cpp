@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/WriteJourneyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,12 @@ WriteJourneyRequest::WriteJourneyRequest() :
     m_startActivityHasBeenSet(false),
     m_startConditionHasBeenSet(false),
     m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_waitForQuietTime(false),
+    m_waitForQuietTimeHasBeenSet(false),
+    m_refreshOnSegmentUpdate(false),
+    m_refreshOnSegmentUpdateHasBeenSet(false),
+    m_journeyChannelSettingsHasBeenSet(false)
 {
 }
 
@@ -60,7 +55,12 @@ WriteJourneyRequest::WriteJourneyRequest(JsonView jsonValue) :
     m_startActivityHasBeenSet(false),
     m_startConditionHasBeenSet(false),
     m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_waitForQuietTime(false),
+    m_waitForQuietTimeHasBeenSet(false),
+    m_refreshOnSegmentUpdate(false),
+    m_refreshOnSegmentUpdateHasBeenSet(false),
+    m_journeyChannelSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,6 +154,27 @@ WriteJourneyRequest& WriteJourneyRequest::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WaitForQuietTime"))
+  {
+    m_waitForQuietTime = jsonValue.GetBool("WaitForQuietTime");
+
+    m_waitForQuietTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RefreshOnSegmentUpdate"))
+  {
+    m_refreshOnSegmentUpdate = jsonValue.GetBool("RefreshOnSegmentUpdate");
+
+    m_refreshOnSegmentUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JourneyChannelSettings"))
+  {
+    m_journeyChannelSettings = jsonValue.GetObject("JourneyChannelSettings");
+
+    m_journeyChannelSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +256,24 @@ JsonValue WriteJourneyRequest::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", StateMapper::GetNameForState(m_state));
+  }
+
+  if(m_waitForQuietTimeHasBeenSet)
+  {
+   payload.WithBool("WaitForQuietTime", m_waitForQuietTime);
+
+  }
+
+  if(m_refreshOnSegmentUpdateHasBeenSet)
+  {
+   payload.WithBool("RefreshOnSegmentUpdate", m_refreshOnSegmentUpdate);
+
+  }
+
+  if(m_journeyChannelSettingsHasBeenSet)
+  {
+   payload.WithObject("JourneyChannelSettings", m_journeyChannelSettings.Jsonize());
+
   }
 
   return payload;

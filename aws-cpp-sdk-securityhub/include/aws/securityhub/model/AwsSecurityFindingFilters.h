@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -21,7 +11,7 @@
 #include <aws/securityhub/model/NumberFilter.h>
 #include <aws/securityhub/model/MapFilter.h>
 #include <aws/securityhub/model/IpFilter.h>
-#include <aws/securityhub/model/KeywordFilter.h>
+#include <aws/securityhub/model/BooleanFilter.h>
 #include <utility>
 
 namespace Aws
@@ -42,7 +32,9 @@ namespace Model
   /**
    * <p>A collection of attributes that are applied to all active Security
    * Hub-aggregated findings and that result in a subset of findings that are
-   * included in this insight.</p><p><h3>See Also:</h3>   <a
+   * included in this insight.</p> <p>You can filter by up to 10 finding attributes.
+   * For each attribute, you can provide up to 20 filter values.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
@@ -113,42 +105,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
 
@@ -197,58 +189,99 @@ namespace Model
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline const Aws::Vector<StringFilter>& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(const Aws::Vector<StringFilter>& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(Aws::Vector<StringFilter>&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(const Aws::Vector<StringFilter>& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(Aws::Vector<StringFilter>&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(const StringFilter& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(value); return *this; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc.</p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline void SetRegion(const Aws::Vector<StringFilter>& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline void SetRegion(Aws::Vector<StringFilter>&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithRegion(const Aws::Vector<StringFilter>& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithRegion(Aws::Vector<StringFilter>&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddRegion(const StringFilter& value) { m_regionHasBeenSet = true; m_region.push_back(value); return *this; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddRegion(StringFilter&& value) { m_regionHasBeenSet = true; m_region.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -510,96 +543,6 @@ namespace Model
      * provider last updated the finding record. </p>
      */
     inline AwsSecurityFindingFilters& AddUpdatedAt(DateFilter&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline const Aws::Vector<NumberFilter>& GetSeverityProduct() const{ return m_severityProduct; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline bool SeverityProductHasBeenSet() const { return m_severityProductHasBeenSet; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline void SetSeverityProduct(const Aws::Vector<NumberFilter>& value) { m_severityProductHasBeenSet = true; m_severityProduct = value; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline void SetSeverityProduct(Aws::Vector<NumberFilter>&& value) { m_severityProductHasBeenSet = true; m_severityProduct = std::move(value); }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityProduct(const Aws::Vector<NumberFilter>& value) { SetSeverityProduct(value); return *this;}
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityProduct(Aws::Vector<NumberFilter>&& value) { SetSeverityProduct(std::move(value)); return *this;}
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityProduct(const NumberFilter& value) { m_severityProductHasBeenSet = true; m_severityProduct.push_back(value); return *this; }
-
-    /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityProduct(NumberFilter&& value) { m_severityProductHasBeenSet = true; m_severityProduct.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline const Aws::Vector<NumberFilter>& GetSeverityNormalized() const{ return m_severityNormalized; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline bool SeverityNormalizedHasBeenSet() const { return m_severityNormalizedHasBeenSet; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline void SetSeverityNormalized(const Aws::Vector<NumberFilter>& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized = value; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline void SetSeverityNormalized(Aws::Vector<NumberFilter>&& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized = std::move(value); }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityNormalized(const Aws::Vector<NumberFilter>& value) { SetSeverityNormalized(value); return *this;}
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithSeverityNormalized(Aws::Vector<NumberFilter>&& value) { SetSeverityNormalized(std::move(value)); return *this;}
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityNormalized(const NumberFilter& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized.push_back(value); return *this; }
-
-    /**
-     * <p>The normalized severity of a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddSeverityNormalized(NumberFilter&& value) { m_severityNormalizedHasBeenSet = true; m_severityNormalized.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -2347,132 +2290,148 @@ namespace Model
 
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline const Aws::Vector<StringFilter>& GetResourcePartition() const{ return m_resourcePartition; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline bool ResourcePartitionHasBeenSet() const { return m_resourcePartitionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline void SetResourcePartition(const Aws::Vector<StringFilter>& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = value; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline void SetResourcePartition(Aws::Vector<StringFilter>&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = std::move(value); }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& WithResourcePartition(const Aws::Vector<StringFilter>& value) { SetResourcePartition(value); return *this;}
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& WithResourcePartition(Aws::Vector<StringFilter>&& value) { SetResourcePartition(std::move(value)); return *this;}
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& AddResourcePartition(const StringFilter& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(value); return *this; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& AddResourcePartition(StringFilter&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline const Aws::Vector<StringFilter>& GetResourceRegion() const{ return m_resourceRegion; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetResourceRegion(const Aws::Vector<StringFilter>& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetResourceRegion(Aws::Vector<StringFilter>&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceRegion(const Aws::Vector<StringFilter>& value) { SetResourceRegion(value); return *this;}
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceRegion(Aws::Vector<StringFilter>&& value) { SetResourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceRegion(const StringFilter& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(value); return *this; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceRegion(StringFilter&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline const Aws::Vector<MapFilter>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline void SetResourceTags(const Aws::Vector<MapFilter>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline void SetResourceTags(Aws::Vector<MapFilter>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceTags(const Aws::Vector<MapFilter>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceTags(Aws::Vector<MapFilter>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceTags(const MapFilter& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceTags(MapFilter&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
@@ -2929,44 +2888,44 @@ namespace Model
 
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyUserName() const{ return m_resourceAwsIamAccessKeyUserName; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyPrincipalName() const{ return m_resourceAwsIamAccessKeyPrincipalName; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline bool ResourceAwsIamAccessKeyUserNameHasBeenSet() const { return m_resourceAwsIamAccessKeyUserNameHasBeenSet; }
+    inline bool ResourceAwsIamAccessKeyPrincipalNameHasBeenSet() const { return m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline void SetResourceAwsIamAccessKeyUserName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName = value; }
+    inline void SetResourceAwsIamAccessKeyPrincipalName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = value; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline void SetResourceAwsIamAccessKeyUserName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName = std::move(value); }
+    inline void SetResourceAwsIamAccessKeyPrincipalName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = std::move(value); }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyUserName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamAccessKeyUserName(value); return *this;}
+    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamAccessKeyPrincipalName(value); return *this;}
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyUserName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamAccessKeyUserName(std::move(value)); return *this;}
+    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamAccessKeyPrincipalName(std::move(value)); return *this;}
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyUserName(const StringFilter& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName.push_back(value); return *this; }
+    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(const StringFilter& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.push_back(value); return *this; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyUserName(StringFilter&& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName.push_back(std::move(value)); return *this; }
+    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(StringFilter&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -3049,6 +3008,47 @@ namespace Model
      * <p>The creation date/time of the IAM access key related to a finding.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyCreatedAt(DateFilter&& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamUserUserName() const{ return m_resourceAwsIamUserUserName; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline bool ResourceAwsIamUserUserNameHasBeenSet() const { return m_resourceAwsIamUserUserNameHasBeenSet; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline void SetResourceAwsIamUserUserName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = value; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline void SetResourceAwsIamUserUserName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = std::move(value); }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamUserUserName(value); return *this;}
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamUserUserName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(const StringFilter& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.push_back(value); return *this; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(StringFilter&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -3266,57 +3266,57 @@ namespace Model
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline const Aws::Vector<StringFilter>& GetComplianceStatus() const{ return m_complianceStatus; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline void SetComplianceStatus(const Aws::Vector<StringFilter>& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline void SetComplianceStatus(Aws::Vector<StringFilter>&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& WithComplianceStatus(const Aws::Vector<StringFilter>& value) { SetComplianceStatus(value); return *this;}
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& WithComplianceStatus(Aws::Vector<StringFilter>&& value) { SetComplianceStatus(std::move(value)); return *this;}
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& AddComplianceStatus(const StringFilter& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(value); return *this; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& AddComplianceStatus(StringFilter&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(std::move(value)); return *this; }
 
@@ -3363,42 +3363,58 @@ namespace Model
 
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline const Aws::Vector<StringFilter>& GetWorkflowState() const{ return m_workflowState; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline bool WorkflowStateHasBeenSet() const { return m_workflowStateHasBeenSet; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline void SetWorkflowState(const Aws::Vector<StringFilter>& value) { m_workflowStateHasBeenSet = true; m_workflowState = value; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline void SetWorkflowState(Aws::Vector<StringFilter>&& value) { m_workflowStateHasBeenSet = true; m_workflowState = std::move(value); }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithWorkflowState(const Aws::Vector<StringFilter>& value) { SetWorkflowState(value); return *this;}
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithWorkflowState(Aws::Vector<StringFilter>&& value) { SetWorkflowState(std::move(value)); return *this;}
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddWorkflowState(const StringFilter& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(value); return *this; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddWorkflowState(StringFilter&& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(std::move(value)); return *this; }
 
@@ -3406,104 +3422,280 @@ namespace Model
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<StringFilter>& GetWorkflowStatus() const{ return m_workflowStatus; }
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline bool WorkflowStatusHasBeenSet() const { return m_workflowStatusHasBeenSet; }
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline void SetWorkflowStatus(const Aws::Vector<StringFilter>& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = value; }
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline void SetWorkflowStatus(Aws::Vector<StringFilter>&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus = std::move(value); }
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithWorkflowStatus(const Aws::Vector<StringFilter>& value) { SetWorkflowStatus(value); return *this;}
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithWorkflowStatus(Aws::Vector<StringFilter>&& value) { SetWorkflowStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddWorkflowStatus(const StringFilter& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.push_back(value); return *this; }
 
     /**
      * <p>The status of the investigation into a finding. Allowed values are the
      * following.</p> <ul> <li> <p> <code>NEW</code> - The initial state of a finding,
-     * before it is reviewed.</p> </li> <li> <p> <code>NOTIFIED</code> - Indicates that
-     * the resource owner has been notified about the security issue. Used when the
-     * initial reviewer is not the resource owner, and needs intervention from the
-     * resource owner.</p> </li> <li> <p> <code>SUPPRESSED</code> - The finding will
-     * not be reviewed again and will not be acted upon.</p> </li> <li> <p>
+     * before it is reviewed.</p> <p>Security Hub also resets the workflow status from
+     * <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the
+     * following cases:</p> <ul> <li> <p> <code>RecordState</code> changes from
+     * <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to either
+     * <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>NOTIFIED</code> - Indicates that the resource
+     * owner has been notified about the security issue. Used when the initial reviewer
+     * is not the resource owner, and needs intervention from the resource owner.</p>
+     * <p>If one of the following occurs, the workflow status is changed automatically
+     * from <code>NOTIFIED</code> to <code>NEW</code>:</p> <ul> <li> <p>
+     * <code>RecordState</code> changes from <code>ARCHIVED</code> to
+     * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
+     * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
+     * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * believe that any action is needed.</p> <p>The workflow status of a
+     * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+     * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
      * <code>RESOLVED</code> - The finding was reviewed and remediated and is now
-     * considered resolved. </p> </li> </ul>
+     * considered resolved. </p> <p>The finding remains <code>RESOLVED</code> unless
+     * one of the following occurs:</p> <ul> <li> <p> <code>RecordState</code> changes
+     * from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
+     * <code>Compliance.Status</code> changes from <code>PASSED</code> to
+     * <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p>
+     * </li> </ul> <p>In those cases, the workflow status is automatically reset to
+     * <code>NEW</code>.</p> <p>For findings from controls, if
+     * <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub
+     * automatically sets the workflow status to <code>RESOLVED</code>.</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddWorkflowStatus(StringFilter&& value) { m_workflowStatusHasBeenSet = true; m_workflowStatus.push_back(std::move(value)); return *this; }
 
@@ -3755,44 +3947,435 @@ namespace Model
 
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline const Aws::Vector<KeywordFilter>& GetKeyword() const{ return m_keyword; }
+    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsConfidence() const{ return m_findingProviderFieldsConfidence; }
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
+    inline bool FindingProviderFieldsConfidenceHasBeenSet() const { return m_findingProviderFieldsConfidenceHasBeenSet; }
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline void SetKeyword(const Aws::Vector<KeywordFilter>& value) { m_keywordHasBeenSet = true; m_keyword = value; }
+    inline void SetFindingProviderFieldsConfidence(const Aws::Vector<NumberFilter>& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = value; }
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline void SetKeyword(Aws::Vector<KeywordFilter>&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
+    inline void SetFindingProviderFieldsConfidence(Aws::Vector<NumberFilter>&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence = std::move(value); }
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline AwsSecurityFindingFilters& WithKeyword(const Aws::Vector<KeywordFilter>& value) { SetKeyword(value); return *this;}
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(const Aws::Vector<NumberFilter>& value) { SetFindingProviderFieldsConfidence(value); return *this;}
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline AwsSecurityFindingFilters& WithKeyword(Aws::Vector<KeywordFilter>&& value) { SetKeyword(std::move(value)); return *this;}
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsConfidence(Aws::Vector<NumberFilter>&& value) { SetFindingProviderFieldsConfidence(std::move(value)); return *this;}
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline AwsSecurityFindingFilters& AddKeyword(const KeywordFilter& value) { m_keywordHasBeenSet = true; m_keyword.push_back(value); return *this; }
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(const NumberFilter& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.push_back(value); return *this; }
 
     /**
-     * <p>A keyword for a finding.</p>
+     * <p>The finding provider value for the finding confidence. Confidence is defined
+     * as the likelihood that a finding accurately identifies the behavior or issue
+     * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
+     * using a ratio scale, where 0 means zero percent confidence and 100 means 100
+     * percent confidence.</p>
      */
-    inline AwsSecurityFindingFilters& AddKeyword(KeywordFilter&& value) { m_keywordHasBeenSet = true; m_keyword.push_back(std::move(value)); return *this; }
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsConfidence(NumberFilter&& value) { m_findingProviderFieldsConfidenceHasBeenSet = true; m_findingProviderFieldsConfidence.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline const Aws::Vector<NumberFilter>& GetFindingProviderFieldsCriticality() const{ return m_findingProviderFieldsCriticality; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline bool FindingProviderFieldsCriticalityHasBeenSet() const { return m_findingProviderFieldsCriticalityHasBeenSet; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline void SetFindingProviderFieldsCriticality(const Aws::Vector<NumberFilter>& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = value; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline void SetFindingProviderFieldsCriticality(Aws::Vector<NumberFilter>&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality = std::move(value); }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(const Aws::Vector<NumberFilter>& value) { SetFindingProviderFieldsCriticality(value); return *this;}
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsCriticality(Aws::Vector<NumberFilter>&& value) { SetFindingProviderFieldsCriticality(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(const NumberFilter& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider value for the level of importance assigned to the
+     * resources associated with the findings.</p> <p>A score of 0 means that the
+     * underlying resources have no criticality, and a score of 100 is reserved for the
+     * most critical resources. </p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsCriticality(NumberFilter&& value) { m_findingProviderFieldsCriticalityHasBeenSet = true; m_findingProviderFieldsCriticality.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsId() const{ return m_findingProviderFieldsRelatedFindingsId; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline bool FindingProviderFieldsRelatedFindingsIdHasBeenSet() const { return m_findingProviderFieldsRelatedFindingsIdHasBeenSet; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsId(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = value; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsId(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId = std::move(value); }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsRelatedFindingsId(value); return *this;}
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsId(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsRelatedFindingsId(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(const StringFilter& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.push_back(value); return *this; }
+
+    /**
+     * <p>The finding identifier of a related finding that is identified by the finding
+     * provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsId(StringFilter&& value) { m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true; m_findingProviderFieldsRelatedFindingsId.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsRelatedFindingsProductArn() const{ return m_findingProviderFieldsRelatedFindingsProductArn; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline bool FindingProviderFieldsRelatedFindingsProductArnHasBeenSet() const { return m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = value; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline void SetFindingProviderFieldsRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsRelatedFindingsProductArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsRelatedFindingsProductArn(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsRelatedFindingsProductArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(const StringFilter& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.push_back(value); return *this; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding that is identified
+     * by the finding provider.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsRelatedFindingsProductArn(StringFilter&& value) { m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true; m_findingProviderFieldsRelatedFindingsProductArn.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityLabel() const{ return m_findingProviderFieldsSeverityLabel; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline bool FindingProviderFieldsSeverityLabelHasBeenSet() const { return m_findingProviderFieldsSeverityLabelHasBeenSet; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityLabel(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = value; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityLabel(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel = std::move(value); }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsSeverityLabel(value); return *this;}
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityLabel(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsSeverityLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(const StringFilter& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider value for the severity label.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityLabel(StringFilter&& value) { m_findingProviderFieldsSeverityLabelHasBeenSet = true; m_findingProviderFieldsSeverityLabel.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsSeverityOriginal() const{ return m_findingProviderFieldsSeverityOriginal; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline bool FindingProviderFieldsSeverityOriginalHasBeenSet() const { return m_findingProviderFieldsSeverityOriginalHasBeenSet; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityOriginal(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = value; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline void SetFindingProviderFieldsSeverityOriginal(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal = std::move(value); }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsSeverityOriginal(value); return *this;}
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsSeverityOriginal(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsSeverityOriginal(std::move(value)); return *this;}
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(const StringFilter& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.push_back(value); return *this; }
+
+    /**
+     * <p>The finding provider's original value for the severity.</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsSeverityOriginal(StringFilter&& value) { m_findingProviderFieldsSeverityOriginalHasBeenSet = true; m_findingProviderFieldsSeverityOriginal.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFindingProviderFieldsTypes() const{ return m_findingProviderFieldsTypes; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline bool FindingProviderFieldsTypesHasBeenSet() const { return m_findingProviderFieldsTypesHasBeenSet; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline void SetFindingProviderFieldsTypes(const Aws::Vector<StringFilter>& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = value; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline void SetFindingProviderFieldsTypes(Aws::Vector<StringFilter>&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes = std::move(value); }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(const Aws::Vector<StringFilter>& value) { SetFindingProviderFieldsTypes(value); return *this;}
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& WithFindingProviderFieldsTypes(Aws::Vector<StringFilter>&& value) { SetFindingProviderFieldsTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(const StringFilter& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more finding types that the finding provider assigned to the finding.
+     * Uses the format of <code>namespace/category/classifier</code> that classify a
+     * finding.</p> <p>Valid namespace values are: Software and Configuration Checks |
+     * TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+     */
+    inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(StringFilter&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline const Aws::Vector<BooleanFilter>& GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline void SetSample(const Aws::Vector<BooleanFilter>& value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline void SetSample(Aws::Vector<BooleanFilter>&& value) { m_sampleHasBeenSet = true; m_sample = std::move(value); }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& WithSample(const Aws::Vector<BooleanFilter>& value) { SetSample(value); return *this;}
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& WithSample(Aws::Vector<BooleanFilter>&& value) { SetSample(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& AddSample(const BooleanFilter& value) { m_sampleHasBeenSet = true; m_sample.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& AddSample(BooleanFilter&& value) { m_sampleHasBeenSet = true; m_sample.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -3808,6 +4391,9 @@ namespace Model
     Aws::Vector<StringFilter> m_generatorId;
     bool m_generatorIdHasBeenSet;
 
+    Aws::Vector<StringFilter> m_region;
+    bool m_regionHasBeenSet;
+
     Aws::Vector<StringFilter> m_type;
     bool m_typeHasBeenSet;
 
@@ -3822,12 +4408,6 @@ namespace Model
 
     Aws::Vector<DateFilter> m_updatedAt;
     bool m_updatedAtHasBeenSet;
-
-    Aws::Vector<NumberFilter> m_severityProduct;
-    bool m_severityProductHasBeenSet;
-
-    Aws::Vector<NumberFilter> m_severityNormalized;
-    bool m_severityNormalizedHasBeenSet;
 
     Aws::Vector<StringFilter> m_severityLabel;
     bool m_severityLabelHasBeenSet;
@@ -3991,14 +4571,17 @@ namespace Model
     Aws::Vector<StringFilter> m_resourceAwsS3BucketOwnerName;
     bool m_resourceAwsS3BucketOwnerNameHasBeenSet;
 
-    Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyUserName;
-    bool m_resourceAwsIamAccessKeyUserNameHasBeenSet;
+    Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyPrincipalName;
+    bool m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet;
 
     Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyStatus;
     bool m_resourceAwsIamAccessKeyStatusHasBeenSet;
 
     Aws::Vector<DateFilter> m_resourceAwsIamAccessKeyCreatedAt;
     bool m_resourceAwsIamAccessKeyCreatedAtHasBeenSet;
+
+    Aws::Vector<StringFilter> m_resourceAwsIamUserUserName;
+    bool m_resourceAwsIamUserUserNameHasBeenSet;
 
     Aws::Vector<StringFilter> m_resourceContainerName;
     bool m_resourceContainerNameHasBeenSet;
@@ -4045,8 +4628,29 @@ namespace Model
     Aws::Vector<StringFilter> m_noteUpdatedBy;
     bool m_noteUpdatedByHasBeenSet;
 
-    Aws::Vector<KeywordFilter> m_keyword;
-    bool m_keywordHasBeenSet;
+    Aws::Vector<NumberFilter> m_findingProviderFieldsConfidence;
+    bool m_findingProviderFieldsConfidenceHasBeenSet;
+
+    Aws::Vector<NumberFilter> m_findingProviderFieldsCriticality;
+    bool m_findingProviderFieldsCriticalityHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsRelatedFindingsId;
+    bool m_findingProviderFieldsRelatedFindingsIdHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsRelatedFindingsProductArn;
+    bool m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsSeverityLabel;
+    bool m_findingProviderFieldsSeverityLabelHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsSeverityOriginal;
+    bool m_findingProviderFieldsSeverityOriginalHasBeenSet;
+
+    Aws::Vector<StringFilter> m_findingProviderFieldsTypes;
+    bool m_findingProviderFieldsTypesHasBeenSet;
+
+    Aws::Vector<BooleanFilter> m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -32,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies limits on the messages that a campaign can send.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>For a campaign, specifies limits on the messages that the campaign can send.
+   * For an application, specifies the default limits for messages that campaigns in
+   * the application can send.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
    * API Reference</a></p>
    */
@@ -48,25 +39,33 @@ namespace Model
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during a 24-hour period. The maximum value is 100.</p>
+     * during a 24-hour period. For an application, this value specifies the default
+     * limit for the number of messages that campaigns and journeys can send to a
+     * single endpoint during a 24-hour period. The maximum value is 100.</p>
      */
     inline int GetDaily() const{ return m_daily; }
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during a 24-hour period. The maximum value is 100.</p>
+     * during a 24-hour period. For an application, this value specifies the default
+     * limit for the number of messages that campaigns and journeys can send to a
+     * single endpoint during a 24-hour period. The maximum value is 100.</p>
      */
     inline bool DailyHasBeenSet() const { return m_dailyHasBeenSet; }
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during a 24-hour period. The maximum value is 100.</p>
+     * during a 24-hour period. For an application, this value specifies the default
+     * limit for the number of messages that campaigns and journeys can send to a
+     * single endpoint during a 24-hour period. The maximum value is 100.</p>
      */
     inline void SetDaily(int value) { m_dailyHasBeenSet = true; m_daily = value; }
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during a 24-hour period. The maximum value is 100.</p>
+     * during a 24-hour period. For an application, this value specifies the default
+     * limit for the number of messages that campaigns and journeys can send to a
+     * single endpoint during a 24-hour period. The maximum value is 100.</p>
      */
     inline CampaignLimits& WithDaily(int value) { SetDaily(value); return *this;}
 
@@ -101,53 +100,90 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of messages that a campaign can send each second. The
-     * minimum value is 50. The maximum value is 20,000.</p>
+     * <p>The maximum number of messages that a campaign can send each second. For an
+     * application, this value specifies the default limit for the number of messages
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
 
     /**
-     * <p>The maximum number of messages that a campaign can send each second. The
-     * minimum value is 50. The maximum value is 20,000.</p>
+     * <p>The maximum number of messages that a campaign can send each second. For an
+     * application, this value specifies the default limit for the number of messages
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
 
     /**
-     * <p>The maximum number of messages that a campaign can send each second. The
-     * minimum value is 50. The maximum value is 20,000.</p>
+     * <p>The maximum number of messages that a campaign can send each second. For an
+     * application, this value specifies the default limit for the number of messages
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
-     * <p>The maximum number of messages that a campaign can send each second. The
-     * minimum value is 50. The maximum value is 20,000.</p>
+     * <p>The maximum number of messages that a campaign can send each second. For an
+     * application, this value specifies the default limit for the number of messages
+     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * is 20,000.</p>
      */
     inline CampaignLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
 
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during the course of the campaign. The maximum value is 100.</p>
+     * during the course of the campaign. If a campaign recurs, this setting applies to
+     * all runs of the campaign. The maximum value is 100.</p>
      */
     inline int GetTotal() const{ return m_total; }
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during the course of the campaign. The maximum value is 100.</p>
+     * during the course of the campaign. If a campaign recurs, this setting applies to
+     * all runs of the campaign. The maximum value is 100.</p>
      */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during the course of the campaign. The maximum value is 100.</p>
+     * during the course of the campaign. If a campaign recurs, this setting applies to
+     * all runs of the campaign. The maximum value is 100.</p>
      */
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
      * <p>The maximum number of messages that a campaign can send to a single endpoint
-     * during the course of the campaign. The maximum value is 100.</p>
+     * during the course of the campaign. If a campaign recurs, this setting applies to
+     * all runs of the campaign. The maximum value is 100.</p>
      */
     inline CampaignLimits& WithTotal(int value) { SetTotal(value); return *this;}
+
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline int GetSession() const{ return m_session; }
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline void SetSession(int value) { m_sessionHasBeenSet = true; m_session = value; }
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline CampaignLimits& WithSession(int value) { SetSession(value); return *this;}
 
   private:
 
@@ -162,6 +198,9 @@ namespace Model
 
     int m_total;
     bool m_totalHasBeenSet;
+
+    int m_session;
+    bool m_sessionHasBeenSet;
   };
 
 } // namespace Model

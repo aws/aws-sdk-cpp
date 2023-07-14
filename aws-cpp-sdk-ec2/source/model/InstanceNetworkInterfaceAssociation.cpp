@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/InstanceNetworkInterfaceAssociation.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 {
 
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() : 
+    m_carrierIpHasBeenSet(false),
+    m_customerOwnedIpHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false)
@@ -38,6 +30,8 @@ InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() :
 }
 
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode) : 
+    m_carrierIpHasBeenSet(false),
+    m_customerOwnedIpHasBeenSet(false),
     m_ipOwnerIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
     m_publicIpHasBeenSet(false)
@@ -51,6 +45,18 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
 
   if(!resultNode.IsNull())
   {
+    XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
+    if(!carrierIpNode.IsNull())
+    {
+      m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+      m_carrierIpHasBeenSet = true;
+    }
+    XmlNode customerOwnedIpNode = resultNode.FirstChild("customerOwnedIp");
+    if(!customerOwnedIpNode.IsNull())
+    {
+      m_customerOwnedIp = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpNode.GetText());
+      m_customerOwnedIpHasBeenSet = true;
+    }
     XmlNode ipOwnerIdNode = resultNode.FirstChild("ipOwnerId");
     if(!ipOwnerIdNode.IsNull())
     {
@@ -76,6 +82,16 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
 
 void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+
+  if(m_customerOwnedIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIp=" << StringUtils::URLEncode(m_customerOwnedIp.c_str()) << "&";
+  }
+
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";
@@ -95,6 +111,14 @@ void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, 
 
 void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_carrierIpHasBeenSet)
+  {
+      oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+  if(m_customerOwnedIpHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIp=" << StringUtils::URLEncode(m_customerOwnedIp.c_str()) << "&";
+  }
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -46,49 +36,49 @@ namespace Model
 
     /**
      * <p>The protocol that will be deleted, such as <code>Email</code> or
-     * <code>SMS</code> (text messaging).</p> <note> <p>To delete an <code>Email</code>
+     * <code>SMS</code> (text messaging).</p>  <p>To delete an <code>Email</code>
      * and an <code>SMS</code> contact method if you added both, you must run separate
-     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> </note>
+     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> 
      */
     inline const ContactProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol that will be deleted, such as <code>Email</code> or
-     * <code>SMS</code> (text messaging).</p> <note> <p>To delete an <code>Email</code>
+     * <code>SMS</code> (text messaging).</p>  <p>To delete an <code>Email</code>
      * and an <code>SMS</code> contact method if you added both, you must run separate
-     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> </note>
+     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> 
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol that will be deleted, such as <code>Email</code> or
-     * <code>SMS</code> (text messaging).</p> <note> <p>To delete an <code>Email</code>
+     * <code>SMS</code> (text messaging).</p>  <p>To delete an <code>Email</code>
      * and an <code>SMS</code> contact method if you added both, you must run separate
-     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> </note>
+     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> 
      */
     inline void SetProtocol(const ContactProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol that will be deleted, such as <code>Email</code> or
-     * <code>SMS</code> (text messaging).</p> <note> <p>To delete an <code>Email</code>
+     * <code>SMS</code> (text messaging).</p>  <p>To delete an <code>Email</code>
      * and an <code>SMS</code> contact method if you added both, you must run separate
-     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> </note>
+     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> 
      */
     inline void SetProtocol(ContactProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol that will be deleted, such as <code>Email</code> or
-     * <code>SMS</code> (text messaging).</p> <note> <p>To delete an <code>Email</code>
+     * <code>SMS</code> (text messaging).</p>  <p>To delete an <code>Email</code>
      * and an <code>SMS</code> contact method if you added both, you must run separate
-     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> </note>
+     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> 
      */
     inline DeleteContactMethodRequest& WithProtocol(const ContactProtocol& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol that will be deleted, such as <code>Email</code> or
-     * <code>SMS</code> (text messaging).</p> <note> <p>To delete an <code>Email</code>
+     * <code>SMS</code> (text messaging).</p>  <p>To delete an <code>Email</code>
      * and an <code>SMS</code> contact method if you added both, you must run separate
-     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> </note>
+     * <code>DeleteContactMethod</code> actions to delete each protocol.</p> 
      */
     inline DeleteContactMethodRequest& WithProtocol(ContactProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 

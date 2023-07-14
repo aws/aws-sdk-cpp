@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,10 +22,12 @@ MessageConfiguration::MessageConfiguration() :
     m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
     m_baiduMessageHasBeenSet(false),
+    m_customMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false)
+    m_sMSMessageHasBeenSet(false),
+    m_inAppMessageHasBeenSet(false)
 {
 }
 
@@ -43,10 +35,12 @@ MessageConfiguration::MessageConfiguration(JsonView jsonValue) :
     m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
     m_baiduMessageHasBeenSet(false),
+    m_customMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false)
+    m_sMSMessageHasBeenSet(false),
+    m_inAppMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +66,13 @@ MessageConfiguration& MessageConfiguration::operator =(JsonView jsonValue)
     m_baiduMessage = jsonValue.GetObject("BaiduMessage");
 
     m_baiduMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomMessage"))
+  {
+    m_customMessage = jsonValue.GetObject("CustomMessage");
+
+    m_customMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultMessage"))
@@ -102,6 +103,13 @@ MessageConfiguration& MessageConfiguration::operator =(JsonView jsonValue)
     m_sMSMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InAppMessage"))
+  {
+    m_inAppMessage = jsonValue.GetObject("InAppMessage");
+
+    m_inAppMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +135,12 @@ JsonValue MessageConfiguration::Jsonize() const
 
   }
 
+  if(m_customMessageHasBeenSet)
+  {
+   payload.WithObject("CustomMessage", m_customMessage.Jsonize());
+
+  }
+
   if(m_defaultMessageHasBeenSet)
   {
    payload.WithObject("DefaultMessage", m_defaultMessage.Jsonize());
@@ -148,6 +162,12 @@ JsonValue MessageConfiguration::Jsonize() const
   if(m_sMSMessageHasBeenSet)
   {
    payload.WithObject("SMSMessage", m_sMSMessage.Jsonize());
+
+  }
+
+  if(m_inAppMessageHasBeenSet)
+  {
+   payload.WithObject("InAppMessage", m_inAppMessage.Jsonize());
 
   }
 

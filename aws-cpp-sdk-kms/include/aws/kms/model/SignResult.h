@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -45,44 +35,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline SignResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline SignResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the asymmetric CMK that was used to sign
-     * the message.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the asymmetric KMS key that was used to sign the message.</p>
      */
     inline SignResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -97,8 +94,9 @@ namespace Model
      * object as defined by ANS X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
      * 2.2.3</a>. This is the most commonly used signature format and is appropriate
-     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
-     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetSignature() const{ return m_signature; }
 
@@ -112,8 +110,9 @@ namespace Model
      * object as defined by ANS X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
      * 2.2.3</a>. This is the most commonly used signature format and is appropriate
-     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
-     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetSignature(const Aws::Utils::ByteBuffer& value) { m_signature = value; }
 
@@ -127,8 +126,9 @@ namespace Model
      * object as defined by ANS X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
      * 2.2.3</a>. This is the most commonly used signature format and is appropriate
-     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
-     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetSignature(Aws::Utils::ByteBuffer&& value) { m_signature = std::move(value); }
 
@@ -142,8 +142,9 @@ namespace Model
      * object as defined by ANS X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
      * 2.2.3</a>. This is the most commonly used signature format and is appropriate
-     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
-     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline SignResult& WithSignature(const Aws::Utils::ByteBuffer& value) { SetSignature(value); return *this;}
 
@@ -157,8 +158,9 @@ namespace Model
      * object as defined by ANS X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
      * 2.2.3</a>. This is the most commonly used signature format and is appropriate
-     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
-     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline SignResult& WithSignature(Aws::Utils::ByteBuffer&& value) { SetSignature(std::move(value)); return *this;}
 

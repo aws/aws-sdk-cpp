@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -183,7 +173,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline const Aws::String& GetReplaceKeyPrefixWith() const{ return m_replaceKeyPrefixWith; }
 
@@ -194,7 +188,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline bool ReplaceKeyPrefixWithHasBeenSet() const { return m_replaceKeyPrefixWithHasBeenSet; }
 
@@ -205,7 +203,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetReplaceKeyPrefixWith(const Aws::String& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = value; }
 
@@ -216,7 +218,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetReplaceKeyPrefixWith(Aws::String&& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = std::move(value); }
 
@@ -227,7 +233,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetReplaceKeyPrefixWith(const char* value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith.assign(value); }
 
@@ -238,7 +248,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline Redirect& WithReplaceKeyPrefixWith(const Aws::String& value) { SetReplaceKeyPrefixWith(value); return *this;}
 
@@ -249,7 +263,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline Redirect& WithReplaceKeyPrefixWith(Aws::String&& value) { SetReplaceKeyPrefixWith(std::move(value)); return *this;}
 
@@ -260,7 +278,11 @@ namespace Model
      * block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the
      * Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not
      * required if one of the siblings is present. Can be present only if
-     * <code>ReplaceKeyWith</code> is not provided.</p>
+     * <code>ReplaceKeyWith</code> is not provided.</p>  <p>Replacement must
+     * be made for object keys containing special characters (such as carriage returns)
+     * when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline Redirect& WithReplaceKeyPrefixWith(const char* value) { SetReplaceKeyPrefixWith(value); return *this;}
 
@@ -269,7 +291,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline const Aws::String& GetReplaceKeyWith() const{ return m_replaceKeyWith; }
 
@@ -277,7 +303,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline bool ReplaceKeyWithHasBeenSet() const { return m_replaceKeyWithHasBeenSet; }
 
@@ -285,7 +315,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetReplaceKeyWith(const Aws::String& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = value; }
 
@@ -293,7 +327,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetReplaceKeyWith(Aws::String&& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = std::move(value); }
 
@@ -301,7 +339,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetReplaceKeyWith(const char* value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith.assign(value); }
 
@@ -309,7 +351,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline Redirect& WithReplaceKeyWith(const Aws::String& value) { SetReplaceKeyWith(value); return *this;}
 
@@ -317,7 +363,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline Redirect& WithReplaceKeyWith(Aws::String&& value) { SetReplaceKeyWith(std::move(value)); return *this;}
 
@@ -325,7 +375,11 @@ namespace Model
      * <p>The specific object key to use in the redirect request. For example, redirect
      * request to <code>error.html</code>. Not required if one of the siblings is
      * present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not
-     * provided.</p>
+     * provided.</p>  <p>Replacement must be made for object keys containing
+     * special characters (such as carriage returns) when using XML requests. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline Redirect& WithReplaceKeyWith(const char* value) { SetReplaceKeyWith(value); return *this;}
 

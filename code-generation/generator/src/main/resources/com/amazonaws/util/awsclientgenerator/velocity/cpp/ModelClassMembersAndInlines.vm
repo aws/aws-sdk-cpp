@@ -28,6 +28,11 @@
 #set($cppType = "const ${rawCppType}&")
 #set($moveType = "${rawCppType}&&")
 #end
+#if($subShape.document)
+#set($returnType = "Aws::Utils::DocumentView")
+#else
+#set($returnType = ${cppType})
+#end
 #set ($required = '')
 #if(!$isEventStreamInput && !$member.value.required && $useRequiredField)
 #set ($required = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
@@ -81,7 +86,7 @@
 #set($override = " override ")
 #end
     $memberDocumentation
-    ${inline}${cppType} Get${memberKeyWithFirstLetterCapitalized}() const$override${getterBody}
+    ${inline}${returnType} Get${memberKeyWithFirstLetterCapitalized}() const$override${getterBody}
 
 #end
 #if(!$isStream && !$isEventStreamInput)
@@ -209,8 +214,10 @@
   Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
 #elseif(($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) && $shape.request)
 #else
-#if($member.value.shape.getName() == $shape.getName() || $member.value.shape.isMutuallyReferencedWith($shape))
+#if($member.value.shape.getName() == $shape.getName())
     Aws::Vector<$CppViewHelper.computeCppType($member.value.shape)> $CppViewHelper.computeMemberVariableName($member.key);
+#elseif($member.value.shape.isMutuallyReferencedWith($shape))
+    std::shared_ptr<$CppViewHelper.computeCppType($member.value.shape)> $CppViewHelper.computeMemberVariableName($member.key);
 #elseif($isEventStreamInput)
     std::shared_ptr<$member.value.shape.name> $CppViewHelper.computeMemberVariableName($member.key);
 #else

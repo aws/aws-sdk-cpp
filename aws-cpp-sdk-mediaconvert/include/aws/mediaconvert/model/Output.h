@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -40,8 +30,10 @@ namespace Model
 {
 
   /**
-   * An output object describes the settings for a single output file or stream in an
-   * output group.<p><h3>See Also:</h3>   <a
+   * Each output in your job is a collection of settings that describes how you want
+   * MediaConvert to encode a single output file or stream. For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/create-outputs.html.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Output">AWS
    * API Reference</a></p>
    */
@@ -203,8 +195,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline const Aws::String& GetExtension() const{ return m_extension; }
 
@@ -212,8 +205,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
 
@@ -221,8 +215,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline void SetExtension(const Aws::String& value) { m_extensionHasBeenSet = true; m_extension = value; }
 
@@ -230,8 +225,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
 
@@ -239,8 +235,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline void SetExtension(const char* value) { m_extensionHasBeenSet = true; m_extension.assign(value); }
 
@@ -248,8 +245,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline Output& WithExtension(const Aws::String& value) { SetExtension(value); return *this;}
 
@@ -257,8 +255,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline Output& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
 
@@ -266,8 +265,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline Output& WithExtension(const char* value) { SetExtension(value); return *this;}
 
@@ -385,56 +385,56 @@ namespace Model
 
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline const Aws::String& GetPreset() const{ return m_preset; }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline void SetPreset(const Aws::String& value) { m_presetHasBeenSet = true; m_preset = value; }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline void SetPreset(Aws::String&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline void SetPreset(const char* value) { m_presetHasBeenSet = true; m_preset.assign(value); }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline Output& WithPreset(const Aws::String& value) { SetPreset(value); return *this;}
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
     inline Output& WithPreset(Aws::String&& value) { SetPreset(std::move(value)); return *this;}
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
      * the system or custom preset name. You can specify either Preset (Preset) or
      * Container settings (ContainerSettings), but not both.
      */
@@ -442,50 +442,44 @@ namespace Model
 
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific
-     * video settings depend on the video codec that you choose when you specify a
-     * value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * VideoDescription contains a group of video encoding settings. The specific video
+     * settings depend on the video codec that you choose for the property codec.
+     * Include one instance of VideoDescription per output.
      */
     inline const VideoDescription& GetVideoDescription() const{ return m_videoDescription; }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific
-     * video settings depend on the video codec that you choose when you specify a
-     * value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * VideoDescription contains a group of video encoding settings. The specific video
+     * settings depend on the video codec that you choose for the property codec.
+     * Include one instance of VideoDescription per output.
      */
     inline bool VideoDescriptionHasBeenSet() const { return m_videoDescriptionHasBeenSet; }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific
-     * video settings depend on the video codec that you choose when you specify a
-     * value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * VideoDescription contains a group of video encoding settings. The specific video
+     * settings depend on the video codec that you choose for the property codec.
+     * Include one instance of VideoDescription per output.
      */
     inline void SetVideoDescription(const VideoDescription& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = value; }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific
-     * video settings depend on the video codec that you choose when you specify a
-     * value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * VideoDescription contains a group of video encoding settings. The specific video
+     * settings depend on the video codec that you choose for the property codec.
+     * Include one instance of VideoDescription per output.
      */
     inline void SetVideoDescription(VideoDescription&& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = std::move(value); }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific
-     * video settings depend on the video codec that you choose when you specify a
-     * value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * VideoDescription contains a group of video encoding settings. The specific video
+     * settings depend on the video codec that you choose for the property codec.
+     * Include one instance of VideoDescription per output.
      */
     inline Output& WithVideoDescription(const VideoDescription& value) { SetVideoDescription(value); return *this;}
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific
-     * video settings depend on the video codec that you choose when you specify a
-     * value for Video codec (codec). Include one instance of (VideoDescription) per
-     * output.
+     * VideoDescription contains a group of video encoding settings. The specific video
+     * settings depend on the video codec that you choose for the property codec.
+     * Include one instance of VideoDescription per output.
      */
     inline Output& WithVideoDescription(VideoDescription&& value) { SetVideoDescription(std::move(value)); return *this;}
 

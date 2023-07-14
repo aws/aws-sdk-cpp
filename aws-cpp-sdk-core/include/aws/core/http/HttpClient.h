@@ -1,22 +1,11 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 #include <memory>
 #include <atomic>
@@ -48,26 +37,11 @@ namespace Aws
             virtual ~HttpClient() {}
 
             /**
-             * Takes an http request, makes it, and returns the newly allocated HttpResponse
-             */
-            AWS_DEPRECATED("Deprecated: in favor of MakeRequest(const std::shared_ptr<HttpRequest>&, ...).")
-            virtual std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request,
-                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
-
-            /**
              * Takes an http request, makes it, and returns the newly allocated HttpResponse.
-             * Default implementation provided for backwards compatability.
              */
             virtual std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const
-            {
-                AWS_UNREFERENCED_PARAM(request);
-                AWS_UNREFERENCED_PARAM(readLimiter);
-                AWS_UNREFERENCED_PARAM(writeLimiter);
-                return nullptr;
-            }
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
 
             /**
              * If yes, the http client supports transfer-encoding:chunked.

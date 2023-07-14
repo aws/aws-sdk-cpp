@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/TypeVersionSummary.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -35,9 +25,12 @@ TypeVersionSummary::TypeVersionSummary() :
     m_typeHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_versionIdHasBeenSet(false),
+    m_isDefaultVersion(false),
+    m_isDefaultVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false)
 {
 }
 
@@ -46,9 +39,12 @@ TypeVersionSummary::TypeVersionSummary(const XmlNode& xmlNode) :
     m_typeHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_versionIdHasBeenSet(false),
+    m_isDefaultVersion(false),
+    m_isDefaultVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +73,12 @@ TypeVersionSummary& TypeVersionSummary::operator =(const XmlNode& xmlNode)
       m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
     }
+    XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
+    if(!isDefaultVersionNode.IsNull())
+    {
+      m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultVersionNode.GetText()).c_str()).c_str());
+      m_isDefaultVersionHasBeenSet = true;
+    }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
@@ -94,6 +96,12 @@ TypeVersionSummary& TypeVersionSummary::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+    }
+    XmlNode publicVersionNumberNode = resultNode.FirstChild("PublicVersionNumber");
+    if(!publicVersionNumberNode.IsNull())
+    {
+      m_publicVersionNumber = Aws::Utils::Xml::DecodeEscapedXmlText(publicVersionNumberNode.GetText());
+      m_publicVersionNumberHasBeenSet = true;
     }
   }
 
@@ -117,6 +125,11 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
   }
 
+  if(m_isDefaultVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsDefaultVersion=" << std::boolalpha << m_isDefaultVersion << "&";
+  }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
@@ -130,6 +143,11 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_publicVersionNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 
 }
@@ -148,6 +166,10 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << ".VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
   }
+  if(m_isDefaultVersionHasBeenSet)
+  {
+      oStream << location << ".IsDefaultVersion=" << std::boolalpha << m_isDefaultVersion << "&";
+  }
   if(m_arnHasBeenSet)
   {
       oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
@@ -159,6 +181,10 @@ void TypeVersionSummary::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_publicVersionNumberHasBeenSet)
+  {
+      oStream << location << ".PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
   }
 }
 

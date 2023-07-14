@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
@@ -28,6 +18,8 @@
 #include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <aws/es/model/DomainEndpointOptionsStatus.h>
 #include <aws/es/model/AdvancedSecurityOptionsStatus.h>
+#include <aws/es/model/AutoTuneOptionsStatus.h>
+#include <aws/es/model/ChangeProgressDetails.h>
 #include <utility>
 
 namespace Aws
@@ -533,6 +525,68 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithAdvancedSecurityOptions(AdvancedSecurityOptionsStatus&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline const AutoTuneOptionsStatus& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptionsStatus& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptionsStatus&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline ElasticsearchDomainConfig& WithAutoTuneOptions(const AutoTuneOptionsStatus& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
+     */
+    inline ElasticsearchDomainConfig& WithAutoTuneOptions(AutoTuneOptionsStatus&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline bool ChangeProgressDetailsHasBeenSet() const { return m_changeProgressDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = value; }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = std::move(value); }
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline ElasticsearchDomainConfig& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
+
+    /**
+     * <p>Specifies change details of the domain configuration change.</p>
+     */
+    inline ElasticsearchDomainConfig& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+
   private:
 
     ElasticsearchVersionStatus m_elasticsearchVersion;
@@ -573,6 +627,12 @@ namespace Model
 
     AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet;
+
+    AutoTuneOptionsStatus m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
+
+    ChangeProgressDetails m_changeProgressDetails;
+    bool m_changeProgressDetailsHasBeenSet;
   };
 
 } // namespace Model

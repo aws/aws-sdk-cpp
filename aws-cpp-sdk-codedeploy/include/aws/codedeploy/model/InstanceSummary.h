@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -135,104 +125,116 @@ namespace Model
 
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
-     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
-     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
-     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
-     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
-     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
-     * deployment status is unknown for this instance.</p> </li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>
+     * <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+     * <li> <p> <code>In Progress</code>: The deployment is in progress for this
+     * instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has
+     * succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The
+     * deployment has failed for this instance.</p> </li> <li> <p>
+     * <code>Skipped</code>: The deployment has been skipped for this instance.</p>
+     * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
+     * instance.</p> </li> </ul>
      */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
-     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
-     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
-     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
-     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
-     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
-     * deployment status is unknown for this instance.</p> </li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>
+     * <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+     * <li> <p> <code>In Progress</code>: The deployment is in progress for this
+     * instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has
+     * succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The
+     * deployment has failed for this instance.</p> </li> <li> <p>
+     * <code>Skipped</code>: The deployment has been skipped for this instance.</p>
+     * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
+     * instance.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
-     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
-     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
-     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
-     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
-     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
-     * deployment status is unknown for this instance.</p> </li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>
+     * <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+     * <li> <p> <code>In Progress</code>: The deployment is in progress for this
+     * instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has
+     * succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The
+     * deployment has failed for this instance.</p> </li> <li> <p>
+     * <code>Skipped</code>: The deployment has been skipped for this instance.</p>
+     * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
+     * instance.</p> </li> </ul>
      */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
-     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
-     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
-     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
-     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
-     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
-     * deployment status is unknown for this instance.</p> </li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>
+     * <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+     * <li> <p> <code>In Progress</code>: The deployment is in progress for this
+     * instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has
+     * succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The
+     * deployment has failed for this instance.</p> </li> <li> <p>
+     * <code>Skipped</code>: The deployment has been skipped for this instance.</p>
+     * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
+     * instance.</p> </li> </ul>
      */
     inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
-     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
-     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
-     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
-     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
-     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
-     * deployment status is unknown for this instance.</p> </li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>
+     * <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+     * <li> <p> <code>In Progress</code>: The deployment is in progress for this
+     * instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has
+     * succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The
+     * deployment has failed for this instance.</p> </li> <li> <p>
+     * <code>Skipped</code>: The deployment has been skipped for this instance.</p>
+     * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
+     * instance.</p> </li> </ul>
      */
     inline InstanceSummary& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
-     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
-     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
-     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
-     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
-     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
-     * deployment status is unknown for this instance.</p> </li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>
+     * <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+     * <li> <p> <code>In Progress</code>: The deployment is in progress for this
+     * instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has
+     * succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The
+     * deployment has failed for this instance.</p> </li> <li> <p>
+     * <code>Skipped</code>: The deployment has been skipped for this instance.</p>
+     * </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this
+     * instance.</p> </li> </ul>
      */
     inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp that indicaties when the instance information was last
+     * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>A timestamp that indicaties when the instance information was last
+     * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp that indicaties when the instance information was last
+     * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p>A timestamp that indicaties when the instance information was last
+     * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p>A timestamp that indicaties when the instance information was last
+     * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp that indicaties when the instance information was last
+     * <p>A timestamp that indicates when the instance information was last
      * updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}

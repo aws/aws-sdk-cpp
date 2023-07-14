@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -38,19 +28,20 @@ namespace Model
   /**
    * <p> Defines which patches should be included in a patch baseline.</p> <p>A patch
    * filter consists of a key and a set of values. The filter key is a patch
-   * property. For example, the available filter keys for WINDOWS are PATCH_SET,
-   * PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values
-   * define a matching criterion for the patch property indicated by the key. For
-   * example, if the filter key is PRODUCT and the filter values are ["Office 2013",
-   * "Office 2016"], then the filter accepts all patches where product name is either
-   * "Office 2013" or "Office 2016". The filter values can be exact values for the
-   * patch property given as a key, or a wildcard (*), which matches all values.</p>
-   * <p>You can view lists of valid values for the patch properties by running the
-   * <code>DescribePatchProperties</code> command. For information about which patch
-   * properties can be used with each major operating system, see
-   * <a>DescribePatchProperties</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter">AWS API
-   * Reference</a></p>
+   * property. For example, the available filter keys for <code>WINDOWS</code> are
+   * <code>PATCH_SET</code>, <code>PRODUCT</code>, <code>PRODUCT_FAMILY</code>,
+   * <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>.</p> <p>The filter
+   * values define a matching criterion for the patch property indicated by the key.
+   * For example, if the filter key is <code>PRODUCT</code> and the filter values are
+   * <code>["Office 2013", "Office 2016"]</code>, then the filter accepts all patches
+   * where product name is either "Office 2013" or "Office 2016". The filter values
+   * can be exact values for the patch property given as a key, or a wildcard (*),
+   * which matches all values.</p> <p>You can view lists of valid values for the
+   * patch properties by running the <code>DescribePatchProperties</code> command.
+   * For information about which patch properties can be used with each major
+   * operating system, see <a>DescribePatchProperties</a>.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API PatchFilter
   {

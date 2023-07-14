@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/FailoverMode.h>
+#include <aws/mediaconnect/model/SourcePriority.h>
 #include <aws/mediaconnect/model/State.h>
 #include <utility>
 
@@ -34,7 +26,7 @@ namespace Model
 {
 
   /**
-   * The settings for source failover<p><h3>See Also:</h3>   <a
+   * The settings for source failover.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFailoverConfig">AWS
    * API Reference</a></p>
    */
@@ -45,6 +37,49 @@ namespace Model
     UpdateFailoverConfig(Aws::Utils::Json::JsonView jsonValue);
     UpdateFailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams
+     * into a single stream, allowing graceful recovery from any single-source loss.
+     * FAILOVER allows switching between different streams.
+     */
+    inline const FailoverMode& GetFailoverMode() const{ return m_failoverMode; }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams
+     * into a single stream, allowing graceful recovery from any single-source loss.
+     * FAILOVER allows switching between different streams.
+     */
+    inline bool FailoverModeHasBeenSet() const { return m_failoverModeHasBeenSet; }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams
+     * into a single stream, allowing graceful recovery from any single-source loss.
+     * FAILOVER allows switching between different streams.
+     */
+    inline void SetFailoverMode(const FailoverMode& value) { m_failoverModeHasBeenSet = true; m_failoverMode = value; }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams
+     * into a single stream, allowing graceful recovery from any single-source loss.
+     * FAILOVER allows switching between different streams.
+     */
+    inline void SetFailoverMode(FailoverMode&& value) { m_failoverModeHasBeenSet = true; m_failoverMode = std::move(value); }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams
+     * into a single stream, allowing graceful recovery from any single-source loss.
+     * FAILOVER allows switching between different streams.
+     */
+    inline UpdateFailoverConfig& WithFailoverMode(const FailoverMode& value) { SetFailoverMode(value); return *this;}
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams
+     * into a single stream, allowing graceful recovery from any single-source loss.
+     * FAILOVER allows switching between different streams.
+     */
+    inline UpdateFailoverConfig& WithFailoverMode(FailoverMode&& value) { SetFailoverMode(std::move(value)); return *this;}
 
 
     /**
@@ -68,6 +103,43 @@ namespace Model
     inline UpdateFailoverConfig& WithRecoveryWindow(int value) { SetRecoveryWindow(value); return *this;}
 
 
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a
+     * backup stream or two equally prioritized streams.
+     */
+    inline const SourcePriority& GetSourcePriority() const{ return m_sourcePriority; }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a
+     * backup stream or two equally prioritized streams.
+     */
+    inline bool SourcePriorityHasBeenSet() const { return m_sourcePriorityHasBeenSet; }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a
+     * backup stream or two equally prioritized streams.
+     */
+    inline void SetSourcePriority(const SourcePriority& value) { m_sourcePriorityHasBeenSet = true; m_sourcePriority = value; }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a
+     * backup stream or two equally prioritized streams.
+     */
+    inline void SetSourcePriority(SourcePriority&& value) { m_sourcePriorityHasBeenSet = true; m_sourcePriority = std::move(value); }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a
+     * backup stream or two equally prioritized streams.
+     */
+    inline UpdateFailoverConfig& WithSourcePriority(const SourcePriority& value) { SetSourcePriority(value); return *this;}
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a
+     * backup stream or two equally prioritized streams.
+     */
+    inline UpdateFailoverConfig& WithSourcePriority(SourcePriority&& value) { SetSourcePriority(std::move(value)); return *this;}
+
+
     
     inline const State& GetState() const{ return m_state; }
 
@@ -88,8 +160,14 @@ namespace Model
 
   private:
 
+    FailoverMode m_failoverMode;
+    bool m_failoverModeHasBeenSet;
+
     int m_recoveryWindow;
     bool m_recoveryWindowHasBeenSet;
+
+    SourcePriority m_sourcePriority;
+    bool m_sourcePriorityHasBeenSet;
 
     State m_state;
     bool m_stateHasBeenSet;

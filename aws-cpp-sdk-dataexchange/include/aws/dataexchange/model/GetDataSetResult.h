@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
@@ -84,32 +74,27 @@ namespace Model
 
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline const AssetType& GetAssetType() const{ return m_assetType; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline void SetAssetType(const AssetType& value) { m_assetType = value; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline void SetAssetType(AssetType&& value) { m_assetType = std::move(value); }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline GetDataSetResult& WithAssetType(const AssetType& value) { SetAssetType(value); return *this;}
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline GetDataSetResult& WithAssetType(AssetType&& value) { SetAssetType(std::move(value)); return *this;}
 

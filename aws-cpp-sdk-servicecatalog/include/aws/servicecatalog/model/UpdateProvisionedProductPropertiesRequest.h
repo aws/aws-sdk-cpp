@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -147,15 +137,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -167,15 +164,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -187,15 +191,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -207,15 +218,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -227,15 +245,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -247,15 +272,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -267,15 +299,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -287,15 +326,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -307,15 +353,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -327,15 +380,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -347,15 +407,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.
@@ -367,15 +434,22 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
-     * provisioned product to another IAM user within the same account. Both end user
-     * owners and administrators can see ownership history of the provisioned product
-     * using the <code>ListRecordHistory</code> API. The new owner can describe all
-     * past records for the provisioned product using the <code>DescribeRecord</code>
-     * API. The previous owner can no longer use <code>DescribeRecord</code>, but can
-     * still see the product's history from when he was an owner using
+     * <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+     * administrator to call <code>UpdateProvisionedProductProperties</code> to update
+     * the launch role that is associated with a provisioned product. This role is used
+     * when an end user calls a provisioning operation such as
+     * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+     * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs and role ARNs. The owner is the user that has permission to see, update,
+     * terminate, and execute service actions in the provisioned product.</p> <p>The
+     * administrator can change the owner of a provisioned product to another IAM user
+     * within the same account. Both end user owners and administrators can see
+     * ownership history of the provisioned product using the
+     * <code>ListRecordHistory</code> API. The new owner can describe all past records
+     * for the provisioned product using the <code>DescribeRecord</code> API. The
+     * previous owner can no longer use <code>DescribeRecord</code>, but can still see
+     * the product's history from when he was an owner using
      * <code>ListRecordHistory</code>.</p> <p>If a provisioned product ownership is
      * assigned to an end user, they can see and perform any action through the API or
      * Service Catalog console such as update, terminate, and execute service actions.

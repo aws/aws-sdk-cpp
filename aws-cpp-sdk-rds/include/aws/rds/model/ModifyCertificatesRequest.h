@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -48,57 +38,57 @@ namespace Model
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline bool CertificateIdentifierHasBeenSet() const { return m_certificateIdentifierHasBeenSet; }
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = std::move(value); }
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline void SetCertificateIdentifier(const char* value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier.assign(value); }
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline ModifyCertificatesRequest& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline ModifyCertificatesRequest& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The new default certificate identifier to override the current one with.</p>
-     * <p>To determine the valid values, use the <code>describe-certificates</code> AWS
-     * CLI command or the <code>DescribeCertificates</code> API operation.</p>
+     * <p>To determine the valid values, use the <code>describe-certificates</code> CLI
+     * command or the <code>DescribeCertificates</code> API operation.</p>
      */
     inline ModifyCertificatesRequest& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
 

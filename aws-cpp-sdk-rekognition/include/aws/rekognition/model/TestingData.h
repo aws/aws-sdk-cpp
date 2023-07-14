@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -36,8 +26,9 @@ namespace Model
 
   /**
    * <p>The dataset used for testing. Optionally, if <code>AutoCreate</code> is set,
-   * Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split
-   * of the training dataset.</p><p><h3>See Also:</h3>   <a
+   * Amazon Rekognition Custom Labels uses the training dataset to create a test
+   * dataset with a temporary split of the training dataset. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TestingData">AWS
    * API Reference</a></p>
    */
@@ -92,26 +83,34 @@ namespace Model
 
 
     /**
-     * <p>If specified, Amazon Rekognition Custom Labels creates a testing dataset with
-     * an 80/20 split of the training dataset.</p>
+     * <p>If specified, Amazon Rekognition Custom Labels temporarily splits the
+     * training dataset (80%) to create a test dataset (20%) for the training job.
+     * After training completes, the test dataset is not stored and the training
+     * dataset reverts to its previous size.</p>
      */
     inline bool GetAutoCreate() const{ return m_autoCreate; }
 
     /**
-     * <p>If specified, Amazon Rekognition Custom Labels creates a testing dataset with
-     * an 80/20 split of the training dataset.</p>
+     * <p>If specified, Amazon Rekognition Custom Labels temporarily splits the
+     * training dataset (80%) to create a test dataset (20%) for the training job.
+     * After training completes, the test dataset is not stored and the training
+     * dataset reverts to its previous size.</p>
      */
     inline bool AutoCreateHasBeenSet() const { return m_autoCreateHasBeenSet; }
 
     /**
-     * <p>If specified, Amazon Rekognition Custom Labels creates a testing dataset with
-     * an 80/20 split of the training dataset.</p>
+     * <p>If specified, Amazon Rekognition Custom Labels temporarily splits the
+     * training dataset (80%) to create a test dataset (20%) for the training job.
+     * After training completes, the test dataset is not stored and the training
+     * dataset reverts to its previous size.</p>
      */
     inline void SetAutoCreate(bool value) { m_autoCreateHasBeenSet = true; m_autoCreate = value; }
 
     /**
-     * <p>If specified, Amazon Rekognition Custom Labels creates a testing dataset with
-     * an 80/20 split of the training dataset.</p>
+     * <p>If specified, Amazon Rekognition Custom Labels temporarily splits the
+     * training dataset (80%) to create a test dataset (20%) for the training job.
+     * After training completes, the test dataset is not stored and the training
+     * dataset reverts to its previous size.</p>
      */
     inline TestingData& WithAutoCreate(bool value) { SetAutoCreate(value); return *this;}
 

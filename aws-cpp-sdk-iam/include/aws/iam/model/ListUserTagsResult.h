@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -48,80 +38,83 @@ namespace Model
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline ListUserTagsResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline ListUserTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline ListUserTagsResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
      * <p>The list of tags that are currently attached to the user. Each tag consists
      * of a key name and an associated value. If no tags are attached to the specified
-     * user, the response contains an empty list.</p>
+     * resource, the response contains an empty list.</p>
      */
     inline ListUserTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
-     * were truncated, you can use the <code>Marker</code> request parameter to make a
-     * subsequent pagination request that retrieves more items. Note that IAM might
-     * return fewer than the <code>MaxItems</code> number of results even when more
-     * results are available. Check <code>IsTruncated</code> after every call to ensure
-     * that you receive all of your results.</p>
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
+     * results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
-     * were truncated, you can use the <code>Marker</code> request parameter to make a
-     * subsequent pagination request that retrieves more items. Note that IAM might
-     * return fewer than the <code>MaxItems</code> number of results even when more
-     * results are available. Check <code>IsTruncated</code> after every call to ensure
-     * that you receive all of your results.</p>
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
+     * results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
-     * were truncated, you can use the <code>Marker</code> request parameter to make a
-     * subsequent pagination request that retrieves more items. Note that IAM might
-     * return fewer than the <code>MaxItems</code> number of results even when more
-     * results are available. Check <code>IsTruncated</code> after every call to ensure
-     * that you receive all of your results.</p>
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
+     * results.</p>
      */
     inline ListUserTagsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 

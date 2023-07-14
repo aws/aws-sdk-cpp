@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
@@ -372,7 +362,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline const BrokerSoftwareInfo& GetCurrentBrokerSoftwareInfo() const{ return m_currentBrokerSoftwareInfo; }
@@ -380,7 +370,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline bool CurrentBrokerSoftwareInfoHasBeenSet() const { return m_currentBrokerSoftwareInfoHasBeenSet; }
@@ -388,7 +378,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline void SetCurrentBrokerSoftwareInfo(const BrokerSoftwareInfo& value) { m_currentBrokerSoftwareInfoHasBeenSet = true; m_currentBrokerSoftwareInfo = value; }
@@ -396,7 +386,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline void SetCurrentBrokerSoftwareInfo(BrokerSoftwareInfo&& value) { m_currentBrokerSoftwareInfoHasBeenSet = true; m_currentBrokerSoftwareInfo = std::move(value); }
@@ -404,7 +394,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline ClusterInfo& WithCurrentBrokerSoftwareInfo(const BrokerSoftwareInfo& value) { SetCurrentBrokerSoftwareInfo(value); return *this;}
@@ -412,7 +402,7 @@ namespace Model
     /**
      * 
             <p>Information about the version of software currently deployed on
-     * the Kafka brokers in the cluster.</p>
+     * the Apache Kafka brokers in the cluster.</p>
          
      */
     inline ClusterInfo& WithCurrentBrokerSoftwareInfo(BrokerSoftwareInfo&& value) { SetCurrentBrokerSoftwareInfo(std::move(value)); return *this;}
@@ -521,9 +511,9 @@ namespace Model
     /**
      * 
             <p>Specifies which metrics are gathered for the MSK cluster. This
-     * property has three possible values: DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     * three levels of monitoring, see <a
+     * property has the following possible values: DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     * associated with each of these levels of monitoring, see <a
      * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 
      *         
@@ -533,9 +523,9 @@ namespace Model
     /**
      * 
             <p>Specifies which metrics are gathered for the MSK cluster. This
-     * property has three possible values: DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     * three levels of monitoring, see <a
+     * property has the following possible values: DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     * associated with each of these levels of monitoring, see <a
      * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 
      *         
@@ -545,9 +535,9 @@ namespace Model
     /**
      * 
             <p>Specifies which metrics are gathered for the MSK cluster. This
-     * property has three possible values: DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     * three levels of monitoring, see <a
+     * property has the following possible values: DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     * associated with each of these levels of monitoring, see <a
      * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 
      *         
@@ -557,9 +547,9 @@ namespace Model
     /**
      * 
             <p>Specifies which metrics are gathered for the MSK cluster. This
-     * property has three possible values: DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     * three levels of monitoring, see <a
+     * property has the following possible values: DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     * associated with each of these levels of monitoring, see <a
      * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 
      *         
@@ -569,9 +559,9 @@ namespace Model
     /**
      * 
             <p>Specifies which metrics are gathered for the MSK cluster. This
-     * property has three possible values: DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     * three levels of monitoring, see <a
+     * property has the following possible values: DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     * associated with each of these levels of monitoring, see <a
      * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 
      *         
@@ -581,9 +571,9 @@ namespace Model
     /**
      * 
             <p>Specifies which metrics are gathered for the MSK cluster. This
-     * property has three possible values: DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
-     * three levels of monitoring, see <a
+     * property has the following possible values: DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics
+     * associated with each of these levels of monitoring, see <a
      * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
 
      *         
@@ -684,48 +674,54 @@ namespace Model
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and
+     * UPDATING.</p>
          
      */
     inline const ClusterState& GetState() const{ return m_state; }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and
+     * UPDATING.</p>
          
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and
+     * UPDATING.</p>
          
      */
     inline void SetState(const ClusterState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and
+     * UPDATING.</p>
          
      */
     inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and
+     * UPDATING.</p>
          
      */
     inline ClusterInfo& WithState(const ClusterState& value) { SetState(value); return *this;}
 
     /**
      * 
-            <p>The state of the cluster. The possible states are CREATING,
-     * ACTIVE, and FAILED.</p>
+            <p>The state of the cluster. The possible states are ACTIVE,
+     * CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and
+     * UPDATING.</p>
          
      */
     inline ClusterInfo& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
@@ -906,6 +902,71 @@ namespace Model
      */
     inline ClusterInfo& WithZookeeperConnectString(const char* value) { SetZookeeperConnectString(value); return *this;}
 
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline const Aws::String& GetZookeeperConnectStringTls() const{ return m_zookeeperConnectStringTls; }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline bool ZookeeperConnectStringTlsHasBeenSet() const { return m_zookeeperConnectStringTlsHasBeenSet; }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline void SetZookeeperConnectStringTls(const Aws::String& value) { m_zookeeperConnectStringTlsHasBeenSet = true; m_zookeeperConnectStringTls = value; }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline void SetZookeeperConnectStringTls(Aws::String&& value) { m_zookeeperConnectStringTlsHasBeenSet = true; m_zookeeperConnectStringTls = std::move(value); }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline void SetZookeeperConnectStringTls(const char* value) { m_zookeeperConnectStringTlsHasBeenSet = true; m_zookeeperConnectStringTls.assign(value); }
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline ClusterInfo& WithZookeeperConnectStringTls(const Aws::String& value) { SetZookeeperConnectStringTls(value); return *this;}
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline ClusterInfo& WithZookeeperConnectStringTls(Aws::String&& value) { SetZookeeperConnectStringTls(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>The connection string to use to connect to zookeeper cluster on
+     * Tls port.</p>
+         
+     */
+    inline ClusterInfo& WithZookeeperConnectStringTls(const char* value) { SetZookeeperConnectStringTls(value); return *this;}
+
   private:
 
     Aws::String m_activeOperationArn;
@@ -958,6 +1019,9 @@ namespace Model
 
     Aws::String m_zookeeperConnectString;
     bool m_zookeeperConnectStringHasBeenSet;
+
+    Aws::String m_zookeeperConnectStringTls;
+    bool m_zookeeperConnectStringTlsHasBeenSet;
   };
 
 } // namespace Model

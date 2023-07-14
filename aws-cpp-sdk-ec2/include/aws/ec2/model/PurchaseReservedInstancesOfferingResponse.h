@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -50,37 +40,65 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesId = value; }
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesId = std::move(value); }
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetReservedInstancesId(const char* value) { m_reservedInstancesId.assign(value); }
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the purchased Reserved Instances.</p>
+     * <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a
+     * discounted pricing tier, the final Reserved Instances IDs might change. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline PurchaseReservedInstancesOfferingResponse& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 

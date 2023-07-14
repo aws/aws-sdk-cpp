@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -36,10 +26,8 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Returns the details of
-   * authentication used by a proxy to log in as a specific database
-   * user.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns the details of authentication used by a proxy to log in as a specific
+   * database user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UserAuthConfigInfo">AWS
    * API Reference</a></p>
    */
@@ -239,38 +227,38 @@ namespace Model
 
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline const IAMAuthMode& GetIAMAuth() const{ return m_iAMAuth; }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline bool IAMAuthHasBeenSet() const { return m_iAMAuthHasBeenSet; }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline void SetIAMAuth(const IAMAuthMode& value) { m_iAMAuthHasBeenSet = true; m_iAMAuth = value; }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline void SetIAMAuth(IAMAuthMode&& value) { m_iAMAuthHasBeenSet = true; m_iAMAuth = std::move(value); }
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline UserAuthConfigInfo& WithIAMAuth(const IAMAuthMode& value) { SetIAMAuth(value); return *this;}
 
     /**
-     * <p>Whether to require or disallow AWS Identity and Access Management (IAM)
-     * authentication for connections to the proxy.</p>
+     * <p>Whether to require or disallow Amazon Web Services Identity and Access
+     * Management (IAM) authentication for connections to the proxy.</p>
      */
     inline UserAuthConfigInfo& WithIAMAuth(IAMAuthMode&& value) { SetIAMAuth(std::move(value)); return *this;}
 

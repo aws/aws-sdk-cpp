@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/FileSourceConvert608To708.h>
+#include <aws/mediaconvert/model/CaptionSourceFramerate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/FileSourceTimeDeltaUnits.h>
 #include <utility>
 
 namespace Aws
@@ -35,9 +27,9 @@ namespace Model
 {
 
   /**
-   * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
-   * specify the URI of the input caption source file. If your caption source is IMSC
-   * in an IMF package, use TrackSourceSettings instead of
+   * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an
+   * xml file, specify the URI of the input caption source file. If your caption
+   * source is IMSC in an IMF package, use TrackSourceSettings instead of
    * FileSoureSettings.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FileSourceSettings">AWS
    * API Reference</a></p>
@@ -107,84 +99,254 @@ namespace Model
 
 
     /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing frame rates between your input captions and
+     * input video, specify the frame rate of the captions file. Specify this value as
+     * a fraction. When you work directly in your JSON job specification, use the
+     * settings framerateNumerator and framerateDenominator. For example, you might
+     * specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or
+     * 30000 / 1001 for 29.97 fps.
+     */
+    inline const CaptionSourceFramerate& GetFramerate() const{ return m_framerate; }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing frame rates between your input captions and
+     * input video, specify the frame rate of the captions file. Specify this value as
+     * a fraction. When you work directly in your JSON job specification, use the
+     * settings framerateNumerator and framerateDenominator. For example, you might
+     * specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or
+     * 30000 / 1001 for 29.97 fps.
+     */
+    inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing frame rates between your input captions and
+     * input video, specify the frame rate of the captions file. Specify this value as
+     * a fraction. When you work directly in your JSON job specification, use the
+     * settings framerateNumerator and framerateDenominator. For example, you might
+     * specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or
+     * 30000 / 1001 for 29.97 fps.
+     */
+    inline void SetFramerate(const CaptionSourceFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing frame rates between your input captions and
+     * input video, specify the frame rate of the captions file. Specify this value as
+     * a fraction. When you work directly in your JSON job specification, use the
+     * settings framerateNumerator and framerateDenominator. For example, you might
+     * specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or
+     * 30000 / 1001 for 29.97 fps.
+     */
+    inline void SetFramerate(CaptionSourceFramerate&& value) { m_framerateHasBeenSet = true; m_framerate = std::move(value); }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing frame rates between your input captions and
+     * input video, specify the frame rate of the captions file. Specify this value as
+     * a fraction. When you work directly in your JSON job specification, use the
+     * settings framerateNumerator and framerateDenominator. For example, you might
+     * specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or
+     * 30000 / 1001 for 29.97 fps.
+     */
+    inline FileSourceSettings& WithFramerate(const CaptionSourceFramerate& value) { SetFramerate(value); return *this;}
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing frame rates between your input captions and
+     * input video, specify the frame rate of the captions file. Specify this value as
+     * a fraction. When you work directly in your JSON job specification, use the
+     * settings framerateNumerator and framerateDenominator. For example, you might
+     * specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or
+     * 30000 / 1001 for 29.97 fps.
+     */
+    inline FileSourceSettings& WithFramerate(CaptionSourceFramerate&& value) { SetFramerate(std::move(value)); return *this;}
+
+
+    /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline void SetSourceFile(const Aws::String& value) { m_sourceFileHasBeenSet = true; m_sourceFile = value; }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline void SetSourceFile(Aws::String&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::move(value); }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline void SetSourceFile(const char* value) { m_sourceFileHasBeenSet = true; m_sourceFile.assign(value); }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline FileSourceSettings& WithSourceFile(const Aws::String& value) { SetSourceFile(value); return *this;}
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline FileSourceSettings& WithSourceFile(Aws::String&& value) { SetSourceFile(std::move(value)); return *this;}
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     inline FileSourceSettings& WithSourceFile(const char* value) { SetSourceFile(value); return *this;}
 
 
     /**
-     * Specifies a time delta in seconds to offset the captions from the source file.
+     * Optional. Use this setting when you need to adjust the sync between your sidecar
+     * captions and your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html.
+     * Enter a positive or negative number to modify the times in the captions file.
+     * For example, type 15 to add 15 seconds to all the times in the captions file.
+     * Type -5 to subtract 5 seconds from the times in the captions file. You can
+     * optionally specify your time delta in milliseconds instead of seconds. When you
+     * do so, set the related setting, Time delta units (TimeDeltaUnits) to
+     * Milliseconds (MILLISECONDS). Note that, when you specify a time delta for
+     * timecode-based caption sources, such as SCC and STL, and your time delta isn't a
+     * multiple of the input frame rate, MediaConvert snaps the captions to the nearest
+     * frame. For example, when your input video frame rate is 25 fps and you specify
+     * 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
      */
     inline int GetTimeDelta() const{ return m_timeDelta; }
 
     /**
-     * Specifies a time delta in seconds to offset the captions from the source file.
+     * Optional. Use this setting when you need to adjust the sync between your sidecar
+     * captions and your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html.
+     * Enter a positive or negative number to modify the times in the captions file.
+     * For example, type 15 to add 15 seconds to all the times in the captions file.
+     * Type -5 to subtract 5 seconds from the times in the captions file. You can
+     * optionally specify your time delta in milliseconds instead of seconds. When you
+     * do so, set the related setting, Time delta units (TimeDeltaUnits) to
+     * Milliseconds (MILLISECONDS). Note that, when you specify a time delta for
+     * timecode-based caption sources, such as SCC and STL, and your time delta isn't a
+     * multiple of the input frame rate, MediaConvert snaps the captions to the nearest
+     * frame. For example, when your input video frame rate is 25 fps and you specify
+     * 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
      */
     inline bool TimeDeltaHasBeenSet() const { return m_timeDeltaHasBeenSet; }
 
     /**
-     * Specifies a time delta in seconds to offset the captions from the source file.
+     * Optional. Use this setting when you need to adjust the sync between your sidecar
+     * captions and your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html.
+     * Enter a positive or negative number to modify the times in the captions file.
+     * For example, type 15 to add 15 seconds to all the times in the captions file.
+     * Type -5 to subtract 5 seconds from the times in the captions file. You can
+     * optionally specify your time delta in milliseconds instead of seconds. When you
+     * do so, set the related setting, Time delta units (TimeDeltaUnits) to
+     * Milliseconds (MILLISECONDS). Note that, when you specify a time delta for
+     * timecode-based caption sources, such as SCC and STL, and your time delta isn't a
+     * multiple of the input frame rate, MediaConvert snaps the captions to the nearest
+     * frame. For example, when your input video frame rate is 25 fps and you specify
+     * 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
      */
     inline void SetTimeDelta(int value) { m_timeDeltaHasBeenSet = true; m_timeDelta = value; }
 
     /**
-     * Specifies a time delta in seconds to offset the captions from the source file.
+     * Optional. Use this setting when you need to adjust the sync between your sidecar
+     * captions and your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html.
+     * Enter a positive or negative number to modify the times in the captions file.
+     * For example, type 15 to add 15 seconds to all the times in the captions file.
+     * Type -5 to subtract 5 seconds from the times in the captions file. You can
+     * optionally specify your time delta in milliseconds instead of seconds. When you
+     * do so, set the related setting, Time delta units (TimeDeltaUnits) to
+     * Milliseconds (MILLISECONDS). Note that, when you specify a time delta for
+     * timecode-based caption sources, such as SCC and STL, and your time delta isn't a
+     * multiple of the input frame rate, MediaConvert snaps the captions to the nearest
+     * frame. For example, when your input video frame rate is 25 fps and you specify
+     * 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
      */
     inline FileSourceSettings& WithTimeDelta(int value) { SetTimeDelta(value); return *this;}
+
+
+    /**
+     * When you use the setting Time delta (TimeDelta) to adjust the sync between your
+     * sidecar captions and your video, use this setting to specify the units for the
+     * delta that you specify. When you don't specify a value for Time delta units
+     * (TimeDeltaUnits), MediaConvert uses seconds by default.
+     */
+    inline const FileSourceTimeDeltaUnits& GetTimeDeltaUnits() const{ return m_timeDeltaUnits; }
+
+    /**
+     * When you use the setting Time delta (TimeDelta) to adjust the sync between your
+     * sidecar captions and your video, use this setting to specify the units for the
+     * delta that you specify. When you don't specify a value for Time delta units
+     * (TimeDeltaUnits), MediaConvert uses seconds by default.
+     */
+    inline bool TimeDeltaUnitsHasBeenSet() const { return m_timeDeltaUnitsHasBeenSet; }
+
+    /**
+     * When you use the setting Time delta (TimeDelta) to adjust the sync between your
+     * sidecar captions and your video, use this setting to specify the units for the
+     * delta that you specify. When you don't specify a value for Time delta units
+     * (TimeDeltaUnits), MediaConvert uses seconds by default.
+     */
+    inline void SetTimeDeltaUnits(const FileSourceTimeDeltaUnits& value) { m_timeDeltaUnitsHasBeenSet = true; m_timeDeltaUnits = value; }
+
+    /**
+     * When you use the setting Time delta (TimeDelta) to adjust the sync between your
+     * sidecar captions and your video, use this setting to specify the units for the
+     * delta that you specify. When you don't specify a value for Time delta units
+     * (TimeDeltaUnits), MediaConvert uses seconds by default.
+     */
+    inline void SetTimeDeltaUnits(FileSourceTimeDeltaUnits&& value) { m_timeDeltaUnitsHasBeenSet = true; m_timeDeltaUnits = std::move(value); }
+
+    /**
+     * When you use the setting Time delta (TimeDelta) to adjust the sync between your
+     * sidecar captions and your video, use this setting to specify the units for the
+     * delta that you specify. When you don't specify a value for Time delta units
+     * (TimeDeltaUnits), MediaConvert uses seconds by default.
+     */
+    inline FileSourceSettings& WithTimeDeltaUnits(const FileSourceTimeDeltaUnits& value) { SetTimeDeltaUnits(value); return *this;}
+
+    /**
+     * When you use the setting Time delta (TimeDelta) to adjust the sync between your
+     * sidecar captions and your video, use this setting to specify the units for the
+     * delta that you specify. When you don't specify a value for Time delta units
+     * (TimeDeltaUnits), MediaConvert uses seconds by default.
+     */
+    inline FileSourceSettings& WithTimeDeltaUnits(FileSourceTimeDeltaUnits&& value) { SetTimeDeltaUnits(std::move(value)); return *this;}
 
   private:
 
     FileSourceConvert608To708 m_convert608To708;
     bool m_convert608To708HasBeenSet;
 
+    CaptionSourceFramerate m_framerate;
+    bool m_framerateHasBeenSet;
+
     Aws::String m_sourceFile;
     bool m_sourceFileHasBeenSet;
 
     int m_timeDelta;
     bool m_timeDeltaHasBeenSet;
+
+    FileSourceTimeDeltaUnits m_timeDeltaUnits;
+    bool m_timeDeltaUnitsHasBeenSet;
   };
 
 } // namespace Model

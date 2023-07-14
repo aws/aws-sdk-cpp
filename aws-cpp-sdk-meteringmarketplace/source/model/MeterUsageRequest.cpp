@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/meteringmarketplace/model/MeterUsageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,7 +19,8 @@ MeterUsageRequest::MeterUsageRequest() :
     m_usageQuantity(0),
     m_usageQuantityHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_usageAllocationsHasBeenSet(false)
 {
 }
 
@@ -63,6 +54,17 @@ Aws::String MeterUsageRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("DryRun", m_dryRun);
+
+  }
+
+  if(m_usageAllocationsHasBeenSet)
+  {
+   Array<JsonValue> usageAllocationsJsonList(m_usageAllocations.size());
+   for(unsigned usageAllocationsIndex = 0; usageAllocationsIndex < usageAllocationsJsonList.GetLength(); ++usageAllocationsIndex)
+   {
+     usageAllocationsJsonList[usageAllocationsIndex].AsObject(m_usageAllocations[usageAllocationsIndex].Jsonize());
+   }
+   payload.WithArray("UsageAllocations", std::move(usageAllocationsJsonList));
 
   }
 

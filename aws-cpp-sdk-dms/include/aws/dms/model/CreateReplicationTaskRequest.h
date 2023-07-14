@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -53,7 +43,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -61,7 +51,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -69,7 +59,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -77,7 +67,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -85,7 +75,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -93,7 +83,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -101,7 +91,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -109,7 +99,7 @@ namespace Model
 
     /**
      * <p>An identifier for the replication task.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
@@ -294,114 +284,130 @@ namespace Model
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 
@@ -463,15 +469,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -483,15 +488,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -503,15 +507,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -523,15 +526,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -543,15 +545,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -563,15 +564,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -583,15 +583,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -603,15 +602,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 
@@ -619,64 +617,64 @@ namespace Model
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
 
@@ -721,6 +719,192 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline const Aws::String& GetTaskData() const{ return m_taskData; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline CreateReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline CreateReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
+     */
+    inline CreateReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}
+
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateReplicationTaskRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateReplicationTaskRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A friendly name for the resource identifier at the end of the
+     * <code>EndpointArn</code> response parameter that is returned in the created
+     * <code>Endpoint</code> object. The value for this parameter can have up to 31
+     * characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also,
+     * it can't end with a hyphen or contain two consecutive hyphens, and can only
+     * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
+     */
+    inline CreateReplicationTaskRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_replicationTaskIdentifier;
@@ -755,6 +939,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_taskData;
+    bool m_taskDataHasBeenSet;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -131,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline TrailInfo& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline TrailInfo& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region in which a trail was created.</p>
+     * <p>The Amazon Web Services Region in which a trail was created.</p>
      */
     inline TrailInfo& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
 

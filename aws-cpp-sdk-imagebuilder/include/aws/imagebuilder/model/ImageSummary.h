@@ -1,25 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/imagebuilder/model/ImageState.h>
 #include <aws/imagebuilder/model/OutputResources.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/BuildType.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +126,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline const ImageType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline ImageSummary& WithType(const ImageType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Specifies whether this is an AMI or container image.</p>
+     */
+    inline ImageSummary& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The version of the image.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
@@ -203,6 +226,55 @@ namespace Model
      * <p>The platform of the image.</p>
      */
     inline ImageSummary& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline ImageSummary& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline ImageSummary& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The operating system version of the instance. For example, Amazon Linux 2,
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
+     */
+    inline ImageSummary& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
 
 
     /**
@@ -414,6 +486,67 @@ namespace Model
      */
     inline ImageSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline const BuildType& GetBuildType() const{ return m_buildType; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline void SetBuildType(const BuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline void SetBuildType(BuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline ImageSummary& WithBuildType(const BuildType& value) { SetBuildType(value); return *this;}
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline ImageSummary& WithBuildType(BuildType&& value) { SetBuildType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -422,11 +555,17 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    ImageType m_type;
+    bool m_typeHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
 
     Platform m_platform;
     bool m_platformHasBeenSet;
+
+    Aws::String m_osVersion;
+    bool m_osVersionHasBeenSet;
 
     ImageState m_state;
     bool m_stateHasBeenSet;
@@ -442,6 +581,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    BuildType m_buildType;
+    bool m_buildTypeHasBeenSet;
   };
 
 } // namespace Model

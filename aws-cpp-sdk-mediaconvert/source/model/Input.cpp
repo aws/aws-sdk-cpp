@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/Input.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,6 +28,7 @@ Input::Input() :
     m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
+    m_dolbyVisionMetadataXmlHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -45,6 +36,8 @@ Input::Input() :
     m_filterStrengthHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
+    m_inputScanType(InputScanType::NOT_SET),
+    m_inputScanTypeHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -54,6 +47,7 @@ Input::Input() :
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
+    m_videoGeneratorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
 }
@@ -68,6 +62,7 @@ Input::Input(JsonView jsonValue) :
     m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
+    m_dolbyVisionMetadataXmlHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -75,6 +70,8 @@ Input::Input(JsonView jsonValue) :
     m_filterStrengthHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
+    m_inputScanType(InputScanType::NOT_SET),
+    m_inputScanTypeHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -84,6 +81,7 @@ Input::Input(JsonView jsonValue) :
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
+    m_videoGeneratorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
   *this = jsonValue;
@@ -149,6 +147,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_denoiseFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dolbyVisionMetadataXml"))
+  {
+    m_dolbyVisionMetadataXml = jsonValue.GetString("dolbyVisionMetadataXml");
+
+    m_dolbyVisionMetadataXmlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("fileInput"))
   {
     m_fileInput = jsonValue.GetString("fileInput");
@@ -185,6 +190,13 @@ Input& Input::operator =(JsonView jsonValue)
       m_inputClippings.push_back(inputClippingsJsonList[inputClippingsIndex].AsObject());
     }
     m_inputClippingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputScanType"))
+  {
+    m_inputScanType = InputScanTypeMapper::GetInputScanTypeForName(jsonValue.GetString("inputScanType"));
+
+    m_inputScanTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("position"))
@@ -230,6 +242,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_timecodeStart = jsonValue.GetString("timecodeStart");
 
     m_timecodeStartHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoGenerator"))
+  {
+    m_videoGenerator = jsonValue.GetObject("videoGenerator");
+
+    m_videoGeneratorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("videoSelector"))
@@ -301,6 +320,12 @@ JsonValue Input::Jsonize() const
    payload.WithString("denoiseFilter", InputDenoiseFilterMapper::GetNameForInputDenoiseFilter(m_denoiseFilter));
   }
 
+  if(m_dolbyVisionMetadataXmlHasBeenSet)
+  {
+   payload.WithString("dolbyVisionMetadataXml", m_dolbyVisionMetadataXml);
+
+  }
+
   if(m_fileInputHasBeenSet)
   {
    payload.WithString("fileInput", m_fileInput);
@@ -333,6 +358,11 @@ JsonValue Input::Jsonize() const
    }
    payload.WithArray("inputClippings", std::move(inputClippingsJsonList));
 
+  }
+
+  if(m_inputScanTypeHasBeenSet)
+  {
+   payload.WithString("inputScanType", InputScanTypeMapper::GetNameForInputScanType(m_inputScanType));
   }
 
   if(m_positionHasBeenSet)
@@ -371,6 +401,12 @@ JsonValue Input::Jsonize() const
   if(m_timecodeStartHasBeenSet)
   {
    payload.WithString("timecodeStart", m_timecodeStart);
+
+  }
+
+  if(m_videoGeneratorHasBeenSet)
+  {
+   payload.WithObject("videoGenerator", m_videoGenerator.Jsonize());
 
   }
 

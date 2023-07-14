@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -43,116 +33,116 @@ namespace Model
 
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline CreateImageRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline CreateImageRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline CreateImageRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateImageRecipeResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateImageRecipeResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateImageRecipeResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline const Aws::String& GetImageRecipeArn() const{ return m_imageRecipeArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline void SetImageRecipeArn(const Aws::String& value) { m_imageRecipeArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline void SetImageRecipeArn(Aws::String&& value) { m_imageRecipeArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline void SetImageRecipeArn(const char* value) { m_imageRecipeArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline CreateImageRecipeResult& WithImageRecipeArn(const Aws::String& value) { SetImageRecipeArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline CreateImageRecipeResult& WithImageRecipeArn(Aws::String&& value) { SetImageRecipeArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image recipe that was created by this
-     * request. </p>
+     * <p>The Amazon Resource Name (ARN) of the image recipe that was created by this
+     * request.</p>
      */
     inline CreateImageRecipeResult& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
 

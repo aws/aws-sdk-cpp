@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -135,56 +125,64 @@ namespace Model
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline Attachment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline Attachment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
      * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
-     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     * <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline Attachment& WithStatus(const char* value) { SetStatus(value); return *this;}
 

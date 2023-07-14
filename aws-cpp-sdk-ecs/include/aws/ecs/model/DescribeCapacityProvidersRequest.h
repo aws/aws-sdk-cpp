@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -113,56 +103,56 @@ namespace Model
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline const Aws::Vector<CapacityProviderField>& GetInclude() const{ return m_include; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(const Aws::Vector<CapacityProviderField>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(Aws::Vector<CapacityProviderField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& WithInclude(const Aws::Vector<CapacityProviderField>& value) { SetInclude(value); return *this;}
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& WithInclude(Aws::Vector<CapacityProviderField>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& AddInclude(const CapacityProviderField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
      * <p>Specifies whether or not you want to see the resource tags for the capacity
      * provider. If <code>TAGS</code> is specified, the tags are included in the
-     * response. If this field is omitted, tags are not included in the response.</p>
+     * response. If this field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeCapacityProvidersRequest& AddInclude(CapacityProviderField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
 
@@ -229,9 +219,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -240,9 +230,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -251,9 +241,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -262,9 +252,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -273,9 +263,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -284,9 +274,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline DescribeCapacityProvidersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -295,9 +285,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline DescribeCapacityProvidersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -306,9 +296,9 @@ namespace Model
      * <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value.</p> <note> <p>This token should be treated as an opaque identifier that
+     * value.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline DescribeCapacityProvidersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

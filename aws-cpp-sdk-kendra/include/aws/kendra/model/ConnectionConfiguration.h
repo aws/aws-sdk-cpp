@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the information necessary to connect to a database.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the configuration information that's required to connect to a
+   * database.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConnectionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -201,98 +191,82 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline ConnectionConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline ConnectionConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
+     * credentials should be a user/password pair. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
-     * a Database Data Source</a>. For more information about AWS Secrets Manager, see
-     * <a
+     * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline ConnectionConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

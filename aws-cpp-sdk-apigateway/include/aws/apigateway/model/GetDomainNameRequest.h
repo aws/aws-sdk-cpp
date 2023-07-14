@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -27,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Request to get the name of a <a>DomainName</a> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Request to get the name of a DomainName resource.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNameRequest">AWS
    * API Reference</a></p>
    */
@@ -47,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline GetDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline GetDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline GetDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

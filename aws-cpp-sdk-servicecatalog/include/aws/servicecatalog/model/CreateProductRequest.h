@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -353,42 +343,50 @@ namespace Model
 
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline const Aws::String& GetSupportUrl() const{ return m_supportUrl; }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline bool SupportUrlHasBeenSet() const { return m_supportUrlHasBeenSet; }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline void SetSupportUrl(const Aws::String& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline void SetSupportUrl(const char* value) { m_supportUrlHasBeenSet = true; m_supportUrl.assign(value); }
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline CreateProductRequest& WithSupportUrl(const Aws::String& value) { SetSupportUrl(value); return *this;}
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline CreateProductRequest& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The contact URL for product support.</p>
+     * <p>The contact URL for product support.</p> <p> <code>^https?:\/\// </code>/ is
+     * the pattern used to validate SupportUrl.</p>
      */
     inline CreateProductRequest& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
 
@@ -466,32 +464,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline const ProvisioningArtifactProperties& GetProvisioningArtifactParameters() const{ return m_provisioningArtifactParameters; }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline bool ProvisioningArtifactParametersHasBeenSet() const { return m_provisioningArtifactParametersHasBeenSet; }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline void SetProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = value; }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline void SetProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = std::move(value); }
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { SetProvisioningArtifactParameters(value); return *this;}
 
     /**
-     * <p>The configuration of the provisioning artifact.</p>
+     * <p>The configuration of the provisioning artifact. </p>
      */
     inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 

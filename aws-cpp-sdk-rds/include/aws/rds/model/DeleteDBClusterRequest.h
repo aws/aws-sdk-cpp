@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -111,9 +101,9 @@ namespace Model
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
      * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
      * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+     * cluster snapshot is created. By default, this parameter is disabled.</p> 
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
+     * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
@@ -122,9 +112,9 @@ namespace Model
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
      * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
      * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+     * cluster snapshot is created. By default, this parameter is disabled.</p> 
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
+     * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
@@ -133,9 +123,9 @@ namespace Model
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
      * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
      * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+     * cluster snapshot is created. By default, this parameter is disabled.</p> 
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
+     * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
@@ -144,18 +134,18 @@ namespace Model
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
      * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
      * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+     * cluster snapshot is created. By default, this parameter is disabled.</p> 
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
-     * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
+     * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline DeleteDBClusterRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -163,10 +153,10 @@ namespace Model
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -174,10 +164,10 @@ namespace Model
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -185,10 +175,10 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -196,10 +186,10 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -207,10 +197,10 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -218,10 +208,10 @@ namespace Model
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -229,10 +219,10 @@ namespace Model
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
-     * when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this
+     * <p>The DB cluster snapshot identifier of the new DB cluster snapshot created
+     * when <code>SkipFinalSnapshot</code> is disabled.</p>  <p>Specifying this
      * parameter and also skipping the creation of a final DB cluster snapshot with the
-     * <code>SkipFinalShapshot</code> parameter results in an error.</p> </note>
+     * <code>SkipFinalShapshot</code> parameter results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>

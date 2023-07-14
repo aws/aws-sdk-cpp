@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/AssignIpv6AddressesResponse.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -56,6 +46,17 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
       {
         m_assignedIpv6Addresses.push_back(assignedIpv6AddressesMember.GetText());
         assignedIpv6AddressesMember = assignedIpv6AddressesMember.NextNode("item");
+      }
+
+    }
+    XmlNode assignedIpv6PrefixesNode = resultNode.FirstChild("assignedIpv6PrefixSet");
+    if(!assignedIpv6PrefixesNode.IsNull())
+    {
+      XmlNode assignedIpv6PrefixesMember = assignedIpv6PrefixesNode.FirstChild("item");
+      while(!assignedIpv6PrefixesMember.IsNull())
+      {
+        m_assignedIpv6Prefixes.push_back(assignedIpv6PrefixesMember.GetText());
+        assignedIpv6PrefixesMember = assignedIpv6PrefixesMember.NextNode("item");
       }
 
     }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -55,76 +45,22 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>The input mode used by the algorithm for the training job. For the input
-     * modes that Amazon SageMaker algorithms support, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-     * downloads the training data from S3 to the provisioned ML storage Volume, and
-     * mounts the directory to docker volume for training container. If an algorithm
-     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
-     * directly from S3 to the container.</p>
-     */
+    
     inline const TrainingInputMode& GetTrainingInputMode() const{ return m_trainingInputMode; }
 
-    /**
-     * <p>The input mode used by the algorithm for the training job. For the input
-     * modes that Amazon SageMaker algorithms support, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-     * downloads the training data from S3 to the provisioned ML storage Volume, and
-     * mounts the directory to docker volume for training container. If an algorithm
-     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
-     * directly from S3 to the container.</p>
-     */
+    
     inline bool TrainingInputModeHasBeenSet() const { return m_trainingInputModeHasBeenSet; }
 
-    /**
-     * <p>The input mode used by the algorithm for the training job. For the input
-     * modes that Amazon SageMaker algorithms support, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-     * downloads the training data from S3 to the provisioned ML storage Volume, and
-     * mounts the directory to docker volume for training container. If an algorithm
-     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
-     * directly from S3 to the container.</p>
-     */
+    
     inline void SetTrainingInputMode(const TrainingInputMode& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
 
-    /**
-     * <p>The input mode used by the algorithm for the training job. For the input
-     * modes that Amazon SageMaker algorithms support, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-     * downloads the training data from S3 to the provisioned ML storage Volume, and
-     * mounts the directory to docker volume for training container. If an algorithm
-     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
-     * directly from S3 to the container.</p>
-     */
+    
     inline void SetTrainingInputMode(TrainingInputMode&& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = std::move(value); }
 
-    /**
-     * <p>The input mode used by the algorithm for the training job. For the input
-     * modes that Amazon SageMaker algorithms support, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-     * downloads the training data from S3 to the provisioned ML storage Volume, and
-     * mounts the directory to docker volume for training container. If an algorithm
-     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
-     * directly from S3 to the container.</p>
-     */
+    
     inline TrainingJobDefinition& WithTrainingInputMode(const TrainingInputMode& value) { SetTrainingInputMode(value); return *this;}
 
-    /**
-     * <p>The input mode used by the algorithm for the training job. For the input
-     * modes that Amazon SageMaker algorithms support, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
-     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
-     * downloads the training data from S3 to the provisioned ML storage Volume, and
-     * mounts the directory to docker volume for training container. If an algorithm
-     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
-     * directly from S3 to the container.</p>
-     */
+    
     inline TrainingJobDefinition& WithTrainingInputMode(TrainingInputMode&& value) { SetTrainingInputMode(std::move(value)); return *this;}
 
 
@@ -244,38 +180,38 @@ namespace Model
 
 
     /**
-     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
-     * SageMaker creates subfolders for the artifacts.</p>
+     * <p>the path to the S3 bucket where you want to store model artifacts. SageMaker
+     * creates subfolders for the artifacts.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
-     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
-     * SageMaker creates subfolders for the artifacts.</p>
+     * <p>the path to the S3 bucket where you want to store model artifacts. SageMaker
+     * creates subfolders for the artifacts.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
-     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
-     * SageMaker creates subfolders for the artifacts.</p>
+     * <p>the path to the S3 bucket where you want to store model artifacts. SageMaker
+     * creates subfolders for the artifacts.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
-     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
-     * SageMaker creates subfolders for the artifacts.</p>
+     * <p>the path to the S3 bucket where you want to store model artifacts. SageMaker
+     * creates subfolders for the artifacts.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
-     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
-     * SageMaker creates subfolders for the artifacts.</p>
+     * <p>the path to the S3 bucket where you want to store model artifacts. SageMaker
+     * creates subfolders for the artifacts.</p>
      */
     inline TrainingJobDefinition& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
-     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
-     * SageMaker creates subfolders for the artifacts.</p>
+     * <p>the path to the S3 bucket where you want to store model artifacts. SageMaker
+     * creates subfolders for the artifacts.</p>
      */
     inline TrainingJobDefinition& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
@@ -318,56 +254,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal,
+     * which delays job termination for 120 seconds. Algorithms can use this 120-second
+     * window to save the model artifacts.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal,
+     * which delays job termination for 120 seconds. Algorithms can use this 120-second
+     * window to save the model artifacts.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal,
+     * which delays job termination for 120 seconds. Algorithms can use this 120-second
+     * window to save the model artifacts.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal,
+     * which delays job termination for 120 seconds. Algorithms can use this 120-second
+     * window to save the model artifacts.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal,
+     * which delays job termination for 120 seconds. Algorithms can use this 120-second
+     * window to save the model artifacts.</p>
      */
     inline TrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, SageMaker ends the training job. Use this API to cap model training
+     * costs.</p> <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal,
+     * which delays job termination for 120 seconds. Algorithms can use this 120-second
+     * window to save the model artifacts.</p>
      */
     inline TrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 

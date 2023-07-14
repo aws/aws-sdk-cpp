@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/groundstation/model/ConfigCapabilityType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,7 @@ namespace Aws
         static const int dataflow_endpoint_HASH = HashingUtils::HashString("dataflow-endpoint");
         static const int tracking_HASH = HashingUtils::HashString("tracking");
         static const int uplink_echo_HASH = HashingUtils::HashString("uplink-echo");
+        static const int s3_recording_HASH = HashingUtils::HashString("s3-recording");
 
 
         ConfigCapabilityType GetConfigCapabilityTypeForName(const Aws::String& name)
@@ -65,6 +56,10 @@ namespace Aws
           {
             return ConfigCapabilityType::uplink_echo;
           }
+          else if (hashCode == s3_recording_HASH)
+          {
+            return ConfigCapabilityType::s3_recording;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +86,8 @@ namespace Aws
             return "tracking";
           case ConfigCapabilityType::uplink_echo:
             return "uplink-echo";
+          case ConfigCapabilityType::s3_recording:
+            return "s3-recording";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -161,10 +151,10 @@ namespace Model
 
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -173,10 +163,10 @@ namespace Model
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -185,10 +175,10 @@ namespace Model
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -197,10 +187,10 @@ namespace Model
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -209,10 +199,10 @@ namespace Model
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -221,10 +211,10 @@ namespace Model
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -233,10 +223,10 @@ namespace Model
     inline RegisterWorkflowTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -245,10 +235,10 @@ namespace Model
     inline RegisterWorkflowTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
+     * <p>The version of the workflow type.</p>  <p>The workflow type consists of
      * the name and version, the combination of which must be unique within the domain.
      * To get a list of all currently registered workflow types, use the
-     * <a>ListWorkflowTypes</a> action.</p> </note> <p>The specified string must not
+     * <a>ListWorkflowTypes</a> action.</p>  <p>The specified string must not
      * start or end with whitespace. It must not contain a <code>:</code> (colon),
      * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -732,82 +722,82 @@ namespace Model
 
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetDefaultLambdaRole() const{ return m_defaultLambdaRole; }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline bool DefaultLambdaRoleHasBeenSet() const { return m_defaultLambdaRoleHasBeenSet; }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline void SetDefaultLambdaRole(const Aws::String& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = value; }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::move(value); }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline void SetDefaultLambdaRole(const char* value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole.assign(value); }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(const Aws::String& value) { SetDefaultLambdaRole(value); return *this;}
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(std::move(value)); return *this;}
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when you start this workflow type, the default Lambda role
      * is attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(const char* value) { SetDefaultLambdaRole(value); return *this;}
 

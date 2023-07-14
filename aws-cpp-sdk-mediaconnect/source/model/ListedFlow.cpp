@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/ListedFlow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,8 @@ ListedFlow::ListedFlow() :
     m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -48,7 +39,8 @@ ListedFlow::ListedFlow(JsonView jsonValue) :
     m_sourceType(SourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +89,13 @@ ListedFlow& ListedFlow::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+    m_maintenanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +135,12 @@ JsonValue ListedFlow::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
+
   }
 
   return payload;

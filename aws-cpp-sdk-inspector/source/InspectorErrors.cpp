@@ -1,30 +1,91 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/inspector/InspectorErrors.h>
+#include <aws/inspector/model/InternalException.h>
+#include <aws/inspector/model/AgentsAlreadyRunningAssessmentException.h>
+#include <aws/inspector/model/UnsupportedFeatureException.h>
+#include <aws/inspector/model/NoSuchEntityException.h>
+#include <aws/inspector/model/LimitExceededException.h>
+#include <aws/inspector/model/AccessDeniedException.h>
+#include <aws/inspector/model/AssessmentRunInProgressException.h>
+#include <aws/inspector/model/InvalidInputException.h>
+#include <aws/inspector/model/ServiceTemporarilyUnavailableException.h>
+#include <aws/inspector/model/InvalidCrossAccountRoleException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Inspector;
 using namespace Aws::Utils;
+using namespace Aws::Inspector;
+using namespace Aws::Inspector::Model;
 
 namespace Aws
 {
 namespace Inspector
 {
+template<> AWS_INSPECTOR_API InternalException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::INTERNAL);
+  return InternalException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API AgentsAlreadyRunningAssessmentException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::AGENTS_ALREADY_RUNNING_ASSESSMENT);
+  return AgentsAlreadyRunningAssessmentException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API UnsupportedFeatureException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::UNSUPPORTED_FEATURE);
+  return UnsupportedFeatureException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API NoSuchEntityException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::NO_SUCH_ENTITY);
+  return NoSuchEntityException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API LimitExceededException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API AccessDeniedException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API AssessmentRunInProgressException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS);
+  return AssessmentRunInProgressException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API InvalidInputException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API ServiceTemporarilyUnavailableException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE);
+  return ServiceTemporarilyUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API InvalidCrossAccountRoleException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::INVALID_CROSS_ACCOUNT_ROLE);
+  return InvalidCrossAccountRoleException(this->GetJsonPayload().View());
+}
+
 namespace InspectorErrorMapper
 {
 
@@ -66,7 +127,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == ASSESSMENT_RUN_IN_PROGRESS_HASH)
   {

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -34,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Access Control List files for the documents in a data source.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Access Control List files for the documents in a data source. For the format
+   * of the file, see <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control
+   * for S3 data sources</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AccessControlListConfiguration">AWS
    * API Reference</a></p>
    */
@@ -49,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline const Aws::String& GetKeyPath() const{ return m_keyPath; }
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline bool KeyPathHasBeenSet() const { return m_keyPathHasBeenSet; }
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline void SetKeyPath(const Aws::String& value) { m_keyPathHasBeenSet = true; m_keyPath = value; }
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline void SetKeyPath(Aws::String&& value) { m_keyPathHasBeenSet = true; m_keyPath = std::move(value); }
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline void SetKeyPath(const char* value) { m_keyPathHasBeenSet = true; m_keyPath.assign(value); }
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline AccessControlListConfiguration& WithKeyPath(const Aws::String& value) { SetKeyPath(value); return *this;}
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline AccessControlListConfiguration& WithKeyPath(Aws::String&& value) { SetKeyPath(std::move(value)); return *this;}
 
     /**
-     * <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+     * <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
      */
     inline AccessControlListConfiguration& WithKeyPath(const char* value) { SetKeyPath(value); return *this;}
 

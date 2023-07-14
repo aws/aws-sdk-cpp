@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class DocDBErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -78,6 +69,10 @@ enum class DocDBErrors
   D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT,
   D_B_SUBNET_QUOTA_EXCEEDED_FAULT,
   D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT,
+  EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT,
+  GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT,
+  GLOBAL_CLUSTER_NOT_FOUND_FAULT,
+  GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT,
   INSTANCE_QUOTA_EXCEEDED_FAULT,
   INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT,
   INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT,
@@ -90,6 +85,8 @@ enum class DocDBErrors
   INVALID_D_B_SNAPSHOT_STATE_FAULT,
   INVALID_D_B_SUBNET_GROUP_STATE_FAULT,
   INVALID_D_B_SUBNET_STATE_FAULT,
+  INVALID_EVENT_SUBSCRIPTION_STATE_FAULT,
+  INVALID_GLOBAL_CLUSTER_STATE_FAULT,
   INVALID_RESTORE_FAULT,
   INVALID_SUBNET,
   INVALID_V_P_C_NETWORK_STATE_FAULT,
@@ -97,10 +94,31 @@ enum class DocDBErrors
   RESOURCE_NOT_FOUND_FAULT,
   SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT,
   SNAPSHOT_QUOTA_EXCEEDED_FAULT,
+  SOURCE_NOT_FOUND_FAULT,
   STORAGE_QUOTA_EXCEEDED_FAULT,
   STORAGE_TYPE_NOT_SUPPORTED_FAULT,
-  SUBNET_ALREADY_IN_USE
+  SUBNET_ALREADY_IN_USE,
+  SUBSCRIPTION_ALREADY_EXIST_FAULT,
+  SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT,
+  SUBSCRIPTION_NOT_FOUND_FAULT,
+  S_N_S_INVALID_TOPIC_FAULT,
+  S_N_S_NO_AUTHORIZATION_FAULT,
+  S_N_S_TOPIC_ARN_NOT_FOUND_FAULT
 };
+
+class AWS_DOCDB_API DocDBError : public Aws::Client::AWSError<DocDBErrors>
+{
+public:
+  DocDBError() {}
+  DocDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+  DocDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+  DocDBError(const Aws::Client::AWSError<DocDBErrors>& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+  DocDBError(Aws::Client::AWSError<DocDBErrors>&& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DocDBErrorMapper
 {
   AWS_DOCDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

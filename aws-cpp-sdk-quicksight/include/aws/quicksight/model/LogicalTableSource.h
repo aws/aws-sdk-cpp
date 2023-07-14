@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -121,6 +111,47 @@ namespace Model
      */
     inline LogicalTableSource& WithPhysicalTableId(const char* value) { SetPhysicalTableId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline const Aws::String& GetDataSetArn() const{ return m_dataSetArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline bool DataSetArnHasBeenSet() const { return m_dataSetArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline void SetDataSetArn(const Aws::String& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline void SetDataSetArn(Aws::String&& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline void SetDataSetArn(const char* value) { m_dataSetArnHasBeenSet = true; m_dataSetArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline LogicalTableSource& WithDataSetArn(const Aws::String& value) { SetDataSetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline LogicalTableSource& WithDataSetArn(Aws::String&& value) { SetDataSetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
+     */
+    inline LogicalTableSource& WithDataSetArn(const char* value) { SetDataSetArn(value); return *this;}
+
   private:
 
     JoinInstruction m_joinInstruction;
@@ -128,6 +159,9 @@ namespace Model
 
     Aws::String m_physicalTableId;
     bool m_physicalTableIdHasBeenSet;
+
+    Aws::String m_dataSetArn;
+    bool m_dataSetArnHasBeenSet;
   };
 
 } // namespace Model

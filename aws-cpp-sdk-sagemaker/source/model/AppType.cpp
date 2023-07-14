@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/AppType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,8 @@ namespace Aws
         static const int JupyterServer_HASH = HashingUtils::HashString("JupyterServer");
         static const int KernelGateway_HASH = HashingUtils::HashString("KernelGateway");
         static const int TensorBoard_HASH = HashingUtils::HashString("TensorBoard");
+        static const int RStudioServerPro_HASH = HashingUtils::HashString("RStudioServerPro");
+        static const int RSessionGateway_HASH = HashingUtils::HashString("RSessionGateway");
 
 
         AppType GetAppTypeForName(const Aws::String& name)
@@ -49,6 +41,14 @@ namespace Aws
           else if (hashCode == TensorBoard_HASH)
           {
             return AppType::TensorBoard;
+          }
+          else if (hashCode == RStudioServerPro_HASH)
+          {
+            return AppType::RStudioServerPro;
+          }
+          else if (hashCode == RSessionGateway_HASH)
+          {
+            return AppType::RSessionGateway;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +70,10 @@ namespace Aws
             return "KernelGateway";
           case AppType::TensorBoard:
             return "TensorBoard";
+          case AppType::RStudioServerPro:
+            return "RStudioServerPro";
+          case AppType::RSessionGateway:
+            return "RSessionGateway";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

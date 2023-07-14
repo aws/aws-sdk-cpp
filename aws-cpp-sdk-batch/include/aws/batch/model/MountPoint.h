@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details on a Docker volume mount point that is used in a job's container
+   * <p>Details on a Docker volume mount point that's used in a job's container
    * properties. This parameter maps to <code>Volumes</code> in the <a
    * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create
    * a container</a> section of the Docker Remote API and the <code>--volume</code>
@@ -52,70 +42,70 @@ namespace Model
 
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline MountPoint& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline MountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path on the container at which to mount the host volume.</p>
+     * <p>The path on the container where the host volume is mounted.</p>
      */
     inline MountPoint& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
 
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
-     * volume; otherwise, the container can write to the volume. The default value is
+     * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
     inline MountPoint& WithReadOnly(bool value) { SetReadOnly(value); return *this;}

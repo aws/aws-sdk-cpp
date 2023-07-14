@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -120,47 +110,56 @@ namespace Model
 
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline void SetLicenseRules(const Aws::Vector<Aws::String>& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = value; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline void SetLicenseRules(Aws::Vector<Aws::String>&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = std::move(value); }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& WithLicenseRules(const Aws::Vector<Aws::String>& value) { SetLicenseRules(value); return *this;}
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& WithLicenseRules(Aws::Vector<Aws::String>&& value) { SetLicenseRules(std::move(value)); return *this;}
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& AddLicenseRules(const Aws::String& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& AddLicenseRules(Aws::String&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>New license rules.</p>
+     * <p>New license rule. The only rule that you can add after you create a license
+     * configuration is licenseAffinityToHost.</p>
      */
     inline UpdateLicenseConfigurationRequest& AddLicenseRules(const char* value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
@@ -329,6 +328,27 @@ namespace Model
      */
     inline UpdateLicenseConfigurationRequest& AddProductInformationList(ProductInformation&& value) { m_productInformationListHasBeenSet = true; m_productInformationList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool GetDisassociateWhenNotFound() const{ return m_disassociateWhenNotFound; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline bool DisassociateWhenNotFoundHasBeenSet() const { return m_disassociateWhenNotFoundHasBeenSet; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline void SetDisassociateWhenNotFound(bool value) { m_disassociateWhenNotFoundHasBeenSet = true; m_disassociateWhenNotFound = value; }
+
+    /**
+     * <p>When true, disassociates a resource when software is uninstalled.</p>
+     */
+    inline UpdateLicenseConfigurationRequest& WithDisassociateWhenNotFound(bool value) { SetDisassociateWhenNotFound(value); return *this;}
+
   private:
 
     Aws::String m_licenseConfigurationArn;
@@ -354,6 +374,9 @@ namespace Model
 
     Aws::Vector<ProductInformation> m_productInformationList;
     bool m_productInformationListHasBeenSet;
+
+    bool m_disassociateWhenNotFound;
+    bool m_disassociateWhenNotFoundHasBeenSet;
   };
 
 } // namespace Model

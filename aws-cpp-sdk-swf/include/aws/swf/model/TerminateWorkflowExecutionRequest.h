@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -261,10 +251,10 @@ namespace Model
      * its history. It is up to the decider to take appropriate actions when it
      * receives an execution history with this event.</p> </li> <li> <p>
      * <code>ABANDON</code> – No action is taken. The child executions continue to
-     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * run.</p> </li> </ul>  <p>A child policy for this workflow execution must
      * be specified either as a default for the workflow type or through this
      * parameter. If neither this parameter is set nor a default child policy was
-     * specified at registration time then a fault is returned.</p> </note>
+     * specified at registration time then a fault is returned.</p> 
      */
     inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
 
@@ -279,10 +269,10 @@ namespace Model
      * its history. It is up to the decider to take appropriate actions when it
      * receives an execution history with this event.</p> </li> <li> <p>
      * <code>ABANDON</code> – No action is taken. The child executions continue to
-     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * run.</p> </li> </ul>  <p>A child policy for this workflow execution must
      * be specified either as a default for the workflow type or through this
      * parameter. If neither this parameter is set nor a default child policy was
-     * specified at registration time then a fault is returned.</p> </note>
+     * specified at registration time then a fault is returned.</p> 
      */
     inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
 
@@ -297,10 +287,10 @@ namespace Model
      * its history. It is up to the decider to take appropriate actions when it
      * receives an execution history with this event.</p> </li> <li> <p>
      * <code>ABANDON</code> – No action is taken. The child executions continue to
-     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * run.</p> </li> </ul>  <p>A child policy for this workflow execution must
      * be specified either as a default for the workflow type or through this
      * parameter. If neither this parameter is set nor a default child policy was
-     * specified at registration time then a fault is returned.</p> </note>
+     * specified at registration time then a fault is returned.</p> 
      */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
@@ -315,10 +305,10 @@ namespace Model
      * its history. It is up to the decider to take appropriate actions when it
      * receives an execution history with this event.</p> </li> <li> <p>
      * <code>ABANDON</code> – No action is taken. The child executions continue to
-     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * run.</p> </li> </ul>  <p>A child policy for this workflow execution must
      * be specified either as a default for the workflow type or through this
      * parameter. If neither this parameter is set nor a default child policy was
-     * specified at registration time then a fault is returned.</p> </note>
+     * specified at registration time then a fault is returned.</p> 
      */
     inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
@@ -333,10 +323,10 @@ namespace Model
      * its history. It is up to the decider to take appropriate actions when it
      * receives an execution history with this event.</p> </li> <li> <p>
      * <code>ABANDON</code> – No action is taken. The child executions continue to
-     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * run.</p> </li> </ul>  <p>A child policy for this workflow execution must
      * be specified either as a default for the workflow type or through this
      * parameter. If neither this parameter is set nor a default child policy was
-     * specified at registration time then a fault is returned.</p> </note>
+     * specified at registration time then a fault is returned.</p> 
      */
     inline TerminateWorkflowExecutionRequest& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
 
@@ -351,10 +341,10 @@ namespace Model
      * its history. It is up to the decider to take appropriate actions when it
      * receives an execution history with this event.</p> </li> <li> <p>
      * <code>ABANDON</code> – No action is taken. The child executions continue to
-     * run.</p> </li> </ul> <note> <p>A child policy for this workflow execution must
+     * run.</p> </li> </ul>  <p>A child policy for this workflow execution must
      * be specified either as a default for the workflow type or through this
      * parameter. If neither this parameter is set nor a default child policy was
-     * specified at registration time then a fault is returned.</p> </note>
+     * specified at registration time then a fault is returned.</p> 
      */
     inline TerminateWorkflowExecutionRequest& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/DataSourceParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,6 +27,7 @@ DataSourceParameters::DataSourceParameters() :
     m_jiraParametersHasBeenSet(false),
     m_mariaDbParametersHasBeenSet(false),
     m_mySqlParametersHasBeenSet(false),
+    m_oracleParametersHasBeenSet(false),
     m_postgreSqlParametersHasBeenSet(false),
     m_prestoParametersHasBeenSet(false),
     m_rdsParametersHasBeenSet(false),
@@ -47,7 +38,9 @@ DataSourceParameters::DataSourceParameters() :
     m_sparkParametersHasBeenSet(false),
     m_sqlServerParametersHasBeenSet(false),
     m_teradataParametersHasBeenSet(false),
-    m_twitterParametersHasBeenSet(false)
+    m_twitterParametersHasBeenSet(false),
+    m_amazonOpenSearchParametersHasBeenSet(false),
+    m_exasolParametersHasBeenSet(false)
 {
 }
 
@@ -60,6 +53,7 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_jiraParametersHasBeenSet(false),
     m_mariaDbParametersHasBeenSet(false),
     m_mySqlParametersHasBeenSet(false),
+    m_oracleParametersHasBeenSet(false),
     m_postgreSqlParametersHasBeenSet(false),
     m_prestoParametersHasBeenSet(false),
     m_rdsParametersHasBeenSet(false),
@@ -70,7 +64,9 @@ DataSourceParameters::DataSourceParameters(JsonView jsonValue) :
     m_sparkParametersHasBeenSet(false),
     m_sqlServerParametersHasBeenSet(false),
     m_teradataParametersHasBeenSet(false),
-    m_twitterParametersHasBeenSet(false)
+    m_twitterParametersHasBeenSet(false),
+    m_amazonOpenSearchParametersHasBeenSet(false),
+    m_exasolParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +127,13 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_mySqlParameters = jsonValue.GetObject("MySqlParameters");
 
     m_mySqlParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OracleParameters"))
+  {
+    m_oracleParameters = jsonValue.GetObject("OracleParameters");
+
+    m_oracleParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PostgreSqlParameters"))
@@ -210,6 +213,20 @@ DataSourceParameters& DataSourceParameters::operator =(JsonView jsonValue)
     m_twitterParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonOpenSearchParameters"))
+  {
+    m_amazonOpenSearchParameters = jsonValue.GetObject("AmazonOpenSearchParameters");
+
+    m_amazonOpenSearchParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExasolParameters"))
+  {
+    m_exasolParameters = jsonValue.GetObject("ExasolParameters");
+
+    m_exasolParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -262,6 +279,12 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_mySqlParametersHasBeenSet)
   {
    payload.WithObject("MySqlParameters", m_mySqlParameters.Jsonize());
+
+  }
+
+  if(m_oracleParametersHasBeenSet)
+  {
+   payload.WithObject("OracleParameters", m_oracleParameters.Jsonize());
 
   }
 
@@ -328,6 +351,18 @@ JsonValue DataSourceParameters::Jsonize() const
   if(m_twitterParametersHasBeenSet)
   {
    payload.WithObject("TwitterParameters", m_twitterParameters.Jsonize());
+
+  }
+
+  if(m_amazonOpenSearchParametersHasBeenSet)
+  {
+   payload.WithObject("AmazonOpenSearchParameters", m_amazonOpenSearchParameters.Jsonize());
+
+  }
+
+  if(m_exasolParametersHasBeenSet)
+  {
+   payload.WithObject("ExasolParameters", m_exasolParameters.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -45,7 +35,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>
@@ -54,7 +44,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>
@@ -63,7 +53,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>
@@ -72,7 +62,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>
@@ -81,7 +71,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>
@@ -90,7 +80,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>
@@ -99,7 +89,7 @@ namespace Model
 
     /**
      * <p>An array of objects that describe the result of the action, such as the
-     * status of the request, the time stamp of the request, and the resources affected
+     * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p> <p>These SSL/TLS certificates are only usable by Lightsail
      * load balancers. You can't get the certificate and use it for another
      * purpose.</p>

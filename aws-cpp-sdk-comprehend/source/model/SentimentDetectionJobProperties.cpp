@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/comprehend/model/SentimentDetectionJobProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 SentimentDetectionJobProperties::SentimentDetectionJobProperties() : 
     m_jobIdHasBeenSet(false),
+    m_jobArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -48,6 +39,7 @@ SentimentDetectionJobProperties::SentimentDetectionJobProperties() :
 
 SentimentDetectionJobProperties::SentimentDetectionJobProperties(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
+    m_jobArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
@@ -72,6 +64,13 @@ SentimentDetectionJobProperties& SentimentDetectionJobProperties::operator =(Jso
     m_jobId = jsonValue.GetString("JobId");
 
     m_jobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobArn"))
+  {
+    m_jobArn = jsonValue.GetString("JobArn");
+
+    m_jobArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("JobName"))
@@ -161,6 +160,12 @@ JsonValue SentimentDetectionJobProperties::Jsonize() const
   if(m_jobIdHasBeenSet)
   {
    payload.WithString("JobId", m_jobId);
+
+  }
+
+  if(m_jobArnHasBeenSet)
+  {
+   payload.WithString("JobArn", m_jobArn);
 
   }
 

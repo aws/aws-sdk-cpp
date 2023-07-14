@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -507,82 +497,82 @@ namespace Model
 
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetDefaultLambdaRole() const{ return m_defaultLambdaRole; }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline bool DefaultLambdaRoleHasBeenSet() const { return m_defaultLambdaRoleHasBeenSet; }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline void SetDefaultLambdaRole(const Aws::String& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = value; }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::move(value); }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline void SetDefaultLambdaRole(const char* value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole.assign(value); }
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline WorkflowTypeConfiguration& WithDefaultLambdaRole(const Aws::String& value) { SetDefaultLambdaRole(value); return *this;}
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline WorkflowTypeConfiguration& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(std::move(value)); return *this;}
 
     /**
-     * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
+     * <p>The default IAM role attached to this workflow type.</p>  <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
      * specify an IAM role when starting this workflow type, the default Lambda role is
      * attached to the execution. For more information, see <a
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
-     * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
+     * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
     inline WorkflowTypeConfiguration& WithDefaultLambdaRole(const char* value) { SetDefaultLambdaRole(value); return *this;}
 

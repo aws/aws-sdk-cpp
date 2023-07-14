@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/managedblockchain/model/NodeFabricAttributes.h>
+#include <aws/managedblockchain/model/NodeEthereumAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Attributes relevant to a peer node on a Managed Blockchain network for the
+   * <p>Attributes relevant to a node on a Managed Blockchain network for the
    * blockchain framework that the network uses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeFrameworkAttributes">AWS
    * API Reference</a></p>
@@ -84,10 +75,50 @@ namespace Model
      */
     inline NodeFrameworkAttributes& WithFabric(NodeFabricAttributes&& value) { SetFabric(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
+     * Ethereum. </p>
+     */
+    inline const NodeEthereumAttributes& GetEthereum() const{ return m_ethereum; }
+
+    /**
+     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
+     * Ethereum. </p>
+     */
+    inline bool EthereumHasBeenSet() const { return m_ethereumHasBeenSet; }
+
+    /**
+     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
+     * Ethereum. </p>
+     */
+    inline void SetEthereum(const NodeEthereumAttributes& value) { m_ethereumHasBeenSet = true; m_ethereum = value; }
+
+    /**
+     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
+     * Ethereum. </p>
+     */
+    inline void SetEthereum(NodeEthereumAttributes&& value) { m_ethereumHasBeenSet = true; m_ethereum = std::move(value); }
+
+    /**
+     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
+     * Ethereum. </p>
+     */
+    inline NodeFrameworkAttributes& WithEthereum(const NodeEthereumAttributes& value) { SetEthereum(value); return *this;}
+
+    /**
+     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
+     * Ethereum. </p>
+     */
+    inline NodeFrameworkAttributes& WithEthereum(NodeEthereumAttributes&& value) { SetEthereum(std::move(value)); return *this;}
+
   private:
 
     NodeFabricAttributes m_fabric;
     bool m_fabricHasBeenSet;
+
+    NodeEthereumAttributes m_ethereum;
+    bool m_ethereumHasBeenSet;
   };
 
 } // namespace Model

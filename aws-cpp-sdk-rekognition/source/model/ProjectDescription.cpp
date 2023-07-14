@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rekognition/model/ProjectDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,8 @@ ProjectDescription::ProjectDescription() :
     m_projectArnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_datasetsHasBeenSet(false)
 {
 }
 
@@ -40,7 +31,8 @@ ProjectDescription::ProjectDescription(JsonView jsonValue) :
     m_projectArnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_datasetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +60,16 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Datasets"))
+  {
+    Array<JsonView> datasetsJsonList = jsonValue.GetArray("Datasets");
+    for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
+    {
+      m_datasets.push_back(datasetsJsonList[datasetsIndex].AsObject());
+    }
+    m_datasetsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +91,17 @@ JsonValue ProjectDescription::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ProjectStatusMapper::GetNameForProjectStatus(m_status));
+  }
+
+  if(m_datasetsHasBeenSet)
+  {
+   Array<JsonValue> datasetsJsonList(m_datasets.size());
+   for(unsigned datasetsIndex = 0; datasetsIndex < datasetsJsonList.GetLength(); ++datasetsIndex)
+   {
+     datasetsJsonList[datasetsIndex].AsObject(m_datasets[datasetsIndex].Jsonize());
+   }
+   payload.WithArray("Datasets", std::move(datasetsJsonList));
+
   }
 
   return payload;

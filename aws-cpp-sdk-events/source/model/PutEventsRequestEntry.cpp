@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/events/model/PutEventsRequestEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ PutEventsRequestEntry::PutEventsRequestEntry() :
     m_resourcesHasBeenSet(false),
     m_detailTypeHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
+    m_eventBusNameHasBeenSet(false),
+    m_traceHeaderHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ PutEventsRequestEntry::PutEventsRequestEntry(JsonView jsonValue) :
     m_resourcesHasBeenSet(false),
     m_detailTypeHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
+    m_eventBusNameHasBeenSet(false),
+    m_traceHeaderHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +88,13 @@ PutEventsRequestEntry& PutEventsRequestEntry::operator =(JsonView jsonValue)
     m_eventBusNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TraceHeader"))
+  {
+    m_traceHeader = jsonValue.GetString("TraceHeader");
+
+    m_traceHeaderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +139,12 @@ JsonValue PutEventsRequestEntry::Jsonize() const
   if(m_eventBusNameHasBeenSet)
   {
    payload.WithString("EventBusName", m_eventBusName);
+
+  }
+
+  if(m_traceHeaderHasBeenSet)
+  {
+   payload.WithString("TraceHeader", m_traceHeader);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -36,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data
+   * <p>Contains the details for an Amazon RDS DB cluster snapshot</p> <p>This data
    * type is used as a response element in the
-   * <code>DescribeDBClusterSnapshots</code> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBClusterSnapshots</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot">AWS
    * API Reference</a></p>
    */
@@ -236,44 +227,93 @@ namespace Model
 
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the database engine.</p>
+     * <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithEngine(const char* value) { SetEngine(value); return *this;}
+
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides the engine mode of the database engine for this DB cluster
+     * snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
 
     /**
@@ -298,42 +338,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline DBClusterSnapshot& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline DBClusterSnapshot& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline DBClusterSnapshot& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -442,42 +498,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the master username for the DB cluster snapshot.</p>
+     * <p>Provides the master username for this DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -648,50 +704,66 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -795,28 +867,53 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline DBClusterSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
+
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBClusterSnapshot& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBClusterSnapshot& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBClusterSnapshot& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBClusterSnapshot& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -834,6 +931,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet;
 
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
@@ -879,6 +979,9 @@ namespace Model
 
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
   };
 
 } // namespace Model

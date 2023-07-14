@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -197,43 +187,43 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline GetBackupSelectionResult& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline GetBackupSelectionResult& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline GetBackupSelectionResult& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

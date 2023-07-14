@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codedeploy/model/DeploymentStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int Created_HASH = HashingUtils::HashString("Created");
         static const int Queued_HASH = HashingUtils::HashString("Queued");
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static const int Baking_HASH = HashingUtils::HashString("Baking");
         static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
@@ -53,6 +44,10 @@ namespace Aws
           else if (hashCode == InProgress_HASH)
           {
             return DeploymentStatus::InProgress;
+          }
+          else if (hashCode == Baking_HASH)
+          {
+            return DeploymentStatus::Baking;
           }
           else if (hashCode == Succeeded_HASH)
           {
@@ -90,6 +85,8 @@ namespace Aws
             return "Queued";
           case DeploymentStatus::InProgress:
             return "InProgress";
+          case DeploymentStatus::Baking:
+            return "Baking";
           case DeploymentStatus::Succeeded:
             return "Succeeded";
           case DeploymentStatus::Failed:

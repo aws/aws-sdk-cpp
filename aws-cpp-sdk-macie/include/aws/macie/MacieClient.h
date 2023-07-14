@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/macie/Macie_EXPORTS.h>
@@ -74,13 +64,13 @@ namespace Model
         class ListS3ResourcesRequest;
         class UpdateS3ResourcesRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MacieErrors>> AssociateMemberAccountOutcome;
-        typedef Aws::Utils::Outcome<AssociateS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> AssociateS3ResourcesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MacieErrors>> DisassociateMemberAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> DisassociateS3ResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListMemberAccountsResult, Aws::Client::AWSError<MacieErrors>> ListMemberAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> ListS3ResourcesOutcome;
-        typedef Aws::Utils::Outcome<UpdateS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> UpdateS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MacieError> AssociateMemberAccountOutcome;
+        typedef Aws::Utils::Outcome<AssociateS3ResourcesResult, MacieError> AssociateS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MacieError> DisassociateMemberAccountOutcome;
+        typedef Aws::Utils::Outcome<DisassociateS3ResourcesResult, MacieError> DisassociateS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListMemberAccountsResult, MacieError> ListMemberAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListS3ResourcesResult, MacieError> ListS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<UpdateS3ResourcesResult, MacieError> UpdateS3ResourcesOutcome;
 
         typedef std::future<AssociateMemberAccountOutcome> AssociateMemberAccountOutcomeCallable;
         typedef std::future<AssociateS3ResourcesOutcome> AssociateS3ResourcesOutcomeCallable;
@@ -102,14 +92,16 @@ namespace Model
     typedef std::function<void(const MacieClient*, const Model::UpdateS3ResourcesRequest&, const Model::UpdateS3ResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateS3ResourcesResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon Macie</fullname> <p>Amazon Macie is a security service that
-   * uses machine learning to automatically discover, classify, and protect sensitive
-   * data in AWS. Macie recognizes sensitive data such as personally identifiable
-   * information (PII) or intellectual property, and provides you with dashboards and
-   * alerts that give visibility into how this data is being accessed or moved. For
-   * more information, see the <a
-   * href="https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html">Macie
-   * User Guide</a>. </p>
+   * <fullname>Amazon Macie Classic</fullname> <p>Amazon Macie Classic has been
+   * discontinued and is no longer available.</p> <p>A new Amazon Macie is now
+   * available with significant design improvements and additional features, at a
+   * lower price and in most Amazon Web Services Regions. We encourage you to take
+   * advantage of the new and improved features, and benefit from the reduced cost.
+   * To learn about features and pricing for the new Macie, see <a
+   * href="http://aws.amazon.com/macie/">Amazon Macie</a>. To learn how to use the
+   * new Macie, see the <a
+   * href="https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html">Amazon
+   * Macie User Guide</a>.</p>
    */
   class AWS_MACIE_API MacieClient : public Aws::Client::AWSJsonClient
   {
@@ -137,107 +129,71 @@ namespace Model
 
         virtual ~MacieClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Macie"; }
-
 
         /**
-         * <p>Associates a specified AWS account with Amazon Macie as a member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Discontinued) Associates a specified Amazon Web Services account with Amazon
+         * Macie Classic as a member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateMemberAccountOutcome AssociateMemberAccount(const Model::AssociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Associates a specified AWS account with Amazon Macie as a member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateMemberAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateMemberAccountOutcomeCallable AssociateMemberAccountCallable(const Model::AssociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Associates a specified AWS account with Amazon Macie as a member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateMemberAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateMemberAccountAsync(const Model::AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates specified S3 resources with Amazon Macie for monitoring and data
-         * classification. If memberAccountId isn't specified, the action associates
-         * specified S3 resources with Macie for the current master account. If
-         * memberAccountId is specified, the action associates specified S3 resources with
-         * Macie for the specified member account. </p><p><h3>See Also:</h3>   <a
+         * <p>(Discontinued) Associates specified S3 resources with Amazon Macie Classic
+         * for monitoring and data classification. If <code>memberAccountId</code> isn't
+         * specified, the action associates specified S3 resources with Macie Classic for
+         * the current Macie Classic administrator account. If <code>memberAccountId</code>
+         * is specified, the action associates specified S3 resources with Macie Classic
+         * for the specified member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateS3ResourcesOutcome AssociateS3Resources(const Model::AssociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Associates specified S3 resources with Amazon Macie for monitoring and data
-         * classification. If memberAccountId isn't specified, the action associates
-         * specified S3 resources with Macie for the current master account. If
-         * memberAccountId is specified, the action associates specified S3 resources with
-         * Macie for the specified member account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateS3ResourcesOutcomeCallable AssociateS3ResourcesCallable(const Model::AssociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Associates specified S3 resources with Amazon Macie for monitoring and data
-         * classification. If memberAccountId isn't specified, the action associates
-         * specified S3 resources with Macie for the current master account. If
-         * memberAccountId is specified, the action associates specified S3 resources with
-         * Macie for the specified member account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateS3ResourcesAsync(const Model::AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified member account from Amazon Macie.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>(Discontinued) Removes the specified member account from Amazon Macie
+         * Classic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateMemberAccountOutcome DisassociateMemberAccount(const Model::DisassociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified member account from Amazon Macie.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateMemberAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateMemberAccountOutcomeCallable DisassociateMemberAccountCallable(const Model::DisassociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified member account from Amazon Macie.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateMemberAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateMemberAccountAsync(const Model::DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes specified S3 resources from being monitored by Amazon Macie. If
-         * memberAccountId isn't specified, the action removes specified S3 resources from
-         * Macie for the current master account. If memberAccountId is specified, the
-         * action removes specified S3 resources from Macie for the specified member
+         * <p>(Discontinued) Removes specified S3 resources from being monitored by Amazon
+         * Macie Classic. If <code>memberAccountId</code> isn't specified, the action
+         * removes specified S3 resources from Macie Classic for the current Macie Classic
+         * administrator account. If <code>memberAccountId</code> is specified, the action
+         * removes specified S3 resources from Macie Classic for the specified member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">AWS
          * API Reference</a></p>
@@ -245,64 +201,39 @@ namespace Model
         virtual Model::DisassociateS3ResourcesOutcome DisassociateS3Resources(const Model::DisassociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Removes specified S3 resources from being monitored by Amazon Macie. If
-         * memberAccountId isn't specified, the action removes specified S3 resources from
-         * Macie for the current master account. If memberAccountId is specified, the
-         * action removes specified S3 resources from Macie for the specified member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateS3ResourcesOutcomeCallable DisassociateS3ResourcesCallable(const Model::DisassociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Removes specified S3 resources from being monitored by Amazon Macie. If
-         * memberAccountId isn't specified, the action removes specified S3 resources from
-         * Macie for the current master account. If memberAccountId is specified, the
-         * action removes specified S3 resources from Macie for the specified member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateS3ResourcesAsync(const Model::DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all Amazon Macie member accounts for the current Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Discontinued) Lists all Amazon Macie Classic member accounts for the current
+         * Macie Classic administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request) const;
 
         /**
-         * <p>Lists all Amazon Macie member accounts for the current Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListMemberAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const Model::ListMemberAccountsRequest& request) const;
 
         /**
-         * <p>Lists all Amazon Macie member accounts for the current Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListMemberAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMemberAccountsAsync(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the S3 resources associated with Amazon Macie. If memberAccountId
-         * isn't specified, the action lists the S3 resources associated with Amazon Macie
-         * for the current master account. If memberAccountId is specified, the action
-         * lists the S3 resources associated with Amazon Macie for the specified member
+         * <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie
+         * Classic. If <code>memberAccountId</code> isn't specified, the action lists the
+         * S3 resources associated with Macie Classic for the current Macie Classic
+         * administrator account. If <code>memberAccountId</code> is specified, the action
+         * lists the S3 resources associated with Macie Classic for the specified member
          * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">AWS
          * API Reference</a></p>
@@ -310,68 +241,35 @@ namespace Model
         virtual Model::ListS3ResourcesOutcome ListS3Resources(const Model::ListS3ResourcesRequest& request) const;
 
         /**
-         * <p>Lists all the S3 resources associated with Amazon Macie. If memberAccountId
-         * isn't specified, the action lists the S3 resources associated with Amazon Macie
-         * for the current master account. If memberAccountId is specified, the action
-         * lists the S3 resources associated with Amazon Macie for the specified member
-         * account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListS3ResourcesOutcomeCallable ListS3ResourcesCallable(const Model::ListS3ResourcesRequest& request) const;
 
         /**
-         * <p>Lists all the S3 resources associated with Amazon Macie. If memberAccountId
-         * isn't specified, the action lists the S3 resources associated with Amazon Macie
-         * for the current master account. If memberAccountId is specified, the action
-         * lists the S3 resources associated with Amazon Macie for the specified member
-         * account. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListS3ResourcesAsync(const Model::ListS3ResourcesRequest& request, const ListS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the classification types for the specified S3 resources. If
-         * memberAccountId isn't specified, the action updates the classification types of
-         * the S3 resources associated with Amazon Macie for the current master account. If
-         * memberAccountId is specified, the action updates the classification types of the
-         * S3 resources associated with Amazon Macie for the specified member account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>(Discontinued) Updates the classification types for the specified S3
+         * resources. If <code>memberAccountId</code> isn't specified, the action updates
+         * the classification types of the S3 resources associated with Amazon Macie
+         * Classic for the current Macie Classic administrator account. If
+         * <code>memberAccountId</code> is specified, the action updates the classification
+         * types of the S3 resources associated with Macie Classic for the specified member
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateS3ResourcesOutcome UpdateS3Resources(const Model::UpdateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Updates the classification types for the specified S3 resources. If
-         * memberAccountId isn't specified, the action updates the classification types of
-         * the S3 resources associated with Amazon Macie for the current master account. If
-         * memberAccountId is specified, the action updates the classification types of the
-         * S3 resources associated with Amazon Macie for the specified member account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateS3Resources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateS3ResourcesOutcomeCallable UpdateS3ResourcesCallable(const Model::UpdateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Updates the classification types for the specified S3 resources. If
-         * memberAccountId isn't specified, the action updates the classification types of
-         * the S3 resources associated with Amazon Macie for the current master account. If
-         * memberAccountId is specified, the action updates the classification types of the
-         * S3 resources associated with Amazon Macie for the specified member account.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateS3Resources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateS3ResourcesAsync(const Model::UpdateS3ResourcesRequest& request, const UpdateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/BackupRuleInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,9 @@ BackupRuleInput::BackupRuleInput() :
     m_completionWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_copyActionsHasBeenSet(false)
+    m_copyActionsHasBeenSet(false),
+    m_enableContinuousBackup(false),
+    m_enableContinuousBackupHasBeenSet(false)
 {
 }
 
@@ -52,7 +44,9 @@ BackupRuleInput::BackupRuleInput(JsonView jsonValue) :
     m_completionWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_copyActionsHasBeenSet(false)
+    m_copyActionsHasBeenSet(false),
+    m_enableContinuousBackup(false),
+    m_enableContinuousBackupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +115,13 @@ BackupRuleInput& BackupRuleInput::operator =(JsonView jsonValue)
     m_copyActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableContinuousBackup"))
+  {
+    m_enableContinuousBackup = jsonValue.GetBool("EnableContinuousBackup");
+
+    m_enableContinuousBackupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +184,12 @@ JsonValue BackupRuleInput::Jsonize() const
      copyActionsJsonList[copyActionsIndex].AsObject(m_copyActions[copyActionsIndex].Jsonize());
    }
    payload.WithArray("CopyActions", std::move(copyActionsJsonList));
+
+  }
+
+  if(m_enableContinuousBackupHasBeenSet)
+  {
+   payload.WithBool("EnableContinuousBackup", m_enableContinuousBackup);
 
   }
 

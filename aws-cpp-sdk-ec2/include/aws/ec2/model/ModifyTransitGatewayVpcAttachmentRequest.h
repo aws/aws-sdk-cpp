@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -191,38 +181,32 @@ namespace Model
 
 
     /**
-     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
-     * options.</p> </note>
+     * <p>The new VPC attachment options.</p>
      */
     inline const ModifyTransitGatewayVpcAttachmentRequestOptions& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
-     * options.</p> </note>
+     * <p>The new VPC attachment options.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
-     * options.</p> </note>
+     * <p>The new VPC attachment options.</p>
      */
     inline void SetOptions(const ModifyTransitGatewayVpcAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
-     * options.</p> </note>
+     * <p>The new VPC attachment options.</p>
      */
     inline void SetOptions(ModifyTransitGatewayVpcAttachmentRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
-     * options.</p> </note>
+     * <p>The new VPC attachment options.</p>
      */
     inline ModifyTransitGatewayVpcAttachmentRequest& WithOptions(const ModifyTransitGatewayVpcAttachmentRequestOptions& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
-     * options.</p> </note>
+     * <p>The new VPC attachment options.</p>
      */
     inline ModifyTransitGatewayVpcAttachmentRequest& WithOptions(ModifyTransitGatewayVpcAttachmentRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
 

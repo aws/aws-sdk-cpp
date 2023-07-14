@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/CreateVolumeResponse.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -34,7 +24,8 @@ CreateVolumeResponse::CreateVolumeResponse() :
     m_iops(0),
     m_volumeType(VolumeType::NOT_SET),
     m_fastRestored(false),
-    m_multiAttachEnabled(false)
+    m_multiAttachEnabled(false),
+    m_throughput(0)
 {
 }
 
@@ -45,7 +36,8 @@ CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<Xml
     m_iops(0),
     m_volumeType(VolumeType::NOT_SET),
     m_fastRestored(false),
-    m_multiAttachEnabled(false)
+    m_multiAttachEnabled(false),
+    m_throughput(0)
 {
   *this = result;
 }
@@ -148,6 +140,11 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     if(!multiAttachEnabledNode.IsNull())
     {
       m_multiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAttachEnabledNode.GetText()).c_str()).c_str());
+    }
+    XmlNode throughputNode = resultNode.FirstChild("throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
     }
   }
 

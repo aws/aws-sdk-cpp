@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -237,42 +227,42 @@ namespace Model
 
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline LicenseOperationFailure& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline LicenseOperationFailure& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the AWS account that owns the resource.</p>
+     * <p>ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline LicenseOperationFailure& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -56,9 +46,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -69,9 +59,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -82,9 +72,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -95,9 +85,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -108,9 +98,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -121,9 +111,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -134,9 +124,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */
@@ -147,9 +137,9 @@ namespace Model
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
      * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
-     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
+     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
+     * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
      * widespread distrust of Symantec certificate authorities.</p>
      */

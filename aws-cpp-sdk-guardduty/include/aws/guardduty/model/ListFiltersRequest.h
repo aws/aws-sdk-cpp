@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -49,67 +39,67 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline ListFiltersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline ListFiltersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline ListFiltersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
+     * <p>You can use this parameter to indicate the maximum number of items that you
+     * want in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
+     * <p>You can use this parameter to indicate the maximum number of items that you
+     * want in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
+     * <p>You can use this parameter to indicate the maximum number of items that you
+     * want in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
+     * <p>You can use this parameter to indicate the maximum number of items that you
+     * want in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline ListFiltersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -117,7 +107,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -125,7 +115,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -133,7 +123,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -141,7 +131,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -149,7 +139,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -157,7 +147,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListFiltersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -165,7 +155,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -173,7 +163,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

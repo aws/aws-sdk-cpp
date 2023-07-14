@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/lex-models/model/Prompt.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lex-models/model/ObfuscationSetting.h>
+#include <aws/lex-models/model/SlotDefaultValueSpec.h>
 #include <utility>
 
 namespace Aws
@@ -286,34 +277,38 @@ namespace Model
 
 
     /**
-     * <p> Directs Lex the order in which to elicit this slot value from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
-     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
-     * same priority, the order in which Lex elicits values is arbitrary.</p>
+     * <p> Directs Amazon Lex the order in which to elicit this slot value from the
+     * user. For example, if the intent has two slots with priorities 1 and 2, AWS
+     * Amazon Lex first elicits a value for the slot with priority 1.</p> <p>If
+     * multiple slots share the same priority, the order in which Amazon Lex elicits
+     * values is arbitrary.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p> Directs Lex the order in which to elicit this slot value from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
-     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
-     * same priority, the order in which Lex elicits values is arbitrary.</p>
+     * <p> Directs Amazon Lex the order in which to elicit this slot value from the
+     * user. For example, if the intent has two slots with priorities 1 and 2, AWS
+     * Amazon Lex first elicits a value for the slot with priority 1.</p> <p>If
+     * multiple slots share the same priority, the order in which Amazon Lex elicits
+     * values is arbitrary.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p> Directs Lex the order in which to elicit this slot value from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
-     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
-     * same priority, the order in which Lex elicits values is arbitrary.</p>
+     * <p> Directs Amazon Lex the order in which to elicit this slot value from the
+     * user. For example, if the intent has two slots with priorities 1 and 2, AWS
+     * Amazon Lex first elicits a value for the slot with priority 1.</p> <p>If
+     * multiple slots share the same priority, the order in which Amazon Lex elicits
+     * values is arbitrary.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p> Directs Lex the order in which to elicit this slot value from the user. For
-     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
-     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
-     * same priority, the order in which Lex elicits values is arbitrary.</p>
+     * <p> Directs Amazon Lex the order in which to elicit this slot value from the
+     * user. For example, if the intent has two slots with priorities 1 and 2, AWS
+     * Amazon Lex first elicits a value for the slot with priority 1.</p> <p>If
+     * multiple slots share the same priority, the order in which Amazon Lex elicits
+     * values is arbitrary.</p>
      */
     inline Slot& WithPriority(int value) { SetPriority(value); return *this;}
 
@@ -508,6 +503,49 @@ namespace Model
      */
     inline Slot& WithObfuscationSetting(ObfuscationSetting&& value) { SetObfuscationSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline const SlotDefaultValueSpec& GetDefaultValueSpec() const{ return m_defaultValueSpec; }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline bool DefaultValueSpecHasBeenSet() const { return m_defaultValueSpecHasBeenSet; }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline void SetDefaultValueSpec(const SlotDefaultValueSpec& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = value; }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline void SetDefaultValueSpec(SlotDefaultValueSpec&& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = std::move(value); }
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline Slot& WithDefaultValueSpec(const SlotDefaultValueSpec& value) { SetDefaultValueSpec(value); return *this;}
+
+    /**
+     * <p>A list of default values for the slot. Default values are used when Amazon
+     * Lex hasn't determined a value for a slot. You can specify default values from
+     * context variables, session attributes, and defined values.</p>
+     */
+    inline Slot& WithDefaultValueSpec(SlotDefaultValueSpec&& value) { SetDefaultValueSpec(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -539,6 +577,9 @@ namespace Model
 
     ObfuscationSetting m_obfuscationSetting;
     bool m_obfuscationSettingHasBeenSet;
+
+    SlotDefaultValueSpec m_defaultValueSpec;
+    bool m_defaultValueSpecHasBeenSet;
   };
 
 } // namespace Model

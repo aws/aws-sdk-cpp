@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
 
@@ -52,13 +43,27 @@ enum class ElasticInferenceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
+
+class AWS_ELASTICINFERENCE_API ElasticInferenceError : public Aws::Client::AWSError<ElasticInferenceErrors>
+{
+public:
+  ElasticInferenceError() {}
+  ElasticInferenceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+  ElasticInferenceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+  ElasticInferenceError(const Aws::Client::AWSError<ElasticInferenceErrors>& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+  ElasticInferenceError(Aws::Client::AWSError<ElasticInferenceErrors>&& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElasticInferenceErrorMapper
 {
   AWS_ELASTICINFERENCE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

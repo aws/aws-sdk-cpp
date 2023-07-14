@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/awstransfer/model/DescribedServer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,10 @@ namespace Model
 
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
+    m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -38,17 +32,26 @@ DescribedServer::DescribedServer() :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -57,12 +60,17 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
+    m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +82,27 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Certificate"))
+  {
+    m_certificate = jsonValue.GetString("Certificate");
+
+    m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProtocolDetails"))
+  {
+    m_protocolDetails = jsonValue.GetObject("ProtocolDetails");
+
+    m_protocolDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("Domain"));
+
+    m_domainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EndpointDetails"))
@@ -118,6 +147,37 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_loggingRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PostAuthenticationLoginBanner"))
+  {
+    m_postAuthenticationLoginBanner = jsonValue.GetString("PostAuthenticationLoginBanner");
+
+    m_postAuthenticationLoginBannerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreAuthenticationLoginBanner"))
+  {
+    m_preAuthenticationLoginBanner = jsonValue.GetString("PreAuthenticationLoginBanner");
+
+    m_preAuthenticationLoginBannerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Protocols"))
+  {
+    Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+    {
+      m_protocols.push_back(ProtocolMapper::GetProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
+    }
+    m_protocolsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityPolicyName"))
+  {
+    m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
+
+    m_securityPolicyNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ServerId"))
   {
     m_serverId = jsonValue.GetString("ServerId");
@@ -149,6 +209,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_userCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkflowDetails"))
+  {
+    m_workflowDetails = jsonValue.GetObject("WorkflowDetails");
+
+    m_workflowDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +227,23 @@ JsonValue DescribedServer::Jsonize() const
   {
    payload.WithString("Arn", m_arn);
 
+  }
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
+
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   if(m_endpointDetailsHasBeenSet)
@@ -196,6 +280,35 @@ JsonValue DescribedServer::Jsonize() const
 
   }
 
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
+
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_securityPolicyNameHasBeenSet)
+  {
+   payload.WithString("SecurityPolicyName", m_securityPolicyName);
+
+  }
+
   if(m_serverIdHasBeenSet)
   {
    payload.WithString("ServerId", m_serverId);
@@ -221,6 +334,12 @@ JsonValue DescribedServer::Jsonize() const
   if(m_userCountHasBeenSet)
   {
    payload.WithInteger("UserCount", m_userCount);
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

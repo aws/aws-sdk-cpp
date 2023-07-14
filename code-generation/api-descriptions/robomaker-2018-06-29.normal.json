@@ -13,6 +13,21 @@
     "uid":"robomaker-2018-06-29"
   },
   "operations":{
+    "BatchDeleteWorlds":{
+      "name":"BatchDeleteWorlds",
+      "http":{
+        "method":"POST",
+        "requestUri":"/batchDeleteWorlds"
+      },
+      "input":{"shape":"BatchDeleteWorldsRequest"},
+      "output":{"shape":"BatchDeleteWorldsResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes one or more worlds in a batch operation.</p>"
+    },
     "BatchDescribeSimulationJob":{
       "name":"BatchDescribeSimulationJob",
       "http":{
@@ -43,7 +58,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Cancels the specified deployment job.</p>"
+      "documentation":"<p>Cancels the specified deployment job.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CancelSimulationJob":{
       "name":"CancelSimulationJob",
@@ -77,6 +94,38 @@
       ],
       "documentation":"<p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch. </p>"
     },
+    "CancelWorldExportJob":{
+      "name":"CancelWorldExportJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cancelWorldExportJob"
+      },
+      "input":{"shape":"CancelWorldExportJobRequest"},
+      "output":{"shape":"CancelWorldExportJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Cancels the specified export job.</p>"
+    },
+    "CancelWorldGenerationJob":{
+      "name":"CancelWorldGenerationJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cancelWorldGenerationJob"
+      },
+      "input":{"shape":"CancelWorldGenerationJobRequest"},
+      "output":{"shape":"CancelWorldGenerationJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Cancels the specified world generator job.</p>"
+    },
     "CreateDeploymentJob":{
       "name":"CreateDeploymentJob",
       "http":{
@@ -94,7 +143,9 @@
         {"shape":"ConcurrentDeploymentException"},
         {"shape":"IdempotentParameterMismatchException"}
       ],
-      "documentation":"<p>Deploys a specific version of a robot application to robots in a fleet.</p> <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html\">Creating a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible. </p> </note>"
+      "documentation":"<p>Deploys a specific version of a robot application to robots in a fleet.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important> <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html\">Creating a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible. </p> </note>",
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateFleet":{
       "name":"CreateFleet",
@@ -110,7 +161,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"LimitExceededException"}
       ],
-      "documentation":"<p>Creates a fleet, a logical group of robots running the same robot application.</p>"
+      "documentation":"<p>Creates a fleet, a logical group of robots running the same robot application.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateRobot":{
       "name":"CreateRobot",
@@ -127,7 +180,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ResourceAlreadyExistsException"}
       ],
-      "documentation":"<p>Creates a robot.</p>"
+      "documentation":"<p>Creates a robot.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateRobotApplication":{
       "name":"CreateRobotApplication",
@@ -218,6 +273,61 @@
       ],
       "documentation":"<p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible. </p> </note>"
     },
+    "CreateWorldExportJob":{
+      "name":"CreateWorldExportJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/createWorldExportJob"
+      },
+      "input":{"shape":"CreateWorldExportJobRequest"},
+      "output":{"shape":"CreateWorldExportJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"IdempotentParameterMismatchException"},
+        {"shape":"ServiceUnavailableException"}
+      ],
+      "documentation":"<p>Creates a world export job.</p>"
+    },
+    "CreateWorldGenerationJob":{
+      "name":"CreateWorldGenerationJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/createWorldGenerationJob"
+      },
+      "input":{"shape":"CreateWorldGenerationJobRequest"},
+      "output":{"shape":"CreateWorldGenerationJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"IdempotentParameterMismatchException"},
+        {"shape":"ServiceUnavailableException"}
+      ],
+      "documentation":"<p>Creates worlds using the specified template.</p>"
+    },
+    "CreateWorldTemplate":{
+      "name":"CreateWorldTemplate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/createWorldTemplate"
+      },
+      "input":{"shape":"CreateWorldTemplateRequest"},
+      "output":{"shape":"CreateWorldTemplateResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Creates a world template.</p>"
+    },
     "DeleteFleet":{
       "name":"DeleteFleet",
       "http":{
@@ -231,7 +341,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Deletes a fleet.</p>"
+      "documentation":"<p>Deletes a fleet.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeleteRobot":{
       "name":"DeleteRobot",
@@ -246,7 +358,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Deletes a robot.</p>"
+      "documentation":"<p>Deletes a robot.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeleteRobotApplication":{
       "name":"DeleteRobotApplication",
@@ -278,6 +392,22 @@
       ],
       "documentation":"<p>Deletes a simulation application.</p>"
     },
+    "DeleteWorldTemplate":{
+      "name":"DeleteWorldTemplate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/deleteWorldTemplate"
+      },
+      "input":{"shape":"DeleteWorldTemplateRequest"},
+      "output":{"shape":"DeleteWorldTemplateResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes a world template.</p>"
+    },
     "DeregisterRobot":{
       "name":"DeregisterRobot",
       "http":{
@@ -292,7 +422,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Deregisters a robot.</p>"
+      "documentation":"<p>Deregisters a robot.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeDeploymentJob":{
       "name":"DescribeDeploymentJob",
@@ -308,7 +440,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Describes a deployment job.</p>"
+      "documentation":"<p>Describes a deployment job.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeFleet":{
       "name":"DescribeFleet",
@@ -324,7 +458,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Describes a fleet.</p>"
+      "documentation":"<p>Describes a fleet.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeRobot":{
       "name":"DescribeRobot",
@@ -340,7 +476,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Describes a robot.</p>"
+      "documentation":"<p>Describes a robot.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeRobotApplication":{
       "name":"DescribeRobotApplication",
@@ -405,6 +543,86 @@
       ],
       "documentation":"<p>Describes a simulation job batch.</p>"
     },
+    "DescribeWorld":{
+      "name":"DescribeWorld",
+      "http":{
+        "method":"POST",
+        "requestUri":"/describeWorld"
+      },
+      "input":{"shape":"DescribeWorldRequest"},
+      "output":{"shape":"DescribeWorldResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Describes a world.</p>"
+    },
+    "DescribeWorldExportJob":{
+      "name":"DescribeWorldExportJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/describeWorldExportJob"
+      },
+      "input":{"shape":"DescribeWorldExportJobRequest"},
+      "output":{"shape":"DescribeWorldExportJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Describes a world export job.</p>"
+    },
+    "DescribeWorldGenerationJob":{
+      "name":"DescribeWorldGenerationJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/describeWorldGenerationJob"
+      },
+      "input":{"shape":"DescribeWorldGenerationJobRequest"},
+      "output":{"shape":"DescribeWorldGenerationJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Describes a world generation job.</p>"
+    },
+    "DescribeWorldTemplate":{
+      "name":"DescribeWorldTemplate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/describeWorldTemplate"
+      },
+      "input":{"shape":"DescribeWorldTemplateRequest"},
+      "output":{"shape":"DescribeWorldTemplateResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Describes a world template.</p>"
+    },
+    "GetWorldTemplateBody":{
+      "name":"GetWorldTemplateBody",
+      "http":{
+        "method":"POST",
+        "requestUri":"/getWorldTemplateBody"
+      },
+      "input":{"shape":"GetWorldTemplateBodyRequest"},
+      "output":{"shape":"GetWorldTemplateBodyResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Gets the world template body.</p>"
+    },
     "ListDeploymentJobs":{
       "name":"ListDeploymentJobs",
       "http":{
@@ -419,7 +637,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs. </p>"
+      "documentation":"<p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListFleets":{
       "name":"ListFleets",
@@ -435,7 +655,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Returns a list of fleets. You can optionally provide filters to retrieve specific fleets. </p>"
+      "documentation":"<p>Returns a list of fleets. You can optionally provide filters to retrieve specific fleets.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListRobotApplications":{
       "name":"ListRobotApplications",
@@ -466,7 +688,9 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p>"
+      "documentation":"<p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListSimulationApplications":{
       "name":"ListSimulationApplications",
@@ -528,6 +752,66 @@
       ],
       "documentation":"<p>Lists all tags on a AWS RoboMaker resource.</p>"
     },
+    "ListWorldExportJobs":{
+      "name":"ListWorldExportJobs",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listWorldExportJobs"
+      },
+      "input":{"shape":"ListWorldExportJobsRequest"},
+      "output":{"shape":"ListWorldExportJobsResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Lists world export jobs.</p>"
+    },
+    "ListWorldGenerationJobs":{
+      "name":"ListWorldGenerationJobs",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listWorldGenerationJobs"
+      },
+      "input":{"shape":"ListWorldGenerationJobsRequest"},
+      "output":{"shape":"ListWorldGenerationJobsResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Lists world generator jobs.</p>"
+    },
+    "ListWorldTemplates":{
+      "name":"ListWorldTemplates",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listWorldTemplates"
+      },
+      "input":{"shape":"ListWorldTemplatesRequest"},
+      "output":{"shape":"ListWorldTemplatesResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists world templates.</p>"
+    },
+    "ListWorlds":{
+      "name":"ListWorlds",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listWorlds"
+      },
+      "input":{"shape":"ListWorldsRequest"},
+      "output":{"shape":"ListWorldsResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists worlds.</p>"
+    },
     "RegisterRobot":{
       "name":"RegisterRobot",
       "http":{
@@ -543,7 +827,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Registers a robot with a fleet.</p>"
+      "documentation":"<p>Registers a robot with a fleet.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "RestartSimulationJob":{
       "name":"RestartSimulationJob",
@@ -596,7 +882,9 @@
         {"shape":"ConcurrentDeploymentException"},
         {"shape":"IdempotentParameterMismatchException"}
       ],
-      "documentation":"<p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p>"
+      "documentation":"<p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p> <important> <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "TagResource":{
       "name":"TagResource",
@@ -663,6 +951,22 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Updates a simulation application.</p>"
+    },
+    "UpdateWorldTemplate":{
+      "name":"UpdateWorldTemplate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/updateWorldTemplate"
+      },
+      "input":{"shape":"UpdateWorldTemplateRequest"},
+      "output":{"shape":"UpdateWorldTemplateResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates a world template.</p>"
     }
   },
   "shapes":{
@@ -685,6 +989,25 @@
       "member":{"shape":"Arn"},
       "max":100,
       "min":1
+    },
+    "BatchDeleteWorldsRequest":{
+      "type":"structure",
+      "required":["worlds"],
+      "members":{
+        "worlds":{
+          "shape":"Arns",
+          "documentation":"<p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>"
+        }
+      }
+    },
+    "BatchDeleteWorldsResponse":{
+      "type":"structure",
+      "members":{
+        "unprocessedWorlds":{
+          "shape":"Arns",
+          "documentation":"<p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>"
+        }
+      }
     },
     "BatchDescribeSimulationJobRequest":{
       "type":"structure",
@@ -734,12 +1057,16 @@
           "shape":"Arn",
           "documentation":"<p>The deployment job ARN to cancel.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CancelDeploymentJobResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CancelSimulationJobBatchRequest":{
       "type":"structure",
@@ -771,6 +1098,36 @@
       "members":{
       }
     },
+    "CancelWorldExportJobRequest":{
+      "type":"structure",
+      "required":["job"],
+      "members":{
+        "job":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world export job to cancel.</p>"
+        }
+      }
+    },
+    "CancelWorldExportJobResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "CancelWorldGenerationJobRequest":{
+      "type":"structure",
+      "required":["job"],
+      "members":{
+        "job":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>"
+        }
+      }
+    },
+    "CancelWorldGenerationJobResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "ClientRequestToken":{
       "type":"string",
       "max":64,
@@ -783,12 +1140,24 @@
       "min":1,
       "pattern":"[a-zA-Z0-9_.\\-]*"
     },
+    "CommandList":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"}
+    },
     "Compute":{
       "type":"structure",
       "members":{
         "simulationUnitLimit":{
           "shape":"SimulationUnit",
-          "documentation":"<p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximim value provided. </p>"
+          "documentation":"<p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>"
+        },
+        "computeType":{
+          "shape":"ComputeType",
+          "documentation":"<p>Compute type information for the simulation job.</p>"
+        },
+        "gpuUnitLimit":{
+          "shape":"GPUUnit",
+          "documentation":"<p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>"
         }
       },
       "documentation":"<p>Compute information for the simulation job.</p>"
@@ -798,10 +1167,25 @@
       "members":{
         "simulationUnitLimit":{
           "shape":"SimulationUnit",
-          "documentation":"<p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximim value provided. </p>"
+          "documentation":"<p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximum value provided. The default is 15. </p>"
+        },
+        "computeType":{
+          "shape":"ComputeType",
+          "documentation":"<p>Compute type response information for the simulation job.</p>"
+        },
+        "gpuUnitLimit":{
+          "shape":"GPUUnit",
+          "documentation":"<p>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs allocated to the SimulationJob.</p>"
         }
       },
       "documentation":"<p>Compute information for the simulation job</p>"
+    },
+    "ComputeType":{
+      "type":"string",
+      "enum":[
+        "CPU",
+        "GPU_AND_CPU"
+      ]
     },
     "ConcurrentDeploymentException":{
       "type":"structure",
@@ -841,7 +1225,9 @@
           "shape":"TagMap",
           "documentation":"<p>A map that contains tag keys and tag values that are attached to the deployment job.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateDeploymentJobResponse":{
       "type":"structure",
@@ -882,7 +1268,9 @@
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the deployment job.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateFleetRequest":{
       "type":"structure",
@@ -896,7 +1284,9 @@
           "shape":"TagMap",
           "documentation":"<p>A map that contains tag keys and tag values that are attached to the fleet.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateFleetResponse":{
       "type":"structure",
@@ -917,13 +1307,14 @@
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the fleet.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateRobotApplicationRequest":{
       "type":"structure",
       "required":[
         "name",
-        "sources",
         "robotSoftwareSuite"
       ],
       "members":{
@@ -942,6 +1333,10 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>A map that contains tag keys and tag values that are attached to the robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains that URI of the Docker image that you use for your robot application.</p>"
         }
       }
     },
@@ -979,6 +1374,10 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>An object that contains the Docker image URI used to a create your robot application.</p>"
         }
       }
     },
@@ -993,6 +1392,14 @@
         "currentRevisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>"
+        },
+        "s3Etags":{
+          "shape":"S3Etags",
+          "documentation":"<p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>"
+        },
+        "imageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>A SHA256 identifier for the Docker image that you use for your robot application.</p>"
         }
       }
     },
@@ -1026,6 +1433,10 @@
         "revisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The revision id of the robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI used to create your robot application.</p>"
         }
       }
     },
@@ -1053,7 +1464,9 @@
           "shape":"TagMap",
           "documentation":"<p>A map that contains tag keys and tag values that are attached to the robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateRobotResponse":{
       "type":"structure",
@@ -1082,13 +1495,14 @@
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "CreateSimulationApplicationRequest":{
       "type":"structure",
       "required":[
         "name",
-        "sources",
         "simulationSoftwareSuite",
         "robotSoftwareSuite"
       ],
@@ -1116,6 +1530,10 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>A map that contains tag keys and tag values that are attached to the simulation application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI used to create your simulation application.</p>"
         }
       }
     },
@@ -1161,6 +1579,10 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the simulation application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI that you used to create your simulation application.</p>"
         }
       }
     },
@@ -1175,6 +1597,14 @@
         "currentRevisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>"
+        },
+        "s3Etags":{
+          "shape":"S3Etags",
+          "documentation":"<p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>"
+        },
+        "imageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>"
         }
       }
     },
@@ -1216,6 +1646,10 @@
         "revisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The revision ID of the simulation application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI used to create the simulation application.</p>"
         }
       }
     },
@@ -1249,7 +1683,7 @@
         },
         "failureBehavior":{
           "shape":"FailureBehavior",
-          "documentation":"<p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>"
+          "documentation":"<p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>"
         },
         "robotApplications":{
           "shape":"RobotApplicationConfigs",
@@ -1280,6 +1714,7 @@
     "CreateSimulationJobRequests":{
       "type":"list",
       "member":{"shape":"SimulationJobRequest"},
+      "max":1000,
       "min":1
     },
     "CreateSimulationJobResponse":{
@@ -1359,6 +1794,189 @@
         }
       }
     },
+    "CreateWorldExportJobRequest":{
+      "type":"structure",
+      "required":[
+        "worlds",
+        "outputLocation",
+        "iamRole"
+      ],
+      "members":{
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken":true
+        },
+        "worlds":{
+          "shape":"Arns",
+          "documentation":"<p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>"
+        },
+        "outputLocation":{"shape":"OutputLocation"},
+        "iamRole":{
+          "shape":"IamRole",
+          "documentation":"<p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world export job.</p>"
+        }
+      }
+    },
+    "CreateWorldExportJobResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world export job.</p>"
+        },
+        "status":{
+          "shape":"WorldExportJobStatus",
+          "documentation":"<p>The status of the world export job.</p> <dl> <dt>Pending</dt> <dd> <p>The world export job request is pending.</p> </dd> <dt>Running</dt> <dd> <p>The world export job is running. </p> </dd> <dt>Completed</dt> <dd> <p>The world export job completed. </p> </dd> <dt>Failed</dt> <dd> <p>The world export job failed. See <code>failureCode</code> for more information. </p> </dd> <dt>Canceled</dt> <dd> <p>The world export job was cancelled.</p> </dd> <dt>Canceling</dt> <dd> <p>The world export job is being cancelled.</p> </dd> </dl>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world export job was created.</p>"
+        },
+        "failureCode":{
+          "shape":"WorldExportJobErrorCode",
+          "documentation":"<p>The failure code of the world export job if it failed:</p> <dl> <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd> <dt>LimitExceeded</dt> <dd> <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the request is not valid.</p> </dd> <dt>AllWorldGenerationFailed</dt> <dd> <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p> </dd> </dl> <p>For more information about troubleshooting WorldForge, see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html\">Troubleshooting Simulation WorldForge</a>. </p>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "outputLocation":{"shape":"OutputLocation"},
+        "iamRole":{
+          "shape":"IamRole",
+          "documentation":"<p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world export job.</p>"
+        }
+      }
+    },
+    "CreateWorldGenerationJobRequest":{
+      "type":"structure",
+      "required":[
+        "template",
+        "worldCount"
+      ],
+      "members":{
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
+          "idempotencyToken":true
+        },
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>"
+        },
+        "worldCount":{
+          "shape":"WorldCount",
+          "documentation":"<p>Information about the world count.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world generator job.</p>"
+        },
+        "worldTags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>"
+        }
+      }
+    },
+    "CreateWorldGenerationJobResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world generator job.</p>"
+        },
+        "status":{
+          "shape":"WorldGenerationJobStatus",
+          "documentation":"<p>The status of the world generator job.</p> <dl> <dt>Pending</dt> <dd> <p>The world generator job request is pending.</p> </dd> <dt>Running</dt> <dd> <p>The world generator job is running. </p> </dd> <dt>Completed</dt> <dd> <p>The world generator job completed. </p> </dd> <dt>Failed</dt> <dd> <p>The world generator job failed. See <code>failureCode</code> for more information. </p> </dd> <dt>PartialFailed</dt> <dd> <p>Some worlds did not generate.</p> </dd> <dt>Canceled</dt> <dd> <p>The world generator job was cancelled.</p> </dd> <dt>Canceling</dt> <dd> <p>The world generator job is being cancelled.</p> </dd> </dl>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world generator job was created.</p>"
+        },
+        "failureCode":{
+          "shape":"WorldGenerationJobErrorCode",
+          "documentation":"<p>The failure code of the world generator job if it failed:</p> <dl> <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd> <dt>LimitExceeded</dt> <dd> <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the request is not valid.</p> </dd> </dl>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template.</p>"
+        },
+        "worldCount":{
+          "shape":"WorldCount",
+          "documentation":"<p>Information about the world count. </p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world generator job.</p>"
+        },
+        "worldTags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>"
+        }
+      }
+    },
+    "CreateWorldTemplateRequest":{
+      "type":"structure",
+      "members":{
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "name":{
+          "shape":"TemplateName",
+          "documentation":"<p>The name of the world template.</p>"
+        },
+        "templateBody":{
+          "shape":"Json",
+          "documentation":"<p>The world template body.</p>"
+        },
+        "templateLocation":{
+          "shape":"TemplateLocation",
+          "documentation":"<p>The location of the world template.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world template.</p>"
+        }
+      }
+    },
+    "CreateWorldTemplateResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world template.</p>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world template was created.</p>"
+        },
+        "name":{
+          "shape":"TemplateName",
+          "documentation":"<p>The name of the world template.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world template.</p>"
+        }
+      }
+    },
     "CreatedAt":{"type":"timestamp"},
     "DataSource":{
       "type":"structure",
@@ -1374,6 +1992,14 @@
         "s3Keys":{
           "shape":"S3KeyOutputs",
           "documentation":"<p>The list of S3 keys identifying the data source files.</p>"
+        },
+        "type":{
+          "shape":"DataSourceType",
+          "documentation":"<p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field, the default value is <code>File</code>.</p>"
+        },
+        "destination":{
+          "shape":"Path",
+          "documentation":"<p>The location where your files are mounted in the container image.</p> <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>"
         }
       },
       "documentation":"<p>Information about a data source.</p>"
@@ -1395,8 +2021,16 @@
           "documentation":"<p>The S3 bucket where the data files are located.</p>"
         },
         "s3Keys":{
-          "shape":"S3Keys",
+          "shape":"S3KeysOrPrefixes",
           "documentation":"<p>The list of S3 keys identifying the data source files.</p>"
+        },
+        "type":{
+          "shape":"DataSourceType",
+          "documentation":"<p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field, the default value is <code>File</code>.</p>"
+        },
+        "destination":{
+          "shape":"Path",
+          "documentation":"<p>The location where your files are mounted in the container image.</p> <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>"
         }
       },
       "documentation":"<p>Information about a data source.</p>"
@@ -1404,12 +2038,20 @@
     "DataSourceConfigs":{
       "type":"list",
       "member":{"shape":"DataSourceConfig"},
-      "max":5,
+      "max":6,
       "min":1
     },
     "DataSourceNames":{
       "type":"list",
       "member":{"shape":"Name"}
+    },
+    "DataSourceType":{
+      "type":"string",
+      "enum":[
+        "Prefix",
+        "Archive",
+        "File"
+      ]
     },
     "DataSources":{
       "type":"list",
@@ -1423,12 +2065,16 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the fleet.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeleteFleetResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeleteRobotApplicationRequest":{
       "type":"structure",
@@ -1457,12 +2103,16 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeleteRobotResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeleteSimulationApplicationRequest":{
       "type":"structure",
@@ -1479,6 +2129,21 @@
       }
     },
     "DeleteSimulationApplicationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteWorldTemplateRequest":{
+      "type":"structure",
+      "required":["template"],
+      "members":{
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template you want to delete.</p>"
+        }
+      }
+    },
+    "DeleteWorldTemplateResponse":{
       "type":"structure",
       "members":{
       }
@@ -1594,7 +2259,11 @@
         "PostLaunchFileFailure",
         "BadPermissionError",
         "DownloadConditionFailed",
-        "InternalServerError"
+        "BadLambdaAssociated",
+        "InternalServerError",
+        "RobotApplicationDoesNotExist",
+        "DeploymentFleetDoesNotExist",
+        "FleetDeploymentTimeout"
       ]
     },
     "DeploymentJobs":{
@@ -1666,7 +2335,9 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DeregisterRobotResponse":{
       "type":"structure",
@@ -1679,7 +2350,9 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeDeploymentJobRequest":{
       "type":"structure",
@@ -1689,7 +2362,9 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the deployment job.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeDeploymentJobResponse":{
       "type":"structure",
@@ -1734,7 +2409,9 @@
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the specified deployment job.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeFleetRequest":{
       "type":"structure",
@@ -1744,7 +2421,9 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the fleet.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeFleetResponse":{
       "type":"structure",
@@ -1781,7 +2460,9 @@
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the specified fleet.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeRobotApplicationRequest":{
       "type":"structure",
@@ -1831,6 +2512,14 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the specified robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI used to create the robot application.</p>"
+        },
+        "imageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>A SHA256 identifier for the Docker image that you use for your robot application.</p>"
         }
       }
     },
@@ -1842,7 +2531,9 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the robot to be described.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeRobotResponse":{
       "type":"structure",
@@ -1887,7 +2578,9 @@
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the specified robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "DescribeSimulationApplicationRequest":{
       "type":"structure",
@@ -1945,6 +2638,14 @@
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>The list of all tags added to the specified simulation application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI used to create the simulation application.</p>"
+        },
+        "imageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>"
         }
       }
     },
@@ -2110,6 +2811,209 @@
         }
       }
     },
+    "DescribeWorldExportJobRequest":{
+      "type":"structure",
+      "required":["job"],
+      "members":{
+        "job":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world export job to describe.</p>"
+        }
+      }
+    },
+    "DescribeWorldExportJobResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world export job.</p>"
+        },
+        "status":{
+          "shape":"WorldExportJobStatus",
+          "documentation":"<p>The status of the world export job.</p> <dl> <dt>Pending</dt> <dd> <p>The world export job request is pending.</p> </dd> <dt>Running</dt> <dd> <p>The world export job is running. </p> </dd> <dt>Completed</dt> <dd> <p>The world export job completed. </p> </dd> <dt>Failed</dt> <dd> <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p> </dd> <dt>Canceled</dt> <dd> <p>The world export job was cancelled.</p> </dd> <dt>Canceling</dt> <dd> <p>The world export job is being cancelled.</p> </dd> </dl>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world export job was created.</p>"
+        },
+        "failureCode":{
+          "shape":"WorldExportJobErrorCode",
+          "documentation":"<p>The failure code of the world export job if it failed:</p> <dl> <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd> <dt>LimitExceeded</dt> <dd> <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the request is not valid.</p> </dd> </dl>"
+        },
+        "failureReason":{
+          "shape":"GenericString",
+          "documentation":"<p>The reason why the world export job failed.</p>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "worlds":{
+          "shape":"Arns",
+          "documentation":"<p>A list of Amazon Resource Names (arns) that correspond to worlds to be exported.</p>"
+        },
+        "outputLocation":{"shape":"OutputLocation"},
+        "iamRole":{
+          "shape":"IamRole",
+          "documentation":"<p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world export job.</p>"
+        }
+      }
+    },
+    "DescribeWorldGenerationJobRequest":{
+      "type":"structure",
+      "required":["job"],
+      "members":{
+        "job":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world generation job to describe.</p>"
+        }
+      }
+    },
+    "DescribeWorldGenerationJobResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world generation job.</p>"
+        },
+        "status":{
+          "shape":"WorldGenerationJobStatus",
+          "documentation":"<p>The status of the world generation job:</p> <dl> <dt>Pending</dt> <dd> <p>The world generation job request is pending.</p> </dd> <dt>Running</dt> <dd> <p>The world generation job is running. </p> </dd> <dt>Completed</dt> <dd> <p>The world generation job completed. </p> </dd> <dt>Failed</dt> <dd> <p>The world generation job failed. See <code>failureCode</code> for more information. </p> </dd> <dt>PartialFailed</dt> <dd> <p>Some worlds did not generate.</p> </dd> <dt>Canceled</dt> <dd> <p>The world generation job was cancelled.</p> </dd> <dt>Canceling</dt> <dd> <p>The world generation job is being cancelled.</p> </dd> </dl>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world generation job was created.</p>"
+        },
+        "failureCode":{
+          "shape":"WorldGenerationJobErrorCode",
+          "documentation":"<p>The failure code of the world generation job if it failed:</p> <dl> <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd> <dt>LimitExceeded</dt> <dd> <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the request is not valid.</p> </dd> </dl>"
+        },
+        "failureReason":{
+          "shape":"GenericString",
+          "documentation":"<p>The reason why the world generation job failed.</p>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template.</p>"
+        },
+        "worldCount":{
+          "shape":"WorldCount",
+          "documentation":"<p>Information about the world count.</p>"
+        },
+        "finishedWorldsSummary":{
+          "shape":"FinishedWorldsSummary",
+          "documentation":"<p>Summary information about finished worlds.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world generation job.</p>"
+        },
+        "worldTags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>"
+        }
+      }
+    },
+    "DescribeWorldRequest":{
+      "type":"structure",
+      "required":["world"],
+      "members":{
+        "world":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world you want to describe.</p>"
+        }
+      }
+    },
+    "DescribeWorldResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world.</p>"
+        },
+        "generationJob":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>"
+        },
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The world template.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world was created.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world.</p>"
+        },
+        "worldDescriptionBody":{
+          "shape":"Json",
+          "documentation":"<p>Returns the JSON formatted string that describes the contents of your world.</p>"
+        }
+      }
+    },
+    "DescribeWorldTemplateRequest":{
+      "type":"structure",
+      "required":["template"],
+      "members":{
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template you want to describe.</p>"
+        }
+      }
+    },
+    "DescribeWorldTemplateResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world template.</p>"
+        },
+        "clientRequestToken":{
+          "shape":"ClientRequestToken",
+          "documentation":"<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>"
+        },
+        "name":{
+          "shape":"TemplateName",
+          "documentation":"<p>The name of the world template.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world template was created.</p>"
+        },
+        "lastUpdatedAt":{
+          "shape":"LastUpdatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world template was last updated.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map that contains tag keys and tag values that are attached to the world template.</p>"
+        },
+        "version":{
+          "shape":"GenericString",
+          "documentation":"<p>The version of the world template that you're using.</p>"
+        }
+      }
+    },
+    "Environment":{
+      "type":"structure",
+      "members":{
+        "uri":{
+          "shape":"RepositoryUrl",
+          "documentation":"<p>The Docker image URI for either your robot or simulation applications.</p>"
+        }
+      },
+      "documentation":"<p>The object that contains the Docker image URI for either your robot or simulation applications.</p>"
+    },
     "EnvironmentVariableKey":{
       "type":"string",
       "max":1024,
@@ -2120,7 +3024,7 @@
       "type":"map",
       "key":{"shape":"EnvironmentVariableKey"},
       "value":{"shape":"EnvironmentVariableValue"},
-      "max":16,
+      "max":20,
       "min":0
     },
     "EnvironmentVariableValue":{
@@ -2128,6 +3032,13 @@
       "max":1024,
       "min":1,
       "pattern":".*"
+    },
+    "ExitBehavior":{
+      "type":"string",
+      "enum":[
+        "FAIL",
+        "RESTART"
+      ]
     },
     "FailedAt":{"type":"timestamp"},
     "FailedCreateSimulationJobRequest":{
@@ -2163,6 +3074,20 @@
         "Continue"
       ]
     },
+    "FailureSummary":{
+      "type":"structure",
+      "members":{
+        "totalFailureCount":{
+          "shape":"Integer",
+          "documentation":"<p>The total number of failures.</p>"
+        },
+        "failures":{
+          "shape":"WorldFailures",
+          "documentation":"<p>The worlds that failed.</p>"
+        }
+      },
+      "documentation":"<p>Information about worlds that failed.</p>"
+    },
     "Filter":{
       "type":"structure",
       "members":{
@@ -2188,6 +3113,24 @@
       "member":{"shape":"Filter"},
       "max":1,
       "min":1
+    },
+    "FinishedWorldsSummary":{
+      "type":"structure",
+      "members":{
+        "finishedCount":{
+          "shape":"Integer",
+          "documentation":"<p>The total number of finished worlds.</p>"
+        },
+        "succeededWorlds":{
+          "shape":"Arns",
+          "documentation":"<p>A list of worlds that succeeded.</p>"
+        },
+        "failureSummary":{
+          "shape":"FailureSummary",
+          "documentation":"<p>Information about worlds that failed.</p>"
+        }
+      },
+      "documentation":"<p>Information about worlds that finished.</p>"
     },
     "Fleet":{
       "type":"structure",
@@ -2225,12 +3168,40 @@
       "max":200,
       "min":0
     },
+    "FloorplanCount":{"type":"integer"},
+    "GPUUnit":{
+      "type":"integer",
+      "max":1,
+      "min":0
+    },
     "GenericInteger":{"type":"integer"},
     "GenericString":{
       "type":"string",
       "max":1024,
       "min":0,
       "pattern":".*"
+    },
+    "GetWorldTemplateBodyRequest":{
+      "type":"structure",
+      "members":{
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template.</p>"
+        },
+        "generationJob":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world generator job.</p>"
+        }
+      }
+    },
+    "GetWorldTemplateBodyResponse":{
+      "type":"structure",
+      "members":{
+        "templateBody":{
+          "shape":"Json",
+          "documentation":"<p>The world template body.</p>"
+        }
+      }
     },
     "IamRole":{
       "type":"string",
@@ -2253,7 +3224,14 @@
       "error":{"httpStatusCode":400},
       "exception":true
     },
+    "ImageDigest":{
+      "type":"string",
+      "max":72,
+      "min":0,
+      "pattern":"[Ss][Hh][Aa]256:[0-9a-fA-F]{64}"
+    },
     "Integer":{"type":"integer"},
+    "InteriorCountPerFloorplan":{"type":"integer"},
     "InternalServerException":{
       "type":"structure",
       "members":{
@@ -2273,14 +3251,16 @@
       "exception":true
     },
     "JobDuration":{"type":"long"},
+    "Json":{
+      "type":"string",
+      "max":262144,
+      "min":1,
+      "pattern":"[\\S\\s]+"
+    },
     "LastStartedAt":{"type":"timestamp"},
     "LastUpdatedAt":{"type":"timestamp"},
     "LaunchConfig":{
       "type":"structure",
-      "required":[
-        "packageName",
-        "launchFile"
-      ],
       "members":{
         "packageName":{
           "shape":"Command",
@@ -2300,7 +3280,11 @@
         },
         "streamUI":{
           "shape":"Boolean",
-          "documentation":"<p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and luanch the component. It must have a graphical user interface. </p>"
+          "documentation":"<p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>"
+        },
+        "command":{
+          "shape":"CommandList",
+          "documentation":"<p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p> <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>"
         }
       },
       "documentation":"<p>Information about a launch configuration.</p>"
@@ -2323,13 +3307,15 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListDeploymentJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
           "documentation":"<p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListDeploymentJobsResponse":{
       "type":"structure",
@@ -2340,16 +3326,18 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the results of a <code>ListDeploymentJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListFleetsRequest":{
       "type":"structure",
       "members":{
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListFleets</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>"
         },
         "maxResults":{
           "shape":"MaxResults",
@@ -2359,7 +3347,9 @@
           "shape":"Filters",
           "documentation":"<p>Optional filters to limit results.</p> <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListFleetsResponse":{
       "type":"structure",
@@ -2370,9 +3360,11 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the results of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListRobotApplicationsRequest":{
       "type":"structure",
@@ -2383,7 +3375,7 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRobotApplications</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
@@ -2404,7 +3396,7 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListRobotApplications</code> request. When the results of a <code>ListRobotApplications</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
       }
     },
@@ -2413,7 +3405,7 @@
       "members":{
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRobots</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
@@ -2423,7 +3415,9 @@
           "shape":"Filters",
           "documentation":"<p>Optional filters to limit results.</p> <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListRobotsResponse":{
       "type":"structure",
@@ -2434,9 +3428,11 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results of a <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "ListSimulationApplicationsRequest":{
       "type":"structure",
@@ -2447,7 +3443,7 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationApplications</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
@@ -2468,7 +3464,7 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListSimulationApplications</code> request. When the results of a <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
       }
     },
@@ -2477,7 +3473,7 @@
       "members":{
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationJobBatches</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
@@ -2498,7 +3494,7 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListSimulationJobBatches</code> request. When the results of a <code>ListSimulationJobBatches</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
       }
     },
@@ -2507,7 +3503,7 @@
       "members":{
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
@@ -2529,7 +3525,7 @@
         },
         "nextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>nextToken</code> value to include in a future <code>ListSimulationJobs</code> request. When the results of a <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>"
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
         }
       }
     },
@@ -2554,13 +3550,132 @@
         }
       }
     },
+    "ListWorldExportJobsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>"
+        },
+        "filters":{
+          "shape":"Filters",
+          "documentation":"<p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>"
+        }
+      }
+    },
+    "ListWorldExportJobsResponse":{
+      "type":"structure",
+      "required":["worldExportJobSummaries"],
+      "members":{
+        "worldExportJobSummaries":{
+          "shape":"WorldExportJobSummaries",
+          "documentation":"<p>Summary information for world export jobs.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        }
+      }
+    },
+    "ListWorldGenerationJobsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>"
+        },
+        "filters":{
+          "shape":"Filters",
+          "documentation":"<p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>"
+        }
+      }
+    },
+    "ListWorldGenerationJobsResponse":{
+      "type":"structure",
+      "required":["worldGenerationJobSummaries"],
+      "members":{
+        "worldGenerationJobSummaries":{
+          "shape":"WorldGenerationJobSummaries",
+          "documentation":"<p>Summary information for world generator jobs.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        }
+      }
+    },
+    "ListWorldTemplatesRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>"
+        }
+      }
+    },
+    "ListWorldTemplatesResponse":{
+      "type":"structure",
+      "members":{
+        "templateSummaries":{
+          "shape":"TemplateSummaries",
+          "documentation":"<p>Summary information for templates.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        }
+      }
+    },
+    "ListWorldsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>"
+        },
+        "filters":{
+          "shape":"Filters",
+          "documentation":"<p>Optional filters to limit results. You can use <code>status</code>.</p>"
+        }
+      }
+    },
+    "ListWorldsResponse":{
+      "type":"structure",
+      "members":{
+        "worldSummaries":{
+          "shape":"WorldSummaries",
+          "documentation":"<p>Summary information for worlds.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>"
+        }
+      }
+    },
     "LoggingConfig":{
       "type":"structure",
-      "required":["recordAllRosTopics"],
       "members":{
         "recordAllRosTopics":{
           "shape":"BoxedBoolean",
-          "documentation":"<p>A boolean indicating whether to record all ROS topics.</p>"
+          "documentation":"<p>A boolean indicating whether to record all ROS topics.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+          "deprecated":true,
+          "deprecatedMessage":"AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
         }
       },
       "documentation":"<p>The logging configuration.</p>"
@@ -2718,7 +3833,9 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the robot.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "RegisterRobotResponse":{
       "type":"structure",
@@ -2731,7 +3848,9 @@
           "shape":"Arn",
           "documentation":"<p>Information about the robot registration.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "RenderingEngine":{
       "type":"structure",
@@ -2756,6 +3875,12 @@
       "max":4,
       "min":1,
       "pattern":"1.x"
+    },
+    "RepositoryUrl":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":".+"
     },
     "ResourceAlreadyExistsException":{
       "type":"structure",
@@ -2856,6 +3981,26 @@
         "launchConfig":{
           "shape":"LaunchConfig",
           "documentation":"<p>The launch configuration for the robot application.</p>"
+        },
+        "uploadConfigurations":{
+          "shape":"UploadConfigurations",
+          "documentation":"<p>The upload configurations for the robot application.</p>"
+        },
+        "useDefaultUploadConfigurations":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+          "deprecated":true,
+          "deprecatedMessage":"AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        },
+        "tools":{
+          "shape":"Tools",
+          "documentation":"<p>Information about tools configured for the robot application.</p>"
+        },
+        "useDefaultTools":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+          "deprecated":true,
+          "deprecatedMessage":"AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
         }
       },
       "documentation":"<p>Application configuration information for a robot.</p>"
@@ -2970,7 +4115,8 @@
       "type":"string",
       "enum":[
         "ROS",
-        "ROS2"
+        "ROS2",
+        "General"
       ]
     },
     "RobotSoftwareSuiteVersionType":{
@@ -2978,7 +4124,8 @@
       "enum":[
         "Kinetic",
         "Melodic",
-        "Dashing"
+        "Dashing",
+        "Foxy"
       ]
     },
     "RobotStatus":{
@@ -3006,17 +4153,27 @@
       "pattern":"[a-z0-9][a-z0-9.\\-]*[a-z0-9]"
     },
     "S3Etag":{"type":"string"},
+    "S3Etags":{
+      "type":"list",
+      "member":{"shape":"S3Etag"}
+    },
     "S3Key":{
       "type":"string",
       "max":1024,
       "min":1,
       "pattern":".*"
     },
+    "S3KeyOrPrefix":{
+      "type":"string",
+      "max":1024,
+      "min":0,
+      "pattern":".*"
+    },
     "S3KeyOutput":{
       "type":"structure",
       "members":{
         "s3Key":{
-          "shape":"S3Key",
+          "shape":"S3KeyOrPrefix",
           "documentation":"<p>The S3 key.</p>"
         },
         "etag":{
@@ -3030,9 +4187,9 @@
       "type":"list",
       "member":{"shape":"S3KeyOutput"}
     },
-    "S3Keys":{
+    "S3KeysOrPrefixes":{
       "type":"list",
-      "member":{"shape":"S3Key"},
+      "member":{"shape":"S3KeyOrPrefix"},
       "max":100,
       "min":1
     },
@@ -3091,6 +4248,30 @@
         "launchConfig":{
           "shape":"LaunchConfig",
           "documentation":"<p>The launch configuration for the simulation application.</p>"
+        },
+        "uploadConfigurations":{
+          "shape":"UploadConfigurations",
+          "documentation":"<p>Information about upload configurations for the simulation application.</p>"
+        },
+        "worldConfigs":{
+          "shape":"WorldConfigs",
+          "documentation":"<p>A list of world configurations.</p>"
+        },
+        "useDefaultUploadConfigurations":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p> <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+          "deprecated":true,
+          "deprecatedMessage":"AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
+        },
+        "tools":{
+          "shape":"Tools",
+          "documentation":"<p>Information about tools configured for the simulation application.</p>"
+        },
+        "useDefaultTools":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important> <p>This API is no longer supported and will throw an error if used.</p> </important>",
+          "deprecated":true,
+          "deprecatedMessage":"AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
         }
       },
       "documentation":"<p>Information about a simulation application configuration.</p>"
@@ -3166,7 +4347,7 @@
         },
         "failureBehavior":{
           "shape":"FailureBehavior",
-          "documentation":"<p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>"
+          "documentation":"<p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>"
         },
         "failureCode":{
           "shape":"SimulationJobErrorCode",
@@ -3293,6 +4474,8 @@
         "InternalServiceError",
         "RobotApplicationCrash",
         "SimulationApplicationCrash",
+        "RobotApplicationHealthCheckFailure",
+        "SimulationApplicationHealthCheckFailure",
         "BadPermissionsRobotApplication",
         "BadPermissionsSimulationApplication",
         "BadPermissionsS3Object",
@@ -3304,6 +4487,7 @@
         "InvalidBundleRobotApplication",
         "InvalidBundleSimulationApplication",
         "InvalidS3Resource",
+        "ThrottlingError",
         "LimitExceeded",
         "MismatchedEtag",
         "RobotApplicationVersionMismatchedEtag",
@@ -3316,7 +4500,8 @@
         "WrongRegionS3Bucket",
         "WrongRegionS3Output",
         "WrongRegionRobotApplication",
-        "WrongRegionSimulationApplication"
+        "WrongRegionSimulationApplication",
+        "UploadContentMismatchError"
       ]
     },
     "SimulationJobRequest":{
@@ -3335,11 +4520,11 @@
         },
         "failureBehavior":{
           "shape":"FailureBehavior",
-          "documentation":"<p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>"
+          "documentation":"<p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Leaves the host running for its maximum timeout duration after a <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>"
         },
         "useDefaultApplications":{
           "shape":"BoxedBoolean",
-          "documentation":"<p>Boolean indicating whether to use default simulation tool applications.</p>"
+          "documentation":"<p>A Boolean indicating whether to use default applications in the simulation job. Default applications include Gazebo, rqt, rviz and terminal access. </p>"
         },
         "robotApplications":{
           "shape":"RobotApplicationConfigs",
@@ -3416,6 +4601,10 @@
         "dataSourceNames":{
           "shape":"DataSourceNames",
           "documentation":"<p>The names of the data sources.</p>"
+        },
+        "computeType":{
+          "shape":"ComputeType",
+          "documentation":"<p>The compute type for the simulation job summary.</p>"
         }
       },
       "documentation":"<p>Summary information for a simulation job.</p>"
@@ -3442,14 +4631,15 @@
       "type":"string",
       "enum":[
         "Gazebo",
-        "RosbagPlay"
+        "RosbagPlay",
+        "SimulationRuntime"
       ]
     },
     "SimulationSoftwareSuiteVersionType":{
       "type":"string",
       "max":1024,
       "min":0,
-      "pattern":"7|9|Kinetic|Melodic|Dashing"
+      "pattern":"7|9|11|Kinetic|Melodic|Dashing|Foxy"
     },
     "SimulationTimeMillis":{"type":"long"},
     "SimulationUnit":{
@@ -3599,7 +4789,9 @@
           "shape":"Arn",
           "documentation":"<p>The target fleet for the synchronization.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "SyncDeploymentJobResponse":{
       "type":"structure",
@@ -3636,7 +4828,9 @@
           "shape":"CreatedAt",
           "documentation":"<p>The time, in milliseconds since the epoch, when the fleet was created.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
     },
     "TagKey":{
       "type":"string",
@@ -3685,6 +4879,60 @@
       "min":0,
       "pattern":"[a-zA-Z0-9 _.\\-\\/+=:]*"
     },
+    "TemplateLocation":{
+      "type":"structure",
+      "required":[
+        "s3Bucket",
+        "s3Key"
+      ],
+      "members":{
+        "s3Bucket":{
+          "shape":"S3Bucket",
+          "documentation":"<p>The Amazon S3 bucket name.</p>"
+        },
+        "s3Key":{
+          "shape":"S3Key",
+          "documentation":"<p>The list of S3 keys identifying the data source files.</p>"
+        }
+      },
+      "documentation":"<p>Information about a template location.</p>"
+    },
+    "TemplateName":{
+      "type":"string",
+      "max":255,
+      "min":0,
+      "pattern":".*"
+    },
+    "TemplateSummaries":{
+      "type":"list",
+      "member":{"shape":"TemplateSummary"}
+    },
+    "TemplateSummary":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the template.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the template was created.</p>"
+        },
+        "lastUpdatedAt":{
+          "shape":"LastUpdatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the template was last updated.</p>"
+        },
+        "name":{
+          "shape":"TemplateName",
+          "documentation":"<p>The name of the template.</p>"
+        },
+        "version":{
+          "shape":"GenericString",
+          "documentation":"<p>The version of the template that you're using.</p>"
+        }
+      },
+      "documentation":"<p>Summary information for a template.</p>"
+    },
     "ThrottlingException":{
       "type":"structure",
       "members":{
@@ -3693,6 +4941,48 @@
       "documentation":"<p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "Tool":{
+      "type":"structure",
+      "required":[
+        "name",
+        "command"
+      ],
+      "members":{
+        "streamUI":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>"
+        },
+        "name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the tool.</p>"
+        },
+        "command":{
+          "shape":"UnrestrictedCommand",
+          "documentation":"<p>Command-line arguments for the tool. It must include the tool executable name.</p>"
+        },
+        "streamOutputToCloudWatch":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>"
+        },
+        "exitBehavior":{
+          "shape":"ExitBehavior",
+          "documentation":"<p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>"
+        }
+      },
+      "documentation":"<p>Information about a tool. Tools are used in a simulation job.</p>"
+    },
+    "Tools":{
+      "type":"list",
+      "member":{"shape":"Tool"},
+      "max":10,
+      "min":0
+    },
+    "UnrestrictedCommand":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":".*"
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -3724,7 +5014,6 @@
       "type":"structure",
       "required":[
         "application",
-        "sources",
         "robotSoftwareSuite"
       ],
       "members":{
@@ -3743,6 +5032,10 @@
         "currentRevisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The revision id for the robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI for your robot application.</p>"
         }
       }
     },
@@ -3776,6 +5069,10 @@
         "revisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The revision id of the robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI for your robot application.</p>"
         }
       }
     },
@@ -3783,7 +5080,6 @@
       "type":"structure",
       "required":[
         "application",
-        "sources",
         "simulationSoftwareSuite",
         "robotSoftwareSuite"
       ],
@@ -3811,6 +5107,10 @@
         "currentRevisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The revision id for the robot application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI for your simulation application.</p>"
         }
       }
     },
@@ -3852,8 +5152,91 @@
         "revisionId":{
           "shape":"RevisionId",
           "documentation":"<p>The revision id of the simulation application.</p>"
+        },
+        "environment":{
+          "shape":"Environment",
+          "documentation":"<p>The object that contains the Docker image URI used for your simulation application.</p>"
         }
       }
+    },
+    "UpdateWorldTemplateRequest":{
+      "type":"structure",
+      "required":["template"],
+      "members":{
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template to update.</p>"
+        },
+        "name":{
+          "shape":"TemplateName",
+          "documentation":"<p>The name of the template.</p>"
+        },
+        "templateBody":{
+          "shape":"Json",
+          "documentation":"<p>The world template body.</p>"
+        },
+        "templateLocation":{
+          "shape":"TemplateLocation",
+          "documentation":"<p>The location of the world template.</p>"
+        }
+      }
+    },
+    "UpdateWorldTemplateResponse":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template.</p>"
+        },
+        "name":{
+          "shape":"TemplateName",
+          "documentation":"<p>The name of the world template.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world template was created.</p>"
+        },
+        "lastUpdatedAt":{
+          "shape":"LastUpdatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world template was last updated.</p>"
+        }
+      }
+    },
+    "UploadBehavior":{
+      "type":"string",
+      "enum":[
+        "UPLOAD_ON_TERMINATE",
+        "UPLOAD_ROLLING_AUTO_REMOVE"
+      ]
+    },
+    "UploadConfiguration":{
+      "type":"structure",
+      "required":[
+        "name",
+        "path",
+        "uploadBehavior"
+      ],
+      "members":{
+        "name":{
+          "shape":"Name",
+          "documentation":"<p>A prefix that specifies where files will be uploaded in Amazon S3. It is appended to the simulation output location to determine the final path. </p> <p> For example, if your simulation output location is <code>s3://my-bucket</code> and your upload configuration name is <code>robot-test</code>, your files will be uploaded to <code>s3://my-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</code>. </p>"
+        },
+        "path":{
+          "shape":"Path",
+          "documentation":"<p> Specifies the path of the file(s) to upload. Standard Unix glob matching rules are accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example, specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code> directory tree to be collected. For more examples, see <a href=\"https://github.com/gobwas/glob\">Glob Library</a>. </p>"
+        },
+        "uploadBehavior":{
+          "shape":"UploadBehavior",
+          "documentation":"<p>Specifies when to upload the files:</p> <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd> <p>Matching files are uploaded once the simulation enters the <code>TERMINATING</code> state. Matching files are not uploaded until all of your code (including tools) have stopped. </p> <p>If there is a problem uploading a file, the upload is retried. If problems persist, no further upload attempts will be made.</p> </dd> <dt>UPLOAD_ROLLING_AUTO_REMOVE</dt> <dd> <p>Matching files are uploaded as they are created. They are deleted after they are uploaded. The specified path is checked every 5 seconds. A final check is made when all of your code (including tools) have stopped. </p> </dd> </dl>"
+        }
+      },
+      "documentation":"<p>Provides upload configuration information. Files are uploaded from the simulation job to a location you specify. </p>"
+    },
+    "UploadConfigurations":{
+      "type":"list",
+      "member":{"shape":"UploadConfiguration"},
+      "max":10,
+      "min":0
     },
     "VPCConfig":{
       "type":"structure",
@@ -3907,6 +5290,200 @@
       "max":255,
       "min":1,
       "pattern":"ALL"
+    },
+    "WorldConfig":{
+      "type":"structure",
+      "members":{
+        "world":{
+          "shape":"Arn",
+          "documentation":"<p>The world generated by Simulation WorldForge.</p>"
+        }
+      },
+      "documentation":"<p>Configuration information for a world.</p>"
+    },
+    "WorldConfigs":{
+      "type":"list",
+      "member":{"shape":"WorldConfig"},
+      "max":1,
+      "min":0
+    },
+    "WorldCount":{
+      "type":"structure",
+      "members":{
+        "floorplanCount":{
+          "shape":"FloorplanCount",
+          "documentation":"<p>The number of unique floorplans.</p>"
+        },
+        "interiorCountPerFloorplan":{
+          "shape":"InteriorCountPerFloorplan",
+          "documentation":"<p>The number of unique interiors per floorplan.</p>"
+        }
+      },
+      "documentation":"<p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p> <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p>"
+    },
+    "WorldExportJobErrorCode":{
+      "type":"string",
+      "enum":[
+        "InternalServiceError",
+        "LimitExceeded",
+        "ResourceNotFound",
+        "RequestThrottled",
+        "InvalidInput",
+        "AccessDenied"
+      ]
+    },
+    "WorldExportJobStatus":{
+      "type":"string",
+      "enum":[
+        "Pending",
+        "Running",
+        "Completed",
+        "Failed",
+        "Canceling",
+        "Canceled"
+      ]
+    },
+    "WorldExportJobSummaries":{
+      "type":"list",
+      "member":{"shape":"WorldExportJobSummary"},
+      "max":100,
+      "min":0
+    },
+    "WorldExportJobSummary":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world export job.</p>"
+        },
+        "status":{
+          "shape":"WorldExportJobStatus",
+          "documentation":"<p>The status of the world export job.</p> <dl> <dt>Pending</dt> <dd> <p>The world export job request is pending.</p> </dd> <dt>Running</dt> <dd> <p>The world export job is running. </p> </dd> <dt>Completed</dt> <dd> <p>The world export job completed. </p> </dd> <dt>Failed</dt> <dd> <p>The world export job failed. See <code>failureCode</code> for more information. </p> </dd> <dt>Canceled</dt> <dd> <p>The world export job was cancelled.</p> </dd> <dt>Canceling</dt> <dd> <p>The world export job is being cancelled.</p> </dd> </dl>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world export job was created.</p>"
+        },
+        "worlds":{
+          "shape":"Arns",
+          "documentation":"<p>A list of worlds.</p>"
+        },
+        "outputLocation":{"shape":"OutputLocation"}
+      },
+      "documentation":"<p>Information about a world export job.</p>"
+    },
+    "WorldFailure":{
+      "type":"structure",
+      "members":{
+        "failureCode":{
+          "shape":"WorldGenerationJobErrorCode",
+          "documentation":"<p>The failure code of the world export job if it failed:</p> <dl> <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd> <dt>LimitExceeded</dt> <dd> <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> </dd> <dt>ResourceNotFound</dt> <dd> <p>The specified resource could not be found. </p> </dd> <dt>RequestThrottled</dt> <dd> <p>The request was throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the request is not valid.</p> </dd> </dl>"
+        },
+        "sampleFailureReason":{
+          "shape":"GenericString",
+          "documentation":"<p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>"
+        },
+        "failureCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of failed worlds.</p>"
+        }
+      },
+      "documentation":"<p>Information about a failed world.</p>"
+    },
+    "WorldFailures":{
+      "type":"list",
+      "member":{"shape":"WorldFailure"},
+      "max":100,
+      "min":0
+    },
+    "WorldGenerationJobErrorCode":{
+      "type":"string",
+      "enum":[
+        "InternalServiceError",
+        "LimitExceeded",
+        "ResourceNotFound",
+        "RequestThrottled",
+        "InvalidInput",
+        "AllWorldGenerationFailed"
+      ]
+    },
+    "WorldGenerationJobStatus":{
+      "type":"string",
+      "enum":[
+        "Pending",
+        "Running",
+        "Completed",
+        "Failed",
+        "PartialFailed",
+        "Canceling",
+        "Canceled"
+      ]
+    },
+    "WorldGenerationJobSummaries":{
+      "type":"list",
+      "member":{"shape":"WorldGenerationJobSummary"},
+      "max":100,
+      "min":0
+    },
+    "WorldGenerationJobSummary":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world generator job.</p>"
+        },
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world generator job was created.</p>"
+        },
+        "status":{
+          "shape":"WorldGenerationJobStatus",
+          "documentation":"<p>The status of the world generator job:</p> <dl> <dt>Pending</dt> <dd> <p>The world generator job request is pending.</p> </dd> <dt>Running</dt> <dd> <p>The world generator job is running. </p> </dd> <dt>Completed</dt> <dd> <p>The world generator job completed. </p> </dd> <dt>Failed</dt> <dd> <p>The world generator job failed. See <code>failureCode</code> for more information. </p> </dd> <dt>PartialFailed</dt> <dd> <p>Some worlds did not generate.</p> </dd> <dt>Canceled</dt> <dd> <p>The world generator job was cancelled.</p> </dd> <dt>Canceling</dt> <dd> <p>The world generator job is being cancelled.</p> </dd> </dl>"
+        },
+        "worldCount":{
+          "shape":"WorldCount",
+          "documentation":"<p>Information about the world count.</p>"
+        },
+        "succeededWorldCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of worlds that were generated.</p>"
+        },
+        "failedWorldCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of worlds that failed.</p>"
+        }
+      },
+      "documentation":"<p>Information about a world generator job.</p>"
+    },
+    "WorldSummaries":{
+      "type":"list",
+      "member":{"shape":"WorldSummary"}
+    },
+    "WorldSummary":{
+      "type":"structure",
+      "members":{
+        "arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the world.</p>"
+        },
+        "createdAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the world was created.</p>"
+        },
+        "generationJob":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world generation job.</p>"
+        },
+        "template":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (arn) of the world template.</p>"
+        }
+      },
+      "documentation":"<p>Information about a world.</p>"
     },
     "errorMessage":{"type":"string"}
   },

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -96,58 +86,58 @@ namespace Model
 
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const{ return m_insightSelectors; }
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline bool InsightSelectorsHasBeenSet() const { return m_insightSelectorsHasBeenSet; }
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline void SetInsightSelectors(const Aws::Vector<InsightSelector>& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = value; }
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline void SetInsightSelectors(Aws::Vector<InsightSelector>&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = std::move(value); }
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline PutInsightSelectorsRequest& WithInsightSelectors(const Aws::Vector<InsightSelector>& value) { SetInsightSelectors(value); return *this;}
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline PutInsightSelectorsRequest& WithInsightSelectors(Aws::Vector<InsightSelector>&& value) { SetInsightSelectors(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline PutInsightSelectorsRequest& AddInsightSelectors(const InsightSelector& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.push_back(value); return *this; }
 
     /**
-     * <p>A JSON string that contains the insight types you want to log on a trail. In
-     * this release, only <code>ApiCallRateInsight</code> is supported as an insight
-     * type.</p>
+     * <p>A JSON string that contains the insight types you want to log on a trail.
+     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
+     * insight types.</p>
      */
     inline PutInsightSelectorsRequest& AddInsightSelectors(InsightSelector&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.push_back(std::move(value)); return *this; }
 

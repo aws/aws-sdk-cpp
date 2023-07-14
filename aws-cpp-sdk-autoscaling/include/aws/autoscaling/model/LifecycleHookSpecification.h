@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -34,30 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes a lifecycle hook. Used in combination with
-   * <a>CreateAutoScalingGroup</a>.</p> <p>A lifecycle hook tells Amazon EC2 Auto
-   * Scaling to perform an action on an instance when the instance launches (before
-   * it is put into service) or as the instance terminates (before it is fully
-   * terminated).</p> <p>This step is a part of the procedure for creating a
-   * lifecycle hook for an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
-   * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
-   * function when Amazon EC2 Auto Scaling launches or terminates instances.</p>
-   * </li> <li> <p>(Optional) Create a notification target and an IAM role. The
-   * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
-   * Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p>
-   * </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used
-   * when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more
-   * time, record the lifecycle action heartbeat to keep the instance in a pending
-   * state using <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you
-   * finish before the timeout period ends, complete the lifecycle action using
-   * <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a
+   * <p>Describes information used to specify a lifecycle hook for an Auto Scaling
+   * group.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
-   * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
-   * Guide</i>.</p> <p>You can view the lifecycle hooks for an Auto Scaling group
-   * using <a>DescribeLifecycleHooks</a>. You can modify an existing lifecycle hook
-   * or create new lifecycle hooks using <a>PutLifecycleHook</a>. If you are no
-   * longer using a lifecycle hook, you can delete it using
-   * <a>DeleteLifecycleHook</a>.</p><p><h3>See Also:</h3>   <a
+   * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHookSpecification">AWS
    * API Reference</a></p>
    */
@@ -380,57 +351,65 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline LifecycleHookSpecification& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline LifecycleHookSpecification& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p>
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
+     * but optional when updating existing hooks.</p>
      */
     inline LifecycleHookSpecification& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

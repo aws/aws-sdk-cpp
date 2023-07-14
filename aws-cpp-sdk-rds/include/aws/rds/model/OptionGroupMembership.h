@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -96,7 +86,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -105,7 +95,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -114,7 +104,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -123,7 +113,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -132,7 +122,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -141,7 +131,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline OptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -150,7 +140,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -159,7 +149,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 

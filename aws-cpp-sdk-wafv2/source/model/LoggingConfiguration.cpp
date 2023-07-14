@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/LoggingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,20 @@ namespace Model
 LoggingConfiguration::LoggingConfiguration() : 
     m_resourceArnHasBeenSet(false),
     m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false)
+    m_redactedFieldsHasBeenSet(false),
+    m_managedByFirewallManager(false),
+    m_managedByFirewallManagerHasBeenSet(false),
+    m_loggingFilterHasBeenSet(false)
 {
 }
 
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false)
+    m_redactedFieldsHasBeenSet(false),
+    m_managedByFirewallManager(false),
+    m_managedByFirewallManagerHasBeenSet(false),
+    m_loggingFilterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +66,20 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
       m_redactedFields.push_back(redactedFieldsJsonList[redactedFieldsIndex].AsObject());
     }
     m_redactedFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManagedByFirewallManager"))
+  {
+    m_managedByFirewallManager = jsonValue.GetBool("ManagedByFirewallManager");
+
+    m_managedByFirewallManagerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LoggingFilter"))
+  {
+    m_loggingFilter = jsonValue.GetObject("LoggingFilter");
+
+    m_loggingFilterHasBeenSet = true;
   }
 
   return *this;
@@ -104,6 +114,18 @@ JsonValue LoggingConfiguration::Jsonize() const
      redactedFieldsJsonList[redactedFieldsIndex].AsObject(m_redactedFields[redactedFieldsIndex].Jsonize());
    }
    payload.WithArray("RedactedFields", std::move(redactedFieldsJsonList));
+
+  }
+
+  if(m_managedByFirewallManagerHasBeenSet)
+  {
+   payload.WithBool("ManagedByFirewallManager", m_managedByFirewallManager);
+
+  }
+
+  if(m_loggingFilterHasBeenSet)
+  {
+   payload.WithObject("LoggingFilter", m_loggingFilter.Jsonize());
 
   }
 

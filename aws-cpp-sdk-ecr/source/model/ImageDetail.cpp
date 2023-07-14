@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecr/model/ImageDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,10 @@ ImageDetail::ImageDetail() :
     m_imageSizeInBytesHasBeenSet(false),
     m_imagePushedAtHasBeenSet(false),
     m_imageScanStatusHasBeenSet(false),
-    m_imageScanFindingsSummaryHasBeenSet(false)
+    m_imageScanFindingsSummaryHasBeenSet(false),
+    m_imageManifestMediaTypeHasBeenSet(false),
+    m_artifactMediaTypeHasBeenSet(false),
+    m_lastRecordedPullTimeHasBeenSet(false)
 {
 }
 
@@ -50,7 +43,10 @@ ImageDetail::ImageDetail(JsonView jsonValue) :
     m_imageSizeInBytesHasBeenSet(false),
     m_imagePushedAtHasBeenSet(false),
     m_imageScanStatusHasBeenSet(false),
-    m_imageScanFindingsSummaryHasBeenSet(false)
+    m_imageScanFindingsSummaryHasBeenSet(false),
+    m_imageManifestMediaTypeHasBeenSet(false),
+    m_artifactMediaTypeHasBeenSet(false),
+    m_lastRecordedPullTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +112,27 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
     m_imageScanFindingsSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageManifestMediaType"))
+  {
+    m_imageManifestMediaType = jsonValue.GetString("imageManifestMediaType");
+
+    m_imageManifestMediaTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("artifactMediaType"))
+  {
+    m_artifactMediaType = jsonValue.GetString("artifactMediaType");
+
+    m_artifactMediaTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastRecordedPullTime"))
+  {
+    m_lastRecordedPullTime = jsonValue.GetDouble("lastRecordedPullTime");
+
+    m_lastRecordedPullTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +190,23 @@ JsonValue ImageDetail::Jsonize() const
   {
    payload.WithObject("imageScanFindingsSummary", m_imageScanFindingsSummary.Jsonize());
 
+  }
+
+  if(m_imageManifestMediaTypeHasBeenSet)
+  {
+   payload.WithString("imageManifestMediaType", m_imageManifestMediaType);
+
+  }
+
+  if(m_artifactMediaTypeHasBeenSet)
+  {
+   payload.WithString("artifactMediaType", m_artifactMediaType);
+
+  }
+
+  if(m_lastRecordedPullTimeHasBeenSet)
+  {
+   payload.WithDouble("lastRecordedPullTime", m_lastRecordedPullTime.SecondsWithMSPrecision());
   }
 
   return payload;

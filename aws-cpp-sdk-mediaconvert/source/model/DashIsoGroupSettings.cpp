@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/DashIsoGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,8 @@ namespace Model
 
 DashIsoGroupSettings::DashIsoGroupSettings() : 
     m_additionalManifestsHasBeenSet(false),
+    m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
+    m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
@@ -38,14 +30,23 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_fragmentLengthHasBeenSet(false),
     m_hbbtvCompliance(DashIsoHbbtvCompliance::NOT_SET),
     m_hbbtvComplianceHasBeenSet(false),
+    m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
     m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
@@ -53,6 +54,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
 
 DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) : 
     m_additionalManifestsHasBeenSet(false),
+    m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
+    m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
@@ -61,14 +64,23 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_fragmentLengthHasBeenSet(false),
     m_hbbtvCompliance(DashIsoHbbtvCompliance::NOT_SET),
     m_hbbtvComplianceHasBeenSet(false),
+    m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
+    m_minFinalSegmentLength(0.0),
+    m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(DashIsoMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(DashIsoSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
     m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
@@ -85,6 +97,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
       m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
     }
     m_additionalManifestsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioChannelConfigSchemeIdUri"))
+  {
+    m_audioChannelConfigSchemeIdUri = DashIsoGroupAudioChannelConfigSchemeIdUriMapper::GetDashIsoGroupAudioChannelConfigSchemeIdUriForName(jsonValue.GetString("audioChannelConfigSchemeIdUri"));
+
+    m_audioChannelConfigSchemeIdUriHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("baseUrl"))
@@ -129,6 +148,20 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_hbbtvComplianceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageBasedTrickPlay"))
+  {
+    m_imageBasedTrickPlay = DashIsoImageBasedTrickPlayMapper::GetDashIsoImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
+
+    m_imageBasedTrickPlayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("minBufferTime"))
   {
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
@@ -136,11 +169,25 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_minBufferTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("minFinalSegmentLength"))
+  {
+    m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
+
+    m_minFinalSegmentLengthHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("mpdProfile"))
   {
     m_mpdProfile = DashIsoMpdProfileMapper::GetDashIsoMpdProfileForName(jsonValue.GetString("mpdProfile"));
 
     m_mpdProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ptsOffsetHandlingForBFrames"))
+  {
+    m_ptsOffsetHandlingForBFrames = DashIsoPtsOffsetHandlingForBFramesMapper::GetDashIsoPtsOffsetHandlingForBFramesForName(jsonValue.GetString("ptsOffsetHandlingForBFrames"));
+
+    m_ptsOffsetHandlingForBFramesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentControl"))
@@ -155,6 +202,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_segmentLength = jsonValue.GetInteger("segmentLength");
 
     m_segmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = DashIsoSegmentLengthControlMapper::GetDashIsoSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("writeSegmentTimelineInRepresentation"))
@@ -180,6 +234,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
    }
    payload.WithArray("additionalManifests", std::move(additionalManifestsJsonList));
 
+  }
+
+  if(m_audioChannelConfigSchemeIdUriHasBeenSet)
+  {
+   payload.WithString("audioChannelConfigSchemeIdUri", DashIsoGroupAudioChannelConfigSchemeIdUriMapper::GetNameForDashIsoGroupAudioChannelConfigSchemeIdUri(m_audioChannelConfigSchemeIdUri));
   }
 
   if(m_baseUrlHasBeenSet)
@@ -217,15 +276,37 @@ JsonValue DashIsoGroupSettings::Jsonize() const
    payload.WithString("hbbtvCompliance", DashIsoHbbtvComplianceMapper::GetNameForDashIsoHbbtvCompliance(m_hbbtvCompliance));
   }
 
+  if(m_imageBasedTrickPlayHasBeenSet)
+  {
+   payload.WithString("imageBasedTrickPlay", DashIsoImageBasedTrickPlayMapper::GetNameForDashIsoImageBasedTrickPlay(m_imageBasedTrickPlay));
+  }
+
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+
+  }
+
   if(m_minBufferTimeHasBeenSet)
   {
    payload.WithInteger("minBufferTime", m_minBufferTime);
 
   }
 
+  if(m_minFinalSegmentLengthHasBeenSet)
+  {
+   payload.WithDouble("minFinalSegmentLength", m_minFinalSegmentLength);
+
+  }
+
   if(m_mpdProfileHasBeenSet)
   {
    payload.WithString("mpdProfile", DashIsoMpdProfileMapper::GetNameForDashIsoMpdProfile(m_mpdProfile));
+  }
+
+  if(m_ptsOffsetHandlingForBFramesHasBeenSet)
+  {
+   payload.WithString("ptsOffsetHandlingForBFrames", DashIsoPtsOffsetHandlingForBFramesMapper::GetNameForDashIsoPtsOffsetHandlingForBFrames(m_ptsOffsetHandlingForBFrames));
   }
 
   if(m_segmentControlHasBeenSet)
@@ -237,6 +318,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", DashIsoSegmentLengthControlMapper::GetNameForDashIsoSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_writeSegmentTimelineInRepresentationHasBeenSet)

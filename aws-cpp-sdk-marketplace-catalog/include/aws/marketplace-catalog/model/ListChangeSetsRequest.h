@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
@@ -136,38 +126,38 @@ namespace Model
 
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline const Sort& GetSort() const{ return m_sort; }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline void SetSort(const Sort& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline void SetSort(Sort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline ListChangeSetsRequest& WithSort(const Sort& value) { SetSort(value); return *this;}
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline ListChangeSetsRequest& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
 

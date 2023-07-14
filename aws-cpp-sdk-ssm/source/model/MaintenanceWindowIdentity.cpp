@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/MaintenanceWindowIdentity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,6 +30,8 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity() :
     m_cutoffHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_scheduleTimezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_nextExecutionTimeHasBeenSet(false)
@@ -58,6 +50,8 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity(JsonView jsonValue) :
     m_cutoffHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_scheduleTimezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_nextExecutionTimeHasBeenSet(false)
@@ -121,6 +115,13 @@ MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(JsonView jsonVa
     m_scheduleTimezone = jsonValue.GetString("ScheduleTimezone");
 
     m_scheduleTimezoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
+
+    m_scheduleOffsetHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EndDate"))
@@ -196,6 +197,12 @@ JsonValue MaintenanceWindowIdentity::Jsonize() const
   if(m_scheduleTimezoneHasBeenSet)
   {
    payload.WithString("ScheduleTimezone", m_scheduleTimezone);
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
 
   }
 

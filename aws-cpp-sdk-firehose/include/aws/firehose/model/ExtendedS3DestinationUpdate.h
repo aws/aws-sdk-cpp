@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -24,6 +14,7 @@
 #include <aws/firehose/model/S3BackupMode.h>
 #include <aws/firehose/model/S3DestinationUpdate.h>
 #include <aws/firehose/model/DataFormatConversionConfiguration.h>
+#include <aws/firehose/model/DynamicPartitioningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -484,32 +475,44 @@ namespace Model
 
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline const S3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline void SetS3BackupMode(const S3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline void SetS3BackupMode(S3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline ExtendedS3DestinationUpdate& WithS3BackupMode(const S3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline ExtendedS3DestinationUpdate& WithS3BackupMode(S3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
@@ -581,6 +584,67 @@ namespace Model
      */
     inline ExtendedS3DestinationUpdate& WithDataFormatConversionConfiguration(DataFormatConversionConfiguration&& value) { SetDataFormatConversionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline const DynamicPartitioningConfiguration& GetDynamicPartitioningConfiguration() const{ return m_dynamicPartitioningConfiguration; }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline bool DynamicPartitioningConfigurationHasBeenSet() const { return m_dynamicPartitioningConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline void SetDynamicPartitioningConfiguration(const DynamicPartitioningConfiguration& value) { m_dynamicPartitioningConfigurationHasBeenSet = true; m_dynamicPartitioningConfiguration = value; }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline void SetDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { m_dynamicPartitioningConfigurationHasBeenSet = true; m_dynamicPartitioningConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline ExtendedS3DestinationUpdate& WithDynamicPartitioningConfiguration(const DynamicPartitioningConfiguration& value) { SetDynamicPartitioningConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of the dynamic partitioning mechanism that creates smaller
+     * data sets from the streaming data by partitioning it based on partition keys.
+     * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * </p>
+     */
+    inline ExtendedS3DestinationUpdate& WithDynamicPartitioningConfiguration(DynamicPartitioningConfiguration&& value) { SetDynamicPartitioningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -618,6 +682,9 @@ namespace Model
 
     DataFormatConversionConfiguration m_dataFormatConversionConfiguration;
     bool m_dataFormatConversionConfigurationHasBeenSet;
+
+    DynamicPartitioningConfiguration m_dynamicPartitioningConfiguration;
+    bool m_dynamicPartitioningConfigurationHasBeenSet;
   };
 
 } // namespace Model

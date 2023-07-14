@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -244,32 +234,38 @@ namespace Model
 
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline const LogType& GetLogType() const{ return m_logType; }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline InvokeRequest& WithLogType(const LogType& value) { SetLogType(value); return *this;}
 
     /**
-     * <p>Set to <code>Tail</code> to include the execution log in the response.</p>
+     * <p>Set to <code>Tail</code> to include the execution log in the response.
+     * Applies to synchronously invoked functions only.</p>
      */
     inline InvokeRequest& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -55,44 +45,51 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline CreateFileSystemResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline CreateFileSystemResult& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The Amazon Web Services account that created the file system. If the file
+     * system was created by an IAM user, the parent account to which the user belongs
+     * is the owner.</p>
      */
     inline CreateFileSystemResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -167,6 +164,70 @@ namespace Model
      * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline CreateFileSystemResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline const Aws::String& GetFileSystemArn() const{ return m_fileSystemArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(const Aws::String& value) { m_fileSystemArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(Aws::String&& value) { m_fileSystemArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(const char* value) { m_fileSystemArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemArn(const Aws::String& value) { SetFileSystemArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemArn(Aws::String&& value) { SetFileSystemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline CreateFileSystemResult& WithFileSystemArn(const char* value) { SetFileSystemArn(value); return *this;}
 
 
     /**
@@ -412,138 +473,218 @@ namespace Model
 
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline CreateFileSystemResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline CreateFileSystemResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
-     * that was used to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline CreateFileSystemResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputMode = value; }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline void SetThroughputMode(ThroughputMode&& value) { m_throughputMode = std::move(value); }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline CreateFileSystemResult& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline CreateFileSystemResult& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibps = value; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline CreateFileSystemResult& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
+
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneName = value; }
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneName = std::move(value); }
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneName.assign(value); }
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline CreateFileSystemResult& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline CreateFileSystemResult& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the Amazon Web Services Availability Zone in which the file system
+     * is located, and is valid only for file systems using One Zone storage classes.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline CreateFileSystemResult& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
+
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneId = value; }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneId = std::move(value); }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneId.assign(value); }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline CreateFileSystemResult& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline CreateFileSystemResult& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it
+     * has the same location in every Amazon Web Services account.</p>
+     */
+    inline CreateFileSystemResult& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
 
     /**
@@ -596,6 +737,8 @@ namespace Model
 
     Aws::String m_fileSystemId;
 
+    Aws::String m_fileSystemArn;
+
     Aws::Utils::DateTime m_creationTime;
 
     LifeCycleState m_lifeCycleState;
@@ -615,6 +758,10 @@ namespace Model
     ThroughputMode m_throughputMode;
 
     double m_provisionedThroughputInMibps;
+
+    Aws::String m_availabilityZoneName;
+
+    Aws::String m_availabilityZoneId;
 
     Aws::Vector<Tag> m_tags;
   };

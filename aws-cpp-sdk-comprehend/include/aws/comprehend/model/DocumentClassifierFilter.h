@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/ModelStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -51,34 +42,75 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline const ModelStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline void SetStatus(ModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline DocumentClassifierFilter& WithStatus(const ModelStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Filters the list of classifiers based on status. </p>
+     * <p>Filters the list of classifiers based on status.</p>
      */
     inline DocumentClassifierFilter& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline const Aws::String& GetDocumentClassifierName() const{ return m_documentClassifierName; }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline bool DocumentClassifierNameHasBeenSet() const { return m_documentClassifierNameHasBeenSet; }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline void SetDocumentClassifierName(const Aws::String& value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName = value; }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline void SetDocumentClassifierName(Aws::String&& value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName = std::move(value); }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline void SetDocumentClassifierName(const char* value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName.assign(value); }
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline DocumentClassifierFilter& WithDocumentClassifierName(const Aws::String& value) { SetDocumentClassifierName(value); return *this;}
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline DocumentClassifierFilter& WithDocumentClassifierName(Aws::String&& value) { SetDocumentClassifierName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name that you assigned to the document classifier</p>
+     */
+    inline DocumentClassifierFilter& WithDocumentClassifierName(const char* value) { SetDocumentClassifierName(value); return *this;}
 
 
     /**
@@ -176,6 +208,9 @@ namespace Model
 
     ModelStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_documentClassifierName;
+    bool m_documentClassifierNameHasBeenSet;
 
     Aws::Utils::DateTime m_submitTimeBefore;
     bool m_submitTimeBeforeHasBeenSet;

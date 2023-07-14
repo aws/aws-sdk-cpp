@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/gamelift/model/GameSession.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -52,7 +42,8 @@ GameSession::GameSession() :
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false)
+    m_matchmakerDataHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -80,7 +71,8 @@ GameSession::GameSession(JsonView jsonValue) :
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false)
+    m_matchmakerDataHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -216,6 +208,13 @@ GameSession& GameSession::operator =(JsonView jsonValue)
     m_matchmakerDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -328,6 +327,12 @@ JsonValue GameSession::Jsonize() const
   if(m_matchmakerDataHasBeenSet)
   {
    payload.WithString("MatchmakerData", m_matchmakerData);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

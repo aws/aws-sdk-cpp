@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/ReservationSpecialFeature.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,8 @@ namespace Aws
 
         static const int ADVANCED_AUDIO_HASH = HashingUtils::HashString("ADVANCED_AUDIO");
         static const int AUDIO_NORMALIZATION_HASH = HashingUtils::HashString("AUDIO_NORMALIZATION");
+        static const int MGHD_HASH = HashingUtils::HashString("MGHD");
+        static const int MGUHD_HASH = HashingUtils::HashString("MGUHD");
 
 
         ReservationSpecialFeature GetReservationSpecialFeatureForName(const Aws::String& name)
@@ -44,6 +36,14 @@ namespace Aws
           else if (hashCode == AUDIO_NORMALIZATION_HASH)
           {
             return ReservationSpecialFeature::AUDIO_NORMALIZATION;
+          }
+          else if (hashCode == MGHD_HASH)
+          {
+            return ReservationSpecialFeature::MGHD;
+          }
+          else if (hashCode == MGUHD_HASH)
+          {
+            return ReservationSpecialFeature::MGUHD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +63,10 @@ namespace Aws
             return "ADVANCED_AUDIO";
           case ReservationSpecialFeature::AUDIO_NORMALIZATION:
             return "AUDIO_NORMALIZATION";
+          case ReservationSpecialFeature::MGHD:
+            return "MGHD";
+          case ReservationSpecialFeature::MGUHD:
+            return "MGUHD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

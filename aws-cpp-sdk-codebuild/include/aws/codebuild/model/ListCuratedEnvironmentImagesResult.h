@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -45,43 +35,43 @@ namespace Model
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline const Aws::Vector<EnvironmentPlatform>& GetPlatforms() const{ return m_platforms; }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline void SetPlatforms(const Aws::Vector<EnvironmentPlatform>& value) { m_platforms = value; }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline void SetPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { m_platforms = std::move(value); }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& WithPlatforms(const Aws::Vector<EnvironmentPlatform>& value) { SetPlatforms(value); return *this;}
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& WithPlatforms(Aws::Vector<EnvironmentPlatform>&& value) { SetPlatforms(std::move(value)); return *this;}
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& AddPlatforms(const EnvironmentPlatform& value) { m_platforms.push_back(value); return *this; }
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
-     * AWS CodeBuild.</p>
+     * CodeBuild.</p>
      */
     inline ListCuratedEnvironmentImagesResult& AddPlatforms(EnvironmentPlatform&& value) { m_platforms.push_back(std::move(value)); return *this; }
 

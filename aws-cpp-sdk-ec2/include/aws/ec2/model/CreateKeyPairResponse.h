@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -49,73 +41,94 @@ namespace Model
 
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprint = value; }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = std::move(value); }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline void SetKeyFingerprint(const char* value) { m_keyFingerprint.assign(value); }
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline CreateKeyPairResponse& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline CreateKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
-     * <p>The SHA-1 digest of the DER encoded private key.</p>
+     * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
+     * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
+     * fingerprint is the base64-encoded SHA-256 digest, which is the default for
+     * OpenSSH, starting with OpenSSH 6.8.</p> </li> </ul>
      */
     inline CreateKeyPairResponse& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline const Aws::String& GetKeyMaterial() const{ return m_keyMaterial; }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline void SetKeyMaterial(const Aws::String& value) { m_keyMaterial = value; }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline void SetKeyMaterial(Aws::String&& value) { m_keyMaterial = std::move(value); }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline void SetKeyMaterial(const char* value) { m_keyMaterial.assign(value); }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline CreateKeyPairResponse& WithKeyMaterial(const Aws::String& value) { SetKeyMaterial(value); return *this;}
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline CreateKeyPairResponse& WithKeyMaterial(Aws::String&& value) { SetKeyMaterial(std::move(value)); return *this;}
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline CreateKeyPairResponse& WithKeyMaterial(const char* value) { SetKeyMaterial(value); return *this;}
 
@@ -192,6 +205,42 @@ namespace Model
     inline CreateKeyPairResponse& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
 
 
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline CreateKeyPairResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline CreateKeyPairResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline CreateKeyPairResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline CreateKeyPairResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -216,6 +265,8 @@ namespace Model
     Aws::String m_keyName;
 
     Aws::String m_keyPairId;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

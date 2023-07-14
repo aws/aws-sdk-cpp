@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/firehose/model/CompressionFormat.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,7 @@ namespace Aws
         static const int GZIP_HASH = HashingUtils::HashString("GZIP");
         static const int ZIP_HASH = HashingUtils::HashString("ZIP");
         static const int Snappy_HASH = HashingUtils::HashString("Snappy");
+        static const int HADOOP_SNAPPY_HASH = HashingUtils::HashString("HADOOP_SNAPPY");
 
 
         CompressionFormat GetCompressionFormatForName(const Aws::String& name)
@@ -54,6 +45,10 @@ namespace Aws
           else if (hashCode == Snappy_HASH)
           {
             return CompressionFormat::Snappy;
+          }
+          else if (hashCode == HADOOP_SNAPPY_HASH)
+          {
+            return CompressionFormat::HADOOP_SNAPPY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +72,8 @@ namespace Aws
             return "ZIP";
           case CompressionFormat::Snappy:
             return "Snappy";
+          case CompressionFormat::HADOOP_SNAPPY:
+            return "HADOOP_SNAPPY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

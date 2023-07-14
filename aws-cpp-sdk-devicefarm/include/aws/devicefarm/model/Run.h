@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
@@ -146,9 +136,9 @@ namespace Model
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p> <note> <p>For Android, an
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
      * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p> </note> </li> <li> <p>APPIUM_JAVA_JUNIT</p>
+     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
@@ -162,9 +152,9 @@ namespace Model
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p> <note> <p>For Android, an
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
      * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p> </note> </li> <li> <p>APPIUM_JAVA_JUNIT</p>
+     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
@@ -178,9 +168,9 @@ namespace Model
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p> <note> <p>For Android, an
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
      * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p> </note> </li> <li> <p>APPIUM_JAVA_JUNIT</p>
+     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
@@ -194,9 +184,9 @@ namespace Model
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p> <note> <p>For Android, an
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
      * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p> </note> </li> <li> <p>APPIUM_JAVA_JUNIT</p>
+     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
@@ -210,9 +200,9 @@ namespace Model
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p> <note> <p>For Android, an
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
      * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p> </note> </li> <li> <p>APPIUM_JAVA_JUNIT</p>
+     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
@@ -226,9 +216,9 @@ namespace Model
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p> <note> <p>For Android, an
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER</p>  <p>For Android, an
      * app explorer that traverses an Android app, interacting with it and capturing
-     * screenshots at the same time.</p> </note> </li> <li> <p>APPIUM_JAVA_JUNIT</p>
+     * screenshots at the same time.</p>  </li> <li> <p>APPIUM_JAVA_JUNIT</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li> <p>APPIUM_PYTHON</p> </li> <li>
      * <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p> </li> <li>
@@ -592,54 +582,54 @@ namespace Model
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have unmetered device slots, you must
+     * <code>metered</code>.</p>  <p>If you have unmetered device slots, you must
      * set this to <code>unmetered</code> to use them. Otherwise, the run is counted
-     * toward metered device minutes.</p> </note>
+     * toward metered device minutes.</p> 
      */
     inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have unmetered device slots, you must
+     * <code>metered</code>.</p>  <p>If you have unmetered device slots, you must
      * set this to <code>unmetered</code> to use them. Otherwise, the run is counted
-     * toward metered device minutes.</p> </note>
+     * toward metered device minutes.</p> 
      */
     inline bool BillingMethodHasBeenSet() const { return m_billingMethodHasBeenSet; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have unmetered device slots, you must
+     * <code>metered</code>.</p>  <p>If you have unmetered device slots, you must
      * set this to <code>unmetered</code> to use them. Otherwise, the run is counted
-     * toward metered device minutes.</p> </note>
+     * toward metered device minutes.</p> 
      */
     inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have unmetered device slots, you must
+     * <code>metered</code>.</p>  <p>If you have unmetered device slots, you must
      * set this to <code>unmetered</code> to use them. Otherwise, the run is counted
-     * toward metered device minutes.</p> </note>
+     * toward metered device minutes.</p> 
      */
     inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have unmetered device slots, you must
+     * <code>metered</code>.</p>  <p>If you have unmetered device slots, you must
      * set this to <code>unmetered</code> to use them. Otherwise, the run is counted
-     * toward metered device minutes.</p> </note>
+     * toward metered device minutes.</p> 
      */
     inline Run& WithBillingMethod(const BillingMethod& value) { SetBillingMethod(value); return *this;}
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have unmetered device slots, you must
+     * <code>metered</code>.</p>  <p>If you have unmetered device slots, you must
      * set this to <code>unmetered</code> to use them. Otherwise, the run is counted
-     * toward metered device minutes.</p> </note>
+     * toward metered device minutes.</p> 
      */
     inline Run& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 

@@ -1,24 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/dataexchange/model/ExportAssetToSignedUrlRequestDetails.h>
 #include <aws/dataexchange/model/ExportAssetsToS3RequestDetails.h>
+#include <aws/dataexchange/model/ExportRevisionsToS3RequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetFromSignedUrlRequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromS3RequestDetails.h>
+#include <aws/dataexchange/model/ImportAssetsFromRedshiftDataSharesRequestDetails.h>
+#include <aws/dataexchange/model/ImportAssetFromApiGatewayApiRequestDetails.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +106,37 @@ namespace Model
 
 
     /**
+     * <p>Details about the export to Amazon S3 request.</p>
+     */
+    inline const ExportRevisionsToS3RequestDetails& GetExportRevisionsToS3() const{ return m_exportRevisionsToS3; }
+
+    /**
+     * <p>Details about the export to Amazon S3 request.</p>
+     */
+    inline bool ExportRevisionsToS3HasBeenSet() const { return m_exportRevisionsToS3HasBeenSet; }
+
+    /**
+     * <p>Details about the export to Amazon S3 request.</p>
+     */
+    inline void SetExportRevisionsToS3(const ExportRevisionsToS3RequestDetails& value) { m_exportRevisionsToS3HasBeenSet = true; m_exportRevisionsToS3 = value; }
+
+    /**
+     * <p>Details about the export to Amazon S3 request.</p>
+     */
+    inline void SetExportRevisionsToS3(ExportRevisionsToS3RequestDetails&& value) { m_exportRevisionsToS3HasBeenSet = true; m_exportRevisionsToS3 = std::move(value); }
+
+    /**
+     * <p>Details about the export to Amazon S3 request.</p>
+     */
+    inline RequestDetails& WithExportRevisionsToS3(const ExportRevisionsToS3RequestDetails& value) { SetExportRevisionsToS3(value); return *this;}
+
+    /**
+     * <p>Details about the export to Amazon S3 request.</p>
+     */
+    inline RequestDetails& WithExportRevisionsToS3(ExportRevisionsToS3RequestDetails&& value) { SetExportRevisionsToS3(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about the import from signed URL request.</p>
      */
     inline const ImportAssetFromSignedUrlRequestDetails& GetImportAssetFromSignedUrl() const{ return m_importAssetFromSignedUrl; }
@@ -173,6 +197,68 @@ namespace Model
      */
     inline RequestDetails& WithImportAssetsFromS3(ImportAssetsFromS3RequestDetails&& value) { SetImportAssetsFromS3(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline const ImportAssetsFromRedshiftDataSharesRequestDetails& GetImportAssetsFromRedshiftDataShares() const{ return m_importAssetsFromRedshiftDataShares; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline bool ImportAssetsFromRedshiftDataSharesHasBeenSet() const { return m_importAssetsFromRedshiftDataSharesHasBeenSet; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline void SetImportAssetsFromRedshiftDataShares(const ImportAssetsFromRedshiftDataSharesRequestDetails& value) { m_importAssetsFromRedshiftDataSharesHasBeenSet = true; m_importAssetsFromRedshiftDataShares = value; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline void SetImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesRequestDetails&& value) { m_importAssetsFromRedshiftDataSharesHasBeenSet = true; m_importAssetsFromRedshiftDataShares = std::move(value); }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline RequestDetails& WithImportAssetsFromRedshiftDataShares(const ImportAssetsFromRedshiftDataSharesRequestDetails& value) { SetImportAssetsFromRedshiftDataShares(value); return *this;}
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare request.</p>
+     */
+    inline RequestDetails& WithImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesRequestDetails&& value) { SetImportAssetsFromRedshiftDataShares(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline const ImportAssetFromApiGatewayApiRequestDetails& GetImportAssetFromApiGatewayApi() const{ return m_importAssetFromApiGatewayApi; }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline bool ImportAssetFromApiGatewayApiHasBeenSet() const { return m_importAssetFromApiGatewayApiHasBeenSet; }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline void SetImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = value; }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline void SetImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = std::move(value); }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline RequestDetails& WithImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { SetImportAssetFromApiGatewayApi(value); return *this;}
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline RequestDetails& WithImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { SetImportAssetFromApiGatewayApi(std::move(value)); return *this;}
+
   private:
 
     ExportAssetToSignedUrlRequestDetails m_exportAssetToSignedUrl;
@@ -181,11 +267,20 @@ namespace Model
     ExportAssetsToS3RequestDetails m_exportAssetsToS3;
     bool m_exportAssetsToS3HasBeenSet;
 
+    ExportRevisionsToS3RequestDetails m_exportRevisionsToS3;
+    bool m_exportRevisionsToS3HasBeenSet;
+
     ImportAssetFromSignedUrlRequestDetails m_importAssetFromSignedUrl;
     bool m_importAssetFromSignedUrlHasBeenSet;
 
     ImportAssetsFromS3RequestDetails m_importAssetsFromS3;
     bool m_importAssetsFromS3HasBeenSet;
+
+    ImportAssetsFromRedshiftDataSharesRequestDetails m_importAssetsFromRedshiftDataShares;
+    bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
+
+    ImportAssetFromApiGatewayApiRequestDetails m_importAssetFromApiGatewayApi;
+    bool m_importAssetFromApiGatewayApiHasBeenSet;
   };
 
 } // namespace Model

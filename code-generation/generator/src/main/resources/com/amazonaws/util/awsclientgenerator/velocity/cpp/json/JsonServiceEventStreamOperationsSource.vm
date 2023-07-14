@@ -3,54 +3,9 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
                 const ${operation.name}ResponseReceivedHandler& responseHandler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
-  Aws::StringStream ss;
-#set($uriParts = $operation.http.requestUriParts)
-#set($uriVars = $operation.http.requestParameters)
-#set($partIndex = 1)
-#set($uriPartString = "${uriParts.get(0)}")
-#set($queryStart = false)
-#if($uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-  uri.SetPath(uri.GetPath() + ss.str());
-#end
-  ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
-#end
-#foreach($var in $uriVars)
-#set($varIndex = $partIndex - 1)
-#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
-#if($partShapeMember.shape.enum)
-  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
-#else
-  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
-#end
-#if($uriParts.size() > $partIndex)
-#set($uriPartString = "${uriParts.get($partIndex)}")
-#if(!$queryStart && $uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-#end
-  uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
-#end
-#end
-#set($partIndex = $partIndex + 1)
-#end
-#if(!$queryStart)
-  uri.SetPath(uri.GetPath() + ss.str());
-#else
-  uri.SetQueryString(ss.str());
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
@@ -67,9 +22,10 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #break
 #end
 #end
+#set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
   auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.Set$streamModelName(eventEncoderStream); // this becomes the body of the request
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
@@ -81,11 +37,11 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
       }
       else
       {
-        request.Get${streamModelName}()->Close();
+        request.Get${streamModelNameWithFirstLetterCapitalized}()->Close();
         responseHandler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
       }
       return ${operation.name}Outcome(NoResult());
   });
   sem->WaitOne();
-  streamReadyHandler(*request.Get${streamModelName}());
+  streamReadyHandler(*request.Get${streamModelNameWithFirstLetterCapitalized}());
 }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -71,10 +61,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -109,12 +99,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -148,10 +138,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -186,12 +176,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -225,10 +215,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -263,12 +253,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -302,10 +292,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -340,12 +330,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -379,10 +369,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -417,12 +407,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -456,10 +446,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -494,12 +484,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -533,10 +523,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -571,12 +561,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -610,10 +600,10 @@ namespace Model
      * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
      * volume, in GiB.</p> </li> <li> <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
-     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
-     * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The ID of the security group for the
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
+     * for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p> <code>launch.group-id</code> - The ID of the security group for the
      * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
      * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
      * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
@@ -648,12 +638,12 @@ namespace Model
      * <code>cancelled</code> | <code>failed</code>). Spot request status information
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value

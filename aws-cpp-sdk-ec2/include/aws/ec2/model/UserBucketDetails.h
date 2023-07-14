@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the S3 bucket for the disk image.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the Amazon S3 bucket for the disk image.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucketDetails">AWS
    * API Reference</a></p>
    */
@@ -50,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline UserBucketDetails& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline UserBucketDetails& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket from which the disk image was created.</p>
+     * <p>The Amazon S3 bucket from which the disk image was created.</p>
      */
     inline UserBucketDetails& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

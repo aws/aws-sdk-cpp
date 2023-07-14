@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -87,26 +77,42 @@ namespace Model
 
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You can retrieve
-     * the application version ID using <a>DescribeApplication</a>.</p>
+     * <p>The version ID of the Kinesis Data Analytics application. You must provide
+     * the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You can retrieve
-     * the application version ID using <a>DescribeApplication</a>.</p>
+     * <p>The version ID of the Kinesis Data Analytics application. You must provide
+     * the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You can retrieve
-     * the application version ID using <a>DescribeApplication</a>.</p>
+     * <p>The version ID of the Kinesis Data Analytics application. You must provide
+     * the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You can retrieve
-     * the application version ID using <a>DescribeApplication</a>.</p>
+     * <p>The version ID of the Kinesis Data Analytics application. You must provide
+     * the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 
@@ -141,6 +147,87 @@ namespace Model
      */
     inline AddApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOption(CloudWatchLoggingOption&& value) { SetCloudWatchLoggingOption(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline AddApplicationCloudWatchLoggingOptionRequest& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline AddApplicationCloudWatchLoggingOptionRequest& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline AddApplicationCloudWatchLoggingOptionRequest& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -151,6 +238,9 @@ namespace Model
 
     CloudWatchLoggingOption m_cloudWatchLoggingOption;
     bool m_cloudWatchLoggingOptionHasBeenSet;
+
+    Aws::String m_conditionalToken;
+    bool m_conditionalTokenHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/ResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int APPLICATION_LOAD_BALANCER_HASH = HashingUtils::HashString("APPLICATION_LOAD_BALANCER");
         static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
+        static const int APPSYNC_HASH = HashingUtils::HashString("APPSYNC");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == API_GATEWAY_HASH)
           {
             return ResourceType::API_GATEWAY;
+          }
+          else if (hashCode == APPSYNC_HASH)
+          {
+            return ResourceType::APPSYNC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "APPLICATION_LOAD_BALANCER";
           case ResourceType::API_GATEWAY:
             return "API_GATEWAY";
+          case ResourceType::APPSYNC:
+            return "APPSYNC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

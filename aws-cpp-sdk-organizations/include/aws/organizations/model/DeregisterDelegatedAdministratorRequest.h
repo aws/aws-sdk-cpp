@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -94,82 +84,82 @@ namespace Model
 
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline DeregisterDelegatedAdministratorRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline DeregisterDelegatedAdministratorRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The service principal name of an AWS service for which the account is a
-     * delegated administrator.</p> <p>Delegated administrator privileges are revoked
-     * for only the specified AWS service from the member account. If the specified
-     * service is the only service for which the member account is a delegated
-     * administrator, the operation also revokes Organizations read action
-     * permissions.</p>
+     * <p>The service principal name of an Amazon Web Services service for which the
+     * account is a delegated administrator.</p> <p>Delegated administrator privileges
+     * are revoked for only the specified Amazon Web Services service from the member
+     * account. If the specified service is the only service for which the member
+     * account is a delegated administrator, the operation also revokes Organizations
+     * read action permissions.</p>
      */
     inline DeregisterDelegatedAdministratorRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
 

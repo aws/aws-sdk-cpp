@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -45,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline const Aws::String& GetTransformJobName() const{ return m_transformJobName; }
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline void SetTransformJobName(Aws::String&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::move(value); }
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline void SetTransformJobName(const char* value) { m_transformJobNameHasBeenSet = true; m_transformJobName.assign(value); }
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline StopTransformJobRequest& WithTransformJobName(const Aws::String& value) { SetTransformJobName(value); return *this;}
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline StopTransformJobRequest& WithTransformJobName(Aws::String&& value) { SetTransformJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the transform job to stop.</p>
+     * <p>The name of the batch transform job to stop.</p>
      */
     inline StopTransformJobRequest& WithTransformJobName(const char* value) { SetTransformJobName(value); return *this;}
 

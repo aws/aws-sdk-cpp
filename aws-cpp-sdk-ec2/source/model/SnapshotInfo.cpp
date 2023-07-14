@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/SnapshotInfo.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -43,7 +33,8 @@ SnapshotInfo::SnapshotInfo() :
     m_startTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
 }
 
@@ -60,7 +51,8 @@ SnapshotInfo::SnapshotInfo(const XmlNode& xmlNode) :
     m_startTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -137,6 +129,12 @@ SnapshotInfo& SnapshotInfo::operator =(const XmlNode& xmlNode)
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -200,6 +198,11 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
 }
 
 void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -249,6 +252,10 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 }
 

@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 
@@ -83,13 +73,78 @@ TEST(XmlSerializerTest, TestXmlSerialize)
     ASSERT_TRUE(doc.GetErrorMessage().empty());
 }
 
+TEST(XmlSerializerTest, TestXmlSerializeNewlines)
+{
+    XmlDocument doc = XmlDocument::CreateWithRootNode("Newlines");
+    XmlNode rootElement = doc.GetRootElement();
+    XmlNode itemLF = rootElement.CreateChildElement("LF");
+    itemLF.SetText("a\n+\n");
+    XmlNode itemCR = rootElement.CreateChildElement("CR");
+    itemCR.SetText("b\r-\r");
+    XmlNode itemLFCR = rootElement.CreateChildElement("LFCR");
+    itemLFCR.SetText("c\n\r*");
+    XmlNode itemCRLF = rootElement.CreateChildElement("CRLF");
+    itemCRLF.SetText("d\r\n/");
+    Aws::String serializedXml = doc.ConvertToString();
+
+    Aws::String toCompare = "<?xml version=\"1.0\"?>\n"
+        "<Newlines>\n"
+        "    <LF>a&#xA;+&#xA;</LF>\n"
+        "    <CR>b&#xD;-&#xD;</CR>\n"
+        "    <LFCR>c&#xA;&#xD;*</LFCR>\n"
+        "    <CRLF>d&#xD;&#xA;/</CRLF>\n"
+        "</Newlines>\n";
+    ASSERT_EQ(toCompare, serializedXml);
+    ASSERT_TRUE(doc.GetErrorMessage().empty());
+}
+
 TEST(XmlSerializerTest, TestXmlHasChildren)
 {
     XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
     XmlNode rootElement = doc.GetRootElement();
     XmlNode item1 = rootElement.CreateChildElement("Item");
-   
+
     ASSERT_TRUE(rootElement.HasChildren());
     ASSERT_FALSE(item1.HasChildren());
 }
-    
+
+TEST(XmlSerializerTest, TestXmlCopyAndMove)
+{
+    const char* testXml = "<?xml version=\"1.0\" ?>\n"
+        "<!-- Our to do list data -->\n"
+        "<ToDo>\n"
+        "</ToDo>";
+
+    XmlDocument doc = XmlDocument::CreateFromXmlString(testXml);
+    ASSERT_TRUE(doc.WasParseSuccessful());
+
+    // Copy constructor
+    XmlDocument copiedDoc(doc);
+    ASSERT_TRUE(copiedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", copiedDoc.GetRootElement().GetName());
+
+    ASSERT_TRUE(doc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", doc.GetRootElement().GetName());
+
+    // Move constructor
+    XmlDocument movedDoc(std::move(doc));
+    ASSERT_TRUE(movedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", movedDoc.GetRootElement().GetName());
+    ASSERT_EQ("", doc.ConvertToString());
+
+    // Copy assignment
+    {
+        XmlDocument scopedDoc = XmlDocument::CreateFromXmlString(testXml);
+        copiedDoc = scopedDoc;
+    }
+    ASSERT_TRUE(copiedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", copiedDoc.GetRootElement().GetName());
+
+    // Move assignment
+    {
+        XmlDocument scopedDoc = XmlDocument::CreateFromXmlString(testXml);
+        movedDoc = std::move(scopedDoc);
+    }
+    ASSERT_TRUE(movedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", movedDoc.GetRootElement().GetName());
+}

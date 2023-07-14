@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -54,169 +44,169 @@ namespace Model
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected configuration in that it has been deleted.</p> </li> <li> <p>
      * <code>MODIFIED</code>: The resource differs from its expected configuration.</p>
-     * </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if
-     * the resource differs from its expected configuration.</p> <p>Any resources that
-     * do not currently support drift detection have a status of
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the
+     * resource differs from its expected configuration.</p> <p>Any resources that
+     * don't currently support drift detection have a status of
      * <code>NOT_CHECKED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-     * Rolling Back an Update</a> in the AWS CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>IN_SYNC</code>: The resources's actual configuration matches its
-     * expected configuration.</p> </li> </ul>
+     * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
+     * configuration.</p> </li> </ul>
      */
     inline const StackResourceDriftStatus& GetStackResourceDriftStatus() const{ return m_stackResourceDriftStatus; }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected configuration in that it has been deleted.</p> </li> <li> <p>
      * <code>MODIFIED</code>: The resource differs from its expected configuration.</p>
-     * </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if
-     * the resource differs from its expected configuration.</p> <p>Any resources that
-     * do not currently support drift detection have a status of
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the
+     * resource differs from its expected configuration.</p> <p>Any resources that
+     * don't currently support drift detection have a status of
      * <code>NOT_CHECKED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-     * Rolling Back an Update</a> in the AWS CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>IN_SYNC</code>: The resources's actual configuration matches its
-     * expected configuration.</p> </li> </ul>
+     * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
+     * configuration.</p> </li> </ul>
      */
     inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected configuration in that it has been deleted.</p> </li> <li> <p>
      * <code>MODIFIED</code>: The resource differs from its expected configuration.</p>
-     * </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if
-     * the resource differs from its expected configuration.</p> <p>Any resources that
-     * do not currently support drift detection have a status of
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the
+     * resource differs from its expected configuration.</p> <p>Any resources that
+     * don't currently support drift detection have a status of
      * <code>NOT_CHECKED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-     * Rolling Back an Update</a> in the AWS CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>IN_SYNC</code>: The resources's actual configuration matches its
-     * expected configuration.</p> </li> </ul>
+     * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
+     * configuration.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatus(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected configuration in that it has been deleted.</p> </li> <li> <p>
      * <code>MODIFIED</code>: The resource differs from its expected configuration.</p>
-     * </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if
-     * the resource differs from its expected configuration.</p> <p>Any resources that
-     * do not currently support drift detection have a status of
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the
+     * resource differs from its expected configuration.</p> <p>Any resources that
+     * don't currently support drift detection have a status of
      * <code>NOT_CHECKED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-     * Rolling Back an Update</a> in the AWS CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>IN_SYNC</code>: The resources's actual configuration matches its
-     * expected configuration.</p> </li> </ul>
+     * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
+     * configuration.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatus(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = std::move(value); }
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected configuration in that it has been deleted.</p> </li> <li> <p>
      * <code>MODIFIED</code>: The resource differs from its expected configuration.</p>
-     * </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if
-     * the resource differs from its expected configuration.</p> <p>Any resources that
-     * do not currently support drift detection have a status of
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the
+     * resource differs from its expected configuration.</p> <p>Any resources that
+     * don't currently support drift detection have a status of
      * <code>NOT_CHECKED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-     * Rolling Back an Update</a> in the AWS CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>IN_SYNC</code>: The resources's actual configuration matches its
-     * expected configuration.</p> </li> </ul>
+     * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
+     * configuration.</p> </li> </ul>
      */
     inline StackResourceDriftInformationSummary& WithStackResourceDriftStatus(const StackResourceDriftStatus& value) { SetStackResourceDriftStatus(value); return *this;}
 
     /**
      * <p>Status of the resource's actual configuration compared to its expected
-     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * configuration.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
      * its expected configuration in that it has been deleted.</p> </li> <li> <p>
      * <code>MODIFIED</code>: The resource differs from its expected configuration.</p>
-     * </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if
-     * the resource differs from its expected configuration.</p> <p>Any resources that
-     * do not currently support drift detection have a status of
+     * </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the
+     * resource differs from its expected configuration.</p> <p>Any resources that
+     * don't currently support drift detection have a status of
      * <code>NOT_CHECKED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-     * Rolling Back an Update</a> in the AWS CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>IN_SYNC</code>: The resources's actual configuration matches its
-     * expected configuration.</p> </li> </ul>
+     * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
+     * configuration.</p> </li> </ul>
      */
     inline StackResourceDriftInformationSummary& WithStackResourceDriftStatus(StackResourceDriftStatus&& value) { SetStackResourceDriftStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>When AWS CloudFormation last checked if the resource had drifted from its
+     * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
     inline const Aws::Utils::DateTime& GetLastCheckTimestamp() const{ return m_lastCheckTimestamp; }
 
     /**
-     * <p>When AWS CloudFormation last checked if the resource had drifted from its
+     * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
     inline bool LastCheckTimestampHasBeenSet() const { return m_lastCheckTimestampHasBeenSet; }
 
     /**
-     * <p>When AWS CloudFormation last checked if the resource had drifted from its
+     * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
     inline void SetLastCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = value; }
 
     /**
-     * <p>When AWS CloudFormation last checked if the resource had drifted from its
+     * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
     inline void SetLastCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = std::move(value); }
 
     /**
-     * <p>When AWS CloudFormation last checked if the resource had drifted from its
+     * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
     inline StackResourceDriftInformationSummary& WithLastCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastCheckTimestamp(value); return *this;}
 
     /**
-     * <p>When AWS CloudFormation last checked if the resource had drifted from its
+     * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
     inline StackResourceDriftInformationSummary& WithLastCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastCheckTimestamp(std::move(value)); return *this;}

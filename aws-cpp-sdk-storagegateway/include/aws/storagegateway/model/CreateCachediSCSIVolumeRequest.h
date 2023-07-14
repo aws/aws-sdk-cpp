@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -95,8 +85,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -105,8 +95,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -115,8 +105,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -125,8 +115,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -135,8 +125,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -145,8 +135,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -155,8 +145,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -165,8 +155,8 @@ namespace Model
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
      * cached volume. Specify this field if you want to create the iSCSI storage volume
-     * from a snapshot otherwise do not include this field. To list snapshots for your
-     * account use <a
+     * from a snapshot; otherwise, do not include this field. To list snapshots for
+     * your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
@@ -330,7 +320,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -338,7 +328,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
@@ -346,7 +336,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
@@ -354,7 +344,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
@@ -362,7 +352,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
@@ -370,7 +360,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
@@ -378,7 +368,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
@@ -386,7 +376,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
@@ -442,164 +432,176 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline CreateCachediSCSIVolumeRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline CreateCachediSCSIVolumeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline CreateCachediSCSIVolumeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline CreateCachediSCSIVolumeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers that you can represent in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256 characters.</p>
-     * </note>
+     * 
      */
     inline CreateCachediSCSIVolumeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

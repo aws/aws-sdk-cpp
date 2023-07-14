@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
@@ -45,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline const Aws::String& GetAttackId() const{ return m_attackId; }
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline bool AttackIdHasBeenSet() const { return m_attackIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline void SetAttackId(const Aws::String& value) { m_attackIdHasBeenSet = true; m_attackId = value; }
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline void SetAttackId(const char* value) { m_attackIdHasBeenSet = true; m_attackId.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline DescribeAttackRequest& WithAttackId(const Aws::String& value) { SetAttackId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline DescribeAttackRequest& WithAttackId(Aws::String&& value) { SetAttackId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     * <p>The unique identifier (ID) for the attack.</p>
      */
     inline DescribeAttackRequest& WithAttackId(const char* value) { SetAttackId(value); return *this;}
 

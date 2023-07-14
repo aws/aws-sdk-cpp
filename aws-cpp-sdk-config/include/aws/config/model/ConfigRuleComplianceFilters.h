@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -50,96 +40,96 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline ConfigRuleComplianceFilters& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline ConfigRuleComplianceFilters& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline ConfigRuleComplianceFilters& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
 
     /**
      * <p>The rule compliance status.</p> <p>For the
-     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * <code>ConfigRuleComplianceFilters</code> data type, Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
      * <p>The rule compliance status.</p> <p>For the
-     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * <code>ConfigRuleComplianceFilters</code> data type, Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The rule compliance status.</p> <p>For the
-     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * <code>ConfigRuleComplianceFilters</code> data type, Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
      * <p>The rule compliance status.</p> <p>For the
-     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * <code>ConfigRuleComplianceFilters</code> data type, Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
      * <p>The rule compliance status.</p> <p>For the
-     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * <code>ConfigRuleComplianceFilters</code> data type, Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
     inline ConfigRuleComplianceFilters& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
      * <p>The rule compliance status.</p> <p>For the
-     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
-     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * <code>ConfigRuleComplianceFilters</code> data type, Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support
+     * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
     inline ConfigRuleComplianceFilters& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}

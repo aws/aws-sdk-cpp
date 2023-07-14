@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -28,8 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to generate a <a>ClientCertificate</a> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A request to generate a ClientCertificate resource.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificateRequest">AWS
    * API Reference</a></p>
    */
@@ -48,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline GenerateClientCertificateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline GenerateClientCertificateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the <a>ClientCertificate</a>.</p>
+     * <p>The description of the ClientCertificate.</p>
      */
     inline GenerateClientCertificateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

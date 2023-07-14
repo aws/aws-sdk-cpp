@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -307,8 +297,8 @@ namespace Model
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
      * the first output. This duplicates the information that is listed for the first
-     * output in the Outputs object.</p> <important> <p>Outputs recommended
-     * instead.</p> </important> <p>A section of the request or response body that
+     * output in the Outputs object.</p>  <p>Outputs recommended
+     * instead.</p>  <p>A section of the request or response body that
      * provides information about the transcoded (target) file. </p>
      */
     inline const JobOutput& GetOutput() const{ return m_output; }
@@ -317,8 +307,8 @@ namespace Model
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
      * the first output. This duplicates the information that is listed for the first
-     * output in the Outputs object.</p> <important> <p>Outputs recommended
-     * instead.</p> </important> <p>A section of the request or response body that
+     * output in the Outputs object.</p>  <p>Outputs recommended
+     * instead.</p>  <p>A section of the request or response body that
      * provides information about the transcoded (target) file. </p>
      */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
@@ -327,8 +317,8 @@ namespace Model
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
      * the first output. This duplicates the information that is listed for the first
-     * output in the Outputs object.</p> <important> <p>Outputs recommended
-     * instead.</p> </important> <p>A section of the request or response body that
+     * output in the Outputs object.</p>  <p>Outputs recommended
+     * instead.</p>  <p>A section of the request or response body that
      * provides information about the transcoded (target) file. </p>
      */
     inline void SetOutput(const JobOutput& value) { m_outputHasBeenSet = true; m_output = value; }
@@ -337,8 +327,8 @@ namespace Model
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
      * the first output. This duplicates the information that is listed for the first
-     * output in the Outputs object.</p> <important> <p>Outputs recommended
-     * instead.</p> </important> <p>A section of the request or response body that
+     * output in the Outputs object.</p>  <p>Outputs recommended
+     * instead.</p>  <p>A section of the request or response body that
      * provides information about the transcoded (target) file. </p>
      */
     inline void SetOutput(JobOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
@@ -347,8 +337,8 @@ namespace Model
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
      * the first output. This duplicates the information that is listed for the first
-     * output in the Outputs object.</p> <important> <p>Outputs recommended
-     * instead.</p> </important> <p>A section of the request or response body that
+     * output in the Outputs object.</p>  <p>Outputs recommended
+     * instead.</p>  <p>A section of the request or response body that
      * provides information about the transcoded (target) file. </p>
      */
     inline Job& WithOutput(const JobOutput& value) { SetOutput(value); return *this;}
@@ -357,8 +347,8 @@ namespace Model
      * <p>If you specified one output for a job, information about that output. If you
      * specified multiple outputs for a job, the Output object lists information about
      * the first output. This duplicates the information that is listed for the first
-     * output in the Outputs object.</p> <important> <p>Outputs recommended
-     * instead.</p> </important> <p>A section of the request or response body that
+     * output in the Outputs object.</p>  <p>Outputs recommended
+     * instead.</p>  <p>A section of the request or response body that
      * provides information about the transcoded (target) file. </p>
      */
     inline Job& WithOutput(JobOutput&& value) { SetOutput(std::move(value)); return *this;}
@@ -519,8 +509,8 @@ namespace Model
 
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -529,8 +519,8 @@ namespace Model
     inline const Aws::Vector<Playlist>& GetPlaylists() const{ return m_playlists; }
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -539,8 +529,8 @@ namespace Model
     inline bool PlaylistsHasBeenSet() const { return m_playlistsHasBeenSet; }
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -549,8 +539,8 @@ namespace Model
     inline void SetPlaylists(const Aws::Vector<Playlist>& value) { m_playlistsHasBeenSet = true; m_playlists = value; }
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -559,8 +549,8 @@ namespace Model
     inline void SetPlaylists(Aws::Vector<Playlist>&& value) { m_playlistsHasBeenSet = true; m_playlists = std::move(value); }
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -569,8 +559,8 @@ namespace Model
     inline Job& WithPlaylists(const Aws::Vector<Playlist>& value) { SetPlaylists(value); return *this;}
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -579,8 +569,8 @@ namespace Model
     inline Job& WithPlaylists(Aws::Vector<Playlist>&& value) { SetPlaylists(std::move(value)); return *this;}
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists
@@ -589,8 +579,8 @@ namespace Model
     inline Job& AddPlaylists(const Playlist& value) { m_playlistsHasBeenSet = true; m_playlists.push_back(value); return *this; }
 
     /**
-     * <important> <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
-     * </important> <p>If you specify a preset in <code>PresetId</code> for which the
+     *  <p>Outputs in Fragmented MP4 or MPEG-TS format only.</p>
+     *  <p>If you specify a preset in <code>PresetId</code> for which the
      * value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS),
      * <code>Playlists</code> contains information about the master playlists that you
      * want Elastic Transcoder to create.</p> <p>The maximum number of master playlists

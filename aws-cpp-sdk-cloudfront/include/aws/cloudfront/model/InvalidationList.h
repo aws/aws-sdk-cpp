@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -40,7 +30,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
    * Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/InvalidationList">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/InvalidationList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API InvalidationList
@@ -218,75 +208,75 @@ namespace Model
 
 
     /**
-     * <p>The number of invalidation batches that were created by the current AWS
-     * account. </p>
+     * <p>The number of invalidation batches that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of invalidation batches that were created by the current AWS
-     * account. </p>
+     * <p>The number of invalidation batches that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of invalidation batches that were created by the current AWS
-     * account. </p>
+     * <p>The number of invalidation batches that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of invalidation batches that were created by the current AWS
-     * account. </p>
+     * <p>The number of invalidation batches that were created by the current Amazon
+     * Web Services account. </p>
      */
     inline InvalidationList& WithQuantity(int value) { SetQuantity(value); return *this;}
 
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline const Aws::Vector<InvalidationSummary>& GetItems() const{ return m_items; }
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline void SetItems(const Aws::Vector<InvalidationSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline void SetItems(Aws::Vector<InvalidationSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline InvalidationList& WithItems(const Aws::Vector<InvalidationSummary>& value) { SetItems(value); return *this;}
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline InvalidationList& WithItems(Aws::Vector<InvalidationSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline InvalidationList& AddItems(const InvalidationSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
-     * each invalidation batch created by the current AWS account.</p>
+     * each invalidation batch created by the current Amazon Web Services account.</p>
      */
     inline InvalidationList& AddItems(InvalidationSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

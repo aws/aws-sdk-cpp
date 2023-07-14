@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/amplify/model/UpdateAppRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,11 +22,14 @@ UpdateAppRequest::UpdateAppRequest() :
     m_environmentVariablesHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
+    m_enableBranchAutoDeletion(false),
+    m_enableBranchAutoDeletionHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
@@ -91,6 +84,12 @@ Aws::String UpdateAppRequest::SerializePayload() const
 
   }
 
+  if(m_enableBranchAutoDeletionHasBeenSet)
+  {
+   payload.WithBool("enableBranchAutoDeletion", m_enableBranchAutoDeletion);
+
+  }
+
   if(m_enableBasicAuthHasBeenSet)
   {
    payload.WithBool("enableBasicAuth", m_enableBasicAuth);
@@ -117,6 +116,12 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_customHeadersHasBeenSet)
+  {
+   payload.WithString("customHeaders", m_customHeaders);
 
   }
 

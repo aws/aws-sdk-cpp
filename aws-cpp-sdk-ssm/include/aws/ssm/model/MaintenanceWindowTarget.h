@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -165,8 +155,8 @@ namespace Model
 
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -174,8 +164,8 @@ namespace Model
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -183,8 +173,8 @@ namespace Model
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -192,8 +182,8 @@ namespace Model
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -201,8 +191,8 @@ namespace Model
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -210,8 +200,8 @@ namespace Model
     inline MaintenanceWindowTarget& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -219,8 +209,8 @@ namespace Model
     inline MaintenanceWindowTarget& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -228,8 +218,8 @@ namespace Model
     inline MaintenanceWindowTarget& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
-     * following format:</p> <p>
+     * <p>The targets, either managed nodes or tags.</p> <p>Specify managed nodes using
+     * the following format:</p> <p>
      * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
      * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
      * name&gt;,Values=&lt;tag value&gt;</code>.</p>
@@ -238,50 +228,58 @@ namespace Model
 
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 

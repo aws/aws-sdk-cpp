@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -61,10 +51,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -90,10 +80,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -119,10 +109,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -148,10 +138,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -177,10 +167,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -206,10 +196,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is

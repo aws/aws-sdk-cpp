@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticloadbalancingv2/model/ProtocolEnum.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,7 @@ namespace Aws
         static const int TLS_HASH = HashingUtils::HashString("TLS");
         static const int UDP_HASH = HashingUtils::HashString("UDP");
         static const int TCP_UDP_HASH = HashingUtils::HashString("TCP_UDP");
+        static const int GENEVE_HASH = HashingUtils::HashString("GENEVE");
 
 
         ProtocolEnum GetProtocolEnumForName(const Aws::String& name)
@@ -65,6 +56,10 @@ namespace Aws
           {
             return ProtocolEnum::TCP_UDP;
           }
+          else if (hashCode == GENEVE_HASH)
+          {
+            return ProtocolEnum::GENEVE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +86,8 @@ namespace Aws
             return "UDP";
           case ProtocolEnum::TCP_UDP:
             return "TCP_UDP";
+          case ProtocolEnum::GENEVE:
+            return "GENEVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

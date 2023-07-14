@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/Transport.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,9 +24,16 @@ Transport::Transport() :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_maxSyncBuffer(0),
+    m_maxSyncBufferHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_remoteIdHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false)
@@ -49,9 +46,16 @@ Transport::Transport(JsonView jsonValue) :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_maxSyncBuffer(0),
+    m_maxSyncBufferHasBeenSet(false),
+    m_minLatency(0),
+    m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_remoteIdHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false)
@@ -85,6 +89,20 @@ Transport& Transport::operator =(JsonView jsonValue)
     m_maxLatencyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxSyncBuffer"))
+  {
+    m_maxSyncBuffer = jsonValue.GetInteger("maxSyncBuffer");
+
+    m_maxSyncBufferHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minLatency"))
+  {
+    m_minLatency = jsonValue.GetInteger("minLatency");
+
+    m_minLatencyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
@@ -97,6 +115,20 @@ Transport& Transport::operator =(JsonView jsonValue)
     m_remoteId = jsonValue.GetString("remoteId");
 
     m_remoteIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderControlPort"))
+  {
+    m_senderControlPort = jsonValue.GetInteger("senderControlPort");
+
+    m_senderControlPortHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderIpAddress"))
+  {
+    m_senderIpAddress = jsonValue.GetString("senderIpAddress");
+
+    m_senderIpAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("smoothingLatency"))
@@ -143,6 +175,18 @@ JsonValue Transport::Jsonize() const
 
   }
 
+  if(m_maxSyncBufferHasBeenSet)
+  {
+   payload.WithInteger("maxSyncBuffer", m_maxSyncBuffer);
+
+  }
+
+  if(m_minLatencyHasBeenSet)
+  {
+   payload.WithInteger("minLatency", m_minLatency);
+
+  }
+
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
@@ -151,6 +195,18 @@ JsonValue Transport::Jsonize() const
   if(m_remoteIdHasBeenSet)
   {
    payload.WithString("remoteId", m_remoteId);
+
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/CmafGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,6 +30,9 @@ CmafGroupSettings::CmafGroupSettings() :
     m_encryptionHasBeenSet(false),
     m_fragmentLength(0),
     m_fragmentLengthHasBeenSet(false),
+    m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(CmafManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
@@ -50,12 +43,18 @@ CmafGroupSettings::CmafGroupSettings() :
     m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(CmafMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
@@ -77,6 +76,9 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_encryptionHasBeenSet(false),
     m_fragmentLength(0),
     m_fragmentLengthHasBeenSet(false),
+    m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(CmafManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
@@ -87,12 +89,18 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_minFinalSegmentLengthHasBeenSet(false),
     m_mpdProfile(CmafMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
+    m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
+    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
@@ -164,6 +172,20 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_fragmentLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageBasedTrickPlay"))
+  {
+    m_imageBasedTrickPlay = CmafImageBasedTrickPlayMapper::GetCmafImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
+
+    m_imageBasedTrickPlayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("manifestCompression"))
   {
     m_manifestCompression = CmafManifestCompressionMapper::GetCmafManifestCompressionForName(jsonValue.GetString("manifestCompression"));
@@ -199,6 +221,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_mpdProfileHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ptsOffsetHandlingForBFrames"))
+  {
+    m_ptsOffsetHandlingForBFrames = CmafPtsOffsetHandlingForBFramesMapper::GetCmafPtsOffsetHandlingForBFramesForName(jsonValue.GetString("ptsOffsetHandlingForBFrames"));
+
+    m_ptsOffsetHandlingForBFramesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("segmentControl"))
   {
     m_segmentControl = CmafSegmentControlMapper::GetCmafSegmentControlForName(jsonValue.GetString("segmentControl"));
@@ -213,11 +242,25 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_segmentLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = CmafSegmentLengthControlMapper::GetCmafSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("streamInfResolution"))
   {
     m_streamInfResolution = CmafStreamInfResolutionMapper::GetCmafStreamInfResolutionForName(jsonValue.GetString("streamInfResolution"));
 
     m_streamInfResolutionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetDurationCompatibilityMode"))
+  {
+    m_targetDurationCompatibilityMode = CmafTargetDurationCompatibilityModeMapper::GetCmafTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
+
+    m_targetDurationCompatibilityModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("writeDashManifest"))
@@ -299,6 +342,17 @@ JsonValue CmafGroupSettings::Jsonize() const
 
   }
 
+  if(m_imageBasedTrickPlayHasBeenSet)
+  {
+   payload.WithString("imageBasedTrickPlay", CmafImageBasedTrickPlayMapper::GetNameForCmafImageBasedTrickPlay(m_imageBasedTrickPlay));
+  }
+
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
+
+  }
+
   if(m_manifestCompressionHasBeenSet)
   {
    payload.WithString("manifestCompression", CmafManifestCompressionMapper::GetNameForCmafManifestCompression(m_manifestCompression));
@@ -326,6 +380,11 @@ JsonValue CmafGroupSettings::Jsonize() const
    payload.WithString("mpdProfile", CmafMpdProfileMapper::GetNameForCmafMpdProfile(m_mpdProfile));
   }
 
+  if(m_ptsOffsetHandlingForBFramesHasBeenSet)
+  {
+   payload.WithString("ptsOffsetHandlingForBFrames", CmafPtsOffsetHandlingForBFramesMapper::GetNameForCmafPtsOffsetHandlingForBFrames(m_ptsOffsetHandlingForBFrames));
+  }
+
   if(m_segmentControlHasBeenSet)
   {
    payload.WithString("segmentControl", CmafSegmentControlMapper::GetNameForCmafSegmentControl(m_segmentControl));
@@ -337,9 +396,19 @@ JsonValue CmafGroupSettings::Jsonize() const
 
   }
 
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", CmafSegmentLengthControlMapper::GetNameForCmafSegmentLengthControl(m_segmentLengthControl));
+  }
+
   if(m_streamInfResolutionHasBeenSet)
   {
    payload.WithString("streamInfResolution", CmafStreamInfResolutionMapper::GetNameForCmafStreamInfResolution(m_streamInfResolution));
+  }
+
+  if(m_targetDurationCompatibilityModeHasBeenSet)
+  {
+   payload.WithString("targetDurationCompatibilityMode", CmafTargetDurationCompatibilityModeMapper::GetNameForCmafTargetDurationCompatibilityMode(m_targetDurationCompatibilityMode));
   }
 
   if(m_writeDashManifestHasBeenSet)

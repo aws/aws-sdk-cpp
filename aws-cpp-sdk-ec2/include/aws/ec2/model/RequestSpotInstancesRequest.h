@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -20,7 +10,9 @@
 #include <aws/ec2/model/RequestSpotLaunchSpecification.h>
 #include <aws/ec2/model/SpotInstanceType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceInterruptionBehavior.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -216,50 +208,22 @@ namespace Model
 
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * <p>Deprecated.</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * <p>Deprecated.</p>
      */
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
-     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
-     * Instance for termination and provides a Spot Instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
-     * specify an Availability Zone group or a launch group if you specify a
-     * duration.</p>
+     * <p>Deprecated.</p>
      */
     inline RequestSpotInstancesRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
@@ -627,58 +591,157 @@ namespace Model
 
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline RequestSpotInstancesRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
 
     /**
-     * <p>The end date of the request. If this is a one-time request, the request
-     * remains active until all instances launch, the request is canceled, or this date
-     * is reached. If the request is persistent, it remains active until it is canceled
-     * or this date is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> <ul> <li>
+     * <p>For a persistent request, the request remains active until the
+     * <code>ValidUntil</code> date and time is reached. Otherwise, the request remains
+     * active until you cancel it. </p> </li> <li> <p>For a one-time request, the
+     * request remains active until all instances launch, the request is canceled, or
+     * the <code>ValidUntil</code> date and time is reached. By default, the request is
+     * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
     inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -751,6 +814,9 @@ namespace Model
 
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;

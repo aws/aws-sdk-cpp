@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -21,6 +11,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationConfigurationDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationMaintenanceConfigurationDescription.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationMode.h>
 #include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOptionDescription.h>
 #include <utility>
 
@@ -179,38 +171,38 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>FLINK-1_6</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 
@@ -383,38 +375,38 @@ namespace Model
 
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline const ApplicationConfigurationDescription& GetApplicationConfigurationDescription() const{ return m_applicationConfigurationDescription; }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline bool ApplicationConfigurationDescriptionHasBeenSet() const { return m_applicationConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = value; }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = std::move(value); }
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { SetApplicationConfigurationDescription(value); return *this;}
 
     /**
-     * <p>Provides details about the application's SQL or Java code and starting
-     * parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { SetApplicationConfigurationDescription(std::move(value)); return *this;}
 
@@ -459,6 +451,192 @@ namespace Model
      */
     inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The details of the maintenance configuration for the application.</p>
+     */
+    inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const{ return m_applicationMaintenanceConfigurationDescription; }
+
+    /**
+     * <p>The details of the maintenance configuration for the application.</p>
+     */
+    inline bool ApplicationMaintenanceConfigurationDescriptionHasBeenSet() const { return m_applicationMaintenanceConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The details of the maintenance configuration for the application.</p>
+     */
+    inline void SetApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = value; }
+
+    /**
+     * <p>The details of the maintenance configuration for the application.</p>
+     */
+    inline void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = std::move(value); }
+
+    /**
+     * <p>The details of the maintenance configuration for the application.</p>
+     */
+    inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { SetApplicationMaintenanceConfigurationDescription(value); return *this;}
+
+    /**
+     * <p>The details of the maintenance configuration for the application.</p>
+     */
+    inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { SetApplicationMaintenanceConfigurationDescription(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline long long GetApplicationVersionUpdatedFrom() const{ return m_applicationVersionUpdatedFrom; }
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline bool ApplicationVersionUpdatedFromHasBeenSet() const { return m_applicationVersionUpdatedFromHasBeenSet; }
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline void SetApplicationVersionUpdatedFrom(long long value) { m_applicationVersionUpdatedFromHasBeenSet = true; m_applicationVersionUpdatedFrom = value; }
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline ApplicationDetail& WithApplicationVersionUpdatedFrom(long long value) { SetApplicationVersionUpdatedFrom(value); return *this;}
+
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline long long GetApplicationVersionRolledBackFrom() const{ return m_applicationVersionRolledBackFrom; }
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline bool ApplicationVersionRolledBackFromHasBeenSet() const { return m_applicationVersionRolledBackFromHasBeenSet; }
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline void SetApplicationVersionRolledBackFrom(long long value) { m_applicationVersionRolledBackFromHasBeenSet = true; m_applicationVersionRolledBackFrom = value; }
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline ApplicationDetail& WithApplicationVersionRolledBackFrom(long long value) { SetApplicationVersionRolledBackFrom(value); return *this;}
+
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline ApplicationDetail& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline ApplicationDetail& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline ApplicationDetail& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
+
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline long long GetApplicationVersionRolledBackTo() const{ return m_applicationVersionRolledBackTo; }
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline bool ApplicationVersionRolledBackToHasBeenSet() const { return m_applicationVersionRolledBackToHasBeenSet; }
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline void SetApplicationVersionRolledBackTo(long long value) { m_applicationVersionRolledBackToHasBeenSet = true; m_applicationVersionRolledBackTo = value; }
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline ApplicationDetail& WithApplicationVersionRolledBackTo(long long value) { SetApplicationVersionRolledBackTo(value); return *this;}
+
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline ApplicationDetail& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline ApplicationDetail& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationARN;
@@ -493,6 +671,24 @@ namespace Model
 
     Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
     bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet;
+
+    ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
+    bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet;
+
+    long long m_applicationVersionUpdatedFrom;
+    bool m_applicationVersionUpdatedFromHasBeenSet;
+
+    long long m_applicationVersionRolledBackFrom;
+    bool m_applicationVersionRolledBackFromHasBeenSet;
+
+    Aws::String m_conditionalToken;
+    bool m_conditionalTokenHasBeenSet;
+
+    long long m_applicationVersionRolledBackTo;
+    bool m_applicationVersionRolledBackToHasBeenSet;
+
+    ApplicationMode m_applicationMode;
+    bool m_applicationModeHasBeenSet;
   };
 
 } // namespace Model

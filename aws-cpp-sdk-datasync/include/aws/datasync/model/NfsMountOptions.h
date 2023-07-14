@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -58,7 +48,7 @@ namespace Model
      * protocol version that allows for asynchronous writes on the server.</p> </li>
      * <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> -
      * stateful, firewall-friendly protocol version that supports delegations and
-     * pseudo filesystems.</p> </li> <li> <p> <b> <a
+     * pseudo file systems.</p> </li> <li> <p> <b> <a
      * href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
      * version that supports sessions, directory delegations, and parallel data
      * processing. Version 4.1 also includes all features available in version 4.0.</p>
@@ -76,7 +66,7 @@ namespace Model
      * protocol version that allows for asynchronous writes on the server.</p> </li>
      * <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> -
      * stateful, firewall-friendly protocol version that supports delegations and
-     * pseudo filesystems.</p> </li> <li> <p> <b> <a
+     * pseudo file systems.</p> </li> <li> <p> <b> <a
      * href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
      * version that supports sessions, directory delegations, and parallel data
      * processing. Version 4.1 also includes all features available in version 4.0.</p>
@@ -94,7 +84,7 @@ namespace Model
      * protocol version that allows for asynchronous writes on the server.</p> </li>
      * <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> -
      * stateful, firewall-friendly protocol version that supports delegations and
-     * pseudo filesystems.</p> </li> <li> <p> <b> <a
+     * pseudo file systems.</p> </li> <li> <p> <b> <a
      * href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
      * version that supports sessions, directory delegations, and parallel data
      * processing. Version 4.1 also includes all features available in version 4.0.</p>
@@ -112,7 +102,7 @@ namespace Model
      * protocol version that allows for asynchronous writes on the server.</p> </li>
      * <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> -
      * stateful, firewall-friendly protocol version that supports delegations and
-     * pseudo filesystems.</p> </li> <li> <p> <b> <a
+     * pseudo file systems.</p> </li> <li> <p> <b> <a
      * href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
      * version that supports sessions, directory delegations, and parallel data
      * processing. Version 4.1 also includes all features available in version 4.0.</p>
@@ -130,7 +120,7 @@ namespace Model
      * protocol version that allows for asynchronous writes on the server.</p> </li>
      * <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> -
      * stateful, firewall-friendly protocol version that supports delegations and
-     * pseudo filesystems.</p> </li> <li> <p> <b> <a
+     * pseudo file systems.</p> </li> <li> <p> <b> <a
      * href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
      * version that supports sessions, directory delegations, and parallel data
      * processing. Version 4.1 also includes all features available in version 4.0.</p>
@@ -148,7 +138,7 @@ namespace Model
      * protocol version that allows for asynchronous writes on the server.</p> </li>
      * <li> <p> <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> -
      * stateful, firewall-friendly protocol version that supports delegations and
-     * pseudo filesystems.</p> </li> <li> <p> <b> <a
+     * pseudo file systems.</p> </li> <li> <p> <b> <a
      * href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
      * version that supports sessions, directory delegations, and parallel data
      * processing. Version 4.1 also includes all features available in version 4.0.</p>

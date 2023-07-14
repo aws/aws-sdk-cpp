@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/ColorCorrector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,6 +28,8 @@ ColorCorrector::ColorCorrector() :
     m_hdr10MetadataHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
+    m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
+    m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
     m_saturationHasBeenSet(false)
 {
@@ -53,6 +45,8 @@ ColorCorrector::ColorCorrector(JsonView jsonValue) :
     m_hdr10MetadataHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
+    m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
+    m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
     m_saturationHasBeenSet(false)
 {
@@ -96,6 +90,13 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
     m_hueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sampleRangeConversion"))
+  {
+    m_sampleRangeConversion = SampleRangeConversionMapper::GetSampleRangeConversionForName(jsonValue.GetString("sampleRangeConversion"));
+
+    m_sampleRangeConversionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("saturation"))
   {
     m_saturation = jsonValue.GetInteger("saturation");
@@ -137,6 +138,11 @@ JsonValue ColorCorrector::Jsonize() const
   {
    payload.WithInteger("hue", m_hue);
 
+  }
+
+  if(m_sampleRangeConversionHasBeenSet)
+  {
+   payload.WithString("sampleRangeConversion", SampleRangeConversionMapper::GetNameForSampleRangeConversion(m_sampleRangeConversion));
   }
 
   if(m_saturationHasBeenSet)

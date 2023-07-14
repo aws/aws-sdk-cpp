@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -51,9 +41,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -63,9 +53,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -75,9 +65,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -87,9 +77,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -99,9 +89,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -111,9 +101,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -123,9 +113,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>
@@ -135,9 +125,9 @@ namespace Model
     /**
      * <p>The type of value that appears in the Grantee object:</p> <ul> <li> <p>
      * <code>Canonical</code>: Either the canonical user ID for an AWS account or an
-     * origin access identity for an Amazon CloudFront distribution.</p> <important>
+     * origin access identity for an Amazon CloudFront distribution.</p> 
      * <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <code>Email</code>: The registered email address of
+     *  </li> <li> <p> <code>Email</code>: The registered email address of
      * an AWS account.</p> </li> <li> <p> <code>Group</code>: One of the following
      * predefined Amazon S3 groups: <code>AllUsers</code>,
      * <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li> </ul>

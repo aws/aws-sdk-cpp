@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,8 @@ namespace Aws
 
         static const int SERVICE_MANAGED_HASH = HashingUtils::HashString("SERVICE_MANAGED");
         static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
+        static const int AWS_DIRECTORY_SERVICE_HASH = HashingUtils::HashString("AWS_DIRECTORY_SERVICE");
+        static const int AWS_LAMBDA_HASH = HashingUtils::HashString("AWS_LAMBDA");
 
 
         IdentityProviderType GetIdentityProviderTypeForName(const Aws::String& name)
@@ -44,6 +36,14 @@ namespace Aws
           else if (hashCode == API_GATEWAY_HASH)
           {
             return IdentityProviderType::API_GATEWAY;
+          }
+          else if (hashCode == AWS_DIRECTORY_SERVICE_HASH)
+          {
+            return IdentityProviderType::AWS_DIRECTORY_SERVICE;
+          }
+          else if (hashCode == AWS_LAMBDA_HASH)
+          {
+            return IdentityProviderType::AWS_LAMBDA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +63,10 @@ namespace Aws
             return "SERVICE_MANAGED";
           case IdentityProviderType::API_GATEWAY:
             return "API_GATEWAY";
+          case IdentityProviderType::AWS_DIRECTORY_SERVICE:
+            return "AWS_DIRECTORY_SERVICE";
+          case IdentityProviderType::AWS_LAMBDA:
+            return "AWS_LAMBDA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

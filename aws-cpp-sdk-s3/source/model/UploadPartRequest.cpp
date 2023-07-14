@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
@@ -32,6 +22,12 @@ UploadPartRequest::UploadPartRequest() :
     m_contentLength(0),
     m_contentLengthHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
+    m_checksumCRC32HasBeenSet(false),
+    m_checksumCRC32CHasBeenSet(false),
+    m_checksumSHA1HasBeenSet(false),
+    m_checksumSHA256HasBeenSet(false),
     m_keyHasBeenSet(false),
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
@@ -41,6 +37,7 @@ UploadPartRequest::UploadPartRequest() :
     m_sSECustomerKeyMD5HasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -81,6 +78,7 @@ void UploadPartRequest::AddQueryStringParameters(URI& uri) const
         }
     }
 }
+
 Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
@@ -96,6 +94,39 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
   {
     ss << m_contentMD5;
     headers.emplace("content-md5",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+  }
+
+  if(m_checksumCRC32HasBeenSet)
+  {
+    ss << m_checksumCRC32;
+    headers.emplace("x-amz-checksum-crc32",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumCRC32CHasBeenSet)
+  {
+    ss << m_checksumCRC32C;
+    headers.emplace("x-amz-checksum-crc32c",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumSHA1HasBeenSet)
+  {
+    ss << m_checksumSHA1;
+    headers.emplace("x-amz-checksum-sha1",  ss.str());
+    ss.str("");
+  }
+
+  if(m_checksumSHA256HasBeenSet)
+  {
+    ss << m_checksumSHA256;
+    headers.emplace("x-amz-checksum-sha256",  ss.str());
     ss.str("");
   }
 
@@ -125,6 +156,26 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
   return headers;
 
 }
+
+Aws::String UploadPartRequest::GetChecksumAlgorithmName() const
+{
+  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  {
+    return "md5";
+  }
+  else
+  {
+    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
+  }
+}
+

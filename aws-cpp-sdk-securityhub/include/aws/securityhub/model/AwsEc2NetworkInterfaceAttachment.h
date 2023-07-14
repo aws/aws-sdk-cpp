@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -49,42 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetAttachTime() const{ return m_attachTime; }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetAttachTime(const Aws::String& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetAttachTime(Aws::String&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetAttachTime(const char* value) { m_attachTimeHasBeenSet = true; m_attachTime.assign(value); }
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(const Aws::String& value) { SetAttachTime(value); return *this;}
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(Aws::String&& value) { SetAttachTime(std::move(value)); return *this;}
 
     /**
-     * <p>The timestamp indicating when the attachment initiated.</p>
+     * <p>Indicates when the attachment initiated.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithAttachTime(const char* value) { SetAttachTime(value); return *this;}
 
@@ -218,42 +240,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline const Aws::String& GetInstanceOwnerId() const{ return m_instanceOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline void SetInstanceOwnerId(const char* value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceOwnerId(const Aws::String& value) { SetInstanceOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The Amazon Web Services account ID of the owner of the instance.</p>
      */
     inline AwsEc2NetworkInterfaceAttachment& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
 

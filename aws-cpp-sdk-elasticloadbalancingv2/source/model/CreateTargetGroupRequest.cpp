@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticloadbalancingv2/model/CreateTargetGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -24,6 +14,7 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_nameHasBeenSet(false),
     m_protocol(ProtocolEnum::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_protocolVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
@@ -43,7 +34,10 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_unhealthyThresholdCountHasBeenSet(false),
     m_matcherHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +53,11 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
   if(m_protocolHasBeenSet)
   {
     ss << "Protocol=" << ProtocolEnumMapper::GetNameForProtocolEnum(m_protocol) << "&";
+  }
+
+  if(m_protocolVersionHasBeenSet)
+  {
+    ss << "ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
   }
 
   if(m_portHasBeenSet)
@@ -119,6 +118,21 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
   if(m_targetTypeHasBeenSet)
   {
     ss << "TargetType=" << TargetTypeEnumMapper::GetNameForTargetTypeEnum(m_targetType) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
   }
 
   ss << "Version=2015-12-01";

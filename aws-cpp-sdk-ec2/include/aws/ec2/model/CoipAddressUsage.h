@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -92,83 +82,83 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline CoipAddressUsage& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline CoipAddressUsage& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline CoipAddressUsage& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline const Aws::String& GetAwsService() const{ return m_awsService; }
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline void SetAwsService(const Aws::String& value) { m_awsServiceHasBeenSet = true; m_awsService = value; }
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline void SetAwsService(Aws::String&& value) { m_awsServiceHasBeenSet = true; m_awsService = std::move(value); }
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline void SetAwsService(const char* value) { m_awsServiceHasBeenSet = true; m_awsService.assign(value); }
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline CoipAddressUsage& WithAwsService(const Aws::String& value) { SetAwsService(value); return *this;}
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline CoipAddressUsage& WithAwsService(Aws::String&& value) { SetAwsService(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service.</p>
+     * <p>The Amazon Web Services service.</p>
      */
     inline CoipAddressUsage& WithAwsService(const char* value) { SetAwsService(value); return *this;}
 

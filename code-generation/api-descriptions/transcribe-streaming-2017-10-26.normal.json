@@ -12,6 +12,23 @@
     "uid":"transcribe-streaming-2017-10-26"
   },
   "operations":{
+    "StartMedicalStreamTranscription":{
+      "name":"StartMedicalStreamTranscription",
+      "http":{
+        "method":"POST",
+        "requestUri":"/medical-stream-transcription"
+      },
+      "input":{"shape":"StartMedicalStreamTranscriptionRequest"},
+      "output":{"shape":"StartMedicalStreamTranscriptionResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"ConflictException"},
+        {"shape":"ServiceUnavailableException"}
+      ],
+      "documentation":"<p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p>"
+    },
     "StartStreamTranscription":{
       "name":"StartStreamTranscription",
       "http":{
@@ -24,9 +41,10 @@
         {"shape":"BadRequestException"},
         {"shape":"LimitExceededException"},
         {"shape":"InternalFailureException"},
-        {"shape":"ConflictException"}
+        {"shape":"ConflictException"},
+        {"shape":"ServiceUnavailableException"}
       ],
-      "documentation":"<p>Starts a bidirectional HTTP2 stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application.</p> <p>The following are encoded as HTTP2 headers:</p> <ul> <li> <p>x-amzn-transcribe-language-code</p> </li> <li> <p>x-amzn-transcribe-media-encoding</p> </li> <li> <p>x-amzn-transcribe-sample-rate</p> </li> <li> <p>x-amzn-transcribe-session-id</p> </li> </ul>"
+      "documentation":"<p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application.</p> <p>The following are encoded as HTTP/2 headers:</p> <ul> <li> <p>x-amzn-transcribe-language-code</p> </li> <li> <p>x-amzn-transcribe-media-encoding</p> </li> <li> <p>x-amzn-transcribe-sample-rate</p> </li> <li> <p>x-amzn-transcribe-session-id</p> </li> </ul> <p>See the <a href=\"https://docs.aws.amazon.com/sdk-for-go/api/service/transcribestreamingservice/#TranscribeStreamingService.StartStreamTranscription\"> SDK for Go API Reference</a> for more detail.</p>"
     }
   },
   "shapes":{
@@ -40,6 +58,10 @@
         "Items":{
           "shape":"ItemList",
           "documentation":"<p>One or more alternative interpretations of the input audio. </p>"
+        },
+        "Entities":{
+          "shape":"EntityList",
+          "documentation":"<p>Contains the entities identified as personally identifiable information (PII) in the transcription output.</p>"
         }
       },
       "documentation":"<p>A list of possible transcriptions for the audio.</p>"
@@ -54,11 +76,11 @@
       "members":{
         "AudioChunk":{
           "shape":"AudioChunk",
-          "documentation":"<p>An audio blob that contains the next part of the audio that you want to transcribe.</p>",
+          "documentation":"<p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>",
           "eventpayload":true
         }
       },
-      "documentation":"<p>Provides a wrapper for the audio chunks that you are sending.</p>",
+      "documentation":"<p>Provides a wrapper for the audio chunks that you are sending.</p> <p>For information on audio encoding in Amazon Transcribe, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/input.html\">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html\">Speech input</a>.</p>",
       "event":true
     },
     "AudioStream":{
@@ -66,7 +88,7 @@
       "members":{
         "AudioEvent":{
           "shape":"AudioEvent",
-          "documentation":"<p>A blob of audio from your application. You audio stream consists of one or more audio events.</p>"
+          "documentation":"<p>A blob of audio from your application. You audio stream consists of one or more audio events.</p> <p>For information on audio encoding formats in Amazon Transcribe, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/input.html\">Speech input</a>. For information on audio encoding formats in Amazon Transcribe Medical, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html\">Speech input</a>.</p> <p>For more information on stream encoding in Amazon Transcribe, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html\">Event stream encoding</a>. For information on stream encoding in Amazon Transcribe Medical, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/event-stream-med.html\">Event stream encoding</a>.</p>"
         }
       },
       "documentation":"<p>Represents the audio stream from your application to Amazon Transcribe.</p>",
@@ -77,11 +99,12 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>One or more arguments to the <code>StartStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to <code>pcm</code> or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>",
+      "documentation":"<p>One or more arguments to the <code>StartStreamTranscription</code> or <code>StartMedicalStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
     },
     "Boolean":{"type":"boolean"},
+    "Confidence":{"type":"double"},
     "ConflictException":{
       "type":"structure",
       "members":{
@@ -91,13 +114,55 @@
       "error":{"httpStatusCode":409},
       "exception":true
     },
+    "ContentIdentificationType":{
+      "type":"string",
+      "enum":["PII"]
+    },
+    "ContentRedactionType":{
+      "type":"string",
+      "enum":["PII"]
+    },
     "Double":{"type":"double"},
+    "Entity":{
+      "type":"structure",
+      "members":{
+        "StartTime":{
+          "shape":"Double",
+          "documentation":"<p>The start time of speech that was identified as PII.</p>"
+        },
+        "EndTime":{
+          "shape":"Double",
+          "documentation":"<p>The end time of speech that was identified as PII.</p>"
+        },
+        "Category":{
+          "shape":"String",
+          "documentation":"<p>The category of information identified in this entity; for example, PII.</p>"
+        },
+        "Type":{
+          "shape":"String",
+          "documentation":"<p>The type of PII identified in this entity; for example, name or credit card number.</p>"
+        },
+        "Content":{
+          "shape":"String",
+          "documentation":"<p>The words in the transcription output that have been identified as a PII entity.</p>"
+        },
+        "Confidence":{
+          "shape":"Confidence",
+          "documentation":"<p>A value between zero and one that Amazon Transcribe assigns to PII identified in the source audio. Larger values indicate a higher confidence in PII identification.</p>"
+        }
+      },
+      "documentation":"<p>The entity identified as personally identifiable information (PII).</p>"
+    },
+    "EntityList":{
+      "type":"list",
+      "member":{"shape":"Entity"}
+    },
     "InternalFailureException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>A problem occurred while processing the audio. Amazon Transcribe terminated processing. Try your request again.</p>",
+      "documentation":"<p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try your request again.</p>",
       "error":{"httpStatusCode":500},
       "exception":true,
       "fault":true
@@ -120,9 +185,25 @@
         "Content":{
           "shape":"String",
           "documentation":"<p>The word or punctuation that was recognized in the input audio.</p>"
+        },
+        "VocabularyFilterMatch":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether a word in the item matches a word in the vocabulary filter you've chosen for your media stream. If <code>true</code> then a word in the item matches your vocabulary filter.</p>"
+        },
+        "Speaker":{
+          "shape":"String",
+          "documentation":"<p>If speaker identification is enabled, shows the speakers identified in the media stream.</p>"
+        },
+        "Confidence":{
+          "shape":"Confidence",
+          "documentation":"<p>A value between zero and one for an item that is a confidence score that Amazon Transcribe assigns to each word or phrase that it transcribes.</p>"
+        },
+        "Stable":{
+          "shape":"Stable",
+          "documentation":"<p>If partial result stabilization has been enabled, indicates whether the word or phrase in the item is stable. If <code>Stable</code> is <code>true</code>, the result is stable.</p>"
         }
       },
-      "documentation":"<p>A word or phrase transcribed from the input audio.</p>"
+      "documentation":"<p>A word, phrase, or punctuation mark that is transcribed from the input audio.</p>"
     },
     "ItemList":{
       "type":"list",
@@ -143,8 +224,38 @@
         "es-US",
         "fr-CA",
         "fr-FR",
-        "en-AU"
+        "en-AU",
+        "it-IT",
+        "de-DE",
+        "pt-BR",
+        "ja-JP",
+        "ko-KR",
+        "zh-CN"
       ]
+    },
+    "LanguageIdentification":{
+      "type":"list",
+      "member":{"shape":"LanguageWithScore"}
+    },
+    "LanguageOptions":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "pattern":"^[a-zA-Z-,]+"
+    },
+    "LanguageWithScore":{
+      "type":"structure",
+      "members":{
+        "LanguageCode":{
+          "shape":"LanguageCode",
+          "documentation":"<p>The language code of the language identified by Amazon Transcribe.</p>"
+        },
+        "Score":{
+          "shape":"Double",
+          "documentation":"<p>The confidence score for the associated language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language. </p>"
+        }
+      },
+      "documentation":"<p>The language codes of the identified languages and their associated confidence scores. The confidence score is a value between zero and one; a larger value indicates a higher confidence in the identified language.</p>"
     },
     "LimitExceededException":{
       "type":"structure",
@@ -157,12 +268,201 @@
     },
     "MediaEncoding":{
       "type":"string",
-      "enum":["pcm"]
+      "enum":[
+        "pcm",
+        "ogg-opus",
+        "flac"
+      ]
     },
     "MediaSampleRateHertz":{
       "type":"integer",
       "max":48000,
       "min":8000
+    },
+    "MedicalAlternative":{
+      "type":"structure",
+      "members":{
+        "Transcript":{
+          "shape":"String",
+          "documentation":"<p>The text that was transcribed from the audio.</p>"
+        },
+        "Items":{
+          "shape":"MedicalItemList",
+          "documentation":"<p>A list of objects that contains words and punctuation marks that represents one or more interpretations of the input audio.</p>"
+        },
+        "Entities":{
+          "shape":"MedicalEntityList",
+          "documentation":"<p>Contains the medical entities identified as personal health information in the transcription output.</p>"
+        }
+      },
+      "documentation":"<p>A list of possible transcriptions for the audio.</p>"
+    },
+    "MedicalAlternativeList":{
+      "type":"list",
+      "member":{"shape":"MedicalAlternative"}
+    },
+    "MedicalContentIdentificationType":{
+      "type":"string",
+      "enum":["PHI"]
+    },
+    "MedicalEntity":{
+      "type":"structure",
+      "members":{
+        "StartTime":{
+          "shape":"Double",
+          "documentation":"<p>The start time of the speech that was identified as a medical entity.</p>"
+        },
+        "EndTime":{
+          "shape":"Double",
+          "documentation":"<p>The end time of the speech that was identified as a medical entity.</p>"
+        },
+        "Category":{
+          "shape":"String",
+          "documentation":"<p>The type of personal health information of the medical entity.</p>"
+        },
+        "Content":{
+          "shape":"String",
+          "documentation":"<p>The word or words in the transcription output that have been identified as a medical entity.</p>"
+        },
+        "Confidence":{
+          "shape":"Confidence",
+          "documentation":"<p>A value between zero and one that Amazon Transcribe Medical assigned to the personal health information that it identified in the source audio. Larger values indicate that Amazon Transcribe Medical has higher confidence in the personal health information that it identified.</p>"
+        }
+      },
+      "documentation":"<p>The medical entity identified as personal health information.</p>"
+    },
+    "MedicalEntityList":{
+      "type":"list",
+      "member":{"shape":"MedicalEntity"}
+    },
+    "MedicalItem":{
+      "type":"structure",
+      "members":{
+        "StartTime":{
+          "shape":"Double",
+          "documentation":"<p>The number of seconds into an audio stream that indicates the creation time of an item.</p>"
+        },
+        "EndTime":{
+          "shape":"Double",
+          "documentation":"<p>The number of seconds into an audio stream that indicates the creation time of an item.</p>"
+        },
+        "Type":{
+          "shape":"ItemType",
+          "documentation":"<p>The type of the item. <code>PRONUNCIATION</code> indicates that the item is a word that was recognized in the input audio. <code>PUNCTUATION</code> indicates that the item was interpreted as a pause in the input audio, such as a period to indicate the end of a sentence.</p>"
+        },
+        "Content":{
+          "shape":"String",
+          "documentation":"<p>The word or punctuation mark that was recognized in the input audio.</p>"
+        },
+        "Confidence":{
+          "shape":"Confidence",
+          "documentation":"<p>A value between 0 and 1 for an item that is a confidence score that Amazon Transcribe Medical assigns to each word that it transcribes.</p>"
+        },
+        "Speaker":{
+          "shape":"String",
+          "documentation":"<p>If speaker identification is enabled, shows the integer values that correspond to the different speakers identified in the stream. For example, if the value of <code>Speaker</code> in the stream is either a <code>0</code> or a <code>1</code>, that indicates that Amazon Transcribe Medical has identified two speakers in the stream. The value of <code>0</code> corresponds to one speaker and the value of <code>1</code> corresponds to the other speaker.</p>"
+        }
+      },
+      "documentation":"<p>A word, phrase, or punctuation mark that is transcribed from the input audio.</p>"
+    },
+    "MedicalItemList":{
+      "type":"list",
+      "member":{"shape":"MedicalItem"}
+    },
+    "MedicalResult":{
+      "type":"structure",
+      "members":{
+        "ResultId":{
+          "shape":"String",
+          "documentation":"<p>A unique identifier for the result.</p>"
+        },
+        "StartTime":{
+          "shape":"Double",
+          "documentation":"<p>The time, in seconds, from the beginning of the audio stream to the beginning of the result.</p>"
+        },
+        "EndTime":{
+          "shape":"Double",
+          "documentation":"<p>The time, in seconds, from the beginning of the audio stream to the end of the result.</p>"
+        },
+        "IsPartial":{
+          "shape":"Boolean",
+          "documentation":"<p>Amazon Transcribe Medical divides the incoming audio stream into segments at natural points in the audio. Transcription results are returned based on these segments.</p> <p>The <code>IsPartial</code> field is <code>true</code> to indicate that Amazon Transcribe Medical has additional transcription data to send. The <code>IsPartial</code> field is <code>false</code> to indicate that this is the last transcription result for the segment.</p>"
+        },
+        "Alternatives":{
+          "shape":"MedicalAlternativeList",
+          "documentation":"<p>A list of possible transcriptions of the audio. Each alternative typically contains one <code>Item</code> that contains the result of the transcription.</p>"
+        },
+        "ChannelId":{
+          "shape":"String",
+          "documentation":"<p>When channel identification is enabled, Amazon Transcribe Medical transcribes the speech from each audio channel separately.</p> <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>"
+        }
+      },
+      "documentation":"<p>The results of transcribing a portion of the input audio stream.</p>"
+    },
+    "MedicalResultList":{
+      "type":"list",
+      "member":{"shape":"MedicalResult"}
+    },
+    "MedicalTranscript":{
+      "type":"structure",
+      "members":{
+        "Results":{
+          "shape":"MedicalResultList",
+          "documentation":"<p> <a>MedicalResult</a> objects that contain the results of transcribing a portion of the input audio stream. The array can be empty.</p>"
+        }
+      },
+      "documentation":"<p>The medical transcript in a <a>MedicalTranscriptEvent</a>.</p>"
+    },
+    "MedicalTranscriptEvent":{
+      "type":"structure",
+      "members":{
+        "Transcript":{
+          "shape":"MedicalTranscript",
+          "documentation":"<p>The transcription of the audio stream. The transcription is composed of all of the items in the results list.</p>"
+        }
+      },
+      "documentation":"<p>Represents a set of transcription results from the server to the client. It contains one or more segments of the transcription.</p>",
+      "event":true
+    },
+    "MedicalTranscriptResultStream":{
+      "type":"structure",
+      "members":{
+        "TranscriptEvent":{
+          "shape":"MedicalTranscriptEvent",
+          "documentation":"<p>A portion of the transcription of the audio stream. Events are sent periodically from Amazon Transcribe Medical to your application. The event can be a partial transcription of a section of the audio stream, or it can be the entire transcription of that portion of the audio stream.</p>"
+        },
+        "BadRequestException":{"shape":"BadRequestException"},
+        "LimitExceededException":{"shape":"LimitExceededException"},
+        "InternalFailureException":{"shape":"InternalFailureException"},
+        "ConflictException":{"shape":"ConflictException"},
+        "ServiceUnavailableException":{"shape":"ServiceUnavailableException"}
+      },
+      "documentation":"<p>Represents the transcription result stream from Amazon Transcribe Medical to your application.</p>",
+      "eventstream":true
+    },
+    "ModelName":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "pattern":"^[0-9a-zA-Z._-]+"
+    },
+    "NumberOfChannels":{
+      "type":"integer",
+      "min":2
+    },
+    "PartialResultsStability":{
+      "type":"string",
+      "enum":[
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "PiiEntityTypes":{
+      "type":"string",
+      "max":300,
+      "min":1,
+      "pattern":"^[A-Z_, ]+"
     },
     "RequestId":{"type":"string"},
     "Result":{
@@ -187,6 +487,18 @@
         "Alternatives":{
           "shape":"AlternativeList",
           "documentation":"<p>A list of possible transcriptions for the audio. Each alternative typically contains one <code>item</code> that contains the result of the transcription.</p>"
+        },
+        "ChannelId":{
+          "shape":"String",
+          "documentation":"<p>When channel identification is enabled, Amazon Transcribe transcribes the speech from each audio channel separately.</p> <p>You can use <code>ChannelId</code> to retrieve the transcription results for a single channel in your audio stream.</p>"
+        },
+        "LanguageCode":{
+          "shape":"LanguageCode",
+          "documentation":"<p>The language code of the identified language in your media stream.</p>"
+        },
+        "LanguageIdentification":{
+          "shape":"LanguageIdentification",
+          "documentation":"<p>The language code of the dominant language identified in your media.</p>"
         }
       },
       "documentation":"<p>The result of transcribing a portion of the input audio stream. </p>"
@@ -195,57 +507,115 @@
       "type":"list",
       "member":{"shape":"Result"}
     },
+    "ServiceUnavailableException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>Service is currently unavailable. Try your request later.</p>",
+      "error":{"httpStatusCode":503},
+      "exception":true
+    },
     "SessionId":{
       "type":"string",
+      "max":36,
+      "min":36,
       "pattern":"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"
     },
-    "StartStreamTranscriptionRequest":{
+    "Specialty":{
+      "type":"string",
+      "enum":[
+        "PRIMARYCARE",
+        "CARDIOLOGY",
+        "NEUROLOGY",
+        "ONCOLOGY",
+        "RADIOLOGY",
+        "UROLOGY"
+      ]
+    },
+    "Stable":{"type":"boolean"},
+    "StartMedicalStreamTranscriptionRequest":{
       "type":"structure",
       "required":[
         "LanguageCode",
         "MediaSampleRateHertz",
         "MediaEncoding",
+        "Specialty",
+        "Type",
         "AudioStream"
       ],
       "members":{
         "LanguageCode":{
           "shape":"LanguageCode",
-          "documentation":"<p>Indicates the source language used in the input audio stream.</p>",
+          "documentation":"<p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-language-code"
         },
         "MediaSampleRateHertz":{
           "shape":"MediaSampleRateHertz",
-          "documentation":"<p>The sample rate, in Hertz, of the input audio. We suggest that you use 8000 Hz for low quality audio and 16000 Hz for high quality audio.</p>",
+          "documentation":"<p>The sample rate of the input audio (in Hertz). Amazon Transcribe medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-sample-rate"
         },
         "MediaEncoding":{
           "shape":"MediaEncoding",
-          "documentation":"<p>The encoding used for the input audio. </p>",
+          "documentation":"<p>The encoding used for the input audio.</p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-media-encoding"
         },
         "VocabularyName":{
           "shape":"VocabularyName",
-          "documentation":"<p>The name of the vocabulary to use when processing the transcription job.</p>",
+          "documentation":"<p>The name of the medical custom vocabulary to use when processing the real-time stream.</p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-vocabulary-name"
         },
+        "Specialty":{
+          "shape":"Specialty",
+          "documentation":"<p>The medical specialty of the clinician or provider.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-specialty"
+        },
+        "Type":{
+          "shape":"Type",
+          "documentation":"<p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-type"
+        },
+        "ShowSpeakerLabel":{
+          "shape":"Boolean",
+          "documentation":"<p>When <code>true</code>, enables speaker identification in your real-time stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-show-speaker-label"
+        },
         "SessionId":{
           "shape":"SessionId",
-          "documentation":"<p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>",
+          "documentation":"<p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-session-id"
         },
-        "AudioStream":{
-          "shape":"AudioStream",
-          "documentation":"<p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP2 data frame.</p>"
+        "AudioStream":{"shape":"AudioStream"},
+        "EnableChannelIdentification":{
+          "shape":"Boolean",
+          "documentation":"<p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p> <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-enable-channel-identification"
+        },
+        "NumberOfChannels":{
+          "shape":"NumberOfChannels",
+          "documentation":"<p>The number of channels that are in your audio stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-number-of-channels"
+        },
+        "ContentIdentificationType":{
+          "shape":"MedicalContentIdentificationType",
+          "documentation":"<p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-content-identification-type"
         }
       },
       "payload":"AudioStream"
     },
-    "StartStreamTranscriptionResponse":{
+    "StartMedicalStreamTranscriptionResponse":{
       "type":"structure",
       "members":{
         "RequestId":{
@@ -256,13 +626,13 @@
         },
         "LanguageCode":{
           "shape":"LanguageCode",
-          "documentation":"<p>The language code for the input audio stream.</p>",
+          "documentation":"<p>The language code for the response transcript. For Amazon Transcribe Medical, this is US English (en-US).</p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-language-code"
         },
         "MediaSampleRateHertz":{
           "shape":"MediaSampleRateHertz",
-          "documentation":"<p>The sample rate for the input audio stream. Use 8000 Hz for low quality audio and 16000 Hz for high quality audio.</p>",
+          "documentation":"<p>The sample rate of the input audio, in Hertz (Hz).</p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-sample-rate"
         },
@@ -274,7 +644,230 @@
         },
         "VocabularyName":{
           "shape":"VocabularyName",
-          "documentation":"<p>The name of the vocabulary used when processing the job.</p>",
+          "documentation":"<p>The name of the vocabulary used when processing the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-name"
+        },
+        "Specialty":{
+          "shape":"Specialty",
+          "documentation":"<p>The specialty in the medical domain.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-specialty"
+        },
+        "Type":{
+          "shape":"Type",
+          "documentation":"<p>The type of audio that was transcribed. </p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-type"
+        },
+        "ShowSpeakerLabel":{
+          "shape":"Boolean",
+          "documentation":"<p>Shows whether speaker identification was enabled in the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-show-speaker-label"
+        },
+        "SessionId":{
+          "shape":"SessionId",
+          "documentation":"<p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-session-id"
+        },
+        "TranscriptResultStream":{
+          "shape":"MedicalTranscriptResultStream",
+          "documentation":"<p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>"
+        },
+        "EnableChannelIdentification":{
+          "shape":"Boolean",
+          "documentation":"<p>Shows whether channel identification has been enabled in the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-enable-channel-identification"
+        },
+        "NumberOfChannels":{
+          "shape":"NumberOfChannels",
+          "documentation":"<p>The number of channels identified in the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-number-of-channels"
+        },
+        "ContentIdentificationType":{
+          "shape":"MedicalContentIdentificationType",
+          "documentation":"<p>If the value is <code>PHI</code>, indicates that you've configured your stream to identify personal health information.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-content-identification-type"
+        }
+      },
+      "payload":"TranscriptResultStream"
+    },
+    "StartStreamTranscriptionRequest":{
+      "type":"structure",
+      "required":[
+        "MediaSampleRateHertz",
+        "MediaEncoding",
+        "AudioStream"
+      ],
+      "members":{
+        "LanguageCode":{
+          "shape":"LanguageCode",
+          "documentation":"<p>The language code of the input audio stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-language-code"
+        },
+        "MediaSampleRateHertz":{
+          "shape":"MediaSampleRateHertz",
+          "documentation":"<p>The sample rate of the input audio (in Hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-sample-rate"
+        },
+        "MediaEncoding":{
+          "shape":"MediaEncoding",
+          "documentation":"<p>The encoding used for the input audio.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-media-encoding"
+        },
+        "VocabularyName":{
+          "shape":"VocabularyName",
+          "documentation":"<p>The name of the custom vocabulary you want to use with your transcription.</p> <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> operation instead.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-name"
+        },
+        "SessionId":{
+          "shape":"SessionId",
+          "documentation":"<p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-session-id"
+        },
+        "AudioStream":{
+          "shape":"AudioStream",
+          "documentation":"<p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>"
+        },
+        "VocabularyFilterName":{
+          "shape":"VocabularyFilterName",
+          "documentation":"<p>The name of the vocabulary filter you want to use with your transcription.</p> <p>This operation is not intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're using <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> operation instead.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-filter-name"
+        },
+        "VocabularyFilterMethod":{
+          "shape":"VocabularyFilterMethod",
+          "documentation":"<p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-filter-method"
+        },
+        "ShowSpeakerLabel":{
+          "shape":"Boolean",
+          "documentation":"<p>When <code>true</code>, enables speaker identification in your media stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-show-speaker-label"
+        },
+        "EnableChannelIdentification":{
+          "shape":"Boolean",
+          "documentation":"<p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p> <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-enable-channel-identification"
+        },
+        "NumberOfChannels":{
+          "shape":"NumberOfChannels",
+          "documentation":"<p>The number of channels that are in your audio stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-number-of-channels"
+        },
+        "EnablePartialResultsStabilization":{
+          "shape":"Boolean",
+          "documentation":"<p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the partial results stabilized. Normally, any word or phrase from one partial result can change in a subsequent partial result. With partial results stabilization enabled, only the last few words of one partial result can change in another partial result.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-enable-partial-results-stabilization"
+        },
+        "PartialResultsStability":{
+          "shape":"PartialResultsStability",
+          "documentation":"<p>You can use this field to set the stability level of the transcription results. A higher stability level means that the transcription results are less likely to change. Higher stability levels can come with lower overall transcription accuracy.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-partial-results-stability"
+        },
+        "ContentIdentificationType":{
+          "shape":"ContentIdentificationType",
+          "documentation":"<p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p> <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-content-identification-type"
+        },
+        "ContentRedactionType":{
+          "shape":"ContentRedactionType",
+          "documentation":"<p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p> <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-content-redaction-type"
+        },
+        "PiiEntityTypes":{
+          "shape":"PiiEntityTypes",
+          "documentation":"<p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code> must be comma-separated; the available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-pii-entity-types"
+        },
+        "LanguageModelName":{
+          "shape":"ModelName",
+          "documentation":"<p>The name of the language model you want to use.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-language-model-name"
+        },
+        "IdentifyLanguage":{
+          "shape":"Boolean",
+          "documentation":"<p>Optional. Set this value to <code>true</code> to enable language identification for your media stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-identify-language"
+        },
+        "LanguageOptions":{
+          "shape":"LanguageOptions",
+          "documentation":"<p>An object containing a list of languages that might be present in your audio.</p> <p>You must provide two or more language codes to help Amazon Transcribe identify the correct language of your media stream with the highest possible accuracy. You can only select one variant per language; for example, you can't include both <code>en-US</code> and <code>en-UK</code> in the same request.</p> <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-language-options"
+        },
+        "PreferredLanguage":{
+          "shape":"LanguageCode",
+          "documentation":"<p>Optional. From the subset of languages codes you provided for <code>LanguageOptions</code>, you can select one preferred language for your transcription.</p> <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-preferred-language"
+        },
+        "VocabularyNames":{
+          "shape":"VocabularyNames",
+          "documentation":"<p>The names of the custom vocabularies you want to use with your transcription.</p> <p>Note that if the custom vocabularies you specify are in languages that don't match the language identified in your media, your job fails.</p> <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> operation instead.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-names"
+        },
+        "VocabularyFilterNames":{
+          "shape":"VocabularyFilterNames",
+          "documentation":"<p>The names of the vocabulary filters you want to use with your transcription.</p> <p>Note that if the vocabulary filters you specify are in languages that don't match the language identified in your media, your job fails.</p> <p>This operation is only intended for use in conjunction with the <code>IdentifyLanguage</code> operation. If you're not using <code>IdentifyLanguage</code> in your request and want to use a vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> operation instead.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-filter-names"
+        }
+      },
+      "payload":"AudioStream"
+    },
+    "StartStreamTranscriptionResponse":{
+      "type":"structure",
+      "members":{
+        "RequestId":{
+          "shape":"RequestId",
+          "documentation":"<p>An identifier for the transcription.</p>",
+          "location":"header",
+          "locationName":"x-amzn-request-id"
+        },
+        "LanguageCode":{
+          "shape":"LanguageCode",
+          "documentation":"<p>The language code of the input audio stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-language-code"
+        },
+        "MediaSampleRateHertz":{
+          "shape":"MediaSampleRateHertz",
+          "documentation":"<p>The sample rate, in Hertz (Hz), for the input audio stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-sample-rate"
+        },
+        "MediaEncoding":{
+          "shape":"MediaEncoding",
+          "documentation":"<p>The encoding used for the input audio stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-media-encoding"
+        },
+        "VocabularyName":{
+          "shape":"VocabularyName",
+          "documentation":"<p>The name of the custom vocabulary used when processing the stream.</p>",
           "location":"header",
           "locationName":"x-amzn-transcribe-vocabulary-name"
         },
@@ -287,6 +880,102 @@
         "TranscriptResultStream":{
           "shape":"TranscriptResultStream",
           "documentation":"<p>Represents the stream of transcription events from Amazon Transcribe to your application.</p>"
+        },
+        "VocabularyFilterName":{
+          "shape":"VocabularyFilterName",
+          "documentation":"<p>The name of the vocabulary filter used when processing the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-filter-name"
+        },
+        "VocabularyFilterMethod":{
+          "shape":"VocabularyFilterMethod",
+          "documentation":"<p>The vocabulary filtering method used when processing the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-filter-method"
+        },
+        "ShowSpeakerLabel":{
+          "shape":"Boolean",
+          "documentation":"<p>Shows whether speaker identification was enabled in the transcription.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-show-speaker-label"
+        },
+        "EnableChannelIdentification":{
+          "shape":"Boolean",
+          "documentation":"<p>Shows whether channel identification was enabled in the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-enable-channel-identification"
+        },
+        "NumberOfChannels":{
+          "shape":"NumberOfChannels",
+          "documentation":"<p>The number of channels identified in the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-number-of-channels"
+        },
+        "EnablePartialResultsStabilization":{
+          "shape":"Boolean",
+          "documentation":"<p>Shows whether partial results stabilization was enabled in the transcription.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-enable-partial-results-stabilization"
+        },
+        "PartialResultsStability":{
+          "shape":"PartialResultsStability",
+          "documentation":"<p>If partial results stabilization has been enabled in the stream, shows the stability level.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-partial-results-stability"
+        },
+        "ContentIdentificationType":{
+          "shape":"ContentIdentificationType",
+          "documentation":"<p>Shows whether content identification was enabled in this stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-content-identification-type"
+        },
+        "ContentRedactionType":{
+          "shape":"ContentRedactionType",
+          "documentation":"<p>Shows whether content redaction was enabled in this stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-content-redaction-type"
+        },
+        "PiiEntityTypes":{
+          "shape":"PiiEntityTypes",
+          "documentation":"<p>Lists the PII entity types you specified in your request.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-pii-entity-types"
+        },
+        "LanguageModelName":{
+          "shape":"ModelName",
+          "documentation":"<p>The name of the custom language model used in the transcription.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-language-model-name"
+        },
+        "IdentifyLanguage":{
+          "shape":"Boolean",
+          "documentation":"<p>The language code of the language identified in your media stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-identify-language"
+        },
+        "LanguageOptions":{
+          "shape":"LanguageOptions",
+          "documentation":"<p>The language codes used in the identification of your media stream's predominant language.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-language-options"
+        },
+        "PreferredLanguage":{
+          "shape":"LanguageCode",
+          "documentation":"<p>The preferred language you specified in your request.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-preferred-language"
+        },
+        "VocabularyNames":{
+          "shape":"VocabularyNames",
+          "documentation":"<p>The name of the custom vocabulary used when processing the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-names"
+        },
+        "VocabularyFilterNames":{
+          "shape":"VocabularyFilterNames",
+          "documentation":"<p>The name of the vocabulary filter used when processing the stream.</p>",
+          "location":"header",
+          "locationName":"x-amzn-transcribe-vocabulary-filter-names"
         }
       },
       "payload":"TranscriptResultStream"
@@ -335,16 +1024,53 @@
         "ConflictException":{
           "shape":"ConflictException",
           "documentation":"<p>A new stream started with the same session ID. The current stream has been terminated.</p>"
+        },
+        "ServiceUnavailableException":{
+          "shape":"ServiceUnavailableException",
+          "documentation":"<p>Service is currently unavailable. Try your request later.</p>"
         }
       },
       "documentation":"<p>Represents the transcription result stream from Amazon Transcribe to your application.</p>",
       "eventstream":true
+    },
+    "Type":{
+      "type":"string",
+      "enum":[
+        "CONVERSATION",
+        "DICTATION"
+      ]
+    },
+    "VocabularyFilterMethod":{
+      "type":"string",
+      "enum":[
+        "remove",
+        "mask",
+        "tag"
+      ]
+    },
+    "VocabularyFilterName":{
+      "type":"string",
+      "max":200,
+      "min":1,
+      "pattern":"^[0-9a-zA-Z._-]+"
+    },
+    "VocabularyFilterNames":{
+      "type":"string",
+      "max":3000,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9,-._]+"
     },
     "VocabularyName":{
       "type":"string",
       "max":200,
       "min":1,
       "pattern":"^[0-9a-zA-Z._-]+"
+    },
+    "VocabularyNames":{
+      "type":"string",
+      "max":3000,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9,-._]+"
     }
   },
   "documentation":"<p>Operations and objects for transcribing streaming speech to text.</p>"

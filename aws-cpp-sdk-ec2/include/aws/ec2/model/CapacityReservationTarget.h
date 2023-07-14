@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a target Capacity Reservation.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a target Capacity Reservation or Capacity Reservation
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationTarget">AWS
    * API Reference</a></p>
    */
@@ -50,49 +41,101 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline CapacityReservationTarget& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline CapacityReservationTarget& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation in which to run the instance.</p>
      */
     inline CapacityReservationTarget& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline const Aws::String& GetCapacityReservationResourceGroupArn() const{ return m_capacityReservationResourceGroupArn; }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline bool CapacityReservationResourceGroupArnHasBeenSet() const { return m_capacityReservationResourceGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline void SetCapacityReservationResourceGroupArn(const Aws::String& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = value; }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline void SetCapacityReservationResourceGroupArn(Aws::String&& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline void SetCapacityReservationResourceGroupArn(const char* value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline CapacityReservationTarget& WithCapacityReservationResourceGroupArn(const Aws::String& value) { SetCapacityReservationResourceGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline CapacityReservationTarget& WithCapacityReservationResourceGroupArn(Aws::String&& value) { SetCapacityReservationResourceGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Capacity Reservation resource group in which to run the
+     * instance.</p>
+     */
+    inline CapacityReservationTarget& WithCapacityReservationResourceGroupArn(const char* value) { SetCapacityReservationResourceGroupArn(value); return *this;}
 
   private:
 
     Aws::String m_capacityReservationId;
     bool m_capacityReservationIdHasBeenSet;
+
+    Aws::String m_capacityReservationResourceGroupArn;
+    bool m_capacityReservationResourceGroupArnHasBeenSet;
   };
 
 } // namespace Model

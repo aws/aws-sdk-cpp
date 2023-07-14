@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/connectparticipant/model/Item.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,8 @@ Item::Item() :
     m_participantIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
+    m_participantRoleHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
 }
 
@@ -52,7 +43,8 @@ Item::Item(JsonView jsonValue) :
     m_participantIdHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false)
+    m_participantRoleHasBeenSet(false),
+    m_attachmentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +107,16 @@ Item& Item::operator =(JsonView jsonValue)
     m_participantRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Attachments"))
+  {
+    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
+    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+    {
+      m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
+    }
+    m_attachmentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -166,6 +168,17 @@ JsonValue Item::Jsonize() const
   if(m_participantRoleHasBeenSet)
   {
    payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
+  }
+
+  if(m_attachmentsHasBeenSet)
+  {
+   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
+   {
+     attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+   }
+   payload.WithArray("Attachments", std::move(attachmentsJsonList));
+
   }
 
   return payload;

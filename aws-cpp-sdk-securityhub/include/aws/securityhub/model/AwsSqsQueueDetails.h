@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -49,74 +39,74 @@ namespace Model
 
     /**
      * <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to
-     * encrypt or decrypt messages before calling AWS KMS again.</p>
+     * encrypt or decrypt messages before calling KMS again.</p>
      */
     inline int GetKmsDataKeyReusePeriodSeconds() const{ return m_kmsDataKeyReusePeriodSeconds; }
 
     /**
      * <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to
-     * encrypt or decrypt messages before calling AWS KMS again.</p>
+     * encrypt or decrypt messages before calling KMS again.</p>
      */
     inline bool KmsDataKeyReusePeriodSecondsHasBeenSet() const { return m_kmsDataKeyReusePeriodSecondsHasBeenSet; }
 
     /**
      * <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to
-     * encrypt or decrypt messages before calling AWS KMS again.</p>
+     * encrypt or decrypt messages before calling KMS again.</p>
      */
     inline void SetKmsDataKeyReusePeriodSeconds(int value) { m_kmsDataKeyReusePeriodSecondsHasBeenSet = true; m_kmsDataKeyReusePeriodSeconds = value; }
 
     /**
      * <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to
-     * encrypt or decrypt messages before calling AWS KMS again.</p>
+     * encrypt or decrypt messages before calling KMS again.</p>
      */
     inline AwsSqsQueueDetails& WithKmsDataKeyReusePeriodSeconds(int value) { SetKmsDataKeyReusePeriodSeconds(value); return *this;}
 
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline AwsSqsQueueDetails& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline AwsSqsQueueDetails& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom
-     * CMK.</p>
+     * <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS
+     * key.</p>
      */
     inline AwsSqsQueueDetails& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
 
@@ -163,50 +153,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline const Aws::String& GetDeadLetterTargetArn() const{ return m_deadLetterTargetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline bool DeadLetterTargetArnHasBeenSet() const { return m_deadLetterTargetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline void SetDeadLetterTargetArn(const Aws::String& value) { m_deadLetterTargetArnHasBeenSet = true; m_deadLetterTargetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline void SetDeadLetterTargetArn(Aws::String&& value) { m_deadLetterTargetArnHasBeenSet = true; m_deadLetterTargetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline void SetDeadLetterTargetArn(const char* value) { m_deadLetterTargetArnHasBeenSet = true; m_deadLetterTargetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline AwsSqsQueueDetails& WithDeadLetterTargetArn(const Aws::String& value) { SetDeadLetterTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline AwsSqsQueueDetails& WithDeadLetterTargetArn(Aws::String&& value) { SetDeadLetterTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+     * <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the
+     * value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline AwsSqsQueueDetails& WithDeadLetterTargetArn(const char* value) { SetDeadLetterTargetArn(value); return *this;}
 

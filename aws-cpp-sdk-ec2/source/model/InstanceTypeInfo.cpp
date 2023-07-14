@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/InstanceTypeInfo.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -39,6 +29,7 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
     m_supportedRootDeviceTypesHasBeenSet(false),
+    m_supportedVirtualizationTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -62,7 +53,8 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_dedicatedHostsSupported(false),
     m_dedicatedHostsSupportedHasBeenSet(false),
     m_autoRecoverySupported(false),
-    m_autoRecoverySupportedHasBeenSet(false)
+    m_autoRecoverySupportedHasBeenSet(false),
+    m_supportedBootModesHasBeenSet(false)
 {
 }
 
@@ -75,6 +67,7 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
     m_supportedRootDeviceTypesHasBeenSet(false),
+    m_supportedVirtualizationTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -98,7 +91,8 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_dedicatedHostsSupported(false),
     m_dedicatedHostsSupportedHasBeenSet(false),
     m_autoRecoverySupported(false),
-    m_autoRecoverySupportedHasBeenSet(false)
+    m_autoRecoverySupportedHasBeenSet(false),
+    m_supportedBootModesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -150,6 +144,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       }
 
       m_supportedRootDeviceTypesHasBeenSet = true;
+    }
+    XmlNode supportedVirtualizationTypesNode = resultNode.FirstChild("supportedVirtualizationTypes");
+    if(!supportedVirtualizationTypesNode.IsNull())
+    {
+      XmlNode supportedVirtualizationTypesMember = supportedVirtualizationTypesNode.FirstChild("item");
+      while(!supportedVirtualizationTypesMember.IsNull())
+      {
+        m_supportedVirtualizationTypes.push_back(VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(supportedVirtualizationTypesMember.GetText().c_str())));
+        supportedVirtualizationTypesMember = supportedVirtualizationTypesMember.NextNode("item");
+      }
+
+      m_supportedVirtualizationTypesHasBeenSet = true;
     }
     XmlNode bareMetalNode = resultNode.FirstChild("bareMetal");
     if(!bareMetalNode.IsNull())
@@ -253,6 +259,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       m_autoRecoverySupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoverySupportedNode.GetText()).c_str()).c_str());
       m_autoRecoverySupportedHasBeenSet = true;
     }
+    XmlNode supportedBootModesNode = resultNode.FirstChild("supportedBootModes");
+    if(!supportedBootModesNode.IsNull())
+    {
+      XmlNode supportedBootModesMember = supportedBootModesNode.FirstChild("item");
+      while(!supportedBootModesMember.IsNull())
+      {
+        m_supportedBootModes.push_back(BootModeTypeMapper::GetBootModeTypeForName(StringUtils::Trim(supportedBootModesMember.GetText().c_str())));
+        supportedBootModesMember = supportedBootModesMember.NextNode("item");
+      }
+
+      m_supportedBootModesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -290,6 +308,15 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_supportedRootDeviceTypes)
       {
         oStream << location << index << locationValue << ".SupportedRootDeviceTypes." << supportedRootDeviceTypesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
+      }
+  }
+
+  if(m_supportedVirtualizationTypesHasBeenSet)
+  {
+      unsigned supportedVirtualizationTypesIdx = 1;
+      for(auto& item : m_supportedVirtualizationTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedVirtualizationTypes." << supportedVirtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
       }
   }
 
@@ -398,6 +425,15 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AutoRecoverySupported=" << std::boolalpha << m_autoRecoverySupported << "&";
   }
 
+  if(m_supportedBootModesHasBeenSet)
+  {
+      unsigned supportedBootModesIdx = 1;
+      for(auto& item : m_supportedBootModes)
+      {
+        oStream << location << index << locationValue << ".SupportedBootModes." << supportedBootModesIdx++ << "=" << BootModeTypeMapper::GetNameForBootModeType(item) << "&";
+      }
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -428,6 +464,14 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_supportedRootDeviceTypes)
       {
         oStream << location << ".SupportedRootDeviceTypes." << supportedRootDeviceTypesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
+      }
+  }
+  if(m_supportedVirtualizationTypesHasBeenSet)
+  {
+      unsigned supportedVirtualizationTypesIdx = 1;
+      for(auto& item : m_supportedVirtualizationTypes)
+      {
+        oStream << location << ".SupportedVirtualizationTypes." << supportedVirtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
       }
   }
   if(m_bareMetalHasBeenSet)
@@ -517,6 +561,14 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_autoRecoverySupportedHasBeenSet)
   {
       oStream << location << ".AutoRecoverySupported=" << std::boolalpha << m_autoRecoverySupported << "&";
+  }
+  if(m_supportedBootModesHasBeenSet)
+  {
+      unsigned supportedBootModesIdx = 1;
+      for(auto& item : m_supportedBootModes)
+      {
+        oStream << location << ".SupportedBootModes." << supportedBootModesIdx++ << "=" << BootModeTypeMapper::GetNameForBootModeType(item) << "&";
+      }
   }
 }
 

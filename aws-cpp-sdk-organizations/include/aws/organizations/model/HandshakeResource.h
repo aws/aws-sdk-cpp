@@ -1,24 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/HandshakeResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/organizations/model/HandshakeResource.h>
 #include <utility>
 
 namespace Aws
@@ -111,96 +100,96 @@ namespace Model
     /**
      * <p>The type of information being passed, specifying how the value is to be
      * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
-     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
-     * Specifies the email address that is associated with the account that receives
-     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
-     * email address associated with the master account. Included as information about
-     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
-     * name associated with the master account. Included as information about an
-     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
-     * by the handshake initiator and intended for the recipient to read.</p> </li>
-     * </ul>
+     * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
+     * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
+     * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
+     * account that receives the handshake. </p> </li> <li> <p>
+     * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
+     * initiator and intended for the recipient to read.</p> </li> </ul>
      */
     inline const HandshakeResourceType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
      * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
-     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
-     * Specifies the email address that is associated with the account that receives
-     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
-     * email address associated with the master account. Included as information about
-     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
-     * name associated with the master account. Included as information about an
-     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
-     * by the handshake initiator and intended for the recipient to read.</p> </li>
-     * </ul>
+     * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
+     * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
+     * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
+     * account that receives the handshake. </p> </li> <li> <p>
+     * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
+     * initiator and intended for the recipient to read.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
      * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
-     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
-     * Specifies the email address that is associated with the account that receives
-     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
-     * email address associated with the master account. Included as information about
-     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
-     * name associated with the master account. Included as information about an
-     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
-     * by the handshake initiator and intended for the recipient to read.</p> </li>
-     * </ul>
+     * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
+     * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
+     * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
+     * account that receives the handshake. </p> </li> <li> <p>
+     * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
+     * initiator and intended for the recipient to read.</p> </li> </ul>
      */
     inline void SetType(const HandshakeResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
      * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
-     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
-     * Specifies the email address that is associated with the account that receives
-     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
-     * email address associated with the master account. Included as information about
-     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
-     * name associated with the master account. Included as information about an
-     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
-     * by the handshake initiator and intended for the recipient to read.</p> </li>
-     * </ul>
+     * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
+     * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
+     * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
+     * account that receives the handshake. </p> </li> <li> <p>
+     * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
+     * initiator and intended for the recipient to read.</p> </li> </ul>
      */
     inline void SetType(HandshakeResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
      * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
-     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
-     * Specifies the email address that is associated with the account that receives
-     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
-     * email address associated with the master account. Included as information about
-     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
-     * name associated with the master account. Included as information about an
-     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
-     * by the handshake initiator and intended for the recipient to read.</p> </li>
-     * </ul>
+     * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
+     * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
+     * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
+     * account that receives the handshake. </p> </li> <li> <p>
+     * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
+     * initiator and intended for the recipient to read.</p> </li> </ul>
      */
     inline HandshakeResource& WithType(const HandshakeResourceType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
      * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
-     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
-     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
-     * Specifies the email address that is associated with the account that receives
-     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
-     * email address associated with the master account. Included as information about
-     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
-     * name associated with the master account. Included as information about an
-     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
-     * by the handshake initiator and intended for the recipient to read.</p> </li>
-     * </ul>
+     * Specifies an Amazon Web Services account ID number.</p> </li> <li> <p>
+     * <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> <li>
+     * <p> <code>EMAIL</code> - Specifies the email address that is associated with the
+     * account that receives the handshake. </p> </li> <li> <p>
+     * <code>OWNER_EMAIL</code> - Specifies the email address associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the
+     * management account. Included as information about an organization. </p> </li>
+     * <li> <p> <code>NOTES</code> - Additional text provided by the handshake
+     * initiator and intended for the recipient to read.</p> </li> </ul>
      */
     inline HandshakeResource& WithType(HandshakeResourceType&& value) { SetType(std::move(value)); return *this;}
 

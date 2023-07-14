@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -176,8 +166,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -190,8 +180,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -204,8 +194,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -218,8 +208,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -232,8 +222,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
@@ -246,8 +236,8 @@ namespace Model
      * <p>The scale that hyperparameter tuning uses to search the hyperparameter range.
      * For information about choosing a hyperparameter scale, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter
-     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd> <p>Amazon
-     * SageMaker hyperparameter tuning chooses the best scale for the
+     * Scaling</a>. One of the following values:</p> <dl> <dt>Auto</dt> <dd>
+     * <p>SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the

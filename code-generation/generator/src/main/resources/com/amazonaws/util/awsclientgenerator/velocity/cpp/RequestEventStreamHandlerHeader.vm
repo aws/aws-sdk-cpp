@@ -51,7 +51,7 @@ namespace Model
 
     public:
         ${operation.name}Handler();
-        ${operation.name}Handler& operator=(const ${operation.name}Handler& handler) = default;
+        ${operation.name}Handler& operator=(const ${operation.name}Handler&) = default;
 
         virtual void OnEvent() override;
 

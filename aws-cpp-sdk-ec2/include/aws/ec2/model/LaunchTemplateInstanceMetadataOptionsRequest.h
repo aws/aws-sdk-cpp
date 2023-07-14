@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/LaunchTemplateHttpTokensState.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataEndpointState.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMetadataProtocolIpv6.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMetadataTagsState.h>
 #include <utility>
 
 namespace Aws
@@ -174,58 +166,150 @@ namespace Model
 
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
-     * <code>disabled</code>, you will not be able to access your instance metadata.
-     * </p> </note>
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the default state is <code>enabled</code>.</p>
+     *  <p>If you specify a value of <code>disabled</code>, you will not be able
+     * to access your instance metadata. </p> 
      */
     inline const LaunchTemplateInstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
-     * <code>disabled</code>, you will not be able to access your instance metadata.
-     * </p> </note>
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the default state is <code>enabled</code>.</p>
+     *  <p>If you specify a value of <code>disabled</code>, you will not be able
+     * to access your instance metadata. </p> 
      */
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
-     * <code>disabled</code>, you will not be able to access your instance metadata.
-     * </p> </note>
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the default state is <code>enabled</code>.</p>
+     *  <p>If you specify a value of <code>disabled</code>, you will not be able
+     * to access your instance metadata. </p> 
      */
     inline void SetHttpEndpoint(const LaunchTemplateInstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
-     * <code>disabled</code>, you will not be able to access your instance metadata.
-     * </p> </note>
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the default state is <code>enabled</code>.</p>
+     *  <p>If you specify a value of <code>disabled</code>, you will not be able
+     * to access your instance metadata. </p> 
      */
     inline void SetHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
-     * <code>disabled</code>, you will not be able to access your instance metadata.
-     * </p> </note>
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the default state is <code>enabled</code>.</p>
+     *  <p>If you specify a value of <code>disabled</code>, you will not be able
+     * to access your instance metadata. </p> 
      */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(const LaunchTemplateInstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the default state is
-     * <code>enabled</code>.</p> <note> <p>If you specify a value of
-     * <code>disabled</code>, you will not be able to access your instance metadata.
-     * </p> </note>
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the default state is <code>enabled</code>.</p>
+     *  <p>If you specify a value of <code>disabled</code>, you will not be able
+     * to access your instance metadata. </p> 
      */
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline const LaunchTemplateInstanceMetadataProtocolIpv6& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline void SetHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline void SetHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { SetHttpProtocolIpv6(value); return *this;}
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Default: <code>disabled</code> </p>
+     */
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline const LaunchTemplateInstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline void SetInstanceMetadataTags(const LaunchTemplateInstanceMetadataTagsState& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline void SetInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState&& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = std::move(value); }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(const LaunchTemplateInstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
 
   private:
 
@@ -237,6 +321,12 @@ namespace Model
 
     LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint;
     bool m_httpEndpointHasBeenSet;
+
+    LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6;
+    bool m_httpProtocolIpv6HasBeenSet;
+
+    LaunchTemplateInstanceMetadataTagsState m_instanceMetadataTags;
+    bool m_instanceMetadataTagsHasBeenSet;
   };
 
 } // namespace Model

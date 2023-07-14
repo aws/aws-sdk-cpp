@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -20,7 +10,9 @@
 #include <aws/firehose/model/ExtendedS3DestinationDescription.h>
 #include <aws/firehose/model/RedshiftDestinationDescription.h>
 #include <aws/firehose/model/ElasticsearchDestinationDescription.h>
+#include <aws/firehose/model/AmazonopensearchserviceDestinationDescription.h>
 #include <aws/firehose/model/SplunkDestinationDescription.h>
+#include <aws/firehose/model/HttpEndpointDestinationDescription.h>
 #include <utility>
 
 namespace Aws
@@ -218,6 +210,25 @@ namespace Model
     inline DestinationDescription& WithElasticsearchDestinationDescription(ElasticsearchDestinationDescription&& value) { SetElasticsearchDestinationDescription(std::move(value)); return *this;}
 
 
+    
+    inline const AmazonopensearchserviceDestinationDescription& GetAmazonopensearchserviceDestinationDescription() const{ return m_amazonopensearchserviceDestinationDescription; }
+
+    
+    inline bool AmazonopensearchserviceDestinationDescriptionHasBeenSet() const { return m_amazonopensearchserviceDestinationDescriptionHasBeenSet; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationDescription(const AmazonopensearchserviceDestinationDescription& value) { m_amazonopensearchserviceDestinationDescriptionHasBeenSet = true; m_amazonopensearchserviceDestinationDescription = value; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationDescription(AmazonopensearchserviceDestinationDescription&& value) { m_amazonopensearchserviceDestinationDescriptionHasBeenSet = true; m_amazonopensearchserviceDestinationDescription = std::move(value); }
+
+    
+    inline DestinationDescription& WithAmazonopensearchserviceDestinationDescription(const AmazonopensearchserviceDestinationDescription& value) { SetAmazonopensearchserviceDestinationDescription(value); return *this;}
+
+    
+    inline DestinationDescription& WithAmazonopensearchserviceDestinationDescription(AmazonopensearchserviceDestinationDescription&& value) { SetAmazonopensearchserviceDestinationDescription(std::move(value)); return *this;}
+
+
     /**
      * <p>The destination in Splunk.</p>
      */
@@ -248,6 +259,37 @@ namespace Model
      */
     inline DestinationDescription& WithSplunkDestinationDescription(SplunkDestinationDescription&& value) { SetSplunkDestinationDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the specified HTTP endpoint destination.</p>
+     */
+    inline const HttpEndpointDestinationDescription& GetHttpEndpointDestinationDescription() const{ return m_httpEndpointDestinationDescription; }
+
+    /**
+     * <p>Describes the specified HTTP endpoint destination.</p>
+     */
+    inline bool HttpEndpointDestinationDescriptionHasBeenSet() const { return m_httpEndpointDestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the specified HTTP endpoint destination.</p>
+     */
+    inline void SetHttpEndpointDestinationDescription(const HttpEndpointDestinationDescription& value) { m_httpEndpointDestinationDescriptionHasBeenSet = true; m_httpEndpointDestinationDescription = value; }
+
+    /**
+     * <p>Describes the specified HTTP endpoint destination.</p>
+     */
+    inline void SetHttpEndpointDestinationDescription(HttpEndpointDestinationDescription&& value) { m_httpEndpointDestinationDescriptionHasBeenSet = true; m_httpEndpointDestinationDescription = std::move(value); }
+
+    /**
+     * <p>Describes the specified HTTP endpoint destination.</p>
+     */
+    inline DestinationDescription& WithHttpEndpointDestinationDescription(const HttpEndpointDestinationDescription& value) { SetHttpEndpointDestinationDescription(value); return *this;}
+
+    /**
+     * <p>Describes the specified HTTP endpoint destination.</p>
+     */
+    inline DestinationDescription& WithHttpEndpointDestinationDescription(HttpEndpointDestinationDescription&& value) { SetHttpEndpointDestinationDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_destinationId;
@@ -265,8 +307,14 @@ namespace Model
     ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
     bool m_elasticsearchDestinationDescriptionHasBeenSet;
 
+    AmazonopensearchserviceDestinationDescription m_amazonopensearchserviceDestinationDescription;
+    bool m_amazonopensearchserviceDestinationDescriptionHasBeenSet;
+
     SplunkDestinationDescription m_splunkDestinationDescription;
     bool m_splunkDestinationDescriptionHasBeenSet;
+
+    HttpEndpointDestinationDescription m_httpEndpointDestinationDescription;
+    bool m_httpEndpointDestinationDescriptionHasBeenSet;
   };
 
 } // namespace Model

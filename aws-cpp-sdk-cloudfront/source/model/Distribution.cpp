@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudfront/model/Distribution.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -39,6 +29,7 @@ Distribution::Distribution() :
     m_inProgressInvalidationBatchesHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_activeTrustedSignersHasBeenSet(false),
+    m_activeTrustedKeyGroupsHasBeenSet(false),
     m_distributionConfigHasBeenSet(false),
     m_aliasICPRecordalsHasBeenSet(false)
 {
@@ -53,6 +44,7 @@ Distribution::Distribution(const XmlNode& xmlNode) :
     m_inProgressInvalidationBatchesHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_activeTrustedSignersHasBeenSet(false),
+    m_activeTrustedKeyGroupsHasBeenSet(false),
     m_distributionConfigHasBeenSet(false),
     m_aliasICPRecordalsHasBeenSet(false)
 {
@@ -106,6 +98,12 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
     {
       m_activeTrustedSigners = activeTrustedSignersNode;
       m_activeTrustedSignersHasBeenSet = true;
+    }
+    XmlNode activeTrustedKeyGroupsNode = resultNode.FirstChild("ActiveTrustedKeyGroups");
+    if(!activeTrustedKeyGroupsNode.IsNull())
+    {
+      m_activeTrustedKeyGroups = activeTrustedKeyGroupsNode;
+      m_activeTrustedKeyGroupsHasBeenSet = true;
     }
     XmlNode distributionConfigNode = resultNode.FirstChild("DistributionConfig");
     if(!distributionConfigNode.IsNull())
@@ -175,6 +173,12 @@ void Distribution::AddToNode(XmlNode& parentNode) const
   {
    XmlNode activeTrustedSignersNode = parentNode.CreateChildElement("ActiveTrustedSigners");
    m_activeTrustedSigners.AddToNode(activeTrustedSignersNode);
+  }
+
+  if(m_activeTrustedKeyGroupsHasBeenSet)
+  {
+   XmlNode activeTrustedKeyGroupsNode = parentNode.CreateChildElement("ActiveTrustedKeyGroups");
+   m_activeTrustedKeyGroups.AddToNode(activeTrustedKeyGroupsNode);
   }
 
   if(m_distributionConfigHasBeenSet)

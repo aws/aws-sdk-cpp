@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/Framework.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,9 @@ namespace Aws
         static const int ONNX_HASH = HashingUtils::HashString("ONNX");
         static const int PYTORCH_HASH = HashingUtils::HashString("PYTORCH");
         static const int XGBOOST_HASH = HashingUtils::HashString("XGBOOST");
+        static const int TFLITE_HASH = HashingUtils::HashString("TFLITE");
+        static const int DARKNET_HASH = HashingUtils::HashString("DARKNET");
+        static const int SKLEARN_HASH = HashingUtils::HashString("SKLEARN");
 
 
         Framework GetFrameworkForName(const Aws::String& name)
@@ -65,6 +58,18 @@ namespace Aws
           {
             return Framework::XGBOOST;
           }
+          else if (hashCode == TFLITE_HASH)
+          {
+            return Framework::TFLITE;
+          }
+          else if (hashCode == DARKNET_HASH)
+          {
+            return Framework::DARKNET;
+          }
+          else if (hashCode == SKLEARN_HASH)
+          {
+            return Framework::SKLEARN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,12 @@ namespace Aws
             return "PYTORCH";
           case Framework::XGBOOST:
             return "XGBOOST";
+          case Framework::TFLITE:
+            return "TFLITE";
+          case Framework::DARKNET:
+            return "DARKNET";
+          case Framework::SKLEARN:
+            return "SKLEARN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

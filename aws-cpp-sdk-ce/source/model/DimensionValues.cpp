@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/DimensionValues.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 DimensionValues::DimensionValues() : 
     m_key(Dimension::NOT_SET),
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_matchOptionsHasBeenSet(false)
 {
 }
 
 DimensionValues::DimensionValues(JsonView jsonValue) : 
     m_key(Dimension::NOT_SET),
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_matchOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +54,16 @@ DimensionValues& DimensionValues::operator =(JsonView jsonValue)
     m_valuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MatchOptions"))
+  {
+    Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("MatchOptions");
+    for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
+    {
+      m_matchOptions.push_back(MatchOptionMapper::GetMatchOptionForName(matchOptionsJsonList[matchOptionsIndex].AsString()));
+    }
+    m_matchOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +84,17 @@ JsonValue DimensionValues::Jsonize() const
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("Values", std::move(valuesJsonList));
+
+  }
+
+  if(m_matchOptionsHasBeenSet)
+  {
+   Array<JsonValue> matchOptionsJsonList(m_matchOptions.size());
+   for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
+   {
+     matchOptionsJsonList[matchOptionsIndex].AsString(MatchOptionMapper::GetNameForMatchOption(m_matchOptions[matchOptionsIndex]));
+   }
+   payload.WithArray("MatchOptions", std::move(matchOptionsJsonList));
 
   }
 

@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents/model/Payload.h>
 #include <utility>
 
 namespace Aws
@@ -88,10 +79,50 @@ namespace Model
      */
     inline SNSTopicPublishAction& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline const Payload& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline SNSTopicPublishAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline SNSTopicPublishAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+
+    Payload m_payload;
+    bool m_payloadHasBeenSet;
   };
 
 } // namespace Model

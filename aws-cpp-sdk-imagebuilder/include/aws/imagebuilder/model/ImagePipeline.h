@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -207,6 +197,39 @@ namespace Model
 
 
     /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
+     */
+    inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
+
+    /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
+     */
+    inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
+
+    /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
+     */
+    inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
+
+    /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
+     */
+    inline ImagePipeline& WithEnhancedImageMetadataEnabled(bool value) { SetEnhancedImageMetadataEnabled(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the image recipe associated with this image
      * pipeline.</p>
      */
@@ -253,6 +276,55 @@ namespace Model
      * pipeline.</p>
      */
     inline ImagePipeline& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline bool ContainerRecipeArnHasBeenSet() const { return m_containerRecipeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline ImagePipeline& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline ImagePipeline& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container recipe that is used for this
+     * pipeline.</p>
+     */
+    inline ImagePipeline& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
 
 
     /**
@@ -689,8 +761,14 @@ namespace Model
     Platform m_platform;
     bool m_platformHasBeenSet;
 
+    bool m_enhancedImageMetadataEnabled;
+    bool m_enhancedImageMetadataEnabledHasBeenSet;
+
     Aws::String m_imageRecipeArn;
     bool m_imageRecipeArnHasBeenSet;
+
+    Aws::String m_containerRecipeArn;
+    bool m_containerRecipeArnHasBeenSet;
 
     Aws::String m_infrastructureConfigurationArn;
     bool m_infrastructureConfigurationArnHasBeenSet;

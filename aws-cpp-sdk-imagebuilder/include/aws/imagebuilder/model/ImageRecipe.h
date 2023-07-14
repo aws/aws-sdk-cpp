@@ -1,24 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 #include <aws/imagebuilder/model/ComponentConfiguration.h>
 #include <aws/imagebuilder/model/InstanceBlockDeviceMapping.h>
 #include <utility>
@@ -91,6 +83,43 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image recipe.</p>
      */
     inline ImageRecipe& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline const ImageType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline ImageRecipe& WithType(const ImageType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Specifies which type of image is created by the recipe - an AMI or a
+     * container image.</p>
+     */
+    inline ImageRecipe& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -330,42 +359,42 @@ namespace Model
 
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipe& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipe& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipe& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
@@ -517,10 +546,103 @@ namespace Model
      */
     inline ImageRecipe& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline ImageRecipe& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline ImageRecipe& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline ImageRecipe& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline const AdditionalInstanceConfiguration& GetAdditionalInstanceConfiguration() const{ return m_additionalInstanceConfiguration; }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline bool AdditionalInstanceConfigurationHasBeenSet() const { return m_additionalInstanceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline void SetAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = value; }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline void SetAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = std::move(value); }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline ImageRecipe& WithAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { SetAdditionalInstanceConfiguration(value); return *this;}
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline ImageRecipe& WithAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { SetAdditionalInstanceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    ImageType m_type;
+    bool m_typeHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -551,6 +673,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_workingDirectory;
+    bool m_workingDirectoryHasBeenSet;
+
+    AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
+    bool m_additionalInstanceConfigurationHasBeenSet;
   };
 
 } // namespace Model

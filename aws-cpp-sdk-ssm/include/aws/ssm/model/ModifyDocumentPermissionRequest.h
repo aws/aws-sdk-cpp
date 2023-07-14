@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -125,177 +115,195 @@ namespace Model
 
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIdsToAdd() const{ return m_accountIdsToAdd; }
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline bool AccountIdsToAddHasBeenSet() const { return m_accountIdsToAddHasBeenSet; }
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline void SetAccountIdsToAdd(const Aws::Vector<Aws::String>& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd = value; }
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline void SetAccountIdsToAdd(Aws::Vector<Aws::String>&& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd = std::move(value); }
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& WithAccountIdsToAdd(const Aws::Vector<Aws::String>& value) { SetAccountIdsToAdd(value); return *this;}
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& WithAccountIdsToAdd(Aws::Vector<Aws::String>&& value) { SetAccountIdsToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(const Aws::String& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(value); return *this; }
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(Aws::String&& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS user accounts that should have access to the document. The account
-     * IDs can either be a group of account IDs or <i>All</i>.</p>
+     * <p>The Amazon Web Services user accounts that should have access to the
+     * document. The account IDs can either be a group of account IDs or
+     * <i>All</i>.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(const char* value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(value); return *this; }
 
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIdsToRemove() const{ return m_accountIdsToRemove; }
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline bool AccountIdsToRemoveHasBeenSet() const { return m_accountIdsToRemoveHasBeenSet; }
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline void SetAccountIdsToRemove(const Aws::Vector<Aws::String>& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove = value; }
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline void SetAccountIdsToRemove(Aws::Vector<Aws::String>&& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove = std::move(value); }
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline ModifyDocumentPermissionRequest& WithAccountIdsToRemove(const Aws::Vector<Aws::String>& value) { SetAccountIdsToRemove(value); return *this;}
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline ModifyDocumentPermissionRequest& WithAccountIdsToRemove(Aws::Vector<Aws::String>&& value) { SetAccountIdsToRemove(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(const Aws::String& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(value); return *this; }
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(Aws::String&& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS user accounts that should no longer have access to the document. The
-     * AWS user account can either be a group of account IDs or <i>All</i>. This action
-     * has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID
-     * to add and the same ID to remove, the system removes access to the document.</p>
+     * <p>The Amazon Web Services user accounts that should no longer have access to
+     * the document. The Amazon Web Services user account can either be a group of
+     * account IDs or <i>All</i>. This action has a higher priority than
+     * <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to
+     * remove, the system removes access to the document.</p>
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(const char* value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(value); return *this; }
 
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline const Aws::String& GetSharedDocumentVersion() const{ return m_sharedDocumentVersion; }
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline bool SharedDocumentVersionHasBeenSet() const { return m_sharedDocumentVersionHasBeenSet; }
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline void SetSharedDocumentVersion(const Aws::String& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = value; }
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline void SetSharedDocumentVersion(Aws::String&& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = std::move(value); }
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline void SetSharedDocumentVersion(const char* value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion.assign(value); }
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(const Aws::String& value) { SetSharedDocumentVersion(value); return *this;}
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(Aws::String&& value) { SetSharedDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
     inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(const char* value) { SetSharedDocumentVersion(value); return *this;}

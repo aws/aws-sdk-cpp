@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -58,7 +48,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -71,7 +61,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -82,7 +72,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -95,7 +85,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -106,7 +96,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -119,7 +109,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -130,7 +120,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -143,7 +133,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -154,7 +144,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -167,7 +157,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -178,7 +168,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -191,7 +181,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -202,7 +192,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -215,7 +205,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -226,7 +216,7 @@ namespace Model
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
-     * (You can also specify both.)</p> <note> <p>Amazon SES does not support the
+     * (You can also specify both.)</p>  <p>Amazon SES does not support the
      * SMTPUTF8 extension, as described in<a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
      * <i>local part</i> of a source email address (the part of the email address that
@@ -239,7 +229,7 @@ namespace Model
      * characters. These characters must be encoded using MIME encoded-word syntax, as
      * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
      * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> </note> <p>If you specify
+     * <code>=?charset?encoding?encoded-text?=</code>.</p>  <p>If you specify
      * the <code>Source</code> parameter and have feedback forwarding enabled, then
      * bounces and complaints will be sent to this email address. This takes precedence
      * over any Return-Path header that you might include in the raw text of the
@@ -443,11 +433,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetFromArn() const{ return m_fromArn; }
 
@@ -458,11 +448,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline bool FromArnHasBeenSet() const { return m_fromArnHasBeenSet; }
 
@@ -473,11 +463,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetFromArn(const Aws::String& value) { m_fromArnHasBeenSet = true; m_fromArn = value; }
 
@@ -488,11 +478,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetFromArn(Aws::String&& value) { m_fromArnHasBeenSet = true; m_fromArn = std::move(value); }
 
@@ -503,11 +493,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetFromArn(const char* value) { m_fromArnHasBeenSet = true; m_fromArn.assign(value); }
 
@@ -518,11 +508,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithFromArn(const Aws::String& value) { SetFromArn(value); return *this;}
 
@@ -533,11 +523,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithFromArn(Aws::String&& value) { SetFromArn(std::move(value)); return *this;}
 
@@ -548,11 +538,11 @@ namespace Model
      * <p>Instead of using this parameter, you can use the X-header
      * <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the
      * <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses
-     * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
+     * the value of the <code>FromArn</code> parameter.</p>  <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithFromArn(const char* value) { SetFromArn(value); return *this;}
 
@@ -570,11 +560,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
@@ -591,11 +581,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
@@ -612,11 +602,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
@@ -633,11 +623,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
@@ -654,11 +644,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
@@ -675,11 +665,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
@@ -696,11 +686,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
@@ -717,11 +707,11 @@ namespace Model
      * using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in
      * the raw message of the email. If you use both the <code>SourceArn</code>
      * parameter and the corresponding X-header, Amazon SES uses the value of the
-     * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
+     * <code>SourceArn</code> parameter.</p>  <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
@@ -741,10 +731,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
 
@@ -763,10 +753,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline bool ReturnPathArnHasBeenSet() const { return m_returnPathArnHasBeenSet; }
 
@@ -785,10 +775,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
 
@@ -807,10 +797,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
 
@@ -829,10 +819,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
 
@@ -851,10 +841,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
 
@@ -873,10 +863,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
 
@@ -895,10 +885,10 @@ namespace Model
      * <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use
      * both the <code>ReturnPathArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
-     * <note> <p>For information about when to use this parameter, see the description
+     *  <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
-     * SES Developer Guide</a>.</p> </note>
+     * SES Developer Guide</a>.</p> 
      */
     inline SendRawEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
 

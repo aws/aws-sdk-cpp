@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/ContactFlowType.h>
+#include <aws/connect/model/ContactFlowState.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains summary information about a contact flow.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains summary information about a contact flow.</p> <p>You can also create
+   * and update contact flows using the <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+   * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowSummary">AWS
    * API Reference</a></p>
    */
@@ -202,6 +195,37 @@ namespace Model
      */
     inline ContactFlowSummary& WithContactFlowType(ContactFlowType&& value) { SetContactFlowType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline const ContactFlowState& GetContactFlowState() const{ return m_contactFlowState; }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline bool ContactFlowStateHasBeenSet() const { return m_contactFlowStateHasBeenSet; }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline void SetContactFlowState(const ContactFlowState& value) { m_contactFlowStateHasBeenSet = true; m_contactFlowState = value; }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline void SetContactFlowState(ContactFlowState&& value) { m_contactFlowStateHasBeenSet = true; m_contactFlowState = std::move(value); }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline ContactFlowSummary& WithContactFlowState(const ContactFlowState& value) { SetContactFlowState(value); return *this;}
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline ContactFlowSummary& WithContactFlowState(ContactFlowState&& value) { SetContactFlowState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -215,6 +239,9 @@ namespace Model
 
     ContactFlowType m_contactFlowType;
     bool m_contactFlowTypeHasBeenSet;
+
+    ContactFlowState m_contactFlowState;
+    bool m_contactFlowStateHasBeenSet;
   };
 
 } // namespace Model

@@ -1,0 +1,85 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/SageMakerRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace SageMaker
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_SAGEMAKER_API DescribeLineageGroupRequest : public SageMakerRequest
+  {
+  public:
+    DescribeLineageGroupRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DescribeLineageGroup"; }
+
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline const Aws::String& GetLineageGroupName() const{ return m_lineageGroupName; }
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline bool LineageGroupNameHasBeenSet() const { return m_lineageGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline void SetLineageGroupName(const Aws::String& value) { m_lineageGroupNameHasBeenSet = true; m_lineageGroupName = value; }
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline void SetLineageGroupName(Aws::String&& value) { m_lineageGroupNameHasBeenSet = true; m_lineageGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline void SetLineageGroupName(const char* value) { m_lineageGroupNameHasBeenSet = true; m_lineageGroupName.assign(value); }
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline DescribeLineageGroupRequest& WithLineageGroupName(const Aws::String& value) { SetLineageGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline DescribeLineageGroupRequest& WithLineageGroupName(Aws::String&& value) { SetLineageGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the lineage group.</p>
+     */
+    inline DescribeLineageGroupRequest& WithLineageGroupName(const char* value) { SetLineageGroupName(value); return *this;}
+
+  private:
+
+    Aws::String m_lineageGroupName;
+    bool m_lineageGroupNameHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace SageMaker
+} // namespace Aws

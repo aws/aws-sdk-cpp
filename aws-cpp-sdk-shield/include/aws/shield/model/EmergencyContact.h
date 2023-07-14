@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
@@ -34,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Contact information that the DRT can use to contact you during a suspected
-   * attack.</p><p><h3>See Also:</h3>   <a
+   * <p>Contact information that the SRT can use to contact you if you have proactive
+   * engagement enabled, for escalations to the SRT and to initiate proactive
+   * customer support.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EmergencyContact">AWS
    * API Reference</a></p>
    */
@@ -49,57 +40,137 @@ namespace Model
 
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline EmergencyContact& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline EmergencyContact& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>An email address that the DRT can use to contact you during a suspected
-     * attack.</p>
+     * <p>The email address for the contact.</p>
      */
     inline EmergencyContact& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline EmergencyContact& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline EmergencyContact& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>The phone number for the contact.</p>
+     */
+    inline EmergencyContact& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline const Aws::String& GetContactNotes() const{ return m_contactNotes; }
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline bool ContactNotesHasBeenSet() const { return m_contactNotesHasBeenSet; }
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline void SetContactNotes(const Aws::String& value) { m_contactNotesHasBeenSet = true; m_contactNotes = value; }
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline void SetContactNotes(Aws::String&& value) { m_contactNotesHasBeenSet = true; m_contactNotes = std::move(value); }
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline void SetContactNotes(const char* value) { m_contactNotesHasBeenSet = true; m_contactNotes.assign(value); }
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline EmergencyContact& WithContactNotes(const Aws::String& value) { SetContactNotes(value); return *this;}
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline EmergencyContact& WithContactNotes(Aws::String&& value) { SetContactNotes(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional notes regarding the contact. </p>
+     */
+    inline EmergencyContact& WithContactNotes(const char* value) { SetContactNotes(value); return *this;}
 
   private:
 
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
+
+    Aws::String m_phoneNumber;
+    bool m_phoneNumberHasBeenSet;
+
+    Aws::String m_contactNotes;
+    bool m_contactNotesHasBeenSet;
   };
 
 } // namespace Model

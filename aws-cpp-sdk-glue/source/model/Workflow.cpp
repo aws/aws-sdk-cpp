@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/Workflow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,10 @@ Workflow::Workflow() :
     m_createdOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_lastRunHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_maxConcurrentRuns(0),
+    m_maxConcurrentRunsHasBeenSet(false),
+    m_blueprintDetailsHasBeenSet(false)
 {
 }
 
@@ -46,7 +39,10 @@ Workflow::Workflow(JsonView jsonValue) :
     m_createdOnHasBeenSet(false),
     m_lastModifiedOnHasBeenSet(false),
     m_lastRunHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_maxConcurrentRuns(0),
+    m_maxConcurrentRunsHasBeenSet(false),
+    m_blueprintDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +101,20 @@ Workflow& Workflow::operator =(JsonView jsonValue)
     m_graphHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxConcurrentRuns"))
+  {
+    m_maxConcurrentRuns = jsonValue.GetInteger("MaxConcurrentRuns");
+
+    m_maxConcurrentRunsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BlueprintDetails"))
+  {
+    m_blueprintDetails = jsonValue.GetObject("BlueprintDetails");
+
+    m_blueprintDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +164,18 @@ JsonValue Workflow::Jsonize() const
   if(m_graphHasBeenSet)
   {
    payload.WithObject("Graph", m_graph.Jsonize());
+
+  }
+
+  if(m_maxConcurrentRunsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentRuns", m_maxConcurrentRuns);
+
+  }
+
+  if(m_blueprintDetailsHasBeenSet)
+  {
+   payload.WithObject("BlueprintDetails", m_blueprintDetails.Jsonize());
 
   }
 

@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/DvbSubOcrLanguage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,6 +38,55 @@ namespace Model
 
 
     /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline const DvbSubOcrLanguage& GetOcrLanguage() const{ return m_ocrLanguage; }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline bool OcrLanguageHasBeenSet() const { return m_ocrLanguageHasBeenSet; }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline void SetOcrLanguage(const DvbSubOcrLanguage& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = value; }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline void SetOcrLanguage(DvbSubOcrLanguage&& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = std::move(value); }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline DvbSubSourceSettings& WithOcrLanguage(const DvbSubOcrLanguage& value) { SetOcrLanguage(value); return *this;}
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption
+     * selector, use this field to
+provide the language to consider when translating
+     * the image-based source to text.
+     */
+    inline DvbSubSourceSettings& WithOcrLanguage(DvbSubOcrLanguage&& value) { SetOcrLanguage(std::move(value)); return *this;}
+
+
+    /**
      * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source
      * content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through,
      * regardless of selectors.
@@ -74,6 +115,9 @@ namespace Model
     inline DvbSubSourceSettings& WithPid(int value) { SetPid(value); return *this;}
 
   private:
+
+    DvbSubOcrLanguage m_ocrLanguage;
+    bool m_ocrLanguageHasBeenSet;
 
     int m_pid;
     bool m_pidHasBeenSet;

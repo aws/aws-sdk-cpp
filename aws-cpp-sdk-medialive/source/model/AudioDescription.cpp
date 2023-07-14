@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/AudioDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,6 +25,7 @@ AudioDescription::AudioDescription() :
     m_audioTypeHasBeenSet(false),
     m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
     m_audioTypeControlHasBeenSet(false),
+    m_audioWatermarkingSettingsHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
     m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
@@ -52,6 +43,7 @@ AudioDescription::AudioDescription(JsonView jsonValue) :
     m_audioTypeHasBeenSet(false),
     m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
     m_audioTypeControlHasBeenSet(false),
+    m_audioWatermarkingSettingsHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
     m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
@@ -91,6 +83,13 @@ AudioDescription& AudioDescription::operator =(JsonView jsonValue)
     m_audioTypeControl = AudioDescriptionAudioTypeControlMapper::GetAudioDescriptionAudioTypeControlForName(jsonValue.GetString("audioTypeControl"));
 
     m_audioTypeControlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioWatermarkingSettings"))
+  {
+    m_audioWatermarkingSettings = jsonValue.GetObject("audioWatermarkingSettings");
+
+    m_audioWatermarkingSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codecSettings"))
@@ -162,6 +161,12 @@ JsonValue AudioDescription::Jsonize() const
   if(m_audioTypeControlHasBeenSet)
   {
    payload.WithString("audioTypeControl", AudioDescriptionAudioTypeControlMapper::GetNameForAudioDescriptionAudioTypeControl(m_audioTypeControl));
+  }
+
+  if(m_audioWatermarkingSettingsHasBeenSet)
+  {
+   payload.WithObject("audioWatermarkingSettings", m_audioWatermarkingSettings.Jsonize());
+
   }
 
   if(m_codecSettingsHasBeenSet)

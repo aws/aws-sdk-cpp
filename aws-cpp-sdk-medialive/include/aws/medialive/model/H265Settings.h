@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/medialive/model/H265AlternativeTransferFunction.h>
 #include <aws/medialive/model/H265ColorMetadata.h>
 #include <aws/medialive/model/H265ColorSpaceSettings.h>
+#include <aws/medialive/model/H265FilterSettings.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/H265FlickerAq.h>
 #include <aws/medialive/model/H265GopSizeUnits.h>
@@ -295,6 +286,37 @@ namespace Model
      * Color Space settings
      */
     inline H265Settings& WithColorSpaceSettings(H265ColorSpaceSettings&& value) { SetColorSpaceSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline const H265FilterSettings& GetFilterSettings() const{ return m_filterSettings; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline void SetFilterSettings(const H265FilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline void SetFilterSettings(H265FilterSettings&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::move(value); }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline H265Settings& WithFilterSettings(const H265FilterSettings& value) { SetFilterSettings(value); return *this;}
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline H265Settings& WithFilterSettings(H265FilterSettings&& value) { SetFilterSettings(std::move(value)); return *this;}
 
 
     /**
@@ -792,6 +814,13 @@ CBR: Quality varies, depending on the video
      * complexity. Recommended only if you distribute
 your assets to devices that
      * cannot handle variable bitrates.
+
+Multiplex: This rate control mode is only
+     * supported (and is required) when the video is being
+delivered to a MediaLive
+     * Multiplex in which case the rate control configuration is controlled
+by the
+     * properties within the Multiplex Program.
      */
     inline const H265RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
@@ -807,6 +836,13 @@ CBR: Quality varies, depending on the video
      * complexity. Recommended only if you distribute
 your assets to devices that
      * cannot handle variable bitrates.
+
+Multiplex: This rate control mode is only
+     * supported (and is required) when the video is being
+delivered to a MediaLive
+     * Multiplex in which case the rate control configuration is controlled
+by the
+     * properties within the Multiplex Program.
      */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
@@ -822,6 +858,13 @@ CBR: Quality varies, depending on the video
      * complexity. Recommended only if you distribute
 your assets to devices that
      * cannot handle variable bitrates.
+
+Multiplex: This rate control mode is only
+     * supported (and is required) when the video is being
+delivered to a MediaLive
+     * Multiplex in which case the rate control configuration is controlled
+by the
+     * properties within the Multiplex Program.
      */
     inline void SetRateControlMode(const H265RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
@@ -837,6 +880,13 @@ CBR: Quality varies, depending on the video
      * complexity. Recommended only if you distribute
 your assets to devices that
      * cannot handle variable bitrates.
+
+Multiplex: This rate control mode is only
+     * supported (and is required) when the video is being
+delivered to a MediaLive
+     * Multiplex in which case the rate control configuration is controlled
+by the
+     * properties within the Multiplex Program.
      */
     inline void SetRateControlMode(H265RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
@@ -852,6 +902,13 @@ CBR: Quality varies, depending on the video
      * complexity. Recommended only if you distribute
 your assets to devices that
      * cannot handle variable bitrates.
+
+Multiplex: This rate control mode is only
+     * supported (and is required) when the video is being
+delivered to a MediaLive
+     * Multiplex in which case the rate control configuration is controlled
+by the
+     * properties within the Multiplex Program.
      */
     inline H265Settings& WithRateControlMode(const H265RateControlMode& value) { SetRateControlMode(value); return *this;}
 
@@ -867,6 +924,13 @@ CBR: Quality varies, depending on the video
      * complexity. Recommended only if you distribute
 your assets to devices that
      * cannot handle variable bitrates.
+
+Multiplex: This rate control mode is only
+     * supported (and is required) when the video is being
+delivered to a MediaLive
+     * Multiplex in which case the rate control configuration is controlled
+by the
+     * properties within the Multiplex Program.
      */
     inline H265Settings& WithRateControlMode(H265RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
 
@@ -1081,6 +1145,9 @@ This field is optional; when
 
     H265ColorSpaceSettings m_colorSpaceSettings;
     bool m_colorSpaceSettingsHasBeenSet;
+
+    H265FilterSettings m_filterSettings;
+    bool m_filterSettingsHasBeenSet;
 
     FixedAfd m_fixedAfd;
     bool m_fixedAfdHasBeenSet;

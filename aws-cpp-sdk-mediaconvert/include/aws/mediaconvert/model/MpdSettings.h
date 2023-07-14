@@ -1,23 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/MpdAccessibilityCaptionHints.h>
+#include <aws/mediaconvert/model/MpdAudioDuration.h>
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
+#include <aws/mediaconvert/model/MpdKlvMetadata.h>
 #include <aws/mediaconvert/model/MpdScte35Esam.h>
 #include <aws/mediaconvert/model/MpdScte35Source.h>
+#include <aws/mediaconvert/model/MpdTimedMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +30,8 @@ namespace Model
 {
 
   /**
-   * Settings for MP4 segments in DASH<p><h3>See Also:</h3>   <a
+   * These settings relate to the fragmented MP4 container for the segments in your
+   * DASH outputs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MpdSettings">AWS
    * API Reference</a></p>
    */
@@ -47,6 +42,176 @@ namespace Model
     MpdSettings(Aws::Utils::Json::JsonView jsonValue);
     MpdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline const MpdAccessibilityCaptionHints& GetAccessibilityCaptionHints() const{ return m_accessibilityCaptionHints; }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline bool AccessibilityCaptionHintsHasBeenSet() const { return m_accessibilityCaptionHintsHasBeenSet; }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline void SetAccessibilityCaptionHints(const MpdAccessibilityCaptionHints& value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = value; }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline void SetAccessibilityCaptionHints(MpdAccessibilityCaptionHints&& value) { m_accessibilityCaptionHintsHasBeenSet = true; m_accessibilityCaptionHints = std::move(value); }
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline MpdSettings& WithAccessibilityCaptionHints(const MpdAccessibilityCaptionHints& value) { SetAccessibilityCaptionHints(value); return *this;}
+
+    /**
+     * Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH
+     * manifest with <Accessibility> elements for embedded 608 captions. This markup
+     * isn't generally required, but some video players require it to discover and play
+     * embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these
+     * elements out. When you enable this setting, this is the markup that MediaConvert
+     * includes in your manifest: <Accessibility
+     * schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+     */
+    inline MpdSettings& WithAccessibilityCaptionHints(MpdAccessibilityCaptionHints&& value) { SetAccessibilityCaptionHints(std::move(value)); return *this;}
+
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline const MpdAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(const MpdAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline void SetAudioDuration(MpdAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline MpdSettings& WithAudioDuration(const MpdAudioDuration& value) { SetAudioDuration(value); return *this;}
+
+    /**
+     * Specify this setting only when your output will be consumed by a downstream
+     * repackaging workflow that is sensitive to very small duration differences
+     * between video and audio. For this situation, choose Match video duration
+     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
+     * MediaConvert pads the output audio streams with silence or trims them to ensure
+     * that the total duration of each audio stream is at least as long as the total
+     * duration of the video stream. After padding or trimming, the audio stream
+     * duration is no more than one frame longer than the video stream. MediaConvert
+     * applies audio padding or trimming only to the end of the last segment of the
+     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
+     * the file. When you keep the default value, any minor discrepancies between audio
+     * and video duration will depend on your output audio codec.
+     */
+    inline MpdSettings& WithAudioDuration(MpdAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
 
 
     /**
@@ -108,6 +273,61 @@ namespace Model
      * your video and audio fragmented MP4 files.
      */
     inline MpdSettings& WithCaptionContainerType(MpdCaptionContainerType&& value) { SetCaptionContainerType(std::move(value)); return *this;}
+
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline const MpdKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline void SetKlvMetadata(const MpdKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline void SetKlvMetadata(MpdKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline MpdSettings& WithKlvMetadata(const MpdKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
+     */
+    inline MpdSettings& WithKlvMetadata(MpdKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -201,16 +421,83 @@ namespace Model
      */
     inline MpdSettings& WithScte35Source(MpdScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline const MpdTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline void SetTimedMetadata(const MpdTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline void SetTimedMetadata(MpdTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline MpdSettings& WithTimedMetadata(const MpdTimedMetadata& value) { SetTimedMetadata(value); return *this;}
+
+    /**
+     * To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to
+     * Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata
+     * inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3
+     * metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata:
+     * Set ID3 metadata to None (NONE) or leave blank.
+     */
+    inline MpdSettings& WithTimedMetadata(MpdTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+
   private:
+
+    MpdAccessibilityCaptionHints m_accessibilityCaptionHints;
+    bool m_accessibilityCaptionHintsHasBeenSet;
+
+    MpdAudioDuration m_audioDuration;
+    bool m_audioDurationHasBeenSet;
 
     MpdCaptionContainerType m_captionContainerType;
     bool m_captionContainerTypeHasBeenSet;
+
+    MpdKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     MpdScte35Esam m_scte35Esam;
     bool m_scte35EsamHasBeenSet;
 
     MpdScte35Source m_scte35Source;
     bool m_scte35SourceHasBeenSet;
+
+    MpdTimedMetadata m_timedMetadata;
+    bool m_timedMetadataHasBeenSet;
   };
 
 } // namespace Model

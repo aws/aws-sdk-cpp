@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -36,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the target Amazon S3 bucket for the Resource Data
-   * Sync.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the target S3 bucket for the resource data
+   * sync.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncS3Destination">AWS
    * API Reference</a></p>
    */
@@ -51,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline ResourceDataSyncS3Destination& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline ResourceDataSyncS3Destination& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
+     * <p>The name of the S3 bucket where the aggregated data is stored.</p>
      */
     inline ResourceDataSyncS3Destination& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
@@ -170,99 +160,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline ResourceDataSyncS3Destination& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline ResourceDataSyncS3Destination& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
-     * Sync.</p>
+     * <p>The Amazon Web Services Region with the S3 bucket targeted by the resource
+     * data sync.</p>
      */
     inline ResourceDataSyncS3Destination& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline const Aws::String& GetAWSKMSKeyARN() const{ return m_aWSKMSKeyARN; }
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline bool AWSKMSKeyARNHasBeenSet() const { return m_aWSKMSKeyARNHasBeenSet; }
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline void SetAWSKMSKeyARN(const Aws::String& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = value; }
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline void SetAWSKMSKeyARN(Aws::String&& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = std::move(value); }
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline void SetAWSKMSKeyARN(const char* value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN.assign(value); }
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline ResourceDataSyncS3Destination& WithAWSKMSKeyARN(const Aws::String& value) { SetAWSKMSKeyARN(value); return *this;}
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline ResourceDataSyncS3Destination& WithAWSKMSKeyARN(Aws::String&& value) { SetAWSKMSKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to
-     * the same Region as the destination Amazon S3 bucket.</p>
+     * the same Region as the destination S3 bucket.</p>
      */
     inline ResourceDataSyncS3Destination& WithAWSKMSKeyARN(const char* value) { SetAWSKMSKeyARN(value); return *this;}
 

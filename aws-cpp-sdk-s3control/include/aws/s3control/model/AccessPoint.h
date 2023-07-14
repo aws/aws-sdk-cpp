@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -91,99 +81,105 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline const NetworkOrigin& GetNetworkOrigin() const{ return m_networkOrigin; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline bool NetworkOriginHasBeenSet() const { return m_networkOriginHasBeenSet; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline void SetNetworkOrigin(const NetworkOrigin& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = value; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline void SetNetworkOrigin(NetworkOrigin&& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = std::move(value); }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline AccessPoint& WithNetworkOrigin(const NetworkOrigin& value) { SetNetworkOrigin(value); return *this;}
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline AccessPoint& WithNetworkOrigin(NetworkOrigin&& value) { SetNetworkOrigin(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
-     * exists.</p>
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
+     * exists.</p>  <p>This element is empty if this access point is an Amazon S3
+     * on Outposts access point that is used by other Amazon Web Services.</p> 
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
-     * exists.</p>
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
+     * exists.</p>  <p>This element is empty if this access point is an Amazon S3
+     * on Outposts access point that is used by other Amazon Web Services.</p> 
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
-     * exists.</p>
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
+     * exists.</p>  <p>This element is empty if this access point is an Amazon S3
+     * on Outposts access point that is used by other Amazon Web Services.</p> 
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
-     * exists.</p>
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
+     * exists.</p>  <p>This element is empty if this access point is an Amazon S3
+     * on Outposts access point that is used by other Amazon Web Services.</p> 
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
-     * exists.</p>
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
+     * exists.</p>  <p>This element is empty if this access point is an Amazon S3
+     * on Outposts access point that is used by other Amazon Web Services.</p> 
      */
     inline AccessPoint& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
-     * exists.</p>
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
+     * exists.</p>  <p>This element is empty if this access point is an Amazon S3
+     * on Outposts access point that is used by other Amazon Web Services.</p> 
      */
     inline AccessPoint& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
@@ -228,6 +224,88 @@ namespace Model
      */
     inline AccessPoint& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline AccessPoint& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline AccessPoint& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the access point.</p>
+     */
+    inline AccessPoint& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline AccessPoint& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline AccessPoint& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline AccessPoint& WithAlias(const char* value) { SetAlias(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -241,6 +319,12 @@ namespace Model
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
+    Aws::String m_accessPointArn;
+    bool m_accessPointArnHasBeenSet;
+
+    Aws::String m_alias;
+    bool m_aliasHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,8 @@ AdditionalAuthenticationProvider::AdditionalAuthenticationProvider() :
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
+    m_userPoolConfigHasBeenSet(false),
+    m_lambdaAuthorizerConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +31,8 @@ AdditionalAuthenticationProvider::AdditionalAuthenticationProvider(JsonView json
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
+    m_userPoolConfigHasBeenSet(false),
+    m_lambdaAuthorizerConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +60,13 @@ AdditionalAuthenticationProvider& AdditionalAuthenticationProvider::operator =(J
     m_userPoolConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaAuthorizerConfig"))
+  {
+    m_lambdaAuthorizerConfig = jsonValue.GetObject("lambdaAuthorizerConfig");
+
+    m_lambdaAuthorizerConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +88,12 @@ JsonValue AdditionalAuthenticationProvider::Jsonize() const
   if(m_userPoolConfigHasBeenSet)
   {
    payload.WithObject("userPoolConfig", m_userPoolConfig.Jsonize());
+
+  }
+
+  if(m_lambdaAuthorizerConfigHasBeenSet)
+  {
+   payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
 
   }
 

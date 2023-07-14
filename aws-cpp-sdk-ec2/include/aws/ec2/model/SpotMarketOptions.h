@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -104,138 +94,142 @@ namespace Model
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline const SpotInstanceType& GetSpotInstanceType() const{ return m_spotInstanceType; }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline bool SpotInstanceTypeHasBeenSet() const { return m_spotInstanceTypeHasBeenSet; }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline void SetSpotInstanceType(const SpotInstanceType& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = value; }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline void SetSpotInstanceType(SpotInstanceType&& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = std::move(value); }
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline SpotMarketOptions& WithSpotInstanceType(const SpotInstanceType& value) { SetSpotInstanceType(value); return *this;}
 
     /**
      * <p>The Spot Instance request type. For <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-     * persistent Spot Instance requests are only supported when
-     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     * <code>stop</code>.</p>
+     * persistent Spot Instance requests are only supported when the instance
+     * interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline SpotMarketOptions& WithSpotInstanceType(SpotInstanceType&& value) { SetSpotInstanceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p>
+     * <p>Deprecated.</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p>
+     * <p>Deprecated.</p>
      */
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p>
+     * <p>Deprecated.</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
-     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
-     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
-     * 360).</p>
+     * <p>Deprecated.</p>
      */
     inline SpotMarketOptions& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
 
     /**
-     * <p>The end date of the request. For a one-time request, the request remains
-     * active until all instances launch, the request is canceled, or this date is
-     * reached. If the request is persistent, it remains active until it is canceled or
-     * this date and time is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only
+     * for persistent requests.</p> <ul> <li> <p>For a persistent request, the request
+     * remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.</p> </li> <li> <p>For
+     * a one-time request, <code>ValidUntil</code> is not supported. The request
+     * remains active until all instances launch or you cancel the request.</p> </li>
+     * </ul>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
-     * <p>The end date of the request. For a one-time request, the request remains
-     * active until all instances launch, the request is canceled, or this date is
-     * reached. If the request is persistent, it remains active until it is canceled or
-     * this date and time is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only
+     * for persistent requests.</p> <ul> <li> <p>For a persistent request, the request
+     * remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.</p> </li> <li> <p>For
+     * a one-time request, <code>ValidUntil</code> is not supported. The request
+     * remains active until all instances launch or you cancel the request.</p> </li>
+     * </ul>
      */
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
-     * <p>The end date of the request. For a one-time request, the request remains
-     * active until all instances launch, the request is canceled, or this date is
-     * reached. If the request is persistent, it remains active until it is canceled or
-     * this date and time is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only
+     * for persistent requests.</p> <ul> <li> <p>For a persistent request, the request
+     * remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.</p> </li> <li> <p>For
+     * a one-time request, <code>ValidUntil</code> is not supported. The request
+     * remains active until all instances launch or you cancel the request.</p> </li>
+     * </ul>
      */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
-     * <p>The end date of the request. For a one-time request, the request remains
-     * active until all instances launch, the request is canceled, or this date is
-     * reached. If the request is persistent, it remains active until it is canceled or
-     * this date and time is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only
+     * for persistent requests.</p> <ul> <li> <p>For a persistent request, the request
+     * remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.</p> </li> <li> <p>For
+     * a one-time request, <code>ValidUntil</code> is not supported. The request
+     * remains active until all instances launch or you cancel the request.</p> </li>
+     * </ul>
      */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
     /**
-     * <p>The end date of the request. For a one-time request, the request remains
-     * active until all instances launch, the request is canceled, or this date is
-     * reached. If the request is persistent, it remains active until it is canceled or
-     * this date and time is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only
+     * for persistent requests.</p> <ul> <li> <p>For a persistent request, the request
+     * remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.</p> </li> <li> <p>For
+     * a one-time request, <code>ValidUntil</code> is not supported. The request
+     * remains active until all instances launch or you cancel the request.</p> </li>
+     * </ul>
      */
     inline SpotMarketOptions& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
 
     /**
-     * <p>The end date of the request. For a one-time request, the request remains
-     * active until all instances launch, the request is canceled, or this date is
-     * reached. If the request is persistent, it remains active until it is canceled or
-     * this date and time is reached. The default end date is 7 days from the current
-     * date.</p>
+     * <p>The end date of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). Supported only
+     * for persistent requests.</p> <ul> <li> <p>For a persistent request, the request
+     * remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.</p> </li> <li> <p>For
+     * a one-time request, <code>ValidUntil</code> is not supported. The request
+     * remains active until all instances launch or you cancel the request.</p> </li>
+     * </ul>
      */
     inline SpotMarketOptions& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 

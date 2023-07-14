@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
@@ -98,78 +88,106 @@ namespace Model
 
     /**
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
-     * application source.</p>
+     * application source.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
 
     /**
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
-     * application source.</p>
+     * application source.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline bool ApplicationSourceHasBeenSet() const { return m_applicationSourceHasBeenSet; }
 
     /**
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
-     * application source.</p>
+     * application source.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
 
     /**
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
-     * application source.</p>
+     * application source.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline void SetApplicationSource(ApplicationSource&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::move(value); }
 
     /**
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
-     * application source.</p>
+     * application source.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline CreateScalingPlanRequest& WithApplicationSource(const ApplicationSource& value) { SetApplicationSource(value); return *this;}
 
     /**
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
-     * application source.</p>
+     * application source.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline CreateScalingPlanRequest& WithApplicationSource(ApplicationSource&& value) { SetApplicationSource(std::move(value)); return *this;}
 
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline const Aws::Vector<ScalingInstruction>& GetScalingInstructions() const{ return m_scalingInstructions; }
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline bool ScalingInstructionsHasBeenSet() const { return m_scalingInstructionsHasBeenSet; }
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline void SetScalingInstructions(const Aws::Vector<ScalingInstruction>& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions = value; }
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline void SetScalingInstructions(Aws::Vector<ScalingInstruction>&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions = std::move(value); }
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline CreateScalingPlanRequest& WithScalingInstructions(const Aws::Vector<ScalingInstruction>& value) { SetScalingInstructions(value); return *this;}
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline CreateScalingPlanRequest& WithScalingInstructions(Aws::Vector<ScalingInstruction>&& value) { SetScalingInstructions(std::move(value)); return *this;}
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline CreateScalingPlanRequest& AddScalingInstructions(const ScalingInstruction& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions.push_back(value); return *this; }
 
     /**
-     * <p>The scaling instructions.</p>
+     * <p>The scaling instructions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+     * in the <i>AWS Auto Scaling API Reference</i>.</p>
      */
     inline CreateScalingPlanRequest& AddScalingInstructions(ScalingInstruction&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -34,16 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>AWS services in China customers must file for an Internet Content Provider
-   * (ICP) recordal if they want to serve content publicly on an alternate domain
-   * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
-   * provides the ICP recordal status for CNAMEs associated with distributions. The
-   * status is returned in the CloudFront response; you can't configure it
-   * yourself.</p> <p>For more information about ICP recordals, see <a
+   * <p>Amazon Web Services services in China customers must file for an Internet
+   * Content Provider (ICP) recordal if they want to serve content publicly on an
+   * alternate domain name, also known as a CNAME, that they've added to CloudFront.
+   * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+   * distributions. The status is returned in the CloudFront response; you can't
+   * configure it yourself.</p> <p>For more information about ICP recordals, see <a
    * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-   * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
-   * China</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/AliasICPRecordal">AWS
+   * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
+   * Services services in China</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AliasICPRecordal">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API AliasICPRecordal

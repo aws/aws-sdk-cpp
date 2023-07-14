@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/ComputeEnvironmentDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,7 +21,10 @@ namespace Model
 ComputeEnvironmentDetail::ComputeEnvironmentDetail() : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
     m_typeHasBeenSet(false),
     m_state(CEState::NOT_SET),
@@ -40,14 +33,18 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
 }
 
 ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
     m_typeHasBeenSet(false),
     m_state(CEState::NOT_SET),
@@ -56,7 +53,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,11 +75,28 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_computeEnvironmentArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unmanagedvCpus"))
+  {
+    m_unmanagedvCpus = jsonValue.GetInteger("unmanagedvCpus");
+
+    m_unmanagedvCpusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ecsClusterArn"))
   {
     m_ecsClusterArn = jsonValue.GetString("ecsClusterArn");
 
     m_ecsClusterArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -126,6 +141,13 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_serviceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updatePolicy"))
+  {
+    m_updatePolicy = jsonValue.GetObject("updatePolicy");
+
+    m_updatePolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,9 +167,26 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
 
   }
 
+  if(m_unmanagedvCpusHasBeenSet)
+  {
+   payload.WithInteger("unmanagedvCpus", m_unmanagedvCpus);
+
+  }
+
   if(m_ecsClusterArnHasBeenSet)
   {
    payload.WithString("ecsClusterArn", m_ecsClusterArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 
@@ -181,6 +220,12 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("serviceRole", m_serviceRole);
+
+  }
+
+  if(m_updatePolicyHasBeenSet)
+  {
+   payload.WithObject("updatePolicy", m_updatePolicy.Jsonize());
 
   }
 

@@ -99,10 +99,13 @@ namespace Model
 
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#if($metadata.hasEndpointDiscoveryTrait)
+        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
 #if($metadata.hasEndpointTrait)
@@ -111,12 +114,15 @@ namespace Model
         bool m_disableHostPrefixInjdection;
 #else
         Aws::String m_uri;
-#end      
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery;
 #end
         Aws::String m_configScheme;
+#if($metadata.hasPreSignedUrl)
+        bool m_useDualStack;
+#end
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

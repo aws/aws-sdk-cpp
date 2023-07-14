@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/organizations/model/CreateAccountFailureReason.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,13 @@ namespace Aws
         static const int CONCURRENT_ACCOUNT_MODIFICATION_HASH = HashingUtils::HashString("CONCURRENT_ACCOUNT_MODIFICATION");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
         static const int GOVCLOUD_ACCOUNT_ALREADY_EXISTS_HASH = HashingUtils::HashString("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
+        static const int MISSING_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("MISSING_BUSINESS_VALIDATION");
+        static const int FAILED_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("FAILED_BUSINESS_VALIDATION");
+        static const int PENDING_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("PENDING_BUSINESS_VALIDATION");
+        static const int INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
+        static const int UNKNOWN_BUSINESS_VALIDATION_HASH = HashingUtils::HashString("UNKNOWN_BUSINESS_VALIDATION");
+        static const int MISSING_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("MISSING_PAYMENT_INSTRUMENT");
+        static const int INVALID_PAYMENT_INSTRUMENT_HASH = HashingUtils::HashString("INVALID_PAYMENT_INSTRUMENT");
 
 
         CreateAccountFailureReason GetCreateAccountFailureReasonForName(const Aws::String& name)
@@ -70,6 +67,34 @@ namespace Aws
           {
             return CreateAccountFailureReason::GOVCLOUD_ACCOUNT_ALREADY_EXISTS;
           }
+          else if (hashCode == MISSING_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::MISSING_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == FAILED_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::FAILED_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == PENDING_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::PENDING_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == INVALID_IDENTITY_FOR_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::INVALID_IDENTITY_FOR_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == UNKNOWN_BUSINESS_VALIDATION_HASH)
+          {
+            return CreateAccountFailureReason::UNKNOWN_BUSINESS_VALIDATION;
+          }
+          else if (hashCode == MISSING_PAYMENT_INSTRUMENT_HASH)
+          {
+            return CreateAccountFailureReason::MISSING_PAYMENT_INSTRUMENT;
+          }
+          else if (hashCode == INVALID_PAYMENT_INSTRUMENT_HASH)
+          {
+            return CreateAccountFailureReason::INVALID_PAYMENT_INSTRUMENT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +123,20 @@ namespace Aws
             return "INTERNAL_FAILURE";
           case CreateAccountFailureReason::GOVCLOUD_ACCOUNT_ALREADY_EXISTS:
             return "GOVCLOUD_ACCOUNT_ALREADY_EXISTS";
+          case CreateAccountFailureReason::MISSING_BUSINESS_VALIDATION:
+            return "MISSING_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::FAILED_BUSINESS_VALIDATION:
+            return "FAILED_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::PENDING_BUSINESS_VALIDATION:
+            return "PENDING_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::INVALID_IDENTITY_FOR_BUSINESS_VALIDATION:
+            return "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::UNKNOWN_BUSINESS_VALIDATION:
+            return "UNKNOWN_BUSINESS_VALIDATION";
+          case CreateAccountFailureReason::MISSING_PAYMENT_INSTRUMENT:
+            return "MISSING_PAYMENT_INSTRUMENT";
+          case CreateAccountFailureReason::INVALID_PAYMENT_INSTRUMENT:
+            return "INVALID_PAYMENT_INSTRUMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

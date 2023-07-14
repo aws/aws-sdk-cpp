@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -267,28 +257,28 @@ namespace Model
     /**
      * <p>Indicates whether this option group can be applied to both VPC and non-VPC
      * instances. The value <code>true</code> indicates the option group can be applied
-     * to both VPC and non-VPC instances. </p>
+     * to both VPC and non-VPC instances.</p>
      */
     inline bool GetAllowsVpcAndNonVpcInstanceMemberships() const{ return m_allowsVpcAndNonVpcInstanceMemberships; }
 
     /**
      * <p>Indicates whether this option group can be applied to both VPC and non-VPC
      * instances. The value <code>true</code> indicates the option group can be applied
-     * to both VPC and non-VPC instances. </p>
+     * to both VPC and non-VPC instances.</p>
      */
     inline bool AllowsVpcAndNonVpcInstanceMembershipsHasBeenSet() const { return m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet; }
 
     /**
      * <p>Indicates whether this option group can be applied to both VPC and non-VPC
      * instances. The value <code>true</code> indicates the option group can be applied
-     * to both VPC and non-VPC instances. </p>
+     * to both VPC and non-VPC instances.</p>
      */
     inline void SetAllowsVpcAndNonVpcInstanceMemberships(bool value) { m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true; m_allowsVpcAndNonVpcInstanceMemberships = value; }
 
     /**
      * <p>Indicates whether this option group can be applied to both VPC and non-VPC
      * instances. The value <code>true</code> indicates the option group can be applied
-     * to both VPC and non-VPC instances. </p>
+     * to both VPC and non-VPC instances.</p>
      */
     inline OptionGroup& WithAllowsVpcAndNonVpcInstanceMemberships(bool value) { SetAllowsVpcAndNonVpcInstanceMemberships(value); return *this;}
 
@@ -299,7 +289,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
@@ -309,7 +299,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
@@ -319,7 +309,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
@@ -329,7 +319,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
@@ -339,7 +329,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
@@ -349,7 +339,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline OptionGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
@@ -359,7 +349,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline OptionGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
@@ -369,7 +359,7 @@ namespace Model
      * <code>true</code> and this field is blank, then this option group can be applied
      * to both VPC and non-VPC instances. If this field contains a value, then this
      * option group can only be applied to instances that are in the VPC indicated by
-     * this field. </p>
+     * this field.</p>
      */
     inline OptionGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

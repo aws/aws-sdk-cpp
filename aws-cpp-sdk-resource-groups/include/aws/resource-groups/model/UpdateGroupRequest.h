@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
@@ -43,114 +33,106 @@ namespace Model
 
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline UpdateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline UpdateGroupRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline UpdateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+    inline UpdateGroupRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource group for which you want to update its
-     * description.</p>
+     * <p>The name or the ARN of the resource group to modify.</p>
      */
-    inline UpdateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    inline UpdateGroupRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline UpdateGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline UpdateGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the resource group. Descriptions can have a maximum of 511
-     * characters, including letters, numbers, hyphens, underscores, punctuation, and
+     * <p>The new description that you want to update the resource group with.
+     * Descriptions can contain letters, numbers, hyphens, underscores, periods, and
      * spaces.</p>
      */
     inline UpdateGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
 
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

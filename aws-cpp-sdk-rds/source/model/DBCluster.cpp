@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/DBCluster.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,6 +32,7 @@ DBCluster::DBCluster() :
     m_dBClusterParameterGroupHasBeenSet(false),
     m_dBSubnetGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -97,7 +88,30 @@ DBCluster::DBCluster() :
     m_copyTagsToSnapshotHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false)
+    m_domainMembershipsHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false),
+    m_globalWriteForwardingRequested(false),
+    m_globalWriteForwardingRequestedHasBeenSet(false),
+    m_pendingModifiedValuesHasBeenSet(false),
+    m_dBClusterInstanceClassHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false),
+    m_monitoringRoleArnHasBeenSet(false),
+    m_performanceInsightsEnabled(false),
+    m_performanceInsightsEnabledHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -113,6 +127,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_dBClusterParameterGroupHasBeenSet(false),
     m_dBSubnetGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -168,7 +183,30 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_copyTagsToSnapshotHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false)
+    m_domainMembershipsHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false),
+    m_globalWriteForwardingRequested(false),
+    m_globalWriteForwardingRequestedHasBeenSet(false),
+    m_pendingModifiedValuesHasBeenSet(false),
+    m_dBClusterInstanceClassHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false),
+    m_monitoringRoleArnHasBeenSet(false),
+    m_performanceInsightsEnabled(false),
+    m_performanceInsightsEnabledHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -238,6 +276,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+    }
+    XmlNode automaticRestartTimeNode = resultNode.FirstChild("AutomaticRestartTime");
+    if(!automaticRestartTimeNode.IsNull())
+    {
+      m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_automaticRestartTimeHasBeenSet = true;
     }
     XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
     if(!percentProgressNode.IsNull())
@@ -545,6 +589,102 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_domainMembershipsHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
+    XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
+    if(!globalWriteForwardingStatusNode.IsNull())
+    {
+      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingStatusHasBeenSet = true;
+    }
+    XmlNode globalWriteForwardingRequestedNode = resultNode.FirstChild("GlobalWriteForwardingRequested");
+    if(!globalWriteForwardingRequestedNode.IsNull())
+    {
+      m_globalWriteForwardingRequested = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingRequestedNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingRequestedHasBeenSet = true;
+    }
+    XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
+    if(!pendingModifiedValuesNode.IsNull())
+    {
+      m_pendingModifiedValues = pendingModifiedValuesNode;
+      m_pendingModifiedValuesHasBeenSet = true;
+    }
+    XmlNode dBClusterInstanceClassNode = resultNode.FirstChild("DBClusterInstanceClass");
+    if(!dBClusterInstanceClassNode.IsNull())
+    {
+      m_dBClusterInstanceClass = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterInstanceClassNode.GetText());
+      m_dBClusterInstanceClassHasBeenSet = true;
+    }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
+      m_storageTypeHasBeenSet = true;
+    }
+    XmlNode iopsNode = resultNode.FirstChild("Iops");
+    if(!iopsNode.IsNull())
+    {
+      m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
+      m_iopsHasBeenSet = true;
+    }
+    XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
+    if(!publiclyAccessibleNode.IsNull())
+    {
+      m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publiclyAccessibleNode.GetText()).c_str()).c_str());
+      m_publiclyAccessibleHasBeenSet = true;
+    }
+    XmlNode autoMinorVersionUpgradeNode = resultNode.FirstChild("AutoMinorVersionUpgrade");
+    if(!autoMinorVersionUpgradeNode.IsNull())
+    {
+      m_autoMinorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoMinorVersionUpgradeNode.GetText()).c_str()).c_str());
+      m_autoMinorVersionUpgradeHasBeenSet = true;
+    }
+    XmlNode monitoringIntervalNode = resultNode.FirstChild("MonitoringInterval");
+    if(!monitoringIntervalNode.IsNull())
+    {
+      m_monitoringInterval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(monitoringIntervalNode.GetText()).c_str()).c_str());
+      m_monitoringIntervalHasBeenSet = true;
+    }
+    XmlNode monitoringRoleArnNode = resultNode.FirstChild("MonitoringRoleArn");
+    if(!monitoringRoleArnNode.IsNull())
+    {
+      m_monitoringRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(monitoringRoleArnNode.GetText());
+      m_monitoringRoleArnHasBeenSet = true;
+    }
+    XmlNode performanceInsightsEnabledNode = resultNode.FirstChild("PerformanceInsightsEnabled");
+    if(!performanceInsightsEnabledNode.IsNull())
+    {
+      m_performanceInsightsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(performanceInsightsEnabledNode.GetText()).c_str()).c_str());
+      m_performanceInsightsEnabledHasBeenSet = true;
+    }
+    XmlNode performanceInsightsKMSKeyIdNode = resultNode.FirstChild("PerformanceInsightsKMSKeyId");
+    if(!performanceInsightsKMSKeyIdNode.IsNull())
+    {
+      m_performanceInsightsKMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(performanceInsightsKMSKeyIdNode.GetText());
+      m_performanceInsightsKMSKeyIdHasBeenSet = true;
+    }
+    XmlNode performanceInsightsRetentionPeriodNode = resultNode.FirstChild("PerformanceInsightsRetentionPeriod");
+    if(!performanceInsightsRetentionPeriodNode.IsNull())
+    {
+      m_performanceInsightsRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(performanceInsightsRetentionPeriodNode.GetText()).c_str()).c_str());
+      m_performanceInsightsRetentionPeriodHasBeenSet = true;
+    }
+    XmlNode serverlessV2ScalingConfigurationNode = resultNode.FirstChild("ServerlessV2ScalingConfiguration");
+    if(!serverlessV2ScalingConfigurationNode.IsNull())
+    {
+      m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
+      m_serverlessV2ScalingConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -599,6 +739,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_percentProgressHasBeenSet)
@@ -860,6 +1005,91 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+
+  if(m_globalWriteForwardingRequestedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalWriteForwardingRequested=" << std::boolalpha << m_globalWriteForwardingRequested << "&";
+  }
+
+  if(m_pendingModifiedValuesHasBeenSet)
+  {
+      Aws::StringStream pendingModifiedValuesLocationAndMemberSs;
+      pendingModifiedValuesLocationAndMemberSs << location << index << locationValue << ".PendingModifiedValues";
+      m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_dBClusterInstanceClassHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
+  }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+
+  if(m_monitoringIntervalHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MonitoringInterval=" << m_monitoringInterval << "&";
+  }
+
+  if(m_monitoringRoleArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+
+  if(m_performanceInsightsEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsEnabled=" << std::boolalpha << m_performanceInsightsEnabled << "&";
+  }
+
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::StringStream serverlessV2ScalingConfigurationLocationAndMemberSs;
+      serverlessV2ScalingConfigurationLocationAndMemberSs << location << index << locationValue << ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -903,6 +1133,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_percentProgressHasBeenSet)
   {
@@ -1119,6 +1353,76 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+  if(m_globalWriteForwardingRequestedHasBeenSet)
+  {
+      oStream << location << ".GlobalWriteForwardingRequested=" << std::boolalpha << m_globalWriteForwardingRequested << "&";
+  }
+  if(m_pendingModifiedValuesHasBeenSet)
+  {
+      Aws::String pendingModifiedValuesLocationAndMember(location);
+      pendingModifiedValuesLocationAndMember += ".PendingModifiedValues";
+      m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMember.c_str());
+  }
+  if(m_dBClusterInstanceClassHasBeenSet)
+  {
+      oStream << location << ".DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_iopsHasBeenSet)
+  {
+      oStream << location << ".Iops=" << m_iops << "&";
+  }
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+      oStream << location << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+      oStream << location << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+      oStream << location << ".MonitoringInterval=" << m_monitoringInterval << "&";
+  }
+  if(m_monitoringRoleArnHasBeenSet)
+  {
+      oStream << location << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  if(m_performanceInsightsEnabledHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsEnabled=" << std::boolalpha << m_performanceInsightsEnabled << "&";
+  }
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
+      serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
   }
 }
 

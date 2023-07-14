@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesis/model/DescribeLimitsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,13 +18,17 @@ using namespace Aws;
 
 DescribeLimitsResult::DescribeLimitsResult() : 
     m_shardLimit(0),
-    m_openShardCount(0)
+    m_openShardCount(0),
+    m_onDemandStreamCount(0),
+    m_onDemandStreamCountLimit(0)
 {
 }
 
 DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_shardLimit(0),
-    m_openShardCount(0)
+    m_openShardCount(0),
+    m_onDemandStreamCount(0),
+    m_onDemandStreamCountLimit(0)
 {
   *this = result;
 }
@@ -51,6 +45,18 @@ DescribeLimitsResult& DescribeLimitsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("OpenShardCount"))
   {
     m_openShardCount = jsonValue.GetInteger("OpenShardCount");
+
+  }
+
+  if(jsonValue.ValueExists("OnDemandStreamCount"))
+  {
+    m_onDemandStreamCount = jsonValue.GetInteger("OnDemandStreamCount");
+
+  }
+
+  if(jsonValue.ValueExists("OnDemandStreamCountLimit"))
+  {
+    m_onDemandStreamCountLimit = jsonValue.GetInteger("OnDemandStreamCountLimit");
 
   }
 

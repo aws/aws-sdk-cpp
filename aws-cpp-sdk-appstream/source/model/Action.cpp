@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appstream/model/Action.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,8 @@ namespace Aws
         static const int FILE_UPLOAD_HASH = HashingUtils::HashString("FILE_UPLOAD");
         static const int FILE_DOWNLOAD_HASH = HashingUtils::HashString("FILE_DOWNLOAD");
         static const int PRINTING_TO_LOCAL_DEVICE_HASH = HashingUtils::HashString("PRINTING_TO_LOCAL_DEVICE");
+        static const int DOMAIN_PASSWORD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_PASSWORD_SIGNIN");
+        static const int DOMAIN_SMART_CARD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_SMART_CARD_SIGNIN");
 
 
         Action GetActionForName(const Aws::String& name)
@@ -60,6 +52,14 @@ namespace Aws
           {
             return Action::PRINTING_TO_LOCAL_DEVICE;
           }
+          else if (hashCode == DOMAIN_PASSWORD_SIGNIN_HASH)
+          {
+            return Action::DOMAIN_PASSWORD_SIGNIN;
+          }
+          else if (hashCode == DOMAIN_SMART_CARD_SIGNIN_HASH)
+          {
+            return Action::DOMAIN_SMART_CARD_SIGNIN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +84,10 @@ namespace Aws
             return "FILE_DOWNLOAD";
           case Action::PRINTING_TO_LOCAL_DEVICE:
             return "PRINTING_TO_LOCAL_DEVICE";
+          case Action::DOMAIN_PASSWORD_SIGNIN:
+            return "DOMAIN_PASSWORD_SIGNIN";
+          case Action::DOMAIN_SMART_CARD_SIGNIN:
+            return "DOMAIN_SMART_CARD_SIGNIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

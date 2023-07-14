@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iotevents/model/Action.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,10 @@ Action::Action() :
     m_lambdaHasBeenSet(false),
     m_iotEventsHasBeenSet(false),
     m_sqsHasBeenSet(false),
-    m_firehoseHasBeenSet(false)
+    m_firehoseHasBeenSet(false),
+    m_dynamoDBHasBeenSet(false),
+    m_dynamoDBv2HasBeenSet(false),
+    m_iotSiteWiseHasBeenSet(false)
 {
 }
 
@@ -52,7 +45,10 @@ Action::Action(JsonView jsonValue) :
     m_lambdaHasBeenSet(false),
     m_iotEventsHasBeenSet(false),
     m_sqsHasBeenSet(false),
-    m_firehoseHasBeenSet(false)
+    m_firehoseHasBeenSet(false),
+    m_dynamoDBHasBeenSet(false),
+    m_dynamoDBv2HasBeenSet(false),
+    m_iotSiteWiseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +125,27 @@ Action& Action::operator =(JsonView jsonValue)
     m_firehoseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dynamoDB"))
+  {
+    m_dynamoDB = jsonValue.GetObject("dynamoDB");
+
+    m_dynamoDBHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamoDBv2"))
+  {
+    m_dynamoDBv2 = jsonValue.GetObject("dynamoDBv2");
+
+    m_dynamoDBv2HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iotSiteWise"))
+  {
+    m_iotSiteWise = jsonValue.GetObject("iotSiteWise");
+
+    m_iotSiteWiseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +210,24 @@ JsonValue Action::Jsonize() const
   if(m_firehoseHasBeenSet)
   {
    payload.WithObject("firehose", m_firehose.Jsonize());
+
+  }
+
+  if(m_dynamoDBHasBeenSet)
+  {
+   payload.WithObject("dynamoDB", m_dynamoDB.Jsonize());
+
+  }
+
+  if(m_dynamoDBv2HasBeenSet)
+  {
+   payload.WithObject("dynamoDBv2", m_dynamoDBv2.Jsonize());
+
+  }
+
+  if(m_iotSiteWiseHasBeenSet)
+  {
+   payload.WithObject("iotSiteWise", m_iotSiteWise.Jsonize());
 
   }
 

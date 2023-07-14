@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/VideoSelectorColorSpace.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,8 @@ namespace Aws
       {
 
         static const int FOLLOW_HASH = HashingUtils::HashString("FOLLOW");
+        static const int HDR10_HASH = HashingUtils::HashString("HDR10");
+        static const int HLG_2020_HASH = HashingUtils::HashString("HLG_2020");
         static const int REC_601_HASH = HashingUtils::HashString("REC_601");
         static const int REC_709_HASH = HashingUtils::HashString("REC_709");
 
@@ -41,6 +33,14 @@ namespace Aws
           if (hashCode == FOLLOW_HASH)
           {
             return VideoSelectorColorSpace::FOLLOW;
+          }
+          else if (hashCode == HDR10_HASH)
+          {
+            return VideoSelectorColorSpace::HDR10;
+          }
+          else if (hashCode == HLG_2020_HASH)
+          {
+            return VideoSelectorColorSpace::HLG_2020;
           }
           else if (hashCode == REC_601_HASH)
           {
@@ -66,6 +66,10 @@ namespace Aws
           {
           case VideoSelectorColorSpace::FOLLOW:
             return "FOLLOW";
+          case VideoSelectorColorSpace::HDR10:
+            return "HDR10";
+          case VideoSelectorColorSpace::HLG_2020:
+            return "HLG_2020";
           case VideoSelectorColorSpace::REC_601:
             return "REC_601";
           case VideoSelectorColorSpace::REC_709:

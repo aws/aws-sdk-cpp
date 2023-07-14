@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/HlsInputSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,9 @@ HlsInputSettings::HlsInputSettings() :
     m_retries(0),
     m_retriesHasBeenSet(false),
     m_retryInterval(0),
-    m_retryIntervalHasBeenSet(false)
+    m_retryIntervalHasBeenSet(false),
+    m_scte35Source(HlsScte35SourceType::NOT_SET),
+    m_scte35SourceHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ HlsInputSettings::HlsInputSettings(JsonView jsonValue) :
     m_retries(0),
     m_retriesHasBeenSet(false),
     m_retryInterval(0),
-    m_retryIntervalHasBeenSet(false)
+    m_retryIntervalHasBeenSet(false),
+    m_scte35Source(HlsScte35SourceType::NOT_SET),
+    m_scte35SourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +77,13 @@ HlsInputSettings& HlsInputSettings::operator =(JsonView jsonValue)
     m_retryIntervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scte35Source"))
+  {
+    m_scte35Source = HlsScte35SourceTypeMapper::GetHlsScte35SourceTypeForName(jsonValue.GetString("scte35Source"));
+
+    m_scte35SourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +113,11 @@ JsonValue HlsInputSettings::Jsonize() const
   {
    payload.WithInteger("retryInterval", m_retryInterval);
 
+  }
+
+  if(m_scte35SourceHasBeenSet)
+  {
+   payload.WithString("scte35Source", HlsScte35SourceTypeMapper::GetNameForHlsScte35SourceType(m_scte35Source));
   }
 
   return payload;

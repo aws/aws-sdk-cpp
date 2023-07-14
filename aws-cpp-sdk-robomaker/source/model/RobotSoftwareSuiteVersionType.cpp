@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/robomaker/model/RobotSoftwareSuiteVersionType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int Kinetic_HASH = HashingUtils::HashString("Kinetic");
         static const int Melodic_HASH = HashingUtils::HashString("Melodic");
         static const int Dashing_HASH = HashingUtils::HashString("Dashing");
+        static const int Foxy_HASH = HashingUtils::HashString("Foxy");
 
 
         RobotSoftwareSuiteVersionType GetRobotSoftwareSuiteVersionTypeForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == Dashing_HASH)
           {
             return RobotSoftwareSuiteVersionType::Dashing;
+          }
+          else if (hashCode == Foxy_HASH)
+          {
+            return RobotSoftwareSuiteVersionType::Foxy;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "Melodic";
           case RobotSoftwareSuiteVersionType::Dashing:
             return "Dashing";
+          case RobotSoftwareSuiteVersionType::Foxy:
+            return "Foxy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

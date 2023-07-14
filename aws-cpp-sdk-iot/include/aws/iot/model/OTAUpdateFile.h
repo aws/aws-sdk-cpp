@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -90,6 +80,31 @@ namespace Model
      * <p>The name of the file.</p>
      */
     inline OTAUpdateFile& WithFileName(const char* value) { SetFileName(value); return *this;}
+
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline int GetFileType() const{ return m_fileType; }
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline void SetFileType(int value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
+
+    /**
+     * <p>An integer value you can include in the job document to allow your devices to
+     * identify the type of file received from the cloud.</p>
+     */
+    inline OTAUpdateFile& WithFileType(int value) { SetFileType(value); return *this;}
 
 
     /**
@@ -264,6 +279,9 @@ namespace Model
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet;
+
+    int m_fileType;
+    bool m_fileTypeHasBeenSet;
 
     Aws::String m_fileVersion;
     bool m_fileVersionHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/RunInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -42,7 +32,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_subnetIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_disableApiTermination(false),
     m_disableApiTerminationHasBeenSet(false),
     m_dryRun(false),
@@ -64,7 +55,12 @@ RunInstancesRequest::RunInstancesRequest() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
 }
 
@@ -297,6 +293,26 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_metadataOptionsHasBeenSet)
   {
     m_metadataOptions.OutputToStream(ss, "MetadataOptions");
+  }
+
+  if(m_enclaveOptionsHasBeenSet)
+  {
+    m_enclaveOptions.OutputToStream(ss, "EnclaveOptions");
+  }
+
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+    m_privateDnsNameOptions.OutputToStream(ss, "PrivateDnsNameOptions");
+  }
+
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+    m_maintenanceOptions.OutputToStream(ss, "MaintenanceOptions");
+  }
+
+  if(m_disableApiStopHasBeenSet)
+  {
+    ss << "DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
   }
 
   ss << "Version=2016-11-15";

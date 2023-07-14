@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tenancy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -49,49 +41,65 @@ namespace Model
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 network range for the VPC, in CIDR notation. For example,
-     * <code>10.0.0.0/16</code>.</p>
+     * <code>10.0.0.0/16</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
      */
     inline CreateVpcRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
@@ -229,6 +237,218 @@ namespace Model
      * block for you, omit this parameter.</p>
      */
     inline CreateVpcRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline const Aws::String& GetIpv4IpamPoolId() const{ return m_ipv4IpamPoolId; }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline bool Ipv4IpamPoolIdHasBeenSet() const { return m_ipv4IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline void SetIpv4IpamPoolId(const Aws::String& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = value; }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline void SetIpv4IpamPoolId(Aws::String&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::move(value); }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline void SetIpv4IpamPoolId(const char* value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId.assign(value); }
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline CreateVpcRequest& WithIpv4IpamPoolId(const Aws::String& value) { SetIpv4IpamPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline CreateVpcRequest& WithIpv4IpamPoolId(Aws::String&& value) { SetIpv4IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR.
+     * For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+     * is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     */
+    inline CreateVpcRequest& WithIpv4IpamPoolId(const char* value) { SetIpv4IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline int GetIpv4NetmaskLength() const{ return m_ipv4NetmaskLength; }
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline bool Ipv4NetmaskLengthHasBeenSet() const { return m_ipv4NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv4NetmaskLength(int value) { m_ipv4NetmaskLengthHasBeenSet = true; m_ipv4NetmaskLength = value; }
+
+    /**
+     * <p>The netmask length of the IPv4 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv4NetmaskLength(int value) { SetIpv4NetmaskLength(value); return *this;}
+
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline const Aws::String& GetIpv6IpamPoolId() const{ return m_ipv6IpamPoolId; }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline bool Ipv6IpamPoolIdHasBeenSet() const { return m_ipv6IpamPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6IpamPoolId(const Aws::String& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = value; }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6IpamPoolId(Aws::String&& value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId = std::move(value); }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6IpamPoolId(const char* value) { m_ipv6IpamPoolIdHasBeenSet = true; m_ipv6IpamPoolId.assign(value); }
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6IpamPoolId(const Aws::String& value) { SetIpv6IpamPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6IpamPoolId(Aws::String&& value) { SetIpv6IpamPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an IPv6 IPAM pool which will be used to allocate this VPC an IPv6
+     * CIDR. IPAM is a VPC feature that you can use to automate your IP address
+     * management workflows including assigning, tracking, troubleshooting, and
+     * auditing IP addresses across Amazon Web Services Regions and accounts throughout
+     * your Amazon Web Services Organization. For more information, see <a
+     * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6IpamPoolId(const char* value) { SetIpv6IpamPoolId(value); return *this;}
+
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline int GetIpv6NetmaskLength() const{ return m_ipv6NetmaskLength; }
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline bool Ipv6NetmaskLengthHasBeenSet() const { return m_ipv6NetmaskLengthHasBeenSet; }
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
+
+    /**
+     * <p>The netmask length of the IPv6 CIDR you want to allocate to this VPC from an
+     * Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see
+     * <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline CreateVpcRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
 
 
     /**
@@ -407,6 +627,47 @@ namespace Model
      */
     inline CreateVpcRequest& WithIpv6CidrBlockNetworkBorderGroup(const char* value) { SetIpv6CidrBlockNetworkBorderGroup(value); return *this;}
 
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline CreateVpcRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline CreateVpcRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline CreateVpcRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to assign to the VPC.</p>
+     */
+    inline CreateVpcRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cidrBlock;
@@ -421,6 +682,18 @@ namespace Model
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
 
+    Aws::String m_ipv4IpamPoolId;
+    bool m_ipv4IpamPoolIdHasBeenSet;
+
+    int m_ipv4NetmaskLength;
+    bool m_ipv4NetmaskLengthHasBeenSet;
+
+    Aws::String m_ipv6IpamPoolId;
+    bool m_ipv6IpamPoolIdHasBeenSet;
+
+    int m_ipv6NetmaskLength;
+    bool m_ipv6NetmaskLengthHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
 
@@ -429,6 +702,9 @@ namespace Model
 
     Aws::String m_ipv6CidrBlockNetworkBorderGroup;
     bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

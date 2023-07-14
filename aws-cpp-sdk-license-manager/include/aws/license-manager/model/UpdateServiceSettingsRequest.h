@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -144,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline bool OrganizationConfigurationHasBeenSet() const { return m_organizationConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = value; }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::move(value); }
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
 
     /**
-     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
+     * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
     inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
 

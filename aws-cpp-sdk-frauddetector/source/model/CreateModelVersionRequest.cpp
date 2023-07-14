@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/frauddetector/model/CreateModelVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,7 +16,12 @@ CreateModelVersionRequest::CreateModelVersionRequest() :
     m_modelIdHasBeenSet(false),
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET),
+    m_trainingDataSourceHasBeenSet(false),
+    m_trainingDataSchemaHasBeenSet(false),
+    m_externalEventsDetailHasBeenSet(false),
+    m_ingestedEventsDetailHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,9 +40,37 @@ Aws::String CreateModelVersionRequest::SerializePayload() const
    payload.WithString("modelType", ModelTypeEnumMapper::GetNameForModelTypeEnum(m_modelType));
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_trainingDataSourceHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithString("trainingDataSource", TrainingDataSourceEnumMapper::GetNameForTrainingDataSourceEnum(m_trainingDataSource));
+  }
+
+  if(m_trainingDataSchemaHasBeenSet)
+  {
+   payload.WithObject("trainingDataSchema", m_trainingDataSchema.Jsonize());
+
+  }
+
+  if(m_externalEventsDetailHasBeenSet)
+  {
+   payload.WithObject("externalEventsDetail", m_externalEventsDetail.Jsonize());
+
+  }
+
+  if(m_ingestedEventsDetailHasBeenSet)
+  {
+   payload.WithObject("ingestedEventsDetail", m_ingestedEventsDetail.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

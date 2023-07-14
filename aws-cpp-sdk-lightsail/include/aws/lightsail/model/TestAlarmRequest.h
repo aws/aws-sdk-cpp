@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -88,61 +78,61 @@ namespace Model
 
     /**
      * <p>The alarm state to test.</p> <p>An alarm has the following possible states
-     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
-     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> -
      * The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.</p> </li> <li> <p>
-     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     * <code>OK</code> - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline const AlarmState& GetState() const{ return m_state; }
 
     /**
      * <p>The alarm state to test.</p> <p>An alarm has the following possible states
-     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
-     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> -
      * The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.</p> </li> <li> <p>
-     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     * <code>OK</code> - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The alarm state to test.</p> <p>An alarm has the following possible states
-     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
-     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> -
      * The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.</p> </li> <li> <p>
-     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     * <code>OK</code> - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline void SetState(const AlarmState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The alarm state to test.</p> <p>An alarm has the following possible states
-     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
-     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> -
      * The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.</p> </li> <li> <p>
-     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     * <code>OK</code> - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline void SetState(AlarmState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The alarm state to test.</p> <p>An alarm has the following possible states
-     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
-     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> -
      * The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.</p> </li> <li> <p>
-     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     * <code>OK</code> - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline TestAlarmRequest& WithState(const AlarmState& value) { SetState(value); return *this;}
 
     /**
      * <p>The alarm state to test.</p> <p>An alarm has the following possible states
-     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
-     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> -
      * The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.</p> </li> <li> <p>
-     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     * <code>OK</code> - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline TestAlarmRequest& WithState(AlarmState&& value) { SetState(std::move(value)); return *this;}
 

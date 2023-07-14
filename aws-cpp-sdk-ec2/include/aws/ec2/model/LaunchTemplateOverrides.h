@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InstanceRequirements.h>
 #include <utility>
 
 namespace Aws
@@ -234,48 +225,129 @@ namespace Model
 
 
     /**
-     * <p>The priority for the launch template override. If
-     * <b>OnDemandAllocationStrategy</b> is set to <code>prioritized</code>, Spot Fleet
-     * uses priority to determine which launch template override to use first in
-     * fulfilling On-Demand capacity. The highest priority is launched first. Valid
-     * values are whole numbers starting at <code>0</code>. The lower the number, the
-     * higher the priority. If no number is set, the launch template override has the
-     * lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If <code>OnDemandAllocationStrategy</code> is set to
+     * <code>prioritized</code>, Spot Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacityOptimizedPrioritized</code>, Spot Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline double GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority for the launch template override. If
-     * <b>OnDemandAllocationStrategy</b> is set to <code>prioritized</code>, Spot Fleet
-     * uses priority to determine which launch template override to use first in
-     * fulfilling On-Demand capacity. The highest priority is launched first. Valid
-     * values are whole numbers starting at <code>0</code>. The lower the number, the
-     * higher the priority. If no number is set, the launch template override has the
-     * lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If <code>OnDemandAllocationStrategy</code> is set to
+     * <code>prioritized</code>, Spot Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacityOptimizedPrioritized</code>, Spot Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority for the launch template override. If
-     * <b>OnDemandAllocationStrategy</b> is set to <code>prioritized</code>, Spot Fleet
-     * uses priority to determine which launch template override to use first in
-     * fulfilling On-Demand capacity. The highest priority is launched first. Valid
-     * values are whole numbers starting at <code>0</code>. The lower the number, the
-     * higher the priority. If no number is set, the launch template override has the
-     * lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If <code>OnDemandAllocationStrategy</code> is set to
+     * <code>prioritized</code>, Spot Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacityOptimizedPrioritized</code>, Spot Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority for the launch template override. If
-     * <b>OnDemandAllocationStrategy</b> is set to <code>prioritized</code>, Spot Fleet
-     * uses priority to determine which launch template override to use first in
-     * fulfilling On-Demand capacity. The highest priority is launched first. Valid
-     * values are whole numbers starting at <code>0</code>. The lower the number, the
-     * higher the priority. If no number is set, the launch template override has the
-     * lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If <code>OnDemandAllocationStrategy</code> is set to
+     * <code>prioritized</code>, Spot Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacityOptimizedPrioritized</code>, Spot Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline LaunchTemplateOverrides& WithPriority(double value) { SetPriority(value); return *this;}
+
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
   private:
 
@@ -296,6 +368,9 @@ namespace Model
 
     double m_priority;
     bool m_priorityHasBeenSet;
+
+    InstanceRequirements m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
   };
 
 } // namespace Model

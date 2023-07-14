@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/Volume.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -53,6 +43,8 @@ Volume::Volume() :
     m_fastRestoredHasBeenSet(false),
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -80,6 +72,8 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_fastRestoredHasBeenSet(false),
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -193,6 +187,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_multiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAttachEnabledNode.GetText()).c_str()).c_str());
       m_multiAttachEnabledHasBeenSet = true;
     }
+    XmlNode throughputNode = resultNode.FirstChild("throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
+      m_throughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -287,6 +287,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
   }
 
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -369,6 +374,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_multiAttachEnabledHasBeenSet)
   {
       oStream << location << ".MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
+  }
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << ".Throughput=" << m_throughput << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/PortForwardingConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -232,7 +223,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline bool GetStreamUI() const{ return m_streamUI; }
@@ -241,7 +232,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline bool StreamUIHasBeenSet() const { return m_streamUIHasBeenSet; }
@@ -250,7 +241,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline void SetStreamUI(bool value) { m_streamUIHasBeenSet = true; m_streamUI = value; }
@@ -259,10 +250,101 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline LaunchConfig& WithStreamUI(bool value) { SetStreamUI(value); return *this;}
+
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline LaunchConfig& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline LaunchConfig& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline LaunchConfig& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline LaunchConfig& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>If you've specified <code>General</code> as the value for your
+     * <code>RobotSoftwareSuite</code>, you can use this field to specify a list of
+     * commands for your container image.</p> <p>If you've specified
+     * <code>SimulationRuntime</code> as the value for your
+     * <code>SimulationSoftwareSuite</code>, you can use this field to specify a list
+     * of commands for your container image.</p>
+     */
+    inline LaunchConfig& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
   private:
 
@@ -280,6 +362,9 @@ namespace Model
 
     bool m_streamUI;
     bool m_streamUIHasBeenSet;
+
+    Aws::Vector<Aws::String> m_command;
+    bool m_commandHasBeenSet;
   };
 
 } // namespace Model

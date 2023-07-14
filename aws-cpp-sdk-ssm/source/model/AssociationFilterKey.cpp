@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/AssociationFilterKey.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,7 @@ namespace Aws
         static const int LastExecutedBefore_HASH = HashingUtils::HashString("LastExecutedBefore");
         static const int LastExecutedAfter_HASH = HashingUtils::HashString("LastExecutedAfter");
         static const int AssociationName_HASH = HashingUtils::HashString("AssociationName");
+        static const int ResourceGroupName_HASH = HashingUtils::HashString("ResourceGroupName");
 
 
         AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
@@ -70,6 +61,10 @@ namespace Aws
           {
             return AssociationFilterKey::AssociationName;
           }
+          else if (hashCode == ResourceGroupName_HASH)
+          {
+            return AssociationFilterKey::ResourceGroupName;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +93,8 @@ namespace Aws
             return "LastExecutedAfter";
           case AssociationFilterKey::AssociationName:
             return "AssociationName";
+          case AssociationFilterKey::ResourceGroupName:
+            return "ResourceGroupName";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

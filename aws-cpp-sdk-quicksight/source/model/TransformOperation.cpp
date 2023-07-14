@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/TransformOperation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,8 @@ TransformOperation::TransformOperation() :
     m_createColumnsOperationHasBeenSet(false),
     m_renameColumnOperationHasBeenSet(false),
     m_castColumnTypeOperationHasBeenSet(false),
-    m_tagColumnOperationHasBeenSet(false)
+    m_tagColumnOperationHasBeenSet(false),
+    m_untagColumnOperationHasBeenSet(false)
 {
 }
 
@@ -44,7 +35,8 @@ TransformOperation::TransformOperation(JsonView jsonValue) :
     m_createColumnsOperationHasBeenSet(false),
     m_renameColumnOperationHasBeenSet(false),
     m_castColumnTypeOperationHasBeenSet(false),
-    m_tagColumnOperationHasBeenSet(false)
+    m_tagColumnOperationHasBeenSet(false),
+    m_untagColumnOperationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +85,13 @@ TransformOperation& TransformOperation::operator =(JsonView jsonValue)
     m_tagColumnOperationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UntagColumnOperation"))
+  {
+    m_untagColumnOperation = jsonValue.GetObject("UntagColumnOperation");
+
+    m_untagColumnOperationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +132,12 @@ JsonValue TransformOperation::Jsonize() const
   if(m_tagColumnOperationHasBeenSet)
   {
    payload.WithObject("TagColumnOperation", m_tagColumnOperation.Jsonize());
+
+  }
+
+  if(m_untagColumnOperationHasBeenSet)
+  {
+   payload.WithObject("UntagColumnOperation", m_untagColumnOperation.Jsonize());
 
   }
 

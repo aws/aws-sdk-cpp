@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/AudioSelectorType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int PID_HASH = HashingUtils::HashString("PID");
         static const int TRACK_HASH = HashingUtils::HashString("TRACK");
         static const int LANGUAGE_CODE_HASH = HashingUtils::HashString("LANGUAGE_CODE");
+        static const int HLS_RENDITION_GROUP_HASH = HashingUtils::HashString("HLS_RENDITION_GROUP");
 
 
         AudioSelectorType GetAudioSelectorTypeForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == LANGUAGE_CODE_HASH)
           {
             return AudioSelectorType::LANGUAGE_CODE;
+          }
+          else if (hashCode == HLS_RENDITION_GROUP_HASH)
+          {
+            return AudioSelectorType::HLS_RENDITION_GROUP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "TRACK";
           case AudioSelectorType::LANGUAGE_CODE:
             return "LANGUAGE_CODE";
+          case AudioSelectorType::HLS_RENDITION_GROUP:
+            return "HLS_RENDITION_GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

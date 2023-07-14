@@ -1,22 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/robomaker/model/LaunchConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/robomaker/model/UploadConfiguration.h>
+#include <aws/robomaker/model/WorldConfig.h>
+#include <aws/robomaker/model/Tool.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +155,129 @@ namespace Model
      */
     inline SimulationApplicationConfig& WithLaunchConfig(LaunchConfig&& value) { SetLaunchConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline const Aws::Vector<UploadConfiguration>& GetUploadConfigurations() const{ return m_uploadConfigurations; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline bool UploadConfigurationsHasBeenSet() const { return m_uploadConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline void SetUploadConfigurations(const Aws::Vector<UploadConfiguration>& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations = value; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline void SetUploadConfigurations(Aws::Vector<UploadConfiguration>&& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations = std::move(value); }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithUploadConfigurations(const Aws::Vector<UploadConfiguration>& value) { SetUploadConfigurations(value); return *this;}
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithUploadConfigurations(Aws::Vector<UploadConfiguration>&& value) { SetUploadConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddUploadConfigurations(const UploadConfiguration& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddUploadConfigurations(UploadConfiguration&& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline const Aws::Vector<WorldConfig>& GetWorldConfigs() const{ return m_worldConfigs; }
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline bool WorldConfigsHasBeenSet() const { return m_worldConfigsHasBeenSet; }
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline void SetWorldConfigs(const Aws::Vector<WorldConfig>& value) { m_worldConfigsHasBeenSet = true; m_worldConfigs = value; }
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline void SetWorldConfigs(Aws::Vector<WorldConfig>&& value) { m_worldConfigsHasBeenSet = true; m_worldConfigs = std::move(value); }
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline SimulationApplicationConfig& WithWorldConfigs(const Aws::Vector<WorldConfig>& value) { SetWorldConfigs(value); return *this;}
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline SimulationApplicationConfig& WithWorldConfigs(Aws::Vector<WorldConfig>&& value) { SetWorldConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline SimulationApplicationConfig& AddWorldConfigs(const WorldConfig& value) { m_worldConfigsHasBeenSet = true; m_worldConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of world configurations.</p>
+     */
+    inline SimulationApplicationConfig& AddWorldConfigs(WorldConfig&& value) { m_worldConfigsHasBeenSet = true; m_worldConfigs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline const Aws::Vector<Tool>& GetTools() const{ return m_tools; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline void SetTools(const Aws::Vector<Tool>& value) { m_toolsHasBeenSet = true; m_tools = value; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline void SetTools(Aws::Vector<Tool>&& value) { m_toolsHasBeenSet = true; m_tools = std::move(value); }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithTools(const Aws::Vector<Tool>& value) { SetTools(value); return *this;}
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithTools(Aws::Vector<Tool>&& value) { SetTools(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddTools(const Tool& value) { m_toolsHasBeenSet = true; m_tools.push_back(value); return *this; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddTools(Tool&& value) { m_toolsHasBeenSet = true; m_tools.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_application;
@@ -171,6 +288,15 @@ namespace Model
 
     LaunchConfig m_launchConfig;
     bool m_launchConfigHasBeenSet;
+
+    Aws::Vector<UploadConfiguration> m_uploadConfigurations;
+    bool m_uploadConfigurationsHasBeenSet;
+
+    Aws::Vector<WorldConfig> m_worldConfigs;
+    bool m_worldConfigsHasBeenSet;
+
+    Aws::Vector<Tool> m_tools;
+    bool m_toolsHasBeenSet;
   };
 
 } // namespace Model

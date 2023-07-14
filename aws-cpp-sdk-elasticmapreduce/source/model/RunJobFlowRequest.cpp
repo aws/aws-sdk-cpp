@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,6 +15,7 @@ using namespace Aws::Utils;
 RunJobFlowRequest::RunJobFlowRequest() : 
     m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
@@ -51,7 +42,11 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_repoUpgradeOnBootHasBeenSet(false),
     m_kerberosAttributesHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false),
+    m_managedScalingPolicyHasBeenSet(false),
+    m_placementGroupConfigsHasBeenSet(false),
+    m_autoTerminationPolicyHasBeenSet(false),
+    m_oSReleaseLabelHasBeenSet(false)
 {
 }
 
@@ -68,6 +63,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("LogUri", m_logUri);
+
+  }
+
+  if(m_logEncryptionKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("LogEncryptionKmsKeyId", m_logEncryptionKmsKeyId);
 
   }
 
@@ -233,6 +234,35 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_stepConcurrencyLevelHasBeenSet)
   {
    payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
+
+  }
+
+  if(m_managedScalingPolicyHasBeenSet)
+  {
+   payload.WithObject("ManagedScalingPolicy", m_managedScalingPolicy.Jsonize());
+
+  }
+
+  if(m_placementGroupConfigsHasBeenSet)
+  {
+   Array<JsonValue> placementGroupConfigsJsonList(m_placementGroupConfigs.size());
+   for(unsigned placementGroupConfigsIndex = 0; placementGroupConfigsIndex < placementGroupConfigsJsonList.GetLength(); ++placementGroupConfigsIndex)
+   {
+     placementGroupConfigsJsonList[placementGroupConfigsIndex].AsObject(m_placementGroupConfigs[placementGroupConfigsIndex].Jsonize());
+   }
+   payload.WithArray("PlacementGroupConfigs", std::move(placementGroupConfigsJsonList));
+
+  }
+
+  if(m_autoTerminationPolicyHasBeenSet)
+  {
+   payload.WithObject("AutoTerminationPolicy", m_autoTerminationPolicy.Jsonize());
+
+  }
+
+  if(m_oSReleaseLabelHasBeenSet)
+  {
+   payload.WithString("OSReleaseLabel", m_oSReleaseLabel);
 
   }
 

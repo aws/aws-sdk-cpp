@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -19,7 +9,9 @@
 #include <aws/medialive/model/AvailBlanking.h>
 #include <aws/medialive/model/AvailConfiguration.h>
 #include <aws/medialive/model/BlackoutSlate.h>
+#include <aws/medialive/model/FeatureActivations.h>
 #include <aws/medialive/model/GlobalConfiguration.h>
+#include <aws/medialive/model/MotionGraphicsConfiguration.h>
 #include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/TimecodeConfig.h>
 #include <aws/medialive/model/AudioDescription.h>
@@ -217,6 +209,37 @@ namespace Model
 
 
     /**
+     * Feature Activations
+     */
+    inline const FeatureActivations& GetFeatureActivations() const{ return m_featureActivations; }
+
+    /**
+     * Feature Activations
+     */
+    inline bool FeatureActivationsHasBeenSet() const { return m_featureActivationsHasBeenSet; }
+
+    /**
+     * Feature Activations
+     */
+    inline void SetFeatureActivations(const FeatureActivations& value) { m_featureActivationsHasBeenSet = true; m_featureActivations = value; }
+
+    /**
+     * Feature Activations
+     */
+    inline void SetFeatureActivations(FeatureActivations&& value) { m_featureActivationsHasBeenSet = true; m_featureActivations = std::move(value); }
+
+    /**
+     * Feature Activations
+     */
+    inline EncoderSettings& WithFeatureActivations(const FeatureActivations& value) { SetFeatureActivations(value); return *this;}
+
+    /**
+     * Feature Activations
+     */
+    inline EncoderSettings& WithFeatureActivations(FeatureActivations&& value) { SetFeatureActivations(std::move(value)); return *this;}
+
+
+    /**
      * Configuration settings that apply to the event as a whole.
      */
     inline const GlobalConfiguration& GetGlobalConfiguration() const{ return m_globalConfiguration; }
@@ -245,6 +268,37 @@ namespace Model
      * Configuration settings that apply to the event as a whole.
      */
     inline EncoderSettings& WithGlobalConfiguration(GlobalConfiguration&& value) { SetGlobalConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline const MotionGraphicsConfiguration& GetMotionGraphicsConfiguration() const{ return m_motionGraphicsConfiguration; }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline bool MotionGraphicsConfigurationHasBeenSet() const { return m_motionGraphicsConfigurationHasBeenSet; }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline void SetMotionGraphicsConfiguration(const MotionGraphicsConfiguration& value) { m_motionGraphicsConfigurationHasBeenSet = true; m_motionGraphicsConfiguration = value; }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline void SetMotionGraphicsConfiguration(MotionGraphicsConfiguration&& value) { m_motionGraphicsConfigurationHasBeenSet = true; m_motionGraphicsConfiguration = std::move(value); }
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline EncoderSettings& WithMotionGraphicsConfiguration(const MotionGraphicsConfiguration& value) { SetMotionGraphicsConfiguration(value); return *this;}
+
+    /**
+     * Settings for motion graphics.
+     */
+    inline EncoderSettings& WithMotionGraphicsConfiguration(MotionGraphicsConfiguration&& value) { SetMotionGraphicsConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -375,8 +429,14 @@ namespace Model
     Aws::Vector<CaptionDescription> m_captionDescriptions;
     bool m_captionDescriptionsHasBeenSet;
 
+    FeatureActivations m_featureActivations;
+    bool m_featureActivationsHasBeenSet;
+
     GlobalConfiguration m_globalConfiguration;
     bool m_globalConfigurationHasBeenSet;
+
+    MotionGraphicsConfiguration m_motionGraphicsConfiguration;
+    bool m_motionGraphicsConfigurationHasBeenSet;
 
     NielsenConfiguration m_nielsenConfiguration;
     bool m_nielsenConfigurationHasBeenSet;

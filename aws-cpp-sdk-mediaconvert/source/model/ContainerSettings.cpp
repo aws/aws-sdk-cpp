@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/ContainerSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,8 @@ ContainerSettings::ContainerSettings() :
     m_m3u8SettingsHasBeenSet(false),
     m_movSettingsHasBeenSet(false),
     m_mp4SettingsHasBeenSet(false),
-    m_mpdSettingsHasBeenSet(false)
+    m_mpdSettingsHasBeenSet(false),
+    m_mxfSettingsHasBeenSet(false)
 {
 }
 
@@ -50,7 +41,8 @@ ContainerSettings::ContainerSettings(JsonView jsonValue) :
     m_m3u8SettingsHasBeenSet(false),
     m_movSettingsHasBeenSet(false),
     m_mp4SettingsHasBeenSet(false),
-    m_mpdSettingsHasBeenSet(false)
+    m_mpdSettingsHasBeenSet(false),
+    m_mxfSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +105,13 @@ ContainerSettings& ContainerSettings::operator =(JsonView jsonValue)
     m_mpdSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mxfSettings"))
+  {
+    m_mxfSettings = jsonValue.GetObject("mxfSettings");
+
+    m_mxfSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +163,12 @@ JsonValue ContainerSettings::Jsonize() const
   if(m_mpdSettingsHasBeenSet)
   {
    payload.WithObject("mpdSettings", m_mpdSettings.Jsonize());
+
+  }
+
+  if(m_mxfSettingsHasBeenSet)
+  {
+   payload.WithObject("mxfSettings", m_mxfSettings.Jsonize());
 
   }
 

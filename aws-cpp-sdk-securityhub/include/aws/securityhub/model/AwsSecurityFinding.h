@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -28,10 +18,15 @@
 #include <aws/securityhub/model/Workflow.h>
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/Note.h>
+#include <aws/securityhub/model/PatchSummary.h>
+#include <aws/securityhub/model/Action.h>
+#include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/Malware.h>
+#include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
 #include <aws/securityhub/model/Resource.h>
 #include <aws/securityhub/model/RelatedFinding.h>
+#include <aws/securityhub/model/Vulnerability.h>
 #include <utility>
 
 namespace Aws
@@ -52,11 +47,11 @@ namespace Model
   /**
    * <p>Provides consistent format for the contents of the Security Hub-aggregated
    * findings. <code>AwsSecurityFinding</code> format enables you to share findings
-   * between AWS security services and third-party solutions, and security standards
-   * checks.</p> <note> <p>A finding is a potential security issue generated either
-   * by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the
-   * integrated third-party solutions and standards checks.</p> </note><p><h3>See
-   * Also:</h3>   <a
+   * between Amazon Web Services security services and third-party solutions, and
+   * security standards checks.</p>  <p>A finding is a potential security issue
+   * generated either by Amazon Web Services services or by the integrated
+   * third-party solutions and standards checks.</p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
    * API Reference</a></p>
    */
@@ -209,99 +204,318 @@ namespace Model
 
 
     /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline const Aws::String& GetProductName() const{ return m_productName; }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the product that generated the finding.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update this
+     * attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by product name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithProductName(const char* value) { SetProductName(value); return *this;}
+
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline const Aws::String& GetCompanyName() const{ return m_companyName; }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline void SetCompanyName(const Aws::String& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline void SetCompanyName(Aws::String&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline void SetCompanyName(const char* value) { m_companyNameHasBeenSet = true; m_companyName.assign(value); }
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithCompanyName(const Aws::String& value) { SetCompanyName(value); return *this;}
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithCompanyName(Aws::String&& value) { SetCompanyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the company for the product that generated the finding.</p>
+     * <p>Security Hub populates this attribute automatically for each finding. You
+     * cannot update this attribute with <code>BatchImportFindings</code> or
+     * <code>BatchUpdateFindings</code>. The exception to this is a custom
+     * integration.</p> <p>When you use the Security Hub console or API to filter
+     * findings by company name, you use this attribute.</p>
+     */
+    inline AwsSecurityFinding& WithCompanyName(const char* value) { SetCompanyName(value); return *this;}
+
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline AwsSecurityFinding& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline AwsSecurityFinding& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p> <p>Security Hub
+     * populates this attribute automatically for each finding. You cannot update it
+     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+     */
+    inline AwsSecurityFinding& WithRegion(const char* value) { SetRegion(value); return *this;}
+
+
+    /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline const Aws::String& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline void SetGeneratorId(const Aws::String& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline void SetGeneratorId(Aws::String&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline void SetGeneratorId(const char* value) { m_generatorIdHasBeenSet = true; m_generatorId.assign(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline AwsSecurityFinding& WithGeneratorId(const Aws::String& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline AwsSecurityFinding& WithGeneratorId(Aws::String&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline AwsSecurityFinding& WithGeneratorId(const char* value) { SetGeneratorId(value); return *this;}
 
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFinding& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFinding& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFinding& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -380,213 +594,309 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetFirstObservedAt(const Aws::String& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetFirstObservedAt(Aws::String&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetFirstObservedAt(const char* value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithFirstObservedAt(const Aws::String& value) { SetFirstObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithFirstObservedAt(Aws::String&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider first observed the potential
+     * security issue that a finding captured.</p> <p>Uses the <code>date-time</code>
+     * format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithFirstObservedAt(const char* value) { SetFirstObservedAt(value); return *this;}
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(const Aws::String& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(Aws::String&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastObservedAt(const char* value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithLastObservedAt(const Aws::String& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithLastObservedAt(Aws::String&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p>
+     * <p>Indicates when the security-findings provider most recently observed the
+     * potential security issue that a finding captured.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithLastObservedAt(const char* value) { SetLastObservedAt(value); return *this;}
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider created the potential security issue that a finding captured.</p>
+     * <p>Indicates when the security-findings provider created the potential security
+     * issue that a finding captured.</p> <p>Uses the <code>date-time</code> format
+     * specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339
+     * section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For
+     * example, <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
-     * provider last updated the finding record. </p>
+     * <p>Indicates when the security-findings provider last updated the finding
+     * record.</p> <p>Uses the <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsSecurityFinding& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 
@@ -685,99 +995,99 @@ namespace Model
 
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline AwsSecurityFinding& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline AwsSecurityFinding& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline AwsSecurityFinding& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline AwsSecurityFinding& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline AwsSecurityFinding& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline AwsSecurityFinding& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -865,91 +1175,117 @@ namespace Model
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProductFields() const{ return m_productFields; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline void SetProductFields(const Aws::Map<Aws::String, Aws::String>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline void SetProductFields(Aws::Map<Aws::String, Aws::String>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& WithProductFields(const Aws::Map<Aws::String, Aws::String>& value) { SetProductFields(value); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& WithProductFields(Aws::Map<Aws::String, Aws::String>&& value) { SetProductFields(std::move(value)); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const Aws::String& key, const Aws::String& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, const Aws::String& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const Aws::String& key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const char* key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, const char* value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
      * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p>
+     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+     * pairs. For each key-value pair, the key can contain up to 128 characters, and
+     * the value can contain up to 2048 characters.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const char* key, const char* value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, value); return *this; }
 
@@ -1106,6 +1442,55 @@ namespace Model
 
 
     /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline const Aws::Vector<NetworkPathComponent>& GetNetworkPath() const{ return m_networkPath; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline void SetNetworkPath(const Aws::Vector<NetworkPathComponent>& value) { m_networkPathHasBeenSet = true; m_networkPath = value; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline void SetNetworkPath(Aws::Vector<NetworkPathComponent>&& value) { m_networkPathHasBeenSet = true; m_networkPath = std::move(value); }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& WithNetworkPath(const Aws::Vector<NetworkPathComponent>& value) { SetNetworkPath(value); return *this;}
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& WithNetworkPath(Aws::Vector<NetworkPathComponent>&& value) { SetNetworkPath(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& AddNetworkPath(const NetworkPathComponent& value) { m_networkPathHasBeenSet = true; m_networkPath.push_back(value); return *this; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& AddNetworkPath(NetworkPathComponent&& value) { m_networkPathHasBeenSet = true; m_networkPath.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The details of process-related information about a finding.</p>
      */
     inline const ProcessDetails& GetProcess() const{ return m_process; }
@@ -1229,42 +1614,48 @@ namespace Model
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
      * check run against a specific rule in a supported security standard, such as CIS
-     * AWS Foundations. Contains security standard-related finding details.</p>
+     * Amazon Web Services Foundations. Contains security standard-related finding
+     * details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 
@@ -1470,6 +1861,185 @@ namespace Model
      */
     inline AwsSecurityFinding& WithNote(Note&& value) { SetNote(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline const Aws::Vector<Vulnerability>& GetVulnerabilities() const{ return m_vulnerabilities; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline bool VulnerabilitiesHasBeenSet() const { return m_vulnerabilitiesHasBeenSet; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline void SetVulnerabilities(const Aws::Vector<Vulnerability>& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities = value; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline void SetVulnerabilities(Aws::Vector<Vulnerability>&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities = std::move(value); }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& WithVulnerabilities(const Aws::Vector<Vulnerability>& value) { SetVulnerabilities(value); return *this;}
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& WithVulnerabilities(Aws::Vector<Vulnerability>&& value) { SetVulnerabilities(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& AddVulnerabilities(const Vulnerability& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.push_back(value); return *this; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& AddVulnerabilities(Vulnerability&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline const PatchSummary& GetPatchSummary() const{ return m_patchSummary; }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline bool PatchSummaryHasBeenSet() const { return m_patchSummaryHasBeenSet; }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline void SetPatchSummary(const PatchSummary& value) { m_patchSummaryHasBeenSet = true; m_patchSummary = value; }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline void SetPatchSummary(PatchSummary&& value) { m_patchSummaryHasBeenSet = true; m_patchSummary = std::move(value); }
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline AwsSecurityFinding& WithPatchSummary(const PatchSummary& value) { SetPatchSummary(value); return *this;}
+
+    /**
+     * <p>Provides an overview of the patch compliance status for an instance against a
+     * selected compliance standard.</p>
+     */
+    inline AwsSecurityFinding& WithPatchSummary(PatchSummary&& value) { SetPatchSummary(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline const Action& GetAction() const{ return m_action; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline AwsSecurityFinding& WithAction(const Action& value) { SetAction(value); return *this;}
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline AwsSecurityFinding& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline const FindingProviderFields& GetFindingProviderFields() const{ return m_findingProviderFields; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline bool FindingProviderFieldsHasBeenSet() const { return m_findingProviderFieldsHasBeenSet; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline void SetFindingProviderFields(const FindingProviderFields& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = value; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline void SetFindingProviderFields(FindingProviderFields&& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = std::move(value); }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline AwsSecurityFinding& WithFindingProviderFields(const FindingProviderFields& value) { SetFindingProviderFields(value); return *this;}
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline AwsSecurityFinding& WithFindingProviderFields(FindingProviderFields&& value) { SetFindingProviderFields(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline void SetSample(bool value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline AwsSecurityFinding& WithSample(bool value) { SetSample(value); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -1480,6 +2050,15 @@ namespace Model
 
     Aws::String m_productArn;
     bool m_productArnHasBeenSet;
+
+    Aws::String m_productName;
+    bool m_productNameHasBeenSet;
+
+    Aws::String m_companyName;
+    bool m_companyNameHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
 
     Aws::String m_generatorId;
     bool m_generatorIdHasBeenSet;
@@ -1535,6 +2114,9 @@ namespace Model
     Network m_network;
     bool m_networkHasBeenSet;
 
+    Aws::Vector<NetworkPathComponent> m_networkPath;
+    bool m_networkPathHasBeenSet;
+
     ProcessDetails m_process;
     bool m_processHasBeenSet;
 
@@ -1564,6 +2146,21 @@ namespace Model
 
     Note m_note;
     bool m_noteHasBeenSet;
+
+    Aws::Vector<Vulnerability> m_vulnerabilities;
+    bool m_vulnerabilitiesHasBeenSet;
+
+    PatchSummary m_patchSummary;
+    bool m_patchSummaryHasBeenSet;
+
+    Action m_action;
+    bool m_actionHasBeenSet;
+
+    FindingProviderFields m_findingProviderFields;
+    bool m_findingProviderFieldsHasBeenSet;
+
+    bool m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model

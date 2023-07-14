@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class CodeCommitErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -148,6 +139,8 @@ enum class CodeCommitErrors
   INVALID_PULL_REQUEST_ID,
   INVALID_PULL_REQUEST_STATUS,
   INVALID_PULL_REQUEST_STATUS_UPDATE,
+  INVALID_REACTION_USER_ARN,
+  INVALID_REACTION_VALUE,
   INVALID_REFERENCE_NAME,
   INVALID_RELATIVE_FILE_VERSION_ENUM,
   INVALID_REPLACEMENT_CONTENT,
@@ -204,6 +197,8 @@ enum class CodeCommitErrors
   PULL_REQUEST_ID_REQUIRED,
   PULL_REQUEST_STATUS_REQUIRED,
   PUT_FILE_ENTRY_CONFLICT,
+  REACTION_LIMIT_EXCEEDED,
+  REACTION_VALUE_REQUIRED,
   REFERENCE_DOES_NOT_EXIST,
   REFERENCE_NAME_REQUIRED,
   REFERENCE_TYPE_NOT_SUPPORTED,
@@ -238,6 +233,20 @@ enum class CodeCommitErrors
   TITLE_REQUIRED,
   TOO_MANY_TAGS
 };
+
+class AWS_CODECOMMIT_API CodeCommitError : public Aws::Client::AWSError<CodeCommitErrors>
+{
+public:
+  CodeCommitError() {}
+  CodeCommitError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+  CodeCommitError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+  CodeCommitError(const Aws::Client::AWSError<CodeCommitErrors>& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+  CodeCommitError(Aws::Client::AWSError<CodeCommitErrors>&& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeCommitErrorMapper
 {
   AWS_CODECOMMIT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -36,18 +26,21 @@ namespace Model
 {
 
   /**
-   * <p>In a <a>CreatePredictor</a> operation, the specified algorithm trains a model
-   * using the specified dataset group. You can optionally tell the operation to
-   * modify data fields prior to training a model. These modifications are referred
-   * to as <i>featurization</i>.</p> <p>You define featurization using the
-   * <code>FeaturizationConfig</code> object. You specify an array of
-   * transformations, one for each field that you want to featurize. You then include
-   * the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code>
-   * request. Amazon Forecast applies the featurization to the
-   * <code>TARGET_TIME_SERIES</code> dataset before model training.</p> <p>You can
-   * create multiple featurization configurations. For example, you might call the
-   * <code>CreatePredictor</code> operation twice by specifying different
-   * featurization configurations.</p><p><h3>See Also:</h3>   <a
+   *  <p>This object belongs to the <a>CreatePredictor</a> operation. If you
+   * created your predictor with <a>CreateAutoPredictor</a>, see
+   * <a>AttributeConfig</a>.</p>  <p>In a <a>CreatePredictor</a> operation,
+   * the specified algorithm trains a model using the specified dataset group. You
+   * can optionally tell the operation to modify data fields prior to training a
+   * model. These modifications are referred to as <i>featurization</i>.</p> <p>You
+   * define featurization using the <code>FeaturizationConfig</code> object. You
+   * specify an array of transformations, one for each field that you want to
+   * featurize. You then include the <code>FeaturizationConfig</code> object in your
+   * <code>CreatePredictor</code> request. Amazon Forecast applies the featurization
+   * to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code>
+   * datasets before model training.</p> <p>You can create multiple featurization
+   * configurations. For example, you might call the <code>CreatePredictor</code>
+   * operation twice by specifying different featurization
+   * configurations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/FeaturizationConfig">AWS
    * API Reference</a></p>
    */
@@ -269,49 +262,49 @@ namespace Model
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline const Aws::Vector<Featurization>& GetFeaturizations() const{ return m_featurizations; }
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline bool FeaturizationsHasBeenSet() const { return m_featurizationsHasBeenSet; }
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline void SetFeaturizations(const Aws::Vector<Featurization>& value) { m_featurizationsHasBeenSet = true; m_featurizations = value; }
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline void SetFeaturizations(Aws::Vector<Featurization>&& value) { m_featurizationsHasBeenSet = true; m_featurizations = std::move(value); }
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline FeaturizationConfig& WithFeaturizations(const Aws::Vector<Featurization>& value) { SetFeaturizations(value); return *this;}
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline FeaturizationConfig& WithFeaturizations(Aws::Vector<Featurization>&& value) { SetFeaturizations(std::move(value)); return *this;}
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline FeaturizationConfig& AddFeaturizations(const Featurization& value) { m_featurizationsHasBeenSet = true; m_featurizations.push_back(value); return *this; }
 
     /**
      * <p>An array of featurization (transformation) information for the fields of a
-     * dataset. Only a single featurization is supported.</p>
+     * dataset.</p>
      */
     inline FeaturizationConfig& AddFeaturizations(Featurization&& value) { m_featurizationsHasBeenSet = true; m_featurizations.push_back(std::move(value)); return *this; }
 

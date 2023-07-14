@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -95,34 +85,38 @@ namespace Model
 
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
+     * Web Services account can perform EMR actions on the cluster that the IAM
+     * policies attached to the principal allow. A value of <code>false</code>
+     * indicates that only the IAM principal that created the cluster and the Amazon
+     * Web Services root user can perform EMR actions on the cluster.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
+     * Web Services account can perform EMR actions on the cluster that the IAM
+     * policies attached to the principal allow. A value of <code>false</code>
+     * indicates that only the IAM principal that created the cluster and the Amazon
+     * Web Services root user can perform EMR actions on the cluster.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
+     * Web Services account can perform EMR actions on the cluster that the IAM
+     * policies attached to the principal allow. A value of <code>false</code>
+     * indicates that only the IAM principal that created the cluster and the Amazon
+     * Web Services root user can perform EMR actions on the cluster.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
+     * Web Services account can perform EMR actions on the cluster that the IAM
+     * policies attached to the principal allow. A value of <code>false</code>
+     * indicates that only the IAM principal that created the cluster and the Amazon
+     * Web Services root user can perform EMR actions on the cluster.</p>
      */
     inline SetVisibleToAllUsersRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 

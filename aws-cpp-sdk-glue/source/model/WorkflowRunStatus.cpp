@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/WorkflowRunStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,9 @@ namespace Aws
 
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         WorkflowRunStatus GetWorkflowRunStatusForName(const Aws::String& name)
@@ -44,6 +37,18 @@ namespace Aws
           else if (hashCode == COMPLETED_HASH)
           {
             return WorkflowRunStatus::COMPLETED;
+          }
+          else if (hashCode == STOPPING_HASH)
+          {
+            return WorkflowRunStatus::STOPPING;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return WorkflowRunStatus::STOPPED;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return WorkflowRunStatus::ERROR_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,12 @@ namespace Aws
             return "RUNNING";
           case WorkflowRunStatus::COMPLETED:
             return "COMPLETED";
+          case WorkflowRunStatus::STOPPING:
+            return "STOPPING";
+          case WorkflowRunStatus::STOPPED:
+            return "STOPPED";
+          case WorkflowRunStatus::ERROR_:
+            return "ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

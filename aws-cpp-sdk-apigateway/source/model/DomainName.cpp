@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigateway/model/DomainName.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -45,7 +35,9 @@ DomainName::DomainName() :
     m_domainNameStatusMessageHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_mutualTlsAuthenticationHasBeenSet(false),
+    m_ownershipVerificationCertificateArnHasBeenSet(false)
 {
 }
 
@@ -66,7 +58,9 @@ DomainName::DomainName(JsonView jsonValue) :
     m_domainNameStatusMessageHasBeenSet(false),
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_mutualTlsAuthenticationHasBeenSet(false),
+    m_ownershipVerificationCertificateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -181,6 +175,20 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mutualTlsAuthentication"))
+  {
+    m_mutualTlsAuthentication = jsonValue.GetObject("mutualTlsAuthentication");
+
+    m_mutualTlsAuthenticationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ownershipVerificationCertificateArn"))
+  {
+    m_ownershipVerificationCertificateArn = jsonValue.GetString("ownershipVerificationCertificateArn");
+
+    m_ownershipVerificationCertificateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -277,6 +285,18 @@ JsonValue DomainName::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_mutualTlsAuthenticationHasBeenSet)
+  {
+   payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
+
+  }
+
+  if(m_ownershipVerificationCertificateArnHasBeenSet)
+  {
+   payload.WithString("ownershipVerificationCertificateArn", m_ownershipVerificationCertificateArn);
 
   }
 

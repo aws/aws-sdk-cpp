@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/UpdateIndexRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,7 +17,12 @@ UpdateIndexRequest::UpdateIndexRequest() :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_documentMetadataConfigurationUpdatesHasBeenSet(false)
+    m_documentMetadataConfigurationUpdatesHasBeenSet(false),
+    m_capacityUnitsHasBeenSet(false),
+    m_userTokenConfigurationsHasBeenSet(false),
+    m_userContextPolicy(UserContextPolicy::NOT_SET),
+    m_userContextPolicyHasBeenSet(false),
+    m_userGroupResolutionConfigurationHasBeenSet(false)
 {
 }
 
@@ -67,6 +62,34 @@ Aws::String UpdateIndexRequest::SerializePayload() const
      documentMetadataConfigurationUpdatesJsonList[documentMetadataConfigurationUpdatesIndex].AsObject(m_documentMetadataConfigurationUpdates[documentMetadataConfigurationUpdatesIndex].Jsonize());
    }
    payload.WithArray("DocumentMetadataConfigurationUpdates", std::move(documentMetadataConfigurationUpdatesJsonList));
+
+  }
+
+  if(m_capacityUnitsHasBeenSet)
+  {
+   payload.WithObject("CapacityUnits", m_capacityUnits.Jsonize());
+
+  }
+
+  if(m_userTokenConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
+   for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
+   {
+     userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject(m_userTokenConfigurations[userTokenConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("UserTokenConfigurations", std::move(userTokenConfigurationsJsonList));
+
+  }
+
+  if(m_userContextPolicyHasBeenSet)
+  {
+   payload.WithString("UserContextPolicy", UserContextPolicyMapper::GetNameForUserContextPolicy(m_userContextPolicy));
+  }
+
+  if(m_userGroupResolutionConfigurationHasBeenSet)
+  {
+   payload.WithObject("UserGroupResolutionConfiguration", m_userGroupResolutionConfiguration.Jsonize());
 
   }
 

@@ -1,28 +1,20 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
-#define AWS_DISABLE_DEPRECATION
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
 #include <aws/core/http/windows/WinSyncHttpClient.h>
 #include <aws/core/Http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/windows/WinConnectionPoolMgr.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
+#include <aws/core/utils/Outcome.h>
 
 #include <Windows.h>
 #include <sstream>
@@ -58,14 +50,14 @@ void WinSyncHttpClient::SetConnectionPoolManager(WinConnectionPoolMgr* connectio
     m_connectionPoolMgr = connectionMgr;
 }
 
-void* WinSyncHttpClient::AllocateWindowsHttpRequest(const Aws::Http::HttpRequest& request, void* connection) const
+void* WinSyncHttpClient::AllocateWindowsHttpRequest(const std::shared_ptr<HttpRequest>& request, void* connection) const
 {
     Aws::StringStream ss;
-    ss << request.GetUri().GetPath();
+    ss << request->GetUri().GetPath();
 
-    if (request.GetUri().GetQueryStringParameters().size() > 0)
+    if (request->GetUri().GetQueryStringParameters().size() > 0)
     {
-        ss << request.GetUri().GetQueryString();
+        ss << request->GetUri().GetQueryString();
     }
 
     void* hHttpRequest = OpenRequest(request, connection, ss);
@@ -74,13 +66,13 @@ void* WinSyncHttpClient::AllocateWindowsHttpRequest(const Aws::Http::HttpRequest
     return hHttpRequest;
 }
 
-void WinSyncHttpClient::AddHeadersToRequest(const HttpRequest& request, void* hHttpRequest) const
+void WinSyncHttpClient::AddHeadersToRequest(const std::shared_ptr<HttpRequest>& request, void* hHttpRequest) const
 {
-    if(request.GetHeaders().size() > 0)
+    if(request->GetHeaders().size() > 0)
     {
         Aws::StringStream ss;
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "with headers:");
-        for (auto& header : request.GetHeaders())
+        for (auto& header : request->GetHeaders())
         {
             ss << header.first << ": " << header.second << "\r\n";
         }
@@ -96,26 +88,52 @@ void WinSyncHttpClient::AddHeadersToRequest(const HttpRequest& request, void* hH
     }
 }
 
-bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+bool WinSyncHttpClient::StreamPayloadToRequest(const std::shared_ptr<HttpRequest>& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     bool success = true;
-    bool isChunked = request.HasTransferEncoding() && request.GetTransferEncoding() == Aws::Http::CHUNKED_VALUE;
-    auto payloadStream = request.GetContentBody();
+    bool isChunked = request->HasTransferEncoding() && request->GetTransferEncoding() == Aws::Http::CHUNKED_VALUE;
+    bool isAwsChunked = request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) && request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE;
+    auto payloadStream = request->GetContentBody();
+    const char CRLF[] = "\r\n";
     if(payloadStream)
     {
         uint64_t bytesWritten;
+        uint64_t bytesToRead = HTTP_REQUEST_WRITE_BUFFER_LENGTH;
         auto startingPos = payloadStream->tellg();
         char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH ];
         bool done = false;
+        // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
+        if (isAwsChunked)
+        {
+            // Length of hex(HTTP_REQUEST_WRITE_BUFFER_LENGTH) is 4;
+            // Length of each CRLF is 2.
+            // Reserve 8 bytes in total.
+            bytesToRead -= 8;
+        }
         while(success && !done)
         {
-            payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
+            payloadStream->read(streamBuffer, bytesToRead);
             std::streamsize bytesRead = payloadStream->gcount();
             success = !payloadStream->bad();
 
             bytesWritten = 0;
             if (bytesRead > 0)
             {
+                if (isAwsChunked)
+                {
+                    if (request->GetRequestHash().second != nullptr)
+                    {
+                        request->GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(streamBuffer), static_cast<size_t>(bytesRead));
+                    }
+
+                    Aws::String hex = Aws::Utils::StringUtils::ToHexString(static_cast<uint64_t>(bytesRead));
+                    memcpy(streamBuffer + hex.size() + 2, streamBuffer, static_cast<size_t>(bytesRead));
+                    memcpy(streamBuffer + hex.size() + 2 + bytesRead, CRLF, 2);
+                    memcpy(streamBuffer, hex.c_str(), hex.size());
+                    memcpy(streamBuffer + hex.size(), CRLF, 2);
+                    bytesRead += hex.size() + 4;
+                }
+
                 bytesWritten = DoWriteData(hHttpRequest, streamBuffer, bytesRead, isChunked);
                 if (!bytesWritten)
                 {
@@ -127,10 +145,10 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 }
             }
 
-            auto& sentHandler = request.GetDataSentEventHandler();
+            auto& sentHandler = request->GetDataSentEventHandler();
             if (sentHandler)
             {
-                sentHandler(&request, (long long)bytesWritten);
+                sentHandler(request.get(), (long long)bytesWritten);
             }
 
             if(!payloadStream->good())
@@ -138,7 +156,28 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 done = true;
             }
 
-            success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
+            success = success && ContinueRequest(*request) && IsRequestProcessingEnabled();
+        }
+
+        if (success && isAwsChunked)
+        {
+            Aws::StringStream chunkedTrailer;
+            chunkedTrailer << "0" << CRLF;
+            if (request->GetRequestHash().second != nullptr)
+            {
+                chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
+                    << Aws::Utils::HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << CRLF;
+            }
+            chunkedTrailer << CRLF;
+            bytesWritten = DoWriteData(hHttpRequest, const_cast<char*>(chunkedTrailer.str().c_str()), chunkedTrailer.str().size(), isChunked);
+            if (!bytesWritten)
+            {
+                success = false;
+            }
+            else if(writeLimiter)
+            {
+                writeLimiter->ApplyAndPayForCost(bytesWritten);
+            }
         }
 
         if (success && isChunked)
@@ -186,7 +225,7 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
 
 }
 
-bool WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& request, std::shared_ptr<HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const
+bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>& request, std::shared_ptr<HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const
 {
     Aws::StringStream ss;
     uint64_t read = 0;
@@ -209,33 +248,37 @@ bool WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& reque
         }
     }
 
-    if (request.GetMethod() != HttpMethod::HTTP_HEAD)
+    if (request->GetMethod() != HttpMethod::HTTP_HEAD)
     {
         char body[1024];
         uint64_t bodySize = sizeof(body);
         int64_t numBytesResponseReceived = 0;
         read = 0;
 
-        bool success = ContinueRequest(request);
+        bool success = ContinueRequest(*request);
 
         while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0 && success)
         {
             response->GetResponseBody().write(body, read);
             if (read > 0)
             {
+                for (const auto& hashIterator : request->GetResponseValidationHashes())
+                {
+                    hashIterator.second->Update(reinterpret_cast<unsigned char*>(body), static_cast<size_t>(read));
+                }
                 numBytesResponseReceived += read;
                 if (readLimiter != nullptr)
                 {
                     readLimiter->ApplyAndPayForCost(read);
                 }
-                auto& receivedHandler = request.GetDataReceivedEventHandler();
+                auto& receivedHandler = request->GetDataReceivedEventHandler();
                 if (receivedHandler)
                 {
-                    receivedHandler(&request, response.get(), (long long)read);
+                    receivedHandler(request.get(), response.get(), (long long)read);
                 }
             }
 
-            success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
+            success = success && ContinueRequest(*request) && IsRequestProcessingEnabled();
         }
 
         if (success && response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
@@ -264,53 +307,37 @@ bool WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& reque
     return true;
 }
 
-std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request,
-	Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-	Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
-{
-	std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
-	MakeRequestInternal(request, response, readLimiter, writeLimiter);
-	return response;
-}
-
 std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
-	Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-	Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
-{
-	std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
-	MakeRequestInternal(*request, response, readLimiter, writeLimiter);
-	return response;
-}
-
-void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
-        std::shared_ptr<HttpResponse>& response,
         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
 	//we URL encode right before going over the wire to avoid double encoding problems with the signer.
-	URI& uriRef = request.GetUri();
-	uriRef.SetPath(URI::URLEncodePathRFC3986(uriRef.GetPath()));
+	URI& uriRef = request->GetUri();
+	uriRef.SetPath(uriRef.GetURLEncodedPathRFC3986());
 
-    AWS_LOGSTREAM_TRACE(GetLogTag(), "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) <<
+    AWS_LOGSTREAM_TRACE(GetLogTag(), "Making " << HttpMethodMapper::GetNameForHttpMethod(request->GetMethod()) <<
 			" request to uri " << uriRef.GetURIString(true));
 
     bool success = false;
     void* connection = nullptr;
     void* hHttpRequest = nullptr;
+    std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(GetLogTag(), request);
 
     if(IsRequestProcessingEnabled())
     {
         if (writeLimiter != nullptr)
         {
-            writeLimiter->ApplyAndPayForCost(request.GetSize());
+            writeLimiter->ApplyAndPayForCost(request->GetSize());
         }
 
         connection = m_connectionPoolMgr->AcquireConnectionForHost(uriRef.GetAuthority(), uriRef.GetPort());
+        OverrideOptionsOnConnectionHandle(connection);
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "Acquired connection " << connection);
 
         hHttpRequest = AllocateWindowsHttpRequest(request, connection);
 
         AddHeadersToRequest(request, hHttpRequest);
+        OverrideOptionsOnRequestHandle(hHttpRequest);
         if (DoSendRequest(hHttpRequest) && StreamPayloadToRequest(request, hHttpRequest, writeLimiter))
         {
             success = BuildSuccessResponse(request, response, hHttpRequest, readLimiter);
@@ -322,7 +349,7 @@ void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
         }
     }
 
-    if (!success && !IsRequestProcessingEnabled() || !ContinueRequest(request))
+    if (!success && !IsRequestProcessingEnabled() || !ContinueRequest(*request))
     {
         response->SetClientErrorType(CoreErrors::USER_CANCELLED);
         response->SetClientErrorMessage("Request processing disabled or continuation cancelled by user's continuation handler.");
@@ -340,5 +367,7 @@ void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
     }
 
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "Releasing connection handle " << connection);
-    GetConnectionPoolManager()->ReleaseConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort(), connection);
+    GetConnectionPoolManager()->ReleaseConnectionForHost(request->GetUri().GetAuthority(), request->GetUri().GetPort(), connection);
+
+    return response;
 }

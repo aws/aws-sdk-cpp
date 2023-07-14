@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -112,58 +102,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline const Aws::Vector<TaskDefinitionField>& GetInclude() const{ return m_include; }
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(const Aws::Vector<TaskDefinitionField>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline void SetInclude(Aws::Vector<TaskDefinitionField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTaskDefinitionRequest& WithInclude(const Aws::Vector<TaskDefinitionField>& value) { SetInclude(value); return *this;}
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTaskDefinitionRequest& WithInclude(Aws::Vector<TaskDefinitionField>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTaskDefinitionRequest& AddInclude(const TaskDefinitionField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <p>Determines whether to see the resource tags for the task definition. If
      * <code>TAGS</code> is specified, the tags are included in the response. If this
-     * field is omitted, tags are not included in the response.</p>
+     * field is omitted, tags aren't included in the response.</p>
      */
     inline DescribeTaskDefinitionRequest& AddInclude(TaskDefinitionField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
 

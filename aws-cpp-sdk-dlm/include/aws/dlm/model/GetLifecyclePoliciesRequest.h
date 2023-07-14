@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dlm/DLM_EXPORTS.h>
@@ -227,63 +217,63 @@ namespace Model
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToAdd() const{ return m_tagsToAdd; }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(const Aws::Vector<Aws::String>& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = value; }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(Aws::Vector<Aws::String>&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::move(value); }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& WithTagsToAdd(const Aws::Vector<Aws::String>& value) { SetTagsToAdd(value); return *this;}
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& WithTagsToAdd(Aws::Vector<Aws::String>&& value) { SetTagsToAdd(std::move(value)); return *this;}
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(const Aws::String& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(Aws::String&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
      * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(const char* value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 

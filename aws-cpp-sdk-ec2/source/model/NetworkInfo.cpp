@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/NetworkInfo.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -34,6 +24,11 @@ NetworkInfo::NetworkInfo() :
     m_networkPerformanceHasBeenSet(false),
     m_maximumNetworkInterfaces(0),
     m_maximumNetworkInterfacesHasBeenSet(false),
+    m_maximumNetworkCards(0),
+    m_maximumNetworkCardsHasBeenSet(false),
+    m_defaultNetworkCardIndex(0),
+    m_defaultNetworkCardIndexHasBeenSet(false),
+    m_networkCardsHasBeenSet(false),
     m_ipv4AddressesPerInterface(0),
     m_ipv4AddressesPerInterfaceHasBeenSet(false),
     m_ipv6AddressesPerInterface(0),
@@ -41,7 +36,12 @@ NetworkInfo::NetworkInfo() :
     m_ipv6Supported(false),
     m_ipv6SupportedHasBeenSet(false),
     m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false)
+    m_enaSupportHasBeenSet(false),
+    m_efaSupported(false),
+    m_efaSupportedHasBeenSet(false),
+    m_efaInfoHasBeenSet(false),
+    m_encryptionInTransitSupported(false),
+    m_encryptionInTransitSupportedHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,11 @@ NetworkInfo::NetworkInfo(const XmlNode& xmlNode) :
     m_networkPerformanceHasBeenSet(false),
     m_maximumNetworkInterfaces(0),
     m_maximumNetworkInterfacesHasBeenSet(false),
+    m_maximumNetworkCards(0),
+    m_maximumNetworkCardsHasBeenSet(false),
+    m_defaultNetworkCardIndex(0),
+    m_defaultNetworkCardIndexHasBeenSet(false),
+    m_networkCardsHasBeenSet(false),
     m_ipv4AddressesPerInterface(0),
     m_ipv4AddressesPerInterfaceHasBeenSet(false),
     m_ipv6AddressesPerInterface(0),
@@ -56,7 +61,12 @@ NetworkInfo::NetworkInfo(const XmlNode& xmlNode) :
     m_ipv6Supported(false),
     m_ipv6SupportedHasBeenSet(false),
     m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false)
+    m_enaSupportHasBeenSet(false),
+    m_efaSupported(false),
+    m_efaSupportedHasBeenSet(false),
+    m_efaInfoHasBeenSet(false),
+    m_encryptionInTransitSupported(false),
+    m_encryptionInTransitSupportedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -78,6 +88,30 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
     {
       m_maximumNetworkInterfaces = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
       m_maximumNetworkInterfacesHasBeenSet = true;
+    }
+    XmlNode maximumNetworkCardsNode = resultNode.FirstChild("maximumNetworkCards");
+    if(!maximumNetworkCardsNode.IsNull())
+    {
+      m_maximumNetworkCards = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkCardsNode.GetText()).c_str()).c_str());
+      m_maximumNetworkCardsHasBeenSet = true;
+    }
+    XmlNode defaultNetworkCardIndexNode = resultNode.FirstChild("defaultNetworkCardIndex");
+    if(!defaultNetworkCardIndexNode.IsNull())
+    {
+      m_defaultNetworkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultNetworkCardIndexNode.GetText()).c_str()).c_str());
+      m_defaultNetworkCardIndexHasBeenSet = true;
+    }
+    XmlNode networkCardsNode = resultNode.FirstChild("networkCards");
+    if(!networkCardsNode.IsNull())
+    {
+      XmlNode networkCardsMember = networkCardsNode.FirstChild("item");
+      while(!networkCardsMember.IsNull())
+      {
+        m_networkCards.push_back(networkCardsMember);
+        networkCardsMember = networkCardsMember.NextNode("item");
+      }
+
+      m_networkCardsHasBeenSet = true;
     }
     XmlNode ipv4AddressesPerInterfaceNode = resultNode.FirstChild("ipv4AddressesPerInterface");
     if(!ipv4AddressesPerInterfaceNode.IsNull())
@@ -103,6 +137,24 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
       m_enaSupport = EnaSupportMapper::GetEnaSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()).c_str());
       m_enaSupportHasBeenSet = true;
     }
+    XmlNode efaSupportedNode = resultNode.FirstChild("efaSupported");
+    if(!efaSupportedNode.IsNull())
+    {
+      m_efaSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(efaSupportedNode.GetText()).c_str()).c_str());
+      m_efaSupportedHasBeenSet = true;
+    }
+    XmlNode efaInfoNode = resultNode.FirstChild("efaInfo");
+    if(!efaInfoNode.IsNull())
+    {
+      m_efaInfo = efaInfoNode;
+      m_efaInfoHasBeenSet = true;
+    }
+    XmlNode encryptionInTransitSupportedNode = resultNode.FirstChild("encryptionInTransitSupported");
+    if(!encryptionInTransitSupportedNode.IsNull())
+    {
+      m_encryptionInTransitSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionInTransitSupportedNode.GetText()).c_str()).c_str());
+      m_encryptionInTransitSupportedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -118,6 +170,27 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
   if(m_maximumNetworkInterfacesHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+
+  if(m_maximumNetworkCardsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaximumNetworkCards=" << m_maximumNetworkCards << "&";
+  }
+
+  if(m_defaultNetworkCardIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultNetworkCardIndex=" << m_defaultNetworkCardIndex << "&";
+  }
+
+  if(m_networkCardsHasBeenSet)
+  {
+      unsigned networkCardsIdx = 1;
+      for(auto& item : m_networkCards)
+      {
+        Aws::StringStream networkCardsSs;
+        networkCardsSs << location << index << locationValue << ".NetworkCards." << networkCardsIdx++;
+        item.OutputToStream(oStream, networkCardsSs.str().c_str());
+      }
   }
 
   if(m_ipv4AddressesPerInterfaceHasBeenSet)
@@ -140,6 +213,23 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EnaSupport=" << EnaSupportMapper::GetNameForEnaSupport(m_enaSupport) << "&";
   }
 
+  if(m_efaSupportedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
+  }
+
+  if(m_efaInfoHasBeenSet)
+  {
+      Aws::StringStream efaInfoLocationAndMemberSs;
+      efaInfoLocationAndMemberSs << location << index << locationValue << ".EfaInfo";
+      m_efaInfo.OutputToStream(oStream, efaInfoLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_encryptionInTransitSupportedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
+  }
+
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -151,6 +241,24 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_maximumNetworkInterfacesHasBeenSet)
   {
       oStream << location << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+  if(m_maximumNetworkCardsHasBeenSet)
+  {
+      oStream << location << ".MaximumNetworkCards=" << m_maximumNetworkCards << "&";
+  }
+  if(m_defaultNetworkCardIndexHasBeenSet)
+  {
+      oStream << location << ".DefaultNetworkCardIndex=" << m_defaultNetworkCardIndex << "&";
+  }
+  if(m_networkCardsHasBeenSet)
+  {
+      unsigned networkCardsIdx = 1;
+      for(auto& item : m_networkCards)
+      {
+        Aws::StringStream networkCardsSs;
+        networkCardsSs << location <<  ".NetworkCards." << networkCardsIdx++;
+        item.OutputToStream(oStream, networkCardsSs.str().c_str());
+      }
   }
   if(m_ipv4AddressesPerInterfaceHasBeenSet)
   {
@@ -167,6 +275,20 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_enaSupportHasBeenSet)
   {
       oStream << location << ".EnaSupport=" << EnaSupportMapper::GetNameForEnaSupport(m_enaSupport) << "&";
+  }
+  if(m_efaSupportedHasBeenSet)
+  {
+      oStream << location << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
+  }
+  if(m_efaInfoHasBeenSet)
+  {
+      Aws::String efaInfoLocationAndMember(location);
+      efaInfoLocationAndMember += ".EfaInfo";
+      m_efaInfo.OutputToStream(oStream, efaInfoLocationAndMember.c_str());
+  }
+  if(m_encryptionInTransitSupportedHasBeenSet)
+  {
+      oStream << location << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
   }
 }
 

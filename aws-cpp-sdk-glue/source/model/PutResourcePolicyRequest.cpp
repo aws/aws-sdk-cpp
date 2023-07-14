@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/PutResourcePolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,9 +14,12 @@ using namespace Aws::Utils;
 
 PutResourcePolicyRequest::PutResourcePolicyRequest() : 
     m_policyInJsonHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
     m_policyHashConditionHasBeenSet(false),
     m_policyExistsCondition(ExistCondition::NOT_SET),
-    m_policyExistsConditionHasBeenSet(false)
+    m_policyExistsConditionHasBeenSet(false),
+    m_enableHybrid(EnableHybridValues::NOT_SET),
+    m_enableHybridHasBeenSet(false)
 {
 }
 
@@ -40,6 +33,12 @@ Aws::String PutResourcePolicyRequest::SerializePayload() const
 
   }
 
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
   if(m_policyHashConditionHasBeenSet)
   {
    payload.WithString("PolicyHashCondition", m_policyHashCondition);
@@ -49,6 +48,11 @@ Aws::String PutResourcePolicyRequest::SerializePayload() const
   if(m_policyExistsConditionHasBeenSet)
   {
    payload.WithString("PolicyExistsCondition", ExistConditionMapper::GetNameForExistCondition(m_policyExistsCondition));
+  }
+
+  if(m_enableHybridHasBeenSet)
+  {
+   payload.WithString("EnableHybrid", EnableHybridValuesMapper::GetNameForEnableHybridValues(m_enableHybrid));
   }
 
   return payload.View().WriteReadable();

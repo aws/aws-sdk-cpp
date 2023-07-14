@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -174,61 +164,151 @@ namespace Model
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline const PortInfoSourceType& GetPortInfoSource() const{ return m_portInfoSource; }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline bool PortInfoSourceHasBeenSet() const { return m_portInfoSourceHasBeenSet; }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline void SetPortInfoSource(const PortInfoSourceType& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = value; }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline void SetPortInfoSource(PortInfoSourceType&& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = std::move(value); }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline InstanceEntry& WithPortInfoSource(const PortInfoSourceType& value) { SetPortInfoSource(value); return *this;}
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint. If this is specified, then IPv4 and IPv6 will be configured
+     * for the new instance that is created in Amazon EC2.</p> </li> <li> <p>
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source
+     * Lightsail instance. If this is specified, the new instance that is created in
+     * Amazon EC2 will be configured to match the configuration of the source Lightsail
+     * instance. For example, if the source instance is configured for dual-stack (IPv4
+     * and IPv6), then IPv4 and IPv6 will be configured for the new instance that is
+     * created in Amazon EC2. If the source instance is configured for IPv4 only, then
+     * only IPv4 will be configured for the new instance that is created in Amazon
+     * EC2.</p> </li> <li> <p> <code>NONE</code> - Use the default Amazon EC2 security
+     * group. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.</p> </li> <li> <p> <code>CLOSED</code> -
+     * All ports closed. If this is specified, then only IPv4 will be configured for
+     * the new instance that is created in Amazon EC2.</p> </li> </ul>  <p>If you
+     * configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+     * your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
+     * clients to connect to your instance, that configuration is not carried over to
+     * your new Amazon EC2 instance.</p> 
      */
     inline InstanceEntry& WithPortInfoSource(PortInfoSourceType&& value) { SetPortInfoSource(std::move(value)); return *this;}
 
@@ -236,80 +316,80 @@ namespace Model
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline InstanceEntry& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline InstanceEntry& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>A launch script you can create that configures a server with additional user
      * data. For example, you might want to run <code>apt-get -y update</code>.</p>
-     * <note> <p>Depending on the machine image you choose, the command to get software
+     *  <p>Depending on the machine image you choose, the command to get software
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
-     * </note>
+     * 
      */
     inline InstanceEntry& WithUserData(const char* value) { SetUserData(value); return *this;}
 

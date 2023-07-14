@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/directconnect/model/NewTransitVirtualInterface.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,9 @@ NewTransitVirtualInterface::NewTransitVirtualInterface() :
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableSiteLink(false),
+    m_enableSiteLinkHasBeenSet(false)
 {
 }
 
@@ -60,7 +52,9 @@ NewTransitVirtualInterface::NewTransitVirtualInterface(JsonView jsonValue) :
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableSiteLink(false),
+    m_enableSiteLinkHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +134,13 @@ NewTransitVirtualInterface& NewTransitVirtualInterface::operator =(JsonView json
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableSiteLink"))
+  {
+    m_enableSiteLink = jsonValue.GetBool("enableSiteLink");
+
+    m_enableSiteLinkHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -208,6 +209,12 @@ JsonValue NewTransitVirtualInterface::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_enableSiteLinkHasBeenSet)
+  {
+   payload.WithBool("enableSiteLink", m_enableSiteLink);
 
   }
 

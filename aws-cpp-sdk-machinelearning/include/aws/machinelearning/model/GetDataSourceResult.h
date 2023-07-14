@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -363,61 +353,66 @@ namespace Model
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
-     * submitted a request to create a <code>DataSource</code>.</li> <li>
-     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * of the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The creation process is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The creation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
-     * submitted a request to create a <code>DataSource</code>.</li> <li>
-     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * of the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The creation process is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The creation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline void SetStatus(const EntityStatus& value) { m_status = value; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
-     * submitted a request to create a <code>DataSource</code>.</li> <li>
-     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * of the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The creation process is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The creation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline void SetStatus(EntityStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
-     * submitted a request to create a <code>DataSource</code>.</li> <li>
-     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * of the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The creation process is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The creation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline GetDataSourceResult& WithStatus(const EntityStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
-     * submitted a request to create a <code>DataSource</code>.</li> <li>
-     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * of the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</p> </li> <li> <p>
+     * <code>INPROGRESS</code> - The creation process is underway.</p> </li> <li> <p>
      * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
-     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
-     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     * run to completion. It is not usable.</p> </li> <li> <p> <code>COMPLETED</code> -
+     * The creation process completed successfully.</p> </li> <li> <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
+     * not usable.</p> </li> </ul>
      */
     inline GetDataSourceResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -693,50 +688,43 @@ namespace Model
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline const Aws::String& GetDataSourceSchema() const{ return m_dataSourceSchema; }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline void SetDataSourceSchema(const Aws::String& value) { m_dataSourceSchema = value; }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline void SetDataSourceSchema(Aws::String&& value) { m_dataSourceSchema = std::move(value); }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline void SetDataSourceSchema(const char* value) { m_dataSourceSchema.assign(value); }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline GetDataSourceResult& WithDataSourceSchema(const Aws::String& value) { SetDataSourceSchema(value); return *this;}
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline GetDataSourceResult& WithDataSourceSchema(Aws::String&& value) { SetDataSourceSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
      */
     inline GetDataSourceResult& WithDataSourceSchema(const char* value) { SetDataSourceSchema(value); return *this;}
 

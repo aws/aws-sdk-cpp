@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -93,7 +83,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
 
@@ -103,7 +96,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
@@ -113,7 +109,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
@@ -123,7 +122,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
 
@@ -133,7 +135,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline ListJobsRequest& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
 
@@ -143,7 +148,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a thing when the thing is
      * added to a target group, even after the job was completed by all things
-     * originally in the group. </p>
+     * originally in the group. </p>  <p>We recommend that you use continuous
+     * jobs instead of snapshot jobs for dynamic thing group targets. By using
+     * continuous jobs, devices that join the group receive the job execution even
+     * after the job has been created.</p> 
      */
     inline ListJobsRequest& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
 
@@ -291,6 +299,95 @@ namespace Model
      */
     inline ListJobsRequest& WithThingGroupId(const char* value) { SetThingGroupId(value); return *this;}
 
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline ListJobsRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline ListJobsRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline ListJobsRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+
   private:
 
     JobStatus m_status;
@@ -310,6 +407,9 @@ namespace Model
 
     Aws::String m_thingGroupId;
     bool m_thingGroupIdHasBeenSet;
+
+    Aws::String m_namespaceId;
+    bool m_namespaceIdHasBeenSet;
   };
 
 } // namespace Model

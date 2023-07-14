@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -47,29 +37,29 @@ namespace Model
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline int GetAttemptDurationSeconds() const{ return m_attemptDurationSeconds; }
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline bool AttemptDurationSecondsHasBeenSet() const { return m_attemptDurationSecondsHasBeenSet; }
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline void SetAttemptDurationSeconds(int value) { m_attemptDurationSecondsHasBeenSet = true; m_attemptDurationSeconds = value; }
 
     /**
      * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which AWS Batch terminates your jobs if
-     * they have not finished.</p>
+     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
+     * have not finished. The minimum value for the timeout is 60 seconds.</p>
      */
     inline JobTimeout& WithAttemptDurationSeconds(int value) { SetAttemptDurationSeconds(value); return *this;}
 

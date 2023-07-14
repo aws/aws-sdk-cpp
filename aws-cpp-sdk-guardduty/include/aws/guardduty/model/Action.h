@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/guardduty/model/DnsRequestAction.h>
 #include <aws/guardduty/model/NetworkConnectionAction.h>
 #include <aws/guardduty/model/PortProbeAction.h>
+#include <aws/guardduty/model/KubernetesApiCallAction.h>
 #include <utility>
 
 namespace Aws
@@ -38,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Action">AWS
    * API Reference</a></p>
    */
@@ -52,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline const Aws::String& GetActionType() const{ return m_actionType; }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline Action& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline Action& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline Action& WithActionType(const char* value) { SetActionType(value); return *this;}
 
@@ -221,6 +212,43 @@ namespace Model
      */
     inline Action& WithPortProbeAction(PortProbeAction&& value) { SetPortProbeAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline const KubernetesApiCallAction& GetKubernetesApiCallAction() const{ return m_kubernetesApiCallAction; }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline bool KubernetesApiCallActionHasBeenSet() const { return m_kubernetesApiCallActionHasBeenSet; }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline void SetKubernetesApiCallAction(const KubernetesApiCallAction& value) { m_kubernetesApiCallActionHasBeenSet = true; m_kubernetesApiCallAction = value; }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline void SetKubernetesApiCallAction(KubernetesApiCallAction&& value) { m_kubernetesApiCallActionHasBeenSet = true; m_kubernetesApiCallAction = std::move(value); }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline Action& WithKubernetesApiCallAction(const KubernetesApiCallAction& value) { SetKubernetesApiCallAction(value); return *this;}
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline Action& WithKubernetesApiCallAction(KubernetesApiCallAction&& value) { SetKubernetesApiCallAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionType;
@@ -237,6 +265,9 @@ namespace Model
 
     PortProbeAction m_portProbeAction;
     bool m_portProbeActionHasBeenSet;
+
+    KubernetesApiCallAction m_kubernetesApiCallAction;
+    bool m_kubernetesApiCallActionHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -43,101 +33,129 @@ namespace Model
 
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetGrantToken() const{ return m_grantToken; }
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(const Aws::String& value) { m_grantToken = value; }
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(Aws::String&& value) { m_grantToken = std::move(value); }
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantToken(const char* value) { m_grantToken.assign(value); }
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantResult& WithGrantToken(const Aws::String& value) { SetGrantToken(value); return *this;}
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantResult& WithGrantToken(Aws::String&& value) { SetGrantToken(std::move(value)); return *this;}
 
     /**
-     * <p>The grant token.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The grant token.</p> <p>Use a grant token when your permission to call this
+     * operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant
+     * token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+     * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantResult& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
 
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline void SetGrantId(const Aws::String& value) { m_grantId = value; }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline void SetGrantId(Aws::String&& value) { m_grantId = std::move(value); }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline void SetGrantId(const char* value) { m_grantId.assign(value); }
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline CreateGrantResult& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline CreateGrantResult& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
-     * <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-     * operation.</p>
+     * <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+     * <a>RevokeGrant</a> operation.</p>
      */
     inline CreateGrantResult& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 

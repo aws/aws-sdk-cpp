@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
@@ -20,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/textract/model/NotificationChannel.h>
+#include <aws/textract/model/OutputConfig.h>
+#include <aws/textract/model/QueriesConfig.h>
 #include <aws/textract/model/FeatureType.h>
 #include <utility>
 
@@ -350,6 +342,141 @@ namespace Model
      */
     inline StartDocumentAnalysisRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default, Amazon
+     * Textract will save the results internally to be accessed by the
+     * GetDocumentAnalysis operation.</p>
+     */
+    inline const OutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default, Amazon
+     * Textract will save the results internally to be accessed by the
+     * GetDocumentAnalysis operation.</p>
+     */
+    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default, Amazon
+     * Textract will save the results internally to be accessed by the
+     * GetDocumentAnalysis operation.</p>
+     */
+    inline void SetOutputConfig(const OutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default, Amazon
+     * Textract will save the results internally to be accessed by the
+     * GetDocumentAnalysis operation.</p>
+     */
+    inline void SetOutputConfig(OutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default, Amazon
+     * Textract will save the results internally to be accessed by the
+     * GetDocumentAnalysis operation.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithOutputConfig(const OutputConfig& value) { SetOutputConfig(value); return *this;}
+
+    /**
+     * <p>Sets if the output will go to a customer defined bucket. By default, Amazon
+     * Textract will save the results internally to be accessed by the
+     * GetDocumentAnalysis operation.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key used to encrypt the inference results. This can be in either Key
+     * ID or Key Alias format. When a KMS key is provided, the KMS key will be used for
+     * server-side encryption of the objects in the customer bucket. When this
+     * parameter is not enabled, the result will be encrypted server side,using
+     * SSE-S3.</p>
+     */
+    inline StartDocumentAnalysisRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+
+
+    
+    inline const QueriesConfig& GetQueriesConfig() const{ return m_queriesConfig; }
+
+    
+    inline bool QueriesConfigHasBeenSet() const { return m_queriesConfigHasBeenSet; }
+
+    
+    inline void SetQueriesConfig(const QueriesConfig& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = value; }
+
+    
+    inline void SetQueriesConfig(QueriesConfig&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::move(value); }
+
+    
+    inline StartDocumentAnalysisRequest& WithQueriesConfig(const QueriesConfig& value) { SetQueriesConfig(value); return *this;}
+
+    
+    inline StartDocumentAnalysisRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
+
   private:
 
     DocumentLocation m_documentLocation;
@@ -366,6 +493,15 @@ namespace Model
 
     NotificationChannel m_notificationChannel;
     bool m_notificationChannelHasBeenSet;
+
+    OutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet;
+
+    Aws::String m_kMSKeyId;
+    bool m_kMSKeyIdHasBeenSet;
+
+    QueriesConfig m_queriesConfig;
+    bool m_queriesConfigHasBeenSet;
   };
 
 } // namespace Model

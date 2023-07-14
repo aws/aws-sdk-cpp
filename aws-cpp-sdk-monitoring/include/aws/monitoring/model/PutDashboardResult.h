@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -48,9 +38,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline const Aws::Vector<DashboardValidationMessage>& GetDashboardValidationMessages() const{ return m_dashboardValidationMessages; }
 
@@ -58,9 +48,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline void SetDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { m_dashboardValidationMessages = value; }
 
@@ -68,9 +58,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline void SetDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { m_dashboardValidationMessages = std::move(value); }
 
@@ -78,9 +68,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline PutDashboardResult& WithDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { SetDashboardValidationMessages(value); return *this;}
 
@@ -88,9 +78,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline PutDashboardResult& WithDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { SetDashboardValidationMessages(std::move(value)); return *this;}
 
@@ -98,9 +88,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline PutDashboardResult& AddDashboardValidationMessages(const DashboardValidationMessage& value) { m_dashboardValidationMessages.push_back(value); return *this; }
 
@@ -108,9 +98,9 @@ namespace Model
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
      * successfully created or modified, this result is empty.</p> <p>If this result
      * includes only warning messages, then the input was valid enough for the
-     * dashboard to be created or modified, but some elements of the dashboard may not
-     * render.</p> <p>If this result includes error messages, the input was not valid
-     * and the operation failed.</p>
+     * dashboard to be created or modified, but some elements of the dashboard might
+     * not render.</p> <p>If this result includes error messages, the input was not
+     * valid and the operation failed.</p>
      */
     inline PutDashboardResult& AddDashboardValidationMessages(DashboardValidationMessage&& value) { m_dashboardValidationMessages.push_back(std::move(value)); return *this; }
 

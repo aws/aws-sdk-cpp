@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 
 #include <aws/external/gtest.h>
@@ -266,7 +256,7 @@ protected:
         DescribeTableOutcome outcome = m_client->DescribeTable(describeTableRequest);
 
         while (shouldContinue)
-        {     
+        {
             if (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
             {
                 break;
@@ -381,6 +371,10 @@ TEST_F(TableOperationTest, TestConditionalCheckFailure)
     badRequest.AddExpected("Simpson", expected);
     PutItemOutcome result = m_client->PutItem(badRequest);
     ASSERT_FALSE(result.IsSuccess());
+#if ENABLE_CURL_CLIENT
+    ASSERT_FALSE(result.GetError().GetRemoteHostIpAddress().empty());
+#endif
+    ASSERT_FALSE(result.GetError().GetRequestId().empty());
     ASSERT_EQ(DynamoDBErrors::CONDITIONAL_CHECK_FAILED, result.GetError().GetErrorType());
 }
 
@@ -400,6 +394,10 @@ TEST_F(TableOperationTest, TestValidationError)
 
     PutItemOutcome result = m_client->PutItem(request);
     ASSERT_FALSE(result.IsSuccess());
+#if ENABLE_CURL_CLIENT
+    ASSERT_FALSE(result.GetError().GetRemoteHostIpAddress().empty());
+#endif
+    ASSERT_FALSE(result.GetError().GetRequestId().empty());
     ASSERT_EQ(DynamoDBErrors::VALIDATION, result.GetError().GetErrorType());
 }
 
@@ -875,7 +873,7 @@ TEST_F(TableOperationTest, TestLimiter)
 
     // set limiter to 1k/sec
     // each request is a Put of 1k of data + >600 from headers/misc and response data
-    // so we expect 20 requests to take at least 30 seconds 
+    // so we expect 20 requests to take at least 30 seconds
     m_limiter->SetRate(1000, true);
 
     auto startTime = CLOCK::now();

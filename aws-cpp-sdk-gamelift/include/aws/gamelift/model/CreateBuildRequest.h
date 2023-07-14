@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -31,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuildInput">AWS
    * API Reference</a></p>
    */
@@ -159,55 +149,73 @@ namespace Model
 
     /**
      * <p>Information indicating where your game build files are stored. Use this
-     * parameter only when creating a build with files stored in an S3 bucket that you
-     * own. The storage location must specify an S3 bucket name and key. The location
-     * must also specify a role ARN that you set up to allow Amazon GameLift to access
-     * your S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
     /**
      * <p>Information indicating where your game build files are stored. Use this
-     * parameter only when creating a build with files stored in an S3 bucket that you
-     * own. The storage location must specify an S3 bucket name and key. The location
-     * must also specify a role ARN that you set up to allow Amazon GameLift to access
-     * your S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
 
     /**
      * <p>Information indicating where your game build files are stored. Use this
-     * parameter only when creating a build with files stored in an S3 bucket that you
-     * own. The storage location must specify an S3 bucket name and key. The location
-     * must also specify a role ARN that you set up to allow Amazon GameLift to access
-     * your S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
     /**
      * <p>Information indicating where your game build files are stored. Use this
-     * parameter only when creating a build with files stored in an S3 bucket that you
-     * own. The storage location must specify an S3 bucket name and key. The location
-     * must also specify a role ARN that you set up to allow Amazon GameLift to access
-     * your S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
     /**
      * <p>Information indicating where your game build files are stored. Use this
-     * parameter only when creating a build with files stored in an S3 bucket that you
-     * own. The storage location must specify an S3 bucket name and key. The location
-     * must also specify a role ARN that you set up to allow Amazon GameLift to access
-     * your S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
     /**
      * <p>Information indicating where your game build files are stored. Use this
-     * parameter only when creating a build with files stored in an S3 bucket that you
-     * own. The storage location must specify an S3 bucket name and key. The location
-     * must also specify a role ARN that you set up to allow Amazon GameLift to access
-     * your S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p> <p>If a <code>StorageLocation</code> is specified,
+     * the size of your file can be found in your Amazon S3 bucket. Amazon GameLift
+     * will report a <code>SizeOnDisk</code> of 0. </p>
      */
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
@@ -275,105 +283,113 @@ namespace Model
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateBuildRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateBuildRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateBuildRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of labels to assign to the new build resource. Tags are
-     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
-     * management, access management and cost allocation. For more information, see <a
+     * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+     * useful for resource management, access management and cost allocation. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
-     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
-     * may be lower than stated. See the AWS General Reference for actual tagging
-     * limits.</p>
+     * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
+     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
+     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
+     * Services General Reference for actual tagging limits.</p>
      */
     inline CreateBuildRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

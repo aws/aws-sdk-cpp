@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -22,10 +12,12 @@
 #include <aws/medialive/model/HlsCodecSpecification.h>
 #include <aws/medialive/model/OutputLocationRef.h>
 #include <aws/medialive/model/HlsDirectoryStructure.h>
+#include <aws/medialive/model/HlsDiscontinuityTags.h>
 #include <aws/medialive/model/HlsEncryptionType.h>
 #include <aws/medialive/model/HlsCdnSettings.h>
 #include <aws/medialive/model/HlsId3SegmentTaggingState.h>
 #include <aws/medialive/model/IFrameOnlyPlaylistType.h>
+#include <aws/medialive/model/HlsIncompleteSegmentBehavior.h>
 #include <aws/medialive/model/InputLossActionForHlsOut.h>
 #include <aws/medialive/model/HlsIvInManifest.h>
 #include <aws/medialive/model/HlsIvSource.h>
@@ -35,6 +27,7 @@
 #include <aws/medialive/model/HlsMode.h>
 #include <aws/medialive/model/HlsOutputSelection.h>
 #include <aws/medialive/model/HlsProgramDateTime.h>
+#include <aws/medialive/model/HlsProgramDateTimeClock.h>
 #include <aws/medialive/model/HlsRedundantManifest.h>
 #include <aws/medialive/model/HlsSegmentationMode.h>
 #include <aws/medialive/model/HlsStreamInfResolution.h>
@@ -744,6 +737,79 @@ omit: Omit any CLOSED-CAPTIONS line
 
 
     /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline const HlsDiscontinuityTags& GetDiscontinuityTags() const{ return m_discontinuityTags; }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline bool DiscontinuityTagsHasBeenSet() const { return m_discontinuityTagsHasBeenSet; }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline void SetDiscontinuityTags(const HlsDiscontinuityTags& value) { m_discontinuityTagsHasBeenSet = true; m_discontinuityTags = value; }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline void SetDiscontinuityTags(HlsDiscontinuityTags&& value) { m_discontinuityTagsHasBeenSet = true; m_discontinuityTags = std::move(value); }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline HlsGroupSettings& WithDiscontinuityTags(const HlsDiscontinuityTags& value) { SetDiscontinuityTags(value); return *this;}
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests
+     * for this output group.
+Typically, choose Insert because these tags are required
+     * in the manifest (according to the HLS specification) and serve an important
+     * purpose.
+Choose Never Insert only if the downstream system is doing real-time
+     * failover (without using the MediaLive automatic failover feature) and only if
+     * that downstream system has advised you to exclude the tags.
+     */
+    inline HlsGroupSettings& WithDiscontinuityTags(HlsDiscontinuityTags&& value) { SetDiscontinuityTags(std::move(value)); return *this;}
+
+
+    /**
      * Encrypts the segments with the given encryption scheme.  Exclude this parameter
      * if no encryption is desired.
      */
@@ -922,33 +988,114 @@ STANDARD: Create an
 
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline const HlsIncompleteSegmentBehavior& GetIncompleteSegmentBehavior() const{ return m_incompleteSegmentBehavior; }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline bool IncompleteSegmentBehaviorHasBeenSet() const { return m_incompleteSegmentBehaviorHasBeenSet; }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline void SetIncompleteSegmentBehavior(const HlsIncompleteSegmentBehavior& value) { m_incompleteSegmentBehaviorHasBeenSet = true; m_incompleteSegmentBehavior = value; }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline void SetIncompleteSegmentBehavior(HlsIncompleteSegmentBehavior&& value) { m_incompleteSegmentBehaviorHasBeenSet = true; m_incompleteSegmentBehavior = std::move(value); }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline HlsGroupSettings& WithIncompleteSegmentBehavior(const HlsIncompleteSegmentBehavior& value) { SetIncompleteSegmentBehavior(value); return *this;}
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output
+     * when the pipeline stops producing output because of a channel stop, a channel
+     * pause or a loss of input to the pipeline.
+Auto means that MediaLive decides
+     * whether to include the final segment, depending on the channel class and the
+     * types of output groups.
+Suppress means to never include the incomplete segment.
+     * We recommend you choose Auto and let MediaLive control the behavior.
+     */
+    inline HlsGroupSettings& WithIncompleteSegmentBehavior(HlsIncompleteSegmentBehavior&& value) { SetIncompleteSegmentBehavior(std::move(value)); return *this;}
+
+
+    /**
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline int GetIndexNSegments() const{ return m_indexNSegments; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline bool IndexNSegmentsHasBeenSet() const { return m_indexNSegmentsHasBeenSet; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline void SetIndexNSegments(int value) { m_indexNSegmentsHasBeenSet = true; m_indexNSegments = value; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in
+     * Applies only if Mode field is LIVE.
+
+Specifies the maximum number of segments in
      * the media manifest file. After this maximum, older segments are removed from the
-     * media manifest. This number must be less than or equal to the Keep Segments
+     * media manifest. This number must be smaller than the number in the Keep Segments
      * field.
      */
     inline HlsGroupSettings& WithIndexNSegments(int value) { SetIndexNSegments(value); return *this;}
@@ -1084,26 +1231,62 @@ STANDARD: Create an
 
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline int GetKeepSegments() const{ return m_keepSegments; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline bool KeepSegmentsHasBeenSet() const { return m_keepSegmentsHasBeenSet; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline void SetKeepSegments(int value) { m_keepSegmentsHasBeenSet = true; m_keepSegments = value; }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
-     * files) to retain in the destination directory.
+     * Applies only if Mode field is LIVE.
+
+Specifies the number of media segments to
+     * retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) +
+     * 1).
+
+If this "keep segments" number is too low, the following might happen: the
+     * player is still reading a media manifest file that lists this segment, but that
+     * segment has been removed from the destination directory (as directed by
+     * indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     inline HlsGroupSettings& WithKeepSegments(int value) { SetKeepSegments(value); return *this;}
 
@@ -1412,107 +1595,204 @@ VOD
 
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
+
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline const HlsOutputSelection& GetOutputSelection() const{ return m_outputSelection; }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
+
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline bool OutputSelectionHasBeenSet() const { return m_outputSelectionHasBeenSet; }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
+
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline void SetOutputSelection(const HlsOutputSelection& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = value; }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
+
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline void SetOutputSelection(HlsOutputSelection&& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = std::move(value); }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
+
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(const HlsOutputSelection& value) { SetOutputSelection(value); return *this;}
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
+
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(HlsOutputSelection&& value) { SetOutputSelection(std::move(value)); return *this;}
 
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline const HlsProgramDateTime& GetProgramDateTime() const{ return m_programDateTime; }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline bool ProgramDateTimeHasBeenSet() const { return m_programDateTimeHasBeenSet; }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline void SetProgramDateTime(const HlsProgramDateTime& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = value; }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline void SetProgramDateTime(HlsProgramDateTime&& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = std::move(value); }
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline HlsGroupSettings& WithProgramDateTime(const HlsProgramDateTime& value) { SetProgramDateTime(value); return *this;}
 
     /**
      * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
-     * value is calculated as follows: either the program date and time are initialized
-     * using the input timecode source, or the time is initialized using the input
-     * timecode source and the date is initialized using the timestampOffset.
+     * value is calculated using the program date time clock.
      */
     inline HlsGroupSettings& WithProgramDateTime(HlsProgramDateTime&& value) { SetProgramDateTime(std::move(value)); return *this;}
+
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline const HlsProgramDateTimeClock& GetProgramDateTimeClock() const{ return m_programDateTimeClock; }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline bool ProgramDateTimeClockHasBeenSet() const { return m_programDateTimeClockHasBeenSet; }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline void SetProgramDateTimeClock(const HlsProgramDateTimeClock& value) { m_programDateTimeClockHasBeenSet = true; m_programDateTimeClock = value; }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline void SetProgramDateTimeClock(HlsProgramDateTimeClock&& value) { m_programDateTimeClockHasBeenSet = true; m_programDateTimeClock = std::move(value); }
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline HlsGroupSettings& WithProgramDateTimeClock(const HlsProgramDateTimeClock& value) { SetProgramDateTimeClock(value); return *this;}
+
+    /**
+     * Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock.
+     * Options include:
+
+INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized
+     * as a function of the first output timecode, then incremented by the EXTINF
+     * duration of each encoded segment.
+
+SYSTEM_CLOCK: The PDT clock is initialized as
+     * a function of the UTC wall clock, then incremented by the EXTINF duration of
+     * each encoded segment. If the PDT clock diverges from the wall clock by more than
+     * 500ms, it is resynchronized to the wall clock.
+     */
+    inline HlsGroupSettings& WithProgramDateTimeClock(HlsProgramDateTimeClock&& value) { SetProgramDateTimeClock(std::move(value)); return *this;}
 
 
     /**
@@ -1857,10 +2137,10 @@ For an HLS output group with
 
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1870,10 +2150,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline const HlsTsFileMode& GetTsFileMode() const{ return m_tsFileMode; }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1883,10 +2163,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline bool TsFileModeHasBeenSet() const { return m_tsFileModeHasBeenSet; }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1896,10 +2176,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline void SetTsFileMode(const HlsTsFileMode& value) { m_tsFileModeHasBeenSet = true; m_tsFileMode = value; }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1909,10 +2189,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline void SetTsFileMode(HlsTsFileMode&& value) { m_tsFileModeHasBeenSet = true; m_tsFileMode = std::move(value); }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1922,10 +2202,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline HlsGroupSettings& WithTsFileMode(const HlsTsFileMode& value) { SetTsFileMode(value); return *this;}
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1972,6 +2252,9 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     HlsDirectoryStructure m_directoryStructure;
     bool m_directoryStructureHasBeenSet;
 
+    HlsDiscontinuityTags m_discontinuityTags;
+    bool m_discontinuityTagsHasBeenSet;
+
     HlsEncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
 
@@ -1983,6 +2266,9 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
 
     IFrameOnlyPlaylistType m_iFrameOnlyPlaylists;
     bool m_iFrameOnlyPlaylistsHasBeenSet;
+
+    HlsIncompleteSegmentBehavior m_incompleteSegmentBehavior;
+    bool m_incompleteSegmentBehaviorHasBeenSet;
 
     int m_indexNSegments;
     bool m_indexNSegmentsHasBeenSet;
@@ -2025,6 +2311,9 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
 
     HlsProgramDateTime m_programDateTime;
     bool m_programDateTimeHasBeenSet;
+
+    HlsProgramDateTimeClock m_programDateTimeClock;
+    bool m_programDateTimeClockHasBeenSet;
 
     int m_programDateTimePeriod;
     bool m_programDateTimePeriodHasBeenSet;

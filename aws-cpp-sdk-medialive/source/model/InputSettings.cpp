@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/InputSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,6 +30,10 @@ InputSettings::InputSettings() :
     m_inputFilter(InputFilter::NOT_SET),
     m_inputFilterHasBeenSet(false),
     m_networkInputSettingsHasBeenSet(false),
+    m_scte35Pid(0),
+    m_scte35PidHasBeenSet(false),
+    m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
+    m_smpte2038DataPreferenceHasBeenSet(false),
     m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
     m_sourceEndBehaviorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
@@ -58,6 +52,10 @@ InputSettings::InputSettings(JsonView jsonValue) :
     m_inputFilter(InputFilter::NOT_SET),
     m_inputFilterHasBeenSet(false),
     m_networkInputSettingsHasBeenSet(false),
+    m_scte35Pid(0),
+    m_scte35PidHasBeenSet(false),
+    m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
+    m_smpte2038DataPreferenceHasBeenSet(false),
     m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
     m_sourceEndBehaviorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
@@ -120,6 +118,20 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
     m_networkInputSettings = jsonValue.GetObject("networkInputSettings");
 
     m_networkInputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scte35Pid"))
+  {
+    m_scte35Pid = jsonValue.GetInteger("scte35Pid");
+
+    m_scte35PidHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("smpte2038DataPreference"))
+  {
+    m_smpte2038DataPreference = Smpte2038DataPreferenceMapper::GetSmpte2038DataPreferenceForName(jsonValue.GetString("smpte2038DataPreference"));
+
+    m_smpte2038DataPreferenceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceEndBehavior"))
@@ -190,6 +202,17 @@ JsonValue InputSettings::Jsonize() const
   {
    payload.WithObject("networkInputSettings", m_networkInputSettings.Jsonize());
 
+  }
+
+  if(m_scte35PidHasBeenSet)
+  {
+   payload.WithInteger("scte35Pid", m_scte35Pid);
+
+  }
+
+  if(m_smpte2038DataPreferenceHasBeenSet)
+  {
+   payload.WithString("smpte2038DataPreference", Smpte2038DataPreferenceMapper::GetNameForSmpte2038DataPreference(m_smpte2038DataPreference));
   }
 
   if(m_sourceEndBehaviorHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DocumentAttributeValueCountPair.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 DocumentAttributeValueCountPair::DocumentAttributeValueCountPair() : 
     m_documentAttributeValueHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_facetResultsHasBeenSet(false)
 {
 }
 
 DocumentAttributeValueCountPair::DocumentAttributeValueCountPair(JsonView jsonValue) : 
     m_documentAttributeValueHasBeenSet(false),
     m_count(0),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_facetResultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +51,16 @@ DocumentAttributeValueCountPair& DocumentAttributeValueCountPair::operator =(Jso
     m_countHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FacetResults"))
+  {
+    Array<JsonView> facetResultsJsonList = jsonValue.GetArray("FacetResults");
+    for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
+    {
+      m_facetResults.push_back(facetResultsJsonList[facetResultsIndex].AsObject());
+    }
+    m_facetResultsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +77,17 @@ JsonValue DocumentAttributeValueCountPair::Jsonize() const
   if(m_countHasBeenSet)
   {
    payload.WithInteger("Count", m_count);
+
+  }
+
+  if(m_facetResultsHasBeenSet)
+  {
+   Array<JsonValue> facetResultsJsonList(m_facetResults.size());
+   for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
+   {
+     facetResultsJsonList[facetResultsIndex].AsObject(m_facetResults[facetResultsIndex].Jsonize());
+   }
+   payload.WithArray("FacetResults", std::move(facetResultsJsonList));
 
   }
 

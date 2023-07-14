@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -47,9 +37,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
@@ -57,9 +47,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
@@ -67,9 +57,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
@@ -77,9 +67,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
@@ -87,9 +77,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
@@ -97,9 +87,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DiscoverPollEndpointRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
@@ -107,9 +97,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DiscoverPollEndpointRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
@@ -117,59 +107,59 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
-     * container instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance ID.
-     * For example,
+     * container instance, the Amazon Web Services account ID of the container instance
+     * owner, the <code>container-instance</code> namespace, and then the container
+     * instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DiscoverPollEndpointRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline DiscoverPollEndpointRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline DiscoverPollEndpointRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
-     * container instance belongs.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
+     * container instance belongs to.</p>
      */
     inline DiscoverPollEndpointRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 

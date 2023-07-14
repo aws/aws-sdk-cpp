@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/TargetType.h>
+#include <aws/rds/model/TargetRole.h>
+#include <aws/rds/model/TargetHealth.h>
 #include <utility>
 
 namespace Aws
@@ -35,12 +27,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Contains the details
-   * for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster
-   * that the proxy can connect to. One or more targets are associated with an RDS
-   * Proxy target group.</p> <p>This data type is used as a response element in the
-   * <code>DescribeDBProxyTargets</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details for an RDS Proxy target. It represents an RDS DB
+   * instance or Aurora DB cluster that the proxy can connect to. One or more targets
+   * are associated with an RDS Proxy target group.</p> <p>This data type is used as
+   * a response element in the <code>DescribeDBProxyTargets</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxyTarget">AWS
    * API Reference</a></p>
    */
@@ -304,6 +295,74 @@ namespace Model
      */
     inline DBProxyTarget& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline const TargetRole& GetRole() const{ return m_role; }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline void SetRole(const TargetRole& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline void SetRole(TargetRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline DBProxyTarget& WithRole(const TargetRole& value) { SetRole(value); return *this;}
+
+    /**
+     * <p>A value that indicates whether the target of the proxy can be used for
+     * read/write or read-only operations.</p>
+     */
+    inline DBProxyTarget& WithRole(TargetRole&& value) { SetRole(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline const TargetHealth& GetTargetHealth() const{ return m_targetHealth; }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline bool TargetHealthHasBeenSet() const { return m_targetHealthHasBeenSet; }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline void SetTargetHealth(const TargetHealth& value) { m_targetHealthHasBeenSet = true; m_targetHealth = value; }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline void SetTargetHealth(TargetHealth&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = std::move(value); }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline DBProxyTarget& WithTargetHealth(const TargetHealth& value) { SetTargetHealth(value); return *this;}
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline DBProxyTarget& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetArn;
@@ -323,6 +382,12 @@ namespace Model
 
     TargetType m_type;
     bool m_typeHasBeenSet;
+
+    TargetRole m_role;
+    bool m_roleHasBeenSet;
+
+    TargetHealth m_targetHealth;
+    bool m_targetHealthHasBeenSet;
   };
 
 } // namespace Model

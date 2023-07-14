@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -149,8 +139,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline const Aws::Map<ProvisionedProductViewFilterBy, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
 
@@ -160,8 +153,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -171,8 +167,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline void SetFilters(const Aws::Map<ProvisionedProductViewFilterBy, Aws::Vector<Aws::String>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -182,8 +181,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline void SetFilters(Aws::Map<ProvisionedProductViewFilterBy, Aws::Vector<Aws::String>>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -193,8 +195,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline SearchProvisionedProductsRequest& WithFilters(const Aws::Map<ProvisionedProductViewFilterBy, Aws::Vector<Aws::String>>& value) { SetFilters(value); return *this;}
 
@@ -204,8 +209,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline SearchProvisionedProductsRequest& WithFilters(Aws::Map<ProvisionedProductViewFilterBy, Aws::Vector<Aws::String>>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -215,8 +223,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline SearchProvisionedProductsRequest& AddFilters(const ProvisionedProductViewFilterBy& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
@@ -226,8 +237,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline SearchProvisionedProductsRequest& AddFilters(ProvisionedProductViewFilterBy&& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
 
@@ -237,8 +251,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline SearchProvisionedProductsRequest& AddFilters(const ProvisionedProductViewFilterBy& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
 
@@ -248,8 +265,11 @@ namespace Model
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
      * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
-     * <code>tags</code>, <code>userArn</code>, and <code>userArnSession</code>.</p>
-     * <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
+     * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
+     * <code>lastProvisioningRecordId</code>,
+     * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
+     * <code>provisioningArtifactName</code>.</p> <p>Example:
+     * <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
      */
     inline SearchProvisionedProductsRequest& AddFilters(ProvisionedProductViewFilterBy&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
 

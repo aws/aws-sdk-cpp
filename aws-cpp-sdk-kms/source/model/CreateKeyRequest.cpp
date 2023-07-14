@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kms/model/CreateKeyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,14 +17,16 @@ CreateKeyRequest::CreateKeyRequest() :
     m_descriptionHasBeenSet(false),
     m_keyUsage(KeyUsageType::NOT_SET),
     m_keyUsageHasBeenSet(false),
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
-    m_customerMasterKeySpecHasBeenSet(false),
+    m_keySpec(KeySpec::NOT_SET),
+    m_keySpecHasBeenSet(false),
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
     m_customKeyStoreIdHasBeenSet(false),
     m_bypassPolicyLockoutSafetyCheck(false),
     m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false)
 {
 }
 
@@ -59,9 +51,9 @@ Aws::String CreateKeyRequest::SerializePayload() const
    payload.WithString("KeyUsage", KeyUsageTypeMapper::GetNameForKeyUsageType(m_keyUsage));
   }
 
-  if(m_customerMasterKeySpecHasBeenSet)
+  if(m_keySpecHasBeenSet)
   {
-   payload.WithString("CustomerMasterKeySpec", CustomerMasterKeySpecMapper::GetNameForCustomerMasterKeySpec(m_customerMasterKeySpec));
+   payload.WithString("KeySpec", KeySpecMapper::GetNameForKeySpec(m_keySpec));
   }
 
   if(m_originHasBeenSet)
@@ -89,6 +81,12 @@ Aws::String CreateKeyRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_multiRegionHasBeenSet)
+  {
+   payload.WithBool("MultiRegion", m_multiRegion);
 
   }
 

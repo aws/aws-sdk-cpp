@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -34,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains metadata about a customer master key (CMK).</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Contains metadata about an KMS key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsKmsKeyDetails">AWS
    * API Reference</a></p>
    */
@@ -49,277 +38,363 @@ namespace Model
 
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline void SetAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.assign(value); }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
 
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the KMS key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline double GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the KMS key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the KMS key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date and time when the CMK was created.</p>
+     * <p>Indicates when the KMS key was created.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsKmsKeyDetails& WithCreationDate(double value) { SetCreationDate(value); return *this;}
 
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The globally unique identifier for the CMK.</p>
+     * <p>The globally unique identifier for the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline const Aws::String& GetKeyManager() const{ return m_keyManager; }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline bool KeyManagerHasBeenSet() const { return m_keyManagerHasBeenSet; }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline void SetKeyManager(const Aws::String& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline void SetKeyManager(Aws::String&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline void SetKeyManager(const char* value) { m_keyManagerHasBeenSet = true; m_keyManager.assign(value); }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline AwsKmsKeyDetails& WithKeyManager(const Aws::String& value) { SetKeyManager(value); return *this;}
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline AwsKmsKeyDetails& WithKeyManager(Aws::String&& value) { SetKeyManager(std::move(value)); return *this;}
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are
+     * either customer managed or Amazon Web Services managed.</p>
      */
     inline AwsKmsKeyDetails& WithKeyManager(const char* value) { SetKeyManager(value); return *this;}
 
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline const Aws::String& GetKeyState() const{ return m_keyState; }
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline void SetKeyState(const Aws::String& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline void SetKeyState(Aws::String&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline void SetKeyState(const char* value) { m_keyStateHasBeenSet = true; m_keyState.assign(value); }
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithKeyState(const Aws::String& value) { SetKeyState(value); return *this;}
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithKeyState(Aws::String&& value) { SetKeyState(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the CMK.</p>
+     * <p>The state of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithKeyState(const char* value) { SetKeyState(value); return *this;}
 
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline const Aws::String& GetOrigin() const{ return m_origin; }
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(const Aws::String& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(Aws::String&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(const char* value) { m_originHasBeenSet = true; m_origin.assign(value); }
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline AwsKmsKeyDetails& WithOrigin(const Aws::String& value) { SetOrigin(value); return *this;}
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline AwsKmsKeyDetails& WithOrigin(Aws::String&& value) { SetOrigin(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * <p>The source of the KMS key material.</p> <p>When this value is
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
+     * management infrastructure or the KMS key lacks key material.</p> <p>When this
+     * value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline AwsKmsKeyDetails& WithOrigin(const char* value) { SetOrigin(value); return *this;}
+
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline AwsKmsKeyDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline AwsKmsKeyDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the key.</p>
+     */
+    inline AwsKmsKeyDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>Whether the key has key rotation enabled.</p>
+     */
+    inline bool GetKeyRotationStatus() const{ return m_keyRotationStatus; }
+
+    /**
+     * <p>Whether the key has key rotation enabled.</p>
+     */
+    inline bool KeyRotationStatusHasBeenSet() const { return m_keyRotationStatusHasBeenSet; }
+
+    /**
+     * <p>Whether the key has key rotation enabled.</p>
+     */
+    inline void SetKeyRotationStatus(bool value) { m_keyRotationStatusHasBeenSet = true; m_keyRotationStatus = value; }
+
+    /**
+     * <p>Whether the key has key rotation enabled.</p>
+     */
+    inline AwsKmsKeyDetails& WithKeyRotationStatus(bool value) { SetKeyRotationStatus(value); return *this;}
 
   private:
 
@@ -340,6 +415,12 @@ namespace Model
 
     Aws::String m_origin;
     bool m_originHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    bool m_keyRotationStatus;
+    bool m_keyRotationStatusHasBeenSet;
   };
 
 } // namespace Model

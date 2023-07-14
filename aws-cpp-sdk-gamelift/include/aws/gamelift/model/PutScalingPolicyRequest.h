@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -32,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicyInput">AWS
    * API Reference</a></p>
    */
@@ -53,113 +43,113 @@ namespace Model
 
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline PutScalingPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline PutScalingPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a scaling policy. Policy names do
-     * not need to be unique. A fleet can have only one scaling policy with the same
-     * name.</p>
+     * <p>A descriptive label that is associated with a fleet's scaling policy. Policy
+     * names do not need to be unique. A fleet can have only one scaling policy with
+     * the same name.</p>
      */
     inline PutScalingPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline PutScalingPolicyRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
     inline PutScalingPolicyRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to apply this policy to. You can use either
+     * <p>A unique identifier for the fleet to apply this policy to. You can use either
      * the fleet ID or ARN value. The fleet cannot be in any of the following statuses:
      * ERROR or DELETING.</p>
      */
@@ -592,32 +582,32 @@ namespace Model
 
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline void SetTargetConfiguration(const TargetConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline PutScalingPolicyRequest& WithTargetConfiguration(const TargetConfiguration& value) { SetTargetConfiguration(value); return *this;}
 
     /**
-     * <p>The settings for a target-based scaling policy.</p>
+     * <p>An object that contains settings for a target-based scaling policy.</p>
      */
     inline PutScalingPolicyRequest& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 

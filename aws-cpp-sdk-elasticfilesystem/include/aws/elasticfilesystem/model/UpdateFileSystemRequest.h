@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -85,93 +75,87 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The throughput mode that you want your file system to use. If
-     * you're not updating your throughput mode, you don't need to provide this value
-     * in your request. If you are changing the <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>.</p>
+     * <p>(Optional) Updates the file system's throughput mode. If you're not updating
+     * your throughput mode, you don't need to provide this value in your request. If
+     * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
+     * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
     inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
 
     /**
-     * <p>(Optional) The throughput mode that you want your file system to use. If
-     * you're not updating your throughput mode, you don't need to provide this value
-     * in your request. If you are changing the <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>.</p>
+     * <p>(Optional) Updates the file system's throughput mode. If you're not updating
+     * your throughput mode, you don't need to provide this value in your request. If
+     * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
+     * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
 
     /**
-     * <p>(Optional) The throughput mode that you want your file system to use. If
-     * you're not updating your throughput mode, you don't need to provide this value
-     * in your request. If you are changing the <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>.</p>
+     * <p>(Optional) Updates the file system's throughput mode. If you're not updating
+     * your throughput mode, you don't need to provide this value in your request. If
+     * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
+     * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
-     * <p>(Optional) The throughput mode that you want your file system to use. If
-     * you're not updating your throughput mode, you don't need to provide this value
-     * in your request. If you are changing the <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>.</p>
+     * <p>(Optional) Updates the file system's throughput mode. If you're not updating
+     * your throughput mode, you don't need to provide this value in your request. If
+     * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
+     * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
     inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
 
     /**
-     * <p>(Optional) The throughput mode that you want your file system to use. If
-     * you're not updating your throughput mode, you don't need to provide this value
-     * in your request. If you are changing the <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>.</p>
+     * <p>(Optional) Updates the file system's throughput mode. If you're not updating
+     * your throughput mode, you don't need to provide this value in your request. If
+     * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
+     * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
     inline UpdateFileSystemRequest& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
 
     /**
-     * <p>(Optional) The throughput mode that you want your file system to use. If
-     * you're not updating your throughput mode, you don't need to provide this value
-     * in your request. If you are changing the <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>.</p>
+     * <p>(Optional) Updates the file system's throughput mode. If you're not updating
+     * your throughput mode, you don't need to provide this value in your request. If
+     * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
+     * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
     inline UpdateFileSystemRequest& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>(Optional) The amount of throughput, in MiB/s, that you want to provision for
-     * your file system. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If
-     * you're not updating the amount of provisioned throughput for your file system,
-     * you don't need to provide this value in your request. </p>
+     * <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
+     * system. Valid values are 1-1024. If you are changing the throughput mode to
+     * provisioned, you must also provide the amount of provisioned throughput.
+     * Required if <code>ThroughputMode</code> is changed to <code>provisioned</code>
+     * on update.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
     /**
-     * <p>(Optional) The amount of throughput, in MiB/s, that you want to provision for
-     * your file system. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If
-     * you're not updating the amount of provisioned throughput for your file system,
-     * you don't need to provide this value in your request. </p>
+     * <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
+     * system. Valid values are 1-1024. If you are changing the throughput mode to
+     * provisioned, you must also provide the amount of provisioned throughput.
+     * Required if <code>ThroughputMode</code> is changed to <code>provisioned</code>
+     * on update.</p>
      */
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
 
     /**
-     * <p>(Optional) The amount of throughput, in MiB/s, that you want to provision for
-     * your file system. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If
-     * you're not updating the amount of provisioned throughput for your file system,
-     * you don't need to provide this value in your request. </p>
+     * <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
+     * system. Valid values are 1-1024. If you are changing the throughput mode to
+     * provisioned, you must also provide the amount of provisioned throughput.
+     * Required if <code>ThroughputMode</code> is changed to <code>provisioned</code>
+     * on update.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
     /**
-     * <p>(Optional) The amount of throughput, in MiB/s, that you want to provision for
-     * your file system. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If
-     * you're not updating the amount of provisioned throughput for your file system,
-     * you don't need to provide this value in your request. </p>
+     * <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file
+     * system. Valid values are 1-1024. If you are changing the throughput mode to
+     * provisioned, you must also provide the amount of provisioned throughput.
+     * Required if <code>ThroughputMode</code> is changed to <code>provisioned</code>
+     * on update.</p>
      */
     inline UpdateFileSystemRequest& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
 

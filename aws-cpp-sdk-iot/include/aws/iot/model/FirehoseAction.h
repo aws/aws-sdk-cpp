@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -186,6 +176,55 @@ namespace Model
      */
     inline FirehoseAction& WithSeparator(const char* value) { SetSeparator(value); return *this;}
 
+
+    /**
+     * <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     * <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
+     * evaluates to an Array, each Array element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more
+     * than 500 records.</p>
+     */
+    inline bool GetBatchMode() const{ return m_batchMode; }
+
+    /**
+     * <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     * <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
+     * evaluates to an Array, each Array element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more
+     * than 500 records.</p>
+     */
+    inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
+
+    /**
+     * <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     * <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
+     * evaluates to an Array, each Array element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more
+     * than 500 records.</p>
+     */
+    inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
+
+    /**
+     * <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
+     * <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement
+     * evaluates to an Array, each Array element forms one record in the <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+     * <code>PutRecordBatch</code> </a> request. The resulting array can't have more
+     * than 500 records.</p>
+     */
+    inline FirehoseAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
+
   private:
 
     Aws::String m_roleArn;
@@ -196,6 +235,9 @@ namespace Model
 
     Aws::String m_separator;
     bool m_separatorHasBeenSet;
+
+    bool m_batchMode;
+    bool m_batchModeHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/ClusterField.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int ATTACHMENTS_HASH = HashingUtils::HashString("ATTACHMENTS");
+        static const int CONFIGURATIONS_HASH = HashingUtils::HashString("CONFIGURATIONS");
         static const int SETTINGS_HASH = HashingUtils::HashString("SETTINGS");
         static const int STATISTICS_HASH = HashingUtils::HashString("STATISTICS");
         static const int TAGS_HASH = HashingUtils::HashString("TAGS");
@@ -42,6 +33,10 @@ namespace Aws
           if (hashCode == ATTACHMENTS_HASH)
           {
             return ClusterField::ATTACHMENTS;
+          }
+          else if (hashCode == CONFIGURATIONS_HASH)
+          {
+            return ClusterField::CONFIGURATIONS;
           }
           else if (hashCode == SETTINGS_HASH)
           {
@@ -71,6 +66,8 @@ namespace Aws
           {
           case ClusterField::ATTACHMENTS:
             return "ATTACHMENTS";
+          case ClusterField::CONFIGURATIONS:
+            return "CONFIGURATIONS";
           case ClusterField::SETTINGS:
             return "SETTINGS";
           case ClusterField::STATISTICS:

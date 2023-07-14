@@ -4,6 +4,7 @@
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Endpoint.h>
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/client/AWSClient.h>
@@ -19,7 +20,7 @@
 #end
 \#include <future>
 \#include <functional>
-#set($accountIdInHostnameSupported = true)
+#set($arnEndpointSupported = true)
 namespace Aws
 {
 
@@ -67,6 +68,18 @@ namespace Aws
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
 
+    // Get endpoint, signer region and signer service name after computing the endpoint.
+    struct ComputeEndpointResult
+    {
+      ComputeEndpointResult(const Aws::String& iEndpointName = "", const Aws::String& iSignerRegion = "", const Aws::String& iSignerServiceName = "") :
+        endpoint(iEndpointName), signerRegion(iSignerRegion), signerServiceName(iSignerServiceName) {}
+
+      Aws::String endpoint;
+      Aws::String signerRegion;
+      Aws::String signerServiceName;
+    };
+    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
+
 #if($serviceModel.documentation)
     /**
      * ${serviceModel.documentation}
@@ -84,19 +97,38 @@ namespace Aws
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
-        
+
         void OverrideEndpoint(const Aws::String& endpoint);
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
-        Aws::String ComputeEndpointString(const Aws::String& accountId) const;
-        Aws::String ComputeEndpointString() const;
+        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
+        /**
+         * For operations without account ID or ARN as parameters, e.g. CreateBucket, ListRegionalBuckets. Possible endpoints:
+         * - s3-control[.dualstack].{region}.amazonaws.com
+         * - s3-outposts.{region}.amazonaws.com
+         * @param hasOutpostId: Use s3-outposts as service name for both endpoint and signer if true.
+         */
+        ComputeEndpointOutcome ComputeEndpointString(bool hasOutpostId = false) const;
+        /**
+         * For operations without account ID, but with ARN as parameters. e.g. GetBucket. Possible endpoints:
+         * - {accountId}.s3-control[.dualstack].{region}.amazonaws.com
+         * - s3-outposts.{region}.amazonaws.com
+         * @param name: accesspoint name (ARN) or bucket name (ARN).
+         * @param hasOutpostId: Use s3-outposts as service name to sign the request if true.
+         * @param uriPathPrefix: Path prefix of the first resource in the uri.
+         */
+        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
         Aws::String m_baseUri;
         Aws::String m_scheme;
+        bool m_enableHostPrefixInjection;
         Aws::String m_configScheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
+        bool m_useDualStack;
+        bool m_useArnRegion;
+        bool m_useCustomEndpoint;
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery;

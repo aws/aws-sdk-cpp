@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -87,22 +77,50 @@ namespace Model
 
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline int GetTargetShardCount() const{ return m_targetShardCount; }
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline bool TargetShardCountHasBeenSet() const { return m_targetShardCountHasBeenSet; }
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline void SetTargetShardCount(int value) { m_targetShardCountHasBeenSet = true; m_targetShardCount = value; }
 
     /**
-     * <p>The new number of shards.</p>
+     * <p>The new number of shards. This value has the following default limits. By
+     * default, you cannot do the following: </p> <ul> <li> <p>Set this value to more
+     * than double your current shard count for a stream.</p> </li> <li> <p>Set this
+     * value below half your current shard count for a stream.</p> </li> <li> <p>Set
+     * this value to more than 10000 shards in a stream (the default limit for shard
+     * count per stream is 10000 per account per region), unless you request a limit
+     * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
+     * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
     inline UpdateShardCountRequest& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
 

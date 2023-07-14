@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kms/model/KeyUsageType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int SIGN_VERIFY_HASH = HashingUtils::HashString("SIGN_VERIFY");
         static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
+        static const int GENERATE_VERIFY_MAC_HASH = HashingUtils::HashString("GENERATE_VERIFY_MAC");
 
 
         KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == ENCRYPT_DECRYPT_HASH)
           {
             return KeyUsageType::ENCRYPT_DECRYPT;
+          }
+          else if (hashCode == GENERATE_VERIFY_MAC_HASH)
+          {
+            return KeyUsageType::GENERATE_VERIFY_MAC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "SIGN_VERIFY";
           case KeyUsageType::ENCRYPT_DECRYPT:
             return "ENCRYPT_DECRYPT";
+          case KeyUsageType::GENERATE_VERIFY_MAC:
+            return "GENERATE_VERIFY_MAC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

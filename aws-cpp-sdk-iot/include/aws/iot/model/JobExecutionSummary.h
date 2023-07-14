@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -206,6 +196,31 @@ namespace Model
      */
     inline JobExecutionSummary& WithExecutionNumber(long long value) { SetExecutionNumber(value); return *this;}
 
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline int GetRetryAttempt() const{ return m_retryAttempt; }
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline bool RetryAttemptHasBeenSet() const { return m_retryAttemptHasBeenSet; }
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline void SetRetryAttempt(int value) { m_retryAttemptHasBeenSet = true; m_retryAttempt = value; }
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline JobExecutionSummary& WithRetryAttempt(int value) { SetRetryAttempt(value); return *this;}
+
   private:
 
     JobExecutionStatus m_status;
@@ -222,6 +237,9 @@ namespace Model
 
     long long m_executionNumber;
     bool m_executionNumberHasBeenSet;
+
+    int m_retryAttempt;
+    bool m_retryAttemptHasBeenSet;
   };
 
 } // namespace Model

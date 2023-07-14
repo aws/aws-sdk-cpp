@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -92,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+     * <p>The type of traffic.</p>
      */
     inline const TrafficDirection& GetTrafficDirection() const{ return m_trafficDirection; }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+     * <p>The type of traffic.</p>
      */
     inline bool TrafficDirectionHasBeenSet() const { return m_trafficDirectionHasBeenSet; }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+     * <p>The type of traffic.</p>
      */
     inline void SetTrafficDirection(const TrafficDirection& value) { m_trafficDirectionHasBeenSet = true; m_trafficDirection = value; }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+     * <p>The type of traffic.</p>
      */
     inline void SetTrafficDirection(TrafficDirection&& value) { m_trafficDirectionHasBeenSet = true; m_trafficDirection = std::move(value); }
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+     * <p>The type of traffic.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithTrafficDirection(const TrafficDirection& value) { SetTrafficDirection(value); return *this;}
 
     /**
-     * <p>The type of traffic (<code>ingress</code> | <code>egress</code>).</p>
+     * <p>The type of traffic.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithTrafficDirection(TrafficDirection&& value) { SetTrafficDirection(std::move(value)); return *this;}
 
@@ -152,38 +142,32 @@ namespace Model
 
 
     /**
-     * <p>The action to take (<code>accept</code> | <code>reject</code>) on the
-     * filtered traffic.</p>
+     * <p>The action to take on the filtered traffic.</p>
      */
     inline const TrafficMirrorRuleAction& GetRuleAction() const{ return m_ruleAction; }
 
     /**
-     * <p>The action to take (<code>accept</code> | <code>reject</code>) on the
-     * filtered traffic.</p>
+     * <p>The action to take on the filtered traffic.</p>
      */
     inline bool RuleActionHasBeenSet() const { return m_ruleActionHasBeenSet; }
 
     /**
-     * <p>The action to take (<code>accept</code> | <code>reject</code>) on the
-     * filtered traffic.</p>
+     * <p>The action to take on the filtered traffic.</p>
      */
     inline void SetRuleAction(const TrafficMirrorRuleAction& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
 
     /**
-     * <p>The action to take (<code>accept</code> | <code>reject</code>) on the
-     * filtered traffic.</p>
+     * <p>The action to take on the filtered traffic.</p>
      */
     inline void SetRuleAction(TrafficMirrorRuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
 
     /**
-     * <p>The action to take (<code>accept</code> | <code>reject</code>) on the
-     * filtered traffic.</p>
+     * <p>The action to take on the filtered traffic.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithRuleAction(const TrafficMirrorRuleAction& value) { SetRuleAction(value); return *this;}
 
     /**
-     * <p>The action to take (<code>accept</code> | <code>reject</code>) on the
-     * filtered traffic.</p>
+     * <p>The action to take on the filtered traffic.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithRuleAction(TrafficMirrorRuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
 
@@ -443,7 +427,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -451,7 +435,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -459,7 +443,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -467,7 +451,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -475,7 +459,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -483,7 +467,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -491,7 +475,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -499,7 +483,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateTrafficMirrorFilterRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

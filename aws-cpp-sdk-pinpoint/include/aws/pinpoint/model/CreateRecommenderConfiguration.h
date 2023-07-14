@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -52,323 +42,344 @@ namespace Model
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of key-value pairs that defines 1-10 custom endpoint or user
-     * attributes, depending on the value for the RecommenderUserIdType property. Each
-     * of these attributes temporarily stores a recommended item that's retrieved from
-     * the recommender model and sent to an AWS Lambda function for additional
-     * processing. Each attribute can be used as a message variable in a message
-     * template.</p> <p>In the map, the key is the name of a custom attribute and the
-     * value is a custom display name for that attribute. The display name appears in
-     * the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:</p> <ul><li><p>An
-     * attribute name must start with a letter or number and it can contain up to 50
-     * characters. The characters can be letters, numbers, underscores (_), or hyphens
-     * (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An
-     * attribute display name must start with a letter or number and it can contain up
-     * to 25 characters. The characters can be letters, numbers, spaces, underscores
-     * (_), or hyphens (-).</p></li></ul> <p>This object is required if the
-     * configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.</p>
+     * attributes, depending on the value for the RecommendationProviderIdType
+     * property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for
+     * additional processing. Each attribute can be used as a message variable in a
+     * message template.</p> <p>In the map, the key is the name of a custom attribute
+     * and the value is a custom display name for that attribute. The display name
+     * appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     * Pinpoint console. The following restrictions apply to these names:</p>
+     * <ul><li><p>An attribute name must start with a letter or number and it can
+     * contain up to 50 characters. The characters can be letters, numbers, underscores
+     * (_), or hyphens (-). Attribute names are case sensitive and must be
+     * unique.</p></li> <li><p>An attribute display name must start with a letter or
+     * number and it can contain up to 25 characters. The characters can be letters,
+     * numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object
+     * is required if the configuration invokes an AWS Lambda function
+     * (RecommendationTransformerUri) to process recommendation data. Otherwise, don't
+     * include this object in your request.</p>
      */
     inline CreateRecommenderConfiguration& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline CreateRecommenderConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline CreateRecommenderConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A custom description of the configuration for the recommender model. The
-     * description can contain up to 128 characters.</p>
+     * description can contain up to 128 characters. The characters can be letters,
+     * numbers, spaces, or the following symbols: _ ; () , ‐.</p>
      */
     inline CreateRecommenderConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -440,7 +451,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -456,7 +467,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -472,7 +483,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -488,7 +499,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -504,7 +515,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -520,7 +531,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -536,7 +547,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -552,7 +563,7 @@ namespace Model
      * value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with
      * a particular user and endpoint in Amazon Pinpoint. The data is correlated based
      * on user IDs in Amazon Pinpoint. If you specify this value, an endpoint
-     * definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an
+     * definition in Amazon Pinpoint has to specify both a user ID (UserId) and an
      * endpoint ID. Otherwise, messages won’t be sent to the user's
      * endpoint.</p></li></ul>
      */
@@ -732,150 +743,154 @@ namespace Model
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline const Aws::String& GetRecommendationsDisplayName() const{ return m_recommendationsDisplayName; }
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline bool RecommendationsDisplayNameHasBeenSet() const { return m_recommendationsDisplayNameHasBeenSet; }
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline void SetRecommendationsDisplayName(const Aws::String& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = value; }
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline void SetRecommendationsDisplayName(Aws::String&& value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName = std::move(value); }
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline void SetRecommendationsDisplayName(const char* value) { m_recommendationsDisplayNameHasBeenSet = true; m_recommendationsDisplayName.assign(value); }
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline CreateRecommenderConfiguration& WithRecommendationsDisplayName(const Aws::String& value) { SetRecommendationsDisplayName(value); return *this;}
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline CreateRecommenderConfiguration& WithRecommendationsDisplayName(Aws::String&& value) { SetRecommendationsDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>A custom display name for the standard endpoint or user attribute
-     * (RecommendationItems) that temporarily stores a recommended item for each
-     * endpoint or user, depending on the value for the RecommenderUserIdType property.
-     * This value is required if the configuration doesn't invoke an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation
-     * data.</p> <p>This name appears in the <b>Attribute finder</b> pane of the
-     * template editor on the Amazon Pinpoint console. The name can contain up to 25
-     * characters. The characters can be letters, numbers, spaces, underscores (_), or
-     * hyphens (-). These restrictions don't apply to attribute values.</p>
+     * (RecommendationItems) that temporarily stores recommended items for each
+     * endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS
+     * Lambda function (RecommendationTransformerUri) to perform additional processing
+     * of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b>
+     * of the template editor on the Amazon Pinpoint console. The name can contain up
+     * to 25 characters. The characters can be letters, numbers, spaces, underscores
+     * (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
      */
     inline CreateRecommenderConfiguration& WithRecommendationsDisplayName(const char* value) { SetRecommendationsDisplayName(value); return *this;}
 
 
     /**
      * <p>The number of recommended items to retrieve from the model for each endpoint
-     * or user, depending on the value for the RecommenderUserIdType property. This
-     * number determines how many recommended attributes are available for use as
-     * message variables in message templates. The minimum value is 1. The maximum
-     * value is 5. The default value is 5.</p> <p>To use multiple recommended items and
-     * custom attributes with message variables, you have to use an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * or user, depending on the value for the RecommendationProviderIdType property.
+     * This number determines how many recommended items are available for use in
+     * message variables. The minimum value is 1. The maximum value is 5. The default
+     * value is 5.</p> <p>To use multiple recommended items and custom attributes with
+     * message variables, you have to use an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline int GetRecommendationsPerMessage() const{ return m_recommendationsPerMessage; }
 
     /**
      * <p>The number of recommended items to retrieve from the model for each endpoint
-     * or user, depending on the value for the RecommenderUserIdType property. This
-     * number determines how many recommended attributes are available for use as
-     * message variables in message templates. The minimum value is 1. The maximum
-     * value is 5. The default value is 5.</p> <p>To use multiple recommended items and
-     * custom attributes with message variables, you have to use an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * or user, depending on the value for the RecommendationProviderIdType property.
+     * This number determines how many recommended items are available for use in
+     * message variables. The minimum value is 1. The maximum value is 5. The default
+     * value is 5.</p> <p>To use multiple recommended items and custom attributes with
+     * message variables, you have to use an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline bool RecommendationsPerMessageHasBeenSet() const { return m_recommendationsPerMessageHasBeenSet; }
 
     /**
      * <p>The number of recommended items to retrieve from the model for each endpoint
-     * or user, depending on the value for the RecommenderUserIdType property. This
-     * number determines how many recommended attributes are available for use as
-     * message variables in message templates. The minimum value is 1. The maximum
-     * value is 5. The default value is 5.</p> <p>To use multiple recommended items and
-     * custom attributes with message variables, you have to use an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * or user, depending on the value for the RecommendationProviderIdType property.
+     * This number determines how many recommended items are available for use in
+     * message variables. The minimum value is 1. The maximum value is 5. The default
+     * value is 5.</p> <p>To use multiple recommended items and custom attributes with
+     * message variables, you have to use an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline void SetRecommendationsPerMessage(int value) { m_recommendationsPerMessageHasBeenSet = true; m_recommendationsPerMessage = value; }
 
     /**
      * <p>The number of recommended items to retrieve from the model for each endpoint
-     * or user, depending on the value for the RecommenderUserIdType property. This
-     * number determines how many recommended attributes are available for use as
-     * message variables in message templates. The minimum value is 1. The maximum
-     * value is 5. The default value is 5.</p> <p>To use multiple recommended items and
-     * custom attributes with message variables, you have to use an AWS Lambda function
-     * (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     * or user, depending on the value for the RecommendationProviderIdType property.
+     * This number determines how many recommended items are available for use in
+     * message variables. The minimum value is 1. The maximum value is 5. The default
+     * value is 5.</p> <p>To use multiple recommended items and custom attributes with
+     * message variables, you have to use an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of
+     * recommendation data.</p>
      */
     inline CreateRecommenderConfiguration& WithRecommendationsPerMessage(int value) { SetRecommendationsPerMessage(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/TemplateVersion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,9 @@ TemplateVersion::TemplateVersion() :
     m_statusHasBeenSet(false),
     m_dataSetConfigurationsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_sourceEntityArnHasBeenSet(false)
+    m_sourceEntityArnHasBeenSet(false),
+    m_themeArnHasBeenSet(false),
+    m_sheetsHasBeenSet(false)
 {
 }
 
@@ -50,7 +42,9 @@ TemplateVersion::TemplateVersion(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_dataSetConfigurationsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_sourceEntityArnHasBeenSet(false)
+    m_sourceEntityArnHasBeenSet(false),
+    m_themeArnHasBeenSet(false),
+    m_sheetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +106,23 @@ TemplateVersion& TemplateVersion::operator =(JsonView jsonValue)
     m_sourceEntityArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThemeArn"))
+  {
+    m_themeArn = jsonValue.GetString("ThemeArn");
+
+    m_themeArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Sheets"))
+  {
+    Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
+    for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
+    {
+      m_sheets.push_back(sheetsJsonList[sheetsIndex].AsObject());
+    }
+    m_sheetsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -166,6 +177,23 @@ JsonValue TemplateVersion::Jsonize() const
   if(m_sourceEntityArnHasBeenSet)
   {
    payload.WithString("SourceEntityArn", m_sourceEntityArn);
+
+  }
+
+  if(m_themeArnHasBeenSet)
+  {
+   payload.WithString("ThemeArn", m_themeArn);
+
+  }
+
+  if(m_sheetsHasBeenSet)
+  {
+   Array<JsonValue> sheetsJsonList(m_sheets.size());
+   for(unsigned sheetsIndex = 0; sheetsIndex < sheetsJsonList.GetLength(); ++sheetsIndex)
+   {
+     sheetsJsonList[sheetsIndex].AsObject(m_sheets[sheetsIndex].Jsonize());
+   }
+   payload.WithArray("Sheets", std::move(sheetsJsonList));
 
   }
 

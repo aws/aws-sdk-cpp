@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
@@ -21,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace signer
 {
 namespace Model
@@ -40,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetSigningProfile"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -82,10 +78,54 @@ namespace Model
      */
     inline GetSigningProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
 
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline const Aws::String& GetProfileOwner() const{ return m_profileOwner; }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline bool ProfileOwnerHasBeenSet() const { return m_profileOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline void SetProfileOwner(const Aws::String& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = value; }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline void SetProfileOwner(Aws::String&& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = std::move(value); }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline void SetProfileOwner(const char* value) { m_profileOwnerHasBeenSet = true; m_profileOwner.assign(value); }
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline GetSigningProfileRequest& WithProfileOwner(const Aws::String& value) { SetProfileOwner(value); return *this;}
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline GetSigningProfileRequest& WithProfileOwner(Aws::String&& value) { SetProfileOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID of the profile owner.</p>
+     */
+    inline GetSigningProfileRequest& WithProfileOwner(const char* value) { SetProfileOwner(value); return *this;}
+
   private:
 
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet;
+
+    Aws::String m_profileOwner;
+    bool m_profileOwnerHasBeenSet;
   };
 
 } // namespace Model

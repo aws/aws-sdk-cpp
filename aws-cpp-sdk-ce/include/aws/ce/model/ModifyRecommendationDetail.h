@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Details on the modification recommendation.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for the modification recommendation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ModifyRecommendationDetail">AWS
    * API Reference</a></p>
    */
@@ -49,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline const Aws::Vector<TargetInstance>& GetTargetInstances() const{ return m_targetInstances; }
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline bool TargetInstancesHasBeenSet() const { return m_targetInstancesHasBeenSet; }
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline void SetTargetInstances(const Aws::Vector<TargetInstance>& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline void SetTargetInstances(Aws::Vector<TargetInstance>&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::move(value); }
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline ModifyRecommendationDetail& WithTargetInstances(const Aws::Vector<TargetInstance>& value) { SetTargetInstances(value); return *this;}
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline ModifyRecommendationDetail& WithTargetInstances(Aws::Vector<TargetInstance>&& value) { SetTargetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline ModifyRecommendationDetail& AddTargetInstances(const TargetInstance& value) { m_targetInstancesHasBeenSet = true; m_targetInstances.push_back(value); return *this; }
 
     /**
-     * <p>Identifies whether this instance type is the Amazon Web Services default
+     * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline ModifyRecommendationDetail& AddTargetInstances(TargetInstance&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances.push_back(std::move(value)); return *this; }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
@@ -78,6 +68,27 @@ namespace Model
      * <p>Socket address of a dataflow endpoint.</p>
      */
     inline DataflowEndpoint& WithAddress(SocketAddress&& value) { SetAddress(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline int GetMtu() const{ return m_mtu; }
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline void SetMtu(int value) { m_mtuHasBeenSet = true; m_mtu = value; }
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline DataflowEndpoint& WithMtu(int value) { SetMtu(value); return *this;}
 
 
     /**
@@ -155,6 +166,9 @@ namespace Model
 
     SocketAddress m_address;
     bool m_addressHasBeenSet;
+
+    int m_mtu;
+    bool m_mtuHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

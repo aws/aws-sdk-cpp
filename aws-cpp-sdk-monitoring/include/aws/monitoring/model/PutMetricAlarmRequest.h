@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -54,42 +44,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
@@ -176,6 +166,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
@@ -196,6 +188,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
@@ -216,6 +210,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
@@ -236,6 +232,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
@@ -256,6 +254,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
@@ -276,6 +276,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
@@ -296,6 +298,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
@@ -316,6 +320,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
@@ -336,6 +342,8 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
@@ -351,12 +359,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
@@ -371,12 +385,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
@@ -391,12 +411,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
@@ -411,12 +437,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
@@ -431,12 +463,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
@@ -451,12 +489,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
@@ -471,12 +515,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
@@ -491,12 +541,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
@@ -511,12 +567,18 @@ namespace Model
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> |
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> |
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
      * </code> </p> <p>Valid Values (for use with IAM roles):
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
      * |
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
@@ -1031,7 +1093,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1053,7 +1115,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1075,7 +1137,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1097,7 +1159,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1116,10 +1178,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1134,10 +1196,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1152,10 +1214,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1170,10 +1232,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1188,10 +1250,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1206,10 +1268,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1385,7 +1447,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
 
@@ -1395,7 +1462,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
 
@@ -1405,7 +1477,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
 
@@ -1415,7 +1492,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
 
@@ -1425,7 +1507,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
 
@@ -1435,7 +1522,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
 
@@ -1445,7 +1537,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(std::move(value)); return *this;}
 
@@ -1455,7 +1552,12 @@ namespace Model
      * <code>missing</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
-     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     * <code>breaching | notBreaching | ignore | missing</code> </p>  <p>Alarms
+     * that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always
+     * <code>ignore</code> missing data even if you choose a different option for
+     * <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has
+     * missing data, alarms that evaluate that metric remain in their current
+     * state.</p> 
      */
     inline PutMetricAlarmRequest& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
 
@@ -1573,7 +1675,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1593,7 +1695,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1613,7 +1715,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1633,7 +1735,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1653,7 +1755,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1673,7 +1775,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1693,7 +1795,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1713,7 +1815,7 @@ namespace Model
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
-     * <code>ReturnValue</code> to true for this object in the array. For more
+     * <code>ReturnData</code> to true for this object in the array. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
      * <p>If you use the <code>Metrics</code> parameter, you cannot include the
@@ -1729,64 +1831,112 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
+     * <p>If you are using this operation to update an existing alarm, any tags you
+     * specify in this parameter are ignored. To change the tags of an existing alarm,
+     * use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

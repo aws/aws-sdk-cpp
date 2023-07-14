@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -27,6 +17,7 @@
 #include <aws/mediaconvert/model/Mpeg2ParControl.h>
 #include <aws/mediaconvert/model/Mpeg2QualityTuningLevel.h>
 #include <aws/mediaconvert/model/Mpeg2RateControlMode.h>
+#include <aws/mediaconvert/model/Mpeg2ScanTypeConversionMode.h>
 #include <aws/mediaconvert/model/Mpeg2SceneChangeDetect.h>
 #include <aws/mediaconvert/model/Mpeg2SlowPal.h>
 #include <aws/mediaconvert/model/Mpeg2SpatialAdaptiveQuantization.h>
@@ -66,38 +57,50 @@ namespace Model
 
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Spatial adaptive
+     * quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline const Mpeg2AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Spatial adaptive
+     * quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Spatial adaptive
+     * quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline void SetAdaptiveQuantization(const Mpeg2AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Spatial adaptive
+     * quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline void SetAdaptiveQuantization(Mpeg2AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Spatial adaptive
+     * quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline Mpeg2Settings& WithAdaptiveQuantization(const Mpeg2AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
-     * quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The
+     * value that you choose here applies to the following settings: Spatial adaptive
+     * quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization
+     * (temporalAdaptiveQuantization).
      */
     inline Mpeg2Settings& WithAdaptiveQuantization(Mpeg2AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -261,7 +264,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -276,7 +279,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -291,7 +294,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -306,7 +309,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -321,7 +324,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -336,7 +339,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -346,161 +349,279 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline const Mpeg2FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline void SetFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline Mpeg2Settings& WithFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or
+     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
+     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
+     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
+     * This results in a smooth picture, but might introduce undesirable video
+     * artifacts. For complex frame rate conversions, especially if your source video
+     * has already been converted from its original cadence, use FrameFormer
+     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
+     * best conversion method frame by frame. Note that using FrameFormer increases the
+     * transcoding time and incurs a significant add-on cost.
      */
     inline Mpeg2Settings& WithFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
 
     /**
-     * Frame rate denominator.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateDenominator to specify the denominator of this fraction. In this
+     * example, use 1001 for the value of FramerateDenominator. When you use the
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline Mpeg2Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
 
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator. When you use the console for
+     * transcode jobs that use frame rate conversion, provide the value as a decimal
+     * number for Framerate. In this example, specify 23.976.
      */
     inline Mpeg2Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline Mpeg2Settings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
 
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline double GetGopSize() const{ return m_gopSize; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline Mpeg2Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
 
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline const Mpeg2GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline void SetGopSizeUnits(const Mpeg2GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline void SetGopSizeUnits(Mpeg2GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline Mpeg2Settings& WithGopSizeUnits(const Mpeg2GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline Mpeg2Settings& WithGopSizeUnits(Mpeg2GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
 
@@ -552,104 +673,98 @@ namespace Model
 
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline const Mpeg2InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(const Mpeg2InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline void SetInterlaceMode(Mpeg2InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline Mpeg2Settings& WithInterlaceMode(const Mpeg2InterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive
+     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
+     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
+     * to create an output that's interlaced with the same field polarity throughout.
+     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
+     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
+     * source. For jobs that have multiple inputs, the output field polarity might
+     * change over the course of the output. Follow behavior depends on the input scan
+     * type. If the source is interlaced, the output will be interlaced with the same
+     * polarity as the source. If the source is progressive, the output will be
+     * interlaced with top field bottom field first, depending on which of the Follow
+     * options you choose.
      */
     inline Mpeg2Settings& WithInterlaceMode(Mpeg2InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
@@ -723,228 +838,429 @@ namespace Model
 
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline Mpeg2Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
 
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline Mpeg2Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline const Mpeg2ParControl& GetParControl() const{ return m_parControl; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline void SetParControl(const Mpeg2ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline void SetParControl(Mpeg2ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline Mpeg2Settings& WithParControl(const Mpeg2ParControl& value) { SetParControl(value); return *this;}
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline Mpeg2Settings& WithParControl(Mpeg2ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline int GetParDenominator() const{ return m_parDenominator; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline Mpeg2Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
 
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline int GetParNumerator() const{ return m_parNumerator; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline Mpeg2Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline const Mpeg2QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(Mpeg2QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline Mpeg2Settings& WithQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline Mpeg2Settings& WithQualityTuningLevel(Mpeg2QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline const Mpeg2RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline void SetRateControlMode(const Mpeg2RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline void SetRateControlMode(Mpeg2RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline Mpeg2Settings& WithRateControlMode(const Mpeg2RateControlMode& value) { SetRateControlMode(value); return *this;}
 
     /**
-     * Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is
+     * Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is
      * variable (vbr) or constant (cbr).
      */
     inline Mpeg2Settings& WithRateControlMode(Mpeg2RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline const Mpeg2ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(const Mpeg2ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline void SetScanTypeConversionMode(Mpeg2ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline Mpeg2Settings& WithScanTypeConversionMode(const Mpeg2ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of
+     * your input frame rate. In this situation, choose Optimized interlacing
+     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
+     * case, each progressive frame from the input corresponds to an interlaced field
+     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+     * other output frame rates. With basic interlacing, MediaConvert performs any
+     * frame rate conversion first and then interlaces the frames. When you choose
+     * Optimized interlacing and you set your output frame rate to a value that isn't
+     * suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set
+     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
+     * interlacing for hard telecine outputs. You must also set Interlace mode
+     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    inline Mpeg2Settings& WithScanTypeConversionMode(Mpeg2ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
 
 
     /**
@@ -985,217 +1301,449 @@ namespace Model
 
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline const Mpeg2SlowPal& GetSlowPal() const{ return m_slowPal; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(const Mpeg2SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline void SetSlowPal(Mpeg2SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline Mpeg2Settings& WithSlowPal(const Mpeg2SlowPal& value) { SetSlowPal(value); return *this;}
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
-     * 25fps, and audio is sped up correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
+     * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
+     * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
+     * to keep it synchronized with the video. Note that enabling this setting will
+     * slightly reduce the duration of your video. Required settings: You must also set
+     * Framerate to 25. In your JSON job specification, set (framerateControl) to
+     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     inline Mpeg2Settings& WithSlowPal(Mpeg2SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, to use the AWS
+     * Elemental default matrices. Choose a value from 17 to 128 to use planar
+     * interpolation. Increasing values from 17 to 128 result in increasing reduction
+     * of high-frequency data. The value 128 results in the softest video.
      */
     inline int GetSoftness() const{ return m_softness; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, to use the AWS
+     * Elemental default matrices. Choose a value from 17 to 128 to use planar
+     * interpolation. Increasing values from 17 to 128 result in increasing reduction
+     * of high-frequency data. The value 128 results in the softest video.
      */
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, to use the AWS
+     * Elemental default matrices. Choose a value from 17 to 128 to use planar
+     * interpolation. Increasing values from 17 to 128 result in increasing reduction
+     * of high-frequency data. The value 128 results in the softest video.
      */
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
-     * in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires
+     * a specific value. If you don't have a specification requirement, we recommend
+     * that you adjust the softness of your output by using a lower value for the
+     * setting Sharpness (sharpness) or by enabling a noise reducer filter
+     * (noiseReducerFilter). The Softness (softness) setting specifies the quantization
+     * matrices that the encoder uses. Keep the default value, 0, to use the AWS
+     * Elemental default matrices. Choose a value from 17 to 128 to use planar
+     * interpolation. Increasing values from 17 to 128 result in increasing reduction
+     * of high-frequency data. The value 128 results in the softest video.
      */
     inline Mpeg2Settings& WithSoftness(int value) { SetSoftness(value); return *this;}
 
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline const Mpeg2SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(const Mpeg2SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(Mpeg2SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline Mpeg2Settings& WithSpatialAdaptiveQuantization(const Mpeg2SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on spatial variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas that can sustain more distortion
+     * with no noticeable visual degradation and uses more bits on areas where any
+     * small distortion will be noticeable. For example, complex textured blocks are
+     * encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     * Enabling this feature will almost always improve your video quality. Note,
+     * though, that this feature doesn't take into account where the viewer's attention
+     * is likely to be. If viewers are likely to be focusing their attention on a part
+     * of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the
+     * value for Adaptive quantization (adaptiveQuantization) depending on your
+     * content. For homogeneous content, such as cartoons and video games, set it to
+     * Low. For content with a wider variety of textures, set it to High or Higher.
      */
     inline Mpeg2Settings& WithSpatialAdaptiveQuantization(Mpeg2SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
 
     /**
-     * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+     * Specify whether this output's video uses the D10 syntax. Keep the default value
+     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
+     * MXF  profile (profile), you must also set this value to to D10 (D_10).
      */
     inline const Mpeg2Syntax& GetSyntax() const{ return m_syntax; }
 
     /**
-     * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+     * Specify whether this output's video uses the D10 syntax. Keep the default value
+     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
+     * MXF  profile (profile), you must also set this value to to D10 (D_10).
      */
     inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
 
     /**
-     * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+     * Specify whether this output's video uses the D10 syntax. Keep the default value
+     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
+     * MXF  profile (profile), you must also set this value to to D10 (D_10).
      */
     inline void SetSyntax(const Mpeg2Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
 
     /**
-     * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+     * Specify whether this output's video uses the D10 syntax. Keep the default value
+     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
+     * MXF  profile (profile), you must also set this value to to D10 (D_10).
      */
     inline void SetSyntax(Mpeg2Syntax&& value) { m_syntaxHasBeenSet = true; m_syntax = std::move(value); }
 
     /**
-     * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+     * Specify whether this output's video uses the D10 syntax. Keep the default value
+     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
+     * MXF  profile (profile), you must also set this value to to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(const Mpeg2Syntax& value) { SetSyntax(value); return *this;}
 
     /**
-     * Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+     * Specify whether this output's video uses the D10 syntax. Keep the default value
+     * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
+     * MXF  profile (profile), you must also set this value to to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(Mpeg2Syntax&& value) { SetSyntax(std::move(value)); return *this;}
 
 
     /**
-     * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline const Mpeg2Telecine& GetTelecine() const{ return m_telecine; }
 
     /**
-     * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
-     * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline void SetTelecine(const Mpeg2Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
-     * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline void SetTelecine(Mpeg2Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
-     * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline Mpeg2Settings& WithTelecine(const Mpeg2Telecine& value) { SetTelecine(value); return *this;}
 
     /**
-     * Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970.
-     * Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a
-     * 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave
-     * converstion to the player.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
+     * fps, and your output scan type is interlaced, you can optionally enable hard or
+     * soft telecine to create a smoother picture. Hard telecine (HARD) produces a
+     * 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that
+     * signals to the video player device to do the conversion during play back. When
+     * you keep the default value, None (NONE), MediaConvert does a standard frame rate
+     * conversion to 29.97 without doing anything with the field polarity to create a
+     * smoother picture.
      */
     inline Mpeg2Settings& WithTelecine(Mpeg2Telecine&& value) { SetTelecine(std::move(value)); return *this;}
 
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline const Mpeg2TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline void SetTemporalAdaptiveQuantization(const Mpeg2TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline void SetTemporalAdaptiveQuantization(Mpeg2TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline Mpeg2Settings& WithTemporalAdaptiveQuantization(const Mpeg2TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content
-     * complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each
+     * frame based on temporal variation of content complexity. When you enable this
+     * feature, the encoder uses fewer bits on areas of the frame that aren't moving
+     * and uses more bits on complex objects with sharp edges that move a lot. For
+     * example, this feature improves the readability of text tickers on newscasts and
+     * scoreboards on sports matches. Enabling this feature will almost always improve
+     * your video quality. Note, though, that this feature doesn't take into account
+     * where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen that doesn't have moving
+     * objects with sharp edges, such as sports athletes' faces, you might choose to
+     * disable this feature. Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization
+     * (adaptiveQuantization).
      */
     inline Mpeg2Settings& WithTemporalAdaptiveQuantization(Mpeg2TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -1272,6 +1820,9 @@ namespace Model
 
     Mpeg2RateControlMode m_rateControlMode;
     bool m_rateControlModeHasBeenSet;
+
+    Mpeg2ScanTypeConversionMode m_scanTypeConversionMode;
+    bool m_scanTypeConversionModeHasBeenSet;
 
     Mpeg2SceneChangeDetect m_sceneChangeDetect;
     bool m_sceneChangeDetectHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
@@ -24,6 +14,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/appstream/model/ImagePermissions.h>
 #include <aws/appstream/model/Application.h>
+#include <aws/appstream/model/ResourceError.h>
 #include <utility>
 
 namespace Aws
@@ -660,6 +651,47 @@ namespace Model
      */
     inline Image& WithImagePermissions(ImagePermissions&& value) { SetImagePermissions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline const Aws::Vector<ResourceError>& GetImageErrors() const{ return m_imageErrors; }
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline bool ImageErrorsHasBeenSet() const { return m_imageErrorsHasBeenSet; }
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline void SetImageErrors(const Aws::Vector<ResourceError>& value) { m_imageErrorsHasBeenSet = true; m_imageErrors = value; }
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline void SetImageErrors(Aws::Vector<ResourceError>&& value) { m_imageErrorsHasBeenSet = true; m_imageErrors = std::move(value); }
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline Image& WithImageErrors(const Aws::Vector<ResourceError>& value) { SetImageErrors(value); return *this;}
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline Image& WithImageErrors(Aws::Vector<ResourceError>&& value) { SetImageErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline Image& AddImageErrors(const ResourceError& value) { m_imageErrorsHasBeenSet = true; m_imageErrors.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the errors that are returned when a new image can't be created.</p>
+     */
+    inline Image& AddImageErrors(ResourceError&& value) { m_imageErrorsHasBeenSet = true; m_imageErrors.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -709,6 +741,9 @@ namespace Model
 
     ImagePermissions m_imagePermissions;
     bool m_imagePermissionsHasBeenSet;
+
+    Aws::Vector<ResourceError> m_imageErrors;
+    bool m_imageErrorsHasBeenSet;
   };
 
 } // namespace Model

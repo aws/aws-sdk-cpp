@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -171,6 +161,31 @@ namespace Model
      * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBClusterRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline CreateDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
     /**
@@ -521,50 +536,50 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use. Currently, setting this
-     * parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>
+     * <p>The version number of the database engine to use for the new DB cluster.</p>
+     * <p>Example: <code>1.0.2.1</code> </p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -595,123 +610,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
-     * database engine.</p> </li> </ul>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -761,7 +736,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -775,7 +750,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -789,7 +764,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -803,7 +778,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -817,7 +792,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -831,7 +806,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -845,7 +820,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -859,7 +834,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. To see the time blocks available, see <a
+     * time for each Amazon Region. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -874,8 +849,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -887,8 +862,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -900,8 +875,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -913,8 +888,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -926,8 +901,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -939,8 +914,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -952,8 +927,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -965,8 +940,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. To see the time
-     * blocks available, see <a
+     * time for each Amazon Region, occurring on a random day of the week. To see the
+     * time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -1087,170 +1062,170 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * <p>The Amazon KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
-     * are creating a DB cluster with the same AWS account that owns the KMS encryption
-     * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * are creating a DB cluster with the same Amazon account that owns the KMS
+     * encryption key used to encrypt the new DB cluster, then you can use the KMS key
+     * alias instead of the ARN for the KMS encryption key.</p> <p>If an encryption key
+     * is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
      * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
-     * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p> <p>If you create a Read Replica
-     * of an encrypted DB cluster in another AWS Region, you must set
-     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-     * Region. This key is used to encrypt the Read Replica in that AWS Region.</p>
+     * will use your default encryption key.</p> </li> </ul> <p>Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a
+     * different default encryption key for each Amazon Region.</p> <p>If you create a
+     * Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon
+     * Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1297,30 +1272,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>If set to <code>true</code>, enables Amazon Identity and Access Management
+     * (IAM) authentication for the entire DB cluster (this cannot be set at an
+     * instance level).</p> <p>Default: <code>false</code>.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>If set to <code>true</code>, enables Amazon Identity and Access Management
+     * (IAM) authentication for the entire DB cluster (this cannot be set at an
+     * instance level).</p> <p>Default: <code>false</code>.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>If set to <code>true</code>, enables Amazon Identity and Access Management
+     * (IAM) authentication for the entire DB cluster (this cannot be set at an
+     * instance level).</p> <p>Default: <code>false</code>.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>If set to <code>true</code>, enables Amazon Identity and Access Management
+     * (IAM) authentication for the entire DB cluster (this cannot be set at an
+     * instance level).</p> <p>Default: <code>false</code>.</p>
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -1408,6 +1383,96 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Neptune global database to which this new DB cluster should be
+     * added.</p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBClusterRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBClusterRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
+
+    /**
+     * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
+     */
+    inline CreateDBClusterRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1418,6 +1483,9 @@ namespace Model
 
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
@@ -1481,6 +1549,12 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::String m_globalClusterIdentifier;
+    bool m_globalClusterIdentifierHasBeenSet;
+
+    Aws::String m_sourceRegion;
+    bool m_sourceRegionHasBeenSet;
   };
 
 } // namespace Model

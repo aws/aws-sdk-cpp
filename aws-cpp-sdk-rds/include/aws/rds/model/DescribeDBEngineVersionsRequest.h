@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -49,42 +39,122 @@ namespace Model
   public:
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine to return.</p>
+     * <p>The database engine to return.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -196,132 +266,276 @@ namespace Model
 
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB engine versions to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-parameter-group-family</code> -
+     * Accepts parameter groups family names. The results list only includes
+     * information about the DB engine versions for these parameter group families.</p>
+     * </li> <li> <p> <code>engine</code> - Accepts engine names. The results list only
+     * includes information about the DB engine versions for these engines.</p> </li>
+     * <li> <p> <code>engine-mode</code> - Accepts DB engine modes. The results list
+     * only includes information about the DB engine versions for these engine modes.
+     * Valid DB engine modes are the following:</p> <ul> <li> <p> <code>global</code>
+     * </p> </li> <li> <p> <code>multimaster</code> </p> </li> <li> <p>
+     * <code>parallelquery</code> </p> </li> <li> <p> <code>provisioned</code> </p>
+     * </li> <li> <p> <code>serverless</code> </p> </li> </ul> </li> <li> <p>
+     * <code>engine-version</code> - Accepts engine versions. The results list only
+     * includes information about the DB engine versions for these engine versions.</p>
+     * </li> <li> <p> <code>status</code> - Accepts engine version statuses. The
+     * results list only includes information about the DB engine versions for these
+     * statuses. Valid statuses are the following:</p> <ul> <li> <p>
+     * <code>available</code> </p> </li> <li> <p> <code>deprecated</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -356,7 +570,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results.</p>
      */
     inline bool GetListSupportedCharacterSets() const{ return m_listSupportedCharacterSets; }
 
@@ -365,7 +582,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results.</p>
      */
     inline bool ListSupportedCharacterSetsHasBeenSet() const { return m_listSupportedCharacterSetsHasBeenSet; }
 
@@ -374,7 +594,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results.</p>
      */
     inline void SetListSupportedCharacterSets(bool value) { m_listSupportedCharacterSetsHasBeenSet = true; m_listSupportedCharacterSets = value; }
 
@@ -383,7 +606,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedCharacterSets(bool value) { SetListSupportedCharacterSets(value); return *this;}
 
@@ -392,8 +618,10 @@ namespace Model
      * <p>A value that indicates whether to list the supported time zones for each
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
-     * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * the response includes a list of supported time zones for each engine
+     * version.</p> <p>For RDS Custom, the default is not to list supported time zones.
+     * If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom
+     * returns no results.</p>
      */
     inline bool GetListSupportedTimezones() const{ return m_listSupportedTimezones; }
 
@@ -401,8 +629,10 @@ namespace Model
      * <p>A value that indicates whether to list the supported time zones for each
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
-     * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * the response includes a list of supported time zones for each engine
+     * version.</p> <p>For RDS Custom, the default is not to list supported time zones.
+     * If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom
+     * returns no results.</p>
      */
     inline bool ListSupportedTimezonesHasBeenSet() const { return m_listSupportedTimezonesHasBeenSet; }
 
@@ -410,8 +640,10 @@ namespace Model
      * <p>A value that indicates whether to list the supported time zones for each
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
-     * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * the response includes a list of supported time zones for each engine
+     * version.</p> <p>For RDS Custom, the default is not to list supported time zones.
+     * If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom
+     * returns no results.</p>
      */
     inline void SetListSupportedTimezones(bool value) { m_listSupportedTimezonesHasBeenSet = true; m_listSupportedTimezones = value; }
 
@@ -419,8 +651,10 @@ namespace Model
      * <p>A value that indicates whether to list the supported time zones for each
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
-     * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * the response includes a list of supported time zones for each engine
+     * version.</p> <p>For RDS Custom, the default is not to list supported time zones.
+     * If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom
+     * returns no results.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedTimezones(bool value) { SetListSupportedTimezones(value); return *this;}
 

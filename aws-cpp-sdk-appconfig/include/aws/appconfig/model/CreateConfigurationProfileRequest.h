@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -169,155 +159,195 @@ namespace Model
 
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
-     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
-     * document, specify either the document name in the format
+     * <p>A URI to locate the configuration. You can specify the AppConfig hosted
+     * configuration store, Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For the hosted configuration store and for
+     * feature flags, specify <code>hosted</code>. For an SSM document, specify either
+     * the document name in the format
      * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
      * (ARN). For a parameter, specify either the parameter name in the format
      * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
      * object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
+     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline const Aws::String& GetRetrievalRoleArn() const{ return m_retrievalRoleArn; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline bool RetrievalRoleArnHasBeenSet() const { return m_retrievalRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline void SetRetrievalRoleArn(const Aws::String& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = value; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline void SetRetrievalRoleArn(Aws::String&& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline void SetRetrievalRoleArn(const char* value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn.assign(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline CreateConfigurationProfileRequest& WithRetrievalRoleArn(const Aws::String& value) { SetRetrievalRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline CreateConfigurationProfileRequest& WithRetrievalRoleArn(Aws::String&& value) { SetRetrievalRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>  <p>A retrieval role ARN is
+     * not required for configurations stored in the AppConfig hosted configuration
+     * store. It is required for all other sources that store your configuration. </p>
+     * 
      */
     inline CreateConfigurationProfileRequest& WithRetrievalRoleArn(const char* value) { SetRetrievalRoleArn(value); return *this;}
 
@@ -454,6 +484,95 @@ namespace Model
      */
     inline CreateConfigurationProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline CreateConfigurationProfileRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline CreateConfigurationProfileRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline CreateConfigurationProfileRequest& WithType(const char* value) { SetType(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -476,6 +595,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

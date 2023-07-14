@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -34,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Sends message data to an AWS IoT Analytics channel.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Sends message data to an IoT Analytics channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotAnalyticsAction">AWS
    * API Reference</a></p>
    */
@@ -139,6 +128,51 @@ namespace Model
 
 
     /**
+     * <p>Whether to process the action as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code> and
+     * the rule SQL statement evaluates to an Array, each Array element is delivered as
+     * a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
+     */
+    inline bool GetBatchMode() const{ return m_batchMode; }
+
+    /**
+     * <p>Whether to process the action as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code> and
+     * the rule SQL statement evaluates to an Array, each Array element is delivered as
+     * a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
+     */
+    inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
+
+    /**
+     * <p>Whether to process the action as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code> and
+     * the rule SQL statement evaluates to an Array, each Array element is delivered as
+     * a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
+     */
+    inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
+
+    /**
+     * <p>Whether to process the action as a batch. The default value is
+     * <code>false</code>.</p> <p>When <code>batchMode</code> is <code>true</code> and
+     * the rule SQL statement evaluates to an Array, each Array element is delivered as
+     * a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
+     */
+    inline IotAnalyticsAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
+
+
+    /**
      * <p>The ARN of the role which has a policy that grants IoT Analytics permission
      * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
@@ -193,6 +227,9 @@ namespace Model
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet;
+
+    bool m_batchMode;
+    bool m_batchModeHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

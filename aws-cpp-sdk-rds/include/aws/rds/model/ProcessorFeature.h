@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -50,8 +40,13 @@ namespace Model
    * addition, you can use the following actions for DB instance class processor
    * information:</p> <ul> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li>
    * <p> <code>DescribeDBSnapshots</code> </p> </li> <li> <p>
-   * <code>DescribeValidDBInstanceModifications</code> </p> </li> </ul> <p>For more
-   * information, see <a
+   * <code>DescribeValidDBInstanceModifications</code> </p> </li> </ul> <p>If you
+   * call <code>DescribeDBInstances</code>, <code>ProcessorFeature</code> returns
+   * non-null values only if the following conditions are met:</p> <ul> <li> <p>You
+   * are accessing an Oracle DB instance.</p> </li> <li> <p>Your Oracle DB instance
+   * class supports configuring the number of CPU cores and threads per core.</p>
+   * </li> <li> <p>The current number CPU cores and threads is set to a non-default
+   * value.</p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
    * the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
    * </p><p><h3>See Also:</h3>   <a

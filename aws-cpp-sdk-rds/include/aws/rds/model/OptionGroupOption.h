@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -453,7 +443,7 @@ namespace Model
      * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
      * instance before you can use this option. You can enable Auto Minor Version
      * Upgrade when you first create your DB instance, or by modifying your DB instance
-     * later. </p>
+     * later.</p>
      */
     inline bool GetRequiresAutoMinorEngineVersionUpgrade() const{ return m_requiresAutoMinorEngineVersionUpgrade; }
 
@@ -461,7 +451,7 @@ namespace Model
      * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
      * instance before you can use this option. You can enable Auto Minor Version
      * Upgrade when you first create your DB instance, or by modifying your DB instance
-     * later. </p>
+     * later.</p>
      */
     inline bool RequiresAutoMinorEngineVersionUpgradeHasBeenSet() const { return m_requiresAutoMinorEngineVersionUpgradeHasBeenSet; }
 
@@ -469,7 +459,7 @@ namespace Model
      * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
      * instance before you can use this option. You can enable Auto Minor Version
      * Upgrade when you first create your DB instance, or by modifying your DB instance
-     * later. </p>
+     * later.</p>
      */
     inline void SetRequiresAutoMinorEngineVersionUpgrade(bool value) { m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = true; m_requiresAutoMinorEngineVersionUpgrade = value; }
 
@@ -477,57 +467,57 @@ namespace Model
      * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
      * instance before you can use this option. You can enable Auto Minor Version
      * Upgrade when you first create your DB instance, or by modifying your DB instance
-     * later. </p>
+     * later.</p>
      */
     inline OptionGroupOption& WithRequiresAutoMinorEngineVersionUpgrade(bool value) { SetRequiresAutoMinorEngineVersionUpgrade(value); return *this;}
 
 
     /**
-     * <p>If true, you can only use this option with a DB instance that is in a VPC.
-     * </p>
+     * <p>If true, you can only use this option with a DB instance that is in a
+     * VPC.</p>
      */
     inline bool GetVpcOnly() const{ return m_vpcOnly; }
 
     /**
-     * <p>If true, you can only use this option with a DB instance that is in a VPC.
-     * </p>
+     * <p>If true, you can only use this option with a DB instance that is in a
+     * VPC.</p>
      */
     inline bool VpcOnlyHasBeenSet() const { return m_vpcOnlyHasBeenSet; }
 
     /**
-     * <p>If true, you can only use this option with a DB instance that is in a VPC.
-     * </p>
+     * <p>If true, you can only use this option with a DB instance that is in a
+     * VPC.</p>
      */
     inline void SetVpcOnly(bool value) { m_vpcOnlyHasBeenSet = true; m_vpcOnly = value; }
 
     /**
-     * <p>If true, you can only use this option with a DB instance that is in a VPC.
-     * </p>
+     * <p>If true, you can only use this option with a DB instance that is in a
+     * VPC.</p>
      */
     inline OptionGroupOption& WithVpcOnly(bool value) { SetVpcOnly(value); return *this;}
 
 
     /**
      * <p>If true, you can change the option to an earlier version of the option. This
-     * only applies to options that have different versions available. </p>
+     * only applies to options that have different versions available.</p>
      */
     inline bool GetSupportsOptionVersionDowngrade() const{ return m_supportsOptionVersionDowngrade; }
 
     /**
      * <p>If true, you can change the option to an earlier version of the option. This
-     * only applies to options that have different versions available. </p>
+     * only applies to options that have different versions available.</p>
      */
     inline bool SupportsOptionVersionDowngradeHasBeenSet() const { return m_supportsOptionVersionDowngradeHasBeenSet; }
 
     /**
      * <p>If true, you can change the option to an earlier version of the option. This
-     * only applies to options that have different versions available. </p>
+     * only applies to options that have different versions available.</p>
      */
     inline void SetSupportsOptionVersionDowngrade(bool value) { m_supportsOptionVersionDowngradeHasBeenSet = true; m_supportsOptionVersionDowngrade = value; }
 
     /**
      * <p>If true, you can change the option to an earlier version of the option. This
-     * only applies to options that have different versions available. </p>
+     * only applies to options that have different versions available.</p>
      */
     inline OptionGroupOption& WithSupportsOptionVersionDowngrade(bool value) { SetSupportsOptionVersionDowngrade(value); return *this;}
 

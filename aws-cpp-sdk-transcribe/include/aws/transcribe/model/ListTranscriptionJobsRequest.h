@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -46,181 +36,195 @@ namespace Model
 
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified status.
-     * Jobs are ordered by creation date, with the newest jobs returned first. If you
-     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
-     * by creation date. </p>
+     * <p>Returns only transcription jobs with the specified status. Jobs are ordered
+     * by creation date, with the newest job first. If you don't include
+     * <code>Status</code>, all transcription jobs are returned.</p>
      */
     inline const TranscriptionJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified status.
-     * Jobs are ordered by creation date, with the newest jobs returned first. If you
-     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
-     * by creation date. </p>
+     * <p>Returns only transcription jobs with the specified status. Jobs are ordered
+     * by creation date, with the newest job first. If you don't include
+     * <code>Status</code>, all transcription jobs are returned.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified status.
-     * Jobs are ordered by creation date, with the newest jobs returned first. If you
-     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
-     * by creation date. </p>
+     * <p>Returns only transcription jobs with the specified status. Jobs are ordered
+     * by creation date, with the newest job first. If you don't include
+     * <code>Status</code>, all transcription jobs are returned.</p>
      */
     inline void SetStatus(const TranscriptionJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified status.
-     * Jobs are ordered by creation date, with the newest jobs returned first. If you
-     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
-     * by creation date. </p>
+     * <p>Returns only transcription jobs with the specified status. Jobs are ordered
+     * by creation date, with the newest job first. If you don't include
+     * <code>Status</code>, all transcription jobs are returned.</p>
      */
     inline void SetStatus(TranscriptionJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified status.
-     * Jobs are ordered by creation date, with the newest jobs returned first. If you
-     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
-     * by creation date. </p>
+     * <p>Returns only transcription jobs with the specified status. Jobs are ordered
+     * by creation date, with the newest job first. If you don't include
+     * <code>Status</code>, all transcription jobs are returned.</p>
      */
     inline ListTranscriptionJobsRequest& WithStatus(const TranscriptionJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified status.
-     * Jobs are ordered by creation date, with the newest jobs returned first. If you
-     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
-     * by creation date. </p>
+     * <p>Returns only transcription jobs with the specified status. Jobs are ordered
+     * by creation date, with the newest job first. If you don't include
+     * <code>Status</code>, all transcription jobs are returned.</p>
      */
     inline ListTranscriptionJobsRequest& WithStatus(TranscriptionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline const Aws::String& GetJobNameContains() const{ return m_jobNameContains; }
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline bool JobNameContainsHasBeenSet() const { return m_jobNameContainsHasBeenSet; }
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline void SetJobNameContains(const Aws::String& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = value; }
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline void SetJobNameContains(Aws::String&& value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains = std::move(value); }
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline void SetJobNameContains(const char* value) { m_jobNameContainsHasBeenSet = true; m_jobNameContains.assign(value); }
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline ListTranscriptionJobsRequest& WithJobNameContains(const Aws::String& value) { SetJobNameContains(value); return *this;}
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline ListTranscriptionJobsRequest& WithJobNameContains(Aws::String&& value) { SetJobNameContains(std::move(value)); return *this;}
 
     /**
-     * <p>When specified, the jobs returned in the list are limited to jobs whose name
-     * contains the specified string.</p>
+     * <p>Returns only the transcription jobs that contain the specified string. The
+     * search is not case sensitive.</p>
      */
     inline ListTranscriptionJobsRequest& WithJobNameContains(const char* value) { SetJobNameContains(value); return *this;}
 
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline ListTranscriptionJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline ListTranscriptionJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
-     * was truncated, include the <code>NextToken</code> to fetch the next set of
-     * jobs.</p>
+     * <p>If your <code>ListTranscriptionJobs</code> request returns more results than
+     * can be displayed, <code>NextToken</code> is displayed in the response with an
+     * associated string. To get the next page of results, copy this string and repeat
+     * your request, including <code>NextToken</code> with the value of the copied
+     * string. Repeat as needed to view all your results.</p>
      */
     inline ListTranscriptionJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of jobs to return in the response. If there are fewer
-     * results in the list, this response contains only the actual results.</p>
+     * <p>The maximum number of transcription jobs to return in each page of results.
+     * If there are fewer results than the value you specify, only the actual results
+     * are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of jobs to return in the response. If there are fewer
-     * results in the list, this response contains only the actual results.</p>
+     * <p>The maximum number of transcription jobs to return in each page of results.
+     * If there are fewer results than the value you specify, only the actual results
+     * are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of jobs to return in the response. If there are fewer
-     * results in the list, this response contains only the actual results.</p>
+     * <p>The maximum number of transcription jobs to return in each page of results.
+     * If there are fewer results than the value you specify, only the actual results
+     * are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of jobs to return in the response. If there are fewer
-     * results in the list, this response contains only the actual results.</p>
+     * <p>The maximum number of transcription jobs to return in each page of results.
+     * If there are fewer results than the value you specify, only the actual results
+     * are returned. If you don't specify a value, a default of 5 is used.</p>
      */
     inline ListTranscriptionJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

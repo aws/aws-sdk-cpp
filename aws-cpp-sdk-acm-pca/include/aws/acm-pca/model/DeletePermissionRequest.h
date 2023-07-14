@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -46,9 +36,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -56,9 +46,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -66,9 +56,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -76,9 +66,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -86,9 +76,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -96,9 +86,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -106,9 +96,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -116,9 +106,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
-     * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must have the following form:
-     * </p> <p>
+     * permissions. You can find the CA's ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
+     * action. This must have the following form: </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
@@ -126,99 +116,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline DeletePermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline DeletePermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline DeletePermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 

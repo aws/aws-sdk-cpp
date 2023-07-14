@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/M3u8Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,9 +19,15 @@ namespace Model
 {
 
 M3u8Settings::M3u8Settings() : 
+    m_audioDuration(M3u8AudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
+    m_dataPTSControl(M3u8DataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
+    m_maxPcrInterval(0),
+    m_maxPcrIntervalHasBeenSet(false),
     m_nielsenId3(M3u8NielsenId3::NOT_SET),
     m_nielsenId3HasBeenSet(false),
     m_patInterval(0),
@@ -64,9 +60,15 @@ M3u8Settings::M3u8Settings() :
 }
 
 M3u8Settings::M3u8Settings(JsonView jsonValue) : 
+    m_audioDuration(M3u8AudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
+    m_dataPTSControl(M3u8DataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
+    m_maxPcrInterval(0),
+    m_maxPcrIntervalHasBeenSet(false),
     m_nielsenId3(M3u8NielsenId3::NOT_SET),
     m_nielsenId3HasBeenSet(false),
     m_patInterval(0),
@@ -101,6 +103,13 @@ M3u8Settings::M3u8Settings(JsonView jsonValue) :
 
 M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = M3u8AudioDurationMapper::GetM3u8AudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {
     m_audioFramesPerPes = jsonValue.GetInteger("audioFramesPerPes");
@@ -116,6 +125,20 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
     }
     m_audioPidsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataPTSControl"))
+  {
+    m_dataPTSControl = M3u8DataPtsControlMapper::GetM3u8DataPtsControlForName(jsonValue.GetString("dataPTSControl"));
+
+    m_dataPTSControlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxPcrInterval"))
+  {
+    m_maxPcrInterval = jsonValue.GetInteger("maxPcrInterval");
+
+    m_maxPcrIntervalHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nielsenId3"))
@@ -223,6 +246,11 @@ JsonValue M3u8Settings::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", M3u8AudioDurationMapper::GetNameForM3u8AudioDuration(m_audioDuration));
+  }
+
   if(m_audioFramesPerPesHasBeenSet)
   {
    payload.WithInteger("audioFramesPerPes", m_audioFramesPerPes);
@@ -237,6 +265,17 @@ JsonValue M3u8Settings::Jsonize() const
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
    }
    payload.WithArray("audioPids", std::move(audioPidsJsonList));
+
+  }
+
+  if(m_dataPTSControlHasBeenSet)
+  {
+   payload.WithString("dataPTSControl", M3u8DataPtsControlMapper::GetNameForM3u8DataPtsControl(m_dataPTSControl));
+  }
+
+  if(m_maxPcrIntervalHasBeenSet)
+  {
+   payload.WithInteger("maxPcrInterval", m_maxPcrInterval);
 
   }
 

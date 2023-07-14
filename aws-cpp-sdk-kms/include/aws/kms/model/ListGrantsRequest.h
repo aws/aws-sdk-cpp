@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -46,7 +36,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 100, inclusive. If you do not include a value,
      * it defaults to 50.</p>
@@ -55,7 +45,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 100, inclusive. If you do not include a value,
      * it defaults to 50.</p>
@@ -64,7 +54,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 100, inclusive. If you do not include a value,
      * it defaults to 50.</p>
@@ -73,7 +63,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 100, inclusive. If you do not include a value,
      * it defaults to 50.</p>
@@ -139,100 +129,198 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline ListGrantsRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline ListGrantsRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>Specify the key
-     * ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different
-     * AWS account, you must use the key ARN.</p> <p>For example:</p> <ul> <li> <p>Key
-     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
-     * ARN:
+     * <p>Returns only grants for the specified KMS key. This parameter is
+     * required.</p> <p>Specify the key ID or key ARN of the KMS key. To specify a KMS
+     * key in a different Amazon Web Services account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
     inline ListGrantsRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline const Aws::String& GetGrantId() const{ return m_grantId; }
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline bool GrantIdHasBeenSet() const { return m_grantIdHasBeenSet; }
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = std::move(value); }
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline ListGrantsRequest& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline ListGrantsRequest& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns only the grant with the specified grant ID. The grant ID uniquely
+     * identifies the grant. </p>
+     */
+    inline ListGrantsRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
+
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline ListGrantsRequest& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline ListGrantsRequest& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns only grants where the specified principal is the grantee principal
+     * for the grant.</p>
+     */
+    inline ListGrantsRequest& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
 
   private:
 
@@ -244,6 +332,12 @@ namespace Model
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
+    Aws::String m_grantId;
+    bool m_grantIdHasBeenSet;
+
+    Aws::String m_granteePrincipal;
+    bool m_granteePrincipalHasBeenSet;
   };
 
 } // namespace Model

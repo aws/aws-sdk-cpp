@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsEc2NetworkInterfaceDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,11 @@ AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails() :
     m_networkInterfaceIdHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false)
+    m_sourceDestCheckHasBeenSet(false),
+    m_ipV6AddressesHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false),
+    m_publicDnsNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -42,7 +36,11 @@ AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails(JsonView jsonValue)
     m_networkInterfaceIdHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false)
+    m_sourceDestCheckHasBeenSet(false),
+    m_ipV6AddressesHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false),
+    m_publicDnsNameHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +78,40 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
     m_sourceDestCheckHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IpV6Addresses"))
+  {
+    Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("IpV6Addresses");
+    for(unsigned ipV6AddressesIndex = 0; ipV6AddressesIndex < ipV6AddressesJsonList.GetLength(); ++ipV6AddressesIndex)
+    {
+      m_ipV6Addresses.push_back(ipV6AddressesJsonList[ipV6AddressesIndex].AsObject());
+    }
+    m_ipV6AddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivateIpAddresses"))
+  {
+    Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("PrivateIpAddresses");
+    for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
+    {
+      m_privateIpAddresses.push_back(privateIpAddressesJsonList[privateIpAddressesIndex].AsObject());
+    }
+    m_privateIpAddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PublicDnsName"))
+  {
+    m_publicDnsName = jsonValue.GetString("PublicDnsName");
+
+    m_publicDnsNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PublicIp"))
+  {
+    m_publicIp = jsonValue.GetString("PublicIp");
+
+    m_publicIpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +145,40 @@ JsonValue AwsEc2NetworkInterfaceDetails::Jsonize() const
   if(m_sourceDestCheckHasBeenSet)
   {
    payload.WithBool("SourceDestCheck", m_sourceDestCheck);
+
+  }
+
+  if(m_ipV6AddressesHasBeenSet)
+  {
+   Array<JsonValue> ipV6AddressesJsonList(m_ipV6Addresses.size());
+   for(unsigned ipV6AddressesIndex = 0; ipV6AddressesIndex < ipV6AddressesJsonList.GetLength(); ++ipV6AddressesIndex)
+   {
+     ipV6AddressesJsonList[ipV6AddressesIndex].AsObject(m_ipV6Addresses[ipV6AddressesIndex].Jsonize());
+   }
+   payload.WithArray("IpV6Addresses", std::move(ipV6AddressesJsonList));
+
+  }
+
+  if(m_privateIpAddressesHasBeenSet)
+  {
+   Array<JsonValue> privateIpAddressesJsonList(m_privateIpAddresses.size());
+   for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
+   {
+     privateIpAddressesJsonList[privateIpAddressesIndex].AsObject(m_privateIpAddresses[privateIpAddressesIndex].Jsonize());
+   }
+   payload.WithArray("PrivateIpAddresses", std::move(privateIpAddressesJsonList));
+
+  }
+
+  if(m_publicDnsNameHasBeenSet)
+  {
+   payload.WithString("PublicDnsName", m_publicDnsName);
+
+  }
+
+  if(m_publicIpHasBeenSet)
+  {
+   payload.WithString("PublicIp", m_publicIp);
 
   }
 

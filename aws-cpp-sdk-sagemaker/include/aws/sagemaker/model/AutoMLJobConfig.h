@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
+#include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
+#include <aws/sagemaker/model/AutoMLCandidateGenerationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A collection of settings used for a job.</p><p><h3>See Also:</h3>   <a
+   * <p>A collection of settings used for an AutoML job.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobConfig">AWS
    * API Reference</a></p>
    */
@@ -49,71 +42,145 @@ namespace Model
 
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline AutoMLJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline AutoMLJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
 
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline const AutoMLSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline bool SecurityConfigHasBeenSet() const { return m_securityConfigHasBeenSet; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline void SetSecurityConfig(const AutoMLSecurityConfig& value) { m_securityConfigHasBeenSet = true; m_securityConfig = value; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline void SetSecurityConfig(AutoMLSecurityConfig&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::move(value); }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline AutoMLJobConfig& WithSecurityConfig(const AutoMLSecurityConfig& value) { SetSecurityConfig(value); return *this;}
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline AutoMLJobConfig& WithSecurityConfig(AutoMLSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline const AutoMLDataSplitConfig& GetDataSplitConfig() const{ return m_dataSplitConfig; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline bool DataSplitConfigHasBeenSet() const { return m_dataSplitConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline void SetDataSplitConfig(const AutoMLDataSplitConfig& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = value; }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline void SetDataSplitConfig(AutoMLDataSplitConfig&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline AutoMLJobConfig& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for splitting the input training dataset.</p> <p>Type:
+     * AutoMLDataSplitConfig</p>
+     */
+    inline AutoMLJobConfig& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline const AutoMLCandidateGenerationConfig& GetCandidateGenerationConfig() const{ return m_candidateGenerationConfig; }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline bool CandidateGenerationConfigHasBeenSet() const { return m_candidateGenerationConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline void SetCandidateGenerationConfig(const AutoMLCandidateGenerationConfig& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = value; }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline void SetCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline AutoMLJobConfig& WithCandidateGenerationConfig(const AutoMLCandidateGenerationConfig& value) { SetCandidateGenerationConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline AutoMLJobConfig& WithCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
 
   private:
 
@@ -122,6 +189,12 @@ namespace Model
 
     AutoMLSecurityConfig m_securityConfig;
     bool m_securityConfigHasBeenSet;
+
+    AutoMLDataSplitConfig m_dataSplitConfig;
+    bool m_dataSplitConfigHasBeenSet;
+
+    AutoMLCandidateGenerationConfig m_candidateGenerationConfig;
+    bool m_candidateGenerationConfigHasBeenSet;
   };
 
 } // namespace Model

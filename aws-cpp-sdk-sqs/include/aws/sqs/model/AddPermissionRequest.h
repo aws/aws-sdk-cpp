@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
@@ -165,109 +155,100 @@ namespace Model
 
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAWSAccountIds() const{ return m_aWSAccountIds; }
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline bool AWSAccountIdsHasBeenSet() const { return m_aWSAccountIdsHasBeenSet; }
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline void SetAWSAccountIds(const Aws::Vector<Aws::String>& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = value; }
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline void SetAWSAccountIds(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = std::move(value); }
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline AddPermissionRequest& WithAWSAccountIds(const Aws::Vector<Aws::String>& value) { SetAWSAccountIds(value); return *this;}
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline AddPermissionRequest& WithAWSAccountIds(Aws::Vector<Aws::String>&& value) { SetAWSAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(const Aws::String& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(Aws::String&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account number of the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
-     * who is given permission. The principal must have an AWS account, but does not
-     * need to be signed up for Amazon SQS. For information about locating the AWS
-     * account identification, see <a
+     * <p>The Amazon Web Services account numbers of the <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
-     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(const char* value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
@@ -279,7 +260,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -294,7 +275,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -309,7 +290,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -324,7 +305,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -339,7 +320,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -354,7 +335,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -369,7 +350,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -384,7 +365,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:
@@ -399,7 +380,7 @@ namespace Model
      * about these actions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
      * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * in the <i>Amazon SQS Developer Guide</i>.</p> <p>Specifying
      * <code>SendMessage</code>, <code>DeleteMessage</code>, or
      * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
      * permissions for the corresponding batch versions of those actions:

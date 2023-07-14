@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -428,82 +418,82 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline bool SourceSecurityGroupOwnerIdHasBeenSet() const { return m_sourceSecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline void SetSourceSecurityGroupOwnerId(const char* value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const Aws::String& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
-     * security group is in a different account. You can't specify this parameter in
-     * combination with the following parameters: the CIDR IP address range, the IP
-     * protocol, the start of the port range, and the end of the port range. To revoke
-     * a specific rule for an IP protocol and port range, use a set of IP permissions
-     * instead.</p>
+     * <p>[EC2-Classic] The Amazon Web Services account ID of the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
+     * range, the IP protocol, the start of the port range, and the end of the port
+     * range. To revoke a specific rule for an IP protocol and port range, use a set of
+     * IP permissions instead.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
@@ -569,6 +559,52 @@ namespace Model
      */
     inline RevokeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const{ return m_securityGroupRuleIds; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline bool SecurityGroupRuleIdsHasBeenSet() const { return m_securityGroupRuleIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline void SetSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = value; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline void SetSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& WithSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupRuleIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& WithSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupRuleIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(const Aws::String& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(Aws::String&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(const char* value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_cidrIp;
@@ -600,6 +636,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<Aws::String> m_securityGroupRuleIds;
+    bool m_securityGroupRuleIdsHasBeenSet;
   };
 
 } // namespace Model

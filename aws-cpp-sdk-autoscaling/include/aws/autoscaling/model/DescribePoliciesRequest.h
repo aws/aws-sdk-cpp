@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -91,127 +81,136 @@ namespace Model
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyTypes() const{ return m_policyTypes; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline bool PolicyTypesHasBeenSet() const { return m_policyTypesHasBeenSet; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline void SetPolicyTypes(const Aws::Vector<Aws::String>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline void SetPolicyTypes(Aws::Vector<Aws::String>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& WithPolicyTypes(Aws::Vector<Aws::String>&& value) { SetPolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(const Aws::String& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(Aws::String&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(const char* value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 

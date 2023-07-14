@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
@@ -128,28 +118,68 @@ namespace Model
     inline CopyBackupToRegionRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline CopyBackupToRegionRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline CopyBackupToRegionRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline CopyBackupToRegionRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Tags to apply to the destination backup during creation. If you specify tags,
+     * only these tags will be applied to the destination backup. If you do not specify
+     * tags, the service copies tags from the source backup to the destination
+     * backup.</p>
+     */
     inline CopyBackupToRegionRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:

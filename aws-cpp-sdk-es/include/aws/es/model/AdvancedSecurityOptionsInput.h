@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/MasterUserOptions.h>
+#include <aws/es/model/SAMLOptionsInput.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +113,62 @@ namespace Model
      */
     inline AdvancedSecurityOptionsInput& WithMasterUserOptions(MasterUserOptions&& value) { SetMasterUserOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline const SAMLOptionsInput& GetSAMLOptions() const{ return m_sAMLOptions; }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline bool SAMLOptionsHasBeenSet() const { return m_sAMLOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline void SetSAMLOptions(const SAMLOptionsInput& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = value; }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline void SetSAMLOptions(SAMLOptionsInput&& value) { m_sAMLOptionsHasBeenSet = true; m_sAMLOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline AdvancedSecurityOptionsInput& WithSAMLOptions(const SAMLOptionsInput& value) { SetSAMLOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the SAML application configuration for the domain.</p>
+     */
+    inline AdvancedSecurityOptionsInput& WithSAMLOptions(SAMLOptionsInput&& value) { SetSAMLOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline bool GetAnonymousAuthEnabled() const{ return m_anonymousAuthEnabled; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline bool AnonymousAuthEnabledHasBeenSet() const { return m_anonymousAuthEnabledHasBeenSet; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline void SetAnonymousAuthEnabled(bool value) { m_anonymousAuthEnabledHasBeenSet = true; m_anonymousAuthEnabled = value; }
+
+    /**
+     * <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when
+     * AdvancedSecurity is enabled on existing domains.</p>
+     */
+    inline AdvancedSecurityOptionsInput& WithAnonymousAuthEnabled(bool value) { SetAnonymousAuthEnabled(value); return *this;}
+
   private:
 
     bool m_enabled;
@@ -132,6 +179,12 @@ namespace Model
 
     MasterUserOptions m_masterUserOptions;
     bool m_masterUserOptionsHasBeenSet;
+
+    SAMLOptionsInput m_sAMLOptions;
+    bool m_sAMLOptionsHasBeenSet;
+
+    bool m_anonymousAuthEnabled;
+    bool m_anonymousAuthEnabledHasBeenSet;
   };
 
 } // namespace Model

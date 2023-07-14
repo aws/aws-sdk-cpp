@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/WorkflowRun.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,26 +21,32 @@ namespace Model
 WorkflowRun::WorkflowRun() : 
     m_nameHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false),
+    m_previousRunIdHasBeenSet(false),
     m_workflowRunPropertiesHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
     m_status(WorkflowRunStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_startingEventBatchConditionHasBeenSet(false)
 {
 }
 
 WorkflowRun::WorkflowRun(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false),
+    m_previousRunIdHasBeenSet(false),
     m_workflowRunPropertiesHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
     m_status(WorkflowRunStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_graphHasBeenSet(false)
+    m_graphHasBeenSet(false),
+    m_startingEventBatchConditionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +65,13 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     m_workflowRunId = jsonValue.GetString("WorkflowRunId");
 
     m_workflowRunIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreviousRunId"))
+  {
+    m_previousRunId = jsonValue.GetString("PreviousRunId");
+
+    m_previousRunIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("WorkflowRunProperties"))
@@ -102,6 +105,13 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErrorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+    m_errorMessageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
@@ -114,6 +124,13 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     m_graph = jsonValue.GetObject("Graph");
 
     m_graphHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartingEventBatchCondition"))
+  {
+    m_startingEventBatchCondition = jsonValue.GetObject("StartingEventBatchCondition");
+
+    m_startingEventBatchConditionHasBeenSet = true;
   }
 
   return *this;
@@ -132,6 +149,12 @@ JsonValue WorkflowRun::Jsonize() const
   if(m_workflowRunIdHasBeenSet)
   {
    payload.WithString("WorkflowRunId", m_workflowRunId);
+
+  }
+
+  if(m_previousRunIdHasBeenSet)
+  {
+   payload.WithString("PreviousRunId", m_previousRunId);
 
   }
 
@@ -161,6 +184,12 @@ JsonValue WorkflowRun::Jsonize() const
    payload.WithString("Status", WorkflowRunStatusMapper::GetNameForWorkflowRunStatus(m_status));
   }
 
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("ErrorMessage", m_errorMessage);
+
+  }
+
   if(m_statisticsHasBeenSet)
   {
    payload.WithObject("Statistics", m_statistics.Jsonize());
@@ -170,6 +199,12 @@ JsonValue WorkflowRun::Jsonize() const
   if(m_graphHasBeenSet)
   {
    payload.WithObject("Graph", m_graph.Jsonize());
+
+  }
+
+  if(m_startingEventBatchConditionHasBeenSet)
+  {
+   payload.WithObject("StartingEventBatchCondition", m_startingEventBatchCondition.Jsonize());
 
   }
 

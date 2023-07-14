@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/ComparedFace.h>
+#include <aws/rekognition/model/KnownGender.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +239,25 @@ namespace Model
      */
     inline Celebrity& WithMatchConfidence(double value) { SetMatchConfidence(value); return *this;}
 
+
+    
+    inline const KnownGender& GetKnownGender() const{ return m_knownGender; }
+
+    
+    inline bool KnownGenderHasBeenSet() const { return m_knownGenderHasBeenSet; }
+
+    
+    inline void SetKnownGender(const KnownGender& value) { m_knownGenderHasBeenSet = true; m_knownGender = value; }
+
+    
+    inline void SetKnownGender(KnownGender&& value) { m_knownGenderHasBeenSet = true; m_knownGender = std::move(value); }
+
+    
+    inline Celebrity& WithKnownGender(const KnownGender& value) { SetKnownGender(value); return *this;}
+
+    
+    inline Celebrity& WithKnownGender(KnownGender&& value) { SetKnownGender(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_urls;
@@ -264,6 +274,9 @@ namespace Model
 
     double m_matchConfidence;
     bool m_matchConfidenceHasBeenSet;
+
+    KnownGender m_knownGender;
+    bool m_knownGenderHasBeenSet;
   };
 
 } // namespace Model

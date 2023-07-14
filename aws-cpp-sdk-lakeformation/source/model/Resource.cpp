@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lakeformation/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,7 +23,10 @@ Resource::Resource() :
     m_databaseHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_tableWithColumnsHasBeenSet(false),
-    m_dataLocationHasBeenSet(false)
+    m_dataLocationHasBeenSet(false),
+    m_dataCellsFilterHasBeenSet(false),
+    m_lFTagHasBeenSet(false),
+    m_lFTagPolicyHasBeenSet(false)
 {
 }
 
@@ -42,7 +35,10 @@ Resource::Resource(JsonView jsonValue) :
     m_databaseHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_tableWithColumnsHasBeenSet(false),
-    m_dataLocationHasBeenSet(false)
+    m_dataLocationHasBeenSet(false),
+    m_dataCellsFilterHasBeenSet(false),
+    m_lFTagHasBeenSet(false),
+    m_lFTagPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +80,27 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_dataLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataCellsFilter"))
+  {
+    m_dataCellsFilter = jsonValue.GetObject("DataCellsFilter");
+
+    m_dataCellsFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LFTag"))
+  {
+    m_lFTag = jsonValue.GetObject("LFTag");
+
+    m_lFTagHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LFTagPolicy"))
+  {
+    m_lFTagPolicy = jsonValue.GetObject("LFTagPolicy");
+
+    m_lFTagPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +135,24 @@ JsonValue Resource::Jsonize() const
   if(m_dataLocationHasBeenSet)
   {
    payload.WithObject("DataLocation", m_dataLocation.Jsonize());
+
+  }
+
+  if(m_dataCellsFilterHasBeenSet)
+  {
+   payload.WithObject("DataCellsFilter", m_dataCellsFilter.Jsonize());
+
+  }
+
+  if(m_lFTagHasBeenSet)
+  {
+   payload.WithObject("LFTag", m_lFTag.Jsonize());
+
+  }
+
+  if(m_lFTagPolicyHasBeenSet)
+  {
+   payload.WithObject("LFTagPolicy", m_lFTagPolicy.Jsonize());
 
   }
 

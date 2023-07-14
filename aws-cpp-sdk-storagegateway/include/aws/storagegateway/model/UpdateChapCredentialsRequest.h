@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -111,57 +101,57 @@ namespace Model
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline const Aws::String& GetSecretToAuthenticateInitiator() const{ return m_secretToAuthenticateInitiator; }
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline bool SecretToAuthenticateInitiatorHasBeenSet() const { return m_secretToAuthenticateInitiatorHasBeenSet; }
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline void SetSecretToAuthenticateInitiator(const Aws::String& value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator = value; }
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline void SetSecretToAuthenticateInitiator(Aws::String&& value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator = std::move(value); }
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline void SetSecretToAuthenticateInitiator(const char* value) { m_secretToAuthenticateInitiatorHasBeenSet = true; m_secretToAuthenticateInitiator.assign(value); }
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(const Aws::String& value) { SetSecretToAuthenticateInitiator(value); return *this;}
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(Aws::String&& value) { SetSecretToAuthenticateInitiator(std::move(value)); return *this;}
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
-     * provide to participate in mutual CHAP with the target.</p> <note> <p>The secret
-     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>
+     * provide to participate in mutual CHAP with the target.</p>  <p>The secret
+     * key must be between 12 and 16 bytes when encoded in UTF-8.</p> 
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(const char* value) { SetSecretToAuthenticateInitiator(value); return *this;}
 
@@ -210,64 +200,64 @@ namespace Model
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline const Aws::String& GetSecretToAuthenticateTarget() const{ return m_secretToAuthenticateTarget; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline bool SecretToAuthenticateTargetHasBeenSet() const { return m_secretToAuthenticateTargetHasBeenSet; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline void SetSecretToAuthenticateTarget(const Aws::String& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = value; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline void SetSecretToAuthenticateTarget(Aws::String&& value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget = std::move(value); }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline void SetSecretToAuthenticateTarget(const char* value) { m_secretToAuthenticateTargetHasBeenSet = true; m_secretToAuthenticateTarget.assign(value); }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(const Aws::String& value) { SetSecretToAuthenticateTarget(value); return *this;}
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(Aws::String&& value) { SetSecretToAuthenticateTarget(std::move(value)); return *this;}
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
      * with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes
-     * of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and
-     * 16 bytes when encoded in UTF-8.</p> </note>
+     * of 12. Maximum bytes of 16.</p>  <p>The secret key must be between 12 and
+     * 16 bytes when encoded in UTF-8.</p> 
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(const char* value) { SetSecretToAuthenticateTarget(value); return *this;}
 

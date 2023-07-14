@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/HttpUrlDestinationConfiguration.h>
+#include <aws/iot/model/VpcDestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -77,10 +68,44 @@ namespace Model
      */
     inline TopicRuleDestinationConfiguration& WithHttpUrlConfiguration(HttpUrlDestinationConfiguration&& value) { SetHttpUrlConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline const VpcDestinationConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline void SetVpcConfiguration(const VpcDestinationConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline void SetVpcConfiguration(VpcDestinationConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline TopicRuleDestinationConfiguration& WithVpcConfiguration(const VpcDestinationConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of the virtual private cloud (VPC) connection.</p>
+     */
+    inline TopicRuleDestinationConfiguration& WithVpcConfiguration(VpcDestinationConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
   private:
 
     HttpUrlDestinationConfiguration m_httpUrlConfiguration;
     bool m_httpUrlConfigurationHasBeenSet;
+
+    VpcDestinationConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet;
   };
 
 } // namespace Model

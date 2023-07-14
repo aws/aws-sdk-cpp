@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -47,50 +37,58 @@ namespace Model
 
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Filters applied to the certificate described in the form of key-value
-     * pairs.</p>
+     * <p>Filters applied to the certificates described in the form of key-value pairs.
+     * Valid values are <code>certificate-arn</code> and
+     * <code>certificate-id</code>.</p>
      */
     inline DescribeCertificatesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

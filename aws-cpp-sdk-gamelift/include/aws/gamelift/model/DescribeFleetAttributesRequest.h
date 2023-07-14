@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -28,7 +18,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributesInput">AWS
    * API Reference</a></p>
    */
@@ -51,81 +41,63 @@ namespace Model
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline DescribeFleetAttributesRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline DescribeFleetAttributesRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
      * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
-     * do not include this parameter. If the list of fleet identifiers includes fleets
-     * that don't currently exist, the request succeeds but no attributes for that
-     * fleet are returned.</p>
+     * do not include this parameter. </p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
@@ -160,66 +132,66 @@ namespace Model
 
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetAttributesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
-     * the token that is returned with a previous call to this action. To start at the
-     * beginning of the result set, do not specify a value. This parameter is ignored
-     * when the request specifies one or a list of fleet IDs.</p>
+     * <p>A token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this operation. To start at
+     * the beginning of the result set, do not specify a value. This parameter is
+     * ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

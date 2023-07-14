@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -167,42 +157,42 @@ namespace Model
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
-     * the domain controllers for your AWS directory.</p>
+     * the domain controllers for your Amazon Web Services directory.</p>
      */
     inline const ReplicationScope& GetReplicationScope() const{ return m_replicationScope; }
 
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
-     * the domain controllers for your AWS directory.</p>
+     * the domain controllers for your Amazon Web Services directory.</p>
      */
     inline bool ReplicationScopeHasBeenSet() const { return m_replicationScopeHasBeenSet; }
 
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
-     * the domain controllers for your AWS directory.</p>
+     * the domain controllers for your Amazon Web Services directory.</p>
      */
     inline void SetReplicationScope(const ReplicationScope& value) { m_replicationScopeHasBeenSet = true; m_replicationScope = value; }
 
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
-     * the domain controllers for your AWS directory.</p>
+     * the domain controllers for your Amazon Web Services directory.</p>
      */
     inline void SetReplicationScope(ReplicationScope&& value) { m_replicationScopeHasBeenSet = true; m_replicationScope = std::move(value); }
 
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
-     * the domain controllers for your AWS directory.</p>
+     * the domain controllers for your Amazon Web Services directory.</p>
      */
     inline ConditionalForwarder& WithReplicationScope(const ReplicationScope& value) { SetReplicationScope(value); return *this;}
 
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
-     * the domain controllers for your AWS directory.</p>
+     * the domain controllers for your Amazon Web Services directory.</p>
      */
     inline ConditionalForwarder& WithReplicationScope(ReplicationScope&& value) { SetReplicationScope(std::move(value)); return *this;}
 

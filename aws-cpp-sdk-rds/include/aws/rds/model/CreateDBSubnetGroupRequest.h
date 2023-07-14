@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -53,65 +43,73 @@ namespace Model
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
-     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
-     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255
+     * letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> <li>
+     * <p>Must not be default.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

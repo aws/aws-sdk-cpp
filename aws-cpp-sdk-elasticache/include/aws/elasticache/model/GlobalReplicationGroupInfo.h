@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The name of the Global Datastore and role of this replication group in the
-   * Global Datastore.</p><p><h3>See Also:</h3>   <a
+   * <p>The name of the Global datastore and role of this replication group in the
+   * Global datastore.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalReplicationGroupInfo">AWS
    * API Reference</a></p>
    */
@@ -51,90 +41,90 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline GlobalReplicationGroupInfo& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline GlobalReplicationGroupInfo& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline GlobalReplicationGroupInfo& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
 
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupMemberRole() const{ return m_globalReplicationGroupMemberRole; }
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline bool GlobalReplicationGroupMemberRoleHasBeenSet() const { return m_globalReplicationGroupMemberRoleHasBeenSet; }
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline void SetGlobalReplicationGroupMemberRole(const Aws::String& value) { m_globalReplicationGroupMemberRoleHasBeenSet = true; m_globalReplicationGroupMemberRole = value; }
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline void SetGlobalReplicationGroupMemberRole(Aws::String&& value) { m_globalReplicationGroupMemberRoleHasBeenSet = true; m_globalReplicationGroupMemberRole = std::move(value); }
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline void SetGlobalReplicationGroupMemberRole(const char* value) { m_globalReplicationGroupMemberRoleHasBeenSet = true; m_globalReplicationGroupMemberRole.assign(value); }
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline GlobalReplicationGroupInfo& WithGlobalReplicationGroupMemberRole(const Aws::String& value) { SetGlobalReplicationGroupMemberRole(value); return *this;}
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline GlobalReplicationGroupInfo& WithGlobalReplicationGroupMemberRole(Aws::String&& value) { SetGlobalReplicationGroupMemberRole(std::move(value)); return *this;}
 
     /**
-     * <p>The role of the replication group in a Global Datastore. Can be primary or
+     * <p>The role of the replication group in a Global datastore. Can be primary or
      * secondary.</p>
      */
     inline GlobalReplicationGroupInfo& WithGlobalReplicationGroupMemberRole(const char* value) { SetGlobalReplicationGroupMemberRole(value); return *this;}

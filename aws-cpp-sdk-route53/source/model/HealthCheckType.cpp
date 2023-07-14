@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/route53/model/HealthCheckType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,7 @@ namespace Aws
         static const int TCP_HASH = HashingUtils::HashString("TCP");
         static const int CALCULATED_HASH = HashingUtils::HashString("CALCULATED");
         static const int CLOUDWATCH_METRIC_HASH = HashingUtils::HashString("CLOUDWATCH_METRIC");
+        static const int RECOVERY_CONTROL_HASH = HashingUtils::HashString("RECOVERY_CONTROL");
 
 
         HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
@@ -70,6 +61,10 @@ namespace Aws
           {
             return HealthCheckType::CLOUDWATCH_METRIC;
           }
+          else if (hashCode == RECOVERY_CONTROL_HASH)
+          {
+            return HealthCheckType::RECOVERY_CONTROL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +93,8 @@ namespace Aws
             return "CALCULATED";
           case HealthCheckType::CLOUDWATCH_METRIC:
             return "CLOUDWATCH_METRIC";
+          case HealthCheckType::RECOVERY_CONTROL:
+            return "RECOVERY_CONTROL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

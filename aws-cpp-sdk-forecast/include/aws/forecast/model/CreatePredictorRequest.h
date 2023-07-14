@@ -1,28 +1,22 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/AutoMLOverrideStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/forecast/model/EvaluationParameters.h>
 #include <aws/forecast/model/HyperParameterTuningJobConfig.h>
 #include <aws/forecast/model/InputDataConfig.h>
 #include <aws/forecast/model/FeaturizationConfig.h>
 #include <aws/forecast/model/EncryptionConfig.h>
+#include <aws/forecast/model/OptimizationMetric.h>
+#include <aws/forecast/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -96,8 +90,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -109,8 +103,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -122,8 +116,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -135,8 +129,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -148,8 +142,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -161,8 +155,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -174,8 +168,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -187,8 +181,8 @@ namespace Model
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
      * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
-     * hyperparameter optimization (HPO)</p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -242,6 +236,88 @@ namespace Model
 
 
     /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline bool ForecastTypesHasBeenSet() const { return m_forecastTypesHasBeenSet; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = value; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::move(value); }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& AddForecastTypes(const Aws::String& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& AddForecastTypes(Aws::String&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the forecast types used to train a predictor. You can specify up to
+     * five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
+     * increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
+     * "0.9"]</code>.</p>
+     */
+    inline CreatePredictorRequest& AddForecastTypes(const char* value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+
+
+    /**
      * <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates
      * the algorithms it provides and chooses the best algorithm and configuration for
      * your training dataset.</p> <p>The default value is <code>false</code>. In this
@@ -287,6 +363,67 @@ namespace Model
 
 
     /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline bool AutoMLOverrideStrategyHasBeenSet() const { return m_autoMLOverrideStrategyHasBeenSet; }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = std::move(value); }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
+
+
+    /**
      * <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal
      * hyperparameter values for your training data. The process of performing HPO is
      * known as running a hyperparameter tuning job.</p> <p>The default value is
@@ -297,7 +434,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline bool GetPerformHPO() const{ return m_performHPO; }
 
@@ -312,7 +450,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline bool PerformHPOHasBeenSet() const { return m_performHPOHasBeenSet; }
 
@@ -327,7 +466,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline void SetPerformHPO(bool value) { m_performHPOHasBeenSet = true; m_performHPO = value; }
 
@@ -342,7 +482,8 @@ namespace Model
      * to optimize, which hyperparameters participate in tuning, and the valid range
      * for each tunable hyperparameter. In this case, you are required to specify an
      * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
-     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
+     * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
+     * </li> </ul>
      */
     inline CreatePredictorRequest& WithPerformHPO(bool value) { SetPerformHPO(value); return *this;}
 
@@ -653,6 +794,222 @@ namespace Model
      */
     inline CreatePredictorRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline CreatePredictorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline CreatePredictorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline CreatePredictorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The optional metadata that you apply to the predictor to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
+     * <ul> <li> <p>Maximum number of tags per resource - 50.</p> </li> <li> <p>For
+     * each resource, each tag key must be unique, and each tag key can have only one
+     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
+     * UTF-8.</p> </li> <li> <p>If your tagging schema is used across multiple services
+     * and resources, remember that other services may have restrictions on allowed
+     * characters. Generally allowed characters are: letters, numbers, and spaces
+     * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+     * <li> <p>Tag keys and values are case sensitive.</p> </li> <li> <p>Do not use
+     * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
+     * such as a prefix for keys as it is reserved for AWS use. You cannot edit or
+     * delete tag keys with this prefix. Values can have this prefix. If a tag value
+     * has <code>aws</code> as its prefix but the key does not, then Forecast considers
+     * it to be a user tag and will count against the limit of 50 tags. Tags with only
+     * the key prefix of <code>aws</code> do not count against your tags per resource
+     * limit.</p> </li> </ul>
+     */
+    inline CreatePredictorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline bool OptimizationMetricHasBeenSet() const { return m_optimizationMetricHasBeenSet; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = std::move(value); }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline CreatePredictorRequest& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline CreatePredictorRequest& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorName;
@@ -664,8 +1021,14 @@ namespace Model
     int m_forecastHorizon;
     bool m_forecastHorizonHasBeenSet;
 
+    Aws::Vector<Aws::String> m_forecastTypes;
+    bool m_forecastTypesHasBeenSet;
+
     bool m_performAutoML;
     bool m_performAutoMLHasBeenSet;
+
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
+    bool m_autoMLOverrideStrategyHasBeenSet;
 
     bool m_performHPO;
     bool m_performHPOHasBeenSet;
@@ -687,6 +1050,12 @@ namespace Model
 
     EncryptionConfig m_encryptionConfig;
     bool m_encryptionConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    OptimizationMetric m_optimizationMetric;
+    bool m_optimizationMetricHasBeenSet;
   };
 
 } // namespace Model

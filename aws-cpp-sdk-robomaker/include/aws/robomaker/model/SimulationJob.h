@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
@@ -250,43 +240,49 @@ namespace Model
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline const FailureBehavior& GetFailureBehavior() const{ return m_failureBehavior; }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline bool FailureBehaviorHasBeenSet() const { return m_failureBehaviorHasBeenSet; }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline void SetFailureBehavior(const FailureBehavior& value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = value; }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline void SetFailureBehavior(FailureBehavior&& value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = std::move(value); }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline SimulationJob& WithFailureBehavior(const FailureBehavior& value) { SetFailureBehavior(value); return *this;}
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline SimulationJob& WithFailureBehavior(FailureBehavior&& value) { SetFailureBehavior(std::move(value)); return *this;}
 

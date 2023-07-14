@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -23,9 +13,11 @@
 #include <aws/ssm/model/ExecutionMode.h>
 #include <aws/ssm/model/ResolvedTargets.h>
 #include <aws/ssm/model/ProgressCounters.h>
+#include <aws/ssm/model/AutomationSubtype.h>
 #include <aws/ssm/model/StepExecution.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/Runbook.h>
 #include <utility>
 
 namespace Aws
@@ -100,42 +92,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline AutomationExecution& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline AutomationExecution& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Automation document used during the execution.</p>
+     * <p>The name of the Automation runbook used during the execution.</p>
      */
     inline AutomationExecution& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
@@ -276,56 +268,56 @@ namespace Model
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline const Aws::Vector<StepExecution>& GetStepExecutions() const{ return m_stepExecutions; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline bool StepExecutionsHasBeenSet() const { return m_stepExecutionsHasBeenSet; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline void SetStepExecutions(const Aws::Vector<StepExecution>& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions = value; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline void SetStepExecutions(Aws::Vector<StepExecution>&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions = std::move(value); }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& WithStepExecutions(const Aws::Vector<StepExecution>& value) { SetStepExecutions(value); return *this;}
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& WithStepExecutions(Aws::Vector<StepExecution>&& value) { SetStepExecutions(std::move(value)); return *this;}
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& AddStepExecutions(const StepExecution& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(value); return *this; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are run in
+     * execution. An Automation runbook contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& AddStepExecutions(StepExecution&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(std::move(value)); return *this; }
@@ -334,162 +326,162 @@ namespace Model
     /**
      * <p>A boolean value that indicates if the response contains the full list of the
      * Automation step executions. If true, use the DescribeAutomationStepExecutions
-     * API action to get the full list of step executions.</p>
+     * API operation to get the full list of step executions.</p>
      */
     inline bool GetStepExecutionsTruncated() const{ return m_stepExecutionsTruncated; }
 
     /**
      * <p>A boolean value that indicates if the response contains the full list of the
      * Automation step executions. If true, use the DescribeAutomationStepExecutions
-     * API action to get the full list of step executions.</p>
+     * API operation to get the full list of step executions.</p>
      */
     inline bool StepExecutionsTruncatedHasBeenSet() const { return m_stepExecutionsTruncatedHasBeenSet; }
 
     /**
      * <p>A boolean value that indicates if the response contains the full list of the
      * Automation step executions. If true, use the DescribeAutomationStepExecutions
-     * API action to get the full list of step executions.</p>
+     * API operation to get the full list of step executions.</p>
      */
     inline void SetStepExecutionsTruncated(bool value) { m_stepExecutionsTruncatedHasBeenSet = true; m_stepExecutionsTruncated = value; }
 
     /**
      * <p>A boolean value that indicates if the response contains the full list of the
      * Automation step executions. If true, use the DescribeAutomationStepExecutions
-     * API action to get the full list of step executions.</p>
+     * API operation to get the full list of step executions.</p>
      */
     inline AutomationExecution& WithStepExecutionsTruncated(bool value) { SetStepExecutionsTruncated(value); return *this;}
 
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value map of execution parameters, which were supplied when calling
-     * StartAutomationExecution.</p>
+     * <a>StartAutomationExecution</a>.</p>
      */
     inline AutomationExecution& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetOutputs() const{ return m_outputs; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline void SetOutputs(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline void SetOutputs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& WithOutputs(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetOutputs(value); return *this;}
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& WithOutputs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& AddOutputs(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& AddOutputs(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& AddOutputs(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& AddOutputs(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& AddOutputs(const char* key, Aws::Vector<Aws::String>&& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of execution outputs as defined in the automation document.</p>
+     * <p>The list of execution outputs as defined in the Automation runbook.</p>
      */
     inline AutomationExecution& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
@@ -901,50 +893,50 @@ namespace Model
 
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline AutomationExecution& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline AutomationExecution& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>The MaxConcurrency value specified by the user when the execution
-     * started.</p>
+     * <p>The <code>MaxConcurrency</code> value specified by the user when the
+     * execution started.</p>
      */
     inline AutomationExecution& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -1032,89 +1024,359 @@ namespace Model
 
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
-     * multi-Region and multi-account Automation execution.</p>
+     * <p>An aggregate of step execution statuses displayed in the Amazon Web Services
+     * Systems Manager console for a multi-Region and multi-account Automation
+     * execution.</p>
      */
     inline const ProgressCounters& GetProgressCounters() const{ return m_progressCounters; }
 
     /**
-     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
-     * multi-Region and multi-account Automation execution.</p>
+     * <p>An aggregate of step execution statuses displayed in the Amazon Web Services
+     * Systems Manager console for a multi-Region and multi-account Automation
+     * execution.</p>
      */
     inline bool ProgressCountersHasBeenSet() const { return m_progressCountersHasBeenSet; }
 
     /**
-     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
-     * multi-Region and multi-account Automation execution.</p>
+     * <p>An aggregate of step execution statuses displayed in the Amazon Web Services
+     * Systems Manager console for a multi-Region and multi-account Automation
+     * execution.</p>
      */
     inline void SetProgressCounters(const ProgressCounters& value) { m_progressCountersHasBeenSet = true; m_progressCounters = value; }
 
     /**
-     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
-     * multi-Region and multi-account Automation execution.</p>
+     * <p>An aggregate of step execution statuses displayed in the Amazon Web Services
+     * Systems Manager console for a multi-Region and multi-account Automation
+     * execution.</p>
      */
     inline void SetProgressCounters(ProgressCounters&& value) { m_progressCountersHasBeenSet = true; m_progressCounters = std::move(value); }
 
     /**
-     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
-     * multi-Region and multi-account Automation execution.</p>
+     * <p>An aggregate of step execution statuses displayed in the Amazon Web Services
+     * Systems Manager console for a multi-Region and multi-account Automation
+     * execution.</p>
      */
     inline AutomationExecution& WithProgressCounters(const ProgressCounters& value) { SetProgressCounters(value); return *this;}
 
     /**
-     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
-     * multi-Region and multi-account Automation execution.</p>
+     * <p>An aggregate of step execution statuses displayed in the Amazon Web Services
+     * Systems Manager console for a multi-Region and multi-account Automation
+     * execution.</p>
      */
     inline AutomationExecution& WithProgressCounters(ProgressCounters&& value) { SetProgressCounters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline const AutomationSubtype& GetAutomationSubtype() const{ return m_automationSubtype; }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline bool AutomationSubtypeHasBeenSet() const { return m_automationSubtypeHasBeenSet; }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline void SetAutomationSubtype(const AutomationSubtype& value) { m_automationSubtypeHasBeenSet = true; m_automationSubtype = value; }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline void SetAutomationSubtype(AutomationSubtype&& value) { m_automationSubtypeHasBeenSet = true; m_automationSubtype = std::move(value); }
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline AutomationExecution& WithAutomationSubtype(const AutomationSubtype& value) { SetAutomationSubtype(value); return *this;}
+
+    /**
+     * <p>The subtype of the Automation operation. Currently, the only supported value
+     * is <code>ChangeRequest</code>.</p>
+     */
+    inline AutomationExecution& WithAutomationSubtype(AutomationSubtype&& value) { SetAutomationSubtype(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline AutomationExecution& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
+
+    /**
+     * <p>The date and time the Automation operation is scheduled to start.</p>
+     */
+    inline AutomationExecution& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline const Aws::Vector<Runbook>& GetRunbooks() const{ return m_runbooks; }
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline bool RunbooksHasBeenSet() const { return m_runbooksHasBeenSet; }
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline void SetRunbooks(const Aws::Vector<Runbook>& value) { m_runbooksHasBeenSet = true; m_runbooks = value; }
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline void SetRunbooks(Aws::Vector<Runbook>&& value) { m_runbooksHasBeenSet = true; m_runbooks = std::move(value); }
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline AutomationExecution& WithRunbooks(const Aws::Vector<Runbook>& value) { SetRunbooks(value); return *this;}
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline AutomationExecution& WithRunbooks(Aws::Vector<Runbook>&& value) { SetRunbooks(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline AutomationExecution& AddRunbooks(const Runbook& value) { m_runbooksHasBeenSet = true; m_runbooks.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the Automation runbooks that are run as part of a runbook
+     * workflow.</p>  <p>The Automation runbooks specified for the runbook
+     * workflow can't run until all required approvals for the change request have been
+     * received.</p> 
+     */
+    inline AutomationExecution& AddRunbooks(Runbook&& value) { m_runbooksHasBeenSet = true; m_runbooks.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline AutomationExecution& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline AutomationExecution& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an OpsItem that is created to represent a Change Manager change
+     * request.</p>
+     */
+    inline AutomationExecution& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline AutomationExecution& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline AutomationExecution& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a State Manager association used in the Automation operation.</p>
+     */
+    inline AutomationExecution& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline const Aws::String& GetChangeRequestName() const{ return m_changeRequestName; }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline bool ChangeRequestNameHasBeenSet() const { return m_changeRequestNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline void SetChangeRequestName(const Aws::String& value) { m_changeRequestNameHasBeenSet = true; m_changeRequestName = value; }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline void SetChangeRequestName(Aws::String&& value) { m_changeRequestNameHasBeenSet = true; m_changeRequestName = std::move(value); }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline void SetChangeRequestName(const char* value) { m_changeRequestNameHasBeenSet = true; m_changeRequestName.assign(value); }
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline AutomationExecution& WithChangeRequestName(const Aws::String& value) { SetChangeRequestName(value); return *this;}
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline AutomationExecution& WithChangeRequestName(Aws::String&& value) { SetChangeRequestName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Change Manager change request.</p>
+     */
+    inline AutomationExecution& WithChangeRequestName(const char* value) { SetChangeRequestName(value); return *this;}
 
   private:
 
@@ -1192,6 +1454,24 @@ namespace Model
 
     ProgressCounters m_progressCounters;
     bool m_progressCountersHasBeenSet;
+
+    AutomationSubtype m_automationSubtype;
+    bool m_automationSubtypeHasBeenSet;
+
+    Aws::Utils::DateTime m_scheduledTime;
+    bool m_scheduledTimeHasBeenSet;
+
+    Aws::Vector<Runbook> m_runbooks;
+    bool m_runbooksHasBeenSet;
+
+    Aws::String m_opsItemId;
+    bool m_opsItemIdHasBeenSet;
+
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet;
+
+    Aws::String m_changeRequestName;
+    bool m_changeRequestNameHasBeenSet;
   };
 
 } // namespace Model

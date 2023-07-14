@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/JobUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -49,7 +39,8 @@ JobUpdate::JobUpdate() :
     m_numberOfWorkersHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_codeGenConfigurationNodesHasBeenSet(false)
 {
 }
 
@@ -74,7 +65,8 @@ JobUpdate::JobUpdate(JsonView jsonValue) :
     m_numberOfWorkersHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_codeGenConfigurationNodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -199,6 +191,16 @@ JobUpdate& JobUpdate::operator =(JsonView jsonValue)
     m_glueVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CodeGenConfigurationNodes"))
+  {
+    Aws::Map<Aws::String, JsonView> codeGenConfigurationNodesJsonMap = jsonValue.GetObject("CodeGenConfigurationNodes").GetAllObjects();
+    for(auto& codeGenConfigurationNodesItem : codeGenConfigurationNodesJsonMap)
+    {
+      m_codeGenConfigurationNodes[codeGenConfigurationNodesItem.first] = codeGenConfigurationNodesItem.second.AsObject();
+    }
+    m_codeGenConfigurationNodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -308,6 +310,17 @@ JsonValue JobUpdate::Jsonize() const
   if(m_glueVersionHasBeenSet)
   {
    payload.WithString("GlueVersion", m_glueVersion);
+
+  }
+
+  if(m_codeGenConfigurationNodesHasBeenSet)
+  {
+   JsonValue codeGenConfigurationNodesJsonMap;
+   for(auto& codeGenConfigurationNodesItem : m_codeGenConfigurationNodes)
+   {
+     codeGenConfigurationNodesJsonMap.WithObject(codeGenConfigurationNodesItem.first, codeGenConfigurationNodesItem.second.Jsonize());
+   }
+   payload.WithObject("CodeGenConfigurationNodes", std::move(codeGenConfigurationNodesJsonMap));
 
   }
 

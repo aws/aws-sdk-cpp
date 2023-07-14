@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -57,8 +47,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -67,8 +57,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -77,8 +67,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -87,8 +77,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -97,8 +87,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -107,8 +97,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -117,8 +107,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -127,8 +117,8 @@ namespace Model
 
     /**
      * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p> <important> <p>You can only specify a verified identity for this
-     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * topic for.</p>  <p>You can only specify a verified identity for this
+     * parameter.</p>  <p>You can specify an identity by using its name or
      * by using its Amazon Resource Name (ARN). The following examples are all valid
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>

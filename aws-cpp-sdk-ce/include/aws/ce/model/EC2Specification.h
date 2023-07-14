@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-   * recommendations for.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+   * provide recommendations for.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2Specification">AWS
    * API Reference</a></p>
    */
@@ -49,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>Whether you want a recommendation for standard or convertible
+     * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
     inline const OfferingClass& GetOfferingClass() const{ return m_offeringClass; }
 
     /**
-     * <p>Whether you want a recommendation for standard or convertible
+     * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
     inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
 
     /**
-     * <p>Whether you want a recommendation for standard or convertible
+     * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
     inline void SetOfferingClass(const OfferingClass& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
 
     /**
-     * <p>Whether you want a recommendation for standard or convertible
+     * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
     inline void SetOfferingClass(OfferingClass&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
 
     /**
-     * <p>Whether you want a recommendation for standard or convertible
+     * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
     inline EC2Specification& WithOfferingClass(const OfferingClass& value) { SetOfferingClass(value); return *this;}
 
     /**
-     * <p>Whether you want a recommendation for standard or convertible
+     * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
     inline EC2Specification& WithOfferingClass(OfferingClass&& value) { SetOfferingClass(std::move(value)); return *this;}

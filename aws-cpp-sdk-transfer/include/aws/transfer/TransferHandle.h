@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -54,23 +44,23 @@ namespace Aws
             // TBI: controls for in-memory parts vs. resumable file-based parts with state serialization to/from file
         };
 
-        class PartState
+        class AWS_TRANSFER_API PartState
         {
             public:
                 PartState();
-                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes, bool lastPart = false);
+                PartState(int partId, uint64_t bestProgressInBytes, uint64_t sizeInBytes, bool lastPart = false);
 
                 int GetPartId() const { return m_partId; }
 
-                size_t GetBestProgressInBytes() const { return m_bestProgressInBytes; }
-                void SetBestProgressInBytes(size_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
+                uint64_t GetBestProgressInBytes() const { return m_bestProgressInBytes; }
+                void SetBestProgressInBytes(uint64_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
 
-                size_t GetSizeInBytes() const { return m_sizeInBytes; }
-                void SetSizeInBytes(size_t sizeInBytes) { m_sizeInBytes = sizeInBytes; }
+                uint64_t GetSizeInBytes() const { return m_sizeInBytes; }
+                void SetSizeInBytes(uint64_t sizeInBytes) { m_sizeInBytes = sizeInBytes; }
 
                 void Reset();
 
-                void OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle);
+                void OnDataTransferred(uint64_t amount, const std::shared_ptr<TransferHandle> &transferHandle);
 
                 void SetETag(const Aws::String& eTag) { m_eTag = eTag; }
                 const Aws::String& GetETag() const { return m_eTag; }
@@ -81,8 +71,8 @@ namespace Aws
                 unsigned char* GetDownloadBuffer() const { return m_downloadBuffer; }
                 void SetDownloadBuffer(unsigned char* downloadBuffer) { m_downloadBuffer = downloadBuffer; }
 
-                void SetRangeBegin(size_t rangeBegin) { m_rangeBegin = rangeBegin; }
-                size_t GetRangeBegin() const { return m_rangeBegin; }
+                void SetRangeBegin(uint64_t rangeBegin) { m_rangeBegin = rangeBegin; }
+                uint64_t GetRangeBegin() const { return m_rangeBegin; }
 
                 bool IsLastPart() { return m_lastPart; }
                 void SetLastPart() { m_lastPart = true; }
@@ -92,10 +82,10 @@ namespace Aws
                 int m_partId;
 
                 Aws::String m_eTag;
-                size_t m_currentProgressInBytes;
-                size_t m_bestProgressInBytes;
-                size_t m_sizeInBytes;
-                size_t m_rangeBegin;
+                uint64_t m_currentProgressInBytes;
+                uint64_t m_bestProgressInBytes;
+                uint64_t m_sizeInBytes;
+                uint64_t m_rangeBegin;
 
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
                 std::atomic<unsigned char*> m_downloadBuffer;
@@ -108,8 +98,8 @@ namespace Aws
         enum class TransferStatus
         {
             //this value is only used for directory synchronization
-            EXACT_OBJECT_ALREADY_EXISTS,    
-            //Operation is still queued and has not begun processing        
+            EXACT_OBJECT_ALREADY_EXISTS,
+            //Operation is still queued and has not begun processing
             NOT_STARTED,
             //Operation is now running
             IN_PROGRESS,
@@ -153,6 +143,14 @@ namespace Aws
              * Alternate DOWNLOAD constructor
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
+
+            /**
+             * Alternate DOWNLOAD constructor
+             */
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName,
+                const uint64_t fileOffset, const uint64_t downloadBytes,
+                CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
+
 
             ~TransferHandle();
 
@@ -245,7 +243,7 @@ namespace Aws
              *  (1) Never lock; given a callback that can happen hundreds of times a second or more on a solid connection, it isn't acceptable to lock each time
              *  (2) Never go backwards, in spite of part upload/download failures.  Negative progress (canceling a highly concurrent transfer can
              *      lead to an enormous step backwards if many parts are aborted at once) is a confusing and undesirable user experience.
-             * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the 
+             * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the
              * necessary retries exceed the previous high-water mark.
              */
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }
@@ -255,6 +253,10 @@ namespace Aws
             void UpdateBytesTransferred(uint64_t amount) { m_bytesTransferred.fetch_add(amount); }
 
             /**
+             * The offset from which to start downloading
+             */
+            inline uint64_t GetBytesOffset() const { return m_offset; }
+            /**
              * The calculated total size of the object being transferred.
              */
             inline uint64_t GetBytesTotalSize() const { return m_bytesTotalSize.load(); }
@@ -262,6 +264,14 @@ namespace Aws
              * Sets the total size of the object being transferred.
              */
             inline void SetBytesTotalSize(uint64_t value) { m_bytesTotalSize.store(value); }
+
+            /**
+             * Gets the total size of contigious bytes from the file begining that is already transferred, and available to users.
+             * For multiple-part downloads, it's guaranteed that these bytes are commited to the underlying stream already.
+             * For single-part downloads, it's also true since we write() directly to the underlying stream.
+             * A potential use case is to poll and stream bytes to users as we are still doing multi-part downloading.
+             */
+            inline uint64_t GetBytesAvailableFromStart() const { return m_bytesAvailableFromStart.load(std::memory_order_relaxed); }
 
             /**
              * Bucket portion of the object location in Amazon S3.
@@ -294,7 +304,7 @@ namespace Aws
             /**
              * Content type of the object being transferred
              */
-            inline void SetContentType(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentType = value; } 
+            inline void SetContentType(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentType = value; }
             /**
              * In case of an upload, this is the metadata that was placed on the object when it was uploaded.
              * In the case of a download, this is the object metadata from the GetObject operation.
@@ -343,15 +353,15 @@ namespace Aws
             /**
              * Blocks the calling thread until the operation has finished. This function does not busy wait. It is safe for your CPU.
              */
-            void WaitUntilFinished() const;      
+            void WaitUntilFinished() const;
 
             const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
 
-            void WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset);
+            void WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset);
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
-            bool LockForCompletion() 
+            bool LockForCompletion()
             {
                 bool expected = false;
                 return m_lastPart.compare_exchange_strong(expected, true/*desired*/);
@@ -376,6 +386,10 @@ namespace Aws
             std::atomic<uint64_t> m_bytesTransferred;
             std::atomic<bool> m_lastPart;
             std::atomic<uint64_t> m_bytesTotalSize;
+            std::atomic<uint64_t> m_bytesAvailableFromStart;
+            /* The next part number to watch, that is able to grow m_bytesAvailableFromStart. */
+            uint32_t m_nextPartToWatch;
+            uint64_t m_offset;
             Aws::String m_bucket;
             Aws::String m_key;
             Aws::String m_fileName;
@@ -390,6 +404,8 @@ namespace Aws
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
             Aws::IOStream* m_downloadStream;
+            /* in case cutomer stream is not based off 0 */
+            uint64_t m_downloadStreamBaseOffset;
 
             mutable std::mutex m_downloadStreamLock;
             mutable std::mutex m_partsLock;

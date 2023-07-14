@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
@@ -126,8 +116,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline const Aws::Vector<NotificationWithSubscribers>& GetNotificationsWithSubscribers() const{ return m_notificationsWithSubscribers; }
 
@@ -135,8 +125,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline bool NotificationsWithSubscribersHasBeenSet() const { return m_notificationsWithSubscribersHasBeenSet; }
 
@@ -144,8 +134,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline void SetNotificationsWithSubscribers(const Aws::Vector<NotificationWithSubscribers>& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = value; }
 
@@ -153,8 +143,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline void SetNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers = std::move(value); }
 
@@ -162,8 +152,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline CreateBudgetRequest& WithNotificationsWithSubscribers(const Aws::Vector<NotificationWithSubscribers>& value) { SetNotificationsWithSubscribers(value); return *this;}
 
@@ -171,8 +161,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline CreateBudgetRequest& WithNotificationsWithSubscribers(Aws::Vector<NotificationWithSubscribers>&& value) { SetNotificationsWithSubscribers(std::move(value)); return *this;}
 
@@ -180,8 +170,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline CreateBudgetRequest& AddNotificationsWithSubscribers(const NotificationWithSubscribers& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(value); return *this; }
 
@@ -189,8 +179,8 @@ namespace Model
      * <p>A notification that you want to associate with a budget. A budget can have up
      * to five notifications, and each notification can have one SNS subscriber and up
      * to 10 email subscribers. If you include notifications and subscribers in your
-     * <code>CreateBudget</code> call, AWS creates the notifications and subscribers
-     * for you.</p>
+     * <code>CreateBudget</code> call, Amazon Web Services creates the notifications
+     * and subscribers for you.</p>
      */
     inline CreateBudgetRequest& AddNotificationsWithSubscribers(NotificationWithSubscribers&& value) { m_notificationsWithSubscribersHasBeenSet = true; m_notificationsWithSubscribers.push_back(std::move(value)); return *this; }
 

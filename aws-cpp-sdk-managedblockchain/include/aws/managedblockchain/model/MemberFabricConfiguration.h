@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
@@ -94,8 +84,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline const Aws::String& GetAdminPassword() const{ return m_adminPassword; }
 
@@ -103,8 +93,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline bool AdminPasswordHasBeenSet() const { return m_adminPasswordHasBeenSet; }
 
@@ -112,8 +102,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline void SetAdminPassword(const Aws::String& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = value; }
 
@@ -121,8 +111,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline void SetAdminPassword(Aws::String&& value) { m_adminPasswordHasBeenSet = true; m_adminPassword = std::move(value); }
 
@@ -130,8 +120,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline void SetAdminPassword(const char* value) { m_adminPasswordHasBeenSet = true; m_adminPassword.assign(value); }
 
@@ -139,8 +129,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline MemberFabricConfiguration& WithAdminPassword(const Aws::String& value) { SetAdminPassword(value); return *this;}
 
@@ -148,8 +138,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline MemberFabricConfiguration& WithAdminPassword(Aws::String&& value) { SetAdminPassword(std::move(value)); return *this;}
 
@@ -157,8 +147,8 @@ namespace Model
      * <p>The password for the member's initial administrative user. The
      * <code>AdminPassword</code> must be at least eight characters long and no more
      * than 32 characters. It must contain at least one uppercase letter, one lowercase
-     * letter, and one digit. It cannot have a single quote(‘), double quote(“),
-     * forward slash(/), backward slash(\), @, or a space.</p>
+     * letter, and one digit. It cannot have a single quotation mark (‘), a double
+     * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
     inline MemberFabricConfiguration& WithAdminPassword(const char* value) { SetAdminPassword(value); return *this;}
 

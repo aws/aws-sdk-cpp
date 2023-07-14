@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type for endpoints.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type for endpoints. A resource must be valid and active when you
+   * add it as an endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointConfiguration">AWS
    * API Reference</a></p>
    */
@@ -51,8 +42,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
@@ -60,8 +52,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
@@ -69,8 +62,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
@@ -78,8 +72,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
@@ -87,8 +82,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
@@ -96,8 +92,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline EndpointConfiguration& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
@@ -105,8 +102,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline EndpointConfiguration& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
@@ -114,8 +112,9 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID. For EC2 instances, this is the EC2 instance ID. </p>
-     * <p>An Application Load Balancer can be either internal or internet-facing.</p>
+     * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
+     * resource must be valid and active when you add it as an endpoint.</p> <p>An
+     * Application Load Balancer can be either internal or internet-facing.</p>
      */
     inline EndpointConfiguration& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/comprehendmedical/model/ICD10CMAttribute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,11 @@ ICD10CMAttribute::ICD10CMAttribute() :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_traitsHasBeenSet(false)
+    m_traitsHasBeenSet(false),
+    m_category(ICD10CMEntityType::NOT_SET),
+    m_categoryHasBeenSet(false),
+    m_relationshipType(ICD10CMRelationshipType::NOT_SET),
+    m_relationshipTypeHasBeenSet(false)
 {
 }
 
@@ -60,7 +54,11 @@ ICD10CMAttribute::ICD10CMAttribute(JsonView jsonValue) :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_traitsHasBeenSet(false)
+    m_traitsHasBeenSet(false),
+    m_category(ICD10CMEntityType::NOT_SET),
+    m_categoryHasBeenSet(false),
+    m_relationshipType(ICD10CMRelationshipType::NOT_SET),
+    m_relationshipTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +124,20 @@ ICD10CMAttribute& ICD10CMAttribute::operator =(JsonView jsonValue)
     m_traitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Category"))
+  {
+    m_category = ICD10CMEntityTypeMapper::GetICD10CMEntityTypeForName(jsonValue.GetString("Category"));
+
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RelationshipType"))
+  {
+    m_relationshipType = ICD10CMRelationshipTypeMapper::GetICD10CMRelationshipTypeForName(jsonValue.GetString("RelationshipType"));
+
+    m_relationshipTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +195,16 @@ JsonValue ICD10CMAttribute::Jsonize() const
    }
    payload.WithArray("Traits", std::move(traitsJsonList));
 
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", ICD10CMEntityTypeMapper::GetNameForICD10CMEntityType(m_category));
+  }
+
+  if(m_relationshipTypeHasBeenSet)
+  {
+   payload.WithString("RelationshipType", ICD10CMRelationshipTypeMapper::GetNameForICD10CMRelationshipType(m_relationshipType));
   }
 
   return payload;

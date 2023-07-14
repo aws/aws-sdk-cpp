@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -51,43 +41,43 @@ namespace Model
 
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
-     * HTTP endpoint.</p> </li> </ul>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
+     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline const RelationalDatabaseSourceType& GetRelationalDatabaseSourceType() const{ return m_relationalDatabaseSourceType; }
 
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
-     * HTTP endpoint.</p> </li> </ul>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
+     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline bool RelationalDatabaseSourceTypeHasBeenSet() const { return m_relationalDatabaseSourceTypeHasBeenSet; }
 
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
-     * HTTP endpoint.</p> </li> </ul>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
+     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseSourceType(const RelationalDatabaseSourceType& value) { m_relationalDatabaseSourceTypeHasBeenSet = true; m_relationalDatabaseSourceType = value; }
 
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
-     * HTTP endpoint.</p> </li> </ul>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
+     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline void SetRelationalDatabaseSourceType(RelationalDatabaseSourceType&& value) { m_relationalDatabaseSourceTypeHasBeenSet = true; m_relationalDatabaseSourceType = std::move(value); }
 
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
-     * HTTP endpoint.</p> </li> </ul>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
+     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline RelationalDatabaseDataSourceConfig& WithRelationalDatabaseSourceType(const RelationalDatabaseSourceType& value) { SetRelationalDatabaseSourceType(value); return *this;}
 
     /**
      * <p>Source type for the relational database.</p> <ul> <li> <p>
-     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
-     * HTTP endpoint.</p> </li> </ul>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon
+     * Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li> </ul>
      */
     inline RelationalDatabaseDataSourceConfig& WithRelationalDatabaseSourceType(RelationalDatabaseSourceType&& value) { SetRelationalDatabaseSourceType(std::move(value)); return *this;}
 

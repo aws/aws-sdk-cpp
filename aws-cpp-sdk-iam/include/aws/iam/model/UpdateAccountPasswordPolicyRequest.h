@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -218,44 +208,44 @@ namespace Model
 
 
     /**
-     * <p> Allows all IAM users in your account to use the AWS Management Console to
-     * change their own passwords. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
-     * you do not specify a value for this parameter, then the operation uses the
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting
+     * IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
+     * <p>If you do not specify a value for this parameter, then the operation uses the
      * default value of <code>false</code>. The result is that IAM users in the account
      * do not automatically have permissions to change their own password.</p>
      */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
 
     /**
-     * <p> Allows all IAM users in your account to use the AWS Management Console to
-     * change their own passwords. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
-     * you do not specify a value for this parameter, then the operation uses the
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting
+     * IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
+     * <p>If you do not specify a value for this parameter, then the operation uses the
      * default value of <code>false</code>. The result is that IAM users in the account
      * do not automatically have permissions to change their own password.</p>
      */
     inline bool AllowUsersToChangePasswordHasBeenSet() const { return m_allowUsersToChangePasswordHasBeenSet; }
 
     /**
-     * <p> Allows all IAM users in your account to use the AWS Management Console to
-     * change their own passwords. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
-     * you do not specify a value for this parameter, then the operation uses the
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting
+     * IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
+     * <p>If you do not specify a value for this parameter, then the operation uses the
      * default value of <code>false</code>. The result is that IAM users in the account
      * do not automatically have permissions to change their own password.</p>
      */
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
 
     /**
-     * <p> Allows all IAM users in your account to use the AWS Management Console to
-     * change their own passwords. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
-     * you do not specify a value for this parameter, then the operation uses the
+     * <p> Allows all IAM users in your account to use the Amazon Web Services
+     * Management Console to change their own passwords. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_enable-user-change.html">Permitting
+     * IAM users to change their own passwords</a> in the <i>IAM User Guide</i>.</p>
+     * <p>If you do not specify a value for this parameter, then the operation uses the
      * default value of <code>false</code>. The result is that IAM users in the account
      * do not automatically have permissions to change their own password.</p>
      */
@@ -325,42 +315,74 @@ namespace Model
 
 
     /**
-     * <p>Prevents IAM users from setting a new password after their password has
-     * expired. The IAM user cannot be accessed until an administrator resets the
-     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * <p> Prevents IAM users who are accessing the account via the Amazon Web Services
+     * Management Console from setting a new console password after their password has
+     * expired. The IAM user cannot access the console until an administrator resets
+     * the password.</p> <p>If you do not specify a value for this parameter, then the
      * operation uses the default value of <code>false</code>. The result is that IAM
      * users can change their passwords after they expire and continue to sign in as
-     * the user.</p>
+     * the user.</p>  <p> In the Amazon Web Services Management Console, the
+     * custom password policy option <b>Allow users to change their own password</b>
+     * gives IAM users permissions to <code>iam:ChangePassword</code> for only their
+     * user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option
+     * does not attach a permissions policy to each user, rather the permissions are
+     * applied at the account-level for all users by IAM. IAM users with
+     * <code>iam:ChangePassword</code> permission and active access keys can reset
+     * their own expired console password using the CLI or API.</p> 
      */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
 
     /**
-     * <p>Prevents IAM users from setting a new password after their password has
-     * expired. The IAM user cannot be accessed until an administrator resets the
-     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * <p> Prevents IAM users who are accessing the account via the Amazon Web Services
+     * Management Console from setting a new console password after their password has
+     * expired. The IAM user cannot access the console until an administrator resets
+     * the password.</p> <p>If you do not specify a value for this parameter, then the
      * operation uses the default value of <code>false</code>. The result is that IAM
      * users can change their passwords after they expire and continue to sign in as
-     * the user.</p>
+     * the user.</p>  <p> In the Amazon Web Services Management Console, the
+     * custom password policy option <b>Allow users to change their own password</b>
+     * gives IAM users permissions to <code>iam:ChangePassword</code> for only their
+     * user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option
+     * does not attach a permissions policy to each user, rather the permissions are
+     * applied at the account-level for all users by IAM. IAM users with
+     * <code>iam:ChangePassword</code> permission and active access keys can reset
+     * their own expired console password using the CLI or API.</p> 
      */
     inline bool HardExpiryHasBeenSet() const { return m_hardExpiryHasBeenSet; }
 
     /**
-     * <p>Prevents IAM users from setting a new password after their password has
-     * expired. The IAM user cannot be accessed until an administrator resets the
-     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * <p> Prevents IAM users who are accessing the account via the Amazon Web Services
+     * Management Console from setting a new console password after their password has
+     * expired. The IAM user cannot access the console until an administrator resets
+     * the password.</p> <p>If you do not specify a value for this parameter, then the
      * operation uses the default value of <code>false</code>. The result is that IAM
      * users can change their passwords after they expire and continue to sign in as
-     * the user.</p>
+     * the user.</p>  <p> In the Amazon Web Services Management Console, the
+     * custom password policy option <b>Allow users to change their own password</b>
+     * gives IAM users permissions to <code>iam:ChangePassword</code> for only their
+     * user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option
+     * does not attach a permissions policy to each user, rather the permissions are
+     * applied at the account-level for all users by IAM. IAM users with
+     * <code>iam:ChangePassword</code> permission and active access keys can reset
+     * their own expired console password using the CLI or API.</p> 
      */
     inline void SetHardExpiry(bool value) { m_hardExpiryHasBeenSet = true; m_hardExpiry = value; }
 
     /**
-     * <p>Prevents IAM users from setting a new password after their password has
-     * expired. The IAM user cannot be accessed until an administrator resets the
-     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * <p> Prevents IAM users who are accessing the account via the Amazon Web Services
+     * Management Console from setting a new console password after their password has
+     * expired. The IAM user cannot access the console until an administrator resets
+     * the password.</p> <p>If you do not specify a value for this parameter, then the
      * operation uses the default value of <code>false</code>. The result is that IAM
      * users can change their passwords after they expire and continue to sign in as
-     * the user.</p>
+     * the user.</p>  <p> In the Amazon Web Services Management Console, the
+     * custom password policy option <b>Allow users to change their own password</b>
+     * gives IAM users permissions to <code>iam:ChangePassword</code> for only their
+     * user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option
+     * does not attach a permissions policy to each user, rather the permissions are
+     * applied at the account-level for all users by IAM. IAM users with
+     * <code>iam:ChangePassword</code> permission and active access keys can reset
+     * their own expired console password using the CLI or API.</p> 
      */
     inline UpdateAccountPasswordPolicyRequest& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 

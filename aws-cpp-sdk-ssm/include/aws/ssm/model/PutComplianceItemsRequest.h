@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ComplianceExecutionSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ComplianceUploadType.h>
 #include <aws/ssm/model/ComplianceItemEntry.h>
 #include <utility>
 
@@ -48,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -246,56 +229,56 @@ namespace Model
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline const Aws::Vector<ComplianceItemEntry>& GetItems() const{ return m_items; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline void SetItems(const Aws::Vector<ComplianceItemEntry>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline void SetItems(Aws::Vector<ComplianceItemEntry>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& WithItems(const Aws::Vector<ComplianceItemEntry>& value) { SetItems(value); return *this;}
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& WithItems(Aws::Vector<ComplianceItemEntry>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& AddItems(const ComplianceItemEntry& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& AddItems(ComplianceItemEntry&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
@@ -356,6 +339,85 @@ namespace Model
      */
     inline PutComplianceItemsRequest& WithItemContentHash(const char* value) { SetItemContentHash(value); return *this;}
 
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
+     */
+    inline const ComplianceUploadType& GetUploadType() const{ return m_uploadType; }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
+     */
+    inline bool UploadTypeHasBeenSet() const { return m_uploadTypeHasBeenSet; }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
+     */
+    inline void SetUploadType(const ComplianceUploadType& value) { m_uploadTypeHasBeenSet = true; m_uploadType = value; }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
+     */
+    inline void SetUploadType(ComplianceUploadType&& value) { m_uploadTypeHasBeenSet = true; m_uploadType = std::move(value); }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
+     */
+    inline PutComplianceItemsRequest& WithUploadType(const ComplianceUploadType& value) { SetUploadType(value); return *this;}
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
+     */
+    inline PutComplianceItemsRequest& WithUploadType(ComplianceUploadType&& value) { SetUploadType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceId;
@@ -375,6 +437,9 @@ namespace Model
 
     Aws::String m_itemContentHash;
     bool m_itemContentHashHasBeenSet;
+
+    ComplianceUploadType m_uploadType;
+    bool m_uploadTypeHasBeenSet;
   };
 
 } // namespace Model

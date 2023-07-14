@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -36,7 +26,7 @@ namespace Model
 
   /**
    * <p>The caching configuration for a resolver that has caching
-   * enabled.</p><p><h3>See Also:</h3>   <a
+   * activated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CachingConfig">AWS
    * API Reference</a></p>
    */
@@ -50,90 +40,90 @@ namespace Model
 
 
     /**
-     * <p>The TTL in seconds for a resolver that has caching enabled.</p> <p>Valid
-     * values are between 1 and 3600 seconds.</p>
+     * <p>The TTL in seconds for a resolver that has caching activated.</p> <p>Valid
+     * values are 1–3,600 seconds.</p>
      */
     inline long long GetTtl() const{ return m_ttl; }
 
     /**
-     * <p>The TTL in seconds for a resolver that has caching enabled.</p> <p>Valid
-     * values are between 1 and 3600 seconds.</p>
+     * <p>The TTL in seconds for a resolver that has caching activated.</p> <p>Valid
+     * values are 1–3,600 seconds.</p>
      */
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
 
     /**
-     * <p>The TTL in seconds for a resolver that has caching enabled.</p> <p>Valid
-     * values are between 1 and 3600 seconds.</p>
+     * <p>The TTL in seconds for a resolver that has caching activated.</p> <p>Valid
+     * values are 1–3,600 seconds.</p>
      */
     inline void SetTtl(long long value) { m_ttlHasBeenSet = true; m_ttl = value; }
 
     /**
-     * <p>The TTL in seconds for a resolver that has caching enabled.</p> <p>Valid
-     * values are between 1 and 3600 seconds.</p>
+     * <p>The TTL in seconds for a resolver that has caching activated.</p> <p>Valid
+     * values are 1–3,600 seconds.</p>
      */
     inline CachingConfig& WithTtl(long long value) { SetTtl(value); return *this;}
 
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCachingKeys() const{ return m_cachingKeys; }
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline bool CachingKeysHasBeenSet() const { return m_cachingKeysHasBeenSet; }
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline void SetCachingKeys(const Aws::Vector<Aws::String>& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = value; }
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline void SetCachingKeys(Aws::Vector<Aws::String>&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys = std::move(value); }
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& WithCachingKeys(const Aws::Vector<Aws::String>& value) { SetCachingKeys(value); return *this;}
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& WithCachingKeys(Aws::Vector<Aws::String>&& value) { SetCachingKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& AddCachingKeys(const Aws::String& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(value); return *this; }
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& AddCachingKeys(Aws::String&& value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values
-     * are entries from the <code>$context.identity</code> and
-     * <code>$context.arguments</code> maps.</p>
+     * <p>The caching keys for a resolver that has caching activated.</p> <p>Valid
+     * values are entries from the <code>$context.arguments</code>,
+     * <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
      */
     inline CachingConfig& AddCachingKeys(const char* value) { m_cachingKeysHasBeenSet = true; m_cachingKeys.push_back(value); return *this; }
 

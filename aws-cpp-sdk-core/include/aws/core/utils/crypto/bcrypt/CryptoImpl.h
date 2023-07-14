@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -79,6 +69,10 @@ namespace Aws
                  */
                 HashResult Calculate(Aws::IStream& stream);
 
+                void Update(unsigned char* buffer, size_t bufferSize);
+
+                HashResult GetHash();
+
             private:
 
                 bool IsValid() const;
@@ -87,6 +81,7 @@ namespace Aws
                 bool HashStream(Aws::IStream& stream);
 
                 void* m_algorithmHandle;
+                void* m_hashHandle;
 
                 DWORD m_hashBufferLength;
                 PBYTE m_hashBuffer;
@@ -120,6 +115,29 @@ namespace Aws
                  */
                 virtual HashResult Calculate(Aws::IStream& stream) override;
 
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+                BCryptHashImpl m_impl;
+            };
+
+            class Sha1BcryptImpl : public Hash
+            {
+            public:
+
+                Sha1BcryptImpl();
+                virtual ~Sha1BcryptImpl() {}
+
+                virtual HashResult Calculate(const Aws::String& str) override;
+
+                virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
             private:
                 BCryptHashImpl m_impl;
             };
@@ -144,6 +162,10 @@ namespace Aws
                  * Calculates a sha256 hash on the stream without loading the entire stream into memory at once.
                  */
                 virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
 
             private:
                 BCryptHashImpl m_impl;
@@ -235,6 +257,7 @@ namespace Aws
                 void InitKey();
                 virtual size_t GetBlockSizeBytes() const = 0;
                 virtual size_t GetKeyLengthBits() const = 0;
+                bool CheckKeyAndIVLength(size_t expectedKeyLength, size_t expectedIVLength);
 
                 BCRYPT_ALG_HANDLE m_algHandle;
                 BCRYPT_KEY_HANDLE m_keyHandle;
@@ -243,7 +266,10 @@ namespace Aws
                 PBCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfoPtr;
 
                 static BCRYPT_KEY_HANDLE ImportKeyBlob(BCRYPT_ALG_HANDLE handle, CryptoBuffer& key);
-
+                /**
+                 * We need to call BCryptEncrypt or BCryptEncrypt at least once. (corner case for empty string)
+                 */
+                bool m_encryptDecryptCalled;
             private:
                 void Init();
                 void Cleanup();
@@ -357,19 +383,28 @@ namespace Aws
             {
             public:
                 /**
-                * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
+                * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 byte IV in the format
                 */
                 AES_GCM_Cipher_BCrypt(const CryptoBuffer& key);
 
                 /**
-                * Create AES in GCM mode off of a 256 bit key, 16 byte IV, and tag
+                * Create AES in GCM mode off of a 256 bit key and AAD. Auto Generates a 12 byte IV in the format
                 */
-                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer()));
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer* aad);
 
                 /**
-                * Create AES in GCM mode off of a 256 bit key, 16 byte IV, and tag
+                * Create AES in GCM mode off of a 256 bit key, 12 byte IV, tag, as well additional authentication data (AAD).
+                * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
                 */
-                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer());
+                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                    CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
+
+                /**
+                * Create AES in GCM mode off of a 256 bit key, 12 byte IV, tag, as well additional authentication data (AAD)
+                * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
+                */
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
+                    const CryptoBuffer& tag = CryptoBuffer(0), const CryptoBuffer& aad = CryptoBuffer(0));
 
                 AES_GCM_Cipher_BCrypt(const AES_GCM_Cipher_BCrypt&) = delete;
 
@@ -395,12 +430,13 @@ namespace Aws
                 void InitCipher();
 
                 static size_t BlockSizeBytes;
-                static size_t NonceSizeBytes;
+                static size_t IVLengthBytes;
                 static size_t KeyLengthBits;
                 static size_t TagLengthBytes;
 
                 CryptoBuffer m_macBuffer;
                 CryptoBuffer m_finalBuffer;
+                CryptoBuffer m_aad;
                 BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfo;
             };
 
@@ -445,4 +481,3 @@ namespace Aws
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws
-

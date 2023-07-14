@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
@@ -29,7 +19,10 @@ namespace Model
     IMPORT_ASSETS_FROM_S3,
     IMPORT_ASSET_FROM_SIGNED_URL,
     EXPORT_ASSETS_TO_S3,
-    EXPORT_ASSET_TO_SIGNED_URL
+    EXPORT_ASSET_TO_SIGNED_URL,
+    EXPORT_REVISIONS_TO_S3,
+    IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES,
+    IMPORT_ASSET_FROM_API_GATEWAY_API
   };
 
 namespace TypeMapper

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/PipelineDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 PipelineDetail::PipelineDetail() : 
     m_activeInputAttachmentNameHasBeenSet(false),
     m_activeInputSwitchActionNameHasBeenSet(false),
+    m_activeMotionGraphicsActionNameHasBeenSet(false),
+    m_activeMotionGraphicsUriHasBeenSet(false),
     m_pipelineIdHasBeenSet(false)
 {
 }
@@ -38,6 +30,8 @@ PipelineDetail::PipelineDetail() :
 PipelineDetail::PipelineDetail(JsonView jsonValue) : 
     m_activeInputAttachmentNameHasBeenSet(false),
     m_activeInputSwitchActionNameHasBeenSet(false),
+    m_activeMotionGraphicsActionNameHasBeenSet(false),
+    m_activeMotionGraphicsUriHasBeenSet(false),
     m_pipelineIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +51,20 @@ PipelineDetail& PipelineDetail::operator =(JsonView jsonValue)
     m_activeInputSwitchActionName = jsonValue.GetString("activeInputSwitchActionName");
 
     m_activeInputSwitchActionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("activeMotionGraphicsActionName"))
+  {
+    m_activeMotionGraphicsActionName = jsonValue.GetString("activeMotionGraphicsActionName");
+
+    m_activeMotionGraphicsActionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("activeMotionGraphicsUri"))
+  {
+    m_activeMotionGraphicsUri = jsonValue.GetString("activeMotionGraphicsUri");
+
+    m_activeMotionGraphicsUriHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pipelineId"))
@@ -82,6 +90,18 @@ JsonValue PipelineDetail::Jsonize() const
   if(m_activeInputSwitchActionNameHasBeenSet)
   {
    payload.WithString("activeInputSwitchActionName", m_activeInputSwitchActionName);
+
+  }
+
+  if(m_activeMotionGraphicsActionNameHasBeenSet)
+  {
+   payload.WithString("activeMotionGraphicsActionName", m_activeMotionGraphicsActionName);
+
+  }
+
+  if(m_activeMotionGraphicsUriHasBeenSet)
+  {
+   payload.WithString("activeMotionGraphicsUri", m_activeMotionGraphicsUri);
 
   }
 

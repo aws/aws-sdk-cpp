@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -102,142 +92,297 @@ namespace Model
 
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The product identifier.</p>
+     * <p>The product identifier. You must provide the product name or ID, but not
+     * both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline const Aws::String& GetProductName() const{ return m_productName; }
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the product. You must provide the name or ID, but not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithProductName(const char* value) { SetProductName(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioning artifact.</p>
+     * <p>The identifier of the provisioning artifact. You must provide the name or ID,
+     * but not both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
 
     /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline const Aws::String& GetProvisioningArtifactName() const{ return m_provisioningArtifactName; }
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline bool ProvisioningArtifactNameHasBeenSet() const { return m_provisioningArtifactNameHasBeenSet; }
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline void SetProvisioningArtifactName(const Aws::String& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = value; }
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline void SetProvisioningArtifactName(Aws::String&& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = std::move(value); }
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline void SetProvisioningArtifactName(const char* value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName.assign(value); }
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithProvisioningArtifactName(const Aws::String& value) { SetProvisioningArtifactName(value); return *this;}
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithProvisioningArtifactName(Aws::String&& value) { SetProvisioningArtifactName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the provisioning artifact. You must provide the name or ID, but
+     * not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithProvisioningArtifactName(const char* value) { SetProvisioningArtifactName(value); return *this;}
+
+
+    /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline void SetPathId(const Aws::String& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline void SetPathId(Aws::String&& value) { m_pathIdHasBeenSet = true; m_pathId = std::move(value); }
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline void SetPathId(const char* value) { m_pathIdHasBeenSet = true; m_pathId.assign(value); }
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithPathId(const Aws::String& value) { SetPathId(value); return *this;}
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithPathId(Aws::String&& value) { SetPathId(std::move(value)); return *this;}
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
      * a default path, and required if the product has more than one path. To list the
-     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     * paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or
+     * ID, but not both.</p>
      */
     inline DescribeProvisioningParametersRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
+
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline const Aws::String& GetPathName() const{ return m_pathName; }
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline bool PathNameHasBeenSet() const { return m_pathNameHasBeenSet; }
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline void SetPathName(const Aws::String& value) { m_pathNameHasBeenSet = true; m_pathName = value; }
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline void SetPathName(Aws::String&& value) { m_pathNameHasBeenSet = true; m_pathName = std::move(value); }
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline void SetPathName(const char* value) { m_pathNameHasBeenSet = true; m_pathName.assign(value); }
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithPathName(const Aws::String& value) { SetPathName(value); return *this;}
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithPathName(Aws::String&& value) { SetPathName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the path. You must provide the name or ID, but not both.</p>
+     */
+    inline DescribeProvisioningParametersRequest& WithPathName(const char* value) { SetPathName(value); return *this;}
 
   private:
 
@@ -247,11 +392,20 @@ namespace Model
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
 
+    Aws::String m_productName;
+    bool m_productNameHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
 
+    Aws::String m_provisioningArtifactName;
+    bool m_provisioningArtifactNameHasBeenSet;
+
     Aws::String m_pathId;
     bool m_pathIdHasBeenSet;
+
+    Aws::String m_pathName;
+    bool m_pathNameHasBeenSet;
   };
 
 } // namespace Model

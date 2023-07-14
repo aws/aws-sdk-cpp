@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -47,49 +37,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline DeletePartitionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline DeletePartitionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline DeletePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 

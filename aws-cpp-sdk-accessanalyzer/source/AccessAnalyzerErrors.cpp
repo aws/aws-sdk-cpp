@@ -1,30 +1,63 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/accessanalyzer/AccessAnalyzerErrors.h>
+#include <aws/accessanalyzer/model/ConflictException.h>
+#include <aws/accessanalyzer/model/ThrottlingException.h>
+#include <aws/accessanalyzer/model/ServiceQuotaExceededException.h>
+#include <aws/accessanalyzer/model/ResourceNotFoundException.h>
+#include <aws/accessanalyzer/model/InternalServerException.h>
+#include <aws/accessanalyzer/model/ValidationException.h>
 
 using namespace Aws::Client;
-using namespace Aws::AccessAnalyzer;
 using namespace Aws::Utils;
+using namespace Aws::AccessAnalyzer;
+using namespace Aws::AccessAnalyzer::Model;
 
 namespace Aws
 {
 namespace AccessAnalyzer
 {
+template<> AWS_ACCESSANALYZER_API ConflictException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCESSANALYZER_API ThrottlingException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCESSANALYZER_API ServiceQuotaExceededException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCESSANALYZER_API ResourceNotFoundException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCESSANALYZER_API InternalServerException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ACCESSANALYZER_API ValidationException AccessAnalyzerError::GetModeledError()
+{
+  assert(this->GetErrorType() == AccessAnalyzerErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
 namespace AccessAnalyzerErrorMapper
 {
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rekognition/model/VideoMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,9 @@ VideoMetadata::VideoMetadata() :
     m_frameHeight(0),
     m_frameHeightHasBeenSet(false),
     m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+    m_frameWidthHasBeenSet(false),
+    m_colorRange(VideoColorRange::NOT_SET),
+    m_colorRangeHasBeenSet(false)
 {
 }
 
@@ -52,7 +44,9 @@ VideoMetadata::VideoMetadata(JsonView jsonValue) :
     m_frameHeight(0),
     m_frameHeightHasBeenSet(false),
     m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+    m_frameWidthHasBeenSet(false),
+    m_colorRange(VideoColorRange::NOT_SET),
+    m_colorRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +95,13 @@ VideoMetadata& VideoMetadata::operator =(JsonView jsonValue)
     m_frameWidthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColorRange"))
+  {
+    m_colorRange = VideoColorRangeMapper::GetVideoColorRangeForName(jsonValue.GetString("ColorRange"));
+
+    m_colorRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +143,11 @@ JsonValue VideoMetadata::Jsonize() const
   {
    payload.WithInt64("FrameWidth", m_frameWidth);
 
+  }
+
+  if(m_colorRangeHasBeenSet)
+  {
+   payload.WithString("ColorRange", VideoColorRangeMapper::GetNameForVideoColorRange(m_colorRange));
   }
 
   return payload;

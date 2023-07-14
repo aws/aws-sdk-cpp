@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -278,6 +268,47 @@ namespace Model
      */
     inline ApplicationResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline ApplicationResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline ApplicationResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time when the Application was created.</p>
+     */
+    inline ApplicationResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -291,6 +322,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_creationDate;
+    bool m_creationDateHasBeenSet;
   };
 
 } // namespace Model

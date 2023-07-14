@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -235,49 +225,49 @@ namespace Model
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 

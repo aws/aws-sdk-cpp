@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/RecoveryPointByBackupVault.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,12 +22,14 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault() :
     m_recoveryPointArnHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_sourceBackupVaultArnHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_status(RecoveryPointStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_completionDateHasBeenSet(false),
     m_backupSizeInBytes(0),
@@ -55,12 +47,14 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault(JsonView jsonValue) :
     m_recoveryPointArnHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
+    m_sourceBackupVaultArnHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_status(RecoveryPointStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_completionDateHasBeenSet(false),
     m_backupSizeInBytes(0),
@@ -98,6 +92,13 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_backupVaultArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceBackupVaultArn"))
+  {
+    m_sourceBackupVaultArn = jsonValue.GetString("SourceBackupVaultArn");
+
+    m_sourceBackupVaultArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
@@ -131,6 +132,13 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_status = RecoveryPointStatusMapper::GetRecoveryPointStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+    m_statusMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationDate"))
@@ -214,6 +222,12 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
 
   }
 
+  if(m_sourceBackupVaultArnHasBeenSet)
+  {
+   payload.WithString("SourceBackupVaultArn", m_sourceBackupVaultArn);
+
+  }
+
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
@@ -241,6 +255,12 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", RecoveryPointStatusMapper::GetNameForRecoveryPointStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("StatusMessage", m_statusMessage);
+
   }
 
   if(m_creationDateHasBeenSet)

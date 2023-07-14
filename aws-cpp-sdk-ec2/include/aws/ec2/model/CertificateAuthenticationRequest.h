@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -52,56 +42,56 @@ namespace Model
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline const Aws::String& GetClientRootCertificateChainArn() const{ return m_clientRootCertificateChainArn; }
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline bool ClientRootCertificateChainArnHasBeenSet() const { return m_clientRootCertificateChainArnHasBeenSet; }
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline void SetClientRootCertificateChainArn(const Aws::String& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = value; }
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline void SetClientRootCertificateChainArn(Aws::String&& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = std::move(value); }
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline void SetClientRootCertificateChainArn(const char* value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn.assign(value); }
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(const Aws::String& value) { SetClientRootCertificateChainArn(value); return *this;}
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(Aws::String&& value) { SetClientRootCertificateChainArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the client certificate. The certificate must be signed by a
-     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * certificate authority (CA) and it must be provisioned in Certificate Manager
      * (ACM).</p>
      */
     inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(const char* value) { SetClientRootCertificateChainArn(value); return *this;}

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/ViolationEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,8 +24,12 @@ ViolationEvent::ViolationEvent() :
     m_securityProfileNameHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_metricValueHasBeenSet(false),
+    m_violationEventAdditionalInfoHasBeenSet(false),
     m_violationEventType(ViolationEventType::NOT_SET),
     m_violationEventTypeHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
+    m_verificationStateDescriptionHasBeenSet(false),
     m_violationEventTimeHasBeenSet(false)
 {
 }
@@ -46,8 +40,12 @@ ViolationEvent::ViolationEvent(JsonView jsonValue) :
     m_securityProfileNameHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_metricValueHasBeenSet(false),
+    m_violationEventAdditionalInfoHasBeenSet(false),
     m_violationEventType(ViolationEventType::NOT_SET),
     m_violationEventTypeHasBeenSet(false),
+    m_verificationState(VerificationState::NOT_SET),
+    m_verificationStateHasBeenSet(false),
+    m_verificationStateDescriptionHasBeenSet(false),
     m_violationEventTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -90,11 +88,32 @@ ViolationEvent& ViolationEvent::operator =(JsonView jsonValue)
     m_metricValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("violationEventAdditionalInfo"))
+  {
+    m_violationEventAdditionalInfo = jsonValue.GetObject("violationEventAdditionalInfo");
+
+    m_violationEventAdditionalInfoHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("violationEventType"))
   {
     m_violationEventType = ViolationEventTypeMapper::GetViolationEventTypeForName(jsonValue.GetString("violationEventType"));
 
     m_violationEventTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("verificationState"))
+  {
+    m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("verificationState"));
+
+    m_verificationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("verificationStateDescription"))
+  {
+    m_verificationStateDescription = jsonValue.GetString("verificationStateDescription");
+
+    m_verificationStateDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("violationEventTime"))
@@ -141,9 +160,26 @@ JsonValue ViolationEvent::Jsonize() const
 
   }
 
+  if(m_violationEventAdditionalInfoHasBeenSet)
+  {
+   payload.WithObject("violationEventAdditionalInfo", m_violationEventAdditionalInfo.Jsonize());
+
+  }
+
   if(m_violationEventTypeHasBeenSet)
   {
    payload.WithString("violationEventType", ViolationEventTypeMapper::GetNameForViolationEventType(m_violationEventType));
+  }
+
+  if(m_verificationStateHasBeenSet)
+  {
+   payload.WithString("verificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
+  }
+
+  if(m_verificationStateDescriptionHasBeenSet)
+  {
+   payload.WithString("verificationStateDescription", m_verificationStateDescription);
+
   }
 
   if(m_violationEventTimeHasBeenSet)

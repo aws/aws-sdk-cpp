@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/ChatMessage.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -47,90 +38,154 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartChatContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartChatContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartChatContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline StartChatContactRequest& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline StartChatContactRequest& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for initiating the chat. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline StartChatContactRequest& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
 
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -139,7 +194,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -148,7 +203,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -157,7 +212,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -166,7 +221,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -175,7 +230,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -184,7 +239,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -193,7 +248,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -202,7 +257,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -211,7 +266,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -220,7 +275,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -229,7 +284,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -238,7 +293,7 @@ namespace Model
 
     /**
      * <p>A custom key-value pair using an attribute map. The attributes are standard
-     * Amazon Connect attributes, and can be accessed in contact flows just like any
+     * Amazon Connect attributes. They can be accessed in contact flows just like any
      * other contact attributes. </p> <p>There can be up to 32,768 UTF-8 bytes across
      * all key-value pairs per contact. Attribute keys can include only alphanumeric,
      * dash, and underscore characters.</p>
@@ -356,6 +411,90 @@ namespace Model
      */
     inline StartChatContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline int GetChatDurationInMinutes() const{ return m_chatDurationInMinutes; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline bool ChatDurationInMinutesHasBeenSet() const { return m_chatDurationInMinutesHasBeenSet; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline void SetChatDurationInMinutes(int value) { m_chatDurationInMinutesHasBeenSet = true; m_chatDurationInMinutes = value; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline StartChatContactRequest& WithChatDurationInMinutes(int value) { SetChatDurationInMinutes(value); return *this;}
+
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedMessagingContentTypes() const{ return m_supportedMessagingContentTypes; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline bool SupportedMessagingContentTypesHasBeenSet() const { return m_supportedMessagingContentTypesHasBeenSet; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline void SetSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = value; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline void SetSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = std::move(value); }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& WithSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { SetSupportedMessagingContentTypes(value); return *this;}
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& WithSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { SetSupportedMessagingContentTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& AddSupportedMessagingContentTypes(const Aws::String& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& AddSupportedMessagingContentTypes(Aws::String&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The supported chat message content types. Content types can be text/plain or
+     * both text/plain and text/markdown.</p>
+     */
+    inline StartChatContactRequest& AddSupportedMessagingContentTypes(const char* value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_instanceId;
@@ -375,6 +514,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    int m_chatDurationInMinutes;
+    bool m_chatDurationInMinutesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
+    bool m_supportedMessagingContentTypesHasBeenSet;
   };
 
 } // namespace Model

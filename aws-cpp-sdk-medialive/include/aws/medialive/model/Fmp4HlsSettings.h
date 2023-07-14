@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/Fmp4NielsenId3Behavior.h>
+#include <aws/medialive/model/Fmp4TimedMetadataBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -95,10 +87,90 @@ namespace Model
      */
     inline Fmp4HlsSettings& WithAudioRenditionSets(const char* value) { SetAudioRenditionSets(value); return *this;}
 
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline const Fmp4NielsenId3Behavior& GetNielsenId3Behavior() const{ return m_nielsenId3Behavior; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline bool NielsenId3BehaviorHasBeenSet() const { return m_nielsenId3BehaviorHasBeenSet; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline void SetNielsenId3Behavior(const Fmp4NielsenId3Behavior& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline void SetNielsenId3Behavior(Fmp4NielsenId3Behavior&& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = std::move(value); }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline Fmp4HlsSettings& WithNielsenId3Behavior(const Fmp4NielsenId3Behavior& value) { SetNielsenId3Behavior(value); return *this;}
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline Fmp4HlsSettings& WithNielsenId3Behavior(Fmp4NielsenId3Behavior&& value) { SetNielsenId3Behavior(std::move(value)); return *this;}
+
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
+    inline const Fmp4TimedMetadataBehavior& GetTimedMetadataBehavior() const{ return m_timedMetadataBehavior; }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
+    inline bool TimedMetadataBehaviorHasBeenSet() const { return m_timedMetadataBehaviorHasBeenSet; }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
+    inline void SetTimedMetadataBehavior(const Fmp4TimedMetadataBehavior& value) { m_timedMetadataBehaviorHasBeenSet = true; m_timedMetadataBehavior = value; }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
+    inline void SetTimedMetadataBehavior(Fmp4TimedMetadataBehavior&& value) { m_timedMetadataBehaviorHasBeenSet = true; m_timedMetadataBehavior = std::move(value); }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
+    inline Fmp4HlsSettings& WithTimedMetadataBehavior(const Fmp4TimedMetadataBehavior& value) { SetTimedMetadataBehavior(value); return *this;}
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
+    inline Fmp4HlsSettings& WithTimedMetadataBehavior(Fmp4TimedMetadataBehavior&& value) { SetTimedMetadataBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_audioRenditionSets;
     bool m_audioRenditionSetsHasBeenSet;
+
+    Fmp4NielsenId3Behavior m_nielsenId3Behavior;
+    bool m_nielsenId3BehaviorHasBeenSet;
+
+    Fmp4TimedMetadataBehavior m_timedMetadataBehavior;
+    bool m_timedMetadataBehaviorHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -34,8 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action that writes data to an Amazon Elasticsearch Service
-   * domain.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an action that writes data to an Amazon OpenSearch Service
+   * domain.</p>  <p>The <code>Elasticsearch</code> action can only be used by
+   * existing rule actions. To create a new rule action or to update an existing rule
+   * action, use the <code>OpenSearch</code> rule action instead. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ElasticsearchAction">AWS
    * API Reference</a></p>
    */
@@ -49,124 +44,124 @@ namespace Model
 
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline ElasticsearchAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline ElasticsearchAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
     inline ElasticsearchAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline ElasticsearchAction& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline ElasticsearchAction& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint of your Elasticsearch domain.</p>
+     * <p>The endpoint of your OpenSearch domain.</p>
      */
     inline ElasticsearchAction& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline const Aws::String& GetIndex() const{ return m_index; }
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline void SetIndex(const Aws::String& value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline void SetIndex(Aws::String&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline void SetIndex(const char* value) { m_indexHasBeenSet = true; m_index.assign(value); }
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline ElasticsearchAction& WithIndex(const Aws::String& value) { SetIndex(value); return *this;}
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline ElasticsearchAction& WithIndex(Aws::String&& value) { SetIndex(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticsearch index where you want to store your data.</p>
+     * <p>The index where you want to store your data.</p>
      */
     inline ElasticsearchAction& WithIndex(const char* value) { SetIndex(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -88,6 +78,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline bool KeyPairIdHasBeenSet() const { return m_keyPairIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(const Aws::String& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = value; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(Aws::String&& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = std::move(value); }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(const char* value) { m_keyPairIdHasBeenSet = true; m_keyPairId.assign(value); }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline DeleteKeyPairRequest& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline DeleteKeyPairRequest& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline DeleteKeyPairRequest& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -123,6 +154,9 @@ namespace Model
 
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
+    Aws::String m_keyPairId;
+    bool m_keyPairIdHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

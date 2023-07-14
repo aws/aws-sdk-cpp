@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -35,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the profiling status.</p><p><h3>See Also:</h3>   <a
+   * <p> Profiling status includes information about the last time a profile agent
+   * pinged back, the last time a profile was received, and the aggregation period
+   * and start time for the most recent aggregated profile. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfilingStatus">AWS
    * API Reference</a></p>
    */
@@ -49,106 +42,136 @@ namespace Model
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * orchestrated.</p>
+     * <p>The date and time when the profiling agent most recently pinged back. Specify
+     * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestAgentOrchestratedAt() const{ return m_latestAgentOrchestratedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * orchestrated.</p>
+     * <p>The date and time when the profiling agent most recently pinged back. Specify
+     * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline bool LatestAgentOrchestratedAtHasBeenSet() const { return m_latestAgentOrchestratedAtHasBeenSet; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * orchestrated.</p>
+     * <p>The date and time when the profiling agent most recently pinged back. Specify
+     * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline void SetLatestAgentOrchestratedAt(const Aws::Utils::DateTime& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * orchestrated.</p>
+     * <p>The date and time when the profiling agent most recently pinged back. Specify
+     * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline void SetLatestAgentOrchestratedAt(Aws::Utils::DateTime&& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * orchestrated.</p>
+     * <p>The date and time when the profiling agent most recently pinged back. Specify
+     * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline ProfilingStatus& WithLatestAgentOrchestratedAt(const Aws::Utils::DateTime& value) { SetLatestAgentOrchestratedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * orchestrated.</p>
+     * <p>The date and time when the profiling agent most recently pinged back. Specify
+     * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline ProfilingStatus& WithLatestAgentOrchestratedAt(Aws::Utils::DateTime&& value) { SetLatestAgentOrchestratedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * reported..</p>
+     * <p>The date and time when the most recent profile was received. Specify using
+     * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestAgentProfileReportedAt() const{ return m_latestAgentProfileReportedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * reported..</p>
+     * <p>The date and time when the most recent profile was received. Specify using
+     * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline bool LatestAgentProfileReportedAtHasBeenSet() const { return m_latestAgentProfileReportedAtHasBeenSet; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * reported..</p>
+     * <p>The date and time when the most recent profile was received. Specify using
+     * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline void SetLatestAgentProfileReportedAt(const Aws::Utils::DateTime& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * reported..</p>
+     * <p>The date and time when the most recent profile was received. Specify using
+     * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline void SetLatestAgentProfileReportedAt(Aws::Utils::DateTime&& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * reported..</p>
+     * <p>The date and time when the most recent profile was received. Specify using
+     * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline ProfilingStatus& WithLatestAgentProfileReportedAt(const Aws::Utils::DateTime& value) { SetLatestAgentProfileReportedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the latest agent was
-     * reported..</p>
+     * <p>The date and time when the most recent profile was received. Specify using
+     * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+     * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
     inline ProfilingStatus& WithLatestAgentProfileReportedAt(Aws::Utils::DateTime&& value) { SetLatestAgentProfileReportedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The latest aggregated profile</p>
+     * <p> An <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+     * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
+     * period and start time for an aggregated profile. </p>
      */
     inline const AggregatedProfileTime& GetLatestAggregatedProfile() const{ return m_latestAggregatedProfile; }
 
     /**
-     * <p>The latest aggregated profile</p>
+     * <p> An <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+     * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
+     * period and start time for an aggregated profile. </p>
      */
     inline bool LatestAggregatedProfileHasBeenSet() const { return m_latestAggregatedProfileHasBeenSet; }
 
     /**
-     * <p>The latest aggregated profile</p>
+     * <p> An <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+     * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
+     * period and start time for an aggregated profile. </p>
      */
     inline void SetLatestAggregatedProfile(const AggregatedProfileTime& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = value; }
 
     /**
-     * <p>The latest aggregated profile</p>
+     * <p> An <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+     * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
+     * period and start time for an aggregated profile. </p>
      */
     inline void SetLatestAggregatedProfile(AggregatedProfileTime&& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = std::move(value); }
 
     /**
-     * <p>The latest aggregated profile</p>
+     * <p> An <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+     * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
+     * period and start time for an aggregated profile. </p>
      */
     inline ProfilingStatus& WithLatestAggregatedProfile(const AggregatedProfileTime& value) { SetLatestAggregatedProfile(value); return *this;}
 
     /**
-     * <p>The latest aggregated profile</p>
+     * <p> An <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html">
+     * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
+     * period and start time for an aggregated profile. </p>
      */
     inline ProfilingStatus& WithLatestAggregatedProfile(AggregatedProfileTime&& value) { SetLatestAggregatedProfile(std::move(value)); return *this;}
 

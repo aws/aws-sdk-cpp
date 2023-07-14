@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/frauddetector/model/ModelInputConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,20 +19,22 @@ namespace Model
 {
 
 ModelInputConfiguration::ModelInputConfiguration() : 
+    m_eventTypeNameHasBeenSet(false),
     m_format(ModelInputDataFormat::NOT_SET),
     m_formatHasBeenSet(false),
-    m_isOpaque(false),
-    m_isOpaqueHasBeenSet(false),
+    m_useEventVariables(false),
+    m_useEventVariablesHasBeenSet(false),
     m_jsonInputTemplateHasBeenSet(false),
     m_csvInputTemplateHasBeenSet(false)
 {
 }
 
 ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) : 
+    m_eventTypeNameHasBeenSet(false),
     m_format(ModelInputDataFormat::NOT_SET),
     m_formatHasBeenSet(false),
-    m_isOpaque(false),
-    m_isOpaqueHasBeenSet(false),
+    m_useEventVariables(false),
+    m_useEventVariablesHasBeenSet(false),
     m_jsonInputTemplateHasBeenSet(false),
     m_csvInputTemplateHasBeenSet(false)
 {
@@ -51,6 +43,13 @@ ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) :
 
 ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("eventTypeName"))
+  {
+    m_eventTypeName = jsonValue.GetString("eventTypeName");
+
+    m_eventTypeNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("format"))
   {
     m_format = ModelInputDataFormatMapper::GetModelInputDataFormatForName(jsonValue.GetString("format"));
@@ -58,11 +57,11 @@ ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
     m_formatHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("isOpaque"))
+  if(jsonValue.ValueExists("useEventVariables"))
   {
-    m_isOpaque = jsonValue.GetBool("isOpaque");
+    m_useEventVariables = jsonValue.GetBool("useEventVariables");
 
-    m_isOpaqueHasBeenSet = true;
+    m_useEventVariablesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jsonInputTemplate"))
@@ -86,14 +85,20 @@ JsonValue ModelInputConfiguration::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
+
+  }
+
   if(m_formatHasBeenSet)
   {
    payload.WithString("format", ModelInputDataFormatMapper::GetNameForModelInputDataFormat(m_format));
   }
 
-  if(m_isOpaqueHasBeenSet)
+  if(m_useEventVariablesHasBeenSet)
   {
-   payload.WithBool("isOpaque", m_isOpaque);
+   payload.WithBool("useEventVariables", m_useEventVariables);
 
   }
 

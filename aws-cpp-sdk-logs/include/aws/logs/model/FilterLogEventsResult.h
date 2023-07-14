@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -82,44 +72,58 @@ namespace Model
 
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline const Aws::Vector<SearchedLogStream>& GetSearchedLogStreams() const{ return m_searchedLogStreams; }
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline void SetSearchedLogStreams(const Aws::Vector<SearchedLogStream>& value) { m_searchedLogStreams = value; }
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline void SetSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { m_searchedLogStreams = std::move(value); }
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline FilterLogEventsResult& WithSearchedLogStreams(const Aws::Vector<SearchedLogStream>& value) { SetSearchedLogStreams(value); return *this;}
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline FilterLogEventsResult& WithSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { SetSearchedLogStreams(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline FilterLogEventsResult& AddSearchedLogStreams(const SearchedLogStream& value) { m_searchedLogStreams.push_back(value); return *this; }
 
     /**
-     * <p>Indicates which log streams have been searched and whether each has been
-     * searched completely.</p>
+     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
+     * deprecated. This parameter will be an empty list after the deprecation
+     * occurs.</p> <p>Indicates which log streams have been searched and whether each
+     * has been searched completely.</p>
      */
     inline FilterLogEventsResult& AddSearchedLogStreams(SearchedLogStream&& value) { m_searchedLogStreams.push_back(std::move(value)); return *this; }
 

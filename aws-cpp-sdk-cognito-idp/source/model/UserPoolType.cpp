@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cognito-idp/model/UserPoolType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,6 +36,7 @@ UserPoolType::UserPoolType() :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -84,6 +75,7 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -229,6 +221,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_smsAuthenticationMessage = jsonValue.GetString("SmsAuthenticationMessage");
 
     m_smsAuthenticationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserAttributeUpdateSettings"))
+  {
+    m_userAttributeUpdateSettings = jsonValue.GetObject("UserAttributeUpdateSettings");
+
+    m_userAttributeUpdateSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MfaConfiguration"))
@@ -456,6 +455,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_smsAuthenticationMessageHasBeenSet)
   {
    payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
+
+  }
+
+  if(m_userAttributeUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
 
   }
 

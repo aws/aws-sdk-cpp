@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -38,7 +28,7 @@ namespace Model
 {
   /**
    * <p>Information about the dedicated IP addresses that are associated with your
-   * AWS account.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpsResponse">AWS
    * API Reference</a></p>
    */
@@ -51,44 +41,44 @@ namespace Model
 
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<DedicatedIp>& GetDedicatedIps() const{ return m_dedicatedIps; }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetDedicatedIps(const Aws::Vector<DedicatedIp>& value) { m_dedicatedIps = value; }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline void SetDedicatedIps(Aws::Vector<DedicatedIp>&& value) { m_dedicatedIps = std::move(value); }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& WithDedicatedIps(const Aws::Vector<DedicatedIp>& value) { SetDedicatedIps(value); return *this;}
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& WithDedicatedIps(Aws::Vector<DedicatedIp>&& value) { SetDedicatedIps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& AddDedicatedIps(const DedicatedIp& value) { m_dedicatedIps.push_back(value); return *this; }
 
     /**
-     * <p>A list of dedicated IP addresses that are associated with your AWS
-     * account.</p>
+     * <p>A list of dedicated IP addresses that are associated with your Amazon Web
+     * Services account.</p>
      */
     inline GetDedicatedIpsResult& AddDedicatedIps(DedicatedIp&& value) { m_dedicatedIps.push_back(std::move(value)); return *this; }
 

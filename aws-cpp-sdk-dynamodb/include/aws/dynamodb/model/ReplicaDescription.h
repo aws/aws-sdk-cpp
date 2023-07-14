@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/dynamodb/model/ReplicaStatus.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/dynamodb/model/TableClassSummary.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexDescription.h>
 #include <utility>
 
@@ -97,7 +89,16 @@ namespace Model
      * The replica is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
-     * for use.</p> </li> </ul>
+     * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline const ReplicaStatus& GetReplicaStatus() const{ return m_replicaStatus; }
 
@@ -106,7 +107,16 @@ namespace Model
      * The replica is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
-     * for use.</p> </li> </ul>
+     * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
 
@@ -115,7 +125,16 @@ namespace Model
      * The replica is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
-     * for use.</p> </li> </ul>
+     * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline void SetReplicaStatus(const ReplicaStatus& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
@@ -124,7 +143,16 @@ namespace Model
      * The replica is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
-     * for use.</p> </li> </ul>
+     * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline void SetReplicaStatus(ReplicaStatus&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
 
@@ -133,7 +161,16 @@ namespace Model
      * The replica is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
-     * for use.</p> </li> </ul>
+     * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline ReplicaDescription& WithReplicaStatus(const ReplicaStatus& value) { SetReplicaStatus(value); return *this;}
 
@@ -142,7 +179,16 @@ namespace Model
      * The replica is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
-     * for use.</p> </li> </ul>
+     * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline ReplicaDescription& WithReplicaStatus(ReplicaStatus&& value) { SetReplicaStatus(std::move(value)); return *this;}
 
@@ -238,50 +284,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline ReplicaDescription& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline ReplicaDescription& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline ReplicaDescription& WithKMSMasterKeyId(const char* value) { SetKMSMasterKeyId(value); return *this;}
 
@@ -363,6 +401,68 @@ namespace Model
      */
     inline ReplicaDescription& AddGlobalSecondaryIndexes(ReplicaGlobalSecondaryIndexDescription&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The time at which the replica was first detected as inaccessible. To
+     * determine cause of inaccessibility check the <code>ReplicaStatus</code>
+     * property.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReplicaInaccessibleDateTime() const{ return m_replicaInaccessibleDateTime; }
+
+    /**
+     * <p>The time at which the replica was first detected as inaccessible. To
+     * determine cause of inaccessibility check the <code>ReplicaStatus</code>
+     * property.</p>
+     */
+    inline bool ReplicaInaccessibleDateTimeHasBeenSet() const { return m_replicaInaccessibleDateTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which the replica was first detected as inaccessible. To
+     * determine cause of inaccessibility check the <code>ReplicaStatus</code>
+     * property.</p>
+     */
+    inline void SetReplicaInaccessibleDateTime(const Aws::Utils::DateTime& value) { m_replicaInaccessibleDateTimeHasBeenSet = true; m_replicaInaccessibleDateTime = value; }
+
+    /**
+     * <p>The time at which the replica was first detected as inaccessible. To
+     * determine cause of inaccessibility check the <code>ReplicaStatus</code>
+     * property.</p>
+     */
+    inline void SetReplicaInaccessibleDateTime(Aws::Utils::DateTime&& value) { m_replicaInaccessibleDateTimeHasBeenSet = true; m_replicaInaccessibleDateTime = std::move(value); }
+
+    /**
+     * <p>The time at which the replica was first detected as inaccessible. To
+     * determine cause of inaccessibility check the <code>ReplicaStatus</code>
+     * property.</p>
+     */
+    inline ReplicaDescription& WithReplicaInaccessibleDateTime(const Aws::Utils::DateTime& value) { SetReplicaInaccessibleDateTime(value); return *this;}
+
+    /**
+     * <p>The time at which the replica was first detected as inaccessible. To
+     * determine cause of inaccessibility check the <code>ReplicaStatus</code>
+     * property.</p>
+     */
+    inline ReplicaDescription& WithReplicaInaccessibleDateTime(Aws::Utils::DateTime&& value) { SetReplicaInaccessibleDateTime(std::move(value)); return *this;}
+
+
+    
+    inline const TableClassSummary& GetReplicaTableClassSummary() const{ return m_replicaTableClassSummary; }
+
+    
+    inline bool ReplicaTableClassSummaryHasBeenSet() const { return m_replicaTableClassSummaryHasBeenSet; }
+
+    
+    inline void SetReplicaTableClassSummary(const TableClassSummary& value) { m_replicaTableClassSummaryHasBeenSet = true; m_replicaTableClassSummary = value; }
+
+    
+    inline void SetReplicaTableClassSummary(TableClassSummary&& value) { m_replicaTableClassSummaryHasBeenSet = true; m_replicaTableClassSummary = std::move(value); }
+
+    
+    inline ReplicaDescription& WithReplicaTableClassSummary(const TableClassSummary& value) { SetReplicaTableClassSummary(value); return *this;}
+
+    
+    inline ReplicaDescription& WithReplicaTableClassSummary(TableClassSummary&& value) { SetReplicaTableClassSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -385,6 +485,12 @@ namespace Model
 
     Aws::Vector<ReplicaGlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
+
+    Aws::Utils::DateTime m_replicaInaccessibleDateTime;
+    bool m_replicaInaccessibleDateTimeHasBeenSet;
+
+    TableClassSummary m_replicaTableClassSummary;
+    bool m_replicaTableClassSummaryHasBeenSet;
   };
 
 } // namespace Model

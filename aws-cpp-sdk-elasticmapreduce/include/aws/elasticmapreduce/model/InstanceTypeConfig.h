@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -39,10 +29,14 @@ namespace Model
   /**
    * <p>An instance type configuration for each instance type in an instance fleet,
    * which determines the EC2 instances Amazon EMR attempts to provision to fulfill
-   * On-Demand and Spot target capacities. There can be a maximum of 5 instance type
-   * configurations in a fleet.</p> <note> <p>The instance fleet configuration is
-   * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-   * versions.</p> </note><p><h3>See Also:</h3>   <a
+   * On-Demand and Spot target capacities. When you use an allocation strategy, you
+   * can include a maximum of 30 instance type configurations for a fleet. For more
+   * information about how to use an allocation strategy, see <a
+   * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure
+   * Instance Fleets</a>. Without an allocation strategy, you may specify a maximum
+   * of five instance type configurations for a fleet.</p>  <p>The instance
+   * fleet configuration is available only in Amazon EMR versions 4.8.0 and later,
+   * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeConfig">AWS
    * API Reference</a></p>
    */
@@ -130,7 +124,7 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -138,7 +132,7 @@ namespace Model
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -146,7 +140,7 @@ namespace Model
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -154,7 +148,7 @@ namespace Model
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -162,7 +156,7 @@ namespace Model
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -170,7 +164,7 @@ namespace Model
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -178,7 +172,7 @@ namespace Model
     inline InstanceTypeConfig& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -186,7 +180,7 @@ namespace Model
     inline InstanceTypeConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <p>The bid price for each EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -195,7 +189,7 @@ namespace Model
 
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
@@ -204,7 +198,7 @@ namespace Model
     inline double GetBidPriceAsPercentageOfOnDemandPrice() const{ return m_bidPriceAsPercentageOfOnDemandPrice; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
@@ -213,7 +207,7 @@ namespace Model
     inline bool BidPriceAsPercentageOfOnDemandPriceHasBeenSet() const { return m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
@@ -222,7 +216,7 @@ namespace Model
     inline void SetBidPriceAsPercentageOfOnDemandPrice(double value) { m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true; m_bidPriceAsPercentageOfOnDemandPrice = value; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
@@ -232,37 +226,37 @@ namespace Model
 
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline const EbsConfiguration& GetEbsConfiguration() const{ return m_ebsConfiguration; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline bool EbsConfigurationHasBeenSet() const { return m_ebsConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline void SetEbsConfiguration(const EbsConfiguration& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline void SetEbsConfiguration(EbsConfiguration&& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline InstanceTypeConfig& WithEbsConfiguration(const EbsConfiguration& value) { SetEbsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
     inline InstanceTypeConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(std::move(value)); return *this;}
@@ -324,6 +318,47 @@ namespace Model
      */
     inline InstanceTypeConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -343,6 +378,9 @@ namespace Model
 
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
   };
 
 } // namespace Model

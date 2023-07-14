@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticfilesystem/model/FileSystemDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ FileSystemDescription::FileSystemDescription() :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
+    m_fileSystemArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
@@ -48,6 +39,8 @@ FileSystemDescription::FileSystemDescription() :
     m_throughputModeHasBeenSet(false),
     m_provisionedThroughputInMibps(0.0),
     m_provisionedThroughputInMibpsHasBeenSet(false),
+    m_availabilityZoneNameHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -56,6 +49,7 @@ FileSystemDescription::FileSystemDescription(JsonView jsonValue) :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
+    m_fileSystemArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
@@ -72,6 +66,8 @@ FileSystemDescription::FileSystemDescription(JsonView jsonValue) :
     m_throughputModeHasBeenSet(false),
     m_provisionedThroughputInMibps(0.0),
     m_provisionedThroughputInMibpsHasBeenSet(false),
+    m_availabilityZoneNameHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -98,6 +94,13 @@ FileSystemDescription& FileSystemDescription::operator =(JsonView jsonValue)
     m_fileSystemId = jsonValue.GetString("FileSystemId");
 
     m_fileSystemIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileSystemArn"))
+  {
+    m_fileSystemArn = jsonValue.GetString("FileSystemArn");
+
+    m_fileSystemArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -170,6 +173,20 @@ FileSystemDescription& FileSystemDescription::operator =(JsonView jsonValue)
     m_provisionedThroughputInMibpsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AvailabilityZoneName"))
+  {
+    m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
+
+    m_availabilityZoneNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailabilityZoneId"))
+  {
+    m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
+
+    m_availabilityZoneIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -202,6 +219,12 @@ JsonValue FileSystemDescription::Jsonize() const
   if(m_fileSystemIdHasBeenSet)
   {
    payload.WithString("FileSystemId", m_fileSystemId);
+
+  }
+
+  if(m_fileSystemArnHasBeenSet)
+  {
+   payload.WithString("FileSystemArn", m_fileSystemArn);
 
   }
 
@@ -258,6 +281,18 @@ JsonValue FileSystemDescription::Jsonize() const
   if(m_provisionedThroughputInMibpsHasBeenSet)
   {
    payload.WithDouble("ProvisionedThroughputInMibps", m_provisionedThroughputInMibps);
+
+  }
+
+  if(m_availabilityZoneNameHasBeenSet)
+  {
+   payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
+
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+   payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -93,42 +83,58 @@ namespace Model
 
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline Parameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline Parameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the parameter.</p>
+     * <p>The value of the parameter. If <code>ParameterName</code> is
+     * <code>wlm_json_configuration</code>, then the maximum size of
+     * <code>ParameterValue</code> is 8000 characters.</p>
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 

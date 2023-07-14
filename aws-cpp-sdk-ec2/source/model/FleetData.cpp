@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/FleetData.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -58,7 +48,8 @@ FleetData::FleetData() :
     m_onDemandOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_errorsHasBeenSet(false),
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -90,7 +81,8 @@ FleetData::FleetData(const XmlNode& xmlNode) :
     m_onDemandOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_errorsHasBeenSet(false),
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -245,6 +237,12 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
 
       m_instancesHasBeenSet = true;
     }
+    XmlNode contextNode = resultNode.FirstChild("context");
+    if(!contextNode.IsNull())
+    {
+      m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
+      m_contextHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -382,6 +380,11 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
 }
 
 void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -495,6 +498,10 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) cons
         instancesSs << location <<  ".FleetInstanceSet." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
+  }
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 }
 

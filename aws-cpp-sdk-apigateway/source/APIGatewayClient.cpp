@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -166,7 +156,7 @@ static const char* ALLOCATION_TAG = "APIGatewayClient";
 APIGatewayClient::APIGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -176,7 +166,7 @@ APIGatewayClient::APIGatewayClient(const Client::ClientConfiguration& clientConf
 APIGatewayClient::APIGatewayClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -187,7 +177,7 @@ APIGatewayClient::APIGatewayClient(const std::shared_ptr<AWSCredentialsProvider>
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -198,8 +188,9 @@ APIGatewayClient::~APIGatewayClient()
 {
 }
 
-void APIGatewayClient::init(const ClientConfiguration& config)
+void APIGatewayClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("API Gateway");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -226,18 +217,8 @@ void APIGatewayClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateApiKeyOutcome APIGatewayClient::CreateApiKey(const CreateApiKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apikeys";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateApiKeyOutcome(CreateApiKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateApiKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/apikeys");
+  return CreateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApiKeyOutcomeCallable APIGatewayClient::CreateApiKeyCallable(const CreateApiKeyRequest& request) const
@@ -266,20 +247,10 @@ CreateAuthorizerOutcome APIGatewayClient::CreateAuthorizer(const CreateAuthorize
     return CreateAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/authorizers";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAuthorizerOutcome(CreateAuthorizerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAuthorizerOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/authorizers");
+  return CreateAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAuthorizerOutcomeCallable APIGatewayClient::CreateAuthorizerCallable(const CreateAuthorizerRequest& request) const
@@ -308,20 +279,10 @@ CreateBasePathMappingOutcome APIGatewayClient::CreateBasePathMapping(const Creat
     return CreateBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/basepathmappings";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBasePathMappingOutcome(CreateBasePathMappingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBasePathMappingOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/basepathmappings");
+  return CreateBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBasePathMappingOutcomeCallable APIGatewayClient::CreateBasePathMappingCallable(const CreateBasePathMappingRequest& request) const
@@ -350,20 +311,10 @@ CreateDeploymentOutcome APIGatewayClient::CreateDeployment(const CreateDeploymen
     return CreateDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDeploymentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/deployments");
+  return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeploymentOutcomeCallable APIGatewayClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
@@ -392,20 +343,10 @@ CreateDocumentationPartOutcome APIGatewayClient::CreateDocumentationPart(const C
     return CreateDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/parts";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDocumentationPartOutcome(CreateDocumentationPartResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDocumentationPartOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/parts");
+  return CreateDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDocumentationPartOutcomeCallable APIGatewayClient::CreateDocumentationPartCallable(const CreateDocumentationPartRequest& request) const
@@ -434,20 +375,10 @@ CreateDocumentationVersionOutcome APIGatewayClient::CreateDocumentationVersion(c
     return CreateDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDocumentationVersionOutcome(CreateDocumentationVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDocumentationVersionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/versions");
+  return CreateDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDocumentationVersionOutcomeCallable APIGatewayClient::CreateDocumentationVersionCallable(const CreateDocumentationVersionRequest& request) const
@@ -471,18 +402,8 @@ void APIGatewayClient::CreateDocumentationVersionAsyncHelper(const CreateDocumen
 CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNameRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDomainNameOutcome(CreateDomainNameResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDomainNameOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames");
+  return CreateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDomainNameOutcomeCallable APIGatewayClient::CreateDomainNameCallable(const CreateDomainNameRequest& request) const
@@ -511,20 +432,10 @@ CreateModelOutcome APIGatewayClient::CreateModel(const CreateModelRequest& reque
     return CreateModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/models";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateModelOutcome(CreateModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateModelOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/models");
+  return CreateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateModelOutcomeCallable APIGatewayClient::CreateModelCallable(const CreateModelRequest& request) const
@@ -553,20 +464,10 @@ CreateRequestValidatorOutcome APIGatewayClient::CreateRequestValidator(const Cre
     return CreateRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/requestvalidators";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRequestValidatorOutcome(CreateRequestValidatorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRequestValidatorOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/requestvalidators");
+  return CreateRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRequestValidatorOutcomeCallable APIGatewayClient::CreateRequestValidatorCallable(const CreateRequestValidatorRequest& request) const
@@ -600,21 +501,11 @@ CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceReque
     return CreateResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ParentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetParentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateResourceOutcome(CreateResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetParentId());
+  return CreateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateResourceOutcomeCallable APIGatewayClient::CreateResourceCallable(const CreateResourceRequest& request) const
@@ -638,18 +529,8 @@ void APIGatewayClient::CreateResourceAsyncHelper(const CreateResourceRequest& re
 CreateRestApiOutcome APIGatewayClient::CreateRestApi(const CreateRestApiRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRestApiOutcome(CreateRestApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRestApiOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis");
+  return CreateRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRestApiOutcomeCallable APIGatewayClient::CreateRestApiCallable(const CreateRestApiRequest& request) const
@@ -678,20 +559,10 @@ CreateStageOutcome APIGatewayClient::CreateStage(const CreateStageRequest& reque
     return CreateStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateStageOutcome(CreateStageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateStageOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages");
+  return CreateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStageOutcomeCallable APIGatewayClient::CreateStageCallable(const CreateStageRequest& request) const
@@ -715,18 +586,8 @@ void APIGatewayClient::CreateStageAsyncHelper(const CreateStageRequest& request,
 CreateUsagePlanOutcome APIGatewayClient::CreateUsagePlan(const CreateUsagePlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUsagePlanOutcome(CreateUsagePlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUsagePlanOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans");
+  return CreateUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUsagePlanOutcomeCallable APIGatewayClient::CreateUsagePlanCallable(const CreateUsagePlanRequest& request) const
@@ -755,20 +616,10 @@ CreateUsagePlanKeyOutcome APIGatewayClient::CreateUsagePlanKey(const CreateUsage
     return CreateUsagePlanKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  ss << "/keys";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUsagePlanKeyOutcome(CreateUsagePlanKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUsagePlanKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  uri.AddPathSegments("/keys");
+  return CreateUsagePlanKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUsagePlanKeyOutcomeCallable APIGatewayClient::CreateUsagePlanKeyCallable(const CreateUsagePlanKeyRequest& request) const
@@ -792,18 +643,8 @@ void APIGatewayClient::CreateUsagePlanKeyAsyncHelper(const CreateUsagePlanKeyReq
 CreateVpcLinkOutcome APIGatewayClient::CreateVpcLink(const CreateVpcLinkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/vpclinks";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateVpcLinkOutcome(CreateVpcLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateVpcLinkOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/vpclinks");
+  return CreateVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVpcLinkOutcomeCallable APIGatewayClient::CreateVpcLinkCallable(const CreateVpcLinkRequest& request) const
@@ -832,19 +673,9 @@ DeleteApiKeyOutcome APIGatewayClient::DeleteApiKey(const DeleteApiKeyRequest& re
     return DeleteApiKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiKey]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apikeys/";
-  ss << request.GetApiKey();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApiKeyOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteApiKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/apikeys/");
+  uri.AddPathSegment(request.GetApiKey());
+  return DeleteApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApiKeyOutcomeCallable APIGatewayClient::DeleteApiKeyCallable(const DeleteApiKeyRequest& request) const
@@ -878,21 +709,11 @@ DeleteAuthorizerOutcome APIGatewayClient::DeleteAuthorizer(const DeleteAuthorize
     return DeleteAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAuthorizerOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAuthorizerOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
+  return DeleteAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAuthorizerOutcomeCallable APIGatewayClient::DeleteAuthorizerCallable(const DeleteAuthorizerRequest& request) const
@@ -926,21 +747,11 @@ DeleteBasePathMappingOutcome APIGatewayClient::DeleteBasePathMapping(const Delet
     return DeleteBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BasePath]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/basepathmappings/";
-  ss << request.GetBasePath();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBasePathMappingOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteBasePathMappingOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/basepathmappings/");
+  uri.AddPathSegment(request.GetBasePath());
+  return DeleteBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBasePathMappingOutcomeCallable APIGatewayClient::DeleteBasePathMappingCallable(const DeleteBasePathMappingRequest& request) const
@@ -969,19 +780,9 @@ DeleteClientCertificateOutcome APIGatewayClient::DeleteClientCertificate(const D
     return DeleteClientCertificateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientCertificateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clientcertificates/";
-  ss << request.GetClientCertificateId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteClientCertificateOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteClientCertificateOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/clientcertificates/");
+  uri.AddPathSegment(request.GetClientCertificateId());
+  return DeleteClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteClientCertificateOutcomeCallable APIGatewayClient::DeleteClientCertificateCallable(const DeleteClientCertificateRequest& request) const
@@ -1015,21 +816,11 @@ DeleteDeploymentOutcome APIGatewayClient::DeleteDeployment(const DeleteDeploymen
     return DeleteDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDeploymentOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDeploymentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  return DeleteDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDeploymentOutcomeCallable APIGatewayClient::DeleteDeploymentCallable(const DeleteDeploymentRequest& request) const
@@ -1063,21 +854,11 @@ DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const D
     return DeleteDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationPartId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/parts/";
-  ss << request.GetDocumentationPartId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDocumentationPartOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDocumentationPartOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/parts/");
+  uri.AddPathSegment(request.GetDocumentationPartId());
+  return DeleteDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDocumentationPartOutcomeCallable APIGatewayClient::DeleteDocumentationPartCallable(const DeleteDocumentationPartRequest& request) const
@@ -1111,21 +892,11 @@ DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(c
     return DeleteDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/versions/";
-  ss << request.GetDocumentationVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDocumentationVersionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDocumentationVersionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/versions/");
+  uri.AddPathSegment(request.GetDocumentationVersion());
+  return DeleteDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDocumentationVersionOutcomeCallable APIGatewayClient::DeleteDocumentationVersionCallable(const DeleteDocumentationVersionRequest& request) const
@@ -1154,19 +925,9 @@ DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNam
     return DeleteDomainNameOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDomainNameOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDomainNameOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return DeleteDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainNameOutcomeCallable APIGatewayClient::DeleteDomainNameCallable(const DeleteDomainNameRequest& request) const
@@ -1200,21 +961,11 @@ DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const Delet
     return DeleteGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/gatewayresponses/";
-  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGatewayResponseOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteGatewayResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/gatewayresponses/");
+  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
+  return DeleteGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGatewayResponseOutcomeCallable APIGatewayClient::DeleteGatewayResponseCallable(const DeleteGatewayResponseRequest& request) const
@@ -1253,24 +1004,14 @@ DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegra
     return DeleteIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIntegrationOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteIntegrationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration");
+  return DeleteIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntegrationOutcomeCallable APIGatewayClient::DeleteIntegrationCallable(const DeleteIntegrationRequest& request) const
@@ -1314,25 +1055,15 @@ DeleteIntegrationResponseOutcome APIGatewayClient::DeleteIntegrationResponse(con
     return DeleteIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIntegrationResponseOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteIntegrationResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return DeleteIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntegrationResponseOutcomeCallable APIGatewayClient::DeleteIntegrationResponseCallable(const DeleteIntegrationResponseRequest& request) const
@@ -1371,23 +1102,13 @@ DeleteMethodOutcome APIGatewayClient::DeleteMethod(const DeleteMethodRequest& re
     return DeleteMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMethodOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteMethodOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  return DeleteMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMethodOutcomeCallable APIGatewayClient::DeleteMethodCallable(const DeleteMethodRequest& request) const
@@ -1431,25 +1152,15 @@ DeleteMethodResponseOutcome APIGatewayClient::DeleteMethodResponse(const DeleteM
     return DeleteMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMethodResponseOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteMethodResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return DeleteMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMethodResponseOutcomeCallable APIGatewayClient::DeleteMethodResponseCallable(const DeleteMethodResponseRequest& request) const
@@ -1483,21 +1194,11 @@ DeleteModelOutcome APIGatewayClient::DeleteModel(const DeleteModelRequest& reque
     return DeleteModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/models/";
-  ss << request.GetModelName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteModelOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteModelOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelName());
+  return DeleteModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteModelOutcomeCallable APIGatewayClient::DeleteModelCallable(const DeleteModelRequest& request) const
@@ -1531,21 +1232,11 @@ DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const Del
     return DeleteRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestValidatorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/requestvalidators/";
-  ss << request.GetRequestValidatorId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRequestValidatorOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRequestValidatorOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/requestvalidators/");
+  uri.AddPathSegment(request.GetRequestValidatorId());
+  return DeleteRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRequestValidatorOutcomeCallable APIGatewayClient::DeleteRequestValidatorCallable(const DeleteRequestValidatorRequest& request) const
@@ -1579,21 +1270,11 @@ DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceReque
     return DeleteResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResourceOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  return DeleteResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceOutcomeCallable APIGatewayClient::DeleteResourceCallable(const DeleteResourceRequest& request) const
@@ -1622,19 +1303,9 @@ DeleteRestApiOutcome APIGatewayClient::DeleteRestApi(const DeleteRestApiRequest&
     return DeleteRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRestApiOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRestApiOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  return DeleteRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRestApiOutcomeCallable APIGatewayClient::DeleteRestApiCallable(const DeleteRestApiRequest& request) const
@@ -1668,21 +1339,11 @@ DeleteStageOutcome APIGatewayClient::DeleteStage(const DeleteStageRequest& reque
     return DeleteStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteStageOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteStageOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  return DeleteStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStageOutcomeCallable APIGatewayClient::DeleteStageCallable(const DeleteStageRequest& request) const
@@ -1711,19 +1372,9 @@ DeleteUsagePlanOutcome APIGatewayClient::DeleteUsagePlan(const DeleteUsagePlanRe
     return DeleteUsagePlanOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUsagePlanOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUsagePlanOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  return DeleteUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUsagePlanOutcomeCallable APIGatewayClient::DeleteUsagePlanCallable(const DeleteUsagePlanRequest& request) const
@@ -1757,21 +1408,11 @@ DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsage
     return DeleteUsagePlanKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  ss << "/keys/";
-  ss << request.GetKeyId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUsagePlanKeyOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUsagePlanKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  uri.AddPathSegments("/keys/");
+  uri.AddPathSegment(request.GetKeyId());
+  return DeleteUsagePlanKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUsagePlanKeyOutcomeCallable APIGatewayClient::DeleteUsagePlanKeyCallable(const DeleteUsagePlanKeyRequest& request) const
@@ -1800,19 +1441,9 @@ DeleteVpcLinkOutcome APIGatewayClient::DeleteVpcLink(const DeleteVpcLinkRequest&
     return DeleteVpcLinkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/vpclinks/";
-  ss << request.GetVpcLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteVpcLinkOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteVpcLinkOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/vpclinks/");
+  uri.AddPathSegment(request.GetVpcLinkId());
+  return DeleteVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVpcLinkOutcomeCallable APIGatewayClient::DeleteVpcLinkCallable(const DeleteVpcLinkRequest& request) const
@@ -1846,22 +1477,12 @@ FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(c
     return FlushStageAuthorizersCacheOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/cache/authorizers";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return FlushStageAuthorizersCacheOutcome(NoResult());
-  }
-  else
-  {
-    return FlushStageAuthorizersCacheOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/cache/authorizers");
+  return FlushStageAuthorizersCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 FlushStageAuthorizersCacheOutcomeCallable APIGatewayClient::FlushStageAuthorizersCacheCallable(const FlushStageAuthorizersCacheRequest& request) const
@@ -1895,22 +1516,12 @@ FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRe
     return FlushStageCacheOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/cache/data";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return FlushStageCacheOutcome(NoResult());
-  }
-  else
-  {
-    return FlushStageCacheOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/cache/data");
+  return FlushStageCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 FlushStageCacheOutcomeCallable APIGatewayClient::FlushStageCacheCallable(const FlushStageCacheRequest& request) const
@@ -1934,18 +1545,8 @@ void APIGatewayClient::FlushStageCacheAsyncHelper(const FlushStageCacheRequest& 
 GenerateClientCertificateOutcome APIGatewayClient::GenerateClientCertificate(const GenerateClientCertificateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clientcertificates";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateClientCertificateOutcome(GenerateClientCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateClientCertificateOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/clientcertificates");
+  return GenerateClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateClientCertificateOutcomeCallable APIGatewayClient::GenerateClientCertificateCallable(const GenerateClientCertificateRequest& request) const
@@ -1969,18 +1570,8 @@ void APIGatewayClient::GenerateClientCertificateAsyncHelper(const GenerateClient
 GetAccountOutcome APIGatewayClient::GetAccount(const GetAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAccountOutcome(GetAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAccountOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/account");
+  return GetAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAccountOutcomeCallable APIGatewayClient::GetAccountCallable(const GetAccountRequest& request) const
@@ -2009,19 +1600,9 @@ GetApiKeyOutcome APIGatewayClient::GetApiKey(const GetApiKeyRequest& request) co
     return GetApiKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiKey]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apikeys/";
-  ss << request.GetApiKey();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApiKeyOutcome(GetApiKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApiKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/apikeys/");
+  uri.AddPathSegment(request.GetApiKey());
+  return GetApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApiKeyOutcomeCallable APIGatewayClient::GetApiKeyCallable(const GetApiKeyRequest& request) const
@@ -2045,18 +1626,8 @@ void APIGatewayClient::GetApiKeyAsyncHelper(const GetApiKeyRequest& request, con
 GetApiKeysOutcome APIGatewayClient::GetApiKeys(const GetApiKeysRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apikeys";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApiKeysOutcome(GetApiKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApiKeysOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/apikeys");
+  return GetApiKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApiKeysOutcomeCallable APIGatewayClient::GetApiKeysCallable(const GetApiKeysRequest& request) const
@@ -2090,21 +1661,11 @@ GetAuthorizerOutcome APIGatewayClient::GetAuthorizer(const GetAuthorizerRequest&
     return GetAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAuthorizerOutcome(GetAuthorizerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAuthorizerOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
+  return GetAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAuthorizerOutcomeCallable APIGatewayClient::GetAuthorizerCallable(const GetAuthorizerRequest& request) const
@@ -2133,20 +1694,10 @@ GetAuthorizersOutcome APIGatewayClient::GetAuthorizers(const GetAuthorizersReque
     return GetAuthorizersOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/authorizers";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAuthorizersOutcome(GetAuthorizersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAuthorizersOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/authorizers");
+  return GetAuthorizersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAuthorizersOutcomeCallable APIGatewayClient::GetAuthorizersCallable(const GetAuthorizersRequest& request) const
@@ -2180,21 +1731,11 @@ GetBasePathMappingOutcome APIGatewayClient::GetBasePathMapping(const GetBasePath
     return GetBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BasePath]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/basepathmappings/";
-  ss << request.GetBasePath();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBasePathMappingOutcome(GetBasePathMappingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBasePathMappingOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/basepathmappings/");
+  uri.AddPathSegment(request.GetBasePath());
+  return GetBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBasePathMappingOutcomeCallable APIGatewayClient::GetBasePathMappingCallable(const GetBasePathMappingRequest& request) const
@@ -2223,20 +1764,10 @@ GetBasePathMappingsOutcome APIGatewayClient::GetBasePathMappings(const GetBasePa
     return GetBasePathMappingsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/basepathmappings";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBasePathMappingsOutcome(GetBasePathMappingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBasePathMappingsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/basepathmappings");
+  return GetBasePathMappingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBasePathMappingsOutcomeCallable APIGatewayClient::GetBasePathMappingsCallable(const GetBasePathMappingsRequest& request) const
@@ -2265,19 +1796,9 @@ GetClientCertificateOutcome APIGatewayClient::GetClientCertificate(const GetClie
     return GetClientCertificateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientCertificateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clientcertificates/";
-  ss << request.GetClientCertificateId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetClientCertificateOutcome(GetClientCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetClientCertificateOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/clientcertificates/");
+  uri.AddPathSegment(request.GetClientCertificateId());
+  return GetClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetClientCertificateOutcomeCallable APIGatewayClient::GetClientCertificateCallable(const GetClientCertificateRequest& request) const
@@ -2301,18 +1822,8 @@ void APIGatewayClient::GetClientCertificateAsyncHelper(const GetClientCertificat
 GetClientCertificatesOutcome APIGatewayClient::GetClientCertificates(const GetClientCertificatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clientcertificates";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetClientCertificatesOutcome(GetClientCertificatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetClientCertificatesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/clientcertificates");
+  return GetClientCertificatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetClientCertificatesOutcomeCallable APIGatewayClient::GetClientCertificatesCallable(const GetClientCertificatesRequest& request) const
@@ -2346,21 +1857,11 @@ GetDeploymentOutcome APIGatewayClient::GetDeployment(const GetDeploymentRequest&
     return GetDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeploymentOutcome(GetDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeploymentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  return GetDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeploymentOutcomeCallable APIGatewayClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
@@ -2389,20 +1890,10 @@ GetDeploymentsOutcome APIGatewayClient::GetDeployments(const GetDeploymentsReque
     return GetDeploymentsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeploymentsOutcome(GetDeploymentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeploymentsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/deployments");
+  return GetDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeploymentsOutcomeCallable APIGatewayClient::GetDeploymentsCallable(const GetDeploymentsRequest& request) const
@@ -2436,21 +1927,11 @@ GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocu
     return GetDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationPartId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/parts/";
-  ss << request.GetDocumentationPartId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentationPartOutcome(GetDocumentationPartResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentationPartOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/parts/");
+  uri.AddPathSegment(request.GetDocumentationPartId());
+  return GetDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationPartOutcomeCallable APIGatewayClient::GetDocumentationPartCallable(const GetDocumentationPartRequest& request) const
@@ -2479,20 +1960,10 @@ GetDocumentationPartsOutcome APIGatewayClient::GetDocumentationParts(const GetDo
     return GetDocumentationPartsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/parts";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentationPartsOutcome(GetDocumentationPartsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentationPartsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/parts");
+  return GetDocumentationPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationPartsOutcomeCallable APIGatewayClient::GetDocumentationPartsCallable(const GetDocumentationPartsRequest& request) const
@@ -2526,21 +1997,11 @@ GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const G
     return GetDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/versions/";
-  ss << request.GetDocumentationVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentationVersionOutcome(GetDocumentationVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentationVersionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/versions/");
+  uri.AddPathSegment(request.GetDocumentationVersion());
+  return GetDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationVersionOutcomeCallable APIGatewayClient::GetDocumentationVersionCallable(const GetDocumentationVersionRequest& request) const
@@ -2569,20 +2030,10 @@ GetDocumentationVersionsOutcome APIGatewayClient::GetDocumentationVersions(const
     return GetDocumentationVersionsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDocumentationVersionsOutcome(GetDocumentationVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDocumentationVersionsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/versions");
+  return GetDocumentationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationVersionsOutcomeCallable APIGatewayClient::GetDocumentationVersionsCallable(const GetDocumentationVersionsRequest& request) const
@@ -2611,19 +2062,9 @@ GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest&
     return GetDomainNameOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainNameOutcome(GetDomainNameResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainNameOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return GetDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainNameOutcomeCallable APIGatewayClient::GetDomainNameCallable(const GetDomainNameRequest& request) const
@@ -2647,18 +2088,8 @@ void APIGatewayClient::GetDomainNameAsyncHelper(const GetDomainNameRequest& requ
 GetDomainNamesOutcome APIGatewayClient::GetDomainNames(const GetDomainNamesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainNamesOutcome(GetDomainNamesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainNamesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames");
+  return GetDomainNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainNamesOutcomeCallable APIGatewayClient::GetDomainNamesCallable(const GetDomainNamesRequest& request) const
@@ -2697,23 +2128,13 @@ GetExportOutcome APIGatewayClient::GetExport(const GetExportRequest& request) co
     return GetExportOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/exports/";
-  ss << request.GetExportType();
-  uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetExportOutcome(GetExportResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetExportOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/exports/");
+  uri.AddPathSegment(request.GetExportType());
+  return GetExportOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetExportOutcomeCallable APIGatewayClient::GetExportCallable(const GetExportRequest& request) const
@@ -2747,21 +2168,11 @@ GetGatewayResponseOutcome APIGatewayClient::GetGatewayResponse(const GetGatewayR
     return GetGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/gatewayresponses/";
-  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetGatewayResponseOutcome(GetGatewayResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetGatewayResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/gatewayresponses/");
+  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
+  return GetGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGatewayResponseOutcomeCallable APIGatewayClient::GetGatewayResponseCallable(const GetGatewayResponseRequest& request) const
@@ -2790,20 +2201,10 @@ GetGatewayResponsesOutcome APIGatewayClient::GetGatewayResponses(const GetGatewa
     return GetGatewayResponsesOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/gatewayresponses";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetGatewayResponsesOutcome(GetGatewayResponsesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetGatewayResponsesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/gatewayresponses");
+  return GetGatewayResponsesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGatewayResponsesOutcomeCallable APIGatewayClient::GetGatewayResponsesCallable(const GetGatewayResponsesRequest& request) const
@@ -2842,24 +2243,14 @@ GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationReque
     return GetIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIntegrationOutcome(GetIntegrationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIntegrationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration");
+  return GetIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntegrationOutcomeCallable APIGatewayClient::GetIntegrationCallable(const GetIntegrationRequest& request) const
@@ -2903,25 +2294,15 @@ GetIntegrationResponseOutcome APIGatewayClient::GetIntegrationResponse(const Get
     return GetIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIntegrationResponseOutcome(GetIntegrationResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIntegrationResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return GetIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntegrationResponseOutcomeCallable APIGatewayClient::GetIntegrationResponseCallable(const GetIntegrationResponseRequest& request) const
@@ -2960,23 +2341,13 @@ GetMethodOutcome APIGatewayClient::GetMethod(const GetMethodRequest& request) co
     return GetMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMethodOutcome(GetMethodResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMethodOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  return GetMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMethodOutcomeCallable APIGatewayClient::GetMethodCallable(const GetMethodRequest& request) const
@@ -3020,25 +2391,15 @@ GetMethodResponseOutcome APIGatewayClient::GetMethodResponse(const GetMethodResp
     return GetMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMethodResponseOutcome(GetMethodResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMethodResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return GetMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMethodResponseOutcomeCallable APIGatewayClient::GetMethodResponseCallable(const GetMethodResponseRequest& request) const
@@ -3072,21 +2433,11 @@ GetModelOutcome APIGatewayClient::GetModel(const GetModelRequest& request) const
     return GetModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/models/";
-  ss << request.GetModelName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetModelOutcome(GetModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetModelOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelName());
+  return GetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelOutcomeCallable APIGatewayClient::GetModelCallable(const GetModelRequest& request) const
@@ -3120,22 +2471,12 @@ GetModelTemplateOutcome APIGatewayClient::GetModelTemplate(const GetModelTemplat
     return GetModelTemplateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/models/";
-  ss << request.GetModelName();
-  ss << "/default_template";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetModelTemplateOutcome(GetModelTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetModelTemplateOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelName());
+  uri.AddPathSegments("/default_template");
+  return GetModelTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelTemplateOutcomeCallable APIGatewayClient::GetModelTemplateCallable(const GetModelTemplateRequest& request) const
@@ -3164,20 +2505,10 @@ GetModelsOutcome APIGatewayClient::GetModels(const GetModelsRequest& request) co
     return GetModelsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/models";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetModelsOutcome(GetModelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetModelsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/models");
+  return GetModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelsOutcomeCallable APIGatewayClient::GetModelsCallable(const GetModelsRequest& request) const
@@ -3211,21 +2542,11 @@ GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetReques
     return GetRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestValidatorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/requestvalidators/";
-  ss << request.GetRequestValidatorId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRequestValidatorOutcome(GetRequestValidatorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRequestValidatorOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/requestvalidators/");
+  uri.AddPathSegment(request.GetRequestValidatorId());
+  return GetRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRequestValidatorOutcomeCallable APIGatewayClient::GetRequestValidatorCallable(const GetRequestValidatorRequest& request) const
@@ -3254,20 +2575,10 @@ GetRequestValidatorsOutcome APIGatewayClient::GetRequestValidators(const GetRequ
     return GetRequestValidatorsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/requestvalidators";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRequestValidatorsOutcome(GetRequestValidatorsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRequestValidatorsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/requestvalidators");
+  return GetRequestValidatorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRequestValidatorsOutcomeCallable APIGatewayClient::GetRequestValidatorsCallable(const GetRequestValidatorsRequest& request) const
@@ -3301,21 +2612,11 @@ GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& reque
     return GetResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourceOutcome(GetResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  return GetResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourceOutcomeCallable APIGatewayClient::GetResourceCallable(const GetResourceRequest& request) const
@@ -3344,20 +2645,10 @@ GetResourcesOutcome APIGatewayClient::GetResources(const GetResourcesRequest& re
     return GetResourcesOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourcesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources");
+  return GetResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourcesOutcomeCallable APIGatewayClient::GetResourcesCallable(const GetResourcesRequest& request) const
@@ -3386,19 +2677,9 @@ GetRestApiOutcome APIGatewayClient::GetRestApi(const GetRestApiRequest& request)
     return GetRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRestApiOutcome(GetRestApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRestApiOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  return GetRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRestApiOutcomeCallable APIGatewayClient::GetRestApiCallable(const GetRestApiRequest& request) const
@@ -3422,18 +2703,8 @@ void APIGatewayClient::GetRestApiAsyncHelper(const GetRestApiRequest& request, c
 GetRestApisOutcome APIGatewayClient::GetRestApis(const GetRestApisRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRestApisOutcome(GetRestApisResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRestApisOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis");
+  return GetRestApisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRestApisOutcomeCallable APIGatewayClient::GetRestApisCallable(const GetRestApisRequest& request) const
@@ -3472,23 +2743,13 @@ GetSdkOutcome APIGatewayClient::GetSdk(const GetSdkRequest& request) const
     return GetSdkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SdkType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  ss << "/sdks/";
-  ss << request.GetSdkType();
-  uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetSdkOutcome(GetSdkResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetSdkOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  uri.AddPathSegments("/sdks/");
+  uri.AddPathSegment(request.GetSdkType());
+  return GetSdkOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetSdkOutcomeCallable APIGatewayClient::GetSdkCallable(const GetSdkRequest& request) const
@@ -3517,19 +2778,9 @@ GetSdkTypeOutcome APIGatewayClient::GetSdkType(const GetSdkTypeRequest& request)
     return GetSdkTypeOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sdktypes/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSdkTypeOutcome(GetSdkTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSdkTypeOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/sdktypes/");
+  uri.AddPathSegment(request.GetId());
+  return GetSdkTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSdkTypeOutcomeCallable APIGatewayClient::GetSdkTypeCallable(const GetSdkTypeRequest& request) const
@@ -3553,18 +2804,8 @@ void APIGatewayClient::GetSdkTypeAsyncHelper(const GetSdkTypeRequest& request, c
 GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sdktypes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSdkTypesOutcome(GetSdkTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSdkTypesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/sdktypes");
+  return GetSdkTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSdkTypesOutcomeCallable APIGatewayClient::GetSdkTypesCallable(const GetSdkTypesRequest& request) const
@@ -3598,21 +2839,11 @@ GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const
     return GetStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetStageOutcome(GetStageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStageOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  return GetStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStageOutcomeCallable APIGatewayClient::GetStageCallable(const GetStageRequest& request) const
@@ -3641,20 +2872,10 @@ GetStagesOutcome APIGatewayClient::GetStages(const GetStagesRequest& request) co
     return GetStagesOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetStagesOutcome(GetStagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStagesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages");
+  return GetStagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStagesOutcomeCallable APIGatewayClient::GetStagesCallable(const GetStagesRequest& request) const
@@ -3683,19 +2904,9 @@ GetTagsOutcome APIGatewayClient::GetTags(const GetTagsRequest& request) const
     return GetTagsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetTagsOutcome(GetTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetTagsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return GetTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTagsOutcomeCallable APIGatewayClient::GetTagsCallable(const GetTagsRequest& request) const
@@ -3734,20 +2945,10 @@ GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
     return GetUsageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  ss << "/usage";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsageOutcome(GetUsageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsageOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  uri.AddPathSegments("/usage");
+  return GetUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsageOutcomeCallable APIGatewayClient::GetUsageCallable(const GetUsageRequest& request) const
@@ -3776,19 +2977,9 @@ GetUsagePlanOutcome APIGatewayClient::GetUsagePlan(const GetUsagePlanRequest& re
     return GetUsagePlanOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsagePlanOutcome(GetUsagePlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsagePlanOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  return GetUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlanOutcomeCallable APIGatewayClient::GetUsagePlanCallable(const GetUsagePlanRequest& request) const
@@ -3822,21 +3013,11 @@ GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRe
     return GetUsagePlanKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  ss << "/keys/";
-  ss << request.GetKeyId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsagePlanKeyOutcome(GetUsagePlanKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsagePlanKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  uri.AddPathSegments("/keys/");
+  uri.AddPathSegment(request.GetKeyId());
+  return GetUsagePlanKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlanKeyOutcomeCallable APIGatewayClient::GetUsagePlanKeyCallable(const GetUsagePlanKeyRequest& request) const
@@ -3865,20 +3046,10 @@ GetUsagePlanKeysOutcome APIGatewayClient::GetUsagePlanKeys(const GetUsagePlanKey
     return GetUsagePlanKeysOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  ss << "/keys";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsagePlanKeysOutcome(GetUsagePlanKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsagePlanKeysOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  uri.AddPathSegments("/keys");
+  return GetUsagePlanKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlanKeysOutcomeCallable APIGatewayClient::GetUsagePlanKeysCallable(const GetUsagePlanKeysRequest& request) const
@@ -3902,18 +3073,8 @@ void APIGatewayClient::GetUsagePlanKeysAsyncHelper(const GetUsagePlanKeysRequest
 GetUsagePlansOutcome APIGatewayClient::GetUsagePlans(const GetUsagePlansRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsagePlansOutcome(GetUsagePlansResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsagePlansOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans");
+  return GetUsagePlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlansOutcomeCallable APIGatewayClient::GetUsagePlansCallable(const GetUsagePlansRequest& request) const
@@ -3942,19 +3103,9 @@ GetVpcLinkOutcome APIGatewayClient::GetVpcLink(const GetVpcLinkRequest& request)
     return GetVpcLinkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/vpclinks/";
-  ss << request.GetVpcLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetVpcLinkOutcome(GetVpcLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetVpcLinkOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/vpclinks/");
+  uri.AddPathSegment(request.GetVpcLinkId());
+  return GetVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVpcLinkOutcomeCallable APIGatewayClient::GetVpcLinkCallable(const GetVpcLinkRequest& request) const
@@ -3978,18 +3129,8 @@ void APIGatewayClient::GetVpcLinkAsyncHelper(const GetVpcLinkRequest& request, c
 GetVpcLinksOutcome APIGatewayClient::GetVpcLinks(const GetVpcLinksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/vpclinks";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetVpcLinksOutcome(GetVpcLinksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetVpcLinksOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/vpclinks");
+  return GetVpcLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVpcLinksOutcomeCallable APIGatewayClient::GetVpcLinksCallable(const GetVpcLinksRequest& request) const
@@ -4019,19 +3160,10 @@ ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest&
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/apikeys";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apikeys");
   ss.str("?mode=import");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportApiKeysOutcome(ImportApiKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportApiKeysOutcome(outcome.GetError());
-  }
+  return ImportApiKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportApiKeysOutcomeCallable APIGatewayClient::ImportApiKeysCallable(const ImportApiKeysRequest& request) const
@@ -4060,20 +3192,10 @@ ImportDocumentationPartsOutcome APIGatewayClient::ImportDocumentationParts(const
     return ImportDocumentationPartsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/parts";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportDocumentationPartsOutcome(ImportDocumentationPartsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportDocumentationPartsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/parts");
+  return ImportDocumentationPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportDocumentationPartsOutcomeCallable APIGatewayClient::ImportDocumentationPartsCallable(const ImportDocumentationPartsRequest& request) const
@@ -4098,19 +3220,10 @@ ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest&
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/restapis";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/restapis");
   ss.str("?mode=import");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportRestApiOutcome(ImportRestApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportRestApiOutcome(outcome.GetError());
-  }
+  return ImportRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportRestApiOutcomeCallable APIGatewayClient::ImportRestApiCallable(const ImportRestApiRequest& request) const
@@ -4144,21 +3257,11 @@ PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayR
     return PutGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/gatewayresponses/";
-  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutGatewayResponseOutcome(PutGatewayResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutGatewayResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/gatewayresponses/");
+  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
+  return PutGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutGatewayResponseOutcomeCallable APIGatewayClient::PutGatewayResponseCallable(const PutGatewayResponseRequest& request) const
@@ -4197,24 +3300,14 @@ PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationReque
     return PutIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutIntegrationOutcome(PutIntegrationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutIntegrationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration");
+  return PutIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutIntegrationOutcomeCallable APIGatewayClient::PutIntegrationCallable(const PutIntegrationRequest& request) const
@@ -4258,25 +3351,15 @@ PutIntegrationResponseOutcome APIGatewayClient::PutIntegrationResponse(const Put
     return PutIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutIntegrationResponseOutcome(PutIntegrationResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutIntegrationResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return PutIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutIntegrationResponseOutcomeCallable APIGatewayClient::PutIntegrationResponseCallable(const PutIntegrationResponseRequest& request) const
@@ -4315,23 +3398,13 @@ PutMethodOutcome APIGatewayClient::PutMethod(const PutMethodRequest& request) co
     return PutMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutMethodOutcome(PutMethodResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutMethodOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  return PutMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutMethodOutcomeCallable APIGatewayClient::PutMethodCallable(const PutMethodRequest& request) const
@@ -4375,25 +3448,15 @@ PutMethodResponseOutcome APIGatewayClient::PutMethodResponse(const PutMethodResp
     return PutMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutMethodResponseOutcome(PutMethodResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutMethodResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return PutMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutMethodResponseOutcomeCallable APIGatewayClient::PutMethodResponseCallable(const PutMethodResponseRequest& request) const
@@ -4422,19 +3485,9 @@ PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request)
     return PutRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRestApiOutcome(PutRestApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRestApiOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  return PutRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRestApiOutcomeCallable APIGatewayClient::PutRestApiCallable(const PutRestApiRequest& request) const
@@ -4463,19 +3516,9 @@ TagResourceOutcome APIGatewayClient::TagResource(const TagResourceRequest& reque
     return TagResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable APIGatewayClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -4509,21 +3552,11 @@ TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInv
     return TestInvokeAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TestInvokeAuthorizerOutcome(TestInvokeAuthorizerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TestInvokeAuthorizerOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
+  return TestInvokeAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestInvokeAuthorizerOutcomeCallable APIGatewayClient::TestInvokeAuthorizerCallable(const TestInvokeAuthorizerRequest& request) const
@@ -4562,23 +3595,13 @@ TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMetho
     return TestInvokeMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TestInvokeMethodOutcome(TestInvokeMethodResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TestInvokeMethodOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  return TestInvokeMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestInvokeMethodOutcomeCallable APIGatewayClient::TestInvokeMethodCallable(const TestInvokeMethodRequest& request) const
@@ -4612,19 +3635,9 @@ UntagResourceOutcome APIGatewayClient::UntagResource(const UntagResourceRequest&
     return UntagResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable APIGatewayClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -4648,18 +3661,8 @@ void APIGatewayClient::UntagResourceAsyncHelper(const UntagResourceRequest& requ
 UpdateAccountOutcome APIGatewayClient::UpdateAccount(const UpdateAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAccountOutcome(UpdateAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAccountOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/account");
+  return UpdateAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAccountOutcomeCallable APIGatewayClient::UpdateAccountCallable(const UpdateAccountRequest& request) const
@@ -4688,19 +3691,9 @@ UpdateApiKeyOutcome APIGatewayClient::UpdateApiKey(const UpdateApiKeyRequest& re
     return UpdateApiKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiKey]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apikeys/";
-  ss << request.GetApiKey();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApiKeyOutcome(UpdateApiKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApiKeyOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/apikeys/");
+  uri.AddPathSegment(request.GetApiKey());
+  return UpdateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApiKeyOutcomeCallable APIGatewayClient::UpdateApiKeyCallable(const UpdateApiKeyRequest& request) const
@@ -4734,21 +3727,11 @@ UpdateAuthorizerOutcome APIGatewayClient::UpdateAuthorizer(const UpdateAuthorize
     return UpdateAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/authorizers/";
-  ss << request.GetAuthorizerId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAuthorizerOutcome(UpdateAuthorizerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAuthorizerOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/authorizers/");
+  uri.AddPathSegment(request.GetAuthorizerId());
+  return UpdateAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAuthorizerOutcomeCallable APIGatewayClient::UpdateAuthorizerCallable(const UpdateAuthorizerRequest& request) const
@@ -4782,21 +3765,11 @@ UpdateBasePathMappingOutcome APIGatewayClient::UpdateBasePathMapping(const Updat
     return UpdateBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BasePath]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  ss << "/basepathmappings/";
-  ss << request.GetBasePath();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateBasePathMappingOutcome(UpdateBasePathMappingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateBasePathMappingOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/basepathmappings/");
+  uri.AddPathSegment(request.GetBasePath());
+  return UpdateBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBasePathMappingOutcomeCallable APIGatewayClient::UpdateBasePathMappingCallable(const UpdateBasePathMappingRequest& request) const
@@ -4825,19 +3798,9 @@ UpdateClientCertificateOutcome APIGatewayClient::UpdateClientCertificate(const U
     return UpdateClientCertificateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientCertificateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clientcertificates/";
-  ss << request.GetClientCertificateId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateClientCertificateOutcome(UpdateClientCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateClientCertificateOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/clientcertificates/");
+  uri.AddPathSegment(request.GetClientCertificateId());
+  return UpdateClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateClientCertificateOutcomeCallable APIGatewayClient::UpdateClientCertificateCallable(const UpdateClientCertificateRequest& request) const
@@ -4871,21 +3834,11 @@ UpdateDeploymentOutcome APIGatewayClient::UpdateDeployment(const UpdateDeploymen
     return UpdateDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDeploymentOutcome(UpdateDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDeploymentOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  return UpdateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDeploymentOutcomeCallable APIGatewayClient::UpdateDeploymentCallable(const UpdateDeploymentRequest& request) const
@@ -4919,21 +3872,11 @@ UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const U
     return UpdateDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationPartId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/parts/";
-  ss << request.GetDocumentationPartId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDocumentationPartOutcome(UpdateDocumentationPartResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDocumentationPartOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/parts/");
+  uri.AddPathSegment(request.GetDocumentationPartId());
+  return UpdateDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentationPartOutcomeCallable APIGatewayClient::UpdateDocumentationPartCallable(const UpdateDocumentationPartRequest& request) const
@@ -4967,21 +3910,11 @@ UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(c
     return UpdateDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/documentation/versions/";
-  ss << request.GetDocumentationVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDocumentationVersionOutcome(UpdateDocumentationVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDocumentationVersionOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/documentation/versions/");
+  uri.AddPathSegment(request.GetDocumentationVersion());
+  return UpdateDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentationVersionOutcomeCallable APIGatewayClient::UpdateDocumentationVersionCallable(const UpdateDocumentationVersionRequest& request) const
@@ -5010,19 +3943,9 @@ UpdateDomainNameOutcome APIGatewayClient::UpdateDomainName(const UpdateDomainNam
     return UpdateDomainNameOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domainnames/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainNameOutcome(UpdateDomainNameResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainNameOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return UpdateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainNameOutcomeCallable APIGatewayClient::UpdateDomainNameCallable(const UpdateDomainNameRequest& request) const
@@ -5056,21 +3979,11 @@ UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const Updat
     return UpdateGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/gatewayresponses/";
-  ss << GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType());
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGatewayResponseOutcome(UpdateGatewayResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGatewayResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/gatewayresponses/");
+  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
+  return UpdateGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGatewayResponseOutcomeCallable APIGatewayClient::UpdateGatewayResponseCallable(const UpdateGatewayResponseRequest& request) const
@@ -5109,24 +4022,14 @@ UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegra
     return UpdateIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateIntegrationOutcome(UpdateIntegrationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateIntegrationOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration");
+  return UpdateIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIntegrationOutcomeCallable APIGatewayClient::UpdateIntegrationCallable(const UpdateIntegrationRequest& request) const
@@ -5170,25 +4073,15 @@ UpdateIntegrationResponseOutcome APIGatewayClient::UpdateIntegrationResponse(con
     return UpdateIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/integration/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateIntegrationResponseOutcome(UpdateIntegrationResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateIntegrationResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/integration/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return UpdateIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIntegrationResponseOutcomeCallable APIGatewayClient::UpdateIntegrationResponseCallable(const UpdateIntegrationResponseRequest& request) const
@@ -5227,23 +4120,13 @@ UpdateMethodOutcome APIGatewayClient::UpdateMethod(const UpdateMethodRequest& re
     return UpdateMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMethodOutcome(UpdateMethodResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMethodOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  return UpdateMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMethodOutcomeCallable APIGatewayClient::UpdateMethodCallable(const UpdateMethodRequest& request) const
@@ -5287,25 +4170,15 @@ UpdateMethodResponseOutcome APIGatewayClient::UpdateMethodResponse(const UpdateM
     return UpdateMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  ss << "/methods/";
-  ss << request.GetHttpMethod();
-  ss << "/responses/";
-  ss << request.GetStatusCode();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMethodResponseOutcome(UpdateMethodResponseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMethodResponseOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  uri.AddPathSegments("/methods/");
+  uri.AddPathSegment(request.GetHttpMethod());
+  uri.AddPathSegments("/responses/");
+  uri.AddPathSegment(request.GetStatusCode());
+  return UpdateMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMethodResponseOutcomeCallable APIGatewayClient::UpdateMethodResponseCallable(const UpdateMethodResponseRequest& request) const
@@ -5339,21 +4212,11 @@ UpdateModelOutcome APIGatewayClient::UpdateModel(const UpdateModelRequest& reque
     return UpdateModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/models/";
-  ss << request.GetModelName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateModelOutcome(UpdateModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateModelOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelName());
+  return UpdateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateModelOutcomeCallable APIGatewayClient::UpdateModelCallable(const UpdateModelRequest& request) const
@@ -5387,21 +4250,11 @@ UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const Upd
     return UpdateRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestValidatorId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/requestvalidators/";
-  ss << request.GetRequestValidatorId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRequestValidatorOutcome(UpdateRequestValidatorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRequestValidatorOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/requestvalidators/");
+  uri.AddPathSegment(request.GetRequestValidatorId());
+  return UpdateRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRequestValidatorOutcomeCallable APIGatewayClient::UpdateRequestValidatorCallable(const UpdateRequestValidatorRequest& request) const
@@ -5435,21 +4288,11 @@ UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceReque
     return UpdateResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/resources/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateResourceOutcome(UpdateResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceId());
+  return UpdateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateResourceOutcomeCallable APIGatewayClient::UpdateResourceCallable(const UpdateResourceRequest& request) const
@@ -5478,19 +4321,9 @@ UpdateRestApiOutcome APIGatewayClient::UpdateRestApi(const UpdateRestApiRequest&
     return UpdateRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRestApiOutcome(UpdateRestApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRestApiOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  return UpdateRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRestApiOutcomeCallable APIGatewayClient::UpdateRestApiCallable(const UpdateRestApiRequest& request) const
@@ -5524,21 +4357,11 @@ UpdateStageOutcome APIGatewayClient::UpdateStage(const UpdateStageRequest& reque
     return UpdateStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restapis/";
-  ss << request.GetRestApiId();
-  ss << "/stages/";
-  ss << request.GetStageName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateStageOutcome(UpdateStageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateStageOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/restapis/");
+  uri.AddPathSegment(request.GetRestApiId());
+  uri.AddPathSegments("/stages/");
+  uri.AddPathSegment(request.GetStageName());
+  return UpdateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStageOutcomeCallable APIGatewayClient::UpdateStageCallable(const UpdateStageRequest& request) const
@@ -5572,22 +4395,12 @@ UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& reque
     return UpdateUsageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  ss << "/keys/";
-  ss << request.GetKeyId();
-  ss << "/usage";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUsageOutcome(UpdateUsageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUsageOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  uri.AddPathSegments("/keys/");
+  uri.AddPathSegment(request.GetKeyId());
+  uri.AddPathSegments("/usage");
+  return UpdateUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUsageOutcomeCallable APIGatewayClient::UpdateUsageCallable(const UpdateUsageRequest& request) const
@@ -5616,19 +4429,9 @@ UpdateUsagePlanOutcome APIGatewayClient::UpdateUsagePlan(const UpdateUsagePlanRe
     return UpdateUsagePlanOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/usageplans/";
-  ss << request.GetUsagePlanId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUsagePlanOutcome(UpdateUsagePlanResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUsagePlanOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/usageplans/");
+  uri.AddPathSegment(request.GetUsagePlanId());
+  return UpdateUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUsagePlanOutcomeCallable APIGatewayClient::UpdateUsagePlanCallable(const UpdateUsagePlanRequest& request) const
@@ -5657,19 +4460,9 @@ UpdateVpcLinkOutcome APIGatewayClient::UpdateVpcLink(const UpdateVpcLinkRequest&
     return UpdateVpcLinkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/vpclinks/";
-  ss << request.GetVpcLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVpcLinkOutcome(UpdateVpcLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVpcLinkOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/vpclinks/");
+  uri.AddPathSegment(request.GetVpcLinkId());
+  return UpdateVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVpcLinkOutcomeCallable APIGatewayClient::UpdateVpcLinkCallable(const UpdateVpcLinkRequest& request) const

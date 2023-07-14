@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/RtmpGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,7 @@ namespace Model
 {
 
 RtmpGroupSettings::RtmpGroupSettings() : 
+    m_adMarkersHasBeenSet(false),
     m_authenticationScheme(AuthenticationScheme::NOT_SET),
     m_authenticationSchemeHasBeenSet(false),
     m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
@@ -45,6 +36,7 @@ RtmpGroupSettings::RtmpGroupSettings() :
 }
 
 RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) : 
+    m_adMarkersHasBeenSet(false),
     m_authenticationScheme(AuthenticationScheme::NOT_SET),
     m_authenticationSchemeHasBeenSet(false),
     m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
@@ -63,6 +55,16 @@ RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) :
 
 RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("adMarkers"))
+  {
+    Array<JsonView> adMarkersJsonList = jsonValue.GetArray("adMarkers");
+    for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
+    {
+      m_adMarkers.push_back(RtmpAdMarkersMapper::GetRtmpAdMarkersForName(adMarkersJsonList[adMarkersIndex].AsString()));
+    }
+    m_adMarkersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("authenticationScheme"))
   {
     m_authenticationScheme = AuthenticationSchemeMapper::GetAuthenticationSchemeForName(jsonValue.GetString("authenticationScheme"));
@@ -111,6 +113,17 @@ RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
 JsonValue RtmpGroupSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_adMarkersHasBeenSet)
+  {
+   Array<JsonValue> adMarkersJsonList(m_adMarkers.size());
+   for(unsigned adMarkersIndex = 0; adMarkersIndex < adMarkersJsonList.GetLength(); ++adMarkersIndex)
+   {
+     adMarkersJsonList[adMarkersIndex].AsString(RtmpAdMarkersMapper::GetNameForRtmpAdMarkers(m_adMarkers[adMarkersIndex]));
+   }
+   payload.WithArray("adMarkers", std::move(adMarkersJsonList));
+
+  }
 
   if(m_authenticationSchemeHasBeenSet)
   {

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -192,14 +182,13 @@ namespace Model
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>ApplyImmediately</code> parameter only affects
+     * <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to
+     * <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -209,14 +198,13 @@ namespace Model
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>ApplyImmediately</code> parameter only affects
+     * <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to
+     * <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
@@ -226,14 +214,13 @@ namespace Model
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>ApplyImmediately</code> parameter only affects
+     * <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to
+     * <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -243,14 +230,13 @@ namespace Model
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
      * this parameter is set to <code>false</code>, changes to the DB cluster are
      * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
-     * If you set the <code>ApplyImmediately</code> parameter value to false, then
-     * changes to the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values are applied during the next maintenance
-     * window. All other changes are applied immediately, regardless of the value of
-     * the <code>ApplyImmediately</code> parameter.</p> <p>Default: <code>false</code>
-     * </p>
+     * <code>ApplyImmediately</code> parameter only affects
+     * <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to
+     * <code>NewDBClusterIdentifier</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately, regardless of the
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline ModifyDBClusterRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
@@ -401,99 +387,83 @@ namespace Model
 
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain from 8 to 41 characters.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p> <i>Not supported by Neptune.</i> </p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -502,7 +472,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -514,7 +484,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -526,7 +496,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -538,7 +508,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -550,7 +520,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -562,7 +532,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -574,7 +544,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -586,7 +556,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Amazon Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -599,7 +569,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -609,7 +579,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -619,7 +589,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -629,7 +599,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -639,7 +609,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -649,7 +619,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -659,7 +629,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -669,7 +639,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * time for each Amazon Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -677,30 +647,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline ModifyDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -743,76 +713,230 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine. Currently, setting this parameter
-     * has no effect. To upgrade your database engine to the most recent release, use
-     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
-     * versions, see <a>CreateDBInstance</a>, or call
-     * <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine to which you want to upgrade.
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
+     * set to true.</p> <p>For a list of valid engine versions, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+     * Releases for Amazon Neptune</a>, or call <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBInstanceParameterGroupName() const{ return m_dBInstanceParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline bool DBInstanceParameterGroupNameHasBeenSet() const { return m_dBInstanceParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(const Aws::String& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(Aws::String&& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(const char* value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const Aws::String& value) { SetDBInstanceParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(Aws::String&& value) { SetDBInstanceParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const char* value) { SetDBInstanceParameterGroupName(value); return *this;}
 
 
     /**
@@ -842,6 +966,31 @@ namespace Model
      * default, deletion protection is disabled.</p>
      */
     inline ModifyDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline ModifyDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
   private:
 
@@ -887,8 +1036,17 @@ namespace Model
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
 
+    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgradeHasBeenSet;
+
+    Aws::String m_dBInstanceParameterGroupName;
+    bool m_dBInstanceParameterGroupNameHasBeenSet;
+
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
   };
 
 } // namespace Model

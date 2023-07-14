@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/amplify/model/DomainAssociation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,6 +23,8 @@ DomainAssociation::DomainAssociation() :
     m_domainNameHasBeenSet(false),
     m_enableAutoSubDomain(false),
     m_enableAutoSubDomainHasBeenSet(false),
+    m_autoSubDomainCreationPatternsHasBeenSet(false),
+    m_autoSubDomainIAMRoleHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
     m_domainStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -46,6 +38,8 @@ DomainAssociation::DomainAssociation(JsonView jsonValue) :
     m_domainNameHasBeenSet(false),
     m_enableAutoSubDomain(false),
     m_enableAutoSubDomainHasBeenSet(false),
+    m_autoSubDomainCreationPatternsHasBeenSet(false),
+    m_autoSubDomainIAMRoleHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
     m_domainStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -76,6 +70,23 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
     m_enableAutoSubDomain = jsonValue.GetBool("enableAutoSubDomain");
 
     m_enableAutoSubDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoSubDomainCreationPatterns"))
+  {
+    Array<JsonView> autoSubDomainCreationPatternsJsonList = jsonValue.GetArray("autoSubDomainCreationPatterns");
+    for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
+    {
+      m_autoSubDomainCreationPatterns.push_back(autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString());
+    }
+    m_autoSubDomainCreationPatternsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoSubDomainIAMRole"))
+  {
+    m_autoSubDomainIAMRole = jsonValue.GetString("autoSubDomainIAMRole");
+
+    m_autoSubDomainIAMRoleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("domainStatus"))
@@ -131,6 +142,23 @@ JsonValue DomainAssociation::Jsonize() const
   if(m_enableAutoSubDomainHasBeenSet)
   {
    payload.WithBool("enableAutoSubDomain", m_enableAutoSubDomain);
+
+  }
+
+  if(m_autoSubDomainCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+   for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
+   {
+     autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
+   }
+   payload.WithArray("autoSubDomainCreationPatterns", std::move(autoSubDomainCreationPatternsJsonList));
+
+  }
+
+  if(m_autoSubDomainIAMRoleHasBeenSet)
+  {
+   payload.WithString("autoSubDomainIAMRole", m_autoSubDomainIAMRole);
 
   }
 

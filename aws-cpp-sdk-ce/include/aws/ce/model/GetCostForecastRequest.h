@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -48,32 +38,38 @@ namespace Model
 
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline GetCostForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The period of time that you want the forecast to cover. The start date must
+     * be equal to or no later than the current date to avoid a validation error.</p>
      */
     inline GetCostForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -201,38 +197,128 @@ namespace Model
 
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline GetCostForecastRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
-     * supports all of the Cost Explorer filters.</p>
+     * <p>The filters that you want to use to filter your forecast. The
+     * <code>GetCostForecast</code> API supports filtering by the following
+     * dimensions:</p> <ul> <li> <p> <code>AZ</code> </p> </li> <li> <p>
+     * <code>INSTANCE_TYPE</code> </p> </li> <li> <p> <code>LINKED_ACCOUNT</code> </p>
+     * </li> <li> <p> <code>LINKED_ACCOUNT_NAME</code> </p> </li> <li> <p>
+     * <code>OPERATION</code> </p> </li> <li> <p> <code>PURCHASE_TYPE</code> </p> </li>
+     * <li> <p> <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li>
+     * <li> <p> <code>USAGE_TYPE</code> </p> </li> <li> <p>
+     * <code>USAGE_TYPE_GROUP</code> </p> </li> <li> <p> <code>RECORD_TYPE</code> </p>
+     * </li> <li> <p> <code>OPERATING_SYSTEM</code> </p> </li> <li> <p>
+     * <code>TENANCY</code> </p> </li> <li> <p> <code>SCOPE</code> </p> </li> <li> <p>
+     * <code>PLATFORM</code> </p> </li> <li> <p> <code>SUBSCRIPTION_ID</code> </p>
+     * </li> <li> <p> <code>LEGAL_ENTITY_NAME</code> </p> </li> <li> <p>
+     * <code>DEPLOYMENT_OPTION</code> </p> </li> <li> <p> <code>DATABASE_ENGINE</code>
+     * </p> </li> <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> <li> <p>
+     * <code>BILLING_ENTITY</code> </p> </li> <li> <p> <code>RESERVATION_ID</code> </p>
+     * </li> <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li> </ul>
      */
     inline GetCostForecastRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

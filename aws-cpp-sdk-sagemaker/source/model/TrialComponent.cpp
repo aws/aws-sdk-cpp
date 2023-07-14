@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/TrialComponent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,7 +34,9 @@ TrialComponent::TrialComponent() :
     m_inputArtifactsHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
     m_metricsHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_sourceDetailHasBeenSet(false),
+    m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_parentsHasBeenSet(false)
 {
@@ -66,7 +58,9 @@ TrialComponent::TrialComponent(JsonView jsonValue) :
     m_inputArtifactsHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
     m_metricsHasBeenSet(false),
+    m_metadataPropertiesHasBeenSet(false),
     m_sourceDetailHasBeenSet(false),
+    m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_parentsHasBeenSet(false)
 {
@@ -192,11 +186,25 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     m_metricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetadataProperties"))
+  {
+    m_metadataProperties = jsonValue.GetObject("MetadataProperties");
+
+    m_metadataPropertiesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SourceDetail"))
   {
     m_sourceDetail = jsonValue.GetObject("SourceDetail");
 
     m_sourceDetailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LineageGroupArn"))
+  {
+    m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
+
+    m_lineageGroupArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -332,9 +340,21 @@ JsonValue TrialComponent::Jsonize() const
 
   }
 
+  if(m_metadataPropertiesHasBeenSet)
+  {
+   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
+
+  }
+
   if(m_sourceDetailHasBeenSet)
   {
    payload.WithObject("SourceDetail", m_sourceDetail.Jsonize());
+
+  }
+
+  if(m_lineageGroupArnHasBeenSet)
+  {
+   payload.WithString("LineageGroupArn", m_lineageGroupArn);
 
   }
 

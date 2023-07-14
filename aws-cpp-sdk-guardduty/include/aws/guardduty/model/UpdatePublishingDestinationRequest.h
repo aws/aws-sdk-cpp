@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -44,91 +34,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline UpdatePublishingDestinationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline UpdatePublishingDestinationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the </p>
+     * <p>The ID of the detector associated with the publishing destinations to
+     * update.</p>
      */
     inline UpdatePublishingDestinationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline void SetDestinationId(const Aws::String& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::move(value); }
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline void SetDestinationId(const char* value) { m_destinationIdHasBeenSet = true; m_destinationId.assign(value); }
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline UpdatePublishingDestinationRequest& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline UpdatePublishingDestinationRequest& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the detector associated with the publishing destinations to
-     * update.</p>
+     * <p>The ID of the publishing destination to update.</p>
      */
     inline UpdatePublishingDestinationRequest& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 

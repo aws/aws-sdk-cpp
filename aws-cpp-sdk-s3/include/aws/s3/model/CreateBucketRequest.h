@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/s3/model/BucketCannedACL.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/CreateBucketConfiguration.h>
+#include <aws/s3/model/ObjectOwnership.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -288,42 +279,58 @@ namespace Model
 
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline const Aws::String& GetGrantWrite() const{ return m_grantWrite; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(Aws::String&& value) { m_grantWriteHasBeenSet = true; m_grantWrite = std::move(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const char* value) { m_grantWriteHasBeenSet = true; m_grantWrite.assign(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(Aws::String&& value) { SetGrantWrite(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(const char* value) { SetGrantWrite(value); return *this;}
 
@@ -395,6 +402,25 @@ namespace Model
 
 
     
+    inline const ObjectOwnership& GetObjectOwnership() const{ return m_objectOwnership; }
+
+    
+    inline bool ObjectOwnershipHasBeenSet() const { return m_objectOwnershipHasBeenSet; }
+
+    
+    inline void SetObjectOwnership(const ObjectOwnership& value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = value; }
+
+    
+    inline void SetObjectOwnership(ObjectOwnership&& value) { m_objectOwnershipHasBeenSet = true; m_objectOwnership = std::move(value); }
+
+    
+    inline CreateBucketRequest& WithObjectOwnership(const ObjectOwnership& value) { SetObjectOwnership(value); return *this;}
+
+    
+    inline CreateBucketRequest& WithObjectOwnership(ObjectOwnership&& value) { SetObjectOwnership(std::move(value)); return *this;}
+
+
+    
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
     
@@ -461,6 +487,9 @@ namespace Model
 
     bool m_objectLockEnabledForBucket;
     bool m_objectLockEnabledForBucketHasBeenSet;
+
+    ObjectOwnership m_objectOwnership;
+    bool m_objectOwnershipHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

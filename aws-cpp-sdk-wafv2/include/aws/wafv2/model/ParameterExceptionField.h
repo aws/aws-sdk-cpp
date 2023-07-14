@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -44,6 +34,7 @@ namespace Model
     REGEX_PATTERN_REFERENCE_STATEMENT,
     IP_SET_REFERENCE_STATEMENT,
     MANAGED_RULE_SET_STATEMENT,
+    LABEL_MATCH_STATEMENT,
     AND_STATEMENT,
     OR_STATEMENT,
     NOT_STATEMENT,
@@ -63,7 +54,31 @@ namespace Model
     TAGS,
     TAG_KEYS,
     METRIC_NAME,
-    FIREWALL_MANAGER_STATEMENT
+    FIREWALL_MANAGER_STATEMENT,
+    FALLBACK_BEHAVIOR,
+    POSITION,
+    FORWARDED_IP_CONFIG,
+    IP_SET_FORWARDED_IP_CONFIG,
+    HEADER_NAME,
+    CUSTOM_REQUEST_HANDLING,
+    RESPONSE_CONTENT_TYPE,
+    CUSTOM_RESPONSE,
+    CUSTOM_RESPONSE_BODY,
+    JSON_MATCH_PATTERN,
+    JSON_MATCH_SCOPE,
+    BODY_PARSING_FALLBACK_BEHAVIOR,
+    LOGGING_FILTER,
+    FILTER_CONDITION,
+    EXPIRE_TIMESTAMP,
+    CHANGE_PROPAGATION_STATUS,
+    ASSOCIABLE_RESOURCE,
+    LOG_DESTINATION,
+    MANAGED_RULE_GROUP_CONFIG,
+    PAYLOAD_TYPE,
+    HEADER_MATCH_PATTERN,
+    COOKIE_MATCH_PATTERN,
+    MAP_MATCH_SCOPE,
+    OVERSIZE_HANDLING
   };
 
 namespace ParameterExceptionFieldMapper

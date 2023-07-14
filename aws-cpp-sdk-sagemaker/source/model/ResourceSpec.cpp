@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,27 +19,38 @@ namespace Model
 {
 
 ResourceSpec::ResourceSpec() : 
-    m_environmentArnHasBeenSet(false),
+    m_sageMakerImageArnHasBeenSet(false),
+    m_sageMakerImageVersionArnHasBeenSet(false),
     m_instanceType(AppInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_lifecycleConfigArnHasBeenSet(false)
 {
 }
 
 ResourceSpec::ResourceSpec(JsonView jsonValue) : 
-    m_environmentArnHasBeenSet(false),
+    m_sageMakerImageArnHasBeenSet(false),
+    m_sageMakerImageVersionArnHasBeenSet(false),
     m_instanceType(AppInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_lifecycleConfigArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ResourceSpec& ResourceSpec::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("EnvironmentArn"))
+  if(jsonValue.ValueExists("SageMakerImageArn"))
   {
-    m_environmentArn = jsonValue.GetString("EnvironmentArn");
+    m_sageMakerImageArn = jsonValue.GetString("SageMakerImageArn");
 
-    m_environmentArnHasBeenSet = true;
+    m_sageMakerImageArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SageMakerImageVersionArn"))
+  {
+    m_sageMakerImageVersionArn = jsonValue.GetString("SageMakerImageVersionArn");
+
+    m_sageMakerImageVersionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InstanceType"))
@@ -59,6 +60,13 @@ ResourceSpec& ResourceSpec::operator =(JsonView jsonValue)
     m_instanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LifecycleConfigArn"))
+  {
+    m_lifecycleConfigArn = jsonValue.GetString("LifecycleConfigArn");
+
+    m_lifecycleConfigArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,15 +74,27 @@ JsonValue ResourceSpec::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_environmentArnHasBeenSet)
+  if(m_sageMakerImageArnHasBeenSet)
   {
-   payload.WithString("EnvironmentArn", m_environmentArn);
+   payload.WithString("SageMakerImageArn", m_sageMakerImageArn);
+
+  }
+
+  if(m_sageMakerImageVersionArnHasBeenSet)
+  {
+   payload.WithString("SageMakerImageVersionArn", m_sageMakerImageVersionArn);
 
   }
 
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("InstanceType", AppInstanceTypeMapper::GetNameForAppInstanceType(m_instanceType));
+  }
+
+  if(m_lifecycleConfigArnHasBeenSet)
+  {
+   payload.WithString("LifecycleConfigArn", m_lifecycleConfigArn);
+
   }
 
   return payload;

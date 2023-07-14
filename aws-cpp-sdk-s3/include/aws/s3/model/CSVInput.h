@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -181,57 +171,57 @@ namespace Model
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline const Aws::String& GetQuoteEscapeCharacter() const{ return m_quoteEscapeCharacter; }
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline bool QuoteEscapeCharacterHasBeenSet() const { return m_quoteEscapeCharacterHasBeenSet; }
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline void SetQuoteEscapeCharacter(const Aws::String& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = value; }
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline void SetQuoteEscapeCharacter(Aws::String&& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = std::move(value); }
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline void SetQuoteEscapeCharacter(const char* value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter.assign(value); }
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline CSVInput& WithQuoteEscapeCharacter(const Aws::String& value) { SetQuoteEscapeCharacter(value); return *this;}
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline CSVInput& WithQuoteEscapeCharacter(Aws::String&& value) { SetQuoteEscapeCharacter(std::move(value)); return *this;}
 
     /**
      * <p>A single character used for escaping the quotation mark character inside an
-     * already escaped value. For example, the value """ a , b """ is parsed as " a , b
-     * ".</p>
+     * already escaped value. For example, the value <code>""" a , b """</code> is
+     * parsed as <code>" a , b "</code>.</p>
      */
     inline CSVInput& WithQuoteEscapeCharacter(const char* value) { SetQuoteEscapeCharacter(value); return *this;}
 

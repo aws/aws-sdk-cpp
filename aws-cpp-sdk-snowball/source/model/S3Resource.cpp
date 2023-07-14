@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/snowball/model/S3Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,15 @@ namespace Model
 
 S3Resource::S3Resource() : 
     m_bucketArnHasBeenSet(false),
-    m_keyRangeHasBeenSet(false)
+    m_keyRangeHasBeenSet(false),
+    m_targetOnDeviceServicesHasBeenSet(false)
 {
 }
 
 S3Resource::S3Resource(JsonView jsonValue) : 
     m_bucketArnHasBeenSet(false),
-    m_keyRangeHasBeenSet(false)
+    m_keyRangeHasBeenSet(false),
+    m_targetOnDeviceServicesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +49,16 @@ S3Resource& S3Resource::operator =(JsonView jsonValue)
     m_keyRangeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetOnDeviceServices"))
+  {
+    Array<JsonView> targetOnDeviceServicesJsonList = jsonValue.GetArray("TargetOnDeviceServices");
+    for(unsigned targetOnDeviceServicesIndex = 0; targetOnDeviceServicesIndex < targetOnDeviceServicesJsonList.GetLength(); ++targetOnDeviceServicesIndex)
+    {
+      m_targetOnDeviceServices.push_back(targetOnDeviceServicesJsonList[targetOnDeviceServicesIndex].AsObject());
+    }
+    m_targetOnDeviceServicesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +75,17 @@ JsonValue S3Resource::Jsonize() const
   if(m_keyRangeHasBeenSet)
   {
    payload.WithObject("KeyRange", m_keyRange.Jsonize());
+
+  }
+
+  if(m_targetOnDeviceServicesHasBeenSet)
+  {
+   Array<JsonValue> targetOnDeviceServicesJsonList(m_targetOnDeviceServices.size());
+   for(unsigned targetOnDeviceServicesIndex = 0; targetOnDeviceServicesIndex < targetOnDeviceServicesJsonList.GetLength(); ++targetOnDeviceServicesIndex)
+   {
+     targetOnDeviceServicesJsonList[targetOnDeviceServicesIndex].AsObject(m_targetOnDeviceServices[targetOnDeviceServicesIndex].Jsonize());
+   }
+   payload.WithArray("TargetOnDeviceServices", std::move(targetOnDeviceServicesJsonList));
 
   }
 

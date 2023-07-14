@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/Status.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -120,22 +111,72 @@ namespace Model
 
 
     /**
-     * <p>Confirms the enrollment status of member accounts within the organization, if
-     * the account is a master account of an organization.</p>
+     * <p>Confirms the enrollment status of member accounts of the organization, if the
+     * account is a management account of an organization.</p>
      */
     inline bool GetMemberAccountsEnrolled() const{ return m_memberAccountsEnrolled; }
 
     /**
-     * <p>Confirms the enrollment status of member accounts within the organization, if
-     * the account is a master account of an organization.</p>
+     * <p>Confirms the enrollment status of member accounts of the organization, if the
+     * account is a management account of an organization.</p>
      */
     inline void SetMemberAccountsEnrolled(bool value) { m_memberAccountsEnrolled = value; }
 
     /**
-     * <p>Confirms the enrollment status of member accounts within the organization, if
-     * the account is a master account of an organization.</p>
+     * <p>Confirms the enrollment status of member accounts of the organization, if the
+     * account is a management account of an organization.</p>
      */
     inline GetEnrollmentStatusResult& WithMemberAccountsEnrolled(bool value) { SetMemberAccountsEnrolled(value); return *this;}
+
+
+    /**
+     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
+     * was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+
+    /**
+     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
+     * was last updated.</p>
+     */
+    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestamp = value; }
+
+    /**
+     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
+     * was last updated.</p>
+     */
+    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestamp = std::move(value); }
+
+    /**
+     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
+     * was last updated.</p>
+     */
+    inline GetEnrollmentStatusResult& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
+
+    /**
+     * <p>The Unix epoch timestamp, in seconds, of when the account enrollment status
+     * was last updated.</p>
+     */
+    inline GetEnrollmentStatusResult& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The count of organization member accounts that are opted in to the service,
+     * if your account is an organization management account.</p>
+     */
+    inline int GetNumberOfMemberAccountsOptedIn() const{ return m_numberOfMemberAccountsOptedIn; }
+
+    /**
+     * <p>The count of organization member accounts that are opted in to the service,
+     * if your account is an organization management account.</p>
+     */
+    inline void SetNumberOfMemberAccountsOptedIn(int value) { m_numberOfMemberAccountsOptedIn = value; }
+
+    /**
+     * <p>The count of organization member accounts that are opted in to the service,
+     * if your account is an organization management account.</p>
+     */
+    inline GetEnrollmentStatusResult& WithNumberOfMemberAccountsOptedIn(int value) { SetNumberOfMemberAccountsOptedIn(value); return *this;}
 
   private:
 
@@ -144,6 +185,10 @@ namespace Model
     Aws::String m_statusReason;
 
     bool m_memberAccountsEnrolled;
+
+    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+
+    int m_numberOfMemberAccountsOptedIn;
   };
 
 } // namespace Model

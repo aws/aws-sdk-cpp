@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/GrpcRouteAction.h>
 #include <aws/appmesh/model/GrpcRouteMatch.h>
 #include <aws/appmesh/model/GrpcRetryPolicy.h>
+#include <aws/appmesh/model/GrpcTimeout.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +132,37 @@ namespace Model
      */
     inline GrpcRoute& WithRetryPolicy(GrpcRetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
+    inline const GrpcTimeout& GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
+    inline void SetTimeout(const GrpcTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
+    inline void SetTimeout(GrpcTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
+    inline GrpcRoute& WithTimeout(const GrpcTimeout& value) { SetTimeout(value); return *this;}
+
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
+    inline GrpcRoute& WithTimeout(GrpcTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
   private:
 
     GrpcRouteAction m_action;
@@ -151,6 +173,9 @@ namespace Model
 
     GrpcRetryPolicy m_retryPolicy;
     bool m_retryPolicyHasBeenSet;
+
+    GrpcTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

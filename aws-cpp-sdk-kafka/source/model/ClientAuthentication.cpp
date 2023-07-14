@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kafka/model/ClientAuthentication.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,23 +19,41 @@ namespace Model
 {
 
 ClientAuthentication::ClientAuthentication() : 
-    m_tlsHasBeenSet(false)
+    m_saslHasBeenSet(false),
+    m_tlsHasBeenSet(false),
+    m_unauthenticatedHasBeenSet(false)
 {
 }
 
 ClientAuthentication::ClientAuthentication(JsonView jsonValue) : 
-    m_tlsHasBeenSet(false)
+    m_saslHasBeenSet(false),
+    m_tlsHasBeenSet(false),
+    m_unauthenticatedHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ClientAuthentication& ClientAuthentication::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("sasl"))
+  {
+    m_sasl = jsonValue.GetObject("sasl");
+
+    m_saslHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
 
     m_tlsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unauthenticated"))
+  {
+    m_unauthenticated = jsonValue.GetObject("unauthenticated");
+
+    m_unauthenticatedHasBeenSet = true;
   }
 
   return *this;
@@ -55,9 +63,21 @@ JsonValue ClientAuthentication::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_saslHasBeenSet)
+  {
+   payload.WithObject("sasl", m_sasl.Jsonize());
+
+  }
+
   if(m_tlsHasBeenSet)
   {
    payload.WithObject("tls", m_tls.Jsonize());
+
+  }
+
+  if(m_unauthenticatedHasBeenSet)
+  {
+   payload.WithObject("unauthenticated", m_unauthenticated.Jsonize());
 
   }
 

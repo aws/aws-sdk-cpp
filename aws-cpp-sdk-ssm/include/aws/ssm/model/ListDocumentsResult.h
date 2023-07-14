@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline const Aws::Vector<DocumentIdentifier>& GetDocumentIdentifiers() const{ return m_documentIdentifiers; }
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline void SetDocumentIdentifiers(const Aws::Vector<DocumentIdentifier>& value) { m_documentIdentifiers = value; }
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline void SetDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { m_documentIdentifiers = std::move(value); }
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline ListDocumentsResult& WithDocumentIdentifiers(const Aws::Vector<DocumentIdentifier>& value) { SetDocumentIdentifiers(value); return *this;}
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline ListDocumentsResult& WithDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { SetDocumentIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline ListDocumentsResult& AddDocumentIdentifiers(const DocumentIdentifier& value) { m_documentIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>The names of the Systems Manager documents.</p>
+     * <p>The names of the SSM documents.</p>
      */
     inline ListDocumentsResult& AddDocumentIdentifiers(DocumentIdentifier&& value) { m_documentIdentifiers.push_back(std::move(value)); return *this; }
 

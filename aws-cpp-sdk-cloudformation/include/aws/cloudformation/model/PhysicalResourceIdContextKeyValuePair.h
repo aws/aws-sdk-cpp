@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -34,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Context information that enables AWS CloudFormation to uniquely identify a
-   * resource. AWS CloudFormation uses context key-value pairs in cases where a
-   * resource's logical and physical IDs are not enough to uniquely identify that
+   * <p>Context information that enables CloudFormation to uniquely identify a
+   * resource. CloudFormation uses context key-value pairs in cases where a
+   * resource's logical and physical IDs aren't enough to uniquely identify that
    * resource. Each context key-value pair specifies a resource that contains the
    * targeted resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PhysicalResourceIdContextKeyValuePair">AWS

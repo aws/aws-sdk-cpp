@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ EncoderSettings::EncoderSettings() :
     m_availConfigurationHasBeenSet(false),
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
+    m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
+    m_motionGraphicsConfigurationHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
@@ -48,7 +40,9 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_availConfigurationHasBeenSet(false),
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
+    m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
+    m_motionGraphicsConfigurationHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
@@ -100,11 +94,25 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
     m_captionDescriptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("featureActivations"))
+  {
+    m_featureActivations = jsonValue.GetObject("featureActivations");
+
+    m_featureActivationsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("globalConfiguration"))
   {
     m_globalConfiguration = jsonValue.GetObject("globalConfiguration");
 
     m_globalConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("motionGraphicsConfiguration"))
+  {
+    m_motionGraphicsConfiguration = jsonValue.GetObject("motionGraphicsConfiguration");
+
+    m_motionGraphicsConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nielsenConfiguration"))
@@ -188,9 +196,21 @@ JsonValue EncoderSettings::Jsonize() const
 
   }
 
+  if(m_featureActivationsHasBeenSet)
+  {
+   payload.WithObject("featureActivations", m_featureActivations.Jsonize());
+
+  }
+
   if(m_globalConfigurationHasBeenSet)
   {
    payload.WithObject("globalConfiguration", m_globalConfiguration.Jsonize());
+
+  }
+
+  if(m_motionGraphicsConfigurationHasBeenSet)
+  {
+   payload.WithObject("motionGraphicsConfiguration", m_motionGraphicsConfiguration.Jsonize());
 
   }
 

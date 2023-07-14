@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/VideoCodecSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,25 +20,35 @@ namespace Model
 
 VideoCodecSettings::VideoCodecSettings() : 
     m_av1SettingsHasBeenSet(false),
+    m_avcIntraSettingsHasBeenSet(false),
     m_codec(VideoCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_frameCaptureSettingsHasBeenSet(false),
     m_h264SettingsHasBeenSet(false),
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
-    m_proresSettingsHasBeenSet(false)
+    m_proresSettingsHasBeenSet(false),
+    m_vc3SettingsHasBeenSet(false),
+    m_vp8SettingsHasBeenSet(false),
+    m_vp9SettingsHasBeenSet(false),
+    m_xavcSettingsHasBeenSet(false)
 {
 }
 
 VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
     m_av1SettingsHasBeenSet(false),
+    m_avcIntraSettingsHasBeenSet(false),
     m_codec(VideoCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_frameCaptureSettingsHasBeenSet(false),
     m_h264SettingsHasBeenSet(false),
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
-    m_proresSettingsHasBeenSet(false)
+    m_proresSettingsHasBeenSet(false),
+    m_vc3SettingsHasBeenSet(false),
+    m_vp8SettingsHasBeenSet(false),
+    m_vp9SettingsHasBeenSet(false),
+    m_xavcSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +60,13 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_av1Settings = jsonValue.GetObject("av1Settings");
 
     m_av1SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("avcIntraSettings"))
+  {
+    m_avcIntraSettings = jsonValue.GetObject("avcIntraSettings");
+
+    m_avcIntraSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codec"))
@@ -104,6 +111,34 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_proresSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vc3Settings"))
+  {
+    m_vc3Settings = jsonValue.GetObject("vc3Settings");
+
+    m_vc3SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vp8Settings"))
+  {
+    m_vp8Settings = jsonValue.GetObject("vp8Settings");
+
+    m_vp8SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vp9Settings"))
+  {
+    m_vp9Settings = jsonValue.GetObject("vp9Settings");
+
+    m_vp9SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("xavcSettings"))
+  {
+    m_xavcSettings = jsonValue.GetObject("xavcSettings");
+
+    m_xavcSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,6 +149,12 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_av1SettingsHasBeenSet)
   {
    payload.WithObject("av1Settings", m_av1Settings.Jsonize());
+
+  }
+
+  if(m_avcIntraSettingsHasBeenSet)
+  {
+   payload.WithObject("avcIntraSettings", m_avcIntraSettings.Jsonize());
 
   }
 
@@ -149,6 +190,30 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_proresSettingsHasBeenSet)
   {
    payload.WithObject("proresSettings", m_proresSettings.Jsonize());
+
+  }
+
+  if(m_vc3SettingsHasBeenSet)
+  {
+   payload.WithObject("vc3Settings", m_vc3Settings.Jsonize());
+
+  }
+
+  if(m_vp8SettingsHasBeenSet)
+  {
+   payload.WithObject("vp8Settings", m_vp8Settings.Jsonize());
+
+  }
+
+  if(m_vp9SettingsHasBeenSet)
+  {
+   payload.WithObject("vp9Settings", m_vp9Settings.Jsonize());
+
+  }
+
+  if(m_xavcSettingsHasBeenSet)
+  {
+   payload.WithObject("xavcSettings", m_xavcSettings.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/CampaignResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,6 +23,7 @@ CampaignResponse::CampaignResponse() :
     m_applicationIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_defaultStateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
@@ -55,7 +46,9 @@ CampaignResponse::CampaignResponse() :
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -64,6 +57,7 @@ CampaignResponse::CampaignResponse(JsonView jsonValue) :
     m_applicationIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_defaultStateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
@@ -86,7 +80,9 @@ CampaignResponse::CampaignResponse(JsonView jsonValue) :
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +118,13 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
     m_creationDate = jsonValue.GetString("CreationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
+  {
+    m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
+
+    m_customDeliveryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultState"))
@@ -260,6 +263,13 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetInteger("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -293,6 +303,12 @@ JsonValue CampaignResponse::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("CreationDate", m_creationDate);
+
+  }
+
+  if(m_customDeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDeliveryConfiguration", m_customDeliveryConfiguration.Jsonize());
 
   }
 
@@ -412,6 +428,12 @@ JsonValue CampaignResponse::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInteger("Version", m_version);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("Priority", m_priority);
 
   }
 

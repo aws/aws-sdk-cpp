@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/config/model/OrganizationManagedRuleMetadata.h>
 #include <aws/config/model/OrganizationCustomRuleMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/OrganizationCustomPolicyRuleMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -48,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline const Aws::String& GetOrganizationConfigRuleName() const{ return m_organizationConfigRuleName; }
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline bool OrganizationConfigRuleNameHasBeenSet() const { return m_organizationConfigRuleNameHasBeenSet; }
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline void SetOrganizationConfigRuleName(const Aws::String& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = value; }
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline void SetOrganizationConfigRuleName(Aws::String&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::move(value); }
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline void SetOrganizationConfigRuleName(const char* value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName.assign(value); }
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(const Aws::String& value) { SetOrganizationConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(Aws::String&& value) { SetOrganizationConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name that you assign to an organization config rule.</p>
+     * <p>The name that you assign to an organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(const char* value) { SetOrganizationConfigRuleName(value); return *this;}
 
@@ -152,57 +143,118 @@ namespace Model
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludedAccounts() const{ return m_excludedAccounts; }
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline bool ExcludedAccountsHasBeenSet() const { return m_excludedAccountsHasBeenSet; }
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline void SetExcludedAccounts(const Aws::Vector<Aws::String>& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts = value; }
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline void SetExcludedAccounts(Aws::Vector<Aws::String>&& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts = std::move(value); }
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& WithExcludedAccounts(const Aws::Vector<Aws::String>& value) { SetExcludedAccounts(value); return *this;}
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& WithExcludedAccounts(Aws::Vector<Aws::String>&& value) { SetExcludedAccounts(std::move(value)); return *this;}
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& AddExcludedAccounts(const Aws::String& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.push_back(value); return *this; }
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& AddExcludedAccounts(Aws::String&& value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A comma-separated list of accounts that you want to exclude from an
-     * organization config rule.</p>
+     * organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleRequest& AddExcludedAccounts(const char* value) { m_excludedAccountsHasBeenSet = true; m_excludedAccounts.push_back(value); return *this; }
+
+
+    /**
+     * <p>An object that specifies metadata for your organization's Config Custom
+     * Policy rule. The metadata includes the runtime system in use, which accounts
+     * have debug logging enabled, and other custom rule metadata, such as resource
+     * type, resource ID of Amazon Web Services resource, and organization trigger
+     * types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.</p>
+     */
+    inline const OrganizationCustomPolicyRuleMetadata& GetOrganizationCustomPolicyRuleMetadata() const{ return m_organizationCustomPolicyRuleMetadata; }
+
+    /**
+     * <p>An object that specifies metadata for your organization's Config Custom
+     * Policy rule. The metadata includes the runtime system in use, which accounts
+     * have debug logging enabled, and other custom rule metadata, such as resource
+     * type, resource ID of Amazon Web Services resource, and organization trigger
+     * types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.</p>
+     */
+    inline bool OrganizationCustomPolicyRuleMetadataHasBeenSet() const { return m_organizationCustomPolicyRuleMetadataHasBeenSet; }
+
+    /**
+     * <p>An object that specifies metadata for your organization's Config Custom
+     * Policy rule. The metadata includes the runtime system in use, which accounts
+     * have debug logging enabled, and other custom rule metadata, such as resource
+     * type, resource ID of Amazon Web Services resource, and organization trigger
+     * types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.</p>
+     */
+    inline void SetOrganizationCustomPolicyRuleMetadata(const OrganizationCustomPolicyRuleMetadata& value) { m_organizationCustomPolicyRuleMetadataHasBeenSet = true; m_organizationCustomPolicyRuleMetadata = value; }
+
+    /**
+     * <p>An object that specifies metadata for your organization's Config Custom
+     * Policy rule. The metadata includes the runtime system in use, which accounts
+     * have debug logging enabled, and other custom rule metadata, such as resource
+     * type, resource ID of Amazon Web Services resource, and organization trigger
+     * types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.</p>
+     */
+    inline void SetOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadata&& value) { m_organizationCustomPolicyRuleMetadataHasBeenSet = true; m_organizationCustomPolicyRuleMetadata = std::move(value); }
+
+    /**
+     * <p>An object that specifies metadata for your organization's Config Custom
+     * Policy rule. The metadata includes the runtime system in use, which accounts
+     * have debug logging enabled, and other custom rule metadata, such as resource
+     * type, resource ID of Amazon Web Services resource, and organization trigger
+     * types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.</p>
+     */
+    inline PutOrganizationConfigRuleRequest& WithOrganizationCustomPolicyRuleMetadata(const OrganizationCustomPolicyRuleMetadata& value) { SetOrganizationCustomPolicyRuleMetadata(value); return *this;}
+
+    /**
+     * <p>An object that specifies metadata for your organization's Config Custom
+     * Policy rule. The metadata includes the runtime system in use, which accounts
+     * have debug logging enabled, and other custom rule metadata, such as resource
+     * type, resource ID of Amazon Web Services resource, and organization trigger
+     * types that initiate Config to evaluate Amazon Web Services resources against a
+     * rule.</p>
+     */
+    inline PutOrganizationConfigRuleRequest& WithOrganizationCustomPolicyRuleMetadata(OrganizationCustomPolicyRuleMetadata&& value) { SetOrganizationCustomPolicyRuleMetadata(std::move(value)); return *this;}
 
   private:
 
@@ -217,6 +269,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_excludedAccounts;
     bool m_excludedAccountsHasBeenSet;
+
+    OrganizationCustomPolicyRuleMetadata m_organizationCustomPolicyRuleMetadata;
+    bool m_organizationCustomPolicyRuleMetadataHasBeenSet;
   };
 
 } // namespace Model

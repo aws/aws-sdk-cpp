@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the current creation or deletion lifecycle state of an AWS
+   * <p>Information about the current creation or deletion lifecycle state of an
    * Cloud9 development environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentLifecycle">AWS
    * API Reference</a></p>
@@ -159,49 +149,49 @@ namespace Model
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetFailureResource() const{ return m_failureResource; }
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline bool FailureResourceHasBeenSet() const { return m_failureResourceHasBeenSet; }
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline void SetFailureResource(const Aws::String& value) { m_failureResourceHasBeenSet = true; m_failureResource = value; }
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline void SetFailureResource(Aws::String&& value) { m_failureResourceHasBeenSet = true; m_failureResource = std::move(value); }
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline void SetFailureResource(const char* value) { m_failureResourceHasBeenSet = true; m_failureResource.assign(value); }
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline EnvironmentLifecycle& WithFailureResource(const Aws::String& value) { SetFailureResource(value); return *this;}
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline EnvironmentLifecycle& WithFailureResource(Aws::String&& value) { SetFailureResource(std::move(value)); return *this;}
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
-     * related AWS resource.</p>
+     * related Amazon Web Services resource.</p>
      */
     inline EnvironmentLifecycle& WithFailureResource(const char* value) { SetFailureResource(value); return *this;}
 

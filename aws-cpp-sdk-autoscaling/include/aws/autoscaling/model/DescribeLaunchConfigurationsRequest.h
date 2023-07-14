@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -49,55 +39,64 @@ namespace Model
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLaunchConfigurationNames() const{ return m_launchConfigurationNames; }
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline bool LaunchConfigurationNamesHasBeenSet() const { return m_launchConfigurationNamesHasBeenSet; }
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline void SetLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = value; }
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline void SetLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = std::move(value); }
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { SetLaunchConfigurationNames(value); return *this;}
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { SetLaunchConfigurationNames(std::move(value)); return *this;}
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const Aws::String& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(Aws::String&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
-     * configurations are described.</p>
+     * configurations are described.</p> <p>Array Members: Maximum number of 50
+     * items.</p>
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const char* value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 

@@ -1,22 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/secretsmanager/SecretsManagerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/secretsmanager/model/SortOrderType.h>
+#include <aws/secretsmanager/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -45,129 +38,165 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>The number of results to include in the response.</p> <p>If there are more
+     * results available, in the response, Secrets Manager includes
+     * <code>NextToken</code>. To get the next results, call <code>ListSecrets</code>
+     * again with the value from <code>NextToken</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>The number of results to include in the response.</p> <p>If there are more
+     * results available, in the response, Secrets Manager includes
+     * <code>NextToken</code>. To get the next results, call <code>ListSecrets</code>
+     * again with the value from <code>NextToken</code>.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>The number of results to include in the response.</p> <p>If there are more
+     * results available, in the response, Secrets Manager includes
+     * <code>NextToken</code>. To get the next results, call <code>ListSecrets</code>
+     * again with the value from <code>NextToken</code>.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Limits the number of results that you want to include in the
-     * response. If you don't include this parameter, it defaults to a value that's
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (isn't null). Include that value as the <code>NextToken</code> request parameter
-     * in the next call to the operation to get the next part of the results. Note that
-     * Secrets Manager might return fewer results than the maximum even when there are
-     * more results available. You should check <code>NextToken</code> after every
-     * operation to ensure that you receive all of the results.</p>
+     * <p>The number of results to include in the response.</p> <p>If there are more
+     * results available, in the response, Secrets Manager includes
+     * <code>NextToken</code>. To get the next results, call <code>ListSecrets</code>
+     * again with the value from <code>NextToken</code>.</p>
      */
     inline ListSecretsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline ListSecretsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline ListSecretsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Use this parameter in a request if you receive a
-     * <code>NextToken</code> response in a previous request that indicates that
-     * there's more output available. In a subsequent call, set it to the value of the
-     * previous call's <code>NextToken</code> response to indicate where the output
-     * should continue from.</p>
+     * <p>A token that indicates where the output should continue from, if a previous
+     * call did not show all results. To get the next results, call
+     * <code>ListSecrets</code> again with this value.</p>
      */
     inline ListSecretsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline ListSecretsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline ListSecretsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline ListSecretsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>The filters to apply to the list of secrets.</p>
+     */
+    inline ListSecretsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Lists secrets in the requested order. </p>
+     */
+    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>Lists secrets in the requested order. </p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>Lists secrets in the requested order. </p>
+     */
+    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+
+    /**
+     * <p>Lists secrets in the requested order. </p>
+     */
+    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
+
+    /**
+     * <p>Lists secrets in the requested order. </p>
+     */
+    inline ListSecretsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
+
+    /**
+     * <p>Lists secrets in the requested order. </p>
+     */
+    inline ListSecretsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 
   private:
 
@@ -176,6 +205,12 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
+
+    SortOrderType m_sortOrder;
+    bool m_sortOrderHasBeenSet;
   };
 
 } // namespace Model

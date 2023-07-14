@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -141,6 +131,128 @@ namespace Model
      */
     inline DescribeProductAsAdminRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProductAsAdminRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProductAsAdminRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProductAsAdminRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline const Aws::String& GetSourcePortfolioId() const{ return m_sourcePortfolioId; }
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline bool SourcePortfolioIdHasBeenSet() const { return m_sourcePortfolioIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline void SetSourcePortfolioId(const Aws::String& value) { m_sourcePortfolioIdHasBeenSet = true; m_sourcePortfolioId = value; }
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline void SetSourcePortfolioId(Aws::String&& value) { m_sourcePortfolioIdHasBeenSet = true; m_sourcePortfolioId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline void SetSourcePortfolioId(const char* value) { m_sourcePortfolioIdHasBeenSet = true; m_sourcePortfolioId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline DescribeProductAsAdminRequest& WithSourcePortfolioId(const Aws::String& value) { SetSourcePortfolioId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline DescribeProductAsAdminRequest& WithSourcePortfolioId(Aws::String&& value) { SetSourcePortfolioId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of the shared portfolio that the specified product is
+     * associated with.</p> <p>You can provide this parameter to retrieve the shared
+     * TagOptions associated with the product. If this parameter is provided and if
+     * TagOptions sharing is enabled in the portfolio share, the API returns both local
+     * and shared TagOptions associated with the product. Otherwise only local
+     * TagOptions will be returned. </p>
+     */
+    inline DescribeProductAsAdminRequest& WithSourcePortfolioId(const char* value) { SetSourcePortfolioId(value); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -148,6 +260,12 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    Aws::String m_sourcePortfolioId;
+    bool m_sourcePortfolioIdHasBeenSet;
   };
 
 } // namespace Model

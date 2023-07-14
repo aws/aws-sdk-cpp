@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
@@ -25,6 +15,8 @@
 #include <aws/kinesisvideo/model/CreateStreamResult.h>
 #include <aws/kinesisvideo/model/DeleteSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/DeleteStreamResult.h>
+#include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationResult.h>
+#include <aws/kinesisvideo/model/DescribeNotificationConfigurationResult.h>
 #include <aws/kinesisvideo/model/DescribeSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/DescribeStreamResult.h>
 #include <aws/kinesisvideo/model/GetDataEndpointResult.h>
@@ -38,6 +30,8 @@
 #include <aws/kinesisvideo/model/UntagResourceResult.h>
 #include <aws/kinesisvideo/model/UntagStreamResult.h>
 #include <aws/kinesisvideo/model/UpdateDataRetentionResult.h>
+#include <aws/kinesisvideo/model/UpdateImageGenerationConfigurationResult.h>
+#include <aws/kinesisvideo/model/UpdateNotificationConfigurationResult.h>
 #include <aws/kinesisvideo/model/UpdateSignalingChannelResult.h>
 #include <aws/kinesisvideo/model/UpdateStreamResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -83,6 +77,8 @@ namespace Model
         class CreateStreamRequest;
         class DeleteSignalingChannelRequest;
         class DeleteStreamRequest;
+        class DescribeImageGenerationConfigurationRequest;
+        class DescribeNotificationConfigurationRequest;
         class DescribeSignalingChannelRequest;
         class DescribeStreamRequest;
         class GetDataEndpointRequest;
@@ -96,33 +92,41 @@ namespace Model
         class UntagResourceRequest;
         class UntagStreamRequest;
         class UpdateDataRetentionRequest;
+        class UpdateImageGenerationConfigurationRequest;
+        class UpdateNotificationConfigurationRequest;
         class UpdateSignalingChannelRequest;
         class UpdateStreamRequest;
 
-        typedef Aws::Utils::Outcome<CreateSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> CreateSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> CreateStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> DeleteSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> DeleteStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> DescribeSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<GetDataEndpointResult, Aws::Client::AWSError<KinesisVideoErrors>> GetDataEndpointOutcome;
-        typedef Aws::Utils::Outcome<GetSignalingChannelEndpointResult, Aws::Client::AWSError<KinesisVideoErrors>> GetSignalingChannelEndpointOutcome;
-        typedef Aws::Utils::Outcome<ListSignalingChannelsResult, Aws::Client::AWSError<KinesisVideoErrors>> ListSignalingChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, Aws::Client::AWSError<KinesisVideoErrors>> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<KinesisVideoErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> ListTagsForStreamOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<KinesisVideoErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TagStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> TagStreamOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<KinesisVideoErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> UntagStreamOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataRetentionResult, Aws::Client::AWSError<KinesisVideoErrors>> UpdateDataRetentionOutcome;
-        typedef Aws::Utils::Outcome<UpdateSignalingChannelResult, Aws::Client::AWSError<KinesisVideoErrors>> UpdateSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<UpdateStreamResult, Aws::Client::AWSError<KinesisVideoErrors>> UpdateStreamOutcome;
+        typedef Aws::Utils::Outcome<CreateSignalingChannelResult, KinesisVideoError> CreateSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<CreateStreamResult, KinesisVideoError> CreateStreamOutcome;
+        typedef Aws::Utils::Outcome<DeleteSignalingChannelResult, KinesisVideoError> DeleteSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteStreamResult, KinesisVideoError> DeleteStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeImageGenerationConfigurationResult, KinesisVideoError> DescribeImageGenerationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotificationConfigurationResult, KinesisVideoError> DescribeNotificationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeSignalingChannelResult, KinesisVideoError> DescribeSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisVideoError> DescribeStreamOutcome;
+        typedef Aws::Utils::Outcome<GetDataEndpointResult, KinesisVideoError> GetDataEndpointOutcome;
+        typedef Aws::Utils::Outcome<GetSignalingChannelEndpointResult, KinesisVideoError> GetSignalingChannelEndpointOutcome;
+        typedef Aws::Utils::Outcome<ListSignalingChannelsResult, KinesisVideoError> ListSignalingChannelsOutcome;
+        typedef Aws::Utils::Outcome<ListStreamsResult, KinesisVideoError> ListStreamsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisVideoError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisVideoError> ListTagsForStreamOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, KinesisVideoError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TagStreamResult, KinesisVideoError> TagStreamOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, KinesisVideoError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagStreamResult, KinesisVideoError> UntagStreamOutcome;
+        typedef Aws::Utils::Outcome<UpdateDataRetentionResult, KinesisVideoError> UpdateDataRetentionOutcome;
+        typedef Aws::Utils::Outcome<UpdateImageGenerationConfigurationResult, KinesisVideoError> UpdateImageGenerationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotificationConfigurationResult, KinesisVideoError> UpdateNotificationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateSignalingChannelResult, KinesisVideoError> UpdateSignalingChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateStreamResult, KinesisVideoError> UpdateStreamOutcome;
 
         typedef std::future<CreateSignalingChannelOutcome> CreateSignalingChannelOutcomeCallable;
         typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
         typedef std::future<DeleteSignalingChannelOutcome> DeleteSignalingChannelOutcomeCallable;
         typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
+        typedef std::future<DescribeImageGenerationConfigurationOutcome> DescribeImageGenerationConfigurationOutcomeCallable;
+        typedef std::future<DescribeNotificationConfigurationOutcome> DescribeNotificationConfigurationOutcomeCallable;
         typedef std::future<DescribeSignalingChannelOutcome> DescribeSignalingChannelOutcomeCallable;
         typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
         typedef std::future<GetDataEndpointOutcome> GetDataEndpointOutcomeCallable;
@@ -136,6 +140,8 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UntagStreamOutcome> UntagStreamOutcomeCallable;
         typedef std::future<UpdateDataRetentionOutcome> UpdateDataRetentionOutcomeCallable;
+        typedef std::future<UpdateImageGenerationConfigurationOutcome> UpdateImageGenerationConfigurationOutcomeCallable;
+        typedef std::future<UpdateNotificationConfigurationOutcome> UpdateNotificationConfigurationOutcomeCallable;
         typedef std::future<UpdateSignalingChannelOutcome> UpdateSignalingChannelOutcomeCallable;
         typedef std::future<UpdateStreamOutcome> UpdateStreamOutcomeCallable;
 } // namespace Model
@@ -146,6 +152,8 @@ namespace Model
     typedef std::function<void(const KinesisVideoClient*, const Model::CreateStreamRequest&, const Model::CreateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::DeleteSignalingChannelRequest&, const Model::DeleteSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSignalingChannelResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::DeleteStreamRequest&, const Model::DeleteStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoClient*, const Model::DescribeImageGenerationConfigurationRequest&, const Model::DescribeImageGenerationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageGenerationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoClient*, const Model::DescribeNotificationConfigurationRequest&, const Model::DescribeNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::DescribeSignalingChannelRequest&, const Model::DescribeSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSignalingChannelResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::GetDataEndpointRequest&, const Model::GetDataEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataEndpointResponseReceivedHandler;
@@ -159,6 +167,8 @@ namespace Model
     typedef std::function<void(const KinesisVideoClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::UntagStreamRequest&, const Model::UntagStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagStreamResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::UpdateDataRetentionRequest&, const Model::UpdateDataRetentionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataRetentionResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateImageGenerationConfigurationRequest&, const Model::UpdateImageGenerationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageGenerationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateNotificationConfigurationRequest&, const Model::UpdateNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::UpdateSignalingChannelRequest&, const Model::UpdateSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSignalingChannelResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoClient*, const Model::UpdateStreamRequest&, const Model::UpdateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamResponseReceivedHandler;
 
@@ -191,8 +201,6 @@ namespace Model
 
         virtual ~KinesisVideoClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Kinesis Video"; }
-
 
         /**
          * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
@@ -203,22 +211,12 @@ namespace Model
         virtual Model::CreateSignalingChannelOutcome CreateSignalingChannel(const Model::CreateSignalingChannelRequest& request) const;
 
         /**
-         * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
-         * an asynchronous operation.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSignalingChannelOutcomeCallable CreateSignalingChannelCallable(const Model::CreateSignalingChannelRequest& request) const;
 
         /**
-         * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
-         * an asynchronous operation.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSignalingChannelAsync(const Model::CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -237,34 +235,12 @@ namespace Model
         virtual Model::CreateStreamOutcome CreateStream(const Model::CreateStreamRequest& request) const;
 
         /**
-         * <p>Creates a new Kinesis video stream. </p> <p>When you create a new stream,
-         * Kinesis Video Streams assigns it a version number. When you change the stream's
-         * metadata, Kinesis Video Streams updates the version. </p> <p>
-         * <code>CreateStream</code> is an asynchronous operation.</p> <p>For information
-         * about how the service works, see <a
-         * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
-         * it Works</a>. </p> <p>You must have permissions for the
-         * <code>KinesisVideo:CreateStream</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateStreamOutcomeCallable CreateStreamCallable(const Model::CreateStreamRequest& request) const;
 
         /**
-         * <p>Creates a new Kinesis video stream. </p> <p>When you create a new stream,
-         * Kinesis Video Streams assigns it a version number. When you change the stream's
-         * metadata, Kinesis Video Streams updates the version. </p> <p>
-         * <code>CreateStream</code> is an asynchronous operation.</p> <p>For information
-         * about how the service works, see <a
-         * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
-         * it Works</a>. </p> <p>You must have permissions for the
-         * <code>KinesisVideo:CreateStream</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -278,24 +254,12 @@ namespace Model
         virtual Model::DeleteSignalingChannelOutcome DeleteSignalingChannel(const Model::DeleteSignalingChannelRequest& request) const;
 
         /**
-         * <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is
-         * an asynchronous operation. If you don't specify the channel's current version,
-         * the most recent version is deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSignalingChannelOutcomeCallable DeleteSignalingChannelCallable(const Model::DeleteSignalingChannelRequest& request) const;
 
         /**
-         * <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is
-         * an asynchronous operation. If you don't specify the channel's current version,
-         * the most recent version is deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSignalingChannelAsync(const Model::DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -315,67 +279,67 @@ namespace Model
         virtual Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
 
         /**
-         * <p>Deletes a Kinesis video stream and the data contained in the stream. </p>
-         * <p>This method marks the stream for deletion, and makes the data in the stream
-         * inaccessible immediately.</p> <p> </p> <p> To ensure that you have the latest
-         * version of the stream before deleting it, you can specify the stream version.
-         * Kinesis Video Streams assigns a version to each stream. When you update a
-         * stream, Kinesis Video Streams assigns a new version number. To get the latest
-         * stream version, use the <code>DescribeStream</code> API. </p> <p>This operation
-         * requires permission for the <code>KinesisVideo:DeleteStream</code>
-         * action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteStreamOutcomeCallable DeleteStreamCallable(const Model::DeleteStreamRequest& request) const;
 
         /**
-         * <p>Deletes a Kinesis video stream and the data contained in the stream. </p>
-         * <p>This method marks the stream for deletion, and makes the data in the stream
-         * inaccessible immediately.</p> <p> </p> <p> To ensure that you have the latest
-         * version of the stream before deleting it, you can specify the stream version.
-         * Kinesis Video Streams assigns a version to each stream. When you update a
-         * stream, Kinesis Video Streams assigns a new version number. To get the latest
-         * stream version, use the <code>DescribeStream</code> API. </p> <p>This operation
-         * requires permission for the <code>KinesisVideo:DeleteStream</code>
-         * action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStreamAsync(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageGenerationConfigurationOutcome DescribeImageGenerationConfiguration(const Model::DescribeImageGenerationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeImageGenerationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImageGenerationConfigurationOutcomeCallable DescribeImageGenerationConfigurationCallable(const Model::DescribeImageGenerationConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeImageGenerationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImageGenerationConfigurationAsync(const Model::DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the <code>NotificationConfiguration</code> for a given Kinesis video
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNotificationConfigurationOutcome DescribeNotificationConfiguration(const Model::DescribeNotificationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNotificationConfigurationOutcomeCallable DescribeNotificationConfigurationCallable(const Model::DescribeNotificationConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNotificationConfigurationAsync(const Model::DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSignalingChannelOutcome DescribeSignalingChannel(const Model::DescribeSignalingChannelRequest& request) const;
 
         /**
-         * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeSignalingChannelOutcomeCallable DescribeSignalingChannelCallable(const Model::DescribeSignalingChannelRequest& request) const;
 
         /**
-         * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSignalingChannelAsync(const Model::DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -389,24 +353,12 @@ namespace Model
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
         /**
-         * <p>Returns the most current information about the specified stream. You must
-         * specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeStreamOutcomeCallable DescribeStreamCallable(const Model::DescribeStreamRequest& request) const;
 
         /**
-         * <p>Returns the most current information about the specified stream. You must
-         * specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -414,9 +366,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -425,34 +377,12 @@ namespace Model
         virtual Model::GetDataEndpointOutcome GetDataEndpoint(const Model::GetDataEndpointRequest& request) const;
 
         /**
-         * <p>Gets an endpoint for a specified stream for either reading or writing. Use
-         * this endpoint in your application to read from the specified stream (using the
-         * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
-         * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
-         * the stream either by <code>StreamName</code> or
-         * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDataEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDataEndpointOutcomeCallable GetDataEndpointCallable(const Model::GetDataEndpointRequest& request) const;
 
         /**
-         * <p>Gets an endpoint for a specified stream for either reading or writing. Use
-         * this endpoint in your application to read from the specified stream (using the
-         * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
-         * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
-         * the stream either by <code>StreamName</code> or
-         * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDataEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDataEndpointAsync(const Model::GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -462,58 +392,26 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSignalingChannelEndpointOutcome GetSignalingChannelEndpoint(const Model::GetSignalingChannelEndpointRequest& request) const;
 
         /**
-         * <p>Provides an endpoint for the specified signaling channel to send and receive
-         * messages. This API uses the
-         * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
-         * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
-         * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetSignalingChannelEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSignalingChannelEndpointOutcomeCallable GetSignalingChannelEndpointCallable(const Model::GetSignalingChannelEndpointRequest& request) const;
 
         /**
-         * <p>Provides an endpoint for the specified signaling channel to send and receive
-         * messages. This API uses the
-         * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
-         * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
-         * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetSignalingChannelEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSignalingChannelEndpointAsync(const Model::GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -528,26 +426,12 @@ namespace Model
         virtual Model::ListSignalingChannelsOutcome ListSignalingChannels(const Model::ListSignalingChannelsRequest& request) const;
 
         /**
-         * <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a
-         * signaling channel. To retrieve only those channels that satisfy a specific
-         * condition, you can specify a <code>ChannelNameCondition</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListSignalingChannels">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListSignalingChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSignalingChannelsOutcomeCallable ListSignalingChannelsCallable(const Model::ListSignalingChannelsRequest& request) const;
 
         /**
-         * <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a
-         * signaling channel. To retrieve only those channels that satisfy a specific
-         * condition, you can specify a <code>ChannelNameCondition</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListSignalingChannels">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListSignalingChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSignalingChannelsAsync(const Model::ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -561,24 +445,12 @@ namespace Model
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Returns an array of <code>StreamInfo</code> objects. Each object describes a
-         * stream. To retrieve only streams that satisfy a specific condition, you can
-         * specify a <code>StreamNameCondition</code>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Returns an array of <code>StreamInfo</code> objects. Each object describes a
-         * stream. To retrieve only streams that satisfy a specific condition, you can
-         * specify a <code>StreamNameCondition</code>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -591,22 +463,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of tags associated with the specified signaling
-         * channel.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of tags associated with the specified signaling
-         * channel.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -620,119 +482,62 @@ namespace Model
         virtual Model::ListTagsForStreamOutcome ListTagsForStream(const Model::ListTagsForStreamRequest& request) const;
 
         /**
-         * <p>Returns a list of tags associated with the specified stream.</p> <p>In the
-         * request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForStreamOutcomeCallable ListTagsForStreamCallable(const Model::ListTagsForStreamRequest& request) const;
 
         /**
-         * <p>Returns a list of tags associated with the specified stream.</p> <p>In the
-         * request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForStreamAsync(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
-         * pair (the value is optional) that you can define and assign to AWS resources. If
-         * you specify a tag that already exists, the tag value is replaced with the value
-         * that you specify in the request. For more information, see <a
+         * pair (the value is optional) that you can define and assign to Amazon Web
+         * Services resources. If you specify a tag that already exists, the tag value is
+         * replaced with the value that you specify in the request. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
-         * pair (the value is optional) that you can define and assign to AWS resources. If
-         * you specify a tag that already exists, the tag value is replaced with the value
-         * that you specify in the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
-         * pair (the value is optional) that you can define and assign to AWS resources. If
-         * you specify a tag that already exists, the tag value is replaced with the value
-         * that you specify in the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the
-         * value is optional) that you can define and assign to AWS resources. If you
-         * specify a tag that already exists, the tag value is replaced with the value that
-         * you specify in the request. For more information, see <a
+         * value is optional) that you can define and assign to Amazon Web Services
+         * resources. If you specify a tag that already exists, the tag value is replaced
+         * with the value that you specify in the request. For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>. </p> <p>You must provide either the <code>StreamName</code> or the
-         * <code>StreamARN</code>.</p> <p>This operation requires permission for the
-         * <code>KinesisVideo:TagStream</code> action.</p> <p>Kinesis video streams support
-         * up to 50 tags.</p><p><h3>See Also:</h3>   <a
+         * Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost
+         * Management User Guide</i>. </p> <p>You must provide either the
+         * <code>StreamName</code> or the <code>StreamARN</code>.</p> <p>This operation
+         * requires permission for the <code>KinesisVideo:TagStream</code> action.</p> <p>A
+         * Kinesis video stream can support up to 50 tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">AWS
          * API Reference</a></p>
          */
         virtual Model::TagStreamOutcome TagStream(const Model::TagStreamRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the
-         * value is optional) that you can define and assign to AWS resources. If you
-         * specify a tag that already exists, the tag value is replaced with the value that
-         * you specify in the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>. </p> <p>You must provide either the <code>StreamName</code> or the
-         * <code>StreamARN</code>.</p> <p>This operation requires permission for the
-         * <code>KinesisVideo:TagStream</code> action.</p> <p>Kinesis video streams support
-         * up to 50 tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagStreamOutcomeCallable TagStreamCallable(const Model::TagStreamRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the
-         * value is optional) that you can define and assign to AWS resources. If you
-         * specify a tag that already exists, the tag value is replaced with the value that
-         * you specify in the request. For more information, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>. </p> <p>You must provide either the <code>StreamName</code> or the
-         * <code>StreamARN</code>.</p> <p>This operation requires permission for the
-         * <code>KinesisVideo:TagStream</code> action.</p> <p>Kinesis video streams support
-         * up to 50 tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagStreamAsync(const Model::TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -746,24 +551,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a signaling channel. In the request, specify
-         * only a tag key or keys; don't specify the value. If you specify a tag key that
-         * does not exist, it's ignored.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a signaling channel. In the request, specify
-         * only a tag key or keys; don't specify the value. If you specify a tag key that
-         * does not exist, it's ignored.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -778,26 +571,12 @@ namespace Model
         virtual Model::UntagStreamOutcome UntagStream(const Model::UntagStreamRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a stream. In the request, specify only a tag
-         * key or keys; don't specify the value. If you specify a tag key that does not
-         * exist, it's ignored.</p> <p>In the request, you must provide the
-         * <code>StreamName</code> or <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagStreamOutcomeCallable UntagStreamCallable(const Model::UntagStreamRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a stream. In the request, specify only a tag
-         * key or keys; don't specify the value. If you specify a tag key that does not
-         * exist, it's ignored.</p> <p>In the request, you must provide the
-         * <code>StreamName</code> or <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagStreamAsync(const Model::UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -806,8 +585,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for
@@ -824,90 +603,69 @@ namespace Model
         virtual Model::UpdateDataRetentionOutcome UpdateDataRetention(const Model::UpdateDataRetentionRequest& request) const;
 
         /**
-         * <p> Increases or decreases the stream's data retention period by the value that
-         * you specify. To indicate whether you want to increase or decrease the data
-         * retention period, specify the <code>Operation</code> parameter in the request
-         * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
-         * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
-         * the data retention period affects the data in the stream as follows:</p> <ul>
-         * <li> <p>If the data retention period is increased, existing data is retained for
-         * the new retention period. For example, if the data retention period is increased
-         * from one hour to seven hours, all existing data is retained for seven hours.</p>
-         * </li> <li> <p>If the data retention period is decreased, existing data is
-         * retained for the new retention period. For example, if the data retention period
-         * is decreased from seven hours to one hour, all existing data is retained for one
-         * hour, and any data older than one hour is deleted immediately.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDataRetention that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDataRetentionOutcomeCallable UpdateDataRetentionCallable(const Model::UpdateDataRetentionRequest& request) const;
 
         /**
-         * <p> Increases or decreases the stream's data retention period by the value that
-         * you specify. To indicate whether you want to increase or decrease the data
-         * retention period, specify the <code>Operation</code> parameter in the request
-         * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
-         * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
-         * the data retention period affects the data in the stream as follows:</p> <ul>
-         * <li> <p>If the data retention period is increased, existing data is retained for
-         * the new retention period. For example, if the data retention period is increased
-         * from one hour to seven hours, all existing data is retained for seven hours.</p>
-         * </li> <li> <p>If the data retention period is decreased, existing data is
-         * retained for the new retention period. For example, if the data retention period
-         * is decreased from seven hours to one hour, all existing data is retained for one
-         * hour, and any data older than one hour is deleted immediately.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDataRetention that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDataRetentionAsync(const Model::UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the <code>StreamInfo</code> and
+         * <code>ImageProcessingConfiguration</code> fields.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateImageGenerationConfigurationOutcome UpdateImageGenerationConfiguration(const Model::UpdateImageGenerationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateImageGenerationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateImageGenerationConfigurationOutcomeCallable UpdateImageGenerationConfigurationCallable(const Model::UpdateImageGenerationConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateImageGenerationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateImageGenerationConfigurationAsync(const Model::UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the notification information for a stream.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNotificationConfigurationOutcome UpdateNotificationConfiguration(const Model::UpdateNotificationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateNotificationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNotificationConfigurationOutcomeCallable UpdateNotificationConfigurationCallable(const Model::UpdateNotificationConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateNotificationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNotificationConfigurationAsync(const Model::UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSignalingChannelOutcome UpdateSignalingChannel(const Model::UpdateSignalingChannelRequest& request) const;
 
         /**
-         * <p>Updates the existing signaling channel. This is an asynchronous operation and
-         * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateSignalingChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSignalingChannelOutcomeCallable UpdateSignalingChannelCallable(const Model::UpdateSignalingChannelRequest& request) const;
 
         /**
-         * <p>Updates the existing signaling channel. This is an asynchronous operation and
-         * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateSignalingChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSignalingChannelAsync(const Model::UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -927,36 +685,12 @@ namespace Model
         virtual Model::UpdateStreamOutcome UpdateStream(const Model::UpdateStreamRequest& request) const;
 
         /**
-         * <p>Updates stream metadata, such as the device name and media type.</p> <p>You
-         * must provide the stream name or the Amazon Resource Name (ARN) of the
-         * stream.</p> <p>To make sure that you have the latest version of the stream
-         * before updating it, you can specify the stream version. Kinesis Video Streams
-         * assigns a version to each stream. When you update a stream, Kinesis Video
-         * Streams assigns a new version number. To get the latest stream version, use the
-         * <code>DescribeStream</code> API. </p> <p> <code>UpdateStream</code> is an
-         * asynchronous operation, and takes time to complete.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateStream that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateStreamOutcomeCallable UpdateStreamCallable(const Model::UpdateStreamRequest& request) const;
 
         /**
-         * <p>Updates stream metadata, such as the device name and media type.</p> <p>You
-         * must provide the stream name or the Amazon Resource Name (ARN) of the
-         * stream.</p> <p>To make sure that you have the latest version of the stream
-         * before updating it, you can specify the stream version. Kinesis Video Streams
-         * assigns a version to each stream. When you update a stream, Kinesis Video
-         * Streams assigns a new version number. To get the latest stream version, use the
-         * <code>DescribeStream</code> API. </p> <p> <code>UpdateStream</code> is an
-         * asynchronous operation, and takes time to complete.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateStreamAsync(const Model::UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -968,6 +702,8 @@ namespace Model
         void CreateStreamAsyncHelper(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSignalingChannelAsyncHelper(const Model::DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamAsyncHelper(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImageGenerationConfigurationAsyncHelper(const Model::DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNotificationConfigurationAsyncHelper(const Model::DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSignalingChannelAsyncHelper(const Model::DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStreamAsyncHelper(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataEndpointAsyncHelper(const Model::GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -981,6 +717,8 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagStreamAsyncHelper(const Model::UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataRetentionAsyncHelper(const Model::UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateImageGenerationConfigurationAsyncHelper(const Model::UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNotificationConfigurationAsyncHelper(const Model::UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSignalingChannelAsyncHelper(const Model::UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStreamAsyncHelper(const Model::UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -49,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-     * recommendations for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+     * provide recommendations for.</p>
      */
     inline const EC2Specification& GetEC2Specification() const{ return m_eC2Specification; }
 
     /**
-     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-     * recommendations for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+     * provide recommendations for.</p>
      */
     inline bool EC2SpecificationHasBeenSet() const { return m_eC2SpecificationHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-     * recommendations for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+     * provide recommendations for.</p>
      */
     inline void SetEC2Specification(const EC2Specification& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = value; }
 
     /**
-     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-     * recommendations for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+     * provide recommendations for.</p>
      */
     inline void SetEC2Specification(EC2Specification&& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-     * recommendations for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+     * provide recommendations for.</p>
      */
     inline ServiceSpecification& WithEC2Specification(const EC2Specification& value) { SetEC2Specification(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
-     * recommendations for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
+     * provide recommendations for.</p>
      */
     inline ServiceSpecification& WithEC2Specification(EC2Specification&& value) { SetEC2Specification(std::move(value)); return *this;}
 

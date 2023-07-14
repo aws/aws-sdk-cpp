@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/cognito-idp/CognitoIdentityProviderErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CognitoIdentityProvider;
 using namespace Aws::Utils;
+using namespace Aws::CognitoIdentityProvider;
 
 namespace Aws
 {
@@ -42,9 +32,11 @@ static const int INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH = HashingUtils::HashSt
 static const int GROUP_EXISTS_HASH = HashingUtils::HashString("GroupExistsException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConfirmedException");
+static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int DUPLICATE_PROVIDER_HASH = HashingUtils::HashString("DuplicateProviderException");
 static const int TOO_MANY_FAILED_ATTEMPTS_HASH = HashingUtils::HashString("TooManyFailedAttemptsException");
 static const int INVALID_SMS_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidSmsRoleAccessPolicyException");
+static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
 static const int INVALID_LAMBDA_RESPONSE_HASH = HashingUtils::HashString("InvalidLambdaResponseException");
 static const int EXPIRED_CODE_HASH = HashingUtils::HashString("ExpiredCodeException");
@@ -52,6 +44,7 @@ static const int UNSUPPORTED_IDENTITY_PROVIDER_HASH = HashingUtils::HashString("
 static const int CODE_MISMATCH_HASH = HashingUtils::HashString("CodeMismatchException");
 static const int INVALID_O_AUTH_FLOW_HASH = HashingUtils::HashString("InvalidOAuthFlowException");
 static const int USER_POOL_ADD_ON_NOT_ENABLED_HASH = HashingUtils::HashString("UserPoolAddOnNotEnabledException");
+static const int UNSUPPORTED_TOKEN_TYPE_HASH = HashingUtils::HashString("UnsupportedTokenTypeException");
 static const int USER_LAMBDA_VALIDATION_HASH = HashingUtils::HashString("UserLambdaValidationException");
 static const int CODE_DELIVERY_FAILURE_HASH = HashingUtils::HashString("CodeDeliveryFailureException");
 static const int INVALID_USER_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidUserPoolConfigurationException");
@@ -88,7 +81,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == M_F_A_METHOD_NOT_FOUND_HASH)
   {
@@ -126,6 +119,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_NOT_CONFIRMED), false);
   }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNAUTHORIZED), false);
+  }
   else if (hashCode == DUPLICATE_PROVIDER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::DUPLICATE_PROVIDER), false);
@@ -137,6 +134,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SMS_ROLE_ACCESS_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::INVALID_SMS_ROLE_ACCESS_POLICY), false);
+  }
+  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNSUPPORTED_OPERATION), false);
   }
   else if (hashCode == INVALID_PASSWORD_HASH)
   {
@@ -165,6 +166,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == USER_POOL_ADD_ON_NOT_ENABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_POOL_ADD_ON_NOT_ENABLED), false);
+  }
+  else if (hashCode == UNSUPPORTED_TOKEN_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNSUPPORTED_TOKEN_TYPE), false);
   }
   else if (hashCode == USER_LAMBDA_VALIDATION_HASH)
   {
@@ -204,7 +209,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == PRECONDITION_NOT_MET_HASH)
   {

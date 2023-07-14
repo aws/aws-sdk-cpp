@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/managedblockchain/model/Node.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,9 +26,14 @@ Node::Node() :
     m_availabilityZoneHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -50,9 +45,14 @@ Node::Node(JsonView jsonValue) :
     m_availabilityZoneHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
+    m_stateDB(StateDBType::NOT_SET),
+    m_stateDBHasBeenSet(false),
     m_status(NodeStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +108,13 @@ Node& Node::operator =(JsonView jsonValue)
     m_logPublishingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StateDB"))
+  {
+    m_stateDB = StateDBTypeMapper::GetStateDBTypeForName(jsonValue.GetString("StateDB"));
+
+    m_stateDBHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = NodeStatusMapper::GetNodeStatusForName(jsonValue.GetString("Status"));
@@ -120,6 +127,30 @@ Node& Node::operator =(JsonView jsonValue)
     m_creationDate = jsonValue.GetString("CreationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
   }
 
   return *this;
@@ -171,6 +202,11 @@ JsonValue Node::Jsonize() const
 
   }
 
+  if(m_stateDBHasBeenSet)
+  {
+   payload.WithString("StateDB", StateDBTypeMapper::GetNameForStateDBType(m_stateDB));
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", NodeStatusMapper::GetNameForNodeStatus(m_status));
@@ -179,6 +215,29 @@ JsonValue Node::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("CreationDate", m_creationDate.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
+
   }
 
   return payload;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -43,51 +33,51 @@ namespace Model
 
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline const Aws::String& GetBackupPlanTemplateJson() const{ return m_backupPlanTemplateJson; }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline void SetBackupPlanTemplateJson(const Aws::String& value) { m_backupPlanTemplateJson = value; }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline void SetBackupPlanTemplateJson(Aws::String&& value) { m_backupPlanTemplateJson = std::move(value); }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline void SetBackupPlanTemplateJson(const char* value) { m_backupPlanTemplateJson.assign(value); }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(const Aws::String& value) { SetBackupPlanTemplateJson(value); return *this;}
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(Aws::String&& value) { SetBackupPlanTemplateJson(std::move(value)); return *this;}
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(const char* value) { SetBackupPlanTemplateJson(value); return *this;}
 

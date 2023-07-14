@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/AssignedPrivateIpAddress.h>
+#include <aws/ec2/model/Ipv4PrefixSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +108,42 @@ namespace Model
     inline AssignPrivateIpAddressesResponse& AddAssignedPrivateIpAddresses(AssignedPrivateIpAddress&& value) { m_assignedPrivateIpAddresses.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline const Aws::Vector<Ipv4PrefixSpecification>& GetAssignedIpv4Prefixes() const{ return m_assignedIpv4Prefixes; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline void SetAssignedIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { m_assignedIpv4Prefixes = value; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline void SetAssignedIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { m_assignedIpv4Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline AssignPrivateIpAddressesResponse& WithAssignedIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { SetAssignedIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline AssignPrivateIpAddressesResponse& WithAssignedIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { SetAssignedIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline AssignPrivateIpAddressesResponse& AddAssignedIpv4Prefixes(const Ipv4PrefixSpecification& value) { m_assignedIpv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline AssignPrivateIpAddressesResponse& AddAssignedIpv4Prefixes(Ipv4PrefixSpecification&& value) { m_assignedIpv4Prefixes.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,6 +164,8 @@ namespace Model
     Aws::String m_networkInterfaceId;
 
     Aws::Vector<AssignedPrivateIpAddress> m_assignedPrivateIpAddresses;
+
+    Aws::Vector<Ipv4PrefixSpecification> m_assignedIpv4Prefixes;
 
     ResponseMetadata m_responseMetadata;
   };

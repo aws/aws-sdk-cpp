@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -29,8 +19,8 @@ namespace Model
 {
 
   /**
-   * <p>The request object for <code>DescribeBackups</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The request object for the <code>DescribeBackups</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackupsRequest">AWS
    * API Reference</a></p>
    */
@@ -51,194 +41,211 @@ namespace Model
 
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBackupIds() const{ return m_backupIds; }
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline bool BackupIdsHasBeenSet() const { return m_backupIdsHasBeenSet; }
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline void SetBackupIds(const Aws::Vector<Aws::String>& value) { m_backupIdsHasBeenSet = true; m_backupIds = value; }
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline void SetBackupIds(Aws::Vector<Aws::String>&& value) { m_backupIdsHasBeenSet = true; m_backupIds = std::move(value); }
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline DescribeBackupsRequest& WithBackupIds(const Aws::Vector<Aws::String>& value) { SetBackupIds(value); return *this;}
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline DescribeBackupsRequest& WithBackupIds(Aws::Vector<Aws::String>&& value) { SetBackupIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline DescribeBackupsRequest& AddBackupIds(const Aws::String& value) { m_backupIdsHasBeenSet = true; m_backupIds.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline DescribeBackupsRequest& AddBackupIds(Aws::String&& value) { m_backupIdsHasBeenSet = true; m_backupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
-     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     * <p>The IDs of the backups that you want to retrieve. This parameter value
+     * overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code>
+     * error occurs.</p>
      */
     inline DescribeBackupsRequest& AddBackupIds(const char* value) { m_backupIdsHasBeenSet = true; m_backupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline DescribeBackupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline DescribeBackupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline DescribeBackupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) Filters structure. Supported names are file-system-id and
-     * backup-type.</p>
+     * <p>The filters structure. The supported names are <code>file-system-id</code>,
+     * <code>backup-type</code>, <code>file-system-type</code>, and
+     * <code>volume-id</code>.</p>
      */
     inline DescribeBackupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>(Optional) Maximum number of backups to return in the response (integer).
-     * This parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of backups to return in the response. This parameter value
+     * must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Maximum number of backups to return in the response (integer).
-     * This parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of backups to return in the response. This parameter value
+     * must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>(Optional) Maximum number of backups to return in the response (integer).
-     * This parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of backups to return in the response. This parameter value
+     * must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Maximum number of backups to return in the response (integer).
-     * This parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of backups to return in the response. This parameter value
+     * must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline DescribeBackupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline DescribeBackupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline DescribeBackupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
-     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * <p>An opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation. If a token is present, the operation
      * continues the list from where the returning call left off.</p>
      */
     inline DescribeBackupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

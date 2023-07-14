@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -34,6 +24,12 @@ namespace QuickSight
 {
 namespace Model
 {
+  /**
+   * <p>Output returned from the <code>GetDashboardEmbedUrl</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrlResponse">AWS
+   * API Reference</a></p>
+   */
   class AWS_QUICKSIGHT_API GetDashboardEmbedUrlResult
   {
   public:
@@ -43,58 +39,58 @@ namespace Model
 
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline GetDashboardEmbedUrlResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline GetDashboardEmbedUrlResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>An URL that you can put into your server-side webpage to embed your
-     * dashboard. This URL is valid for 5 minutes, and the resulting session is valid
-     * for 10 hours. The API provides the URL with an <code>auth_code</code> value that
-     * enables a single sign-on session. </p>
+     * <p>A single-use URL that you can put into your server-side webpage to embed your
+     * dashboard. This URL is valid for 5 minutes. The API operation provides the URL
+     * with an <code>auth_code</code> value that enables one (and only one) sign-on to
+     * a user session that is valid for 10 hours. </p>
      */
     inline GetDashboardEmbedUrlResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
 
@@ -116,37 +112,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline GetDashboardEmbedUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline GetDashboardEmbedUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline GetDashboardEmbedUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

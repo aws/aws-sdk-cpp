@@ -1,30 +1,49 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dataexchange/DataExchangeErrors.h>
+#include <aws/dataexchange/model/ConflictException.h>
+#include <aws/dataexchange/model/ResourceNotFoundException.h>
+#include <aws/dataexchange/model/ValidationException.h>
+#include <aws/dataexchange/model/ServiceLimitExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DataExchange;
 using namespace Aws::Utils;
+using namespace Aws::DataExchange;
+using namespace Aws::DataExchange::Model;
 
 namespace Aws
 {
 namespace DataExchange
 {
+template<> AWS_DATAEXCHANGE_API ConflictException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATAEXCHANGE_API ResourceNotFoundException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATAEXCHANGE_API ValidationException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATAEXCHANGE_API ServiceLimitExceededException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::SERVICE_LIMIT_EXCEEDED);
+  return ServiceLimitExceededException(this->GetJsonPayload().View());
+}
+
 namespace DataExchangeErrorMapper
 {
 

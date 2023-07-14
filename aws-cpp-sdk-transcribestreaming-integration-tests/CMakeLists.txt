@@ -21,7 +21,6 @@ else()
 endif()
 
 # We are using WinINet for windows in this test until we figure out why WinHTTP is not working with H2
-# HAVE_H2_CLIENT is only used in transcribestreaming integration tests, users will be not be affected by this check.
 if((ENABLE_CURL_CLIENT AND CURL_HAS_H2) OR (ENABLE_WINDOWS_CLIENT AND WININET_HAS_H2))
     target_compile_definitions(${PROJECT_NAME} PRIVATE "HAVE_H2_CLIENT")
 endif()

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -38,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>The configuration that defines an instance fleet.</p> <note> <p>The instance
+   * <p>The configuration that defines an instance fleet.</p>  <p>The instance
    * fleet configuration is available only in Amazon EMR versions 4.8.0 and later,
-   * excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+   * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetConfig">AWS
    * API Reference</a></p>
    */
@@ -95,204 +85,204 @@ namespace Model
 
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline const InstanceFleetType& GetInstanceFleetType() const{ return m_instanceFleetType; }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline bool InstanceFleetTypeHasBeenSet() const { return m_instanceFleetTypeHasBeenSet; }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline void SetInstanceFleetType(const InstanceFleetType& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = std::move(value); }
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline InstanceFleetConfig& WithInstanceFleetType(const InstanceFleetType& value) { SetInstanceFleetType(value); return *this;}
 
     /**
-     * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
-     * TASK.</p>
+     * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
+     * and TASK.</p>
      */
     inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
 
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
-     * determines how many On-Demand instances to provision. When the instance fleet
-     * launches, Amazon EMR tries to provision On-Demand instances as specified by
+     * determines how many On-Demand Instances to provision. When the instance fleet
+     * launches, Amazon EMR tries to provision On-Demand Instances as specified by
      * <a>InstanceTypeConfig</a>. Each instance configuration has a specified
-     * <code>WeightedCapacity</code>. When an On-Demand instance is provisioned, the
+     * <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the
      * <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR
      * provisions instances until the target capacity is totally fulfilled, even if
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
-     * 0, only Spot instances are provisioned for the instance fleet using
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
+     * 0, only Spot Instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline int GetTargetOnDemandCapacity() const{ return m_targetOnDemandCapacity; }
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
-     * determines how many On-Demand instances to provision. When the instance fleet
-     * launches, Amazon EMR tries to provision On-Demand instances as specified by
+     * determines how many On-Demand Instances to provision. When the instance fleet
+     * launches, Amazon EMR tries to provision On-Demand Instances as specified by
      * <a>InstanceTypeConfig</a>. Each instance configuration has a specified
-     * <code>WeightedCapacity</code>. When an On-Demand instance is provisioned, the
+     * <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the
      * <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR
      * provisions instances until the target capacity is totally fulfilled, even if
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
-     * 0, only Spot instances are provisioned for the instance fleet using
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
+     * 0, only Spot Instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline bool TargetOnDemandCapacityHasBeenSet() const { return m_targetOnDemandCapacityHasBeenSet; }
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
-     * determines how many On-Demand instances to provision. When the instance fleet
-     * launches, Amazon EMR tries to provision On-Demand instances as specified by
+     * determines how many On-Demand Instances to provision. When the instance fleet
+     * launches, Amazon EMR tries to provision On-Demand Instances as specified by
      * <a>InstanceTypeConfig</a>. Each instance configuration has a specified
-     * <code>WeightedCapacity</code>. When an On-Demand instance is provisioned, the
+     * <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the
      * <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR
      * provisions instances until the target capacity is totally fulfilled, even if
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
-     * 0, only Spot instances are provisioned for the instance fleet using
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
+     * 0, only Spot Instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline void SetTargetOnDemandCapacity(int value) { m_targetOnDemandCapacityHasBeenSet = true; m_targetOnDemandCapacity = value; }
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
-     * determines how many On-Demand instances to provision. When the instance fleet
-     * launches, Amazon EMR tries to provision On-Demand instances as specified by
+     * determines how many On-Demand Instances to provision. When the instance fleet
+     * launches, Amazon EMR tries to provision On-Demand Instances as specified by
      * <a>InstanceTypeConfig</a>. Each instance configuration has a specified
-     * <code>WeightedCapacity</code>. When an On-Demand instance is provisioned, the
+     * <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the
      * <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR
      * provisions instances until the target capacity is totally fulfilled, even if
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
-     * 0, only Spot instances are provisioned for the instance fleet using
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
+     * 0, only Spot Instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline InstanceFleetConfig& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
 
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
-     * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
+     * a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
      * capacity is totally fulfilled, even if this results in an overage. For example,
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand Instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline int GetTargetSpotCapacity() const{ return m_targetSpotCapacity; }
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
-     * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
+     * a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
      * capacity is totally fulfilled, even if this results in an overage. For example,
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand Instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline bool TargetSpotCapacityHasBeenSet() const { return m_targetSpotCapacityHasBeenSet; }
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
-     * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
+     * a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
      * capacity is totally fulfilled, even if this results in an overage. For example,
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand Instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline void SetTargetSpotCapacity(int value) { m_targetSpotCapacityHasBeenSet = true; m_targetSpotCapacity = value; }
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
-     * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
+     * a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
      * capacity is totally fulfilled, even if this results in an overage. For example,
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand Instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline InstanceFleetConfig& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 

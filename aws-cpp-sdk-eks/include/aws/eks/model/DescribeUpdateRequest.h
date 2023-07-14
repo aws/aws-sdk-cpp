@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -131,44 +121,117 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline DescribeUpdateRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline DescribeUpdateRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS node group associated with the update.</p>
+     * <p>The name of the Amazon EKS node group associated with the update. This
+     * parameter is required if the update is a node group update.</p>
      */
     inline DescribeUpdateRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline DescribeUpdateRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline DescribeUpdateRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+     * <code>ListAddons</code> </a>. This parameter is required if the update is an
+     * add-on update.</p>
+     */
+    inline DescribeUpdateRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
   private:
 
@@ -180,6 +243,9 @@ namespace Model
 
     Aws::String m_nodegroupName;
     bool m_nodegroupNameHasBeenSet;
+
+    Aws::String m_addonName;
+    bool m_addonNameHasBeenSet;
   };
 
 } // namespace Model

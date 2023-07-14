@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -50,49 +40,73 @@ namespace Model
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline FlowDefinitionOutputConfig& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline FlowDefinitionOutputConfig& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 path where the object containing human output will be made
-     * available.</p>
+     * available.</p> <p>To learn more about the format of Amazon A2I output data, see
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon
+     * A2I Output Data</a>.</p>
      */
     inline FlowDefinitionOutputConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
 

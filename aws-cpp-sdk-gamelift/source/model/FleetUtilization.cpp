@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/gamelift/model/FleetUtilization.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,7 @@ namespace Model
 
 FleetUtilization::FleetUtilization() : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_activeServerProcessCount(0),
     m_activeServerProcessCountHasBeenSet(false),
     m_activeGameSessionCount(0),
@@ -37,12 +28,14 @@ FleetUtilization::FleetUtilization() :
     m_currentPlayerSessionCount(0),
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false)
+    m_maximumPlayerSessionCountHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
 FleetUtilization::FleetUtilization(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_activeServerProcessCount(0),
     m_activeServerProcessCountHasBeenSet(false),
     m_activeGameSessionCount(0),
@@ -50,7 +43,8 @@ FleetUtilization::FleetUtilization(JsonView jsonValue) :
     m_currentPlayerSessionCount(0),
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false)
+    m_maximumPlayerSessionCountHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +56,13 @@ FleetUtilization& FleetUtilization::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ActiveServerProcessCount"))
@@ -92,6 +93,13 @@ FleetUtilization& FleetUtilization::operator =(JsonView jsonValue)
     m_maximumPlayerSessionCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +110,12 @@ JsonValue FleetUtilization::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 
@@ -126,6 +140,12 @@ JsonValue FleetUtilization::Jsonize() const
   if(m_maximumPlayerSessionCountHasBeenSet)
   {
    payload.WithInteger("MaximumPlayerSessionCount", m_maximumPlayerSessionCount);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

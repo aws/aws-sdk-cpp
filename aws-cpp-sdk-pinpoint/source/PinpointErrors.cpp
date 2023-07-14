@@ -1,33 +1,81 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/pinpoint/PinpointErrors.h>
+#include <aws/pinpoint/model/ConflictException.h>
+#include <aws/pinpoint/model/NotFoundException.h>
+#include <aws/pinpoint/model/ForbiddenException.h>
+#include <aws/pinpoint/model/PayloadTooLargeException.h>
+#include <aws/pinpoint/model/TooManyRequestsException.h>
+#include <aws/pinpoint/model/BadRequestException.h>
+#include <aws/pinpoint/model/InternalServerErrorException.h>
+#include <aws/pinpoint/model/MethodNotAllowedException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Pinpoint;
 using namespace Aws::Utils;
+using namespace Aws::Pinpoint;
+using namespace Aws::Pinpoint::Model;
 
 namespace Aws
 {
 namespace Pinpoint
 {
+template<> AWS_PINPOINT_API ConflictException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API NotFoundException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API ForbiddenException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::FORBIDDEN);
+  return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API PayloadTooLargeException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::PAYLOAD_TOO_LARGE);
+  return PayloadTooLargeException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API TooManyRequestsException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API BadRequestException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API InternalServerErrorException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API MethodNotAllowedException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::METHOD_NOT_ALLOWED);
+  return MethodNotAllowedException(this->GetJsonPayload().View());
+}
+
 namespace PinpointErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int PAYLOAD_TOO_LARGE_HASH = HashingUtils::HashString("PayloadTooLargeException");
@@ -41,7 +89,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::NOT_FOUND), false);
   }
@@ -55,7 +107,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {

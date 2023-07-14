@@ -1,25 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/kinesisvideo/KinesisVideoErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::KinesisVideo;
 using namespace Aws::Utils;
+using namespace Aws::KinesisVideo;
 
 namespace Aws
 {
@@ -33,6 +23,7 @@ static const int INVALID_DEVICE_HASH = HashingUtils::HashString("InvalidDeviceEx
 static const int TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH = HashingUtils::HashString("TagsPerResourceExceededLimitException");
 static const int INVALID_RESOURCE_FORMAT_HASH = HashingUtils::HashString("InvalidResourceFormatException");
 static const int ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountStreamLimitExceededException");
+static const int NO_DATA_RETENTION_HASH = HashingUtils::HashString("NoDataRetentionException");
 static const int ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountChannelLimitExceededException");
 static const int DEVICE_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeviceStreamLimitExceededException");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
@@ -64,6 +55,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_STREAM_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == NO_DATA_RETENTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NO_DATA_RETENTION), false);
   }
   else if (hashCode == ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH)
   {

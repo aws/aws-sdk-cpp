@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/sesv2/model/Destination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/EmailContent.h>
+#include <aws/sesv2/model/ListManagementOptions.h>
 #include <aws/sesv2/model/MessageTag.h>
 #include <utility>
 
@@ -31,7 +22,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to send an email message.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a request to send a single formatted email using Amazon SES. For
+   * more information, see the <a
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmailRequest">AWS
    * API Reference</a></p>
    */
@@ -50,52 +44,197 @@ namespace Model
 
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline void SetFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.assign(value); }
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline SendEmailRequest& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline SendEmailRequest& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The email address that you want to use as the "From" address for the email.
-     * The address that you specify has to be verified. </p>
+     * <p>The email address to use as the "From" address for the email. The address
+     * that you specify has to be verified. </p>
      */
     inline SendEmailRequest& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
+
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline const Aws::String& GetFromEmailAddressIdentityArn() const{ return m_fromEmailAddressIdentityArn; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline bool FromEmailAddressIdentityArnHasBeenSet() const { return m_fromEmailAddressIdentityArnHasBeenSet; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline void SetFromEmailAddressIdentityArn(const Aws::String& value) { m_fromEmailAddressIdentityArnHasBeenSet = true; m_fromEmailAddressIdentityArn = value; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline void SetFromEmailAddressIdentityArn(Aws::String&& value) { m_fromEmailAddressIdentityArnHasBeenSet = true; m_fromEmailAddressIdentityArn = std::move(value); }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline void SetFromEmailAddressIdentityArn(const char* value) { m_fromEmailAddressIdentityArnHasBeenSet = true; m_fromEmailAddressIdentityArn.assign(value); }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline SendEmailRequest& WithFromEmailAddressIdentityArn(const Aws::String& value) { SetFromEmailAddressIdentityArn(value); return *this;}
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline SendEmailRequest& WithFromEmailAddressIdentityArn(Aws::String&& value) { SetFromEmailAddressIdentityArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the <code>FromEmailAddress</code>
+     * parameter.</p> <p>For example, if the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.</p> <p>For more
+     * information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p> <p>For Raw emails, the
+     * <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+     * and X-SES-FROM-ARN headers specified in raw email message content.</p>
+     */
+    inline SendEmailRequest& WithFromEmailAddressIdentityArn(const char* value) { SetFromEmailAddressIdentityArn(value); return *this;}
 
 
     /**
@@ -234,38 +373,175 @@ namespace Model
 
 
     /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline const Aws::String& GetFeedbackForwardingEmailAddressIdentityArn() const{ return m_feedbackForwardingEmailAddressIdentityArn; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline bool FeedbackForwardingEmailAddressIdentityArnHasBeenSet() const { return m_feedbackForwardingEmailAddressIdentityArnHasBeenSet; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline void SetFeedbackForwardingEmailAddressIdentityArn(const Aws::String& value) { m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = true; m_feedbackForwardingEmailAddressIdentityArn = value; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline void SetFeedbackForwardingEmailAddressIdentityArn(Aws::String&& value) { m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = true; m_feedbackForwardingEmailAddressIdentityArn = std::move(value); }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline void SetFeedbackForwardingEmailAddressIdentityArn(const char* value) { m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = true; m_feedbackForwardingEmailAddressIdentityArn.assign(value); }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline SendEmailRequest& WithFeedbackForwardingEmailAddressIdentityArn(const Aws::String& value) { SetFeedbackForwardingEmailAddressIdentityArn(value); return *this;}
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline SendEmailRequest& WithFeedbackForwardingEmailAddressIdentityArn(Aws::String&& value) { SetFeedbackForwardingEmailAddressIdentityArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.</p> <p>For example, if
+     * the owner of example.com (which has ARN
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it
+     * that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+     * <p>For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline SendEmailRequest& WithFeedbackForwardingEmailAddressIdentityArn(const char* value) { SetFeedbackForwardingEmailAddressIdentityArn(value); return *this;}
+
+
+    /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message or a Raw message.</p>
+     * message Raw message or a template Message.</p>
      */
     inline const EmailContent& GetContent() const{ return m_content; }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message or a Raw message.</p>
+     * message Raw message or a template Message.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message or a Raw message.</p>
+     * message Raw message or a template Message.</p>
      */
     inline void SetContent(const EmailContent& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message or a Raw message.</p>
+     * message Raw message or a template Message.</p>
      */
     inline void SetContent(EmailContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message or a Raw message.</p>
+     * message Raw message or a template Message.</p>
      */
     inline SendEmailRequest& WithContent(const EmailContent& value) { SetContent(value); return *this;}
 
     /**
      * <p>An object that contains the body of the message. You can send either a Simple
-     * message or a Raw message.</p>
+     * message Raw message or a template Message.</p>
      */
     inline SendEmailRequest& WithContent(EmailContent&& value) { SetContent(std::move(value)); return *this;}
 
@@ -336,57 +612,89 @@ namespace Model
 
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline SendEmailRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline SendEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to use when sending the
-     * email.</p>
+     * <p>The name of the configuration set to use when sending the email.</p>
      */
     inline SendEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline const ListManagementOptions& GetListManagementOptions() const{ return m_listManagementOptions; }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline bool ListManagementOptionsHasBeenSet() const { return m_listManagementOptionsHasBeenSet; }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline void SetListManagementOptions(const ListManagementOptions& value) { m_listManagementOptionsHasBeenSet = true; m_listManagementOptions = value; }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline void SetListManagementOptions(ListManagementOptions&& value) { m_listManagementOptionsHasBeenSet = true; m_listManagementOptions = std::move(value); }
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline SendEmailRequest& WithListManagementOptions(const ListManagementOptions& value) { SetListManagementOptions(value); return *this;}
+
+    /**
+     * <p>An object used to specify a list or topic to which an email belongs, which
+     * will be used when a contact chooses to unsubscribe.</p>
+     */
+    inline SendEmailRequest& WithListManagementOptions(ListManagementOptions&& value) { SetListManagementOptions(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_fromEmailAddress;
     bool m_fromEmailAddressHasBeenSet;
+
+    Aws::String m_fromEmailAddressIdentityArn;
+    bool m_fromEmailAddressIdentityArnHasBeenSet;
 
     Destination m_destination;
     bool m_destinationHasBeenSet;
@@ -397,6 +705,9 @@ namespace Model
     Aws::String m_feedbackForwardingEmailAddress;
     bool m_feedbackForwardingEmailAddressHasBeenSet;
 
+    Aws::String m_feedbackForwardingEmailAddressIdentityArn;
+    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet;
+
     EmailContent m_content;
     bool m_contentHasBeenSet;
 
@@ -405,6 +716,9 @@ namespace Model
 
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
+    ListManagementOptions m_listManagementOptions;
+    bool m_listManagementOptionsHasBeenSet;
   };
 
 } // namespace Model

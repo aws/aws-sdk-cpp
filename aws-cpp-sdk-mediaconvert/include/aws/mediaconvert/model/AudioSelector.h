@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/AudioDefaultSelection.h>
+#include <aws/mediaconvert/model/HlsRenditionGroupSettings.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/RemixSettings.h>
@@ -39,7 +30,9 @@ namespace Model
 {
 
   /**
-   * Selector for Audio<p><h3>See Also:</h3>   <a
+   * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
+   * the input that you will use in your outputs. You can use multiple Audio
+   * selectors per input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioSelector">AWS
    * API Reference</a></p>
    */
@@ -183,6 +176,79 @@ namespace Model
      * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(const char* value) { SetExternalAudioFileInput(value); return *this;}
+
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique audio track among the alternative rendition groups present
+     * in the HLS manifest. If no unique track is found, or multiple tracks match the
+     * properties provided, the job fails. If no properties in
+     * hlsRenditionGroupSettings are specified, the default audio track within the
+     * video segment is chosen. If there is no audio within video segment, the
+     * alternative audio with DEFAULT=YES is chosen instead.
+     */
+    inline const HlsRenditionGroupSettings& GetHlsRenditionGroupSettings() const{ return m_hlsRenditionGroupSettings; }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique audio track among the alternative rendition groups present
+     * in the HLS manifest. If no unique track is found, or multiple tracks match the
+     * properties provided, the job fails. If no properties in
+     * hlsRenditionGroupSettings are specified, the default audio track within the
+     * video segment is chosen. If there is no audio within video segment, the
+     * alternative audio with DEFAULT=YES is chosen instead.
+     */
+    inline bool HlsRenditionGroupSettingsHasBeenSet() const { return m_hlsRenditionGroupSettingsHasBeenSet; }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique audio track among the alternative rendition groups present
+     * in the HLS manifest. If no unique track is found, or multiple tracks match the
+     * properties provided, the job fails. If no properties in
+     * hlsRenditionGroupSettings are specified, the default audio track within the
+     * video segment is chosen. If there is no audio within video segment, the
+     * alternative audio with DEFAULT=YES is chosen instead.
+     */
+    inline void SetHlsRenditionGroupSettings(const HlsRenditionGroupSettings& value) { m_hlsRenditionGroupSettingsHasBeenSet = true; m_hlsRenditionGroupSettings = value; }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique audio track among the alternative rendition groups present
+     * in the HLS manifest. If no unique track is found, or multiple tracks match the
+     * properties provided, the job fails. If no properties in
+     * hlsRenditionGroupSettings are specified, the default audio track within the
+     * video segment is chosen. If there is no audio within video segment, the
+     * alternative audio with DEFAULT=YES is chosen instead.
+     */
+    inline void SetHlsRenditionGroupSettings(HlsRenditionGroupSettings&& value) { m_hlsRenditionGroupSettingsHasBeenSet = true; m_hlsRenditionGroupSettings = std::move(value); }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique audio track among the alternative rendition groups present
+     * in the HLS manifest. If no unique track is found, or multiple tracks match the
+     * properties provided, the job fails. If no properties in
+     * hlsRenditionGroupSettings are specified, the default audio track within the
+     * video segment is chosen. If there is no audio within video segment, the
+     * alternative audio with DEFAULT=YES is chosen instead.
+     */
+    inline AudioSelector& WithHlsRenditionGroupSettings(const HlsRenditionGroupSettings& value) { SetHlsRenditionGroupSettings(value); return *this;}
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique audio track among the alternative rendition groups present
+     * in the HLS manifest. If no unique track is found, or multiple tracks match the
+     * properties provided, the job fails. If no properties in
+     * hlsRenditionGroupSettings are specified, the default audio track within the
+     * video segment is chosen. If there is no audio within video segment, the
+     * alternative audio with DEFAULT=YES is chosen instead.
+     */
+    inline AudioSelector& WithHlsRenditionGroupSettings(HlsRenditionGroupSettings&& value) { SetHlsRenditionGroupSettings(std::move(value)); return *this;}
 
 
     /**
@@ -480,6 +546,9 @@ namespace Model
 
     Aws::String m_externalAudioFileInput;
     bool m_externalAudioFileInputHasBeenSet;
+
+    HlsRenditionGroupSettings m_hlsRenditionGroupSettings;
+    bool m_hlsRenditionGroupSettingsHasBeenSet;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;

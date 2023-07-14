@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/forecast/model/DescribeDatasetImportJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -27,11 +17,15 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeDatasetImportJobResult::DescribeDatasetImportJobResult() : 
+    m_useGeolocationForTimeZone(false),
+    m_estimatedTimeRemainingInMinutes(0),
     m_dataSize(0.0)
 {
 }
 
 DescribeDatasetImportJobResult::DescribeDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_useGeolocationForTimeZone(false),
+    m_estimatedTimeRemainingInMinutes(0),
     m_dataSize(0.0)
 {
   *this = result;
@@ -64,9 +58,33 @@ DescribeDatasetImportJobResult& DescribeDatasetImportJobResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("TimeZone"))
+  {
+    m_timeZone = jsonValue.GetString("TimeZone");
+
+  }
+
+  if(jsonValue.ValueExists("UseGeolocationForTimeZone"))
+  {
+    m_useGeolocationForTimeZone = jsonValue.GetBool("UseGeolocationForTimeZone");
+
+  }
+
+  if(jsonValue.ValueExists("GeolocationFormat"))
+  {
+    m_geolocationFormat = jsonValue.GetString("GeolocationFormat");
+
+  }
+
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
+
+  }
+
+  if(jsonValue.ValueExists("EstimatedTimeRemainingInMinutes"))
+  {
+    m_estimatedTimeRemainingInMinutes = jsonValue.GetInt64("EstimatedTimeRemainingInMinutes");
 
   }
 
@@ -106,6 +124,12 @@ DescribeDatasetImportJobResult& DescribeDatasetImportJobResult::operator =(const
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
+
+  }
+
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = jsonValue.GetString("Format");
 
   }
 

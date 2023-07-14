@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -88,115 +78,115 @@ namespace Model
 
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline AssociateAddressRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline AssociateAddressRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
-     * can specify either the instance ID or the network interface ID, but not both.
-     * The operation fails if you specify an instance ID unless exactly one network
-     * interface is attached.</p>
+     * <p>The ID of the instance. The instance must have exactly one attached network
+     * interface. For EC2-VPC, you can specify either the instance ID or the network
+     * interface ID, but not both. For EC2-Classic, you must specify an instance ID and
+     * the instance must be in the running state.</p>
      */
     inline AssociateAddressRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline AssociateAddressRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline AssociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic IP address to associate with the instance. This is required for
-     * EC2-Classic.</p>
+     * <p>[EC2-Classic] The Elastic IP address to associate with the instance. This is
+     * required for EC2-Classic.</p>
      */
     inline AssociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 

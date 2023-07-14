@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appmesh/model/DnsServiceDiscovery.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,20 @@ namespace Model
 {
 
 DnsServiceDiscovery::DnsServiceDiscovery() : 
-    m_hostnameHasBeenSet(false)
+    m_hostnameHasBeenSet(false),
+    m_ipPreference(IpPreference::NOT_SET),
+    m_ipPreferenceHasBeenSet(false),
+    m_responseType(DnsResponseType::NOT_SET),
+    m_responseTypeHasBeenSet(false)
 {
 }
 
 DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false)
+    m_hostnameHasBeenSet(false),
+    m_ipPreference(IpPreference::NOT_SET),
+    m_ipPreferenceHasBeenSet(false),
+    m_responseType(DnsResponseType::NOT_SET),
+    m_responseTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +46,20 @@ DnsServiceDiscovery& DnsServiceDiscovery::operator =(JsonView jsonValue)
     m_hostnameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipPreference"))
+  {
+    m_ipPreference = IpPreferenceMapper::GetIpPreferenceForName(jsonValue.GetString("ipPreference"));
+
+    m_ipPreferenceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("responseType"))
+  {
+    m_responseType = DnsResponseTypeMapper::GetDnsResponseTypeForName(jsonValue.GetString("responseType"));
+
+    m_responseTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +71,16 @@ JsonValue DnsServiceDiscovery::Jsonize() const
   {
    payload.WithString("hostname", m_hostname);
 
+  }
+
+  if(m_ipPreferenceHasBeenSet)
+  {
+   payload.WithString("ipPreference", IpPreferenceMapper::GetNameForIpPreference(m_ipPreference));
+  }
+
+  if(m_responseTypeHasBeenSet)
+  {
+   payload.WithString("responseType", DnsResponseTypeMapper::GetNameForDnsResponseType(m_responseType));
   }
 
   return payload;

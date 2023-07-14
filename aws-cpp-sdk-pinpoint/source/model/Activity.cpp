@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pinpoint/model/Activity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,30 +19,45 @@ namespace Model
 {
 
 Activity::Activity() : 
+    m_cUSTOMHasBeenSet(false),
     m_conditionalSplitHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_eMAILHasBeenSet(false),
     m_holdoutHasBeenSet(false),
     m_multiConditionHasBeenSet(false),
+    m_pUSHHasBeenSet(false),
     m_randomSplitHasBeenSet(false),
-    m_waitHasBeenSet(false)
+    m_sMSHasBeenSet(false),
+    m_waitHasBeenSet(false),
+    m_contactCenterHasBeenSet(false)
 {
 }
 
 Activity::Activity(JsonView jsonValue) : 
+    m_cUSTOMHasBeenSet(false),
     m_conditionalSplitHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_eMAILHasBeenSet(false),
     m_holdoutHasBeenSet(false),
     m_multiConditionHasBeenSet(false),
+    m_pUSHHasBeenSet(false),
     m_randomSplitHasBeenSet(false),
-    m_waitHasBeenSet(false)
+    m_sMSHasBeenSet(false),
+    m_waitHasBeenSet(false),
+    m_contactCenterHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Activity& Activity::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CUSTOM"))
+  {
+    m_cUSTOM = jsonValue.GetObject("CUSTOM");
+
+    m_cUSTOMHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ConditionalSplit"))
   {
     m_conditionalSplit = jsonValue.GetObject("ConditionalSplit");
@@ -88,11 +93,25 @@ Activity& Activity::operator =(JsonView jsonValue)
     m_multiConditionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PUSH"))
+  {
+    m_pUSH = jsonValue.GetObject("PUSH");
+
+    m_pUSHHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RandomSplit"))
   {
     m_randomSplit = jsonValue.GetObject("RandomSplit");
 
     m_randomSplitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SMS"))
+  {
+    m_sMS = jsonValue.GetObject("SMS");
+
+    m_sMSHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Wait"))
@@ -102,12 +121,25 @@ Activity& Activity::operator =(JsonView jsonValue)
     m_waitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContactCenter"))
+  {
+    m_contactCenter = jsonValue.GetObject("ContactCenter");
+
+    m_contactCenterHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Activity::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cUSTOMHasBeenSet)
+  {
+   payload.WithObject("CUSTOM", m_cUSTOM.Jsonize());
+
+  }
 
   if(m_conditionalSplitHasBeenSet)
   {
@@ -139,15 +171,33 @@ JsonValue Activity::Jsonize() const
 
   }
 
+  if(m_pUSHHasBeenSet)
+  {
+   payload.WithObject("PUSH", m_pUSH.Jsonize());
+
+  }
+
   if(m_randomSplitHasBeenSet)
   {
    payload.WithObject("RandomSplit", m_randomSplit.Jsonize());
 
   }
 
+  if(m_sMSHasBeenSet)
+  {
+   payload.WithObject("SMS", m_sMS.Jsonize());
+
+  }
+
   if(m_waitHasBeenSet)
   {
    payload.WithObject("Wait", m_wait.Jsonize());
+
+  }
+
+  if(m_contactCenterHasBeenSet)
+  {
+   payload.WithObject("ContactCenter", m_contactCenter.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
@@ -81,65 +71,72 @@ namespace Model
 
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline ListSimulationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline ListSimulationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListSimulationJobs</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be
-     * used to retrieve the next page of results. This value is <code>null</code> when
-     * there are no more results to return. </p>
+     * <p>If the previous paginated request did not return all of the remaining
+     * results, the response object's <code>nextToken</code> parameter value is set to
+     * a token. To retrieve the next set of results, call
+     * <code>ListSimulationJobs</code> again and assign that token to the request
+     * object's <code>nextToken</code> parameter. If there are no remaining results,
+     * the previous response object's NextToken parameter is set to null. </p>
      */
     inline ListSimulationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

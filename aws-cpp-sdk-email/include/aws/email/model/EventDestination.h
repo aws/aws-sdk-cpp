@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
@@ -40,10 +30,10 @@ namespace Model
 
   /**
    * <p>Contains information about the event destination that the specified email
-   * sending events will be published to.</p> <note> <p>When you create or update an
+   * sending events will be published to.</p>  <p>When you create or update an
    * event destination, you must provide one, and only one, destination. The
    * destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple
-   * Notification Service (Amazon SNS).</p> </note> <p>Event destinations are
+   * Notification Service (Amazon SNS).</p>  <p>Event destinations are
    * associated with configuration sets, which enable you to publish email sending
    * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
    * Notification Service (Amazon SNS). For information about using configuration

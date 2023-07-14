@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,10 @@ namespace Aws
         static const int rtp_HASH = HashingUtils::HashString("rtp");
         static const int zixi_pull_HASH = HashingUtils::HashString("zixi-pull");
         static const int rist_HASH = HashingUtils::HashString("rist");
+        static const int st2110_jpegxs_HASH = HashingUtils::HashString("st2110-jpegxs");
+        static const int cdi_HASH = HashingUtils::HashString("cdi");
+        static const int srt_listener_HASH = HashingUtils::HashString("srt-listener");
+        static const int fujitsu_qos_HASH = HashingUtils::HashString("fujitsu-qos");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
@@ -60,6 +54,22 @@ namespace Aws
           {
             return Protocol::rist;
           }
+          else if (hashCode == st2110_jpegxs_HASH)
+          {
+            return Protocol::st2110_jpegxs;
+          }
+          else if (hashCode == cdi_HASH)
+          {
+            return Protocol::cdi;
+          }
+          else if (hashCode == srt_listener_HASH)
+          {
+            return Protocol::srt_listener;
+          }
+          else if (hashCode == fujitsu_qos_HASH)
+          {
+            return Protocol::fujitsu_qos;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +94,14 @@ namespace Aws
             return "zixi-pull";
           case Protocol::rist:
             return "rist";
+          case Protocol::st2110_jpegxs:
+            return "st2110-jpegxs";
+          case Protocol::cdi:
+            return "cdi";
+          case Protocol::srt_listener:
+            return "srt-listener";
+          case Protocol::fujitsu_qos:
+            return "fujitsu-qos";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

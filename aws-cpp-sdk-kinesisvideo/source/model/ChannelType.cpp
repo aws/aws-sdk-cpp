@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesisvideo/model/ChannelType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -31,6 +21,7 @@ namespace Aws
       {
 
         static const int SINGLE_MASTER_HASH = HashingUtils::HashString("SINGLE_MASTER");
+        static const int FULL_MESH_HASH = HashingUtils::HashString("FULL_MESH");
 
 
         ChannelType GetChannelTypeForName(const Aws::String& name)
@@ -39,6 +30,10 @@ namespace Aws
           if (hashCode == SINGLE_MASTER_HASH)
           {
             return ChannelType::SINGLE_MASTER;
+          }
+          else if (hashCode == FULL_MESH_HASH)
+          {
+            return ChannelType::FULL_MESH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +51,8 @@ namespace Aws
           {
           case ChannelType::SINGLE_MASTER:
             return "SINGLE_MASTER";
+          case ChannelType::FULL_MESH:
+            return "FULL_MESH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

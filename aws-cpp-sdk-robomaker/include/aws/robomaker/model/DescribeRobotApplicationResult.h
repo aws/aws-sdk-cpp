@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/robomaker/model/RobotSoftwareSuite.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/robomaker/model/Environment.h>
 #include <aws/robomaker/model/Source.h>
 #include <utility>
 
@@ -349,6 +340,80 @@ namespace Model
      */
     inline DescribeRobotApplicationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the robot
+     * application.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the robot
+     * application.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environment = value; }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the robot
+     * application.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environment = std::move(value); }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the robot
+     * application.</p>
+     */
+    inline DescribeRobotApplicationResult& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The object that contains the Docker image URI used to create the robot
+     * application.</p>
+     */
+    inline DescribeRobotApplicationResult& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline void SetImageDigest(const Aws::String& value) { m_imageDigest = value; }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigest = std::move(value); }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline void SetImageDigest(const char* value) { m_imageDigest.assign(value); }
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline DescribeRobotApplicationResult& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline DescribeRobotApplicationResult& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
+
+    /**
+     * <p>A SHA256 identifier for the Docker image that you use for your robot
+     * application.</p>
+     */
+    inline DescribeRobotApplicationResult& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -366,6 +431,10 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Environment m_environment;
+
+    Aws::String m_imageDigest;
   };
 
 } // namespace Model

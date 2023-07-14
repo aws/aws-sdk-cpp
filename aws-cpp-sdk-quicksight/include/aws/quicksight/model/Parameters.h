@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -38,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of Amazon QuickSight parameters and the list's override
+   * values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Parameters">AWS
    * API Reference</a></p>
    */
@@ -52,165 +43,165 @@ namespace Model
 
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline const Aws::Vector<StringParameter>& GetStringParameters() const{ return m_stringParameters; }
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline bool StringParametersHasBeenSet() const { return m_stringParametersHasBeenSet; }
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline void SetStringParameters(const Aws::Vector<StringParameter>& value) { m_stringParametersHasBeenSet = true; m_stringParameters = value; }
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline void SetStringParameters(Aws::Vector<StringParameter>&& value) { m_stringParametersHasBeenSet = true; m_stringParameters = std::move(value); }
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline Parameters& WithStringParameters(const Aws::Vector<StringParameter>& value) { SetStringParameters(value); return *this;}
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline Parameters& WithStringParameters(Aws::Vector<StringParameter>&& value) { SetStringParameters(std::move(value)); return *this;}
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline Parameters& AddStringParameters(const StringParameter& value) { m_stringParametersHasBeenSet = true; m_stringParameters.push_back(value); return *this; }
 
     /**
-     * <p>String parameters.</p>
+     * <p>The parameters that have a data type of string.</p>
      */
     inline Parameters& AddStringParameters(StringParameter&& value) { m_stringParametersHasBeenSet = true; m_stringParameters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline const Aws::Vector<IntegerParameter>& GetIntegerParameters() const{ return m_integerParameters; }
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline bool IntegerParametersHasBeenSet() const { return m_integerParametersHasBeenSet; }
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline void SetIntegerParameters(const Aws::Vector<IntegerParameter>& value) { m_integerParametersHasBeenSet = true; m_integerParameters = value; }
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline void SetIntegerParameters(Aws::Vector<IntegerParameter>&& value) { m_integerParametersHasBeenSet = true; m_integerParameters = std::move(value); }
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline Parameters& WithIntegerParameters(const Aws::Vector<IntegerParameter>& value) { SetIntegerParameters(value); return *this;}
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline Parameters& WithIntegerParameters(Aws::Vector<IntegerParameter>&& value) { SetIntegerParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline Parameters& AddIntegerParameters(const IntegerParameter& value) { m_integerParametersHasBeenSet = true; m_integerParameters.push_back(value); return *this; }
 
     /**
-     * <p>Integer parameters.</p>
+     * <p>The parameters that have a data type of integer.</p>
      */
     inline Parameters& AddIntegerParameters(IntegerParameter&& value) { m_integerParametersHasBeenSet = true; m_integerParameters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline const Aws::Vector<DecimalParameter>& GetDecimalParameters() const{ return m_decimalParameters; }
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline bool DecimalParametersHasBeenSet() const { return m_decimalParametersHasBeenSet; }
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline void SetDecimalParameters(const Aws::Vector<DecimalParameter>& value) { m_decimalParametersHasBeenSet = true; m_decimalParameters = value; }
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline void SetDecimalParameters(Aws::Vector<DecimalParameter>&& value) { m_decimalParametersHasBeenSet = true; m_decimalParameters = std::move(value); }
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline Parameters& WithDecimalParameters(const Aws::Vector<DecimalParameter>& value) { SetDecimalParameters(value); return *this;}
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline Parameters& WithDecimalParameters(Aws::Vector<DecimalParameter>&& value) { SetDecimalParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline Parameters& AddDecimalParameters(const DecimalParameter& value) { m_decimalParametersHasBeenSet = true; m_decimalParameters.push_back(value); return *this; }
 
     /**
-     * <p>Decimal parameters.</p>
+     * <p>The parameters that have a data type of decimal.</p>
      */
     inline Parameters& AddDecimalParameters(DecimalParameter&& value) { m_decimalParametersHasBeenSet = true; m_decimalParameters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline const Aws::Vector<DateTimeParameter>& GetDateTimeParameters() const{ return m_dateTimeParameters; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline bool DateTimeParametersHasBeenSet() const { return m_dateTimeParametersHasBeenSet; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline void SetDateTimeParameters(const Aws::Vector<DateTimeParameter>& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters = value; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline void SetDateTimeParameters(Aws::Vector<DateTimeParameter>&& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters = std::move(value); }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline Parameters& WithDateTimeParameters(const Aws::Vector<DateTimeParameter>& value) { SetDateTimeParameters(value); return *this;}
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline Parameters& WithDateTimeParameters(Aws::Vector<DateTimeParameter>&& value) { SetDateTimeParameters(std::move(value)); return *this;}
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline Parameters& AddDateTimeParameters(const DateTimeParameter& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters.push_back(value); return *this; }
 
     /**
-     * <p>DateTime parameters.</p>
+     * <p>The parameters that have a data type of date-time.</p>
      */
     inline Parameters& AddDateTimeParameters(DateTimeParameter&& value) { m_dateTimeParametersHasBeenSet = true; m_dateTimeParameters.push_back(std::move(value)); return *this; }
 

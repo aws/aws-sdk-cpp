@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -49,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline Initiator& WithID(const Aws::String& value) { SetID(value); return *this;}
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline Initiator& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
-     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.</p>
+     * <p>If the principal is an Amazon Web Services account, it provides the Canonical
+     * User ID. If the principal is an IAM User, it provides a user ARN value.</p>
      */
     inline Initiator& WithID(const char* value) { SetID(value); return *this;}
 

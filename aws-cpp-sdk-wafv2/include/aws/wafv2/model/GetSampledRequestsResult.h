@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -90,70 +80,75 @@ namespace Model
     /**
      * <p>The total number of requests from which <code>GetSampledRequests</code> got a
      * sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less
-     * than <code>MaxItems</code>, the sample includes every request that your AWS
-     * resource received during the specified time range.</p>
+     * than <code>MaxItems</code>, the sample includes every request that your Amazon
+     * Web Services resource received during the specified time range.</p>
      */
     inline long long GetPopulationSize() const{ return m_populationSize; }
 
     /**
      * <p>The total number of requests from which <code>GetSampledRequests</code> got a
      * sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less
-     * than <code>MaxItems</code>, the sample includes every request that your AWS
-     * resource received during the specified time range.</p>
+     * than <code>MaxItems</code>, the sample includes every request that your Amazon
+     * Web Services resource received during the specified time range.</p>
      */
     inline void SetPopulationSize(long long value) { m_populationSize = value; }
 
     /**
      * <p>The total number of requests from which <code>GetSampledRequests</code> got a
      * sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less
-     * than <code>MaxItems</code>, the sample includes every request that your AWS
-     * resource received during the specified time range.</p>
+     * than <code>MaxItems</code>, the sample includes every request that your Amazon
+     * Web Services resource received during the specified time range.</p>
      */
     inline GetSampledRequestsResult& WithPopulationSize(long long value) { SetPopulationSize(value); return *this;}
 
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-     * <code>GetSampledRequests</code> request. However, if your AWS resource received
-     * more than 5,000 requests during the time range that you specified in the
-     * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * <code>GetSampledRequests</code> request. However, if your Amazon Web Services
+     * resource received more than 5,000 requests during the time range that you
+     * specified in the request, <code>GetSampledRequests</code> returns the time range
+     * for the first 5,000 requests. Times are in Coordinated Universal Time (UTC)
+     * format.</p>
      */
     inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-     * <code>GetSampledRequests</code> request. However, if your AWS resource received
-     * more than 5,000 requests during the time range that you specified in the
-     * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * <code>GetSampledRequests</code> request. However, if your Amazon Web Services
+     * resource received more than 5,000 requests during the time range that you
+     * specified in the request, <code>GetSampledRequests</code> returns the time range
+     * for the first 5,000 requests. Times are in Coordinated Universal Time (UTC)
+     * format.</p>
      */
     inline void SetTimeWindow(const TimeWindow& value) { m_timeWindow = value; }
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-     * <code>GetSampledRequests</code> request. However, if your AWS resource received
-     * more than 5,000 requests during the time range that you specified in the
-     * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * <code>GetSampledRequests</code> request. However, if your Amazon Web Services
+     * resource received more than 5,000 requests during the time range that you
+     * specified in the request, <code>GetSampledRequests</code> returns the time range
+     * for the first 5,000 requests. Times are in Coordinated Universal Time (UTC)
+     * format.</p>
      */
     inline void SetTimeWindow(TimeWindow&& value) { m_timeWindow = std::move(value); }
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-     * <code>GetSampledRequests</code> request. However, if your AWS resource received
-     * more than 5,000 requests during the time range that you specified in the
-     * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * <code>GetSampledRequests</code> request. However, if your Amazon Web Services
+     * resource received more than 5,000 requests during the time range that you
+     * specified in the request, <code>GetSampledRequests</code> returns the time range
+     * for the first 5,000 requests. Times are in Coordinated Universal Time (UTC)
+     * format.</p>
      */
     inline GetSampledRequestsResult& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-     * <code>GetSampledRequests</code> request. However, if your AWS resource received
-     * more than 5,000 requests during the time range that you specified in the
-     * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * <code>GetSampledRequests</code> request. However, if your Amazon Web Services
+     * resource received more than 5,000 requests during the time range that you
+     * specified in the request, <code>GetSampledRequests</code> returns the time range
+     * for the first 5,000 requests. Times are in Coordinated Universal Time (UTC)
+     * format.</p>
      */
     inline GetSampledRequestsResult& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 

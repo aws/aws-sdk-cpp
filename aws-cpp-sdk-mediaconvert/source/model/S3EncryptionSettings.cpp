@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/S3EncryptionSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 S3EncryptionSettings::S3EncryptionSettings() : 
     m_encryptionType(S3ServerSideEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
+    m_kmsEncryptionContextHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false)
 {
 }
@@ -38,6 +29,7 @@ S3EncryptionSettings::S3EncryptionSettings() :
 S3EncryptionSettings::S3EncryptionSettings(JsonView jsonValue) : 
     m_encryptionType(S3ServerSideEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
+    m_kmsEncryptionContextHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,6 +42,13 @@ S3EncryptionSettings& S3EncryptionSettings::operator =(JsonView jsonValue)
     m_encryptionType = S3ServerSideEncryptionTypeMapper::GetS3ServerSideEncryptionTypeForName(jsonValue.GetString("encryptionType"));
 
     m_encryptionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsEncryptionContext"))
+  {
+    m_kmsEncryptionContext = jsonValue.GetString("kmsEncryptionContext");
+
+    m_kmsEncryptionContextHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("kmsKeyArn"))
@@ -69,6 +68,12 @@ JsonValue S3EncryptionSettings::Jsonize() const
   if(m_encryptionTypeHasBeenSet)
   {
    payload.WithString("encryptionType", S3ServerSideEncryptionTypeMapper::GetNameForS3ServerSideEncryptionType(m_encryptionType));
+  }
+
+  if(m_kmsEncryptionContextHasBeenSet)
+  {
+   payload.WithString("kmsEncryptionContext", m_kmsEncryptionContext);
+
   }
 
   if(m_kmsKeyArnHasBeenSet)

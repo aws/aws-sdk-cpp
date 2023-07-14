@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -53,86 +43,86 @@ namespace Model
     /**
      * <p>The type of deployment event. Deployment event types include the start, stop,
      * or completion of a deployment; a percentage update; the start or stop of a bake
-     * period; the start or completion of a rollback.</p>
+     * period; and the start or completion of a rollback.</p>
      */
     inline const DeploymentEventType& GetEventType() const{ return m_eventType; }
 
     /**
      * <p>The type of deployment event. Deployment event types include the start, stop,
      * or completion of a deployment; a percentage update; the start or stop of a bake
-     * period; the start or completion of a rollback.</p>
+     * period; and the start or completion of a rollback.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The type of deployment event. Deployment event types include the start, stop,
      * or completion of a deployment; a percentage update; the start or stop of a bake
-     * period; the start or completion of a rollback.</p>
+     * period; and the start or completion of a rollback.</p>
      */
     inline void SetEventType(const DeploymentEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
      * <p>The type of deployment event. Deployment event types include the start, stop,
      * or completion of a deployment; a percentage update; the start or stop of a bake
-     * period; the start or completion of a rollback.</p>
+     * period; and the start or completion of a rollback.</p>
      */
     inline void SetEventType(DeploymentEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
      * <p>The type of deployment event. Deployment event types include the start, stop,
      * or completion of a deployment; a percentage update; the start or stop of a bake
-     * period; the start or completion of a rollback.</p>
+     * period; and the start or completion of a rollback.</p>
      */
     inline DeploymentEvent& WithEventType(const DeploymentEventType& value) { SetEventType(value); return *this;}
 
     /**
      * <p>The type of deployment event. Deployment event types include the start, stop,
      * or completion of a deployment; a percentage update; the start or stop of a bake
-     * period; the start or completion of a rollback.</p>
+     * period; and the start or completion of a rollback.</p>
      */
     inline DeploymentEvent& WithEventType(DeploymentEventType&& value) { SetEventType(std::move(value)); return *this;}
 
 
     /**
      * <p>The entity that triggered the deployment event. Events can be triggered by a
-     * user, AWS AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+     * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
     inline const TriggeredBy& GetTriggeredBy() const{ return m_triggeredBy; }
 
     /**
      * <p>The entity that triggered the deployment event. Events can be triggered by a
-     * user, AWS AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+     * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
     inline bool TriggeredByHasBeenSet() const { return m_triggeredByHasBeenSet; }
 
     /**
      * <p>The entity that triggered the deployment event. Events can be triggered by a
-     * user, AWS AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+     * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
     inline void SetTriggeredBy(const TriggeredBy& value) { m_triggeredByHasBeenSet = true; m_triggeredBy = value; }
 
     /**
      * <p>The entity that triggered the deployment event. Events can be triggered by a
-     * user, AWS AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+     * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
     inline void SetTriggeredBy(TriggeredBy&& value) { m_triggeredByHasBeenSet = true; m_triggeredBy = std::move(value); }
 
     /**
      * <p>The entity that triggered the deployment event. Events can be triggered by a
-     * user, AWS AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+     * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
     inline DeploymentEvent& WithTriggeredBy(const TriggeredBy& value) { SetTriggeredBy(value); return *this;}
 
     /**
      * <p>The entity that triggered the deployment event. Events can be triggered by a
-     * user, AWS AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+     * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
     inline DeploymentEvent& WithTriggeredBy(TriggeredBy&& value) { SetTriggeredBy(std::move(value)); return *this;}
 
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -140,7 +130,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -148,7 +138,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -156,7 +146,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -164,7 +154,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -172,7 +162,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -180,7 +170,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */
@@ -188,7 +178,7 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the CloudWatch alarm ARN that initiated a
+     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
      * rollback, the percentage of hosts that received the deployment, or in the case
      * of an internal error, a recommendation to attempt a new deployment.</p>
      */

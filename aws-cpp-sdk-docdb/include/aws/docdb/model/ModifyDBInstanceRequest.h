@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/docdb/DocDB_EXPORTS.h>
@@ -109,80 +99,80 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.r5.large</code>. Not all instance classes are available in all Amazon
+     * Web Services Regions. </p> <p>If you modify the instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
@@ -351,46 +341,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -569,6 +539,128 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
+
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -594,6 +686,12 @@ namespace Model
 
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+
+    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsightsHasBeenSet;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet;
   };
 
 } // namespace Model

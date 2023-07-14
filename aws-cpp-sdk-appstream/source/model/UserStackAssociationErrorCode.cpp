@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/appstream/model/UserStackAssociationErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int STACK_NOT_FOUND_HASH = HashingUtils::HashString("STACK_NOT_FOUND");
         static const int USER_NAME_NOT_FOUND_HASH = HashingUtils::HashString("USER_NAME_NOT_FOUND");
+        static const int DIRECTORY_NOT_FOUND_HASH = HashingUtils::HashString("DIRECTORY_NOT_FOUND");
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 
 
@@ -45,6 +36,10 @@ namespace Aws
           else if (hashCode == USER_NAME_NOT_FOUND_HASH)
           {
             return UserStackAssociationErrorCode::USER_NAME_NOT_FOUND;
+          }
+          else if (hashCode == DIRECTORY_NOT_FOUND_HASH)
+          {
+            return UserStackAssociationErrorCode::DIRECTORY_NOT_FOUND;
           }
           else if (hashCode == INTERNAL_ERROR_HASH)
           {
@@ -68,6 +63,8 @@ namespace Aws
             return "STACK_NOT_FOUND";
           case UserStackAssociationErrorCode::USER_NAME_NOT_FOUND:
             return "USER_NAME_NOT_FOUND";
+          case UserStackAssociationErrorCode::DIRECTORY_NOT_FOUND:
+            return "DIRECTORY_NOT_FOUND";
           case UserStackAssociationErrorCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           default:

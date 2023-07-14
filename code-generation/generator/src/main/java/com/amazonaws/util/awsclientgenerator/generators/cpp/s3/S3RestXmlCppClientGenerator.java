@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.generators.cpp.s3;
 
@@ -33,27 +23,22 @@ import java.util.Set;
 
 public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
-    private static Set<String> opsThatNeedMd5 = new HashSet<>();
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
+    private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
 
     static {
-        opsThatNeedMd5.add("DeleteObjects");
-        opsThatNeedMd5.add("PutBucketCors");
-        opsThatNeedMd5.add("PutBucketLifecycle");
-        opsThatNeedMd5.add("PutBucketLifecycleConfiguration");
-        opsThatNeedMd5.add("PutBucketPolicy");
-        opsThatNeedMd5.add("PutBucketTagging");
-        opsThatNeedMd5.add("PutObjectLegalHold");
-        opsThatNeedMd5.add("PutObjectLockConfiguration");
-        opsThatNeedMd5.add("PutObjectRetention");
-
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
+        opsThatDoNotSupportVirtualAddressing.add("WriteGetObjectResponse");
 
         opsThatDoNotSupportArnEndpoint.add("CreateBucket");
         opsThatDoNotSupportArnEndpoint.add("ListBuckets");
+        opsThatDoNotSupportArnEndpoint.add("WriteGetObjectResponse");
+
+        opsThatDoNotSupportFutureInS3CRT.add("GetObject");
+        opsThatDoNotSupportFutureInS3CRT.add("PutObject");
 
         bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
@@ -73,7 +58,8 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         bucketLocationConstraints.add("cn-northwest-1");
         bucketLocationConstraints.add("ca-central-1");
         bucketLocationConstraints.add("us-gov-west-1");
-        bucketLocationConstraints.add("EU");
+        bucketLocationConstraints.add("eu-north-1");
+        bucketLocationConstraints.add("us-iso-west-1");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
@@ -86,12 +72,6 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         // Add ID2 and RequestId to GetObjectResult
         hackGetObjectOutputResponse(serviceModel);
 
-        //if an operation should precompute md5, make sure it is added here.
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        opsThatNeedMd5.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.getRequest().getShape().setComputeContentMd5(true));
-
         //size and content length should ALWAYS be 64 bit integers, if they aren't set them as that now.
         serviceModel.getShapes().entrySet().stream().filter(shapeEntry -> shapeEntry.getKey().toLowerCase().equals("contentlength") || shapeEntry.getKey().toLowerCase().equals("size"))
                 .forEach(shapeEntry -> shapeEntry.getValue().setType("long"));
@@ -99,22 +79,33 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         serviceModel.getOperations().values().stream()
                 .filter(operationEntry ->
                         !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setVirtualAddressAllowed(true));
-
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        !opsThatDoNotSupportVirtualAddressing.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setVirtualAddressMemberName("Bucket"));
-
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        !opsThatDoNotSupportArnEndpoint.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setArnEndpointAllowed(true));
+                .forEach(operationEntry -> {
+                    operationEntry.setVirtualAddressAllowed(true);
+                    operationEntry.setVirtualAddressMemberName("Bucket");
+                });
 
         serviceModel.getOperations().values().stream()
                 .filter(operationEntry ->
                         !opsThatDoNotSupportArnEndpoint.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setArnEndpointMemberName("Bucket"));
+                .forEach(operationEntry -> {
+                    operationEntry.setArnEndpointAllowed(true);
+                    operationEntry.setArnEndpointMemberName("Bucket");
+                });
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry -> operationEntry.getName().equals("WriteGetObjectResponse"))
+                .forEach(operationEntry -> {
+                    operationEntry.setRequiresServiceNameOverride(true);
+                    operationEntry.setServiceNameOverride("s3-object-lambda");
+                    operationEntry.setSupportsChunkedEncoding(true);
+                });
+
+
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        serviceModel.getMetadata().getNamespace().equals("S3Crt") && opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
@@ -273,6 +264,30 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     }
 
     @Override
+    protected SdkFileEntry generateErrorMarshallerHeaderFile(ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("include/aws/%s/%sErrorMarshaller.h",
+                serviceModel.getMetadata().getProjectName(), serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateErrorMarshallingSourceFile(final ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ErrorMarshallerSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("source/%sErrorMarshaller.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
     protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
@@ -321,5 +336,20 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         return makeFile(template, context, fileName, true);
     }
-}
 
+    @Override
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        if ("S3-CRT".equalsIgnoreCase(serviceModel.getMetadata().getProjectName())) {
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfig.vm", StandardCharsets.UTF_8.name());
+
+            VelocityContext context = createContext(serviceModel);
+            context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+            String fileName = String.format("include/aws/%s/ClientConfiguration.h", serviceModel.getMetadata().getProjectName());
+
+            return makeFile(template, context, fileName, true);
+        }
+
+        return null;
+    }
+}

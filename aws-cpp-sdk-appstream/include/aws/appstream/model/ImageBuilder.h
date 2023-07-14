@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
@@ -296,17 +286,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -314,17 +315,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -332,17 +344,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -350,17 +373,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -368,17 +402,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -386,17 +431,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -404,17 +460,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -422,17 +489,28 @@ namespace Model
 
     /**
      * <p>The instance type for the image builder. The following instance types are
-     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
-     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
-     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
-     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
-     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
-     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
-     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * available:</p> <ul> <li> <p>stream.standard.small</p> </li> <li>
+     * <p>stream.standard.medium</p> </li> <li> <p>stream.standard.large</p> </li> <li>
+     * <p>stream.compute.large</p> </li> <li> <p>stream.compute.xlarge</p> </li> <li>
+     * <p>stream.compute.2xlarge</p> </li> <li> <p>stream.compute.4xlarge</p> </li>
+     * <li> <p>stream.compute.8xlarge</p> </li> <li> <p>stream.memory.large</p> </li>
+     * <li> <p>stream.memory.xlarge</p> </li> <li> <p>stream.memory.2xlarge</p> </li>
+     * <li> <p>stream.memory.4xlarge</p> </li> <li> <p>stream.memory.8xlarge</p> </li>
+     * <li> <p>stream.memory.z1d.large</p> </li> <li> <p>stream.memory.z1d.xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.2xlarge</p> </li> <li>
+     * <p>stream.memory.z1d.3xlarge</p> </li> <li> <p>stream.memory.z1d.6xlarge</p>
+     * </li> <li> <p>stream.memory.z1d.12xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
      * <p>stream.graphics-design.2xlarge</p> </li> <li>
      * <p>stream.graphics-design.4xlarge</p> </li> <li>
      * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
+     * <p>stream.graphics.g4dn.16xlarge</p> </li> <li>
      * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
@@ -476,7 +554,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -491,7 +569,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -506,7 +584,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -521,7 +599,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -536,7 +614,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -551,7 +629,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -566,7 +644,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on
@@ -581,7 +659,7 @@ namespace Model
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0
      * retrieves the temporary credentials and creates the
-     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * <b>appstream_machine_role</b> credential profile on the instance.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
      * an IAM Role to Grant Permissions to Applications and Scripts Running on

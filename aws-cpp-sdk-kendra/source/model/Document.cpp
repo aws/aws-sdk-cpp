@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/Document.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,6 +26,7 @@ Document::Document() :
     m_s3PathHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_accessControlListHasBeenSet(false),
+    m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
     m_contentTypeHasBeenSet(false)
 {
@@ -48,6 +39,7 @@ Document::Document(JsonView jsonValue) :
     m_s3PathHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_accessControlListHasBeenSet(false),
+    m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
     m_contentTypeHasBeenSet(false)
 {
@@ -101,6 +93,16 @@ Document& Document::operator =(JsonView jsonValue)
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
     }
     m_accessControlListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HierarchicalAccessControlList"))
+  {
+    Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
+    for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
+    {
+      m_hierarchicalAccessControlList.push_back(hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject());
+    }
+    m_hierarchicalAccessControlListHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ContentType"))
@@ -159,6 +161,17 @@ JsonValue Document::Jsonize() const
      accessControlListJsonList[accessControlListIndex].AsObject(m_accessControlList[accessControlListIndex].Jsonize());
    }
    payload.WithArray("AccessControlList", std::move(accessControlListJsonList));
+
+  }
+
+  if(m_hierarchicalAccessControlListHasBeenSet)
+  {
+   Array<JsonValue> hierarchicalAccessControlListJsonList(m_hierarchicalAccessControlList.size());
+   for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
+   {
+     hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject(m_hierarchicalAccessControlList[hierarchicalAccessControlListIndex].Jsonize());
+   }
+   payload.WithArray("HierarchicalAccessControlList", std::move(hierarchicalAccessControlListJsonList));
 
   }
 

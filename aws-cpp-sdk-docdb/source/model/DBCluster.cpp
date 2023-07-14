@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/docdb/model/DBCluster.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -52,6 +42,8 @@ DBCluster::DBCluster() :
     m_masterUsernameHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
+    m_replicationSourceIdentifierHasBeenSet(false),
+    m_readReplicaIdentifiersHasBeenSet(false),
     m_dBClusterMembersHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
@@ -90,6 +82,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_masterUsernameHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
+    m_replicationSourceIdentifierHasBeenSet(false),
+    m_readReplicaIdentifiersHasBeenSet(false),
     m_dBClusterMembersHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
@@ -226,6 +220,24 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_preferredMaintenanceWindow = Aws::Utils::Xml::DecodeEscapedXmlText(preferredMaintenanceWindowNode.GetText());
       m_preferredMaintenanceWindowHasBeenSet = true;
+    }
+    XmlNode replicationSourceIdentifierNode = resultNode.FirstChild("ReplicationSourceIdentifier");
+    if(!replicationSourceIdentifierNode.IsNull())
+    {
+      m_replicationSourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(replicationSourceIdentifierNode.GetText());
+      m_replicationSourceIdentifierHasBeenSet = true;
+    }
+    XmlNode readReplicaIdentifiersNode = resultNode.FirstChild("ReadReplicaIdentifiers");
+    if(!readReplicaIdentifiersNode.IsNull())
+    {
+      XmlNode readReplicaIdentifiersMember = readReplicaIdentifiersNode.FirstChild("ReadReplicaIdentifier");
+      while(!readReplicaIdentifiersMember.IsNull())
+      {
+        m_readReplicaIdentifiers.push_back(readReplicaIdentifiersMember.GetText());
+        readReplicaIdentifiersMember = readReplicaIdentifiersMember.NextNode("ReadReplicaIdentifier");
+      }
+
+      m_readReplicaIdentifiersHasBeenSet = true;
     }
     XmlNode dBClusterMembersNode = resultNode.FirstChild("DBClusterMembers");
     if(!dBClusterMembersNode.IsNull())
@@ -418,6 +430,20 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
 
+  if(m_replicationSourceIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
+  }
+
+  if(m_readReplicaIdentifiersHasBeenSet)
+  {
+      unsigned readReplicaIdentifiersIdx = 1;
+      for(auto& item : m_readReplicaIdentifiers)
+      {
+        oStream << location << index << locationValue << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_dBClusterMembersHasBeenSet)
   {
       unsigned dBClusterMembersIdx = 1;
@@ -574,6 +600,18 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
       oStream << location << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
+  }
+  if(m_replicationSourceIdentifierHasBeenSet)
+  {
+      oStream << location << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
+  }
+  if(m_readReplicaIdentifiersHasBeenSet)
+  {
+      unsigned readReplicaIdentifiersIdx = 1;
+      for(auto& item : m_readReplicaIdentifiers)
+      {
+        oStream << location << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_dBClusterMembersHasBeenSet)
   {

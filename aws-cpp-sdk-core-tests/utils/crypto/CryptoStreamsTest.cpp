@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
@@ -250,10 +240,8 @@ TEST(CryptoStreamsTest, TestCiphersNeverUsedSrc)
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Decrypt);
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Encrypt);
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Decrypt);
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Encrypt);
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Decrypt);
-#endif
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
     CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Encrypt);
@@ -268,10 +256,8 @@ TEST(CryptoStreamsTest, TestCiphersNeverUsedSinkDestructorFinalizes)
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Decrypt);
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Encrypt);
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Decrypt);
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Encrypt);
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Decrypt);
-#endif
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
     CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Encrypt);
@@ -286,10 +272,8 @@ TEST(CryptoStreamsTest, TestUninitializedCiphersSinkExplicitFinalize)
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Decrypt);
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Encrypt);
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Decrypt);
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Encrypt);
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Decrypt);
-#endif
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
     CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Encrypt);
@@ -687,7 +671,6 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
 {
     Aws::String iv_raw = "92f258071d79af3e63672285";
@@ -725,6 +708,5 @@ TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
         ASSERT_STREQ(data_raw.c_str(), plainTextOutput.c_str());
     }
 }
-#endif
 
 #endif // NO_SYMMETRIC_ENCRYPTION

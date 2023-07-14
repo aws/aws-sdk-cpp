@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/compute-optimizer/model/InstanceRecommendationOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,20 +21,28 @@ namespace Model
 InstanceRecommendationOption::InstanceRecommendationOption() : 
     m_instanceTypeHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false),
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false),
+    m_migrationEffort(MigrationEffort::NOT_SET),
+    m_migrationEffortHasBeenSet(false)
 {
 }
 
 InstanceRecommendationOption::InstanceRecommendationOption(JsonView jsonValue) : 
     m_instanceTypeHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false),
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false),
+    m_migrationEffort(MigrationEffort::NOT_SET),
+    m_migrationEffortHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +66,16 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
     m_projectedUtilizationMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("platformDifferences"))
+  {
+    Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("platformDifferences");
+    for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+    {
+      m_platformDifferences.push_back(PlatformDifferenceMapper::GetPlatformDifferenceForName(platformDifferencesJsonList[platformDifferencesIndex].AsString()));
+    }
+    m_platformDifferencesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("performanceRisk"))
   {
     m_performanceRisk = jsonValue.GetDouble("performanceRisk");
@@ -80,6 +88,20 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
     m_rank = jsonValue.GetInteger("rank");
 
     m_rankHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("savingsOpportunity"))
+  {
+    m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
+
+    m_savingsOpportunityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("migrationEffort"))
+  {
+    m_migrationEffort = MigrationEffortMapper::GetMigrationEffortForName(jsonValue.GetString("migrationEffort"));
+
+    m_migrationEffortHasBeenSet = true;
   }
 
   return *this;
@@ -106,6 +128,17 @@ JsonValue InstanceRecommendationOption::Jsonize() const
 
   }
 
+  if(m_platformDifferencesHasBeenSet)
+  {
+   Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
+   for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+   {
+     platformDifferencesJsonList[platformDifferencesIndex].AsString(PlatformDifferenceMapper::GetNameForPlatformDifference(m_platformDifferences[platformDifferencesIndex]));
+   }
+   payload.WithArray("platformDifferences", std::move(platformDifferencesJsonList));
+
+  }
+
   if(m_performanceRiskHasBeenSet)
   {
    payload.WithDouble("performanceRisk", m_performanceRisk);
@@ -116,6 +149,17 @@ JsonValue InstanceRecommendationOption::Jsonize() const
   {
    payload.WithInteger("rank", m_rank);
 
+  }
+
+  if(m_savingsOpportunityHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
+
+  }
+
+  if(m_migrationEffortHasBeenSet)
+  {
+   payload.WithString("migrationEffort", MigrationEffortMapper::GetNameForMigrationEffort(m_migrationEffort));
   }
 
   return payload;

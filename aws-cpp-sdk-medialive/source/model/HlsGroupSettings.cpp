@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/HlsGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -45,6 +35,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_destinationHasBeenSet(false),
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
+    m_discontinuityTags(HlsDiscontinuityTags::NOT_SET),
+    m_discontinuityTagsHasBeenSet(false),
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
@@ -52,6 +44,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_hlsId3SegmentTaggingHasBeenSet(false),
     m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
     m_iFrameOnlyPlaylistsHasBeenSet(false),
+    m_incompleteSegmentBehavior(HlsIncompleteSegmentBehavior::NOT_SET),
+    m_incompleteSegmentBehaviorHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -77,6 +71,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_outputSelectionHasBeenSet(false),
     m_programDateTime(HlsProgramDateTime::NOT_SET),
     m_programDateTimeHasBeenSet(false),
+    m_programDateTimeClock(HlsProgramDateTimeClock::NOT_SET),
+    m_programDateTimeClockHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
     m_redundantManifest(HlsRedundantManifest::NOT_SET),
@@ -117,6 +113,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_destinationHasBeenSet(false),
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
+    m_discontinuityTags(HlsDiscontinuityTags::NOT_SET),
+    m_discontinuityTagsHasBeenSet(false),
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
@@ -124,6 +122,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_hlsId3SegmentTaggingHasBeenSet(false),
     m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
     m_iFrameOnlyPlaylistsHasBeenSet(false),
+    m_incompleteSegmentBehavior(HlsIncompleteSegmentBehavior::NOT_SET),
+    m_incompleteSegmentBehaviorHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -149,6 +149,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_outputSelectionHasBeenSet(false),
     m_programDateTime(HlsProgramDateTime::NOT_SET),
     m_programDateTimeHasBeenSet(false),
+    m_programDateTimeClock(HlsProgramDateTimeClock::NOT_SET),
+    m_programDateTimeClockHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
     m_redundantManifest(HlsRedundantManifest::NOT_SET),
@@ -265,6 +267,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_directoryStructureHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("discontinuityTags"))
+  {
+    m_discontinuityTags = HlsDiscontinuityTagsMapper::GetHlsDiscontinuityTagsForName(jsonValue.GetString("discontinuityTags"));
+
+    m_discontinuityTagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = HlsEncryptionTypeMapper::GetHlsEncryptionTypeForName(jsonValue.GetString("encryptionType"));
@@ -291,6 +300,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_iFrameOnlyPlaylists = IFrameOnlyPlaylistTypeMapper::GetIFrameOnlyPlaylistTypeForName(jsonValue.GetString("iFrameOnlyPlaylists"));
 
     m_iFrameOnlyPlaylistsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("incompleteSegmentBehavior"))
+  {
+    m_incompleteSegmentBehavior = HlsIncompleteSegmentBehaviorMapper::GetHlsIncompleteSegmentBehaviorForName(jsonValue.GetString("incompleteSegmentBehavior"));
+
+    m_incompleteSegmentBehaviorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("indexNSegments"))
@@ -389,6 +405,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_programDateTime = HlsProgramDateTimeMapper::GetHlsProgramDateTimeForName(jsonValue.GetString("programDateTime"));
 
     m_programDateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("programDateTimeClock"))
+  {
+    m_programDateTimeClock = HlsProgramDateTimeClockMapper::GetHlsProgramDateTimeClockForName(jsonValue.GetString("programDateTimeClock"));
+
+    m_programDateTimeClockHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("programDateTimePeriod"))
@@ -546,6 +569,11 @@ JsonValue HlsGroupSettings::Jsonize() const
    payload.WithString("directoryStructure", HlsDirectoryStructureMapper::GetNameForHlsDirectoryStructure(m_directoryStructure));
   }
 
+  if(m_discontinuityTagsHasBeenSet)
+  {
+   payload.WithString("discontinuityTags", HlsDiscontinuityTagsMapper::GetNameForHlsDiscontinuityTags(m_discontinuityTags));
+  }
+
   if(m_encryptionTypeHasBeenSet)
   {
    payload.WithString("encryptionType", HlsEncryptionTypeMapper::GetNameForHlsEncryptionType(m_encryptionType));
@@ -565,6 +593,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_iFrameOnlyPlaylistsHasBeenSet)
   {
    payload.WithString("iFrameOnlyPlaylists", IFrameOnlyPlaylistTypeMapper::GetNameForIFrameOnlyPlaylistType(m_iFrameOnlyPlaylists));
+  }
+
+  if(m_incompleteSegmentBehaviorHasBeenSet)
+  {
+   payload.WithString("incompleteSegmentBehavior", HlsIncompleteSegmentBehaviorMapper::GetNameForHlsIncompleteSegmentBehavior(m_incompleteSegmentBehavior));
   }
 
   if(m_indexNSegmentsHasBeenSet)
@@ -641,6 +674,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_programDateTimeHasBeenSet)
   {
    payload.WithString("programDateTime", HlsProgramDateTimeMapper::GetNameForHlsProgramDateTime(m_programDateTime));
+  }
+
+  if(m_programDateTimeClockHasBeenSet)
+  {
+   payload.WithString("programDateTimeClock", HlsProgramDateTimeClockMapper::GetNameForHlsProgramDateTimeClock(m_programDateTimeClock));
   }
 
   if(m_programDateTimePeriodHasBeenSet)

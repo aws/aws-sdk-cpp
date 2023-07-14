@@ -1,25 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/ColorCorrector.h>
 #include <aws/mediaconvert/model/Deinterlacer.h>
 #include <aws/mediaconvert/model/DolbyVision.h>
+#include <aws/mediaconvert/model/Hdr10Plus.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/mediaconvert/model/NoiseReducer.h>
+#include <aws/mediaconvert/model/PartnerWatermarking.h>
 #include <aws/mediaconvert/model/TimecodeBurnin.h>
 #include <utility>
 
@@ -55,81 +47,87 @@ namespace Model
 
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline const ColorCorrector& GetColorCorrector() const{ return m_colorCorrector; }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline bool ColorCorrectorHasBeenSet() const { return m_colorCorrectorHasBeenSet; }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline void SetColorCorrector(const ColorCorrector& value) { m_colorCorrectorHasBeenSet = true; m_colorCorrector = value; }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline void SetColorCorrector(ColorCorrector&& value) { m_colorCorrectorHasBeenSet = true; m_colorCorrector = std::move(value); }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline VideoPreprocessor& WithColorCorrector(const ColorCorrector& value) { SetColorCorrector(value); return *this;}
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline VideoPreprocessor& WithColorCorrector(ColorCorrector&& value) { SetColorCorrector(std::move(value)); return *this;}
 
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline const Deinterlacer& GetDeinterlacer() const{ return m_deinterlacer; }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline bool DeinterlacerHasBeenSet() const { return m_deinterlacerHasBeenSet; }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline void SetDeinterlacer(const Deinterlacer& value) { m_deinterlacerHasBeenSet = true; m_deinterlacer = value; }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline void SetDeinterlacer(Deinterlacer&& value) { m_deinterlacerHasBeenSet = true; m_deinterlacer = std::move(value); }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline VideoPreprocessor& WithDeinterlacer(const Deinterlacer& value) { SetDeinterlacer(value); return *this;}
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline VideoPreprocessor& WithDeinterlacer(Deinterlacer&& value) { SetDeinterlacer(std::move(value)); return *this;}
 
@@ -163,6 +161,37 @@ namespace Model
      * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
      */
     inline VideoPreprocessor& WithDolbyVision(DolbyVision&& value) { SetDolbyVision(std::move(value)); return *this;}
+
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline const Hdr10Plus& GetHdr10Plus() const{ return m_hdr10Plus; }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline bool Hdr10PlusHasBeenSet() const { return m_hdr10PlusHasBeenSet; }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline void SetHdr10Plus(const Hdr10Plus& value) { m_hdr10PlusHasBeenSet = true; m_hdr10Plus = value; }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline void SetHdr10Plus(Hdr10Plus&& value) { m_hdr10PlusHasBeenSet = true; m_hdr10Plus = std::move(value); }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline VideoPreprocessor& WithHdr10Plus(const Hdr10Plus& value) { SetHdr10Plus(value); return *this;}
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline VideoPreprocessor& WithHdr10Plus(Hdr10Plus&& value) { SetHdr10Plus(std::move(value)); return *this;}
 
 
     /**
@@ -252,38 +281,75 @@ namespace Model
 
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline const PartnerWatermarking& GetPartnerWatermarking() const{ return m_partnerWatermarking; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline bool PartnerWatermarkingHasBeenSet() const { return m_partnerWatermarkingHasBeenSet; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline void SetPartnerWatermarking(const PartnerWatermarking& value) { m_partnerWatermarkingHasBeenSet = true; m_partnerWatermarking = value; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline void SetPartnerWatermarking(PartnerWatermarking&& value) { m_partnerWatermarkingHasBeenSet = true; m_partnerWatermarking = std::move(value); }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline VideoPreprocessor& WithPartnerWatermarking(const PartnerWatermarking& value) { SetPartnerWatermarking(value); return *this;}
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline VideoPreprocessor& WithPartnerWatermarking(PartnerWatermarking&& value) { SetPartnerWatermarking(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline const TimecodeBurnin& GetTimecodeBurnin() const{ return m_timecodeBurnin; }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline bool TimecodeBurninHasBeenSet() const { return m_timecodeBurninHasBeenSet; }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline void SetTimecodeBurnin(const TimecodeBurnin& value) { m_timecodeBurninHasBeenSet = true; m_timecodeBurnin = value; }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline void SetTimecodeBurnin(TimecodeBurnin&& value) { m_timecodeBurninHasBeenSet = true; m_timecodeBurnin = std::move(value); }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline VideoPreprocessor& WithTimecodeBurnin(const TimecodeBurnin& value) { SetTimecodeBurnin(value); return *this;}
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline VideoPreprocessor& WithTimecodeBurnin(TimecodeBurnin&& value) { SetTimecodeBurnin(std::move(value)); return *this;}
 
@@ -298,11 +364,17 @@ namespace Model
     DolbyVision m_dolbyVision;
     bool m_dolbyVisionHasBeenSet;
 
+    Hdr10Plus m_hdr10Plus;
+    bool m_hdr10PlusHasBeenSet;
+
     ImageInserter m_imageInserter;
     bool m_imageInserterHasBeenSet;
 
     NoiseReducer m_noiseReducer;
     bool m_noiseReducerHasBeenSet;
+
+    PartnerWatermarking m_partnerWatermarking;
+    bool m_partnerWatermarkingHasBeenSet;
 
     TimecodeBurnin m_timecodeBurnin;
     bool m_timecodeBurninHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/Backup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,13 @@ Backup::Backup() :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileSystemHasBeenSet(false),
-    m_directoryInformationHasBeenSet(false)
+    m_directoryInformationHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_sourceBackupIdHasBeenSet(false),
+    m_sourceBackupRegionHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
 }
 
@@ -60,7 +56,13 @@ Backup::Backup(JsonView jsonValue) :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_fileSystemHasBeenSet(false),
-    m_directoryInformationHasBeenSet(false)
+    m_directoryInformationHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_sourceBackupIdHasBeenSet(false),
+    m_sourceBackupRegionHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,41 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_directoryInformationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OwnerId"))
+  {
+    m_ownerId = jsonValue.GetString("OwnerId");
+
+    m_ownerIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceBackupId"))
+  {
+    m_sourceBackupId = jsonValue.GetString("SourceBackupId");
+
+    m_sourceBackupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceBackupRegion"))
+  {
+    m_sourceBackupRegion = jsonValue.GetString("SourceBackupRegion");
+
+    m_sourceBackupRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Volume"))
+  {
+    m_volume = jsonValue.GetObject("Volume");
+
+    m_volumeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -219,6 +256,35 @@ JsonValue Backup::Jsonize() const
   if(m_directoryInformationHasBeenSet)
   {
    payload.WithObject("DirectoryInformation", m_directoryInformation.Jsonize());
+
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+   payload.WithString("OwnerId", m_ownerId);
+
+  }
+
+  if(m_sourceBackupIdHasBeenSet)
+  {
+   payload.WithString("SourceBackupId", m_sourceBackupId);
+
+  }
+
+  if(m_sourceBackupRegionHasBeenSet)
+  {
+   payload.WithString("SourceBackupRegion", m_sourceBackupRegion);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_volumeHasBeenSet)
+  {
+   payload.WithObject("Volume", m_volume.Jsonize());
 
   }
 

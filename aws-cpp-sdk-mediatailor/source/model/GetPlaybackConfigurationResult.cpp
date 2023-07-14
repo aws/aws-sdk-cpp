@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediatailor/model/GetPlaybackConfigurationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,10 +36,37 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("AvailSuppression"))
+  {
+    m_availSuppression = jsonValue.GetObject("AvailSuppression");
+
+  }
+
+  if(jsonValue.ValueExists("Bumper"))
+  {
+    m_bumper = jsonValue.GetObject("Bumper");
+
+  }
+
   if(jsonValue.ValueExists("CdnConfiguration"))
   {
     m_cdnConfiguration = jsonValue.GetObject("CdnConfiguration");
 
+  }
+
+  if(jsonValue.ValueExists("ConfigurationAliases"))
+  {
+    Aws::Map<Aws::String, JsonView> configurationAliasesJsonMap = jsonValue.GetObject("ConfigurationAliases").GetAllObjects();
+    for(auto& configurationAliasesItem : configurationAliasesJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> __mapOf__stringJsonMap = configurationAliasesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> __mapOf__stringMap;
+      for(auto& __mapOf__stringItem : __mapOf__stringJsonMap)
+      {
+        __mapOf__stringMap[__mapOf__stringItem.first] = __mapOf__stringItem.second.AsString();
+      }
+      m_configurationAliases[configurationAliasesItem.first] = std::move(__mapOf__stringMap);
+    }
   }
 
   if(jsonValue.ValueExists("DashConfiguration"))
@@ -67,6 +84,18 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
   if(jsonValue.ValueExists("LivePreRollConfiguration"))
   {
     m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("ManifestProcessingRules"))
+  {
+    m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
 
   }
 

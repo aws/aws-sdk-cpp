@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -67,73 +57,73 @@ namespace Model
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline void SetDiskIds(const Aws::Vector<Aws::String>& value) { m_diskIds = value; }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = std::move(value); }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline DescribeCacheResult& WithDiskIds(const Aws::Vector<Aws::String>& value) { SetDiskIds(value); return *this;}
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline DescribeCacheResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline DescribeCacheResult& AddDiskIds(const Aws::String& value) { m_diskIds.push_back(value); return *this; }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline DescribeCacheResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that identify disks that are to be configured as working
-     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * storage. Each string has a minimum length of 1 and maximum length of 300. You
      * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
      */
     inline DescribeCacheResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The amount of cache in bytes allocated to the a gateway.</p>
+     * <p>The amount of cache in bytes allocated to a gateway.</p>
      */
     inline long long GetCacheAllocatedInBytes() const{ return m_cacheAllocatedInBytes; }
 
     /**
-     * <p>The amount of cache in bytes allocated to the a gateway.</p>
+     * <p>The amount of cache in bytes allocated to a gateway.</p>
      */
     inline void SetCacheAllocatedInBytes(long long value) { m_cacheAllocatedInBytes = value; }
 
     /**
-     * <p>The amount of cache in bytes allocated to the a gateway.</p>
+     * <p>The amount of cache in bytes allocated to a gateway.</p>
      */
     inline DescribeCacheResult& WithCacheAllocatedInBytes(long long value) { SetCacheAllocatedInBytes(value); return *this;}
 
@@ -162,22 +152,22 @@ namespace Model
 
     /**
      * <p>The file share's contribution to the overall percentage of the gateway's
-     * cache that has not been persisted to AWS. The sample is taken at the end of the
-     * reporting period.</p>
+     * cache that has not been persisted to Amazon Web Services. The sample is taken at
+     * the end of the reporting period.</p>
      */
     inline double GetCacheDirtyPercentage() const{ return m_cacheDirtyPercentage; }
 
     /**
      * <p>The file share's contribution to the overall percentage of the gateway's
-     * cache that has not been persisted to AWS. The sample is taken at the end of the
-     * reporting period.</p>
+     * cache that has not been persisted to Amazon Web Services. The sample is taken at
+     * the end of the reporting period.</p>
      */
     inline void SetCacheDirtyPercentage(double value) { m_cacheDirtyPercentage = value; }
 
     /**
      * <p>The file share's contribution to the overall percentage of the gateway's
-     * cache that has not been persisted to AWS. The sample is taken at the end of the
-     * reporting period.</p>
+     * cache that has not been persisted to Amazon Web Services. The sample is taken at
+     * the end of the reporting period.</p>
      */
     inline DescribeCacheResult& WithCacheDirtyPercentage(double value) { SetCacheDirtyPercentage(value); return *this;}
 

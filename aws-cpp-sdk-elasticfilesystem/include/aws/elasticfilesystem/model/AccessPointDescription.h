@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -396,42 +386,50 @@ namespace Model
 
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline AccessPointDescription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline AccessPointDescription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>Identified the AWS account that owns the access point resource.</p>
+     * <p>Identified the Amazon Web Services account that owns the access point
+     * resource.</p>
      */
     inline AccessPointDescription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

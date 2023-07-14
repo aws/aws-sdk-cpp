@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/CreateIndexRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,11 +14,18 @@ using namespace Aws::Utils;
 
 CreateIndexRequest::CreateIndexRequest() : 
     m_nameHasBeenSet(false),
+    m_edition(IndexEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_tagsHasBeenSet(false),
+    m_userTokenConfigurationsHasBeenSet(false),
+    m_userContextPolicy(UserContextPolicy::NOT_SET),
+    m_userContextPolicyHasBeenSet(false),
+    m_userGroupResolutionConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,6 +37,11 @@ Aws::String CreateIndexRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_editionHasBeenSet)
+  {
+   payload.WithString("Edition", IndexEditionMapper::GetNameForIndexEdition(m_edition));
   }
 
   if(m_roleArnHasBeenSet)
@@ -63,6 +65,39 @@ Aws::String CreateIndexRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_userTokenConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
+   for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
+   {
+     userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject(m_userTokenConfigurations[userTokenConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("UserTokenConfigurations", std::move(userTokenConfigurationsJsonList));
+
+  }
+
+  if(m_userContextPolicyHasBeenSet)
+  {
+   payload.WithString("UserContextPolicy", UserContextPolicyMapper::GetNameForUserContextPolicy(m_userContextPolicy));
+  }
+
+  if(m_userGroupResolutionConfigurationHasBeenSet)
+  {
+   payload.WithObject("UserGroupResolutionConfiguration", m_userGroupResolutionConfiguration.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -20,6 +10,9 @@
 #include <aws/elasticache/model/PendingAutomaticFailoverStatus.h>
 #include <aws/elasticache/model/ReshardingStatus.h>
 #include <aws/elasticache/model/AuthTokenUpdateStatus.h>
+#include <aws/elasticache/model/UserGroupsUpdateStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -111,56 +104,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline const PendingAutomaticFailoverStatus& GetAutomaticFailoverStatus() const{ return m_automaticFailoverStatus; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline bool AutomaticFailoverStatusHasBeenSet() const { return m_automaticFailoverStatusHasBeenSet; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { SetAutomaticFailoverStatus(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(std::move(value)); return *this;}
 
@@ -226,6 +201,78 @@ namespace Model
      */
     inline ReplicationGroupPendingModifiedValues& WithAuthTokenStatus(AuthTokenUpdateStatus&& value) { SetAuthTokenStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user group being modified.</p>
+     */
+    inline const UserGroupsUpdateStatus& GetUserGroups() const{ return m_userGroups; }
+
+    /**
+     * <p>The user group being modified.</p>
+     */
+    inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
+
+    /**
+     * <p>The user group being modified.</p>
+     */
+    inline void SetUserGroups(const UserGroupsUpdateStatus& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
+
+    /**
+     * <p>The user group being modified.</p>
+     */
+    inline void SetUserGroups(UserGroupsUpdateStatus&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
+
+    /**
+     * <p>The user group being modified.</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithUserGroups(const UserGroupsUpdateStatus& value) { SetUserGroups(value); return *this;}
+
+    /**
+     * <p>The user group being modified.</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithUserGroups(UserGroupsUpdateStatus&& value) { SetUserGroups(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline const Aws::Vector<PendingLogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<PendingLogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<PendingLogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithLogDeliveryConfigurations(const Aws::Vector<PendingLogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithLogDeliveryConfigurations(Aws::Vector<PendingLogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& AddLogDeliveryConfigurations(const PendingLogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& AddLogDeliveryConfigurations(PendingLogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_primaryClusterId;
@@ -239,6 +286,12 @@ namespace Model
 
     AuthTokenUpdateStatus m_authTokenStatus;
     bool m_authTokenStatusHasBeenSet;
+
+    UserGroupsUpdateStatus m_userGroups;
+    bool m_userGroupsHasBeenSet;
+
+    Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

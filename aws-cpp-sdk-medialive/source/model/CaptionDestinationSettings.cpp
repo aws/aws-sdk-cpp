@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/CaptionDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
     m_aribDestinationSettingsHasBeenSet(false),
     m_burnInDestinationSettingsHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
+    m_ebuTtDDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
     m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
     m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
@@ -48,6 +39,7 @@ CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) :
     m_aribDestinationSettingsHasBeenSet(false),
     m_burnInDestinationSettingsHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
+    m_ebuTtDDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
     m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
     m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
@@ -82,6 +74,13 @@ CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView json
     m_dvbSubDestinationSettings = jsonValue.GetObject("dvbSubDestinationSettings");
 
     m_dvbSubDestinationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ebuTtDDestinationSettings"))
+  {
+    m_ebuTtDDestinationSettings = jsonValue.GetObject("ebuTtDDestinationSettings");
+
+    m_ebuTtDDestinationSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("embeddedDestinationSettings"))
@@ -169,6 +168,12 @@ JsonValue CaptionDestinationSettings::Jsonize() const
   if(m_dvbSubDestinationSettingsHasBeenSet)
   {
    payload.WithObject("dvbSubDestinationSettings", m_dvbSubDestinationSettings.Jsonize());
+
+  }
+
+  if(m_ebuTtDDestinationSettingsHasBeenSet)
+  {
+   payload.WithObject("ebuTtDDestinationSettings", m_ebuTtDDestinationSettings.Jsonize());
 
   }
 

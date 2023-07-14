@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
@@ -408,67 +398,80 @@ namespace Model
 
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetReviews() const{ return m_reviews; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline bool ReviewsHasBeenSet() const { return m_reviewsHasBeenSet; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline void SetReviews(const Aws::Map<Aws::String, Aws::String>& value) { m_reviewsHasBeenSet = true; m_reviews = value; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline void SetReviews(Aws::Map<Aws::String, Aws::String>&& value) { m_reviewsHasBeenSet = true; m_reviews = std::move(value); }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& WithReviews(const Aws::Map<Aws::String, Aws::String>& value) { SetReviews(value); return *this;}
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& WithReviews(Aws::Map<Aws::String, Aws::String>&& value) { SetReviews(std::move(value)); return *this;}
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(const Aws::String& key, const Aws::String& value) { m_reviewsHasBeenSet = true; m_reviews.emplace(key, value); return *this; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(Aws::String&& key, const Aws::String& value) { m_reviewsHasBeenSet = true; m_reviews.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(const Aws::String& key, Aws::String&& value) { m_reviewsHasBeenSet = true; m_reviews.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(Aws::String&& key, Aws::String&& value) { m_reviewsHasBeenSet = true; m_reviews.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(const char* key, Aws::String&& value) { m_reviewsHasBeenSet = true; m_reviews.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(Aws::String&& key, const char* value) { m_reviewsHasBeenSet = true; m_reviews.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     * <p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the
+     * skill, including Key and Value pair.</p>
      */
     inline SkillDetails& AddReviews(const char* key, const char* value) { m_reviewsHasBeenSet = true; m_reviews.emplace(key, value); return *this; }
 

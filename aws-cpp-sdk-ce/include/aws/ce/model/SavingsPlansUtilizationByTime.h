@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -37,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The amount of Savings Plans utilization, in hours.</p><p><h3>See Also:</h3>  
+   * <p>The amount of Savings Plans utilization (in hours).</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilizationByTime">AWS
    * API Reference</a></p>
@@ -108,44 +98,44 @@ namespace Model
 
 
     /**
-     * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of
-     * the Savings Plans when considering the utilization rate.</p>
+     * <p>The amount that's saved by using existing Savings Plans. Savings returns both
+     * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
+     * of the Savings Plans when considering the utilization rate.</p>
      */
     inline const SavingsPlansSavings& GetSavings() const{ return m_savings; }
 
     /**
-     * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of
-     * the Savings Plans when considering the utilization rate.</p>
+     * <p>The amount that's saved by using existing Savings Plans. Savings returns both
+     * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
+     * of the Savings Plans when considering the utilization rate.</p>
      */
     inline bool SavingsHasBeenSet() const { return m_savingsHasBeenSet; }
 
     /**
-     * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of
-     * the Savings Plans when considering the utilization rate.</p>
+     * <p>The amount that's saved by using existing Savings Plans. Savings returns both
+     * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
+     * of the Savings Plans when considering the utilization rate.</p>
      */
     inline void SetSavings(const SavingsPlansSavings& value) { m_savingsHasBeenSet = true; m_savings = value; }
 
     /**
-     * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of
-     * the Savings Plans when considering the utilization rate.</p>
+     * <p>The amount that's saved by using existing Savings Plans. Savings returns both
+     * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
+     * of the Savings Plans when considering the utilization rate.</p>
      */
     inline void SetSavings(SavingsPlansSavings&& value) { m_savingsHasBeenSet = true; m_savings = std::move(value); }
 
     /**
-     * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of
-     * the Savings Plans when considering the utilization rate.</p>
+     * <p>The amount that's saved by using existing Savings Plans. Savings returns both
+     * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
+     * of the Savings Plans when considering the utilization rate.</p>
      */
     inline SavingsPlansUtilizationByTime& WithSavings(const SavingsPlansSavings& value) { SetSavings(value); return *this;}
 
     /**
-     * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from Savings Plans as well as the <code>onDemandCostEquivalent</code> of
-     * the Savings Plans when considering the utilization rate.</p>
+     * <p>The amount that's saved by using existing Savings Plans. Savings returns both
+     * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
+     * of the Savings Plans when considering the utilization rate.</p>
      */
     inline SavingsPlansUtilizationByTime& WithSavings(SavingsPlansSavings&& value) { SetSavings(std::move(value)); return *this;}
 

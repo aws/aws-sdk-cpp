@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/PutComplianceItemsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,7 +18,9 @@ PutComplianceItemsRequest::PutComplianceItemsRequest() :
     m_complianceTypeHasBeenSet(false),
     m_executionSummaryHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_itemContentHashHasBeenSet(false)
+    m_itemContentHashHasBeenSet(false),
+    m_uploadType(ComplianceUploadType::NOT_SET),
+    m_uploadTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +67,11 @@ Aws::String PutComplianceItemsRequest::SerializePayload() const
   {
    payload.WithString("ItemContentHash", m_itemContentHash);
 
+  }
+
+  if(m_uploadTypeHasBeenSet)
+  {
+   payload.WithString("UploadType", ComplianceUploadTypeMapper::GetNameForComplianceUploadType(m_uploadType));
   }
 
   return payload.View().WriteReadable();

@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/WebvttDestinationStyleControl.h>
+#include <utility>
 
 namespace Aws
 {
@@ -44,6 +36,59 @@ namespace Model
     WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    /**
+     * Controls whether the color and position of the source captions is passed through
+     * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
+     * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
+     * output captions will not contain any font styling information.
+     */
+    inline const WebvttDestinationStyleControl& GetStyleControl() const{ return m_styleControl; }
+
+    /**
+     * Controls whether the color and position of the source captions is passed through
+     * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
+     * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
+     * output captions will not contain any font styling information.
+     */
+    inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
+
+    /**
+     * Controls whether the color and position of the source captions is passed through
+     * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
+     * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
+     * output captions will not contain any font styling information.
+     */
+    inline void SetStyleControl(const WebvttDestinationStyleControl& value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
+
+    /**
+     * Controls whether the color and position of the source captions is passed through
+     * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
+     * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
+     * output captions will not contain any font styling information.
+     */
+    inline void SetStyleControl(WebvttDestinationStyleControl&& value) { m_styleControlHasBeenSet = true; m_styleControl = std::move(value); }
+
+    /**
+     * Controls whether the color and position of the source captions is passed through
+     * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
+     * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
+     * output captions will not contain any font styling information.
+     */
+    inline WebvttDestinationSettings& WithStyleControl(const WebvttDestinationStyleControl& value) { SetStyleControl(value); return *this;}
+
+    /**
+     * Controls whether the color and position of the source captions is passed through
+     * to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions
+     * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
+     * output captions will not contain any font styling information.
+     */
+    inline WebvttDestinationSettings& WithStyleControl(WebvttDestinationStyleControl&& value) { SetStyleControl(std::move(value)); return *this;}
+
+  private:
+
+    WebvttDestinationStyleControl m_styleControl;
+    bool m_styleControlHasBeenSet;
   };
 
 } // namespace Model

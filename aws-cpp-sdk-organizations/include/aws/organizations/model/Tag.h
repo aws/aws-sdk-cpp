@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -34,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>A custom key-value pair associated with a resource such as an account within
-   * your organization. </p><p><h3>See Also:</h3>   <a
+   * <p>A custom key-value pair associated with a resource within your
+   * organization.</p> <p>You can attach tags to any of the following organization
+   * resources.</p> <ul> <li> <p>Amazon Web Services account</p> </li> <li>
+   * <p>Organizational unit (OU)</p> </li> <li> <p>Organization root</p> </li> <li>
+   * <p>Policy</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Tag">AWS
    * API Reference</a></p>
    */

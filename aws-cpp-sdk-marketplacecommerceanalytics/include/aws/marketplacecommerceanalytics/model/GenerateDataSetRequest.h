@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
@@ -98,8 +88,15 @@ namespace Model
      * includes metered transactions (e.g. hourly) from one month prior, and up-front
      * software charges (e.g. annual) from one month prior.</p> </li> <li>
      * <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present:
-     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> </ul>
-     * </p>
+     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data
+     * set is deprecated. Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_industry</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
     inline const DataSetType& GetDataSetType() const{ return m_dataSetType; }
 
@@ -150,8 +147,15 @@ namespace Model
      * includes metered transactions (e.g. hourly) from one month prior, and up-front
      * software charges (e.g. annual) from one month prior.</p> </li> <li>
      * <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present:
-     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> </ul>
-     * </p>
+     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data
+     * set is deprecated. Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_industry</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
     inline bool DataSetTypeHasBeenSet() const { return m_dataSetTypeHasBeenSet; }
 
@@ -202,8 +206,15 @@ namespace Model
      * includes metered transactions (e.g. hourly) from one month prior, and up-front
      * software charges (e.g. annual) from one month prior.</p> </li> <li>
      * <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present:
-     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> </ul>
-     * </p>
+     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data
+     * set is deprecated. Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_industry</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
     inline void SetDataSetType(const DataSetType& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = value; }
 
@@ -254,8 +265,15 @@ namespace Model
      * includes metered transactions (e.g. hourly) from one month prior, and up-front
      * software charges (e.g. annual) from one month prior.</p> </li> <li>
      * <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present:
-     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> </ul>
-     * </p>
+     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data
+     * set is deprecated. Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_industry</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
     inline void SetDataSetType(DataSetType&& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = std::move(value); }
 
@@ -306,8 +324,15 @@ namespace Model
      * includes metered transactions (e.g. hourly) from one month prior, and up-front
      * software charges (e.g. annual) from one month prior.</p> </li> <li>
      * <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present:
-     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> </ul>
-     * </p>
+     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data
+     * set is deprecated. Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_industry</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
     inline GenerateDataSetRequest& WithDataSetType(const DataSetType& value) { SetDataSetType(value); return *this;}
 
@@ -358,8 +383,15 @@ namespace Model
      * includes metered transactions (e.g. hourly) from one month prior, and up-front
      * software charges (e.g. annual) from one month prior.</p> </li> <li>
      * <strong>us_sales_and_use_tax_records</strong> <p>From 2017-09-15 to present:
-     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> </ul>
-     * </p>
+     * Available monthly on the 15th day of the month by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_product_with_uncollected_funds</strong> <p>This data
+     * set is deprecated. Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_industry</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_revenue</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> <li>
+     * <strong>customer_profile_by_geography</strong> <p>This data set is deprecated.
+     * Download related reports from AMMP instead!</p> </li> </ul> </p>
      */
     inline GenerateDataSetRequest& WithDataSetType(DataSetType&& value) { SetDataSetType(std::move(value)); return *this;}
 

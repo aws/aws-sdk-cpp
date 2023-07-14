@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kinesis/model/ShardFilter.h>
 #include <utility>
 
 namespace Aws
@@ -109,11 +100,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -132,11 +123,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -155,11 +146,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -178,11 +169,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -201,11 +192,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -224,11 +215,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListShardsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -247,11 +238,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListShardsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -270,11 +261,11 @@ namespace Model
      * shards that the operation returns if you don't specify <code>MaxResults</code>,
      * the response will contain a new <code>NextToken</code> value. You can use the
      * new <code>NextToken</code> value in a subsequent call to the
-     * <code>ListShards</code> operation.</p> <important> <p>Tokens expire after 300
+     * <code>ListShards</code> operation.</p>  <p>Tokens expire after 300
      * seconds. When you obtain a value for <code>NextToken</code> in the response to a
      * call to <code>ListShards</code>, you have 300 seconds to use that value. If you
      * specify an expired token in a call to <code>ListShards</code>, you get
-     * <code>ExpiredNextTokenException</code>.</p> </important>
+     * <code>ExpiredNextTokenException</code>.</p> 
      */
     inline ListShardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -362,41 +353,45 @@ namespace Model
 
     /**
      * <p>The maximum number of shards to return in a single call to
-     * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
-     * of shards to be listed is greater than the value of <code>MaxResults</code>, the
-     * response contains a <code>NextToken</code> value that you can use in a
-     * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
+     * <code>ListShards</code>. The maximum number of shards to return in a single
+     * call. The default value is 1000. If you specify a value greater than 1000, at
+     * most 1000 results are returned. </p> <p>When the number of shards to be listed
+     * is greater than the value of <code>MaxResults</code>, the response contains a
+     * <code>NextToken</code> value that you can use in a subsequent call to
+     * <code>ListShards</code> to list the next set of shards.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of shards to return in a single call to
-     * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
-     * of shards to be listed is greater than the value of <code>MaxResults</code>, the
-     * response contains a <code>NextToken</code> value that you can use in a
-     * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
+     * <code>ListShards</code>. The maximum number of shards to return in a single
+     * call. The default value is 1000. If you specify a value greater than 1000, at
+     * most 1000 results are returned. </p> <p>When the number of shards to be listed
+     * is greater than the value of <code>MaxResults</code>, the response contains a
+     * <code>NextToken</code> value that you can use in a subsequent call to
+     * <code>ListShards</code> to list the next set of shards.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of shards to return in a single call to
-     * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
-     * of shards to be listed is greater than the value of <code>MaxResults</code>, the
-     * response contains a <code>NextToken</code> value that you can use in a
-     * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
+     * <code>ListShards</code>. The maximum number of shards to return in a single
+     * call. The default value is 1000. If you specify a value greater than 1000, at
+     * most 1000 results are returned. </p> <p>When the number of shards to be listed
+     * is greater than the value of <code>MaxResults</code>, the response contains a
+     * <code>NextToken</code> value that you can use in a subsequent call to
+     * <code>ListShards</code> to list the next set of shards.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of shards to return in a single call to
-     * <code>ListShards</code>. The minimum value you can specify for this parameter is
-     * 1, and the maximum is 1,000, which is also the default.</p> <p>When the number
-     * of shards to be listed is greater than the value of <code>MaxResults</code>, the
-     * response contains a <code>NextToken</code> value that you can use in a
-     * subsequent call to <code>ListShards</code> to list the next set of shards.</p>
+     * <code>ListShards</code>. The maximum number of shards to return in a single
+     * call. The default value is 1000. If you specify a value greater than 1000, at
+     * most 1000 results are returned. </p> <p>When the number of shards to be listed
+     * is greater than the value of <code>MaxResults</code>, the response contains a
+     * <code>NextToken</code> value that you can use in a subsequent call to
+     * <code>ListShards</code> to list the next set of shards.</p>
      */
     inline ListShardsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -461,6 +456,145 @@ namespace Model
      */
     inline ListShardsRequest& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables you to filter out the response of the <code>ListShards</code> API.
+     * You can only specify one filter at a time. </p> <p>If you use the
+     * <code>ShardFilter</code> parameter when invoking the ListShards API, the
+     * <code>Type</code> is the required property and must be specified. If you specify
+     * the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+     * <code>AT_LATEST</code> types, you do not need to specify either the
+     * <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+     * <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide
+     * the value for the optional <code>ShardId</code> property. The
+     * <code>ShardId</code> property is identical in fuctionality to the
+     * <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API.
+     * When <code>ShardId</code> property is specified, the response includes the
+     * shards starting with the shard whose ID immediately follows the
+     * <code>ShardId</code> that you provided. </p> <p>If you specify the
+     * <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also
+     * provide the value for the optional <code>Timestamp</code> property. If you
+     * specify the AT_TIMESTAMP type, then all shards that were open at the provided
+     * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
+     * starting from the provided timestamp to TIP are returned. </p>
+     */
+    inline const ShardFilter& GetShardFilter() const{ return m_shardFilter; }
+
+    /**
+     * <p>Enables you to filter out the response of the <code>ListShards</code> API.
+     * You can only specify one filter at a time. </p> <p>If you use the
+     * <code>ShardFilter</code> parameter when invoking the ListShards API, the
+     * <code>Type</code> is the required property and must be specified. If you specify
+     * the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+     * <code>AT_LATEST</code> types, you do not need to specify either the
+     * <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+     * <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide
+     * the value for the optional <code>ShardId</code> property. The
+     * <code>ShardId</code> property is identical in fuctionality to the
+     * <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API.
+     * When <code>ShardId</code> property is specified, the response includes the
+     * shards starting with the shard whose ID immediately follows the
+     * <code>ShardId</code> that you provided. </p> <p>If you specify the
+     * <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also
+     * provide the value for the optional <code>Timestamp</code> property. If you
+     * specify the AT_TIMESTAMP type, then all shards that were open at the provided
+     * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
+     * starting from the provided timestamp to TIP are returned. </p>
+     */
+    inline bool ShardFilterHasBeenSet() const { return m_shardFilterHasBeenSet; }
+
+    /**
+     * <p>Enables you to filter out the response of the <code>ListShards</code> API.
+     * You can only specify one filter at a time. </p> <p>If you use the
+     * <code>ShardFilter</code> parameter when invoking the ListShards API, the
+     * <code>Type</code> is the required property and must be specified. If you specify
+     * the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+     * <code>AT_LATEST</code> types, you do not need to specify either the
+     * <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+     * <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide
+     * the value for the optional <code>ShardId</code> property. The
+     * <code>ShardId</code> property is identical in fuctionality to the
+     * <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API.
+     * When <code>ShardId</code> property is specified, the response includes the
+     * shards starting with the shard whose ID immediately follows the
+     * <code>ShardId</code> that you provided. </p> <p>If you specify the
+     * <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also
+     * provide the value for the optional <code>Timestamp</code> property. If you
+     * specify the AT_TIMESTAMP type, then all shards that were open at the provided
+     * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
+     * starting from the provided timestamp to TIP are returned. </p>
+     */
+    inline void SetShardFilter(const ShardFilter& value) { m_shardFilterHasBeenSet = true; m_shardFilter = value; }
+
+    /**
+     * <p>Enables you to filter out the response of the <code>ListShards</code> API.
+     * You can only specify one filter at a time. </p> <p>If you use the
+     * <code>ShardFilter</code> parameter when invoking the ListShards API, the
+     * <code>Type</code> is the required property and must be specified. If you specify
+     * the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+     * <code>AT_LATEST</code> types, you do not need to specify either the
+     * <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+     * <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide
+     * the value for the optional <code>ShardId</code> property. The
+     * <code>ShardId</code> property is identical in fuctionality to the
+     * <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API.
+     * When <code>ShardId</code> property is specified, the response includes the
+     * shards starting with the shard whose ID immediately follows the
+     * <code>ShardId</code> that you provided. </p> <p>If you specify the
+     * <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also
+     * provide the value for the optional <code>Timestamp</code> property. If you
+     * specify the AT_TIMESTAMP type, then all shards that were open at the provided
+     * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
+     * starting from the provided timestamp to TIP are returned. </p>
+     */
+    inline void SetShardFilter(ShardFilter&& value) { m_shardFilterHasBeenSet = true; m_shardFilter = std::move(value); }
+
+    /**
+     * <p>Enables you to filter out the response of the <code>ListShards</code> API.
+     * You can only specify one filter at a time. </p> <p>If you use the
+     * <code>ShardFilter</code> parameter when invoking the ListShards API, the
+     * <code>Type</code> is the required property and must be specified. If you specify
+     * the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+     * <code>AT_LATEST</code> types, you do not need to specify either the
+     * <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+     * <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide
+     * the value for the optional <code>ShardId</code> property. The
+     * <code>ShardId</code> property is identical in fuctionality to the
+     * <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API.
+     * When <code>ShardId</code> property is specified, the response includes the
+     * shards starting with the shard whose ID immediately follows the
+     * <code>ShardId</code> that you provided. </p> <p>If you specify the
+     * <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also
+     * provide the value for the optional <code>Timestamp</code> property. If you
+     * specify the AT_TIMESTAMP type, then all shards that were open at the provided
+     * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
+     * starting from the provided timestamp to TIP are returned. </p>
+     */
+    inline ListShardsRequest& WithShardFilter(const ShardFilter& value) { SetShardFilter(value); return *this;}
+
+    /**
+     * <p>Enables you to filter out the response of the <code>ListShards</code> API.
+     * You can only specify one filter at a time. </p> <p>If you use the
+     * <code>ShardFilter</code> parameter when invoking the ListShards API, the
+     * <code>Type</code> is the required property and must be specified. If you specify
+     * the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or
+     * <code>AT_LATEST</code> types, you do not need to specify either the
+     * <code>ShardId</code> or the <code>Timestamp</code> optional properties. </p>
+     * <p>If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide
+     * the value for the optional <code>ShardId</code> property. The
+     * <code>ShardId</code> property is identical in fuctionality to the
+     * <code>ExclusiveStartShardId</code> parameter of the <code>ListShards</code> API.
+     * When <code>ShardId</code> property is specified, the response includes the
+     * shards starting with the shard whose ID immediately follows the
+     * <code>ShardId</code> that you provided. </p> <p>If you specify the
+     * <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type, you must also
+     * provide the value for the optional <code>Timestamp</code> property. If you
+     * specify the AT_TIMESTAMP type, then all shards that were open at the provided
+     * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
+     * starting from the provided timestamp to TIP are returned. </p>
+     */
+    inline ListShardsRequest& WithShardFilter(ShardFilter&& value) { SetShardFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -477,6 +611,9 @@ namespace Model
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
     bool m_streamCreationTimestampHasBeenSet;
+
+    ShardFilter m_shardFilter;
+    bool m_shardFilterHasBeenSet;
   };
 
 } // namespace Model

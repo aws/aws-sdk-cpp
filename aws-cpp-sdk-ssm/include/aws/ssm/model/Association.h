@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/AssociationOverview.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an association of a Systems Manager document and an
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an association of a Amazon Web Services Systems Manager document
+   * (SSM document) and a managed node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Association">AWS API
    * Reference</a></p>
    */
@@ -53,83 +44,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline Association& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline Association& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline Association& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline Association& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline Association& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>
      */
     inline Association& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -225,83 +216,179 @@ namespace Model
 
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline Association& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association. If you change a document
+     * version for a State Manager association, Systems Manager immediately runs the
+     * association unless you previously specifed the
+     * <code>apply-only-at-cron-interval</code> parameter.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline Association& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The instances targeted by the request to create an association. </p>
+     * <p>The managed nodes targeted by the request to create an association. You can
+     * target all managed nodes in an Amazon Web Services account by specifying the
+     * <code>InstanceIds</code> key with a value of <code>*</code>.</p>
      */
     inline Association& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -369,42 +456,50 @@ namespace Model
 
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline Association& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline Association& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     * <p>A cron expression that specifies a schedule when the association runs. The
+     * schedule runs in Coordinated Universal Time (UTC).</p>
      */
     inline Association& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
@@ -449,6 +544,76 @@ namespace Model
      */
     inline Association& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>Number of days to wait after the scheduled day to run an association.</p>
+     */
+    inline Association& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>A key-value mapping of document parameters to target resources. Both Targets
+     * and TargetMaps can't be specified together.</p>
+     */
+    inline Association& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -480,6 +645,12 @@ namespace Model
 
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
   };
 
 } // namespace Model

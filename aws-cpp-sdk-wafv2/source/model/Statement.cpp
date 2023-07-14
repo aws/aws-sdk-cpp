@@ -1,20 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/Statement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/RateBasedStatement.h>
+#include <aws/wafv2/model/AndStatement.h>
+#include <aws/wafv2/model/OrStatement.h>
+#include <aws/wafv2/model/NotStatement.h>
+#include <aws/wafv2/model/ManagedRuleGroupStatement.h>
 
 #include <utility>
 
@@ -41,7 +36,9 @@ Statement::Statement() :
     m_andStatementHasBeenSet(false),
     m_orStatementHasBeenSet(false),
     m_notStatementHasBeenSet(false),
-    m_managedRuleGroupStatementHasBeenSet(false)
+    m_managedRuleGroupStatementHasBeenSet(false),
+    m_labelMatchStatementHasBeenSet(false),
+    m_regexMatchStatementHasBeenSet(false)
 {
 }
 
@@ -58,24 +55,47 @@ Statement::Statement(JsonView jsonValue) :
     m_andStatementHasBeenSet(false),
     m_orStatementHasBeenSet(false),
     m_notStatementHasBeenSet(false),
-    m_managedRuleGroupStatementHasBeenSet(false)
+    m_managedRuleGroupStatementHasBeenSet(false),
+    m_labelMatchStatementHasBeenSet(false),
+    m_regexMatchStatementHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-const RateBasedStatement& Statement::GetRateBasedStatement() const{ return m_rateBasedStatement[0]; }
+const RateBasedStatement& Statement::GetRateBasedStatement() const{ return *m_rateBasedStatement; }
 bool Statement::RateBasedStatementHasBeenSet() const { return m_rateBasedStatementHasBeenSet; }
-void Statement::SetRateBasedStatement(const RateBasedStatement& value) { m_rateBasedStatementHasBeenSet = true; m_rateBasedStatement.resize(1); m_rateBasedStatement[0] = value; }
-void Statement::SetRateBasedStatement(RateBasedStatement&& value) { m_rateBasedStatementHasBeenSet = true; m_rateBasedStatement.resize(1); m_rateBasedStatement[0] = std::move(value); }
+void Statement::SetRateBasedStatement(const RateBasedStatement& value) { m_rateBasedStatementHasBeenSet = true; m_rateBasedStatement = Aws::MakeShared<RateBasedStatement>("Statement", value); }
+void Statement::SetRateBasedStatement(RateBasedStatement&& value) { m_rateBasedStatementHasBeenSet = true; m_rateBasedStatement = Aws::MakeShared<RateBasedStatement>("Statement", std::move(value)); }
 Statement& Statement::WithRateBasedStatement(const RateBasedStatement& value) { SetRateBasedStatement(value); return *this;}
 Statement& Statement::WithRateBasedStatement(RateBasedStatement&& value) { SetRateBasedStatement(std::move(value)); return *this;}
 
-const NotStatement& Statement::GetNotStatement() const{ return m_notStatement[0]; }
+const AndStatement& Statement::GetAndStatement() const{ return *m_andStatement; }
+bool Statement::AndStatementHasBeenSet() const { return m_andStatementHasBeenSet; }
+void Statement::SetAndStatement(const AndStatement& value) { m_andStatementHasBeenSet = true; m_andStatement = Aws::MakeShared<AndStatement>("Statement", value); }
+void Statement::SetAndStatement(AndStatement&& value) { m_andStatementHasBeenSet = true; m_andStatement = Aws::MakeShared<AndStatement>("Statement", std::move(value)); }
+Statement& Statement::WithAndStatement(const AndStatement& value) { SetAndStatement(value); return *this;}
+Statement& Statement::WithAndStatement(AndStatement&& value) { SetAndStatement(std::move(value)); return *this;}
+
+const OrStatement& Statement::GetOrStatement() const{ return *m_orStatement; }
+bool Statement::OrStatementHasBeenSet() const { return m_orStatementHasBeenSet; }
+void Statement::SetOrStatement(const OrStatement& value) { m_orStatementHasBeenSet = true; m_orStatement = Aws::MakeShared<OrStatement>("Statement", value); }
+void Statement::SetOrStatement(OrStatement&& value) { m_orStatementHasBeenSet = true; m_orStatement = Aws::MakeShared<OrStatement>("Statement", std::move(value)); }
+Statement& Statement::WithOrStatement(const OrStatement& value) { SetOrStatement(value); return *this;}
+Statement& Statement::WithOrStatement(OrStatement&& value) { SetOrStatement(std::move(value)); return *this;}
+
+const NotStatement& Statement::GetNotStatement() const{ return *m_notStatement; }
 bool Statement::NotStatementHasBeenSet() const { return m_notStatementHasBeenSet; }
-void Statement::SetNotStatement(const NotStatement& value) { m_notStatementHasBeenSet = true; m_notStatement.resize(1); m_notStatement[0] = value; }
-void Statement::SetNotStatement(NotStatement&& value) { m_notStatementHasBeenSet = true; m_notStatement.resize(1); m_notStatement[0] = std::move(value); }
+void Statement::SetNotStatement(const NotStatement& value) { m_notStatementHasBeenSet = true; m_notStatement = Aws::MakeShared<NotStatement>("Statement", value); }
+void Statement::SetNotStatement(NotStatement&& value) { m_notStatementHasBeenSet = true; m_notStatement = Aws::MakeShared<NotStatement>("Statement", std::move(value)); }
 Statement& Statement::WithNotStatement(const NotStatement& value) { SetNotStatement(value); return *this;}
 Statement& Statement::WithNotStatement(NotStatement&& value) { SetNotStatement(std::move(value)); return *this;}
+
+const ManagedRuleGroupStatement& Statement::GetManagedRuleGroupStatement() const{ return *m_managedRuleGroupStatement; }
+bool Statement::ManagedRuleGroupStatementHasBeenSet() const { return m_managedRuleGroupStatementHasBeenSet; }
+void Statement::SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", value); }
+void Statement::SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", std::move(value)); }
+Statement& Statement::WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { SetManagedRuleGroupStatement(value); return *this;}
+Statement& Statement::WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { SetManagedRuleGroupStatement(std::move(value)); return *this;}
 
 Statement& Statement::operator =(JsonView jsonValue)
 {
@@ -137,39 +157,51 @@ Statement& Statement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RateBasedStatement"))
   {
-    m_rateBasedStatement.resize(1);
-    m_rateBasedStatement[0] = jsonValue.GetObject("RateBasedStatement");
+    m_rateBasedStatement = Aws::MakeShared<RateBasedStatement>("Statement", jsonValue.GetObject("RateBasedStatement"));
 
     m_rateBasedStatementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AndStatement"))
   {
-    m_andStatement = jsonValue.GetObject("AndStatement");
+    m_andStatement = Aws::MakeShared<AndStatement>("Statement", jsonValue.GetObject("AndStatement"));
 
     m_andStatementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("OrStatement"))
   {
-    m_orStatement = jsonValue.GetObject("OrStatement");
+    m_orStatement = Aws::MakeShared<OrStatement>("Statement", jsonValue.GetObject("OrStatement"));
 
     m_orStatementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NotStatement"))
   {
-    m_notStatement.resize(1);
-    m_notStatement[0] = jsonValue.GetObject("NotStatement");
+    m_notStatement = Aws::MakeShared<NotStatement>("Statement", jsonValue.GetObject("NotStatement"));
 
     m_notStatementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ManagedRuleGroupStatement"))
   {
-    m_managedRuleGroupStatement = jsonValue.GetObject("ManagedRuleGroupStatement");
+    m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", jsonValue.GetObject("ManagedRuleGroupStatement"));
 
     m_managedRuleGroupStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LabelMatchStatement"))
+  {
+    m_labelMatchStatement = jsonValue.GetObject("LabelMatchStatement");
+
+    m_labelMatchStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RegexMatchStatement"))
+  {
+    m_regexMatchStatement = jsonValue.GetObject("RegexMatchStatement");
+
+    m_regexMatchStatementHasBeenSet = true;
   }
 
   return *this;
@@ -229,31 +261,43 @@ JsonValue Statement::Jsonize() const
 
   if(m_rateBasedStatementHasBeenSet)
   {
-   payload.WithObject("RateBasedStatement", m_rateBasedStatement[0].Jsonize());
+   payload.WithObject("RateBasedStatement", m_rateBasedStatement->Jsonize());
 
   }
 
   if(m_andStatementHasBeenSet)
   {
-   payload.WithObject("AndStatement", m_andStatement.Jsonize());
+   payload.WithObject("AndStatement", m_andStatement->Jsonize());
 
   }
 
   if(m_orStatementHasBeenSet)
   {
-   payload.WithObject("OrStatement", m_orStatement.Jsonize());
+   payload.WithObject("OrStatement", m_orStatement->Jsonize());
 
   }
 
   if(m_notStatementHasBeenSet)
   {
-   payload.WithObject("NotStatement", m_notStatement[0].Jsonize());
+   payload.WithObject("NotStatement", m_notStatement->Jsonize());
 
   }
 
   if(m_managedRuleGroupStatementHasBeenSet)
   {
-   payload.WithObject("ManagedRuleGroupStatement", m_managedRuleGroupStatement.Jsonize());
+   payload.WithObject("ManagedRuleGroupStatement", m_managedRuleGroupStatement->Jsonize());
+
+  }
+
+  if(m_labelMatchStatementHasBeenSet)
+  {
+   payload.WithObject("LabelMatchStatement", m_labelMatchStatement.Jsonize());
+
+  }
+
+  if(m_regexMatchStatementHasBeenSet)
+  {
+   payload.WithObject("RegexMatchStatement", m_regexMatchStatement.Jsonize());
 
   }
 

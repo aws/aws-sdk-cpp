@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -30,31 +20,41 @@
 #include <aws/appmesh/AppMeshClient.h>
 #include <aws/appmesh/AppMeshEndpoint.h>
 #include <aws/appmesh/AppMeshErrorMarshaller.h>
+#include <aws/appmesh/model/CreateGatewayRouteRequest.h>
 #include <aws/appmesh/model/CreateMeshRequest.h>
 #include <aws/appmesh/model/CreateRouteRequest.h>
+#include <aws/appmesh/model/CreateVirtualGatewayRequest.h>
 #include <aws/appmesh/model/CreateVirtualNodeRequest.h>
 #include <aws/appmesh/model/CreateVirtualRouterRequest.h>
 #include <aws/appmesh/model/CreateVirtualServiceRequest.h>
+#include <aws/appmesh/model/DeleteGatewayRouteRequest.h>
 #include <aws/appmesh/model/DeleteMeshRequest.h>
 #include <aws/appmesh/model/DeleteRouteRequest.h>
+#include <aws/appmesh/model/DeleteVirtualGatewayRequest.h>
 #include <aws/appmesh/model/DeleteVirtualNodeRequest.h>
 #include <aws/appmesh/model/DeleteVirtualRouterRequest.h>
 #include <aws/appmesh/model/DeleteVirtualServiceRequest.h>
+#include <aws/appmesh/model/DescribeGatewayRouteRequest.h>
 #include <aws/appmesh/model/DescribeMeshRequest.h>
 #include <aws/appmesh/model/DescribeRouteRequest.h>
+#include <aws/appmesh/model/DescribeVirtualGatewayRequest.h>
 #include <aws/appmesh/model/DescribeVirtualNodeRequest.h>
 #include <aws/appmesh/model/DescribeVirtualRouterRequest.h>
 #include <aws/appmesh/model/DescribeVirtualServiceRequest.h>
+#include <aws/appmesh/model/ListGatewayRoutesRequest.h>
 #include <aws/appmesh/model/ListMeshesRequest.h>
 #include <aws/appmesh/model/ListRoutesRequest.h>
 #include <aws/appmesh/model/ListTagsForResourceRequest.h>
+#include <aws/appmesh/model/ListVirtualGatewaysRequest.h>
 #include <aws/appmesh/model/ListVirtualNodesRequest.h>
 #include <aws/appmesh/model/ListVirtualRoutersRequest.h>
 #include <aws/appmesh/model/ListVirtualServicesRequest.h>
 #include <aws/appmesh/model/TagResourceRequest.h>
 #include <aws/appmesh/model/UntagResourceRequest.h>
+#include <aws/appmesh/model/UpdateGatewayRouteRequest.h>
 #include <aws/appmesh/model/UpdateMeshRequest.h>
 #include <aws/appmesh/model/UpdateRouteRequest.h>
+#include <aws/appmesh/model/UpdateVirtualGatewayRequest.h>
 #include <aws/appmesh/model/UpdateVirtualNodeRequest.h>
 #include <aws/appmesh/model/UpdateVirtualRouterRequest.h>
 #include <aws/appmesh/model/UpdateVirtualServiceRequest.h>
@@ -74,7 +74,7 @@ static const char* ALLOCATION_TAG = "AppMeshClient";
 AppMeshClient::AppMeshClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,7 +84,7 @@ AppMeshClient::AppMeshClient(const Client::ClientConfiguration& clientConfigurat
 AppMeshClient::AppMeshClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,7 +95,7 @@ AppMeshClient::AppMeshClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -106,8 +106,9 @@ AppMeshClient::~AppMeshClient()
 {
 }
 
-void AppMeshClient::init(const ClientConfiguration& config)
+void AppMeshClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("App Mesh");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -131,21 +132,50 @@ void AppMeshClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateGatewayRouteOutcome AppMeshClient::CreateGatewayRoute(const CreateGatewayRouteRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGatewayRoute", "Required field: MeshName, is not set");
+    return CreateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return CreateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateway/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  uri.AddPathSegments("/gatewayRoutes");
+  return CreateGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateGatewayRouteOutcomeCallable AppMeshClient::CreateGatewayRouteCallable(const CreateGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::CreateGatewayRouteAsync(const CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::CreateGatewayRouteAsyncHelper(const CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGatewayRoute(request), context);
+}
+
 CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateMeshOutcome(CreateMeshResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateMeshOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes");
+  return CreateMeshOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMeshOutcomeCallable AppMeshClient::CreateMeshCallable(const CreateMeshRequest& request) const
@@ -179,22 +209,12 @@ CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request)
     return CreateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouter/";
-  ss << request.GetVirtualRouterName();
-  ss << "/routes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRouteOutcome(CreateRouteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRouteOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouter/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  uri.AddPathSegments("/routes");
+  return CreateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRouteOutcomeCallable AppMeshClient::CreateRouteCallable(const CreateRouteRequest& request) const
@@ -215,6 +235,38 @@ void AppMeshClient::CreateRouteAsyncHelper(const CreateRouteRequest& request, co
   handler(this, request, CreateRoute(request), context);
 }
 
+CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVirtualGateway", "Required field: MeshName, is not set");
+    return CreateVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateways");
+  return CreateVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVirtualGatewayOutcomeCallable AppMeshClient::CreateVirtualGatewayCallable(const CreateVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::CreateVirtualGatewayAsync(const CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::CreateVirtualGatewayAsyncHelper(const CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVirtualGateway(request), context);
+}
+
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -223,20 +275,10 @@ CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNod
     return CreateVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualNodes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateVirtualNodeOutcome(CreateVirtualNodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateVirtualNodeOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualNodes");
+  return CreateVirtualNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVirtualNodeOutcomeCallable AppMeshClient::CreateVirtualNodeCallable(const CreateVirtualNodeRequest& request) const
@@ -265,20 +307,10 @@ CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtua
     return CreateVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouters";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateVirtualRouterOutcome(CreateVirtualRouterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateVirtualRouterOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouters");
+  return CreateVirtualRouterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVirtualRouterOutcomeCallable AppMeshClient::CreateVirtualRouterCallable(const CreateVirtualRouterRequest& request) const
@@ -307,20 +339,10 @@ CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirt
     return CreateVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualServices";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateVirtualServiceOutcome(CreateVirtualServiceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateVirtualServiceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualServices");
+  return CreateVirtualServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVirtualServiceOutcomeCallable AppMeshClient::CreateVirtualServiceCallable(const CreateVirtualServiceRequest& request) const
@@ -341,6 +363,51 @@ void AppMeshClient::CreateVirtualServiceAsyncHelper(const CreateVirtualServiceRe
   handler(this, request, CreateVirtualService(request), context);
 }
 
+DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayRouteRequest& request) const
+{
+  if (!request.GatewayRouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRoute", "Required field: GatewayRouteName, is not set");
+    return DeleteGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayRouteName]", false));
+  }
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRoute", "Required field: MeshName, is not set");
+    return DeleteGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return DeleteGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateway/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  uri.AddPathSegments("/gatewayRoutes/");
+  uri.AddPathSegment(request.GetGatewayRouteName());
+  return DeleteGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteGatewayRouteOutcomeCallable AppMeshClient::DeleteGatewayRouteCallable(const DeleteGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DeleteGatewayRouteAsync(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DeleteGatewayRouteAsyncHelper(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGatewayRoute(request), context);
+}
+
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -349,19 +416,9 @@ DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) co
     return DeleteMeshOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMeshOutcome(DeleteMeshResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteMeshOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  return DeleteMeshOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMeshOutcomeCallable AppMeshClient::DeleteMeshCallable(const DeleteMeshRequest& request) const
@@ -400,23 +457,13 @@ DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request)
     return DeleteRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouter/";
-  ss << request.GetVirtualRouterName();
-  ss << "/routes/";
-  ss << request.GetRouteName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRouteOutcome(DeleteRouteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRouteOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouter/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteName());
+  return DeleteRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRouteOutcomeCallable AppMeshClient::DeleteRouteCallable(const DeleteRouteRequest& request) const
@@ -437,6 +484,44 @@ void AppMeshClient::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, co
   handler(this, request, DeleteRoute(request), context);
 }
 
+DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualGateway", "Required field: MeshName, is not set");
+    return DeleteVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualGateway", "Required field: VirtualGatewayName, is not set");
+    return DeleteVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateways/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  return DeleteVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVirtualGatewayOutcomeCallable AppMeshClient::DeleteVirtualGatewayCallable(const DeleteVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DeleteVirtualGatewayAsync(const DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DeleteVirtualGatewayAsyncHelper(const DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVirtualGateway(request), context);
+}
+
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -450,21 +535,11 @@ DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNod
     return DeleteVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualNodeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualNodes/";
-  ss << request.GetVirtualNodeName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteVirtualNodeOutcome(DeleteVirtualNodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteVirtualNodeOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualNodes/");
+  uri.AddPathSegment(request.GetVirtualNodeName());
+  return DeleteVirtualNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVirtualNodeOutcomeCallable AppMeshClient::DeleteVirtualNodeCallable(const DeleteVirtualNodeRequest& request) const
@@ -498,21 +573,11 @@ DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtua
     return DeleteVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouters/";
-  ss << request.GetVirtualRouterName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteVirtualRouterOutcome(DeleteVirtualRouterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteVirtualRouterOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouters/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  return DeleteVirtualRouterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVirtualRouterOutcomeCallable AppMeshClient::DeleteVirtualRouterCallable(const DeleteVirtualRouterRequest& request) const
@@ -546,21 +611,11 @@ DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirt
     return DeleteVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualServiceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualServices/";
-  ss << request.GetVirtualServiceName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteVirtualServiceOutcome(DeleteVirtualServiceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteVirtualServiceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualServices/");
+  uri.AddPathSegment(request.GetVirtualServiceName());
+  return DeleteVirtualServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVirtualServiceOutcomeCallable AppMeshClient::DeleteVirtualServiceCallable(const DeleteVirtualServiceRequest& request) const
@@ -581,6 +636,51 @@ void AppMeshClient::DeleteVirtualServiceAsyncHelper(const DeleteVirtualServiceRe
   handler(this, request, DeleteVirtualService(request), context);
 }
 
+DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGatewayRouteRequest& request) const
+{
+  if (!request.GatewayRouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGatewayRoute", "Required field: GatewayRouteName, is not set");
+    return DescribeGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayRouteName]", false));
+  }
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGatewayRoute", "Required field: MeshName, is not set");
+    return DescribeGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return DescribeGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateway/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  uri.AddPathSegments("/gatewayRoutes/");
+  uri.AddPathSegment(request.GetGatewayRouteName());
+  return DescribeGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGatewayRouteOutcomeCallable AppMeshClient::DescribeGatewayRouteCallable(const DescribeGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DescribeGatewayRouteAsync(const DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DescribeGatewayRouteAsyncHelper(const DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGatewayRoute(request), context);
+}
+
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -589,19 +689,9 @@ DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& reque
     return DescribeMeshOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeMeshOutcome(DescribeMeshResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeMeshOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  return DescribeMeshOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeMeshOutcomeCallable AppMeshClient::DescribeMeshCallable(const DescribeMeshRequest& request) const
@@ -640,23 +730,13 @@ DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& re
     return DescribeRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouter/";
-  ss << request.GetVirtualRouterName();
-  ss << "/routes/";
-  ss << request.GetRouteName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRouteOutcome(DescribeRouteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRouteOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouter/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteName());
+  return DescribeRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRouteOutcomeCallable AppMeshClient::DescribeRouteCallable(const DescribeRouteRequest& request) const
@@ -677,6 +757,44 @@ void AppMeshClient::DescribeRouteAsyncHelper(const DescribeRouteRequest& request
   handler(this, request, DescribeRoute(request), context);
 }
 
+DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const DescribeVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualGateway", "Required field: MeshName, is not set");
+    return DescribeVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualGateway", "Required field: VirtualGatewayName, is not set");
+    return DescribeVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateways/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  return DescribeVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVirtualGatewayOutcomeCallable AppMeshClient::DescribeVirtualGatewayCallable(const DescribeVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DescribeVirtualGatewayAsync(const DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DescribeVirtualGatewayAsyncHelper(const DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVirtualGateway(request), context);
+}
+
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -690,21 +808,11 @@ DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirt
     return DescribeVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualNodeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualNodes/";
-  ss << request.GetVirtualNodeName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeVirtualNodeOutcome(DescribeVirtualNodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeVirtualNodeOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualNodes/");
+  uri.AddPathSegment(request.GetVirtualNodeName());
+  return DescribeVirtualNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeVirtualNodeOutcomeCallable AppMeshClient::DescribeVirtualNodeCallable(const DescribeVirtualNodeRequest& request) const
@@ -738,21 +846,11 @@ DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const Describe
     return DescribeVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouters/";
-  ss << request.GetVirtualRouterName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeVirtualRouterOutcome(DescribeVirtualRouterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeVirtualRouterOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouters/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  return DescribeVirtualRouterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeVirtualRouterOutcomeCallable AppMeshClient::DescribeVirtualRouterCallable(const DescribeVirtualRouterRequest& request) const
@@ -786,21 +884,11 @@ DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const Descri
     return DescribeVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualServiceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualServices/";
-  ss << request.GetVirtualServiceName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeVirtualServiceOutcome(DescribeVirtualServiceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeVirtualServiceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualServices/");
+  uri.AddPathSegment(request.GetVirtualServiceName());
+  return DescribeVirtualServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeVirtualServiceOutcomeCallable AppMeshClient::DescribeVirtualServiceCallable(const DescribeVirtualServiceRequest& request) const
@@ -821,21 +909,50 @@ void AppMeshClient::DescribeVirtualServiceAsyncHelper(const DescribeVirtualServi
   handler(this, request, DescribeVirtualService(request), context);
 }
 
+ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoutesRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGatewayRoutes", "Required field: MeshName, is not set");
+    return ListGatewayRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGatewayRoutes", "Required field: VirtualGatewayName, is not set");
+    return ListGatewayRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateway/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  uri.AddPathSegments("/gatewayRoutes");
+  return ListGatewayRoutesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListGatewayRoutesOutcomeCallable AppMeshClient::ListGatewayRoutesCallable(const ListGatewayRoutesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGatewayRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGatewayRoutes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::ListGatewayRoutesAsync(const ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGatewayRoutesAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::ListGatewayRoutesAsyncHelper(const ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGatewayRoutes(request), context);
+}
+
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListMeshesOutcome(ListMeshesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListMeshesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes");
+  return ListMeshesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMeshesOutcomeCallable AppMeshClient::ListMeshesCallable(const ListMeshesRequest& request) const
@@ -869,22 +986,12 @@ ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) co
     return ListRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouter/";
-  ss << request.GetVirtualRouterName();
-  ss << "/routes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRoutesOutcome(ListRoutesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRoutesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouter/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  uri.AddPathSegments("/routes");
+  return ListRoutesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRoutesOutcomeCallable AppMeshClient::ListRoutesCallable(const ListRoutesRequest& request) const
@@ -913,18 +1020,8 @@ ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/tags");
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable AppMeshClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -945,6 +1042,38 @@ void AppMeshClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequ
   handler(this, request, ListTagsForResource(request), context);
 }
 
+ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualGatewaysRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVirtualGateways", "Required field: MeshName, is not set");
+    return ListVirtualGatewaysOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateways");
+  return ListVirtualGatewaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVirtualGatewaysOutcomeCallable AppMeshClient::ListVirtualGatewaysCallable(const ListVirtualGatewaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVirtualGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualGateways(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::ListVirtualGatewaysAsync(const ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualGatewaysAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::ListVirtualGatewaysAsyncHelper(const ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVirtualGateways(request), context);
+}
+
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -953,20 +1082,10 @@ ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRe
     return ListVirtualNodesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualNodes";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListVirtualNodesOutcome(ListVirtualNodesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListVirtualNodesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualNodes");
+  return ListVirtualNodesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListVirtualNodesOutcomeCallable AppMeshClient::ListVirtualNodesCallable(const ListVirtualNodesRequest& request) const
@@ -995,20 +1114,10 @@ ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRou
     return ListVirtualRoutersOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouters";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListVirtualRoutersOutcome(ListVirtualRoutersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListVirtualRoutersOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouters");
+  return ListVirtualRoutersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListVirtualRoutersOutcomeCallable AppMeshClient::ListVirtualRoutersCallable(const ListVirtualRoutersRequest& request) const
@@ -1037,20 +1146,10 @@ ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualS
     return ListVirtualServicesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualServices";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListVirtualServicesOutcome(ListVirtualServicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListVirtualServicesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualServices");
+  return ListVirtualServicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListVirtualServicesOutcomeCallable AppMeshClient::ListVirtualServicesCallable(const ListVirtualServicesRequest& request) const
@@ -1079,18 +1178,8 @@ TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request)
     return TagResourceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/tag";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/tag");
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable AppMeshClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1119,18 +1208,8 @@ UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& re
     return UntagResourceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/untag";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/untag");
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable AppMeshClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1151,6 +1230,51 @@ void AppMeshClient::UntagResourceAsyncHelper(const UntagResourceRequest& request
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayRouteRequest& request) const
+{
+  if (!request.GatewayRouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRoute", "Required field: GatewayRouteName, is not set");
+    return UpdateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayRouteName]", false));
+  }
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRoute", "Required field: MeshName, is not set");
+    return UpdateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return UpdateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateway/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  uri.AddPathSegments("/gatewayRoutes/");
+  uri.AddPathSegment(request.GetGatewayRouteName());
+  return UpdateGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGatewayRouteOutcomeCallable AppMeshClient::UpdateGatewayRouteCallable(const UpdateGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::UpdateGatewayRouteAsync(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::UpdateGatewayRouteAsyncHelper(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGatewayRoute(request), context);
+}
+
 UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -1159,19 +1283,9 @@ UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) co
     return UpdateMeshOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMeshOutcome(UpdateMeshResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMeshOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  return UpdateMeshOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMeshOutcomeCallable AppMeshClient::UpdateMeshCallable(const UpdateMeshRequest& request) const
@@ -1210,23 +1324,13 @@ UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request)
     return UpdateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouter/";
-  ss << request.GetVirtualRouterName();
-  ss << "/routes/";
-  ss << request.GetRouteName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRouteOutcome(UpdateRouteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRouteOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouter/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteName());
+  return UpdateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRouteOutcomeCallable AppMeshClient::UpdateRouteCallable(const UpdateRouteRequest& request) const
@@ -1247,6 +1351,44 @@ void AppMeshClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, co
   handler(this, request, UpdateRoute(request), context);
 }
 
+UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualGateway", "Required field: MeshName, is not set");
+    return UpdateVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualGateway", "Required field: VirtualGatewayName, is not set");
+    return UpdateVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualGateways/");
+  uri.AddPathSegment(request.GetVirtualGatewayName());
+  return UpdateVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateVirtualGatewayOutcomeCallable AppMeshClient::UpdateVirtualGatewayCallable(const UpdateVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::UpdateVirtualGatewayAsync(const UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::UpdateVirtualGatewayAsyncHelper(const UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVirtualGateway(request), context);
+}
+
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -1260,21 +1402,11 @@ UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNod
     return UpdateVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualNodeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualNodes/";
-  ss << request.GetVirtualNodeName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVirtualNodeOutcome(UpdateVirtualNodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVirtualNodeOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualNodes/");
+  uri.AddPathSegment(request.GetVirtualNodeName());
+  return UpdateVirtualNodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVirtualNodeOutcomeCallable AppMeshClient::UpdateVirtualNodeCallable(const UpdateVirtualNodeRequest& request) const
@@ -1308,21 +1440,11 @@ UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtua
     return UpdateVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualRouters/";
-  ss << request.GetVirtualRouterName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVirtualRouterOutcome(UpdateVirtualRouterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVirtualRouterOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualRouters/");
+  uri.AddPathSegment(request.GetVirtualRouterName());
+  return UpdateVirtualRouterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVirtualRouterOutcomeCallable AppMeshClient::UpdateVirtualRouterCallable(const UpdateVirtualRouterRequest& request) const
@@ -1356,21 +1478,11 @@ UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirt
     return UpdateVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualServiceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v20190125/meshes/";
-  ss << request.GetMeshName();
-  ss << "/virtualServices/";
-  ss << request.GetVirtualServiceName();
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVirtualServiceOutcome(UpdateVirtualServiceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVirtualServiceOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/v20190125/meshes/");
+  uri.AddPathSegment(request.GetMeshName());
+  uri.AddPathSegments("/virtualServices/");
+  uri.AddPathSegment(request.GetVirtualServiceName());
+  return UpdateVirtualServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVirtualServiceOutcomeCallable AppMeshClient::UpdateVirtualServiceCallable(const UpdateVirtualServiceRequest& request) const

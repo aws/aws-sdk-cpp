@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -45,70 +35,68 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline RevokePermissionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline RevokePermissionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline RevokePermissionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -178,7 +166,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
@@ -186,7 +174,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
@@ -194,7 +182,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
@@ -202,7 +190,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
@@ -210,7 +198,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
@@ -218,7 +206,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
@@ -226,7 +214,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
@@ -234,7 +222,7 @@ namespace Model
     /**
      * <p>The permissions revoked to the principal on the resource. For information
      * about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
      * and Access Control to Metadata and Data</a>.</p>
      */
     inline RevokePermissionsRequest& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }

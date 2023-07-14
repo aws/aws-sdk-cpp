@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/TableInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,8 @@ TableInput::TableInput() :
     m_viewOriginalTextHasBeenSet(false),
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_targetTableHasBeenSet(false)
 {
 }
 
@@ -58,7 +49,8 @@ TableInput::TableInput(JsonView jsonValue) :
     m_viewOriginalTextHasBeenSet(false),
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_targetTableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +147,13 @@ TableInput& TableInput::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetTable"))
+  {
+    m_targetTable = jsonValue.GetObject("TargetTable");
+
+    m_targetTableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -239,6 +238,12 @@ JsonValue TableInput::Jsonize() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_targetTableHasBeenSet)
+  {
+   payload.WithObject("TargetTable", m_targetTable.Jsonize());
 
   }
 

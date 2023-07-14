@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -35,9 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>A list of public keys you've added to CloudFront to use with features like
-   * field-level encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/PublicKeyList">AWS
+   * <p>A list of public keys that you can use with <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+   * URLs and signed cookies</a>, or with <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+   * encryption</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKeyList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKeyList
@@ -108,96 +101,84 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of public keys you want in the response body. </p>
+     * <p>The maximum number of public keys you want in the response.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of public keys you want in the response body. </p>
+     * <p>The maximum number of public keys you want in the response.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of public keys you want in the response body. </p>
+     * <p>The maximum number of public keys you want in the response.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of public keys you want in the response body. </p>
+     * <p>The maximum number of public keys you want in the response.</p>
      */
     inline PublicKeyList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
 
     /**
-     * <p>The number of public keys you added to CloudFront to use with features like
-     * field-level encryption.</p>
+     * <p>The number of public keys in the list.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of public keys you added to CloudFront to use with features like
-     * field-level encryption.</p>
+     * <p>The number of public keys in the list.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of public keys you added to CloudFront to use with features like
-     * field-level encryption.</p>
+     * <p>The number of public keys in the list.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of public keys you added to CloudFront to use with features like
-     * field-level encryption.</p>
+     * <p>The number of public keys in the list.</p>
      */
     inline PublicKeyList& WithQuantity(int value) { SetQuantity(value); return *this;}
 
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline const Aws::Vector<PublicKeySummary>& GetItems() const{ return m_items; }
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline void SetItems(const Aws::Vector<PublicKeySummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline void SetItems(Aws::Vector<PublicKeySummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline PublicKeyList& WithItems(const Aws::Vector<PublicKeySummary>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline PublicKeyList& WithItems(Aws::Vector<PublicKeySummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline PublicKeyList& AddItems(const PublicKeySummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * <p>An array of information about a public key you add to CloudFront to use with
-     * features like field-level encryption.</p>
+     * <p>A list of public keys.</p>
      */
     inline PublicKeyList& AddItems(PublicKeySummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

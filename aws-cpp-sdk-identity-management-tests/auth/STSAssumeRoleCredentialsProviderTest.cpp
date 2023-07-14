@@ -1,24 +1,19 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <thread>
 
 #include <aws/identity-management/auth/STSAssumeRoleCredentialsProvider.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/STSClient.h>
-#include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/external/gtest.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
+
+#include <cmath>
+#include <thread>
 
 using namespace Aws::Auth;
 using namespace Aws::STS;
@@ -84,13 +79,13 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsLoadAndCache)
 
     Model::AssumeRoleResult assumeRoleResult;
     assumeRoleResult.SetCredentials(stsCredentials);
-    
+
     stsClient->MockAssumeRole(assumeRoleResult);
 
     STSAssumeRoleCredentialsProvider credsProvider(ROLE_ARN, SESSION_NAME, EXTERNAL_ID, DEFAULT_CREDS_LOAD_FREQ_SECONDS, stsClient);
 
     auto credentials = credsProvider.GetAWSCredentials();
-  
+
     ASSERT_STREQ(ACCESS_KEY_ID_1, credentials.GetAWSAccessKeyId().c_str());
     ASSERT_STREQ(SECRET_ACCESS_KEY_ID_1, credentials.GetAWSSecretKey().c_str());
     ASSERT_STREQ(SESSION_TOKEN_1, credentials.GetSessionToken().c_str());
@@ -168,9 +163,9 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsCacheExpiry)
 
 //Fail once then make sure next call recovers.
 TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsErrorThenRecovery)
-{    
-    auto stsClient = Aws::MakeShared<MockSTSClient>(CLASS_TAG);    
-        
+{
+    auto stsClient = Aws::MakeShared<MockSTSClient>(CLASS_TAG);
+
     STSAssumeRoleCredentialsProvider credsProvider(ROLE_ARN, SESSION_NAME, EXTERNAL_ID, DEFAULT_CREDS_LOAD_FREQ_SECONDS, stsClient);
 
     Aws::Client::AWSError<STSErrors> error(STSErrors::INVALID_ACTION, "blah", "blah", false);
@@ -200,7 +195,7 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsErrorThenRecovery)
     Model::AssumeRoleResult assumeRoleResult;
     assumeRoleResult.SetCredentials(stsCredentials);
 
-    stsClient->MockAssumeRole(assumeRoleResult);  
+    stsClient->MockAssumeRole(assumeRoleResult);
 
     credentials = credsProvider.GetAWSCredentials();
     request = stsClient->CapturedRequest();

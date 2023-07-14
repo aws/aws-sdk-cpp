@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
@@ -130,6 +120,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the event type.</p>
+     */
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline Detector& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline Detector& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline Detector& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+
+
+    /**
      * <p>Timestamp of when the detector was last updated.</p>
      */
     inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
@@ -210,6 +241,47 @@ namespace Model
      */
     inline Detector& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline Detector& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline Detector& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline Detector& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -218,11 +290,17 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
+
     Aws::String m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
 
     Aws::String m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

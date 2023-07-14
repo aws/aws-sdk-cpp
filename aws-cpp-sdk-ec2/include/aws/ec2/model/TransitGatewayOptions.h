@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AutoAcceptSharedAttachmentsValue.h>
 #include <aws/ec2/model/DefaultRouteTableAssociationValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -82,6 +73,52 @@ namespace Model
      * 4294967294 for 32-bit ASNs.</p>
      */
     inline TransitGatewayOptions& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
+
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTransitGatewayCidrBlocks() const{ return m_transitGatewayCidrBlocks; }
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline bool TransitGatewayCidrBlocksHasBeenSet() const { return m_transitGatewayCidrBlocksHasBeenSet; }
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline void SetTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = value; }
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline void SetTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = std::move(value); }
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline TransitGatewayOptions& WithTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { SetTransitGatewayCidrBlocks(value); return *this;}
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline TransitGatewayOptions& WithTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { SetTransitGatewayCidrBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline TransitGatewayOptions& AddTransitGatewayCidrBlocks(const Aws::String& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(value); return *this; }
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline TransitGatewayOptions& AddTransitGatewayCidrBlocks(Aws::String&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The transit gateway CIDR blocks.</p>
+     */
+    inline TransitGatewayOptions& AddTransitGatewayCidrBlocks(const char* value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(value); return *this; }
 
 
     /**
@@ -367,6 +404,9 @@ namespace Model
 
     long long m_amazonSideAsn;
     bool m_amazonSideAsnHasBeenSet;
+
+    Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
+    bool m_transitGatewayCidrBlocksHasBeenSet;
 
     AutoAcceptSharedAttachmentsValue m_autoAcceptSharedAttachments;
     bool m_autoAcceptSharedAttachmentsHasBeenSet;

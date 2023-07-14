@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -81,42 +71,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline const Aws::String& GetSseAwsKmsKeyId() const{ return m_sseAwsKmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline bool SseAwsKmsKeyIdHasBeenSet() const { return m_sseAwsKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline void SetSseAwsKmsKeyId(const Aws::String& value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline void SetSseAwsKmsKeyId(Aws::String&& value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline void SetSseAwsKmsKeyId(const char* value) { m_sseAwsKmsKeyIdHasBeenSet = true; m_sseAwsKmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline EncryptionAtRest& WithSseAwsKmsKeyId(const Aws::String& value) { SetSseAwsKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline EncryptionAtRest& WithSseAwsKmsKeyId(Aws::String&& value) { SetSseAwsKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     * <p>The ID of the KMS key to use for encryption at rest.</p>
      */
     inline EncryptionAtRest& WithSseAwsKmsKeyId(const char* value) { SetSseAwsKmsKeyId(value); return *this;}
 

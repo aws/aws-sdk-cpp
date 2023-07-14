@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -34,10 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user
-   * pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon
-   * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-   * the region in which the user pool resides.</p> </note><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+   * a user pool.</p>  <p>In Regions where Amazon Pinpointisn't available, user
+   * pools only support sending events to Amazon Pinpoint projects in us-east-1. In
+   * Regions where Amazon Pinpoint is available, user pools support sending events to
+   * Amazon Pinpoint projects within that same Region.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -92,50 +84,115 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline AnalyticsConfigurationType& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline AnalyticsConfigurationType& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
+     * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
+     */
+    inline AnalyticsConfigurationType& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -182,26 +239,26 @@ namespace Model
 
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline bool GetUserDataShared() const{ return m_userDataShared; }
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline bool UserDataSharedHasBeenSet() const { return m_userDataSharedHasBeenSet; }
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline void SetUserDataShared(bool value) { m_userDataSharedHasBeenSet = true; m_userDataShared = value; }
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithUserDataShared(bool value) { SetUserDataShared(value); return *this;}
 
@@ -209,6 +266,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
+    Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

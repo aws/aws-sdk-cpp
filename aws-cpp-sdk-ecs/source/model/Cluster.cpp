@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/Cluster.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 Cluster::Cluster() : 
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_registeredContainerInstancesCount(0),
     m_registeredContainerInstancesCountHasBeenSet(false),
@@ -53,6 +44,7 @@ Cluster::Cluster() :
 Cluster::Cluster(JsonView jsonValue) : 
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_registeredContainerInstancesCount(0),
     m_registeredContainerInstancesCountHasBeenSet(false),
@@ -87,6 +79,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_clusterName = jsonValue.GetString("clusterName");
 
     m_clusterNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+
+    m_configurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -207,6 +206,12 @@ JsonValue Cluster::Jsonize() const
   if(m_clusterNameHasBeenSet)
   {
    payload.WithString("clusterName", m_clusterName);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

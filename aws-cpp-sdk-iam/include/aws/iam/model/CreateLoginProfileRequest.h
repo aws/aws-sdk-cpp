@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -127,9 +117,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
@@ -141,9 +131,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
@@ -155,9 +145,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
@@ -169,9 +159,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
@@ -183,9 +173,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
@@ -197,9 +187,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline CreateLoginProfileRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
@@ -211,9 +201,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline CreateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
@@ -225,9 +215,9 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
-     * meaning within that tool.</p>
+     * valid in a password. However, many tools, such as the Amazon Web Services
+     * Management Console, might restrict the ability to type certain characters
+     * because they have special meaning within that tool.</p>
      */
     inline CreateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

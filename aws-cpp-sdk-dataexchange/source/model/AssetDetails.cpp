@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dataexchange/model/AssetDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,16 @@ namespace Model
 {
 
 AssetDetails::AssetDetails() : 
-    m_s3SnapshotAssetHasBeenSet(false)
+    m_s3SnapshotAssetHasBeenSet(false),
+    m_redshiftDataShareAssetHasBeenSet(false),
+    m_apiGatewayApiAssetHasBeenSet(false)
 {
 }
 
 AssetDetails::AssetDetails(JsonView jsonValue) : 
-    m_s3SnapshotAssetHasBeenSet(false)
+    m_s3SnapshotAssetHasBeenSet(false),
+    m_redshiftDataShareAssetHasBeenSet(false),
+    m_apiGatewayApiAssetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +42,20 @@ AssetDetails& AssetDetails::operator =(JsonView jsonValue)
     m_s3SnapshotAssetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedshiftDataShareAsset"))
+  {
+    m_redshiftDataShareAsset = jsonValue.GetObject("RedshiftDataShareAsset");
+
+    m_redshiftDataShareAssetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApiGatewayApiAsset"))
+  {
+    m_apiGatewayApiAsset = jsonValue.GetObject("ApiGatewayApiAsset");
+
+    m_apiGatewayApiAssetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +66,18 @@ JsonValue AssetDetails::Jsonize() const
   if(m_s3SnapshotAssetHasBeenSet)
   {
    payload.WithObject("S3SnapshotAsset", m_s3SnapshotAsset.Jsonize());
+
+  }
+
+  if(m_redshiftDataShareAssetHasBeenSet)
+  {
+   payload.WithObject("RedshiftDataShareAsset", m_redshiftDataShareAsset.Jsonize());
+
+  }
+
+  if(m_apiGatewayApiAssetHasBeenSet)
+  {
+   payload.WithObject("ApiGatewayApiAsset", m_apiGatewayApiAsset.Jsonize());
 
   }
 

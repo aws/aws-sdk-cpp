@@ -1,22 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/rds-data/model/ArrayValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -127,73 +116,73 @@ namespace Model
 
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline const Aws::Vector<double>& GetDoubleValues() const{ return m_doubleValues; }
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline bool DoubleValuesHasBeenSet() const { return m_doubleValuesHasBeenSet; }
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline void SetDoubleValues(const Aws::Vector<double>& value) { m_doubleValuesHasBeenSet = true; m_doubleValues = value; }
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline void SetDoubleValues(Aws::Vector<double>&& value) { m_doubleValuesHasBeenSet = true; m_doubleValues = std::move(value); }
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline ArrayValue& WithDoubleValues(const Aws::Vector<double>& value) { SetDoubleValues(value); return *this;}
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline ArrayValue& WithDoubleValues(Aws::Vector<double>&& value) { SetDoubleValues(std::move(value)); return *this;}
 
     /**
-     * <p>An array of integers.</p>
+     * <p>An array of floating-point numbers.</p>
      */
     inline ArrayValue& AddDoubleValues(double value) { m_doubleValuesHasBeenSet = true; m_doubleValues.push_back(value); return *this; }
 
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline const Aws::Vector<long long>& GetLongValues() const{ return m_longValues; }
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline bool LongValuesHasBeenSet() const { return m_longValuesHasBeenSet; }
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline void SetLongValues(const Aws::Vector<long long>& value) { m_longValuesHasBeenSet = true; m_longValues = value; }
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline void SetLongValues(Aws::Vector<long long>&& value) { m_longValuesHasBeenSet = true; m_longValues = std::move(value); }
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline ArrayValue& WithLongValues(const Aws::Vector<long long>& value) { SetLongValues(value); return *this;}
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline ArrayValue& WithLongValues(Aws::Vector<long long>&& value) { SetLongValues(std::move(value)); return *this;}
 
     /**
-     * <p>An array of floating point numbers.</p>
+     * <p>An array of integers.</p>
      */
     inline ArrayValue& AddLongValues(long long value) { m_longValuesHasBeenSet = true; m_longValues.push_back(value); return *this; }
 

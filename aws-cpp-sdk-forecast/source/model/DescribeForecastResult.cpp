@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/forecast/model/DescribeForecastResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeForecastResult::DescribeForecastResult()
+DescribeForecastResult::DescribeForecastResult() : 
+    m_estimatedTimeRemainingInMinutes(0)
 {
 }
 
-DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_estimatedTimeRemainingInMinutes(0)
 {
   *this = result;
 }
@@ -71,6 +63,12 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("EstimatedTimeRemainingInMinutes"))
+  {
+    m_estimatedTimeRemainingInMinutes = jsonValue.GetInt64("EstimatedTimeRemainingInMinutes");
+
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
@@ -92,6 +90,12 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
+
+  }
+
+  if(jsonValue.ValueExists("TimeSeriesSelector"))
+  {
+    m_timeSeriesSelector = jsonValue.GetObject("TimeSeriesSelector");
 
   }
 

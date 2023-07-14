@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -195,22 +185,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of versions to return.</p>
+     * <p>The maximum number of versions to return. Note that
+     * <code>ListVersionsByFunction</code> returns a maximum of 50 items in each
+     * response, even if you set the number higher.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of versions to return.</p>
+     * <p>The maximum number of versions to return. Note that
+     * <code>ListVersionsByFunction</code> returns a maximum of 50 items in each
+     * response, even if you set the number higher.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of versions to return.</p>
+     * <p>The maximum number of versions to return. Note that
+     * <code>ListVersionsByFunction</code> returns a maximum of 50 items in each
+     * response, even if you set the number higher.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of versions to return.</p>
+     * <p>The maximum number of versions to return. Note that
+     * <code>ListVersionsByFunction</code> returns a maximum of 50 items in each
+     * response, even if you set the number higher.</p>
      */
     inline ListVersionsByFunctionRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

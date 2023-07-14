@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/gamelift/model/GameSessionQueue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,11 @@ GameSessionQueue::GameSessionQueue() :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false),
+    m_priorityConfigurationHasBeenSet(false),
+    m_customEventDataHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false)
 {
 }
 
@@ -44,7 +38,11 @@ GameSessionQueue::GameSessionQueue(JsonView jsonValue) :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false),
+    m_priorityConfigurationHasBeenSet(false),
+    m_customEventDataHasBeenSet(false),
+    m_notificationTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +90,34 @@ GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
     m_destinationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FilterConfiguration"))
+  {
+    m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
+
+    m_filterConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PriorityConfiguration"))
+  {
+    m_priorityConfiguration = jsonValue.GetObject("PriorityConfiguration");
+
+    m_priorityConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomEventData"))
+  {
+    m_customEventData = jsonValue.GetString("CustomEventData");
+
+    m_customEventDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationTarget"))
+  {
+    m_notificationTarget = jsonValue.GetString("NotificationTarget");
+
+    m_notificationTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +162,30 @@ JsonValue GameSessionQueue::Jsonize() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("Destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_filterConfigurationHasBeenSet)
+  {
+   payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
+
+  }
+
+  if(m_priorityConfigurationHasBeenSet)
+  {
+   payload.WithObject("PriorityConfiguration", m_priorityConfiguration.Jsonize());
+
+  }
+
+  if(m_customEventDataHasBeenSet)
+  {
+   payload.WithString("CustomEventData", m_customEventData);
+
+  }
+
+  if(m_notificationTargetHasBeenSet)
+  {
+   payload.WithString("NotificationTarget", m_notificationTarget);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/translate/model/TerminologyData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,14 +22,18 @@ namespace Model
 TerminologyData::TerminologyData() : 
     m_fileHasBeenSet(false),
     m_format(TerminologyDataFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_directionality(Directionality::NOT_SET),
+    m_directionalityHasBeenSet(false)
 {
 }
 
 TerminologyData::TerminologyData(JsonView jsonValue) : 
     m_fileHasBeenSet(false),
     m_format(TerminologyDataFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_directionality(Directionality::NOT_SET),
+    m_directionalityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +53,13 @@ TerminologyData& TerminologyData::operator =(JsonView jsonValue)
     m_formatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Directionality"))
+  {
+    m_directionality = DirectionalityMapper::GetDirectionalityForName(jsonValue.GetString("Directionality"));
+
+    m_directionalityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +75,11 @@ JsonValue TerminologyData::Jsonize() const
   if(m_formatHasBeenSet)
   {
    payload.WithString("Format", TerminologyDataFormatMapper::GetNameForTerminologyDataFormat(m_format));
+  }
+
+  if(m_directionalityHasBeenSet)
+  {
+   payload.WithString("Directionality", DirectionalityMapper::GetNameForDirectionality(m_directionality));
   }
 
   return payload;

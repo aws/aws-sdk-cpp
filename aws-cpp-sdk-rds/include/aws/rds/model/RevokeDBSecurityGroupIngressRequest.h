@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -91,277 +81,277 @@ namespace Model
 
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline bool CIDRIPHasBeenSet() const { return m_cIDRIPHasBeenSet; }
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = std::move(value); }
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline void SetCIDRIP(const char* value) { m_cIDRIPHasBeenSet = true; m_cIDRIP.assign(value); }
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(std::move(value)); return *this;}
 
     /**
-     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <p>The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
      * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
-     * be provided. </p>
+     * be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = std::move(value); }
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupName(const char* value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName.assign(value); }
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(const Aws::String& value) { SetEC2SecurityGroupName(value); return *this;}
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the EC2 security group to revoke access from. For VPC DB
-     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * <p>The name of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupId() const{ return m_eC2SecurityGroupId; }
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline bool EC2SecurityGroupIdHasBeenSet() const { return m_eC2SecurityGroupIdHasBeenSet; }
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupId(const Aws::String& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = value; }
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupId(Aws::String&& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = std::move(value); }
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupId(const char* value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId.assign(value); }
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(const Aws::String& value) { SetEC2SecurityGroupId(value); return *this;}
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(Aws::String&& value) { SetEC2SecurityGroupId(std::move(value)); return *this;}
 
     /**
-     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * <p>The id of the EC2 security group to revoke access from. For VPC DB security
      * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
-     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupId(const char* value) { SetEC2SecurityGroupId(value); return *this;}
 
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS account number of the owner of the EC2 security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an
-     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
-     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
-     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
-     * provided. </p>
+     * <p>The Amazon Web Services account number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web
+     * Services access key ID isn't an acceptable value. For VPC DB security groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided.</p>
      */
     inline RevokeDBSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 

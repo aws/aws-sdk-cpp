@@ -63,7 +63,6 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 #end
 #if($shape.hasQueryStringMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
-
 #end
 
 #if($shape.supportsPresigning)
@@ -73,5 +72,6 @@ void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
 }
 
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
 
 

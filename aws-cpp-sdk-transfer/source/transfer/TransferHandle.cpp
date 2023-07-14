@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transfer/TransferHandle.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -35,7 +25,7 @@ namespace Aws
             m_lastPart(false)
         {}
 
-        PartState::PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes, bool lastPart) :
+        PartState::PartState(int partId, uint64_t bestProgressInBytes, uint64_t sizeInBytes, bool lastPart) :
             m_partId(partId),
             m_eTag(""),
             m_currentProgressInBytes(0),
@@ -53,9 +43,9 @@ namespace Aws
             m_currentProgressInBytes = 0;
         }
 
-        void PartState::OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle)
+        void PartState::OnDataTransferred(uint64_t amount, const std::shared_ptr<TransferHandle> &transferHandle)
         {
-            m_currentProgressInBytes += static_cast<size_t>(amount);
+            m_currentProgressInBytes += amount;
             if (m_currentProgressInBytes > m_bestProgressInBytes)
             {
                 transferHandle->UpdateBytesTransferred(m_currentProgressInBytes - m_bestProgressInBytes);
@@ -71,54 +61,86 @@ namespace Aws
             return m_completedParts;
         }
 
-        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath) : 
-            m_isMultipart(false), 
-            m_direction(TransferDirection::UPLOAD), 
-            m_bytesTransferred(0), 
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath) :
+            m_isMultipart(false),
+            m_direction(TransferDirection::UPLOAD),
+            m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(totalSize),
-            m_bucket(bucketName), 
-            m_key(keyName), 
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
+            m_offset(0),
+            m_bucket(bucketName),
+            m_key(keyName),
             m_fileName(targetFilePath),
             m_versionId(""),
-            m_status(TransferStatus::NOT_STARTED), 
+            m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
             m_handleId(Utils::UUID::RandomUUID()),
-            m_createDownloadStreamFn(), 
+            m_createDownloadStreamFn(),
             m_downloadStream(nullptr)
         {}
 
         TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath) :
-            m_isMultipart(false), 
-            m_direction(TransferDirection::DOWNLOAD), 
-            m_bytesTransferred(0), 
+            m_isMultipart(false),
+            m_direction(TransferDirection::DOWNLOAD),
+            m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(0),
-            m_bucket(bucketName), 
-            m_key(keyName), 
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
+            m_offset(0),
+            m_bucket(bucketName),
+            m_key(keyName),
             m_fileName(targetFilePath),
             m_versionId(""),
-            m_status(TransferStatus::NOT_STARTED), 
+            m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
             m_handleId(Utils::UUID::RandomUUID()),
-            m_createDownloadStreamFn(), 
+            m_createDownloadStreamFn(),
             m_downloadStream(nullptr)
         {}
 
         TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath) :
-            m_isMultipart(false), 
-            m_direction(TransferDirection::DOWNLOAD), 
-            m_bytesTransferred(0), 
+            m_isMultipart(false),
+            m_direction(TransferDirection::DOWNLOAD),
+            m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(0),
-            m_bucket(bucketName), 
-            m_key(keyName), 
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
+            m_offset(0),
+            m_bucket(bucketName),
+            m_key(keyName),
             m_fileName(targetFilePath),
             m_versionId(""),
-            m_status(TransferStatus::NOT_STARTED), 
+            m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
             m_handleId(Utils::UUID::RandomUUID()),
-            m_createDownloadStreamFn(createDownloadStreamFn), 
+            m_createDownloadStreamFn(createDownloadStreamFn),
+            m_downloadStream(nullptr)
+        {}
+
+
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName,
+            const uint64_t fileOffset, const uint64_t downloadBytes,
+            CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath) :
+            m_isMultipart(false),
+            m_direction(TransferDirection::DOWNLOAD),
+            m_bytesTransferred(0),
+            m_lastPart(false),
+            m_bytesTotalSize(downloadBytes),
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
+            m_offset(fileOffset),
+            m_bucket(bucketName),
+            m_key(keyName),
+            m_fileName(targetFilePath),
+            m_versionId(""),
+            m_status(TransferStatus::NOT_STARTED),
+            m_cancel(false),
+            m_handleId(Utils::UUID::RandomUUID()),
+            m_createDownloadStreamFn(createDownloadStreamFn),
             m_downloadStream(nullptr)
         {}
 
@@ -137,13 +159,22 @@ namespace Aws
             }
 
             partState->SetETag(eTag);
-            if (partState->IsLastPart()) 
+            if (partState->IsLastPart())
             {
                 AddMetadataEntry("ETag", eTag);
             }
             m_completedParts[partId] = partState;
             AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Setting part [" << partId
                     << "] to [" << TransferStatus::COMPLETED << "].");
+
+            // Each completed part is accounted for exactly once, by caching the next part number to watch for.
+            // The data is immediately available for consumers since it's flushed via
+            // WritePartToDownloadStream() already. count returns a loss of data warning on values larger than an int.
+            while (m_completedParts.count(m_nextPartToWatch)) {
+                m_bytesAvailableFromStart.fetch_add(m_completedParts[m_nextPartToWatch]->GetSizeInBytes(),
+                                                    std::memory_order_relaxed);
+                m_nextPartToWatch++;
+            }
         }
 
         PartStateMap TransferHandle::GetQueuedParts() const
@@ -159,10 +190,10 @@ namespace Aws
         }
 
         void TransferHandle::AddQueuedPart(const PartPointer& partState)
-        {            
+        {
             std::lock_guard<std::mutex> locker(m_partsLock);
             partState->Reset();
-            m_failedParts.erase(partState->GetPartId());          
+            m_failedParts.erase(partState->GetPartId());
             m_queuedParts[partState->GetPartId()] = partState;
         }
 
@@ -179,9 +210,9 @@ namespace Aws
         }
 
         void TransferHandle::AddPendingPart(const PartPointer& partState)
-        {            
+        {
             std::lock_guard<std::mutex> locker(m_partsLock);
-            m_queuedParts.erase(partState->GetPartId());           
+            m_queuedParts.erase(partState->GetPartId());
             m_pendingParts[partState->GetPartId()] = partState;
         }
 
@@ -323,7 +354,7 @@ namespace Aws
             std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
             while (!IsFinishedStatus(m_status) || HasPendingParts())
             {
-                m_waitUntilFinishedSignal.wait(semaphoreLock); 
+                m_waitUntilFinishedSignal.wait(semaphoreLock);
             }
         }
 
@@ -345,7 +376,7 @@ namespace Aws
             return !m_cancel.load();
         }
 
-        void TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset)
+        void TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset)
         {
             std::lock_guard<std::mutex> lock(m_downloadStreamLock);
 
@@ -353,10 +384,11 @@ namespace Aws
             {
                 m_downloadStream = m_createDownloadStreamFn();
                 assert(m_downloadStream->good());
+                m_downloadStreamBaseOffset = m_downloadStream->tellp();
             }
 
             partStream->seekg(0);
-            m_downloadStream->seekp(writeOffset);
+            m_downloadStream->seekp(m_downloadStreamBaseOffset + writeOffset);
             (*m_downloadStream) << partStream->rdbuf();
             m_downloadStream->flush();
         }

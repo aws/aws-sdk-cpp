@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/guardduty/model/AwsApiCallAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,8 +22,11 @@ AwsApiCallAction::AwsApiCallAction() :
     m_apiHasBeenSet(false),
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
+    m_errorCodeHasBeenSet(false),
+    m_userAgentHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_remoteAccountDetailsHasBeenSet(false)
 {
 }
 
@@ -41,8 +34,11 @@ AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) :
     m_apiHasBeenSet(false),
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
+    m_errorCodeHasBeenSet(false),
+    m_userAgentHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_remoteAccountDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +66,20 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     m_domainDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = jsonValue.GetString("errorCode");
+
+    m_errorCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("userAgent"))
+  {
+    m_userAgent = jsonValue.GetString("userAgent");
+
+    m_userAgentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("remoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("remoteIpDetails");
@@ -82,6 +92,13 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     m_serviceName = jsonValue.GetString("serviceName");
 
     m_serviceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("remoteAccountDetails"))
+  {
+    m_remoteAccountDetails = jsonValue.GetObject("remoteAccountDetails");
+
+    m_remoteAccountDetailsHasBeenSet = true;
   }
 
   return *this;
@@ -109,6 +126,18 @@ JsonValue AwsApiCallAction::Jsonize() const
 
   }
 
+  if(m_errorCodeHasBeenSet)
+  {
+   payload.WithString("errorCode", m_errorCode);
+
+  }
+
+  if(m_userAgentHasBeenSet)
+  {
+   payload.WithString("userAgent", m_userAgent);
+
+  }
+
   if(m_remoteIpDetailsHasBeenSet)
   {
    payload.WithObject("remoteIpDetails", m_remoteIpDetails.Jsonize());
@@ -118,6 +147,12 @@ JsonValue AwsApiCallAction::Jsonize() const
   if(m_serviceNameHasBeenSet)
   {
    payload.WithString("serviceName", m_serviceName);
+
+  }
+
+  if(m_remoteAccountDetailsHasBeenSet)
+  {
+   payload.WithObject("remoteAccountDetails", m_remoteAccountDetails.Jsonize());
 
   }
 

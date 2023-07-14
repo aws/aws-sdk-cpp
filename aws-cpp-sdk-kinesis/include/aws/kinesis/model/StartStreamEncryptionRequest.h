@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -118,11 +108,12 @@ namespace Model
 
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -134,11 +125,12 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -150,11 +142,12 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -166,11 +159,12 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -182,11 +176,12 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -198,11 +193,12 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -214,11 +210,12 @@ namespace Model
     inline StartStreamEncryptionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
@@ -230,11 +227,12 @@ namespace Model
     inline StartStreamEncryptionRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
-     * value can be a globally unique identifier, a fully specified Amazon Resource
-     * Name (ARN) to either an alias or a key, or an alias name prefixed by
-     * "alias/".You can also use a master key owned by Kinesis Data Streams by
-     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <p>The GUID for the customer-managed Amazon Web Services KMS key to use for
+     * encryption. This value can be a globally unique identifier, a fully specified
+     * Amazon Resource Name (ARN) to either an alias or a key, or an alias name
+     * prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams
+     * by specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN
+     * example:
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p> </li> <li> <p>Alias ARN example:
      * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>

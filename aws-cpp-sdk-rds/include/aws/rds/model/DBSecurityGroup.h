@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -37,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for an Amazon RDS DB security group. </p> <p>This data
+   * <p>Contains the details for an Amazon RDS DB security group.</p> <p>This data
    * type is used as a response element in the <code>DescribeDBSecurityGroups</code>
-   * action. </p><p><h3>See Also:</h3>   <a
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup">AWS
    * API Reference</a></p>
    */
@@ -55,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -219,83 +217,83 @@ namespace Model
 
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline const Aws::Vector<EC2SecurityGroup>& GetEC2SecurityGroups() const{ return m_eC2SecurityGroups; }
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline bool EC2SecurityGroupsHasBeenSet() const { return m_eC2SecurityGroupsHasBeenSet; }
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline void SetEC2SecurityGroups(const Aws::Vector<EC2SecurityGroup>& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups = value; }
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline void SetEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups = std::move(value); }
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline DBSecurityGroup& WithEC2SecurityGroups(const Aws::Vector<EC2SecurityGroup>& value) { SetEC2SecurityGroups(value); return *this;}
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline DBSecurityGroup& WithEC2SecurityGroups(Aws::Vector<EC2SecurityGroup>&& value) { SetEC2SecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline DBSecurityGroup& AddEC2SecurityGroups(const EC2SecurityGroup& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> Contains a list of <code>EC2SecurityGroup</code> elements. </p>
+     * <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
      */
     inline DBSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline const Aws::Vector<IPRange>& GetIPRanges() const{ return m_iPRanges; }
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline bool IPRangesHasBeenSet() const { return m_iPRangesHasBeenSet; }
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline void SetIPRanges(const Aws::Vector<IPRange>& value) { m_iPRangesHasBeenSet = true; m_iPRanges = value; }
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline void SetIPRanges(Aws::Vector<IPRange>&& value) { m_iPRangesHasBeenSet = true; m_iPRanges = std::move(value); }
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline DBSecurityGroup& WithIPRanges(const Aws::Vector<IPRange>& value) { SetIPRanges(value); return *this;}
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline DBSecurityGroup& WithIPRanges(Aws::Vector<IPRange>&& value) { SetIPRanges(std::move(value)); return *this;}
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline DBSecurityGroup& AddIPRanges(const IPRange& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(value); return *this; }
 
     /**
-     * <p> Contains a list of <code>IPRange</code> elements. </p>
+     * <p>Contains a list of <code>IPRange</code> elements.</p>
      */
     inline DBSecurityGroup& AddIPRanges(IPRange&& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(std::move(value)); return *this; }
 

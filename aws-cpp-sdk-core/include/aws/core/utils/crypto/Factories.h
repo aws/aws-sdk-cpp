@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -54,6 +44,18 @@ namespace Aws
              */
             AWS_CORE_API std::shared_ptr<Hash> CreateMD5Implementation();
             /**
+             * Create a CRC32 Hash provider
+             */
+            AWS_CORE_API std::shared_ptr<Hash> CreateCRC32Implementation();
+            /**
+             * Create a CRC32C Hash provider
+             */
+            AWS_CORE_API std::shared_ptr<Hash> CreateCRC32CImplementation();
+            /**
+             * Create a Sha1 Hash provider
+             */
+            AWS_CORE_API std::shared_ptr<Hash> CreateSha1Implementation();
+            /**
              * Create a Sha256 Hash provider
              */
             AWS_CORE_API std::shared_ptr<Hash> CreateSha256Implementation();
@@ -90,35 +92,51 @@ namespace Aws
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(CryptoBuffer&& key, CryptoBuffer&& iv);
 
             /**
-             * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte secure random IV.
+             * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 byte secure random IV.
              */
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key);
             /**
-             * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
+             * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 byte secure random IV and aad.
+             */
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer* aad);
+            /**
+             * Create AES in GCM mode off of a 256 bit key, a 12 byte secure random IV, and an optional 16 byte Tag. If you are using this
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv,
-                                                                                      const CryptoBuffer& tag = CryptoBuffer(0));
+                                                                                      const CryptoBuffer& tag = CryptoBuffer(0), const CryptoBuffer& aad = CryptoBuffer(0));
             /**
-             * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
+             * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag, as well an optional add. If you are using this
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv,
-                                                                                      CryptoBuffer&& tag = CryptoBuffer(0));
+                                                                                      CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
             /**
              * Create AES in Key Wrap mode off of a 256 bit key.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);   
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);
 
             /**
              * Create SecureRandomBytes instance
              */
             AWS_CORE_API std::shared_ptr<SecureRandomBytes> CreateSecureRandomBytesImplementation();
-          
+
             /**
              * Set the global factory for MD5 Hash providers
              */
             AWS_CORE_API void SetMD5Factory(const std::shared_ptr<HashFactory>& factory);
+            /**
+             * Set the global factory for CRC32 Hash providers
+             */
+            AWS_CORE_API void SetCRC32Factory(const std::shared_ptr<HashFactory>& factory);
+            /**
+             * Set the global factory for CRC32C Hash providers
+             */
+            AWS_CORE_API void SetCRC32CFactory(const std::shared_ptr<HashFactory>& factory);
+            /**
+             * Set the global factory for Sha1 Hash providers
+             */
+            AWS_CORE_API void SetSha1Factory(const std::shared_ptr<HashFactory>& factory);
             /**
              * Set the global factory for Sha256 Hash providers
              */
@@ -151,4 +169,3 @@ namespace Aws
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws
-

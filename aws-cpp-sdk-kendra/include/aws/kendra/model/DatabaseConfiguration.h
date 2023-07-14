@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/kendra/model/ColumnConfiguration.h>
 #include <aws/kendra/model/AclConfiguration.h>
+#include <aws/kendra/model/SqlConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the information necessary to connect a database to an index.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information to connect to a index. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DatabaseConfiguration">AWS
    * API Reference</a></p>
    */
@@ -84,32 +75,32 @@ namespace Model
 
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline const ConnectionConfiguration& GetConnectionConfiguration() const{ return m_connectionConfiguration; }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline bool ConnectionConfigurationHasBeenSet() const { return m_connectionConfigurationHasBeenSet; }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline void SetConnectionConfiguration(const ConnectionConfiguration& value) { m_connectionConfigurationHasBeenSet = true; m_connectionConfiguration = value; }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline void SetConnectionConfiguration(ConnectionConfiguration&& value) { m_connectionConfigurationHasBeenSet = true; m_connectionConfiguration = std::move(value); }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline DatabaseConfiguration& WithConnectionConfiguration(const ConnectionConfiguration& value) { SetConnectionConfiguration(value); return *this;}
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline DatabaseConfiguration& WithConnectionConfiguration(ConnectionConfiguration&& value) { SetConnectionConfiguration(std::move(value)); return *this;}
 
@@ -206,6 +197,43 @@ namespace Model
      */
     inline DatabaseConfiguration& WithAclConfiguration(AclConfiguration&& value) { SetAclConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides information about how Amazon Kendra uses quote marks around SQL
+     * identifiers when querying a database data source.</p>
+     */
+    inline const SqlConfiguration& GetSqlConfiguration() const{ return m_sqlConfiguration; }
+
+    /**
+     * <p>Provides information about how Amazon Kendra uses quote marks around SQL
+     * identifiers when querying a database data source.</p>
+     */
+    inline bool SqlConfigurationHasBeenSet() const { return m_sqlConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information about how Amazon Kendra uses quote marks around SQL
+     * identifiers when querying a database data source.</p>
+     */
+    inline void SetSqlConfiguration(const SqlConfiguration& value) { m_sqlConfigurationHasBeenSet = true; m_sqlConfiguration = value; }
+
+    /**
+     * <p>Provides information about how Amazon Kendra uses quote marks around SQL
+     * identifiers when querying a database data source.</p>
+     */
+    inline void SetSqlConfiguration(SqlConfiguration&& value) { m_sqlConfigurationHasBeenSet = true; m_sqlConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides information about how Amazon Kendra uses quote marks around SQL
+     * identifiers when querying a database data source.</p>
+     */
+    inline DatabaseConfiguration& WithSqlConfiguration(const SqlConfiguration& value) { SetSqlConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides information about how Amazon Kendra uses quote marks around SQL
+     * identifiers when querying a database data source.</p>
+     */
+    inline DatabaseConfiguration& WithSqlConfiguration(SqlConfiguration&& value) { SetSqlConfiguration(std::move(value)); return *this;}
+
   private:
 
     DatabaseEngineType m_databaseEngineType;
@@ -222,6 +250,9 @@ namespace Model
 
     AclConfiguration m_aclConfiguration;
     bool m_aclConfigurationHasBeenSet;
+
+    SqlConfiguration m_sqlConfiguration;
+    bool m_sqlConfigurationHasBeenSet;
   };
 
 } // namespace Model

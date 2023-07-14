@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerRequest.h>
 #include <aws/codeguru-reviewer/model/Repository.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/codeguru-reviewer/model/KMSKeyDetails.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -76,156 +68,270 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline AssociateRepositoryRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline AssociateRepositoryRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline AssociateRepositoryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * example, <code>CostCenter</code>, <code>Environment</code>,
+     * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
+     * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
+     * <code>111122223333</code>, <code>Production</code>, or a team name). Omitting
+     * the tag value is the same as using an empty string. Like tag keys, tag values
+     * are case sensitive.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>A <code>KMSKeyDetails</code> object that contains:</p> <ul> <li> <p>The
+     * encryption option for this repository association. It is either owned by Amazon
+     * Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID
+     * of the Amazon Web Services KMS key that is associated with this respository
+     * association.</p> </li> </ul>
+     */
+    inline const KMSKeyDetails& GetKMSKeyDetails() const{ return m_kMSKeyDetails; }
+
+    /**
+     * <p>A <code>KMSKeyDetails</code> object that contains:</p> <ul> <li> <p>The
+     * encryption option for this repository association. It is either owned by Amazon
+     * Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID
+     * of the Amazon Web Services KMS key that is associated with this respository
+     * association.</p> </li> </ul>
+     */
+    inline bool KMSKeyDetailsHasBeenSet() const { return m_kMSKeyDetailsHasBeenSet; }
+
+    /**
+     * <p>A <code>KMSKeyDetails</code> object that contains:</p> <ul> <li> <p>The
+     * encryption option for this repository association. It is either owned by Amazon
+     * Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID
+     * of the Amazon Web Services KMS key that is associated with this respository
+     * association.</p> </li> </ul>
+     */
+    inline void SetKMSKeyDetails(const KMSKeyDetails& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = value; }
+
+    /**
+     * <p>A <code>KMSKeyDetails</code> object that contains:</p> <ul> <li> <p>The
+     * encryption option for this repository association. It is either owned by Amazon
+     * Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID
+     * of the Amazon Web Services KMS key that is associated with this respository
+     * association.</p> </li> </ul>
+     */
+    inline void SetKMSKeyDetails(KMSKeyDetails&& value) { m_kMSKeyDetailsHasBeenSet = true; m_kMSKeyDetails = std::move(value); }
+
+    /**
+     * <p>A <code>KMSKeyDetails</code> object that contains:</p> <ul> <li> <p>The
+     * encryption option for this repository association. It is either owned by Amazon
+     * Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID
+     * of the Amazon Web Services KMS key that is associated with this respository
+     * association.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& WithKMSKeyDetails(const KMSKeyDetails& value) { SetKMSKeyDetails(value); return *this;}
+
+    /**
+     * <p>A <code>KMSKeyDetails</code> object that contains:</p> <ul> <li> <p>The
+     * encryption option for this repository association. It is either owned by Amazon
+     * Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
+     * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID
+     * of the Amazon Web Services KMS key that is associated with this respository
+     * association.</p> </li> </ul>
+     */
+    inline AssociateRepositoryRequest& WithKMSKeyDetails(KMSKeyDetails&& value) { SetKMSKeyDetails(std::move(value)); return *this;}
 
   private:
 
@@ -234,6 +340,12 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    KMSKeyDetails m_kMSKeyDetails;
+    bool m_kMSKeyDetailsHasBeenSet;
   };
 
 } // namespace Model

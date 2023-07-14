@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
@@ -49,27 +39,47 @@ namespace Model
 
 
     /**
-     * <p>The attachment content and file name.</p>
+     * <p>This object includes the attachment content and file name.</p> <p>In the
+     * previous response syntax, the value for the <code>data</code> parameter appears
+     * as <code>blob</code>, which is represented as a base64-encoded string. The value
+     * for <code>fileName</code> is the name of the attachment, such as
+     * <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline const Attachment& GetAttachment() const{ return m_attachment; }
 
     /**
-     * <p>The attachment content and file name.</p>
+     * <p>This object includes the attachment content and file name.</p> <p>In the
+     * previous response syntax, the value for the <code>data</code> parameter appears
+     * as <code>blob</code>, which is represented as a base64-encoded string. The value
+     * for <code>fileName</code> is the name of the attachment, such as
+     * <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline void SetAttachment(const Attachment& value) { m_attachment = value; }
 
     /**
-     * <p>The attachment content and file name.</p>
+     * <p>This object includes the attachment content and file name.</p> <p>In the
+     * previous response syntax, the value for the <code>data</code> parameter appears
+     * as <code>blob</code>, which is represented as a base64-encoded string. The value
+     * for <code>fileName</code> is the name of the attachment, such as
+     * <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline void SetAttachment(Attachment&& value) { m_attachment = std::move(value); }
 
     /**
-     * <p>The attachment content and file name.</p>
+     * <p>This object includes the attachment content and file name.</p> <p>In the
+     * previous response syntax, the value for the <code>data</code> parameter appears
+     * as <code>blob</code>, which is represented as a base64-encoded string. The value
+     * for <code>fileName</code> is the name of the attachment, such as
+     * <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline DescribeAttachmentResult& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
 
     /**
-     * <p>The attachment content and file name.</p>
+     * <p>This object includes the attachment content and file name.</p> <p>In the
+     * previous response syntax, the value for the <code>data</code> parameter appears
+     * as <code>blob</code>, which is represented as a base64-encoded string. The value
+     * for <code>fileName</code> is the name of the attachment, such as
+     * <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline DescribeAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
 

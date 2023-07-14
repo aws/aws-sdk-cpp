@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/redshift/model/Endpoint.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,14 +23,16 @@ namespace Model
 Endpoint::Endpoint() : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_vpcEndpointsHasBeenSet(false)
 {
 }
 
 Endpoint::Endpoint(const XmlNode& xmlNode) : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_vpcEndpointsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +55,18 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
+    XmlNode vpcEndpointsNode = resultNode.FirstChild("VpcEndpoints");
+    if(!vpcEndpointsNode.IsNull())
+    {
+      XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("VpcEndpoint");
+      while(!vpcEndpointsMember.IsNull())
+      {
+        m_vpcEndpoints.push_back(vpcEndpointsMember);
+        vpcEndpointsMember = vpcEndpointsMember.NextNode("VpcEndpoint");
+      }
+
+      m_vpcEndpointsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,6 +84,17 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
 
+  if(m_vpcEndpointsHasBeenSet)
+  {
+      unsigned vpcEndpointsIdx = 1;
+      for(auto& item : m_vpcEndpoints)
+      {
+        Aws::StringStream vpcEndpointsSs;
+        vpcEndpointsSs << location << index << locationValue << ".VpcEndpoint." << vpcEndpointsIdx++;
+        item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
+      }
+  }
+
 }
 
 void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -91,6 +106,16 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
+  }
+  if(m_vpcEndpointsHasBeenSet)
+  {
+      unsigned vpcEndpointsIdx = 1;
+      for(auto& item : m_vpcEndpoints)
+      {
+        Aws::StringStream vpcEndpointsSs;
+        vpcEndpointsSs << location <<  ".VpcEndpoint." << vpcEndpointsIdx++;
+        item.OutputToStream(oStream, vpcEndpointsSs.str().c_str());
+      }
   }
 }
 

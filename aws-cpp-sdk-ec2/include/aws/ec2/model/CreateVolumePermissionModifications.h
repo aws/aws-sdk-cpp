@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -52,83 +42,91 @@ namespace Model
 
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline const Aws::Vector<CreateVolumePermission>& GetAdd() const{ return m_add; }
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline void SetAdd(const Aws::Vector<CreateVolumePermission>& value) { m_addHasBeenSet = true; m_add = value; }
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline void SetAdd(Aws::Vector<CreateVolumePermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline CreateVolumePermissionModifications& WithAdd(const Aws::Vector<CreateVolumePermission>& value) { SetAdd(value); return *this;}
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline CreateVolumePermissionModifications& WithAdd(Aws::Vector<CreateVolumePermission>&& value) { SetAdd(std::move(value)); return *this;}
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline CreateVolumePermissionModifications& AddAdd(const CreateVolumePermission& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
 
     /**
-     * <p>Adds the specified AWS account ID or group to the list.</p>
+     * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
     inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline const Aws::Vector<CreateVolumePermission>& GetRemove() const{ return m_remove; }
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline void SetRemove(const Aws::Vector<CreateVolumePermission>& value) { m_removeHasBeenSet = true; m_remove = value; }
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline void SetRemove(Aws::Vector<CreateVolumePermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline CreateVolumePermissionModifications& WithRemove(const Aws::Vector<CreateVolumePermission>& value) { SetRemove(value); return *this;}
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline CreateVolumePermissionModifications& WithRemove(Aws::Vector<CreateVolumePermission>&& value) { SetRemove(std::move(value)); return *this;}
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline CreateVolumePermissionModifications& AddRemove(const CreateVolumePermission& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
 
     /**
-     * <p>Removes the specified AWS account ID or group from the list.</p>
+     * <p>Removes the specified Amazon Web Services account ID or group from the
+     * list.</p>
      */
     inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
 

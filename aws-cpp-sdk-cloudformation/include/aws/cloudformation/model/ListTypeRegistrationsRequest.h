@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -49,148 +39,142 @@ namespace Model
   public:
 
     /**
-     * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <p>The kind of extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <p>The name of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
+     * <p>The Amazon Resource Name (ARN) of the extension.</p> <p>Conditional: You must
      * specify either <code>TypeName</code> and <code>Type</code>, or
      * <code>Arn</code>.</p>
      */
@@ -198,38 +182,38 @@ namespace Model
 
 
     /**
-     * <p>The current status of the type registration request.</p> <p>The default is
-     * <code>IN_PROGRESS</code>.</p>
+     * <p>The current status of the extension registration request.</p> <p>The default
+     * is <code>IN_PROGRESS</code>.</p>
      */
     inline const RegistrationStatus& GetRegistrationStatusFilter() const{ return m_registrationStatusFilter; }
 
     /**
-     * <p>The current status of the type registration request.</p> <p>The default is
-     * <code>IN_PROGRESS</code>.</p>
+     * <p>The current status of the extension registration request.</p> <p>The default
+     * is <code>IN_PROGRESS</code>.</p>
      */
     inline bool RegistrationStatusFilterHasBeenSet() const { return m_registrationStatusFilterHasBeenSet; }
 
     /**
-     * <p>The current status of the type registration request.</p> <p>The default is
-     * <code>IN_PROGRESS</code>.</p>
+     * <p>The current status of the extension registration request.</p> <p>The default
+     * is <code>IN_PROGRESS</code>.</p>
      */
     inline void SetRegistrationStatusFilter(const RegistrationStatus& value) { m_registrationStatusFilterHasBeenSet = true; m_registrationStatusFilter = value; }
 
     /**
-     * <p>The current status of the type registration request.</p> <p>The default is
-     * <code>IN_PROGRESS</code>.</p>
+     * <p>The current status of the extension registration request.</p> <p>The default
+     * is <code>IN_PROGRESS</code>.</p>
      */
     inline void SetRegistrationStatusFilter(RegistrationStatus&& value) { m_registrationStatusFilterHasBeenSet = true; m_registrationStatusFilter = std::move(value); }
 
     /**
-     * <p>The current status of the type registration request.</p> <p>The default is
-     * <code>IN_PROGRESS</code>.</p>
+     * <p>The current status of the extension registration request.</p> <p>The default
+     * is <code>IN_PROGRESS</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithRegistrationStatusFilter(const RegistrationStatus& value) { SetRegistrationStatusFilter(value); return *this;}
 
     /**
-     * <p>The current status of the type registration request.</p> <p>The default is
-     * <code>IN_PROGRESS</code>.</p>
+     * <p>The current status of the extension registration request.</p> <p>The default
+     * is <code>IN_PROGRESS</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithRegistrationStatusFilter(RegistrationStatus&& value) { SetRegistrationStatusFilter(std::move(value)); return *this;}
 
@@ -268,7 +252,7 @@ namespace Model
 
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -278,7 +262,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -288,7 +272,7 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -298,7 +282,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -308,7 +292,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -318,7 +302,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -328,7 +312,7 @@ namespace Model
     inline ListTypeRegistrationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no
@@ -338,7 +322,7 @@ namespace Model
     inline ListTypeRegistrationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the previous paginated request didn't return all of the remaining results,
+     * <p>If the previous paginated request didn't return all the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
      * To retrieve the next set of results, call this action again and assign that
      * token to the request object's <code>NextToken</code> parameter. If there are no

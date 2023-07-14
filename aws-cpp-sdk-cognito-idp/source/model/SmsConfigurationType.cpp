@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cognito-idp/model/SmsConfigurationType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,15 @@ namespace Model
 
 SmsConfigurationType::SmsConfigurationType() : 
     m_snsCallerArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_snsRegionHasBeenSet(false)
 {
 }
 
 SmsConfigurationType::SmsConfigurationType(JsonView jsonValue) : 
     m_snsCallerArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_snsRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +49,13 @@ SmsConfigurationType& SmsConfigurationType::operator =(JsonView jsonValue)
     m_externalIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsRegion"))
+  {
+    m_snsRegion = jsonValue.GetString("SnsRegion");
+
+    m_snsRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +72,12 @@ JsonValue SmsConfigurationType::Jsonize() const
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("ExternalId", m_externalId);
+
+  }
+
+  if(m_snsRegionHasBeenSet)
+  {
+   payload.WithString("SnsRegion", m_snsRegion);
 
   }
 

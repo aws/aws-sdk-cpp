@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/SnapshotDetail.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/ImportImageLicenseConfigurationResponse.h>
@@ -296,50 +287,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline ImportImageTask& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline ImportImageTask& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline ImportImageTask& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -679,6 +670,78 @@ namespace Model
      */
     inline ImportImageTask& AddLicenseSpecifications(ImportImageLicenseConfigurationResponse&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageTask& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageTask& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageTask& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline ImportImageTask& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the virtual machine.</p>
+     */
+    inline ImportImageTask& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_architecture;
@@ -725,6 +788,12 @@ namespace Model
 
     Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
     bool m_licenseSpecificationsHasBeenSet;
+
+    Aws::String m_usageOperation;
+    bool m_usageOperationHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
   };
 
 } // namespace Model

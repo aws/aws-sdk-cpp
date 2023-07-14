@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -36,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>In a response to a <a>DiscoverInstance</a> request,
-   * <code>HttpInstanceSummary</code> contains information about one instance that
-   * matches the values that you specified in the request.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>In a response to a <a
+   * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>
+   * request, <code>HttpInstanceSummary</code> contains information about one
+   * instance that matches the values that you specified in the
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HttpInstanceSummary">AWS
    * API Reference</a></p>
    */
@@ -102,50 +93,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline HttpInstanceSummary& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline HttpInstanceSummary& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.</p>
      */
     inline HttpInstanceSummary& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
 

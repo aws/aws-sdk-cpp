@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -90,28 +80,32 @@ namespace Model
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the group.</p>
+     * parameter also deletes any outstanding lifecycle actions associated with the
+     * group.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the group.</p>
+     * parameter also deletes any outstanding lifecycle actions associated with the
+     * group.</p>
      */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the group.</p>
+     * parameter also deletes any outstanding lifecycle actions associated with the
+     * group.</p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any lifecycle actions associated with the group.</p>
+     * parameter also deletes any outstanding lifecycle actions associated with the
+     * group.</p>
      */
     inline DeleteAutoScalingGroupRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 

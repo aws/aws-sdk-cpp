@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsKmsKeyDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,10 @@ AwsKmsKeyDetails::AwsKmsKeyDetails() :
     m_keyIdHasBeenSet(false),
     m_keyManagerHasBeenSet(false),
     m_keyStateHasBeenSet(false),
-    m_originHasBeenSet(false)
+    m_originHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_keyRotationStatus(false),
+    m_keyRotationStatusHasBeenSet(false)
 {
 }
 
@@ -46,7 +39,10 @@ AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue) :
     m_keyIdHasBeenSet(false),
     m_keyManagerHasBeenSet(false),
     m_keyStateHasBeenSet(false),
-    m_originHasBeenSet(false)
+    m_originHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_keyRotationStatus(false),
+    m_keyRotationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +91,20 @@ AwsKmsKeyDetails& AwsKmsKeyDetails::operator =(JsonView jsonValue)
     m_originHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyRotationStatus"))
+  {
+    m_keyRotationStatus = jsonValue.GetBool("KeyRotationStatus");
+
+    m_keyRotationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +145,18 @@ JsonValue AwsKmsKeyDetails::Jsonize() const
   if(m_originHasBeenSet)
   {
    payload.WithString("Origin", m_origin);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_keyRotationStatusHasBeenSet)
+  {
+   payload.WithBool("KeyRotationStatus", m_keyRotationStatus);
 
   }
 

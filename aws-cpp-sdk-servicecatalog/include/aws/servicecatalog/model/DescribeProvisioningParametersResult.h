@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
 #include <aws/servicecatalog/model/TagOptionSummary.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactOutput.h>
 #include <utility>
 
 namespace Aws
@@ -235,6 +226,56 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { SetProvisioningArtifactPreferences(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline const Aws::Vector<ProvisioningArtifactOutput>& GetProvisioningArtifactOutputKeys() const{ return m_provisioningArtifactOutputKeys; }
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline void SetProvisioningArtifactOutputKeys(const Aws::Vector<ProvisioningArtifactOutput>& value) { m_provisioningArtifactOutputKeys = value; }
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline void SetProvisioningArtifactOutputKeys(Aws::Vector<ProvisioningArtifactOutput>&& value) { m_provisioningArtifactOutputKeys = std::move(value); }
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputKeys(const Aws::Vector<ProvisioningArtifactOutput>& value) { SetProvisioningArtifactOutputKeys(value); return *this;}
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactOutputKeys(Aws::Vector<ProvisioningArtifactOutput>&& value) { SetProvisioningArtifactOutputKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputKeys(const ProvisioningArtifactOutput& value) { m_provisioningArtifactOutputKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the keys and descriptions of the outputs. These outputs can be
+     * referenced from a provisioned product launched from this provisioning
+     * artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& AddProvisioningArtifactOutputKeys(ProvisioningArtifactOutput&& value) { m_provisioningArtifactOutputKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
@@ -246,6 +287,8 @@ namespace Model
     Aws::Vector<TagOptionSummary> m_tagOptions;
 
     ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
+
+    Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputKeys;
   };
 
 } // namespace Model

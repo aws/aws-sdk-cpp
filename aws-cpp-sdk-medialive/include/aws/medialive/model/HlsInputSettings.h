@@ -1,20 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/HlsScte35SourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -156,6 +148,55 @@ namespace Model
      */
     inline HlsInputSettings& WithRetryInterval(int value) { SetRetryInterval(value); return *this;}
 
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest.
+     * Messages can be ingested from the content segments (in the stream) or from tags
+     * in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the
+     * source that is not selected.
+     */
+    inline const HlsScte35SourceType& GetScte35Source() const{ return m_scte35Source; }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest.
+     * Messages can be ingested from the content segments (in the stream) or from tags
+     * in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the
+     * source that is not selected.
+     */
+    inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest.
+     * Messages can be ingested from the content segments (in the stream) or from tags
+     * in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the
+     * source that is not selected.
+     */
+    inline void SetScte35Source(const HlsScte35SourceType& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest.
+     * Messages can be ingested from the content segments (in the stream) or from tags
+     * in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the
+     * source that is not selected.
+     */
+    inline void SetScte35Source(HlsScte35SourceType&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest.
+     * Messages can be ingested from the content segments (in the stream) or from tags
+     * in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the
+     * source that is not selected.
+     */
+    inline HlsInputSettings& WithScte35Source(const HlsScte35SourceType& value) { SetScte35Source(value); return *this;}
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest.
+     * Messages can be ingested from the content segments (in the stream) or from tags
+     * in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the
+     * source that is not selected.
+     */
+    inline HlsInputSettings& WithScte35Source(HlsScte35SourceType&& value) { SetScte35Source(std::move(value)); return *this;}
+
   private:
 
     int m_bandwidth;
@@ -169,6 +210,9 @@ namespace Model
 
     int m_retryInterval;
     bool m_retryIntervalHasBeenSet;
+
+    HlsScte35SourceType m_scte35Source;
+    bool m_scte35SourceHasBeenSet;
   };
 
 } // namespace Model

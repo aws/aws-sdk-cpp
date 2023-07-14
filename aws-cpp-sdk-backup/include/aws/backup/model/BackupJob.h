@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/BackupJobState.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -51,42 +42,83 @@ namespace Model
 
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline BackupJob& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline BackupJob& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline BackupJob& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline bool BackupJobIdHasBeenSet() const { return m_backupJobIdHasBeenSet; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const Aws::String& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = value; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(Aws::String&& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = std::move(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const char* value) { m_backupJobIdHasBeenSet = true; m_backupJobId.assign(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline BackupJob& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline BackupJob& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline BackupJob& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
 
@@ -94,64 +126,64 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline BackupJob& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline BackupJob& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline BackupJob& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 
@@ -560,50 +592,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline BackupJob& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline BackupJob& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the IAM role ARN used to create the target recovery point; for
-     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     * <p>Specifies the IAM role ARN used to create the target recovery point. IAM
+     * roles other than the default role must include either <code>AWSBackup</code> or
+     * <code>AwsBackup</code> in the role name. For example,
+     * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
+     * without those strings lack permissions to perform backup jobs.</p>
      */
     inline BackupJob& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
@@ -780,58 +836,66 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline BackupJob& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline BackupJob& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
-     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to be backed up; for example, an
+     * Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database
+     * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
+     * backups, the only supported resource type is Amazon EC2.</p>
      */
     inline BackupJob& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -860,7 +924,195 @@ namespace Model
      */
     inline BackupJob& WithBytesTransferred(long long value) { SetBytesTransferred(value); return *this;}
 
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const{ return m_backupOptions; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline bool BackupOptionsHasBeenSet() const { return m_backupOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline void SetBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = value; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline void SetBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& WithBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetBackupOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& WithBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetBackupOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(const Aws::String& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(Aws::String&& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(const Aws::String& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(Aws::String&& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(const char* key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the backup option for a selected resource. This option is only
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p>
+     */
+    inline BackupJob& AddBackupOptions(const char* key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline const Aws::String& GetBackupType() const{ return m_backupType; }
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline void SetBackupType(const Aws::String& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline void SetBackupType(Aws::String&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline void SetBackupType(const char* value) { m_backupTypeHasBeenSet = true; m_backupType.assign(value); }
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline BackupJob& WithBackupType(const Aws::String& value) { SetBackupType(value); return *this;}
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline BackupJob& WithBackupType(Aws::String&& value) { SetBackupType(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the type of backup for a backup job.</p>
+     */
+    inline BackupJob& WithBackupType(const char* value) { SetBackupType(value); return *this;}
+
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
 
     Aws::String m_backupJobId;
     bool m_backupJobIdHasBeenSet;
@@ -912,6 +1164,12 @@ namespace Model
 
     long long m_bytesTransferred;
     bool m_bytesTransferredHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_backupOptions;
+    bool m_backupOptionsHasBeenSet;
+
+    Aws::String m_backupType;
+    bool m_backupTypeHasBeenSet;
   };
 
 } // namespace Model

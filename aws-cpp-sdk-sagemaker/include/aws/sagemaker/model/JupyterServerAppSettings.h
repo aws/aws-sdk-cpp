@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Jupyter server's app settings.</p><p><h3>See Also:</h3>   <a
+   * <p>The JupyterServer app settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/JupyterServerAppSettings">AWS
    * API Reference</a></p>
    */
@@ -48,39 +40,142 @@ namespace Model
 
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app. If you use the
+     * <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.</p>
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app. If you use the
+     * <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.</p>
      */
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app. If you use the
+     * <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.</p>
      */
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app. If you use the
+     * <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.</p>
      */
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app. If you use the
+     * <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.</p>
      */
     inline JupyterServerAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the default
+     * SageMaker image used by the JupyterServer app. If you use the
+     * <code>LifecycleConfigArns</code> parameter, then this parameter is also
+     * required.</p>
      */
     inline JupyterServerAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const{ return m_lifecycleConfigArns; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline bool LifecycleConfigArnsHasBeenSet() const { return m_lifecycleConfigArnsHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline void SetLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline void SetLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline JupyterServerAppSettings& WithLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { SetLifecycleConfigArns(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline JupyterServerAppSettings& WithLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { SetLifecycleConfigArns(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline JupyterServerAppSettings& AddLifecycleConfigArns(const Aws::String& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline JupyterServerAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to
+     * the JupyterServerApp. If you use this parameter, the
+     * <code>DefaultResourceSpec</code> parameter is also required.</p>  <p>To
+     * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+     * empty list.</p> 
+     */
+    inline JupyterServerAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
 
   private:
 
     ResourceSpec m_defaultResourceSpec;
     bool m_defaultResourceSpecHasBeenSet;
+
+    Aws::Vector<Aws::String> m_lifecycleConfigArns;
+    bool m_lifecycleConfigArnsHasBeenSet;
   };
 
 } // namespace Model

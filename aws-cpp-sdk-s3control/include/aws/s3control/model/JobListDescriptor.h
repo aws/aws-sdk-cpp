@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -143,37 +133,37 @@ namespace Model
 
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline const OperationName& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline void SetOperation(const OperationName& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline void SetOperation(OperationName&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline JobListDescriptor& WithOperation(const OperationName& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The operation that the specified job is configured to run on each object
+     * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
     inline JobListDescriptor& WithOperation(OperationName&& value) { SetOperation(std::move(value)); return *this;}
@@ -300,37 +290,37 @@ namespace Model
 
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline const JobProgressSummary& GetProgressSummary() const{ return m_progressSummary; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline bool ProgressSummaryHasBeenSet() const { return m_progressSummaryHasBeenSet; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline void SetProgressSummary(const JobProgressSummary& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = value; }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline void SetProgressSummary(JobProgressSummary&& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = std::move(value); }
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline JobListDescriptor& WithProgressSummary(const JobProgressSummary& value) { SetProgressSummary(value); return *this;}
 
     /**
-     * <p>Describes the total number of tasks that the specified job has executed, the
+     * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
     inline JobListDescriptor& WithProgressSummary(JobProgressSummary&& value) { SetProgressSummary(std::move(value)); return *this;}

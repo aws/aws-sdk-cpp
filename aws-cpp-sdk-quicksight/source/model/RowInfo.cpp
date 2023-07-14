@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/RowInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,7 +22,9 @@ RowInfo::RowInfo() :
     m_rowsIngested(0),
     m_rowsIngestedHasBeenSet(false),
     m_rowsDropped(0),
-    m_rowsDroppedHasBeenSet(false)
+    m_rowsDroppedHasBeenSet(false),
+    m_totalRowsInDataset(0),
+    m_totalRowsInDatasetHasBeenSet(false)
 {
 }
 
@@ -40,7 +32,9 @@ RowInfo::RowInfo(JsonView jsonValue) :
     m_rowsIngested(0),
     m_rowsIngestedHasBeenSet(false),
     m_rowsDropped(0),
-    m_rowsDroppedHasBeenSet(false)
+    m_rowsDroppedHasBeenSet(false),
+    m_totalRowsInDataset(0),
+    m_totalRowsInDatasetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +55,13 @@ RowInfo& RowInfo::operator =(JsonView jsonValue)
     m_rowsDroppedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalRowsInDataset"))
+  {
+    m_totalRowsInDataset = jsonValue.GetInt64("TotalRowsInDataset");
+
+    m_totalRowsInDatasetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +78,12 @@ JsonValue RowInfo::Jsonize() const
   if(m_rowsDroppedHasBeenSet)
   {
    payload.WithInt64("RowsDropped", m_rowsDropped);
+
+  }
+
+  if(m_totalRowsInDatasetHasBeenSet)
+  {
+   payload.WithInt64("TotalRowsInDataset", m_totalRowsInDataset);
 
   }
 

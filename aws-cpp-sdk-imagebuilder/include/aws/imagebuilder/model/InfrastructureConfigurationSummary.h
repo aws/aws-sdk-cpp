@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The infrastructure used when building EC2 AMIs.</p><p><h3>See Also:</h3>   <a
+   * <p>The infrastructure used when building Amazon EC2 AMIs.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InfrastructureConfigurationSummary">AWS
    * API Reference</a></p>
    */
@@ -254,6 +246,72 @@ namespace Model
 
 
     /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const{ return m_resourceTags; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline void SetResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline void SetResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { SetResourceTags(value); return *this;}
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { SetResourceTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(const Aws::String& key, const Aws::String& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(Aws::String&& key, const Aws::String& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(const Aws::String& key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(Aws::String&& key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(const char* key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(Aws::String&& key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the image created by Image Builder.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddResourceTags(const char* key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The tags of the infrastructure configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -318,6 +376,93 @@ namespace Model
      */
     inline InfrastructureConfigurationSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instance types of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline bool InstanceProfileNameHasBeenSet() const { return m_instanceProfileNameHasBeenSet; }
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::move(value); }
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance profile of the infrastructure configuration.</p>
+     */
+    inline InfrastructureConfigurationSummary& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -335,8 +480,17 @@ namespace Model
     Aws::String m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
 
+    Aws::Map<Aws::String, Aws::String> m_resourceTags;
+    bool m_resourceTagsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet;
+
+    Aws::String m_instanceProfileName;
+    bool m_instanceProfileNameHasBeenSet;
   };
 
 } // namespace Model

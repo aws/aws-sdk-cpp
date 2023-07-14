@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -213,6 +203,52 @@ namespace Model
      */
     inline SecretVersionsListEntry& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetKmsKeyIds() const{ return m_kmsKeyIds; }
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline bool KmsKeyIdsHasBeenSet() const { return m_kmsKeyIdsHasBeenSet; }
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline void SetKmsKeyIds(const Aws::Vector<Aws::String>& value) { m_kmsKeyIdsHasBeenSet = true; m_kmsKeyIds = value; }
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline void SetKmsKeyIds(Aws::Vector<Aws::String>&& value) { m_kmsKeyIdsHasBeenSet = true; m_kmsKeyIds = std::move(value); }
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline SecretVersionsListEntry& WithKmsKeyIds(const Aws::Vector<Aws::String>& value) { SetKmsKeyIds(value); return *this;}
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline SecretVersionsListEntry& WithKmsKeyIds(Aws::Vector<Aws::String>&& value) { SetKmsKeyIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline SecretVersionsListEntry& AddKmsKeyIds(const Aws::String& value) { m_kmsKeyIdsHasBeenSet = true; m_kmsKeyIds.push_back(value); return *this; }
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline SecretVersionsListEntry& AddKmsKeyIds(Aws::String&& value) { m_kmsKeyIdsHasBeenSet = true; m_kmsKeyIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The KMS keys used to encrypt the secret version.</p>
+     */
+    inline SecretVersionsListEntry& AddKmsKeyIds(const char* value) { m_kmsKeyIdsHasBeenSet = true; m_kmsKeyIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_versionId;
@@ -226,6 +262,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
+    Aws::Vector<Aws::String> m_kmsKeyIds;
+    bool m_kmsKeyIdsHasBeenSet;
   };
 
 } // namespace Model

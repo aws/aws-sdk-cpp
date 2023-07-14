@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,8 +26,21 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
     m_importedFileChunkSizeHasBeenSet(false),
     m_deploymentType(LustreDeploymentType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false),
     m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false)
+    m_perUnitStorageThroughputHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_driveCacheType(DriveCacheType::NOT_SET),
+    m_driveCacheTypeHasBeenSet(false),
+    m_dataCompressionType(DataCompressionType::NOT_SET),
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_rootSquashConfigurationHasBeenSet(false)
 {
 }
 
@@ -49,8 +52,21 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonVie
     m_importedFileChunkSizeHasBeenSet(false),
     m_deploymentType(LustreDeploymentType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false),
     m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false)
+    m_perUnitStorageThroughputHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_driveCacheType(DriveCacheType::NOT_SET),
+    m_driveCacheTypeHasBeenSet(false),
+    m_dataCompressionType(DataCompressionType::NOT_SET),
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
+    m_rootSquashConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,11 +108,67 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_deploymentTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoImportPolicy"))
+  {
+    m_autoImportPolicy = AutoImportPolicyTypeMapper::GetAutoImportPolicyTypeForName(jsonValue.GetString("AutoImportPolicy"));
+
+    m_autoImportPolicyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PerUnitStorageThroughput"))
   {
     m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
 
     m_perUnitStorageThroughputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
+  {
+    m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
+
+    m_dailyAutomaticBackupStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
+  {
+    m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
+
+    m_automaticBackupRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CopyTagsToBackups"))
+  {
+    m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
+
+    m_copyTagsToBackupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DriveCacheType"))
+  {
+    m_driveCacheType = DriveCacheTypeMapper::GetDriveCacheTypeForName(jsonValue.GetString("DriveCacheType"));
+
+    m_driveCacheTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataCompressionType"))
+  {
+    m_dataCompressionType = DataCompressionTypeMapper::GetDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
+
+    m_dataCompressionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RootSquashConfiguration"))
+  {
+    m_rootSquashConfiguration = jsonValue.GetObject("RootSquashConfiguration");
+
+    m_rootSquashConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -135,9 +207,54 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
    payload.WithString("DeploymentType", LustreDeploymentTypeMapper::GetNameForLustreDeploymentType(m_deploymentType));
   }
 
+  if(m_autoImportPolicyHasBeenSet)
+  {
+   payload.WithString("AutoImportPolicy", AutoImportPolicyTypeMapper::GetNameForAutoImportPolicyType(m_autoImportPolicy));
+  }
+
   if(m_perUnitStorageThroughputHasBeenSet)
   {
    payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
+
+  }
+
+  if(m_dailyAutomaticBackupStartTimeHasBeenSet)
+  {
+   payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
+
+  }
+
+  if(m_automaticBackupRetentionDaysHasBeenSet)
+  {
+   payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
+
+  }
+
+  if(m_copyTagsToBackupsHasBeenSet)
+  {
+   payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
+
+  }
+
+  if(m_driveCacheTypeHasBeenSet)
+  {
+   payload.WithString("DriveCacheType", DriveCacheTypeMapper::GetNameForDriveCacheType(m_driveCacheType));
+  }
+
+  if(m_dataCompressionTypeHasBeenSet)
+  {
+   payload.WithString("DataCompressionType", DataCompressionTypeMapper::GetNameForDataCompressionType(m_dataCompressionType));
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_rootSquashConfigurationHasBeenSet)
+  {
+   payload.WithObject("RootSquashConfiguration", m_rootSquashConfiguration.Jsonize());
 
   }
 

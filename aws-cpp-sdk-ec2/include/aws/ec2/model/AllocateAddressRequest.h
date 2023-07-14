@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/DomainType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -48,38 +40,50 @@ namespace Model
   public:
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline const DomainType& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline void SetDomain(const DomainType& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline void SetDomain(DomainType&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline AllocateAddressRequest& WithDomain(const DomainType& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline AllocateAddressRequest& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -191,130 +195,98 @@ namespace Model
 
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline AllocateAddressRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline AllocateAddressRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The location from which the IP address is advertised. Use this parameter to
-     * limit the address to this location.</p> <p>A network border group is a unique
-     * set of Availability Zones or Local Zones from where AWS advertises IP addresses
-     * and limits the addresses to the group. IP addresses cannot move between network
-     * border groups.</p> <p>Use <a
+     * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p> <note> <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline AllocateAddressRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 
@@ -408,6 +380,47 @@ namespace Model
      */
     inline AllocateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline AllocateAddressRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline AllocateAddressRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline AllocateAddressRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to assign to the Elastic IP address.</p>
+     */
+    inline AllocateAddressRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     DomainType m_domain;
@@ -427,6 +440,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

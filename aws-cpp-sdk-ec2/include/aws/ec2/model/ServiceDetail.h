@@ -1,26 +1,19 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/PayerResponsibility.h>
 #include <aws/ec2/model/DnsNameState.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
+#include <aws/ec2/model/PrivateDnsDetails.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/ServiceConnectivityType.h>
 #include <utility>
 
 namespace Aws
@@ -223,42 +216,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline ServiceDetail& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline ServiceDetail& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the service owner.</p>
+     * <p>The Amazon Web Services account ID of the service owner.</p>
      */
     inline ServiceDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
 
@@ -351,6 +344,47 @@ namespace Model
 
 
     /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline const Aws::Vector<PrivateDnsDetails>& GetPrivateDnsNames() const{ return m_privateDnsNames; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline bool PrivateDnsNamesHasBeenSet() const { return m_privateDnsNamesHasBeenSet; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline void SetPrivateDnsNames(const Aws::Vector<PrivateDnsDetails>& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames = value; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline void SetPrivateDnsNames(Aws::Vector<PrivateDnsDetails>&& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames = std::move(value); }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& WithPrivateDnsNames(const Aws::Vector<PrivateDnsDetails>& value) { SetPrivateDnsNames(value); return *this;}
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& WithPrivateDnsNames(Aws::Vector<PrivateDnsDetails>&& value) { SetPrivateDnsNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& AddPrivateDnsNames(const PrivateDnsDetails& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames.push_back(value); return *this; }
+
+    /**
+     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     */
+    inline ServiceDetail& AddPrivateDnsNames(PrivateDnsDetails&& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Indicates whether the service supports endpoint policies.</p>
      */
     inline bool GetVpcEndpointPolicySupported() const{ return m_vpcEndpointPolicySupported; }
@@ -419,6 +453,37 @@ namespace Model
      * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline ServiceDetail& WithManagesVpcEndpoints(bool value) { SetManagesVpcEndpoints(value); return *this;}
+
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline const PayerResponsibility& GetPayerResponsibility() const{ return m_payerResponsibility; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline bool PayerResponsibilityHasBeenSet() const { return m_payerResponsibilityHasBeenSet; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline void SetPayerResponsibility(const PayerResponsibility& value) { m_payerResponsibilityHasBeenSet = true; m_payerResponsibility = value; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline void SetPayerResponsibility(PayerResponsibility&& value) { m_payerResponsibilityHasBeenSet = true; m_payerResponsibility = std::move(value); }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline ServiceDetail& WithPayerResponsibility(const PayerResponsibility& value) { SetPayerResponsibility(value); return *this;}
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline ServiceDetail& WithPayerResponsibility(PayerResponsibility&& value) { SetPayerResponsibility(std::move(value)); return *this;}
 
 
     /**
@@ -504,6 +569,47 @@ namespace Model
      */
     inline ServiceDetail& WithPrivateDnsNameVerificationState(DnsNameState&& value) { SetPrivateDnsNameVerificationState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline const Aws::Vector<ServiceConnectivityType>& GetSupportedIpAddressTypes() const{ return m_supportedIpAddressTypes; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline bool SupportedIpAddressTypesHasBeenSet() const { return m_supportedIpAddressTypesHasBeenSet; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline void SetSupportedIpAddressTypes(const Aws::Vector<ServiceConnectivityType>& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = value; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline void SetSupportedIpAddressTypes(Aws::Vector<ServiceConnectivityType>&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes = std::move(value); }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& WithSupportedIpAddressTypes(const Aws::Vector<ServiceConnectivityType>& value) { SetSupportedIpAddressTypes(value); return *this;}
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& WithSupportedIpAddressTypes(Aws::Vector<ServiceConnectivityType>&& value) { SetSupportedIpAddressTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& AddSupportedIpAddressTypes(const ServiceConnectivityType& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported IP address types.</p>
+     */
+    inline ServiceDetail& AddSupportedIpAddressTypes(ServiceConnectivityType&& value) { m_supportedIpAddressTypesHasBeenSet = true; m_supportedIpAddressTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serviceName;
@@ -527,6 +633,9 @@ namespace Model
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
 
+    Aws::Vector<PrivateDnsDetails> m_privateDnsNames;
+    bool m_privateDnsNamesHasBeenSet;
+
     bool m_vpcEndpointPolicySupported;
     bool m_vpcEndpointPolicySupportedHasBeenSet;
 
@@ -536,11 +645,17 @@ namespace Model
     bool m_managesVpcEndpoints;
     bool m_managesVpcEndpointsHasBeenSet;
 
+    PayerResponsibility m_payerResponsibility;
+    bool m_payerResponsibilityHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
 
     DnsNameState m_privateDnsNameVerificationState;
     bool m_privateDnsNameVerificationStateHasBeenSet;
+
+    Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
+    bool m_supportedIpAddressTypesHasBeenSet;
   };
 
 } // namespace Model

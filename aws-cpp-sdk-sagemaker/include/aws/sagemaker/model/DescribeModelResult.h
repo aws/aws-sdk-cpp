@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/InferenceExecutionConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -47,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelName = value; }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline void SetModelName(const char* value) { m_modelName.assign(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline DescribeModelResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline DescribeModelResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker model.</p>
+     * <p>Name of the SageMaker model.</p>
      */
     inline DescribeModelResult& WithModelName(const char* value) { SetModelName(value); return *this;}
 
@@ -152,6 +143,37 @@ namespace Model
      * <p>The containers in the inference pipeline.</p>
      */
     inline DescribeModelResult& AddContainers(ContainerDefinition&& value) { m_containers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline const InferenceExecutionConfig& GetInferenceExecutionConfig() const{ return m_inferenceExecutionConfig; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline void SetInferenceExecutionConfig(const InferenceExecutionConfig& value) { m_inferenceExecutionConfig = value; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline void SetInferenceExecutionConfig(InferenceExecutionConfig&& value) { m_inferenceExecutionConfig = std::move(value); }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline DescribeModelResult& WithInferenceExecutionConfig(const InferenceExecutionConfig& value) { SetInferenceExecutionConfig(value); return *this;}
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline DescribeModelResult& WithInferenceExecutionConfig(InferenceExecutionConfig&& value) { SetInferenceExecutionConfig(std::move(value)); return *this;}
 
 
     /**
@@ -325,6 +347,8 @@ namespace Model
     ContainerDefinition m_primaryContainer;
 
     Aws::Vector<ContainerDefinition> m_containers;
+
+    InferenceExecutionConfig m_inferenceExecutionConfig;
 
     Aws::String m_executionRoleArn;
 

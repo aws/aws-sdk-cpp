@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/CreateSnapshotResponse.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -30,14 +20,16 @@ using namespace Aws;
 CreateSnapshotResponse::CreateSnapshotResponse() : 
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
-    m_volumeSize(0)
+    m_volumeSize(0),
+    m_storageTier(StorageTier::NOT_SET)
 {
 }
 
 CreateSnapshotResponse::CreateSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
-    m_volumeSize(0)
+    m_volumeSize(0),
+    m_storageTier(StorageTier::NOT_SET)
 {
   *this = result;
 }
@@ -119,6 +111,11 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     {
       m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -129,6 +126,16 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
         tagsMember = tagsMember.NextNode("item");
       }
 
+    }
+    XmlNode storageTierNode = resultNode.FirstChild("storageTier");
+    if(!storageTierNode.IsNull())
+    {
+      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()).c_str());
+    }
+    XmlNode restoreExpiryTimeNode = resultNode.FirstChild("restoreExpiryTime");
+    if(!restoreExpiryTimeNode.IsNull())
+    {
+      m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

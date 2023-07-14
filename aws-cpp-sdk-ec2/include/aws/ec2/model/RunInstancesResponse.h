@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -39,7 +29,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Describes a reservation.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a launch request for one or more instances, and includes owner,
+   * requester, and security group information that applies to all instances in the
+   * launch request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Reservation">AWS API
    * Reference</a></p>
    */
@@ -124,80 +116,80 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline RunInstancesResponse& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline RunInstancesResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the reservation.</p>
+     * <p>The ID of the Amazon Web Services account that owns the reservation.</p>
      */
     inline RunInstancesResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline const Aws::String& GetRequesterId() const{ return m_requesterId; }
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline void SetRequesterId(const Aws::String& value) { m_requesterId = value; }
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline void SetRequesterId(Aws::String&& value) { m_requesterId = std::move(value); }
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline void SetRequesterId(const char* value) { m_requesterId.assign(value); }
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline RunInstancesResponse& WithRequesterId(const Aws::String& value) { SetRequesterId(value); return *this;}
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline RunInstancesResponse& WithRequesterId(Aws::String&& value) { SetRequesterId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
-     * example, AWS Management Console or Auto Scaling).</p>
+     * example, Amazon Web Services Management Console or Auto Scaling).</p>
      */
     inline RunInstancesResponse& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 

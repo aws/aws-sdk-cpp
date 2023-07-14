@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/FilterName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,9 @@ namespace Aws
 
         static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
         static const int backup_type_HASH = HashingUtils::HashString("backup-type");
+        static const int file_system_type_HASH = HashingUtils::HashString("file-system-type");
+        static const int volume_id_HASH = HashingUtils::HashString("volume-id");
+        static const int data_repository_type_HASH = HashingUtils::HashString("data-repository-type");
 
 
         FilterName GetFilterNameForName(const Aws::String& name)
@@ -44,6 +37,18 @@ namespace Aws
           else if (hashCode == backup_type_HASH)
           {
             return FilterName::backup_type;
+          }
+          else if (hashCode == file_system_type_HASH)
+          {
+            return FilterName::file_system_type;
+          }
+          else if (hashCode == volume_id_HASH)
+          {
+            return FilterName::volume_id;
+          }
+          else if (hashCode == data_repository_type_HASH)
+          {
+            return FilterName::data_repository_type;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,12 @@ namespace Aws
             return "file-system-id";
           case FilterName::backup_type:
             return "backup-type";
+          case FilterName::file_system_type:
+            return "file-system-type";
+          case FilterName::volume_id:
+            return "volume-id";
+          case FilterName::data_repository_type:
+            return "data-repository-type";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

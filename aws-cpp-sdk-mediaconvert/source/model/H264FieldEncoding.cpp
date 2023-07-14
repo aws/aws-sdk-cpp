@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/H264FieldEncoding.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int PAFF_HASH = HashingUtils::HashString("PAFF");
         static const int FORCE_FIELD_HASH = HashingUtils::HashString("FORCE_FIELD");
+        static const int MBAFF_HASH = HashingUtils::HashString("MBAFF");
 
 
         H264FieldEncoding GetH264FieldEncodingForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == FORCE_FIELD_HASH)
           {
             return H264FieldEncoding::FORCE_FIELD;
+          }
+          else if (hashCode == MBAFF_HASH)
+          {
+            return H264FieldEncoding::MBAFF;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "PAFF";
           case H264FieldEncoding::FORCE_FIELD:
             return "FORCE_FIELD";
+          case H264FieldEncoding::MBAFF:
+            return "MBAFF";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

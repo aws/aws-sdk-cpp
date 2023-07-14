@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -129,106 +119,82 @@ namespace Model
 
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline ReleaseAddressRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline ReleaseAddressRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The location that the IP address is released from.</p> <p>If you provide an
-     * incorrect network border group, you will receive an
-     * <code>InvalidAddress.NotFound</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> <note> <p>You cannot use a network border group with EC2 Classic.
-     * If you attempt this operation on EC2 classic, you will receive an
-     * <code>InvalidParameterCombination</code> error. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> </note>
+     * <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which
+     * Amazon Web Services advertises IP addresses.</p> <p>If you provide an incorrect
+     * network border group, you receive an <code>InvalidAddress.NotFound</code>
+     * error.</p> <p>You cannot use a network border group with EC2 Classic. If you
+     * attempt this operation on EC2 classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline ReleaseAddressRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 

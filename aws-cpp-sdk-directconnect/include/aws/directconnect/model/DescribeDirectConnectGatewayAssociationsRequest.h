@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -242,42 +232,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsRequest& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsRequest& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway or transit gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 

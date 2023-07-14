@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -157,8 +147,9 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call respects the grace period. Set this to <code>False</code>, to have the call
      * not respect the grace period associated with the group.</p> <p>For more
-     * information about the health check grace period, see
-     * <a>CreateAutoScalingGroup</a>.</p>
+     * information about the health check grace period, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline bool GetShouldRespectGracePeriod() const{ return m_shouldRespectGracePeriod; }
 
@@ -167,8 +158,9 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call respects the grace period. Set this to <code>False</code>, to have the call
      * not respect the grace period associated with the group.</p> <p>For more
-     * information about the health check grace period, see
-     * <a>CreateAutoScalingGroup</a>.</p>
+     * information about the health check grace period, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline bool ShouldRespectGracePeriodHasBeenSet() const { return m_shouldRespectGracePeriodHasBeenSet; }
 
@@ -177,8 +169,9 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call respects the grace period. Set this to <code>False</code>, to have the call
      * not respect the grace period associated with the group.</p> <p>For more
-     * information about the health check grace period, see
-     * <a>CreateAutoScalingGroup</a>.</p>
+     * information about the health check grace period, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline void SetShouldRespectGracePeriod(bool value) { m_shouldRespectGracePeriodHasBeenSet = true; m_shouldRespectGracePeriod = value; }
 
@@ -187,8 +180,9 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call respects the grace period. Set this to <code>False</code>, to have the call
      * not respect the grace period associated with the group.</p> <p>For more
-     * information about the health check grace period, see
-     * <a>CreateAutoScalingGroup</a>.</p>
+     * information about the health check grace period, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline SetInstanceHealthRequest& WithShouldRespectGracePeriod(bool value) { SetShouldRespectGracePeriod(value); return *this;}
 

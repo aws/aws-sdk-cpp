@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
@@ -35,8 +25,11 @@ namespace Model
 
   /**
    * <p>The result of a SQL statement.</p> <pre><code> &lt;important&gt;
-   * &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;
-   * </code></pre><p><h3>See Also:</h3>   <a
+   * &lt;p&gt;This data structure is only used with the deprecated
+   * &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the
+   * &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or
+   * &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt;
+   * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlStatementResult">AWS
    * API Reference</a></p>
    */

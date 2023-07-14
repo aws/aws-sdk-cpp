@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
@@ -49,49 +39,49 @@ namespace Model
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline RoomSkillParameter& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline RoomSkillParameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
-     * type that only takes “DEFAULT�� or “SCOPE” as valid values.</p>
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
     inline RoomSkillParameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
 

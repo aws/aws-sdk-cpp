@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -35,10 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
-   * "customerManagedS3" storage. If not specified, the default is
-   * "serviceManagedS3". This cannot be changed after creation of the
-   * channel.</p><p><h3>See Also:</h3>   <a
+   * <p>Where channel data is stored. You may choose one of
+   * <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not
+   * specified, the default is <code>serviceManagedS3</code>. This can't be changed
+   * after creation of the channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelStorage">AWS
    * API Reference</a></p>
    */
@@ -52,93 +42,87 @@ namespace Model
 
 
     /**
-     * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+     * can't change the choice of S3 storage after the data store is created.</p>
      */
     inline const ServiceManagedChannelS3Storage& GetServiceManagedS3() const{ return m_serviceManagedS3; }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+     * can't change the choice of S3 storage after the data store is created.</p>
      */
     inline bool ServiceManagedS3HasBeenSet() const { return m_serviceManagedS3HasBeenSet; }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+     * can't change the choice of S3 storage after the data store is created.</p>
      */
     inline void SetServiceManagedS3(const ServiceManagedChannelS3Storage& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = value; }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+     * can't change the choice of S3 storage after the data store is created.</p>
      */
     inline void SetServiceManagedS3(ServiceManagedChannelS3Storage&& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = std::move(value); }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+     * can't change the choice of S3 storage after the data store is created.</p>
      */
     inline ChannelStorage& WithServiceManagedS3(const ServiceManagedChannelS3Storage& value) { SetServiceManagedS3(value); return *this;}
 
     /**
-     * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-     * Analytics service. The choice of service-managed or customer-managed S3 storage
-     * cannot be changed after creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+     * can't change the choice of S3 storage after the data store is created.</p>
      */
     inline ChannelStorage& WithServiceManagedS3(ServiceManagedChannelS3Storage&& value) { SetServiceManagedS3(std::move(value)); return *this;}
 
 
     /**
-     * <p>Use this to store channel data in an S3 bucket that you manage. If customer
-     * managed storage is selected, the "retentionPeriod" parameter is ignored. The
-     * choice of service-managed or customer-managed S3 storage cannot be changed after
-     * creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket that you manage. If customer
+     * managed storage is selected, the <code>retentionPeriod</code> parameter is
+     * ignored. You can't change the choice of S3 storage after the data store is
+     * created.</p>
      */
     inline const CustomerManagedChannelS3Storage& GetCustomerManagedS3() const{ return m_customerManagedS3; }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket that you manage. If customer
-     * managed storage is selected, the "retentionPeriod" parameter is ignored. The
-     * choice of service-managed or customer-managed S3 storage cannot be changed after
-     * creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket that you manage. If customer
+     * managed storage is selected, the <code>retentionPeriod</code> parameter is
+     * ignored. You can't change the choice of S3 storage after the data store is
+     * created.</p>
      */
     inline bool CustomerManagedS3HasBeenSet() const { return m_customerManagedS3HasBeenSet; }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket that you manage. If customer
-     * managed storage is selected, the "retentionPeriod" parameter is ignored. The
-     * choice of service-managed or customer-managed S3 storage cannot be changed after
-     * creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket that you manage. If customer
+     * managed storage is selected, the <code>retentionPeriod</code> parameter is
+     * ignored. You can't change the choice of S3 storage after the data store is
+     * created.</p>
      */
     inline void SetCustomerManagedS3(const CustomerManagedChannelS3Storage& value) { m_customerManagedS3HasBeenSet = true; m_customerManagedS3 = value; }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket that you manage. If customer
-     * managed storage is selected, the "retentionPeriod" parameter is ignored. The
-     * choice of service-managed or customer-managed S3 storage cannot be changed after
-     * creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket that you manage. If customer
+     * managed storage is selected, the <code>retentionPeriod</code> parameter is
+     * ignored. You can't change the choice of S3 storage after the data store is
+     * created.</p>
      */
     inline void SetCustomerManagedS3(CustomerManagedChannelS3Storage&& value) { m_customerManagedS3HasBeenSet = true; m_customerManagedS3 = std::move(value); }
 
     /**
-     * <p>Use this to store channel data in an S3 bucket that you manage. If customer
-     * managed storage is selected, the "retentionPeriod" parameter is ignored. The
-     * choice of service-managed or customer-managed S3 storage cannot be changed after
-     * creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket that you manage. If customer
+     * managed storage is selected, the <code>retentionPeriod</code> parameter is
+     * ignored. You can't change the choice of S3 storage after the data store is
+     * created.</p>
      */
     inline ChannelStorage& WithCustomerManagedS3(const CustomerManagedChannelS3Storage& value) { SetCustomerManagedS3(value); return *this;}
 
     /**
-     * <p>Use this to store channel data in an S3 bucket that you manage. If customer
-     * managed storage is selected, the "retentionPeriod" parameter is ignored. The
-     * choice of service-managed or customer-managed S3 storage cannot be changed after
-     * creation of the channel.</p>
+     * <p>Used to store channel data in an S3 bucket that you manage. If customer
+     * managed storage is selected, the <code>retentionPeriod</code> parameter is
+     * ignored. You can't change the choice of S3 storage after the data store is
+     * created.</p>
      */
     inline ChannelStorage& WithCustomerManagedS3(CustomerManagedChannelS3Storage&& value) { SetCustomerManagedS3(std::move(value)); return *this;}
 

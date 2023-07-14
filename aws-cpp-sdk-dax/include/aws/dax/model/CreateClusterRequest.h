@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dax/DAX_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dax/model/SSESpecification.h>
+#include <aws/dax/model/ClusterEndpointEncryptionType.h>
 #include <aws/dax/model/Tag.h>
 #include <utility>
 
@@ -209,8 +200,8 @@ namespace Model
      * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
      * (one primary and two read replicas) and 10 (one primary and nine read replicas).
      * <code>If the AvailabilityZones</code> parameter is provided, its length must
-     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
-     * have at least two read replicas per cluster.</p> </note>
+     * equal the <code>ReplicationFactor</code>.</p>  <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> 
      */
     inline int GetReplicationFactor() const{ return m_replicationFactor; }
 
@@ -221,8 +212,8 @@ namespace Model
      * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
      * (one primary and two read replicas) and 10 (one primary and nine read replicas).
      * <code>If the AvailabilityZones</code> parameter is provided, its length must
-     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
-     * have at least two read replicas per cluster.</p> </note>
+     * equal the <code>ReplicationFactor</code>.</p>  <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> 
      */
     inline bool ReplicationFactorHasBeenSet() const { return m_replicationFactorHasBeenSet; }
 
@@ -233,8 +224,8 @@ namespace Model
      * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
      * (one primary and two read replicas) and 10 (one primary and nine read replicas).
      * <code>If the AvailabilityZones</code> parameter is provided, its length must
-     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
-     * have at least two read replicas per cluster.</p> </note>
+     * equal the <code>ReplicationFactor</code>.</p>  <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> 
      */
     inline void SetReplicationFactor(int value) { m_replicationFactorHasBeenSet = true; m_replicationFactor = value; }
 
@@ -245,8 +236,8 @@ namespace Model
      * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
      * (one primary and two read replicas) and 10 (one primary and nine read replicas).
      * <code>If the AvailabilityZones</code> parameter is provided, its length must
-     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
-     * have at least two read replicas per cluster.</p> </note>
+     * equal the <code>ReplicationFactor</code>.</p>  <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> 
      */
     inline CreateClusterRequest& WithReplicationFactor(int value) { SetReplicationFactor(value); return *this;}
 
@@ -335,65 +326,65 @@ namespace Model
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline const Aws::String& GetSubnetGroupName() const{ return m_subnetGroupName; }
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline bool SubnetGroupNameHasBeenSet() const { return m_subnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline void SetSubnetGroupName(const Aws::String& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = value; }
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline void SetSubnetGroupName(Aws::String&& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline void SetSubnetGroupName(const char* value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName.assign(value); }
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline CreateClusterRequest& WithSubnetGroupName(const Aws::String& value) { SetSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline CreateClusterRequest& WithSubnetGroupName(Aws::String&& value) { SetSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
-     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     *  <p>DAX clusters can only run in an Amazon VPC environment. All of
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
-     * </important>
+     * 
      */
     inline CreateClusterRequest& WithSubnetGroupName(const char* value) { SetSubnetGroupName(value); return *this;}
 
@@ -470,10 +461,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -485,10 +476,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -500,10 +491,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -515,10 +506,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -530,10 +521,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -545,10 +536,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline CreateClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -560,10 +551,10 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline CreateClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -575,67 +566,67 @@ namespace Model
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>  <p>If you don't specify
      * a preferred maintenance window when you create or modify a cache cluster, DAX
      * assigns a 60-minute maintenance window on a randomly selected day of the
-     * week.</p> </note>
+     * week.</p> 
      */
     inline CreateClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline CreateClusterRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline CreateClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
-     * cluster owner.</p> </note>
+     * will be sent.</p>  <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> 
      */
     inline CreateClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
@@ -815,6 +806,49 @@ namespace Model
      */
     inline CreateClusterRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline const ClusterEndpointEncryptionType& GetClusterEndpointEncryptionType() const{ return m_clusterEndpointEncryptionType; }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline bool ClusterEndpointEncryptionTypeHasBeenSet() const { return m_clusterEndpointEncryptionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline void SetClusterEndpointEncryptionType(const ClusterEndpointEncryptionType& value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = value; }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline void SetClusterEndpointEncryptionType(ClusterEndpointEncryptionType&& value) { m_clusterEndpointEncryptionTypeHasBeenSet = true; m_clusterEndpointEncryptionType = std::move(value); }
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithClusterEndpointEncryptionType(const ClusterEndpointEncryptionType& value) { SetClusterEndpointEncryptionType(value); return *this;}
+
+    /**
+     * <p>The type of encryption the cluster's endpoint should support. Values are:</p>
+     * <ul> <li> <p> <code>NONE</code> for no encryption</p> </li> <li> <p>
+     * <code>TLS</code> for Transport Layer Security</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithClusterEndpointEncryptionType(ClusterEndpointEncryptionType&& value) { SetClusterEndpointEncryptionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -855,6 +889,9 @@ namespace Model
 
     SSESpecification m_sSESpecification;
     bool m_sSESpecificationHasBeenSet;
+
+    ClusterEndpointEncryptionType m_clusterEndpointEncryptionType;
+    bool m_clusterEndpointEncryptionTypeHasBeenSet;
   };
 
 } // namespace Model

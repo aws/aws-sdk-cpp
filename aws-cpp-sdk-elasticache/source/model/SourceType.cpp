@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/SourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,8 @@ namespace Aws
         static const int cache_security_group_HASH = HashingUtils::HashString("cache-security-group");
         static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subnet-group");
         static const int replication_group_HASH = HashingUtils::HashString("replication-group");
+        static const int user_HASH = HashingUtils::HashString("user");
+        static const int user_group_HASH = HashingUtils::HashString("user-group");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -60,6 +52,14 @@ namespace Aws
           {
             return SourceType::replication_group;
           }
+          else if (hashCode == user_HASH)
+          {
+            return SourceType::user;
+          }
+          else if (hashCode == user_group_HASH)
+          {
+            return SourceType::user_group;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +84,10 @@ namespace Aws
             return "cache-subnet-group";
           case SourceType::replication_group:
             return "replication-group";
+          case SourceType::user:
+            return "user";
+          case SourceType::user_group:
+            return "user-group";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

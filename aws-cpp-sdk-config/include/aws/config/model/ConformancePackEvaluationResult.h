@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -37,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The details of a conformance pack evaluation. Provides AWS Config rule and
-   * AWS resource type that was evaluated, the compliance of the conformance pack,
-   * related time stamps, and supplementary information. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The details of a conformance pack evaluation. Provides Config rule and Amazon
+   * Web Services resource type that was evaluated, the compliance of the conformance
+   * pack, related time stamps, and supplementary information. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackEvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -55,37 +45,37 @@ namespace Model
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline ConformancePackEvaluationResult& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
      * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
-     * <code>NON_COMPLIANT</code>. </p>
+     * <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline ConformancePackEvaluationResult& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 
@@ -110,63 +100,63 @@ namespace Model
 
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline bool ConfigRuleInvokedTimeHasBeenSet() const { return m_configRuleInvokedTimeHasBeenSet; }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline void SetConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = std::move(value); }
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline ConformancePackEvaluationResult& WithConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { SetConfigRuleInvokedTime(value); return *this;}
 
     /**
-     * <p>The time when AWS Config rule evaluated AWS resource.</p>
+     * <p>The time when Config rule evaluated Amazon Web Services resource.</p>
      */
     inline ConformancePackEvaluationResult& WithConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { SetConfigRuleInvokedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline const Aws::Utils::DateTime& GetResultRecordedTime() const{ return m_resultRecordedTime; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline bool ResultRecordedTimeHasBeenSet() const { return m_resultRecordedTimeHasBeenSet; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline void SetResultRecordedTime(Aws::Utils::DateTime&& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = std::move(value); }
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline ConformancePackEvaluationResult& WithResultRecordedTime(const Aws::Utils::DateTime& value) { SetResultRecordedTime(value); return *this;}
 
     /**
-     * <p>The time when AWS Config recorded the evaluation result. </p>
+     * <p>The time when Config recorded the evaluation result. </p>
      */
     inline ConformancePackEvaluationResult& WithResultRecordedTime(Aws::Utils::DateTime&& value) { SetResultRecordedTime(std::move(value)); return *this;}
 

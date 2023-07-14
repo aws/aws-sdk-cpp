@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -111,64 +101,64 @@ namespace Model
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetSourceBackupVaultName() const{ return m_sourceBackupVaultName; }
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline bool SourceBackupVaultNameHasBeenSet() const { return m_sourceBackupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetSourceBackupVaultName(const Aws::String& value) { m_sourceBackupVaultNameHasBeenSet = true; m_sourceBackupVaultName = value; }
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetSourceBackupVaultName(Aws::String&& value) { m_sourceBackupVaultNameHasBeenSet = true; m_sourceBackupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetSourceBackupVaultName(const char* value) { m_sourceBackupVaultNameHasBeenSet = true; m_sourceBackupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline StartCopyJobRequest& WithSourceBackupVaultName(const Aws::String& value) { SetSourceBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline StartCopyJobRequest& WithSourceBackupVaultName(Aws::String&& value) { SetSourceBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
-     * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * them and the Amazon Web Services Region where they are created. They consist of
+     * lowercase letters, numbers, and hyphens.</p>
      */
     inline StartCopyJobRequest& WithSourceBackupVaultName(const char* value) { SetSourceBackupVaultName(value); return *this;}
 
@@ -232,98 +222,114 @@ namespace Model
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartCopyJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartCopyJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartCopyJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline StartCopyJobRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline StartCopyJobRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartCopyJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartCopyJob</code>. Retrying a successful request with
+     * the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline StartCopyJobRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

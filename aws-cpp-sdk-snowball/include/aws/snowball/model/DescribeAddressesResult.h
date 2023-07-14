@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline const Aws::Vector<Address>& GetAddresses() const{ return m_addresses; }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline void SetAddresses(const Aws::Vector<Address>& value) { m_addresses = value; }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = std::move(value); }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& WithAddresses(const Aws::Vector<Address>& value) { SetAddresses(value); return *this;}
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& AddAddresses(const Address& value) { m_addresses.push_back(value); return *this; }
 
     /**
-     * <p>The Snowball shipping addresses that were created for this account.</p>
+     * <p>The Snow device shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
 

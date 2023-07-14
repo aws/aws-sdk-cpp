@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -158,6 +148,55 @@ namespace Model
      */
     inline ListConfigurationProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline ListConfigurationProfilesRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline ListConfigurationProfilesRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter based on the type of configurations that the configuration profile
+     * contains. A configuration can be a feature flag or a freeform configuration.</p>
+     */
+    inline ListConfigurationProfilesRequest& WithType(const char* value) { SetType(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -168,6 +207,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

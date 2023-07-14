@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -114,118 +104,118 @@ namespace Model
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline const Aws::String& GetEndpointUrl() const{ return m_endpointUrl; }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline bool EndpointUrlHasBeenSet() const { return m_endpointUrlHasBeenSet; }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = value; }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::move(value); }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline void SetEndpointUrl(const char* value) { m_endpointUrlHasBeenSet = true; m_endpointUrl.assign(value); }
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(const Aws::String& value) { SetEndpointUrl(value); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
-     * <code>MLModel</code>.</p> <note><title>Note</title> <p>The application must wait
-     * until the real-time endpoint is ready before using this URI.</p> </note>
+     * <code>MLModel</code>.</p> <p> <b>Note:</b> The application must wait until the
+     * real-time endpoint is ready before using this URI.</p>
      */
     inline RealtimeEndpointInfo& WithEndpointUrl(const char* value) { SetEndpointUrl(value); return *this;}
 
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>
-     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
-     * <code>READY</code> - Endpoint is ready to be used for real-time
-     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
-     * </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li> <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+     * <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
+     * endpoint. </p> </li> </ul>
      */
     inline const RealtimeEndpointStatus& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>
-     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
-     * <code>READY</code> - Endpoint is ready to be used for real-time
-     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
-     * </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li> <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+     * <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
+     * endpoint. </p> </li> </ul>
      */
     inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>
-     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
-     * <code>READY</code> - Endpoint is ready to be used for real-time
-     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
-     * </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li> <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+     * <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
+     * endpoint. </p> </li> </ul>
      */
     inline void SetEndpointStatus(const RealtimeEndpointStatus& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>
-     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
-     * <code>READY</code> - Endpoint is ready to be used for real-time
-     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
-     * </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li> <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+     * <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
+     * endpoint. </p> </li> </ul>
      */
     inline void SetEndpointStatus(RealtimeEndpointStatus&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>
-     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
-     * <code>READY</code> - Endpoint is ready to be used for real-time
-     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
-     * </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li> <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+     * <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
+     * endpoint. </p> </li> </ul>
      */
     inline RealtimeEndpointInfo& WithEndpointStatus(const RealtimeEndpointStatus& value) { SetEndpointStatus(value); return *this;}
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>
-     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
-     * <code>READY</code> - Endpoint is ready to be used for real-time
-     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
-     * </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li> <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
+     * <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</p> </li> <li> <p> <code>UPDATING</code> - Updating/creating the
+     * endpoint. </p> </li> </ul>
      */
     inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(std::move(value)); return *this;}
 

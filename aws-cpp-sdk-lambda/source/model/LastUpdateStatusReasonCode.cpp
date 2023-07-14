@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,9 @@ namespace Aws
         static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
         static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
         static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
+        static const int ImageDeleted_HASH = HashingUtils::HashString("ImageDeleted");
+        static const int ImageAccessDenied_HASH = HashingUtils::HashString("ImageAccessDenied");
+        static const int InvalidImage_HASH = HashingUtils::HashString("InvalidImage");
 
 
         LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::String& name)
@@ -70,6 +63,18 @@ namespace Aws
           {
             return LastUpdateStatusReasonCode::InvalidSecurityGroup;
           }
+          else if (hashCode == ImageDeleted_HASH)
+          {
+            return LastUpdateStatusReasonCode::ImageDeleted;
+          }
+          else if (hashCode == ImageAccessDenied_HASH)
+          {
+            return LastUpdateStatusReasonCode::ImageAccessDenied;
+          }
+          else if (hashCode == InvalidImage_HASH)
+          {
+            return LastUpdateStatusReasonCode::InvalidImage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,12 @@ namespace Aws
             return "InvalidSubnet";
           case LastUpdateStatusReasonCode::InvalidSecurityGroup:
             return "InvalidSecurityGroup";
+          case LastUpdateStatusReasonCode::ImageDeleted:
+            return "ImageDeleted";
+          case LastUpdateStatusReasonCode::ImageAccessDenied:
+            return "ImageAccessDenied";
+          case LastUpdateStatusReasonCode::InvalidImage:
+            return "InvalidImage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

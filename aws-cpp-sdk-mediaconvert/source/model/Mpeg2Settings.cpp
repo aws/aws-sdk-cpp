@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -77,6 +67,8 @@ Mpeg2Settings::Mpeg2Settings() :
     m_qualityTuningLevelHasBeenSet(false),
     m_rateControlMode(Mpeg2RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
+    m_scanTypeConversionMode(Mpeg2ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(Mpeg2SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slowPal(Mpeg2SlowPal::NOT_SET),
@@ -143,6 +135,8 @@ Mpeg2Settings::Mpeg2Settings(JsonView jsonValue) :
     m_qualityTuningLevelHasBeenSet(false),
     m_rateControlMode(Mpeg2RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
+    m_scanTypeConversionMode(Mpeg2ScanTypeConversionMode::NOT_SET),
+    m_scanTypeConversionModeHasBeenSet(false),
     m_sceneChangeDetect(Mpeg2SceneChangeDetect::NOT_SET),
     m_sceneChangeDetectHasBeenSet(false),
     m_slowPal(Mpeg2SlowPal::NOT_SET),
@@ -331,6 +325,13 @@ Mpeg2Settings& Mpeg2Settings::operator =(JsonView jsonValue)
     m_rateControlModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanTypeConversionMode"))
+  {
+    m_scanTypeConversionMode = Mpeg2ScanTypeConversionModeMapper::GetMpeg2ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
+
+    m_scanTypeConversionModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sceneChangeDetect"))
   {
     m_sceneChangeDetect = Mpeg2SceneChangeDetectMapper::GetMpeg2SceneChangeDetectForName(jsonValue.GetString("sceneChangeDetect"));
@@ -517,6 +518,11 @@ JsonValue Mpeg2Settings::Jsonize() const
   if(m_rateControlModeHasBeenSet)
   {
    payload.WithString("rateControlMode", Mpeg2RateControlModeMapper::GetNameForMpeg2RateControlMode(m_rateControlMode));
+  }
+
+  if(m_scanTypeConversionModeHasBeenSet)
+  {
+   payload.WithString("scanTypeConversionMode", Mpeg2ScanTypeConversionModeMapper::GetNameForMpeg2ScanTypeConversionMode(m_scanTypeConversionMode));
   }
 
   if(m_sceneChangeDetectHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -208,66 +198,66 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline InstanceGroup& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline InstanceGroup& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot instance type as defined by
-     * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
-     * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
+     * <p>If specified, indicates that the instance group uses Spot Instances. This is
+     * the maximum price you are willing to pay for Spot Instances. Specify
+     * <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.</p>
      */
     inline InstanceGroup& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
@@ -387,58 +377,66 @@ namespace Model
 
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline InstanceGroup& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline InstanceGroup& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline InstanceGroup& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
-     * configurations supplied for an EMR cluster instance group. You can specify a
-     * separate configuration for each instance group (master, core, and task).</p>
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
+     * configurations supplied for an Amazon EMR cluster instance group. You can
+     * specify a separate configuration for each instance group (master, core, and
+     * task).</p>
      */
     inline InstanceGroup& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
@@ -691,6 +689,47 @@ namespace Model
      */
     inline InstanceGroup& WithAutoScalingPolicy(AutoScalingPolicyDescription&& value) { SetAutoScalingPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline InstanceGroup& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline InstanceGroup& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline InstanceGroup& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -743,6 +782,9 @@ namespace Model
 
     AutoScalingPolicyDescription m_autoScalingPolicy;
     bool m_autoScalingPolicyHasBeenSet;
+
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
   };
 
 } // namespace Model

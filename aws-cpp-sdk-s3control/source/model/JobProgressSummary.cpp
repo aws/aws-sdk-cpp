@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3control/model/JobProgressSummary.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -36,7 +26,8 @@ JobProgressSummary::JobProgressSummary() :
     m_numberOfTasksSucceeded(0),
     m_numberOfTasksSucceededHasBeenSet(false),
     m_numberOfTasksFailed(0),
-    m_numberOfTasksFailedHasBeenSet(false)
+    m_numberOfTasksFailedHasBeenSet(false),
+    m_timersHasBeenSet(false)
 {
 }
 
@@ -46,7 +37,8 @@ JobProgressSummary::JobProgressSummary(const XmlNode& xmlNode) :
     m_numberOfTasksSucceeded(0),
     m_numberOfTasksSucceededHasBeenSet(false),
     m_numberOfTasksFailed(0),
-    m_numberOfTasksFailedHasBeenSet(false)
+    m_numberOfTasksFailedHasBeenSet(false),
+    m_timersHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -74,6 +66,12 @@ JobProgressSummary& JobProgressSummary::operator =(const XmlNode& xmlNode)
     {
       m_numberOfTasksFailed = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfTasksFailedNode.GetText()).c_str()).c_str());
       m_numberOfTasksFailedHasBeenSet = true;
+    }
+    XmlNode timersNode = resultNode.FirstChild("Timers");
+    if(!timersNode.IsNull())
+    {
+      m_timers = timersNode;
+      m_timersHasBeenSet = true;
     }
   }
 
@@ -105,6 +103,12 @@ void JobProgressSummary::AddToNode(XmlNode& parentNode) const
    ss << m_numberOfTasksFailed;
    numberOfTasksFailedNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_timersHasBeenSet)
+  {
+   XmlNode timersNode = parentNode.CreateChildElement("Timers");
+   m_timers.AddToNode(timersNode);
   }
 
 }

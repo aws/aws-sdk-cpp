@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -104,13 +94,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
 
@@ -118,13 +108,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
 
@@ -132,13 +122,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
@@ -146,13 +136,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
 
@@ -160,13 +150,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline LocalSecondaryIndex& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
 
@@ -174,13 +164,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline LocalSecondaryIndex& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
 
@@ -188,13 +178,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline LocalSecondaryIndex& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
@@ -202,13 +192,13 @@ namespace Model
      * <p>The complete key schema for the local secondary index, consisting of one or
      * more pairs of attribute names and key types:</p> <ul> <li> <p> <code>HASH</code>
      * - partition key</p> </li> <li> <p> <code>RANGE</code> - sort key</p> </li> </ul>
-     * <note> <p>The partition key of an item is also known as its <i>hash
+     *  <p>The partition key of an item is also known as its <i>hash
      * attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an
      * internal hash function to evenly distribute data items across partitions, based
      * on their partition key values.</p> <p>The sort key of an item is also known as
      * its <i>range attribute</i>. The term "range attribute" derives from the way
      * DynamoDB stores items with the same partition key physically close together, in
-     * sorted order by the sort key value.</p> </note>
+     * sorted order by the sort key value.</p> 
      */
     inline LocalSecondaryIndex& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 

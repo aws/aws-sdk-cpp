@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-insights/model/OsType.h>
 #include <aws/application-insights/model/Tier.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +83,55 @@ namespace Model
 
 
     /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline const Aws::String& GetComponentRemarks() const{ return m_componentRemarks; }
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline bool ComponentRemarksHasBeenSet() const { return m_componentRemarksHasBeenSet; }
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline void SetComponentRemarks(const Aws::String& value) { m_componentRemarksHasBeenSet = true; m_componentRemarks = value; }
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline void SetComponentRemarks(Aws::String&& value) { m_componentRemarksHasBeenSet = true; m_componentRemarks = std::move(value); }
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline void SetComponentRemarks(const char* value) { m_componentRemarksHasBeenSet = true; m_componentRemarks.assign(value); }
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline ApplicationComponent& WithComponentRemarks(const Aws::String& value) { SetComponentRemarks(value); return *this;}
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline ApplicationComponent& WithComponentRemarks(Aws::String&& value) { SetComponentRemarks(std::move(value)); return *this;}
+
+    /**
+     * <p> If logging is supported for the resource type, indicates whether the
+     * component has configured logs to be monitored. </p>
+     */
+    inline ApplicationComponent& WithComponentRemarks(const char* value) { SetComponentRemarks(value); return *this;}
+
+
+    /**
      * <p>The resource type. Supported resource types include EC2 instances, Auto
      * Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
      */
@@ -137,6 +178,37 @@ namespace Model
      * Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
      */
     inline ApplicationComponent& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    /**
+     * <p> The operating system of the component. </p>
+     */
+    inline const OsType& GetOsType() const{ return m_osType; }
+
+    /**
+     * <p> The operating system of the component. </p>
+     */
+    inline bool OsTypeHasBeenSet() const { return m_osTypeHasBeenSet; }
+
+    /**
+     * <p> The operating system of the component. </p>
+     */
+    inline void SetOsType(const OsType& value) { m_osTypeHasBeenSet = true; m_osType = value; }
+
+    /**
+     * <p> The operating system of the component. </p>
+     */
+    inline void SetOsType(OsType&& value) { m_osTypeHasBeenSet = true; m_osType = std::move(value); }
+
+    /**
+     * <p> The operating system of the component. </p>
+     */
+    inline ApplicationComponent& WithOsType(const OsType& value) { SetOsType(value); return *this;}
+
+    /**
+     * <p> The operating system of the component. </p>
+     */
+    inline ApplicationComponent& WithOsType(OsType&& value) { SetOsType(std::move(value)); return *this;}
 
 
     /**
@@ -190,19 +262,79 @@ namespace Model
      */
     inline ApplicationComponent& WithMonitor(bool value) { SetMonitor(value); return *this;}
 
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline const Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>>& GetDetectedWorkload() const{ return m_detectedWorkload; }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline bool DetectedWorkloadHasBeenSet() const { return m_detectedWorkloadHasBeenSet; }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline void SetDetectedWorkload(const Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>>& value) { m_detectedWorkloadHasBeenSet = true; m_detectedWorkload = value; }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline void SetDetectedWorkload(Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>>&& value) { m_detectedWorkloadHasBeenSet = true; m_detectedWorkload = std::move(value); }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline ApplicationComponent& WithDetectedWorkload(const Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>>& value) { SetDetectedWorkload(value); return *this;}
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline ApplicationComponent& WithDetectedWorkload(Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>>&& value) { SetDetectedWorkload(std::move(value)); return *this;}
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline ApplicationComponent& AddDetectedWorkload(const Tier& key, const Aws::Map<Aws::String, Aws::String>& value) { m_detectedWorkloadHasBeenSet = true; m_detectedWorkload.emplace(key, value); return *this; }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline ApplicationComponent& AddDetectedWorkload(Tier&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_detectedWorkloadHasBeenSet = true; m_detectedWorkload.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline ApplicationComponent& AddDetectedWorkload(const Tier& key, Aws::Map<Aws::String, Aws::String>&& value) { m_detectedWorkloadHasBeenSet = true; m_detectedWorkload.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> Workloads detected in the application component. </p>
+     */
+    inline ApplicationComponent& AddDetectedWorkload(Tier&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_detectedWorkloadHasBeenSet = true; m_detectedWorkload.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet;
 
+    Aws::String m_componentRemarks;
+    bool m_componentRemarksHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    OsType m_osType;
+    bool m_osTypeHasBeenSet;
 
     Tier m_tier;
     bool m_tierHasBeenSet;
 
     bool m_monitor;
     bool m_monitorHasBeenSet;
+
+    Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>> m_detectedWorkload;
+    bool m_detectedWorkloadHasBeenSet;
   };
 
 } // namespace Model

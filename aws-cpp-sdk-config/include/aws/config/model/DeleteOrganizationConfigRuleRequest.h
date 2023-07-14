@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -45,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline const Aws::String& GetOrganizationConfigRuleName() const{ return m_organizationConfigRuleName; }
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline bool OrganizationConfigRuleNameHasBeenSet() const { return m_organizationConfigRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline void SetOrganizationConfigRuleName(const Aws::String& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = value; }
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline void SetOrganizationConfigRuleName(Aws::String&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::move(value); }
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline void SetOrganizationConfigRuleName(const char* value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName.assign(value); }
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline DeleteOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(const Aws::String& value) { SetOrganizationConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline DeleteOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(Aws::String&& value) { SetOrganizationConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of organization config rule that you want to delete.</p>
+     * <p>The name of organization Config rule that you want to delete.</p>
      */
     inline DeleteOrganizationConfigRuleRequest& WithOrganizationConfigRuleName(const char* value) { SetOrganizationConfigRuleName(value); return *this;}
 

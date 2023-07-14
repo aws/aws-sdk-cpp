@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/UpdateUserRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -28,7 +18,13 @@ UpdateUserRequest::UpdateUserRequest() :
     m_namespaceHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_role(UserRole::NOT_SET),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false),
+    m_unapplyCustomPermissions(false),
+    m_unapplyCustomPermissionsHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_customFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +41,36 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_roleHasBeenSet)
   {
    payload.WithString("Role", UserRoleMapper::GetNameForUserRole(m_role));
+  }
+
+  if(m_customPermissionsNameHasBeenSet)
+  {
+   payload.WithString("CustomPermissionsName", m_customPermissionsName);
+
+  }
+
+  if(m_unapplyCustomPermissionsHasBeenSet)
+  {
+   payload.WithBool("UnapplyCustomPermissions", m_unapplyCustomPermissions);
+
+  }
+
+  if(m_externalLoginFederationProviderTypeHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderType", m_externalLoginFederationProviderType);
+
+  }
+
+  if(m_customFederationProviderUrlHasBeenSet)
+  {
+   payload.WithString("CustomFederationProviderUrl", m_customFederationProviderUrl);
+
+  }
+
+  if(m_externalLoginIdHasBeenSet)
+  {
+   payload.WithString("ExternalLoginId", m_externalLoginId);
+
   }
 
   return payload.View().WriteReadable();

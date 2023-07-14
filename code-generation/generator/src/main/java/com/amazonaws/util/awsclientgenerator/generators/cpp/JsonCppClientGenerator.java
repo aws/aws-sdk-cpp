@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
@@ -52,10 +42,13 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
 
         Shape shape = shapeEntry.getValue();
-        if (shape.isException())
+        if (shape.isException() && !shape.isJsonModeledException())
             return null;
 
         if (shape.isResult() && shape.hasEventStreamMembers())
+            return null;
+
+        if (shape.isDocument())
             return null;
 
         //we only want to override json related stuff.
@@ -73,7 +66,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
                 } else {
                     template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm", StandardCharsets.UTF_8.name());
                 }
-            } else if (shape.isEventStream() && shape.hasNestedEventPayloadMembers()) { // streams with event-payload members are input event-streams
+            } else if (shape.isEventStream() && shape.isOutgoingEventStream()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/EventStreamHeader.vm", StandardCharsets.UTF_8.name());
             } else if (shape.isStructure()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectHeader.vm", StandardCharsets.UTF_8.name());
@@ -96,15 +89,18 @@ public class JsonCppClientGenerator extends CppClientGenerator {
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
 
-        // if the shape is an event and has a single blob member then we don't need a source file, because the whole
+        // if the shape is an event and its content type is "blob" then we don't need a source file, because the whole
         // class is implemented in the header file. See EventHeader.vm
-        if (shape.isEvent() && shape.getMembers().size() == 1 && shape.hasBlobMembers())
+        if (shape.isEvent() && shape.getEventPayloadType().equals("blob"))
             return null;
 
-        if (shape.isException())
+        if (shape.isException() && !shape.isJsonModeledException())
             return null;
 
         if (shape.isEventStream())
+            return null;
+
+        if (shape.isDocument())
             return null;
 
         if (shape.isEnum()) {

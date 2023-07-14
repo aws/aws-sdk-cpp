@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -39,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The user type.</p><p><h3>See Also:</h3>   <a
+   * <p>A user profile in a Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType">AWS
    * API Reference</a></p>
    */
@@ -53,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline UserType& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline UserType& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you wish to describe.</p>
+     * <p>The user name of the user you want to describe.</p>
      */
     inline UserType& WithUsername(const char* value) { SetUsername(value); return *this;}
 
@@ -218,86 +208,86 @@ namespace Model
 
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>The user status. This can be one of the following:</p> <ul> <li>
+     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
+     * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
+     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * a temporary password, but on first sign-in, the user must change their password
+     * to a new value before doing anything else. </p> </li> </ul>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>The user status. This can be one of the following:</p> <ul> <li>
+     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
+     * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
+     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * a temporary password, but on first sign-in, the user must change their password
+     * to a new value before doing anything else. </p> </li> </ul>
      */
     inline bool UserStatusHasBeenSet() const { return m_userStatusHasBeenSet; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>The user status. This can be one of the following:</p> <ul> <li>
+     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
+     * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
+     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * a temporary password, but on first sign-in, the user must change their password
+     * to a new value before doing anything else. </p> </li> </ul>
      */
     inline void SetUserStatus(const UserStatusType& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>The user status. This can be one of the following:</p> <ul> <li>
+     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
+     * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
+     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * a temporary password, but on first sign-in, the user must change their password
+     * to a new value before doing anything else. </p> </li> </ul>
      */
     inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = std::move(value); }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>The user status. This can be one of the following:</p> <ul> <li>
+     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
+     * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
+     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * a temporary password, but on first sign-in, the user must change their password
+     * to a new value before doing anything else. </p> </li> </ul>
      */
     inline UserType& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>The user status. This can be one of the following:</p> <ul> <li>
+     * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
+     * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
+     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * a temporary password, but on first sign-in, the user must change their password
+     * to a new value before doing anything else. </p> </li> </ul>
      */
     inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
 

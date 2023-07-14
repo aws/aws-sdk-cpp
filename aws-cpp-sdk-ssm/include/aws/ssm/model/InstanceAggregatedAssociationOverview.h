@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -91,47 +81,47 @@ namespace Model
 
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline const Aws::Map<Aws::String, int>& GetInstanceAssociationStatusAggregatedCount() const{ return m_instanceAssociationStatusAggregatedCount; }
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline bool InstanceAssociationStatusAggregatedCountHasBeenSet() const { return m_instanceAssociationStatusAggregatedCountHasBeenSet; }
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline void SetInstanceAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount = value; }
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline void SetInstanceAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount = std::move(value); }
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline InstanceAggregatedAssociationOverview& WithInstanceAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { SetInstanceAssociationStatusAggregatedCount(value); return *this;}
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline InstanceAggregatedAssociationOverview& WithInstanceAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { SetInstanceAssociationStatusAggregatedCount(std::move(value)); return *this;}
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(const Aws::String& key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(key, value); return *this; }
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(Aws::String&& key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The number of associations for the instance(s).</p>
+     * <p>The number of associations for the managed node(s).</p>
      */
     inline InstanceAggregatedAssociationOverview& AddInstanceAssociationStatusAggregatedCount(const char* key, int value) { m_instanceAssociationStatusAggregatedCountHasBeenSet = true; m_instanceAssociationStatusAggregatedCount.emplace(key, value); return *this; }
 

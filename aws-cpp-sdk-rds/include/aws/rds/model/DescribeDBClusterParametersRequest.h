@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -109,58 +99,58 @@ namespace Model
 
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline DescribeDBClusterParametersRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline DescribeDBClusterParametersRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p> A value that indicates to return only parameters for a specific source.
+     * <p>A value that indicates to return only parameters for a specific source.
      * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
+     * <code>customer</code>.</p>
      */
     inline DescribeDBClusterParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -207,99 +197,99 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBClusterParametersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBClusterParametersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBClusterParametersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * <code>DescribeDBClusterParameters</code> request. If this parameter is
      * specified, the response includes only records beyond the marker, up to the value
-     * specified by <code>MaxRecords</code>. </p>
+     * specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBClusterParametersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

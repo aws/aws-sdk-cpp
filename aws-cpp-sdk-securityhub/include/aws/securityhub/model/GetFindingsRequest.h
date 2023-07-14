@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -47,37 +37,55 @@ namespace Model
 
     /**
      * <p>The finding attributes used to define a condition to filter the returned
-     * findings.</p>
+     * findings.</p> <p>You can filter by up to 10 finding attributes. For each
+     * attribute, you can provide up to 20 filter values.</p> <p>Note that in the
+     * available filter fields, <code>WorkflowState</code> is deprecated. To search for
+     * a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
      */
     inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The finding attributes used to define a condition to filter the returned
-     * findings.</p>
+     * findings.</p> <p>You can filter by up to 10 finding attributes. For each
+     * attribute, you can provide up to 20 filter values.</p> <p>Note that in the
+     * available filter fields, <code>WorkflowState</code> is deprecated. To search for
+     * a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The finding attributes used to define a condition to filter the returned
-     * findings.</p>
+     * findings.</p> <p>You can filter by up to 10 finding attributes. For each
+     * attribute, you can provide up to 20 filter values.</p> <p>Note that in the
+     * available filter fields, <code>WorkflowState</code> is deprecated. To search for
+     * a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
      */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The finding attributes used to define a condition to filter the returned
-     * findings.</p>
+     * findings.</p> <p>You can filter by up to 10 finding attributes. For each
+     * attribute, you can provide up to 20 filter values.</p> <p>Note that in the
+     * available filter fields, <code>WorkflowState</code> is deprecated. To search for
+     * a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
      */
     inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The finding attributes used to define a condition to filter the returned
-     * findings.</p>
+     * findings.</p> <p>You can filter by up to 10 finding attributes. For each
+     * attribute, you can provide up to 20 filter values.</p> <p>Note that in the
+     * available filter fields, <code>WorkflowState</code> is deprecated. To search for
+     * a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
      */
     inline GetFindingsRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The finding attributes used to define a condition to filter the returned
-     * findings.</p>
+     * findings.</p> <p>You can filter by up to 10 finding attributes. For each
+     * attribute, you can provide up to 20 filter values.</p> <p>Note that in the
+     * available filter fields, <code>WorkflowState</code> is deprecated. To search for
+     * a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
      */
     inline GetFindingsRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -247,22 +237,64 @@ namespace Model
 
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline int GetTargetThroughput() const{ return m_targetThroughput; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline bool TargetThroughputHasBeenSet() const { return m_targetThroughputHasBeenSet; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline void SetTargetThroughput(int value) { m_targetThroughputHasBeenSet = true; m_targetThroughput = value; }
+
+    /**
+     * <p>The target throughput of the volume, in MiB/s.</p>
+     */
+    inline VolumeModification& WithTargetThroughput(int value) { SetTargetThroughput(value); return *this;}
+
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool GetTargetMultiAttachEnabled() const{ return m_targetMultiAttachEnabled; }
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool TargetMultiAttachEnabledHasBeenSet() const { return m_targetMultiAttachEnabledHasBeenSet; }
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline void SetTargetMultiAttachEnabled(bool value) { m_targetMultiAttachEnabledHasBeenSet = true; m_targetMultiAttachEnabled = value; }
+
+    /**
+     * <p>The target setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline VolumeModification& WithTargetMultiAttachEnabled(bool value) { SetTargetMultiAttachEnabled(value); return *this;}
+
+
+    /**
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline int GetOriginalSize() const{ return m_originalSize; }
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline bool OriginalSizeHasBeenSet() const { return m_originalSizeHasBeenSet; }
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline void SetOriginalSize(int value) { m_originalSizeHasBeenSet = true; m_originalSize = value; }
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline VolumeModification& WithOriginalSize(int value) { SetOriginalSize(value); return *this;}
 
@@ -317,6 +349,48 @@ namespace Model
      * <p>The original EBS volume type of the volume.</p>
      */
     inline VolumeModification& WithOriginalVolumeType(VolumeType&& value) { SetOriginalVolumeType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline int GetOriginalThroughput() const{ return m_originalThroughput; }
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline bool OriginalThroughputHasBeenSet() const { return m_originalThroughputHasBeenSet; }
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline void SetOriginalThroughput(int value) { m_originalThroughputHasBeenSet = true; m_originalThroughput = value; }
+
+    /**
+     * <p>The original throughput of the volume, in MiB/s.</p>
+     */
+    inline VolumeModification& WithOriginalThroughput(int value) { SetOriginalThroughput(value); return *this;}
+
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool GetOriginalMultiAttachEnabled() const{ return m_originalMultiAttachEnabled; }
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline bool OriginalMultiAttachEnabledHasBeenSet() const { return m_originalMultiAttachEnabledHasBeenSet; }
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline void SetOriginalMultiAttachEnabled(bool value) { m_originalMultiAttachEnabledHasBeenSet = true; m_originalMultiAttachEnabled = value; }
+
+    /**
+     * <p>The original setting for Amazon EBS Multi-Attach.</p>
+     */
+    inline VolumeModification& WithOriginalMultiAttachEnabled(bool value) { SetOriginalMultiAttachEnabled(value); return *this;}
 
 
     /**
@@ -421,6 +495,12 @@ namespace Model
     VolumeType m_targetVolumeType;
     bool m_targetVolumeTypeHasBeenSet;
 
+    int m_targetThroughput;
+    bool m_targetThroughputHasBeenSet;
+
+    bool m_targetMultiAttachEnabled;
+    bool m_targetMultiAttachEnabledHasBeenSet;
+
     int m_originalSize;
     bool m_originalSizeHasBeenSet;
 
@@ -429,6 +509,12 @@ namespace Model
 
     VolumeType m_originalVolumeType;
     bool m_originalVolumeTypeHasBeenSet;
+
+    int m_originalThroughput;
+    bool m_originalThroughputHasBeenSet;
+
+    bool m_originalMultiAttachEnabled;
+    bool m_originalMultiAttachEnabledHasBeenSet;
 
     long long m_progress;
     bool m_progressHasBeenSet;

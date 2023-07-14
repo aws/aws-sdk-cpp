@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/workspaces/model/Compute.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,8 @@ namespace Aws
         static const int GRAPHICS_HASH = HashingUtils::HashString("GRAPHICS");
         static const int POWERPRO_HASH = HashingUtils::HashString("POWERPRO");
         static const int GRAPHICSPRO_HASH = HashingUtils::HashString("GRAPHICSPRO");
+        static const int GRAPHICS_G4DN_HASH = HashingUtils::HashString("GRAPHICS_G4DN");
+        static const int GRAPHICSPRO_G4DN_HASH = HashingUtils::HashString("GRAPHICSPRO_G4DN");
 
 
         Compute GetComputeForName(const Aws::String& name)
@@ -70,6 +62,14 @@ namespace Aws
           {
             return Compute::GRAPHICSPRO;
           }
+          else if (hashCode == GRAPHICS_G4DN_HASH)
+          {
+            return Compute::GRAPHICS_G4DN;
+          }
+          else if (hashCode == GRAPHICSPRO_G4DN_HASH)
+          {
+            return Compute::GRAPHICSPRO_G4DN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +98,10 @@ namespace Aws
             return "POWERPRO";
           case Compute::GRAPHICSPRO:
             return "GRAPHICSPRO";
+          case Compute::GRAPHICS_G4DN:
+            return "GRAPHICS_G4DN";
+          case Compute::GRAPHICSPRO_G4DN:
+            return "GRAPHICSPRO_G4DN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

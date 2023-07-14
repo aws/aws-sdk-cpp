@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
@@ -578,12 +568,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const{ return m_environment; }
 
@@ -593,12 +583,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -608,12 +598,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<EnvironmentVariable>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -623,12 +613,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline void SetEnvironment(Aws::Vector<EnvironmentVariable>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -638,12 +628,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline App& WithEnvironment(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironment(value); return *this;}
 
@@ -653,12 +643,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline App& WithEnvironment(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -668,12 +658,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline App& AddEnvironment(const EnvironmentVariable& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -683,12 +673,12 @@ namespace Model
      * variables are defined on the associated app server instances. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * Environment Variables</a>. </p>  <p>There is no specific limit on the
      * number of environment variables. However, the size of the associated data
      * structure - which includes the variable names, values, and protected flag values
      * - cannot exceed 20 KB. This limit should accommodate most if not all use cases,
      * but if you do exceed it, you will cause an exception (API) with an "Environment:
-     * is too large (maximum is 20 KB)" message.</p> </note>
+     * is too large (maximum is 20 KB)" message.</p> 
      */
     inline App& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

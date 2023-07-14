@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
@@ -43,132 +33,228 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the resource share from which you want to disassociate
+     * a permission.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the permission to disassociate from the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission to disassociate from the resource
+     * share. Changes to permissions take effect immediately.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
 
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
+     * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. This lets you safely retry the request without
+     * accidentally performing the same operation a second time. Passing the same value
+     * to a later call to an operation requires that you also pass the same value for
+     * all other parameters. We recommend that you use a <a
+     * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
+     * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
+     * generates a random one for you.</p>
      */
     inline DisassociateResourceSharePermissionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/CreateDBInstanceRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -50,6 +40,7 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_ncharCharacterSetNameHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -82,7 +73,12 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_maxAllocatedStorage(0),
-    m_maxAllocatedStorageHasBeenSet(false)
+    m_maxAllocatedStorageHasBeenSet(false),
+    m_enableCustomerOwnedIp(false),
+    m_enableCustomerOwnedIpHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false),
+    m_backupTargetHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -217,6 +213,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
     ss << "CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
 
+  if(m_ncharCharacterSetNameHasBeenSet)
+  {
+    ss << "NcharCharacterSetName=" << StringUtils::URLEncode(m_ncharCharacterSetName.c_str()) << "&";
+  }
+
   if(m_publiclyAccessibleHasBeenSet)
   {
     ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
@@ -346,6 +347,26 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_maxAllocatedStorageHasBeenSet)
   {
     ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+
+  if(m_enableCustomerOwnedIpHasBeenSet)
+  {
+    ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+  }
+
+  if(m_backupTargetHasBeenSet)
+  {
+    ss << "BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

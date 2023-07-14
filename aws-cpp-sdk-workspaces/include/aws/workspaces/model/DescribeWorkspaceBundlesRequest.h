@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
@@ -102,57 +92,65 @@ namespace Model
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the bundles. You cannot combine this parameter with any other
-     * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
-     * AWS or null to describe the bundles that belong to your account.</p>
+     * filter.</p> <p>To describe the bundles provided by Amazon Web Services, specify
+     * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
+     * specify a value.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
 

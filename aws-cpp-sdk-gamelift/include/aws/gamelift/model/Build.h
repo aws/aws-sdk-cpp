@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -37,10 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a custom game build.</p> <p> <b>Related operations</b>
-   * </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
-   * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
-   * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a custom game build.</p> <p> <b>Related actions</b>
+   * </p> <p> <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> |
+   * <a>UpdateBuild</a> | <a>DeleteBuild</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build">AWS API
    * Reference</a></p>
    */
@@ -54,115 +45,123 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline Build& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline Build& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a build.</p>
+     * <p>A unique identifier for the build.</p>
      */
     inline Build& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline Build& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline Build& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
-     * the <i>BuildId</i> value.</p>
+     * are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
     inline Build& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
 
@@ -348,25 +347,29 @@ namespace Model
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline long long GetSizeOnDisk() const{ return m_sizeOnDisk; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline bool SizeOnDiskHasBeenSet() const { return m_sizeOnDiskHasBeenSet; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline void SetSizeOnDisk(long long value) { m_sizeOnDiskHasBeenSet = true; m_sizeOnDisk = value; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * status is <code>INITIALIZED</code>, this value is 0.</p>
+     * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
+     * location, this value is 0.</p>
      */
     inline Build& WithSizeOnDisk(long long value) { SetSizeOnDisk(value); return *this;}
 
@@ -415,38 +418,44 @@ namespace Model
 
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Build& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -53,56 +43,64 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline PolicySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline PolicySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
-     * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits,
+     * or the underscore character (_).</p>
      */
     inline PolicySummary& WithId(const char* value) { SetId(value); return *this;}
 
@@ -110,72 +108,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline PolicySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline PolicySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
      * about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+     * Formats Supported by Organizations</a> in the <i>Amazon Web Services Service
+     * Authorization Reference</i>.</p>
      */
     inline PolicySummary& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -318,30 +316,30 @@ namespace Model
 
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
-     * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
-     * you cannot edit it.</p>
+     * <p>A boolean value that indicates whether the specified policy is an Amazon Web
+     * Services managed policy. If true, then you can attach the policy to roots, OUs,
+     * or accounts, but you cannot edit it.</p>
      */
     inline bool GetAwsManaged() const{ return m_awsManaged; }
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
-     * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
-     * you cannot edit it.</p>
+     * <p>A boolean value that indicates whether the specified policy is an Amazon Web
+     * Services managed policy. If true, then you can attach the policy to roots, OUs,
+     * or accounts, but you cannot edit it.</p>
      */
     inline bool AwsManagedHasBeenSet() const { return m_awsManagedHasBeenSet; }
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
-     * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
-     * you cannot edit it.</p>
+     * <p>A boolean value that indicates whether the specified policy is an Amazon Web
+     * Services managed policy. If true, then you can attach the policy to roots, OUs,
+     * or accounts, but you cannot edit it.</p>
      */
     inline void SetAwsManaged(bool value) { m_awsManagedHasBeenSet = true; m_awsManaged = value; }
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
-     * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
-     * you cannot edit it.</p>
+     * <p>A boolean value that indicates whether the specified policy is an Amazon Web
+     * Services managed policy. If true, then you can attach the policy to roots, OUs,
+     * or accounts, but you cannot edit it.</p>
      */
     inline PolicySummary& WithAwsManaged(bool value) { SetAwsManaged(value); return *this;}
 

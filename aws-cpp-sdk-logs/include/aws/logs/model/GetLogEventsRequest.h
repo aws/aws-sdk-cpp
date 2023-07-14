@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -190,57 +180,49 @@ namespace Model
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline GetLogEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline GetLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p> <p>Using this token works only when you specify
-     * <code>true</code> for <code>startFromHead</code>.</p>
+     * a previous call.)</p>
      */
     inline GetLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -277,32 +259,36 @@ namespace Model
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
-     * must specify <code>true</code> for <code>startFromHead</code>.</p>
+     * false.</p> <p>If you are using a previous <code>nextForwardToken</code> value as
+     * the <code>nextToken</code> in this operation, you must specify <code>true</code>
+     * for <code>startFromHead</code>.</p>
      */
     inline bool GetStartFromHead() const{ return m_startFromHead; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
-     * must specify <code>true</code> for <code>startFromHead</code>.</p>
+     * false.</p> <p>If you are using a previous <code>nextForwardToken</code> value as
+     * the <code>nextToken</code> in this operation, you must specify <code>true</code>
+     * for <code>startFromHead</code>.</p>
      */
     inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
-     * must specify <code>true</code> for <code>startFromHead</code>.</p>
+     * false.</p> <p>If you are using a previous <code>nextForwardToken</code> value as
+     * the <code>nextToken</code> in this operation, you must specify <code>true</code>
+     * for <code>startFromHead</code>.</p>
      */
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
-     * must specify <code>true</code> for <code>startFromHead</code>.</p>
+     * false.</p> <p>If you are using a previous <code>nextForwardToken</code> value as
+     * the <code>nextToken</code> in this operation, you must specify <code>true</code>
+     * for <code>startFromHead</code>.</p>
      */
     inline GetLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
 

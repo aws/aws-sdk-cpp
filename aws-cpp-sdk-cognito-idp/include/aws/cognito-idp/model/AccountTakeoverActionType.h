@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -69,62 +59,68 @@ namespace Model
 
 
     /**
-     * <p>The event action.</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action
-     * will block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Throw
+     * <p>The action to take in response to the account takeover action. Valid values
+     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
+     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
      * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it,
-     * else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the user
-     * sign-in.</p> </li> </ul>
+     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
+     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
+     * user to sign in.</p> </li> </ul>
      */
     inline const AccountTakeoverEventActionType& GetEventAction() const{ return m_eventAction; }
 
     /**
-     * <p>The event action.</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action
-     * will block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Throw
+     * <p>The action to take in response to the account takeover action. Valid values
+     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
+     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
      * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it,
-     * else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the user
-     * sign-in.</p> </li> </ul>
+     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
+     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
+     * user to sign in.</p> </li> </ul>
      */
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }
 
     /**
-     * <p>The event action.</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action
-     * will block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Throw
+     * <p>The action to take in response to the account takeover action. Valid values
+     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
+     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
      * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it,
-     * else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the user
-     * sign-in.</p> </li> </ul>
+     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
+     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
+     * user to sign in.</p> </li> </ul>
      */
     inline void SetEventAction(const AccountTakeoverEventActionType& value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
 
     /**
-     * <p>The event action.</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action
-     * will block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Throw
+     * <p>The action to take in response to the account takeover action. Valid values
+     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
+     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
      * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it,
-     * else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the user
-     * sign-in.</p> </li> </ul>
+     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
+     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
+     * user to sign in.</p> </li> </ul>
      */
     inline void SetEventAction(AccountTakeoverEventActionType&& value) { m_eventActionHasBeenSet = true; m_eventAction = std::move(value); }
 
     /**
-     * <p>The event action.</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action
-     * will block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Throw
+     * <p>The action to take in response to the account takeover action. Valid values
+     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
+     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
      * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it,
-     * else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the user
-     * sign-in.</p> </li> </ul>
+     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
+     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
+     * user to sign in.</p> </li> </ul>
      */
     inline AccountTakeoverActionType& WithEventAction(const AccountTakeoverEventActionType& value) { SetEventAction(value); return *this;}
 
     /**
-     * <p>The event action.</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action
-     * will block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Throw
+     * <p>The action to take in response to the account takeover action. Valid values
+     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
+     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
      * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it,
-     * else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the user
-     * sign-in.</p> </li> </ul>
+     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
+     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
+     * user to sign in.</p> </li> </ul>
      */
     inline AccountTakeoverActionType& WithEventAction(AccountTakeoverEventActionType&& value) { SetEventAction(std::move(value)); return *this;}
 

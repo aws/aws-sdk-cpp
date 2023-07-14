@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -116,46 +106,135 @@ namespace Model
     /**
      * <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise,
      * you can only delete a job which is in a terminal state ("COMPLETED" or
-     * "CANCELED") or an exception will occur. The default is false.</p> <note>
+     * "CANCELED") or an exception will occur. The default is false.</p> 
      * <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
      * the job to be unable to access job information or update the job execution
      * status. Use caution and ensure that each device executing a job which is deleted
-     * is able to recover to a valid state.</p> </note>
+     * is able to recover to a valid state.</p> 
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
      * <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise,
      * you can only delete a job which is in a terminal state ("COMPLETED" or
-     * "CANCELED") or an exception will occur. The default is false.</p> <note>
+     * "CANCELED") or an exception will occur. The default is false.</p> 
      * <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
      * the job to be unable to access job information or update the job execution
      * status. Use caution and ensure that each device executing a job which is deleted
-     * is able to recover to a valid state.</p> </note>
+     * is able to recover to a valid state.</p> 
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise,
      * you can only delete a job which is in a terminal state ("COMPLETED" or
-     * "CANCELED") or an exception will occur. The default is false.</p> <note>
+     * "CANCELED") or an exception will occur. The default is false.</p> 
      * <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
      * the job to be unable to access job information or update the job execution
      * status. Use caution and ensure that each device executing a job which is deleted
-     * is able to recover to a valid state.</p> </note>
+     * is able to recover to a valid state.</p> 
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
      * <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise,
      * you can only delete a job which is in a terminal state ("COMPLETED" or
-     * "CANCELED") or an exception will occur. The default is false.</p> <note>
+     * "CANCELED") or an exception will occur. The default is false.</p> 
      * <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
      * the job to be unable to access job information or update the job execution
      * status. Use caution and ensure that each device executing a job which is deleted
-     * is able to recover to a valid state.</p> </note>
+     * is able to recover to a valid state.</p> 
      */
     inline DeleteJobRequest& WithForce(bool value) { SetForce(value); return *this;}
+
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline DeleteJobRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline DeleteJobRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace used to indicate that a job is a customer-managed job.</p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
+     * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
+     * 
+     */
+    inline DeleteJobRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
 
   private:
 
@@ -164,6 +243,9 @@ namespace Model
 
     bool m_force;
     bool m_forceHasBeenSet;
+
+    Aws::String m_namespaceId;
+    bool m_namespaceIdHasBeenSet;
   };
 
 } // namespace Model

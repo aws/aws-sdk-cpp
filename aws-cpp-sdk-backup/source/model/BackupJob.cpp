@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/BackupJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,7 @@ namespace Model
 {
 
 BackupJob::BackupJob() : 
+    m_accountIdHasBeenSet(false),
     m_backupJobIdHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
@@ -48,11 +39,14 @@ BackupJob::BackupJob() :
     m_startByHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false)
+    m_bytesTransferredHasBeenSet(false),
+    m_backupOptionsHasBeenSet(false),
+    m_backupTypeHasBeenSet(false)
 {
 }
 
 BackupJob::BackupJob(JsonView jsonValue) : 
+    m_accountIdHasBeenSet(false),
     m_backupJobIdHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
@@ -72,13 +66,22 @@ BackupJob::BackupJob(JsonView jsonValue) :
     m_startByHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false)
+    m_bytesTransferredHasBeenSet(false),
+    m_backupOptionsHasBeenSet(false),
+    m_backupTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 BackupJob& BackupJob::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("BackupJobId"))
   {
     m_backupJobId = jsonValue.GetString("BackupJobId");
@@ -198,12 +201,35 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
     m_bytesTransferredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackupOptions"))
+  {
+    Aws::Map<Aws::String, JsonView> backupOptionsJsonMap = jsonValue.GetObject("BackupOptions").GetAllObjects();
+    for(auto& backupOptionsItem : backupOptionsJsonMap)
+    {
+      m_backupOptions[backupOptionsItem.first] = backupOptionsItem.second.AsString();
+    }
+    m_backupOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BackupType"))
+  {
+    m_backupType = jsonValue.GetString("BackupType");
+
+    m_backupTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue BackupJob::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_backupJobIdHasBeenSet)
   {
@@ -299,6 +325,23 @@ JsonValue BackupJob::Jsonize() const
   if(m_bytesTransferredHasBeenSet)
   {
    payload.WithInt64("BytesTransferred", m_bytesTransferred);
+
+  }
+
+  if(m_backupOptionsHasBeenSet)
+  {
+   JsonValue backupOptionsJsonMap;
+   for(auto& backupOptionsItem : m_backupOptions)
+   {
+     backupOptionsJsonMap.WithString(backupOptionsItem.first, backupOptionsItem.second);
+   }
+   payload.WithObject("BackupOptions", std::move(backupOptionsJsonMap));
+
+  }
+
+  if(m_backupTypeHasBeenSet)
+  {
+   payload.WithString("BackupType", m_backupType);
 
   }
 

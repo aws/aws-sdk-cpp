@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/Segment.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -47,49 +38,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline GetPartitionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline GetPartitionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline GetPartitionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -206,8 +197,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -244,8 +235,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -282,8 +273,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -320,8 +311,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -358,8 +349,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -396,8 +387,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -434,8 +425,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -472,8 +463,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -581,6 +572,123 @@ namespace Model
      */
     inline GetPartitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
+    inline bool GetExcludeColumnSchema() const{ return m_excludeColumnSchema; }
+
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
+    inline bool ExcludeColumnSchemaHasBeenSet() const { return m_excludeColumnSchemaHasBeenSet; }
+
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
+    inline void SetExcludeColumnSchema(bool value) { m_excludeColumnSchemaHasBeenSet = true; m_excludeColumnSchema = value; }
+
+    /**
+     * <p>When true, specifies not returning the partition column schema. Useful when
+     * you are interested only in other partition attributes such as partition values
+     * or location. This approach avoids the problem of a large response by not
+     * returning duplicate data.</p>
+     */
+    inline GetPartitionsRequest& WithExcludeColumnSchema(bool value) { SetExcludeColumnSchema(value); return *this;}
+
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline GetPartitionsRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline GetPartitionsRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline GetPartitionsRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetQueryAsOfTime() const{ return m_queryAsOfTime; }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline bool QueryAsOfTimeHasBeenSet() const { return m_queryAsOfTimeHasBeenSet; }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline void SetQueryAsOfTime(const Aws::Utils::DateTime& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = value; }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline void SetQueryAsOfTime(Aws::Utils::DateTime&& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = std::move(value); }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline GetPartitionsRequest& WithQueryAsOfTime(const Aws::Utils::DateTime& value) { SetQueryAsOfTime(value); return *this;}
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline GetPartitionsRequest& WithQueryAsOfTime(Aws::Utils::DateTime&& value) { SetQueryAsOfTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -603,6 +711,15 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    bool m_excludeColumnSchema;
+    bool m_excludeColumnSchemaHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
+
+    Aws::Utils::DateTime m_queryAsOfTime;
+    bool m_queryAsOfTimeHasBeenSet;
   };
 
 } // namespace Model

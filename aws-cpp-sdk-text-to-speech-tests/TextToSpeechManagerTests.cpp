@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 #include <aws/text-to-speech/TextToSpeechManager.h>
@@ -32,7 +22,7 @@ static const char* ALLOC_TAG = "TextToSpeechManagerTests";
 
 class MockPCMDriver : public PCMOutputDriver
 {
-public:   
+public:
     MockPCMDriver() : m_primeCalledCount(0), m_flushCalledCount(0), m_mockWriteResponse(false) {}
 
     bool WriteBufferToDevice(const unsigned char* buffer, size_t size) override
@@ -50,7 +40,7 @@ public:
     {
         return m_buffersWritten;
     }
-   
+
     Aws::Vector<DeviceInfo> EnumerateDevices() const override
     {
         return m_devices;
@@ -60,7 +50,7 @@ public:
     {
         m_devices.push_back(device);
     }
-        
+
     void SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps) override
     {
         m_activeDevice = device;
@@ -96,7 +86,7 @@ public:
     {
         return m_primeCalledCount;
     }
-      
+
     void Flush() override
     {
         m_flushCalledCount++;
@@ -216,7 +206,7 @@ TEST(TextToSpeechManagerTests, TestListVoicesFailure)
 
     auto voices = manager->ListAvailableVoices();
 
-    ASSERT_EQ(0u, voices.size());    
+    ASSERT_EQ(0u, voices.size());
 }
 
 TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
@@ -225,17 +215,17 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
 
     auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
     auto driver2 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
-    
+
     auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);
     driverFactory->AddDriver(driver1);
     driverFactory->AddDriver(driver2);
-    
+
     auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
 
     DeviceInfo devInfo1;
     devInfo1.deviceId = "device1";
     devInfo1.deviceName ="deviceName1";
-       
+
     CapabilityInfo capability;
     capability.sampleRate = KHZ_8;
     devInfo1.capabilities.push_back(capability);
@@ -274,8 +264,8 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
 TEST(TextToSpeechManagerTests, TestDeviceListEmpty)
 {
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
-    
-    auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);    
+
+    auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);
 
     auto manager = TextToSpeechManager::Create(pollyClient, driverFactory);
     ASSERT_EQ(0u, manager->EnumerateDevices().size());
@@ -368,7 +358,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
     CapabilityInfo capability;
     capability.sampleRate = KHZ_8;
-    devInfo1.capabilities.push_back(capability);  
+    devInfo1.capabilities.push_back(capability);
     driver1->AddDevice(devInfo1);
 
     manager->SetActiveVoice("Maxim");
@@ -378,7 +368,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
     const char* REQUEST_TEXT = "Blah blah blah";
 
-    SendTextCompletedHandler handler = [&](const char* text, const SynthesizeSpeechOutcome&, bool sent) 
+    SendTextCompletedHandler handler = [&](const char* text, const SynthesizeSpeechOutcome&, bool sent)
         {
             std::lock_guard<std::mutex> lockGuard(lock);
             EXPECT_STREQ(REQUEST_TEXT, text);
@@ -396,7 +386,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
     ASSERT_EQ(1u, driver1->GetPrimeCalledCount());
     ASSERT_EQ(1u, driver1->GetFlushCalledCount());
-    
+
     auto buffers = driver1->GetWrittenBuffers();
     ASSERT_EQ(1u, buffers.size());
 
@@ -417,10 +407,10 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
     auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 
     auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
-    driver1->MockWriteResponse(true);   
+    driver1->MockWriteResponse(true);
 
     auto driverFactory = Aws::MakeShared<MockPCMDriverFactory>(ALLOC_TAG);
-    driverFactory->AddDriver(driver1);    
+    driverFactory->AddDriver(driver1);
 
     pollyClient->MockSynthesizeSpeech(Aws::Client::AWSError<PollyErrors>(PollyErrors::ACCESS_DENIED, false));
 

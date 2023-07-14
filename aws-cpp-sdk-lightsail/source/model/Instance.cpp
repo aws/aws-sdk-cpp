@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/lightsail/model/Instance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -45,7 +35,9 @@ Instance::Instance() :
     m_isStaticIpHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_publicIpAddressHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
     m_hardwareHasBeenSet(false),
     m_networkingHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -71,7 +63,9 @@ Instance::Instance(JsonView jsonValue) :
     m_isStaticIpHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_publicIpAddressHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false),
     m_hardwareHasBeenSet(false),
     m_networkingHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -187,11 +181,21 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_publicIpAddressHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ipv6Address"))
+  if(jsonValue.ValueExists("ipv6Addresses"))
   {
-    m_ipv6Address = jsonValue.GetString("ipv6Address");
+    Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
+    {
+      m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
+    }
+    m_ipv6AddressesHasBeenSet = true;
+  }
 
-    m_ipv6AddressHasBeenSet = true;
+  if(jsonValue.ValueExists("ipAddressType"))
+  {
+    m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+
+    m_ipAddressTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hardware"))
@@ -328,10 +332,20 @@ JsonValue Instance::Jsonize() const
 
   }
 
-  if(m_ipv6AddressHasBeenSet)
+  if(m_ipv6AddressesHasBeenSet)
   {
-   payload.WithString("ipv6Address", m_ipv6Address);
+   Array<JsonValue> ipv6AddressesJsonList(m_ipv6Addresses.size());
+   for(unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex)
+   {
+     ipv6AddressesJsonList[ipv6AddressesIndex].AsString(m_ipv6Addresses[ipv6AddressesIndex]);
+   }
+   payload.WithArray("ipv6Addresses", std::move(ipv6AddressesJsonList));
 
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
   if(m_hardwareHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/PutScalingPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -39,7 +29,8 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_estimatedInstanceWarmupHasBeenSet(false),
     m_targetTrackingConfigurationHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_predictiveScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -115,6 +106,11 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   if(m_enabledHasBeenSet)
   {
     ss << "Enabled=" << std::boolalpha << m_enabled << "&";
+  }
+
+  if(m_predictiveScalingConfigurationHasBeenSet)
+  {
+    m_predictiveScalingConfiguration.OutputToStream(ss, "PredictiveScalingConfiguration");
   }
 
   ss << "Version=2011-01-01";

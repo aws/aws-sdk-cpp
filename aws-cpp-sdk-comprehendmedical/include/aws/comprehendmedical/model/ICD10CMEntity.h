@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
@@ -163,37 +153,43 @@ namespace Model
 
     /**
      * <p>Describes the specific type of entity with category of entities. InferICD10CM
-     * detects entities of the type <code>DX_NAME</code>.</p>
+     * detects entities of the type <code>DX_NAME</code> and
+     * <code>TIME_EXPRESSION</code>.</p>
      */
     inline const ICD10CMEntityType& GetType() const{ return m_type; }
 
     /**
      * <p>Describes the specific type of entity with category of entities. InferICD10CM
-     * detects entities of the type <code>DX_NAME</code>.</p>
+     * detects entities of the type <code>DX_NAME</code> and
+     * <code>TIME_EXPRESSION</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Describes the specific type of entity with category of entities. InferICD10CM
-     * detects entities of the type <code>DX_NAME</code>.</p>
+     * detects entities of the type <code>DX_NAME</code> and
+     * <code>TIME_EXPRESSION</code>.</p>
      */
     inline void SetType(const ICD10CMEntityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>Describes the specific type of entity with category of entities. InferICD10CM
-     * detects entities of the type <code>DX_NAME</code>.</p>
+     * detects entities of the type <code>DX_NAME</code> and
+     * <code>TIME_EXPRESSION</code>.</p>
      */
     inline void SetType(ICD10CMEntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Describes the specific type of entity with category of entities. InferICD10CM
-     * detects entities of the type <code>DX_NAME</code>.</p>
+     * detects entities of the type <code>DX_NAME</code> and
+     * <code>TIME_EXPRESSION</code>.</p>
      */
     inline ICD10CMEntity& WithType(const ICD10CMEntityType& value) { SetType(value); return *this;}
 
     /**
      * <p>Describes the specific type of entity with category of entities. InferICD10CM
-     * detects entities of the type <code>DX_NAME</code>.</p>
+     * detects entities of the type <code>DX_NAME</code> and
+     * <code>TIME_EXPRESSION</code>.</p>
      */
     inline ICD10CMEntity& WithType(ICD10CMEntityType&& value) { SetType(std::move(value)); return *this;}
 

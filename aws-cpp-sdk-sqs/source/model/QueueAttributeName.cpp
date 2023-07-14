@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sqs/model/QueueAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -48,6 +38,10 @@ namespace Aws
         static const int ContentBasedDeduplication_HASH = HashingUtils::HashString("ContentBasedDeduplication");
         static const int KmsMasterKeyId_HASH = HashingUtils::HashString("KmsMasterKeyId");
         static const int KmsDataKeyReusePeriodSeconds_HASH = HashingUtils::HashString("KmsDataKeyReusePeriodSeconds");
+        static const int DeduplicationScope_HASH = HashingUtils::HashString("DeduplicationScope");
+        static const int FifoThroughputLimit_HASH = HashingUtils::HashString("FifoThroughputLimit");
+        static const int RedriveAllowPolicy_HASH = HashingUtils::HashString("RedriveAllowPolicy");
+        static const int SqsManagedSseEnabled_HASH = HashingUtils::HashString("SqsManagedSseEnabled");
         static const int SentTimestamp_HASH = HashingUtils::HashString("SentTimestamp");
         static const int ApproximateFirstReceiveTimestamp_HASH = HashingUtils::HashString("ApproximateFirstReceiveTimestamp");
         static const int ApproximateReceiveCount_HASH = HashingUtils::HashString("ApproximateReceiveCount");
@@ -129,6 +123,22 @@ namespace Aws
           {
             return QueueAttributeName::KmsDataKeyReusePeriodSeconds;
           }
+          else if (hashCode == DeduplicationScope_HASH)
+          {
+            return QueueAttributeName::DeduplicationScope;
+          }
+          else if (hashCode == FifoThroughputLimit_HASH)
+          {
+            return QueueAttributeName::FifoThroughputLimit;
+          }
+          else if (hashCode == RedriveAllowPolicy_HASH)
+          {
+            return QueueAttributeName::RedriveAllowPolicy;
+          }
+          else if (hashCode == SqsManagedSseEnabled_HASH)
+          {
+            return QueueAttributeName::SqsManagedSseEnabled;
+          }
           else if (hashCode == SentTimestamp_HASH)
           {
             return QueueAttributeName::SentTimestamp;
@@ -195,6 +205,14 @@ namespace Aws
             return "KmsMasterKeyId";
           case QueueAttributeName::KmsDataKeyReusePeriodSeconds:
             return "KmsDataKeyReusePeriodSeconds";
+          case QueueAttributeName::DeduplicationScope:
+            return "DeduplicationScope";
+          case QueueAttributeName::FifoThroughputLimit:
+            return "FifoThroughputLimit";
+          case QueueAttributeName::RedriveAllowPolicy:
+            return "RedriveAllowPolicy";
+          case QueueAttributeName::SqsManagedSseEnabled:
+            return "SqsManagedSseEnabled";
           case QueueAttributeName::SentTimestamp:
             return "SentTimestamp";
           case QueueAttributeName::ApproximateFirstReceiveTimestamp:

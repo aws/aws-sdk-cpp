@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/DomainSettingsForUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -46,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline UpdateDomainRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline UpdateDomainRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline UpdateDomainRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
@@ -116,6 +107,43 @@ namespace Model
      */
     inline UpdateDomainRequest& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline const DomainSettingsForUpdate& GetDomainSettingsForUpdate() const{ return m_domainSettingsForUpdate; }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline bool DomainSettingsForUpdateHasBeenSet() const { return m_domainSettingsForUpdateHasBeenSet; }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline void SetDomainSettingsForUpdate(const DomainSettingsForUpdate& value) { m_domainSettingsForUpdateHasBeenSet = true; m_domainSettingsForUpdate = value; }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline void SetDomainSettingsForUpdate(DomainSettingsForUpdate&& value) { m_domainSettingsForUpdateHasBeenSet = true; m_domainSettingsForUpdate = std::move(value); }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline UpdateDomainRequest& WithDomainSettingsForUpdate(const DomainSettingsForUpdate& value) { SetDomainSettingsForUpdate(value); return *this;}
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline UpdateDomainRequest& WithDomainSettingsForUpdate(DomainSettingsForUpdate&& value) { SetDomainSettingsForUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -123,6 +151,9 @@ namespace Model
 
     UserSettings m_defaultUserSettings;
     bool m_defaultUserSettingsHasBeenSet;
+
+    DomainSettingsForUpdate m_domainSettingsForUpdate;
+    bool m_domainSettingsForUpdateHasBeenSet;
   };
 
 } // namespace Model

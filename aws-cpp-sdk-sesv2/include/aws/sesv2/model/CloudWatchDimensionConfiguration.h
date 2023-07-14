@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -124,67 +114,61 @@ namespace Model
 
     /**
      * <p>The location where the Amazon SES API v2 finds the value of a dimension to
-     * publish to Amazon CloudWatch. If you want to use the message tags that you
-     * specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * publish to Amazon CloudWatch. To use the message tags that you specify using an
+     * <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
      * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
-     * <code>messageTag</code>. If you want to use your own email headers, choose
-     * <code>emailHeader</code>. If you want to use link tags, choose
-     * <code>linkTags</code>.</p>
+     * <code>messageTag</code>. To use your own email headers, choose
+     * <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
      */
     inline const DimensionValueSource& GetDimensionValueSource() const{ return m_dimensionValueSource; }
 
     /**
      * <p>The location where the Amazon SES API v2 finds the value of a dimension to
-     * publish to Amazon CloudWatch. If you want to use the message tags that you
-     * specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * publish to Amazon CloudWatch. To use the message tags that you specify using an
+     * <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
      * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
-     * <code>messageTag</code>. If you want to use your own email headers, choose
-     * <code>emailHeader</code>. If you want to use link tags, choose
-     * <code>linkTags</code>.</p>
+     * <code>messageTag</code>. To use your own email headers, choose
+     * <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
      */
     inline bool DimensionValueSourceHasBeenSet() const { return m_dimensionValueSourceHasBeenSet; }
 
     /**
      * <p>The location where the Amazon SES API v2 finds the value of a dimension to
-     * publish to Amazon CloudWatch. If you want to use the message tags that you
-     * specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * publish to Amazon CloudWatch. To use the message tags that you specify using an
+     * <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
      * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
-     * <code>messageTag</code>. If you want to use your own email headers, choose
-     * <code>emailHeader</code>. If you want to use link tags, choose
-     * <code>linkTags</code>.</p>
+     * <code>messageTag</code>. To use your own email headers, choose
+     * <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
      */
     inline void SetDimensionValueSource(const DimensionValueSource& value) { m_dimensionValueSourceHasBeenSet = true; m_dimensionValueSource = value; }
 
     /**
      * <p>The location where the Amazon SES API v2 finds the value of a dimension to
-     * publish to Amazon CloudWatch. If you want to use the message tags that you
-     * specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * publish to Amazon CloudWatch. To use the message tags that you specify using an
+     * <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
      * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
-     * <code>messageTag</code>. If you want to use your own email headers, choose
-     * <code>emailHeader</code>. If you want to use link tags, choose
-     * <code>linkTags</code>.</p>
+     * <code>messageTag</code>. To use your own email headers, choose
+     * <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
      */
     inline void SetDimensionValueSource(DimensionValueSource&& value) { m_dimensionValueSourceHasBeenSet = true; m_dimensionValueSource = std::move(value); }
 
     /**
      * <p>The location where the Amazon SES API v2 finds the value of a dimension to
-     * publish to Amazon CloudWatch. If you want to use the message tags that you
-     * specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * publish to Amazon CloudWatch. To use the message tags that you specify using an
+     * <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
      * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
-     * <code>messageTag</code>. If you want to use your own email headers, choose
-     * <code>emailHeader</code>. If you want to use link tags, choose
-     * <code>linkTags</code>.</p>
+     * <code>messageTag</code>. To use your own email headers, choose
+     * <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionValueSource(const DimensionValueSource& value) { SetDimensionValueSource(value); return *this;}
 
     /**
      * <p>The location where the Amazon SES API v2 finds the value of a dimension to
-     * publish to Amazon CloudWatch. If you want to use the message tags that you
-     * specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * publish to Amazon CloudWatch. To use the message tags that you specify using an
+     * <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
      * <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
-     * <code>messageTag</code>. If you want to use your own email headers, choose
-     * <code>emailHeader</code>. If you want to use link tags, choose
-     * <code>linkTags</code>.</p>
+     * <code>messageTag</code>. To use your own email headers, choose
+     * <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionValueSource(DimensionValueSource&& value) { SetDimensionValueSource(std::move(value)); return *this;}
 

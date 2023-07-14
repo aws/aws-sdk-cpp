@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ModelPackageStatus.h>
+#include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <utility>
 
 namespace Aws
@@ -89,6 +80,76 @@ namespace Model
      * <p>The name of the model package.</p>
      */
     inline ModelPackageSummary& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline ModelPackageSummary& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline ModelPackageSummary& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>If the model package is a versioned model, the model group that the versioned
+     * model belongs to.</p>
+     */
+    inline ModelPackageSummary& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+
+
+    /**
+     * <p>If the model package is a versioned model, the version of the model.</p>
+     */
+    inline int GetModelPackageVersion() const{ return m_modelPackageVersion; }
+
+    /**
+     * <p>If the model package is a versioned model, the version of the model.</p>
+     */
+    inline bool ModelPackageVersionHasBeenSet() const { return m_modelPackageVersionHasBeenSet; }
+
+    /**
+     * <p>If the model package is a versioned model, the version of the model.</p>
+     */
+    inline void SetModelPackageVersion(int value) { m_modelPackageVersionHasBeenSet = true; m_modelPackageVersion = value; }
+
+    /**
+     * <p>If the model package is a versioned model, the version of the model.</p>
+     */
+    inline ModelPackageSummary& WithModelPackageVersion(int value) { SetModelPackageVersion(value); return *this;}
 
 
     /**
@@ -234,10 +295,71 @@ namespace Model
      */
     inline ModelPackageSummary& WithModelPackageStatus(ModelPackageStatus&& value) { SetModelPackageStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The approval status of the model. This can be one of the following
+     * values.</p> <ul> <li> <p> <code>APPROVED</code> - The model is approved</p>
+     * </li> <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li> <li> <p>
+     * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
+     * approval.</p> </li> </ul>
+     */
+    inline const ModelApprovalStatus& GetModelApprovalStatus() const{ return m_modelApprovalStatus; }
+
+    /**
+     * <p>The approval status of the model. This can be one of the following
+     * values.</p> <ul> <li> <p> <code>APPROVED</code> - The model is approved</p>
+     * </li> <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li> <li> <p>
+     * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
+     * approval.</p> </li> </ul>
+     */
+    inline bool ModelApprovalStatusHasBeenSet() const { return m_modelApprovalStatusHasBeenSet; }
+
+    /**
+     * <p>The approval status of the model. This can be one of the following
+     * values.</p> <ul> <li> <p> <code>APPROVED</code> - The model is approved</p>
+     * </li> <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li> <li> <p>
+     * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
+     * approval.</p> </li> </ul>
+     */
+    inline void SetModelApprovalStatus(const ModelApprovalStatus& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
+
+    /**
+     * <p>The approval status of the model. This can be one of the following
+     * values.</p> <ul> <li> <p> <code>APPROVED</code> - The model is approved</p>
+     * </li> <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li> <li> <p>
+     * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
+     * approval.</p> </li> </ul>
+     */
+    inline void SetModelApprovalStatus(ModelApprovalStatus&& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = std::move(value); }
+
+    /**
+     * <p>The approval status of the model. This can be one of the following
+     * values.</p> <ul> <li> <p> <code>APPROVED</code> - The model is approved</p>
+     * </li> <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li> <li> <p>
+     * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
+     * approval.</p> </li> </ul>
+     */
+    inline ModelPackageSummary& WithModelApprovalStatus(const ModelApprovalStatus& value) { SetModelApprovalStatus(value); return *this;}
+
+    /**
+     * <p>The approval status of the model. This can be one of the following
+     * values.</p> <ul> <li> <p> <code>APPROVED</code> - The model is approved</p>
+     * </li> <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li> <li> <p>
+     * <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual
+     * approval.</p> </li> </ul>
+     */
+    inline ModelPackageSummary& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelPackageName;
     bool m_modelPackageNameHasBeenSet;
+
+    Aws::String m_modelPackageGroupName;
+    bool m_modelPackageGroupNameHasBeenSet;
+
+    int m_modelPackageVersion;
+    bool m_modelPackageVersionHasBeenSet;
 
     Aws::String m_modelPackageArn;
     bool m_modelPackageArnHasBeenSet;
@@ -250,6 +372,9 @@ namespace Model
 
     ModelPackageStatus m_modelPackageStatus;
     bool m_modelPackageStatusHasBeenSet;
+
+    ModelApprovalStatus m_modelApprovalStatus;
+    bool m_modelApprovalStatusHasBeenSet;
   };
 
 } // namespace Model

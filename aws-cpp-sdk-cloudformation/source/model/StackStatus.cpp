@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -42,6 +32,7 @@ namespace Aws
         static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
         static const int UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
         static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
         static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
         static const int UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
@@ -104,6 +95,10 @@ namespace Aws
           else if (hashCode == UPDATE_COMPLETE_HASH)
           {
             return StackStatus::UPDATE_COMPLETE;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return StackStatus::UPDATE_FAILED;
           }
           else if (hashCode == UPDATE_ROLLBACK_IN_PROGRESS_HASH)
           {
@@ -183,6 +178,8 @@ namespace Aws
             return "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS";
           case StackStatus::UPDATE_COMPLETE:
             return "UPDATE_COMPLETE";
+          case StackStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           case StackStatus::UPDATE_ROLLBACK_IN_PROGRESS:
             return "UPDATE_ROLLBACK_IN_PROGRESS";
           case StackStatus::UPDATE_ROLLBACK_FAILED:

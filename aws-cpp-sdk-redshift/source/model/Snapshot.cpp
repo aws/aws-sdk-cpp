@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/redshift/model/Snapshot.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -41,6 +31,7 @@ Snapshot::Snapshot() :
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
+    m_engineFullVersionHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_numberOfNodes(0),
@@ -91,6 +82,7 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
+    m_engineFullVersionHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_numberOfNodes(0),
@@ -190,6 +182,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_clusterVersion = Aws::Utils::Xml::DecodeEscapedXmlText(clusterVersionNode.GetText());
       m_clusterVersionHasBeenSet = true;
+    }
+    XmlNode engineFullVersionNode = resultNode.FirstChild("EngineFullVersion");
+    if(!engineFullVersionNode.IsNull())
+    {
+      m_engineFullVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineFullVersionNode.GetText());
+      m_engineFullVersionHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
     if(!snapshotTypeNode.IsNull())
@@ -405,6 +403,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
 
+  if(m_engineFullVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineFullVersion=" << StringUtils::URLEncode(m_engineFullVersion.c_str()) << "&";
+  }
+
   if(m_snapshotTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotType=" << StringUtils::URLEncode(m_snapshotType.c_str()) << "&";
@@ -580,6 +583,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_clusterVersionHasBeenSet)
   {
       oStream << location << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
+  }
+  if(m_engineFullVersionHasBeenSet)
+  {
+      oStream << location << ".EngineFullVersion=" << StringUtils::URLEncode(m_engineFullVersion.c_str()) << "&";
   }
   if(m_snapshotTypeHasBeenSet)
   {

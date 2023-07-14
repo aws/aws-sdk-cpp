@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -37,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains a list of available options for a DB instance.</p> <p> This data
-   * type is used as a response element in the
-   * <code>DescribeOrderableDBInstanceOptions</code> action. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains a list of available options for a DB instance.</p> <p>This data type
+   * is used as a response element in the
+   * <code>DescribeOrderableDBInstanceOptions</code> action.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OrderableDBInstanceOption">AWS
    * API Reference</a></p>
    */
@@ -217,6 +207,47 @@ namespace Model
      * <p>The license model for a DB instance.</p>
      */
     inline OrderableDBInstanceOption& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
+
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
 
     /**
@@ -649,99 +680,72 @@ namespace Model
 
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline bool SupportedEngineModesHasBeenSet() const { return m_supportedEngineModesHasBeenSet; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
-     * engine mode only applies for global database clusters created with Aurora MySQL
-     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
-     * database use <code>provisioned</code> engine mode. </p> </note>
+     * <p>A list of the supported DB engine modes.</p>
      */
     inline OrderableDBInstanceOption& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline bool GetSupportsStorageAutoscaling() const{ return m_supportsStorageAutoscaling; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline bool SupportsStorageAutoscalingHasBeenSet() const { return m_supportsStorageAutoscalingHasBeenSet; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline void SetSupportsStorageAutoscaling(bool value) { m_supportsStorageAutoscalingHasBeenSet = true; m_supportsStorageAutoscaling = value; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
 
@@ -766,6 +770,278 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsKerberosAuthentication(bool value) { SetSupportsKerberosAuthentication(value); return *this;}
 
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline bool GetOutpostCapable() const{ return m_outpostCapable; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline bool OutpostCapableHasBeenSet() const { return m_outpostCapableHasBeenSet; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetOutpostCapable(bool value) { m_outpostCapableHasBeenSet = true; m_outpostCapable = value; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& WithOutpostCapable(bool value) { SetOutpostCapable(value); return *this;}
+
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedActivityStreamModes() const{ return m_supportedActivityStreamModes; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline bool SupportedActivityStreamModesHasBeenSet() const { return m_supportedActivityStreamModesHasBeenSet; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline void SetSupportedActivityStreamModes(const Aws::Vector<Aws::String>& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes = value; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline void SetSupportedActivityStreamModes(Aws::Vector<Aws::String>&& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes = std::move(value); }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedActivityStreamModes(const Aws::Vector<Aws::String>& value) { SetSupportedActivityStreamModes(value); return *this;}
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedActivityStreamModes(Aws::Vector<Aws::String>&& value) { SetSupportedActivityStreamModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedActivityStreamModes(const Aws::String& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedActivityStreamModes(Aws::String&& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedActivityStreamModes(const char* value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes.push_back(value); return *this; }
+
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific combination of other DB engine attributes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
+
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline bool GetSupportsClusters() const{ return m_supportsClusters; }
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline bool SupportsClustersHasBeenSet() const { return m_supportsClustersHasBeenSet; }
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline void SetSupportsClusters(bool value) { m_supportsClustersHasBeenSet = true; m_supportsClusters = value; }
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsClusters(bool value) { SetSupportsClusters(value); return *this;}
+
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetSupportedNetworkTypes(const Aws::Vector<Aws::String>& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = value; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline void SetSupportedNetworkTypes(Aws::Vector<Aws::String>&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::move(value); }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedNetworkTypes(const Aws::Vector<Aws::String>& value) { SetSupportedNetworkTypes(value); return *this;}
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedNetworkTypes(Aws::Vector<Aws::String>&& value) { SetSupportedNetworkTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedNetworkTypes(const Aws::String& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedNetworkTypes(Aws::String&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The network types supported by the DB instance (<code>IPV4</code> or
+     * <code>DUAL</code>).</p> <p>A DB instance can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedNetworkTypes(const char* value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_engine;
@@ -779,6 +1055,9 @@ namespace Model
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
+    Aws::String m_availabilityZoneGroup;
+    bool m_availabilityZoneGroupHasBeenSet;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -839,6 +1118,21 @@ namespace Model
 
     bool m_supportsKerberosAuthentication;
     bool m_supportsKerberosAuthenticationHasBeenSet;
+
+    bool m_outpostCapable;
+    bool m_outpostCapableHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedActivityStreamModes;
+    bool m_supportedActivityStreamModesHasBeenSet;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet;
+
+    bool m_supportsClusters;
+    bool m_supportsClustersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedNetworkTypes;
+    bool m_supportedNetworkTypesHasBeenSet;
   };
 
 } // namespace Model

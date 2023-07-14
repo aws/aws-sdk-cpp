@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -50,49 +40,55 @@ namespace Model
 
     /**
      * <p>The current status of the campaign, or the current status of a treatment that
-     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
-     * has a status of COMPLETED only if all campaign treatments have a status of
-     * COMPLETED.</p>
+     * belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the
+     * campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED. If you delete the segment that's associated with a campaign, the
+     * campaign fails and has a status of DELETED.</p>
      */
     inline const CampaignStatus& GetCampaignStatus() const{ return m_campaignStatus; }
 
     /**
      * <p>The current status of the campaign, or the current status of a treatment that
-     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
-     * has a status of COMPLETED only if all campaign treatments have a status of
-     * COMPLETED.</p>
+     * belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the
+     * campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED. If you delete the segment that's associated with a campaign, the
+     * campaign fails and has a status of DELETED.</p>
      */
     inline bool CampaignStatusHasBeenSet() const { return m_campaignStatusHasBeenSet; }
 
     /**
      * <p>The current status of the campaign, or the current status of a treatment that
-     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
-     * has a status of COMPLETED only if all campaign treatments have a status of
-     * COMPLETED.</p>
+     * belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the
+     * campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED. If you delete the segment that's associated with a campaign, the
+     * campaign fails and has a status of DELETED.</p>
      */
     inline void SetCampaignStatus(const CampaignStatus& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = value; }
 
     /**
      * <p>The current status of the campaign, or the current status of a treatment that
-     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
-     * has a status of COMPLETED only if all campaign treatments have a status of
-     * COMPLETED.</p>
+     * belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the
+     * campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED. If you delete the segment that's associated with a campaign, the
+     * campaign fails and has a status of DELETED.</p>
      */
     inline void SetCampaignStatus(CampaignStatus&& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = std::move(value); }
 
     /**
      * <p>The current status of the campaign, or the current status of a treatment that
-     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
-     * has a status of COMPLETED only if all campaign treatments have a status of
-     * COMPLETED.</p>
+     * belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the
+     * campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED. If you delete the segment that's associated with a campaign, the
+     * campaign fails and has a status of DELETED.</p>
      */
     inline CampaignState& WithCampaignStatus(const CampaignStatus& value) { SetCampaignStatus(value); return *this;}
 
     /**
      * <p>The current status of the campaign, or the current status of a treatment that
-     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
-     * has a status of COMPLETED only if all campaign treatments have a status of
-     * COMPLETED.</p>
+     * belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the
+     * campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED. If you delete the segment that's associated with a campaign, the
+     * campaign fails and has a status of DELETED.</p>
      */
     inline CampaignState& WithCampaignStatus(CampaignStatus&& value) { SetCampaignStatus(std::move(value)); return *this;}
 

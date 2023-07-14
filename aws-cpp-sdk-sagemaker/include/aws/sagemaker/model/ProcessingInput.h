@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ProcessingS3Input.h>
+#include <aws/sagemaker/model/DatasetDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The inputs for a processing job.</p><p><h3>See Also:</h3>   <a
+   * <p>The inputs for a processing job. The processing input must specify exactly
+   * one of either <code>S3Input</code> or <code>DatasetDefinition</code>
+   * types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingInput">AWS
    * API Reference</a></p>
    */
@@ -49,83 +42,155 @@ namespace Model
 
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline const Aws::String& GetInputName() const{ return m_inputName; }
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline ProcessingInput& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline ProcessingInput& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the inputs for the processing job.</p>
+     * <p>The name for the processing job input.</p>
      */
     inline ProcessingInput& WithInputName(const char* value) { SetInputName(value); return *this;}
 
 
     /**
-     * <p>The S3 inputs for the processing job. </p>
+     * <p>When <code>True</code>, input operations such as data download are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * input operations are managed by Amazon SageMaker.</p>
+     */
+    inline bool GetAppManaged() const{ return m_appManaged; }
+
+    /**
+     * <p>When <code>True</code>, input operations such as data download are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * input operations are managed by Amazon SageMaker.</p>
+     */
+    inline bool AppManagedHasBeenSet() const { return m_appManagedHasBeenSet; }
+
+    /**
+     * <p>When <code>True</code>, input operations such as data download are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * input operations are managed by Amazon SageMaker.</p>
+     */
+    inline void SetAppManaged(bool value) { m_appManagedHasBeenSet = true; m_appManaged = value; }
+
+    /**
+     * <p>When <code>True</code>, input operations such as data download are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * input operations are managed by Amazon SageMaker.</p>
+     */
+    inline ProcessingInput& WithAppManaged(bool value) { SetAppManaged(value); return *this;}
+
+
+    /**
+     * <p>Configuration for downloading input data from Amazon S3 into the processing
+     * container.</p>
      */
     inline const ProcessingS3Input& GetS3Input() const{ return m_s3Input; }
 
     /**
-     * <p>The S3 inputs for the processing job. </p>
+     * <p>Configuration for downloading input data from Amazon S3 into the processing
+     * container.</p>
      */
     inline bool S3InputHasBeenSet() const { return m_s3InputHasBeenSet; }
 
     /**
-     * <p>The S3 inputs for the processing job. </p>
+     * <p>Configuration for downloading input data from Amazon S3 into the processing
+     * container.</p>
      */
     inline void SetS3Input(const ProcessingS3Input& value) { m_s3InputHasBeenSet = true; m_s3Input = value; }
 
     /**
-     * <p>The S3 inputs for the processing job. </p>
+     * <p>Configuration for downloading input data from Amazon S3 into the processing
+     * container.</p>
      */
     inline void SetS3Input(ProcessingS3Input&& value) { m_s3InputHasBeenSet = true; m_s3Input = std::move(value); }
 
     /**
-     * <p>The S3 inputs for the processing job. </p>
+     * <p>Configuration for downloading input data from Amazon S3 into the processing
+     * container.</p>
      */
     inline ProcessingInput& WithS3Input(const ProcessingS3Input& value) { SetS3Input(value); return *this;}
 
     /**
-     * <p>The S3 inputs for the processing job. </p>
+     * <p>Configuration for downloading input data from Amazon S3 into the processing
+     * container.</p>
      */
     inline ProcessingInput& WithS3Input(ProcessingS3Input&& value) { SetS3Input(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration for a Dataset Definition input. </p>
+     */
+    inline const DatasetDefinition& GetDatasetDefinition() const{ return m_datasetDefinition; }
+
+    /**
+     * <p>Configuration for a Dataset Definition input. </p>
+     */
+    inline bool DatasetDefinitionHasBeenSet() const { return m_datasetDefinitionHasBeenSet; }
+
+    /**
+     * <p>Configuration for a Dataset Definition input. </p>
+     */
+    inline void SetDatasetDefinition(const DatasetDefinition& value) { m_datasetDefinitionHasBeenSet = true; m_datasetDefinition = value; }
+
+    /**
+     * <p>Configuration for a Dataset Definition input. </p>
+     */
+    inline void SetDatasetDefinition(DatasetDefinition&& value) { m_datasetDefinitionHasBeenSet = true; m_datasetDefinition = std::move(value); }
+
+    /**
+     * <p>Configuration for a Dataset Definition input. </p>
+     */
+    inline ProcessingInput& WithDatasetDefinition(const DatasetDefinition& value) { SetDatasetDefinition(value); return *this;}
+
+    /**
+     * <p>Configuration for a Dataset Definition input. </p>
+     */
+    inline ProcessingInput& WithDatasetDefinition(DatasetDefinition&& value) { SetDatasetDefinition(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_inputName;
     bool m_inputNameHasBeenSet;
 
+    bool m_appManaged;
+    bool m_appManagedHasBeenSet;
+
     ProcessingS3Input m_s3Input;
     bool m_s3InputHasBeenSet;
+
+    DatasetDefinition m_datasetDefinition;
+    bool m_datasetDefinitionHasBeenSet;
   };
 
 } // namespace Model

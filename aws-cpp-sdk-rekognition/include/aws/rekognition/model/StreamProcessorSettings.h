@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/FaceSearchSettings.h>
+#include <aws/rekognition/model/ConnectedHomeSettings.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Input parameters used to recognize faces in a streaming video analyzed by a
-   * Amazon Rekognition stream processor.</p><p><h3>See Also:</h3>   <a
+   * <p>Input parameters used in a streaming video analyzed by a Amazon Rekognition
+   * stream processor. You can use <code>FaceSearch</code> to recognize faces in a
+   * streaming video, or you can use <code>ConnectedHome</code> to detect labels.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorSettings">AWS
    * API Reference</a></p>
    */
@@ -78,10 +71,32 @@ namespace Model
      */
     inline StreamProcessorSettings& WithFaceSearch(FaceSearchSettings&& value) { SetFaceSearch(std::move(value)); return *this;}
 
+
+    
+    inline const ConnectedHomeSettings& GetConnectedHome() const{ return m_connectedHome; }
+
+    
+    inline bool ConnectedHomeHasBeenSet() const { return m_connectedHomeHasBeenSet; }
+
+    
+    inline void SetConnectedHome(const ConnectedHomeSettings& value) { m_connectedHomeHasBeenSet = true; m_connectedHome = value; }
+
+    
+    inline void SetConnectedHome(ConnectedHomeSettings&& value) { m_connectedHomeHasBeenSet = true; m_connectedHome = std::move(value); }
+
+    
+    inline StreamProcessorSettings& WithConnectedHome(const ConnectedHomeSettings& value) { SetConnectedHome(value); return *this;}
+
+    
+    inline StreamProcessorSettings& WithConnectedHome(ConnectedHomeSettings&& value) { SetConnectedHome(std::move(value)); return *this;}
+
   private:
 
     FaceSearchSettings m_faceSearch;
     bool m_faceSearchHasBeenSet;
+
+    ConnectedHomeSettings m_connectedHome;
+    bool m_connectedHomeHasBeenSet;
   };
 
 } // namespace Model

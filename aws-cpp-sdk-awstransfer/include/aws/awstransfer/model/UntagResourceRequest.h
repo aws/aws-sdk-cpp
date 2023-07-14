@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
@@ -46,58 +36,58 @@ namespace Model
 
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline UntagResourceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline UntagResourceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific Amazon Web Services resource, such as
+     * a server, user, or role.</p>
      */
     inline UntagResourceRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

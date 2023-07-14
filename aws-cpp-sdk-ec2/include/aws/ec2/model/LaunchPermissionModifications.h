@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -51,91 +41,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline const Aws::Vector<LaunchPermission>& GetAdd() const{ return m_add; }
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline void SetAdd(const Aws::Vector<LaunchPermission>& value) { m_addHasBeenSet = true; m_add = value; }
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline void SetAdd(Aws::Vector<LaunchPermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& WithAdd(const Aws::Vector<LaunchPermission>& value) { SetAdd(value); return *this;}
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& WithAdd(Aws::Vector<LaunchPermission>&& value) { SetAdd(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& AddAdd(const LaunchPermission& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to add to the
+     * list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& AddAdd(LaunchPermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline const Aws::Vector<LaunchPermission>& GetRemove() const{ return m_remove; }
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline void SetRemove(const Aws::Vector<LaunchPermission>& value) { m_removeHasBeenSet = true; m_remove = value; }
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline void SetRemove(Aws::Vector<LaunchPermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& WithRemove(const Aws::Vector<LaunchPermission>& value) { SetRemove(value); return *this;}
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& WithRemove(Aws::Vector<LaunchPermission>&& value) { SetRemove(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& AddRemove(const LaunchPermission& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account ID to remove from the list of launch permissions for the
-     * AMI.</p>
+     * <p>The Amazon Web Services account ID, organization ARN, or OU ARN to remove
+     * from the list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& AddRemove(LaunchPermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
 

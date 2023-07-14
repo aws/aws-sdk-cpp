@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an IPv6 CIDR block associated with a subnet.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes an association between a subnet and an IPv6 CIDR
+   * block.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SubnetIpv6CidrBlockAssociation">AWS
    * API Reference</a></p>
    */
@@ -52,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline SubnetIpv6CidrBlockAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline SubnetIpv6CidrBlockAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>The association ID for the CIDR block.</p>
+     * <p>The ID of the association.</p>
      */
     inline SubnetIpv6CidrBlockAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
@@ -134,32 +124,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>The state of the CIDR block.</p>
      */
     inline const SubnetCidrBlockState& GetIpv6CidrBlockState() const{ return m_ipv6CidrBlockState; }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>The state of the CIDR block.</p>
      */
     inline bool Ipv6CidrBlockStateHasBeenSet() const { return m_ipv6CidrBlockStateHasBeenSet; }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>The state of the CIDR block.</p>
      */
     inline void SetIpv6CidrBlockState(const SubnetCidrBlockState& value) { m_ipv6CidrBlockStateHasBeenSet = true; m_ipv6CidrBlockState = value; }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>The state of the CIDR block.</p>
      */
     inline void SetIpv6CidrBlockState(SubnetCidrBlockState&& value) { m_ipv6CidrBlockStateHasBeenSet = true; m_ipv6CidrBlockState = std::move(value); }
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>The state of the CIDR block.</p>
      */
     inline SubnetIpv6CidrBlockAssociation& WithIpv6CidrBlockState(const SubnetCidrBlockState& value) { SetIpv6CidrBlockState(value); return *this;}
 
     /**
-     * <p>Information about the state of the CIDR block.</p>
+     * <p>The state of the CIDR block.</p>
      */
     inline SubnetIpv6CidrBlockAssociation& WithIpv6CidrBlockState(SubnetCidrBlockState&& value) { SetIpv6CidrBlockState(std::move(value)); return *this;}
 

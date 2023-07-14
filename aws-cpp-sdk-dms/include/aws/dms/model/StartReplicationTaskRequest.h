@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -91,32 +81,80 @@ namespace Model
 
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline const StartReplicationTaskTypeValue& GetStartReplicationTaskType() const{ return m_startReplicationTaskType; }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline bool StartReplicationTaskTypeHasBeenSet() const { return m_startReplicationTaskTypeHasBeenSet; }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline void SetStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = std::move(value); }
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { SetStartReplicationTaskType(value); return *this;}
 
     /**
-     * <p>The type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
 
@@ -178,15 +216,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -198,15 +235,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -218,15 +254,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -238,15 +273,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -258,15 +292,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -278,15 +311,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -298,15 +330,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -318,15 +349,14 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> 
      * <p>When you use this task setting with a source PostgreSQL database, a logical
      * replication slot should already be created and associated with the source
      * endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * </note>
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 
@@ -334,64 +364,64 @@ namespace Model
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline StartReplicationTaskRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline StartReplicationTaskRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
-     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
      */
     inline StartReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/User.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,11 @@ User::User() :
     m_identityTypeHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_externalLoginFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +46,11 @@ User::User(JsonView jsonValue) :
     m_identityTypeHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_externalLoginFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +106,34 @@ User& User::operator =(JsonView jsonValue)
     m_principalIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomPermissionsName"))
+  {
+    m_customPermissionsName = jsonValue.GetString("CustomPermissionsName");
+
+    m_customPermissionsNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalLoginFederationProviderType"))
+  {
+    m_externalLoginFederationProviderType = jsonValue.GetString("ExternalLoginFederationProviderType");
+
+    m_externalLoginFederationProviderTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalLoginFederationProviderUrl"))
+  {
+    m_externalLoginFederationProviderUrl = jsonValue.GetString("ExternalLoginFederationProviderUrl");
+
+    m_externalLoginFederationProviderUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalLoginId"))
+  {
+    m_externalLoginId = jsonValue.GetString("ExternalLoginId");
+
+    m_externalLoginIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +178,30 @@ JsonValue User::Jsonize() const
   if(m_principalIdHasBeenSet)
   {
    payload.WithString("PrincipalId", m_principalId);
+
+  }
+
+  if(m_customPermissionsNameHasBeenSet)
+  {
+   payload.WithString("CustomPermissionsName", m_customPermissionsName);
+
+  }
+
+  if(m_externalLoginFederationProviderTypeHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderType", m_externalLoginFederationProviderType);
+
+  }
+
+  if(m_externalLoginFederationProviderUrlHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderUrl", m_externalLoginFederationProviderUrl);
+
+  }
+
+  if(m_externalLoginIdHasBeenSet)
+  {
+   payload.WithString("ExternalLoginId", m_externalLoginId);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
@@ -162,10 +152,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -183,10 +173,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -204,10 +194,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -225,10 +215,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -246,10 +236,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -267,10 +257,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -288,10 +278,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -309,10 +299,10 @@ namespace Model
      * and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want
      * to specify the users or groups who have access to the transcoded files,
      * thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the
-     * permissions that Elastic Transcoder grants to the files. </p> <important>
+     * permissions that Elastic Transcoder grants to the files. </p> 
      * <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants
      * full control over the files only to the AWS account that owns the role that is
-     * specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to
+     * specified by <code>Role</code>.</p>  </li> <li> <p>You want to
      * associate the transcoded files and thumbnails with the Amazon S3 Standard
      * storage class.</p> </li> </ul> <p>If you want to save transcoded files and
      * playlists in one bucket and thumbnails in another bucket, specify which users
@@ -463,8 +453,8 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify to report job status.</p> <important> <p>To receive notifications, you
-     * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+     * notify to report job status.</p>  <p>To receive notifications, you
+     * must also subscribe to the new topic in the Amazon SNS console.</p> 
      * <ul> <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple
      * Notification Service (Amazon SNS) topic that you want to notify when Elastic
      * Transcoder has started to process a job in this pipeline. This is the ARN that
@@ -485,8 +475,8 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify to report job status.</p> <important> <p>To receive notifications, you
-     * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+     * notify to report job status.</p>  <p>To receive notifications, you
+     * must also subscribe to the new topic in the Amazon SNS console.</p> 
      * <ul> <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple
      * Notification Service (Amazon SNS) topic that you want to notify when Elastic
      * Transcoder has started to process a job in this pipeline. This is the ARN that
@@ -507,8 +497,8 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify to report job status.</p> <important> <p>To receive notifications, you
-     * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+     * notify to report job status.</p>  <p>To receive notifications, you
+     * must also subscribe to the new topic in the Amazon SNS console.</p> 
      * <ul> <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple
      * Notification Service (Amazon SNS) topic that you want to notify when Elastic
      * Transcoder has started to process a job in this pipeline. This is the ARN that
@@ -529,8 +519,8 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify to report job status.</p> <important> <p>To receive notifications, you
-     * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+     * notify to report job status.</p>  <p>To receive notifications, you
+     * must also subscribe to the new topic in the Amazon SNS console.</p> 
      * <ul> <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple
      * Notification Service (Amazon SNS) topic that you want to notify when Elastic
      * Transcoder has started to process a job in this pipeline. This is the ARN that
@@ -551,8 +541,8 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify to report job status.</p> <important> <p>To receive notifications, you
-     * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+     * notify to report job status.</p>  <p>To receive notifications, you
+     * must also subscribe to the new topic in the Amazon SNS console.</p> 
      * <ul> <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple
      * Notification Service (Amazon SNS) topic that you want to notify when Elastic
      * Transcoder has started to process a job in this pipeline. This is the ARN that
@@ -573,8 +563,8 @@ namespace Model
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
-     * notify to report job status.</p> <important> <p>To receive notifications, you
-     * must also subscribe to the new topic in the Amazon SNS console.</p> </important>
+     * notify to report job status.</p>  <p>To receive notifications, you
+     * must also subscribe to the new topic in the Amazon SNS console.</p> 
      * <ul> <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple
      * Notification Service (Amazon SNS) topic that you want to notify when Elastic
      * Transcoder has started to process a job in this pipeline. This is the ARN that
@@ -617,8 +607,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -670,8 +660,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -723,8 +713,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -776,8 +766,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -829,8 +819,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -882,8 +872,8 @@ namespace Model
      * the Amazon Simple Storage Service Developer Guide. For more information about
      * using CloudFront origin access identities to require that users use CloudFront
      * URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict
-     * Access to Your Amazon S3 Content.</p> <important> <p>A canonical user ID is not
-     * the same as an AWS account number.</p> </important> </li> <li> <p> <b>Email</b>:
+     * Access to Your Amazon S3 Content.</p>  <p>A canonical user ID is not
+     * the same as an AWS account number.</p>  </li> <li> <p> <b>Email</b>:
      * The value in the <code>Grantee</code> object is the registered email address of
      * an AWS account.</p> </li> <li> <p> <b>Group</b>: The value in the
      * <code>Grantee</code> object is one of the following predefined Amazon S3 groups:
@@ -932,8 +922,8 @@ namespace Model
      * object: </p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account. </p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -979,8 +969,8 @@ namespace Model
      * object: </p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account. </p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -1026,8 +1016,8 @@ namespace Model
      * object: </p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account. </p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -1073,8 +1063,8 @@ namespace Model
      * object: </p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account. </p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -1120,8 +1110,8 @@ namespace Model
      * object: </p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account. </p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,
@@ -1167,8 +1157,8 @@ namespace Model
      * object: </p> <ul> <li> <p> <b>Canonical</b>: The value in the
      * <code>Grantee</code> object is either the canonical user ID for an AWS account
      * or an origin access identity for an Amazon CloudFront distribution.</p>
-     * <important> <p>A canonical user ID is not the same as an AWS account number.</p>
-     * </important> </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
+     *  <p>A canonical user ID is not the same as an AWS account number.</p>
+     *  </li> <li> <p> <b>Email</b>: The value in the <code>Grantee</code>
      * object is the registered email address of an AWS account. </p> </li> <li> <p>
      * <b>Group</b>: The value in the <code>Grantee</code> object is one of the
      * following predefined Amazon S3 groups: <code>AllUsers</code>,

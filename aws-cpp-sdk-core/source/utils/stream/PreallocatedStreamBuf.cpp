@@ -1,18 +1,8 @@
 
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <cassert>
@@ -23,7 +13,7 @@ namespace Aws
     {
         namespace Stream
         {
-            PreallocatedStreamBuf::PreallocatedStreamBuf(unsigned char* buffer, std::size_t lengthToRead) :
+            PreallocatedStreamBuf::PreallocatedStreamBuf(unsigned char* buffer, uint64_t lengthToRead) :
                 m_underlyingBuffer(buffer), m_lengthToRead(lengthToRead)
             {
                 char* end = reinterpret_cast<char*>(m_underlyingBuffer + m_lengthToRead);

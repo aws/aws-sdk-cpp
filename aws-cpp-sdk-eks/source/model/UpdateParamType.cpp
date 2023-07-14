@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eks/model/UpdateParamType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -38,10 +28,21 @@ namespace Aws
         static const int DesiredSize_HASH = HashingUtils::HashString("DesiredSize");
         static const int LabelsToAdd_HASH = HashingUtils::HashString("LabelsToAdd");
         static const int LabelsToRemove_HASH = HashingUtils::HashString("LabelsToRemove");
+        static const int TaintsToAdd_HASH = HashingUtils::HashString("TaintsToAdd");
+        static const int TaintsToRemove_HASH = HashingUtils::HashString("TaintsToRemove");
         static const int MaxSize_HASH = HashingUtils::HashString("MaxSize");
         static const int MinSize_HASH = HashingUtils::HashString("MinSize");
         static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
         static const int PublicAccessCidrs_HASH = HashingUtils::HashString("PublicAccessCidrs");
+        static const int LaunchTemplateName_HASH = HashingUtils::HashString("LaunchTemplateName");
+        static const int LaunchTemplateVersion_HASH = HashingUtils::HashString("LaunchTemplateVersion");
+        static const int IdentityProviderConfig_HASH = HashingUtils::HashString("IdentityProviderConfig");
+        static const int EncryptionConfig_HASH = HashingUtils::HashString("EncryptionConfig");
+        static const int AddonVersion_HASH = HashingUtils::HashString("AddonVersion");
+        static const int ServiceAccountRoleArn_HASH = HashingUtils::HashString("ServiceAccountRoleArn");
+        static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
+        static const int MaxUnavailable_HASH = HashingUtils::HashString("MaxUnavailable");
+        static const int MaxUnavailablePercentage_HASH = HashingUtils::HashString("MaxUnavailablePercentage");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -79,6 +80,14 @@ namespace Aws
           {
             return UpdateParamType::LabelsToRemove;
           }
+          else if (hashCode == TaintsToAdd_HASH)
+          {
+            return UpdateParamType::TaintsToAdd;
+          }
+          else if (hashCode == TaintsToRemove_HASH)
+          {
+            return UpdateParamType::TaintsToRemove;
+          }
           else if (hashCode == MaxSize_HASH)
           {
             return UpdateParamType::MaxSize;
@@ -94,6 +103,42 @@ namespace Aws
           else if (hashCode == PublicAccessCidrs_HASH)
           {
             return UpdateParamType::PublicAccessCidrs;
+          }
+          else if (hashCode == LaunchTemplateName_HASH)
+          {
+            return UpdateParamType::LaunchTemplateName;
+          }
+          else if (hashCode == LaunchTemplateVersion_HASH)
+          {
+            return UpdateParamType::LaunchTemplateVersion;
+          }
+          else if (hashCode == IdentityProviderConfig_HASH)
+          {
+            return UpdateParamType::IdentityProviderConfig;
+          }
+          else if (hashCode == EncryptionConfig_HASH)
+          {
+            return UpdateParamType::EncryptionConfig;
+          }
+          else if (hashCode == AddonVersion_HASH)
+          {
+            return UpdateParamType::AddonVersion;
+          }
+          else if (hashCode == ServiceAccountRoleArn_HASH)
+          {
+            return UpdateParamType::ServiceAccountRoleArn;
+          }
+          else if (hashCode == ResolveConflicts_HASH)
+          {
+            return UpdateParamType::ResolveConflicts;
+          }
+          else if (hashCode == MaxUnavailable_HASH)
+          {
+            return UpdateParamType::MaxUnavailable;
+          }
+          else if (hashCode == MaxUnavailablePercentage_HASH)
+          {
+            return UpdateParamType::MaxUnavailablePercentage;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -125,6 +170,10 @@ namespace Aws
             return "LabelsToAdd";
           case UpdateParamType::LabelsToRemove:
             return "LabelsToRemove";
+          case UpdateParamType::TaintsToAdd:
+            return "TaintsToAdd";
+          case UpdateParamType::TaintsToRemove:
+            return "TaintsToRemove";
           case UpdateParamType::MaxSize:
             return "MaxSize";
           case UpdateParamType::MinSize:
@@ -133,6 +182,24 @@ namespace Aws
             return "ReleaseVersion";
           case UpdateParamType::PublicAccessCidrs:
             return "PublicAccessCidrs";
+          case UpdateParamType::LaunchTemplateName:
+            return "LaunchTemplateName";
+          case UpdateParamType::LaunchTemplateVersion:
+            return "LaunchTemplateVersion";
+          case UpdateParamType::IdentityProviderConfig:
+            return "IdentityProviderConfig";
+          case UpdateParamType::EncryptionConfig:
+            return "EncryptionConfig";
+          case UpdateParamType::AddonVersion:
+            return "AddonVersion";
+          case UpdateParamType::ServiceAccountRoleArn:
+            return "ServiceAccountRoleArn";
+          case UpdateParamType::ResolveConflicts:
+            return "ResolveConflicts";
+          case UpdateParamType::MaxUnavailable:
+            return "MaxUnavailable";
+          case UpdateParamType::MaxUnavailablePercentage:
+            return "MaxUnavailablePercentage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

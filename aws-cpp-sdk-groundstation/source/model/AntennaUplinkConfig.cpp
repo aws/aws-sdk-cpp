@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/groundstation/model/AntennaUplinkConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,17 @@ namespace Model
 
 AntennaUplinkConfig::AntennaUplinkConfig() : 
     m_spectrumConfigHasBeenSet(false),
-    m_targetEirpHasBeenSet(false)
+    m_targetEirpHasBeenSet(false),
+    m_transmitDisabled(false),
+    m_transmitDisabledHasBeenSet(false)
 {
 }
 
 AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue) : 
     m_spectrumConfigHasBeenSet(false),
-    m_targetEirpHasBeenSet(false)
+    m_targetEirpHasBeenSet(false),
+    m_transmitDisabled(false),
+    m_transmitDisabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +51,13 @@ AntennaUplinkConfig& AntennaUplinkConfig::operator =(JsonView jsonValue)
     m_targetEirpHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("transmitDisabled"))
+  {
+    m_transmitDisabled = jsonValue.GetBool("transmitDisabled");
+
+    m_transmitDisabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +74,12 @@ JsonValue AntennaUplinkConfig::Jsonize() const
   if(m_targetEirpHasBeenSet)
   {
    payload.WithObject("targetEirp", m_targetEirp.Jsonize());
+
+  }
+
+  if(m_transmitDisabledHasBeenSet)
+  {
+   payload.WithBool("transmitDisabled", m_transmitDisabled);
 
   }
 

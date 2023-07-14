@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/AutoMLDataSource.h>
 #include <aws/sagemaker/model/CompressionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/AutoMLChannelType.h>
 #include <utility>
 
 namespace Aws
@@ -36,9 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>Similar to Channel. A channel is a named input source that training
-   * algorithms can consume. Refer to Channel for detailed
-   * descriptions.</p><p><h3>See Also:</h3>   <a
+   * <p>A channel is a named input source that training algorithms can consume. The
+   * validation dataset size is limited to less than 2 GB. The training dataset size
+   * must be less than 100 GB. For more information, see .</p>  <p>A validation
+   * dataset must contain the same headers as the training dataset.</p> 
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel">AWS
    * API Reference</a></p>
    */
@@ -52,106 +45,246 @@ namespace Model
 
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline const AutoMLDataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline void SetDataSource(const AutoMLDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline void SetDataSource(AutoMLDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline AutoMLChannel& WithDataSource(const AutoMLDataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline AutoMLChannel& WithDataSource(AutoMLDataSource&& value) { SetDataSource(std::move(value)); return *this;}
 
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline AutoMLChannel& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline AutoMLChannel& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline void SetTargetAttributeName(const Aws::String& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline void SetTargetAttributeName(const char* value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName.assign(value); }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(const Aws::String& value) { SetTargetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
+
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline AutoMLChannel& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline AutoMLChannel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline AutoMLChannel& WithContentType(const char* value) { SetContentType(value); return *this;}
+
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline const AutoMLChannelType& GetChannelType() const{ return m_channelType; }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline void SetChannelType(const AutoMLChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline void SetChannelType(AutoMLChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline AutoMLChannel& WithChannelType(const AutoMLChannelType& value) { SetChannelType(value); return *this;}
+
+    /**
+     * <p>The channel type (optional) is an <code>enum</code> string. The default value
+     * is <code>training</code>. Channels for training and validation must share the
+     * same <code>ContentType</code> and <code>TargetAttributeName</code>. For
+     * information on specifying training and validation channel types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+     * <code>How to specify training and validation datasets</code> </a>.</p>
+     */
+    inline AutoMLChannel& WithChannelType(AutoMLChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
   private:
 
@@ -163,6 +296,12 @@ namespace Model
 
     Aws::String m_targetAttributeName;
     bool m_targetAttributeNameHasBeenSet;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet;
+
+    AutoMLChannelType m_channelType;
+    bool m_channelTypeHasBeenSet;
   };
 
 } // namespace Model

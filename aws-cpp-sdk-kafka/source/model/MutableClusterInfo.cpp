@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kafka/model/MutableClusterInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,12 @@ MutableClusterInfo::MutableClusterInfo() :
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false)
+    m_kafkaVersionHasBeenSet(false),
+    m_loggingInfoHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_clientAuthenticationHasBeenSet(false),
+    m_encryptionInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
 }
 
@@ -48,7 +43,12 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false)
+    m_kafkaVersionHasBeenSet(false),
+    m_loggingInfoHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_clientAuthenticationHasBeenSet(false),
+    m_encryptionInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,11 +93,46 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_openMonitoringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kafkaVersion"))
+  {
+    m_kafkaVersion = jsonValue.GetString("kafkaVersion");
+
+    m_kafkaVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("loggingInfo"))
   {
     m_loggingInfo = jsonValue.GetObject("loggingInfo");
 
     m_loggingInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clientAuthentication"))
+  {
+    m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
+
+    m_clientAuthenticationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionInfo"))
+  {
+    m_encryptionInfo = jsonValue.GetObject("encryptionInfo");
+
+    m_encryptionInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectivityInfo"))
+  {
+    m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
+
+    m_connectivityInfoHasBeenSet = true;
   }
 
   return *this;
@@ -141,9 +176,39 @@ JsonValue MutableClusterInfo::Jsonize() const
 
   }
 
+  if(m_kafkaVersionHasBeenSet)
+  {
+   payload.WithString("kafkaVersion", m_kafkaVersion);
+
+  }
+
   if(m_loggingInfoHasBeenSet)
   {
    payload.WithObject("loggingInfo", m_loggingInfo.Jsonize());
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_clientAuthenticationHasBeenSet)
+  {
+   payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
+
+  }
+
+  if(m_encryptionInfoHasBeenSet)
+  {
+   payload.WithObject("encryptionInfo", m_encryptionInfo.Jsonize());
+
+  }
+
+  if(m_connectivityInfoHasBeenSet)
+  {
+   payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
 
   }
 

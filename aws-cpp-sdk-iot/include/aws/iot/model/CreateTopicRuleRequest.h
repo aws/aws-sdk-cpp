@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -121,74 +111,74 @@ namespace Model
 
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline const Aws::String& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline void SetTags(const Aws::String& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline void SetTags(Aws::String&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline void SetTags(const char* value) { m_tagsHasBeenSet = true; m_tags.assign(value); }
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline CreateTopicRuleRequest& WithTags(const Aws::String& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline CreateTopicRuleRequest& WithTags(Aws::String&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * <p>Metadata which can be used to manage the topic rule.</p>  <p>For URI
      * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
      * CLI command-line parameter use format: --tags
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
-     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
     inline CreateTopicRuleRequest& WithTags(const char* value) { SetTags(value); return *this;}
 

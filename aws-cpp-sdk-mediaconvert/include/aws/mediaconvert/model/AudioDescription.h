@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AudioChannelTaggingSettings.h>
 #include <aws/mediaconvert/model/AudioNormalizationSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/AudioTypeControl.h>
@@ -40,7 +31,12 @@ namespace Model
 {
 
   /**
-   * Description of audio output<p><h3>See Also:</h3>   <a
+   * Settings related to one audio tab on the MediaConvert console. In your job JSON,
+   * an instance of AudioDescription is equivalent to one audio tab in the console.
+   * Usually, one audio tab corresponds to one output audio track. Depending on how
+   * you set up your input audio selectors and whether you use audio selector groups,
+   * one audio tab can correspond to a group of output audio tracks.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioDescription">AWS
    * API Reference</a></p>
    */
@@ -51,6 +47,73 @@ namespace Model
     AudioDescription(Aws::Utils::Json::JsonView jsonValue);
     AudioDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline const AudioChannelTaggingSettings& GetAudioChannelTaggingSettings() const{ return m_audioChannelTaggingSettings; }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline bool AudioChannelTaggingSettingsHasBeenSet() const { return m_audioChannelTaggingSettingsHasBeenSet; }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline void SetAudioChannelTaggingSettings(const AudioChannelTaggingSettings& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = value; }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline void SetAudioChannelTaggingSettings(AudioChannelTaggingSettings&& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = std::move(value); }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline AudioDescription& WithAudioChannelTaggingSettings(const AudioChannelTaggingSettings& value) { SetAudioChannelTaggingSettings(value); return *this;}
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks,
+     * you can tag each channel layout manually. For example, you would tag the tracks
+     * that contain your left, right, and center audio with Left (L), Right (R), and
+     * Center (C), respectively. When you don't specify a value, MediaConvert labels
+     * your track as Center (C) by default. To use audio layout tagging, your output
+     * must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or
+     * AIFF; and you must set up your audio track to have only one channel.
+     */
+    inline AudioDescription& WithAudioChannelTaggingSettings(AudioChannelTaggingSettings&& value) { SetAudioChannelTaggingSettings(std::move(value)); return *this;}
 
 
     /**
@@ -298,68 +361,38 @@ namespace Model
 
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-     * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value that you choose for Audio codec (Codec). For each codec
-     * enum that you choose, define the corresponding settings object. The following
-     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-     * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-     * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on
+     * the value that you choose for your audio codec.
      */
     inline const AudioCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-     * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value that you choose for Audio codec (Codec). For each codec
-     * enum that you choose, define the corresponding settings object. The following
-     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-     * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-     * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on
+     * the value that you choose for your audio codec.
      */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-     * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value that you choose for Audio codec (Codec). For each codec
-     * enum that you choose, define the corresponding settings object. The following
-     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-     * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-     * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on
+     * the value that you choose for your audio codec.
      */
     inline void SetCodecSettings(const AudioCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-     * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value that you choose for Audio codec (Codec). For each codec
-     * enum that you choose, define the corresponding settings object. The following
-     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-     * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-     * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on
+     * the value that you choose for your audio codec.
      */
     inline void SetCodecSettings(AudioCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-     * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value that you choose for Audio codec (Codec). For each codec
-     * enum that you choose, define the corresponding settings object. The following
-     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-     * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-     * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on
+     * the value that you choose for your audio codec.
      */
     inline AudioDescription& WithCodecSettings(const AudioCodecSettings& value) { SetCodecSettings(value); return *this;}
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-     * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value that you choose for Audio codec (Codec). For each codec
-     * enum that you choose, define the corresponding settings object. The following
-     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-     * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-     * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on
+     * the value that you choose for your audio codec.
      */
     inline AudioDescription& WithCodecSettings(AudioCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
 
@@ -683,6 +716,9 @@ namespace Model
     inline AudioDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
   private:
+
+    AudioChannelTaggingSettings m_audioChannelTaggingSettings;
+    bool m_audioChannelTaggingSettingsHasBeenSet;
 
     AudioNormalizationSettings m_audioNormalizationSettings;
     bool m_audioNormalizationSettingsHasBeenSet;

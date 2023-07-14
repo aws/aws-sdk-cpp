@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/ImagebuilderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/Platform.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -88,57 +79,121 @@ namespace Model
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateComponentRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateComponentRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number to the fourth node.</p> <p>
+     * <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment
+     * requirements for the nodes that you can assign. For example, you might choose a
+     * software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+     * 
      */
     inline CreateComponentRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
@@ -281,123 +336,211 @@ namespace Model
 
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline CreateComponentRequest& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline CreateComponentRequest& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline CreateComponentRequest& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline CreateComponentRequest& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline CreateComponentRequest& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+
+
+    /**
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline CreateComponentRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline CreateComponentRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The data of the component. Used to specify the data inline. Either
-     * <code>data</code> or <code>uri</code> can be used to specify the data within the
-     * component.</p>
+     * <p>Component <code>data</code> contains inline YAML document content for the
+     * component. Alternatively, you can specify the <code>uri</code> of a YAML
+     * document file stored in Amazon S3. However, you cannot specify both
+     * properties.</p>
      */
     inline CreateComponentRequest& WithData(const char* value) { SetData(value); return *this;}
 
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline CreateComponentRequest& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline CreateComponentRequest& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The <code>uri</code> of a YAML component document file. This must be an S3
+     * URL (<code>s3://bucket/key</code>), and the requester must have permission to
+     * access the S3 bucket it points to. If you use Amazon S3, you can specify
+     * component content up to your service quota.</p> <p>Alternatively, you can
+     * specify the YAML document inline, using the component <code>data</code>
+     * property. You cannot specify both properties.</p>
      */
     inline CreateComponentRequest& WithUri(const char* value) { SetUri(value); return *this;}
 
@@ -565,6 +708,9 @@ namespace Model
 
     Platform m_platform;
     bool m_platformHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedOsVersions;
+    bool m_supportedOsVersionsHasBeenSet;
 
     Aws::String m_data;
     bool m_dataHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -94,49 +84,49 @@ namespace Model
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline const Aws::String& GetRemoteAccessSecurityGroup() const{ return m_remoteAccessSecurityGroup; }
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline bool RemoteAccessSecurityGroupHasBeenSet() const { return m_remoteAccessSecurityGroupHasBeenSet; }
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline void SetRemoteAccessSecurityGroup(const Aws::String& value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup = value; }
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline void SetRemoteAccessSecurityGroup(Aws::String&& value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup = std::move(value); }
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline void SetRemoteAccessSecurityGroup(const char* value) { m_remoteAccessSecurityGroupHasBeenSet = true; m_remoteAccessSecurityGroup.assign(value); }
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline NodegroupResources& WithRemoteAccessSecurityGroup(const Aws::String& value) { SetRemoteAccessSecurityGroup(value); return *this;}
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline NodegroupResources& WithRemoteAccessSecurityGroup(Aws::String&& value) { SetRemoteAccessSecurityGroup(std::move(value)); return *this;}
 
     /**
      * <p>The remote access security group associated with the node group. This
-     * security group controls SSH access to the worker nodes.</p>
+     * security group controls SSH access to the nodes.</p>
      */
     inline NodegroupResources& WithRemoteAccessSecurityGroup(const char* value) { SetRemoteAccessSecurityGroup(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ResponseLaunchTemplateData.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -60,7 +50,13 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
 }
 
@@ -94,7 +90,13 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_enclaveOptionsHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -309,6 +311,36 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_metadataOptions = metadataOptionsNode;
       m_metadataOptionsHasBeenSet = true;
     }
+    XmlNode enclaveOptionsNode = resultNode.FirstChild("enclaveOptions");
+    if(!enclaveOptionsNode.IsNull())
+    {
+      m_enclaveOptions = enclaveOptionsNode;
+      m_enclaveOptionsHasBeenSet = true;
+    }
+    XmlNode instanceRequirementsNode = resultNode.FirstChild("instanceRequirements");
+    if(!instanceRequirementsNode.IsNull())
+    {
+      m_instanceRequirements = instanceRequirementsNode;
+      m_instanceRequirementsHasBeenSet = true;
+    }
+    XmlNode privateDnsNameOptionsNode = resultNode.FirstChild("privateDnsNameOptions");
+    if(!privateDnsNameOptionsNode.IsNull())
+    {
+      m_privateDnsNameOptions = privateDnsNameOptionsNode;
+      m_privateDnsNameOptionsHasBeenSet = true;
+    }
+    XmlNode maintenanceOptionsNode = resultNode.FirstChild("maintenanceOptions");
+    if(!maintenanceOptionsNode.IsNull())
+    {
+      m_maintenanceOptions = maintenanceOptionsNode;
+      m_maintenanceOptionsHasBeenSet = true;
+    }
+    XmlNode disableApiStopNode = resultNode.FirstChild("disableApiStop");
+    if(!disableApiStopNode.IsNull())
+    {
+      m_disableApiStop = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableApiStopNode.GetText()).c_str()).c_str());
+      m_disableApiStopHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -508,6 +540,39 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::StringStream enclaveOptionsLocationAndMemberSs;
+      enclaveOptionsLocationAndMemberSs << location << index << locationValue << ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::StringStream instanceRequirementsLocationAndMemberSs;
+      instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameOptionsLocationAndMemberSs;
+      privateDnsNameOptionsLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::StringStream maintenanceOptionsLocationAndMemberSs;
+      maintenanceOptionsLocationAndMemberSs << location << index << locationValue << ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_disableApiStopHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
+  }
+
 }
 
 void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -677,6 +742,34 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String metadataOptionsLocationAndMember(location);
       metadataOptionsLocationAndMember += ".MetadataOptions";
       m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
+  }
+  if(m_enclaveOptionsHasBeenSet)
+  {
+      Aws::String enclaveOptionsLocationAndMember(location);
+      enclaveOptionsLocationAndMember += ".EnclaveOptions";
+      m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
+  }
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::String instanceRequirementsLocationAndMember(location);
+      instanceRequirementsLocationAndMember += ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::String privateDnsNameOptionsLocationAndMember(location);
+      privateDnsNameOptionsLocationAndMember += ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMember.c_str());
+  }
+  if(m_maintenanceOptionsHasBeenSet)
+  {
+      Aws::String maintenanceOptionsLocationAndMember(location);
+      maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
+      m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
+  }
+  if(m_disableApiStopHasBeenSet)
+  {
+      oStream << location << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
   }
 }
 

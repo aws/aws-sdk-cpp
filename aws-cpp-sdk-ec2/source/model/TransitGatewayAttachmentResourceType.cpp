@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/TransitGatewayAttachmentResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,8 @@ namespace Aws
         static const int vpc_HASH = HashingUtils::HashString("vpc");
         static const int vpn_HASH = HashingUtils::HashString("vpn");
         static const int direct_connect_gateway_HASH = HashingUtils::HashString("direct-connect-gateway");
+        static const int connect_HASH = HashingUtils::HashString("connect");
+        static const int peering_HASH = HashingUtils::HashString("peering");
         static const int tgw_peering_HASH = HashingUtils::HashString("tgw-peering");
 
 
@@ -50,6 +42,14 @@ namespace Aws
           else if (hashCode == direct_connect_gateway_HASH)
           {
             return TransitGatewayAttachmentResourceType::direct_connect_gateway;
+          }
+          else if (hashCode == connect_HASH)
+          {
+            return TransitGatewayAttachmentResourceType::connect;
+          }
+          else if (hashCode == peering_HASH)
+          {
+            return TransitGatewayAttachmentResourceType::peering;
           }
           else if (hashCode == tgw_peering_HASH)
           {
@@ -75,6 +75,10 @@ namespace Aws
             return "vpn";
           case TransitGatewayAttachmentResourceType::direct_connect_gateway:
             return "direct-connect-gateway";
+          case TransitGatewayAttachmentResourceType::connect:
+            return "connect";
+          case TransitGatewayAttachmentResourceType::peering:
+            return "peering";
           case TransitGatewayAttachmentResourceType::tgw_peering:
             return "tgw-peering";
           default:

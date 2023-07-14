@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsCodeBuildProjectEnvironment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,6 +20,9 @@ namespace Model
 
 AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment() : 
     m_certificateHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false),
+    m_privilegedMode(false),
+    m_privilegedModeHasBeenSet(false),
     m_imagePullCredentialsTypeHasBeenSet(false),
     m_registryCredentialHasBeenSet(false),
     m_typeHasBeenSet(false)
@@ -38,6 +31,9 @@ AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment() :
 
 AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment(JsonView jsonValue) : 
     m_certificateHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false),
+    m_privilegedMode(false),
+    m_privilegedModeHasBeenSet(false),
     m_imagePullCredentialsTypeHasBeenSet(false),
     m_registryCredentialHasBeenSet(false),
     m_typeHasBeenSet(false)
@@ -52,6 +48,23 @@ AwsCodeBuildProjectEnvironment& AwsCodeBuildProjectEnvironment::operator =(JsonV
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnvironmentVariables"))
+  {
+    Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("EnvironmentVariables");
+    for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
+    {
+      m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
+    }
+    m_environmentVariablesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivilegedMode"))
+  {
+    m_privilegedMode = jsonValue.GetBool("PrivilegedMode");
+
+    m_privilegedModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ImagePullCredentialsType"))
@@ -85,6 +98,23 @@ JsonValue AwsCodeBuildProjectEnvironment::Jsonize() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_environmentVariablesHasBeenSet)
+  {
+   Array<JsonValue> environmentVariablesJsonList(m_environmentVariables.size());
+   for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
+   {
+     environmentVariablesJsonList[environmentVariablesIndex].AsObject(m_environmentVariables[environmentVariablesIndex].Jsonize());
+   }
+   payload.WithArray("EnvironmentVariables", std::move(environmentVariablesJsonList));
+
+  }
+
+  if(m_privilegedModeHasBeenSet)
+  {
+   payload.WithBool("PrivilegedMode", m_privilegedMode);
 
   }
 

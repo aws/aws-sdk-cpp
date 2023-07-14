@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -21,9 +11,12 @@
 #include <aws/elasticache/model/ReplicationGroupPendingModifiedValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
+#include <aws/elasticache/model/MultiAZStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticache/model/DataTieringStatus.h>
 #include <aws/elasticache/model/NodeGroup.h>
+#include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -140,38 +133,38 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline const GlobalReplicationGroupInfo& GetGlobalReplicationGroupInfo() const{ return m_globalReplicationGroupInfo; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline bool GlobalReplicationGroupInfoHasBeenSet() const { return m_globalReplicationGroupInfoHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline void SetGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = value; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline void SetGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline ReplicationGroup& WithGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { SetGlobalReplicationGroupInfo(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline ReplicationGroup& WithGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { SetGlobalReplicationGroupInfo(std::move(value)); return *this;}
 
@@ -440,58 +433,89 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline bool AutomaticFailoverHasBeenSet() const { return m_automaticFailoverHasBeenSet; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailover(const AutomaticFailoverStatus& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline ReplicationGroup& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
+    inline const MultiAZStatus& GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
+    inline void SetMultiAZ(const MultiAZStatus& value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
+    inline void SetMultiAZ(MultiAZStatus&& value) { m_multiAZHasBeenSet = true; m_multiAZ = std::move(value); }
+
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
+    inline ReplicationGroup& WithMultiAZ(const MultiAZStatus& value) { SetMultiAZ(value); return *this;}
+
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
+    inline ReplicationGroup& WithMultiAZ(MultiAZStatus&& value) { SetMultiAZ(std::move(value)); return *this;}
 
 
     /**
@@ -535,9 +559,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
@@ -545,9 +569,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
 
@@ -555,9 +579,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
@@ -565,9 +589,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline ReplicationGroup& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
@@ -576,8 +600,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
@@ -585,8 +609,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
 
@@ -594,8 +618,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
@@ -603,8 +627,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
@@ -612,8 +636,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
@@ -621,8 +645,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline ReplicationGroup& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
@@ -630,8 +654,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline ReplicationGroup& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
@@ -639,8 +663,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline ReplicationGroup& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
@@ -870,6 +894,52 @@ namespace Model
 
 
     /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMemberClustersOutpostArns() const{ return m_memberClustersOutpostArns; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline bool MemberClustersOutpostArnsHasBeenSet() const { return m_memberClustersOutpostArnsHasBeenSet; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline void SetMemberClustersOutpostArns(const Aws::Vector<Aws::String>& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns = value; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline void SetMemberClustersOutpostArns(Aws::Vector<Aws::String>&& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns = std::move(value); }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& WithMemberClustersOutpostArns(const Aws::Vector<Aws::String>& value) { SetMemberClustersOutpostArns(value); return *this;}
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& WithMemberClustersOutpostArns(Aws::Vector<Aws::String>&& value) { SetMemberClustersOutpostArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& AddMemberClustersOutpostArns(const Aws::String& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns.push_back(value); return *this; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& AddMemberClustersOutpostArns(Aws::String&& value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The outpost ARNs of the replication group's member clusters.</p>
+     */
+    inline ReplicationGroup& AddMemberClustersOutpostArns(const char* value) { m_memberClustersOutpostArnsHasBeenSet = true; m_memberClustersOutpostArns.push_back(value); return *this; }
+
+
+    /**
      * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
@@ -909,6 +979,220 @@ namespace Model
      */
     inline ReplicationGroup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline ReplicationGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline ReplicationGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the replication group.</p>
+     */
+    inline ReplicationGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline ReplicationGroup& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline ReplicationGroup& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline ReplicationGroup& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline ReplicationGroup& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the user group associated to the replication group.</p>
+     */
+    inline ReplicationGroup& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline const Aws::Vector<LogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& AddLogDeliveryConfigurations(const LogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& AddLogDeliveryConfigurations(LogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReplicationGroupCreateTime() const{ return m_replicationGroupCreateTime; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline bool ReplicationGroupCreateTimeHasBeenSet() const { return m_replicationGroupCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline void SetReplicationGroupCreateTime(const Aws::Utils::DateTime& value) { m_replicationGroupCreateTimeHasBeenSet = true; m_replicationGroupCreateTime = value; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline void SetReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { m_replicationGroupCreateTimeHasBeenSet = true; m_replicationGroupCreateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline ReplicationGroup& WithReplicationGroupCreateTime(const Aws::Utils::DateTime& value) { SetReplicationGroupCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline ReplicationGroup& WithReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { SetReplicationGroupCreateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -938,6 +1222,9 @@ namespace Model
     AutomaticFailoverStatus m_automaticFailover;
     bool m_automaticFailoverHasBeenSet;
 
+    MultiAZStatus m_multiAZ;
+    bool m_multiAZHasBeenSet;
+
     Endpoint m_configurationEndpoint;
     bool m_configurationEndpointHasBeenSet;
 
@@ -965,8 +1252,26 @@ namespace Model
     bool m_atRestEncryptionEnabled;
     bool m_atRestEncryptionEnabledHasBeenSet;
 
+    Aws::Vector<Aws::String> m_memberClustersOutpostArns;
+    bool m_memberClustersOutpostArnsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
+
+    Aws::Vector<Aws::String> m_userGroupIds;
+    bool m_userGroupIdsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
+
+    Aws::Utils::DateTime m_replicationGroupCreateTime;
+    bool m_replicationGroupCreateTimeHasBeenSet;
+
+    DataTieringStatus m_dataTiering;
+    bool m_dataTieringHasBeenSet;
   };
 
 } // namespace Model

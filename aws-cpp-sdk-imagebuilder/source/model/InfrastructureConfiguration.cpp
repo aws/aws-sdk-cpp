@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/InfrastructureConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,6 +33,8 @@ InfrastructureConfiguration::InfrastructureConfiguration() :
     m_snsTopicArnHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
+    m_instanceMetadataOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -62,6 +54,8 @@ InfrastructureConfiguration::InfrastructureConfiguration(JsonView jsonValue) :
     m_snsTopicArnHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
+    m_instanceMetadataOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -166,6 +160,23 @@ InfrastructureConfiguration& InfrastructureConfiguration::operator =(JsonView js
     m_dateUpdatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceTags"))
+  {
+    Aws::Map<Aws::String, JsonView> resourceTagsJsonMap = jsonValue.GetObject("resourceTags").GetAllObjects();
+    for(auto& resourceTagsItem : resourceTagsJsonMap)
+    {
+      m_resourceTags[resourceTagsItem.first] = resourceTagsItem.second.AsString();
+    }
+    m_resourceTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceMetadataOptions"))
+  {
+    m_instanceMetadataOptions = jsonValue.GetObject("instanceMetadataOptions");
+
+    m_instanceMetadataOptionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -268,6 +279,23 @@ JsonValue InfrastructureConfiguration::Jsonize() const
   if(m_dateUpdatedHasBeenSet)
   {
    payload.WithString("dateUpdated", m_dateUpdated);
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   JsonValue resourceTagsJsonMap;
+   for(auto& resourceTagsItem : m_resourceTags)
+   {
+     resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+   }
+   payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
+
+  }
+
+  if(m_instanceMetadataOptionsHasBeenSet)
+  {
+   payload.WithObject("instanceMetadataOptions", m_instanceMetadataOptions.Jsonize());
 
   }
 

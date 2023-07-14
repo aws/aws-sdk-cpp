@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 
   /**
    * <p>Returns information related to the type of user authentication that is in use
-   * for a server's users. A server can have only one method of
-   * authentication.</p><p><h3>See Also:</h3>   <a
+   * for a file transfer protocol-enabled server's users. A server can have only one
+   * method of authentication.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/IdentityProviderDetails">AWS
    * API Reference</a></p>
    */
@@ -50,101 +40,183 @@ namespace Model
 
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline bool InvocationRoleHasBeenSet() const { return m_invocationRoleHasBeenSet; }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline void SetInvocationRole(const Aws::String& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = value; }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline void SetInvocationRole(Aws::String&& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = std::move(value); }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline void SetInvocationRole(const char* value) { m_invocationRoleHasBeenSet = true; m_invocationRole.assign(value); }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(const Aws::String& value) { SetInvocationRole(value); return *this;}
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(Aws::String&& value) { SetInvocationRole(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline IdentityProviderDetails& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline IdentityProviderDetails& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Web Services Directory Service directory that
+     * you want to stop sharing.</p>
+     */
+    inline IdentityProviderDetails& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline const Aws::String& GetFunction() const{ return m_function; }
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline void SetFunction(const Aws::String& value) { m_functionHasBeenSet = true; m_function = value; }
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline void SetFunction(Aws::String&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline void SetFunction(const char* value) { m_functionHasBeenSet = true; m_function.assign(value); }
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline IdentityProviderDetails& WithFunction(const Aws::String& value) { SetFunction(value); return *this;}
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline IdentityProviderDetails& WithFunction(Aws::String&& value) { SetFunction(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for a lambda function to use for the Identity provider.</p>
+     */
+    inline IdentityProviderDetails& WithFunction(const char* value) { SetFunction(value); return *this;}
 
   private:
 
@@ -153,6 +225,12 @@ namespace Model
 
     Aws::String m_invocationRole;
     bool m_invocationRoleHasBeenSet;
+
+    Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet;
+
+    Aws::String m_function;
+    bool m_functionHasBeenSet;
   };
 
 } // namespace Model

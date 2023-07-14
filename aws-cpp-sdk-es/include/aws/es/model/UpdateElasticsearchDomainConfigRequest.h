@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
@@ -25,6 +15,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
+#include <aws/es/model/NodeToNodeEncryptionOptions.h>
+#include <aws/es/model/EncryptionAtRestOptions.h>
+#include <aws/es/model/AutoTuneOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -588,6 +581,136 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& WithAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline const NodeToNodeEncryptionOptions& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline bool NodeToNodeEncryptionOptionsHasBeenSet() const { return m_nodeToNodeEncryptionOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline void SetNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline void SetNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { SetNodeToNodeEncryptionOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline const AutoTuneOptions& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptions& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptions&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithAutoTuneOptions(const AutoTuneOptions& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>Specifies Auto-Tune options.</p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithAutoTuneOptions(AutoTuneOptions&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -622,6 +745,18 @@ namespace Model
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet;
+
+    NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+
+    EncryptionAtRestOptions m_encryptionAtRestOptions;
+    bool m_encryptionAtRestOptionsHasBeenSet;
+
+    AutoTuneOptions m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

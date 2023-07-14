@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DataSourceConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,40 @@ namespace Model
 DataSourceConfiguration::DataSourceConfiguration() : 
     m_s3ConfigurationHasBeenSet(false),
     m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false)
+    m_databaseConfigurationHasBeenSet(false),
+    m_salesforceConfigurationHasBeenSet(false),
+    m_oneDriveConfigurationHasBeenSet(false),
+    m_serviceNowConfigurationHasBeenSet(false),
+    m_confluenceConfigurationHasBeenSet(false),
+    m_googleDriveConfigurationHasBeenSet(false),
+    m_webCrawlerConfigurationHasBeenSet(false),
+    m_workDocsConfigurationHasBeenSet(false),
+    m_fsxConfigurationHasBeenSet(false),
+    m_slackConfigurationHasBeenSet(false),
+    m_boxConfigurationHasBeenSet(false),
+    m_quipConfigurationHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false),
+    m_gitHubConfigurationHasBeenSet(false)
 {
 }
 
 DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
     m_s3ConfigurationHasBeenSet(false),
     m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false)
+    m_databaseConfigurationHasBeenSet(false),
+    m_salesforceConfigurationHasBeenSet(false),
+    m_oneDriveConfigurationHasBeenSet(false),
+    m_serviceNowConfigurationHasBeenSet(false),
+    m_confluenceConfigurationHasBeenSet(false),
+    m_googleDriveConfigurationHasBeenSet(false),
+    m_webCrawlerConfigurationHasBeenSet(false),
+    m_workDocsConfigurationHasBeenSet(false),
+    m_fsxConfigurationHasBeenSet(false),
+    m_slackConfigurationHasBeenSet(false),
+    m_boxConfigurationHasBeenSet(false),
+    m_quipConfigurationHasBeenSet(false),
+    m_jiraConfigurationHasBeenSet(false),
+    m_gitHubConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +82,97 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_databaseConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SalesforceConfiguration"))
+  {
+    m_salesforceConfiguration = jsonValue.GetObject("SalesforceConfiguration");
+
+    m_salesforceConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OneDriveConfiguration"))
+  {
+    m_oneDriveConfiguration = jsonValue.GetObject("OneDriveConfiguration");
+
+    m_oneDriveConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceNowConfiguration"))
+  {
+    m_serviceNowConfiguration = jsonValue.GetObject("ServiceNowConfiguration");
+
+    m_serviceNowConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfluenceConfiguration"))
+  {
+    m_confluenceConfiguration = jsonValue.GetObject("ConfluenceConfiguration");
+
+    m_confluenceConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GoogleDriveConfiguration"))
+  {
+    m_googleDriveConfiguration = jsonValue.GetObject("GoogleDriveConfiguration");
+
+    m_googleDriveConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WebCrawlerConfiguration"))
+  {
+    m_webCrawlerConfiguration = jsonValue.GetObject("WebCrawlerConfiguration");
+
+    m_webCrawlerConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkDocsConfiguration"))
+  {
+    m_workDocsConfiguration = jsonValue.GetObject("WorkDocsConfiguration");
+
+    m_workDocsConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FsxConfiguration"))
+  {
+    m_fsxConfiguration = jsonValue.GetObject("FsxConfiguration");
+
+    m_fsxConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SlackConfiguration"))
+  {
+    m_slackConfiguration = jsonValue.GetObject("SlackConfiguration");
+
+    m_slackConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BoxConfiguration"))
+  {
+    m_boxConfiguration = jsonValue.GetObject("BoxConfiguration");
+
+    m_boxConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QuipConfiguration"))
+  {
+    m_quipConfiguration = jsonValue.GetObject("QuipConfiguration");
+
+    m_quipConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JiraConfiguration"))
+  {
+    m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
+
+    m_jiraConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GitHubConfiguration"))
+  {
+    m_gitHubConfiguration = jsonValue.GetObject("GitHubConfiguration");
+
+    m_gitHubConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +195,84 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_databaseConfigurationHasBeenSet)
   {
    payload.WithObject("DatabaseConfiguration", m_databaseConfiguration.Jsonize());
+
+  }
+
+  if(m_salesforceConfigurationHasBeenSet)
+  {
+   payload.WithObject("SalesforceConfiguration", m_salesforceConfiguration.Jsonize());
+
+  }
+
+  if(m_oneDriveConfigurationHasBeenSet)
+  {
+   payload.WithObject("OneDriveConfiguration", m_oneDriveConfiguration.Jsonize());
+
+  }
+
+  if(m_serviceNowConfigurationHasBeenSet)
+  {
+   payload.WithObject("ServiceNowConfiguration", m_serviceNowConfiguration.Jsonize());
+
+  }
+
+  if(m_confluenceConfigurationHasBeenSet)
+  {
+   payload.WithObject("ConfluenceConfiguration", m_confluenceConfiguration.Jsonize());
+
+  }
+
+  if(m_googleDriveConfigurationHasBeenSet)
+  {
+   payload.WithObject("GoogleDriveConfiguration", m_googleDriveConfiguration.Jsonize());
+
+  }
+
+  if(m_webCrawlerConfigurationHasBeenSet)
+  {
+   payload.WithObject("WebCrawlerConfiguration", m_webCrawlerConfiguration.Jsonize());
+
+  }
+
+  if(m_workDocsConfigurationHasBeenSet)
+  {
+   payload.WithObject("WorkDocsConfiguration", m_workDocsConfiguration.Jsonize());
+
+  }
+
+  if(m_fsxConfigurationHasBeenSet)
+  {
+   payload.WithObject("FsxConfiguration", m_fsxConfiguration.Jsonize());
+
+  }
+
+  if(m_slackConfigurationHasBeenSet)
+  {
+   payload.WithObject("SlackConfiguration", m_slackConfiguration.Jsonize());
+
+  }
+
+  if(m_boxConfigurationHasBeenSet)
+  {
+   payload.WithObject("BoxConfiguration", m_boxConfiguration.Jsonize());
+
+  }
+
+  if(m_quipConfigurationHasBeenSet)
+  {
+   payload.WithObject("QuipConfiguration", m_quipConfiguration.Jsonize());
+
+  }
+
+  if(m_jiraConfigurationHasBeenSet)
+  {
+   payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
+
+  }
+
+  if(m_gitHubConfigurationHasBeenSet)
+  {
+   payload.WithObject("GitHubConfiguration", m_gitHubConfiguration.Jsonize());
 
   }
 

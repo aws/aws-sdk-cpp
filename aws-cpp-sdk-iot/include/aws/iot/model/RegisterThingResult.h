@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -44,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePem = value; }
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline void SetCertificatePem(Aws::String&& value) { m_certificatePem = std::move(value); }
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline void SetCertificatePem(const char* value) { m_certificatePem.assign(value); }
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline RegisterThingResult& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline RegisterThingResult& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
 
     /**
-     * <p>.</p>
+     * <p>The certificate data, in PEM format.</p>
      */
     inline RegisterThingResult& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
 

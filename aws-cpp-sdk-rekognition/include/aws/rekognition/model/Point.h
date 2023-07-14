@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -32,13 +22,14 @@ namespace Model
 {
 
   /**
-   * <p>The X and Y coordinates of a point on an image. The X and Y values returned
-   * are ratios of the overall image size. For example, if the input image is 700x200
-   * and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50)
-   * pixel coordinate on the image.</p> <p>An array of <code>Point</code> objects,
-   * <code>Polygon</code>, is returned by <a>DetectText</a> and by
-   * <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained
-   * polygon around a detected item. For more information, see Geometry in the Amazon
+   * <p>The X and Y coordinates of a point on an image or video frame. The X and Y
+   * values are ratios of the overall image size or video resolution. For example, if
+   * an input image is 700x200 and the values are X=0.5 and Y=0.25, then the point is
+   * at the (350,50) pixel coordinate on the image.</p> <p>An array of
+   * <code>Point</code> objects makes up a <code>Polygon</code>. A
+   * <code>Polygon</code> is returned by <a>DetectText</a> and by
+   * <a>DetectCustomLabels</a> <code>Polygon</code> represents a fine-grained polygon
+   * around a detected item. For more information, see Geometry in the Amazon
    * Rekognition Developer Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Point">AWS
    * API Reference</a></p>

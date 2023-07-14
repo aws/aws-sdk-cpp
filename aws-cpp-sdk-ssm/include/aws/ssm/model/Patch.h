@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -49,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline Patch& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline Patch& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the patch (this is different than the Microsoft Knowledge Base
-     * ID).</p>
+     * <p>The ID of the patch. Applies to Windows patches only.</p>  <p>This ID
+     * isn't the same as the Microsoft Knowledge Base ID.</p> 
      */
     inline Patch& WithId(const char* value) { SetId(value); return *this;}
 
@@ -293,263 +284,311 @@ namespace Model
 
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline const Aws::String& GetProductFamily() const{ return m_productFamily; }
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline bool ProductFamilyHasBeenSet() const { return m_productFamilyHasBeenSet; }
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline void SetProductFamily(const Aws::String& value) { m_productFamilyHasBeenSet = true; m_productFamily = value; }
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline void SetProductFamily(Aws::String&& value) { m_productFamilyHasBeenSet = true; m_productFamily = std::move(value); }
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline void SetProductFamily(const char* value) { m_productFamilyHasBeenSet = true; m_productFamily.assign(value); }
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline Patch& WithProductFamily(const Aws::String& value) { SetProductFamily(value); return *this;}
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline Patch& WithProductFamily(Aws::String&& value) { SetProductFamily(std::move(value)); return *this;}
 
     /**
-     * <p>The product family the patch is applicable for (for example, Windows).</p>
+     * <p>The product family the patch is applicable for. For example,
+     * <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
      */
     inline Patch& WithProductFamily(const char* value) { SetProductFamily(value); return *this;}
 
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline Patch& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline Patch& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
 
     /**
-     * <p>The specific product the patch is applicable for (for example,
-     * WindowsServer2016).</p>
+     * <p>The specific product the patch is applicable for. For example,
+     * <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
      */
     inline Patch& WithProduct(const char* value) { SetProduct(value); return *this;}
 
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline void SetClassification(const char* value) { m_classificationHasBeenSet = true; m_classification.assign(value); }
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline Patch& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline Patch& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
 
     /**
-     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
-     * CriticalUpdates).</p>
+     * <p>The classification of the patch. For example, <code>SecurityUpdates</code>,
+     * <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
      */
     inline Patch& WithClassification(const char* value) { SetClassification(value); return *this;}
 
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline const Aws::String& GetMsrcSeverity() const{ return m_msrcSeverity; }
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline bool MsrcSeverityHasBeenSet() const { return m_msrcSeverityHasBeenSet; }
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline void SetMsrcSeverity(const Aws::String& value) { m_msrcSeverityHasBeenSet = true; m_msrcSeverity = value; }
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline void SetMsrcSeverity(Aws::String&& value) { m_msrcSeverityHasBeenSet = true; m_msrcSeverity = std::move(value); }
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline void SetMsrcSeverity(const char* value) { m_msrcSeverityHasBeenSet = true; m_msrcSeverity.assign(value); }
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithMsrcSeverity(const Aws::String& value) { SetMsrcSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithMsrcSeverity(Aws::String&& value) { SetMsrcSeverity(std::move(value)); return *this;}
 
     /**
-     * <p>The severity of the patch (for example Critical, Important, Moderate).</p>
+     * <p>The severity of the patch, such as <code>Critical</code>,
+     * <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithMsrcSeverity(const char* value) { SetMsrcSeverity(value); return *this;}
 
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline const Aws::String& GetKbNumber() const{ return m_kbNumber; }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline bool KbNumberHasBeenSet() const { return m_kbNumberHasBeenSet; }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline void SetKbNumber(const Aws::String& value) { m_kbNumberHasBeenSet = true; m_kbNumber = value; }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline void SetKbNumber(Aws::String&& value) { m_kbNumberHasBeenSet = true; m_kbNumber = std::move(value); }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline void SetKbNumber(const char* value) { m_kbNumberHasBeenSet = true; m_kbNumber.assign(value); }
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithKbNumber(const Aws::String& value) { SetKbNumber(value); return *this;}
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithKbNumber(Aws::String&& value) { SetKbNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The Microsoft Knowledge Base ID of the patch.</p>
+     * <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithKbNumber(const char* value) { SetKbNumber(value); return *this;}
 
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline const Aws::String& GetMsrcNumber() const{ return m_msrcNumber; }
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline bool MsrcNumberHasBeenSet() const { return m_msrcNumberHasBeenSet; }
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline void SetMsrcNumber(const Aws::String& value) { m_msrcNumberHasBeenSet = true; m_msrcNumber = value; }
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline void SetMsrcNumber(Aws::String&& value) { m_msrcNumberHasBeenSet = true; m_msrcNumber = std::move(value); }
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline void SetMsrcNumber(const char* value) { m_msrcNumberHasBeenSet = true; m_msrcNumber.assign(value); }
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithMsrcNumber(const Aws::String& value) { SetMsrcNumber(value); return *this;}
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithMsrcNumber(Aws::String&& value) { SetMsrcNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the MSRC bulletin the patch is related to.</p>
+     * <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is
+     * related to. For example, <code>MS14-045</code>. Applies to Windows patches
+     * only.</p>
      */
     inline Patch& WithMsrcNumber(const char* value) { SetMsrcNumber(value); return *this;}
 
@@ -594,6 +633,526 @@ namespace Model
      */
     inline Patch& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdvisoryIds() const{ return m_advisoryIds; }
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool AdvisoryIdsHasBeenSet() const { return m_advisoryIdsHasBeenSet; }
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetAdvisoryIds(const Aws::Vector<Aws::String>& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds = value; }
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetAdvisoryIds(Aws::Vector<Aws::String>&& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds = std::move(value); }
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithAdvisoryIds(const Aws::Vector<Aws::String>& value) { SetAdvisoryIds(value); return *this;}
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithAdvisoryIds(Aws::Vector<Aws::String>&& value) { SetAdvisoryIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddAdvisoryIds(const Aws::String& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds.push_back(value); return *this; }
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddAdvisoryIds(Aws::String&& value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>.
+     * Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddAdvisoryIds(const char* value) { m_advisoryIdsHasBeenSet = true; m_advisoryIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetBugzillaIds() const{ return m_bugzillaIds; }
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline bool BugzillaIdsHasBeenSet() const { return m_bugzillaIdsHasBeenSet; }
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline void SetBugzillaIds(const Aws::Vector<Aws::String>& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds = value; }
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline void SetBugzillaIds(Aws::Vector<Aws::String>&& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds = std::move(value); }
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithBugzillaIds(const Aws::Vector<Aws::String>& value) { SetBugzillaIds(value); return *this;}
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithBugzillaIds(Aws::Vector<Aws::String>&& value) { SetBugzillaIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddBugzillaIds(const Aws::String& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds.push_back(value); return *this; }
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddBugzillaIds(Aws::String&& value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to
+     * Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddBugzillaIds(const char* value) { m_bugzillaIdsHasBeenSet = true; m_bugzillaIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCVEIds() const{ return m_cVEIds; }
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetCVEIds(const Aws::Vector<Aws::String>& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetCVEIds(Aws::Vector<Aws::String>&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithCVEIds(const Aws::Vector<Aws::String>& value) { SetCVEIds(value); return *this;}
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithCVEIds(Aws::Vector<Aws::String>&& value) { SetCVEIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(value); return *this; }
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example,
+     * <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& AddCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The epoch of the patch. For example in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline int GetEpoch() const{ return m_epoch; }
+
+    /**
+     * <p>The epoch of the patch. For example in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool EpochHasBeenSet() const { return m_epochHasBeenSet; }
+
+    /**
+     * <p>The epoch of the patch. For example in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetEpoch(int value) { m_epochHasBeenSet = true; m_epoch = value; }
+
+    /**
+     * <p>The epoch of the patch. For example in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is
+     * <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithEpoch(int value) { SetEpoch(value); return *this;}
+
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version number of the patch. For example, in
+     * <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is
+     * indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline const Aws::String& GetRelease() const{ return m_release; }
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool ReleaseHasBeenSet() const { return m_releaseHasBeenSet; }
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetRelease(const Aws::String& value) { m_releaseHasBeenSet = true; m_release = value; }
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetRelease(Aws::String&& value) { m_releaseHasBeenSet = true; m_release = std::move(value); }
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetRelease(const char* value) { m_releaseHasBeenSet = true; m_release.assign(value); }
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithRelease(const Aws::String& value) { SetRelease(value); return *this;}
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithRelease(Aws::String&& value) { SetRelease(std::move(value)); return *this;}
+
+    /**
+     * <p>The particular release of a patch. For example, in
+     * <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is
+     * <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithRelease(const char* value) { SetRelease(value); return *this;}
+
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline const Aws::String& GetArch() const{ return m_arch; }
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline bool ArchHasBeenSet() const { return m_archHasBeenSet; }
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetArch(const Aws::String& value) { m_archHasBeenSet = true; m_arch = value; }
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetArch(Aws::String&& value) { m_archHasBeenSet = true; m_arch = std::move(value); }
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline void SetArch(const char* value) { m_archHasBeenSet = true; m_arch.assign(value); }
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithArch(const Aws::String& value) { SetArch(value); return *this;}
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithArch(Aws::String&& value) { SetArch(std::move(value)); return *this;}
+
+    /**
+     * <p>The architecture of the patch. For example, in
+     * <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated
+     * by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
+     */
+    inline Patch& WithArch(const char* value) { SetArch(value); return *this;}
+
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline const Aws::String& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline Patch& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline Patch& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
+
+    /**
+     * <p>The severity level of the patch. For example, <code>CRITICAL</code> or
+     * <code>MODERATE</code>.</p>
+     */
+    inline Patch& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline const Aws::String& GetRepository() const{ return m_repository; }
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline Patch& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline Patch& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
+
+    /**
+     * <p>The source patch repository for the operating system and version, such as
+     * <code>trusty-security</code> for Ubuntu Server 14.04 LTE and
+     * <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based
+     * managed nodes only.</p>
+     */
+    inline Patch& WithRepository(const char* value) { SetRepository(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -634,6 +1193,36 @@ namespace Model
 
     Aws::String m_language;
     bool m_languageHasBeenSet;
+
+    Aws::Vector<Aws::String> m_advisoryIds;
+    bool m_advisoryIdsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_bugzillaIds;
+    bool m_bugzillaIdsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_cVEIds;
+    bool m_cVEIdsHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    int m_epoch;
+    bool m_epochHasBeenSet;
+
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
+
+    Aws::String m_release;
+    bool m_releaseHasBeenSet;
+
+    Aws::String m_arch;
+    bool m_archHasBeenSet;
+
+    Aws::String m_severity;
+    bool m_severityHasBeenSet;
+
+    Aws::String m_repository;
+    bool m_repositoryHasBeenSet;
   };
 
 } // namespace Model

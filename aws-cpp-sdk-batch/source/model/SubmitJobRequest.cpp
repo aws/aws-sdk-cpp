@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/SubmitJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,6 +15,9 @@ using namespace Aws::Utils;
 SubmitJobRequest::SubmitJobRequest() : 
     m_jobNameHasBeenSet(false),
     m_jobQueueHasBeenSet(false),
+    m_shareIdentifierHasBeenSet(false),
+    m_schedulingPriorityOverride(0),
+    m_schedulingPriorityOverrideHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
     m_dependsOnHasBeenSet(false),
     m_jobDefinitionHasBeenSet(false),
@@ -32,7 +25,10 @@ SubmitJobRequest::SubmitJobRequest() :
     m_containerOverridesHasBeenSet(false),
     m_nodeOverridesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_propagateTags(false),
+    m_propagateTagsHasBeenSet(false),
+    m_timeoutHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,6 +45,18 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_jobQueueHasBeenSet)
   {
    payload.WithString("jobQueue", m_jobQueue);
+
+  }
+
+  if(m_shareIdentifierHasBeenSet)
+  {
+   payload.WithString("shareIdentifier", m_shareIdentifier);
+
+  }
+
+  if(m_schedulingPriorityOverrideHasBeenSet)
+  {
+   payload.WithInteger("schedulingPriorityOverride", m_schedulingPriorityOverride);
 
   }
 
@@ -104,9 +112,26 @@ Aws::String SubmitJobRequest::SerializePayload() const
 
   }
 
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithBool("propagateTags", m_propagateTags);
+
+  }
+
   if(m_timeoutHasBeenSet)
   {
    payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

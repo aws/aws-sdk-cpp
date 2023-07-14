@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
@@ -185,6 +175,47 @@ namespace Model
      */
     inline Change& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline const Aws::String& GetChangeName() const{ return m_changeName; }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline bool ChangeNameHasBeenSet() const { return m_changeNameHasBeenSet; }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline void SetChangeName(const Aws::String& value) { m_changeNameHasBeenSet = true; m_changeName = value; }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline void SetChangeName(Aws::String&& value) { m_changeNameHasBeenSet = true; m_changeName = std::move(value); }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline void SetChangeName(const char* value) { m_changeNameHasBeenSet = true; m_changeName.assign(value); }
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline Change& WithChangeName(const Aws::String& value) { SetChangeName(value); return *this;}
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline Change& WithChangeName(Aws::String&& value) { SetChangeName(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional name for the change.</p>
+     */
+    inline Change& WithChangeName(const char* value) { SetChangeName(value); return *this;}
+
   private:
 
     Aws::String m_changeType;
@@ -195,6 +226,9 @@ namespace Model
 
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
+    Aws::String m_changeName;
+    bool m_changeNameHasBeenSet;
   };
 
 } // namespace Model

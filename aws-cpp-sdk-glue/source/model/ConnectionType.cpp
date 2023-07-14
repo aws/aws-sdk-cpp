@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/ConnectionType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,10 @@ namespace Aws
         static const int JDBC_HASH = HashingUtils::HashString("JDBC");
         static const int SFTP_HASH = HashingUtils::HashString("SFTP");
         static const int MONGODB_HASH = HashingUtils::HashString("MONGODB");
+        static const int KAFKA_HASH = HashingUtils::HashString("KAFKA");
+        static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
+        static const int MARKETPLACE_HASH = HashingUtils::HashString("MARKETPLACE");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -49,6 +43,22 @@ namespace Aws
           else if (hashCode == MONGODB_HASH)
           {
             return ConnectionType::MONGODB;
+          }
+          else if (hashCode == KAFKA_HASH)
+          {
+            return ConnectionType::KAFKA;
+          }
+          else if (hashCode == NETWORK_HASH)
+          {
+            return ConnectionType::NETWORK;
+          }
+          else if (hashCode == MARKETPLACE_HASH)
+          {
+            return ConnectionType::MARKETPLACE;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return ConnectionType::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,14 @@ namespace Aws
             return "SFTP";
           case ConnectionType::MONGODB:
             return "MONGODB";
+          case ConnectionType::KAFKA:
+            return "KAFKA";
+          case ConnectionType::NETWORK:
+            return "NETWORK";
+          case ConnectionType::MARKETPLACE:
+            return "MARKETPLACE";
+          case ConnectionType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

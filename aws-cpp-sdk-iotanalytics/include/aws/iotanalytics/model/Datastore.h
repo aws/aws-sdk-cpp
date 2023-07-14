@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -20,6 +10,8 @@
 #include <aws/iotanalytics/model/DatastoreStatus.h>
 #include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotanalytics/model/FileFormatConfiguration.h>
+#include <aws/iotanalytics/model/DatastorePartitions.h>
 #include <utility>
 
 namespace Aws
@@ -93,44 +85,56 @@ namespace Model
 
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline const DatastoreStorage& GetStorage() const{ return m_storage; }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline void SetStorage(const DatastoreStorage& value) { m_storageHasBeenSet = true; m_storage = value; }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline void SetStorage(DatastoreStorage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline Datastore& WithStorage(const DatastoreStorage& value) { SetStorage(value); return *this;}
 
     /**
-     * <p>Where data store data is stored. You may choose one of "serviceManagedS3" or
-     * "customerManagedS3" storage. If not specified, the default is
-     * "serviceManagedS3". This cannot be changed after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline Datastore& WithStorage(DatastoreStorage&& value) { SetStorage(std::move(value)); return *this;}
 
@@ -227,37 +231,43 @@ namespace Model
 
     /**
      * <p>How long, in days, message data is kept for the data store. When
-     * "customerManagedS3" storage is selected, this parameter is ignored.</p>
+     * <code>customerManagedS3</code> storage is selected, this parameter is
+     * ignored.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
      * <p>How long, in days, message data is kept for the data store. When
-     * "customerManagedS3" storage is selected, this parameter is ignored.</p>
+     * <code>customerManagedS3</code> storage is selected, this parameter is
+     * ignored.</p>
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>How long, in days, message data is kept for the data store. When
-     * "customerManagedS3" storage is selected, this parameter is ignored.</p>
+     * <code>customerManagedS3</code> storage is selected, this parameter is
+     * ignored.</p>
      */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
      * <p>How long, in days, message data is kept for the data store. When
-     * "customerManagedS3" storage is selected, this parameter is ignored.</p>
+     * <code>customerManagedS3</code> storage is selected, this parameter is
+     * ignored.</p>
      */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
 
     /**
      * <p>How long, in days, message data is kept for the data store. When
-     * "customerManagedS3" storage is selected, this parameter is ignored.</p>
+     * <code>customerManagedS3</code> storage is selected, this parameter is
+     * ignored.</p>
      */
     inline Datastore& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
 
     /**
      * <p>How long, in days, message data is kept for the data store. When
-     * "customerManagedS3" storage is selected, this parameter is ignored.</p>
+     * <code>customerManagedS3</code> storage is selected, this parameter is
+     * ignored.</p>
      */
     inline Datastore& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
@@ -323,6 +333,141 @@ namespace Model
      */
     inline Datastore& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline Datastore& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
+
+    /**
+     * <p>The last time when a new message arrived in the data store.</p> <p>IoT
+     * Analytics updates this value at most once per minute for Amazon Simple Storage
+     * Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is
+     * an approximation.</p> <p>This feature only applies to messages that arrived in
+     * the data store after October 23, 2020. </p>
+     */
+    inline Datastore& WithLastMessageArrivalTime(Aws::Utils::DateTime&& value) { SetLastMessageArrivalTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
+     */
+    inline const FileFormatConfiguration& GetFileFormatConfiguration() const{ return m_fileFormatConfiguration; }
+
+    /**
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
+     */
+    inline bool FileFormatConfigurationHasBeenSet() const { return m_fileFormatConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
+     */
+    inline void SetFileFormatConfiguration(const FileFormatConfiguration& value) { m_fileFormatConfigurationHasBeenSet = true; m_fileFormatConfiguration = value; }
+
+    /**
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
+     */
+    inline void SetFileFormatConfiguration(FileFormatConfiguration&& value) { m_fileFormatConfigurationHasBeenSet = true; m_fileFormatConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
+     */
+    inline Datastore& WithFileFormatConfiguration(const FileFormatConfiguration& value) { SetFileFormatConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
+     */
+    inline Datastore& WithFileFormatConfiguration(FileFormatConfiguration&& value) { SetFileFormatConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline const DatastorePartitions& GetDatastorePartitions() const{ return m_datastorePartitions; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline bool DatastorePartitionsHasBeenSet() const { return m_datastorePartitionsHasBeenSet; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(const DatastorePartitions& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = value; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(DatastorePartitions&& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = std::move(value); }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline Datastore& WithDatastorePartitions(const DatastorePartitions& value) { SetDatastorePartitions(value); return *this;}
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline Datastore& WithDatastorePartitions(DatastorePartitions&& value) { SetDatastorePartitions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -345,6 +490,15 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_lastMessageArrivalTime;
+    bool m_lastMessageArrivalTimeHasBeenSet;
+
+    FileFormatConfiguration m_fileFormatConfiguration;
+    bool m_fileFormatConfigurationHasBeenSet;
+
+    DatastorePartitions m_datastorePartitions;
+    bool m_datastorePartitionsHasBeenSet;
   };
 
 } // namespace Model

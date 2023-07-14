@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -53,22 +43,42 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value indicating whether to include a description.</p>
+     * <p>A <code>Boolean</code> value indicating whether to include a description. If
+     * <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed
+     * information about profiling groups is returned. If <code>false</code>, then a
+     * list of profiling group names is returned.</p>
      */
     inline bool GetIncludeDescription() const{ return m_includeDescription; }
 
     /**
-     * <p>A Boolean value indicating whether to include a description.</p>
+     * <p>A <code>Boolean</code> value indicating whether to include a description. If
+     * <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed
+     * information about profiling groups is returned. If <code>false</code>, then a
+     * list of profiling group names is returned.</p>
      */
     inline bool IncludeDescriptionHasBeenSet() const { return m_includeDescriptionHasBeenSet; }
 
     /**
-     * <p>A Boolean value indicating whether to include a description.</p>
+     * <p>A <code>Boolean</code> value indicating whether to include a description. If
+     * <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed
+     * information about profiling groups is returned. If <code>false</code>, then a
+     * list of profiling group names is returned.</p>
      */
     inline void SetIncludeDescription(bool value) { m_includeDescriptionHasBeenSet = true; m_includeDescription = value; }
 
     /**
-     * <p>A Boolean value indicating whether to include a description.</p>
+     * <p>A <code>Boolean</code> value indicating whether to include a description. If
+     * <code>true</code>, then a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+     * <code>ProfilingGroupDescription</code> </a> objects that contain detailed
+     * information about profiling groups is returned. If <code>false</code>, then a
+     * list of profiling group names is returned.</p>
      */
     inline ListProfilingGroupsRequest& WithIncludeDescription(bool value) { SetIncludeDescription(value); return *this;}
 
@@ -123,9 +133,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -134,9 +144,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -145,9 +155,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -156,9 +166,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -167,9 +177,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -178,9 +188,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfilingGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -189,9 +199,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfilingGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -200,9 +210,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfilingGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

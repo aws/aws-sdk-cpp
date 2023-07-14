@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/acm-pca/model/FailureReason.h>
 #include <aws/acm-pca/model/CertificateAuthorityConfiguration.h>
 #include <aws/acm-pca/model/RevocationConfiguration.h>
+#include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
 #include <utility>
 
 namespace Aws
@@ -44,12 +35,16 @@ namespace Model
    * private CA can issue and revoke X.509 digital certificates. Digital certificates
    * verify that the entity named in the certificate <b>Subject</b> field owns or
    * controls the public key contained in the <b>Subject Public Key Info</b> field.
-   * Call the <a>CreateCertificateAuthority</a> action to create your private CA. You
-   * must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve
-   * a private CA certificate signing request (CSR). Sign the CSR with your ACM
-   * Private CA-hosted or on-premises root or subordinate CA certificate. Call the
-   * <a>ImportCertificateAuthorityCertificate</a> action to import the signed
-   * certificate into AWS Certificate Manager (ACM). </p><p><h3>See Also:</h3>   <a
+   * Call the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
+   * action to create your private CA. You must then call the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
+   * action to retrieve a private CA certificate signing request (CSR). Sign the CSR
+   * with your ACM Private CA-hosted or on-premises root or subordinate CA
+   * certificate. Call the <a
+   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
+   * action to import the signed certificate into Certificate Manager (ACM).
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthority">AWS
    * API Reference</a></p>
    */
@@ -109,6 +104,47 @@ namespace Model
      * format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
      */
     inline CertificateAuthority& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline CertificateAuthority& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline CertificateAuthority& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
+     */
+    inline CertificateAuthority& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
 
     /**
@@ -401,88 +437,170 @@ namespace Model
 
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline CertificateAuthority& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline CertificateAuthority& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
-     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
-     * <a>DeleteCertificateAuthorityRequest</a> action. </p>
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * action. </p>
      */
     inline const Aws::Utils::DateTime& GetRestorableUntil() const{ return m_restorableUntil; }
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
-     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
-     * <a>DeleteCertificateAuthorityRequest</a> action. </p>
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * action. </p>
      */
     inline bool RestorableUntilHasBeenSet() const { return m_restorableUntilHasBeenSet; }
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
-     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
-     * <a>DeleteCertificateAuthorityRequest</a> action. </p>
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * action. </p>
      */
     inline void SetRestorableUntil(const Aws::Utils::DateTime& value) { m_restorableUntilHasBeenSet = true; m_restorableUntil = value; }
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
-     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
-     * <a>DeleteCertificateAuthorityRequest</a> action. </p>
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * action. </p>
      */
     inline void SetRestorableUntil(Aws::Utils::DateTime&& value) { m_restorableUntilHasBeenSet = true; m_restorableUntil = std::move(value); }
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
-     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
-     * <a>DeleteCertificateAuthorityRequest</a> action. </p>
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * action. </p>
      */
     inline CertificateAuthority& WithRestorableUntil(const Aws::Utils::DateTime& value) { SetRestorableUntil(value); return *this;}
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,
-     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
-     * <a>DeleteCertificateAuthorityRequest</a> action. </p>
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+     * action. </p>
      */
     inline CertificateAuthority& WithRestorableUntil(Aws::Utils::DateTime&& value) { SetRestorableUntil(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline const KeyStorageSecurityStandard& GetKeyStorageSecurityStandard() const{ return m_keyStorageSecurityStandard; }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = std::move(value); }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CertificateAuthority& WithKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { SetKeyStorageSecurityStandard(value); return *this;}
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CertificateAuthority& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
@@ -516,6 +634,9 @@ namespace Model
 
     Aws::Utils::DateTime m_restorableUntil;
     bool m_restorableUntilHasBeenSet;
+
+    KeyStorageSecurityStandard m_keyStorageSecurityStandard;
+    bool m_keyStorageSecurityStandardHasBeenSet;
   };
 
 } // namespace Model

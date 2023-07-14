@@ -1,23 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionCacheBehaviors.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionDefaultCacheBehavior.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionLogging.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOrigins.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginGroups.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionViewerCertificate.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +41,133 @@ namespace Model
     AwsCloudFrontDistributionDetails(Aws::Utils::Json::JsonView jsonValue);
     AwsCloudFrontDistributionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline const AwsCloudFrontDistributionCacheBehaviors& GetCacheBehaviors() const{ return m_cacheBehaviors; }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline bool CacheBehaviorsHasBeenSet() const { return m_cacheBehaviorsHasBeenSet; }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline void SetCacheBehaviors(const AwsCloudFrontDistributionCacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline void SetCacheBehaviors(AwsCloudFrontDistributionCacheBehaviors&& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = std::move(value); }
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithCacheBehaviors(const AwsCloudFrontDistributionCacheBehaviors& value) { SetCacheBehaviors(value); return *this;}
+
+    /**
+     * <p>Provides information about the cache configuration for the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithCacheBehaviors(AwsCloudFrontDistributionCacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline const AwsCloudFrontDistributionDefaultCacheBehavior& GetDefaultCacheBehavior() const{ return m_defaultCacheBehavior; }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline bool DefaultCacheBehaviorHasBeenSet() const { return m_defaultCacheBehaviorHasBeenSet; }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline void SetDefaultCacheBehavior(const AwsCloudFrontDistributionDefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline void SetDefaultCacheBehavior(AwsCloudFrontDistributionDefaultCacheBehavior&& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = std::move(value); }
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultCacheBehavior(const AwsCloudFrontDistributionDefaultCacheBehavior& value) { SetDefaultCacheBehavior(value); return *this;}
+
+    /**
+     * <p>The default cache behavior for the configuration.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultCacheBehavior(AwsCloudFrontDistributionDefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline const Aws::String& GetDefaultRootObject() const{ return m_defaultRootObject; }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline bool DefaultRootObjectHasBeenSet() const { return m_defaultRootObjectHasBeenSet; }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline void SetDefaultRootObject(const Aws::String& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = value; }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline void SetDefaultRootObject(Aws::String&& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = std::move(value); }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline void SetDefaultRootObject(const char* value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject.assign(value); }
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultRootObject(const Aws::String& value) { SetDefaultRootObject(value); return *this;}
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultRootObject(Aws::String&& value) { SetDefaultRootObject(std::move(value)); return *this;}
+
+    /**
+     * <p>The object that CloudFront sends in response to requests from the origin (for
+     * example, index.html) when a viewer requests the root URL for the distribution
+     * (http://www.example.com) instead of an object in your distribution
+     * (http://www.example.com/product-description.html). </p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithDefaultRootObject(const char* value) { SetDefaultRootObject(value); return *this;}
 
 
     /**
@@ -132,42 +253,74 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline const Aws::String& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModifiedTime(const Aws::String& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModifiedTime(Aws::String&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline void SetLastModifiedTime(const char* value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime.assign(value); }
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithLastModifiedTime(const Aws::String& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithLastModifiedTime(Aws::String&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time that the distribution was last modified.</p>
+     * <p>Indicates when that the distribution was last modified.</p> <p>Uses the
+     * <code>date-time</code> format specified in <a
+     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithLastModifiedTime(const char* value) { SetLastModifiedTime(value); return *this;}
 
@@ -247,6 +400,74 @@ namespace Model
 
 
     /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline const AwsCloudFrontDistributionOriginGroups& GetOriginGroups() const{ return m_originGroups; }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline void SetOriginGroups(const AwsCloudFrontDistributionOriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline void SetOriginGroups(AwsCloudFrontDistributionOriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithOriginGroups(const AwsCloudFrontDistributionOriginGroups& value) { SetOriginGroups(value); return *this;}
+
+    /**
+     * <p>Provides information about the origin groups in the distribution.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithOriginGroups(AwsCloudFrontDistributionOriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline const AwsCloudFrontDistributionViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline void SetViewerCertificate(const AwsCloudFrontDistributionViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline void SetViewerCertificate(AwsCloudFrontDistributionViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithViewerCertificate(const AwsCloudFrontDistributionViewerCertificate& value) { SetViewerCertificate(value); return *this;}
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithViewerCertificate(AwsCloudFrontDistributionViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates the current status of the distribution.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -288,54 +509,63 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline const Aws::String& GetWebAclId() const{ return m_webAclId; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline bool WebAclIdHasBeenSet() const { return m_webAclIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(const Aws::String& value) { m_webAclIdHasBeenSet = true; m_webAclId = value; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::move(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(const char* value) { m_webAclIdHasBeenSet = true; m_webAclId.assign(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(const Aws::String& value) { SetWebAclId(value); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(Aws::String&& value) { SetWebAclId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
 
   private:
+
+    AwsCloudFrontDistributionCacheBehaviors m_cacheBehaviors;
+    bool m_cacheBehaviorsHasBeenSet;
+
+    AwsCloudFrontDistributionDefaultCacheBehavior m_defaultCacheBehavior;
+    bool m_defaultCacheBehaviorHasBeenSet;
+
+    Aws::String m_defaultRootObject;
+    bool m_defaultRootObjectHasBeenSet;
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
@@ -351,6 +581,12 @@ namespace Model
 
     AwsCloudFrontDistributionOrigins m_origins;
     bool m_originsHasBeenSet;
+
+    AwsCloudFrontDistributionOriginGroups m_originGroups;
+    bool m_originGroupsHasBeenSet;
+
+    AwsCloudFrontDistributionViewerCertificate m_viewerCertificate;
+    bool m_viewerCertificateHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

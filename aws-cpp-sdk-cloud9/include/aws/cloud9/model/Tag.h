@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
@@ -34,13 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>Metadata that is associated with AWS resources. In particular, a name-value
-   * pair that can be associated with an AWS Cloud9 development environment. There
-   * are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is
-   * created by the user. A system tag is automatically created by AWS services. A
-   * system tag is prefixed with "aws:" and cannot be modified by the
-   * user.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/Tag">AWS API
+   * <p>Metadata that is associated with Amazon Web Services resources. In
+   * particular, a name-value pair that can be associated with an Cloud9 development
+   * environment. There are two types of tags: <i>user tags</i> and <i>system
+   * tags</i>. A user tag is created by the user. A system tag is automatically
+   * created by Amazon Web Services services. A system tag is prefixed with
+   * <code>"aws:"</code> and cannot be modified by the user.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/Tag">AWS API
    * Reference</a></p>
    */
   class AWS_CLOUD9_API Tag

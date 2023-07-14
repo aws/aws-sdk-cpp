@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -54,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_username = value; }
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline void SetUsername(const char* value) { m_username.assign(value); }
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline AdminGetUserResult& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline AdminGetUserResult& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user about whom you are receiving information.</p>
+     * <p>The user name of the user about whom you're receiving information.</p>
      */
     inline AdminGetUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
 
@@ -178,17 +168,17 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the status is enabled.</p>
+     * <p>Indicates that the status is <code>enabled</code>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Indicates that the status is enabled.</p>
+     * <p>Indicates that the status is <code>enabled</code>.</p>
      */
     inline void SetEnabled(bool value) { m_enabled = value; }
 
     /**
-     * <p>Indicates that the status is enabled.</p>
+     * <p>Indicates that the status is <code>enabled</code>.</p>
      */
     inline AdminGetUserResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -197,13 +187,12 @@ namespace Model
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
-     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * <li> <p>UNKNOWN - User status isn't known.</p> </li> <li> <p>RESET_REQUIRED -
+     * User is confirmed, but the user must request a code and reset their password
+     * before they can sign in.</p> </li> <li> <p>FORCE_CHANGE_PASSWORD - The user is
+     * confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change their password to a new value before doing
+     * anything else. </p> </li> </ul>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
 
@@ -211,13 +200,12 @@ namespace Model
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
-     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * <li> <p>UNKNOWN - User status isn't known.</p> </li> <li> <p>RESET_REQUIRED -
+     * User is confirmed, but the user must request a code and reset their password
+     * before they can sign in.</p> </li> <li> <p>FORCE_CHANGE_PASSWORD - The user is
+     * confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change their password to a new value before doing
+     * anything else. </p> </li> </ul>
      */
     inline void SetUserStatus(const UserStatusType& value) { m_userStatus = value; }
 
@@ -225,13 +213,12 @@ namespace Model
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
-     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * <li> <p>UNKNOWN - User status isn't known.</p> </li> <li> <p>RESET_REQUIRED -
+     * User is confirmed, but the user must request a code and reset their password
+     * before they can sign in.</p> </li> <li> <p>FORCE_CHANGE_PASSWORD - The user is
+     * confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change their password to a new value before doing
+     * anything else. </p> </li> </ul>
      */
     inline void SetUserStatus(UserStatusType&& value) { m_userStatus = std::move(value); }
 
@@ -239,13 +226,12 @@ namespace Model
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
-     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * <li> <p>UNKNOWN - User status isn't known.</p> </li> <li> <p>RESET_REQUIRED -
+     * User is confirmed, but the user must request a code and reset their password
+     * before they can sign in.</p> </li> <li> <p>FORCE_CHANGE_PASSWORD - The user is
+     * confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change their password to a new value before doing
+     * anything else. </p> </li> </ul>
      */
     inline AdminGetUserResult& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
 
@@ -253,13 +239,12 @@ namespace Model
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
-     * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
-     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset his or her password before he or she can sign in.</p> </li> <li>
-     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
-     * a temporary password, but on first sign-in, the user must change his or her
-     * password to a new value before doing anything else. </p> </li> </ul>
+     * <li> <p>UNKNOWN - User status isn't known.</p> </li> <li> <p>RESET_REQUIRED -
+     * User is confirmed, but the user must request a code and reset their password
+     * before they can sign in.</p> </li> <li> <p>FORCE_CHANGE_PASSWORD - The user is
+     * confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change their password to a new value before doing
+     * anything else. </p> </li> </ul>
      */
     inline AdminGetUserResult& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
 
@@ -267,63 +252,63 @@ namespace Model
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
 
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptions = value; }
 
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptions = std::move(value); }
 
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline AdminGetUserResult& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
 
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline AdminGetUserResult& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
 
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline AdminGetUserResult& AddMFAOptions(const MFAOptionType& value) { m_mFAOptions.push_back(value); return *this; }
 
     /**
      * <p> <i>This response parameter is no longer supported.</i> It provides
      * information only about SMS MFA configurations. It doesn't provide information
-     * about TOTP software token MFA configurations. To look up information about
-     * either type of MFA configuration, use the
-     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
+     * about time-based one-time password (TOTP) software token MFA configurations. To
+     * look up information about either type of MFA configuration, use
+     * UserMFASettingList instead.</p>
      */
     inline AdminGetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
@@ -365,49 +350,49 @@ namespace Model
 
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline void SetUserMFASettingList(Aws::Vector<Aws::String>&& value) { m_userMFASettingList = std::move(value); }
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& WithUserMFASettingList(const Aws::Vector<Aws::String>& value) { SetUserMFASettingList(value); return *this;}
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& WithUserMFASettingList(Aws::Vector<Aws::String>&& value) { SetUserMFASettingList(std::move(value)); return *this;}
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& AddUserMFASettingList(const Aws::String& value) { m_userMFASettingList.push_back(value); return *this; }
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& AddUserMFASettingList(Aws::String&& value) { m_userMFASettingList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The MFA options that are enabled for the user. The possible values in this
+     * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& AddUserMFASettingList(const char* value) { m_userMFASettingList.push_back(value); return *this; }

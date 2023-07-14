@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -136,9 +126,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -147,9 +137,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -158,9 +148,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -169,9 +159,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -180,9 +170,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -191,9 +181,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfileTimesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -202,9 +192,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfileTimesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -213,9 +203,9 @@ namespace Model
      * <code>ListProfileTimes</code> request where <code>maxResults</code> was used and
      * the results exceeded the value of that parameter. Pagination continues from the
      * end of the previous results that returned the <code>nextToken</code> value. </p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfileTimesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -258,32 +248,56 @@ namespace Model
 
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline const AggregationPeriod& GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline void SetPeriod(const AggregationPeriod& value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline void SetPeriod(AggregationPeriod&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline ListProfileTimesRequest& WithPeriod(const AggregationPeriod& value) { SetPeriod(value); return *this;}
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline ListProfileTimesRequest& WithPeriod(AggregationPeriod&& value) { SetPeriod(std::move(value)); return *this;}
 

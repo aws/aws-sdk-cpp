@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/DataRepositoryConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,24 +19,41 @@ namespace Model
 {
 
 DataRepositoryConfiguration::DataRepositoryConfiguration() : 
+    m_lifecycle(DataRepositoryLifecycle::NOT_SET),
+    m_lifecycleHasBeenSet(false),
     m_importPathHasBeenSet(false),
     m_exportPathHasBeenSet(false),
     m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false)
+    m_importedFileChunkSizeHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false)
 {
 }
 
 DataRepositoryConfiguration::DataRepositoryConfiguration(JsonView jsonValue) : 
+    m_lifecycle(DataRepositoryLifecycle::NOT_SET),
+    m_lifecycleHasBeenSet(false),
     m_importPathHasBeenSet(false),
     m_exportPathHasBeenSet(false),
     m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false)
+    m_importedFileChunkSizeHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DataRepositoryConfiguration& DataRepositoryConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Lifecycle"))
+  {
+    m_lifecycle = DataRepositoryLifecycleMapper::GetDataRepositoryLifecycleForName(jsonValue.GetString("Lifecycle"));
+
+    m_lifecycleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ImportPath"))
   {
     m_importPath = jsonValue.GetString("ImportPath");
@@ -68,12 +75,31 @@ DataRepositoryConfiguration& DataRepositoryConfiguration::operator =(JsonView js
     m_importedFileChunkSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoImportPolicy"))
+  {
+    m_autoImportPolicy = AutoImportPolicyTypeMapper::GetAutoImportPolicyTypeForName(jsonValue.GetString("AutoImportPolicy"));
+
+    m_autoImportPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureDetails"))
+  {
+    m_failureDetails = jsonValue.GetObject("FailureDetails");
+
+    m_failureDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue DataRepositoryConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_lifecycleHasBeenSet)
+  {
+   payload.WithString("Lifecycle", DataRepositoryLifecycleMapper::GetNameForDataRepositoryLifecycle(m_lifecycle));
+  }
 
   if(m_importPathHasBeenSet)
   {
@@ -90,6 +116,17 @@ JsonValue DataRepositoryConfiguration::Jsonize() const
   if(m_importedFileChunkSizeHasBeenSet)
   {
    payload.WithInteger("ImportedFileChunkSize", m_importedFileChunkSize);
+
+  }
+
+  if(m_autoImportPolicyHasBeenSet)
+  {
+   payload.WithString("AutoImportPolicy", AutoImportPolicyTypeMapper::GetNameForAutoImportPolicyType(m_autoImportPolicy));
+  }
+
+  if(m_failureDetailsHasBeenSet)
+  {
+   payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
 
   }
 

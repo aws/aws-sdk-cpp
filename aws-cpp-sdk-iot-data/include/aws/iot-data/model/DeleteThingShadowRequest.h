@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
@@ -21,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoTDataPlane
 {
 namespace Model
@@ -43,6 +37,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteThingShadow"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -85,10 +81,54 @@ namespace Model
      */
     inline DeleteThingShadowRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline const Aws::String& GetShadowName() const{ return m_shadowName; }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline bool ShadowNameHasBeenSet() const { return m_shadowNameHasBeenSet; }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline void SetShadowName(const Aws::String& value) { m_shadowNameHasBeenSet = true; m_shadowName = value; }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline void SetShadowName(Aws::String&& value) { m_shadowNameHasBeenSet = true; m_shadowName = std::move(value); }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline void SetShadowName(const char* value) { m_shadowNameHasBeenSet = true; m_shadowName.assign(value); }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline DeleteThingShadowRequest& WithShadowName(const Aws::String& value) { SetShadowName(value); return *this;}
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline DeleteThingShadowRequest& WithShadowName(Aws::String&& value) { SetShadowName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline DeleteThingShadowRequest& WithShadowName(const char* value) { SetShadowName(value); return *this;}
+
   private:
 
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
+    Aws::String m_shadowName;
+    bool m_shadowNameHasBeenSet;
   };
 
 } // namespace Model

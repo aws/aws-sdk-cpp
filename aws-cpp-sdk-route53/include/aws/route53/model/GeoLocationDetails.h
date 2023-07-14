@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
@@ -214,50 +204,90 @@ namespace Model
 
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline bool SubdivisionCodeHasBeenSet() const { return m_subdivisionCodeHasBeenSet; }
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the subdivision. Route 53 currently supports only states in the
-     * United States.</p>
+     * <p>The code for the subdivision, such as a particular state within the United
+     * States. For a list of US state abbreviations, see <a
+     * href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and
+     * Possession Abbreviations</a> on the United States Postal Service website. For a
+     * list of all supported subdivision codes, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+     * API.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
 

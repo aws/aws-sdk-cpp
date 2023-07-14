@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/KeyValuePair.h>
+#include <aws/ecs/model/EnvironmentFile.h>
 #include <aws/ecs/model/ResourceRequirement.h>
 #include <utility>
 
@@ -37,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The overrides that should be sent to a container. An empty container override
-   * can be passed in. An example of an empty container override would be
+   * <p>The overrides that are sent to a container. An empty container override can
+   * be passed in. An example of an empty container override is
    * <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is
    * specified, the <code>name</code> parameter must be included.</p><p><h3>See
    * Also:</h3>   <a
@@ -233,6 +224,55 @@ namespace Model
 
 
     /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline const Aws::Vector<EnvironmentFile>& GetEnvironmentFiles() const{ return m_environmentFiles; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline bool EnvironmentFilesHasBeenSet() const { return m_environmentFilesHasBeenSet; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline void SetEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = value; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline void SetEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::move(value); }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& WithEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { SetEnvironmentFiles(value); return *this;}
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& WithEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { SetEnvironmentFiles(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& AddEnvironmentFiles(const EnvironmentFile& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& AddEnvironmentFiles(EnvironmentFile&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The number of <code>cpu</code> units reserved for the container, instead of
      * the default value from the task definition. You must also specify a container
      * name.</p>
@@ -389,6 +429,9 @@ namespace Model
 
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
+    Aws::Vector<EnvironmentFile> m_environmentFiles;
+    bool m_environmentFilesHasBeenSet;
 
     int m_cpu;
     bool m_cpuHasBeenSet;

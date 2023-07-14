@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/ParameterExceptionField.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -48,6 +38,7 @@ namespace Aws
         static const int REGEX_PATTERN_REFERENCE_STATEMENT_HASH = HashingUtils::HashString("REGEX_PATTERN_REFERENCE_STATEMENT");
         static const int IP_SET_REFERENCE_STATEMENT_HASH = HashingUtils::HashString("IP_SET_REFERENCE_STATEMENT");
         static const int MANAGED_RULE_SET_STATEMENT_HASH = HashingUtils::HashString("MANAGED_RULE_SET_STATEMENT");
+        static const int LABEL_MATCH_STATEMENT_HASH = HashingUtils::HashString("LABEL_MATCH_STATEMENT");
         static const int AND_STATEMENT_HASH = HashingUtils::HashString("AND_STATEMENT");
         static const int OR_STATEMENT_HASH = HashingUtils::HashString("OR_STATEMENT");
         static const int NOT_STATEMENT_HASH = HashingUtils::HashString("NOT_STATEMENT");
@@ -68,6 +59,30 @@ namespace Aws
         static const int TAG_KEYS_HASH = HashingUtils::HashString("TAG_KEYS");
         static const int METRIC_NAME_HASH = HashingUtils::HashString("METRIC_NAME");
         static const int FIREWALL_MANAGER_STATEMENT_HASH = HashingUtils::HashString("FIREWALL_MANAGER_STATEMENT");
+        static const int FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("FALLBACK_BEHAVIOR");
+        static const int POSITION_HASH = HashingUtils::HashString("POSITION");
+        static const int FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("FORWARDED_IP_CONFIG");
+        static const int IP_SET_FORWARDED_IP_CONFIG_HASH = HashingUtils::HashString("IP_SET_FORWARDED_IP_CONFIG");
+        static const int HEADER_NAME_HASH = HashingUtils::HashString("HEADER_NAME");
+        static const int CUSTOM_REQUEST_HANDLING_HASH = HashingUtils::HashString("CUSTOM_REQUEST_HANDLING");
+        static const int RESPONSE_CONTENT_TYPE_HASH = HashingUtils::HashString("RESPONSE_CONTENT_TYPE");
+        static const int CUSTOM_RESPONSE_HASH = HashingUtils::HashString("CUSTOM_RESPONSE");
+        static const int CUSTOM_RESPONSE_BODY_HASH = HashingUtils::HashString("CUSTOM_RESPONSE_BODY");
+        static const int JSON_MATCH_PATTERN_HASH = HashingUtils::HashString("JSON_MATCH_PATTERN");
+        static const int JSON_MATCH_SCOPE_HASH = HashingUtils::HashString("JSON_MATCH_SCOPE");
+        static const int BODY_PARSING_FALLBACK_BEHAVIOR_HASH = HashingUtils::HashString("BODY_PARSING_FALLBACK_BEHAVIOR");
+        static const int LOGGING_FILTER_HASH = HashingUtils::HashString("LOGGING_FILTER");
+        static const int FILTER_CONDITION_HASH = HashingUtils::HashString("FILTER_CONDITION");
+        static const int EXPIRE_TIMESTAMP_HASH = HashingUtils::HashString("EXPIRE_TIMESTAMP");
+        static const int CHANGE_PROPAGATION_STATUS_HASH = HashingUtils::HashString("CHANGE_PROPAGATION_STATUS");
+        static const int ASSOCIABLE_RESOURCE_HASH = HashingUtils::HashString("ASSOCIABLE_RESOURCE");
+        static const int LOG_DESTINATION_HASH = HashingUtils::HashString("LOG_DESTINATION");
+        static const int MANAGED_RULE_GROUP_CONFIG_HASH = HashingUtils::HashString("MANAGED_RULE_GROUP_CONFIG");
+        static const int PAYLOAD_TYPE_HASH = HashingUtils::HashString("PAYLOAD_TYPE");
+        static const int HEADER_MATCH_PATTERN_HASH = HashingUtils::HashString("HEADER_MATCH_PATTERN");
+        static const int COOKIE_MATCH_PATTERN_HASH = HashingUtils::HashString("COOKIE_MATCH_PATTERN");
+        static const int MAP_MATCH_SCOPE_HASH = HashingUtils::HashString("MAP_MATCH_SCOPE");
+        static const int OVERSIZE_HANDLING_HASH = HashingUtils::HashString("OVERSIZE_HANDLING");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -144,6 +159,10 @@ namespace Aws
           else if (hashCode == MANAGED_RULE_SET_STATEMENT_HASH)
           {
             return ParameterExceptionField::MANAGED_RULE_SET_STATEMENT;
+          }
+          else if (hashCode == LABEL_MATCH_STATEMENT_HASH)
+          {
+            return ParameterExceptionField::LABEL_MATCH_STATEMENT;
           }
           else if (hashCode == AND_STATEMENT_HASH)
           {
@@ -225,6 +244,102 @@ namespace Aws
           {
             return ParameterExceptionField::FIREWALL_MANAGER_STATEMENT;
           }
+          else if (hashCode == FALLBACK_BEHAVIOR_HASH)
+          {
+            return ParameterExceptionField::FALLBACK_BEHAVIOR;
+          }
+          else if (hashCode == POSITION_HASH)
+          {
+            return ParameterExceptionField::POSITION;
+          }
+          else if (hashCode == FORWARDED_IP_CONFIG_HASH)
+          {
+            return ParameterExceptionField::FORWARDED_IP_CONFIG;
+          }
+          else if (hashCode == IP_SET_FORWARDED_IP_CONFIG_HASH)
+          {
+            return ParameterExceptionField::IP_SET_FORWARDED_IP_CONFIG;
+          }
+          else if (hashCode == HEADER_NAME_HASH)
+          {
+            return ParameterExceptionField::HEADER_NAME;
+          }
+          else if (hashCode == CUSTOM_REQUEST_HANDLING_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_REQUEST_HANDLING;
+          }
+          else if (hashCode == RESPONSE_CONTENT_TYPE_HASH)
+          {
+            return ParameterExceptionField::RESPONSE_CONTENT_TYPE;
+          }
+          else if (hashCode == CUSTOM_RESPONSE_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_RESPONSE;
+          }
+          else if (hashCode == CUSTOM_RESPONSE_BODY_HASH)
+          {
+            return ParameterExceptionField::CUSTOM_RESPONSE_BODY;
+          }
+          else if (hashCode == JSON_MATCH_PATTERN_HASH)
+          {
+            return ParameterExceptionField::JSON_MATCH_PATTERN;
+          }
+          else if (hashCode == JSON_MATCH_SCOPE_HASH)
+          {
+            return ParameterExceptionField::JSON_MATCH_SCOPE;
+          }
+          else if (hashCode == BODY_PARSING_FALLBACK_BEHAVIOR_HASH)
+          {
+            return ParameterExceptionField::BODY_PARSING_FALLBACK_BEHAVIOR;
+          }
+          else if (hashCode == LOGGING_FILTER_HASH)
+          {
+            return ParameterExceptionField::LOGGING_FILTER;
+          }
+          else if (hashCode == FILTER_CONDITION_HASH)
+          {
+            return ParameterExceptionField::FILTER_CONDITION;
+          }
+          else if (hashCode == EXPIRE_TIMESTAMP_HASH)
+          {
+            return ParameterExceptionField::EXPIRE_TIMESTAMP;
+          }
+          else if (hashCode == CHANGE_PROPAGATION_STATUS_HASH)
+          {
+            return ParameterExceptionField::CHANGE_PROPAGATION_STATUS;
+          }
+          else if (hashCode == ASSOCIABLE_RESOURCE_HASH)
+          {
+            return ParameterExceptionField::ASSOCIABLE_RESOURCE;
+          }
+          else if (hashCode == LOG_DESTINATION_HASH)
+          {
+            return ParameterExceptionField::LOG_DESTINATION;
+          }
+          else if (hashCode == MANAGED_RULE_GROUP_CONFIG_HASH)
+          {
+            return ParameterExceptionField::MANAGED_RULE_GROUP_CONFIG;
+          }
+          else if (hashCode == PAYLOAD_TYPE_HASH)
+          {
+            return ParameterExceptionField::PAYLOAD_TYPE;
+          }
+          else if (hashCode == HEADER_MATCH_PATTERN_HASH)
+          {
+            return ParameterExceptionField::HEADER_MATCH_PATTERN;
+          }
+          else if (hashCode == COOKIE_MATCH_PATTERN_HASH)
+          {
+            return ParameterExceptionField::COOKIE_MATCH_PATTERN;
+          }
+          else if (hashCode == MAP_MATCH_SCOPE_HASH)
+          {
+            return ParameterExceptionField::MAP_MATCH_SCOPE;
+          }
+          else if (hashCode == OVERSIZE_HANDLING_HASH)
+          {
+            return ParameterExceptionField::OVERSIZE_HANDLING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -275,6 +390,8 @@ namespace Aws
             return "IP_SET_REFERENCE_STATEMENT";
           case ParameterExceptionField::MANAGED_RULE_SET_STATEMENT:
             return "MANAGED_RULE_SET_STATEMENT";
+          case ParameterExceptionField::LABEL_MATCH_STATEMENT:
+            return "LABEL_MATCH_STATEMENT";
           case ParameterExceptionField::AND_STATEMENT:
             return "AND_STATEMENT";
           case ParameterExceptionField::OR_STATEMENT:
@@ -315,6 +432,54 @@ namespace Aws
             return "METRIC_NAME";
           case ParameterExceptionField::FIREWALL_MANAGER_STATEMENT:
             return "FIREWALL_MANAGER_STATEMENT";
+          case ParameterExceptionField::FALLBACK_BEHAVIOR:
+            return "FALLBACK_BEHAVIOR";
+          case ParameterExceptionField::POSITION:
+            return "POSITION";
+          case ParameterExceptionField::FORWARDED_IP_CONFIG:
+            return "FORWARDED_IP_CONFIG";
+          case ParameterExceptionField::IP_SET_FORWARDED_IP_CONFIG:
+            return "IP_SET_FORWARDED_IP_CONFIG";
+          case ParameterExceptionField::HEADER_NAME:
+            return "HEADER_NAME";
+          case ParameterExceptionField::CUSTOM_REQUEST_HANDLING:
+            return "CUSTOM_REQUEST_HANDLING";
+          case ParameterExceptionField::RESPONSE_CONTENT_TYPE:
+            return "RESPONSE_CONTENT_TYPE";
+          case ParameterExceptionField::CUSTOM_RESPONSE:
+            return "CUSTOM_RESPONSE";
+          case ParameterExceptionField::CUSTOM_RESPONSE_BODY:
+            return "CUSTOM_RESPONSE_BODY";
+          case ParameterExceptionField::JSON_MATCH_PATTERN:
+            return "JSON_MATCH_PATTERN";
+          case ParameterExceptionField::JSON_MATCH_SCOPE:
+            return "JSON_MATCH_SCOPE";
+          case ParameterExceptionField::BODY_PARSING_FALLBACK_BEHAVIOR:
+            return "BODY_PARSING_FALLBACK_BEHAVIOR";
+          case ParameterExceptionField::LOGGING_FILTER:
+            return "LOGGING_FILTER";
+          case ParameterExceptionField::FILTER_CONDITION:
+            return "FILTER_CONDITION";
+          case ParameterExceptionField::EXPIRE_TIMESTAMP:
+            return "EXPIRE_TIMESTAMP";
+          case ParameterExceptionField::CHANGE_PROPAGATION_STATUS:
+            return "CHANGE_PROPAGATION_STATUS";
+          case ParameterExceptionField::ASSOCIABLE_RESOURCE:
+            return "ASSOCIABLE_RESOURCE";
+          case ParameterExceptionField::LOG_DESTINATION:
+            return "LOG_DESTINATION";
+          case ParameterExceptionField::MANAGED_RULE_GROUP_CONFIG:
+            return "MANAGED_RULE_GROUP_CONFIG";
+          case ParameterExceptionField::PAYLOAD_TYPE:
+            return "PAYLOAD_TYPE";
+          case ParameterExceptionField::HEADER_MATCH_PATTERN:
+            return "HEADER_MATCH_PATTERN";
+          case ParameterExceptionField::COOKIE_MATCH_PATTERN:
+            return "COOKIE_MATCH_PATTERN";
+          case ParameterExceptionField::MAP_MATCH_SCOPE:
+            return "MAP_MATCH_SCOPE";
+          case ParameterExceptionField::OVERSIZE_HANDLING:
+            return "OVERSIZE_HANDLING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

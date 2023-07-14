@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -239,56 +229,64 @@ namespace Model
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline const Aws::Vector<MetricToRetain>& GetAdditionalMetricsToRetainV2() const{ return m_additionalMetricsToRetainV2; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline bool AdditionalMetricsToRetainV2HasBeenSet() const { return m_additionalMetricsToRetainV2HasBeenSet; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline void SetAdditionalMetricsToRetainV2(const Aws::Vector<MetricToRetain>& value) { m_additionalMetricsToRetainV2HasBeenSet = true; m_additionalMetricsToRetainV2 = value; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline void SetAdditionalMetricsToRetainV2(Aws::Vector<MetricToRetain>&& value) { m_additionalMetricsToRetainV2HasBeenSet = true; m_additionalMetricsToRetainV2 = std::move(value); }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline UpdateSecurityProfileRequest& WithAdditionalMetricsToRetainV2(const Aws::Vector<MetricToRetain>& value) { SetAdditionalMetricsToRetainV2(value); return *this;}
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline UpdateSecurityProfileRequest& WithAdditionalMetricsToRetainV2(Aws::Vector<MetricToRetain>&& value) { SetAdditionalMetricsToRetainV2(std::move(value)); return *this;}
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline UpdateSecurityProfileRequest& AddAdditionalMetricsToRetainV2(const MetricToRetain& value) { m_additionalMetricsToRetainV2HasBeenSet = true; m_additionalMetricsToRetainV2.push_back(value); return *this; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
      * retained for any metric used in the profile's behaviors, but it is also retained
-     * for any metric specified here.</p>
+     * for any metric specified here. Can be used with custom metrics; cannot be used
+     * with dimensions.</p>
      */
     inline UpdateSecurityProfileRequest& AddAdditionalMetricsToRetainV2(MetricToRetain&& value) { m_additionalMetricsToRetainV2HasBeenSet = true; m_additionalMetricsToRetainV2.push_back(std::move(value)); return *this; }
 

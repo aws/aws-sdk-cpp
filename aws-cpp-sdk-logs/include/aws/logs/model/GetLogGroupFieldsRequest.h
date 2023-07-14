@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -87,37 +77,37 @@ namespace Model
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 8 minutes before and 8 minutes after this time are searched. If you omit
-     * <code>time</code>, the past 15 minutes are queried.</p> <p>The <code>time</code>
-     * value is specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.</p>
+     * the 15 minutes before this time are queries. If you omit <code>time</code> the 8
+     * minutes before and 8 minutes after this time are searched.</p> <p>The
+     * <code>time</code> value is specified as epoch time, the number of seconds since
+     * January 1, 1970, 00:00:00 UTC.</p>
      */
     inline long long GetTime() const{ return m_time; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 8 minutes before and 8 minutes after this time are searched. If you omit
-     * <code>time</code>, the past 15 minutes are queried.</p> <p>The <code>time</code>
-     * value is specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.</p>
+     * the 15 minutes before this time are queries. If you omit <code>time</code> the 8
+     * minutes before and 8 minutes after this time are searched.</p> <p>The
+     * <code>time</code> value is specified as epoch time, the number of seconds since
+     * January 1, 1970, 00:00:00 UTC.</p>
      */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 8 minutes before and 8 minutes after this time are searched. If you omit
-     * <code>time</code>, the past 15 minutes are queried.</p> <p>The <code>time</code>
-     * value is specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.</p>
+     * the 15 minutes before this time are queries. If you omit <code>time</code> the 8
+     * minutes before and 8 minutes after this time are searched.</p> <p>The
+     * <code>time</code> value is specified as epoch time, the number of seconds since
+     * January 1, 1970, 00:00:00 UTC.</p>
      */
     inline void SetTime(long long value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,
-     * the 8 minutes before and 8 minutes after this time are searched. If you omit
-     * <code>time</code>, the past 15 minutes are queried.</p> <p>The <code>time</code>
-     * value is specified as epoch time, the number of seconds since January 1, 1970,
-     * 00:00:00 UTC.</p>
+     * the 15 minutes before this time are queries. If you omit <code>time</code> the 8
+     * minutes before and 8 minutes after this time are searched.</p> <p>The
+     * <code>time</code> value is specified as epoch time, the number of seconds since
+     * January 1, 1970, 00:00:00 UTC.</p>
      */
     inline GetLogGroupFieldsRequest& WithTime(long long value) { SetTime(value); return *this;}
 

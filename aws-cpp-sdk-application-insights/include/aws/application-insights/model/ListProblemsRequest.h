@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
@@ -235,6 +225,47 @@ namespace Model
      */
     inline ListProblemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline ListProblemsRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline ListProblemsRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the component. </p>
+     */
+    inline ListProblemsRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -251,6 +282,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_componentName;
+    bool m_componentNameHasBeenSet;
   };
 
 } // namespace Model

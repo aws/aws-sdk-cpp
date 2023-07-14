@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -31,6 +21,8 @@
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
+#include <aws/ec2/model/VirtualizationType.h>
+#include <aws/ec2/model/BootModeType.h>
 #include <utility>
 
 namespace Aws
@@ -66,63 +58,63 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline InstanceTypeInfo& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline InstanceTypeInfo& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline bool GetCurrentGeneration() const{ return m_currentGeneration; }
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
-     * <p>Indicates whether the instance type is a current generation.</p>
+     * <p>Indicates whether the instance type is current generation.</p>
      */
     inline InstanceTypeInfo& WithCurrentGeneration(bool value) { SetCurrentGeneration(value); return *this;}
 
@@ -190,94 +182,135 @@ namespace Model
 
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline const Aws::Vector<RootDeviceType>& GetSupportedRootDeviceTypes() const{ return m_supportedRootDeviceTypes; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline bool SupportedRootDeviceTypesHasBeenSet() const { return m_supportedRootDeviceTypesHasBeenSet; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline void SetSupportedRootDeviceTypes(const Aws::Vector<RootDeviceType>& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes = value; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline void SetSupportedRootDeviceTypes(Aws::Vector<RootDeviceType>&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes = std::move(value); }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& WithSupportedRootDeviceTypes(const Aws::Vector<RootDeviceType>& value) { SetSupportedRootDeviceTypes(value); return *this;}
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& WithSupportedRootDeviceTypes(Aws::Vector<RootDeviceType>&& value) { SetSupportedRootDeviceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& AddSupportedRootDeviceTypes(const RootDeviceType& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Indicates the supported root device types.</p>
+     * <p>The supported root device types.</p>
      */
     inline InstanceTypeInfo& AddSupportedRootDeviceTypes(RootDeviceType&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>The supported virtualization types.</p>
+     */
+    inline const Aws::Vector<VirtualizationType>& GetSupportedVirtualizationTypes() const{ return m_supportedVirtualizationTypes; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline bool SupportedVirtualizationTypesHasBeenSet() const { return m_supportedVirtualizationTypesHasBeenSet; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline void SetSupportedVirtualizationTypes(const Aws::Vector<VirtualizationType>& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes = value; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline void SetSupportedVirtualizationTypes(Aws::Vector<VirtualizationType>&& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes = std::move(value); }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedVirtualizationTypes(const Aws::Vector<VirtualizationType>& value) { SetSupportedVirtualizationTypes(value); return *this;}
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedVirtualizationTypes(Aws::Vector<VirtualizationType>&& value) { SetSupportedVirtualizationTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedVirtualizationTypes(const VirtualizationType& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedVirtualizationTypes(VirtualizationType&& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline bool GetBareMetal() const{ return m_bareMetal; }
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline bool BareMetalHasBeenSet() const { return m_bareMetalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline void SetBareMetal(bool value) { m_bareMetalHasBeenSet = true; m_bareMetal = value; }
 
     /**
-     * <p>Indicates whether the instance is bare metal.</p>
+     * <p>Indicates whether the instance is a bare metal instance type.</p>
      */
     inline InstanceTypeInfo& WithBareMetal(bool value) { SetBareMetal(value); return *this;}
 
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline const InstanceTypeHypervisor& GetHypervisor() const{ return m_hypervisor; }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline bool HypervisorHasBeenSet() const { return m_hypervisorHasBeenSet; }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline void SetHypervisor(const InstanceTypeHypervisor& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline void SetHypervisor(InstanceTypeHypervisor&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline InstanceTypeInfo& WithHypervisor(const InstanceTypeHypervisor& value) { SetHypervisor(value); return *this;}
 
     /**
-     * <p>Indicates the hypervisor used for the instance type.</p>
+     * <p>The hypervisor for the instance type.</p>
      */
     inline InstanceTypeInfo& WithHypervisor(InstanceTypeHypervisor&& value) { SetHypervisor(std::move(value)); return *this;}
 
@@ -397,32 +430,32 @@ namespace Model
 
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline const InstanceStorageInfo& GetInstanceStorageInfo() const{ return m_instanceStorageInfo; }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline bool InstanceStorageInfoHasBeenSet() const { return m_instanceStorageInfoHasBeenSet; }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline void SetInstanceStorageInfo(const InstanceStorageInfo& value) { m_instanceStorageInfoHasBeenSet = true; m_instanceStorageInfo = value; }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline void SetInstanceStorageInfo(InstanceStorageInfo&& value) { m_instanceStorageInfoHasBeenSet = true; m_instanceStorageInfo = std::move(value); }
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline InstanceTypeInfo& WithInstanceStorageInfo(const InstanceStorageInfo& value) { SetInstanceStorageInfo(value); return *this;}
 
     /**
-     * <p>Describes the disks for the instance type.</p>
+     * <p>Describes the instance storage for the instance type.</p>
      */
     inline InstanceTypeInfo& WithInstanceStorageInfo(InstanceStorageInfo&& value) { SetInstanceStorageInfo(std::move(value)); return *this;}
 
@@ -700,6 +733,63 @@ namespace Model
      */
     inline InstanceTypeInfo& WithAutoRecoverySupported(bool value) { SetAutoRecoverySupported(value); return *this;}
 
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Aws::Vector<BootModeType>& GetSupportedBootModes() const{ return m_supportedBootModes; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool SupportedBootModesHasBeenSet() const { return m_supportedBootModesHasBeenSet; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetSupportedBootModes(const Aws::Vector<BootModeType>& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes = value; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline void SetSupportedBootModes(Aws::Vector<BootModeType>&& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes = std::move(value); }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedBootModes(const Aws::Vector<BootModeType>& value) { SetSupportedBootModes(value); return *this;}
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedBootModes(Aws::Vector<BootModeType>&& value) { SetSupportedBootModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedBootModes(const BootModeType& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedBootModes(BootModeType&& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes.push_back(std::move(value)); return *this; }
+
   private:
 
     InstanceType m_instanceType;
@@ -716,6 +806,9 @@ namespace Model
 
     Aws::Vector<RootDeviceType> m_supportedRootDeviceTypes;
     bool m_supportedRootDeviceTypesHasBeenSet;
+
+    Aws::Vector<VirtualizationType> m_supportedVirtualizationTypes;
+    bool m_supportedVirtualizationTypesHasBeenSet;
 
     bool m_bareMetal;
     bool m_bareMetalHasBeenSet;
@@ -767,6 +860,9 @@ namespace Model
 
     bool m_autoRecoverySupported;
     bool m_autoRecoverySupportedHasBeenSet;
+
+    Aws::Vector<BootModeType> m_supportedBootModes;
+    bool m_supportedBootModesHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -77,6 +67,7 @@ namespace Aws
              * @return The response from the HTTP endpoint as a string, together with the http response code.
              */
             virtual AmazonWebServiceResult<Aws::String> GetResourceWithAWSWebServiceResult(const char *endpoint, const char *resourcePath, const char *authToken) const;
+
             /**
              * Above Function: Aws::String GetResource(const char* endpoint, const char* resourcePath, const char* authToken) const;
              * is limited to HTTP GET method and caller can't add wanted HTTP headers as well.
@@ -145,12 +136,27 @@ namespace Aws
              */
             virtual Aws::String GetCurrentRegion() const;
 
+            /**
+             * Sets endpoint used to connect to the EC2 Instance metadata Service
+             */
+            virtual void SetEndpoint(const Aws::String& endpoint);
+
+            /**
+             * Gets endpoint used to connect to the EC2 Instance metadata Service
+             */
+            virtual Aws::String GetEndpoint() const;
+
         private:
             Aws::String m_endpoint;
             mutable std::recursive_mutex m_tokenMutex;
             mutable Aws::String m_token;
             mutable bool m_tokenRequired;
+            mutable Aws::String m_region;
         };
+
+        void AWS_CORE_API InitEC2MetadataClient();
+        void AWS_CORE_API CleanupEC2MetadataClient();
+        std::shared_ptr<EC2MetadataClient> AWS_CORE_API GetEC2MetadataClient();
 
         /**
          * Derived class to support retrieving of ECS Credentials
@@ -225,5 +231,36 @@ namespace Aws
         private:
             Aws::String m_endpoint;
         };
+
+        /**
+         * To support retrieving credentials from SSO.
+         */
+         class AWS_CORE_API SSOCredentialsClient : public AWSHttpResourceClient
+         {
+         public:
+             SSOCredentialsClient(const Client::ClientConfiguration& clientConfiguration);
+
+             SSOCredentialsClient& operator =(SSOCredentialsClient& rhs) = delete;
+             SSOCredentialsClient(const SSOCredentialsClient& rhs) = delete;
+             SSOCredentialsClient& operator =(SSOCredentialsClient&& rhs) = delete;
+             SSOCredentialsClient(SSOCredentialsClient&& rhs) = delete;
+
+             struct SSOGetRoleCredentialsRequest
+             {
+                 Aws::String m_ssoAccountId;
+                 Aws::String m_ssoRoleName;
+                 Aws::String m_accessToken;
+             };
+
+             struct SSOGetRoleCredentialsResult
+             {
+                 Aws::Auth::AWSCredentials creds;
+             };
+
+             SSOGetRoleCredentialsResult GetSSOCredentials(const SSOGetRoleCredentialsRequest& request);
+
+         private:
+             Aws::String m_endpoint;
+         };
     } // namespace Internal
 } // namespace Aws

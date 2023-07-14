@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Placement.h>
+#include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <utility>
 
 namespace Aws
@@ -52,32 +43,38 @@ namespace Model
 
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type.</p>
+     * <p>The instance type.</p>  <p>If you specify <code>InstanceTypes</code>,
+     * you can't specify <code>InstanceRequirements</code>.</p> 
      */
     inline FleetLaunchTemplateOverridesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -259,42 +256,66 @@ namespace Model
 
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline double GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority for the launch template override. If <b>AllocationStrategy</b>
-     * is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which
-     * launch template override to use first in fulfilling On-Demand capacity. The
-     * highest priority is launched first. Valid values are whole numbers starting at
-     * <code>0</code>. The lower the number, the higher the priority. If no number is
-     * set, the launch template override has the lowest priority.</p>
+     * <p>The priority for the launch template override. The highest priority is
+     * launched first.</p> <p>If the On-Demand <code>AllocationStrategy</code> is set
+     * to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch
+     * template override to use first in fulfilling On-Demand capacity.</p> <p>If the
+     * Spot <code>AllocationStrategy</code> is set to
+     * <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a
+     * best-effort basis to determine which launch template override to use in
+     * fulfilling Spot capacity, but optimizes for capacity first.</p> <p>Valid values
+     * are whole numbers starting at <code>0</code>. The lower the number, the higher
+     * the priority. If no number is set, the launch template override has the lowest
+     * priority. You can set the same priority for different launch template
+     * overrides.</p>
      */
     inline FleetLaunchTemplateOverridesRequest& WithPriority(double value) { SetPriority(value); return *this;}
 
@@ -329,6 +350,55 @@ namespace Model
      */
     inline FleetLaunchTemplateOverridesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -351,6 +421,9 @@ namespace Model
 
     Placement m_placement;
     bool m_placementHasBeenSet;
+
+    InstanceRequirementsRequest m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/detective/Detective_EXPORTS.h>
@@ -45,108 +35,115 @@ namespace Model
 
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline const Aws::Vector<MemberDetail>& GetMembers() const{ return m_members; }
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline void SetMembers(const Aws::Vector<MemberDetail>& value) { m_members = value; }
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline void SetMembers(Aws::Vector<MemberDetail>&& value) { m_members = std::move(value); }
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline CreateMembersResult& WithMembers(const Aws::Vector<MemberDetail>& value) { SetMembers(value); return *this;}
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline CreateMembersResult& WithMembers(Aws::Vector<MemberDetail>&& value) { SetMembers(std::move(value)); return *this;}
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline CreateMembersResult& AddMembers(const MemberDetail& value) { m_members.push_back(value); return *this; }
 
     /**
-     * <p>The set of member account invitation requests that Detective was able to
-     * process. This includes accounts that are being verified, that failed
-     * verification, and that passed verification and are being sent an invitation.</p>
+     * <p>The set of member account invitation or enablement requests that Detective
+     * was able to process. This includes accounts that are being verified, that failed
+     * verification, and that passed verification and are being sent an invitation or
+     * are being enabled.</p>
      */
     inline CreateMembersResult& AddMembers(MemberDetail&& value) { m_members.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline CreateMembersResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline CreateMembersResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline CreateMembersResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
 
     /**
      * <p>The list of accounts for which Detective was unable to process the invitation
-     * request. For each account, the list provides the reason why the request could
-     * not be processed. The list includes accounts that are already member accounts in
-     * the behavior graph.</p>
+     * or enablement request. For each account, the list provides the reason why the
+     * request could not be processed. The list includes accounts that are already
+     * member accounts in the behavior graph.</p>
      */
     inline CreateMembersResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
 

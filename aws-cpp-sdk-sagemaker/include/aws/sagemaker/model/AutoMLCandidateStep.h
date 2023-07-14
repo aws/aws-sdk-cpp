@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the steps for a Candidate, and what step it is working
+   * <p>Information about the steps for a candidate and what step it is working
    * on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidateStep">AWS
    * API Reference</a></p>
@@ -50,114 +40,114 @@ namespace Model
 
 
     /**
-     * <p>Whether the Candidate is at the transform, training, or processing step.</p>
+     * <p>Whether the candidate is at the transform, training, or processing step.</p>
      */
     inline const CandidateStepType& GetCandidateStepType() const{ return m_candidateStepType; }
 
     /**
-     * <p>Whether the Candidate is at the transform, training, or processing step.</p>
+     * <p>Whether the candidate is at the transform, training, or processing step.</p>
      */
     inline bool CandidateStepTypeHasBeenSet() const { return m_candidateStepTypeHasBeenSet; }
 
     /**
-     * <p>Whether the Candidate is at the transform, training, or processing step.</p>
+     * <p>Whether the candidate is at the transform, training, or processing step.</p>
      */
     inline void SetCandidateStepType(const CandidateStepType& value) { m_candidateStepTypeHasBeenSet = true; m_candidateStepType = value; }
 
     /**
-     * <p>Whether the Candidate is at the transform, training, or processing step.</p>
+     * <p>Whether the candidate is at the transform, training, or processing step.</p>
      */
     inline void SetCandidateStepType(CandidateStepType&& value) { m_candidateStepTypeHasBeenSet = true; m_candidateStepType = std::move(value); }
 
     /**
-     * <p>Whether the Candidate is at the transform, training, or processing step.</p>
+     * <p>Whether the candidate is at the transform, training, or processing step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepType(const CandidateStepType& value) { SetCandidateStepType(value); return *this;}
 
     /**
-     * <p>Whether the Candidate is at the transform, training, or processing step.</p>
+     * <p>Whether the candidate is at the transform, training, or processing step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepType(CandidateStepType&& value) { SetCandidateStepType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline const Aws::String& GetCandidateStepArn() const{ return m_candidateStepArn; }
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline bool CandidateStepArnHasBeenSet() const { return m_candidateStepArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline void SetCandidateStepArn(const Aws::String& value) { m_candidateStepArnHasBeenSet = true; m_candidateStepArn = value; }
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline void SetCandidateStepArn(Aws::String&& value) { m_candidateStepArnHasBeenSet = true; m_candidateStepArn = std::move(value); }
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline void SetCandidateStepArn(const char* value) { m_candidateStepArnHasBeenSet = true; m_candidateStepArn.assign(value); }
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepArn(const Aws::String& value) { SetCandidateStepArn(value); return *this;}
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepArn(Aws::String&& value) { SetCandidateStepArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the Candidate's step.</p>
+     * <p>The ARN for the candidate's step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepArn(const char* value) { SetCandidateStepArn(value); return *this;}
 
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline const Aws::String& GetCandidateStepName() const{ return m_candidateStepName; }
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline bool CandidateStepNameHasBeenSet() const { return m_candidateStepNameHasBeenSet; }
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline void SetCandidateStepName(const Aws::String& value) { m_candidateStepNameHasBeenSet = true; m_candidateStepName = value; }
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline void SetCandidateStepName(Aws::String&& value) { m_candidateStepNameHasBeenSet = true; m_candidateStepName = std::move(value); }
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline void SetCandidateStepName(const char* value) { m_candidateStepNameHasBeenSet = true; m_candidateStepName.assign(value); }
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepName(const Aws::String& value) { SetCandidateStepName(value); return *this;}
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepName(Aws::String&& value) { SetCandidateStepName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the Candidate's step.</p>
+     * <p>The name for the candidate's step.</p>
      */
     inline AutoMLCandidateStep& WithCandidateStepName(const char* value) { SetCandidateStepName(value); return *this;}
 

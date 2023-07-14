@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
@@ -130,7 +120,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -141,7 +131,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
 
@@ -152,7 +142,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
 
@@ -163,7 +153,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -174,7 +164,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -185,7 +175,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
 
@@ -196,7 +186,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 

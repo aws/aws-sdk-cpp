@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sesv2/model/DkimAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,12 @@ DkimAttributes::DkimAttributes() :
     m_statusHasBeenSet(false),
     m_tokensHasBeenSet(false),
     m_signingAttributesOrigin(DkimSigningAttributesOrigin::NOT_SET),
-    m_signingAttributesOriginHasBeenSet(false)
+    m_signingAttributesOriginHasBeenSet(false),
+    m_nextSigningKeyLength(DkimSigningKeyLength::NOT_SET),
+    m_nextSigningKeyLengthHasBeenSet(false),
+    m_currentSigningKeyLength(DkimSigningKeyLength::NOT_SET),
+    m_currentSigningKeyLengthHasBeenSet(false),
+    m_lastKeyGenerationTimestampHasBeenSet(false)
 {
 }
 
@@ -46,7 +41,12 @@ DkimAttributes::DkimAttributes(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_tokensHasBeenSet(false),
     m_signingAttributesOrigin(DkimSigningAttributesOrigin::NOT_SET),
-    m_signingAttributesOriginHasBeenSet(false)
+    m_signingAttributesOriginHasBeenSet(false),
+    m_nextSigningKeyLength(DkimSigningKeyLength::NOT_SET),
+    m_nextSigningKeyLengthHasBeenSet(false),
+    m_currentSigningKeyLength(DkimSigningKeyLength::NOT_SET),
+    m_currentSigningKeyLengthHasBeenSet(false),
+    m_lastKeyGenerationTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +84,27 @@ DkimAttributes& DkimAttributes::operator =(JsonView jsonValue)
     m_signingAttributesOriginHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NextSigningKeyLength"))
+  {
+    m_nextSigningKeyLength = DkimSigningKeyLengthMapper::GetDkimSigningKeyLengthForName(jsonValue.GetString("NextSigningKeyLength"));
+
+    m_nextSigningKeyLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CurrentSigningKeyLength"))
+  {
+    m_currentSigningKeyLength = DkimSigningKeyLengthMapper::GetDkimSigningKeyLengthForName(jsonValue.GetString("CurrentSigningKeyLength"));
+
+    m_currentSigningKeyLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastKeyGenerationTimestamp"))
+  {
+    m_lastKeyGenerationTimestamp = jsonValue.GetDouble("LastKeyGenerationTimestamp");
+
+    m_lastKeyGenerationTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +137,21 @@ JsonValue DkimAttributes::Jsonize() const
   if(m_signingAttributesOriginHasBeenSet)
   {
    payload.WithString("SigningAttributesOrigin", DkimSigningAttributesOriginMapper::GetNameForDkimSigningAttributesOrigin(m_signingAttributesOrigin));
+  }
+
+  if(m_nextSigningKeyLengthHasBeenSet)
+  {
+   payload.WithString("NextSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_nextSigningKeyLength));
+  }
+
+  if(m_currentSigningKeyLengthHasBeenSet)
+  {
+   payload.WithString("CurrentSigningKeyLength", DkimSigningKeyLengthMapper::GetNameForDkimSigningKeyLength(m_currentSigningKeyLength));
+  }
+
+  if(m_lastKeyGenerationTimestampHasBeenSet)
+  {
+   payload.WithDouble("LastKeyGenerationTimestamp", m_lastKeyGenerationTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

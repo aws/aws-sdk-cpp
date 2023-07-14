@@ -1,28 +1,21 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/MediaLiveRequest.h>
+#include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
+#include <aws/medialive/model/MaintenanceCreateSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/medialive/model/VpcOutputSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -52,6 +45,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateChannel"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline const CdiInputSpecification& GetCdiInputSpecification() const{ return m_cdiInputSpecification; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline bool CdiInputSpecificationHasBeenSet() const { return m_cdiInputSpecificationHasBeenSet; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(const CdiInputSpecification& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = value; }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline void SetCdiInputSpecification(CdiInputSpecification&& value) { m_cdiInputSpecificationHasBeenSet = true; m_cdiInputSpecification = std::move(value); }
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline CreateChannelRequest& WithCdiInputSpecification(const CdiInputSpecification& value) { SetCdiInputSpecification(value); return *this;}
+
+    /**
+     * Specification of CDI inputs for this channel
+     */
+    inline CreateChannelRequest& WithCdiInputSpecification(CdiInputSpecification&& value) { SetCdiInputSpecification(std::move(value)); return *this;}
 
 
     /**
@@ -177,32 +201,32 @@ namespace Model
 
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline bool InputSpecificationHasBeenSet() const { return m_inputSpecificationHasBeenSet; }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline CreateChannelRequest& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      */
     inline CreateChannelRequest& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
 
@@ -236,6 +260,37 @@ namespace Model
      * The log level to write to CloudWatch Logs.
      */
     inline CreateChannelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline const MaintenanceCreateSettings& GetMaintenance() const{ return m_maintenance; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(const MaintenanceCreateSettings& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(MaintenanceCreateSettings&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline CreateChannelRequest& WithMaintenance(const MaintenanceCreateSettings& value) { SetMaintenance(value); return *this;}
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline CreateChannelRequest& WithMaintenance(MaintenanceCreateSettings&& value) { SetMaintenance(std::move(value)); return *this;}
 
 
     /**
@@ -458,7 +513,41 @@ creating multiple resources.
      */
     inline CreateChannelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline const VpcOutputSettings& GetVpc() const{ return m_vpc; }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline void SetVpc(const VpcOutputSettings& value) { m_vpcHasBeenSet = true; m_vpc = value; }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline void SetVpc(VpcOutputSettings&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline CreateChannelRequest& WithVpc(const VpcOutputSettings& value) { SetVpc(value); return *this;}
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline CreateChannelRequest& WithVpc(VpcOutputSettings&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
+
+    CdiInputSpecification m_cdiInputSpecification;
+    bool m_cdiInputSpecificationHasBeenSet;
 
     ChannelClass m_channelClass;
     bool m_channelClassHasBeenSet;
@@ -478,6 +567,9 @@ creating multiple resources.
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
 
+    MaintenanceCreateSettings m_maintenance;
+    bool m_maintenanceHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
@@ -489,6 +581,9 @@ creating multiple resources.
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    VpcOutputSettings m_vpc;
+    bool m_vpcHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -38,7 +28,11 @@ InstanceMetadataOptionsResponse::InstanceMetadataOptionsResponse() :
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(InstanceMetadataProtocolState::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false),
+    m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
+    m_instanceMetadataTagsHasBeenSet(false)
 {
 }
 
@@ -50,7 +44,11 @@ InstanceMetadataOptionsResponse::InstanceMetadataOptionsResponse(const XmlNode& 
     m_httpPutResponseHopLimit(0),
     m_httpPutResponseHopLimitHasBeenSet(false),
     m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
+    m_httpEndpointHasBeenSet(false),
+    m_httpProtocolIpv6(InstanceMetadataProtocolState::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false),
+    m_instanceMetadataTags(InstanceMetadataTagsState::NOT_SET),
+    m_instanceMetadataTagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +83,18 @@ InstanceMetadataOptionsResponse& InstanceMetadataOptionsResponse::operator =(con
       m_httpEndpoint = InstanceMetadataEndpointStateMapper::GetInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
       m_httpEndpointHasBeenSet = true;
     }
+    XmlNode httpProtocolIpv6Node = resultNode.FirstChild("httpProtocolIpv6");
+    if(!httpProtocolIpv6Node.IsNull())
+    {
+      m_httpProtocolIpv6 = InstanceMetadataProtocolStateMapper::GetInstanceMetadataProtocolStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpProtocolIpv6Node.GetText()).c_str()).c_str());
+      m_httpProtocolIpv6HasBeenSet = true;
+    }
+    XmlNode instanceMetadataTagsNode = resultNode.FirstChild("instanceMetadataTags");
+    if(!instanceMetadataTagsNode.IsNull())
+    {
+      m_instanceMetadataTags = InstanceMetadataTagsStateMapper::GetInstanceMetadataTagsStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMetadataTagsNode.GetText()).c_str()).c_str());
+      m_instanceMetadataTagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +122,16 @@ void InstanceMetadataOptionsResponse::OutputToStream(Aws::OStream& oStream, cons
       oStream << location << index << locationValue << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
   }
 
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
+  }
+
+  if(m_instanceMetadataTagsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
+  }
+
 }
 
 void InstanceMetadataOptionsResponse::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,6 +151,14 @@ void InstanceMetadataOptionsResponse::OutputToStream(Aws::OStream& oStream, cons
   if(m_httpEndpointHasBeenSet)
   {
       oStream << location << ".HttpEndpoint=" << InstanceMetadataEndpointStateMapper::GetNameForInstanceMetadataEndpointState(m_httpEndpoint) << "&";
+  }
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+      oStream << location << ".HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
+  }
+  if(m_instanceMetadataTagsHasBeenSet)
+  {
+      oStream << location << ".InstanceMetadataTags=" << InstanceMetadataTagsStateMapper::GetNameForInstanceMetadataTagsState(m_instanceMetadataTags) << "&";
   }
 }
 

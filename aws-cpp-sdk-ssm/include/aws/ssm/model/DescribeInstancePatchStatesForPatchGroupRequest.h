@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -96,58 +86,66 @@ namespace Model
 
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline const Aws::Vector<InstancePatchStateFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<InstancePatchStateFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<InstancePatchStateFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithFilters(const Aws::Vector<InstancePatchStateFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithFilters(Aws::Vector<InstancePatchStateFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(const InstancePatchStateFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
-     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
-     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Key
+     * (string between 1 and 200 characters)</p> </li> <li> <p>Values (array containing
+     * a single string)</p> </li> <li> <p>Type (string "Equal", "NotEqual", "LessThan",
+     * "GreaterThan")</p> </li> </ul>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(InstancePatchStateFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

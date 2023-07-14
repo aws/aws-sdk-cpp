@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/ServiceDiscoveryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicediscovery/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -89,64 +81,64 @@ namespace Model
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline CreateHttpNamespaceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline CreateHttpNamespaceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateHttpNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string (for example, a date/time stamp).</p>
      */
     inline CreateHttpNamespaceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -191,6 +183,63 @@ namespace Model
      */
     inline CreateHttpNamespaceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline CreateHttpNamespaceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline CreateHttpNamespaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline CreateHttpNamespaceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
+     */
+    inline CreateHttpNamespaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -201,6 +250,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pi/PI_EXPORTS.h>
@@ -52,67 +42,67 @@ namespace Model
 
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline void SetDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& WithDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& WithDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(const Aws::String& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(Aws::String&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(const Aws::String& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(Aws::String&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(const char* key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(Aws::String&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     * <p>A dimension map that contains the dimensions for this partition.</p>
      */
     inline ResponsePartitionKey& AddDimensions(const char* key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
@@ -80,6 +70,55 @@ namespace Model
      * provider, such as Bitbucket.</p>
      */
     inline ListConnectionsRequest& WithProviderTypeFilter(ProviderType&& value) { SetProviderTypeFilter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline const Aws::String& GetHostArnFilter() const{ return m_hostArnFilter; }
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline bool HostArnFilterHasBeenSet() const { return m_hostArnFilterHasBeenSet; }
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline void SetHostArnFilter(const Aws::String& value) { m_hostArnFilterHasBeenSet = true; m_hostArnFilter = value; }
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline void SetHostArnFilter(Aws::String&& value) { m_hostArnFilterHasBeenSet = true; m_hostArnFilter = std::move(value); }
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline void SetHostArnFilter(const char* value) { m_hostArnFilterHasBeenSet = true; m_hostArnFilter.assign(value); }
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline ListConnectionsRequest& WithHostArnFilter(const Aws::String& value) { SetHostArnFilter(value); return *this;}
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline ListConnectionsRequest& WithHostArnFilter(Aws::String&& value) { SetHostArnFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of connections to those associated with a specified
+     * host.</p>
+     */
+    inline ListConnectionsRequest& WithHostArnFilter(const char* value) { SetHostArnFilter(value); return *this;}
 
 
     /**
@@ -163,6 +202,9 @@ namespace Model
 
     ProviderType m_providerTypeFilter;
     bool m_providerTypeFilterHasBeenSet;
+
+    Aws::String m_hostArnFilter;
+    bool m_hostArnFilterHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

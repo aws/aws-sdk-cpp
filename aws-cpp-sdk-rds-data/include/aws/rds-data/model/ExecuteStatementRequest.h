@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/rds-data/RDSDataServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds-data/model/RecordsFormatType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds-data/model/ResultSetOptions.h>
 #include <aws/rds-data/model/SqlParameter.h>
@@ -52,40 +43,40 @@ namespace Model
     /**
      * <p>A value that indicates whether to continue running the statement after the
      * call times out. By default, the statement stops running when the call times
-     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * out.</p>  <p>For DDL statements, we recommend continuing to run the
      * statement after the call times out. When a DDL statement terminates before it is
      * finished running, it can result in errors and possibly corrupted data
-     * structures.</p> </important>
+     * structures.</p> 
      */
     inline bool GetContinueAfterTimeout() const{ return m_continueAfterTimeout; }
 
     /**
      * <p>A value that indicates whether to continue running the statement after the
      * call times out. By default, the statement stops running when the call times
-     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * out.</p>  <p>For DDL statements, we recommend continuing to run the
      * statement after the call times out. When a DDL statement terminates before it is
      * finished running, it can result in errors and possibly corrupted data
-     * structures.</p> </important>
+     * structures.</p> 
      */
     inline bool ContinueAfterTimeoutHasBeenSet() const { return m_continueAfterTimeoutHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to continue running the statement after the
      * call times out. By default, the statement stops running when the call times
-     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * out.</p>  <p>For DDL statements, we recommend continuing to run the
      * statement after the call times out. When a DDL statement terminates before it is
      * finished running, it can result in errors and possibly corrupted data
-     * structures.</p> </important>
+     * structures.</p> 
      */
     inline void SetContinueAfterTimeout(bool value) { m_continueAfterTimeoutHasBeenSet = true; m_continueAfterTimeout = value; }
 
     /**
      * <p>A value that indicates whether to continue running the statement after the
      * call times out. By default, the statement stops running when the call times
-     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * out.</p>  <p>For DDL statements, we recommend continuing to run the
      * statement after the call times out. When a DDL statement terminates before it is
      * finished running, it can result in errors and possibly corrupted data
-     * structures.</p> </important>
+     * structures.</p> 
      */
     inline ExecuteStatementRequest& WithContinueAfterTimeout(bool value) { SetContinueAfterTimeout(value); return *this;}
 
@@ -132,6 +123,79 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline const RecordsFormatType& GetFormatRecordsAs() const{ return m_formatRecordsAs; }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline bool FormatRecordsAsHasBeenSet() const { return m_formatRecordsAsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline void SetFormatRecordsAs(const RecordsFormatType& value) { m_formatRecordsAsHasBeenSet = true; m_formatRecordsAs = value; }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline void SetFormatRecordsAs(RecordsFormatType&& value) { m_formatRecordsAsHasBeenSet = true; m_formatRecordsAs = std::move(value); }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline ExecuteStatementRequest& WithFormatRecordsAs(const RecordsFormatType& value) { SetFormatRecordsAs(value); return *this;}
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline ExecuteStatementRequest& WithFormatRecordsAs(RecordsFormatType&& value) { SetFormatRecordsAs(std::move(value)); return *this;}
+
+
+    /**
      * <p>A value that indicates whether to include metadata in the results.</p>
      */
     inline bool GetIncludeResultMetadata() const{ return m_includeResultMetadata; }
@@ -153,50 +217,50 @@ namespace Model
 
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline const Aws::Vector<SqlParameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline void SetParameters(const Aws::Vector<SqlParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline void SetParameters(Aws::Vector<SqlParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline ExecuteStatementRequest& WithParameters(const Aws::Vector<SqlParameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline ExecuteStatementRequest& WithParameters(Aws::Vector<SqlParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline ExecuteStatementRequest& AddParameters(const SqlParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
-     * supported.</p> </note>
+     * <p>The parameters for the SQL statement.</p>  <p>Array parameters are not
+     * supported.</p> 
      */
     inline ExecuteStatementRequest& AddParameters(SqlParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
@@ -274,42 +338,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline ExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline ExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline ExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 
@@ -467,6 +539,9 @@ namespace Model
 
     Aws::String m_database;
     bool m_databaseHasBeenSet;
+
+    RecordsFormatType m_formatRecordsAs;
+    bool m_formatRecordsAsHasBeenSet;
 
     bool m_includeResultMetadata;
     bool m_includeResultMetadataHasBeenSet;

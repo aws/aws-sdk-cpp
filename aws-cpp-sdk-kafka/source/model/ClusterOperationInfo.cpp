@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kafka/model/ClusterOperationInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,6 +26,7 @@ ClusterOperationInfo::ClusterOperationInfo() :
     m_errorInfoHasBeenSet(false),
     m_operationArnHasBeenSet(false),
     m_operationStateHasBeenSet(false),
+    m_operationStepsHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_sourceClusterInfoHasBeenSet(false),
     m_targetClusterInfoHasBeenSet(false)
@@ -50,6 +41,7 @@ ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue) :
     m_errorInfoHasBeenSet(false),
     m_operationArnHasBeenSet(false),
     m_operationStateHasBeenSet(false),
+    m_operationStepsHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_sourceClusterInfoHasBeenSet(false),
     m_targetClusterInfoHasBeenSet(false)
@@ -106,6 +98,16 @@ ClusterOperationInfo& ClusterOperationInfo::operator =(JsonView jsonValue)
     m_operationState = jsonValue.GetString("operationState");
 
     m_operationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operationSteps"))
+  {
+    Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
+    for(unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex)
+    {
+      m_operationSteps.push_back(operationStepsJsonList[operationStepsIndex].AsObject());
+    }
+    m_operationStepsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("operationType"))
@@ -173,6 +175,17 @@ JsonValue ClusterOperationInfo::Jsonize() const
   if(m_operationStateHasBeenSet)
   {
    payload.WithString("operationState", m_operationState);
+
+  }
+
+  if(m_operationStepsHasBeenSet)
+  {
+   Array<JsonValue> operationStepsJsonList(m_operationSteps.size());
+   for(unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex)
+   {
+     operationStepsJsonList[operationStepsIndex].AsObject(m_operationSteps[operationStepsIndex].Jsonize());
+   }
+   payload.WithArray("operationSteps", std::move(operationStepsJsonList));
 
   }
 

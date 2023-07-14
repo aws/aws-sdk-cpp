@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/translate/model/InputDataConfig.h>
 #include <aws/translate/model/OutputDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/translate/model/TranslationSettings.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -160,56 +151,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM)
      * role that grants Amazon Translate read access to your input data. For more
-     * nformation, see <a>identity-and-access-management</a>.</p>
+     * information, see <a>identity-and-access-management</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -318,147 +309,307 @@ namespace Model
 
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminologyNames() const{ return m_terminologyNames; }
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline bool TerminologyNamesHasBeenSet() const { return m_terminologyNamesHasBeenSet; }
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline void SetTerminologyNames(const Aws::Vector<Aws::String>& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = value; }
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline void SetTerminologyNames(Aws::Vector<Aws::String>&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = std::move(value); }
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithTerminologyNames(const Aws::Vector<Aws::String>& value) { SetTerminologyNames(value); return *this;}
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithTerminologyNames(Aws::Vector<Aws::String>&& value) { SetTerminologyNames(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTerminologyNames(const Aws::String& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTerminologyNames(Aws::String&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The name of the terminology to use in the batch translation job. For a list
-     * of available terminologies, use the <a>ListTerminologies</a> operation.</p>
+     * <p>The name of a custom terminology resource to add to the translation job. This
+     * resource lists examples source terms and the desired translation for each
+     * term.</p> <p>This parameter accepts only one custom terminology resource.</p>
+     * <p>For a list of available custom terminology resources, use the
+     * <a>ListTerminologies</a> operation.</p> <p>For more information, see
+     * <a>how-custom-terminology</a>.</p>
      */
     inline StartTextTranslationJobRequest& AddTerminologyNames(const char* value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetParallelDataNames() const{ return m_parallelDataNames; }
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline bool ParallelDataNamesHasBeenSet() const { return m_parallelDataNamesHasBeenSet; }
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline void SetParallelDataNames(const Aws::Vector<Aws::String>& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = value; }
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline void SetParallelDataNames(Aws::Vector<Aws::String>&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames = std::move(value); }
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline StartTextTranslationJobRequest& WithParallelDataNames(const Aws::Vector<Aws::String>& value) { SetParallelDataNames(value); return *this;}
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline StartTextTranslationJobRequest& WithParallelDataNames(Aws::Vector<Aws::String>&& value) { SetParallelDataNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline StartTextTranslationJobRequest& AddParallelDataNames(const Aws::String& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline StartTextTranslationJobRequest& AddParallelDataNames(Aws::String&& value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The name of a parallel data resource to add to the translation job. This
+     * resource consists of examples that show how you want segments of text to be
+     * translated. When you add parallel data to a translation job, you create an
+     * <i>Active Custom Translation</i> job. </p> <p>This parameter accepts only one
+     * parallel data resource.</p>  <p>Active Custom Translation jobs are priced
+     * at a higher rate than other jobs that don't use parallel data. For more
+     * information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+     * Translate pricing</a>.</p>  <p>For a list of available parallel data
+     * resources, use the <a>ListParallelData</a> operation.</p> <p>For more
+     * information, see <a>customizing-translations-parallel-data</a>.</p>
+     */
+    inline StartTextTranslationJobRequest& AddParallelDataNames(const char* value) { m_parallelDataNamesHasBeenSet = true; m_parallelDataNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The client token of the EC2 instance calling the request. This token is
-     * auto-generated when using the Amazon Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     * EC2 operation to retreive an instance's client token. For more information, see
-     * <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.</p>
+     * <p>A unique identifier for the request. This token is auto-generated when using
+     * the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline const TranslationSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline StartTextTranslationJobRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline StartTextTranslationJobRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 
   private:
 
@@ -483,8 +634,14 @@ namespace Model
     Aws::Vector<Aws::String> m_terminologyNames;
     bool m_terminologyNamesHasBeenSet;
 
+    Aws::Vector<Aws::String> m_parallelDataNames;
+    bool m_parallelDataNamesHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    TranslationSettings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

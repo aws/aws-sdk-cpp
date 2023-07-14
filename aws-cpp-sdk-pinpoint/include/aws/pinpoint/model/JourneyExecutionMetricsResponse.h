@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -184,7 +174,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetrics() const{ return m_metrics; }
@@ -192,7 +182,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
@@ -200,7 +190,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetMetrics(const Aws::Map<Aws::String, Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
@@ -208,7 +198,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetMetrics(Aws::Map<Aws::String, Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
@@ -216,7 +206,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& WithMetrics(const Aws::Map<Aws::String, Aws::String>& value) { SetMetrics(value); return *this;}
@@ -224,7 +214,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& WithMetrics(Aws::Map<Aws::String, Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
@@ -232,7 +222,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(const Aws::String& key, const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
@@ -240,7 +230,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(Aws::String&& key, const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
@@ -248,7 +238,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(const Aws::String& key, Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
@@ -256,7 +246,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(Aws::String&& key, Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), std::move(value)); return *this; }
@@ -264,7 +254,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(const char* key, Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
@@ -272,7 +262,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(Aws::String&& key, const char* value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
@@ -280,7 +270,7 @@ namespace Model
     /**
      * <p>A JSON object that contains the results of the query. For information about
      * the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
     inline JourneyExecutionMetricsResponse& AddMetrics(const char* key, const char* value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }

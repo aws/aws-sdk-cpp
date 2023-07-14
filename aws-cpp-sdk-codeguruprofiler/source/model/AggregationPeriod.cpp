@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codeguruprofiler/model/AggregationPeriod.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,25 +20,25 @@ namespace Aws
       namespace AggregationPeriodMapper
       {
 
-        static const int P1D_HASH = HashingUtils::HashString("P1D");
-        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
         static const int PT5M_HASH = HashingUtils::HashString("PT5M");
+        static const int PT1H_HASH = HashingUtils::HashString("PT1H");
+        static const int P1D_HASH = HashingUtils::HashString("P1D");
 
 
         AggregationPeriod GetAggregationPeriodForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == P1D_HASH)
+          if (hashCode == PT5M_HASH)
           {
-            return AggregationPeriod::P1D;
+            return AggregationPeriod::PT5M;
           }
           else if (hashCode == PT1H_HASH)
           {
             return AggregationPeriod::PT1H;
           }
-          else if (hashCode == PT5M_HASH)
+          else if (hashCode == P1D_HASH)
           {
-            return AggregationPeriod::PT5M;
+            return AggregationPeriod::P1D;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,12 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case AggregationPeriod::P1D:
-            return "P1D";
-          case AggregationPeriod::PT1H:
-            return "PT1H";
           case AggregationPeriod::PT5M:
             return "PT5M";
+          case AggregationPeriod::PT1H:
+            return "PT1H";
+          case AggregationPeriod::P1D:
+            return "P1D";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

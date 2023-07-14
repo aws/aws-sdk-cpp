@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -54,49 +44,81 @@ namespace Model
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline ReplicationRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline ReplicationRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>An object key name prefix that identifies the subset of objects to which the
-     * rule applies.</p>
+     * rule applies.</p>  <p>Replacement must be made for object keys
+     * containing special characters (such as carriage returns) when using XML
+     * requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline ReplicationRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

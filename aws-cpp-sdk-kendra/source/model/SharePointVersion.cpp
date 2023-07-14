@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/SharePointVersion.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,13 +20,23 @@ namespace Aws
       namespace SharePointVersionMapper
       {
 
+        static const int SHAREPOINT_2013_HASH = HashingUtils::HashString("SHAREPOINT_2013");
+        static const int SHAREPOINT_2016_HASH = HashingUtils::HashString("SHAREPOINT_2016");
         static const int SHAREPOINT_ONLINE_HASH = HashingUtils::HashString("SHAREPOINT_ONLINE");
 
 
         SharePointVersion GetSharePointVersionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SHAREPOINT_ONLINE_HASH)
+          if (hashCode == SHAREPOINT_2013_HASH)
+          {
+            return SharePointVersion::SHAREPOINT_2013;
+          }
+          else if (hashCode == SHAREPOINT_2016_HASH)
+          {
+            return SharePointVersion::SHAREPOINT_2016;
+          }
+          else if (hashCode == SHAREPOINT_ONLINE_HASH)
           {
             return SharePointVersion::SHAREPOINT_ONLINE;
           }
@@ -54,6 +54,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharePointVersion::SHAREPOINT_2013:
+            return "SHAREPOINT_2013";
+          case SharePointVersion::SHAREPOINT_2016:
+            return "SHAREPOINT_2016";
           case SharePointVersion::SHAREPOINT_ONLINE:
             return "SHAREPOINT_ONLINE";
           default:

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -88,32 +78,32 @@ namespace Model
 
 
     /**
-     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     * <p>The type of resources that you want Config to list in the response.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     * <p>The type of resources that you want Config to list in the response.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     * <p>The type of resources that you want Config to list in the response.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     * <p>The type of resources that you want Config to list in the response.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     * <p>The type of resources that you want Config to list in the response.</p>
      */
     inline ListAggregateDiscoveredResourcesRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     * <p>The type of resources that you want Config to list in the response.</p>
      */
     inline ListAggregateDiscoveredResourcesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -150,30 +140,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * <p>The maximum number of resource identifiers returned on each page. You cannot
+     * specify a number greater than 100. If you specify 0, Config uses the
+     * default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * <p>The maximum number of resource identifiers returned on each page. You cannot
+     * specify a number greater than 100. If you specify 0, Config uses the
+     * default.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * <p>The maximum number of resource identifiers returned on each page. You cannot
+     * specify a number greater than 100. If you specify 0, Config uses the
+     * default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * <p>The maximum number of resource identifiers returned on each page. You cannot
+     * specify a number greater than 100. If you specify 0, Config uses the
+     * default.</p>
      */
     inline ListAggregateDiscoveredResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

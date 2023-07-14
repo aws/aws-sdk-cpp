@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/CostCategory.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,10 @@ CostCategory::CostCategory() :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_splitChargeRulesHasBeenSet(false),
+    m_processingStatusHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
@@ -46,7 +39,10 @@ CostCategory::CostCategory(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_splitChargeRulesHasBeenSet(false),
+    m_processingStatusHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +94,33 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     m_rulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SplitChargeRules"))
+  {
+    Array<JsonView> splitChargeRulesJsonList = jsonValue.GetArray("SplitChargeRules");
+    for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
+    {
+      m_splitChargeRules.push_back(splitChargeRulesJsonList[splitChargeRulesIndex].AsObject());
+    }
+    m_splitChargeRulesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProcessingStatus"))
+  {
+    Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
+    for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
+    {
+      m_processingStatus.push_back(processingStatusJsonList[processingStatusIndex].AsObject());
+    }
+    m_processingStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultValue"))
+  {
+    m_defaultValue = jsonValue.GetString("DefaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +165,34 @@ JsonValue CostCategory::Jsonize() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_splitChargeRulesHasBeenSet)
+  {
+   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
+   {
+     splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
+   }
+   payload.WithArray("SplitChargeRules", std::move(splitChargeRulesJsonList));
+
+  }
+
+  if(m_processingStatusHasBeenSet)
+  {
+   Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
+   for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
+   {
+     processingStatusJsonList[processingStatusIndex].AsObject(m_processingStatus[processingStatusIndex].Jsonize());
+   }
+   payload.WithArray("ProcessingStatus", std::move(processingStatusJsonList));
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("DefaultValue", m_defaultValue);
 
   }
 

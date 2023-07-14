@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -36,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Organization config rule creation or deletion status in each member account.
+   * <p>Organization Config rule creation or deletion status in each member account.
    * This includes the name of the rule, the status, error code and error message
    * when the rule creation or deletion failed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/MemberAccountStatus">AWS
@@ -93,296 +83,296 @@ namespace Model
 
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline MemberAccountStatus& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline MemberAccountStatus& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of config rule deployed in the member account.</p>
+     * <p>The name of Config rule deployed in the member account.</p>
      */
     inline MemberAccountStatus& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
 
     /**
-     * <p>Indicates deployment status for config rule in the member account. When
+     * <p>Indicates deployment status for Config rule in the member account. When
      * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, config
+     * time, Config rule status is created in the member account. When master account
+     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
+     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
      * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when config rule deletion
+     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
+     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
      * has failed in the member account.</p> </li> <li> <p>
-     * <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member
-     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has
+     * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
+     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
-     * <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member
-     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is
+     * <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member
+     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is
      * being updated in the member account.</p> </li> <li> <p>
-     * <code>UPDATE_FAILED</code> when config rule deletion has failed in the member
+     * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
     inline const MemberAccountRuleStatus& GetMemberAccountRuleStatus() const{ return m_memberAccountRuleStatus; }
 
     /**
-     * <p>Indicates deployment status for config rule in the member account. When
+     * <p>Indicates deployment status for Config rule in the member account. When
      * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, config
+     * time, Config rule status is created in the member account. When master account
+     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
+     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
      * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when config rule deletion
+     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
+     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
      * has failed in the member account.</p> </li> <li> <p>
-     * <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member
-     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has
+     * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
+     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
-     * <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member
-     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is
+     * <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member
+     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is
      * being updated in the member account.</p> </li> <li> <p>
-     * <code>UPDATE_FAILED</code> when config rule deletion has failed in the member
+     * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
     inline bool MemberAccountRuleStatusHasBeenSet() const { return m_memberAccountRuleStatusHasBeenSet; }
 
     /**
-     * <p>Indicates deployment status for config rule in the member account. When
+     * <p>Indicates deployment status for Config rule in the member account. When
      * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, config
+     * time, Config rule status is created in the member account. When master account
+     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
+     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
      * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when config rule deletion
+     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
+     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
      * has failed in the member account.</p> </li> <li> <p>
-     * <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member
-     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has
+     * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
+     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
-     * <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member
-     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is
+     * <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member
+     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is
      * being updated in the member account.</p> </li> <li> <p>
-     * <code>UPDATE_FAILED</code> when config rule deletion has failed in the member
+     * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
     inline void SetMemberAccountRuleStatus(const MemberAccountRuleStatus& value) { m_memberAccountRuleStatusHasBeenSet = true; m_memberAccountRuleStatus = value; }
 
     /**
-     * <p>Indicates deployment status for config rule in the member account. When
+     * <p>Indicates deployment status for Config rule in the member account. When
      * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, config
+     * time, Config rule status is created in the member account. When master account
+     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
+     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
      * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when config rule deletion
+     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
+     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
      * has failed in the member account.</p> </li> <li> <p>
-     * <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member
-     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has
+     * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
+     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
-     * <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member
-     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is
+     * <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member
+     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is
      * being updated in the member account.</p> </li> <li> <p>
-     * <code>UPDATE_FAILED</code> when config rule deletion has failed in the member
+     * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
     inline void SetMemberAccountRuleStatus(MemberAccountRuleStatus&& value) { m_memberAccountRuleStatusHasBeenSet = true; m_memberAccountRuleStatus = std::move(value); }
 
     /**
-     * <p>Indicates deployment status for config rule in the member account. When
+     * <p>Indicates deployment status for Config rule in the member account. When
      * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, config
+     * time, Config rule status is created in the member account. When master account
+     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
+     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
      * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when config rule deletion
+     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
+     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
      * has failed in the member account.</p> </li> <li> <p>
-     * <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member
-     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has
+     * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
+     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
-     * <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member
-     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is
+     * <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member
+     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is
      * being updated in the member account.</p> </li> <li> <p>
-     * <code>UPDATE_FAILED</code> when config rule deletion has failed in the member
+     * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
     inline MemberAccountStatus& WithMemberAccountRuleStatus(const MemberAccountRuleStatus& value) { SetMemberAccountRuleStatus(value); return *this;}
 
     /**
-     * <p>Indicates deployment status for config rule in the member account. When
+     * <p>Indicates deployment status for Config rule in the member account. When
      * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, config
+     * time, Config rule status is created in the member account. When master account
+     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
      * rule status is updated in the member account. Config rule status is deleted when
      * the master account deletes <code>OrganizationConfigRule</code> and disables
      * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * AWS Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when config rule is
+     * Config sets the state of the rule to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
+     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
      * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when config rule deletion
+     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
+     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
      * has failed in the member account.</p> </li> <li> <p>
-     * <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member
-     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when config rule has
+     * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
+     * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
-     * <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member
-     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when config rule is
+     * <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member
+     * account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is
      * being updated in the member account.</p> </li> <li> <p>
-     * <code>UPDATE_FAILED</code> when config rule deletion has failed in the member
+     * <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member
      * account.</p> </li> </ul>
      */
     inline MemberAccountStatus& WithMemberAccountRuleStatus(MemberAccountRuleStatus&& value) { SetMemberAccountRuleStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline MemberAccountStatus& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline MemberAccountStatus& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>An error code that is returned when config rule creation or deletion failed
+     * <p>An error code that is returned when Config rule creation or deletion failed
      * in the member account.</p>
      */
     inline MemberAccountStatus& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline MemberAccountStatus& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline MemberAccountStatus& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>An error message indicating that config rule account creation or deletion has
+     * <p>An error message indicating that Config rule account creation or deletion has
      * failed due to an error in the member account.</p>
      */
     inline MemberAccountStatus& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}

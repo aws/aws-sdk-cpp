@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,20 @@ namespace Model
 SimulationApplicationConfig::SimulationApplicationConfig() : 
     m_applicationHasBeenSet(false),
     m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false)
+    m_launchConfigHasBeenSet(false),
+    m_uploadConfigurationsHasBeenSet(false),
+    m_worldConfigsHasBeenSet(false),
+    m_toolsHasBeenSet(false)
 {
 }
 
 SimulationApplicationConfig::SimulationApplicationConfig(JsonView jsonValue) : 
     m_applicationHasBeenSet(false),
     m_applicationVersionHasBeenSet(false),
-    m_launchConfigHasBeenSet(false)
+    m_launchConfigHasBeenSet(false),
+    m_uploadConfigurationsHasBeenSet(false),
+    m_worldConfigsHasBeenSet(false),
+    m_toolsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +62,36 @@ SimulationApplicationConfig& SimulationApplicationConfig::operator =(JsonView js
     m_launchConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("uploadConfigurations"))
+  {
+    Array<JsonView> uploadConfigurationsJsonList = jsonValue.GetArray("uploadConfigurations");
+    for(unsigned uploadConfigurationsIndex = 0; uploadConfigurationsIndex < uploadConfigurationsJsonList.GetLength(); ++uploadConfigurationsIndex)
+    {
+      m_uploadConfigurations.push_back(uploadConfigurationsJsonList[uploadConfigurationsIndex].AsObject());
+    }
+    m_uploadConfigurationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("worldConfigs"))
+  {
+    Array<JsonView> worldConfigsJsonList = jsonValue.GetArray("worldConfigs");
+    for(unsigned worldConfigsIndex = 0; worldConfigsIndex < worldConfigsJsonList.GetLength(); ++worldConfigsIndex)
+    {
+      m_worldConfigs.push_back(worldConfigsJsonList[worldConfigsIndex].AsObject());
+    }
+    m_worldConfigsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tools"))
+  {
+    Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
+    {
+      m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
+    }
+    m_toolsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +114,39 @@ JsonValue SimulationApplicationConfig::Jsonize() const
   if(m_launchConfigHasBeenSet)
   {
    payload.WithObject("launchConfig", m_launchConfig.Jsonize());
+
+  }
+
+  if(m_uploadConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> uploadConfigurationsJsonList(m_uploadConfigurations.size());
+   for(unsigned uploadConfigurationsIndex = 0; uploadConfigurationsIndex < uploadConfigurationsJsonList.GetLength(); ++uploadConfigurationsIndex)
+   {
+     uploadConfigurationsJsonList[uploadConfigurationsIndex].AsObject(m_uploadConfigurations[uploadConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("uploadConfigurations", std::move(uploadConfigurationsJsonList));
+
+  }
+
+  if(m_worldConfigsHasBeenSet)
+  {
+   Array<JsonValue> worldConfigsJsonList(m_worldConfigs.size());
+   for(unsigned worldConfigsIndex = 0; worldConfigsIndex < worldConfigsJsonList.GetLength(); ++worldConfigsIndex)
+   {
+     worldConfigsJsonList[worldConfigsIndex].AsObject(m_worldConfigs[worldConfigsIndex].Jsonize());
+   }
+   payload.WithArray("worldConfigs", std::move(worldConfigsJsonList));
+
+  }
+
+  if(m_toolsHasBeenSet)
+  {
+   Array<JsonValue> toolsJsonList(m_tools.size());
+   for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
+   {
+     toolsJsonList[toolsIndex].AsObject(m_tools[toolsIndex].Jsonize());
+   }
+   payload.WithArray("tools", std::move(toolsJsonList));
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
@@ -51,50 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline EncryptionConfig& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline EncryptionConfig& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the customer master key (CMK) used for encryption, if
-     * applicable.</p>
+     * <p>The ID of the KMS key used for encryption, if applicable.</p>
      */
     inline EncryptionConfig& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -137,38 +119,38 @@ namespace Model
 
 
     /**
-     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
-     * to <code>NONE</code> for default encryption.</p>
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys.
+     * Set to <code>NONE</code> for default encryption.</p>
      */
     inline const EncryptionType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
-     * to <code>NONE</code> for default encryption.</p>
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys.
+     * Set to <code>NONE</code> for default encryption.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
-     * to <code>NONE</code> for default encryption.</p>
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys.
+     * Set to <code>NONE</code> for default encryption.</p>
      */
     inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
-     * to <code>NONE</code> for default encryption.</p>
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys.
+     * Set to <code>NONE</code> for default encryption.</p>
      */
     inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
-     * to <code>NONE</code> for default encryption.</p>
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys.
+     * Set to <code>NONE</code> for default encryption.</p>
      */
     inline EncryptionConfig& WithType(const EncryptionType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
-     * to <code>NONE</code> for default encryption.</p>
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys.
+     * Set to <code>NONE</code> for default encryption.</p>
      */
     inline EncryptionConfig& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
 

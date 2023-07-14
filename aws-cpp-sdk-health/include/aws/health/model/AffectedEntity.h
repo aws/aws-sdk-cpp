@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
@@ -125,73 +115,81 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline const Aws::String& GetEventArn() const{ return m_eventArn; }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline bool EventArnHasBeenSet() const { return m_eventArnHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline void SetEventArn(const Aws::String& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline void SetEventArn(const char* value) { m_eventArnHasBeenSet = true; m_eventArn.assign(value); }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline AffectedEntity& WithEventArn(const Aws::String& value) { SetEventArn(value); return *this;}
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline AffectedEntity& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline AffectedEntity& WithEventArn(const char* value) { SetEventArn(value); return *this;}
@@ -280,42 +278,50 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline AffectedEntity& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline AffectedEntity& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     * <p>The 12-digit Amazon Web Services account number that contains the affected
+     * entity.</p>
      */
     inline AffectedEntity& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -395,67 +401,80 @@ namespace Model
 
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of entity tags attached to the affected entity.</p>
+     * <p>A map of entity tags attached to the affected entity.</p> 
+     * <p>Currently, the <code>tags</code> property isn't supported.</p> 
      */
     inline AffectedEntity& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

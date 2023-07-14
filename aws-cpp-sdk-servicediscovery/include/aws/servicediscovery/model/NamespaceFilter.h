@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -158,78 +148,78 @@ namespace Model
     /**
      * <p>The operator that you want to use to determine whether
      * <code>ListNamespaces</code> returns a namespace. Valid values for
-     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
-     * specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
-     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
-     * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> <li> <p>
-     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     * <code>condition</code> include:</p> <dl> <dt>EQ</dt> <dd> <p>When you specify
+     * <code>EQ</code> for the condition, you can choose to list only public namespaces
+     * or private namespaces, but not both. <code>EQ</code> is the default condition
+     * and can be omitted.</p> </dd> <dt>IN</dt> <dd> <p>When you specify
+     * <code>IN</code> for the condition, you can choose to list public namespaces,
+     * private namespaces, or both. </p> </dd> <dt>BETWEEN</dt> <dd> <p> Not
+     * applicable</p> </dd> </dl>
      */
     inline const FilterCondition& GetCondition() const{ return m_condition; }
 
     /**
      * <p>The operator that you want to use to determine whether
      * <code>ListNamespaces</code> returns a namespace. Valid values for
-     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
-     * specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
-     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
-     * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> <li> <p>
-     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     * <code>condition</code> include:</p> <dl> <dt>EQ</dt> <dd> <p>When you specify
+     * <code>EQ</code> for the condition, you can choose to list only public namespaces
+     * or private namespaces, but not both. <code>EQ</code> is the default condition
+     * and can be omitted.</p> </dd> <dt>IN</dt> <dd> <p>When you specify
+     * <code>IN</code> for the condition, you can choose to list public namespaces,
+     * private namespaces, or both. </p> </dd> <dt>BETWEEN</dt> <dd> <p> Not
+     * applicable</p> </dd> </dl>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>The operator that you want to use to determine whether
      * <code>ListNamespaces</code> returns a namespace. Valid values for
-     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
-     * specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
-     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
-     * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> <li> <p>
-     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     * <code>condition</code> include:</p> <dl> <dt>EQ</dt> <dd> <p>When you specify
+     * <code>EQ</code> for the condition, you can choose to list only public namespaces
+     * or private namespaces, but not both. <code>EQ</code> is the default condition
+     * and can be omitted.</p> </dd> <dt>IN</dt> <dd> <p>When you specify
+     * <code>IN</code> for the condition, you can choose to list public namespaces,
+     * private namespaces, or both. </p> </dd> <dt>BETWEEN</dt> <dd> <p> Not
+     * applicable</p> </dd> </dl>
      */
     inline void SetCondition(const FilterCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
      * <p>The operator that you want to use to determine whether
      * <code>ListNamespaces</code> returns a namespace. Valid values for
-     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
-     * specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
-     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
-     * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> <li> <p>
-     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     * <code>condition</code> include:</p> <dl> <dt>EQ</dt> <dd> <p>When you specify
+     * <code>EQ</code> for the condition, you can choose to list only public namespaces
+     * or private namespaces, but not both. <code>EQ</code> is the default condition
+     * and can be omitted.</p> </dd> <dt>IN</dt> <dd> <p>When you specify
+     * <code>IN</code> for the condition, you can choose to list public namespaces,
+     * private namespaces, or both. </p> </dd> <dt>BETWEEN</dt> <dd> <p> Not
+     * applicable</p> </dd> </dl>
      */
     inline void SetCondition(FilterCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
      * <p>The operator that you want to use to determine whether
      * <code>ListNamespaces</code> returns a namespace. Valid values for
-     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
-     * specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
-     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
-     * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> <li> <p>
-     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     * <code>condition</code> include:</p> <dl> <dt>EQ</dt> <dd> <p>When you specify
+     * <code>EQ</code> for the condition, you can choose to list only public namespaces
+     * or private namespaces, but not both. <code>EQ</code> is the default condition
+     * and can be omitted.</p> </dd> <dt>IN</dt> <dd> <p>When you specify
+     * <code>IN</code> for the condition, you can choose to list public namespaces,
+     * private namespaces, or both. </p> </dd> <dt>BETWEEN</dt> <dd> <p> Not
+     * applicable</p> </dd> </dl>
      */
     inline NamespaceFilter& WithCondition(const FilterCondition& value) { SetCondition(value); return *this;}
 
     /**
      * <p>The operator that you want to use to determine whether
      * <code>ListNamespaces</code> returns a namespace. Valid values for
-     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
-     * specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
-     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
-     * specify <code>IN</code> for the condition, you can choose to list public
-     * namespaces, private namespaces, or both. </p> </li> <li> <p>
-     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     * <code>condition</code> include:</p> <dl> <dt>EQ</dt> <dd> <p>When you specify
+     * <code>EQ</code> for the condition, you can choose to list only public namespaces
+     * or private namespaces, but not both. <code>EQ</code> is the default condition
+     * and can be omitted.</p> </dd> <dt>IN</dt> <dd> <p>When you specify
+     * <code>IN</code> for the condition, you can choose to list public namespaces,
+     * private namespaces, or both. </p> </dd> <dt>BETWEEN</dt> <dd> <p> Not
+     * applicable</p> </dd> </dl>
      */
     inline NamespaceFilter& WithCondition(FilterCondition&& value) { SetCondition(std::move(value)); return *this;}
 

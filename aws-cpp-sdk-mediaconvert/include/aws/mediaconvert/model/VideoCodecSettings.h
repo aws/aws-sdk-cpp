@@ -1,27 +1,22 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1Settings.h>
+#include <aws/mediaconvert/model/AvcIntraSettings.h>
 #include <aws/mediaconvert/model/VideoCodec.h>
 #include <aws/mediaconvert/model/FrameCaptureSettings.h>
 #include <aws/mediaconvert/model/H264Settings.h>
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
 #include <aws/mediaconvert/model/ProresSettings.h>
+#include <aws/mediaconvert/model/Vc3Settings.h>
+#include <aws/mediaconvert/model/Vp8Settings.h>
+#include <aws/mediaconvert/model/Vp9Settings.h>
+#include <aws/mediaconvert/model/XavcSettings.h>
 #include <utility>
 
 namespace Aws
@@ -44,9 +39,10 @@ namespace Model
    * group of settings related to video encoding. The settings in this group vary
    * depending on the value that you choose for Video codec (Codec). For each codec
    * enum that you choose, define the corresponding settings object. The following
-   * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
-   * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-   * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings<p><h3>See
+   * lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
+   * AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings *
+   * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3,
+   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
@@ -95,6 +91,61 @@ namespace Model
      * AV1.
      */
     inline VideoCodecSettings& WithAv1Settings(Av1Settings&& value) { SetAv1Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+     */
+    inline const AvcIntraSettings& GetAvcIntraSettings() const{ return m_avcIntraSettings; }
+
+    /**
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+     */
+    inline bool AvcIntraSettingsHasBeenSet() const { return m_avcIntraSettingsHasBeenSet; }
+
+    /**
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+     */
+    inline void SetAvcIntraSettings(const AvcIntraSettings& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = value; }
+
+    /**
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+     */
+    inline void SetAvcIntraSettings(AvcIntraSettings&& value) { m_avcIntraSettingsHasBeenSet = true; m_avcIntraSettings = std::move(value); }
+
+    /**
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+     */
+    inline VideoCodecSettings& WithAvcIntraSettings(const AvcIntraSettings& value) { SetAvcIntraSettings(value); return *this;}
+
+    /**
+     * Required when you choose AVC-Intra for your output video codec. For more
+     * information about the AVC-Intra settings, see the relevant specification. For
+     * detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in
+     * AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+     */
+    inline VideoCodecSettings& WithAvcIntraSettings(AvcIntraSettings&& value) { SetAvcIntraSettings(std::move(value)); return *this;}
 
 
     /**
@@ -312,10 +363,161 @@ namespace Model
      */
     inline VideoCodecSettings& WithProresSettings(ProresSettings&& value) { SetProresSettings(std::move(value)); return *this;}
 
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline const Vc3Settings& GetVc3Settings() const{ return m_vc3Settings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline bool Vc3SettingsHasBeenSet() const { return m_vc3SettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline void SetVc3Settings(const Vc3Settings& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline void SetVc3Settings(Vc3Settings&& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline VideoCodecSettings& WithVc3Settings(const Vc3Settings& value) { SetVc3Settings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VC3
+     */
+    inline VideoCodecSettings& WithVc3Settings(Vc3Settings&& value) { SetVc3Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline const Vp8Settings& GetVp8Settings() const{ return m_vp8Settings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline bool Vp8SettingsHasBeenSet() const { return m_vp8SettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline void SetVp8Settings(const Vp8Settings& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline void SetVp8Settings(Vp8Settings&& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline VideoCodecSettings& WithVp8Settings(const Vp8Settings& value) { SetVp8Settings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline VideoCodecSettings& WithVp8Settings(Vp8Settings&& value) { SetVp8Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline const Vp9Settings& GetVp9Settings() const{ return m_vp9Settings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline bool Vp9SettingsHasBeenSet() const { return m_vp9SettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline void SetVp9Settings(const Vp9Settings& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline void SetVp9Settings(Vp9Settings&& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline VideoCodecSettings& WithVp9Settings(const Vp9Settings& value) { SetVp9Settings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline VideoCodecSettings& WithVp9Settings(Vp9Settings&& value) { SetVp9Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline const XavcSettings& GetXavcSettings() const{ return m_xavcSettings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline bool XavcSettingsHasBeenSet() const { return m_xavcSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline void SetXavcSettings(const XavcSettings& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline void SetXavcSettings(XavcSettings&& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline VideoCodecSettings& WithXavcSettings(const XavcSettings& value) { SetXavcSettings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline VideoCodecSettings& WithXavcSettings(XavcSettings&& value) { SetXavcSettings(std::move(value)); return *this;}
+
   private:
 
     Av1Settings m_av1Settings;
     bool m_av1SettingsHasBeenSet;
+
+    AvcIntraSettings m_avcIntraSettings;
+    bool m_avcIntraSettingsHasBeenSet;
 
     VideoCodec m_codec;
     bool m_codecHasBeenSet;
@@ -334,6 +536,18 @@ namespace Model
 
     ProresSettings m_proresSettings;
     bool m_proresSettingsHasBeenSet;
+
+    Vc3Settings m_vc3Settings;
+    bool m_vc3SettingsHasBeenSet;
+
+    Vp8Settings m_vp8Settings;
+    bool m_vp8SettingsHasBeenSet;
+
+    Vp9Settings m_vp9Settings;
+    bool m_vp9SettingsHasBeenSet;
+
+    XavcSettings m_xavcSettings;
+    bool m_xavcSettingsHasBeenSet;
   };
 
 } // namespace Model

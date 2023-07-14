@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -148,58 +138,58 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline const Aws::String& GetAccountWithRestoreAccess() const{ return m_accountWithRestoreAccess; }
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline bool AccountWithRestoreAccessHasBeenSet() const { return m_accountWithRestoreAccessHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline void SetAccountWithRestoreAccess(const Aws::String& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline void SetAccountWithRestoreAccess(Aws::String&& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline void SetAccountWithRestoreAccess(const char* value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess.assign(value); }
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline AuthorizeSnapshotAccessRequest& WithAccountWithRestoreAccess(const Aws::String& value) { SetAccountWithRestoreAccess(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline AuthorizeSnapshotAccessRequest& WithAccountWithRestoreAccess(Aws::String&& value) { SetAccountWithRestoreAccess(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS customer account authorized to restore the
-     * specified snapshot.</p> <p>To share a snapshot with AWS support, specify
-     * amazon-redshift-support.</p>
+     * <p>The identifier of the Amazon Web Services account authorized to restore the
+     * specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support,
+     * specify amazon-redshift-support.</p>
      */
     inline AuthorizeSnapshotAccessRequest& WithAccountWithRestoreAccess(const char* value) { SetAccountWithRestoreAccess(value); return *this;}
 

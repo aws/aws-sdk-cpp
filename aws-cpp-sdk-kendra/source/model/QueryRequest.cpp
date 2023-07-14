@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/QueryRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,10 +20,15 @@ QueryRequest::QueryRequest() :
     m_requestedDocumentAttributesHasBeenSet(false),
     m_queryResultTypeFilter(QueryResultType::NOT_SET),
     m_queryResultTypeFilterHasBeenSet(false),
+    m_documentRelevanceOverrideConfigurationsHasBeenSet(false),
     m_pageNumber(0),
     m_pageNumberHasBeenSet(false),
     m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_sortingConfigurationHasBeenSet(false),
+    m_userContextHasBeenSet(false),
+    m_visitorIdHasBeenSet(false),
+    m_spellCorrectionConfigurationHasBeenSet(false)
 {
 }
 
@@ -86,6 +81,17 @@ Aws::String QueryRequest::SerializePayload() const
    payload.WithString("QueryResultTypeFilter", QueryResultTypeMapper::GetNameForQueryResultType(m_queryResultTypeFilter));
   }
 
+  if(m_documentRelevanceOverrideConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> documentRelevanceOverrideConfigurationsJsonList(m_documentRelevanceOverrideConfigurations.size());
+   for(unsigned documentRelevanceOverrideConfigurationsIndex = 0; documentRelevanceOverrideConfigurationsIndex < documentRelevanceOverrideConfigurationsJsonList.GetLength(); ++documentRelevanceOverrideConfigurationsIndex)
+   {
+     documentRelevanceOverrideConfigurationsJsonList[documentRelevanceOverrideConfigurationsIndex].AsObject(m_documentRelevanceOverrideConfigurations[documentRelevanceOverrideConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("DocumentRelevanceOverrideConfigurations", std::move(documentRelevanceOverrideConfigurationsJsonList));
+
+  }
+
   if(m_pageNumberHasBeenSet)
   {
    payload.WithInteger("PageNumber", m_pageNumber);
@@ -95,6 +101,30 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_pageSizeHasBeenSet)
   {
    payload.WithInteger("PageSize", m_pageSize);
+
+  }
+
+  if(m_sortingConfigurationHasBeenSet)
+  {
+   payload.WithObject("SortingConfiguration", m_sortingConfiguration.Jsonize());
+
+  }
+
+  if(m_userContextHasBeenSet)
+  {
+   payload.WithObject("UserContext", m_userContext.Jsonize());
+
+  }
+
+  if(m_visitorIdHasBeenSet)
+  {
+   payload.WithString("VisitorId", m_visitorId);
+
+  }
+
+  if(m_spellCorrectionConfigurationHasBeenSet)
+  {
+   payload.WithObject("SpellCorrectionConfiguration", m_spellCorrectionConfiguration.Jsonize());
 
   }
 

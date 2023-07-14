@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
@@ -50,58 +40,58 @@ namespace Model
 
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline const Aws::String& GetMD5OfMessageBody() const{ return m_mD5OfMessageBody; }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageBody(const Aws::String& value) { m_mD5OfMessageBody = value; }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageBody(Aws::String&& value) { m_mD5OfMessageBody = std::move(value); }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageBody(const char* value) { m_mD5OfMessageBody.assign(value); }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageResult& WithMD5OfMessageBody(const Aws::String& value) { SetMD5OfMessageBody(value); return *this;}
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageResult& WithMD5OfMessageBody(Aws::String&& value) { SetMD5OfMessageBody(std::move(value)); return *this;}
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
-     * this attribute to verify that Amazon SQS received the message correctly. Amazon
-     * SQS URL-decodes the message before creating the MD5 digest. For information
-     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     * <p>An MD5 digest of the non-URL-encoded message body string. You can use this
+     * attribute to verify that Amazon SQS received the message correctly. Amazon SQS
+     * URL-decodes the message before creating the MD5 digest. For information about
+     * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline SendMessageResult& WithMD5OfMessageBody(const char* value) { SetMD5OfMessageBody(value); return *this;}
 
@@ -217,8 +207,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
@@ -226,8 +215,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
@@ -235,8 +223,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
 
@@ -244,8 +231,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
@@ -253,8 +239,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
@@ -262,8 +247,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
@@ -271,8 +255,7 @@ namespace Model
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-     * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p>
+     * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

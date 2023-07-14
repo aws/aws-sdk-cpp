@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/ExistCondition.h>
+#include <aws/glue/model/EnableHybridValues.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +75,47 @@ namespace Model
      * <p>Contains the policy document to set, in JSON format.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyInJson(const char* value) { SetPolicyInJson(value); return *this;}
+
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline PutResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline PutResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Do not use. For internal use only.</p>
+     */
+    inline PutResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
@@ -154,7 +186,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline const ExistCondition& GetPolicyExistsCondition() const{ return m_policyExistsCondition; }
@@ -162,7 +194,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline bool PolicyExistsConditionHasBeenSet() const { return m_policyExistsConditionHasBeenSet; }
@@ -170,7 +202,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline void SetPolicyExistsCondition(const ExistCondition& value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = value; }
@@ -178,7 +210,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline void SetPolicyExistsCondition(ExistCondition&& value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = std::move(value); }
@@ -186,7 +218,7 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyExistsCondition(const ExistCondition& value) { SetPolicyExistsCondition(value); return *this;}
@@ -194,21 +226,94 @@ namespace Model
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
      * <code>NOT_EXIST</code> is used to create a new policy. If a value of
-     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyExistsCondition(ExistCondition&& value) { SetPolicyExistsCondition(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
+     */
+    inline const EnableHybridValues& GetEnableHybrid() const{ return m_enableHybrid; }
+
+    /**
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
+     */
+    inline bool EnableHybridHasBeenSet() const { return m_enableHybridHasBeenSet; }
+
+    /**
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
+     */
+    inline void SetEnableHybrid(const EnableHybridValues& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = value; }
+
+    /**
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
+     */
+    inline void SetEnableHybrid(EnableHybridValues&& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = std::move(value); }
+
+    /**
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
+     */
+    inline PutResourcePolicyRequest& WithEnableHybrid(const EnableHybridValues& value) { SetEnableHybrid(value); return *this;}
+
+    /**
+     * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
+     * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
+     * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
+     */
+    inline PutResourcePolicyRequest& WithEnableHybrid(EnableHybridValues&& value) { SetEnableHybrid(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_policyInJson;
     bool m_policyInJsonHasBeenSet;
 
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
+
     Aws::String m_policyHashCondition;
     bool m_policyHashConditionHasBeenSet;
 
     ExistCondition m_policyExistsCondition;
     bool m_policyExistsConditionHasBeenSet;
+
+    EnableHybridValues m_enableHybrid;
+    bool m_enableHybridHasBeenSet;
   };
 
 } // namespace Model

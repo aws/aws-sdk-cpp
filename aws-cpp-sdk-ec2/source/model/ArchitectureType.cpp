@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ArchitectureType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int i386_HASH = HashingUtils::HashString("i386");
         static const int x86_64_HASH = HashingUtils::HashString("x86_64");
         static const int arm64_HASH = HashingUtils::HashString("arm64");
+        static const int x86_64_mac_HASH = HashingUtils::HashString("x86_64_mac");
 
 
         ArchitectureType GetArchitectureTypeForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == arm64_HASH)
           {
             return ArchitectureType::arm64;
+          }
+          else if (hashCode == x86_64_mac_HASH)
+          {
+            return ArchitectureType::x86_64_mac;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "x86_64";
           case ArchitectureType::arm64:
             return "arm64";
+          case ArchitectureType::x86_64_mac:
+            return "x86_64_mac";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

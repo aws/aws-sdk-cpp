@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
@@ -34,7 +24,26 @@ namespace Model
     RESOURCE_MISSING_SECURITY_GROUP,
     RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
     SECURITY_GROUP_UNUSED,
-    SECURITY_GROUP_REDUNDANT
+    SECURITY_GROUP_REDUNDANT,
+    FMS_CREATED_SECURITY_GROUP_EDITED,
+    MISSING_FIREWALL,
+    MISSING_FIREWALL_SUBNET_IN_AZ,
+    MISSING_EXPECTED_ROUTE_TABLE,
+    NETWORK_FIREWALL_POLICY_MODIFIED,
+    FIREWALL_SUBNET_IS_OUT_OF_SCOPE,
+    INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE,
+    FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE,
+    UNEXPECTED_FIREWALL_ROUTES,
+    UNEXPECTED_TARGET_GATEWAY_ROUTES,
+    TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY,
+    INVALID_ROUTE_CONFIGURATION,
+    MISSING_TARGET_GATEWAY,
+    INTERNET_TRAFFIC_NOT_INSPECTED,
+    BLACK_HOLE_ROUTE_DETECTED,
+    BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET,
+    RESOURCE_MISSING_DNS_FIREWALL,
+    ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT,
+    FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT
   };
 
 namespace ViolationReasonMapper

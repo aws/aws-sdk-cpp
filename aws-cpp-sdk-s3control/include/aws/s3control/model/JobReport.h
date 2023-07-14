@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -157,57 +147,57 @@ namespace Model
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline JobReport& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline JobReport& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>An optional prefix to describe where in the specified bucket the
-     * job-completion report will be stored. Amazon S3 will store the job-completion
-     * report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.</p>
+     * job-completion report will be stored. Amazon S3 stores the job-completion report
+     * at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.</p>
      */
     inline JobReport& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
@@ -369,50 +359,50 @@ namespace Model
 
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline UpdateStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline UpdateStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The stage name. Stage names can only contain alphanumeric characters,
-     * hyphens, and underscores. Maximum length is 128 characters.</p>
+     * <p>The stage name. Stage names can contain only alphanumeric characters,
+     * hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
      */
     inline UpdateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 

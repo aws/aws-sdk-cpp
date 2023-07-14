@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rekognition/model/StreamProcessorSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 StreamProcessorSettings::StreamProcessorSettings() : 
-    m_faceSearchHasBeenSet(false)
+    m_faceSearchHasBeenSet(false),
+    m_connectedHomeHasBeenSet(false)
 {
 }
 
 StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue) : 
-    m_faceSearchHasBeenSet(false)
+    m_faceSearchHasBeenSet(false),
+    m_connectedHomeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +40,13 @@ StreamProcessorSettings& StreamProcessorSettings::operator =(JsonView jsonValue)
     m_faceSearchHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectedHome"))
+  {
+    m_connectedHome = jsonValue.GetObject("ConnectedHome");
+
+    m_connectedHomeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +57,12 @@ JsonValue StreamProcessorSettings::Jsonize() const
   if(m_faceSearchHasBeenSet)
   {
    payload.WithObject("FaceSearch", m_faceSearch.Jsonize());
+
+  }
+
+  if(m_connectedHomeHasBeenSet)
+  {
+   payload.WithObject("ConnectedHome", m_connectedHome.Jsonize());
 
   }
 

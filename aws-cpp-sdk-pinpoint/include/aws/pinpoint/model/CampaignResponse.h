@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/CustomDeliveryConfiguration.h>
 #include <aws/pinpoint/model/CampaignState.h>
 #include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/pinpoint/model/CampaignLimits.h>
@@ -230,44 +221,75 @@ namespace Model
 
 
     /**
+     * <p>The delivery configuration settings for sending the campaign through a custom
+     * channel.</p>
+     */
+    inline const CustomDeliveryConfiguration& GetCustomDeliveryConfiguration() const{ return m_customDeliveryConfiguration; }
+
+    /**
+     * <p>The delivery configuration settings for sending the campaign through a custom
+     * channel.</p>
+     */
+    inline bool CustomDeliveryConfigurationHasBeenSet() const { return m_customDeliveryConfigurationHasBeenSet; }
+
+    /**
+     * <p>The delivery configuration settings for sending the campaign through a custom
+     * channel.</p>
+     */
+    inline void SetCustomDeliveryConfiguration(const CustomDeliveryConfiguration& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = value; }
+
+    /**
+     * <p>The delivery configuration settings for sending the campaign through a custom
+     * channel.</p>
+     */
+    inline void SetCustomDeliveryConfiguration(CustomDeliveryConfiguration&& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = std::move(value); }
+
+    /**
+     * <p>The delivery configuration settings for sending the campaign through a custom
+     * channel.</p>
+     */
+    inline CampaignResponse& WithCustomDeliveryConfiguration(const CustomDeliveryConfiguration& value) { SetCustomDeliveryConfiguration(value); return *this;}
+
+    /**
+     * <p>The delivery configuration settings for sending the campaign through a custom
+     * channel.</p>
+     */
+    inline CampaignResponse& WithCustomDeliveryConfiguration(CustomDeliveryConfiguration&& value) { SetCustomDeliveryConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The current status of the campaign's default treatment. This value exists
-     * only for campaigns that have more than one treatment, to support A/B
-     * testing.</p>
+     * only for campaigns that have more than one treatment.</p>
      */
     inline const CampaignState& GetDefaultState() const{ return m_defaultState; }
 
     /**
      * <p>The current status of the campaign's default treatment. This value exists
-     * only for campaigns that have more than one treatment, to support A/B
-     * testing.</p>
+     * only for campaigns that have more than one treatment.</p>
      */
     inline bool DefaultStateHasBeenSet() const { return m_defaultStateHasBeenSet; }
 
     /**
      * <p>The current status of the campaign's default treatment. This value exists
-     * only for campaigns that have more than one treatment, to support A/B
-     * testing.</p>
+     * only for campaigns that have more than one treatment.</p>
      */
     inline void SetDefaultState(const CampaignState& value) { m_defaultStateHasBeenSet = true; m_defaultState = value; }
 
     /**
      * <p>The current status of the campaign's default treatment. This value exists
-     * only for campaigns that have more than one treatment, to support A/B
-     * testing.</p>
+     * only for campaigns that have more than one treatment.</p>
      */
     inline void SetDefaultState(CampaignState&& value) { m_defaultStateHasBeenSet = true; m_defaultState = std::move(value); }
 
     /**
      * <p>The current status of the campaign's default treatment. This value exists
-     * only for campaigns that have more than one treatment, to support A/B
-     * testing.</p>
+     * only for campaigns that have more than one treatment.</p>
      */
     inline CampaignResponse& WithDefaultState(const CampaignState& value) { SetDefaultState(value); return *this;}
 
     /**
      * <p>The current status of the campaign's default treatment. This value exists
-     * only for campaigns that have more than one treatment, to support A/B
-     * testing.</p>
+     * only for campaigns that have more than one treatment.</p>
      */
     inline CampaignResponse& WithDefaultState(CampaignState&& value) { SetDefaultState(std::move(value)); return *this;}
 
@@ -340,36 +362,42 @@ namespace Model
 
     /**
      * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
     inline const CampaignHook& GetHook() const{ return m_hook; }
 
     /**
      * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
     inline bool HookHasBeenSet() const { return m_hookHasBeenSet; }
 
     /**
      * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
     inline void SetHook(const CampaignHook& value) { m_hookHasBeenSet = true; m_hook = value; }
 
     /**
      * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
     inline void SetHook(CampaignHook&& value) { m_hookHasBeenSet = true; m_hook = std::move(value); }
 
     /**
      * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
     inline CampaignResponse& WithHook(const CampaignHook& value) { SetHook(value); return *this;}
 
     /**
      * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign. You can use this hook to customize the segment that's used by the
      * campaign.</p>
      */
     inline CampaignResponse& WithHook(CampaignHook&& value) { SetHook(std::move(value)); return *this;}
@@ -841,99 +869,99 @@ namespace Model
 
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline void SetTreatmentDescription(const Aws::String& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = value; }
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline void SetTreatmentDescription(Aws::String&& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = std::move(value); }
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline void SetTreatmentDescription(const char* value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription.assign(value); }
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline CampaignResponse& WithTreatmentDescription(const Aws::String& value) { SetTreatmentDescription(value); return *this;}
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline CampaignResponse& WithTreatmentDescription(Aws::String&& value) { SetTreatmentDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The custom description of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom description of the default treatment for the campaign.</p>
      */
     inline CampaignResponse& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
 
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline CampaignResponse& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline CampaignResponse& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom name of a variation of the campaign that's used for A/B
-     * testing.</p>
+     * <p>The custom name of the default treatment for the campaign, if the campaign
+     * has multiple treatments. A <i>treatment</i> is a variation of a campaign that's
+     * used for A/B testing.</p>
      */
     inline CampaignResponse& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
@@ -958,6 +986,35 @@ namespace Model
      */
     inline CampaignResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline CampaignResponse& WithPriority(int value) { SetPriority(value); return *this;}
+
   private:
 
     Aws::Vector<TreatmentResource> m_additionalTreatments;
@@ -971,6 +1028,9 @@ namespace Model
 
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
+    CustomDeliveryConfiguration m_customDeliveryConfiguration;
+    bool m_customDeliveryConfigurationHasBeenSet;
 
     CampaignState m_defaultState;
     bool m_defaultStateHasBeenSet;
@@ -1028,6 +1088,9 @@ namespace Model
 
     int m_version;
     bool m_versionHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
   };
 
 } // namespace Model

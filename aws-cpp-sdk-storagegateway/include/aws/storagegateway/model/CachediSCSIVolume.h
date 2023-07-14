@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -91,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
+     * <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
@@ -233,7 +223,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
 
@@ -241,7 +231,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline bool VolumeAttachmentStatusHasBeenSet() const { return m_volumeAttachmentStatusHasBeenSet; }
 
@@ -249,7 +239,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
 
@@ -257,7 +247,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
 
@@ -265,7 +255,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
 
@@ -273,7 +263,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
 
@@ -281,7 +271,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
 
@@ -289,7 +279,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
 
@@ -350,49 +340,57 @@ namespace Model
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline const Aws::String& GetSourceSnapshotId() const{ return m_sourceSnapshotId; }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline bool SourceSnapshotIdHasBeenSet() const { return m_sourceSnapshotIdHasBeenSet; }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline void SetSourceSnapshotId(const Aws::String& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = value; }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline void SetSourceSnapshotId(Aws::String&& value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId = std::move(value); }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline void SetSourceSnapshotId(const char* value) { m_sourceSnapshotIdHasBeenSet = true; m_sourceSnapshotId.assign(value); }
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(const Aws::String& value) { SetSourceSnapshotId(value); return *this;}
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(Aws::String&& value) { SetSourceSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
-     * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
+     * snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not
+     * included.</p>
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
 
@@ -436,37 +434,37 @@ namespace Model
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline CachediSCSIVolume& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
-     * don’t have this time stamp.</p>
+     * don’t have this timestamp.</p>
      */
     inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
@@ -477,8 +475,13 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline long long GetVolumeUsedInBytes() const{ return m_volumeUsedInBytes; }
 
@@ -488,8 +491,13 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline bool VolumeUsedInBytesHasBeenSet() const { return m_volumeUsedInBytesHasBeenSet; }
 
@@ -499,8 +507,13 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline void SetVolumeUsedInBytes(long long value) { m_volumeUsedInBytesHasBeenSet = true; m_volumeUsedInBytes = value; }
 
@@ -510,8 +523,13 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> <p>If you
+     * use a delete tool that overwrites the data on your volume with random data, your
+     * usage will not be reduced. This is because the random data is not compressible.
+     * If you want to reduce the amount of billed storage on your volume, we recommend
+     * overwriting your files with zeros to compress the data to a negligible amount of
+     * actual storage.</p> 
      */
     inline CachediSCSIVolume& WithVolumeUsedInBytes(long long value) { SetVolumeUsedInBytes(value); return *this;}
 

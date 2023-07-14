@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/ImagePipeline.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,10 @@ ImagePipeline::ImagePipeline() :
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
+    m_containerRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
@@ -55,7 +48,10 @@ ImagePipeline::ImagePipeline(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
+    m_containerRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
@@ -101,11 +97,25 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     m_platformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enhancedImageMetadataEnabled"))
+  {
+    m_enhancedImageMetadataEnabled = jsonValue.GetBool("enhancedImageMetadataEnabled");
+
+    m_enhancedImageMetadataEnabledHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("imageRecipeArn"))
   {
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
 
     m_imageRecipeArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerRecipeArn"))
+  {
+    m_containerRecipeArn = jsonValue.GetString("containerRecipeArn");
+
+    m_containerRecipeArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("infrastructureConfigurationArn"))
@@ -211,9 +221,21 @@ JsonValue ImagePipeline::Jsonize() const
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
   }
 
+  if(m_enhancedImageMetadataEnabledHasBeenSet)
+  {
+   payload.WithBool("enhancedImageMetadataEnabled", m_enhancedImageMetadataEnabled);
+
+  }
+
   if(m_imageRecipeArnHasBeenSet)
   {
    payload.WithString("imageRecipeArn", m_imageRecipeArn);
+
+  }
+
+  if(m_containerRecipeArnHasBeenSet)
+  {
+   payload.WithString("containerRecipeArn", m_containerRecipeArn);
 
   }
 

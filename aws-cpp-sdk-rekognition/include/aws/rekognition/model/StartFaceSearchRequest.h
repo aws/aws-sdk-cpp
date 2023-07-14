@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -220,37 +210,49 @@ namespace Model
 
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
-     * publish the completion status of the search. </p>
+     * publish the completion status of the search. The Amazon SNS topic must have a
+     * topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
 
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
-     * publish the completion status of the search. </p>
+     * publish the completion status of the search. The Amazon SNS topic must have a
+     * topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
-     * publish the completion status of the search. </p>
+     * publish the completion status of the search. The Amazon SNS topic must have a
+     * topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
-     * publish the completion status of the search. </p>
+     * publish the completion status of the search. The Amazon SNS topic must have a
+     * topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
-     * publish the completion status of the search. </p>
+     * publish the completion status of the search. The Amazon SNS topic must have a
+     * topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline StartFaceSearchRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
-     * publish the completion status of the search. </p>
+     * publish the completion status of the search. The Amazon SNS topic must have a
+     * topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline StartFaceSearchRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 

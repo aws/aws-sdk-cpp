@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -131,136 +121,128 @@ namespace Model
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline const Aws::String& GetLifecycleTransition() const{ return m_lifecycleTransition; }
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline bool LifecycleTransitionHasBeenSet() const { return m_lifecycleTransitionHasBeenSet; }
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline void SetLifecycleTransition(const Aws::String& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = value; }
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline void SetLifecycleTransition(Aws::String&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = std::move(value); }
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline void SetLifecycleTransition(const char* value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition.assign(value); }
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithLifecycleTransition(const Aws::String& value) { SetLifecycleTransition(value); return *this;}
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. The valid
      * values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
-     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Conditional: This
-     * parameter is required for new lifecycle hooks, but optional when updating
-     * existing hooks.</p>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul> <p>Required for new
+     * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
 
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
-     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
-     * queue.</p> <p>Conditional: This parameter is required for new lifecycle hooks,
+     * specified notification target.</p> <p>Valid only if the notification target is
+     * an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks,
      * but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
@@ -426,7 +408,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
@@ -436,7 +418,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
 
@@ -446,7 +428,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
@@ -456,7 +438,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline PutLifecycleHookRequest& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 

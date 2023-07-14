@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/LocalGatewayRoute.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,7 +27,9 @@ LocalGatewayRoute::LocalGatewayRoute() :
     m_typeHasBeenSet(false),
     m_state(LocalGatewayRouteState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false)
+    m_localGatewayRouteTableIdHasBeenSet(false),
+    m_localGatewayRouteTableArnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ LocalGatewayRoute::LocalGatewayRoute(const XmlNode& xmlNode) :
     m_typeHasBeenSet(false),
     m_state(LocalGatewayRouteState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false)
+    m_localGatewayRouteTableIdHasBeenSet(false),
+    m_localGatewayRouteTableArnHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -89,6 +83,18 @@ LocalGatewayRoute& LocalGatewayRoute::operator =(const XmlNode& xmlNode)
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
       m_localGatewayRouteTableIdHasBeenSet = true;
     }
+    XmlNode localGatewayRouteTableArnNode = resultNode.FirstChild("localGatewayRouteTableArn");
+    if(!localGatewayRouteTableArnNode.IsNull())
+    {
+      m_localGatewayRouteTableArn = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableArnNode.GetText());
+      m_localGatewayRouteTableArnHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +127,16 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
   }
 
+  if(m_localGatewayRouteTableArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalGatewayRouteTableArn=" << StringUtils::URLEncode(m_localGatewayRouteTableArn.c_str()) << "&";
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
 }
 
 void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +160,14 @@ void LocalGatewayRoute::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_localGatewayRouteTableIdHasBeenSet)
   {
       oStream << location << ".LocalGatewayRouteTableId=" << StringUtils::URLEncode(m_localGatewayRouteTableId.c_str()) << "&";
+  }
+  if(m_localGatewayRouteTableArnHasBeenSet)
+  {
+      oStream << location << ".LocalGatewayRouteTableArn=" << StringUtils::URLEncode(m_localGatewayRouteTableArn.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 }
 

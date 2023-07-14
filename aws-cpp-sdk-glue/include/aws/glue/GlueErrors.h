@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/glue/Glue_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class GlueErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,23 +51,44 @@ enum class GlueErrors
   CONCURRENT_MODIFICATION,
   CONCURRENT_RUNS_EXCEEDED,
   CONDITION_CHECK_FAILURE,
+  CONFLICT,
   CRAWLER_NOT_RUNNING,
   CRAWLER_RUNNING,
   CRAWLER_STOPPING,
   ENTITY_NOT_FOUND,
   GLUE_ENCRYPTION,
   IDEMPOTENT_PARAMETER_MISMATCH,
+  ILLEGAL_BLUEPRINT_STATE,
+  ILLEGAL_SESSION_STATE,
+  ILLEGAL_WORKFLOW_STATE,
   INTERNAL_SERVICE,
   INVALID_INPUT,
+  INVALID_STATE,
   M_L_TRANSFORM_NOT_READY,
   NO_SCHEDULE,
   OPERATION_TIMEOUT,
+  PERMISSION_TYPE_MISMATCH,
+  RESOURCE_NOT_READY,
   RESOURCE_NUMBER_LIMIT_EXCEEDED,
   SCHEDULER_NOT_RUNNING,
   SCHEDULER_RUNNING,
   SCHEDULER_TRANSITIONING,
   VERSION_MISMATCH
 };
+
+class AWS_GLUE_API GlueError : public Aws::Client::AWSError<GlueErrors>
+{
+public:
+  GlueError() {}
+  GlueError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+  GlueError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+  GlueError(const Aws::Client::AWSError<GlueErrors>& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+  GlueError(Aws::Client::AWSError<GlueErrors>&& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace GlueErrorMapper
 {
   AWS_GLUE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

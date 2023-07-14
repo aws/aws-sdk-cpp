@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AudioHlsRenditionSelection.h>
 #include <aws/medialive/model/AudioLanguageSelection.h>
 #include <aws/medialive/model/AudioPidSelection.h>
+#include <aws/medialive/model/AudioTrackSelection.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +38,25 @@ namespace Model
     AudioSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
     AudioSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const AudioHlsRenditionSelection& GetAudioHlsRenditionSelection() const{ return m_audioHlsRenditionSelection; }
+
+    
+    inline bool AudioHlsRenditionSelectionHasBeenSet() const { return m_audioHlsRenditionSelectionHasBeenSet; }
+
+    
+    inline void SetAudioHlsRenditionSelection(const AudioHlsRenditionSelection& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = value; }
+
+    
+    inline void SetAudioHlsRenditionSelection(AudioHlsRenditionSelection&& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = std::move(value); }
+
+    
+    inline AudioSelectorSettings& WithAudioHlsRenditionSelection(const AudioHlsRenditionSelection& value) { SetAudioHlsRenditionSelection(value); return *this;}
+
+    
+    inline AudioSelectorSettings& WithAudioHlsRenditionSelection(AudioHlsRenditionSelection&& value) { SetAudioHlsRenditionSelection(std::move(value)); return *this;}
 
 
     
@@ -85,13 +96,38 @@ namespace Model
     
     inline AudioSelectorSettings& WithAudioPidSelection(AudioPidSelection&& value) { SetAudioPidSelection(std::move(value)); return *this;}
 
+
+    
+    inline const AudioTrackSelection& GetAudioTrackSelection() const{ return m_audioTrackSelection; }
+
+    
+    inline bool AudioTrackSelectionHasBeenSet() const { return m_audioTrackSelectionHasBeenSet; }
+
+    
+    inline void SetAudioTrackSelection(const AudioTrackSelection& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = value; }
+
+    
+    inline void SetAudioTrackSelection(AudioTrackSelection&& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = std::move(value); }
+
+    
+    inline AudioSelectorSettings& WithAudioTrackSelection(const AudioTrackSelection& value) { SetAudioTrackSelection(value); return *this;}
+
+    
+    inline AudioSelectorSettings& WithAudioTrackSelection(AudioTrackSelection&& value) { SetAudioTrackSelection(std::move(value)); return *this;}
+
   private:
+
+    AudioHlsRenditionSelection m_audioHlsRenditionSelection;
+    bool m_audioHlsRenditionSelectionHasBeenSet;
 
     AudioLanguageSelection m_audioLanguageSelection;
     bool m_audioLanguageSelectionHasBeenSet;
 
     AudioPidSelection m_audioPidSelection;
     bool m_audioPidSelectionHasBeenSet;
+
+    AudioTrackSelection m_audioTrackSelection;
+    bool m_audioTrackSelectionHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudfront/model/SSLSupportMethod.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int sni_only_HASH = HashingUtils::HashString("sni-only");
         static const int vip_HASH = HashingUtils::HashString("vip");
+        static const int static_ip_HASH = HashingUtils::HashString("static-ip");
 
 
         SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == vip_HASH)
           {
             return SSLSupportMethod::vip;
+          }
+          else if (hashCode == static_ip_HASH)
+          {
+            return SSLSupportMethod::static_ip;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "sni-only";
           case SSLSupportMethod::vip:
             return "vip";
+          case SSLSupportMethod::static_ip:
+            return "static-ip";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

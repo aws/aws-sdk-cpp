@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsCloudFrontDistributionOriginItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,16 @@ namespace Model
 AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem() : 
     m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_originPathHasBeenSet(false)
+    m_originPathHasBeenSet(false),
+    m_s3OriginConfigHasBeenSet(false)
 {
 }
 
 AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_originPathHasBeenSet(false)
+    m_originPathHasBeenSet(false),
+    m_s3OriginConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +58,13 @@ AwsCloudFrontDistributionOriginItem& AwsCloudFrontDistributionOriginItem::operat
     m_originPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3OriginConfig"))
+  {
+    m_s3OriginConfig = jsonValue.GetObject("S3OriginConfig");
+
+    m_s3OriginConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +87,12 @@ JsonValue AwsCloudFrontDistributionOriginItem::Jsonize() const
   if(m_originPathHasBeenSet)
   {
    payload.WithString("OriginPath", m_originPath);
+
+  }
+
+  if(m_s3OriginConfigHasBeenSet)
+  {
+   payload.WithObject("S3OriginConfig", m_s3OriginConfig.Jsonize());
 
   }
 

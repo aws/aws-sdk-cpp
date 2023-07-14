@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/route53/model/ResourceRecordSet.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -49,7 +39,8 @@ ResourceRecordSet::ResourceRecordSet() :
     m_resourceRecordsHasBeenSet(false),
     m_aliasTargetHasBeenSet(false),
     m_healthCheckIdHasBeenSet(false),
-    m_trafficPolicyInstanceIdHasBeenSet(false)
+    m_trafficPolicyInstanceIdHasBeenSet(false),
+    m_cidrRoutingConfigHasBeenSet(false)
 {
 }
 
@@ -72,7 +63,8 @@ ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode) :
     m_resourceRecordsHasBeenSet(false),
     m_aliasTargetHasBeenSet(false),
     m_healthCheckIdHasBeenSet(false),
-    m_trafficPolicyInstanceIdHasBeenSet(false)
+    m_trafficPolicyInstanceIdHasBeenSet(false),
+    m_cidrRoutingConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -166,6 +158,12 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     {
       m_trafficPolicyInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceIdNode.GetText());
       m_trafficPolicyInstanceIdHasBeenSet = true;
+    }
+    XmlNode cidrRoutingConfigNode = resultNode.FirstChild("CidrRoutingConfig");
+    if(!cidrRoutingConfigNode.IsNull())
+    {
+      m_cidrRoutingConfig = cidrRoutingConfigNode;
+      m_cidrRoutingConfigHasBeenSet = true;
     }
   }
 
@@ -261,6 +259,12 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const
   {
    XmlNode trafficPolicyInstanceIdNode = parentNode.CreateChildElement("TrafficPolicyInstanceId");
    trafficPolicyInstanceIdNode.SetText(m_trafficPolicyInstanceId);
+  }
+
+  if(m_cidrRoutingConfigHasBeenSet)
+  {
+   XmlNode cidrRoutingConfigNode = parentNode.CreateChildElement("CidrRoutingConfig");
+   m_cidrRoutingConfig.AddToNode(cidrRoutingConfigNode);
   }
 
 }

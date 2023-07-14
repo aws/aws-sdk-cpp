@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/LaunchConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -51,7 +41,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false)
+    m_placementTenancyHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -76,7 +67,8 @@ LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) :
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false)
+    m_placementTenancyHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -219,6 +211,12 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_placementTenancy = Aws::Utils::Xml::DecodeEscapedXmlText(placementTenancyNode.GetText());
       m_placementTenancyHasBeenSet = true;
     }
+    XmlNode metadataOptionsNode = resultNode.FirstChild("MetadataOptions");
+    if(!metadataOptionsNode.IsNull())
+    {
+      m_metadataOptions = metadataOptionsNode;
+      m_metadataOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -337,6 +335,13 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
 
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::StringStream metadataOptionsLocationAndMemberSs;
+      metadataOptionsLocationAndMemberSs << location << index << locationValue << ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -432,6 +437,12 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_placementTenancyHasBeenSet)
   {
       oStream << location << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
+  }
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::String metadataOptionsLocationAndMember(location);
+      metadataOptionsLocationAndMember += ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
   }
 }
 

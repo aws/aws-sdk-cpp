@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/Partition.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/DataClassificationDetails.h>
 #include <aws/securityhub/model/ResourceDetails.h>
 #include <utility>
 
@@ -165,154 +156,254 @@ namespace Model
 
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline const Partition& GetPartition() const{ return m_partition; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline void SetPartition(const Partition& value) { m_partitionHasBeenSet = true; m_partition = value; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline void SetPartition(Partition&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline Resource& WithPartition(const Partition& value) { SetPartition(value); return *this;}
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline Resource& WithPartition(Partition&& value) { SetPartition(std::move(value)); return *this;}
 
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline Resource& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline Resource& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline Resource& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline Resource& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline Resource& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies the role of the resource in the finding. A resource is either the
+     * actor or target of the finding activity,</p>
+     */
+    inline Resource& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
+
+
+    /**
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline Resource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline const DataClassificationDetails& GetDataClassification() const{ return m_dataClassification; }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline bool DataClassificationHasBeenSet() const { return m_dataClassificationHasBeenSet; }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline void SetDataClassification(const DataClassificationDetails& value) { m_dataClassificationHasBeenSet = true; m_dataClassification = value; }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline void SetDataClassification(DataClassificationDetails&& value) { m_dataClassificationHasBeenSet = true; m_dataClassification = std::move(value); }
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline Resource& WithDataClassification(const DataClassificationDetails& value) { SetDataClassification(value); return *this;}
+
+    /**
+     * <p>Contains information about sensitive data that was detected on the
+     * resource.</p>
+     */
+    inline Resource& WithDataClassification(DataClassificationDetails&& value) { SetDataClassification(std::move(value)); return *this;}
 
 
     /**
@@ -359,8 +450,14 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet;
 
+    Aws::String m_resourceRole;
+    bool m_resourceRoleHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    DataClassificationDetails m_dataClassification;
+    bool m_dataClassificationHasBeenSet;
 
     ResourceDetails m_details;
     bool m_detailsHasBeenSet;

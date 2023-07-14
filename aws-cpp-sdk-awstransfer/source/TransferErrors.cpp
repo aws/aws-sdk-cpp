@@ -1,30 +1,42 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/awstransfer/TransferErrors.h>
+#include <aws/awstransfer/model/ResourceExistsException.h>
+#include <aws/awstransfer/model/ThrottlingException.h>
+#include <aws/awstransfer/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Transfer;
 using namespace Aws::Utils;
+using namespace Aws::Transfer;
+using namespace Aws::Transfer::Model;
 
 namespace Aws
 {
 namespace Transfer
 {
+template<> AWS_TRANSFER_API ResourceExistsException TransferError::GetModeledError()
+{
+  assert(this->GetErrorType() == TransferErrors::RESOURCE_EXISTS);
+  return ResourceExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_TRANSFER_API ThrottlingException TransferError::GetModeledError()
+{
+  assert(this->GetErrorType() == TransferErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_TRANSFER_API ResourceNotFoundException TransferError::GetModeledError()
+{
+  assert(this->GetErrorType() == TransferErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
 namespace TransferErrorMapper
 {
 

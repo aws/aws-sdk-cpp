@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -86,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChain = value; }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChain.assign(value); }
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline GetCertificateResult& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline GetCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p>The base64 PEM-encoded certificate chain that chains up to the on-premises
-     * root CA certificate that you used to sign your private CA certificate. </p>
+     * <p>The base64 PEM-encoded certificate chain that chains up to the root CA
+     * certificate that you used to sign your private CA certificate. </p>
      */
     inline GetCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

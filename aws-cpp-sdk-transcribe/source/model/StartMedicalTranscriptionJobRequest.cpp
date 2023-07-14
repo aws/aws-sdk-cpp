@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/transcribe/model/StartMedicalTranscriptionJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,12 +22,17 @@ StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() :
     m_mediaFormatHasBeenSet(false),
     m_mediaHasBeenSet(false),
     m_outputBucketNameHasBeenSet(false),
+    m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
+    m_kMSEncryptionContextHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -79,9 +74,26 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
 
   }
 
+  if(m_outputKeyHasBeenSet)
+  {
+   payload.WithString("OutputKey", m_outputKey);
+
+  }
+
   if(m_outputEncryptionKMSKeyIdHasBeenSet)
   {
    payload.WithString("OutputEncryptionKMSKeyId", m_outputEncryptionKMSKeyId);
+
+  }
+
+  if(m_kMSEncryptionContextHasBeenSet)
+  {
+   JsonValue kMSEncryptionContextJsonMap;
+   for(auto& kMSEncryptionContextItem : m_kMSEncryptionContext)
+   {
+     kMSEncryptionContextJsonMap.WithString(kMSEncryptionContextItem.first, kMSEncryptionContextItem.second);
+   }
+   payload.WithObject("KMSEncryptionContext", std::move(kMSEncryptionContextJsonMap));
 
   }
 
@@ -89,6 +101,11 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   {
    payload.WithObject("Settings", m_settings.Jsonize());
 
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   if(m_specialtyHasBeenSet)
@@ -99,6 +116,17 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

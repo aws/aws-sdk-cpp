@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,42 +42,130 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the engine to retrieve DB instance options for.</p>
+     * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
+     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -192,70 +270,155 @@ namespace Model
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
 
@@ -302,103 +465,103 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more records
+     * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that you can retrieve the
-     * remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
+     * remaining results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum
      * 100.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous
+     * <p>An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -415,6 +578,9 @@ namespace Model
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
+    Aws::String m_availabilityZoneGroup;
+    bool m_availabilityZoneGroupHasBeenSet;
 
     bool m_vpc;
     bool m_vpcHasBeenSet;

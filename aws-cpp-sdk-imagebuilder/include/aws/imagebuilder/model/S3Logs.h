@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -48,83 +38,83 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline S3Logs& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline S3Logs& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket in which to store the logs.</p>
+     * <p>The S3 bucket in which to store the logs.</p>
      */
     inline S3Logs& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline S3Logs& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline S3Logs& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 path in which to store the logs.</p>
+     * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
     inline S3Logs& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 

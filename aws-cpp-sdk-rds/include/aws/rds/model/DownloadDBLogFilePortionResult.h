@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -86,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline DownloadDBLogFilePortionResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline DownloadDBLogFilePortionResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a later DownloadDBLogFilePortion
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DownloadDBLogFilePortion</code> request.</p>
      */
     inline DownloadDBLogFilePortionResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

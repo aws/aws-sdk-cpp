@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -51,73 +41,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource Name (ARN) of the SMB location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 

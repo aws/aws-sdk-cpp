@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/medialive/model/VideoSelector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 VideoSelector::VideoSelector() : 
     m_colorSpace(VideoSelectorColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
+    m_colorSpaceSettingsHasBeenSet(false),
     m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
     m_selectorSettingsHasBeenSet(false)
@@ -40,6 +31,7 @@ VideoSelector::VideoSelector() :
 VideoSelector::VideoSelector(JsonView jsonValue) : 
     m_colorSpace(VideoSelectorColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
+    m_colorSpaceSettingsHasBeenSet(false),
     m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
     m_colorSpaceUsageHasBeenSet(false),
     m_selectorSettingsHasBeenSet(false)
@@ -54,6 +46,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_colorSpace = VideoSelectorColorSpaceMapper::GetVideoSelectorColorSpaceForName(jsonValue.GetString("colorSpace"));
 
     m_colorSpaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("colorSpaceSettings"))
+  {
+    m_colorSpaceSettings = jsonValue.GetObject("colorSpaceSettings");
+
+    m_colorSpaceSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("colorSpaceUsage"))
@@ -80,6 +79,12 @@ JsonValue VideoSelector::Jsonize() const
   if(m_colorSpaceHasBeenSet)
   {
    payload.WithString("colorSpace", VideoSelectorColorSpaceMapper::GetNameForVideoSelectorColorSpace(m_colorSpace));
+  }
+
+  if(m_colorSpaceSettingsHasBeenSet)
+  {
+   payload.WithObject("colorSpaceSettings", m_colorSpaceSettings.Jsonize());
+
   }
 
   if(m_colorSpaceUsageHasBeenSet)

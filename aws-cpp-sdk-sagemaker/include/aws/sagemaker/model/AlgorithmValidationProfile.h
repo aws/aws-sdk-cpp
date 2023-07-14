@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -36,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Defines a training job and a batch transform job that Amazon SageMaker runs
-   * to validate your algorithm.</p> <p>The data provided in the validation profile
-   * is made available to your buyers on AWS Marketplace.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Defines a training job and a batch transform job that SageMaker runs to
+   * validate your algorithm.</p> <p>The data provided in the validation profile is
+   * made available to your buyers on Amazon Web Services Marketplace.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmValidationProfile">AWS
    * API Reference</a></p>
    */
@@ -103,74 +93,74 @@ namespace Model
 
     /**
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
-     * that Amazon SageMaker runs to validate your algorithm.</p>
+     * that SageMaker runs to validate your algorithm.</p>
      */
     inline const TrainingJobDefinition& GetTrainingJobDefinition() const{ return m_trainingJobDefinition; }
 
     /**
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
-     * that Amazon SageMaker runs to validate your algorithm.</p>
+     * that SageMaker runs to validate your algorithm.</p>
      */
     inline bool TrainingJobDefinitionHasBeenSet() const { return m_trainingJobDefinitionHasBeenSet; }
 
     /**
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
-     * that Amazon SageMaker runs to validate your algorithm.</p>
+     * that SageMaker runs to validate your algorithm.</p>
      */
     inline void SetTrainingJobDefinition(const TrainingJobDefinition& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = value; }
 
     /**
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
-     * that Amazon SageMaker runs to validate your algorithm.</p>
+     * that SageMaker runs to validate your algorithm.</p>
      */
     inline void SetTrainingJobDefinition(TrainingJobDefinition&& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = std::move(value); }
 
     /**
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
-     * that Amazon SageMaker runs to validate your algorithm.</p>
+     * that SageMaker runs to validate your algorithm.</p>
      */
     inline AlgorithmValidationProfile& WithTrainingJobDefinition(const TrainingJobDefinition& value) { SetTrainingJobDefinition(value); return *this;}
 
     /**
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
-     * that Amazon SageMaker runs to validate your algorithm.</p>
+     * that SageMaker runs to validate your algorithm.</p>
      */
     inline AlgorithmValidationProfile& WithTrainingJobDefinition(TrainingJobDefinition&& value) { SetTrainingJobDefinition(std::move(value)); return *this;}
 
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
-     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     * job that SageMaker runs to validate your algorithm.</p>
      */
     inline const TransformJobDefinition& GetTransformJobDefinition() const{ return m_transformJobDefinition; }
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
-     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     * job that SageMaker runs to validate your algorithm.</p>
      */
     inline bool TransformJobDefinitionHasBeenSet() const { return m_transformJobDefinitionHasBeenSet; }
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
-     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     * job that SageMaker runs to validate your algorithm.</p>
      */
     inline void SetTransformJobDefinition(const TransformJobDefinition& value) { m_transformJobDefinitionHasBeenSet = true; m_transformJobDefinition = value; }
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
-     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     * job that SageMaker runs to validate your algorithm.</p>
      */
     inline void SetTransformJobDefinition(TransformJobDefinition&& value) { m_transformJobDefinitionHasBeenSet = true; m_transformJobDefinition = std::move(value); }
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
-     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     * job that SageMaker runs to validate your algorithm.</p>
      */
     inline AlgorithmValidationProfile& WithTransformJobDefinition(const TransformJobDefinition& value) { SetTransformJobDefinition(value); return *this;}
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
-     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     * job that SageMaker runs to validate your algorithm.</p>
      */
     inline AlgorithmValidationProfile& WithTransformJobDefinition(TransformJobDefinition&& value) { SetTransformJobDefinition(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -214,6 +204,61 @@ namespace Model
      */
     inline ChannelSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
+
+    /**
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
+
+    /**
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
+
+    /**
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
+
+    /**
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline ChannelSummary& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
+
+    /**
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
+     * feature only applies to messages that arrived in the data store after October
+     * 23, 2020. </p>
+     */
+    inline ChannelSummary& WithLastMessageArrivalTime(Aws::Utils::DateTime&& value) { SetLastMessageArrivalTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelName;
@@ -230,6 +275,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_lastMessageArrivalTime;
+    bool m_lastMessageArrivalTimeHasBeenSet;
   };
 
 } // namespace Model

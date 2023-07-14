@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -51,82 +41,82 @@ namespace Model
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetEc2SshKey() const{ return m_ec2SshKey; }
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline bool Ec2SshKeyHasBeenSet() const { return m_ec2SshKeyHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline void SetEc2SshKey(const Aws::String& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = value; }
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline void SetEc2SshKey(Aws::String&& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = std::move(value); }
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline void SetEc2SshKey(const char* value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey.assign(value); }
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline RemoteAccessConfig& WithEc2SshKey(const Aws::String& value) { SetEc2SshKey(value); return *this;}
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline RemoteAccessConfig& WithEc2SshKey(Aws::String&& value) { SetEc2SshKey(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
-     * worker nodes in the managed node group. For more information, see <a
+     * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline RemoteAccessConfig& WithEc2SshKey(const char* value) { SetEc2SshKey(value); return *this;}
 
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -134,10 +124,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSourceSecurityGroups() const{ return m_sourceSecurityGroups; }
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -145,10 +135,10 @@ namespace Model
     inline bool SourceSecurityGroupsHasBeenSet() const { return m_sourceSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -156,10 +146,10 @@ namespace Model
     inline void SetSourceSecurityGroups(const Aws::Vector<Aws::String>& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups = value; }
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -167,10 +157,10 @@ namespace Model
     inline void SetSourceSecurityGroups(Aws::Vector<Aws::String>&& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups = std::move(value); }
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -178,10 +168,10 @@ namespace Model
     inline RemoteAccessConfig& WithSourceSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSourceSecurityGroups(value); return *this;}
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -189,10 +179,10 @@ namespace Model
     inline RemoteAccessConfig& WithSourceSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSourceSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -200,10 +190,10 @@ namespace Model
     inline RemoteAccessConfig& AddSourceSecurityGroups(const Aws::String& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -211,10 +201,10 @@ namespace Model
     inline RemoteAccessConfig& AddSourceSecurityGroups(Aws::String&& value) { m_sourceSecurityGroupsHasBeenSet = true; m_sourceSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The security groups that are allowed SSH access (port 22) to the worker
-     * nodes. If you specify an Amazon EC2 SSH key but do not specify a source security
-     * group when you create a managed node group, then port 22 on the worker nodes is
-     * opened to the internet (0.0.0.0/0). For more information, see <a
+     * <p>The security groups that are allowed SSH access (port 22) to the nodes. If
+     * you specify an Amazon EC2 SSH key but do not specify a source security group
+     * when you create a managed node group, then port 22 on the nodes is opened to the
+     * internet (0.0.0.0/0). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>

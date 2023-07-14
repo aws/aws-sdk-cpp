@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -34,13 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>Information about the use of a TLS/SSL certificate for a fleet. TLS
-   * certificate generation is enabled at the fleet level, with one certificate
-   * generated for the fleet. When this feature is enabled, the certificate can be
-   * retrieved using the <a
+   * <p>Determines whether a TLS/SSL certificate is generated for a fleet. This
+   * feature must be enabled when creating the fleet. All instances in a fleet share
+   * the same certificate. The certificate can be retrieved by calling the <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift
-   * Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a
-   * fleet share the same certificate.</p><p><h3>See Also:</h3>   <a
+   * Server SDK</a> operation <code>GetInstanceCertificate</code>. </p> <p>A fleet's
+   * certificate configuration is part of <a>FleetAttributes</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -54,38 +44,50 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for a fleet. </p> <p>
-     * </p> <p> </p>
+     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline const CertificateType& GetCertificateType() const{ return m_certificateType; }
 
     /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for a fleet. </p> <p>
-     * </p> <p> </p>
+     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline bool CertificateTypeHasBeenSet() const { return m_certificateTypeHasBeenSet; }
 
     /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for a fleet. </p> <p>
-     * </p> <p> </p>
+     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline void SetCertificateType(const CertificateType& value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
 
     /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for a fleet. </p> <p>
-     * </p> <p> </p>
+     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline void SetCertificateType(CertificateType&& value) { m_certificateTypeHasBeenSet = true; m_certificateType = std::move(value); }
 
     /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for a fleet. </p> <p>
-     * </p> <p> </p>
+     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline CertificateConfiguration& WithCertificateType(const CertificateType& value) { SetCertificateType(value); return *this;}
 
     /**
-     * <p>Indicates whether a TLS/SSL certificate was generated for a fleet. </p> <p>
-     * </p> <p> </p>
+     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline CertificateConfiguration& WithCertificateType(CertificateType&& value) { SetCertificateType(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -54,6 +44,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating the block public access configuration to remove the exception.</p>
+     *  <p>For accounts that created clusters in a Region before November 25,
+     * 2019, block public access is disabled by default in that Region. To use this
+     * feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is
+     * enabled by default in that Region.</p> 
      */
     inline const BlockPublicAccessConfiguration& GetBlockPublicAccessConfiguration() const{ return m_blockPublicAccessConfiguration; }
 
@@ -68,6 +63,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating the block public access configuration to remove the exception.</p>
+     *  <p>For accounts that created clusters in a Region before November 25,
+     * 2019, block public access is disabled by default in that Region. To use this
+     * feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is
+     * enabled by default in that Region.</p> 
      */
     inline void SetBlockPublicAccessConfiguration(const BlockPublicAccessConfiguration& value) { m_blockPublicAccessConfiguration = value; }
 
@@ -82,6 +82,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating the block public access configuration to remove the exception.</p>
+     *  <p>For accounts that created clusters in a Region before November 25,
+     * 2019, block public access is disabled by default in that Region. To use this
+     * feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is
+     * enabled by default in that Region.</p> 
      */
     inline void SetBlockPublicAccessConfiguration(BlockPublicAccessConfiguration&& value) { m_blockPublicAccessConfiguration = std::move(value); }
 
@@ -96,6 +101,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating the block public access configuration to remove the exception.</p>
+     *  <p>For accounts that created clusters in a Region before November 25,
+     * 2019, block public access is disabled by default in that Region. To use this
+     * feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is
+     * enabled by default in that Region.</p> 
      */
     inline GetBlockPublicAccessConfigurationResult& WithBlockPublicAccessConfiguration(const BlockPublicAccessConfiguration& value) { SetBlockPublicAccessConfiguration(value); return *this;}
 
@@ -110,12 +120,17 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating the block public access configuration to remove the exception.</p>
+     *  <p>For accounts that created clusters in a Region before November 25,
+     * 2019, block public access is disabled by default in that Region. To use this
+     * feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is
+     * enabled by default in that Region.</p> 
      */
     inline GetBlockPublicAccessConfigurationResult& WithBlockPublicAccessConfiguration(BlockPublicAccessConfiguration&& value) { SetBlockPublicAccessConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -124,7 +139,7 @@ namespace Model
     inline const BlockPublicAccessConfigurationMetadata& GetBlockPublicAccessConfigurationMetadata() const{ return m_blockPublicAccessConfigurationMetadata; }
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -133,7 +148,7 @@ namespace Model
     inline void SetBlockPublicAccessConfigurationMetadata(const BlockPublicAccessConfigurationMetadata& value) { m_blockPublicAccessConfigurationMetadata = value; }
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -142,7 +157,7 @@ namespace Model
     inline void SetBlockPublicAccessConfigurationMetadata(BlockPublicAccessConfigurationMetadata&& value) { m_blockPublicAccessConfigurationMetadata = std::move(value); }
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -151,7 +166,7 @@ namespace Model
     inline GetBlockPublicAccessConfigurationResult& WithBlockPublicAccessConfigurationMetadata(const BlockPublicAccessConfigurationMetadata& value) { SetBlockPublicAccessConfigurationMetadata(value); return *this;}
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block

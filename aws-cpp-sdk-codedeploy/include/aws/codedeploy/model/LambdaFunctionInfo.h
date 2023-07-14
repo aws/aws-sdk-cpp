@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -91,57 +81,57 @@ namespace Model
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline const Aws::String& GetFunctionAlias() const{ return m_functionAlias; }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline bool FunctionAliasHasBeenSet() const { return m_functionAliasHasBeenSet; }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionAlias(const Aws::String& value) { m_functionAliasHasBeenSet = true; m_functionAlias = value; }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionAlias(Aws::String&& value) { m_functionAliasHasBeenSet = true; m_functionAlias = std::move(value); }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionAlias(const char* value) { m_functionAliasHasBeenSet = true; m_functionAlias.assign(value); }
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline LambdaFunctionInfo& WithFunctionAlias(const Aws::String& value) { SetFunctionAlias(value); return *this;}
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline LambdaFunctionInfo& WithFunctionAlias(Aws::String&& value) { SetFunctionAlias(std::move(value)); return *this;}
 
     /**
      * <p> The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-     * to AWS Lambda Aliases</a>. </p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS
+     * Lambda Function Aliases</a> in the <i>AWS Lambda Developer Guide</i>.</p>
      */
     inline LambdaFunctionInfo& WithFunctionAlias(const char* value) { SetFunctionAlias(value); return *this;}
 

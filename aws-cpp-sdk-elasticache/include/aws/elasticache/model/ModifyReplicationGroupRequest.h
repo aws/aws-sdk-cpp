@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -267,46 +258,51 @@ namespace Model
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
-     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
-     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
-     * </ul>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
 
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
-     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
-     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
-     * </ul>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
 
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
-     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
-     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
-     * </ul>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
-     * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
-     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
-     * </ul>
+     * <code>true</code> | <code>false</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
+
+
+    /**
+     * <p>A flag to indicate MultiAZ is enabled.</p>
+     */
+    inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
+
+    /**
+     * <p>A flag to indicate MultiAZ is enabled.</p>
+     */
+    inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag to indicate MultiAZ is enabled.</p>
+     */
+    inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
+
+    /**
+     * <p>A flag to indicate MultiAZ is enabled.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
 
 
     /**
@@ -563,57 +559,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
@@ -883,22 +879,30 @@ namespace Model
 
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>This parameter is currently disabled.</p>
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
      */
     inline ModifyReplicationGroupRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1156,7 +1160,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
@@ -1166,7 +1170,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
@@ -1176,7 +1180,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline void SetAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = value; }
@@ -1186,7 +1190,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline void SetAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = std::move(value); }
@@ -1196,7 +1200,7 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline ModifyReplicationGroupRequest& WithAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { SetAuthTokenUpdateStrategy(value); return *this;}
@@ -1206,10 +1210,173 @@ namespace Model
      * be specified with the <code>auth-token</code> parameter. Possible values:</p>
      * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
      * Users with Redis AUTH</a> </p>
      */
     inline ModifyReplicationGroupRequest& WithAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { SetAuthTokenUpdateStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroupIdsToAdd() const{ return m_userGroupIdsToAdd; }
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline bool UserGroupIdsToAddHasBeenSet() const { return m_userGroupIdsToAddHasBeenSet; }
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline void SetUserGroupIdsToAdd(const Aws::Vector<Aws::String>& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd = value; }
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline void SetUserGroupIdsToAdd(Aws::Vector<Aws::String>&& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd = std::move(value); }
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToAdd(const Aws::Vector<Aws::String>& value) { SetUserGroupIdsToAdd(value); return *this;}
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToAdd(Aws::Vector<Aws::String>&& value) { SetUserGroupIdsToAdd(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(const Aws::String& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(value); return *this; }
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(Aws::String&& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the user group you are associating with the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(const char* value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(value); return *this; }
+
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUserGroupIdsToRemove() const{ return m_userGroupIdsToRemove; }
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline bool UserGroupIdsToRemoveHasBeenSet() const { return m_userGroupIdsToRemoveHasBeenSet; }
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline void SetUserGroupIdsToRemove(const Aws::Vector<Aws::String>& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove = value; }
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline void SetUserGroupIdsToRemove(Aws::Vector<Aws::String>&& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove = std::move(value); }
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToRemove(const Aws::Vector<Aws::String>& value) { SetUserGroupIdsToRemove(value); return *this;}
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithUserGroupIdsToRemove(Aws::Vector<Aws::String>&& value) { SetUserGroupIdsToRemove(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(const Aws::String& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(value); return *this; }
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(Aws::String&& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ID of the user group to disassociate from the replication group, meaning
+     * the users in the group no longer can access the replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(const char* value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(value); return *this; }
+
+
+    /**
+     * <p>Removes the user group associated with this replication group.</p>
+     */
+    inline bool GetRemoveUserGroups() const{ return m_removeUserGroups; }
+
+    /**
+     * <p>Removes the user group associated with this replication group.</p>
+     */
+    inline bool RemoveUserGroupsHasBeenSet() const { return m_removeUserGroupsHasBeenSet; }
+
+    /**
+     * <p>Removes the user group associated with this replication group.</p>
+     */
+    inline void SetRemoveUserGroups(bool value) { m_removeUserGroupsHasBeenSet = true; m_removeUserGroups = value; }
+
+    /**
+     * <p>Removes the user group associated with this replication group.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithRemoveUserGroups(bool value) { SetRemoveUserGroups(value); return *this;}
+
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1227,6 +1394,9 @@ namespace Model
 
     bool m_automaticFailoverEnabled;
     bool m_automaticFailoverEnabledHasBeenSet;
+
+    bool m_multiAZEnabled;
+    bool m_multiAZEnabledHasBeenSet;
 
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
     bool m_cacheSecurityGroupNamesHasBeenSet;
@@ -1269,6 +1439,18 @@ namespace Model
 
     AuthTokenUpdateStrategyType m_authTokenUpdateStrategy;
     bool m_authTokenUpdateStrategyHasBeenSet;
+
+    Aws::Vector<Aws::String> m_userGroupIdsToAdd;
+    bool m_userGroupIdsToAddHasBeenSet;
+
+    Aws::Vector<Aws::String> m_userGroupIdsToRemove;
+    bool m_userGroupIdsToRemoveHasBeenSet;
+
+    bool m_removeUserGroups;
+    bool m_removeUserGroupsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

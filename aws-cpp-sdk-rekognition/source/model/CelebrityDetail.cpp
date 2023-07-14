@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rekognition/model/CelebrityDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,8 @@ CelebrityDetail::CelebrityDetail() :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false)
+    m_faceHasBeenSet(false),
+    m_knownGenderHasBeenSet(false)
 {
 }
 
@@ -46,7 +37,8 @@ CelebrityDetail::CelebrityDetail(JsonView jsonValue) :
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false)
+    m_faceHasBeenSet(false),
+    m_knownGenderHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +90,13 @@ CelebrityDetail& CelebrityDetail::operator =(JsonView jsonValue)
     m_faceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KnownGender"))
+  {
+    m_knownGender = jsonValue.GetObject("KnownGender");
+
+    m_knownGenderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +142,12 @@ JsonValue CelebrityDetail::Jsonize() const
   if(m_faceHasBeenSet)
   {
    payload.WithObject("Face", m_face.Jsonize());
+
+  }
+
+  if(m_knownGenderHasBeenSet)
+  {
+   payload.WithObject("KnownGender", m_knownGender.Jsonize());
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -46,73 +36,73 @@ namespace Model
 
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline GenerateChangeSetRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline GenerateChangeSetRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the application associated with the change set.</p>
+     * <p>The ID of the application associated with the change set.</p>
      */
     inline GenerateChangeSetRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline const OutputFormat& GetChangesetFormat() const{ return m_changesetFormat; }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline bool ChangesetFormatHasBeenSet() const { return m_changesetFormatHasBeenSet; }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline void SetChangesetFormat(const OutputFormat& value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = value; }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline void SetChangesetFormat(OutputFormat&& value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = std::move(value); }
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline GenerateChangeSetRequest& WithChangesetFormat(const OutputFormat& value) { SetChangesetFormat(value); return *this;}
 
     /**
-     * <p>Format for the change set.</p>
+     * <p>The format for the change set.</p>
      */
     inline GenerateChangeSetRequest& WithChangesetFormat(OutputFormat&& value) { SetChangesetFormat(std::move(value)); return *this;}
 

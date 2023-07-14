@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -95,74 +85,74 @@ namespace Model
 
 
     /**
-     * <p>The type of resource for the publishing destination. Currently only S3 is
-     * supported.</p>
+     * <p>The type of resource for the publishing destination. Currently only Amazon S3
+     * buckets are supported.</p>
      */
     inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
 
     /**
-     * <p>The type of resource for the publishing destination. Currently only S3 is
-     * supported.</p>
+     * <p>The type of resource for the publishing destination. Currently only Amazon S3
+     * buckets are supported.</p>
      */
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource for the publishing destination. Currently only S3 is
-     * supported.</p>
+     * <p>The type of resource for the publishing destination. Currently only Amazon S3
+     * buckets are supported.</p>
      */
     inline void SetDestinationType(const DestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
 
     /**
-     * <p>The type of resource for the publishing destination. Currently only S3 is
-     * supported.</p>
+     * <p>The type of resource for the publishing destination. Currently only Amazon S3
+     * buckets are supported.</p>
      */
     inline void SetDestinationType(DestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
 
     /**
-     * <p>The type of resource for the publishing destination. Currently only S3 is
-     * supported.</p>
+     * <p>The type of resource for the publishing destination. Currently only Amazon S3
+     * buckets are supported.</p>
      */
     inline CreatePublishingDestinationRequest& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
 
     /**
-     * <p>The type of resource for the publishing destination. Currently only S3 is
-     * supported.</p>
+     * <p>The type of resource for the publishing destination. Currently only Amazon S3
+     * buckets are supported.</p>
      */
     inline CreatePublishingDestinationRequest& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Properties of the publishing destination, including the ARNs for the
+     * <p>The properties of the publishing destination, including the ARNs for the
      * destination and the KMS key used for encryption.</p>
      */
     inline const DestinationProperties& GetDestinationProperties() const{ return m_destinationProperties; }
 
     /**
-     * <p>Properties of the publishing destination, including the ARNs for the
+     * <p>The properties of the publishing destination, including the ARNs for the
      * destination and the KMS key used for encryption.</p>
      */
     inline bool DestinationPropertiesHasBeenSet() const { return m_destinationPropertiesHasBeenSet; }
 
     /**
-     * <p>Properties of the publishing destination, including the ARNs for the
+     * <p>The properties of the publishing destination, including the ARNs for the
      * destination and the KMS key used for encryption.</p>
      */
     inline void SetDestinationProperties(const DestinationProperties& value) { m_destinationPropertiesHasBeenSet = true; m_destinationProperties = value; }
 
     /**
-     * <p>Properties of the publishing destination, including the ARNs for the
+     * <p>The properties of the publishing destination, including the ARNs for the
      * destination and the KMS key used for encryption.</p>
      */
     inline void SetDestinationProperties(DestinationProperties&& value) { m_destinationPropertiesHasBeenSet = true; m_destinationProperties = std::move(value); }
 
     /**
-     * <p>Properties of the publishing destination, including the ARNs for the
+     * <p>The properties of the publishing destination, including the ARNs for the
      * destination and the KMS key used for encryption.</p>
      */
     inline CreatePublishingDestinationRequest& WithDestinationProperties(const DestinationProperties& value) { SetDestinationProperties(value); return *this;}
 
     /**
-     * <p>Properties of the publishing destination, including the ARNs for the
+     * <p>The properties of the publishing destination, including the ARNs for the
      * destination and the KMS key used for encryption.</p>
      */
     inline CreatePublishingDestinationRequest& WithDestinationProperties(DestinationProperties&& value) { SetDestinationProperties(std::move(value)); return *this;}

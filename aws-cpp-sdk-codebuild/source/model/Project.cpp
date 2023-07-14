@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/Project.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -53,7 +43,14 @@ Project::Project() :
     m_vpcConfigHasBeenSet(false),
     m_badgeHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_buildBatchConfigHasBeenSet(false),
+    m_concurrentBuildLimit(0),
+    m_concurrentBuildLimitHasBeenSet(false),
+    m_projectVisibility(ProjectVisibilityType::NOT_SET),
+    m_projectVisibilityHasBeenSet(false),
+    m_publicProjectAliasHasBeenSet(false),
+    m_resourceAccessRoleHasBeenSet(false)
 {
 }
 
@@ -82,7 +79,14 @@ Project::Project(JsonView jsonValue) :
     m_vpcConfigHasBeenSet(false),
     m_badgeHasBeenSet(false),
     m_logsConfigHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_buildBatchConfigHasBeenSet(false),
+    m_concurrentBuildLimit(0),
+    m_concurrentBuildLimitHasBeenSet(false),
+    m_projectVisibility(ProjectVisibilityType::NOT_SET),
+    m_projectVisibilityHasBeenSet(false),
+    m_publicProjectAliasHasBeenSet(false),
+    m_resourceAccessRoleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -265,6 +269,41 @@ Project& Project::operator =(JsonView jsonValue)
     m_fileSystemLocationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("buildBatchConfig"))
+  {
+    m_buildBatchConfig = jsonValue.GetObject("buildBatchConfig");
+
+    m_buildBatchConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("concurrentBuildLimit"))
+  {
+    m_concurrentBuildLimit = jsonValue.GetInteger("concurrentBuildLimit");
+
+    m_concurrentBuildLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("projectVisibility"))
+  {
+    m_projectVisibility = ProjectVisibilityTypeMapper::GetProjectVisibilityTypeForName(jsonValue.GetString("projectVisibility"));
+
+    m_projectVisibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("publicProjectAlias"))
+  {
+    m_publicProjectAlias = jsonValue.GetString("publicProjectAlias");
+
+    m_publicProjectAliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceAccessRole"))
+  {
+    m_resourceAccessRole = jsonValue.GetString("resourceAccessRole");
+
+    m_resourceAccessRoleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -430,6 +469,35 @@ JsonValue Project::Jsonize() const
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
    }
    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
+
+  }
+
+  if(m_buildBatchConfigHasBeenSet)
+  {
+   payload.WithObject("buildBatchConfig", m_buildBatchConfig.Jsonize());
+
+  }
+
+  if(m_concurrentBuildLimitHasBeenSet)
+  {
+   payload.WithInteger("concurrentBuildLimit", m_concurrentBuildLimit);
+
+  }
+
+  if(m_projectVisibilityHasBeenSet)
+  {
+   payload.WithString("projectVisibility", ProjectVisibilityTypeMapper::GetNameForProjectVisibilityType(m_projectVisibility));
+  }
+
+  if(m_publicProjectAliasHasBeenSet)
+  {
+   payload.WithString("publicProjectAlias", m_publicProjectAlias);
+
+  }
+
+  if(m_resourceAccessRoleHasBeenSet)
+  {
+   payload.WithString("resourceAccessRole", m_resourceAccessRole);
 
   }
 

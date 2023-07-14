@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -49,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     * topic.</p>
+     * <p>The ARN of an SQS queue or SNS topic.</p>
      */
     inline AwsLambdaFunctionDeadLetterConfig& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 

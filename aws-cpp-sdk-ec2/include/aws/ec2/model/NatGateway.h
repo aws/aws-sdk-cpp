@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ProvisionedBandwidth.h>
 #include <aws/ec2/model/NatGatewayState.h>
+#include <aws/ec2/model/ConnectivityType.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -679,6 +670,43 @@ namespace Model
      */
     inline NatGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private
+     * connectivity.</p>
+     */
+    inline const ConnectivityType& GetConnectivityType() const{ return m_connectivityType; }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private
+     * connectivity.</p>
+     */
+    inline bool ConnectivityTypeHasBeenSet() const { return m_connectivityTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private
+     * connectivity.</p>
+     */
+    inline void SetConnectivityType(const ConnectivityType& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private
+     * connectivity.</p>
+     */
+    inline void SetConnectivityType(ConnectivityType&& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = std::move(value); }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private
+     * connectivity.</p>
+     */
+    inline NatGateway& WithConnectivityType(const ConnectivityType& value) { SetConnectivityType(value); return *this;}
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private
+     * connectivity.</p>
+     */
+    inline NatGateway& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_createTime;
@@ -713,6 +741,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ConnectivityType m_connectivityType;
+    bool m_connectivityTypeHasBeenSet;
   };
 
 } // namespace Model

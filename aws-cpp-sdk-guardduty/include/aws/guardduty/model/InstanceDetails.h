@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -54,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -331,50 +321,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline InstanceDetails& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline InstanceDetails& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline InstanceDetails& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
@@ -421,42 +411,42 @@ namespace Model
 
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

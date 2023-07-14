@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -90,6 +80,47 @@ namespace Model
      * <p>The ID of the local gateway route table.</p>
      */
     inline LocalGatewayRouteTable& WithLocalGatewayRouteTableId(const char* value) { SetLocalGatewayRouteTableId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline const Aws::String& GetLocalGatewayRouteTableArn() const{ return m_localGatewayRouteTableArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline bool LocalGatewayRouteTableArnHasBeenSet() const { return m_localGatewayRouteTableArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline void SetLocalGatewayRouteTableArn(const Aws::String& value) { m_localGatewayRouteTableArnHasBeenSet = true; m_localGatewayRouteTableArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline void SetLocalGatewayRouteTableArn(Aws::String&& value) { m_localGatewayRouteTableArnHasBeenSet = true; m_localGatewayRouteTableArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline void SetLocalGatewayRouteTableArn(const char* value) { m_localGatewayRouteTableArnHasBeenSet = true; m_localGatewayRouteTableArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline LocalGatewayRouteTable& WithLocalGatewayRouteTableArn(const Aws::String& value) { SetLocalGatewayRouteTableArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline LocalGatewayRouteTable& WithLocalGatewayRouteTableArn(Aws::String&& value) { SetLocalGatewayRouteTableArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
+     */
+    inline LocalGatewayRouteTable& WithLocalGatewayRouteTableArn(const char* value) { SetLocalGatewayRouteTableArn(value); return *this;}
 
 
     /**
@@ -172,6 +203,55 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
      */
     inline LocalGatewayRouteTable& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline LocalGatewayRouteTable& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline LocalGatewayRouteTable& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the local gateway route
+     * table.</p>
+     */
+    inline LocalGatewayRouteTable& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
 
     /**
@@ -260,11 +340,17 @@ namespace Model
     Aws::String m_localGatewayRouteTableId;
     bool m_localGatewayRouteTableIdHasBeenSet;
 
+    Aws::String m_localGatewayRouteTableArn;
+    bool m_localGatewayRouteTableArnHasBeenSet;
+
     Aws::String m_localGatewayId;
     bool m_localGatewayIdHasBeenSet;
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
 
     Aws::String m_state;
     bool m_stateHasBeenSet;

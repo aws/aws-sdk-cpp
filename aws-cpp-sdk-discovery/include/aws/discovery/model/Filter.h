@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
@@ -38,8 +28,8 @@ namespace Model
    * <p>A filter that can use conditional operators.</p> <p>For more information
    * about filters, see <a
    * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying
-   * Discovered Configuration Items</a> in the <i>AWS Application Discovery Service
-   * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * Discovered Configuration Items</a> in the <i>Amazon Web Services Application
+   * Discovery Service User Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/Filter">AWS
    * API Reference</a></p>
    */

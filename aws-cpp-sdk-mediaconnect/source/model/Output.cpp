@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/Output.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,9 @@ Output::Output() :
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_listenerAddressHasBeenSet(false),
     m_mediaLiveInputArnHasBeenSet(false),
+    m_mediaStreamOutputConfigurationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputArnHasBeenSet(false),
     m_port(0),
@@ -52,7 +44,9 @@ Output::Output(JsonView jsonValue) :
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_listenerAddressHasBeenSet(false),
     m_mediaLiveInputArnHasBeenSet(false),
+    m_mediaStreamOutputConfigurationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputArnHasBeenSet(false),
     m_port(0),
@@ -100,11 +94,28 @@ Output& Output::operator =(JsonView jsonValue)
     m_entitlementArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("listenerAddress"))
+  {
+    m_listenerAddress = jsonValue.GetString("listenerAddress");
+
+    m_listenerAddressHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("mediaLiveInputArn"))
   {
     m_mediaLiveInputArn = jsonValue.GetString("mediaLiveInputArn");
 
     m_mediaLiveInputArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaStreamOutputConfigurations"))
+  {
+    Array<JsonView> mediaStreamOutputConfigurationsJsonList = jsonValue.GetArray("mediaStreamOutputConfigurations");
+    for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
+    {
+      m_mediaStreamOutputConfigurations.push_back(mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject());
+    }
+    m_mediaStreamOutputConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -179,9 +190,26 @@ JsonValue Output::Jsonize() const
 
   }
 
+  if(m_listenerAddressHasBeenSet)
+  {
+   payload.WithString("listenerAddress", m_listenerAddress);
+
+  }
+
   if(m_mediaLiveInputArnHasBeenSet)
   {
    payload.WithString("mediaLiveInputArn", m_mediaLiveInputArn);
+
+  }
+
+  if(m_mediaStreamOutputConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
+   for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
+   {
+     mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject(m_mediaStreamOutputConfigurations[mediaStreamOutputConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreamOutputConfigurations", std::move(mediaStreamOutputConfigurationsJsonList));
 
   }
 

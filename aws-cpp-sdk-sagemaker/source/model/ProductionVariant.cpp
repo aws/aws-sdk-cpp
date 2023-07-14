@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,9 @@ ProductionVariant::ProductionVariant() :
     m_initialVariantWeight(0.0),
     m_initialVariantWeightHasBeenSet(false),
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
-    m_acceleratorTypeHasBeenSet(false)
+    m_acceleratorTypeHasBeenSet(false),
+    m_coreDumpConfigHasBeenSet(false),
+    m_serverlessConfigHasBeenSet(false)
 {
 }
 
@@ -52,7 +44,9 @@ ProductionVariant::ProductionVariant(JsonView jsonValue) :
     m_initialVariantWeight(0.0),
     m_initialVariantWeightHasBeenSet(false),
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
-    m_acceleratorTypeHasBeenSet(false)
+    m_acceleratorTypeHasBeenSet(false),
+    m_coreDumpConfigHasBeenSet(false),
+    m_serverlessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +95,20 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
     m_acceleratorTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CoreDumpConfig"))
+  {
+    m_coreDumpConfig = jsonValue.GetObject("CoreDumpConfig");
+
+    m_coreDumpConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServerlessConfig"))
+  {
+    m_serverlessConfig = jsonValue.GetObject("ServerlessConfig");
+
+    m_serverlessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +148,18 @@ JsonValue ProductionVariant::Jsonize() const
   if(m_acceleratorTypeHasBeenSet)
   {
    payload.WithString("AcceleratorType", ProductionVariantAcceleratorTypeMapper::GetNameForProductionVariantAcceleratorType(m_acceleratorType));
+  }
+
+  if(m_coreDumpConfigHasBeenSet)
+  {
+   payload.WithObject("CoreDumpConfig", m_coreDumpConfig.Jsonize());
+
+  }
+
+  if(m_serverlessConfigHasBeenSet)
+  {
+   payload.WithObject("ServerlessConfig", m_serverlessConfig.Jsonize());
+
   }
 
   return payload;

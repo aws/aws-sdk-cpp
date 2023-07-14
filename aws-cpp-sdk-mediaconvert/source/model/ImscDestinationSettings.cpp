@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/ImscDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,16 @@ namespace Model
 {
 
 ImscDestinationSettings::ImscDestinationSettings() : 
+    m_accessibility(ImscAccessibilitySubs::NOT_SET),
+    m_accessibilityHasBeenSet(false),
     m_stylePassthrough(ImscStylePassthrough::NOT_SET),
     m_stylePassthroughHasBeenSet(false)
 {
 }
 
 ImscDestinationSettings::ImscDestinationSettings(JsonView jsonValue) : 
+    m_accessibility(ImscAccessibilitySubs::NOT_SET),
+    m_accessibilityHasBeenSet(false),
     m_stylePassthrough(ImscStylePassthrough::NOT_SET),
     m_stylePassthroughHasBeenSet(false)
 {
@@ -43,6 +37,13 @@ ImscDestinationSettings::ImscDestinationSettings(JsonView jsonValue) :
 
 ImscDestinationSettings& ImscDestinationSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessibility"))
+  {
+    m_accessibility = ImscAccessibilitySubsMapper::GetImscAccessibilitySubsForName(jsonValue.GetString("accessibility"));
+
+    m_accessibilityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("stylePassthrough"))
   {
     m_stylePassthrough = ImscStylePassthroughMapper::GetImscStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
@@ -56,6 +57,11 @@ ImscDestinationSettings& ImscDestinationSettings::operator =(JsonView jsonValue)
 JsonValue ImscDestinationSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessibilityHasBeenSet)
+  {
+   payload.WithString("accessibility", ImscAccessibilitySubsMapper::GetNameForImscAccessibilitySubs(m_accessibility));
+  }
 
   if(m_stylePassthroughHasBeenSet)
   {

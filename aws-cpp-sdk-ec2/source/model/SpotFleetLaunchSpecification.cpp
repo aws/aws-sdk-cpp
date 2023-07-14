@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/SpotFleetLaunchSpecification.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -51,7 +41,8 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() :
     m_userDataHasBeenSet(false),
     m_weightedCapacity(0.0),
     m_weightedCapacityHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
 }
 
@@ -76,7 +67,8 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification(const XmlNode& xmlNod
     m_userDataHasBeenSet(false),
     m_weightedCapacity(0.0),
     m_weightedCapacityHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -219,6 +211,12 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
 
       m_tagSpecificationsHasBeenSet = true;
     }
+    XmlNode instanceRequirementsNode = resultNode.FirstChild("instanceRequirements");
+    if(!instanceRequirementsNode.IsNull())
+    {
+      m_instanceRequirements = instanceRequirementsNode;
+      m_instanceRequirementsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -346,6 +344,13 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       }
   }
 
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::StringStream instanceRequirementsLocationAndMemberSs;
+      instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -451,6 +456,12 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
         tagSpecificationsSs << location <<  ".TagSpecificationSet." << tagSpecificationsIdx++;
         item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
       }
+  }
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::String instanceRequirementsLocationAndMember(location);
+      instanceRequirementsLocationAndMember += ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
   }
 }
 

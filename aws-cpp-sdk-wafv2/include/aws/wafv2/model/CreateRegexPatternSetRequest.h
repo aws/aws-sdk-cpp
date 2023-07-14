@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -90,117 +80,115 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline CreateRegexPatternSetRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
-     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
-     * the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline CreateRegexPatternSetRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline CreateRegexPatternSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline CreateRegexPatternSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the set that helps with identification. You cannot change
-     * the description of a set after you create it.</p>
+     * <p>A description of the set that helps with identification. </p>
      */
     inline CreateRegexPatternSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

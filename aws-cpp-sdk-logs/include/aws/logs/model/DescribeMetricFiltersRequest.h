@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -86,42 +76,50 @@ namespace Model
 
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline bool FilterNamePrefixHasBeenSet() const { return m_filterNamePrefixHasBeenSet; }
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = std::move(value); }
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline void SetFilterNamePrefix(const char* value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix.assign(value); }
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to match.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
+     * also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const char* value) { SetFilterNamePrefix(value); return *this;}
 

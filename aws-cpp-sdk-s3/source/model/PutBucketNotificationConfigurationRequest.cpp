@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/PutBucketNotificationConfigurationRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -29,6 +19,9 @@ using namespace Aws::Http;
 PutBucketNotificationConfigurationRequest::PutBucketNotificationConfigurationRequest() : 
     m_bucketHasBeenSet(false),
     m_notificationConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_skipDestinationValidation(false),
+    m_skipDestinationValidationHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -41,7 +34,7 @@ Aws::String PutBucketNotificationConfigurationRequest::SerializePayload() const
   parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
 
   m_notificationConfiguration.AddToNode(parentNode);
-  
+
   return payloadDoc.ConvertToString();
 }
 
@@ -67,3 +60,23 @@ void PutBucketNotificationConfigurationRequest::AddQueryStringParameters(URI& ur
     }
 }
 
+Aws::Http::HeaderValueCollection PutBucketNotificationConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+    ss << m_expectedBucketOwner;
+    headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  if(m_skipDestinationValidationHasBeenSet)
+  {
+    ss << std::boolalpha << m_skipDestinationValidation;
+    headers.emplace("x-amz-skip-destination-validation", ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

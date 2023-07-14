@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -45,7 +35,7 @@ namespace Model
 
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -53,7 +43,7 @@ namespace Model
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -61,7 +51,7 @@ namespace Model
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -69,7 +59,7 @@ namespace Model
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -77,7 +67,7 @@ namespace Model
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -85,7 +75,7 @@ namespace Model
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -93,7 +83,7 @@ namespace Model
     inline UpdateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -101,7 +91,7 @@ namespace Model
     inline UpdateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the alias that is changing its CMK. This value must begin with
+     * <p>Identifies the alias that is changing its KMS key. This value must begin with
      * <code>alias/</code> followed by the alias name, such as
      * <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
      * name.</p>
@@ -110,122 +100,154 @@ namespace Model
 
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline bool TargetKeyIdHasBeenSet() const { return m_targetKeyIdHasBeenSet; }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline UpdateAliasRequest& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline UpdateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the CMK to associate with the alias. When the update operation
-     * completes, the alias will point to this CMK. </p> <p>The CMK must be in the same
-     * AWS account and Region as the alias. Also, the new target CMK must be the same
-     * type as the current target CMK (both symmetric or both asymmetric) and they must
-     * have the same key usage. </p> <p>Specify the key ID or the Amazon Resource Name
-     * (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+     * managed key</a> to associate with the alias. You don't have permission to
+     * associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+     * Web Services managed key</a>.</p> <p>The KMS key must be in the same Amazon Web
+     * Services account and Region as the alias. Also, the new target KMS key must be
+     * the same type as the current target KMS key (both symmetric or both asymmetric)
+     * and they must have the same key usage. </p> <p>Specify the key ID or key ARN of
+     * the KMS key.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
-     * CMK, use <a>ListAliases</a>.</p>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped
+     * to the correct KMS key, use <a>ListAliases</a>.</p>
      */
     inline UpdateAliasRequest& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -49,7 +39,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -58,7 +48,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -67,7 +57,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -76,7 +66,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -85,7 +75,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -94,7 +84,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline PutResourcePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -103,7 +93,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline PutResourcePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -112,7 +102,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing
-     * a Report Group</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline PutResourcePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

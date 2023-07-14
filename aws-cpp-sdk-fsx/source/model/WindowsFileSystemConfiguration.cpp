@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/WindowsFileSystemConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -44,7 +34,9 @@ WindowsFileSystemConfiguration::WindowsFileSystemConfiguration() :
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_auditLogConfigurationHasBeenSet(false)
 {
 }
 
@@ -64,7 +56,9 @@ WindowsFileSystemConfiguration::WindowsFileSystemConfiguration(JsonView jsonValu
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_aliasesHasBeenSet(false),
+    m_auditLogConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -158,6 +152,23 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator =(JsonV
     m_copyTagsToBackupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Aliases"))
+  {
+    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
+    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+    {
+      m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
+    }
+    m_aliasesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuditLogConfiguration"))
+  {
+    m_auditLogConfiguration = jsonValue.GetObject("AuditLogConfiguration");
+
+    m_auditLogConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -238,6 +249,23 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const
   if(m_copyTagsToBackupsHasBeenSet)
   {
    payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
+
+  }
+
+  if(m_aliasesHasBeenSet)
+  {
+   Array<JsonValue> aliasesJsonList(m_aliases.size());
+   for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
+   {
+     aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());
+   }
+   payload.WithArray("Aliases", std::move(aliasesJsonList));
+
+  }
+
+  if(m_auditLogConfigurationHasBeenSet)
+  {
+   payload.WithObject("AuditLogConfiguration", m_auditLogConfiguration.Jsonize());
 
   }
 

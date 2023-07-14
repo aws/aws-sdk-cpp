@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -19,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/model/AwsEc2NetworkInterfaceSecurityGroup.h>
+#include <aws/securityhub/model/AwsEc2NetworkInterfaceIpV6AddressDetail.h>
+#include <aws/securityhub/model/AwsEc2NetworkInterfacePrivateIpAddressDetail.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +175,170 @@ namespace Model
      */
     inline AwsEc2NetworkInterfaceDetails& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
 
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& GetIpV6Addresses() const{ return m_ipV6Addresses; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline bool IpV6AddressesHasBeenSet() const { return m_ipV6AddressesHasBeenSet; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline void SetIpV6Addresses(const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = value; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline void SetIpV6Addresses(Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = std::move(value); }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithIpV6Addresses(const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& value) { SetIpV6Addresses(value); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithIpV6Addresses(Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>&& value) { SetIpV6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& AddIpV6Addresses(const AwsEc2NetworkInterfaceIpV6AddressDetail& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& AddIpV6Addresses(AwsEc2NetworkInterfaceIpV6AddressDetail&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline void SetPrivateIpAddresses(const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline void SetPrivateIpAddresses(Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPrivateIpAddresses(const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& value) { SetPrivateIpAddresses(value); return *this;}
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPrivateIpAddresses(Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& AddPrivateIpAddresses(const AwsEc2NetworkInterfacePrivateIpAddressDetail& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& AddPrivateIpAddresses(AwsEc2NetworkInterfacePrivateIpAddressDetail&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The public DNS name of the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline AwsEc2NetworkInterfaceDetails& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+
   private:
 
     AwsEc2NetworkInterfaceAttachment m_attachment;
@@ -196,6 +352,18 @@ namespace Model
 
     bool m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
+
+    Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail> m_ipV6Addresses;
+    bool m_ipV6AddressesHasBeenSet;
+
+    Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail> m_privateIpAddresses;
+    bool m_privateIpAddressesHasBeenSet;
+
+    Aws::String m_publicDnsName;
+    bool m_publicDnsNameHasBeenSet;
+
+    Aws::String m_publicIp;
+    bool m_publicIpHasBeenSet;
   };
 
 } // namespace Model

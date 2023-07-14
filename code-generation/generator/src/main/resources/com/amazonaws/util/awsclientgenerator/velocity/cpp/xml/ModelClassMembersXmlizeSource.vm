@@ -2,7 +2,7 @@
 #if($shape.members.entrySet().size() == 0)
   AWS_UNREFERENCED_PARAM(parentNode);
 #end
-#if(!$callFromRequestShape && $shape.xmlNamespace) 
+#if(!$callFromRequestShape && $shape.xmlNamespace)
 ##If requestShape has xmlNamespace field, then it has already added xml attribute before calling into this vm.
 #if($shape.xmlNamespace.prefix)
 #set($xmlnsKey = "xmlns:${shape.xmlNamespace.prefix}")
@@ -60,11 +60,35 @@
   ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
 #else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName))
+  ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
+  ${spaces}if (arn && arn.Validate().IsSuccess())
+  ${spaces}{
+  ${spaces}  if (arn.GetResourceType() == ARNResourceType::BUCKET)
+  ${spaces}  {
+  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetResourceId());
+  ${spaces}  }
+  ${spaces}  else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+  ${spaces}  {
+  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetSubResourceId());
+  ${spaces}  }
+  ${spaces}  else
+  ${spaces}  {
+  ${spaces}    // It's a valid ARN, but has incorrect resource type.
+  ${spaces}    assert(false);
+  ${spaces}  }
+  ${spaces}}
+  ${spaces}else
+  ${spaces}{
+  ${spaces}  ${lowerCaseVarName}Node.SetText(${memberVarName});
+  ${spaces}}
+#else
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
+#end
 #end
 #elseif($member.shape.timeStamp)
 #if($member.xmlAttribute)
-  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName}.ToGmtString(DateFormat::ISO_8601));
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape)));
 #else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(DateFormat::ISO_8601));
@@ -82,13 +106,15 @@
 #elseif($member.shape.list)
 #if($member.flattened)
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${memberName}");
-#elseif(!$member.shape.flattened)
+#elseif(!($member.locationName && $member.shape.flattened))
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${serializationName}");
 #end
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
 #if($member.locationName && $member.shape.flattened)
     ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${member.locationName}");
+#elseif(${member.shape.listMember.locationName})
+    ${spaces}XmlNode ${lowerCaseVarName}Node = ${lowerCaseVarName}ParentNode.CreateChildElement("${member.shape.listMember.locationName}");
 #else
     ${spaces}XmlNode ${lowerCaseVarName}Node = ${lowerCaseVarName}ParentNode.CreateChildElement("${member.shape.listMember.shape.name}");
 #end
@@ -105,7 +131,7 @@
 #elseif($member.shape.listMember.shape.string)
     ${spaces}${lowerCaseVarName}Node.SetText(item);
 #elseif($member.shape.listMember.shape.timeStamp)
-    ${spaces}${lowerCaseVarName}Node.SetText(item.ToGmtString(DateFormat::ISO_8601);
+    ${spaces}${lowerCaseVarName}Node.SetText(item.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInXml($member.shape.listMember.shape));
 #elseif($member.shape.listMember.shape.blob)
     ${spaces}${lowerCaseVarName}Node.SetText(HashingUtils::Base64Encode(item));
 #elseif($member.shape.listMember.shape.structure)

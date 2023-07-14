@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/qldb/QLDB_EXPORTS.h>
@@ -106,9 +96,9 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -116,9 +106,9 @@ namespace Model
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -126,9 +116,9 @@ namespace Model
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -136,9 +126,9 @@ namespace Model
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -146,9 +136,9 @@ namespace Model
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -156,9 +146,9 @@ namespace Model
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -166,9 +156,9 @@ namespace Model
     inline S3EncryptionConfiguration& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>
@@ -176,9 +166,9 @@ namespace Model
     inline S3EncryptionConfiguration& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key
-     * Management Service (AWS KMS).</p> <p>You must provide a <code>KmsKeyArn</code>
-     * if you specify <code>SSE_KMS</code> as the
+     * <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service
+     * (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a
+     * <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      * <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not
      * required if you specify <code>SSE_S3</code> as the
      * <code>ObjectEncryptionType</code>.</p>

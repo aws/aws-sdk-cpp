@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/VpcEndpointConnection.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -38,7 +28,10 @@ VpcEndpointConnection::VpcEndpointConnection() :
     m_vpcEndpointStateHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false)
+    m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -50,7 +43,10 @@ VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode) :
     m_vpcEndpointStateHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false)
+    m_networkLoadBalancerArnsHasBeenSet(false),
+    m_gatewayLoadBalancerArnsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -115,6 +111,24 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
 
       m_networkLoadBalancerArnsHasBeenSet = true;
     }
+    XmlNode gatewayLoadBalancerArnsNode = resultNode.FirstChild("gatewayLoadBalancerArnSet");
+    if(!gatewayLoadBalancerArnsNode.IsNull())
+    {
+      XmlNode gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsNode.FirstChild("item");
+      while(!gatewayLoadBalancerArnsMember.IsNull())
+      {
+        m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsMember.GetText());
+        gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsMember.NextNode("item");
+      }
+
+      m_gatewayLoadBalancerArnsHasBeenSet = true;
+    }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -167,6 +181,20 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+      unsigned gatewayLoadBalancerArnsIdx = 1;
+      for(auto& item : m_gatewayLoadBalancerArns)
+      {
+        oStream << location << index << locationValue << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
 }
 
 void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -208,6 +236,18 @@ void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* lo
       {
         oStream << location << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_gatewayLoadBalancerArnsHasBeenSet)
+  {
+      unsigned gatewayLoadBalancerArnsIdx = 1;
+      for(auto& item : m_gatewayLoadBalancerArns)
+      {
+        oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 }
 

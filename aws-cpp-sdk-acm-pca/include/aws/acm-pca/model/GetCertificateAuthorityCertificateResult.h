@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
@@ -80,57 +70,57 @@ namespace Model
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChain = value; }
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChain.assign(value); }
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline GetCertificateAuthorityCertificateResult& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline GetCertificateAuthorityCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
      * <p>Base64-encoded certificate chain that includes any intermediate certificates
-     * and chains up to root on-premises certificate that you used to sign your private
-     * CA certificate. The chain does not include your private CA certificate. If this
-     * is a root CA, the value will be null.</p>
+     * and chains up to root certificate that you used to sign your private CA
+     * certificate. The chain does not include your private CA certificate. If this is
+     * a root CA, the value will be null.</p>
      */
     inline GetCertificateAuthorityCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

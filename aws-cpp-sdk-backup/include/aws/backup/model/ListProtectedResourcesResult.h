@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -45,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline const Aws::Vector<ProtectedResource>& GetResults() const{ return m_results; }
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline void SetResults(const Aws::Vector<ProtectedResource>& value) { m_results = value; }
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline void SetResults(Aws::Vector<ProtectedResource>&& value) { m_results = std::move(value); }
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline ListProtectedResourcesResult& WithResults(const Aws::Vector<ProtectedResource>& value) { SetResults(value); return *this;}
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline ListProtectedResourcesResult& WithResults(Aws::Vector<ProtectedResource>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline ListProtectedResourcesResult& AddResults(const ProtectedResource& value) { m_results.push_back(value); return *this; }
 
     /**
-     * <p>An array of resources successfully backed up by AWS Backup including the time
-     * the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
+     * <p>An array of resources successfully backed up by Backup including the time the
+     * resource was saved, an Amazon Resource Name (ARN) of the resource, and a
      * resource type.</p>
      */
     inline ListProtectedResourcesResult& AddResults(ProtectedResource&& value) { m_results.push_back(std::move(value)); return *this; }

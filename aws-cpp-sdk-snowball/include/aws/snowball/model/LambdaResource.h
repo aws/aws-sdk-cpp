@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -50,49 +40,49 @@ namespace Model
 
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline LambdaResource& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline LambdaResource& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * <p>An Amazon Resource Name (ARN) that represents an Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
     inline LambdaResource& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}

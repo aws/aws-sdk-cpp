@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/AuditFinding.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -39,7 +29,9 @@ AuditFinding::AuditFinding() :
     m_nonCompliantResourceHasBeenSet(false),
     m_relatedResourcesHasBeenSet(false),
     m_reasonForNonComplianceHasBeenSet(false),
-    m_reasonForNonComplianceCodeHasBeenSet(false)
+    m_reasonForNonComplianceCodeHasBeenSet(false),
+    m_isSuppressed(false),
+    m_isSuppressedHasBeenSet(false)
 {
 }
 
@@ -54,7 +46,9 @@ AuditFinding::AuditFinding(JsonView jsonValue) :
     m_nonCompliantResourceHasBeenSet(false),
     m_relatedResourcesHasBeenSet(false),
     m_reasonForNonComplianceHasBeenSet(false),
-    m_reasonForNonComplianceCodeHasBeenSet(false)
+    m_reasonForNonComplianceCodeHasBeenSet(false),
+    m_isSuppressed(false),
+    m_isSuppressedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +128,13 @@ AuditFinding& AuditFinding::operator =(JsonView jsonValue)
     m_reasonForNonComplianceCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isSuppressed"))
+  {
+    m_isSuppressed = jsonValue.GetBool("isSuppressed");
+
+    m_isSuppressedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +201,12 @@ JsonValue AuditFinding::Jsonize() const
   if(m_reasonForNonComplianceCodeHasBeenSet)
   {
    payload.WithString("reasonForNonComplianceCode", m_reasonForNonComplianceCode);
+
+  }
+
+  if(m_isSuppressedHasBeenSet)
+  {
+   payload.WithBool("isSuppressed", m_isSuppressed);
 
   }
 

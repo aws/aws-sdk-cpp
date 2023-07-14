@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpPermission.h>
+#include <aws/ec2/model/SecurityGroupRuleDescription.h>
 #include <utility>
 
 namespace Aws
@@ -188,44 +179,101 @@ namespace Model
 
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
     /**
-     * <p>The IP permissions for the security group rule.</p>
+     * <p>The IP permissions for the security group rule. You must specify either the
+     * IP permissions or the description.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline const Aws::Vector<SecurityGroupRuleDescription>& GetSecurityGroupRuleDescriptions() const{ return m_securityGroupRuleDescriptions; }
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline bool SecurityGroupRuleDescriptionsHasBeenSet() const { return m_securityGroupRuleDescriptionsHasBeenSet; }
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline void SetSecurityGroupRuleDescriptions(const Aws::Vector<SecurityGroupRuleDescription>& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = value; }
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline void SetSecurityGroupRuleDescriptions(Aws::Vector<SecurityGroupRuleDescription>&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = std::move(value); }
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithSecurityGroupRuleDescriptions(const Aws::Vector<SecurityGroupRuleDescription>& value) { SetSecurityGroupRuleDescriptions(value); return *this;}
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithSecurityGroupRuleDescriptions(Aws::Vector<SecurityGroupRuleDescription>&& value) { SetSecurityGroupRuleDescriptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddSecurityGroupRuleDescriptions(const SecurityGroupRuleDescription& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.push_back(value); return *this; }
+
+    /**
+     * <p>The description for the egress security group rules. You must specify either
+     * the description or the IP permissions.</p>
+     */
+    inline UpdateSecurityGroupRuleDescriptionsEgressRequest& AddSecurityGroupRuleDescriptions(SecurityGroupRuleDescription&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -240,6 +288,9 @@ namespace Model
 
     Aws::Vector<IpPermission> m_ipPermissions;
     bool m_ipPermissionsHasBeenSet;
+
+    Aws::Vector<SecurityGroupRuleDescription> m_securityGroupRuleDescriptions;
+    bool m_securityGroupRuleDescriptionsHasBeenSet;
   };
 
 } // namespace Model

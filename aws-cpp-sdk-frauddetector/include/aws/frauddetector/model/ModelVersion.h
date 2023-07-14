@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
@@ -49,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline ModelVersion& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline ModelVersion& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
 
     /**
-     * <p>The parent model ID.</p>
+     * <p>The model ID.</p>
      */
     inline ModelVersion& WithModelId(const char* value) { SetModelId(value); return *this;}
 
@@ -121,44 +111,85 @@ namespace Model
 
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline const Aws::String& GetModelVersionNumber() const{ return m_modelVersionNumber; }
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline bool ModelVersionNumberHasBeenSet() const { return m_modelVersionNumberHasBeenSet; }
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline void SetModelVersionNumber(const Aws::String& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = value; }
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline void SetModelVersionNumber(Aws::String&& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = std::move(value); }
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline void SetModelVersionNumber(const char* value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber.assign(value); }
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline ModelVersion& WithModelVersionNumber(const Aws::String& value) { SetModelVersionNumber(value); return *this;}
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline ModelVersion& WithModelVersionNumber(Aws::String&& value) { SetModelVersionNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The model version.</p>
+     * <p>The model version number.</p>
      */
     inline ModelVersion& WithModelVersionNumber(const char* value) { SetModelVersionNumber(value); return *this;}
+
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline ModelVersion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline ModelVersion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The model version ARN.</p>
+     */
+    inline ModelVersion& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
 
@@ -170,6 +201,9 @@ namespace Model
 
     Aws::String m_modelVersionNumber;
     bool m_modelVersionNumberHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

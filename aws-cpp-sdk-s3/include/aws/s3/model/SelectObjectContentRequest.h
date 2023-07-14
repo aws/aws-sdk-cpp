@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -171,172 +161,220 @@ namespace Model
 
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) algorithm used to encrypt the object. This
+     * parameter is needed only when the object was created using a checksum algorithm.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
-     * <p>The SSE Customer Key. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
-     * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
-     * Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     * <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is
+     * needed only when the object was created using a checksum algorithm. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+     * data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
@@ -609,6 +647,63 @@ namespace Model
     inline SelectObjectContentRequest& WithScanRange(ScanRange&& value) { SetScanRange(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline SelectObjectContentRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline SelectObjectContentRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
+     */
+    inline SelectObjectContentRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -682,6 +777,9 @@ namespace Model
 
     ScanRange m_scanRange;
     bool m_scanRangeHasBeenSet;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

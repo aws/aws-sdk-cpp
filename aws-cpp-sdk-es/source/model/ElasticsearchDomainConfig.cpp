@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/es/model/ElasticsearchDomainConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -41,7 +31,9 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
 }
 
@@ -58,7 +50,9 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue) :
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +150,20 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(JsonView jsonVa
     m_advancedSecurityOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoTuneOptions"))
+  {
+    m_autoTuneOptions = jsonValue.GetObject("AutoTuneOptions");
+
+    m_autoTuneOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChangeProgressDetails"))
+  {
+    m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
+
+    m_changeProgressDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -238,6 +246,18 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_autoTuneOptionsHasBeenSet)
+  {
+   payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_changeProgressDetailsHasBeenSet)
+  {
+   payload.WithObject("ChangeProgressDetails", m_changeProgressDetails.Jsonize());
 
   }
 

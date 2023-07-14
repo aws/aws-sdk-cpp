@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -45,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline const Aws::String& GetHyperParameterTuningJobName() const{ return m_hyperParameterTuningJobName; }
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobName(Aws::String&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::move(value); }
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobName(const char* value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName.assign(value); }
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const Aws::String& value) { SetHyperParameterTuningJobName(value); return *this;}
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(Aws::String&& value) { SetHyperParameterTuningJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the tuning job to describe.</p>
+     * <p>The name of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const char* value) { SetHyperParameterTuningJobName(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -35,7 +25,7 @@ namespace Model
 
   /**
    * <p>An object with the name of the retention configuration and the retention
-   * period in days. The object stores the configuration for data retention in AWS
+   * period in days. The object stores the configuration for data retention in
    * Config.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RetentionConfiguration">AWS
    * API Reference</a></p>
@@ -91,26 +81,26 @@ namespace Model
 
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline int GetRetentionPeriodInDays() const{ return m_retentionPeriodInDays; }
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline RetentionConfiguration& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
 

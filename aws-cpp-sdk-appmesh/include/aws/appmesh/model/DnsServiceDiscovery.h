@@ -1,21 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appmesh/model/IpPreference.h>
+#include <aws/appmesh/model/DnsResponseType.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +27,7 @@ namespace Model
 
   /**
    * <p>An object that represents the DNS service discovery information for your
-   * virtual
-         node.</p><p><h3>See Also:</h3>   <a
+   * virtual node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DnsServiceDiscovery">AWS
    * API Reference</a></p>
    */
@@ -89,10 +80,78 @@ namespace Model
      */
     inline DnsServiceDiscovery& WithHostname(const char* value) { SetHostname(value); return *this;}
 
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline const IpPreference& GetIpPreference() const{ return m_ipPreference; }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline bool IpPreferenceHasBeenSet() const { return m_ipPreferenceHasBeenSet; }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline void SetIpPreference(const IpPreference& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline void SetIpPreference(IpPreference&& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = std::move(value); }
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline DnsServiceDiscovery& WithIpPreference(const IpPreference& value) { SetIpPreference(value); return *this;}
+
+    /**
+     * <p>The IP version to use to control traffic within the mesh.</p>
+     */
+    inline DnsServiceDiscovery& WithIpPreference(IpPreference&& value) { SetIpPreference(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline const DnsResponseType& GetResponseType() const{ return m_responseType; }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline void SetResponseType(const DnsResponseType& value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline void SetResponseType(DnsResponseType&& value) { m_responseTypeHasBeenSet = true; m_responseType = std::move(value); }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline DnsServiceDiscovery& WithResponseType(const DnsResponseType& value) { SetResponseType(value); return *this;}
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline DnsServiceDiscovery& WithResponseType(DnsResponseType&& value) { SetResponseType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
+    IpPreference m_ipPreference;
+    bool m_ipPreferenceHasBeenSet;
+
+    DnsResponseType m_responseType;
+    bool m_responseTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/awstransfer/model/TestIdentityProviderRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,6 +14,9 @@ using namespace Aws::Utils;
 
 TestIdentityProviderRequest::TestIdentityProviderRequest() : 
     m_serverIdHasBeenSet(false),
+    m_serverProtocol(Protocol::NOT_SET),
+    m_serverProtocolHasBeenSet(false),
+    m_sourceIpHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_userPasswordHasBeenSet(false)
 {
@@ -36,6 +29,17 @@ Aws::String TestIdentityProviderRequest::SerializePayload() const
   if(m_serverIdHasBeenSet)
   {
    payload.WithString("ServerId", m_serverId);
+
+  }
+
+  if(m_serverProtocolHasBeenSet)
+  {
+   payload.WithString("ServerProtocol", ProtocolMapper::GetNameForProtocol(m_serverProtocol));
+  }
+
+  if(m_sourceIpHasBeenSet)
+  {
+   payload.WithString("SourceIp", m_sourceIp);
 
   }
 

@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.transform;
 
@@ -268,8 +258,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
         c2jServiceModel.setMetadata(new C2jMetadata());
         c2jServiceModel.getMetadata().setUid("service-7869-05-67");
-        // Currently, we only support event stream in S3, so we should suppress event stream in kinesis.
-        c2jServiceModel.setServiceName("kinesis");
+        c2jServiceModel.getMetadata().setProtocol("json");
 
         C2jShape stringShape = new C2jShape();
         stringShape.setDocumentation("String Shape Documentation");
@@ -313,6 +302,7 @@ public class C2jModelToGeneratorModelTransformerTest {
 
         C2jShape errorShape = new C2jShape();
         errorShape.setType("structure");
+        errorShape.setException(true);
         errorShape.setMembers(new HashMap<>());
         errorShape.getMembers().put("StringShape", inputStringShapeMember);
         c2jShapeMap.put("ErrorShape", errorShape);
@@ -341,8 +331,84 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals("OperationResult", c2jModelToGeneratorModelTransformer.operations.get("Operation").getResult().getShape().getName());
         assertEquals(1, c2jModelToGeneratorModelTransformer.operations.get("Operation").getErrors().size());
         assertEquals("ErrorShape", c2jModelToGeneratorModelTransformer.operations.get("Operation").getErrors().get(0).getName());
+        assertTrue(c2jModelToGeneratorModelTransformer.operations.get("Operation").getErrors().get(0).isModeled());
         assertEquals("POST", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getMethod());
         assertEquals("/", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getRequestUri());
         assertEquals("200", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getResponseCode());
+    }
+
+    // "shapes":{
+    //     "EventStreamShape":{
+    //         "type":"structure",
+    //         "members":{
+    //             "EventShape":{"shape":"EventShape"}
+    //         },
+    //         "eventstream":true
+    //     },
+    //     "EventShape":{
+    //         "type":"structure",
+    //         "members":{
+    //             "BlobShape":{"shape":"BlobShape"}
+    //         },
+    //         "event":true
+    //     },
+    //     "BlobShape":{
+    //         "type":"blob"
+    //     }
+    // }
+    @Test
+    public void testEventStreamShapeConversion() {
+        C2jServiceModel c2jServiceModel = new C2jServiceModel();
+        Map<String, C2jShape> c2jShapeMap = new HashMap<>();
+        c2jServiceModel.setMetadata(new C2jMetadata());
+        c2jServiceModel.getMetadata().setUid("service-7869-05-67");
+
+        C2jShape eventStreamShape = new C2jShape();
+        eventStreamShape.setType("structure");
+        eventStreamShape.setEventstream(true);
+        c2jShapeMap.put("EventStreamShape", eventStreamShape);
+
+        C2jShape eventShape = new C2jShape();
+        eventShape.setType("structure");
+        eventShape.setEvent(true);
+        c2jShapeMap.put("EventShape", eventShape);
+
+        C2jShape blobShape = new C2jShape();
+        blobShape.setType("blob");
+        c2jShapeMap.put("BlobShape", blobShape);
+
+        C2jShapeMember blobShapeMember = new C2jShapeMember();
+        blobShapeMember.setShape("BlobShape");
+
+        eventShape.setMembers(new HashMap<>());
+        eventShape.getMembers().put("BlobShape", blobShapeMember);
+
+        C2jShapeMember eventShapeMember = new C2jShapeMember();
+        eventShapeMember.setShape("EventShape");
+
+        eventStreamShape.setMembers(new HashMap<>());
+        eventStreamShape.getMembers().put("EventShape", eventShapeMember);
+
+        c2jServiceModel.setShapes(c2jShapeMap);
+
+        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
+        c2jModelToGeneratorModelTransformer.convertShapes();
+        c2jModelToGeneratorModelTransformer.postProcessShapes();
+
+        Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
+        assertEquals(3, shapes.size());
+        assertEquals("EventStreamShape", shapes.get("EventStreamShape").getName());
+        assertTrue(shapes.get("EventStreamShape").isEventStream());
+        assertEquals("EventShape", shapes.get("EventShape").getName());
+        assertTrue(shapes.get("EventShape").isEvent());
+        assertEquals("blob", shapes.get("EventShape").getEventPayloadType());
+        assertEquals("BlobShape", shapes.get("EventShape").getEventPayloadMemberName());
+        assertEquals("BlobShape", shapes.get("BlobShape").getName());
+        assertEquals("blob", shapes.get("BlobShape").getType());
+        assertEquals(1, shapes.get("EventStreamShape").getMembers().size());
+        assertEquals("EventShape", shapes.get("EventStreamShape").getMembers().get("EventShape").getShape().getName());
+        assertEquals(1, shapes.get("EventShape").getMembers().size());
+        assertEquals("BlobShape", shapes.get("EventShape").getMembers().get("BlobShape").getShape().getName());
+        assertTrue(shapes.get("EventShape").getMembers().get("BlobShape").isEventPayload());
     }
 }

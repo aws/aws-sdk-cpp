@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
@@ -90,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline CognitoUserPoolConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline CognitoUserPoolConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region in which the user pool was created.</p>
+     * <p>The Amazon Web Services Region in which the user pool was created.</p>
      */
     inline CognitoUserPoolConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

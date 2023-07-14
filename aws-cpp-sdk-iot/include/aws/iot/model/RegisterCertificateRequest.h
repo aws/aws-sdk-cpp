@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -129,32 +119,44 @@ namespace Model
 
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline RegisterCertificateRequest& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the register certificate request.</p>
+     * <p>The status of the register certificate request. Valid values that you can use
+     * include <code>ACTIVE</code>, <code>INACTIVE</code>, and
+     * <code>REVOKED</code>.</p>
      */
     inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

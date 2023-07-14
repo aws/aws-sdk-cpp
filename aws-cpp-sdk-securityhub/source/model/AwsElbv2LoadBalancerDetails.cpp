@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -38,7 +28,8 @@ AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails() :
     m_securityGroupsHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_loadBalancerAttributesHasBeenSet(false)
 {
 }
 
@@ -52,7 +43,8 @@ AwsElbv2LoadBalancerDetails::AwsElbv2LoadBalancerDetails(JsonView jsonValue) :
     m_securityGroupsHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_loadBalancerAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +127,16 @@ AwsElbv2LoadBalancerDetails& AwsElbv2LoadBalancerDetails::operator =(JsonView js
     m_vpcIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LoadBalancerAttributes"))
+  {
+    Array<JsonView> loadBalancerAttributesJsonList = jsonValue.GetArray("LoadBalancerAttributes");
+    for(unsigned loadBalancerAttributesIndex = 0; loadBalancerAttributesIndex < loadBalancerAttributesJsonList.GetLength(); ++loadBalancerAttributesIndex)
+    {
+      m_loadBalancerAttributes.push_back(loadBalancerAttributesJsonList[loadBalancerAttributesIndex].AsObject());
+    }
+    m_loadBalancerAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -209,6 +211,17 @@ JsonValue AwsElbv2LoadBalancerDetails::Jsonize() const
   if(m_vpcIdHasBeenSet)
   {
    payload.WithString("VpcId", m_vpcId);
+
+  }
+
+  if(m_loadBalancerAttributesHasBeenSet)
+  {
+   Array<JsonValue> loadBalancerAttributesJsonList(m_loadBalancerAttributes.size());
+   for(unsigned loadBalancerAttributesIndex = 0; loadBalancerAttributesIndex < loadBalancerAttributesJsonList.GetLength(); ++loadBalancerAttributesIndex)
+   {
+     loadBalancerAttributesJsonList[loadBalancerAttributesIndex].AsObject(m_loadBalancerAttributes[loadBalancerAttributesIndex].Jsonize());
+   }
+   payload.WithArray("LoadBalancerAttributes", std::move(loadBalancerAttributesJsonList));
 
   }
 

@@ -1,0 +1,79 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/model/ChangeProgressStatusDetails.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace OpenSearchService
+{
+namespace Model
+{
+  /**
+   * <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains
+   * the progress information of the requested domain change. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgressResponse">AWS
+   * API Reference</a></p>
+   */
+  class AWS_OPENSEARCHSERVICE_API DescribeDomainChangeProgressResult
+  {
+  public:
+    DescribeDomainChangeProgressResult();
+    DescribeDomainChangeProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDomainChangeProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Progress information for the configuration change that is requested in the
+     * <code>DescribeDomainChangeProgress</code> request. </p>
+     */
+    inline const ChangeProgressStatusDetails& GetChangeProgressStatus() const{ return m_changeProgressStatus; }
+
+    /**
+     * <p>Progress information for the configuration change that is requested in the
+     * <code>DescribeDomainChangeProgress</code> request. </p>
+     */
+    inline void SetChangeProgressStatus(const ChangeProgressStatusDetails& value) { m_changeProgressStatus = value; }
+
+    /**
+     * <p>Progress information for the configuration change that is requested in the
+     * <code>DescribeDomainChangeProgress</code> request. </p>
+     */
+    inline void SetChangeProgressStatus(ChangeProgressStatusDetails&& value) { m_changeProgressStatus = std::move(value); }
+
+    /**
+     * <p>Progress information for the configuration change that is requested in the
+     * <code>DescribeDomainChangeProgress</code> request. </p>
+     */
+    inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(const ChangeProgressStatusDetails& value) { SetChangeProgressStatus(value); return *this;}
+
+    /**
+     * <p>Progress information for the configuration change that is requested in the
+     * <code>DescribeDomainChangeProgress</code> request. </p>
+     */
+    inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(ChangeProgressStatusDetails&& value) { SetChangeProgressStatus(std::move(value)); return *this;}
+
+  private:
+
+    ChangeProgressStatusDetails m_changeProgressStatus;
+  };
+
+} // namespace Model
+} // namespace OpenSearchService
+} // namespace Aws

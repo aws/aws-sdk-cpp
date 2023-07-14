@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/VideoPreprocessor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,8 +22,10 @@ VideoPreprocessor::VideoPreprocessor() :
     m_colorCorrectorHasBeenSet(false),
     m_deinterlacerHasBeenSet(false),
     m_dolbyVisionHasBeenSet(false),
+    m_hdr10PlusHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_noiseReducerHasBeenSet(false),
+    m_partnerWatermarkingHasBeenSet(false),
     m_timecodeBurninHasBeenSet(false)
 {
 }
@@ -42,8 +34,10 @@ VideoPreprocessor::VideoPreprocessor(JsonView jsonValue) :
     m_colorCorrectorHasBeenSet(false),
     m_deinterlacerHasBeenSet(false),
     m_dolbyVisionHasBeenSet(false),
+    m_hdr10PlusHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_noiseReducerHasBeenSet(false),
+    m_partnerWatermarkingHasBeenSet(false),
     m_timecodeBurninHasBeenSet(false)
 {
   *this = jsonValue;
@@ -72,6 +66,13 @@ VideoPreprocessor& VideoPreprocessor::operator =(JsonView jsonValue)
     m_dolbyVisionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hdr10Plus"))
+  {
+    m_hdr10Plus = jsonValue.GetObject("hdr10Plus");
+
+    m_hdr10PlusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("imageInserter"))
   {
     m_imageInserter = jsonValue.GetObject("imageInserter");
@@ -84,6 +85,13 @@ VideoPreprocessor& VideoPreprocessor::operator =(JsonView jsonValue)
     m_noiseReducer = jsonValue.GetObject("noiseReducer");
 
     m_noiseReducerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("partnerWatermarking"))
+  {
+    m_partnerWatermarking = jsonValue.GetObject("partnerWatermarking");
+
+    m_partnerWatermarkingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timecodeBurnin"))
@@ -118,6 +126,12 @@ JsonValue VideoPreprocessor::Jsonize() const
 
   }
 
+  if(m_hdr10PlusHasBeenSet)
+  {
+   payload.WithObject("hdr10Plus", m_hdr10Plus.Jsonize());
+
+  }
+
   if(m_imageInserterHasBeenSet)
   {
    payload.WithObject("imageInserter", m_imageInserter.Jsonize());
@@ -127,6 +141,12 @@ JsonValue VideoPreprocessor::Jsonize() const
   if(m_noiseReducerHasBeenSet)
   {
    payload.WithObject("noiseReducer", m_noiseReducer.Jsonize());
+
+  }
+
+  if(m_partnerWatermarkingHasBeenSet)
+  {
+   payload.WithObject("partnerWatermarking", m_partnerWatermarking.Jsonize());
 
   }
 

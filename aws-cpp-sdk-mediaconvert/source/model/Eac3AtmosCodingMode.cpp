@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/Eac3AtmosCodingMode.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,13 +20,28 @@ namespace Aws
       namespace Eac3AtmosCodingModeMapper
       {
 
+        static const int CODING_MODE_AUTO_HASH = HashingUtils::HashString("CODING_MODE_AUTO");
+        static const int CODING_MODE_5_1_4_HASH = HashingUtils::HashString("CODING_MODE_5_1_4");
+        static const int CODING_MODE_7_1_4_HASH = HashingUtils::HashString("CODING_MODE_7_1_4");
         static const int CODING_MODE_9_1_6_HASH = HashingUtils::HashString("CODING_MODE_9_1_6");
 
 
         Eac3AtmosCodingMode GetEac3AtmosCodingModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CODING_MODE_9_1_6_HASH)
+          if (hashCode == CODING_MODE_AUTO_HASH)
+          {
+            return Eac3AtmosCodingMode::CODING_MODE_AUTO;
+          }
+          else if (hashCode == CODING_MODE_5_1_4_HASH)
+          {
+            return Eac3AtmosCodingMode::CODING_MODE_5_1_4;
+          }
+          else if (hashCode == CODING_MODE_7_1_4_HASH)
+          {
+            return Eac3AtmosCodingMode::CODING_MODE_7_1_4;
+          }
+          else if (hashCode == CODING_MODE_9_1_6_HASH)
           {
             return Eac3AtmosCodingMode::CODING_MODE_9_1_6;
           }
@@ -54,6 +59,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosCodingMode::CODING_MODE_AUTO:
+            return "CODING_MODE_AUTO";
+          case Eac3AtmosCodingMode::CODING_MODE_5_1_4:
+            return "CODING_MODE_5_1_4";
+          case Eac3AtmosCodingMode::CODING_MODE_7_1_4:
+            return "CODING_MODE_7_1_4";
           case Eac3AtmosCodingMode::CODING_MODE_9_1_6:
             return "CODING_MODE_9_1_6";
           default:

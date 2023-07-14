@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/quicksight/model/RenameColumnOperation.h>
 #include <aws/quicksight/model/CastColumnTypeOperation.h>
 #include <aws/quicksight/model/TagColumnOperation.h>
+#include <aws/quicksight/model/UntagColumnOperation.h>
 #include <utility>
 
 namespace Aws
@@ -251,6 +242,25 @@ namespace Model
      */
     inline TransformOperation& WithTagColumnOperation(TagColumnOperation&& value) { SetTagColumnOperation(std::move(value)); return *this;}
 
+
+    
+    inline const UntagColumnOperation& GetUntagColumnOperation() const{ return m_untagColumnOperation; }
+
+    
+    inline bool UntagColumnOperationHasBeenSet() const { return m_untagColumnOperationHasBeenSet; }
+
+    
+    inline void SetUntagColumnOperation(const UntagColumnOperation& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = value; }
+
+    
+    inline void SetUntagColumnOperation(UntagColumnOperation&& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = std::move(value); }
+
+    
+    inline TransformOperation& WithUntagColumnOperation(const UntagColumnOperation& value) { SetUntagColumnOperation(value); return *this;}
+
+    
+    inline TransformOperation& WithUntagColumnOperation(UntagColumnOperation&& value) { SetUntagColumnOperation(std::move(value)); return *this;}
+
   private:
 
     ProjectOperation m_projectOperation;
@@ -270,6 +280,9 @@ namespace Model
 
     TagColumnOperation m_tagColumnOperation;
     bool m_tagColumnOperationHasBeenSet;
+
+    UntagColumnOperation m_untagColumnOperation;
+    bool m_untagColumnOperationHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -20,7 +10,9 @@
 #include <aws/firehose/model/ExtendedS3DestinationUpdate.h>
 #include <aws/firehose/model/RedshiftDestinationUpdate.h>
 #include <aws/firehose/model/ElasticsearchDestinationUpdate.h>
+#include <aws/firehose/model/AmazonopensearchserviceDestinationUpdate.h>
 #include <aws/firehose/model/SplunkDestinationUpdate.h>
+#include <aws/firehose/model/HttpEndpointDestinationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -304,6 +296,25 @@ namespace Model
     inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
 
 
+    
+    inline const AmazonopensearchserviceDestinationUpdate& GetAmazonopensearchserviceDestinationUpdate() const{ return m_amazonopensearchserviceDestinationUpdate; }
+
+    
+    inline bool AmazonopensearchserviceDestinationUpdateHasBeenSet() const { return m_amazonopensearchserviceDestinationUpdateHasBeenSet; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = value; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = std::move(value); }
+
+    
+    inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { SetAmazonopensearchserviceDestinationUpdate(value); return *this;}
+
+    
+    inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { SetAmazonopensearchserviceDestinationUpdate(std::move(value)); return *this;}
+
+
     /**
      * <p>Describes an update for a destination in Splunk.</p>
      */
@@ -334,6 +345,37 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithSplunkDestinationUpdate(SplunkDestinationUpdate&& value) { SetSplunkDestinationUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline const HttpEndpointDestinationUpdate& GetHttpEndpointDestinationUpdate() const{ return m_httpEndpointDestinationUpdate; }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline bool HttpEndpointDestinationUpdateHasBeenSet() const { return m_httpEndpointDestinationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline void SetHttpEndpointDestinationUpdate(const HttpEndpointDestinationUpdate& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = value; }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline void SetHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = std::move(value); }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(const HttpEndpointDestinationUpdate& value) { SetHttpEndpointDestinationUpdate(value); return *this;}
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { SetHttpEndpointDestinationUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -354,8 +396,14 @@ namespace Model
     ElasticsearchDestinationUpdate m_elasticsearchDestinationUpdate;
     bool m_elasticsearchDestinationUpdateHasBeenSet;
 
+    AmazonopensearchserviceDestinationUpdate m_amazonopensearchserviceDestinationUpdate;
+    bool m_amazonopensearchserviceDestinationUpdateHasBeenSet;
+
     SplunkDestinationUpdate m_splunkDestinationUpdate;
     bool m_splunkDestinationUpdateHasBeenSet;
+
+    HttpEndpointDestinationUpdate m_httpEndpointDestinationUpdate;
+    bool m_httpEndpointDestinationUpdateHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -140,42 +130,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline const Aws::String& GetWorkRequesterAccountId() const{ return m_workRequesterAccountId; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline bool WorkRequesterAccountIdHasBeenSet() const { return m_workRequesterAccountIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline void SetWorkRequesterAccountId(const Aws::String& value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline void SetWorkRequesterAccountId(Aws::String&& value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline void SetWorkRequesterAccountId(const char* value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline LabelingJobForWorkteamSummary& WithWorkRequesterAccountId(const Aws::String& value) { SetWorkRequesterAccountId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline LabelingJobForWorkteamSummary& WithWorkRequesterAccountId(Aws::String&& value) { SetWorkRequesterAccountId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline LabelingJobForWorkteamSummary& WithWorkRequesterAccountId(const char* value) { SetWorkRequesterAccountId(value); return *this;}
 

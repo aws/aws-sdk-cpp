@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/DataSourceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,20 @@ namespace Aws
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
         static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
+        static const int SALESFORCE_HASH = HashingUtils::HashString("SALESFORCE");
+        static const int ONEDRIVE_HASH = HashingUtils::HashString("ONEDRIVE");
+        static const int SERVICENOW_HASH = HashingUtils::HashString("SERVICENOW");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
+        static const int GOOGLEDRIVE_HASH = HashingUtils::HashString("GOOGLEDRIVE");
+        static const int WEBCRAWLER_HASH = HashingUtils::HashString("WEBCRAWLER");
+        static const int WORKDOCS_HASH = HashingUtils::HashString("WORKDOCS");
+        static const int FSX_HASH = HashingUtils::HashString("FSX");
+        static const int SLACK_HASH = HashingUtils::HashString("SLACK");
+        static const int BOX_HASH = HashingUtils::HashString("BOX");
+        static const int QUIP_HASH = HashingUtils::HashString("QUIP");
+        static const int JIRA_HASH = HashingUtils::HashString("JIRA");
+        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -49,6 +53,62 @@ namespace Aws
           else if (hashCode == DATABASE_HASH)
           {
             return DataSourceType::DATABASE;
+          }
+          else if (hashCode == SALESFORCE_HASH)
+          {
+            return DataSourceType::SALESFORCE;
+          }
+          else if (hashCode == ONEDRIVE_HASH)
+          {
+            return DataSourceType::ONEDRIVE;
+          }
+          else if (hashCode == SERVICENOW_HASH)
+          {
+            return DataSourceType::SERVICENOW;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return DataSourceType::CUSTOM;
+          }
+          else if (hashCode == CONFLUENCE_HASH)
+          {
+            return DataSourceType::CONFLUENCE;
+          }
+          else if (hashCode == GOOGLEDRIVE_HASH)
+          {
+            return DataSourceType::GOOGLEDRIVE;
+          }
+          else if (hashCode == WEBCRAWLER_HASH)
+          {
+            return DataSourceType::WEBCRAWLER;
+          }
+          else if (hashCode == WORKDOCS_HASH)
+          {
+            return DataSourceType::WORKDOCS;
+          }
+          else if (hashCode == FSX_HASH)
+          {
+            return DataSourceType::FSX;
+          }
+          else if (hashCode == SLACK_HASH)
+          {
+            return DataSourceType::SLACK;
+          }
+          else if (hashCode == BOX_HASH)
+          {
+            return DataSourceType::BOX;
+          }
+          else if (hashCode == QUIP_HASH)
+          {
+            return DataSourceType::QUIP;
+          }
+          else if (hashCode == JIRA_HASH)
+          {
+            return DataSourceType::JIRA;
+          }
+          else if (hashCode == GITHUB_HASH)
+          {
+            return DataSourceType::GITHUB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +130,34 @@ namespace Aws
             return "SHAREPOINT";
           case DataSourceType::DATABASE:
             return "DATABASE";
+          case DataSourceType::SALESFORCE:
+            return "SALESFORCE";
+          case DataSourceType::ONEDRIVE:
+            return "ONEDRIVE";
+          case DataSourceType::SERVICENOW:
+            return "SERVICENOW";
+          case DataSourceType::CUSTOM:
+            return "CUSTOM";
+          case DataSourceType::CONFLUENCE:
+            return "CONFLUENCE";
+          case DataSourceType::GOOGLEDRIVE:
+            return "GOOGLEDRIVE";
+          case DataSourceType::WEBCRAWLER:
+            return "WEBCRAWLER";
+          case DataSourceType::WORKDOCS:
+            return "WORKDOCS";
+          case DataSourceType::FSX:
+            return "FSX";
+          case DataSourceType::SLACK:
+            return "SLACK";
+          case DataSourceType::BOX:
+            return "BOX";
+          case DataSourceType::QUIP:
+            return "QUIP";
+          case DataSourceType::JIRA:
+            return "JIRA";
+          case DataSourceType::GITHUB:
+            return "GITHUB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

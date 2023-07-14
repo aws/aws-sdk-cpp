@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -34,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Specifies data Model Monitor will capture.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureOption">AWS
    * API Reference</a></p>
    */
@@ -48,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline const CaptureMode& GetCaptureMode() const{ return m_captureMode; }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline bool CaptureModeHasBeenSet() const { return m_captureModeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline void SetCaptureMode(const CaptureMode& value) { m_captureModeHasBeenSet = true; m_captureMode = value; }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline void SetCaptureMode(CaptureMode&& value) { m_captureModeHasBeenSet = true; m_captureMode = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline CaptureOption& WithCaptureMode(const CaptureMode& value) { SetCaptureMode(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specify the boundary of data to capture.</p>
      */
     inline CaptureOption& WithCaptureMode(CaptureMode&& value) { SetCaptureMode(std::move(value)); return *this;}
 

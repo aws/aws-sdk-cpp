@@ -1,30 +1,98 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/chime/ChimeErrors.h>
+#include <aws/chime/model/ServiceUnavailableException.h>
+#include <aws/chime/model/ConflictException.h>
+#include <aws/chime/model/NotFoundException.h>
+#include <aws/chime/model/ServiceFailureException.h>
+#include <aws/chime/model/ForbiddenException.h>
+#include <aws/chime/model/ResourceLimitExceededException.h>
+#include <aws/chime/model/AccessDeniedException.h>
+#include <aws/chime/model/ThrottledClientException.h>
+#include <aws/chime/model/UnprocessableEntityException.h>
+#include <aws/chime/model/UnauthorizedClientException.h>
+#include <aws/chime/model/BadRequestException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Chime;
 using namespace Aws::Utils;
+using namespace Aws::Chime;
+using namespace Aws::Chime::Model;
 
 namespace Aws
 {
 namespace Chime
 {
+template<> AWS_CHIME_API ServiceUnavailableException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API ConflictException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API NotFoundException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API ServiceFailureException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::SERVICE_FAILURE);
+  return ServiceFailureException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API ForbiddenException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::FORBIDDEN);
+  return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API ResourceLimitExceededException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::RESOURCE_LIMIT_EXCEEDED);
+  return ResourceLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API AccessDeniedException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API ThrottledClientException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::THROTTLED_CLIENT);
+  return ThrottledClientException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API UnprocessableEntityException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::UNPROCESSABLE_ENTITY);
+  return UnprocessableEntityException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API UnauthorizedClientException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::UNAUTHORIZED_CLIENT);
+  return UnauthorizedClientException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIME_API BadRequestException ChimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
 namespace ChimeErrorMapper
 {
 

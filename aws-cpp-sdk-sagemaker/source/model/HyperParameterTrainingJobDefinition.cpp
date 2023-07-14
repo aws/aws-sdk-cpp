@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/HyperParameterTrainingJobDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -46,7 +36,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false)
+    m_checkpointConfigHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
 }
 
@@ -68,7 +59,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false)
+    m_checkpointConfigHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -186,6 +178,13 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_checkpointConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +289,12 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_checkpointConfigHasBeenSet)
   {
    payload.WithObject("CheckpointConfig", m_checkpointConfig.Jsonize());
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

@@ -1,21 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/TLSSecurityPolicy.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +118,113 @@ namespace Model
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specify if custom endpoint should be enabled for the Elasticsearch
+     * domain.</p>
+     */
+    inline bool GetCustomEndpointEnabled() const{ return m_customEndpointEnabled; }
+
+    /**
+     * <p>Specify if custom endpoint should be enabled for the Elasticsearch
+     * domain.</p>
+     */
+    inline bool CustomEndpointEnabledHasBeenSet() const { return m_customEndpointEnabledHasBeenSet; }
+
+    /**
+     * <p>Specify if custom endpoint should be enabled for the Elasticsearch
+     * domain.</p>
+     */
+    inline void SetCustomEndpointEnabled(bool value) { m_customEndpointEnabledHasBeenSet = true; m_customEndpointEnabled = value; }
+
+    /**
+     * <p>Specify if custom endpoint should be enabled for the Elasticsearch
+     * domain.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpointEnabled(bool value) { SetCustomEndpointEnabled(value); return *this;}
+
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline const Aws::String& GetCustomEndpoint() const{ return m_customEndpoint; }
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline bool CustomEndpointHasBeenSet() const { return m_customEndpointHasBeenSet; }
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline void SetCustomEndpoint(const Aws::String& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = value; }
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline void SetCustomEndpoint(Aws::String&& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = std::move(value); }
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline void SetCustomEndpoint(const char* value) { m_customEndpointHasBeenSet = true; m_customEndpoint.assign(value); }
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpoint(const Aws::String& value) { SetCustomEndpoint(value); return *this;}
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpoint(Aws::String&& value) { SetCustomEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the fully qualified domain for your custom endpoint.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpoint(const char* value) { SetCustomEndpoint(value); return *this;}
+
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline const Aws::String& GetCustomEndpointCertificateArn() const{ return m_customEndpointCertificateArn; }
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline bool CustomEndpointCertificateArnHasBeenSet() const { return m_customEndpointCertificateArnHasBeenSet; }
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline void SetCustomEndpointCertificateArn(const Aws::String& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = value; }
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline void SetCustomEndpointCertificateArn(Aws::String&& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = std::move(value); }
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline void SetCustomEndpointCertificateArn(const char* value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn.assign(value); }
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpointCertificateArn(const Aws::String& value) { SetCustomEndpointCertificateArn(value); return *this;}
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpointCertificateArn(Aws::String&& value) { SetCustomEndpointCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify ACM certificate ARN for your custom endpoint.</p>
+     */
+    inline DomainEndpointOptions& WithCustomEndpointCertificateArn(const char* value) { SetCustomEndpointCertificateArn(value); return *this;}
+
   private:
 
     bool m_enforceHTTPS;
@@ -134,6 +232,15 @@ namespace Model
 
     TLSSecurityPolicy m_tLSSecurityPolicy;
     bool m_tLSSecurityPolicyHasBeenSet;
+
+    bool m_customEndpointEnabled;
+    bool m_customEndpointEnabledHasBeenSet;
+
+    Aws::String m_customEndpoint;
+    bool m_customEndpointHasBeenSet;
+
+    Aws::String m_customEndpointCertificateArn;
+    bool m_customEndpointCertificateArnHasBeenSet;
   };
 
 } // namespace Model

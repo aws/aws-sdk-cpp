@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
@@ -73,40 +63,40 @@ namespace Model
     /**
      * <p>Indicates whether a deployment should continue if information about the
      * current state of alarms cannot be retrieved from Amazon CloudWatch. The default
-     * value is false.</p> <ul> <li> <p>true: The deployment proceeds even if alarm
-     * status information can't be retrieved from Amazon CloudWatch.</p> </li> <li>
-     * <p>false: The deployment stops if alarm status information can't be retrieved
-     * from Amazon CloudWatch.</p> </li> </ul>
+     * value is false.</p> <ul> <li> <p> <code>true</code>: The deployment proceeds
+     * even if alarm status information can't be retrieved from Amazon CloudWatch.</p>
+     * </li> <li> <p> <code>false</code>: The deployment stops if alarm status
+     * information can't be retrieved from Amazon CloudWatch.</p> </li> </ul>
      */
     inline bool GetIgnorePollAlarmFailure() const{ return m_ignorePollAlarmFailure; }
 
     /**
      * <p>Indicates whether a deployment should continue if information about the
      * current state of alarms cannot be retrieved from Amazon CloudWatch. The default
-     * value is false.</p> <ul> <li> <p>true: The deployment proceeds even if alarm
-     * status information can't be retrieved from Amazon CloudWatch.</p> </li> <li>
-     * <p>false: The deployment stops if alarm status information can't be retrieved
-     * from Amazon CloudWatch.</p> </li> </ul>
+     * value is false.</p> <ul> <li> <p> <code>true</code>: The deployment proceeds
+     * even if alarm status information can't be retrieved from Amazon CloudWatch.</p>
+     * </li> <li> <p> <code>false</code>: The deployment stops if alarm status
+     * information can't be retrieved from Amazon CloudWatch.</p> </li> </ul>
      */
     inline bool IgnorePollAlarmFailureHasBeenSet() const { return m_ignorePollAlarmFailureHasBeenSet; }
 
     /**
      * <p>Indicates whether a deployment should continue if information about the
      * current state of alarms cannot be retrieved from Amazon CloudWatch. The default
-     * value is false.</p> <ul> <li> <p>true: The deployment proceeds even if alarm
-     * status information can't be retrieved from Amazon CloudWatch.</p> </li> <li>
-     * <p>false: The deployment stops if alarm status information can't be retrieved
-     * from Amazon CloudWatch.</p> </li> </ul>
+     * value is false.</p> <ul> <li> <p> <code>true</code>: The deployment proceeds
+     * even if alarm status information can't be retrieved from Amazon CloudWatch.</p>
+     * </li> <li> <p> <code>false</code>: The deployment stops if alarm status
+     * information can't be retrieved from Amazon CloudWatch.</p> </li> </ul>
      */
     inline void SetIgnorePollAlarmFailure(bool value) { m_ignorePollAlarmFailureHasBeenSet = true; m_ignorePollAlarmFailure = value; }
 
     /**
      * <p>Indicates whether a deployment should continue if information about the
      * current state of alarms cannot be retrieved from Amazon CloudWatch. The default
-     * value is false.</p> <ul> <li> <p>true: The deployment proceeds even if alarm
-     * status information can't be retrieved from Amazon CloudWatch.</p> </li> <li>
-     * <p>false: The deployment stops if alarm status information can't be retrieved
-     * from Amazon CloudWatch.</p> </li> </ul>
+     * value is false.</p> <ul> <li> <p> <code>true</code>: The deployment proceeds
+     * even if alarm status information can't be retrieved from Amazon CloudWatch.</p>
+     * </li> <li> <p> <code>false</code>: The deployment stops if alarm status
+     * information can't be retrieved from Amazon CloudWatch.</p> </li> </ul>
      */
     inline AlarmConfiguration& WithIgnorePollAlarmFailure(bool value) { SetIgnorePollAlarmFailure(value); return *this;}
 

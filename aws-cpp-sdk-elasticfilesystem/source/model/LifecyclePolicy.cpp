@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticfilesystem/model/LifecyclePolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,17 @@ namespace Model
 
 LifecyclePolicy::LifecyclePolicy() : 
     m_transitionToIA(TransitionToIARules::NOT_SET),
-    m_transitionToIAHasBeenSet(false)
+    m_transitionToIAHasBeenSet(false),
+    m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
+    m_transitionToPrimaryStorageClassHasBeenSet(false)
 {
 }
 
 LifecyclePolicy::LifecyclePolicy(JsonView jsonValue) : 
     m_transitionToIA(TransitionToIARules::NOT_SET),
-    m_transitionToIAHasBeenSet(false)
+    m_transitionToIAHasBeenSet(false),
+    m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
+    m_transitionToPrimaryStorageClassHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +44,13 @@ LifecyclePolicy& LifecyclePolicy::operator =(JsonView jsonValue)
     m_transitionToIAHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransitionToPrimaryStorageClass"))
+  {
+    m_transitionToPrimaryStorageClass = TransitionToPrimaryStorageClassRulesMapper::GetTransitionToPrimaryStorageClassRulesForName(jsonValue.GetString("TransitionToPrimaryStorageClass"));
+
+    m_transitionToPrimaryStorageClassHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +61,11 @@ JsonValue LifecyclePolicy::Jsonize() const
   if(m_transitionToIAHasBeenSet)
   {
    payload.WithString("TransitionToIA", TransitionToIARulesMapper::GetNameForTransitionToIARules(m_transitionToIA));
+  }
+
+  if(m_transitionToPrimaryStorageClassHasBeenSet)
+  {
+   payload.WithString("TransitionToPrimaryStorageClass", TransitionToPrimaryStorageClassRulesMapper::GetNameForTransitionToPrimaryStorageClassRules(m_transitionToPrimaryStorageClass));
   }
 
   return payload;

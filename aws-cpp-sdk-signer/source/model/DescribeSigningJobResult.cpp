@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/signer/model/DescribeSigningJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -64,9 +54,21 @@ DescribeSigningJobResult& DescribeSigningJobResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("platformDisplayName"))
+  {
+    m_platformDisplayName = jsonValue.GetString("platformDisplayName");
+
+  }
+
   if(jsonValue.ValueExists("profileName"))
   {
     m_profileName = jsonValue.GetString("profileName");
+
+  }
+
+  if(jsonValue.ValueExists("profileVersion"))
+  {
+    m_profileVersion = jsonValue.GetString("profileVersion");
 
   }
 
@@ -97,6 +99,12 @@ DescribeSigningJobResult& DescribeSigningJobResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("signatureExpiresAt"))
+  {
+    m_signatureExpiresAt = jsonValue.GetDouble("signatureExpiresAt");
+
+  }
+
   if(jsonValue.ValueExists("requestedBy"))
   {
     m_requestedBy = jsonValue.GetString("requestedBy");
@@ -115,9 +123,27 @@ DescribeSigningJobResult& DescribeSigningJobResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("revocationRecord"))
+  {
+    m_revocationRecord = jsonValue.GetObject("revocationRecord");
+
+  }
+
   if(jsonValue.ValueExists("signedObject"))
   {
     m_signedObject = jsonValue.GetObject("signedObject");
+
+  }
+
+  if(jsonValue.ValueExists("jobOwner"))
+  {
+    m_jobOwner = jsonValue.GetString("jobOwner");
+
+  }
+
+  if(jsonValue.ValueExists("jobInvoker"))
+  {
+    m_jobInvoker = jsonValue.GetString("jobInvoker");
 
   }
 

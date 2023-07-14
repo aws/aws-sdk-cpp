@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -44,56 +34,56 @@ namespace Model
 
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline InviteMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline InviteMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline InviteMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline InviteMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of account IDs of the AWS accounts to invite to Security Hub as
-     * members. </p>
+     * <p>The list of account IDs of the Amazon Web Services accounts to invite to
+     * Security Hub as members. </p>
      */
     inline InviteMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 

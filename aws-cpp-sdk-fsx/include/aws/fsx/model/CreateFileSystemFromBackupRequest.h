@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -19,7 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/CreateFileSystemWindowsConfiguration.h>
+#include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
 #include <aws/fsx/model/StorageType.h>
+#include <aws/fsx/model/CreateFileSystemOpenZFSConfiguration.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -79,58 +71,58 @@ namespace Model
 
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -141,9 +133,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
@@ -153,9 +146,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
@@ -165,9 +159,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
@@ -177,9 +172,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
@@ -189,9 +185,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
@@ -201,9 +198,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
@@ -213,9 +211,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -225,9 +224,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
@@ -237,9 +237,10 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
-     * types and Lustre file systems, provide exactly one subnet ID. The file server is
-     * launched in that subnet's Availability Zone.</p>
+     * <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types, Lustre file systems, and OpenZFS file systems provide exactly
+     * one subnet ID. The file server is launched in that subnet's Availability
+     * Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -247,72 +248,72 @@ namespace Model
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later DescribeFileSystem
-     * requests.</p>
+     * network interfaces. This value isn't returned in later
+     * <code>DescribeFileSystem</code> requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -405,101 +406,271 @@ namespace Model
     inline CreateFileSystemFromBackupRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
 
+    
+    inline const CreateFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+
+    
+    inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
+
+    
+    inline void SetLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
+
+    
+    inline void SetLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
+
+    
+    inline CreateFileSystemFromBackupRequest& WithLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
+
+    
+    inline CreateFileSystemFromBackupRequest& WithLustreConfiguration(CreateFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+
+
     /**
-     * <p>Sets the storage type for the Windows file system you're creating from a
-     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
-     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
-     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
-     * have different minimum storage capacity requirements. A restored file system's
+     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
+     * creating from a backup. Valid values are <code>SSD</code> and
+     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
+     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
+     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
+     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
+     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
+     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
-     * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * storage if the original SSD file system had a storage capacity of at least 2000
+     * GiB.</p> 
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Sets the storage type for the Windows file system you're creating from a
-     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
-     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
-     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
-     * have different minimum storage capacity requirements. A restored file system's
+     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
+     * creating from a backup. Valid values are <code>SSD</code> and
+     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
+     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
+     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
+     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
+     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
+     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
-     * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * storage if the original SSD file system had a storage capacity of at least 2000
+     * GiB.</p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Sets the storage type for the Windows file system you're creating from a
-     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
-     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
-     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
-     * have different minimum storage capacity requirements. A restored file system's
+     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
+     * creating from a backup. Valid values are <code>SSD</code> and
+     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
+     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
+     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
+     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
+     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
+     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
-     * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * storage if the original SSD file system had a storage capacity of at least 2000
+     * GiB.</p> 
      */
     inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Sets the storage type for the Windows file system you're creating from a
-     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
-     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
-     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
-     * have different minimum storage capacity requirements. A restored file system's
+     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
+     * creating from a backup. Valid values are <code>SSD</code> and
+     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
+     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
+     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
+     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
+     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
+     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
-     * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * storage if the original SSD file system had a storage capacity of at least 2000
+     * GiB.</p> 
      */
     inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Sets the storage type for the Windows file system you're creating from a
-     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
-     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
-     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
-     * have different minimum storage capacity requirements. A restored file system's
+     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
+     * creating from a backup. Valid values are <code>SSD</code> and
+     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
+     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
+     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
+     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
+     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
+     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
-     * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * storage if the original SSD file system had a storage capacity of at least 2000
+     * GiB.</p> 
      */
     inline CreateFileSystemFromBackupRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Sets the storage type for the Windows file system you're creating from a
-     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
-     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
-     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
-     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
-     * have different minimum storage capacity requirements. A restored file system's
+     * <p>Sets the storage type for the Windows or OpenZFS file system that you're
+     * creating from a backup. Valid values are <code>SSD</code> and
+     * <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state
+     * drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p>
+     * </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is
+     * supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for
+     * Windows File Server file system deployment types.</p> </li> </ul> <p> The
+     * default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types have
+     * different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
-     * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * storage if the original SSD file system had a storage capacity of at least 2000
+     * GiB.</p> 
      */
     inline CreateFileSystemFromBackupRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    
+    inline CreateFileSystemFromBackupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    
+    inline CreateFileSystemFromBackupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    
+    inline CreateFileSystemFromBackupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Sets the version for the Amazon FSx for Lustre file system that you're
+     * creating from a backup. Valid values are <code>2.10</code> and
+     * <code>2.12</code>.</p> <p>You don't need to specify
+     * <code>FileSystemTypeVersion</code> because it will be applied using the backup's
+     * <code>FileSystemTypeVersion</code> setting. If you choose to specify
+     * <code>FileSystemTypeVersion</code> when creating from backup, the value must
+     * match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+
+
+    /**
+     * <p>The OpenZFS configuration for the file system that's being created. </p>
+     */
+    inline const CreateFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+
+    /**
+     * <p>The OpenZFS configuration for the file system that's being created. </p>
+     */
+    inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
+
+    /**
+     * <p>The OpenZFS configuration for the file system that's being created. </p>
+     */
+    inline void SetOpenZFSConfiguration(const CreateFileSystemOpenZFSConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
+
+    /**
+     * <p>The OpenZFS configuration for the file system that's being created. </p>
+     */
+    inline void SetOpenZFSConfiguration(CreateFileSystemOpenZFSConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
+
+    /**
+     * <p>The OpenZFS configuration for the file system that's being created. </p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithOpenZFSConfiguration(const CreateFileSystemOpenZFSConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
+
+    /**
+     * <p>The OpenZFS configuration for the file system that's being created. </p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithOpenZFSConfiguration(CreateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -521,8 +692,20 @@ namespace Model
     CreateFileSystemWindowsConfiguration m_windowsConfiguration;
     bool m_windowsConfigurationHasBeenSet;
 
+    CreateFileSystemLustreConfiguration m_lustreConfiguration;
+    bool m_lustreConfigurationHasBeenSet;
+
     StorageType m_storageType;
     bool m_storageTypeHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
+
+    Aws::String m_fileSystemTypeVersion;
+    bool m_fileSystemTypeVersionHasBeenSet;
+
+    CreateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
+    bool m_openZFSConfigurationHasBeenSet;
   };
 
 } // namespace Model

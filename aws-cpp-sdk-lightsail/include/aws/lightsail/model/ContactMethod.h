@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -106,60 +96,60 @@ namespace Model
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline const ContactMethodStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline void SetStatus(const ContactMethodStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline void SetStatus(ContactMethodStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline ContactMethod& WithStatus(const ContactMethodStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline ContactMethod& WithStatus(ContactMethodStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -315,22 +305,40 @@ namespace Model
     inline ContactMethod& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline ContactMethod& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>An object that describes the location of the contact method, such as the
+     * Amazon Web Services Region and Availability Zone.</p>
+     */
     inline ContactMethod& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 

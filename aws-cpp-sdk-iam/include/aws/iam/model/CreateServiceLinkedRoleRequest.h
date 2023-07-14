@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -47,114 +37,114 @@ namespace Model
   public:
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline const Aws::String& GetAWSServiceName() const{ return m_aWSServiceName; }
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline bool AWSServiceNameHasBeenSet() const { return m_aWSServiceNameHasBeenSet; }
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline void SetAWSServiceName(const Aws::String& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = value; }
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline void SetAWSServiceName(Aws::String&& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = std::move(value); }
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline void SetAWSServiceName(const char* value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName.assign(value); }
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const Aws::String& value) { SetAWSServiceName(value); return *this;}
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(Aws::String&& value) { SetAWSServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service principal for the AWS service to which this role is attached. You
-     * use a string similar to a URL but without the http:// in front. For example:
-     * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
-     * unique and case-sensitive. To find the exact service principal for your
-     * service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
-     * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
-     * the <b>Yes</b> link to view the service-linked role documentation for that
-     * service.</p>
+     * <p>The service principal for the Amazon Web Services service to which this role
+     * is attached. You use a string similar to a URL but without the http:// in front.
+     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
+     * principals are unique and case-sensitive. To find the exact service principal
+     * for your service-linked role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
+     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
+     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
+     * Choose the <b>Yes</b> link to view the service-linked role documentation for
+     * that service.</p>
      */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const char* value) { SetAWSServiceName(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sesv2/model/SendEmailRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,12 +14,15 @@ using namespace Aws::Utils;
 
 SendEmailRequest::SendEmailRequest() : 
     m_fromEmailAddressHasBeenSet(false),
+    m_fromEmailAddressIdentityArnHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_replyToAddressesHasBeenSet(false),
     m_feedbackForwardingEmailAddressHasBeenSet(false),
+    m_feedbackForwardingEmailAddressIdentityArnHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_emailTagsHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false)
+    m_configurationSetNameHasBeenSet(false),
+    m_listManagementOptionsHasBeenSet(false)
 {
 }
 
@@ -40,6 +33,12 @@ Aws::String SendEmailRequest::SerializePayload() const
   if(m_fromEmailAddressHasBeenSet)
   {
    payload.WithString("FromEmailAddress", m_fromEmailAddress);
+
+  }
+
+  if(m_fromEmailAddressIdentityArnHasBeenSet)
+  {
+   payload.WithString("FromEmailAddressIdentityArn", m_fromEmailAddressIdentityArn);
 
   }
 
@@ -66,6 +65,12 @@ Aws::String SendEmailRequest::SerializePayload() const
 
   }
 
+  if(m_feedbackForwardingEmailAddressIdentityArnHasBeenSet)
+  {
+   payload.WithString("FeedbackForwardingEmailAddressIdentityArn", m_feedbackForwardingEmailAddressIdentityArn);
+
+  }
+
   if(m_contentHasBeenSet)
   {
    payload.WithObject("Content", m_content.Jsonize());
@@ -86,6 +91,12 @@ Aws::String SendEmailRequest::SerializePayload() const
   if(m_configurationSetNameHasBeenSet)
   {
    payload.WithString("ConfigurationSetName", m_configurationSetName);
+
+  }
+
+  if(m_listManagementOptionsHasBeenSet)
+  {
+   payload.WithObject("ListManagementOptions", m_listManagementOptions.Jsonize());
 
   }
 

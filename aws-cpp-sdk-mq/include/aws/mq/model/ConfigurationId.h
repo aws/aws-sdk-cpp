@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -34,7 +24,8 @@ namespace Model
 {
 
   /**
-   * A list of information about the configuration.<p><h3>See Also:</h3>   <a
+   * <p>A list of information about the configuration.</p> <p>Does not
+   * apply to RabbitMQ brokers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationId">AWS
    * API Reference</a></p>
    */
@@ -48,63 +39,63 @@ namespace Model
 
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline ConfigurationId& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline ConfigurationId& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline ConfigurationId& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The revision number of the configuration.
+     * <p>The revision number of the configuration.</p>
      */
     inline int GetRevision() const{ return m_revision; }
 
     /**
-     * The revision number of the configuration.
+     * <p>The revision number of the configuration.</p>
      */
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
-     * The revision number of the configuration.
+     * <p>The revision number of the configuration.</p>
      */
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * The revision number of the configuration.
+     * <p>The revision number of the configuration.</p>
      */
     inline ConfigurationId& WithRevision(int value) { SetRevision(value); return *this;}
 

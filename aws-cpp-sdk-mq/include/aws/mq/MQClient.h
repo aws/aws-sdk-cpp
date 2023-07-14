@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -104,28 +94,28 @@ namespace Model
         class UpdateConfigurationRequest;
         class UpdateUserRequest;
 
-        typedef Aws::Utils::Outcome<CreateBrokerResult, Aws::Client::AWSError<MQErrors>> CreateBrokerOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationResult, Aws::Client::AWSError<MQErrors>> CreateConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MQErrors>> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<MQErrors>> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<DeleteBrokerResult, Aws::Client::AWSError<MQErrors>> DeleteBrokerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MQErrors>> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DeleteUserResult, Aws::Client::AWSError<MQErrors>> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<DescribeBrokerResult, Aws::Client::AWSError<MQErrors>> DescribeBrokerOutcome;
-        typedef Aws::Utils::Outcome<DescribeBrokerEngineTypesResult, Aws::Client::AWSError<MQErrors>> DescribeBrokerEngineTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeBrokerInstanceOptionsResult, Aws::Client::AWSError<MQErrors>> DescribeBrokerInstanceOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationResult, Aws::Client::AWSError<MQErrors>> DescribeConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, Aws::Client::AWSError<MQErrors>> DescribeConfigurationRevisionOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserResult, Aws::Client::AWSError<MQErrors>> DescribeUserOutcome;
-        typedef Aws::Utils::Outcome<ListBrokersResult, Aws::Client::AWSError<MQErrors>> ListBrokersOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, Aws::Client::AWSError<MQErrors>> ListConfigurationRevisionsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationsResult, Aws::Client::AWSError<MQErrors>> ListConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<MQErrors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<MQErrors>> ListUsersOutcome;
-        typedef Aws::Utils::Outcome<RebootBrokerResult, Aws::Client::AWSError<MQErrors>> RebootBrokerOutcome;
-        typedef Aws::Utils::Outcome<UpdateBrokerResult, Aws::Client::AWSError<MQErrors>> UpdateBrokerOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationResult, Aws::Client::AWSError<MQErrors>> UpdateConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<MQErrors>> UpdateUserOutcome;
+        typedef Aws::Utils::Outcome<CreateBrokerResult, MQError> CreateBrokerOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationResult, MQError> CreateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MQError> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateUserResult, MQError> CreateUserOutcome;
+        typedef Aws::Utils::Outcome<DeleteBrokerResult, MQError> DeleteBrokerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MQError> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserResult, MQError> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeBrokerResult, MQError> DescribeBrokerOutcome;
+        typedef Aws::Utils::Outcome<DescribeBrokerEngineTypesResult, MQError> DescribeBrokerEngineTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeBrokerInstanceOptionsResult, MQError> DescribeBrokerInstanceOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationResult, MQError> DescribeConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, MQError> DescribeConfigurationRevisionOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserResult, MQError> DescribeUserOutcome;
+        typedef Aws::Utils::Outcome<ListBrokersResult, MQError> ListBrokersOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, MQError> ListConfigurationRevisionsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationsResult, MQError> ListConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, MQError> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<ListUsersResult, MQError> ListUsersOutcome;
+        typedef Aws::Utils::Outcome<RebootBrokerResult, MQError> RebootBrokerOutcome;
+        typedef Aws::Utils::Outcome<UpdateBrokerResult, MQError> UpdateBrokerOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationResult, MQError> UpdateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserResult, MQError> UpdateUserOutcome;
 
         typedef std::future<CreateBrokerOutcome> CreateBrokerOutcomeCallable;
         typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
@@ -177,10 +167,11 @@ namespace Model
     typedef std::function<void(const MQClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it
-   * easy to set up and operate message brokers in the cloud. A message broker allows
-   * software applications and components to communicate using various programming
-   * languages, operating systems, and formal messaging protocols.
+   * <p>Amazon MQ is a managed message broker service for Apache ActiveMQ and
+   * RabbitMQ that makes it easy to set up and operate message brokers in the cloud.
+   * A message broker allows software applications and components to communicate
+   * using various programming languages, operating systems, and formal messaging
+   * protocols.</p>
    */
   class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient
   {
@@ -208,568 +199,403 @@ namespace Model
 
         virtual ~MQClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mq"; }
-
 
         /**
-         * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
+         * <p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker,
+         * you must either use the AmazonMQFullAccess IAM policy or include the following
+         * EC2 permissions in your IAM policy.</p>
+         * <ul><li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to
+         * allow Amazon MQ to create an elastic network interface (ENI) on behalf of your
+         * account.</p></li> <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This
+         * permission is required to attach the ENI to the broker instance.</p></li>
+         * <li><p>ec2:DeleteNetworkInterface</p></li>
+         * <li><p>ec2:DeleteNetworkInterfacePermission</p></li>
+         * <li><p>ec2:DetachNetworkInterface</p></li>
+         * <li><p>ec2:DescribeInternetGateways</p></li>
+         * <li><p>ec2:DescribeNetworkInterfaces</p></li>
+         * <li><p>ec2:DescribeNetworkInterfacePermissions</p></li>
+         * <li><p>ec2:DescribeRouteTables</p></li>
+         * <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li>
+         * <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
+         * an IAM User and Get Your AWS Credentials</a> and <a
+         * href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+         * Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateBrokerOutcome CreateBroker(const Model::CreateBrokerRequest& request) const;
 
         /**
-         * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateBroker that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateBrokerOutcomeCallable CreateBrokerCallable(const Model::CreateBrokerRequest& request) const;
 
         /**
-         * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBrokerAsync(const Model::CreateBrokerRequest& request, const CreateBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a new configuration for the specified configuration name. Amazon MQ
+         * uses the default configuration (the engine type and version).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConfigurationOutcome CreateConfiguration(const Model::CreateConfigurationRequest& request) const;
 
         /**
-         * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConfigurationOutcomeCallable CreateConfigurationCallable(const Model::CreateConfigurationRequest& request) const;
 
         /**
-         * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConfigurationAsync(const Model::CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Add a tag to a resource.<p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
         /**
-         * Add a tag to a resource.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateTags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
 
         /**
-         * Add a tag to a resource.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Creates an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * Creates an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * Creates an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS API
-         * Reference</a></p>
+         * <p>Deletes a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBrokerOutcome DeleteBroker(const Model::DeleteBrokerRequest& request) const;
 
         /**
-         * Deletes a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteBroker that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBrokerOutcomeCallable DeleteBrokerCallable(const Model::DeleteBrokerRequest& request) const;
 
         /**
-         * Deletes a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBrokerAsync(const Model::DeleteBrokerRequest& request, const DeleteBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Removes a tag from a resource.<p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * Removes a tag from a resource.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteTags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * Removes a tag from a resource.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * Deletes an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * Deletes an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about the specified broker.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified broker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBrokerOutcome DescribeBroker(const Model::DescribeBrokerRequest& request) const;
 
         /**
-         * Returns information about the specified broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBroker that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBrokerOutcomeCallable DescribeBrokerCallable(const Model::DescribeBrokerRequest& request) const;
 
         /**
-         * Returns information about the specified broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBrokerAsync(const Model::DescribeBrokerRequest& request, const DescribeBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Describe available engine types and versions.<p><h3>See Also:</h3>   <a
+         * <p>Describe available engine types and versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBrokerEngineTypesOutcome DescribeBrokerEngineTypes(const Model::DescribeBrokerEngineTypesRequest& request) const;
 
         /**
-         * Describe available engine types and versions.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBrokerEngineTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBrokerEngineTypesOutcomeCallable DescribeBrokerEngineTypesCallable(const Model::DescribeBrokerEngineTypesRequest& request) const;
 
         /**
-         * Describe available engine types and versions.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBrokerEngineTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBrokerEngineTypesAsync(const Model::DescribeBrokerEngineTypesRequest& request, const DescribeBrokerEngineTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Describe available broker instance options.<p><h3>See Also:</h3>   <a
+         * <p>Describe available broker instance options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBrokerInstanceOptionsOutcome DescribeBrokerInstanceOptions(const Model::DescribeBrokerInstanceOptionsRequest& request) const;
 
         /**
-         * Describe available broker instance options.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeBrokerInstanceOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeBrokerInstanceOptionsOutcomeCallable DescribeBrokerInstanceOptionsCallable(const Model::DescribeBrokerInstanceOptionsRequest& request) const;
 
         /**
-         * Describe available broker instance options.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeBrokerInstanceOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBrokerInstanceOptionsAsync(const Model::DescribeBrokerInstanceOptionsRequest& request, const DescribeBrokerInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationOutcome DescribeConfiguration(const Model::DescribeConfigurationRequest& request) const;
 
         /**
-         * Returns information about the specified configuration.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConfigurationOutcomeCallable DescribeConfigurationCallable(const Model::DescribeConfigurationRequest& request) const;
 
         /**
-         * Returns information about the specified configuration.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConfigurationAsync(const Model::DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the specified configuration revision for the specified
-         * configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns the specified configuration revision for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationRevisionOutcome DescribeConfigurationRevision(const Model::DescribeConfigurationRevisionRequest& request) const;
 
         /**
-         * Returns the specified configuration revision for the specified
-         * configuration.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeConfigurationRevision that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConfigurationRevisionOutcomeCallable DescribeConfigurationRevisionCallable(const Model::DescribeConfigurationRevisionRequest& request) const;
 
         /**
-         * Returns the specified configuration revision for the specified
-         * configuration.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeConfigurationRevision that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConfigurationRevisionAsync(const Model::DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
          * Reference</a></p>
          */
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
         /**
-         * Returns information about an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
 
         /**
-         * Returns information about an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all brokers.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all brokers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">AWS API
          * Reference</a></p>
          */
         virtual Model::ListBrokersOutcome ListBrokers(const Model::ListBrokersRequest& request) const;
 
         /**
-         * Returns a list of all brokers.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListBrokers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListBrokersOutcomeCallable ListBrokersCallable(const Model::ListBrokersRequest& request) const;
 
         /**
-         * Returns a list of all brokers.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListBrokers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBrokersAsync(const Model::ListBrokersRequest& request, const ListBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all revisions for the specified configuration.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of all revisions for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConfigurationRevisionsOutcome ListConfigurationRevisions(const Model::ListConfigurationRevisionsRequest& request) const;
 
         /**
-         * Returns a list of all revisions for the specified configuration.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConfigurationRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConfigurationRevisionsOutcomeCallable ListConfigurationRevisionsCallable(const Model::ListConfigurationRevisionsRequest& request) const;
 
         /**
-         * Returns a list of all revisions for the specified configuration.<p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConfigurationRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConfigurationRevisionsAsync(const Model::ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all configurations.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request) const;
 
         /**
-         * Returns a list of all configurations.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const Model::ListConfigurationsRequest& request) const;
 
         /**
-         * Returns a list of all configurations.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConfigurationsAsync(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists tags for a resource.<p><h3>See Also:</h3>   <a
+         * <p>Lists tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">AWS API
          * Reference</a></p>
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * Lists tags for a resource.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * Lists tags for a resource.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all ActiveMQ users.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all ActiveMQ users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">AWS API
          * Reference</a></p>
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * Returns a list of all ActiveMQ users.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * Returns a list of all ActiveMQ users.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Reboots a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS API
-         * Reference</a></p>
+         * <p>Reboots a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootBrokerOutcome RebootBroker(const Model::RebootBrokerRequest& request) const;
 
         /**
-         * Reboots a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RebootBroker that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RebootBrokerOutcomeCallable RebootBrokerCallable(const Model::RebootBrokerRequest& request) const;
 
         /**
-         * Reboots a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RebootBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebootBrokerAsync(const Model::RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Adds a pending configuration change to a broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS API
-         * Reference</a></p>
+         * <p>Adds a pending configuration change to a broker.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateBrokerOutcome UpdateBroker(const Model::UpdateBrokerRequest& request) const;
 
         /**
-         * Adds a pending configuration change to a broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateBroker that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateBrokerOutcomeCallable UpdateBrokerCallable(const Model::UpdateBrokerRequest& request) const;
 
         /**
-         * Adds a pending configuration change to a broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateBroker that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBrokerAsync(const Model::UpdateBrokerRequest& request, const UpdateBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Updates the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request) const;
 
         /**
-         * Updates the specified configuration.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const Model::UpdateConfigurationRequest& request) const;
 
         /**
-         * Updates the specified configuration.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConfigurationAsync(const Model::UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Updates the information for an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Updates the information for an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">AWS API
          * Reference</a></p>
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * Updates the information for an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">AWS API
-         * Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * Updates the information for an ActiveMQ user.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">AWS API
-         * Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

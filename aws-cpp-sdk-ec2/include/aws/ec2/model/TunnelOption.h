@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -99,44 +89,85 @@ namespace Model
 
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline const Aws::String& GetTunnelInsideCidr() const{ return m_tunnelInsideCidr; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline bool TunnelInsideCidrHasBeenSet() const { return m_tunnelInsideCidrHasBeenSet; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline void SetTunnelInsideCidr(const Aws::String& value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr = value; }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline void SetTunnelInsideCidr(Aws::String&& value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr = std::move(value); }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline void SetTunnelInsideCidr(const char* value) { m_tunnelInsideCidrHasBeenSet = true; m_tunnelInsideCidr.assign(value); }
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline TunnelOption& WithTunnelInsideCidr(const Aws::String& value) { SetTunnelInsideCidr(value); return *this;}
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline TunnelOption& WithTunnelInsideCidr(Aws::String&& value) { SetTunnelInsideCidr(std::move(value)); return *this;}
 
     /**
-     * <p>The range of inside IP addresses for the tunnel.</p>
+     * <p>The range of inside IPv4 addresses for the tunnel.</p>
      */
     inline TunnelOption& WithTunnelInsideCidr(const char* value) { SetTunnelInsideCidr(value); return *this;}
+
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline const Aws::String& GetTunnelInsideIpv6Cidr() const{ return m_tunnelInsideIpv6Cidr; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline bool TunnelInsideIpv6CidrHasBeenSet() const { return m_tunnelInsideIpv6CidrHasBeenSet; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(const Aws::String& value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr = value; }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(Aws::String&& value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr = std::move(value); }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline void SetTunnelInsideIpv6Cidr(const char* value) { m_tunnelInsideIpv6CidrHasBeenSet = true; m_tunnelInsideIpv6Cidr.assign(value); }
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline TunnelOption& WithTunnelInsideIpv6Cidr(const Aws::String& value) { SetTunnelInsideIpv6Cidr(value); return *this;}
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline TunnelOption& WithTunnelInsideIpv6Cidr(Aws::String&& value) { SetTunnelInsideIpv6Cidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The range of inside IPv6 addresses for the tunnel.</p>
+     */
+    inline TunnelOption& WithTunnelInsideIpv6Cidr(const char* value) { SetTunnelInsideIpv6Cidr(value); return *this;}
 
 
     /**
@@ -232,25 +263,29 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline int GetRekeyMarginTimeSeconds() const{ return m_rekeyMarginTimeSeconds; }
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline bool RekeyMarginTimeSecondsHasBeenSet() const { return m_rekeyMarginTimeSecondsHasBeenSet; }
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline void SetRekeyMarginTimeSeconds(int value) { m_rekeyMarginTimeSecondsHasBeenSet = true; m_rekeyMarginTimeSeconds = value; }
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey.</p>
+     * which the Amazon Web Services side of the VPN connection performs an IKE
+     * rekey.</p>
      */
     inline TunnelOption& WithRekeyMarginTimeSeconds(int value) { SetRekeyMarginTimeSeconds(value); return *this;}
 
@@ -324,6 +359,47 @@ namespace Model
      * <p>The number of seconds after which a DPD timeout occurs.</p>
      */
     inline TunnelOption& WithDpdTimeoutSeconds(int value) { SetDpdTimeoutSeconds(value); return *this;}
+
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline const Aws::String& GetDpdTimeoutAction() const{ return m_dpdTimeoutAction; }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline bool DpdTimeoutActionHasBeenSet() const { return m_dpdTimeoutActionHasBeenSet; }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline void SetDpdTimeoutAction(const Aws::String& value) { m_dpdTimeoutActionHasBeenSet = true; m_dpdTimeoutAction = value; }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline void SetDpdTimeoutAction(Aws::String&& value) { m_dpdTimeoutActionHasBeenSet = true; m_dpdTimeoutAction = std::move(value); }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline void SetDpdTimeoutAction(const char* value) { m_dpdTimeoutActionHasBeenSet = true; m_dpdTimeoutAction.assign(value); }
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline TunnelOption& WithDpdTimeoutAction(const Aws::String& value) { SetDpdTimeoutAction(value); return *this;}
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline TunnelOption& WithDpdTimeoutAction(Aws::String&& value) { SetDpdTimeoutAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take after a DPD timeout occurs.</p>
+     */
+    inline TunnelOption& WithDpdTimeoutAction(const char* value) { SetDpdTimeoutAction(value); return *this;}
 
 
     /**
@@ -660,6 +736,55 @@ namespace Model
      */
     inline TunnelOption& AddIkeVersions(IKEVersionsListValue&& value) { m_ikeVersionsHasBeenSet = true; m_ikeVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline const Aws::String& GetStartupAction() const{ return m_startupAction; }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline bool StartupActionHasBeenSet() const { return m_startupActionHasBeenSet; }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline void SetStartupAction(const Aws::String& value) { m_startupActionHasBeenSet = true; m_startupAction = value; }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline void SetStartupAction(Aws::String&& value) { m_startupActionHasBeenSet = true; m_startupAction = std::move(value); }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline void SetStartupAction(const char* value) { m_startupActionHasBeenSet = true; m_startupAction.assign(value); }
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline TunnelOption& WithStartupAction(const Aws::String& value) { SetStartupAction(value); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline TunnelOption& WithStartupAction(Aws::String&& value) { SetStartupAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take when the establishing the VPN tunnels for a VPN
+     * connection.</p>
+     */
+    inline TunnelOption& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
+
   private:
 
     Aws::String m_outsideIpAddress;
@@ -667,6 +792,9 @@ namespace Model
 
     Aws::String m_tunnelInsideCidr;
     bool m_tunnelInsideCidrHasBeenSet;
+
+    Aws::String m_tunnelInsideIpv6Cidr;
+    bool m_tunnelInsideIpv6CidrHasBeenSet;
 
     Aws::String m_preSharedKey;
     bool m_preSharedKeyHasBeenSet;
@@ -689,6 +817,9 @@ namespace Model
     int m_dpdTimeoutSeconds;
     bool m_dpdTimeoutSecondsHasBeenSet;
 
+    Aws::String m_dpdTimeoutAction;
+    bool m_dpdTimeoutActionHasBeenSet;
+
     Aws::Vector<Phase1EncryptionAlgorithmsListValue> m_phase1EncryptionAlgorithms;
     bool m_phase1EncryptionAlgorithmsHasBeenSet;
 
@@ -709,6 +840,9 @@ namespace Model
 
     Aws::Vector<IKEVersionsListValue> m_ikeVersions;
     bool m_ikeVersionsHasBeenSet;
+
+    Aws::String m_startupAction;
+    bool m_startupActionHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -32,16 +22,12 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>Specifies that AWS WAF should do
-   * nothing. This is generally used to try out a rule without performing any
-   * actions. You set the <code>OverrideAction</code> on the <a>Rule</a>. </p>
-   * <p>This is used only in the context of other settings, for example to specify
-   * values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies that WAF should do nothing. This is used for the
+   * <code>OverrideAction</code> setting on a <a>Rule</a> when the rule uses a rule
+   * group reference statement. </p> <p>This is used in the context of other
+   * settings, for example to specify values for <a>RuleAction</a> and web ACL
+   * <a>DefaultAction</a>. </p> <p>JSON specification: <code>"None": {}</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/NoneAction">AWS
    * API Reference</a></p>
    */

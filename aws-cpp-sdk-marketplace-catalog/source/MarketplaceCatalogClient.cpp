@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -52,7 +42,7 @@ static const char* ALLOCATION_TAG = "MarketplaceCatalogClient";
 MarketplaceCatalogClient::MarketplaceCatalogClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -62,7 +52,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const Client::ClientConfigura
 MarketplaceCatalogClient::MarketplaceCatalogClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -73,7 +63,7 @@ MarketplaceCatalogClient::MarketplaceCatalogClient(const std::shared_ptr<AWSCred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MarketplaceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,8 +74,9 @@ MarketplaceCatalogClient::~MarketplaceCatalogClient()
 {
 }
 
-void MarketplaceCatalogClient::init(const ClientConfiguration& config)
+void MarketplaceCatalogClient::init(const Client::ClientConfiguration& config)
 {
+  SetServiceClientName("Marketplace Catalog");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -122,18 +113,8 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
     return CancelChangeSetOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangeSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CancelChangeSet";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelChangeSetOutcome(CancelChangeSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelChangeSetOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/CancelChangeSet");
+  return CancelChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelChangeSetOutcomeCallable MarketplaceCatalogClient::CancelChangeSetCallable(const CancelChangeSetRequest& request) const
@@ -167,18 +148,8 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
     return DescribeChangeSetOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangeSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeChangeSet";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeChangeSetOutcome(DescribeChangeSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeChangeSetOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/DescribeChangeSet");
+  return DescribeChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChangeSetOutcomeCallable MarketplaceCatalogClient::DescribeChangeSetCallable(const DescribeChangeSetRequest& request) const
@@ -212,18 +183,8 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
     return DescribeEntityOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeEntity";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEntityOutcome(DescribeEntityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEntityOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/DescribeEntity");
+  return DescribeEntityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEntityOutcomeCallable MarketplaceCatalogClient::DescribeEntityCallable(const DescribeEntityRequest& request) const
@@ -247,18 +208,8 @@ void MarketplaceCatalogClient::DescribeEntityAsyncHelper(const DescribeEntityReq
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListChangeSets";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListChangeSetsOutcome(ListChangeSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListChangeSetsOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/ListChangeSets");
+  return ListChangeSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChangeSetsOutcomeCallable MarketplaceCatalogClient::ListChangeSetsCallable(const ListChangeSetsRequest& request) const
@@ -282,18 +233,8 @@ void MarketplaceCatalogClient::ListChangeSetsAsyncHelper(const ListChangeSetsReq
 ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListEntities";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEntitiesOutcome(ListEntitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEntitiesOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/ListEntities");
+  return ListEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEntitiesOutcomeCallable MarketplaceCatalogClient::ListEntitiesCallable(const ListEntitiesRequest& request) const
@@ -317,18 +258,8 @@ void MarketplaceCatalogClient::ListEntitiesAsyncHelper(const ListEntitiesRequest
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/StartChangeSet";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartChangeSetOutcome(StartChangeSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartChangeSetOutcome(outcome.GetError());
-  }
+  uri.AddPathSegments("/StartChangeSet");
+  return StartChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartChangeSetOutcomeCallable MarketplaceCatalogClient::StartChangeSetCallable(const StartChangeSetRequest& request) const

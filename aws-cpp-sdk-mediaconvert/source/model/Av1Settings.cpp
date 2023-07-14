@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/Av1Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 Av1Settings::Av1Settings() : 
     m_adaptiveQuantization(Av1AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
+    m_bitDepth(Av1BitDepth::NOT_SET),
+    m_bitDepthHasBeenSet(false),
     m_framerateControl(Av1FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
@@ -58,6 +50,8 @@ Av1Settings::Av1Settings() :
 Av1Settings::Av1Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(Av1AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
+    m_bitDepth(Av1BitDepth::NOT_SET),
+    m_bitDepthHasBeenSet(false),
     m_framerateControl(Av1FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
@@ -90,6 +84,13 @@ Av1Settings& Av1Settings::operator =(JsonView jsonValue)
     m_adaptiveQuantization = Av1AdaptiveQuantizationMapper::GetAv1AdaptiveQuantizationForName(jsonValue.GetString("adaptiveQuantization"));
 
     m_adaptiveQuantizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bitDepth"))
+  {
+    m_bitDepth = Av1BitDepthMapper::GetAv1BitDepthForName(jsonValue.GetString("bitDepth"));
+
+    m_bitDepthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerateControl"))
@@ -179,6 +180,11 @@ JsonValue Av1Settings::Jsonize() const
   if(m_adaptiveQuantizationHasBeenSet)
   {
    payload.WithString("adaptiveQuantization", Av1AdaptiveQuantizationMapper::GetNameForAv1AdaptiveQuantization(m_adaptiveQuantization));
+  }
+
+  if(m_bitDepthHasBeenSet)
+  {
+   payload.WithString("bitDepth", Av1BitDepthMapper::GetNameForAv1BitDepth(m_bitDepth));
   }
 
   if(m_framerateControlHasBeenSet)

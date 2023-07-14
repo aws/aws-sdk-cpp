@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/wafv2/model/DescribeManagedRuleGroupResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -40,6 +30,18 @@ DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult(const Aws::Amazon
 DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+  }
+
+  if(jsonValue.ValueExists("SnsTopicArn"))
+  {
+    m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
+
+  }
+
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");
@@ -52,6 +54,30 @@ DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("LabelNamespace"))
+  {
+    m_labelNamespace = jsonValue.GetString("LabelNamespace");
+
+  }
+
+  if(jsonValue.ValueExists("AvailableLabels"))
+  {
+    Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
+    for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
+    {
+      m_availableLabels.push_back(availableLabelsJsonList[availableLabelsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("ConsumedLabels"))
+  {
+    Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
+    for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
+    {
+      m_consumedLabels.push_back(consumedLabelsJsonList[consumedLabelsIndex].AsObject());
     }
   }
 

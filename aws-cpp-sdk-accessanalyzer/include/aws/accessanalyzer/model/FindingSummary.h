@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/ResourceType.h>
 #include <aws/accessanalyzer/model/FindingStatus.h>
+#include <aws/accessanalyzer/model/FindingSource.h>
 #include <utility>
 
 namespace Aws
@@ -482,42 +473,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline FindingSummary& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline FindingSummary& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline FindingSummary& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
 
@@ -551,6 +542,55 @@ namespace Model
      * <p>The type of the resource that the external principal has access to.</p>
      */
     inline FindingSummary& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline const Aws::Vector<FindingSource>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline void SetSources(const Aws::Vector<FindingSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline void SetSources(Aws::Vector<FindingSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline FindingSummary& WithSources(const Aws::Vector<FindingSource>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline FindingSummary& WithSources(Aws::Vector<FindingSource>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline FindingSummary& AddSources(const FindingSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline FindingSummary& AddSources(FindingSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -648,6 +688,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Vector<FindingSource> m_sources;
+    bool m_sourcesHasBeenSet;
 
     FindingStatus m_status;
     bool m_statusHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -45,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline const Aws::Vector<ResourceDataSyncItem>& GetResourceDataSyncItems() const{ return m_resourceDataSyncItems; }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline void SetResourceDataSyncItems(const Aws::Vector<ResourceDataSyncItem>& value) { m_resourceDataSyncItems = value; }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline void SetResourceDataSyncItems(Aws::Vector<ResourceDataSyncItem>&& value) { m_resourceDataSyncItems = std::move(value); }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& WithResourceDataSyncItems(const Aws::Vector<ResourceDataSyncItem>& value) { SetResourceDataSyncItems(value); return *this;}
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& WithResourceDataSyncItems(Aws::Vector<ResourceDataSyncItem>&& value) { SetResourceDataSyncItems(std::move(value)); return *this;}
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& AddResourceDataSyncItems(const ResourceDataSyncItem& value) { m_resourceDataSyncItems.push_back(value); return *this; }
 
     /**
-     * <p>A list of your current Resource Data Sync configurations and their
+     * <p>A list of your current resource data sync configurations and their
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& AddResourceDataSyncItems(ResourceDataSyncItem&& value) { m_resourceDataSyncItems.push_back(std::move(value)); return *this; }

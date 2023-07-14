@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
@@ -36,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of configuration properties for a member.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A summary of configuration properties for a member.</p> <p>Applies only to
+   * Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberSummary">AWS
    * API Reference</a></p>
    */
@@ -179,15 +169,23 @@ namespace Model
      * <code>AVAILABLE</code> - The member has been created and can participate in the
      * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
      * attempted to create a member and creation failed.</p> </li> <li> <p>
-     * <code>DELETING</code> - The member and all associated resources are in the
-     * process of being deleted. Either the AWS account that owns the member deleted
-     * it, or the member is being deleted as the result of an <code>APPROVED</code>
-     * <code>PROPOSAL</code> to remove the member.</p> </li> <li> <p>
-     * <code>DELETED</code> - The member can no longer participate on the network and
-     * all associated resources are deleted. Either the AWS account that owns the
+     * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+     * <li> <p> <code>DELETING</code> - The member and all associated resources are in
+     * the process of being deleted. Either the AWS account that owns the member
+     * deleted it, or the member is being deleted as the result of an
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>DELETED</code> - The member can no longer participate on the network
+     * and all associated resources are deleted. Either the AWS account that owns the
      * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-     * </ul>
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
+     * not function as expected because it cannot access the specified customer managed
+     * key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the
+     * KMS key was disabled or deleted, or the grants on the key were revoked.</p>
+     * <p>The effect of disabling or deleting a key, or revoking a grant is not
+     * immediate. The member resource might take some time to find that the key is
+     * inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.</p> </li> </ul>
      */
     inline const MemberStatus& GetStatus() const{ return m_status; }
 
@@ -197,15 +195,23 @@ namespace Model
      * <code>AVAILABLE</code> - The member has been created and can participate in the
      * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
      * attempted to create a member and creation failed.</p> </li> <li> <p>
-     * <code>DELETING</code> - The member and all associated resources are in the
-     * process of being deleted. Either the AWS account that owns the member deleted
-     * it, or the member is being deleted as the result of an <code>APPROVED</code>
-     * <code>PROPOSAL</code> to remove the member.</p> </li> <li> <p>
-     * <code>DELETED</code> - The member can no longer participate on the network and
-     * all associated resources are deleted. Either the AWS account that owns the
+     * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+     * <li> <p> <code>DELETING</code> - The member and all associated resources are in
+     * the process of being deleted. Either the AWS account that owns the member
+     * deleted it, or the member is being deleted as the result of an
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>DELETED</code> - The member can no longer participate on the network
+     * and all associated resources are deleted. Either the AWS account that owns the
      * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-     * </ul>
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
+     * not function as expected because it cannot access the specified customer managed
+     * key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the
+     * KMS key was disabled or deleted, or the grants on the key were revoked.</p>
+     * <p>The effect of disabling or deleting a key, or revoking a grant is not
+     * immediate. The member resource might take some time to find that the key is
+     * inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -215,15 +221,23 @@ namespace Model
      * <code>AVAILABLE</code> - The member has been created and can participate in the
      * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
      * attempted to create a member and creation failed.</p> </li> <li> <p>
-     * <code>DELETING</code> - The member and all associated resources are in the
-     * process of being deleted. Either the AWS account that owns the member deleted
-     * it, or the member is being deleted as the result of an <code>APPROVED</code>
-     * <code>PROPOSAL</code> to remove the member.</p> </li> <li> <p>
-     * <code>DELETED</code> - The member can no longer participate on the network and
-     * all associated resources are deleted. Either the AWS account that owns the
+     * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+     * <li> <p> <code>DELETING</code> - The member and all associated resources are in
+     * the process of being deleted. Either the AWS account that owns the member
+     * deleted it, or the member is being deleted as the result of an
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>DELETED</code> - The member can no longer participate on the network
+     * and all associated resources are deleted. Either the AWS account that owns the
      * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-     * </ul>
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
+     * not function as expected because it cannot access the specified customer managed
+     * key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the
+     * KMS key was disabled or deleted, or the grants on the key were revoked.</p>
+     * <p>The effect of disabling or deleting a key, or revoking a grant is not
+     * immediate. The member resource might take some time to find that the key is
+     * inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.</p> </li> </ul>
      */
     inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -233,15 +247,23 @@ namespace Model
      * <code>AVAILABLE</code> - The member has been created and can participate in the
      * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
      * attempted to create a member and creation failed.</p> </li> <li> <p>
-     * <code>DELETING</code> - The member and all associated resources are in the
-     * process of being deleted. Either the AWS account that owns the member deleted
-     * it, or the member is being deleted as the result of an <code>APPROVED</code>
-     * <code>PROPOSAL</code> to remove the member.</p> </li> <li> <p>
-     * <code>DELETED</code> - The member can no longer participate on the network and
-     * all associated resources are deleted. Either the AWS account that owns the
+     * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+     * <li> <p> <code>DELETING</code> - The member and all associated resources are in
+     * the process of being deleted. Either the AWS account that owns the member
+     * deleted it, or the member is being deleted as the result of an
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>DELETED</code> - The member can no longer participate on the network
+     * and all associated resources are deleted. Either the AWS account that owns the
      * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-     * </ul>
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
+     * not function as expected because it cannot access the specified customer managed
+     * key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the
+     * KMS key was disabled or deleted, or the grants on the key were revoked.</p>
+     * <p>The effect of disabling or deleting a key, or revoking a grant is not
+     * immediate. The member resource might take some time to find that the key is
+     * inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.</p> </li> </ul>
      */
     inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -251,15 +273,23 @@ namespace Model
      * <code>AVAILABLE</code> - The member has been created and can participate in the
      * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
      * attempted to create a member and creation failed.</p> </li> <li> <p>
-     * <code>DELETING</code> - The member and all associated resources are in the
-     * process of being deleted. Either the AWS account that owns the member deleted
-     * it, or the member is being deleted as the result of an <code>APPROVED</code>
-     * <code>PROPOSAL</code> to remove the member.</p> </li> <li> <p>
-     * <code>DELETED</code> - The member can no longer participate on the network and
-     * all associated resources are deleted. Either the AWS account that owns the
+     * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+     * <li> <p> <code>DELETING</code> - The member and all associated resources are in
+     * the process of being deleted. Either the AWS account that owns the member
+     * deleted it, or the member is being deleted as the result of an
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>DELETED</code> - The member can no longer participate on the network
+     * and all associated resources are deleted. Either the AWS account that owns the
      * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-     * </ul>
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
+     * not function as expected because it cannot access the specified customer managed
+     * key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the
+     * KMS key was disabled or deleted, or the grants on the key were revoked.</p>
+     * <p>The effect of disabling or deleting a key, or revoking a grant is not
+     * immediate. The member resource might take some time to find that the key is
+     * inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.</p> </li> </ul>
      */
     inline MemberSummary& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
 
@@ -269,15 +299,23 @@ namespace Model
      * <code>AVAILABLE</code> - The member has been created and can participate in the
      * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
      * attempted to create a member and creation failed.</p> </li> <li> <p>
-     * <code>DELETING</code> - The member and all associated resources are in the
-     * process of being deleted. Either the AWS account that owns the member deleted
-     * it, or the member is being deleted as the result of an <code>APPROVED</code>
-     * <code>PROPOSAL</code> to remove the member.</p> </li> <li> <p>
-     * <code>DELETED</code> - The member can no longer participate on the network and
-     * all associated resources are deleted. Either the AWS account that owns the
+     * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
+     * <li> <p> <code>DELETING</code> - The member and all associated resources are in
+     * the process of being deleted. Either the AWS account that owns the member
+     * deleted it, or the member is being deleted as the result of an
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>DELETED</code> - The member can no longer participate on the network
+     * and all associated resources are deleted. Either the AWS account that owns the
      * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
-     * </ul>
+     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
+     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
+     * not function as expected because it cannot access the specified customer managed
+     * key in AWS Key Management Service (AWS KMS) for encryption at rest. Either the
+     * KMS key was disabled or deleted, or the grants on the key were revoked.</p>
+     * <p>The effect of disabling or deleting a key, or revoking a grant is not
+     * immediate. The member resource might take some time to find that the key is
+     * inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.</p> </li> </ul>
      */
     inline MemberSummary& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -337,6 +375,71 @@ namespace Model
      */
     inline MemberSummary& WithIsOwned(bool value) { SetIsOwned(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline MemberSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline MemberSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
+     * and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline MemberSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -356,6 +459,9 @@ namespace Model
 
     bool m_isOwned;
     bool m_isOwnedHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

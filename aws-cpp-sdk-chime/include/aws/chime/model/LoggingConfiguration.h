@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
@@ -48,33 +38,57 @@ namespace Model
 
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
      */
     inline bool GetEnableSIPLogs() const{ return m_enableSIPLogs; }
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
      */
     inline bool EnableSIPLogsHasBeenSet() const { return m_enableSIPLogsHasBeenSet; }
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
      */
     inline void SetEnableSIPLogs(bool value) { m_enableSIPLogsHasBeenSet = true; m_enableSIPLogs = value; }
 
     /**
-     * <p>When true, enables SIP message logs for sending to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
      */
     inline LoggingConfiguration& WithEnableSIPLogs(bool value) { SetEnableSIPLogs(value); return *this;}
+
+
+    /**
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to CloudWatch logs.</p>
+     */
+    inline bool GetEnableMediaMetricLogs() const{ return m_enableMediaMetricLogs; }
+
+    /**
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to CloudWatch logs.</p>
+     */
+    inline bool EnableMediaMetricLogsHasBeenSet() const { return m_enableMediaMetricLogsHasBeenSet; }
+
+    /**
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to CloudWatch logs.</p>
+     */
+    inline void SetEnableMediaMetricLogs(bool value) { m_enableMediaMetricLogsHasBeenSet = true; m_enableMediaMetricLogs = value; }
+
+    /**
+     * <p>Boolean that enables logging of detailed media metrics for Voice Connectors
+     * to CloudWatch logs.</p>
+     */
+    inline LoggingConfiguration& WithEnableMediaMetricLogs(bool value) { SetEnableMediaMetricLogs(value); return *this;}
 
   private:
 
     bool m_enableSIPLogs;
     bool m_enableSIPLogsHasBeenSet;
+
+    bool m_enableMediaMetricLogs;
+    bool m_enableMediaMetricLogsHasBeenSet;
   };
 
 } // namespace Model

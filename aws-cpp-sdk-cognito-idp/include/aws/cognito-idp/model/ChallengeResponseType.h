@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -49,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The challenge name</p>
+     * <p>The challenge name.</p>
      */
     inline const ChallengeName& GetChallengeName() const{ return m_challengeName; }
 
     /**
-     * <p>The challenge name</p>
+     * <p>The challenge name.</p>
      */
     inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
 
     /**
-     * <p>The challenge name</p>
+     * <p>The challenge name.</p>
      */
     inline void SetChallengeName(const ChallengeName& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
 
     /**
-     * <p>The challenge name</p>
+     * <p>The challenge name.</p>
      */
     inline void SetChallengeName(ChallengeName&& value) { m_challengeNameHasBeenSet = true; m_challengeName = std::move(value); }
 
     /**
-     * <p>The challenge name</p>
+     * <p>The challenge name.</p>
      */
     inline ChallengeResponseType& WithChallengeName(const ChallengeName& value) { SetChallengeName(value); return *this;}
 
     /**
-     * <p>The challenge name</p>
+     * <p>The challenge name.</p>
      */
     inline ChallengeResponseType& WithChallengeName(ChallengeName&& value) { SetChallengeName(std::move(value)); return *this;}
 

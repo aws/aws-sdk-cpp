@@ -1,26 +1,12 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/ModelTypeEnum.h>
-#include <aws/frauddetector/model/TrainingDataSource.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/frauddetector/model/LabelSchema.h>
-#include <aws/frauddetector/model/ModelVariable.h>
 #include <utility>
 
 namespace Aws
@@ -166,106 +152,85 @@ namespace Model
 
 
     /**
-     * <p>The model training data source in Amazon S3.</p>
+     * <p>The name of the event type.</p>
      */
-    inline const TrainingDataSource& GetTrainingDataSource() const{ return m_trainingDataSource; }
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
 
     /**
-     * <p>The model training data source in Amazon S3.</p>
+     * <p>The name of the event type.</p>
      */
-    inline bool TrainingDataSourceHasBeenSet() const { return m_trainingDataSourceHasBeenSet; }
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
 
     /**
-     * <p>The model training data source in Amazon S3.</p>
+     * <p>The name of the event type.</p>
      */
-    inline void SetTrainingDataSource(const TrainingDataSource& value) { m_trainingDataSourceHasBeenSet = true; m_trainingDataSource = value; }
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
 
     /**
-     * <p>The model training data source in Amazon S3.</p>
+     * <p>The name of the event type.</p>
      */
-    inline void SetTrainingDataSource(TrainingDataSource&& value) { m_trainingDataSourceHasBeenSet = true; m_trainingDataSource = std::move(value); }
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
 
     /**
-     * <p>The model training data source in Amazon S3.</p>
+     * <p>The name of the event type.</p>
      */
-    inline Model& WithTrainingDataSource(const TrainingDataSource& value) { SetTrainingDataSource(value); return *this;}
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
 
     /**
-     * <p>The model training data source in Amazon S3.</p>
+     * <p>The name of the event type.</p>
      */
-    inline Model& WithTrainingDataSource(TrainingDataSource&& value) { SetTrainingDataSource(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The model input variables.</p>
-     */
-    inline const Aws::Vector<ModelVariable>& GetModelVariables() const{ return m_modelVariables; }
+    inline Model& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
 
     /**
-     * <p>The model input variables.</p>
+     * <p>The name of the event type.</p>
      */
-    inline bool ModelVariablesHasBeenSet() const { return m_modelVariablesHasBeenSet; }
+    inline Model& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The model input variables.</p>
+     * <p>The name of the event type.</p>
      */
-    inline void SetModelVariables(const Aws::Vector<ModelVariable>& value) { m_modelVariablesHasBeenSet = true; m_modelVariables = value; }
-
-    /**
-     * <p>The model input variables.</p>
-     */
-    inline void SetModelVariables(Aws::Vector<ModelVariable>&& value) { m_modelVariablesHasBeenSet = true; m_modelVariables = std::move(value); }
-
-    /**
-     * <p>The model input variables.</p>
-     */
-    inline Model& WithModelVariables(const Aws::Vector<ModelVariable>& value) { SetModelVariables(value); return *this;}
-
-    /**
-     * <p>The model input variables.</p>
-     */
-    inline Model& WithModelVariables(Aws::Vector<ModelVariable>&& value) { SetModelVariables(std::move(value)); return *this;}
-
-    /**
-     * <p>The model input variables.</p>
-     */
-    inline Model& AddModelVariables(const ModelVariable& value) { m_modelVariablesHasBeenSet = true; m_modelVariables.push_back(value); return *this; }
-
-    /**
-     * <p>The model input variables.</p>
-     */
-    inline Model& AddModelVariables(ModelVariable&& value) { m_modelVariablesHasBeenSet = true; m_modelVariables.push_back(std::move(value)); return *this; }
+    inline Model& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
 
 
     /**
-     * <p>The model label schema.</p>
+     * <p>Timestamp of when the model was created.</p>
      */
-    inline const LabelSchema& GetLabelSchema() const{ return m_labelSchema; }
+    inline const Aws::String& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The model label schema.</p>
+     * <p>Timestamp of when the model was created.</p>
      */
-    inline bool LabelSchemaHasBeenSet() const { return m_labelSchemaHasBeenSet; }
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The model label schema.</p>
+     * <p>Timestamp of when the model was created.</p>
      */
-    inline void SetLabelSchema(const LabelSchema& value) { m_labelSchemaHasBeenSet = true; m_labelSchema = value; }
+    inline void SetCreatedTime(const Aws::String& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The model label schema.</p>
+     * <p>Timestamp of when the model was created.</p>
      */
-    inline void SetLabelSchema(LabelSchema&& value) { m_labelSchemaHasBeenSet = true; m_labelSchema = std::move(value); }
+    inline void SetCreatedTime(Aws::String&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The model label schema.</p>
+     * <p>Timestamp of when the model was created.</p>
      */
-    inline Model& WithLabelSchema(const LabelSchema& value) { SetLabelSchema(value); return *this;}
+    inline void SetCreatedTime(const char* value) { m_createdTimeHasBeenSet = true; m_createdTime.assign(value); }
 
     /**
-     * <p>The model label schema.</p>
+     * <p>Timestamp of when the model was created.</p>
      */
-    inline Model& WithLabelSchema(LabelSchema&& value) { SetLabelSchema(std::move(value)); return *this;}
+    inline Model& WithCreatedTime(const Aws::String& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>Timestamp of when the model was created.</p>
+     */
+    inline Model& WithCreatedTime(Aws::String&& value) { SetCreatedTime(std::move(value)); return *this;}
+
+    /**
+     * <p>Timestamp of when the model was created.</p>
+     */
+    inline Model& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
 
     /**
@@ -310,44 +275,44 @@ namespace Model
 
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline const Aws::String& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline void SetCreatedTime(const Aws::String& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline void SetCreatedTime(Aws::String&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline void SetCreatedTime(const char* value) { m_createdTimeHasBeenSet = true; m_createdTime.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline Model& WithCreatedTime(const Aws::String& value) { SetCreatedTime(value); return *this;}
+    inline Model& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline Model& WithCreatedTime(Aws::String&& value) { SetCreatedTime(std::move(value)); return *this;}
+    inline Model& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Timestamp of when the model was created.</p>
+     * <p>The ARN of the model.</p>
      */
-    inline Model& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
+    inline Model& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
 
@@ -360,20 +325,17 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
-    TrainingDataSource m_trainingDataSource;
-    bool m_trainingDataSourceHasBeenSet;
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
 
-    Aws::Vector<ModelVariable> m_modelVariables;
-    bool m_modelVariablesHasBeenSet;
-
-    LabelSchema m_labelSchema;
-    bool m_labelSchemaHasBeenSet;
+    Aws::String m_createdTime;
+    bool m_createdTimeHasBeenSet;
 
     Aws::String m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
 
-    Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

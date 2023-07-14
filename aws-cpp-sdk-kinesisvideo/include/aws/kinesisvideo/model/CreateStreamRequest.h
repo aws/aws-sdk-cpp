@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
@@ -44,58 +34,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline CreateStreamRequest& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline CreateStreamRequest& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * <p>The name of the device that is writing to the stream. </p>  <p>In the
      * current implementation, Kinesis Video Streams does not use this name.</p>
-     * </note>
+     * 
      */
     inline CreateStreamRequest& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
@@ -255,80 +245,80 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
-     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
-     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
-     * used.</p> <p> For more information, see <a
+     * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
+     * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
+     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
+     * <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -23,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/InputDestination.h>
+#include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
 #include <aws/medialive/model/InputSource.h>
 #include <utility>
@@ -314,10 +305,97 @@ SINGLE_PIPELINE - You can
 
 
     /**
+     * Settings for the input devices.
+     */
+    inline const Aws::Vector<InputDeviceSettings>& GetInputDevices() const{ return m_inputDevices; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline bool InputDevicesHasBeenSet() const { return m_inputDevicesHasBeenSet; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline void SetInputDevices(const Aws::Vector<InputDeviceSettings>& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = value; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline void SetInputDevices(Aws::Vector<InputDeviceSettings>&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = std::move(value); }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& WithInputDevices(const Aws::Vector<InputDeviceSettings>& value) { SetInputDevices(value); return *this;}
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& WithInputDevices(Aws::Vector<InputDeviceSettings>&& value) { SetInputDevices(std::move(value)); return *this;}
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& AddInputDevices(const InputDeviceSettings& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(value); return *this; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& AddInputDevices(InputDeviceSettings&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline const Aws::Vector<Aws::String>& GetInputPartnerIds() const{ return m_inputPartnerIds; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline bool InputPartnerIdsHasBeenSet() const { return m_inputPartnerIdsHasBeenSet; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline void SetInputPartnerIds(const Aws::Vector<Aws::String>& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = value; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline void SetInputPartnerIds(Aws::Vector<Aws::String>&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds = std::move(value); }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& WithInputPartnerIds(const Aws::Vector<Aws::String>& value) { SetInputPartnerIds(value); return *this;}
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& WithInputPartnerIds(Aws::Vector<Aws::String>&& value) { SetInputPartnerIds(std::move(value)); return *this;}
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& AddInputPartnerIds(const Aws::String& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(value); return *this; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& AddInputPartnerIds(Aws::String&& value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline Input& AddInputPartnerIds(const char* value) { m_inputPartnerIdsHasBeenSet = true; m_inputPartnerIds.push_back(value); return *this; }
+
+
+    /**
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
@@ -326,7 +404,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline bool InputSourceTypeHasBeenSet() const { return m_inputSourceTypeHasBeenSet; }
@@ -335,7 +413,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = value; }
@@ -344,7 +422,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = std::move(value); }
@@ -353,7 +431,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline Input& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
@@ -362,7 +440,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline Input& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
@@ -705,6 +783,12 @@ during input switch actions. Presently, this
 
     InputClass m_inputClass;
     bool m_inputClassHasBeenSet;
+
+    Aws::Vector<InputDeviceSettings> m_inputDevices;
+    bool m_inputDevicesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_inputPartnerIds;
+    bool m_inputPartnerIdsHasBeenSet;
 
     InputSourceType m_inputSourceType;
     bool m_inputSourceTypeHasBeenSet;

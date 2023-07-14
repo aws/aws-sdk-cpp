@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/quicksight/model/UpdateDashboardPermissionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,7 +16,9 @@ UpdateDashboardPermissionsRequest::UpdateDashboardPermissionsRequest() :
     m_awsAccountIdHasBeenSet(false),
     m_dashboardIdHasBeenSet(false),
     m_grantPermissionsHasBeenSet(false),
-    m_revokePermissionsHasBeenSet(false)
+    m_revokePermissionsHasBeenSet(false),
+    m_grantLinkPermissionsHasBeenSet(false),
+    m_revokeLinkPermissionsHasBeenSet(false)
 {
 }
 
@@ -53,6 +45,28 @@ Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
      revokePermissionsJsonList[revokePermissionsIndex].AsObject(m_revokePermissions[revokePermissionsIndex].Jsonize());
    }
    payload.WithArray("RevokePermissions", std::move(revokePermissionsJsonList));
+
+  }
+
+  if(m_grantLinkPermissionsHasBeenSet)
+  {
+   Array<JsonValue> grantLinkPermissionsJsonList(m_grantLinkPermissions.size());
+   for(unsigned grantLinkPermissionsIndex = 0; grantLinkPermissionsIndex < grantLinkPermissionsJsonList.GetLength(); ++grantLinkPermissionsIndex)
+   {
+     grantLinkPermissionsJsonList[grantLinkPermissionsIndex].AsObject(m_grantLinkPermissions[grantLinkPermissionsIndex].Jsonize());
+   }
+   payload.WithArray("GrantLinkPermissions", std::move(grantLinkPermissionsJsonList));
+
+  }
+
+  if(m_revokeLinkPermissionsHasBeenSet)
+  {
+   Array<JsonValue> revokeLinkPermissionsJsonList(m_revokeLinkPermissions.size());
+   for(unsigned revokeLinkPermissionsIndex = 0; revokeLinkPermissionsIndex < revokeLinkPermissionsJsonList.GetLength(); ++revokeLinkPermissionsIndex)
+   {
+     revokeLinkPermissionsJsonList[revokeLinkPermissionsIndex].AsObject(m_revokeLinkPermissions[revokeLinkPermissionsIndex].Jsonize());
+   }
+   payload.WithArray("RevokeLinkPermissions", std::move(revokeLinkPermissionsJsonList));
 
   }
 

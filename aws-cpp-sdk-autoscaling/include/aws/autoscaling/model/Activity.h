@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -412,6 +402,96 @@ namespace Model
      */
     inline Activity& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline const Aws::String& GetAutoScalingGroupState() const{ return m_autoScalingGroupState; }
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline bool AutoScalingGroupStateHasBeenSet() const { return m_autoScalingGroupStateHasBeenSet; }
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline void SetAutoScalingGroupState(const Aws::String& value) { m_autoScalingGroupStateHasBeenSet = true; m_autoScalingGroupState = value; }
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline void SetAutoScalingGroupState(Aws::String&& value) { m_autoScalingGroupStateHasBeenSet = true; m_autoScalingGroupState = std::move(value); }
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline void SetAutoScalingGroupState(const char* value) { m_autoScalingGroupStateHasBeenSet = true; m_autoScalingGroupState.assign(value); }
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline Activity& WithAutoScalingGroupState(const Aws::String& value) { SetAutoScalingGroupState(value); return *this;}
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline Activity& WithAutoScalingGroupState(Aws::String&& value) { SetAutoScalingGroupState(std::move(value)); return *this;}
+
+    /**
+     * <p>The state of the Auto Scaling group, which is either <code>InService</code>
+     * or <code>Deleted</code>.</p>
+     */
+    inline Activity& WithAutoScalingGroupState(const char* value) { SetAutoScalingGroupState(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline const Aws::String& GetAutoScalingGroupARN() const{ return m_autoScalingGroupARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline bool AutoScalingGroupARNHasBeenSet() const { return m_autoScalingGroupARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline void SetAutoScalingGroupARN(const Aws::String& value) { m_autoScalingGroupARNHasBeenSet = true; m_autoScalingGroupARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline void SetAutoScalingGroupARN(Aws::String&& value) { m_autoScalingGroupARNHasBeenSet = true; m_autoScalingGroupARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline void SetAutoScalingGroupARN(const char* value) { m_autoScalingGroupARNHasBeenSet = true; m_autoScalingGroupARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline Activity& WithAutoScalingGroupARN(const Aws::String& value) { SetAutoScalingGroupARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline Activity& WithAutoScalingGroupARN(Aws::String&& value) { SetAutoScalingGroupARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
+     */
+    inline Activity& WithAutoScalingGroupARN(const char* value) { SetAutoScalingGroupARN(value); return *this;}
+
   private:
 
     Aws::String m_activityId;
@@ -443,6 +523,12 @@ namespace Model
 
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
+    Aws::String m_autoScalingGroupState;
+    bool m_autoScalingGroupStateHasBeenSet;
+
+    Aws::String m_autoScalingGroupARN;
+    bool m_autoScalingGroupARNHasBeenSet;
   };
 
 } // namespace Model

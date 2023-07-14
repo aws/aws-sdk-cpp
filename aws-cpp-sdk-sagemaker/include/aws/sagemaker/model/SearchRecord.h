@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -19,6 +9,13 @@
 #include <aws/sagemaker/model/Experiment.h>
 #include <aws/sagemaker/model/Trial.h>
 #include <aws/sagemaker/model/TrialComponent.h>
+#include <aws/sagemaker/model/Endpoint.h>
+#include <aws/sagemaker/model/ModelPackage.h>
+#include <aws/sagemaker/model/ModelPackageGroup.h>
+#include <aws/sagemaker/model/Pipeline.h>
+#include <aws/sagemaker/model/PipelineExecution.h>
+#include <aws/sagemaker/model/FeatureGroup.h>
+#include <aws/sagemaker/model/Project.h>
 #include <utility>
 
 namespace Aws
@@ -37,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>An individual search result record that contains a single resource
-   * object.</p><p><h3>See Also:</h3>   <a
+   * <p>A single resource returned as part of the <a>Search</a> API
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord">AWS
    * API Reference</a></p>
    */
@@ -52,133 +49,272 @@ namespace Model
 
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline const TrainingJob& GetTrainingJob() const{ return m_trainingJob; }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline bool TrainingJobHasBeenSet() const { return m_trainingJobHasBeenSet; }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline void SetTrainingJob(const TrainingJob& value) { m_trainingJobHasBeenSet = true; m_trainingJob = value; }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline void SetTrainingJob(TrainingJob&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::move(value); }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline SearchRecord& WithTrainingJob(const TrainingJob& value) { SetTrainingJob(value); return *this;}
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline SearchRecord& WithTrainingJob(TrainingJob&& value) { SetTrainingJob(std::move(value)); return *this;}
 
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline const Experiment& GetExperiment() const{ return m_experiment; }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline bool ExperimentHasBeenSet() const { return m_experimentHasBeenSet; }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline void SetExperiment(const Experiment& value) { m_experimentHasBeenSet = true; m_experiment = value; }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline void SetExperiment(Experiment&& value) { m_experimentHasBeenSet = true; m_experiment = std::move(value); }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline SearchRecord& WithExperiment(const Experiment& value) { SetExperiment(value); return *this;}
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline SearchRecord& WithExperiment(Experiment&& value) { SetExperiment(std::move(value)); return *this;}
 
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline const Trial& GetTrial() const{ return m_trial; }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline bool TrialHasBeenSet() const { return m_trialHasBeenSet; }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline void SetTrial(const Trial& value) { m_trialHasBeenSet = true; m_trial = value; }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline void SetTrial(Trial&& value) { m_trialHasBeenSet = true; m_trial = std::move(value); }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline SearchRecord& WithTrial(const Trial& value) { SetTrial(value); return *this;}
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline SearchRecord& WithTrial(Trial&& value) { SetTrial(std::move(value)); return *this;}
 
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline const TrialComponent& GetTrialComponent() const{ return m_trialComponent; }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline bool TrialComponentHasBeenSet() const { return m_trialComponentHasBeenSet; }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline void SetTrialComponent(const TrialComponent& value) { m_trialComponentHasBeenSet = true; m_trialComponent = value; }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline void SetTrialComponent(TrialComponent&& value) { m_trialComponentHasBeenSet = true; m_trialComponent = std::move(value); }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline SearchRecord& WithTrialComponent(const TrialComponent& value) { SetTrialComponent(value); return *this;}
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline SearchRecord& WithTrialComponent(TrialComponent&& value) { SetTrialComponent(std::move(value)); return *this;}
+
+
+    
+    inline const Endpoint& GetEndpoint() const{ return m_endpoint; }
+
+    
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    
+    inline void SetEndpoint(const Endpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+
+    
+    inline void SetEndpoint(Endpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
+
+    
+    inline SearchRecord& WithEndpoint(const Endpoint& value) { SetEndpoint(value); return *this;}
+
+    
+    inline SearchRecord& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+
+
+    
+    inline const ModelPackage& GetModelPackage() const{ return m_modelPackage; }
+
+    
+    inline bool ModelPackageHasBeenSet() const { return m_modelPackageHasBeenSet; }
+
+    
+    inline void SetModelPackage(const ModelPackage& value) { m_modelPackageHasBeenSet = true; m_modelPackage = value; }
+
+    
+    inline void SetModelPackage(ModelPackage&& value) { m_modelPackageHasBeenSet = true; m_modelPackage = std::move(value); }
+
+    
+    inline SearchRecord& WithModelPackage(const ModelPackage& value) { SetModelPackage(value); return *this;}
+
+    
+    inline SearchRecord& WithModelPackage(ModelPackage&& value) { SetModelPackage(std::move(value)); return *this;}
+
+
+    
+    inline const ModelPackageGroup& GetModelPackageGroup() const{ return m_modelPackageGroup; }
+
+    
+    inline bool ModelPackageGroupHasBeenSet() const { return m_modelPackageGroupHasBeenSet; }
+
+    
+    inline void SetModelPackageGroup(const ModelPackageGroup& value) { m_modelPackageGroupHasBeenSet = true; m_modelPackageGroup = value; }
+
+    
+    inline void SetModelPackageGroup(ModelPackageGroup&& value) { m_modelPackageGroupHasBeenSet = true; m_modelPackageGroup = std::move(value); }
+
+    
+    inline SearchRecord& WithModelPackageGroup(const ModelPackageGroup& value) { SetModelPackageGroup(value); return *this;}
+
+    
+    inline SearchRecord& WithModelPackageGroup(ModelPackageGroup&& value) { SetModelPackageGroup(std::move(value)); return *this;}
+
+
+    
+    inline const Pipeline& GetPipeline() const{ return m_pipeline; }
+
+    
+    inline bool PipelineHasBeenSet() const { return m_pipelineHasBeenSet; }
+
+    
+    inline void SetPipeline(const Pipeline& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
+
+    
+    inline void SetPipeline(Pipeline&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
+
+    
+    inline SearchRecord& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
+
+    
+    inline SearchRecord& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+
+
+    
+    inline const PipelineExecution& GetPipelineExecution() const{ return m_pipelineExecution; }
+
+    
+    inline bool PipelineExecutionHasBeenSet() const { return m_pipelineExecutionHasBeenSet; }
+
+    
+    inline void SetPipelineExecution(const PipelineExecution& value) { m_pipelineExecutionHasBeenSet = true; m_pipelineExecution = value; }
+
+    
+    inline void SetPipelineExecution(PipelineExecution&& value) { m_pipelineExecutionHasBeenSet = true; m_pipelineExecution = std::move(value); }
+
+    
+    inline SearchRecord& WithPipelineExecution(const PipelineExecution& value) { SetPipelineExecution(value); return *this;}
+
+    
+    inline SearchRecord& WithPipelineExecution(PipelineExecution&& value) { SetPipelineExecution(std::move(value)); return *this;}
+
+
+    
+    inline const FeatureGroup& GetFeatureGroup() const{ return m_featureGroup; }
+
+    
+    inline bool FeatureGroupHasBeenSet() const { return m_featureGroupHasBeenSet; }
+
+    
+    inline void SetFeatureGroup(const FeatureGroup& value) { m_featureGroupHasBeenSet = true; m_featureGroup = value; }
+
+    
+    inline void SetFeatureGroup(FeatureGroup&& value) { m_featureGroupHasBeenSet = true; m_featureGroup = std::move(value); }
+
+    
+    inline SearchRecord& WithFeatureGroup(const FeatureGroup& value) { SetFeatureGroup(value); return *this;}
+
+    
+    inline SearchRecord& WithFeatureGroup(FeatureGroup&& value) { SetFeatureGroup(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline const Project& GetProject() const{ return m_project; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline void SetProject(const Project& value) { m_projectHasBeenSet = true; m_project = value; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline void SetProject(Project&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline SearchRecord& WithProject(const Project& value) { SetProject(value); return *this;}
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline SearchRecord& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
   private:
 
@@ -193,6 +329,27 @@ namespace Model
 
     TrialComponent m_trialComponent;
     bool m_trialComponentHasBeenSet;
+
+    Endpoint m_endpoint;
+    bool m_endpointHasBeenSet;
+
+    ModelPackage m_modelPackage;
+    bool m_modelPackageHasBeenSet;
+
+    ModelPackageGroup m_modelPackageGroup;
+    bool m_modelPackageGroupHasBeenSet;
+
+    Pipeline m_pipeline;
+    bool m_pipelineHasBeenSet;
+
+    PipelineExecution m_pipelineExecution;
+    bool m_pipelineExecutionHasBeenSet;
+
+    FeatureGroup m_featureGroup;
+    bool m_featureGroupHasBeenSet;
+
+    Project m_project;
+    bool m_projectHasBeenSet;
   };
 
 } // namespace Model

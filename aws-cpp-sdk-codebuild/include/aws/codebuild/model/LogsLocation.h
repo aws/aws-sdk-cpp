@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -36,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about build logs in Amazon CloudWatch Logs.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about build logs in CloudWatch Logs.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsLocation">AWS
    * API Reference</a></p>
    */
@@ -51,124 +41,124 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline LogsLocation& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline LogsLocation& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     * <p>The name of the CloudWatch Logs group for the build logs.</p>
      */
     inline LogsLocation& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     * <p>The name of the CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline const Aws::String& GetDeepLink() const{ return m_deepLink; }
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline bool DeepLinkHasBeenSet() const { return m_deepLinkHasBeenSet; }
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline void SetDeepLink(const Aws::String& value) { m_deepLinkHasBeenSet = true; m_deepLink = value; }
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline void SetDeepLink(Aws::String&& value) { m_deepLinkHasBeenSet = true; m_deepLink = std::move(value); }
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline void SetDeepLink(const char* value) { m_deepLinkHasBeenSet = true; m_deepLink.assign(value); }
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline LogsLocation& WithDeepLink(const Aws::String& value) { SetDeepLink(value); return *this;}
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline LogsLocation& WithDeepLink(Aws::String&& value) { SetDeepLink(std::move(value)); return *this;}
 
     /**
-     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs.</p>
      */
     inline LogsLocation& WithDeepLink(const char* value) { SetDeepLink(value); return *this;}
 
@@ -215,74 +205,74 @@ namespace Model
 
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline const Aws::String& GetCloudWatchLogsArn() const{ return m_cloudWatchLogsArn; }
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline bool CloudWatchLogsArnHasBeenSet() const { return m_cloudWatchLogsArnHasBeenSet; }
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline void SetCloudWatchLogsArn(const Aws::String& value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn = value; }
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline void SetCloudWatchLogsArn(Aws::String&& value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn = std::move(value); }
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline void SetCloudWatchLogsArn(const char* value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn.assign(value); }
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline LogsLocation& WithCloudWatchLogsArn(const Aws::String& value) { SetCloudWatchLogsArn(value); return *this;}
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline LogsLocation& WithCloudWatchLogsArn(Aws::String&& value) { SetCloudWatchLogsArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <p> The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by Amazon CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>. </p>
      */
     inline LogsLocation& WithCloudWatchLogsArn(const char* value) { SetCloudWatchLogsArn(value); return *this;}
 
@@ -361,32 +351,32 @@ namespace Model
 
 
     /**
-     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     * <p> Information about CloudWatch Logs for a build project. </p>
      */
     inline const CloudWatchLogsConfig& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
 
     /**
-     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     * <p> Information about CloudWatch Logs for a build project. </p>
      */
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
 
     /**
-     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     * <p> Information about CloudWatch Logs for a build project. </p>
      */
     inline void SetCloudWatchLogs(const CloudWatchLogsConfig& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
 
     /**
-     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     * <p> Information about CloudWatch Logs for a build project. </p>
      */
     inline void SetCloudWatchLogs(CloudWatchLogsConfig&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
 
     /**
-     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     * <p> Information about CloudWatch Logs for a build project. </p>
      */
     inline LogsLocation& WithCloudWatchLogs(const CloudWatchLogsConfig& value) { SetCloudWatchLogs(value); return *this;}
 
     /**
-     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     * <p> Information about CloudWatch Logs for a build project. </p>
      */
     inline LogsLocation& WithCloudWatchLogs(CloudWatchLogsConfig&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/CreateActivationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,7 +19,8 @@ CreateActivationRequest::CreateActivationRequest() :
     m_registrationLimit(0),
     m_registrationLimitHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_registrationMetadataHasBeenSet(false)
 {
 }
 
@@ -74,6 +65,17 @@ Aws::String CreateActivationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_registrationMetadataHasBeenSet)
+  {
+   Array<JsonValue> registrationMetadataJsonList(m_registrationMetadata.size());
+   for(unsigned registrationMetadataIndex = 0; registrationMetadataIndex < registrationMetadataJsonList.GetLength(); ++registrationMetadataIndex)
+   {
+     registrationMetadataJsonList[registrationMetadataIndex].AsObject(m_registrationMetadata[registrationMetadataIndex].Jsonize());
+   }
+   payload.WithArray("RegistrationMetadata", std::move(registrationMetadataJsonList));
 
   }
 

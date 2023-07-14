@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/ImageAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,10 @@ namespace Aws
         static const int productCodes_HASH = HashingUtils::HashString("productCodes");
         static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
         static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
+        static const int bootMode_HASH = HashingUtils::HashString("bootMode");
+        static const int tpmSupport_HASH = HashingUtils::HashString("tpmSupport");
+        static const int uefiData_HASH = HashingUtils::HashString("uefiData");
+        static const int lastLaunchedTime_HASH = HashingUtils::HashString("lastLaunchedTime");
 
 
         ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
@@ -70,6 +64,22 @@ namespace Aws
           {
             return ImageAttributeName::sriovNetSupport;
           }
+          else if (hashCode == bootMode_HASH)
+          {
+            return ImageAttributeName::bootMode;
+          }
+          else if (hashCode == tpmSupport_HASH)
+          {
+            return ImageAttributeName::tpmSupport;
+          }
+          else if (hashCode == uefiData_HASH)
+          {
+            return ImageAttributeName::uefiData;
+          }
+          else if (hashCode == lastLaunchedTime_HASH)
+          {
+            return ImageAttributeName::lastLaunchedTime;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +108,14 @@ namespace Aws
             return "blockDeviceMapping";
           case ImageAttributeName::sriovNetSupport:
             return "sriovNetSupport";
+          case ImageAttributeName::bootMode:
+            return "bootMode";
+          case ImageAttributeName::tpmSupport:
+            return "tpmSupport";
+          case ImageAttributeName::uefiData:
+            return "uefiData";
+          case ImageAttributeName::lastLaunchedTime:
+            return "lastLaunchedTime";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

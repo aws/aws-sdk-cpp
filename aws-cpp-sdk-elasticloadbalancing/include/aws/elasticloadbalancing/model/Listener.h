@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
@@ -36,7 +26,7 @@ namespace Model
   /**
    * <p>Information about a listener.</p> <p>For information about the protocols and
    * the ports supported by Elastic Load Balancing, see <a
-   * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
    * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Listener">AWS
@@ -133,12 +123,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -146,12 +136,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -159,12 +149,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -172,12 +162,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -185,12 +175,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -198,12 +188,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -211,12 +201,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
@@ -224,12 +214,12 @@ namespace Model
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
-     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
-     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
-     * another listener with the same <code>InstancePort</code> whose
-     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
-     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
-     * listener with the same <code>InstancePort</code> whose
+     * SSL.</p> <p>If the front-end protocol is TCP or SSL, the back-end protocol must
+     * be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol
+     * must be HTTP or HTTPS.</p> <p>If there is another listener with the same
+     * <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS
+     * or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+     * <p>If there is another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */

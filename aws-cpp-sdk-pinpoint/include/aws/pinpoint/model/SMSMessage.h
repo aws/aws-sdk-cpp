@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -142,91 +132,91 @@ namespace Model
 
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline SMSMessage& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline SMSMessage& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of an image or video to display in the SMS message.</p>
+     * <p>This field is reserved for future use.</p>
      */
     inline SMSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
 
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline SMSMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline SMSMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
@@ -417,6 +407,104 @@ namespace Model
      */
     inline SMSMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline SMSMessage& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline SMSMessage& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline SMSMessage& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline SMSMessage& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline SMSMessage& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline SMSMessage& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+
   private:
 
     Aws::String m_body;
@@ -439,6 +527,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet;
+
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -38,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>A node represents an AWS Glue component like Trigger, Job etc. which is part
-   * of a workflow.</p><p><h3>See Also:</h3>   <a
+   * <p>A node represents an Glue component (trigger, crawler, or job) on a workflow
+   * graph.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Node">AWS API
    * Reference</a></p>
    */
@@ -53,73 +43,73 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Glue component represented by the node.</p>
+     * <p>The type of Glue component represented by the node.</p>
      */
     inline const NodeType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of AWS Glue component represented by the node.</p>
+     * <p>The type of Glue component represented by the node.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Glue component represented by the node.</p>
+     * <p>The type of Glue component represented by the node.</p>
      */
     inline void SetType(const NodeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of AWS Glue component represented by the node.</p>
+     * <p>The type of Glue component represented by the node.</p>
      */
     inline void SetType(NodeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of AWS Glue component represented by the node.</p>
+     * <p>The type of Glue component represented by the node.</p>
      */
     inline Node& WithType(const NodeType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of AWS Glue component represented by the node.</p>
+     * <p>The type of Glue component represented by the node.</p>
      */
     inline Node& WithType(NodeType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline Node& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline Node& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Glue component represented by the node.</p>
+     * <p>The name of the Glue component represented by the node.</p>
      */
     inline Node& WithName(const char* value) { SetName(value); return *this;}
 

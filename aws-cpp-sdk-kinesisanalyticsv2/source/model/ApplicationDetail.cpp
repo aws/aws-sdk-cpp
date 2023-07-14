@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesisanalyticsv2/model/ApplicationDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,7 +32,17 @@ ApplicationDetail::ApplicationDetail() :
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
+    m_applicationVersionUpdatedFrom(0),
+    m_applicationVersionUpdatedFromHasBeenSet(false),
+    m_applicationVersionRolledBackFrom(0),
+    m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false),
+    m_applicationVersionRolledBackTo(0),
+    m_applicationVersionRolledBackToHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
 }
 
@@ -60,7 +60,17 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
+    m_applicationVersionUpdatedFrom(0),
+    m_applicationVersionUpdatedFromHasBeenSet(false),
+    m_applicationVersionRolledBackFrom(0),
+    m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false),
+    m_applicationVersionRolledBackTo(0),
+    m_applicationVersionRolledBackToHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +157,48 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationMaintenanceConfigurationDescription"))
+  {
+    m_applicationMaintenanceConfigurationDescription = jsonValue.GetObject("ApplicationMaintenanceConfigurationDescription");
+
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionUpdatedFrom"))
+  {
+    m_applicationVersionUpdatedFrom = jsonValue.GetInt64("ApplicationVersionUpdatedFrom");
+
+    m_applicationVersionUpdatedFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionRolledBackFrom"))
+  {
+    m_applicationVersionRolledBackFrom = jsonValue.GetInt64("ApplicationVersionRolledBackFrom");
+
+    m_applicationVersionRolledBackFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConditionalToken"))
+  {
+    m_conditionalToken = jsonValue.GetString("ConditionalToken");
+
+    m_conditionalTokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionRolledBackTo"))
+  {
+    m_applicationVersionRolledBackTo = jsonValue.GetInt64("ApplicationVersionRolledBackTo");
+
+    m_applicationVersionRolledBackToHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationMode"))
+  {
+    m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("ApplicationMode"));
+
+    m_applicationModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -219,6 +271,41 @@ JsonValue ApplicationDetail::Jsonize() const
    }
    payload.WithArray("CloudWatchLoggingOptionDescriptions", std::move(cloudWatchLoggingOptionDescriptionsJsonList));
 
+  }
+
+  if(m_applicationMaintenanceConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ApplicationMaintenanceConfigurationDescription", m_applicationMaintenanceConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_applicationVersionUpdatedFromHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionUpdatedFrom", m_applicationVersionUpdatedFrom);
+
+  }
+
+  if(m_applicationVersionRolledBackFromHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionRolledBackFrom", m_applicationVersionRolledBackFrom);
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
+
+  }
+
+  if(m_applicationVersionRolledBackToHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionRolledBackTo", m_applicationVersionRolledBackTo);
+
+  }
+
+  if(m_applicationModeHasBeenSet)
+  {
+   payload.WithString("ApplicationMode", ApplicationModeMapper::GetNameForApplicationMode(m_applicationMode));
   }
 
   return payload;

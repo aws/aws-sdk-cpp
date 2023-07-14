@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/EndpointInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,14 @@ EndpointInput::EndpointInput() :
     m_s3InputMode(ProcessingS3InputMode::NOT_SET),
     m_s3InputModeHasBeenSet(false),
     m_s3DataDistributionType(ProcessingS3DataDistributionType::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false)
+    m_s3DataDistributionTypeHasBeenSet(false),
+    m_featuresAttributeHasBeenSet(false),
+    m_inferenceAttributeHasBeenSet(false),
+    m_probabilityAttributeHasBeenSet(false),
+    m_probabilityThresholdAttribute(0.0),
+    m_probabilityThresholdAttributeHasBeenSet(false),
+    m_startTimeOffsetHasBeenSet(false),
+    m_endTimeOffsetHasBeenSet(false)
 {
 }
 
@@ -44,7 +41,14 @@ EndpointInput::EndpointInput(JsonView jsonValue) :
     m_s3InputMode(ProcessingS3InputMode::NOT_SET),
     m_s3InputModeHasBeenSet(false),
     m_s3DataDistributionType(ProcessingS3DataDistributionType::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false)
+    m_s3DataDistributionTypeHasBeenSet(false),
+    m_featuresAttributeHasBeenSet(false),
+    m_inferenceAttributeHasBeenSet(false),
+    m_probabilityAttributeHasBeenSet(false),
+    m_probabilityThresholdAttribute(0.0),
+    m_probabilityThresholdAttributeHasBeenSet(false),
+    m_startTimeOffsetHasBeenSet(false),
+    m_endTimeOffsetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +83,48 @@ EndpointInput& EndpointInput::operator =(JsonView jsonValue)
     m_s3DataDistributionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FeaturesAttribute"))
+  {
+    m_featuresAttribute = jsonValue.GetString("FeaturesAttribute");
+
+    m_featuresAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InferenceAttribute"))
+  {
+    m_inferenceAttribute = jsonValue.GetString("InferenceAttribute");
+
+    m_inferenceAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProbabilityAttribute"))
+  {
+    m_probabilityAttribute = jsonValue.GetString("ProbabilityAttribute");
+
+    m_probabilityAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProbabilityThresholdAttribute"))
+  {
+    m_probabilityThresholdAttribute = jsonValue.GetDouble("ProbabilityThresholdAttribute");
+
+    m_probabilityThresholdAttributeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartTimeOffset"))
+  {
+    m_startTimeOffset = jsonValue.GetString("StartTimeOffset");
+
+    m_startTimeOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndTimeOffset"))
+  {
+    m_endTimeOffset = jsonValue.GetString("EndTimeOffset");
+
+    m_endTimeOffsetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,6 +152,42 @@ JsonValue EndpointInput::Jsonize() const
   if(m_s3DataDistributionTypeHasBeenSet)
   {
    payload.WithString("S3DataDistributionType", ProcessingS3DataDistributionTypeMapper::GetNameForProcessingS3DataDistributionType(m_s3DataDistributionType));
+  }
+
+  if(m_featuresAttributeHasBeenSet)
+  {
+   payload.WithString("FeaturesAttribute", m_featuresAttribute);
+
+  }
+
+  if(m_inferenceAttributeHasBeenSet)
+  {
+   payload.WithString("InferenceAttribute", m_inferenceAttribute);
+
+  }
+
+  if(m_probabilityAttributeHasBeenSet)
+  {
+   payload.WithString("ProbabilityAttribute", m_probabilityAttribute);
+
+  }
+
+  if(m_probabilityThresholdAttributeHasBeenSet)
+  {
+   payload.WithDouble("ProbabilityThresholdAttribute", m_probabilityThresholdAttribute);
+
+  }
+
+  if(m_startTimeOffsetHasBeenSet)
+  {
+   payload.WithString("StartTimeOffset", m_startTimeOffset);
+
+  }
+
+  if(m_endTimeOffsetHasBeenSet)
+  {
+   payload.WithString("EndTimeOffset", m_endTimeOffset);
+
   }
 
   return payload;

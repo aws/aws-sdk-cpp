@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pricing/Pricing_EXPORTS.h>
@@ -50,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline Service& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline Service& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline Service& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -39,7 +29,9 @@ ScalingConfigurationInfo::ScalingConfigurationInfo() :
     m_autoPauseHasBeenSet(false),
     m_secondsUntilAutoPause(0),
     m_secondsUntilAutoPauseHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false)
+    m_timeoutActionHasBeenSet(false),
+    m_secondsBeforeTimeout(0),
+    m_secondsBeforeTimeoutHasBeenSet(false)
 {
 }
 
@@ -52,7 +44,9 @@ ScalingConfigurationInfo::ScalingConfigurationInfo(const XmlNode& xmlNode) :
     m_autoPauseHasBeenSet(false),
     m_secondsUntilAutoPause(0),
     m_secondsUntilAutoPauseHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false)
+    m_timeoutActionHasBeenSet(false),
+    m_secondsBeforeTimeout(0),
+    m_secondsBeforeTimeoutHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +87,12 @@ ScalingConfigurationInfo& ScalingConfigurationInfo::operator =(const XmlNode& xm
       m_timeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(timeoutActionNode.GetText());
       m_timeoutActionHasBeenSet = true;
     }
+    XmlNode secondsBeforeTimeoutNode = resultNode.FirstChild("SecondsBeforeTimeout");
+    if(!secondsBeforeTimeoutNode.IsNull())
+    {
+      m_secondsBeforeTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsBeforeTimeoutNode.GetText()).c_str()).c_str());
+      m_secondsBeforeTimeoutHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -125,6 +125,11 @@ void ScalingConfigurationInfo::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
   }
 
+  if(m_secondsBeforeTimeoutHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecondsBeforeTimeout=" << m_secondsBeforeTimeout << "&";
+  }
+
 }
 
 void ScalingConfigurationInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -148,6 +153,10 @@ void ScalingConfigurationInfo::OutputToStream(Aws::OStream& oStream, const char*
   if(m_timeoutActionHasBeenSet)
   {
       oStream << location << ".TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
+  }
+  if(m_secondsBeforeTimeoutHasBeenSet)
+  {
+      oStream << location << ".SecondsBeforeTimeout=" << m_secondsBeforeTimeout << "&";
   }
 }
 

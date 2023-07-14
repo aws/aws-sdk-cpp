@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/ec2/model/State.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/DnsEntry.h>
 #include <utility>
 
@@ -137,42 +128,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline const Aws::String& GetVpcEndpointOwner() const{ return m_vpcEndpointOwner; }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline void SetVpcEndpointOwner(Aws::String&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline void SetVpcEndpointOwner(const char* value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline VpcEndpointConnection& WithVpcEndpointOwner(const Aws::String& value) { SetVpcEndpointOwner(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline VpcEndpointConnection& WithVpcEndpointOwner(Aws::String&& value) { SetVpcEndpointOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     * <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
      */
     inline VpcEndpointConnection& WithVpcEndpointOwner(const char* value) { SetVpcEndpointOwner(value); return *this;}
 
@@ -334,6 +325,92 @@ namespace Model
      */
     inline VpcEndpointConnection& AddNetworkLoadBalancerArns(const char* value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGatewayLoadBalancerArns() const{ return m_gatewayLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline bool GatewayLoadBalancerArnsHasBeenSet() const { return m_gatewayLoadBalancerArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline void SetGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline void SetGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& WithGatewayLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetGatewayLoadBalancerArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& WithGatewayLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetGatewayLoadBalancerArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddGatewayLoadBalancerArns(const Aws::String& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddGatewayLoadBalancerArns(Aws::String&& value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddGatewayLoadBalancerArns(const char* value) { m_gatewayLoadBalancerArnsHasBeenSet = true; m_gatewayLoadBalancerArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline VpcEndpointConnection& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the endpoint.</p>
+     */
+    inline VpcEndpointConnection& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceId;
@@ -356,6 +433,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
     bool m_networkLoadBalancerArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
+    bool m_gatewayLoadBalancerArnsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

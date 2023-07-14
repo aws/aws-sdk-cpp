@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -240,64 +230,64 @@ namespace Model
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline CreateDimensionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline CreateDimensionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>Each dimension must have a unique client request token. If you try to create
      * a new dimension with the same token as a dimension that already exists, an
-     * exception occurs. If you omit this value, AWS SDKs will automatically generate a
-     * unique client request.</p>
+     * exception occurs. If you omit this value, Amazon Web Services SDKs will
+     * automatically generate a unique client request.</p>
      */
     inline CreateDimensionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

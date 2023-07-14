@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cognito-idp/model/CreateUserPoolClientRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,11 @@ CreateUserPoolClientRequest::CreateUserPoolClientRequest() :
     m_generateSecretHasBeenSet(false),
     m_refreshTokenValidity(0),
     m_refreshTokenValidityHasBeenSet(false),
+    m_accessTokenValidity(0),
+    m_accessTokenValidityHasBeenSet(false),
+    m_idTokenValidity(0),
+    m_idTokenValidityHasBeenSet(false),
+    m_tokenValidityUnitsHasBeenSet(false),
     m_readAttributesHasBeenSet(false),
     m_writeAttributesHasBeenSet(false),
     m_explicitAuthFlowsHasBeenSet(false),
@@ -42,7 +37,11 @@ CreateUserPoolClientRequest::CreateUserPoolClientRequest() :
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
     m_analyticsConfigurationHasBeenSet(false),
     m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false)
+    m_preventUserExistenceErrorsHasBeenSet(false),
+    m_enableTokenRevocation(false),
+    m_enableTokenRevocationHasBeenSet(false),
+    m_enablePropagateAdditionalUserContextData(false),
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
 {
 }
 
@@ -71,6 +70,24 @@ Aws::String CreateUserPoolClientRequest::SerializePayload() const
   if(m_refreshTokenValidityHasBeenSet)
   {
    payload.WithInteger("RefreshTokenValidity", m_refreshTokenValidity);
+
+  }
+
+  if(m_accessTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("AccessTokenValidity", m_accessTokenValidity);
+
+  }
+
+  if(m_idTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("IdTokenValidity", m_idTokenValidity);
+
+  }
+
+  if(m_tokenValidityUnitsHasBeenSet)
+  {
+   payload.WithObject("TokenValidityUnits", m_tokenValidityUnits.Jsonize());
 
   }
 
@@ -183,6 +200,18 @@ Aws::String CreateUserPoolClientRequest::SerializePayload() const
   if(m_preventUserExistenceErrorsHasBeenSet)
   {
    payload.WithString("PreventUserExistenceErrors", PreventUserExistenceErrorTypesMapper::GetNameForPreventUserExistenceErrorTypes(m_preventUserExistenceErrors));
+  }
+
+  if(m_enableTokenRevocationHasBeenSet)
+  {
+   payload.WithBool("EnableTokenRevocation", m_enableTokenRevocation);
+
+  }
+
+  if(m_enablePropagateAdditionalUserContextDataHasBeenSet)
+  {
+   payload.WithBool("EnablePropagateAdditionalUserContextData", m_enablePropagateAdditionalUserContextData);
+
   }
 
   return payload.View().WriteReadable();

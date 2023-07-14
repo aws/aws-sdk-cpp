@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -203,81 +193,81 @@ namespace Model
 
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline const EnableIoTLoggingParams& GetEnableIoTLoggingParams() const{ return m_enableIoTLoggingParams; }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline bool EnableIoTLoggingParamsHasBeenSet() const { return m_enableIoTLoggingParamsHasBeenSet; }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline void SetEnableIoTLoggingParams(const EnableIoTLoggingParams& value) { m_enableIoTLoggingParamsHasBeenSet = true; m_enableIoTLoggingParams = value; }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline void SetEnableIoTLoggingParams(EnableIoTLoggingParams&& value) { m_enableIoTLoggingParamsHasBeenSet = true; m_enableIoTLoggingParams = std::move(value); }
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline MitigationActionParams& WithEnableIoTLoggingParams(const EnableIoTLoggingParams& value) { SetEnableIoTLoggingParams(value); return *this;}
 
     /**
-     * <p>Parameters to define a mitigation action that enables AWS IoT logging at a
-     * specified level of detail.</p>
+     * <p>Parameters to define a mitigation action that enables Amazon Web Services IoT
+     * Core logging at a specified level of detail.</p>
      */
     inline MitigationActionParams& WithEnableIoTLoggingParams(EnableIoTLoggingParams&& value) { SetEnableIoTLoggingParams(std::move(value)); return *this;}
 
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline const PublishFindingToSnsParams& GetPublishFindingToSnsParams() const{ return m_publishFindingToSnsParams; }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline bool PublishFindingToSnsParamsHasBeenSet() const { return m_publishFindingToSnsParamsHasBeenSet; }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline void SetPublishFindingToSnsParams(const PublishFindingToSnsParams& value) { m_publishFindingToSnsParamsHasBeenSet = true; m_publishFindingToSnsParams = value; }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline void SetPublishFindingToSnsParams(PublishFindingToSnsParams&& value) { m_publishFindingToSnsParamsHasBeenSet = true; m_publishFindingToSnsParams = std::move(value); }
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline MitigationActionParams& WithPublishFindingToSnsParams(const PublishFindingToSnsParams& value) { SetPublishFindingToSnsParams(value); return *this;}
 
     /**
      * <p>Parameters to define a mitigation action that publishes findings to Amazon
-     * SNS. You can implement your own custom actions in response to the Amazon SNS
-     * messages.</p>
+     * Simple Notification Service (Amazon SNS. You can implement your own custom
+     * actions in response to the Amazon SNS messages.</p>
      */
     inline MitigationActionParams& WithPublishFindingToSnsParams(PublishFindingToSnsParams&& value) { SetPublishFindingToSnsParams(std::move(value)); return *this;}
 

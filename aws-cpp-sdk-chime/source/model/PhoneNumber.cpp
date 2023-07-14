@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/chime/model/PhoneNumber.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,7 @@ namespace Model
 PhoneNumber::PhoneNumber() : 
     m_phoneNumberIdHasBeenSet(false),
     m_e164PhoneNumberHasBeenSet(false),
+    m_countryHasBeenSet(false),
     m_type(PhoneNumberType::NOT_SET),
     m_typeHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
@@ -51,6 +42,7 @@ PhoneNumber::PhoneNumber() :
 PhoneNumber::PhoneNumber(JsonView jsonValue) : 
     m_phoneNumberIdHasBeenSet(false),
     m_e164PhoneNumberHasBeenSet(false),
+    m_countryHasBeenSet(false),
     m_type(PhoneNumberType::NOT_SET),
     m_typeHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
@@ -83,6 +75,13 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
 
     m_e164PhoneNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Country"))
+  {
+    m_country = jsonValue.GetString("Country");
+
+    m_countryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -174,6 +173,12 @@ JsonValue PhoneNumber::Jsonize() const
   if(m_e164PhoneNumberHasBeenSet)
   {
    payload.WithString("E164PhoneNumber", m_e164PhoneNumber);
+
+  }
+
+  if(m_countryHasBeenSet)
+  {
+   payload.WithString("Country", m_country);
 
   }
 

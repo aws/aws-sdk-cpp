@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -33,7 +23,9 @@ namespace Model
     ml_c5,
     ml_p2,
     ml_p3,
+    ml_g4dn,
     ml_inf1,
+    ml_eia2,
     jetson_tx1,
     jetson_tx2,
     jetson_nano,
@@ -48,7 +40,14 @@ namespace Model
     qcs605,
     qcs603,
     sitara_am57x,
-    amba_cv22
+    amba_cv2,
+    amba_cv22,
+    amba_cv25,
+    x86_win32,
+    x86_win64,
+    coreml,
+    jacinto_tda4vm,
+    imx8mplus
   };
 
 namespace TargetDeviceMapper

@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/Platform.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/ComponentType.h>
 #include <utility>
 
@@ -36,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A high-level overview of a component semantic version.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The defining characteristics of a specific version of an Amazon Web Services
+   * TOE component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentVersion">AWS
    * API Reference</a></p>
    */
@@ -51,42 +42,106 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline ComponentVersion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline ComponentVersion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component.</p>
+     * <p>The Amazon Resource Name (ARN) of the component.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline ComponentVersion& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -133,42 +188,146 @@ namespace Model
 
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline ComponentVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline ComponentVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The semantic version of the component.</p>
+     * <p>The semantic version of the component.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number to the fourth
+     * node.</p> <p> <b>Patterns:</b> You can use any numeric pattern that adheres to
+     * the assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> <p> <b>Filtering:</b> With semantic versioning, you have the
+     * flexibility to use wildcards (x) to specify the most recent versions or nodes
+     * when selecting the base image or components for your recipe. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards.</p> 
      */
     inline ComponentVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -243,6 +402,70 @@ namespace Model
      * <p>The platform of the component.</p>
      */
     inline ComponentVersion& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline ComponentVersion& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline ComponentVersion& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline ComponentVersion& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline ComponentVersion& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>he operating system (OS) version supported by the component. If the OS
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
+     */
+    inline ComponentVersion& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 
 
     /**
@@ -379,6 +602,9 @@ namespace Model
 
     Platform m_platform;
     bool m_platformHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedOsVersions;
+    bool m_supportedOsVersionsHasBeenSet;
 
     ComponentType m_type;
     bool m_typeHasBeenSet;

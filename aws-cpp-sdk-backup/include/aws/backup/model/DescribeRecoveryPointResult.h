@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
@@ -192,6 +182,70 @@ namespace Model
 
 
     /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline const Aws::String& GetSourceBackupVaultArn() const{ return m_sourceBackupVaultArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const Aws::String& value) { m_sourceBackupVaultArn = value; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(Aws::String&& value) { m_sourceBackupVaultArn = std::move(value); }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline void SetSourceBackupVaultArn(const char* value) { m_sourceBackupVaultArn.assign(value); }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(const Aws::String& value) { SetSourceBackupVaultArn(value); return *this;}
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(Aws::String&& value) { SetSourceBackupVaultArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where
+     * the resource was originally backed up in; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     * recovery is restored to the same Amazon Web Services account or Region, this
+     * value will be <code>null</code>.</p>
+     */
+    inline DescribeRecoveryPointResult& WithSourceBackupVaultArn(const char* value) { SetSourceBackupVaultArn(value); return *this;}
+
+
+    /**
      * <p>An ARN that uniquely identifies a saved resource. The format of the ARN
      * depends on the resource type.</p>
      */
@@ -235,51 +289,51 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline DescribeRecoveryPointResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline DescribeRecoveryPointResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource to save as a recovery point; for example, an Amazon
-     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
-     * (Amazon RDS) database.</p>
+     * <p>The type of Amazon Web Services resource to save as a recovery point; for
+     * example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.</p>
      */
     inline DescribeRecoveryPointResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -369,39 +423,132 @@ namespace Model
 
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
-     * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * <p>A status code specifying the state of the recovery point.</p> <p>
+     * <code>PARTIAL</code> status indicates Backup could not create the recovery point
+     * before the backup window closed. To increase your backup plan window using the
+     * API, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+     * You can also increase your backup plan window using the Console by choosing and
+     * editing your backup plan.</p> <p> <code>EXPIRED</code> status indicates that the
+     * recovery point has exceeded its retention period, but Backup lacks permission or
+     * is otherwise unable to delete it. To manually delete these recovery points, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
+     * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
+     * of <i>Getting started</i>.</p>
      */
     inline const RecoveryPointStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
-     * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * <p>A status code specifying the state of the recovery point.</p> <p>
+     * <code>PARTIAL</code> status indicates Backup could not create the recovery point
+     * before the backup window closed. To increase your backup plan window using the
+     * API, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+     * You can also increase your backup plan window using the Console by choosing and
+     * editing your backup plan.</p> <p> <code>EXPIRED</code> status indicates that the
+     * recovery point has exceeded its retention period, but Backup lacks permission or
+     * is otherwise unable to delete it. To manually delete these recovery points, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
+     * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
+     * of <i>Getting started</i>.</p>
      */
     inline void SetStatus(const RecoveryPointStatus& value) { m_status = value; }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
-     * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * <p>A status code specifying the state of the recovery point.</p> <p>
+     * <code>PARTIAL</code> status indicates Backup could not create the recovery point
+     * before the backup window closed. To increase your backup plan window using the
+     * API, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+     * You can also increase your backup plan window using the Console by choosing and
+     * editing your backup plan.</p> <p> <code>EXPIRED</code> status indicates that the
+     * recovery point has exceeded its retention period, but Backup lacks permission or
+     * is otherwise unable to delete it. To manually delete these recovery points, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
+     * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
+     * of <i>Getting started</i>.</p>
      */
     inline void SetStatus(RecoveryPointStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
-     * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * <p>A status code specifying the state of the recovery point.</p> <p>
+     * <code>PARTIAL</code> status indicates Backup could not create the recovery point
+     * before the backup window closed. To increase your backup plan window using the
+     * API, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+     * You can also increase your backup plan window using the Console by choosing and
+     * editing your backup plan.</p> <p> <code>EXPIRED</code> status indicates that the
+     * recovery point has exceeded its retention period, but Backup lacks permission or
+     * is otherwise unable to delete it. To manually delete these recovery points, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
+     * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
+     * of <i>Getting started</i>.</p>
      */
     inline DescribeRecoveryPointResult& WithStatus(const RecoveryPointStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
-     * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * <p>A status code specifying the state of the recovery point.</p> <p>
+     * <code>PARTIAL</code> status indicates Backup could not create the recovery point
+     * before the backup window closed. To increase your backup plan window using the
+     * API, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+     * You can also increase your backup plan window using the Console by choosing and
+     * editing your backup plan.</p> <p> <code>EXPIRED</code> status indicates that the
+     * recovery point has exceeded its retention period, but Backup lacks permission or
+     * is otherwise unable to delete it. To manually delete these recovery points, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
+     * Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section
+     * of <i>Getting started</i>.</p>
      */
     inline DescribeRecoveryPointResult& WithStatus(RecoveryPointStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline DescribeRecoveryPointResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline DescribeRecoveryPointResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A status message explaining the reason for the recovery point deletion
+     * failure.</p>
+     */
+    inline DescribeRecoveryPointResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
@@ -535,56 +682,86 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups that
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups that
      * are transitioned to cold storage must be stored in cold storage for a minimum of
-     * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * 90 days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups that
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups that
      * are transitioned to cold storage must be stored in cold storage for a minimum of
-     * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * 90 days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycle = value; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups that
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups that
      * are transitioned to cold storage must be stored in cold storage for a minimum of
-     * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * 90 days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycle = std::move(value); }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups that
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups that
      * are transitioned to cold storage must be stored in cold storage for a minimum of
-     * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * 90 days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline DescribeRecoveryPointResult& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups that
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups that
      * are transitioned to cold storage must be stored in cold storage for a minimum of
-     * 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
+     * 90 days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline DescribeRecoveryPointResult& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -733,6 +910,8 @@ namespace Model
 
     Aws::String m_backupVaultArn;
 
+    Aws::String m_sourceBackupVaultArn;
+
     Aws::String m_resourceArn;
 
     Aws::String m_resourceType;
@@ -742,6 +921,8 @@ namespace Model
     Aws::String m_iamRoleArn;
 
     RecoveryPointStatus m_status;
+
+    Aws::String m_statusMessage;
 
     Aws::Utils::DateTime m_creationDate;
 

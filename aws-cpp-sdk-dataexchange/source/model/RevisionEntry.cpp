@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dataexchange/model/RevisionEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,11 @@ RevisionEntry::RevisionEntry() :
     m_finalizedHasBeenSet(false),
     m_idHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_revocationCommentHasBeenSet(false),
+    m_revoked(false),
+    m_revokedHasBeenSet(false),
+    m_revokedAtHasBeenSet(false)
 {
 }
 
@@ -50,7 +44,11 @@ RevisionEntry::RevisionEntry(JsonView jsonValue) :
     m_finalizedHasBeenSet(false),
     m_idHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_revocationCommentHasBeenSet(false),
+    m_revoked(false),
+    m_revokedHasBeenSet(false),
+    m_revokedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +111,27 @@ RevisionEntry& RevisionEntry::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RevocationComment"))
+  {
+    m_revocationComment = jsonValue.GetString("RevocationComment");
+
+    m_revocationCommentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Revoked"))
+  {
+    m_revoked = jsonValue.GetBool("Revoked");
+
+    m_revokedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RevokedAt"))
+  {
+    m_revokedAt = jsonValue.GetString("RevokedAt");
+
+    m_revokedAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +183,23 @@ JsonValue RevisionEntry::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("UpdatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_revocationCommentHasBeenSet)
+  {
+   payload.WithString("RevocationComment", m_revocationComment);
+
+  }
+
+  if(m_revokedHasBeenSet)
+  {
+   payload.WithBool("Revoked", m_revoked);
+
+  }
+
+  if(m_revokedAtHasBeenSet)
+  {
+   payload.WithString("RevokedAt", m_revokedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   return payload;

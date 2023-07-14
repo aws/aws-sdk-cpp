@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/personalize/model/HPOConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/personalize/model/AutoMLConfig.h>
+#include <aws/personalize/model/OptimizationObjective.h>
 #include <utility>
 
 namespace Aws
@@ -264,40 +255,95 @@ namespace Model
 
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline const AutoMLConfig& GetAutoMLConfig() const{ return m_autoMLConfig; }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline bool AutoMLConfigHasBeenSet() const { return m_autoMLConfigHasBeenSet; }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline void SetAutoMLConfig(const AutoMLConfig& value) { m_autoMLConfigHasBeenSet = true; m_autoMLConfig = value; }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline void SetAutoMLConfig(AutoMLConfig&& value) { m_autoMLConfigHasBeenSet = true; m_autoMLConfig = std::move(value); }
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline SolutionConfig& WithAutoMLConfig(const AutoMLConfig& value) { SetAutoMLConfig(value); return *this;}
 
     /**
-     * <p>The <a>AutoMLConfig</a> object containing a list of recipes to search when
-     * AutoML is performed.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+     * object containing a list of recipes to search when AutoML is performed.</p>
      */
     inline SolutionConfig& WithAutoMLConfig(AutoMLConfig&& value) { SetAutoMLConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the additional objective for the solution, such as maximizing
+     * streaming minutes or increasing revenue. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     * a solution</a>.</p>
+     */
+    inline const OptimizationObjective& GetOptimizationObjective() const{ return m_optimizationObjective; }
+
+    /**
+     * <p>Describes the additional objective for the solution, such as maximizing
+     * streaming minutes or increasing revenue. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     * a solution</a>.</p>
+     */
+    inline bool OptimizationObjectiveHasBeenSet() const { return m_optimizationObjectiveHasBeenSet; }
+
+    /**
+     * <p>Describes the additional objective for the solution, such as maximizing
+     * streaming minutes or increasing revenue. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     * a solution</a>.</p>
+     */
+    inline void SetOptimizationObjective(const OptimizationObjective& value) { m_optimizationObjectiveHasBeenSet = true; m_optimizationObjective = value; }
+
+    /**
+     * <p>Describes the additional objective for the solution, such as maximizing
+     * streaming minutes or increasing revenue. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     * a solution</a>.</p>
+     */
+    inline void SetOptimizationObjective(OptimizationObjective&& value) { m_optimizationObjectiveHasBeenSet = true; m_optimizationObjective = std::move(value); }
+
+    /**
+     * <p>Describes the additional objective for the solution, such as maximizing
+     * streaming minutes or increasing revenue. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     * a solution</a>.</p>
+     */
+    inline SolutionConfig& WithOptimizationObjective(const OptimizationObjective& value) { SetOptimizationObjective(value); return *this;}
+
+    /**
+     * <p>Describes the additional objective for the solution, such as maximizing
+     * streaming minutes or increasing revenue. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     * a solution</a>.</p>
+     */
+    inline SolutionConfig& WithOptimizationObjective(OptimizationObjective&& value) { SetOptimizationObjective(std::move(value)); return *this;}
 
   private:
 
@@ -315,6 +361,9 @@ namespace Model
 
     AutoMLConfig m_autoMLConfig;
     bool m_autoMLConfigHasBeenSet;
+
+    OptimizationObjective m_optimizationObjective;
+    bool m_optimizationObjectiveHasBeenSet;
   };
 
 } // namespace Model

@@ -1,27 +1,21 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/pinpoint/model/CustomMessageActivity.h>
 #include <aws/pinpoint/model/ConditionalSplitActivity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/EmailMessageActivity.h>
 #include <aws/pinpoint/model/HoldoutActivity.h>
 #include <aws/pinpoint/model/MultiConditionalSplitActivity.h>
+#include <aws/pinpoint/model/PushMessageActivity.h>
 #include <aws/pinpoint/model/RandomSplitActivity.h>
+#include <aws/pinpoint/model/SMSMessageActivity.h>
 #include <aws/pinpoint/model/WaitActivity.h>
+#include <aws/pinpoint/model/ContactCenterActivity.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +46,43 @@ namespace Model
     Activity(Aws::Utils::Json::JsonView jsonValue);
     Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The settings for a custom message activity. This type of activity calls an
+     * AWS Lambda function or web hook that sends messages to participants.</p>
+     */
+    inline const CustomMessageActivity& GetCUSTOM() const{ return m_cUSTOM; }
+
+    /**
+     * <p>The settings for a custom message activity. This type of activity calls an
+     * AWS Lambda function or web hook that sends messages to participants.</p>
+     */
+    inline bool CUSTOMHasBeenSet() const { return m_cUSTOMHasBeenSet; }
+
+    /**
+     * <p>The settings for a custom message activity. This type of activity calls an
+     * AWS Lambda function or web hook that sends messages to participants.</p>
+     */
+    inline void SetCUSTOM(const CustomMessageActivity& value) { m_cUSTOMHasBeenSet = true; m_cUSTOM = value; }
+
+    /**
+     * <p>The settings for a custom message activity. This type of activity calls an
+     * AWS Lambda function or web hook that sends messages to participants.</p>
+     */
+    inline void SetCUSTOM(CustomMessageActivity&& value) { m_cUSTOMHasBeenSet = true; m_cUSTOM = std::move(value); }
+
+    /**
+     * <p>The settings for a custom message activity. This type of activity calls an
+     * AWS Lambda function or web hook that sends messages to participants.</p>
+     */
+    inline Activity& WithCUSTOM(const CustomMessageActivity& value) { SetCUSTOM(value); return *this;}
+
+    /**
+     * <p>The settings for a custom message activity. This type of activity calls an
+     * AWS Lambda function or web hook that sends messages to participants.</p>
+     */
+    inline Activity& WithCUSTOM(CustomMessageActivity&& value) { SetCUSTOM(std::move(value)); return *this;}
 
 
     /**
@@ -256,6 +287,43 @@ namespace Model
 
 
     /**
+     * <p>The settings for a push notification activity. This type of activity sends a
+     * push notification to participants.</p>
+     */
+    inline const PushMessageActivity& GetPUSH() const{ return m_pUSH; }
+
+    /**
+     * <p>The settings for a push notification activity. This type of activity sends a
+     * push notification to participants.</p>
+     */
+    inline bool PUSHHasBeenSet() const { return m_pUSHHasBeenSet; }
+
+    /**
+     * <p>The settings for a push notification activity. This type of activity sends a
+     * push notification to participants.</p>
+     */
+    inline void SetPUSH(const PushMessageActivity& value) { m_pUSHHasBeenSet = true; m_pUSH = value; }
+
+    /**
+     * <p>The settings for a push notification activity. This type of activity sends a
+     * push notification to participants.</p>
+     */
+    inline void SetPUSH(PushMessageActivity&& value) { m_pUSHHasBeenSet = true; m_pUSH = std::move(value); }
+
+    /**
+     * <p>The settings for a push notification activity. This type of activity sends a
+     * push notification to participants.</p>
+     */
+    inline Activity& WithPUSH(const PushMessageActivity& value) { SetPUSH(value); return *this;}
+
+    /**
+     * <p>The settings for a push notification activity. This type of activity sends a
+     * push notification to participants.</p>
+     */
+    inline Activity& WithPUSH(PushMessageActivity&& value) { SetPUSH(std::move(value)); return *this;}
+
+
+    /**
      * <p>The settings for a random split activity. This type of activity randomly
      * sends specified percentages of participants down one of as many as five paths in
      * a journey, based on conditions that you specify.</p>
@@ -296,6 +364,43 @@ namespace Model
      * a journey, based on conditions that you specify.</p>
      */
     inline Activity& WithRandomSplit(RandomSplitActivity&& value) { SetRandomSplit(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for an SMS activity. This type of activity sends a text message
+     * to participants.</p>
+     */
+    inline const SMSMessageActivity& GetSMS() const{ return m_sMS; }
+
+    /**
+     * <p>The settings for an SMS activity. This type of activity sends a text message
+     * to participants.</p>
+     */
+    inline bool SMSHasBeenSet() const { return m_sMSHasBeenSet; }
+
+    /**
+     * <p>The settings for an SMS activity. This type of activity sends a text message
+     * to participants.</p>
+     */
+    inline void SetSMS(const SMSMessageActivity& value) { m_sMSHasBeenSet = true; m_sMS = value; }
+
+    /**
+     * <p>The settings for an SMS activity. This type of activity sends a text message
+     * to participants.</p>
+     */
+    inline void SetSMS(SMSMessageActivity&& value) { m_sMSHasBeenSet = true; m_sMS = std::move(value); }
+
+    /**
+     * <p>The settings for an SMS activity. This type of activity sends a text message
+     * to participants.</p>
+     */
+    inline Activity& WithSMS(const SMSMessageActivity& value) { SetSMS(value); return *this;}
+
+    /**
+     * <p>The settings for an SMS activity. This type of activity sends a text message
+     * to participants.</p>
+     */
+    inline Activity& WithSMS(SMSMessageActivity&& value) { SetSMS(std::move(value)); return *this;}
 
 
     /**
@@ -340,7 +445,47 @@ namespace Model
      */
     inline Activity& WithWait(WaitActivity&& value) { SetWait(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline const ContactCenterActivity& GetContactCenter() const{ return m_contactCenter; }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline bool ContactCenterHasBeenSet() const { return m_contactCenterHasBeenSet; }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline void SetContactCenter(const ContactCenterActivity& value) { m_contactCenterHasBeenSet = true; m_contactCenter = value; }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline void SetContactCenter(ContactCenterActivity&& value) { m_contactCenterHasBeenSet = true; m_contactCenter = std::move(value); }
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline Activity& WithContactCenter(const ContactCenterActivity& value) { SetContactCenter(value); return *this;}
+
+    /**
+     * <p>The settings for a connect activity. This type of activity initiates a
+     * contact center call to participants.</p>
+     */
+    inline Activity& WithContactCenter(ContactCenterActivity&& value) { SetContactCenter(std::move(value)); return *this;}
+
   private:
+
+    CustomMessageActivity m_cUSTOM;
+    bool m_cUSTOMHasBeenSet;
 
     ConditionalSplitActivity m_conditionalSplit;
     bool m_conditionalSplitHasBeenSet;
@@ -357,11 +502,20 @@ namespace Model
     MultiConditionalSplitActivity m_multiCondition;
     bool m_multiConditionHasBeenSet;
 
+    PushMessageActivity m_pUSH;
+    bool m_pUSHHasBeenSet;
+
     RandomSplitActivity m_randomSplit;
     bool m_randomSplitHasBeenSet;
 
+    SMSMessageActivity m_sMS;
+    bool m_sMSHasBeenSet;
+
     WaitActivity m_wait;
     bool m_waitHasBeenSet;
+
+    ContactCenterActivity m_contactCenter;
+    bool m_contactCenterHasBeenSet;
   };
 
 } // namespace Model

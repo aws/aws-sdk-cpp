@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -54,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetResourcesRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetResourcesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetResourcesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
@@ -162,100 +152,91 @@ namespace Model
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline bool EmbedHasBeenSet() const { return m_embedHasBeenSet; }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline void SetEmbed(const Aws::Vector<Aws::String>& value) { m_embedHasBeenSet = true; m_embed = value; }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline void SetEmbed(Aws::Vector<Aws::String>&& value) { m_embedHasBeenSet = true; m_embed = std::move(value); }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline GetResourcesRequest& WithEmbed(const Aws::Vector<Aws::String>& value) { SetEmbed(value); return *this;}
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline GetResourcesRequest& WithEmbed(Aws::Vector<Aws::String>&& value) { SetEmbed(std::move(value)); return *this;}
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline GetResourcesRequest& AddEmbed(const Aws::String& value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline GetResourcesRequest& AddEmbed(Aws::String&& value) { m_embedHasBeenSet = true; m_embed.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
-     * returned <a>Resources</a> resource in the response. This <code>embed</code>
-     * parameter value is a list of comma-separated strings. Currently, the request
-     * supports only retrieval of the embedded <a>Method</a> resources this way. The
-     * query parameter value must be a single-valued list and contain the
-     * <code>"methods"</code> string. For example, <code>GET
-     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     * returned Resources resource in the response. This <code>embed</code> parameter
+     * value is a list of comma-separated strings. Currently, the request supports only
+     * retrieval of the embedded Method resources this way. The query parameter value
+     * must be a single-valued list and contain the <code>"methods"</code> string. For
+     * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline GetResourcesRequest& AddEmbed(const char* value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
 

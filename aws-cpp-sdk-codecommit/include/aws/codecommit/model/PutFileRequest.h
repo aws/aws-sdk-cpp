@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
@@ -169,65 +159,65 @@ namespace Model
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline PutFileRequest& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline PutFileRequest& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
 
     /**
      * <p>The name of the file you want to add or update, including the relative path
-     * to the file in the repository.</p> <note> <p>If the path does not currently
+     * to the file in the repository.</p>  <p>If the path does not currently
      * exist in the repository, the path is created as part of adding the file.</p>
-     * </note>
+     * 
      */
     inline PutFileRequest& WithFilePath(const char* value) { SetFilePath(value); return *this;}
 

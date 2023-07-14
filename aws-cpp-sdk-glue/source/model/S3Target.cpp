@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/S3Target.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,23 @@ namespace Model
 
 S3Target::S3Target() : 
     m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+    m_exclusionsHasBeenSet(false),
+    m_connectionNameHasBeenSet(false),
+    m_sampleSize(0),
+    m_sampleSizeHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
 }
 
 S3Target::S3Target(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false)
+    m_exclusionsHasBeenSet(false),
+    m_connectionNameHasBeenSet(false),
+    m_sampleSize(0),
+    m_sampleSizeHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +60,34 @@ S3Target& S3Target::operator =(JsonView jsonValue)
     m_exclusionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionName"))
+  {
+    m_connectionName = jsonValue.GetString("ConnectionName");
+
+    m_connectionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SampleSize"))
+  {
+    m_sampleSize = jsonValue.GetInteger("SampleSize");
+
+    m_sampleSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventQueueArn"))
+  {
+    m_eventQueueArn = jsonValue.GetString("EventQueueArn");
+
+    m_eventQueueArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DlqEventQueueArn"))
+  {
+    m_dlqEventQueueArn = jsonValue.GetString("DlqEventQueueArn");
+
+    m_dlqEventQueueArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +109,30 @@ JsonValue S3Target::Jsonize() const
      exclusionsJsonList[exclusionsIndex].AsString(m_exclusions[exclusionsIndex]);
    }
    payload.WithArray("Exclusions", std::move(exclusionsJsonList));
+
+  }
+
+  if(m_connectionNameHasBeenSet)
+  {
+   payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_sampleSizeHasBeenSet)
+  {
+   payload.WithInteger("SampleSize", m_sampleSize);
+
+  }
+
+  if(m_eventQueueArnHasBeenSet)
+  {
+   payload.WithString("EventQueueArn", m_eventQueueArn);
+
+  }
+
+  if(m_dlqEventQueueArnHasBeenSet)
+  {
+   payload.WithString("DlqEventQueueArn", m_dlqEventQueueArn);
 
   }
 

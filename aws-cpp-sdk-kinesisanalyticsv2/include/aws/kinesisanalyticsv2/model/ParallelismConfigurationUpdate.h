@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -34,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to parameters for how a Java-based Kinesis Data Analytics
-   * application executes multiple tasks simultaneously.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes updates to parameters for how an application executes multiple
+   * tasks simultaneously.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfigurationUpdate">AWS
    * API Reference</a></p>
    */
@@ -184,25 +173,29 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline bool GetAutoScalingEnabledUpdate() const{ return m_autoScalingEnabledUpdate; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline bool AutoScalingEnabledUpdateHasBeenSet() const { return m_autoScalingEnabledUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline void SetAutoScalingEnabledUpdate(bool value) { m_autoScalingEnabledUpdateHasBeenSet = true; m_autoScalingEnabledUpdate = value; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline ParallelismConfigurationUpdate& WithAutoScalingEnabledUpdate(bool value) { SetAutoScalingEnabledUpdate(value); return *this;}
 

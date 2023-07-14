@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -28,7 +18,7 @@ namespace Model
 {
 
   /**
-   * Creates a new ActiveMQ user.<p><h3>See Also:</h3>   <a
+   * <p>Creates a new ActiveMQ user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUserRequest">AWS
    * API Reference</a></p>
    */
@@ -47,233 +37,241 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(Aws::String&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const char* value) { m_brokerIdHasBeenSet = true; m_brokerId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline CreateUserRequest& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline CreateUserRequest& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline CreateUserRequest& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
 
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
      */
     inline bool GetConsoleAccess() const{ return m_consoleAccess; }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
      */
     inline bool ConsoleAccessHasBeenSet() const { return m_consoleAccessHasBeenSet; }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
      */
     inline void SetConsoleAccess(bool value) { m_consoleAccessHasBeenSet = true; m_consoleAccess = value; }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
      */
     inline CreateUserRequest& WithConsoleAccess(bool value) { SetConsoleAccess(value); return *this;}
 
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline CreateUserRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline CreateUserRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline CreateUserRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline CreateUserRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
-     * can contain only alphanumeric characters, dashes, periods, underscores, and
-     * tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This
+     * value can contain only alphanumeric characters, dashes, periods, underscores,
+     * and tildes (- . _ ~). This value must be 2-100 characters long.</p>
      */
     inline CreateUserRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline CreateUserRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline CreateUserRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * Required. The password of the user. This value must be at least 12 characters
-     * long, must contain at least 4 unique characters, and must not contain commas.
+     * <p>Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas,
+     * colons, or equal signs (,:=).</p>
      */
     inline CreateUserRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline CreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline CreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

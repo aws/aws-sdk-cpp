@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconnect/model/CreateFlowRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -25,12 +15,14 @@ using namespace Aws::Utils;
 CreateFlowRequest::CreateFlowRequest() : 
     m_availabilityZoneHasBeenSet(false),
     m_entitlementsHasBeenSet(false),
+    m_mediaStreamsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_sourceFailoverConfigHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_vpcInterfacesHasBeenSet(false)
+    m_vpcInterfacesHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -52,6 +44,17 @@ Aws::String CreateFlowRequest::SerializePayload() const
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
    }
    payload.WithArray("entitlements", std::move(entitlementsJsonList));
+
+  }
+
+  if(m_mediaStreamsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
+   {
+     mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreams", std::move(mediaStreamsJsonList));
 
   }
 
@@ -103,6 +106,12 @@ Aws::String CreateFlowRequest::SerializePayload() const
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());
    }
    payload.WithArray("vpcInterfaces", std::move(vpcInterfacesJsonList));
+
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
 
   }
 

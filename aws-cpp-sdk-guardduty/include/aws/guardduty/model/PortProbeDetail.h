@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -51,94 +41,94 @@ namespace Model
 
 
     /**
-     * <p>Local port information of the connection.</p>
+     * <p>The local port information of the connection.</p>
      */
     inline const LocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
 
     /**
-     * <p>Local port information of the connection.</p>
+     * <p>The local port information of the connection.</p>
      */
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
 
     /**
-     * <p>Local port information of the connection.</p>
+     * <p>The local port information of the connection.</p>
      */
     inline void SetLocalPortDetails(const LocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
 
     /**
-     * <p>Local port information of the connection.</p>
+     * <p>The local port information of the connection.</p>
      */
     inline void SetLocalPortDetails(LocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
 
     /**
-     * <p>Local port information of the connection.</p>
+     * <p>The local port information of the connection.</p>
      */
     inline PortProbeDetail& WithLocalPortDetails(const LocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
 
     /**
-     * <p>Local port information of the connection.</p>
+     * <p>The local port information of the connection.</p>
      */
     inline PortProbeDetail& WithLocalPortDetails(LocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>Local IP information of the connection.</p>
+     * <p>The local IP information of the connection.</p>
      */
     inline const LocalIpDetails& GetLocalIpDetails() const{ return m_localIpDetails; }
 
     /**
-     * <p>Local IP information of the connection.</p>
+     * <p>The local IP information of the connection.</p>
      */
     inline bool LocalIpDetailsHasBeenSet() const { return m_localIpDetailsHasBeenSet; }
 
     /**
-     * <p>Local IP information of the connection.</p>
+     * <p>The local IP information of the connection.</p>
      */
     inline void SetLocalIpDetails(const LocalIpDetails& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = value; }
 
     /**
-     * <p>Local IP information of the connection.</p>
+     * <p>The local IP information of the connection.</p>
      */
     inline void SetLocalIpDetails(LocalIpDetails&& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = std::move(value); }
 
     /**
-     * <p>Local IP information of the connection.</p>
+     * <p>The local IP information of the connection.</p>
      */
     inline PortProbeDetail& WithLocalIpDetails(const LocalIpDetails& value) { SetLocalIpDetails(value); return *this;}
 
     /**
-     * <p>Local IP information of the connection.</p>
+     * <p>The local IP information of the connection.</p>
      */
     inline PortProbeDetail& WithLocalIpDetails(LocalIpDetails&& value) { SetLocalIpDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(RemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline PortProbeDetail& WithRemoteIpDetails(const RemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline PortProbeDetail& WithRemoteIpDetails(RemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -52,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline const Aws::String& GetReplicationRunId() const{ return m_replicationRunId; }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline bool ReplicationRunIdHasBeenSet() const { return m_replicationRunIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline void SetReplicationRunId(const Aws::String& value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId = value; }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline void SetReplicationRunId(Aws::String&& value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId = std::move(value); }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline void SetReplicationRunId(const char* value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId.assign(value); }
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline ReplicationRun& WithReplicationRunId(const Aws::String& value) { SetReplicationRunId(value); return *this;}
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline ReplicationRun& WithReplicationRunId(Aws::String&& value) { SetReplicationRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the replication run.</p>
+     * <p>The ID of the replication run.</p>
      */
     inline ReplicationRun& WithReplicationRunId(const char* value) { SetReplicationRunId(value); return *this;}
 
@@ -155,32 +145,32 @@ namespace Model
 
 
     /**
-     * <p>Details of the current stage of the replication run.</p>
+     * <p>Details about the current stage of the replication run.</p>
      */
     inline const ReplicationRunStageDetails& GetStageDetails() const{ return m_stageDetails; }
 
     /**
-     * <p>Details of the current stage of the replication run.</p>
+     * <p>Details about the current stage of the replication run.</p>
      */
     inline bool StageDetailsHasBeenSet() const { return m_stageDetailsHasBeenSet; }
 
     /**
-     * <p>Details of the current stage of the replication run.</p>
+     * <p>Details about the current stage of the replication run.</p>
      */
     inline void SetStageDetails(const ReplicationRunStageDetails& value) { m_stageDetailsHasBeenSet = true; m_stageDetails = value; }
 
     /**
-     * <p>Details of the current stage of the replication run.</p>
+     * <p>Details about the current stage of the replication run.</p>
      */
     inline void SetStageDetails(ReplicationRunStageDetails&& value) { m_stageDetailsHasBeenSet = true; m_stageDetails = std::move(value); }
 
     /**
-     * <p>Details of the current stage of the replication run.</p>
+     * <p>Details about the current stage of the replication run.</p>
      */
     inline ReplicationRun& WithStageDetails(const ReplicationRunStageDetails& value) { SetStageDetails(value); return *this;}
 
     /**
-     * <p>Details of the current stage of the replication run.</p>
+     * <p>Details about the current stage of the replication run.</p>
      */
     inline ReplicationRun& WithStageDetails(ReplicationRunStageDetails&& value) { SetStageDetails(std::move(value)); return *this;}
 
@@ -227,50 +217,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline ReplicationRun& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline ReplicationRun& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
-     * run.</p>
+     * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
     inline ReplicationRun& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
@@ -379,99 +361,103 @@ namespace Model
 
 
     /**
-     * <p>Whether the replication run should produce encrypted AMI or not. See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>Indicates whether the replication run should produce an encrypted AMI.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Whether the replication run should produce encrypted AMI or not. See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>Indicates whether the replication run should produce an encrypted AMI.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Whether the replication run should produce encrypted AMI or not. See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>Indicates whether the replication run should produce an encrypted AMI.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Whether the replication run should produce encrypted AMI or not. See also
-     * <code>KmsKeyId</code> below.</p>
+     * <p>Indicates whether the replication run should produce an encrypted AMI.</p>
      */
     inline ReplicationRun& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline ReplicationRun& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline ReplicationRun& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
-     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
-     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
-     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
-     * not specified, the customer's default KMS key for EBS is used. </p>
+     * <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This
+     * value can be any of the following:</p> <ul> <li> <p>KMS key ID</p> </li> <li>
+     * <p>KMS key alias</p> </li> <li> <p>ARN referring to the KMS key ID</p> </li>
+     * <li> <p>ARN referring to the KMS key alias</p> </li> </ul> <p> If encrypted is
+     * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
+     * for Amazon EBS is used. </p>
      */
     inline ReplicationRun& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

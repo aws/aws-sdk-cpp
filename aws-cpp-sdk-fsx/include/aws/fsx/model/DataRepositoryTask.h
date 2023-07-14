@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -43,7 +33,7 @@ namespace Model
 
   /**
    * <p>A description of the data repository task. You use data repository tasks to
-   * perform bulk transfer operations between your Amazon FSx file system and its
+   * perform bulk transfer operations between your Amazon FSx file system and a
    * linked data repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTask">AWS
    * API Reference</a></p>
@@ -109,13 +99,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline const DataRepositoryTaskLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -130,13 +120,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -151,13 +141,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline void SetLifecycle(const DataRepositoryTaskLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -172,13 +162,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline void SetLifecycle(DataRepositoryTaskLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -193,13 +183,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline DataRepositoryTask& WithLifecycle(const DataRepositoryTaskLifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -214,50 +204,74 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline DataRepositoryTask& WithLifecycle(DataRepositoryTaskLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline const DataRepositoryTaskType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline void SetType(const DataRepositoryTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline void SetType(DataRepositoryTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline DataRepositoryTask& WithType(const DataRepositoryTaskType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline DataRepositoryTask& WithType(DataRepositoryTaskType&& value) { SetType(std::move(value)); return *this;}
 

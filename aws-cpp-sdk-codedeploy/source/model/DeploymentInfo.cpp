@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codedeploy/model/DeploymentInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -62,7 +52,9 @@ DeploymentInfo::DeploymentInfo() :
     m_fileExistsBehaviorHasBeenSet(false),
     m_deploymentStatusMessagesHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
+    m_relatedDeploymentsHasBeenSet(false)
 {
 }
 
@@ -100,7 +92,9 @@ DeploymentInfo::DeploymentInfo(JsonView jsonValue) :
     m_fileExistsBehaviorHasBeenSet(false),
     m_deploymentStatusMessagesHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
+    m_relatedDeploymentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -299,6 +293,20 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
     m_computePlatformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("relatedDeployments"))
+  {
+    m_relatedDeployments = jsonValue.GetObject("relatedDeployments");
+
+    m_relatedDeploymentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -464,6 +472,18 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_computePlatformHasBeenSet)
   {
    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
+
+  }
+
+  if(m_relatedDeploymentsHasBeenSet)
+  {
+   payload.WithObject("relatedDeployments", m_relatedDeployments.Jsonize());
+
   }
 
   return payload;

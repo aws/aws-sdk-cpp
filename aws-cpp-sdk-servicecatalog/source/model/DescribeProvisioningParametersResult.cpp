@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/servicecatalog/model/DescribeProvisioningParametersResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -78,6 +68,15 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
   {
     m_provisioningArtifactPreferences = jsonValue.GetObject("ProvisioningArtifactPreferences");
 
+  }
+
+  if(jsonValue.ValueExists("ProvisioningArtifactOutputKeys"))
+  {
+    Array<JsonView> provisioningArtifactOutputKeysJsonList = jsonValue.GetArray("ProvisioningArtifactOutputKeys");
+    for(unsigned provisioningArtifactOutputKeysIndex = 0; provisioningArtifactOutputKeysIndex < provisioningArtifactOutputKeysJsonList.GetLength(); ++provisioningArtifactOutputKeysIndex)
+    {
+      m_provisioningArtifactOutputKeys.push_back(provisioningArtifactOutputKeysJsonList[provisioningArtifactOutputKeysIndex].AsObject());
+    }
   }
 
 

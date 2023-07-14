@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -51,10 +41,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -63,10 +53,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -75,10 +65,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -87,10 +77,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -99,10 +89,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -111,10 +101,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -123,10 +113,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -135,10 +125,10 @@ namespace Model
 
     /**
      * <p>The Amazon EFS access point ID to use. If an access point is specified, the
-     * root directory value specified in the <code>EFSVolumeConfiguration</code> will
-     * be relative to the directory set for the access point. If an access point is
-     * used, transit encryption must be enabled in the
-     * <code>EFSVolumeConfiguration</code>. For more information, see <a
+     * root directory value specified in the <code>EFSVolumeConfiguration</code> must
+     * either be omitted or set to <code>/</code> which will enforce the path set on
+     * the EFS access point. If an access point is used, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
      * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
@@ -147,7 +137,7 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -159,7 +149,7 @@ namespace Model
     inline const EFSAuthorizationConfigIAM& GetIam() const{ return m_iam; }
 
     /**
-     * <p>Whether or not to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -171,7 +161,7 @@ namespace Model
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
 
     /**
-     * <p>Whether or not to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -183,7 +173,7 @@ namespace Model
     inline void SetIam(const EFSAuthorizationConfigIAM& value) { m_iamHasBeenSet = true; m_iam = value; }
 
     /**
-     * <p>Whether or not to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -195,7 +185,7 @@ namespace Model
     inline void SetIam(EFSAuthorizationConfigIAM&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
 
     /**
-     * <p>Whether or not to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
@@ -207,7 +197,7 @@ namespace Model
     inline EFSAuthorizationConfig& WithIam(const EFSAuthorizationConfigIAM& value) { SetIam(value); return *this;}
 
     /**
-     * <p>Whether or not to use the Amazon ECS task IAM role defined in a task
+     * <p>Determines whether to use the Amazon ECS task IAM role defined in a task
      * definition when mounting the Amazon EFS file system. If enabled, transit
      * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For

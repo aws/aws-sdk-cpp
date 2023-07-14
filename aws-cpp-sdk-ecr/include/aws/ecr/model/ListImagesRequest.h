@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -46,58 +36,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline ListImagesRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline ListImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID associated with the registry that contains the repository
-     * in which to list images. If you do not specify a registry, the default registry
-     * is assumed.</p>
+     * <p>The Amazon Web Services account ID associated with the registry that contains
+     * the repository in which to list images. If you do not specify a registry, the
+     * default registry is assumed.</p>
      */
     inline ListImagesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
@@ -148,10 +138,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -160,10 +150,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -172,10 +162,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -184,10 +174,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -196,10 +186,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -208,10 +198,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline ListImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -220,10 +210,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline ListImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -232,10 +222,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * value is <code>null</code> when there are no more results to return.</p> 
      * <p>This token should be treated as an opaque identifier that is only used to
      * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * </note>
+     * 
      */
     inline ListImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

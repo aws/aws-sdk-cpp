@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/EventSelector.h>
+#include <aws/cloudtrail/model/AdvancedEventSelector.h>
 #include <utility>
 
 namespace Aws
@@ -53,9 +44,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailName() const{ return m_trailName; }
@@ -67,9 +58,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
@@ -81,9 +72,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
@@ -95,9 +86,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
@@ -109,9 +100,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
@@ -123,9 +114,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
@@ -137,9 +128,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
@@ -151,9 +142,9 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the following format.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
@@ -161,51 +152,180 @@ namespace Model
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline const Aws::Vector<EventSelector>& GetEventSelectors() const{ return m_eventSelectors; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline bool EventSelectorsHasBeenSet() const { return m_eventSelectorsHasBeenSet; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline void SetEventSelectors(const Aws::Vector<EventSelector>& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = value; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = std::move(value); }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& WithEventSelectors(const Aws::Vector<EventSelector>& value) { SetEventSelectors(value); return *this;}
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& AddEventSelectors(const EventSelector& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(value); return *this; }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
-     * event selectors for a trail.</p>
+     * event selectors for a trail. You can use either <code>EventSelectors</code> or
+     * <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request,
+     * but not both. If you apply <code>EventSelectors</code> to a trail, any existing
+     * <code>AdvancedEventSelectors</code> are overwritten.</p>
      */
     inline PutEventSelectorsRequest& AddEventSelectors(EventSelector&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline PutEventSelectorsRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline PutEventSelectorsRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline PutEventSelectorsRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
+
+    /**
+     * <p> Specifies the settings for advanced event selectors. You can add advanced
+     * event selectors, and conditions for your advanced event selectors, up to a
+     * maximum of 500 values for all conditions and selectors on a trail. You can use
+     * either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but
+     * not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about
+     * advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     */
+    inline PutEventSelectorsRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -214,6 +334,9 @@ namespace Model
 
     Aws::Vector<EventSelector> m_eventSelectors;
     bool m_eventSelectorsHasBeenSet;
+
+    Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
+    bool m_advancedEventSelectorsHasBeenSet;
   };
 
 } // namespace Model

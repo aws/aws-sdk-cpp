@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/UserDefinedFunction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,23 +20,27 @@ namespace Model
 
 UserDefinedFunction::UserDefinedFunction() : 
     m_functionNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
     m_classNameHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_ownerType(PrincipalType::NOT_SET),
     m_ownerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false)
+    m_resourceUrisHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
 UserDefinedFunction::UserDefinedFunction(JsonView jsonValue) : 
     m_functionNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
     m_classNameHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_ownerType(PrincipalType::NOT_SET),
     m_ownerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false)
+    m_resourceUrisHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +52,13 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
     m_functionName = jsonValue.GetString("FunctionName");
 
     m_functionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatabaseName"))
+  {
+    m_databaseName = jsonValue.GetString("DatabaseName");
+
+    m_databaseNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ClassName"))
@@ -98,6 +99,13 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
     m_resourceUrisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +116,12 @@ JsonValue UserDefinedFunction::Jsonize() const
   if(m_functionNameHasBeenSet)
   {
    payload.WithString("FunctionName", m_functionName);
+
+  }
+
+  if(m_databaseNameHasBeenSet)
+  {
+   payload.WithString("DatabaseName", m_databaseName);
 
   }
 
@@ -141,6 +155,12 @@ JsonValue UserDefinedFunction::Jsonize() const
      resourceUrisJsonList[resourceUrisIndex].AsObject(m_resourceUris[resourceUrisIndex].Jsonize());
    }
    payload.WithArray("ResourceUris", std::move(resourceUrisJsonList));
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

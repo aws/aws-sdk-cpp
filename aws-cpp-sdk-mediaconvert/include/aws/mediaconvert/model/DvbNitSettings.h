@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -34,8 +24,11 @@ namespace Model
 {
 
   /**
-   * Inserts DVB Network Information Table (NIT) at the specified table repetition
-   * interval.<p><h3>See Also:</h3>   <a
+   * Use these settings to insert a DVB Network Information Table (NIT) in the
+   * transport stream of this output. When you work directly in your JSON job
+   * specification, include this object only when your job has a transport stream
+   * output and the container settings contain the object M2tsSettings.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbNitSettings">AWS
    * API Reference</a></p>
    */

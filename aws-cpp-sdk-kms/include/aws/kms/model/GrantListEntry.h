@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
@@ -38,8 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an entry in a list of grants.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about a grant.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry">AWS
    * API Reference</a></p>
    */
@@ -53,50 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline GrantListEntry& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline GrantListEntry& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) to which the grant
-     * applies.</p>
+     * <p>The unique identifier for the KMS key to which the grant applies.</p>
      */
     inline GrantListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -231,42 +212,90 @@ namespace Model
 
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline GrantListEntry& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline GrantListEntry& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an Amazon Web
+     * Services service, the <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline GrantListEntry& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
 
@@ -313,42 +342,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline const Aws::String& GetIssuingAccount() const{ return m_issuingAccount; }
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline bool IssuingAccountHasBeenSet() const { return m_issuingAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline void SetIssuingAccount(const Aws::String& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = value; }
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline void SetIssuingAccount(Aws::String&& value) { m_issuingAccountHasBeenSet = true; m_issuingAccount = std::move(value); }
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline void SetIssuingAccount(const char* value) { m_issuingAccountHasBeenSet = true; m_issuingAccount.assign(value); }
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline GrantListEntry& WithIssuingAccount(const Aws::String& value) { SetIssuingAccount(value); return *this;}
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline GrantListEntry& WithIssuingAccount(Aws::String&& value) { SetIssuingAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account under which the grant was issued.</p>
+     * <p>The Amazon Web Services account under which the grant was issued.</p>
      */
     inline GrantListEntry& WithIssuingAccount(const char* value) { SetIssuingAccount(value); return *this;}
 

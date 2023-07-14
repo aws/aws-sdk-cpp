@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -118,50 +108,50 @@ namespace Model
 
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline CreateDynamicThingGroupRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline CreateDynamicThingGroupRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
-     * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is
-     * supported: "AWS_Things".</p> </note>
+     * <p>The dynamic thing group index name.</p>  <p>Currently one index is
+     * supported: <code>AWS_Things</code>.</p> 
      */
     inline CreateDynamicThingGroupRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
@@ -224,58 +214,58 @@ namespace Model
 
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline const Aws::String& GetQueryVersion() const{ return m_queryVersion; }
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline void SetQueryVersion(const Aws::String& value) { m_queryVersionHasBeenSet = true; m_queryVersion = value; }
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline void SetQueryVersion(Aws::String&& value) { m_queryVersionHasBeenSet = true; m_queryVersion = std::move(value); }
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline void SetQueryVersion(const char* value) { m_queryVersionHasBeenSet = true; m_queryVersion.assign(value); }
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline CreateDynamicThingGroupRequest& WithQueryVersion(const Aws::String& value) { SetQueryVersion(value); return *this;}
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline CreateDynamicThingGroupRequest& WithQueryVersion(Aws::String&& value) { SetQueryVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The dynamic thing group query version.</p> <note> <p>Currently one query
+     * <p>The dynamic thing group query version.</p>  <p>Currently one query
      * version is supported: "2017-09-30". If not specified, the query version defaults
-     * to this value.</p> </note>
+     * to this value.</p> 
      */
     inline CreateDynamicThingGroupRequest& WithQueryVersion(const char* value) { SetQueryVersion(value); return *this;}
 

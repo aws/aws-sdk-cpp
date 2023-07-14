@@ -1,24 +1,17 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/ce/model/DateInterval.h>
 #include <aws/ce/model/Expression.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/SortDefinition.h>
+#include <aws/ce/model/SavingsPlansDataType.h>
 #include <utility>
 
 namespace Aws
@@ -181,6 +174,47 @@ namespace Model
 
 
     /**
+     * <p>The data type.</p>
+     */
+    inline const Aws::Vector<SavingsPlansDataType>& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline void SetDataType(const Aws::Vector<SavingsPlansDataType>& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline void SetDataType(Aws::Vector<SavingsPlansDataType>&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline GetSavingsPlansUtilizationDetailsRequest& WithDataType(const Aws::Vector<SavingsPlansDataType>& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline GetSavingsPlansUtilizationDetailsRequest& WithDataType(Aws::Vector<SavingsPlansDataType>&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline GetSavingsPlansUtilizationDetailsRequest& AddDataType(const SavingsPlansDataType& value) { m_dataTypeHasBeenSet = true; m_dataType.push_back(value); return *this; }
+
+    /**
+     * <p>The data type.</p>
+     */
+    inline GetSavingsPlansUtilizationDetailsRequest& AddDataType(SavingsPlansDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
@@ -261,6 +295,91 @@ namespace Model
      */
     inline GetSavingsPlansUtilizationDetailsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline GetSavingsPlansUtilizationDetailsRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
+     * supported for <code>Key</code>:</p> <ul> <li> <p>
+     * <code>UtilizationPercentage</code> </p> </li> <li> <p>
+     * <code>TotalCommitment</code> </p> </li> <li> <p> <code>UsedCommitment</code>
+     * </p> </li> <li> <p> <code>UnusedCommitment</code> </p> </li> <li> <p>
+     * <code>NetSavings</code> </p> </li> <li> <p>
+     * <code>AmortizedRecurringCommitment</code> </p> </li> <li> <p>
+     * <code>AmortizedUpfrontCommitment</code> </p> </li> </ul> <p>The supported values
+     * for <code>SortOrder</code> are <code>ASCENDING</code> and
+     * <code>DESCENDING</code>.</p>
+     */
+    inline GetSavingsPlansUtilizationDetailsRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+
   private:
 
     DateInterval m_timePeriod;
@@ -269,11 +388,17 @@ namespace Model
     Expression m_filter;
     bool m_filterHasBeenSet;
 
+    Aws::Vector<SavingsPlansDataType> m_dataType;
+    bool m_dataTypeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    SortDefinition m_sortBy;
+    bool m_sortByHasBeenSet;
   };
 
 } // namespace Model

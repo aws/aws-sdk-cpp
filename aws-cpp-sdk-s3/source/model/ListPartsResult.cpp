@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/ListPartsResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -32,7 +22,8 @@ ListPartsResult::ListPartsResult() :
     m_maxParts(0),
     m_isTruncated(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
 {
 }
 
@@ -42,7 +33,8 @@ ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<XmlDocument>&
     m_maxParts(0),
     m_isTruncated(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_requestCharged(RequestCharged::NOT_SET)
+    m_requestCharged(RequestCharged::NOT_SET),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET)
 {
   *this = result;
 }
@@ -114,6 +106,11 @@ ListPartsResult& ListPartsResult::operator =(const Aws::AmazonWebServiceResult<X
     if(!storageClassNode.IsNull())
     {
       m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+    }
+    XmlNode checksumAlgorithmNode = resultNode.FirstChild("ChecksumAlgorithm");
+    if(!checksumAlgorithmNode.IsNull())
+    {
+      m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumAlgorithmNode.GetText()).c_str()).c_str());
     }
   }
 

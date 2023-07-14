@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,7 +33,11 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_debugHookConfigHasBeenSet(false),
     m_debugRuleConfigurationsHasBeenSet(false),
     m_tensorBoardOutputConfigHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false)
+    m_experimentConfigHasBeenSet(false),
+    m_profilerConfigHasBeenSet(false),
+    m_profilerRuleConfigurationsHasBeenSet(false),
+    m_environmentHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
 }
 
@@ -176,6 +170,40 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
   if(m_experimentConfigHasBeenSet)
   {
    payload.WithObject("ExperimentConfig", m_experimentConfig.Jsonize());
+
+  }
+
+  if(m_profilerConfigHasBeenSet)
+  {
+   payload.WithObject("ProfilerConfig", m_profilerConfig.Jsonize());
+
+  }
+
+  if(m_profilerRuleConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> profilerRuleConfigurationsJsonList(m_profilerRuleConfigurations.size());
+   for(unsigned profilerRuleConfigurationsIndex = 0; profilerRuleConfigurationsIndex < profilerRuleConfigurationsJsonList.GetLength(); ++profilerRuleConfigurationsIndex)
+   {
+     profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject(m_profilerRuleConfigurations[profilerRuleConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("ProfilerRuleConfigurations", std::move(profilerRuleConfigurationsJsonList));
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   JsonValue environmentJsonMap;
+   for(auto& environmentItem : m_environment)
+   {
+     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+   }
+   payload.WithObject("Environment", std::move(environmentJsonMap));
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/HlsAudioOnlyContainer.h>
 #include <aws/mediaconvert/model/HlsAudioTrackType.h>
+#include <aws/mediaconvert/model/HlsDescriptiveVideoServiceFlag.h>
 #include <aws/mediaconvert/model/HlsIFrameOnlyManifest.h>
 #include <utility>
 
@@ -51,42 +42,42 @@ namespace Model
 
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline const Aws::String& GetAudioGroupId() const{ return m_audioGroupId; }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline bool AudioGroupIdHasBeenSet() const { return m_audioGroupIdHasBeenSet; }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline void SetAudioGroupId(const Aws::String& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = value; }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline void SetAudioGroupId(Aws::String&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::move(value); }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline void SetAudioGroupId(const char* value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId.assign(value); }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline HlsSettings& WithAudioGroupId(const Aws::String& value) { SetAudioGroupId(value); return *this;}
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline HlsSettings& WithAudioGroupId(Aws::String&& value) { SetAudioGroupId(std::move(value)); return *this;}
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      */
     inline HlsSettings& WithAudioGroupId(const char* value) { SetAudioGroupId(value); return *this;}
 
@@ -287,38 +278,135 @@ namespace Model
 
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Specify whether to flag this audio track as descriptive video service (DVS) in
+     * your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the
+     * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+     * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+     * (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with
+     * accessibility on Apple devices. For more information, see the Apple
+     * documentation.
+     */
+    inline const HlsDescriptiveVideoServiceFlag& GetDescriptiveVideoServiceFlag() const{ return m_descriptiveVideoServiceFlag; }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in
+     * your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the
+     * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+     * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+     * (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with
+     * accessibility on Apple devices. For more information, see the Apple
+     * documentation.
+     */
+    inline bool DescriptiveVideoServiceFlagHasBeenSet() const { return m_descriptiveVideoServiceFlagHasBeenSet; }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in
+     * your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the
+     * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+     * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+     * (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with
+     * accessibility on Apple devices. For more information, see the Apple
+     * documentation.
+     */
+    inline void SetDescriptiveVideoServiceFlag(const HlsDescriptiveVideoServiceFlag& value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = value; }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in
+     * your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the
+     * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+     * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+     * (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with
+     * accessibility on Apple devices. For more information, see the Apple
+     * documentation.
+     */
+    inline void SetDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag&& value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = std::move(value); }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in
+     * your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the
+     * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+     * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+     * (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with
+     * accessibility on Apple devices. For more information, see the Apple
+     * documentation.
+     */
+    inline HlsSettings& WithDescriptiveVideoServiceFlag(const HlsDescriptiveVideoServiceFlag& value) { SetDescriptiveVideoServiceFlag(value); return *this;}
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in
+     * your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the
+     * parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+     * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag
+     * (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with
+     * accessibility on Apple devices. For more information, see the Apple
+     * documentation.
+     */
+    inline HlsSettings& WithDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag&& value) { SetDescriptiveVideoServiceFlag(std::move(value)); return *this;}
+
+
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline const HlsIFrameOnlyManifest& GetIFrameOnlyManifest() const{ return m_iFrameOnlyManifest; }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline bool IFrameOnlyManifestHasBeenSet() const { return m_iFrameOnlyManifestHasBeenSet; }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline void SetIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline void SetIFrameOnlyManifest(HlsIFrameOnlyManifest&& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = std::move(value); }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline HlsSettings& WithIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { SetIFrameOnlyManifest(value); return *this;}
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS
-     * manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that
+     * lists only the I-frames for this rendition, in addition to your regular manifest
+     * for this rendition. You might use this manifest as part of a workflow that
+     * creates preview functions for your video. MediaConvert adds both the I-frame
+     * only child manifest and the regular child manifest to the parent manifest. When
+     * you don't need the I-frame only child manifest, keep the default value Exclude
+     * (EXCLUDE).
      */
     inline HlsSettings& WithIFrameOnlyManifest(HlsIFrameOnlyManifest&& value) { SetIFrameOnlyManifest(std::move(value)); return *this;}
 
@@ -400,6 +488,9 @@ namespace Model
 
     HlsAudioTrackType m_audioTrackType;
     bool m_audioTrackTypeHasBeenSet;
+
+    HlsDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag;
+    bool m_descriptiveVideoServiceFlagHasBeenSet;
 
     HlsIFrameOnlyManifest m_iFrameOnlyManifest;
     bool m_iFrameOnlyManifestHasBeenSet;

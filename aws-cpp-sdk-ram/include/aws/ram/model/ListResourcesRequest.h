@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ram/RAM_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/ram/model/ResourceOwner.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ram/model/ResourceRegionScopeFilter.h>
 #include <utility>
 
 namespace Aws
@@ -45,318 +36,503 @@ namespace Model
 
 
     /**
-     * <p>The type of owner.</p>
+     * <p>Specifies that you want to list only the resource shares that match the
+     * following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources that your
+     * account shares with other accounts</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+     * account</p> </li> </ul>
      */
     inline const ResourceOwner& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>The type of owner.</p>
+     * <p>Specifies that you want to list only the resource shares that match the
+     * following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources that your
+     * account shares with other accounts</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+     * account</p> </li> </ul>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
-     * <p>The type of owner.</p>
+     * <p>Specifies that you want to list only the resource shares that match the
+     * following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources that your
+     * account shares with other accounts</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+     * account</p> </li> </ul>
      */
     inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
-     * <p>The type of owner.</p>
+     * <p>Specifies that you want to list only the resource shares that match the
+     * following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources that your
+     * account shares with other accounts</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+     * account</p> </li> </ul>
      */
     inline void SetResourceOwner(ResourceOwner&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
-     * <p>The type of owner.</p>
+     * <p>Specifies that you want to list only the resource shares that match the
+     * following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources that your
+     * account shares with other accounts</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+     * account</p> </li> </ul>
      */
     inline ListResourcesRequest& WithResourceOwner(const ResourceOwner& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>The type of owner.</p>
+     * <p>Specifies that you want to list only the resource shares that match the
+     * following:</p> <ul> <li> <p> <b> <code>SELF</code> </b> – resources that your
+     * account shares with other accounts</p> </li> <li> <p> <b>
+     * <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your
+     * account</p> </li> </ul>
      */
     inline ListResourcesRequest& WithResourceOwner(ResourceOwner&& value) { SetResourceOwner(std::move(value)); return *this;}
 
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline ListResourcesRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline ListResourcesRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>Specifies that you want to list only the resource shares that are associated
+     * with the specified principal.</p>
      */
     inline ListResourcesRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline ListResourcesRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline ListResourcesRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code>
-     * | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> |
-     * <code>ec2:TransitGateway</code> |
-     * <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code>
-     * </p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources of the specified resource type.</p> <p>For valid values, query the
+     * <a>ListResourceTypes</a> operation.</p>
      */
     inline ListResourcesRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>Specifies that you want to list only the resource shares that include
+     * resources with the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceShareArns() const{ return m_resourceShareArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline bool ResourceShareArnsHasBeenSet() const { return m_resourceShareArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline void SetResourceShareArns(const Aws::Vector<Aws::String>& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline void SetResourceShareArns(Aws::Vector<Aws::String>&& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& WithResourceShareArns(const Aws::Vector<Aws::String>& value) { SetResourceShareArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& WithResourceShareArns(Aws::Vector<Aws::String>&& value) { SetResourceShareArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& AddResourceShareArns(const Aws::String& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& AddResourceShareArns(Aws::String&& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>Specifies that you want to list only resources in the resource shares
+     * identified by the specified <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs)</a>.</p>
      */
     inline ListResourcesRequest& AddResourceShareArns(const char* value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline ListResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline ListResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next page of results.</p>
+     * <p>Specifies that you want to receive the next page of results. Valid only if
+     * you received a <code>NextToken</code> response in the previous request. If you
+     * did, it indicates that more output is available. Set this parameter to the value
+     * provided by the previous call's <code>NextToken</code> response to request the
+     * next page of results.</p>
      */
     inline ListResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p>
+     * <p>Specifies the total number of results that you want included on each page of
+     * the response. If you do not include this parameter, it defaults to a value that
+     * is specific to the operation. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> response element is returned with a value
+     * (not null). Include the specified value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that the service might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
      */
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
+     * <p>Specifies that you want the results to include only resources that have the
+     * specified scope.</p> <ul> <li> <p> <code>ALL</code> – the results include both
+     * global and regional resources or resource types.</p> </li> <li> <p>
+     * <code>GLOBAL</code> – the results include only global resources or resource
+     * types.</p> </li> <li> <p> <code>REGIONAL</code> – the results include only
+     * regional resources or resource types.</p> </li> </ul> <p>The default value is
+     * <code>ALL</code>.</p>
+     */
+    inline const ResourceRegionScopeFilter& GetResourceRegionScope() const{ return m_resourceRegionScope; }
+
+    /**
+     * <p>Specifies that you want the results to include only resources that have the
+     * specified scope.</p> <ul> <li> <p> <code>ALL</code> – the results include both
+     * global and regional resources or resource types.</p> </li> <li> <p>
+     * <code>GLOBAL</code> – the results include only global resources or resource
+     * types.</p> </li> <li> <p> <code>REGIONAL</code> – the results include only
+     * regional resources or resource types.</p> </li> </ul> <p>The default value is
+     * <code>ALL</code>.</p>
+     */
+    inline bool ResourceRegionScopeHasBeenSet() const { return m_resourceRegionScopeHasBeenSet; }
+
+    /**
+     * <p>Specifies that you want the results to include only resources that have the
+     * specified scope.</p> <ul> <li> <p> <code>ALL</code> – the results include both
+     * global and regional resources or resource types.</p> </li> <li> <p>
+     * <code>GLOBAL</code> – the results include only global resources or resource
+     * types.</p> </li> <li> <p> <code>REGIONAL</code> – the results include only
+     * regional resources or resource types.</p> </li> </ul> <p>The default value is
+     * <code>ALL</code>.</p>
+     */
+    inline void SetResourceRegionScope(const ResourceRegionScopeFilter& value) { m_resourceRegionScopeHasBeenSet = true; m_resourceRegionScope = value; }
+
+    /**
+     * <p>Specifies that you want the results to include only resources that have the
+     * specified scope.</p> <ul> <li> <p> <code>ALL</code> – the results include both
+     * global and regional resources or resource types.</p> </li> <li> <p>
+     * <code>GLOBAL</code> – the results include only global resources or resource
+     * types.</p> </li> <li> <p> <code>REGIONAL</code> – the results include only
+     * regional resources or resource types.</p> </li> </ul> <p>The default value is
+     * <code>ALL</code>.</p>
+     */
+    inline void SetResourceRegionScope(ResourceRegionScopeFilter&& value) { m_resourceRegionScopeHasBeenSet = true; m_resourceRegionScope = std::move(value); }
+
+    /**
+     * <p>Specifies that you want the results to include only resources that have the
+     * specified scope.</p> <ul> <li> <p> <code>ALL</code> – the results include both
+     * global and regional resources or resource types.</p> </li> <li> <p>
+     * <code>GLOBAL</code> – the results include only global resources or resource
+     * types.</p> </li> <li> <p> <code>REGIONAL</code> – the results include only
+     * regional resources or resource types.</p> </li> </ul> <p>The default value is
+     * <code>ALL</code>.</p>
+     */
+    inline ListResourcesRequest& WithResourceRegionScope(const ResourceRegionScopeFilter& value) { SetResourceRegionScope(value); return *this;}
+
+    /**
+     * <p>Specifies that you want the results to include only resources that have the
+     * specified scope.</p> <ul> <li> <p> <code>ALL</code> – the results include both
+     * global and regional resources or resource types.</p> </li> <li> <p>
+     * <code>GLOBAL</code> – the results include only global resources or resource
+     * types.</p> </li> <li> <p> <code>REGIONAL</code> – the results include only
+     * regional resources or resource types.</p> </li> </ul> <p>The default value is
+     * <code>ALL</code>.</p>
+     */
+    inline ListResourcesRequest& WithResourceRegionScope(ResourceRegionScopeFilter&& value) { SetResourceRegionScope(std::move(value)); return *this;}
 
   private:
 
@@ -380,6 +556,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    ResourceRegionScopeFilter m_resourceRegionScope;
+    bool m_resourceRegionScopeHasBeenSet;
   };
 
 } // namespace Model

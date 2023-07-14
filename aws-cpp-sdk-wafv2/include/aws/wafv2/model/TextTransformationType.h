@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -31,7 +21,22 @@ namespace Model
     HTML_ENTITY_DECODE,
     LOWERCASE,
     CMD_LINE,
-    URL_DECODE
+    URL_DECODE,
+    BASE64_DECODE,
+    HEX_DECODE,
+    MD5,
+    REPLACE_COMMENTS,
+    ESCAPE_SEQ_DECODE,
+    SQL_HEX_DECODE,
+    CSS_DECODE,
+    JS_DECODE,
+    NORMALIZE_PATH,
+    NORMALIZE_PATH_WIN,
+    REMOVE_NULLS,
+    REPLACE_NULLS,
+    BASE64_DECODE_EXT,
+    URL_DECODE_UNI,
+    UTF8_TO_UNICODE
   };
 
 namespace TextTransformationTypeMapper

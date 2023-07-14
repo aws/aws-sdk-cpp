@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
@@ -86,104 +76,124 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline bool FlowDefinitionArnHasBeenSet() const { return m_flowDefinitionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline StartHumanLoopRequest& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline StartHumanLoopRequest& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition associated with this
+     * human loop.</p>
      */
     inline StartHumanLoopRequest& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
 
 
     /**
-     * <p>An object containing information about the human loop.</p>
+     * <p>An object that contains information about the human loop.</p>
      */
     inline const HumanLoopInput& GetHumanLoopInput() const{ return m_humanLoopInput; }
 
     /**
-     * <p>An object containing information about the human loop.</p>
+     * <p>An object that contains information about the human loop.</p>
      */
     inline bool HumanLoopInputHasBeenSet() const { return m_humanLoopInputHasBeenSet; }
 
     /**
-     * <p>An object containing information about the human loop.</p>
+     * <p>An object that contains information about the human loop.</p>
      */
     inline void SetHumanLoopInput(const HumanLoopInput& value) { m_humanLoopInputHasBeenSet = true; m_humanLoopInput = value; }
 
     /**
-     * <p>An object containing information about the human loop.</p>
+     * <p>An object that contains information about the human loop.</p>
      */
     inline void SetHumanLoopInput(HumanLoopInput&& value) { m_humanLoopInputHasBeenSet = true; m_humanLoopInput = std::move(value); }
 
     /**
-     * <p>An object containing information about the human loop.</p>
+     * <p>An object that contains information about the human loop.</p>
      */
     inline StartHumanLoopRequest& WithHumanLoopInput(const HumanLoopInput& value) { SetHumanLoopInput(value); return *this;}
 
     /**
-     * <p>An object containing information about the human loop.</p>
+     * <p>An object that contains information about the human loop.</p>
      */
     inline StartHumanLoopRequest& WithHumanLoopInput(HumanLoopInput&& value) { SetHumanLoopInput(std::move(value)); return *this;}
 
 
     /**
-     * <p>Attributes of the data specified by the customer.</p>
+     * <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify
+     * if your data is free of personally identifiable information and/or free of adult
+     * content.</p>
      */
     inline const HumanLoopDataAttributes& GetDataAttributes() const{ return m_dataAttributes; }
 
     /**
-     * <p>Attributes of the data specified by the customer.</p>
+     * <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify
+     * if your data is free of personally identifiable information and/or free of adult
+     * content.</p>
      */
     inline bool DataAttributesHasBeenSet() const { return m_dataAttributesHasBeenSet; }
 
     /**
-     * <p>Attributes of the data specified by the customer.</p>
+     * <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify
+     * if your data is free of personally identifiable information and/or free of adult
+     * content.</p>
      */
     inline void SetDataAttributes(const HumanLoopDataAttributes& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = value; }
 
     /**
-     * <p>Attributes of the data specified by the customer.</p>
+     * <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify
+     * if your data is free of personally identifiable information and/or free of adult
+     * content.</p>
      */
     inline void SetDataAttributes(HumanLoopDataAttributes&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::move(value); }
 
     /**
-     * <p>Attributes of the data specified by the customer.</p>
+     * <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify
+     * if your data is free of personally identifiable information and/or free of adult
+     * content.</p>
      */
     inline StartHumanLoopRequest& WithDataAttributes(const HumanLoopDataAttributes& value) { SetDataAttributes(value); return *this;}
 
     /**
-     * <p>Attributes of the data specified by the customer.</p>
+     * <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify
+     * if your data is free of personally identifiable information and/or free of adult
+     * content.</p>
      */
     inline StartHumanLoopRequest& WithDataAttributes(HumanLoopDataAttributes&& value) { SetDataAttributes(std::move(value)); return *this;}
 

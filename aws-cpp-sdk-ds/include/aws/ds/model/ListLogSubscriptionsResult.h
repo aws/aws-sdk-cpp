@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -45,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<LogSubscription>& GetLogSubscriptions() const{ return m_logSubscriptions; }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline void SetLogSubscriptions(const Aws::Vector<LogSubscription>& value) { m_logSubscriptions = value; }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline void SetLogSubscriptions(Aws::Vector<LogSubscription>&& value) { m_logSubscriptions = std::move(value); }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& WithLogSubscriptions(const Aws::Vector<LogSubscription>& value) { SetLogSubscriptions(value); return *this;}
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& WithLogSubscriptions(Aws::Vector<LogSubscription>&& value) { SetLogSubscriptions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& AddLogSubscriptions(const LogSubscription& value) { m_logSubscriptions.push_back(value); return *this; }
 
     /**
-     * <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-     * account.</p>
+     * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
+     * Services account.</p>
      */
     inline ListLogSubscriptionsResult& AddLogSubscriptions(LogSubscription&& value) { m_logSubscriptions.push_back(std::move(value)); return *this; }
 

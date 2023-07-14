@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -46,33 +36,33 @@ namespace Model
 
     /**
      * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon SES account in the current AWS Region. Set
-     * to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
+     * that are associated with your Amazon SES account in the current Amazon Web
+     * Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.</p>
      */
     inline bool GetAutoWarmupEnabled() const{ return m_autoWarmupEnabled; }
 
     /**
      * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon SES account in the current AWS Region. Set
-     * to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
+     * that are associated with your Amazon SES account in the current Amazon Web
+     * Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.</p>
      */
     inline bool AutoWarmupEnabledHasBeenSet() const { return m_autoWarmupEnabledHasBeenSet; }
 
     /**
      * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon SES account in the current AWS Region. Set
-     * to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
+     * that are associated with your Amazon SES account in the current Amazon Web
+     * Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.</p>
      */
     inline void SetAutoWarmupEnabled(bool value) { m_autoWarmupEnabledHasBeenSet = true; m_autoWarmupEnabled = value; }
 
     /**
      * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
-     * that are associated with your Amazon SES account in the current AWS Region. Set
-     * to <code>true</code> to enable the automatic warm-up feature, or set to
-     * <code>false</code> to disable it.</p>
+     * that are associated with your Amazon SES account in the current Amazon Web
+     * Services Region. Set to <code>true</code> to enable the automatic warm-up
+     * feature, or set to <code>false</code> to disable it.</p>
      */
     inline PutAccountDedicatedIpWarmupAttributesRequest& WithAutoWarmupEnabled(bool value) { SetAutoWarmupEnabled(value); return *this;}
 

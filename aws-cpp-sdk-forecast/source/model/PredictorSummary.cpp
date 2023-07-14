@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/forecast/model/PredictorSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,9 @@ PredictorSummary::PredictorSummary() :
     m_predictorArnHasBeenSet(false),
     m_predictorNameHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
+    m_isAutoPredictor(false),
+    m_isAutoPredictorHasBeenSet(false),
+    m_referencePredictorSummaryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -43,6 +36,9 @@ PredictorSummary::PredictorSummary(JsonView jsonValue) :
     m_predictorArnHasBeenSet(false),
     m_predictorNameHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
+    m_isAutoPredictor(false),
+    m_isAutoPredictorHasBeenSet(false),
+    m_referencePredictorSummaryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -72,6 +68,20 @@ PredictorSummary& PredictorSummary::operator =(JsonView jsonValue)
     m_datasetGroupArn = jsonValue.GetString("DatasetGroupArn");
 
     m_datasetGroupArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsAutoPredictor"))
+  {
+    m_isAutoPredictor = jsonValue.GetBool("IsAutoPredictor");
+
+    m_isAutoPredictorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReferencePredictorSummary"))
+  {
+    m_referencePredictorSummary = jsonValue.GetObject("ReferencePredictorSummary");
+
+    m_referencePredictorSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -124,6 +134,18 @@ JsonValue PredictorSummary::Jsonize() const
   if(m_datasetGroupArnHasBeenSet)
   {
    payload.WithString("DatasetGroupArn", m_datasetGroupArn);
+
+  }
+
+  if(m_isAutoPredictorHasBeenSet)
+  {
+   payload.WithBool("IsAutoPredictor", m_isAutoPredictor);
+
+  }
+
+  if(m_referencePredictorSummaryHasBeenSet)
+  {
+   payload.WithObject("ReferencePredictorSummary", m_referencePredictorSummary.Jsonize());
 
   }
 

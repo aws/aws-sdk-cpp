@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -55,7 +45,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline const Aws::Vector<Trail>& GetTrailList() const{ return m_trailList; }
 
@@ -65,7 +55,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline void SetTrailList(const Aws::Vector<Trail>& value) { m_trailList = value; }
 
@@ -75,7 +65,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline void SetTrailList(Aws::Vector<Trail>&& value) { m_trailList = std::move(value); }
 
@@ -85,7 +75,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& WithTrailList(const Aws::Vector<Trail>& value) { SetTrailList(value); return *this;}
 
@@ -95,7 +85,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& WithTrailList(Aws::Vector<Trail>&& value) { SetTrailList(std::move(value)); return *this;}
 
@@ -105,7 +95,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& AddTrailList(const Trail& value) { m_trailList.push_back(value); return *this; }
 
@@ -115,7 +105,7 @@ namespace Model
      * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
      * results if a trail is configured to send SNS notifications. Similarly,
      * <code>KMSKeyId</code> only appears in results if a trail's log files are
-     * encrypted with AWS KMS-managed keys.</p>
+     * encrypted with KMS customer managed keys.</p>
      */
     inline DescribeTrailsResult& AddTrailList(Trail&& value) { m_trailList.push_back(std::move(value)); return *this; }
 

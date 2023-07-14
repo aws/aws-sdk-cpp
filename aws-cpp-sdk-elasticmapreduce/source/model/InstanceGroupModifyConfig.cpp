@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticmapreduce/model/InstanceGroupModifyConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,6 +24,8 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig() :
     m_instanceCountHasBeenSet(false),
     m_eC2InstanceIdsToTerminateHasBeenSet(false),
     m_shrinkPolicyHasBeenSet(false),
+    m_reconfigurationType(ReconfigurationType::NOT_SET),
+    m_reconfigurationTypeHasBeenSet(false),
     m_configurationsHasBeenSet(false)
 {
 }
@@ -44,6 +36,8 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig(JsonView jsonValue) :
     m_instanceCountHasBeenSet(false),
     m_eC2InstanceIdsToTerminateHasBeenSet(false),
     m_shrinkPolicyHasBeenSet(false),
+    m_reconfigurationType(ReconfigurationType::NOT_SET),
+    m_reconfigurationTypeHasBeenSet(false),
     m_configurationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -80,6 +74,13 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonVa
     m_shrinkPolicy = jsonValue.GetObject("ShrinkPolicy");
 
     m_shrinkPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReconfigurationType"))
+  {
+    m_reconfigurationType = ReconfigurationTypeMapper::GetReconfigurationTypeForName(jsonValue.GetString("ReconfigurationType"));
+
+    m_reconfigurationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Configurations"))
@@ -126,6 +127,11 @@ JsonValue InstanceGroupModifyConfig::Jsonize() const
   {
    payload.WithObject("ShrinkPolicy", m_shrinkPolicy.Jsonize());
 
+  }
+
+  if(m_reconfigurationTypeHasBeenSet)
+  {
+   payload.WithString("ReconfigurationType", ReconfigurationTypeMapper::GetNameForReconfigurationType(m_reconfigurationType));
   }
 
   if(m_configurationsHasBeenSet)

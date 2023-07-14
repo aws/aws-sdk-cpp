@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -34,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The destination for an exported forecast, an AWS Identity and Access
-   * Management (IAM) role that allows Amazon Forecast to access the location and,
-   * optionally, an AWS Key Management Service (KMS) key. This object is submitted in
-   * the <a>CreateForecastExportJob</a> request.</p><p><h3>See Also:</h3>   <a
+   * <p>The destination for an export job. Provide an S3 path, an AWS Identity and
+   * Access Management (IAM) role that allows Amazon Forecast to access the location,
+   * and an AWS Key Management Service (KMS) key (optional). </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DataDestination">AWS
    * API Reference</a></p>
    */

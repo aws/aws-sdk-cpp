@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -50,8 +40,8 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -59,8 +49,8 @@ namespace Model
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -68,8 +58,8 @@ namespace Model
     inline bool DBSecurityGroupNameHasBeenSet() const { return m_dBSecurityGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -77,8 +67,8 @@ namespace Model
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -86,8 +76,8 @@ namespace Model
     inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -95,8 +85,8 @@ namespace Model
     inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -104,8 +94,8 @@ namespace Model
     inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>
@@ -113,8 +103,8 @@ namespace Model
     inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB security group to delete.</p> <note> <p>You can't delete
-     * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
+     * <p>The name of the DB security group to delete.</p>  <p>You can't delete
+     * the default DB security group.</p>  <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> <li> <p>Must not be "Default"</p> </li> </ul>

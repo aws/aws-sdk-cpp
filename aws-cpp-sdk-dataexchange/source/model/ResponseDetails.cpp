@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dataexchange/model/ResponseDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,16 +21,22 @@ namespace Model
 ResponseDetails::ResponseDetails() : 
     m_exportAssetToSignedUrlHasBeenSet(false),
     m_exportAssetsToS3HasBeenSet(false),
+    m_exportRevisionsToS3HasBeenSet(false),
     m_importAssetFromSignedUrlHasBeenSet(false),
-    m_importAssetsFromS3HasBeenSet(false)
+    m_importAssetsFromS3HasBeenSet(false),
+    m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
+    m_importAssetFromApiGatewayApiHasBeenSet(false)
 {
 }
 
 ResponseDetails::ResponseDetails(JsonView jsonValue) : 
     m_exportAssetToSignedUrlHasBeenSet(false),
     m_exportAssetsToS3HasBeenSet(false),
+    m_exportRevisionsToS3HasBeenSet(false),
     m_importAssetFromSignedUrlHasBeenSet(false),
-    m_importAssetsFromS3HasBeenSet(false)
+    m_importAssetsFromS3HasBeenSet(false),
+    m_importAssetsFromRedshiftDataSharesHasBeenSet(false),
+    m_importAssetFromApiGatewayApiHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +57,13 @@ ResponseDetails& ResponseDetails::operator =(JsonView jsonValue)
     m_exportAssetsToS3HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExportRevisionsToS3"))
+  {
+    m_exportRevisionsToS3 = jsonValue.GetObject("ExportRevisionsToS3");
+
+    m_exportRevisionsToS3HasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ImportAssetFromSignedUrl"))
   {
     m_importAssetFromSignedUrl = jsonValue.GetObject("ImportAssetFromSignedUrl");
@@ -73,6 +76,20 @@ ResponseDetails& ResponseDetails::operator =(JsonView jsonValue)
     m_importAssetsFromS3 = jsonValue.GetObject("ImportAssetsFromS3");
 
     m_importAssetsFromS3HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImportAssetsFromRedshiftDataShares"))
+  {
+    m_importAssetsFromRedshiftDataShares = jsonValue.GetObject("ImportAssetsFromRedshiftDataShares");
+
+    m_importAssetsFromRedshiftDataSharesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImportAssetFromApiGatewayApi"))
+  {
+    m_importAssetFromApiGatewayApi = jsonValue.GetObject("ImportAssetFromApiGatewayApi");
+
+    m_importAssetFromApiGatewayApiHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +111,12 @@ JsonValue ResponseDetails::Jsonize() const
 
   }
 
+  if(m_exportRevisionsToS3HasBeenSet)
+  {
+   payload.WithObject("ExportRevisionsToS3", m_exportRevisionsToS3.Jsonize());
+
+  }
+
   if(m_importAssetFromSignedUrlHasBeenSet)
   {
    payload.WithObject("ImportAssetFromSignedUrl", m_importAssetFromSignedUrl.Jsonize());
@@ -103,6 +126,18 @@ JsonValue ResponseDetails::Jsonize() const
   if(m_importAssetsFromS3HasBeenSet)
   {
    payload.WithObject("ImportAssetsFromS3", m_importAssetsFromS3.Jsonize());
+
+  }
+
+  if(m_importAssetsFromRedshiftDataSharesHasBeenSet)
+  {
+   payload.WithObject("ImportAssetsFromRedshiftDataShares", m_importAssetsFromRedshiftDataShares.Jsonize());
+
+  }
+
+  if(m_importAssetFromApiGatewayApiHasBeenSet)
+  {
+   payload.WithObject("ImportAssetFromApiGatewayApi", m_importAssetFromApiGatewayApi.Jsonize());
 
   }
 

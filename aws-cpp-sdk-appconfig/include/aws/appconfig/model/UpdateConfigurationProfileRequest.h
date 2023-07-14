@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
@@ -210,49 +200,49 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline const Aws::String& GetRetrievalRoleArn() const{ return m_retrievalRoleArn; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline bool RetrievalRoleArnHasBeenSet() const { return m_retrievalRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(const Aws::String& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = value; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(Aws::String&& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(const char* value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn.assign(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline UpdateConfigurationProfileRequest& WithRetrievalRoleArn(const Aws::String& value) { SetRetrievalRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline UpdateConfigurationProfileRequest& WithRetrievalRoleArn(Aws::String&& value) { SetRetrievalRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline UpdateConfigurationProfileRequest& WithRetrievalRoleArn(const char* value) { SetRetrievalRoleArn(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -36,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a request parameter in the
+   * <p>This data type is used as a request parameter in the
    * <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code>
-   * actions. </p> <p>This data type is used as a response element in the
+   * actions.</p> <p>This data type is used as a response element in the
    * <code>DescribeEngineDefaultParameters</code> and
    * <code>DescribeDBParameters</code> actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Parameter">AWS API
@@ -343,30 +333,30 @@ namespace Model
 
 
     /**
-     * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline bool GetIsModifiable() const{ return m_isModifiable; }
 
     /**
-     * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
 
     /**
-     * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
-     * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline Parameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 

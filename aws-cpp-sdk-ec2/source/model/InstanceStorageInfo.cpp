@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/InstanceStorageInfo.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,14 +23,22 @@ namespace Model
 InstanceStorageInfo::InstanceStorageInfo() : 
     m_totalSizeInGB(0),
     m_totalSizeInGBHasBeenSet(false),
-    m_disksHasBeenSet(false)
+    m_disksHasBeenSet(false),
+    m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
+    m_nvmeSupportHasBeenSet(false),
+    m_encryptionSupport(InstanceStorageEncryptionSupport::NOT_SET),
+    m_encryptionSupportHasBeenSet(false)
 {
 }
 
 InstanceStorageInfo::InstanceStorageInfo(const XmlNode& xmlNode) : 
     m_totalSizeInGB(0),
     m_totalSizeInGBHasBeenSet(false),
-    m_disksHasBeenSet(false)
+    m_disksHasBeenSet(false),
+    m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
+    m_nvmeSupportHasBeenSet(false),
+    m_encryptionSupport(InstanceStorageEncryptionSupport::NOT_SET),
+    m_encryptionSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -69,6 +67,18 @@ InstanceStorageInfo& InstanceStorageInfo::operator =(const XmlNode& xmlNode)
 
       m_disksHasBeenSet = true;
     }
+    XmlNode nvmeSupportNode = resultNode.FirstChild("nvmeSupport");
+    if(!nvmeSupportNode.IsNull())
+    {
+      m_nvmeSupport = EphemeralNvmeSupportMapper::GetEphemeralNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()).c_str());
+      m_nvmeSupportHasBeenSet = true;
+    }
+    XmlNode encryptionSupportNode = resultNode.FirstChild("encryptionSupport");
+    if(!encryptionSupportNode.IsNull())
+    {
+      m_encryptionSupport = InstanceStorageEncryptionSupportMapper::GetInstanceStorageEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()).c_str());
+      m_encryptionSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -92,6 +102,16 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_nvmeSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
+  }
+
+  if(m_encryptionSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EncryptionSupport=" << InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport) << "&";
+  }
+
 }
 
 void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -109,6 +129,14 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
         disksSs << location <<  ".Disks." << disksIdx++;
         item.OutputToStream(oStream, disksSs.str().c_str());
       }
+  }
+  if(m_nvmeSupportHasBeenSet)
+  {
+      oStream << location << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
+  }
+  if(m_encryptionSupportHasBeenSet)
+  {
+      oStream << location << ".EncryptionSupport=" << InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport) << "&";
   }
 }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -128,7 +118,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
@@ -137,7 +127,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
@@ -146,7 +136,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
@@ -155,7 +145,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
@@ -164,7 +154,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
@@ -173,7 +163,7 @@ namespace Model
      * Data Streams, which does not inspect, interpret, or change the data in the blob
      * in any way. When the data blob (the payload before base64-encoding) is added to
      * the partition key size, the total size must not exceed the maximum record size
-     * (1 MB).</p>
+     * (1 MiB).</p>
      */
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
@@ -223,8 +213,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
@@ -232,8 +222,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
@@ -241,8 +231,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
@@ -250,8 +240,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
@@ -259,8 +249,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline Record& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
@@ -268,8 +258,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed AWS KMS
-     * key.</p> </li> </ul>
+     * encryption on the records in the stream using a customer-managed Amazon Web
+     * Services KMS key.</p> </li> </ul>
      */
     inline Record& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

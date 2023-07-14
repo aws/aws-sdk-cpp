@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
@@ -51,44 +41,44 @@ namespace Model
 
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline const Aws::Vector<PublicKey>& GetPublicKeyList() const{ return m_publicKeyList; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline void SetPublicKeyList(const Aws::Vector<PublicKey>& value) { m_publicKeyList = value; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline void SetPublicKeyList(Aws::Vector<PublicKey>&& value) { m_publicKeyList = std::move(value); }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline ListPublicKeysResult& WithPublicKeyList(const Aws::Vector<PublicKey>& value) { SetPublicKeyList(value); return *this;}
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline ListPublicKeysResult& WithPublicKeyList(Aws::Vector<PublicKey>&& value) { SetPublicKeyList(std::move(value)); return *this;}
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline ListPublicKeysResult& AddPublicKeyList(const PublicKey& value) { m_publicKeyList.push_back(value); return *this; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
-     * keys may have validity time ranges that overlap.</p> </note>
+     * <p>Contains an array of PublicKey objects.</p>  <p>The returned public
+     * keys may have validity time ranges that overlap.</p> 
      */
     inline ListPublicKeysResult& AddPublicKeyList(PublicKey&& value) { m_publicKeyList.push_back(std::move(value)); return *this; }
 

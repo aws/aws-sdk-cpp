@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/ModifyReplicationGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -27,6 +17,8 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_snapshottingClusterIdHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false),
+    m_multiAZEnabled(false),
+    m_multiAZEnabledHasBeenSet(false),
     m_cacheSecurityGroupNamesHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
@@ -44,7 +36,12 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_cacheNodeTypeHasBeenSet(false),
     m_authTokenHasBeenSet(false),
     m_authTokenUpdateStrategy(AuthTokenUpdateStrategyType::NOT_SET),
-    m_authTokenUpdateStrategyHasBeenSet(false)
+    m_authTokenUpdateStrategyHasBeenSet(false),
+    m_userGroupIdsToAddHasBeenSet(false),
+    m_userGroupIdsToRemoveHasBeenSet(false),
+    m_removeUserGroups(false),
+    m_removeUserGroupsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -75,6 +72,11 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_automaticFailoverEnabledHasBeenSet)
   {
     ss << "AutomaticFailoverEnabled=" << std::boolalpha << m_automaticFailoverEnabled << "&";
+  }
+
+  if(m_multiAZEnabledHasBeenSet)
+  {
+    ss << "MultiAZEnabled=" << std::boolalpha << m_multiAZEnabled << "&";
   }
 
   if(m_cacheSecurityGroupNamesHasBeenSet)
@@ -157,6 +159,43 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_authTokenUpdateStrategyHasBeenSet)
   {
     ss << "AuthTokenUpdateStrategy=" << AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy) << "&";
+  }
+
+  if(m_userGroupIdsToAddHasBeenSet)
+  {
+    unsigned userGroupIdsToAddCount = 1;
+    for(auto& item : m_userGroupIdsToAdd)
+    {
+      ss << "UserGroupIdsToAdd.member." << userGroupIdsToAddCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      userGroupIdsToAddCount++;
+    }
+  }
+
+  if(m_userGroupIdsToRemoveHasBeenSet)
+  {
+    unsigned userGroupIdsToRemoveCount = 1;
+    for(auto& item : m_userGroupIdsToRemove)
+    {
+      ss << "UserGroupIdsToRemove.member." << userGroupIdsToRemoveCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      userGroupIdsToRemoveCount++;
+    }
+  }
+
+  if(m_removeUserGroupsHasBeenSet)
+  {
+    ss << "RemoveUserGroups=" << std::boolalpha << m_removeUserGroups << "&";
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

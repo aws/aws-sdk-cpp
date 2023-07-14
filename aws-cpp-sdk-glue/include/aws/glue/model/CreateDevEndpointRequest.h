@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
@@ -286,11 +276,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetPublicKeys() const{ return m_publicKeys; }
 
@@ -298,11 +288,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline bool PublicKeysHasBeenSet() const { return m_publicKeysHasBeenSet; }
 
@@ -310,11 +300,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline void SetPublicKeys(const Aws::Vector<Aws::String>& value) { m_publicKeysHasBeenSet = true; m_publicKeys = value; }
 
@@ -322,11 +312,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline void SetPublicKeys(Aws::Vector<Aws::String>&& value) { m_publicKeysHasBeenSet = true; m_publicKeys = std::move(value); }
 
@@ -334,11 +324,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& WithPublicKeys(const Aws::Vector<Aws::String>& value) { SetPublicKeys(value); return *this;}
 
@@ -346,11 +336,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& WithPublicKeys(Aws::Vector<Aws::String>&& value) { SetPublicKeys(std::move(value)); return *this;}
 
@@ -358,11 +348,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& AddPublicKeys(const Aws::String& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
 
@@ -370,11 +360,11 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& AddPublicKeys(Aws::String&& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(std::move(value)); return *this; }
 
@@ -382,35 +372,35 @@ namespace Model
      * <p>A list of public keys to be used by the development endpoints for
      * authentication. The use of this attribute is preferred over a single public key
      * because the public keys allow you to have a different private key per
-     * client.</p> <note> <p>If you previously created an endpoint with a public key,
+     * client.</p>  <p>If you previously created an endpoint with a public key,
      * you must remove that key to be able to set a list of public keys. Call the
      * <code>UpdateDevEndpoint</code> API with the public key content in the
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
-     * <code>addPublicKeys</code> attribute.</p> </note>
+     * <code>addPublicKeys</code> attribute.</p> 
      */
     inline CreateDevEndpointRequest& AddPublicKeys(const char* value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
 
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline CreateDevEndpointRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
@@ -520,10 +510,10 @@ namespace Model
 
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -535,10 +525,10 @@ namespace Model
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -550,10 +540,10 @@ namespace Model
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -565,10 +555,10 @@ namespace Model
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -580,10 +570,10 @@ namespace Model
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -595,10 +585,10 @@ namespace Model
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -610,10 +600,10 @@ namespace Model
     inline CreateDevEndpointRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -625,10 +615,10 @@ namespace Model
     inline CreateDevEndpointRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -672,80 +662,80 @@ namespace Model
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline bool ExtraPythonLibsS3PathHasBeenSet() const { return m_extraPythonLibsS3PathHasBeenSet; }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = value; }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::move(value); }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path.assign(value); }
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
 
     /**
      * <p>The paths to one or more Python libraries in an Amazon S3 bucket that should
      * be loaded in your <code>DevEndpoint</code>. Multiple values must be complete
-     * paths separated by a comma.</p> <note> <p>You can only use pure Python libraries
+     * paths separated by a comma.</p>  <p>You can only use pure Python libraries
      * with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
-     * are not yet supported.</p> </note>
+     * are not yet supported.</p> 
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 
@@ -850,105 +840,105 @@ namespace Model
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

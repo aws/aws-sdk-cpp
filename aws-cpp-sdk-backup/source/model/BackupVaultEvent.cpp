@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/backup/model/BackupVaultEvent.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -45,6 +35,8 @@ namespace Aws
         static const int RECOVERY_POINT_MODIFIED_HASH = HashingUtils::HashString("RECOVERY_POINT_MODIFIED");
         static const int BACKUP_PLAN_CREATED_HASH = HashingUtils::HashString("BACKUP_PLAN_CREATED");
         static const int BACKUP_PLAN_MODIFIED_HASH = HashingUtils::HashString("BACKUP_PLAN_MODIFIED");
+        static const int S3_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_BACKUP_OBJECT_FAILED");
+        static const int S3_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("S3_RESTORE_OBJECT_FAILED");
 
 
         BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name)
@@ -110,6 +102,14 @@ namespace Aws
           {
             return BackupVaultEvent::BACKUP_PLAN_MODIFIED;
           }
+          else if (hashCode == S3_BACKUP_OBJECT_FAILED_HASH)
+          {
+            return BackupVaultEvent::S3_BACKUP_OBJECT_FAILED;
+          }
+          else if (hashCode == S3_RESTORE_OBJECT_FAILED_HASH)
+          {
+            return BackupVaultEvent::S3_RESTORE_OBJECT_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -154,6 +154,10 @@ namespace Aws
             return "BACKUP_PLAN_CREATED";
           case BackupVaultEvent::BACKUP_PLAN_MODIFIED:
             return "BACKUP_PLAN_MODIFIED";
+          case BackupVaultEvent::S3_BACKUP_OBJECT_FAILED:
+            return "S3_BACKUP_OBJECT_FAILED";
+          case BackupVaultEvent::S3_RESTORE_OBJECT_FAILED:
+            return "S3_RESTORE_OBJECT_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

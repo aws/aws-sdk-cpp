@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/pi/model/DescribeDimensionKeysRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -32,6 +22,7 @@ DescribeDimensionKeysRequest::DescribeDimensionKeysRequest() :
     m_periodInSeconds(0),
     m_periodInSecondsHasBeenSet(false),
     m_groupByHasBeenSet(false),
+    m_additionalMetricsHasBeenSet(false),
     m_partitionByHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_maxResults(0),
@@ -80,6 +71,17 @@ Aws::String DescribeDimensionKeysRequest::SerializePayload() const
   if(m_groupByHasBeenSet)
   {
    payload.WithObject("GroupBy", m_groupBy.Jsonize());
+
+  }
+
+  if(m_additionalMetricsHasBeenSet)
+  {
+   Array<JsonValue> additionalMetricsJsonList(m_additionalMetrics.size());
+   for(unsigned additionalMetricsIndex = 0; additionalMetricsIndex < additionalMetricsJsonList.GetLength(); ++additionalMetricsIndex)
+   {
+     additionalMetricsJsonList[additionalMetricsIndex].AsString(m_additionalMetrics[additionalMetricsIndex]);
+   }
+   payload.WithArray("AdditionalMetrics", std::move(additionalMetricsJsonList));
 
   }
 

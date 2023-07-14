@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -32,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Use this to store channel data in an S3 bucket managed by the AWS IoT
-   * Analytics service. The choice of service-managed or customer-managed S3 storage
-   * cannot be changed after creation of the channel.</p><p><h3>See Also:</h3>   <a
+   * <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You
+   * can't change the choice of S3 storage after the data store is
+   * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ServiceManagedChannelS3Storage">AWS
    * API Reference</a></p>
    */

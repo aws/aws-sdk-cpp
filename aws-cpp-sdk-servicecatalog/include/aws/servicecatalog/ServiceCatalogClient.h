@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -50,6 +40,7 @@
 #include <aws/servicecatalog/model/DescribeCopyProductStatusResult.h>
 #include <aws/servicecatalog/model/DescribePortfolioResult.h>
 #include <aws/servicecatalog/model/DescribePortfolioShareStatusResult.h>
+#include <aws/servicecatalog/model/DescribePortfolioSharesResult.h>
 #include <aws/servicecatalog/model/DescribeProductResult.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminResult.h>
 #include <aws/servicecatalog/model/DescribeProductViewResult.h>
@@ -71,6 +62,8 @@
 #include <aws/servicecatalog/model/ExecuteProvisionedProductPlanResult.h>
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionResult.h>
 #include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusResult.h>
+#include <aws/servicecatalog/model/GetProvisionedProductOutputsResult.h>
+#include <aws/servicecatalog/model/ImportAsProvisionedProductResult.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesResult.h>
 #include <aws/servicecatalog/model/ListBudgetsForResourceResult.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioResult.h>
@@ -98,6 +91,7 @@
 #include <aws/servicecatalog/model/TerminateProvisionedProductResult.h>
 #include <aws/servicecatalog/model/UpdateConstraintResult.h>
 #include <aws/servicecatalog/model/UpdatePortfolioResult.h>
+#include <aws/servicecatalog/model/UpdatePortfolioShareResult.h>
 #include <aws/servicecatalog/model/UpdateProductResult.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductResult.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductPropertiesResult.h>
@@ -172,6 +166,7 @@ namespace Model
         class DescribeCopyProductStatusRequest;
         class DescribePortfolioRequest;
         class DescribePortfolioShareStatusRequest;
+        class DescribePortfolioSharesRequest;
         class DescribeProductRequest;
         class DescribeProductAsAdminRequest;
         class DescribeProductViewRequest;
@@ -193,6 +188,8 @@ namespace Model
         class ExecuteProvisionedProductPlanRequest;
         class ExecuteProvisionedProductServiceActionRequest;
         class GetAWSOrganizationsAccessStatusRequest;
+        class GetProvisionedProductOutputsRequest;
+        class ImportAsProvisionedProductRequest;
         class ListAcceptedPortfolioSharesRequest;
         class ListBudgetsForResourceRequest;
         class ListConstraintsForPortfolioRequest;
@@ -220,6 +217,7 @@ namespace Model
         class TerminateProvisionedProductRequest;
         class UpdateConstraintRequest;
         class UpdatePortfolioRequest;
+        class UpdatePortfolioShareRequest;
         class UpdateProductRequest;
         class UpdateProvisionedProductRequest;
         class UpdateProvisionedProductPropertiesRequest;
@@ -227,89 +225,93 @@ namespace Model
         class UpdateServiceActionRequest;
         class UpdateTagOptionRequest;
 
-        typedef Aws::Utils::Outcome<AcceptPortfolioShareResult, Aws::Client::AWSError<ServiceCatalogErrors>> AcceptPortfolioShareOutcome;
-        typedef Aws::Utils::Outcome<AssociateBudgetWithResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateBudgetWithResourceOutcome;
-        typedef Aws::Utils::Outcome<AssociatePrincipalWithPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociatePrincipalWithPortfolioOutcome;
-        typedef Aws::Utils::Outcome<AssociateProductWithPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateProductWithPortfolioOutcome;
-        typedef Aws::Utils::Outcome<AssociateServiceActionWithProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateServiceActionWithProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<AssociateTagOptionWithResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateTagOptionWithResourceOutcome;
-        typedef Aws::Utils::Outcome<BatchAssociateServiceActionWithProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> BatchAssociateServiceActionWithProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<BatchDisassociateServiceActionFromProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> BatchDisassociateServiceActionFromProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<CopyProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> CopyProductOutcome;
-        typedef Aws::Utils::Outcome<CreateConstraintResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreateConstraintOutcome;
-        typedef Aws::Utils::Outcome<CreatePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreatePortfolioOutcome;
-        typedef Aws::Utils::Outcome<CreatePortfolioShareResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreatePortfolioShareOutcome;
-        typedef Aws::Utils::Outcome<CreateProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreateProductOutcome;
-        typedef Aws::Utils::Outcome<CreateProvisionedProductPlanResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreateProvisionedProductPlanOutcome;
-        typedef Aws::Utils::Outcome<CreateProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreateProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<CreateServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreateServiceActionOutcome;
-        typedef Aws::Utils::Outcome<CreateTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> CreateTagOptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteConstraintResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteConstraintOutcome;
-        typedef Aws::Utils::Outcome<DeletePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeletePortfolioOutcome;
-        typedef Aws::Utils::Outcome<DeletePortfolioShareResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeletePortfolioShareOutcome;
-        typedef Aws::Utils::Outcome<DeleteProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteProductOutcome;
-        typedef Aws::Utils::Outcome<DeleteProvisionedProductPlanResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteProvisionedProductPlanOutcome;
-        typedef Aws::Utils::Outcome<DeleteProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<DeleteServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteServiceActionOutcome;
-        typedef Aws::Utils::Outcome<DeleteTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DeleteTagOptionOutcome;
-        typedef Aws::Utils::Outcome<DescribeConstraintResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeConstraintOutcome;
-        typedef Aws::Utils::Outcome<DescribeCopyProductStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeCopyProductStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribePortfolioOutcome;
-        typedef Aws::Utils::Outcome<DescribePortfolioShareStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribePortfolioShareStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductOutcome;
-        typedef Aws::Utils::Outcome<DescribeProductAsAdminResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductAsAdminOutcome;
-        typedef Aws::Utils::Outcome<DescribeProductViewResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductViewOutcome;
-        typedef Aws::Utils::Outcome<DescribeProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisionedProductOutcome;
-        typedef Aws::Utils::Outcome<DescribeProvisionedProductPlanResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisionedProductPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<DescribeProvisioningParametersResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisioningParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecordResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeRecordOutcome;
-        typedef Aws::Utils::Outcome<DescribeServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeServiceActionOutcome;
-        typedef Aws::Utils::Outcome<DescribeServiceActionExecutionParametersResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeServiceActionExecutionParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeTagOptionOutcome;
-        typedef Aws::Utils::Outcome<DisableAWSOrganizationsAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisableAWSOrganizationsAccessOutcome;
-        typedef Aws::Utils::Outcome<DisassociateBudgetFromResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateBudgetFromResourceOutcome;
-        typedef Aws::Utils::Outcome<DisassociatePrincipalFromPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociatePrincipalFromPortfolioOutcome;
-        typedef Aws::Utils::Outcome<DisassociateProductFromPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateProductFromPortfolioOutcome;
-        typedef Aws::Utils::Outcome<DisassociateServiceActionFromProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateServiceActionFromProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<DisassociateTagOptionFromResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateTagOptionFromResourceOutcome;
-        typedef Aws::Utils::Outcome<EnableAWSOrganizationsAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> EnableAWSOrganizationsAccessOutcome;
-        typedef Aws::Utils::Outcome<ExecuteProvisionedProductPlanResult, Aws::Client::AWSError<ServiceCatalogErrors>> ExecuteProvisionedProductPlanOutcome;
-        typedef Aws::Utils::Outcome<ExecuteProvisionedProductServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> ExecuteProvisionedProductServiceActionOutcome;
-        typedef Aws::Utils::Outcome<GetAWSOrganizationsAccessStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> GetAWSOrganizationsAccessStatusOutcome;
-        typedef Aws::Utils::Outcome<ListAcceptedPortfolioSharesResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListAcceptedPortfolioSharesOutcome;
-        typedef Aws::Utils::Outcome<ListBudgetsForResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListBudgetsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListConstraintsForPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListConstraintsForPortfolioOutcome;
-        typedef Aws::Utils::Outcome<ListLaunchPathsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListLaunchPathsOutcome;
-        typedef Aws::Utils::Outcome<ListOrganizationPortfolioAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListOrganizationPortfolioAccessOutcome;
-        typedef Aws::Utils::Outcome<ListPortfolioAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPortfolioAccessOutcome;
-        typedef Aws::Utils::Outcome<ListPortfoliosResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPortfoliosOutcome;
-        typedef Aws::Utils::Outcome<ListPortfoliosForProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPortfoliosForProductOutcome;
-        typedef Aws::Utils::Outcome<ListPrincipalsForPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPrincipalsForPortfolioOutcome;
-        typedef Aws::Utils::Outcome<ListProvisionedProductPlansResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListProvisionedProductPlansOutcome;
-        typedef Aws::Utils::Outcome<ListProvisioningArtifactsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListProvisioningArtifactsOutcome;
-        typedef Aws::Utils::Outcome<ListProvisioningArtifactsForServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListProvisioningArtifactsForServiceActionOutcome;
-        typedef Aws::Utils::Outcome<ListRecordHistoryResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListRecordHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesForTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListResourcesForTagOptionOutcome;
-        typedef Aws::Utils::Outcome<ListServiceActionsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListServiceActionsOutcome;
-        typedef Aws::Utils::Outcome<ListServiceActionsForProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListServiceActionsForProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<ListStackInstancesForProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListStackInstancesForProvisionedProductOutcome;
-        typedef Aws::Utils::Outcome<ListTagOptionsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListTagOptionsOutcome;
-        typedef Aws::Utils::Outcome<ProvisionProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> ProvisionProductOutcome;
-        typedef Aws::Utils::Outcome<RejectPortfolioShareResult, Aws::Client::AWSError<ServiceCatalogErrors>> RejectPortfolioShareOutcome;
-        typedef Aws::Utils::Outcome<ScanProvisionedProductsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ScanProvisionedProductsOutcome;
-        typedef Aws::Utils::Outcome<SearchProductsResult, Aws::Client::AWSError<ServiceCatalogErrors>> SearchProductsOutcome;
-        typedef Aws::Utils::Outcome<SearchProductsAsAdminResult, Aws::Client::AWSError<ServiceCatalogErrors>> SearchProductsAsAdminOutcome;
-        typedef Aws::Utils::Outcome<SearchProvisionedProductsResult, Aws::Client::AWSError<ServiceCatalogErrors>> SearchProvisionedProductsOutcome;
-        typedef Aws::Utils::Outcome<TerminateProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> TerminateProvisionedProductOutcome;
-        typedef Aws::Utils::Outcome<UpdateConstraintResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateConstraintOutcome;
-        typedef Aws::Utils::Outcome<UpdatePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdatePortfolioOutcome;
-        typedef Aws::Utils::Outcome<UpdateProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProductOutcome;
-        typedef Aws::Utils::Outcome<UpdateProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProvisionedProductOutcome;
-        typedef Aws::Utils::Outcome<UpdateProvisionedProductPropertiesResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProvisionedProductPropertiesOutcome;
-        typedef Aws::Utils::Outcome<UpdateProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProvisioningArtifactOutcome;
-        typedef Aws::Utils::Outcome<UpdateServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateServiceActionOutcome;
-        typedef Aws::Utils::Outcome<UpdateTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateTagOptionOutcome;
+        typedef Aws::Utils::Outcome<AcceptPortfolioShareResult, ServiceCatalogError> AcceptPortfolioShareOutcome;
+        typedef Aws::Utils::Outcome<AssociateBudgetWithResourceResult, ServiceCatalogError> AssociateBudgetWithResourceOutcome;
+        typedef Aws::Utils::Outcome<AssociatePrincipalWithPortfolioResult, ServiceCatalogError> AssociatePrincipalWithPortfolioOutcome;
+        typedef Aws::Utils::Outcome<AssociateProductWithPortfolioResult, ServiceCatalogError> AssociateProductWithPortfolioOutcome;
+        typedef Aws::Utils::Outcome<AssociateServiceActionWithProvisioningArtifactResult, ServiceCatalogError> AssociateServiceActionWithProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<AssociateTagOptionWithResourceResult, ServiceCatalogError> AssociateTagOptionWithResourceOutcome;
+        typedef Aws::Utils::Outcome<BatchAssociateServiceActionWithProvisioningArtifactResult, ServiceCatalogError> BatchAssociateServiceActionWithProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<BatchDisassociateServiceActionFromProvisioningArtifactResult, ServiceCatalogError> BatchDisassociateServiceActionFromProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<CopyProductResult, ServiceCatalogError> CopyProductOutcome;
+        typedef Aws::Utils::Outcome<CreateConstraintResult, ServiceCatalogError> CreateConstraintOutcome;
+        typedef Aws::Utils::Outcome<CreatePortfolioResult, ServiceCatalogError> CreatePortfolioOutcome;
+        typedef Aws::Utils::Outcome<CreatePortfolioShareResult, ServiceCatalogError> CreatePortfolioShareOutcome;
+        typedef Aws::Utils::Outcome<CreateProductResult, ServiceCatalogError> CreateProductOutcome;
+        typedef Aws::Utils::Outcome<CreateProvisionedProductPlanResult, ServiceCatalogError> CreateProvisionedProductPlanOutcome;
+        typedef Aws::Utils::Outcome<CreateProvisioningArtifactResult, ServiceCatalogError> CreateProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<CreateServiceActionResult, ServiceCatalogError> CreateServiceActionOutcome;
+        typedef Aws::Utils::Outcome<CreateTagOptionResult, ServiceCatalogError> CreateTagOptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteConstraintResult, ServiceCatalogError> DeleteConstraintOutcome;
+        typedef Aws::Utils::Outcome<DeletePortfolioResult, ServiceCatalogError> DeletePortfolioOutcome;
+        typedef Aws::Utils::Outcome<DeletePortfolioShareResult, ServiceCatalogError> DeletePortfolioShareOutcome;
+        typedef Aws::Utils::Outcome<DeleteProductResult, ServiceCatalogError> DeleteProductOutcome;
+        typedef Aws::Utils::Outcome<DeleteProvisionedProductPlanResult, ServiceCatalogError> DeleteProvisionedProductPlanOutcome;
+        typedef Aws::Utils::Outcome<DeleteProvisioningArtifactResult, ServiceCatalogError> DeleteProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<DeleteServiceActionResult, ServiceCatalogError> DeleteServiceActionOutcome;
+        typedef Aws::Utils::Outcome<DeleteTagOptionResult, ServiceCatalogError> DeleteTagOptionOutcome;
+        typedef Aws::Utils::Outcome<DescribeConstraintResult, ServiceCatalogError> DescribeConstraintOutcome;
+        typedef Aws::Utils::Outcome<DescribeCopyProductStatusResult, ServiceCatalogError> DescribeCopyProductStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribePortfolioResult, ServiceCatalogError> DescribePortfolioOutcome;
+        typedef Aws::Utils::Outcome<DescribePortfolioShareStatusResult, ServiceCatalogError> DescribePortfolioShareStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribePortfolioSharesResult, ServiceCatalogError> DescribePortfolioSharesOutcome;
+        typedef Aws::Utils::Outcome<DescribeProductResult, ServiceCatalogError> DescribeProductOutcome;
+        typedef Aws::Utils::Outcome<DescribeProductAsAdminResult, ServiceCatalogError> DescribeProductAsAdminOutcome;
+        typedef Aws::Utils::Outcome<DescribeProductViewResult, ServiceCatalogError> DescribeProductViewOutcome;
+        typedef Aws::Utils::Outcome<DescribeProvisionedProductResult, ServiceCatalogError> DescribeProvisionedProductOutcome;
+        typedef Aws::Utils::Outcome<DescribeProvisionedProductPlanResult, ServiceCatalogError> DescribeProvisionedProductPlanOutcome;
+        typedef Aws::Utils::Outcome<DescribeProvisioningArtifactResult, ServiceCatalogError> DescribeProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<DescribeProvisioningParametersResult, ServiceCatalogError> DescribeProvisioningParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeRecordResult, ServiceCatalogError> DescribeRecordOutcome;
+        typedef Aws::Utils::Outcome<DescribeServiceActionResult, ServiceCatalogError> DescribeServiceActionOutcome;
+        typedef Aws::Utils::Outcome<DescribeServiceActionExecutionParametersResult, ServiceCatalogError> DescribeServiceActionExecutionParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagOptionResult, ServiceCatalogError> DescribeTagOptionOutcome;
+        typedef Aws::Utils::Outcome<DisableAWSOrganizationsAccessResult, ServiceCatalogError> DisableAWSOrganizationsAccessOutcome;
+        typedef Aws::Utils::Outcome<DisassociateBudgetFromResourceResult, ServiceCatalogError> DisassociateBudgetFromResourceOutcome;
+        typedef Aws::Utils::Outcome<DisassociatePrincipalFromPortfolioResult, ServiceCatalogError> DisassociatePrincipalFromPortfolioOutcome;
+        typedef Aws::Utils::Outcome<DisassociateProductFromPortfolioResult, ServiceCatalogError> DisassociateProductFromPortfolioOutcome;
+        typedef Aws::Utils::Outcome<DisassociateServiceActionFromProvisioningArtifactResult, ServiceCatalogError> DisassociateServiceActionFromProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<DisassociateTagOptionFromResourceResult, ServiceCatalogError> DisassociateTagOptionFromResourceOutcome;
+        typedef Aws::Utils::Outcome<EnableAWSOrganizationsAccessResult, ServiceCatalogError> EnableAWSOrganizationsAccessOutcome;
+        typedef Aws::Utils::Outcome<ExecuteProvisionedProductPlanResult, ServiceCatalogError> ExecuteProvisionedProductPlanOutcome;
+        typedef Aws::Utils::Outcome<ExecuteProvisionedProductServiceActionResult, ServiceCatalogError> ExecuteProvisionedProductServiceActionOutcome;
+        typedef Aws::Utils::Outcome<GetAWSOrganizationsAccessStatusResult, ServiceCatalogError> GetAWSOrganizationsAccessStatusOutcome;
+        typedef Aws::Utils::Outcome<GetProvisionedProductOutputsResult, ServiceCatalogError> GetProvisionedProductOutputsOutcome;
+        typedef Aws::Utils::Outcome<ImportAsProvisionedProductResult, ServiceCatalogError> ImportAsProvisionedProductOutcome;
+        typedef Aws::Utils::Outcome<ListAcceptedPortfolioSharesResult, ServiceCatalogError> ListAcceptedPortfolioSharesOutcome;
+        typedef Aws::Utils::Outcome<ListBudgetsForResourceResult, ServiceCatalogError> ListBudgetsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListConstraintsForPortfolioResult, ServiceCatalogError> ListConstraintsForPortfolioOutcome;
+        typedef Aws::Utils::Outcome<ListLaunchPathsResult, ServiceCatalogError> ListLaunchPathsOutcome;
+        typedef Aws::Utils::Outcome<ListOrganizationPortfolioAccessResult, ServiceCatalogError> ListOrganizationPortfolioAccessOutcome;
+        typedef Aws::Utils::Outcome<ListPortfolioAccessResult, ServiceCatalogError> ListPortfolioAccessOutcome;
+        typedef Aws::Utils::Outcome<ListPortfoliosResult, ServiceCatalogError> ListPortfoliosOutcome;
+        typedef Aws::Utils::Outcome<ListPortfoliosForProductResult, ServiceCatalogError> ListPortfoliosForProductOutcome;
+        typedef Aws::Utils::Outcome<ListPrincipalsForPortfolioResult, ServiceCatalogError> ListPrincipalsForPortfolioOutcome;
+        typedef Aws::Utils::Outcome<ListProvisionedProductPlansResult, ServiceCatalogError> ListProvisionedProductPlansOutcome;
+        typedef Aws::Utils::Outcome<ListProvisioningArtifactsResult, ServiceCatalogError> ListProvisioningArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListProvisioningArtifactsForServiceActionResult, ServiceCatalogError> ListProvisioningArtifactsForServiceActionOutcome;
+        typedef Aws::Utils::Outcome<ListRecordHistoryResult, ServiceCatalogError> ListRecordHistoryOutcome;
+        typedef Aws::Utils::Outcome<ListResourcesForTagOptionResult, ServiceCatalogError> ListResourcesForTagOptionOutcome;
+        typedef Aws::Utils::Outcome<ListServiceActionsResult, ServiceCatalogError> ListServiceActionsOutcome;
+        typedef Aws::Utils::Outcome<ListServiceActionsForProvisioningArtifactResult, ServiceCatalogError> ListServiceActionsForProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<ListStackInstancesForProvisionedProductResult, ServiceCatalogError> ListStackInstancesForProvisionedProductOutcome;
+        typedef Aws::Utils::Outcome<ListTagOptionsResult, ServiceCatalogError> ListTagOptionsOutcome;
+        typedef Aws::Utils::Outcome<ProvisionProductResult, ServiceCatalogError> ProvisionProductOutcome;
+        typedef Aws::Utils::Outcome<RejectPortfolioShareResult, ServiceCatalogError> RejectPortfolioShareOutcome;
+        typedef Aws::Utils::Outcome<ScanProvisionedProductsResult, ServiceCatalogError> ScanProvisionedProductsOutcome;
+        typedef Aws::Utils::Outcome<SearchProductsResult, ServiceCatalogError> SearchProductsOutcome;
+        typedef Aws::Utils::Outcome<SearchProductsAsAdminResult, ServiceCatalogError> SearchProductsAsAdminOutcome;
+        typedef Aws::Utils::Outcome<SearchProvisionedProductsResult, ServiceCatalogError> SearchProvisionedProductsOutcome;
+        typedef Aws::Utils::Outcome<TerminateProvisionedProductResult, ServiceCatalogError> TerminateProvisionedProductOutcome;
+        typedef Aws::Utils::Outcome<UpdateConstraintResult, ServiceCatalogError> UpdateConstraintOutcome;
+        typedef Aws::Utils::Outcome<UpdatePortfolioResult, ServiceCatalogError> UpdatePortfolioOutcome;
+        typedef Aws::Utils::Outcome<UpdatePortfolioShareResult, ServiceCatalogError> UpdatePortfolioShareOutcome;
+        typedef Aws::Utils::Outcome<UpdateProductResult, ServiceCatalogError> UpdateProductOutcome;
+        typedef Aws::Utils::Outcome<UpdateProvisionedProductResult, ServiceCatalogError> UpdateProvisionedProductOutcome;
+        typedef Aws::Utils::Outcome<UpdateProvisionedProductPropertiesResult, ServiceCatalogError> UpdateProvisionedProductPropertiesOutcome;
+        typedef Aws::Utils::Outcome<UpdateProvisioningArtifactResult, ServiceCatalogError> UpdateProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<UpdateServiceActionResult, ServiceCatalogError> UpdateServiceActionOutcome;
+        typedef Aws::Utils::Outcome<UpdateTagOptionResult, ServiceCatalogError> UpdateTagOptionOutcome;
 
         typedef std::future<AcceptPortfolioShareOutcome> AcceptPortfolioShareOutcomeCallable;
         typedef std::future<AssociateBudgetWithResourceOutcome> AssociateBudgetWithResourceOutcomeCallable;
@@ -340,6 +342,7 @@ namespace Model
         typedef std::future<DescribeCopyProductStatusOutcome> DescribeCopyProductStatusOutcomeCallable;
         typedef std::future<DescribePortfolioOutcome> DescribePortfolioOutcomeCallable;
         typedef std::future<DescribePortfolioShareStatusOutcome> DescribePortfolioShareStatusOutcomeCallable;
+        typedef std::future<DescribePortfolioSharesOutcome> DescribePortfolioSharesOutcomeCallable;
         typedef std::future<DescribeProductOutcome> DescribeProductOutcomeCallable;
         typedef std::future<DescribeProductAsAdminOutcome> DescribeProductAsAdminOutcomeCallable;
         typedef std::future<DescribeProductViewOutcome> DescribeProductViewOutcomeCallable;
@@ -361,6 +364,8 @@ namespace Model
         typedef std::future<ExecuteProvisionedProductPlanOutcome> ExecuteProvisionedProductPlanOutcomeCallable;
         typedef std::future<ExecuteProvisionedProductServiceActionOutcome> ExecuteProvisionedProductServiceActionOutcomeCallable;
         typedef std::future<GetAWSOrganizationsAccessStatusOutcome> GetAWSOrganizationsAccessStatusOutcomeCallable;
+        typedef std::future<GetProvisionedProductOutputsOutcome> GetProvisionedProductOutputsOutcomeCallable;
+        typedef std::future<ImportAsProvisionedProductOutcome> ImportAsProvisionedProductOutcomeCallable;
         typedef std::future<ListAcceptedPortfolioSharesOutcome> ListAcceptedPortfolioSharesOutcomeCallable;
         typedef std::future<ListBudgetsForResourceOutcome> ListBudgetsForResourceOutcomeCallable;
         typedef std::future<ListConstraintsForPortfolioOutcome> ListConstraintsForPortfolioOutcomeCallable;
@@ -388,6 +393,7 @@ namespace Model
         typedef std::future<TerminateProvisionedProductOutcome> TerminateProvisionedProductOutcomeCallable;
         typedef std::future<UpdateConstraintOutcome> UpdateConstraintOutcomeCallable;
         typedef std::future<UpdatePortfolioOutcome> UpdatePortfolioOutcomeCallable;
+        typedef std::future<UpdatePortfolioShareOutcome> UpdatePortfolioShareOutcomeCallable;
         typedef std::future<UpdateProductOutcome> UpdateProductOutcomeCallable;
         typedef std::future<UpdateProvisionedProductOutcome> UpdateProvisionedProductOutcomeCallable;
         typedef std::future<UpdateProvisionedProductPropertiesOutcome> UpdateProvisionedProductPropertiesOutcomeCallable;
@@ -427,6 +433,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeCopyProductStatusRequest&, const Model::DescribeCopyProductStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCopyProductStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribePortfolioRequest&, const Model::DescribePortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribePortfolioShareStatusRequest&, const Model::DescribePortfolioShareStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortfolioShareStatusResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DescribePortfolioSharesRequest&, const Model::DescribePortfolioSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortfolioSharesResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductRequest&, const Model::DescribeProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductAsAdminRequest&, const Model::DescribeProductAsAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductAsAdminResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductViewRequest&, const Model::DescribeProductViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductViewResponseReceivedHandler;
@@ -448,6 +455,8 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::ExecuteProvisionedProductPlanRequest&, const Model::ExecuteProvisionedProductPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteProvisionedProductPlanResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ExecuteProvisionedProductServiceActionRequest&, const Model::ExecuteProvisionedProductServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteProvisionedProductServiceActionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::GetAWSOrganizationsAccessStatusRequest&, const Model::GetAWSOrganizationsAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSOrganizationsAccessStatusResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::GetProvisionedProductOutputsRequest&, const Model::GetProvisionedProductOutputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProvisionedProductOutputsResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::ImportAsProvisionedProductRequest&, const Model::ImportAsProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportAsProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListAcceptedPortfolioSharesRequest&, const Model::ListAcceptedPortfolioSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAcceptedPortfolioSharesResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListBudgetsForResourceRequest&, const Model::ListBudgetsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBudgetsForResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListConstraintsForPortfolioRequest&, const Model::ListConstraintsForPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConstraintsForPortfolioResponseReceivedHandler;
@@ -475,6 +484,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::TerminateProvisionedProductRequest&, const Model::TerminateProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateConstraintRequest&, const Model::UpdateConstraintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConstraintResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdatePortfolioRequest&, const Model::UpdatePortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePortfolioResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::UpdatePortfolioShareRequest&, const Model::UpdatePortfolioShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePortfolioShareResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProductRequest&, const Model::UpdateProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProvisionedProductRequest&, const Model::UpdateProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProvisionedProductPropertiesRequest&, const Model::UpdateProvisionedProductPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProvisionedProductPropertiesResponseReceivedHandler;
@@ -486,8 +496,8 @@ namespace Model
    * <fullname>AWS Service Catalog</fullname> <p> <a
    * href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables
    * organizations to create and manage catalogs of IT services that are approved for
-   * use on AWS. To get the most out of this documentation, you should be familiar
-   * with the terminology discussed in <a
+   * AWS. To get the most out of this documentation, you should be familiar with the
+   * terminology discussed in <a
    * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
    * Service Catalog Concepts</a>.</p>
    */
@@ -517,8 +527,6 @@ namespace Model
 
         virtual ~ServiceCatalogClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "Service Catalog"; }
-
 
         /**
          * <p>Accepts an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
@@ -529,22 +537,12 @@ namespace Model
         virtual Model::AcceptPortfolioShareOutcome AcceptPortfolioShare(const Model::AcceptPortfolioShareRequest& request) const;
 
         /**
-         * <p>Accepts an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AcceptPortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AcceptPortfolioShareOutcomeCallable AcceptPortfolioShareCallable(const Model::AcceptPortfolioShareRequest& request) const;
 
         /**
-         * <p>Accepts an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AcceptPortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptPortfolioShareAsync(const Model::AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -557,22 +555,12 @@ namespace Model
         virtual Model::AssociateBudgetWithResourceOutcome AssociateBudgetWithResource(const Model::AssociateBudgetWithResourceRequest& request) const;
 
         /**
-         * <p>Associates the specified budget with the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateBudgetWithResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateBudgetWithResourceOutcomeCallable AssociateBudgetWithResourceCallable(const Model::AssociateBudgetWithResourceRequest& request) const;
 
         /**
-         * <p>Associates the specified budget with the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateBudgetWithResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateBudgetWithResourceAsync(const Model::AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -585,50 +573,31 @@ namespace Model
         virtual Model::AssociatePrincipalWithPortfolioOutcome AssociatePrincipalWithPortfolio(const Model::AssociatePrincipalWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified principal ARN with the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociatePrincipalWithPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociatePrincipalWithPortfolioOutcomeCallable AssociatePrincipalWithPortfolioCallable(const Model::AssociatePrincipalWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified principal ARN with the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociatePrincipalWithPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociatePrincipalWithPortfolioAsync(const Model::AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified product with the specified portfolio.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified product with the specified portfolio.</p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateProductWithPortfolioOutcome AssociateProductWithPortfolio(const Model::AssociateProductWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified product with the specified portfolio.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateProductWithPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateProductWithPortfolioOutcomeCallable AssociateProductWithPortfolioCallable(const Model::AssociateProductWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified product with the specified portfolio.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateProductWithPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateProductWithPortfolioAsync(const Model::AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -641,22 +610,12 @@ namespace Model
         virtual Model::AssociateServiceActionWithProvisioningArtifactOutcome AssociateServiceActionWithProvisioningArtifact(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Associates a self-service action with a provisioning artifact.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateServiceActionWithProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateServiceActionWithProvisioningArtifactOutcomeCallable AssociateServiceActionWithProvisioningArtifactCallable(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Associates a self-service action with a provisioning artifact.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateServiceActionWithProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateServiceActionWithProvisioningArtifactAsync(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -669,22 +628,12 @@ namespace Model
         virtual Model::AssociateTagOptionWithResourceOutcome AssociateTagOptionWithResource(const Model::AssociateTagOptionWithResourceRequest& request) const;
 
         /**
-         * <p>Associate the specified TagOption with the specified portfolio or
-         * product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateTagOptionWithResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateTagOptionWithResourceOutcomeCallable AssociateTagOptionWithResourceCallable(const Model::AssociateTagOptionWithResourceRequest& request) const;
 
         /**
-         * <p>Associate the specified TagOption with the specified portfolio or
-         * product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateTagOptionWithResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateTagOptionWithResourceAsync(const Model::AssociateTagOptionWithResourceRequest& request, const AssociateTagOptionWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -697,22 +646,12 @@ namespace Model
         virtual Model::BatchAssociateServiceActionWithProvisioningArtifactOutcome BatchAssociateServiceActionWithProvisioningArtifact(const Model::BatchAssociateServiceActionWithProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Associates multiple self-service actions with provisioning
-         * artifacts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchAssociateServiceActionWithProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchAssociateServiceActionWithProvisioningArtifactOutcomeCallable BatchAssociateServiceActionWithProvisioningArtifactCallable(const Model::BatchAssociateServiceActionWithProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Associates multiple self-service actions with provisioning
-         * artifacts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchAssociateServiceActionWithProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchAssociateServiceActionWithProvisioningArtifactAsync(const Model::BatchAssociateServiceActionWithProvisioningArtifactRequest& request, const BatchAssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -725,22 +664,12 @@ namespace Model
         virtual Model::BatchDisassociateServiceActionFromProvisioningArtifactOutcome BatchDisassociateServiceActionFromProvisioningArtifact(const Model::BatchDisassociateServiceActionFromProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Disassociates a batch of self-service actions from the specified provisioning
-         * artifact.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for BatchDisassociateServiceActionFromProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::BatchDisassociateServiceActionFromProvisioningArtifactOutcomeCallable BatchDisassociateServiceActionFromProvisioningArtifactCallable(const Model::BatchDisassociateServiceActionFromProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Disassociates a batch of self-service actions from the specified provisioning
-         * artifact.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for BatchDisassociateServiceActionFromProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDisassociateServiceActionFromProvisioningArtifactAsync(const Model::BatchDisassociateServiceActionFromProvisioningArtifactRequest& request, const BatchDisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -756,137 +685,97 @@ namespace Model
         virtual Model::CopyProductOutcome CopyProduct(const Model::CopyProductRequest& request) const;
 
         /**
-         * <p>Copies the specified source product to the specified target product or a new
-         * product.</p> <p>You can copy a product to the same account or another account.
-         * You can copy a product to the same region or another region.</p> <p>This
-         * operation is performed asynchronously. To track the progress of the operation,
-         * use <a>DescribeCopyProductStatus</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CopyProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CopyProductOutcomeCallable CopyProductCallable(const Model::CopyProductRequest& request) const;
 
         /**
-         * <p>Copies the specified source product to the specified target product or a new
-         * product.</p> <p>You can copy a product to the same account or another account.
-         * You can copy a product to the same region or another region.</p> <p>This
-         * operation is performed asynchronously. To track the progress of the operation,
-         * use <a>DescribeCopyProductStatus</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CopyProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CopyProductAsync(const Model::CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a constraint.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConstraintOutcome CreateConstraint(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a constraint.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConstraintOutcomeCallable CreateConstraintCallable(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a constraint.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConstraintAsync(const Model::CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a portfolio.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePortfolioOutcome CreatePortfolio(const Model::CreatePortfolioRequest& request) const;
 
         /**
-         * <p>Creates a portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreatePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePortfolioOutcomeCallable CreatePortfolioCallable(const Model::CreatePortfolioRequest& request) const;
 
         /**
-         * <p>Creates a portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreatePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortfolioAsync(const Model::CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Shares the specified portfolio with the specified account or organization
-         * node. Shares to an organization node can only be created by the master account
-         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
-         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * node. Shares to an organization node can only be created by the management
+         * account of an organization or by a delegated administrator. You can share
+         * portfolios to an organization, an organizational unit, or a specific
+         * account.</p> <p>Note that if a delegated admin is de-registered, they can no
+         * longer create portfolio shares.</p> <p> <code>AWSOrganizationsAccess</code> must
+         * be enabled in order to create a portfolio share to an organization node.</p>
+         * <p>You can't share a shared resource, including portfolios that contain a shared
+         * product.</p> <p>If the portfolio share with the specified account or
+         * organization node already exists, this action will have no effect and will not
+         * return an error. To update an existing share, you must use the <code>
+         * UpdatePortfolioShare</code> API instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePortfolioShareOutcome CreatePortfolioShare(const Model::CreatePortfolioShareRequest& request) const;
 
         /**
-         * <p>Shares the specified portfolio with the specified account or organization
-         * node. Shares to an organization node can only be created by the master account
-         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
-         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreatePortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePortfolioShareOutcomeCallable CreatePortfolioShareCallable(const Model::CreatePortfolioShareRequest& request) const;
 
         /**
-         * <p>Shares the specified portfolio with the specified account or organization
-         * node. Shares to an organization node can only be created by the master account
-         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
-         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreatePortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortfolioShareAsync(const Model::CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a product.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a product.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p> <p>The user or role that performs this operation must have the
+         * <code>cloudformation:GetTemplate</code> IAM policy permission. This policy
+         * permission is required when using the <code>ImportFromPhysicalId</code> template
+         * source in the information data section.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProductOutcome CreateProduct(const Model::CreateProductRequest& request) const;
 
         /**
-         * <p>Creates a product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request) const;
 
         /**
-         * <p>Creates a product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProductAsync(const Model::CreateProductRequest& request, const CreateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -905,65 +794,34 @@ namespace Model
         virtual Model::CreateProvisionedProductPlanOutcome CreateProvisionedProductPlan(const Model::CreateProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Creates a plan. A plan includes the list of resources to be created (when
-         * provisioning a new product) or modified (when updating a provisioned product)
-         * when the plan is executed.</p> <p>You can create one plan per provisioned
-         * product. To create a plan for an existing provisioned product, the product
-         * status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the
-         * change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the
-         * provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProvisionedProductPlanOutcomeCallable CreateProvisionedProductPlanCallable(const Model::CreateProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Creates a plan. A plan includes the list of resources to be created (when
-         * provisioning a new product) or modified (when updating a provisioned product)
-         * when the plan is executed.</p> <p>You can create one plan per provisioned
-         * product. To create a plan for an existing provisioned product, the product
-         * status must be AVAILBLE or TAINTED.</p> <p>To view the resource changes in the
-         * change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify the
-         * provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProvisionedProductPlanAsync(const Model::CreateProvisionedProductPlanRequest& request, const CreateProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a provisioning artifact (also known as a version) for the specified
          * product.</p> <p>You cannot create a provisioning artifact for a product that was
-         * shared with you.</p><p><h3>See Also:</h3>   <a
+         * shared with you.</p> <p>The user or role that performs this operation must have
+         * the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy
+         * permission is required when using the <code>ImportFromPhysicalId</code> template
+         * source in the information data section.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProvisioningArtifactOutcome CreateProvisioningArtifact(const Model::CreateProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Creates a provisioning artifact (also known as a version) for the specified
-         * product.</p> <p>You cannot create a provisioning artifact for a product that was
-         * shared with you.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProvisioningArtifactOutcomeCallable CreateProvisioningArtifactCallable(const Model::CreateProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Creates a provisioning artifact (also known as a version) for the specified
-         * product.</p> <p>You cannot create a provisioning artifact for a product that was
-         * shared with you.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProvisioningArtifactAsync(const Model::CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -975,20 +833,12 @@ namespace Model
         virtual Model::CreateServiceActionOutcome CreateServiceAction(const Model::CreateServiceActionRequest& request) const;
 
         /**
-         * <p>Creates a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateServiceActionOutcomeCallable CreateServiceActionCallable(const Model::CreateServiceActionRequest& request) const;
 
         /**
-         * <p>Creates a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateServiceActionAsync(const Model::CreateServiceActionRequest& request, const CreateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1000,135 +850,90 @@ namespace Model
         virtual Model::CreateTagOptionOutcome CreateTagOption(const Model::CreateTagOptionRequest& request) const;
 
         /**
-         * <p>Creates a TagOption.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateTagOptionOutcomeCallable CreateTagOptionCallable(const Model::CreateTagOptionRequest& request) const;
 
         /**
-         * <p>Creates a TagOption.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTagOptionAsync(const Model::CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified constraint.</p> <p>A delegated admin is authorized to
+         * invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConstraintOutcome DeleteConstraint(const Model::DeleteConstraintRequest& request) const;
 
         /**
-         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConstraintOutcomeCallable DeleteConstraintCallable(const Model::DeleteConstraintRequest& request) const;
 
         /**
-         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConstraintAsync(const Model::DeleteConstraintRequest& request, const DeleteConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
          * was shared with you or if it has associated products, users, constraints, or
-         * shared accounts.</p><p><h3>See Also:</h3>   <a
+         * shared accounts.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePortfolioOutcome DeletePortfolio(const Model::DeletePortfolioRequest& request) const;
 
         /**
-         * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
-         * was shared with you or if it has associated products, users, constraints, or
-         * shared accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeletePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePortfolioOutcomeCallable DeletePortfolioCallable(const Model::DeletePortfolioRequest& request) const;
 
         /**
-         * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
-         * was shared with you or if it has associated products, users, constraints, or
-         * shared accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeletePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePortfolioAsync(const Model::DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops sharing the specified portfolio with the specified account or
          * organization node. Shares to an organization node can only be deleted by the
-         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
+         * management account of an organization or by a delegated administrator.</p>
+         * <p>Note that if a delegated admin is de-registered, portfolio shares created
+         * from that account are removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePortfolioShareOutcome DeletePortfolioShare(const Model::DeletePortfolioShareRequest& request) const;
 
         /**
-         * <p>Stops sharing the specified portfolio with the specified account or
-         * organization node. Shares to an organization node can only be deleted by the
-         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeletePortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePortfolioShareOutcomeCallable DeletePortfolioShareCallable(const Model::DeletePortfolioShareRequest& request) const;
 
         /**
-         * <p>Stops sharing the specified portfolio with the specified account or
-         * organization node. Shares to an organization node can only be deleted by the
-         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeletePortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePortfolioShareAsync(const Model::DeletePortfolioShareRequest& request, const DeletePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
-         * shared with you or is associated with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * shared with you or is associated with a portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest& request) const;
 
         /**
-         * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
-         * shared with you or is associated with a portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProductOutcomeCallable DeleteProductCallable(const Model::DeleteProductRequest& request) const;
 
         /**
-         * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
-         * shared with you or is associated with a portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1140,20 +945,12 @@ namespace Model
         virtual Model::DeleteProvisionedProductPlanOutcome DeleteProvisionedProductPlan(const Model::DeleteProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Deletes the specified plan.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProvisionedProductPlanOutcomeCallable DeleteProvisionedProductPlanCallable(const Model::DeleteProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Deletes the specified plan.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProvisionedProductPlanAsync(const Model::DeleteProvisionedProductPlanRequest& request, const DeleteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1169,28 +966,12 @@ namespace Model
         virtual Model::DeleteProvisioningArtifactOutcome DeleteProvisioningArtifact(const Model::DeleteProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Deletes the specified provisioning artifact (also known as a version) for the
-         * specified product.</p> <p>You cannot delete a provisioning artifact associated
-         * with a product that was shared with you. You cannot delete the last provisioning
-         * artifact for a product, because a product must have at least one provisioning
-         * artifact.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProvisioningArtifactOutcomeCallable DeleteProvisioningArtifactCallable(const Model::DeleteProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Deletes the specified provisioning artifact (also known as a version) for the
-         * specified product.</p> <p>You cannot delete a provisioning artifact associated
-         * with a product that was shared with you. You cannot delete the last provisioning
-         * artifact for a product, because a product must have at least one provisioning
-         * artifact.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProvisioningArtifactAsync(const Model::DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1202,20 +983,12 @@ namespace Model
         virtual Model::DeleteServiceActionOutcome DeleteServiceAction(const Model::DeleteServiceActionRequest& request) const;
 
         /**
-         * <p>Deletes a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteServiceActionOutcomeCallable DeleteServiceActionCallable(const Model::DeleteServiceActionRequest& request) const;
 
         /**
-         * <p>Deletes a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteServiceActionAsync(const Model::DeleteServiceActionRequest& request, const DeleteServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1228,22 +1001,12 @@ namespace Model
         virtual Model::DeleteTagOptionOutcome DeleteTagOption(const Model::DeleteTagOptionRequest& request) const;
 
         /**
-         * <p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it
-         * is associated with a product or portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTagOptionOutcomeCallable DeleteTagOptionCallable(const Model::DeleteTagOptionRequest& request) const;
 
         /**
-         * <p>Deletes the specified TagOption.</p> <p>You cannot delete a TagOption if it
-         * is associated with a product or portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTagOptionAsync(const Model::DeleteTagOptionRequest& request, const DeleteTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1256,22 +1019,12 @@ namespace Model
         virtual Model::DescribeConstraintOutcome DescribeConstraint(const Model::DescribeConstraintRequest& request) const;
 
         /**
-         * <p>Gets information about the specified constraint.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConstraintOutcomeCallable DescribeConstraintCallable(const Model::DescribeConstraintRequest& request) const;
 
         /**
-         * <p>Gets information about the specified constraint.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConstraintAsync(const Model::DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1284,80 +1037,73 @@ namespace Model
         virtual Model::DescribeCopyProductStatusOutcome DescribeCopyProductStatus(const Model::DescribeCopyProductStatusRequest& request) const;
 
         /**
-         * <p>Gets the status of the specified copy product operation.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeCopyProductStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeCopyProductStatusOutcomeCallable DescribeCopyProductStatusCallable(const Model::DescribeCopyProductStatusRequest& request) const;
 
         /**
-         * <p>Gets the status of the specified copy product operation.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeCopyProductStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeCopyProductStatusAsync(const Model::DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePortfolioOutcome DescribePortfolio(const Model::DescribePortfolioRequest& request) const;
 
         /**
-         * <p>Gets information about the specified portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribePortfolioOutcomeCallable DescribePortfolioCallable(const Model::DescribePortfolioRequest& request) const;
 
         /**
-         * <p>Gets information about the specified portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePortfolioAsync(const Model::DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the status of the specified portfolio share operation. This API can only
-         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * be called by the management account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePortfolioShareStatusOutcome DescribePortfolioShareStatus(const Model::DescribePortfolioShareStatusRequest& request) const;
 
         /**
-         * <p>Gets the status of the specified portfolio share operation. This API can only
-         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribePortfolioShareStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribePortfolioShareStatusOutcomeCallable DescribePortfolioShareStatusCallable(const Model::DescribePortfolioShareStatusRequest& request) const;
 
         /**
-         * <p>Gets the status of the specified portfolio share operation. This API can only
-         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribePortfolioShareStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePortfolioShareStatusAsync(const Model::DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a summary of each of the portfolio shares that were created for the
+         * specified portfolio.</p> <p>You can use this API to determine which accounts or
+         * organizational nodes this portfolio have been shared, whether the recipient
+         * entity has imported the share, and whether TagOptions are included with the
+         * share.</p> <p>The <code>PortfolioId</code> and <code>Type</code> parameters are
+         * both required.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShares">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePortfolioSharesOutcome DescribePortfolioShares(const Model::DescribePortfolioSharesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePortfolioShares that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePortfolioSharesOutcomeCallable DescribePortfolioSharesCallable(const Model::DescribePortfolioSharesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribePortfolioShares that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePortfolioSharesAsync(const Model::DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
@@ -1367,20 +1113,12 @@ namespace Model
         virtual Model::DescribeProductOutcome DescribeProduct(const Model::DescribeProductRequest& request) const;
 
         /**
-         * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProductOutcomeCallable DescribeProductCallable(const Model::DescribeProductRequest& request) const;
 
         /**
-         * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProductAsync(const Model::DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1393,22 +1131,12 @@ namespace Model
         virtual Model::DescribeProductAsAdminOutcome DescribeProductAsAdmin(const Model::DescribeProductAsAdminRequest& request) const;
 
         /**
-         * <p>Gets information about the specified product. This operation is run with
-         * administrator access.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProductAsAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProductAsAdminOutcomeCallable DescribeProductAsAdminCallable(const Model::DescribeProductAsAdminRequest& request) const;
 
         /**
-         * <p>Gets information about the specified product. This operation is run with
-         * administrator access.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProductAsAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProductAsAdminAsync(const Model::DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1420,20 +1148,12 @@ namespace Model
         virtual Model::DescribeProductViewOutcome DescribeProductView(const Model::DescribeProductViewRequest& request) const;
 
         /**
-         * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProductView that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProductViewOutcomeCallable DescribeProductViewCallable(const Model::DescribeProductViewRequest& request) const;
 
         /**
-         * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProductView that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProductViewAsync(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1446,22 +1166,12 @@ namespace Model
         virtual Model::DescribeProvisionedProductOutcome DescribeProvisionedProduct(const Model::DescribeProvisionedProductRequest& request) const;
 
         /**
-         * <p>Gets information about the specified provisioned product.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProvisionedProductOutcomeCallable DescribeProvisionedProductCallable(const Model::DescribeProvisionedProductRequest& request) const;
 
         /**
-         * <p>Gets information about the specified provisioned product.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProvisionedProductAsync(const Model::DescribeProvisionedProductRequest& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1474,22 +1184,12 @@ namespace Model
         virtual Model::DescribeProvisionedProductPlanOutcome DescribeProvisionedProductPlan(const Model::DescribeProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Gets information about the resource changes for the specified
-         * plan.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProvisionedProductPlanOutcomeCallable DescribeProvisionedProductPlanCallable(const Model::DescribeProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Gets information about the resource changes for the specified
-         * plan.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProvisionedProductPlanAsync(const Model::DescribeProvisionedProductPlanRequest& request, const DescribeProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1502,22 +1202,12 @@ namespace Model
         virtual Model::DescribeProvisioningArtifactOutcome DescribeProvisioningArtifact(const Model::DescribeProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Gets information about the specified provisioning artifact (also known as a
-         * version) for the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProvisioningArtifactOutcomeCallable DescribeProvisioningArtifactCallable(const Model::DescribeProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Gets information about the specified provisioning artifact (also known as a
-         * version) for the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProvisioningArtifactAsync(const Model::DescribeProvisioningArtifactRequest& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1538,38 +1228,12 @@ namespace Model
         virtual Model::DescribeProvisioningParametersOutcome DescribeProvisioningParameters(const Model::DescribeProvisioningParametersRequest& request) const;
 
         /**
-         * <p>Gets information about the configuration required to provision the specified
-         * product using the specified provisioning artifact.</p> <p>If the output contains
-         * a TagOption key with an empty list of values, there is a TagOption conflict for
-         * that key. The end user cannot take action to fix the conflict, and launch is not
-         * blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include
-         * conflicted TagOption keys as tags, or this causes the error "Parameter
-         * validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
-         * Tag the provisioned product with the value
-         * <code>sc-tagoption-conflict-portfolioId-productId</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeProvisioningParameters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProvisioningParametersOutcomeCallable DescribeProvisioningParametersCallable(const Model::DescribeProvisioningParametersRequest& request) const;
 
         /**
-         * <p>Gets information about the configuration required to provision the specified
-         * product using the specified provisioning artifact.</p> <p>If the output contains
-         * a TagOption key with an empty list of values, there is a TagOption conflict for
-         * that key. The end user cannot take action to fix the conflict, and launch is not
-         * blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include
-         * conflicted TagOption keys as tags, or this causes the error "Parameter
-         * validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
-         * Tag the provisioned product with the value
-         * <code>sc-tagoption-conflict-portfolioId-productId</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeProvisioningParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProvisioningParametersAsync(const Model::DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1577,48 +1241,24 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * <a>UpdateProvisionedProduct</a>). </p>  <p>If a provisioned product was
          * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
          * new owner will be able to describe all past records for that product. The
          * previous owner will no longer be able to describe the records, but will be able
          * to use <a>ListRecordHistory</a> to see the product's history from when he was
-         * the owner.</p> </note><p><h3>See Also:</h3>   <a
+         * the owner.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeRecordOutcome DescribeRecord(const Model::DescribeRecordRequest& request) const;
 
         /**
-         * <p>Gets information about the specified request operation.</p> <p>Use this
-         * operation after calling a request operation (for example,
-         * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
-         * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
-         * new owner will be able to describe all past records for that product. The
-         * previous owner will no longer be able to describe the records, but will be able
-         * to use <a>ListRecordHistory</a> to see the product's history from when he was
-         * the owner.</p> </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeRecord that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeRecordOutcomeCallable DescribeRecordCallable(const Model::DescribeRecordRequest& request) const;
 
         /**
-         * <p>Gets information about the specified request operation.</p> <p>Use this
-         * operation after calling a request operation (for example,
-         * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
-         * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
-         * new owner will be able to describe all past records for that product. The
-         * previous owner will no longer be able to describe the records, but will be able
-         * to use <a>ListRecordHistory</a> to see the product's history from when he was
-         * the owner.</p> </note><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeRecord that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeRecordAsync(const Model::DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1630,20 +1270,12 @@ namespace Model
         virtual Model::DescribeServiceActionOutcome DescribeServiceAction(const Model::DescribeServiceActionRequest& request) const;
 
         /**
-         * <p>Describes a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServiceActionOutcomeCallable DescribeServiceActionCallable(const Model::DescribeServiceActionRequest& request) const;
 
         /**
-         * <p>Describes a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServiceActionAsync(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1657,24 +1289,12 @@ namespace Model
         virtual Model::DescribeServiceActionExecutionParametersOutcome DescribeServiceActionExecutionParameters(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
 
         /**
-         * <p>Finds the default parameters for a specific self-service action on a specific
-         * provisioned product and returns a map of the results to the user.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeServiceActionExecutionParameters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServiceActionExecutionParametersOutcomeCallable DescribeServiceActionExecutionParametersCallable(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
 
         /**
-         * <p>Finds the default parameters for a specific self-service action on a specific
-         * provisioned product and returns a map of the results to the user.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeServiceActionExecutionParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServiceActionExecutionParametersAsync(const Model::DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1686,20 +1306,12 @@ namespace Model
         virtual Model::DescribeTagOptionOutcome DescribeTagOption(const Model::DescribeTagOptionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified TagOption.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTagOptionOutcomeCallable DescribeTagOptionCallable(const Model::DescribeTagOptionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified TagOption.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTagOptionAsync(const Model::DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1708,38 +1320,22 @@ namespace Model
          * will not delete your current shares but it will prevent you from creating new
          * shares throughout your organization. Current shares will not be in sync with
          * your organization structure if it changes after calling this API. This API can
-         * only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * only be called by the management account in the organization.</p> <p>This API
+         * can't be invoked if there are active delegated administrators in the
+         * organization.</p> <p>Note that a delegated administrator is not authorized to
+         * invoke <code>DisableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableAWSOrganizationsAccessOutcome DisableAWSOrganizationsAccess(const Model::DisableAWSOrganizationsAccessRequest& request) const;
 
         /**
-         * <p>Disable portfolio sharing through AWS Organizations feature. This feature
-         * will not delete your current shares but it will prevent you from creating new
-         * shares throughout your organization. Current shares will not be in sync with
-         * your organization structure if it changes after calling this API. This API can
-         * only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisableAWSOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisableAWSOrganizationsAccessOutcomeCallable DisableAWSOrganizationsAccessCallable(const Model::DisableAWSOrganizationsAccessRequest& request) const;
 
         /**
-         * <p>Disable portfolio sharing through AWS Organizations feature. This feature
-         * will not delete your current shares but it will prevent you from creating new
-         * shares throughout your organization. Current shares will not be in sync with
-         * your organization structure if it changes after calling this API. This API can
-         * only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisableAWSOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableAWSOrganizationsAccessAsync(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1752,22 +1348,12 @@ namespace Model
         virtual Model::DisassociateBudgetFromResourceOutcome DisassociateBudgetFromResource(const Model::DisassociateBudgetFromResourceRequest& request) const;
 
         /**
-         * <p>Disassociates the specified budget from the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateBudgetFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateBudgetFromResourceOutcomeCallable DisassociateBudgetFromResourceCallable(const Model::DisassociateBudgetFromResourceRequest& request) const;
 
         /**
-         * <p>Disassociates the specified budget from the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateBudgetFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateBudgetFromResourceAsync(const Model::DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1780,50 +1366,31 @@ namespace Model
         virtual Model::DisassociatePrincipalFromPortfolioOutcome DisassociatePrincipalFromPortfolio(const Model::DisassociatePrincipalFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates a previously associated principal ARN from a specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociatePrincipalFromPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociatePrincipalFromPortfolioOutcomeCallable DisassociatePrincipalFromPortfolioCallable(const Model::DisassociatePrincipalFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates a previously associated principal ARN from a specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociatePrincipalFromPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociatePrincipalFromPortfolioAsync(const Model::DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified product from the specified portfolio. </p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateProductFromPortfolioOutcome DisassociateProductFromPortfolio(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateProductFromPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateProductFromPortfolioOutcomeCallable DisassociateProductFromPortfolioCallable(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio.
-         * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateProductFromPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateProductFromPortfolioAsync(const Model::DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1836,22 +1403,12 @@ namespace Model
         virtual Model::DisassociateServiceActionFromProvisioningArtifactOutcome DisassociateServiceActionFromProvisioningArtifact(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Disassociates the specified self-service action association from the
-         * specified provisioning artifact.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateServiceActionFromProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateServiceActionFromProvisioningArtifactOutcomeCallable DisassociateServiceActionFromProvisioningArtifactCallable(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Disassociates the specified self-service action association from the
-         * specified provisioning artifact.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateServiceActionFromProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateServiceActionFromProvisioningArtifactAsync(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1864,22 +1421,12 @@ namespace Model
         virtual Model::DisassociateTagOptionFromResourceOutcome DisassociateTagOptionFromResource(const Model::DisassociateTagOptionFromResourceRequest& request) const;
 
         /**
-         * <p>Disassociates the specified TagOption from the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateTagOptionFromResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateTagOptionFromResourceOutcomeCallable DisassociateTagOptionFromResourceCallable(const Model::DisassociateTagOptionFromResourceRequest& request) const;
 
         /**
-         * <p>Disassociates the specified TagOption from the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateTagOptionFromResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateTagOptionFromResourceAsync(const Model::DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1887,42 +1434,23 @@ namespace Model
          * <p>Enable portfolio sharing feature through AWS Organizations. This API will
          * allow Service Catalog to receive updates on your organization in order to sync
          * your shares with the current structure. This API can only be called by the
-         * master account in the organization.</p> <p>By calling this API Service Catalog
-         * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
-         * your shares can be in sync with any changes in your AWS Organizations
-         * structure.</p><p><h3>See Also:</h3>   <a
+         * management account in the organization.</p> <p>By calling this API Service
+         * Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf
+         * so that your shares can be in sync with any changes in your AWS Organizations
+         * structure.</p> <p>Note that a delegated administrator is not authorized to
+         * invoke <code>EnableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableAWSOrganizationsAccessOutcome EnableAWSOrganizationsAccess(const Model::EnableAWSOrganizationsAccessRequest& request) const;
 
         /**
-         * <p>Enable portfolio sharing feature through AWS Organizations. This API will
-         * allow Service Catalog to receive updates on your organization in order to sync
-         * your shares with the current structure. This API can only be called by the
-         * master account in the organization.</p> <p>By calling this API Service Catalog
-         * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
-         * your shares can be in sync with any changes in your AWS Organizations
-         * structure.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for EnableAWSOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::EnableAWSOrganizationsAccessOutcomeCallable EnableAWSOrganizationsAccessCallable(const Model::EnableAWSOrganizationsAccessRequest& request) const;
 
         /**
-         * <p>Enable portfolio sharing feature through AWS Organizations. This API will
-         * allow Service Catalog to receive updates on your organization in order to sync
-         * your shares with the current structure. This API can only be called by the
-         * master account in the organization.</p> <p>By calling this API Service Catalog
-         * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
-         * your shares can be in sync with any changes in your AWS Organizations
-         * structure.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for EnableAWSOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableAWSOrganizationsAccessAsync(const Model::EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1935,22 +1463,12 @@ namespace Model
         virtual Model::ExecuteProvisionedProductPlanOutcome ExecuteProvisionedProductPlan(const Model::ExecuteProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Provisions or modifies a product based on the resource changes for the
-         * specified plan.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExecuteProvisionedProductPlan that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExecuteProvisionedProductPlanOutcomeCallable ExecuteProvisionedProductPlanCallable(const Model::ExecuteProvisionedProductPlanRequest& request) const;
 
         /**
-         * <p>Provisions or modifies a product based on the resource changes for the
-         * specified plan.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExecuteProvisionedProductPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExecuteProvisionedProductPlanAsync(const Model::ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -1963,58 +1481,88 @@ namespace Model
         virtual Model::ExecuteProvisionedProductServiceActionOutcome ExecuteProvisionedProductServiceAction(const Model::ExecuteProvisionedProductServiceActionRequest& request) const;
 
         /**
-         * <p>Executes a self-service action against a provisioned product.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ExecuteProvisionedProductServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ExecuteProvisionedProductServiceActionOutcomeCallable ExecuteProvisionedProductServiceActionCallable(const Model::ExecuteProvisionedProductServiceActionRequest& request) const;
 
         /**
-         * <p>Executes a self-service action against a provisioned product.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ExecuteProvisionedProductServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExecuteProvisionedProductServiceActionAsync(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the Access Status for AWS Organization portfolio share feature. This API
-         * can only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * can only be called by the management account in the organization or by a
+         * delegated admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAWSOrganizationsAccessStatusOutcome GetAWSOrganizationsAccessStatus(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
 
         /**
-         * <p>Get the Access Status for AWS Organization portfolio share feature. This API
-         * can only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAWSOrganizationsAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAWSOrganizationsAccessStatusOutcomeCallable GetAWSOrganizationsAccessStatusCallable(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
 
         /**
-         * <p>Get the Access Status for AWS Organization portfolio share feature. This API
-         * can only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAWSOrganizationsAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAWSOrganizationsAccessStatusAsync(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all portfolios for which sharing was accepted by this
+         * <p>This API takes either a <code>ProvisonedProductId</code> or a
+         * <code>ProvisionedProductName</code>, along with a list of one or more output
+         * keys, and responds with the key/value pairs of those outputs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetProvisionedProductOutputsOutcome GetProvisionedProductOutputs(const Model::GetProvisionedProductOutputsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetProvisionedProductOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetProvisionedProductOutputsOutcomeCallable GetProvisionedProductOutputsCallable(const Model::GetProvisionedProductOutputsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetProvisionedProductOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetProvisionedProductOutputsAsync(const Model::GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Requests the import of a resource as a Service Catalog provisioned product
+         * that is associated to a Service Catalog product and provisioning artifact. Once
+         * imported, all supported Service Catalog governance actions are supported on the
+         * provisioned product.</p> <p>Resource import only supports CloudFormation stack
+         * ARNs. CloudFormation StackSets and non-root nested stacks are not supported.</p>
+         * <p>The CloudFormation stack must have one of the following statuses to be
+         * imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>,
+         * <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+         * <code>IMPORT_ROLLBACK_COMPLETE</code>.</p> <p>Import of the resource requires
+         * that the CloudFormation stack template matches the associated Service Catalog
+         * product provisioning artifact. </p> <p>The user or role that performs this
+         * operation must have the <code>cloudformation:GetTemplate</code> and
+         * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportAsProvisionedProductOutcome ImportAsProvisionedProduct(const Model::ImportAsProvisionedProductRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportAsProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportAsProvisionedProductOutcomeCallable ImportAsProvisionedProductCallable(const Model::ImportAsProvisionedProductRequest& request) const;
+
+        /**
+         * An Async wrapper for ImportAsProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportAsProvisionedProductAsync(const Model::ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all imported portfolios for which account-to-account shares were
+         * accepted by this account. By specifying the <code>PortfolioShareType</code>, you
+         * can list portfolios for which organizational shares were accepted by this
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
          * API Reference</a></p>
@@ -2022,22 +1570,12 @@ namespace Model
         virtual Model::ListAcceptedPortfolioSharesOutcome ListAcceptedPortfolioShares(const Model::ListAcceptedPortfolioSharesRequest& request) const;
 
         /**
-         * <p>Lists all portfolios for which sharing was accepted by this
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAcceptedPortfolioShares that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAcceptedPortfolioSharesOutcomeCallable ListAcceptedPortfolioSharesCallable(const Model::ListAcceptedPortfolioSharesRequest& request) const;
 
         /**
-         * <p>Lists all portfolios for which sharing was accepted by this
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAcceptedPortfolioShares that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAcceptedPortfolioSharesAsync(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2050,22 +1588,12 @@ namespace Model
         virtual Model::ListBudgetsForResourceOutcome ListBudgetsForResource(const Model::ListBudgetsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all the budgets associated to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListBudgetsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListBudgetsForResourceOutcomeCallable ListBudgetsForResourceCallable(const Model::ListBudgetsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all the budgets associated to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListBudgetsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBudgetsForResourceAsync(const Model::ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2078,22 +1606,12 @@ namespace Model
         virtual Model::ListConstraintsForPortfolioOutcome ListConstraintsForPortfolio(const Model::ListConstraintsForPortfolioRequest& request) const;
 
         /**
-         * <p>Lists the constraints for the specified portfolio and product.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConstraintsForPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConstraintsForPortfolioOutcomeCallable ListConstraintsForPortfolioCallable(const Model::ListConstraintsForPortfolioRequest& request) const;
 
         /**
-         * <p>Lists the constraints for the specified portfolio and product.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConstraintsForPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConstraintsForPortfolioAsync(const Model::ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2108,85 +1626,52 @@ namespace Model
         virtual Model::ListLaunchPathsOutcome ListLaunchPaths(const Model::ListLaunchPathsRequest& request) const;
 
         /**
-         * <p>Lists the paths to the specified product. A path is how the user has access
-         * to a specified product, and is necessary when provisioning a product. A path
-         * also determines the constraints put on the product.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListLaunchPaths that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListLaunchPathsOutcomeCallable ListLaunchPathsCallable(const Model::ListLaunchPathsRequest& request) const;
 
         /**
-         * <p>Lists the paths to the specified product. A path is how the user has access
-         * to a specified product, and is necessary when provisioning a product. A path
-         * also determines the constraints put on the product.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListLaunchPaths that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLaunchPathsAsync(const Model::ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the organization nodes that have access to the specified portfolio.
-         * This API can only be called by the master account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * This API can only be called by the management account in the organization or by
+         * a delegated admin.</p> <p>If a delegated admin is de-registered, they can no
+         * longer perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOrganizationPortfolioAccessOutcome ListOrganizationPortfolioAccess(const Model::ListOrganizationPortfolioAccessRequest& request) const;
 
         /**
-         * <p>Lists the organization nodes that have access to the specified portfolio.
-         * This API can only be called by the master account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListOrganizationPortfolioAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListOrganizationPortfolioAccessOutcomeCallable ListOrganizationPortfolioAccessCallable(const Model::ListOrganizationPortfolioAccessRequest& request) const;
 
         /**
-         * <p>Lists the organization nodes that have access to the specified portfolio.
-         * This API can only be called by the master account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListOrganizationPortfolioAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOrganizationPortfolioAccessAsync(const Model::ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the account IDs that have access to the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account IDs that have access to the specified portfolio.</p> <p>A
+         * delegated admin can list the accounts that have access to the shared portfolio.
+         * Note that if a delegated admin is de-registered, they can no longer perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPortfolioAccessOutcome ListPortfolioAccess(const Model::ListPortfolioAccessRequest& request) const;
 
         /**
-         * <p>Lists the account IDs that have access to the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListPortfolioAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPortfolioAccessOutcomeCallable ListPortfolioAccessCallable(const Model::ListPortfolioAccessRequest& request) const;
 
         /**
-         * <p>Lists the account IDs that have access to the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListPortfolioAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPortfolioAccessAsync(const Model::ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2198,20 +1683,12 @@ namespace Model
         virtual Model::ListPortfoliosOutcome ListPortfolios(const Model::ListPortfoliosRequest& request) const;
 
         /**
-         * <p>Lists all portfolios in the catalog.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListPortfolios that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPortfoliosOutcomeCallable ListPortfoliosCallable(const Model::ListPortfoliosRequest& request) const;
 
         /**
-         * <p>Lists all portfolios in the catalog.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListPortfolios that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPortfoliosAsync(const Model::ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2224,22 +1701,12 @@ namespace Model
         virtual Model::ListPortfoliosForProductOutcome ListPortfoliosForProduct(const Model::ListPortfoliosForProductRequest& request) const;
 
         /**
-         * <p>Lists all portfolios that the specified product is associated
-         * with.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListPortfoliosForProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPortfoliosForProductOutcomeCallable ListPortfoliosForProductCallable(const Model::ListPortfoliosForProductRequest& request) const;
 
         /**
-         * <p>Lists all portfolios that the specified product is associated
-         * with.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListPortfoliosForProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPortfoliosForProductAsync(const Model::ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2252,22 +1719,12 @@ namespace Model
         virtual Model::ListPrincipalsForPortfolioOutcome ListPrincipalsForPortfolio(const Model::ListPrincipalsForPortfolioRequest& request) const;
 
         /**
-         * <p>Lists all principal ARNs associated with the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListPrincipalsForPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPrincipalsForPortfolioOutcomeCallable ListPrincipalsForPortfolioCallable(const Model::ListPrincipalsForPortfolioRequest& request) const;
 
         /**
-         * <p>Lists all principal ARNs associated with the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListPrincipalsForPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPrincipalsForPortfolioAsync(const Model::ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2280,22 +1737,12 @@ namespace Model
         virtual Model::ListProvisionedProductPlansOutcome ListProvisionedProductPlans(const Model::ListProvisionedProductPlansRequest& request) const;
 
         /**
-         * <p>Lists the plans for the specified provisioned product or all plans to which
-         * the user has access.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListProvisionedProductPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProvisionedProductPlansOutcomeCallable ListProvisionedProductPlansCallable(const Model::ListProvisionedProductPlansRequest& request) const;
 
         /**
-         * <p>Lists the plans for the specified provisioned product or all plans to which
-         * the user has access.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListProvisionedProductPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProvisionedProductPlansAsync(const Model::ListProvisionedProductPlansRequest& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2308,22 +1755,12 @@ namespace Model
         virtual Model::ListProvisioningArtifactsOutcome ListProvisioningArtifacts(const Model::ListProvisioningArtifactsRequest& request) const;
 
         /**
-         * <p>Lists all provisioning artifacts (also known as versions) for the specified
-         * product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListProvisioningArtifacts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProvisioningArtifactsOutcomeCallable ListProvisioningArtifactsCallable(const Model::ListProvisioningArtifactsRequest& request) const;
 
         /**
-         * <p>Lists all provisioning artifacts (also known as versions) for the specified
-         * product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListProvisioningArtifacts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProvisioningArtifactsAsync(const Model::ListProvisioningArtifactsRequest& request, const ListProvisioningArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2336,22 +1773,12 @@ namespace Model
         virtual Model::ListProvisioningArtifactsForServiceActionOutcome ListProvisioningArtifactsForServiceAction(const Model::ListProvisioningArtifactsForServiceActionRequest& request) const;
 
         /**
-         * <p>Lists all provisioning artifacts (also known as versions) for the specified
-         * self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListProvisioningArtifactsForServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProvisioningArtifactsForServiceActionOutcomeCallable ListProvisioningArtifactsForServiceActionCallable(const Model::ListProvisioningArtifactsForServiceActionRequest& request) const;
 
         /**
-         * <p>Lists all provisioning artifacts (also known as versions) for the specified
-         * self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListProvisioningArtifactsForServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProvisioningArtifactsForServiceActionAsync(const Model::ListProvisioningArtifactsForServiceActionRequest& request, const ListProvisioningArtifactsForServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2364,22 +1791,12 @@ namespace Model
         virtual Model::ListRecordHistoryOutcome ListRecordHistory(const Model::ListRecordHistoryRequest& request) const;
 
         /**
-         * <p>Lists the specified requests or all performed requests.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListRecordHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRecordHistoryOutcomeCallable ListRecordHistoryCallable(const Model::ListRecordHistoryRequest& request) const;
 
         /**
-         * <p>Lists the specified requests or all performed requests.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListRecordHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRecordHistoryAsync(const Model::ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2392,22 +1809,12 @@ namespace Model
         virtual Model::ListResourcesForTagOptionOutcome ListResourcesForTagOption(const Model::ListResourcesForTagOptionRequest& request) const;
 
         /**
-         * <p>Lists the resources associated with the specified TagOption.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListResourcesForTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListResourcesForTagOptionOutcomeCallable ListResourcesForTagOptionCallable(const Model::ListResourcesForTagOptionRequest& request) const;
 
         /**
-         * <p>Lists the resources associated with the specified TagOption.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListResourcesForTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListResourcesForTagOptionAsync(const Model::ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2419,20 +1826,12 @@ namespace Model
         virtual Model::ListServiceActionsOutcome ListServiceActions(const Model::ListServiceActionsRequest& request) const;
 
         /**
-         * <p>Lists all self-service actions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListServiceActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListServiceActionsOutcomeCallable ListServiceActionsCallable(const Model::ListServiceActionsRequest& request) const;
 
         /**
-         * <p>Lists all self-service actions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListServiceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListServiceActionsAsync(const Model::ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2445,22 +1844,12 @@ namespace Model
         virtual Model::ListServiceActionsForProvisioningArtifactOutcome ListServiceActionsForProvisioningArtifact(const Model::ListServiceActionsForProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of self-service actions associated with the
-         * specified Product ID and Provisioning Artifact ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListServiceActionsForProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListServiceActionsForProvisioningArtifactOutcomeCallable ListServiceActionsForProvisioningArtifactCallable(const Model::ListServiceActionsForProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Returns a paginated list of self-service actions associated with the
-         * specified Product ID and Provisioning Artifact ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListServiceActionsForProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListServiceActionsForProvisioningArtifactAsync(const Model::ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2475,26 +1864,12 @@ namespace Model
         virtual Model::ListStackInstancesForProvisionedProductOutcome ListStackInstancesForProvisionedProduct(const Model::ListStackInstancesForProvisionedProductRequest& request) const;
 
         /**
-         * <p>Returns summary information about stack instances that are associated with
-         * the specified <code>CFN_STACKSET</code> type provisioned product. You can filter
-         * for stack instances that are associated with a specific AWS account name or
-         * region. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListStackInstancesForProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListStackInstancesForProvisionedProductOutcomeCallable ListStackInstancesForProvisionedProductCallable(const Model::ListStackInstancesForProvisionedProductRequest& request) const;
 
         /**
-         * <p>Returns summary information about stack instances that are associated with
-         * the specified <code>CFN_STACKSET</code> type provisioned product. You can filter
-         * for stack instances that are associated with a specific AWS account name or
-         * region. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListStackInstancesForProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStackInstancesForProvisionedProductAsync(const Model::ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2507,22 +1882,12 @@ namespace Model
         virtual Model::ListTagOptionsOutcome ListTagOptions(const Model::ListTagOptionsRequest& request) const;
 
         /**
-         * <p>Lists the specified TagOptions or all TagOptions.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagOptionsOutcomeCallable ListTagOptionsCallable(const Model::ListTagOptionsRequest& request) const;
 
         /**
-         * <p>Lists the specified TagOptions or all TagOptions.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagOptionsAsync(const Model::ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2542,36 +1907,12 @@ namespace Model
         virtual Model::ProvisionProductOutcome ProvisionProduct(const Model::ProvisionProductRequest& request) const;
 
         /**
-         * <p>Provisions the specified product.</p> <p>A provisioned product is a resourced
-         * instance of a product. For example, provisioning a product based on a
-         * CloudFormation template launches a CloudFormation stack and its underlying
-         * resources. You can check the status of this request using
-         * <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty
-         * list of values, there is a tag conflict for that key. Do not include conflicted
-         * keys as tags, or this causes the error "Parameter validation failed: Missing
-         * required parameter in Tags[<i>N</i>]:<i>Value</i>".</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ProvisionProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ProvisionProductOutcomeCallable ProvisionProductCallable(const Model::ProvisionProductRequest& request) const;
 
         /**
-         * <p>Provisions the specified product.</p> <p>A provisioned product is a resourced
-         * instance of a product. For example, provisioning a product based on a
-         * CloudFormation template launches a CloudFormation stack and its underlying
-         * resources. You can check the status of this request using
-         * <a>DescribeRecord</a>.</p> <p>If the request contains a tag key with an empty
-         * list of values, there is a tag conflict for that key. Do not include conflicted
-         * keys as tags, or this causes the error "Parameter validation failed: Missing
-         * required parameter in Tags[<i>N</i>]:<i>Value</i>".</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ProvisionProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ProvisionProductAsync(const Model::ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2584,22 +1925,12 @@ namespace Model
         virtual Model::RejectPortfolioShareOutcome RejectPortfolioShare(const Model::RejectPortfolioShareRequest& request) const;
 
         /**
-         * <p>Rejects an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RejectPortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RejectPortfolioShareOutcomeCallable RejectPortfolioShareCallable(const Model::RejectPortfolioShareRequest& request) const;
 
         /**
-         * <p>Rejects an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RejectPortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RejectPortfolioShareAsync(const Model::RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2613,24 +1944,12 @@ namespace Model
         virtual Model::ScanProvisionedProductsOutcome ScanProvisionedProducts(const Model::ScanProvisionedProductsRequest& request) const;
 
         /**
-         * <p>Lists the provisioned products that are available (not terminated).</p> <p>To
-         * use additional filtering, see <a>SearchProvisionedProducts</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ScanProvisionedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ScanProvisionedProductsOutcomeCallable ScanProvisionedProductsCallable(const Model::ScanProvisionedProductsRequest& request) const;
 
         /**
-         * <p>Lists the provisioned products that are available (not terminated).</p> <p>To
-         * use additional filtering, see <a>SearchProvisionedProducts</a>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ScanProvisionedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ScanProvisionedProductsAsync(const Model::ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2643,22 +1962,12 @@ namespace Model
         virtual Model::SearchProductsOutcome SearchProducts(const Model::SearchProductsRequest& request) const;
 
         /**
-         * <p>Gets information about the products to which the caller has
-         * access.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchProductsOutcomeCallable SearchProductsCallable(const Model::SearchProductsRequest& request) const;
 
         /**
-         * <p>Gets information about the products to which the caller has
-         * access.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchProductsAsync(const Model::SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2671,22 +1980,12 @@ namespace Model
         virtual Model::SearchProductsAsAdminOutcome SearchProductsAsAdmin(const Model::SearchProductsAsAdminRequest& request) const;
 
         /**
-         * <p>Gets information about the products for the specified portfolio or all
-         * products.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchProductsAsAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchProductsAsAdminOutcomeCallable SearchProductsAsAdminCallable(const Model::SearchProductsAsAdminRequest& request) const;
 
         /**
-         * <p>Gets information about the products for the specified portfolio or all
-         * products.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchProductsAsAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchProductsAsAdminAsync(const Model::SearchProductsAsAdminRequest& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2699,22 +1998,12 @@ namespace Model
         virtual Model::SearchProvisionedProductsOutcome SearchProvisionedProducts(const Model::SearchProvisionedProductsRequest& request) const;
 
         /**
-         * <p>Gets information about the provisioned products that meet the specified
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SearchProvisionedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchProvisionedProductsOutcomeCallable SearchProvisionedProductsCallable(const Model::SearchProvisionedProductsRequest& request) const;
 
         /**
-         * <p>Gets information about the provisioned products that meet the specified
-         * criteria.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SearchProvisionedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchProvisionedProductsAsync(const Model::SearchProvisionedProductsRequest& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2729,26 +2018,12 @@ namespace Model
         virtual Model::TerminateProvisionedProductOutcome TerminateProvisionedProduct(const Model::TerminateProvisionedProductRequest& request) const;
 
         /**
-         * <p>Terminates the specified provisioned product.</p> <p>This operation does not
-         * delete any records associated with the provisioned product.</p> <p>You can check
-         * the status of this request using <a>DescribeRecord</a>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TerminateProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TerminateProvisionedProductOutcomeCallable TerminateProvisionedProductCallable(const Model::TerminateProvisionedProductRequest& request) const;
 
         /**
-         * <p>Terminates the specified provisioned product.</p> <p>This operation does not
-         * delete any records associated with the provisioned product.</p> <p>You can check
-         * the status of this request using <a>DescribeRecord</a>.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TerminateProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TerminateProvisionedProductAsync(const Model::TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2760,20 +2035,12 @@ namespace Model
         virtual Model::UpdateConstraintOutcome UpdateConstraint(const Model::UpdateConstraintRequest& request) const;
 
         /**
-         * <p>Updates the specified constraint.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateConstraint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConstraintOutcomeCallable UpdateConstraintCallable(const Model::UpdateConstraintRequest& request) const;
 
         /**
-         * <p>Updates the specified constraint.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateConstraint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConstraintAsync(const Model::UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2786,24 +2053,42 @@ namespace Model
         virtual Model::UpdatePortfolioOutcome UpdatePortfolio(const Model::UpdatePortfolioRequest& request) const;
 
         /**
-         * <p>Updates the specified portfolio.</p> <p>You cannot update a product that was
-         * shared with you.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdatePortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdatePortfolioOutcomeCallable UpdatePortfolioCallable(const Model::UpdatePortfolioRequest& request) const;
 
         /**
-         * <p>Updates the specified portfolio.</p> <p>You cannot update a product that was
-         * shared with you.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdatePortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdatePortfolioAsync(const Model::UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified portfolio share. You can use this API to enable or
+         * disable TagOptions sharing for an existing portfolio share. </p> <p>The
+         * portfolio share cannot be updated if the <code> CreatePortfolioShare</code>
+         * operation is <code>IN_PROGRESS</code>, as the share is not available to
+         * recipient entities. In this case, you must wait for the portfolio share to be
+         * COMPLETED.</p> <p>You must provide the <code>accountId</code> or organization
+         * node in the input, but not both.</p> <p>If the portfolio is shared to both an
+         * external account and an organization node, and both shares need to be updated,
+         * you must invoke <code>UpdatePortfolioShare</code> separately for each share
+         * type. </p> <p>This API cannot be used for removing the portfolio share. You must
+         * use <code>DeletePortfolioShare</code> API for that action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolioShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePortfolioShareOutcome UpdatePortfolioShare(const Model::UpdatePortfolioShareRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePortfolioShare that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePortfolioShareOutcomeCallable UpdatePortfolioShareCallable(const Model::UpdatePortfolioShareRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdatePortfolioShare that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePortfolioShareAsync(const Model::UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified product.</p><p><h3>See Also:</h3>   <a
@@ -2813,20 +2098,12 @@ namespace Model
         virtual Model::UpdateProductOutcome UpdateProduct(const Model::UpdateProductRequest& request) const;
 
         /**
-         * <p>Updates the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProductOutcomeCallable UpdateProductCallable(const Model::UpdateProductRequest& request) const;
 
         /**
-         * <p>Updates the specified product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProductAsync(const Model::UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2843,30 +2120,12 @@ namespace Model
         virtual Model::UpdateProvisionedProductOutcome UpdateProvisionedProduct(const Model::UpdateProvisionedProductRequest& request) const;
 
         /**
-         * <p>Requests updates to the configuration of the specified provisioned
-         * product.</p> <p>If there are tags associated with the object, they cannot be
-         * updated or added. Depending on the specific updates requested, this operation
-         * can update with no interruption, with some interruption, or replace the
-         * provisioned product entirely.</p> <p>You can check the status of this request
-         * using <a>DescribeRecord</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProvisionedProductOutcomeCallable UpdateProvisionedProductCallable(const Model::UpdateProvisionedProductRequest& request) const;
 
         /**
-         * <p>Requests updates to the configuration of the specified provisioned
-         * product.</p> <p>If there are tags associated with the object, they cannot be
-         * updated or added. Depending on the specific updates requested, this operation
-         * can update with no interruption, with some interruption, or replace the
-         * provisioned product entirely.</p> <p>You can check the status of this request
-         * using <a>DescribeRecord</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProvisionedProductAsync(const Model::UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2879,22 +2138,12 @@ namespace Model
         virtual Model::UpdateProvisionedProductPropertiesOutcome UpdateProvisionedProductProperties(const Model::UpdateProvisionedProductPropertiesRequest& request) const;
 
         /**
-         * <p>Requests updates to the properties of the specified provisioned
-         * product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateProvisionedProductProperties that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProvisionedProductPropertiesOutcomeCallable UpdateProvisionedProductPropertiesCallable(const Model::UpdateProvisionedProductPropertiesRequest& request) const;
 
         /**
-         * <p>Requests updates to the properties of the specified provisioned
-         * product.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateProvisionedProductProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProvisionedProductPropertiesAsync(const Model::UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2908,24 +2157,12 @@ namespace Model
         virtual Model::UpdateProvisioningArtifactOutcome UpdateProvisioningArtifact(const Model::UpdateProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Updates the specified provisioning artifact (also known as a version) for the
-         * specified product.</p> <p>You cannot update a provisioning artifact for a
-         * product that was shared with you.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProvisioningArtifactOutcomeCallable UpdateProvisioningArtifactCallable(const Model::UpdateProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Updates the specified provisioning artifact (also known as a version) for the
-         * specified product.</p> <p>You cannot update a provisioning artifact for a
-         * product that was shared with you.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateProvisioningArtifactAsync(const Model::UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2937,20 +2174,12 @@ namespace Model
         virtual Model::UpdateServiceActionOutcome UpdateServiceAction(const Model::UpdateServiceActionRequest& request) const;
 
         /**
-         * <p>Updates a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateServiceAction that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateServiceActionOutcomeCallable UpdateServiceActionCallable(const Model::UpdateServiceActionRequest& request) const;
 
         /**
-         * <p>Updates a self-service action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateServiceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateServiceActionAsync(const Model::UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -2962,20 +2191,12 @@ namespace Model
         virtual Model::UpdateTagOptionOutcome UpdateTagOption(const Model::UpdateTagOptionRequest& request) const;
 
         /**
-         * <p>Updates the specified TagOption.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateTagOption that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateTagOptionOutcomeCallable UpdateTagOptionCallable(const Model::UpdateTagOptionRequest& request) const;
 
         /**
-         * <p>Updates the specified TagOption.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateTagOption that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateTagOptionAsync(const Model::UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -3012,6 +2233,7 @@ namespace Model
         void DescribeCopyProductStatusAsyncHelper(const Model::DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePortfolioAsyncHelper(const Model::DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePortfolioShareStatusAsyncHelper(const Model::DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePortfolioSharesAsyncHelper(const Model::DescribePortfolioSharesRequest& request, const DescribePortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductAsyncHelper(const Model::DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductAsAdminAsyncHelper(const Model::DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductViewAsyncHelper(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3033,6 +2255,8 @@ namespace Model
         void ExecuteProvisionedProductPlanAsyncHelper(const Model::ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExecuteProvisionedProductServiceActionAsyncHelper(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAWSOrganizationsAccessStatusAsyncHelper(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetProvisionedProductOutputsAsyncHelper(const Model::GetProvisionedProductOutputsRequest& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportAsProvisionedProductAsyncHelper(const Model::ImportAsProvisionedProductRequest& request, const ImportAsProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAcceptedPortfolioSharesAsyncHelper(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBudgetsForResourceAsyncHelper(const Model::ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConstraintsForPortfolioAsyncHelper(const Model::ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3060,6 +2284,7 @@ namespace Model
         void TerminateProvisionedProductAsyncHelper(const Model::TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConstraintAsyncHelper(const Model::UpdateConstraintRequest& request, const UpdateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePortfolioAsyncHelper(const Model::UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePortfolioShareAsyncHelper(const Model::UpdatePortfolioShareRequest& request, const UpdatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProductAsyncHelper(const Model::UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProvisionedProductAsyncHelper(const Model::UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProvisionedProductPropertiesAsyncHelper(const Model::UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

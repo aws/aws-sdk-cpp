@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
@@ -45,68 +35,101 @@ namespace Model
 
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline const Aws::Map<Aws::String, FailureInfo>& GetFailedResourcesMap() const{ return m_failedResourcesMap; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline void SetFailedResourcesMap(const Aws::Map<Aws::String, FailureInfo>& value) { m_failedResourcesMap = value; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline void SetFailedResourcesMap(Aws::Map<Aws::String, FailureInfo>&& value) { m_failedResourcesMap = std::move(value); }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& WithFailedResourcesMap(const Aws::Map<Aws::String, FailureInfo>& value) { SetFailedResourcesMap(value); return *this;}
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& WithFailedResourcesMap(Aws::Map<Aws::String, FailureInfo>&& value) { SetFailedResourcesMap(std::move(value)); return *this;}
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& AddFailedResourcesMap(const Aws::String& key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& AddFailedResourcesMap(Aws::String&& key, const FailureInfo& value) { m_failedResourcesMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& AddFailedResourcesMap(const Aws::String& key, FailureInfo&& value) { m_failedResourcesMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& AddFailedResourcesMap(Aws::String&& key, FailureInfo&& value) { m_failedResourcesMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& AddFailedResourcesMap(const char* key, FailureInfo&& value) { m_failedResourcesMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details of resources that could not be untagged. An error code, status code,
-     * and error message are returned for each failed item. </p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * untagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline UntagResourcesResult& AddFailedResourcesMap(const char* key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
 

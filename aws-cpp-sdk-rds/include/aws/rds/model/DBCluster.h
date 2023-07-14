@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -22,11 +12,15 @@
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
+#include <aws/rds/model/WriteForwardingStatus.h>
+#include <aws/rds/model/ClusterPendingModifiedValues.h>
+#include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
 #include <aws/rds/model/DomainMembership.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -44,10 +38,27 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type
-   * is used as a response element in the <code>DescribeDBClusters</code>,
-   * <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB
+   * cluster.</p> <p>For an Amazon Aurora DB cluster, this data type is used as a
+   * response element in the operations <code>CreateDBCluster</code>,
+   * <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+   * <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>,
+   * <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>,
+   * <code>RestoreDBClusterFromSnapshot</code>,
+   * <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and
+   * <code>StopDBCluster</code>.</p> <p>For a Multi-AZ DB cluster, this data type is
+   * used as a response element in the operations <code>CreateDBCluster</code>,
+   * <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+   * <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>,
+   * <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and
+   * <code>RestoreDBClusterToPointInTime</code>.</p> <p>For more information on
+   * Amazon Aurora DB clusters, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+   * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>For
+   * more information on Multi-AZ DB clusters, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+   * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+   * RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
@@ -462,6 +473,37 @@ namespace Model
 
 
     /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const{ return m_automaticRestartTime; }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline void SetAutomaticRestartTime(const Aws::Utils::DateTime& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = value; }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline void SetAutomaticRestartTime(Aws::Utils::DateTime&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::move(value); }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline DBCluster& WithAutomaticRestartTime(const Aws::Utils::DateTime& value) { SetAutomaticRestartTime(value); return *this;}
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline DBCluster& WithAutomaticRestartTime(Aws::Utils::DateTime&& value) { SetAutomaticRestartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the progress of the operation as a percentage.</p>
      */
     inline const Aws::String& GetPercentProgress() const{ return m_percentProgress; }
@@ -594,8 +636,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -607,8 +649,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -620,8 +662,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -633,8 +675,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -646,8 +688,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -659,8 +701,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -672,8 +714,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -685,8 +727,8 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Aurora
      * distributes the connection requests among the Aurora Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Aurora
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
-     * Replica that you are connected to is promoted to be the primary instance, your
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Aurora Replica
+     * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Aurora
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
      */
@@ -765,42 +807,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline DBCluster& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline DBCluster& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     * <p>The name of the database engine to be used for this DB cluster.</p>
      */
     inline DBCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -989,56 +1031,56 @@ namespace Model
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1349,107 +1391,115 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the KMS key for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
@@ -1496,91 +1546,91 @@ namespace Model
 
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline const Aws::Vector<DBClusterRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline void SetAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline void SetAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { SetAssociatedRoles(value); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(const DBClusterRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -1827,38 +1877,38 @@ namespace Model
 
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline int GetCapacity() const{ return m_capacity; }
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
 
     /**
-     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
-     * Serverless, see <a
+     * Serverless v1, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline DBCluster& WithCapacity(int value) { SetCapacity(value); return *this;}
 
@@ -1866,104 +1916,72 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
-     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
-     * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
-     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
-     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
-     * </note>
+     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -1989,73 +2007,73 @@ namespace Model
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when deletion protection is enabled.</p>
      */
     inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline bool GetHttpEndpointEnabled() const{ return m_httpEndpointEnabled; }
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline bool HttpEndpointEnabledHasBeenSet() const { return m_httpEndpointEnabledHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabledHasBeenSet = true; m_httpEndpointEnabled = value; }
 
     /**
-     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB
-     * cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
+     * <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless v1
+     * DB cluster is enabled.</p> <p>When enabled, the HTTP endpoint provides a
      * connectionless web service API for running SQL queries on the Aurora Serverless
-     * DB cluster. You can also query your database from inside the RDS console with
+     * v1 DB cluster. You can also query your database from inside the RDS console with
      * the query editor.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
      */
     inline DBCluster& WithHttpEndpointEnabled(bool value) { SetHttpEndpointEnabled(value); return *this;}
@@ -2064,42 +2082,42 @@ namespace Model
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline const ActivityStreamMode& GetActivityStreamMode() const{ return m_activityStreamMode; }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline bool ActivityStreamModeHasBeenSet() const { return m_activityStreamModeHasBeenSet; }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline void SetActivityStreamMode(const ActivityStreamMode& value) { m_activityStreamModeHasBeenSet = true; m_activityStreamMode = value; }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline void SetActivityStreamMode(ActivityStreamMode&& value) { m_activityStreamModeHasBeenSet = true; m_activityStreamMode = std::move(value); }
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline DBCluster& WithActivityStreamMode(const ActivityStreamMode& value) { SetActivityStreamMode(value); return *this;}
 
     /**
      * <p>The mode of the database activity stream. Database events such as a change or
      * access generate an activity stream event. The database session can handle these
-     * events either synchronously or asynchronously. </p>
+     * events either synchronously or asynchronously.</p>
      */
     inline DBCluster& WithActivityStreamMode(ActivityStreamMode&& value) { SetActivityStreamMode(std::move(value)); return *this;}
 
@@ -2136,50 +2154,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetActivityStreamKmsKeyId() const{ return m_activityStreamKmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline bool ActivityStreamKmsKeyIdHasBeenSet() const { return m_activityStreamKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetActivityStreamKmsKeyId(const Aws::String& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetActivityStreamKmsKeyId(Aws::String&& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetActivityStreamKmsKeyId(const char* value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(const Aws::String& value) { SetActivityStreamKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(Aws::String&& value) { SetActivityStreamKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(const char* value) { SetActivityStreamKmsKeyId(value); return *this;}
 
@@ -2260,25 +2286,25 @@ namespace Model
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline bool GetCrossAccountClone() const{ return m_crossAccountClone; }
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline bool CrossAccountCloneHasBeenSet() const { return m_crossAccountCloneHasBeenSet; }
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline void SetCrossAccountClone(bool value) { m_crossAccountCloneHasBeenSet = true; m_crossAccountClone = value; }
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline DBCluster& WithCrossAccountClone(bool value) { SetCrossAccountClone(value); return *this;}
 
@@ -2331,6 +2357,585 @@ namespace Model
      */
     inline DBCluster& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBCluster& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBCluster& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBCluster& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBCluster& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline const WriteForwardingStatus& GetGlobalWriteForwardingStatus() const{ return m_globalWriteForwardingStatus; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline bool GlobalWriteForwardingStatusHasBeenSet() const { return m_globalWriteForwardingStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = value; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { SetGlobalWriteForwardingStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { SetGlobalWriteForwardingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline bool GetGlobalWriteForwardingRequested() const{ return m_globalWriteForwardingRequested; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline bool GlobalWriteForwardingRequestedHasBeenSet() const { return m_globalWriteForwardingRequestedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline void SetGlobalWriteForwardingRequested(bool value) { m_globalWriteForwardingRequestedHasBeenSet = true; m_globalWriteForwardingRequested = value; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingRequested(bool value) { SetGlobalWriteForwardingRequested(value); return *this;}
+
+
+    /**
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
+     */
+    inline const ClusterPendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
+
+    /**
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
+     */
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+
+    /**
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
+     */
+    inline void SetPendingModifiedValues(const ClusterPendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
+
+    /**
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
+     */
+    inline void SetPendingModifiedValues(ClusterPendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
+
+    /**
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
+     */
+    inline DBCluster& WithPendingModifiedValues(const ClusterPendingModifiedValues& value) { SetPendingModifiedValues(value); return *this;}
+
+    /**
+     * <p>A value that specifies that changes to the DB cluster are pending. This
+     * element is only included when changes are pending. Specific changes are
+     * identified by subelements.</p>
+     */
+    inline DBCluster& WithPendingModifiedValues(ClusterPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetDBClusterInstanceClass() const{ return m_dBClusterInstanceClass; }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetDBClusterInstanceClass(const Aws::String& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = value; }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetDBClusterInstanceClass(Aws::String&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::move(value); }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetDBClusterInstanceClass(const char* value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass.assign(value); }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithDBClusterInstanceClass(const Aws::String& value) { SetDBClusterInstanceClass(value); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithDBClusterInstanceClass(Aws::String&& value) { SetDBClusterInstanceClass(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithDBClusterInstanceClass(const char* value) { SetDBClusterInstanceClass(value); return *this;}
+
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithIops(int value) { SetIops(value); return *this;}
+
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBCluster& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBCluster& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool PerformanceInsightsEnabledHasBeenSet() const { return m_performanceInsightsEnabledHasBeenSet; }
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsEnabled(bool value) { m_performanceInsightsEnabledHasBeenSet = true; m_performanceInsightsEnabled = value; }
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsEnabled(bool value) { SetPerformanceInsightsEnabled(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+
+
+    
+    inline const ServerlessV2ScalingConfigurationInfo& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
+
+    
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfigurationInfo& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
+
+    
+    inline DBCluster& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfigurationInfo& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
+
+    
+    inline DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -2359,6 +2964,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Utils::DateTime m_automaticRestartTime;
+    bool m_automaticRestartTimeHasBeenSet;
 
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet;
@@ -2488,6 +3096,51 @@ namespace Model
 
     Aws::Vector<DomainMembership> m_domainMemberships;
     bool m_domainMembershipsHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
+
+    WriteForwardingStatus m_globalWriteForwardingStatus;
+    bool m_globalWriteForwardingStatusHasBeenSet;
+
+    bool m_globalWriteForwardingRequested;
+    bool m_globalWriteForwardingRequestedHasBeenSet;
+
+    ClusterPendingModifiedValues m_pendingModifiedValues;
+    bool m_pendingModifiedValuesHasBeenSet;
+
+    Aws::String m_dBClusterInstanceClass;
+    bool m_dBClusterInstanceClassHasBeenSet;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet;
+
+    int m_iops;
+    bool m_iopsHasBeenSet;
+
+    bool m_publiclyAccessible;
+    bool m_publiclyAccessibleHasBeenSet;
+
+    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgradeHasBeenSet;
+
+    int m_monitoringInterval;
+    bool m_monitoringIntervalHasBeenSet;
+
+    Aws::String m_monitoringRoleArn;
+    bool m_monitoringRoleArnHasBeenSet;
+
+    bool m_performanceInsightsEnabled;
+    bool m_performanceInsightsEnabledHasBeenSet;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    int m_performanceInsightsRetentionPeriod;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+
+    ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kendra/model/QueryResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -68,6 +58,24 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
   {
     m_totalNumberOfResults = jsonValue.GetInteger("TotalNumberOfResults");
 
+  }
+
+  if(jsonValue.ValueExists("Warnings"))
+  {
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("SpellCorrectedQueries"))
+  {
+    Array<JsonView> spellCorrectedQueriesJsonList = jsonValue.GetArray("SpellCorrectedQueries");
+    for(unsigned spellCorrectedQueriesIndex = 0; spellCorrectedQueriesIndex < spellCorrectedQueriesJsonList.GetLength(); ++spellCorrectedQueriesIndex)
+    {
+      m_spellCorrectedQueries.push_back(spellCorrectedQueriesJsonList[spellCorrectedQueriesIndex].AsObject());
+    }
   }
 
 

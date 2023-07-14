@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/ProresCodecProfile.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,8 @@ namespace Aws
         static const int APPLE_PRORES_422_HQ_HASH = HashingUtils::HashString("APPLE_PRORES_422_HQ");
         static const int APPLE_PRORES_422_LT_HASH = HashingUtils::HashString("APPLE_PRORES_422_LT");
         static const int APPLE_PRORES_422_PROXY_HASH = HashingUtils::HashString("APPLE_PRORES_422_PROXY");
+        static const int APPLE_PRORES_4444_HASH = HashingUtils::HashString("APPLE_PRORES_4444");
+        static const int APPLE_PRORES_4444_XQ_HASH = HashingUtils::HashString("APPLE_PRORES_4444_XQ");
 
 
         ProresCodecProfile GetProresCodecProfileForName(const Aws::String& name)
@@ -54,6 +46,14 @@ namespace Aws
           else if (hashCode == APPLE_PRORES_422_PROXY_HASH)
           {
             return ProresCodecProfile::APPLE_PRORES_422_PROXY;
+          }
+          else if (hashCode == APPLE_PRORES_4444_HASH)
+          {
+            return ProresCodecProfile::APPLE_PRORES_4444;
+          }
+          else if (hashCode == APPLE_PRORES_4444_XQ_HASH)
+          {
+            return ProresCodecProfile::APPLE_PRORES_4444_XQ;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +77,10 @@ namespace Aws
             return "APPLE_PRORES_422_LT";
           case ProresCodecProfile::APPLE_PRORES_422_PROXY:
             return "APPLE_PRORES_422_PROXY";
+          case ProresCodecProfile::APPLE_PRORES_4444:
+            return "APPLE_PRORES_4444";
+          case ProresCodecProfile::APPLE_PRORES_4444_XQ:
+            return "APPLE_PRORES_4444_XQ";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

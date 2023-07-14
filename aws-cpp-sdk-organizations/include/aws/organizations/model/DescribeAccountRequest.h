@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -45,8 +35,8 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -54,8 +44,8 @@ namespace Model
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -63,8 +53,8 @@ namespace Model
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -72,8 +62,8 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -81,8 +71,8 @@ namespace Model
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -90,8 +80,8 @@ namespace Model
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -99,8 +89,8 @@ namespace Model
     inline DescribeAccountRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
@@ -108,8 +98,8 @@ namespace Model
     inline DescribeAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the AWS account that you want information
-     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <p>The unique identifier (ID) of the Amazon Web Services account that you want
+     * information about. You can get the ID from the <a>ListAccounts</a> or
      * <a>ListAccountsForParent</a> operations.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>

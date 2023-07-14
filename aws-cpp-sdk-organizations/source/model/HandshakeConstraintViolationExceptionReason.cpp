@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/organizations/model/HandshakeConstraintViolationExceptionReason.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,10 +24,12 @@ namespace Aws
         static const int HANDSHAKE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HANDSHAKE_RATE_LIMIT_EXCEEDED");
         static const int ALREADY_IN_AN_ORGANIZATION_HASH = HashingUtils::HashString("ALREADY_IN_AN_ORGANIZATION");
         static const int ORGANIZATION_ALREADY_HAS_ALL_FEATURES_HASH = HashingUtils::HashString("ORGANIZATION_ALREADY_HAS_ALL_FEATURES");
+        static const int ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION_HASH = HashingUtils::HashString("ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION");
         static const int INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES_HASH = HashingUtils::HashString("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
         static const int PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("PAYMENT_INSTRUMENT_REQUIRED");
         static const int ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD_HASH = HashingUtils::HashString("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
         static const int ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
+        static const int MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH = HashingUtils::HashString("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
 
 
         HandshakeConstraintViolationExceptionReason GetHandshakeConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -59,6 +51,10 @@ namespace Aws
           {
             return HandshakeConstraintViolationExceptionReason::ORGANIZATION_ALREADY_HAS_ALL_FEATURES;
           }
+          else if (hashCode == ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION_HASH)
+          {
+            return HandshakeConstraintViolationExceptionReason::ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION;
+          }
           else if (hashCode == INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES_HASH)
           {
             return HandshakeConstraintViolationExceptionReason::INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES;
@@ -74,6 +70,10 @@ namespace Aws
           else if (hashCode == ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED_HASH)
           {
             return HandshakeConstraintViolationExceptionReason::ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED_HASH)
+          {
+            return HandshakeConstraintViolationExceptionReason::MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -97,6 +97,8 @@ namespace Aws
             return "ALREADY_IN_AN_ORGANIZATION";
           case HandshakeConstraintViolationExceptionReason::ORGANIZATION_ALREADY_HAS_ALL_FEATURES:
             return "ORGANIZATION_ALREADY_HAS_ALL_FEATURES";
+          case HandshakeConstraintViolationExceptionReason::ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION:
+            return "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION";
           case HandshakeConstraintViolationExceptionReason::INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES:
             return "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES";
           case HandshakeConstraintViolationExceptionReason::PAYMENT_INSTRUMENT_REQUIRED:
@@ -105,6 +107,8 @@ namespace Aws
             return "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD";
           case HandshakeConstraintViolationExceptionReason::ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED:
             return "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED";
+          case HandshakeConstraintViolationExceptionReason::MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED:
+            return "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
@@ -72,25 +62,25 @@ namespace Model
 
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for children of array jobs.</p>
      */
     inline int GetIndex() const{ return m_index; }
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for children of array jobs.</p>
      */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for children of array jobs.</p>
      */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
-     * <p>The job index within the array that is associated with this job. This
+     * <p>The job index within the array that's associated with this job. This
      * parameter is returned for children of array jobs.</p>
      */
     inline ArrayPropertiesSummary& WithIndex(int value) { SetIndex(value); return *this;}

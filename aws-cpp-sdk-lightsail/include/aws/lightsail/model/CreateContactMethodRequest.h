@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -48,15 +38,15 @@ namespace Model
     /**
      * <p>The protocol of the contact method, such as <code>Email</code> or
      * <code>SMS</code> (text messaging).</p> <p>The <code>SMS</code> protocol is
-     * supported only in the following AWS Regions.</p> <ul> <li> <p>US East (N.
-     * Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
+     * supported only in the following Amazon Web Services Regions.</p> <ul> <li> <p>US
+     * East (N. Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
      * (<code>us-west-2</code>)</p> </li> <li> <p>Europe (Ireland)
      * (<code>eu-west-1</code>)</p> </li> <li> <p>Asia Pacific (Tokyo)
      * (<code>ap-northeast-1</code>)</p> </li> <li> <p>Asia Pacific (Singapore)
      * (<code>ap-southeast-1</code>)</p> </li> <li> <p>Asia Pacific (Sydney)
      * (<code>ap-southeast-2</code>)</p> </li> </ul> <p>For a list of countries/regions
-     * where SMS text messages can be sent, and the latest AWS Regions where SMS text
-     * messaging is supported, see <a
+     * where SMS text messages can be sent, and the latest Amazon Web Services Regions
+     * where SMS text messaging is supported, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
@@ -68,15 +58,15 @@ namespace Model
     /**
      * <p>The protocol of the contact method, such as <code>Email</code> or
      * <code>SMS</code> (text messaging).</p> <p>The <code>SMS</code> protocol is
-     * supported only in the following AWS Regions.</p> <ul> <li> <p>US East (N.
-     * Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
+     * supported only in the following Amazon Web Services Regions.</p> <ul> <li> <p>US
+     * East (N. Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
      * (<code>us-west-2</code>)</p> </li> <li> <p>Europe (Ireland)
      * (<code>eu-west-1</code>)</p> </li> <li> <p>Asia Pacific (Tokyo)
      * (<code>ap-northeast-1</code>)</p> </li> <li> <p>Asia Pacific (Singapore)
      * (<code>ap-southeast-1</code>)</p> </li> <li> <p>Asia Pacific (Sydney)
      * (<code>ap-southeast-2</code>)</p> </li> </ul> <p>For a list of countries/regions
-     * where SMS text messages can be sent, and the latest AWS Regions where SMS text
-     * messaging is supported, see <a
+     * where SMS text messages can be sent, and the latest Amazon Web Services Regions
+     * where SMS text messaging is supported, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
@@ -88,15 +78,15 @@ namespace Model
     /**
      * <p>The protocol of the contact method, such as <code>Email</code> or
      * <code>SMS</code> (text messaging).</p> <p>The <code>SMS</code> protocol is
-     * supported only in the following AWS Regions.</p> <ul> <li> <p>US East (N.
-     * Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
+     * supported only in the following Amazon Web Services Regions.</p> <ul> <li> <p>US
+     * East (N. Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
      * (<code>us-west-2</code>)</p> </li> <li> <p>Europe (Ireland)
      * (<code>eu-west-1</code>)</p> </li> <li> <p>Asia Pacific (Tokyo)
      * (<code>ap-northeast-1</code>)</p> </li> <li> <p>Asia Pacific (Singapore)
      * (<code>ap-southeast-1</code>)</p> </li> <li> <p>Asia Pacific (Sydney)
      * (<code>ap-southeast-2</code>)</p> </li> </ul> <p>For a list of countries/regions
-     * where SMS text messages can be sent, and the latest AWS Regions where SMS text
-     * messaging is supported, see <a
+     * where SMS text messages can be sent, and the latest Amazon Web Services Regions
+     * where SMS text messaging is supported, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
@@ -108,15 +98,15 @@ namespace Model
     /**
      * <p>The protocol of the contact method, such as <code>Email</code> or
      * <code>SMS</code> (text messaging).</p> <p>The <code>SMS</code> protocol is
-     * supported only in the following AWS Regions.</p> <ul> <li> <p>US East (N.
-     * Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
+     * supported only in the following Amazon Web Services Regions.</p> <ul> <li> <p>US
+     * East (N. Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
      * (<code>us-west-2</code>)</p> </li> <li> <p>Europe (Ireland)
      * (<code>eu-west-1</code>)</p> </li> <li> <p>Asia Pacific (Tokyo)
      * (<code>ap-northeast-1</code>)</p> </li> <li> <p>Asia Pacific (Singapore)
      * (<code>ap-southeast-1</code>)</p> </li> <li> <p>Asia Pacific (Sydney)
      * (<code>ap-southeast-2</code>)</p> </li> </ul> <p>For a list of countries/regions
-     * where SMS text messages can be sent, and the latest AWS Regions where SMS text
-     * messaging is supported, see <a
+     * where SMS text messages can be sent, and the latest Amazon Web Services Regions
+     * where SMS text messaging is supported, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
@@ -128,15 +118,15 @@ namespace Model
     /**
      * <p>The protocol of the contact method, such as <code>Email</code> or
      * <code>SMS</code> (text messaging).</p> <p>The <code>SMS</code> protocol is
-     * supported only in the following AWS Regions.</p> <ul> <li> <p>US East (N.
-     * Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
+     * supported only in the following Amazon Web Services Regions.</p> <ul> <li> <p>US
+     * East (N. Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
      * (<code>us-west-2</code>)</p> </li> <li> <p>Europe (Ireland)
      * (<code>eu-west-1</code>)</p> </li> <li> <p>Asia Pacific (Tokyo)
      * (<code>ap-northeast-1</code>)</p> </li> <li> <p>Asia Pacific (Singapore)
      * (<code>ap-southeast-1</code>)</p> </li> <li> <p>Asia Pacific (Sydney)
      * (<code>ap-southeast-2</code>)</p> </li> </ul> <p>For a list of countries/regions
-     * where SMS text messages can be sent, and the latest AWS Regions where SMS text
-     * messaging is supported, see <a
+     * where SMS text messages can be sent, and the latest Amazon Web Services Regions
+     * where SMS text messaging is supported, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
@@ -148,15 +138,15 @@ namespace Model
     /**
      * <p>The protocol of the contact method, such as <code>Email</code> or
      * <code>SMS</code> (text messaging).</p> <p>The <code>SMS</code> protocol is
-     * supported only in the following AWS Regions.</p> <ul> <li> <p>US East (N.
-     * Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
+     * supported only in the following Amazon Web Services Regions.</p> <ul> <li> <p>US
+     * East (N. Virginia) (<code>us-east-1</code>)</p> </li> <li> <p>US West (Oregon)
      * (<code>us-west-2</code>)</p> </li> <li> <p>Europe (Ireland)
      * (<code>eu-west-1</code>)</p> </li> <li> <p>Asia Pacific (Tokyo)
      * (<code>ap-northeast-1</code>)</p> </li> <li> <p>Asia Pacific (Singapore)
      * (<code>ap-southeast-1</code>)</p> </li> <li> <p>Asia Pacific (Sydney)
      * (<code>ap-southeast-2</code>)</p> </li> </ul> <p>For a list of countries/regions
-     * where SMS text messages can be sent, and the latest AWS Regions where SMS text
-     * messaging is supported, see <a
+     * where SMS text messages can be sent, and the latest Amazon Web Services Regions
+     * where SMS text messaging is supported, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
      * Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>For
      * more information about notifications in Amazon Lightsail, see <a
@@ -174,7 +164,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline const Aws::String& GetContactEndpoint() const{ return m_contactEndpoint; }
 
@@ -186,7 +176,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline bool ContactEndpointHasBeenSet() const { return m_contactEndpointHasBeenSet; }
 
@@ -198,7 +188,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetContactEndpoint(const Aws::String& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = value; }
 
@@ -210,7 +200,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetContactEndpoint(Aws::String&& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = std::move(value); }
 
@@ -222,7 +212,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetContactEndpoint(const char* value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint.assign(value); }
 
@@ -234,7 +224,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline CreateContactMethodRequest& WithContactEndpoint(const Aws::String& value) { SetContactEndpoint(value); return *this;}
 
@@ -246,7 +236,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline CreateContactMethodRequest& WithContactEndpoint(Aws::String&& value) { SetContactEndpoint(std::move(value)); return *this;}
 
@@ -258,7 +248,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline CreateContactMethodRequest& WithContactEndpoint(const char* value) { SetContactEndpoint(value); return *this;}
 

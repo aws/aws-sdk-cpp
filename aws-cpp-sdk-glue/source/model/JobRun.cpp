@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/JobRun.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -56,7 +46,9 @@ JobRun::JobRun() :
     m_securityConfigurationHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_dPUSeconds(0.0),
+    m_dPUSecondsHasBeenSet(false)
 {
 }
 
@@ -88,7 +80,9 @@ JobRun::JobRun(JsonView jsonValue) :
     m_securityConfigurationHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_dPUSeconds(0.0),
+    m_dPUSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -248,6 +242,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_glueVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DPUSeconds"))
+  {
+    m_dPUSeconds = jsonValue.GetDouble("DPUSeconds");
+
+    m_dPUSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -383,6 +384,12 @@ JsonValue JobRun::Jsonize() const
   if(m_glueVersionHasBeenSet)
   {
    payload.WithString("GlueVersion", m_glueVersion);
+
+  }
+
+  if(m_dPUSecondsHasBeenSet)
+  {
+   payload.WithDouble("DPUSeconds", m_dPUSeconds);
 
   }
 

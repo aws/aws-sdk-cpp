@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -35,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the patches to use to update the instances, including
-   * target operating systems and source repository. Applies to Linux instances
+   * <p>Information about the patches to use to update the managed nodes, including
+   * target operating systems and source repository. Applies to Linux managed nodes
    * only.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchSource">AWS API
    * Reference</a></p>
@@ -157,65 +147,89 @@ namespace Model
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline PatchSource& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline PatchSource& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>
-     * <code>[main]</code> </p> <p>
-     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
-     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     * <code>[main]</code> </p> <p> <code>name=MyCustomRepository</code> </p> <p>
+     * <code>baseurl=https://my-custom-repository</code> </p> <p>
+     * <code>enabled=1</code> </p>  <p>For information about other options
+     * available for your yum repository configuration, see <a
+     * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
+     * 
      */
     inline PatchSource& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 

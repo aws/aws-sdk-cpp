@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/FindMatchesMetrics.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,8 @@ FindMatchesMetrics::FindMatchesMetrics() :
     m_recallHasBeenSet(false),
     m_f1(0.0),
     m_f1HasBeenSet(false),
-    m_confusionMatrixHasBeenSet(false)
+    m_confusionMatrixHasBeenSet(false),
+    m_columnImportancesHasBeenSet(false)
 {
 }
 
@@ -50,7 +41,8 @@ FindMatchesMetrics::FindMatchesMetrics(JsonView jsonValue) :
     m_recallHasBeenSet(false),
     m_f1(0.0),
     m_f1HasBeenSet(false),
-    m_confusionMatrixHasBeenSet(false)
+    m_confusionMatrixHasBeenSet(false),
+    m_columnImportancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +84,16 @@ FindMatchesMetrics& FindMatchesMetrics::operator =(JsonView jsonValue)
     m_confusionMatrixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColumnImportances"))
+  {
+    Array<JsonView> columnImportancesJsonList = jsonValue.GetArray("ColumnImportances");
+    for(unsigned columnImportancesIndex = 0; columnImportancesIndex < columnImportancesJsonList.GetLength(); ++columnImportancesIndex)
+    {
+      m_columnImportances.push_back(columnImportancesJsonList[columnImportancesIndex].AsObject());
+    }
+    m_columnImportancesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +128,17 @@ JsonValue FindMatchesMetrics::Jsonize() const
   if(m_confusionMatrixHasBeenSet)
   {
    payload.WithObject("ConfusionMatrix", m_confusionMatrix.Jsonize());
+
+  }
+
+  if(m_columnImportancesHasBeenSet)
+  {
+   Array<JsonValue> columnImportancesJsonList(m_columnImportances.size());
+   for(unsigned columnImportancesIndex = 0; columnImportancesIndex < columnImportancesJsonList.GetLength(); ++columnImportancesIndex)
+   {
+     columnImportancesJsonList[columnImportancesIndex].AsObject(m_columnImportances[columnImportancesIndex].Jsonize());
+   }
+   payload.WithArray("ColumnImportances", std::move(columnImportancesJsonList));
 
   }
 

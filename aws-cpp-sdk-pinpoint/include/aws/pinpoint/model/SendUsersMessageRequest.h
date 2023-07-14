@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
@@ -276,86 +266,122 @@ namespace Model
 
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline const Aws::Map<Aws::String, EndpointSendConfiguration>& GetUsers() const{ return m_users; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline void SetUsers(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { m_usersHasBeenSet = true; m_users = value; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline void SetUsers(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& WithUsers(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { SetUsers(value); return *this;}
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& WithUsers(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& AddUsers(const Aws::String& key, const EndpointSendConfiguration& value) { m_usersHasBeenSet = true; m_users.emplace(key, value); return *this; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& AddUsers(Aws::String&& key, const EndpointSendConfiguration& value) { m_usersHasBeenSet = true; m_users.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& AddUsers(const Aws::String& key, EndpointSendConfiguration&& value) { m_usersHasBeenSet = true; m_users.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& AddUsers(Aws::String&& key, EndpointSendConfiguration&& value) { m_usersHasBeenSet = true; m_users.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& AddUsers(const char* key, EndpointSendConfiguration&& value) { m_usersHasBeenSet = true; m_users.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map that associates user IDs with EndpointSendConfiguration objects. You
-     * can use an EndpointSendConfiguration object to tailor the message for a user by
-     * specifying settings such as content overrides and message variables.</p>
+     * <p>A map that associates user IDs with <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * objects. You can use an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a>
+     * object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.</p>
      */
     inline SendUsersMessageRequest& AddUsers(const char* key, const EndpointSendConfiguration& value) { m_usersHasBeenSet = true; m_users.emplace(key, value); return *this; }
 

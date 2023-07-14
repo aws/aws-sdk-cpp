@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -35,8 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>Filter used in the request. Supported filter keys are Name and
-   * Enabled.</p><p><h3>See Also:</h3>   <a
+   * <p>Filter used in the request. Supported filter keys depend on the API operation
+   * that includes the filter. API operations that use
+   * <code>MaintenanceWindowFilter&gt;</code> include the following:</p> <ul> <li>
+   * <p> <a>DescribeMaintenanceWindowExecutions</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceWindowExecutionTaskInvocations</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceWindowExecutionTasks</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceWindows</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceWindowTargets</a> </p> </li> <li> <p>
+   * <a>DescribeMaintenanceWindowTasks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowFilter">AWS
    * API Reference</a></p>
    */

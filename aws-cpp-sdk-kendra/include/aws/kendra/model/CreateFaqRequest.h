@@ -1,24 +1,18 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/S3Path.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/FaqFileFormat.h>
+#include <aws/kendra/model/Tag.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -263,6 +257,252 @@ namespace Model
      */
     inline CreateFaqRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateFaqRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateFaqRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateFaqRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs that identify the FAQ. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateFaqRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline void SetFileFormat(FaqFileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline CreateFaqRequest& WithFileFormat(const FaqFileFormat& value) { SetFileFormat(value); return *this;}
+
+    /**
+     * <p>The format of the input file. You can choose between a basic CSV format, a
+     * CSV format that includes customs attributes in a header, and a JSON format that
+     * includes custom attributes.</p> <p>The format must match the format of the file
+     * stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.</p>
+     */
+    inline CreateFaqRequest& WithFileFormat(FaqFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline CreateFaqRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline CreateFaqRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create a FAQ. Multiple
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
+     */
+    inline CreateFaqRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline CreateFaqRequest& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline CreateFaqRequest& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline CreateFaqRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -279,6 +519,18 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    FaqFileFormat m_fileFormat;
+    bool m_fileFormatHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
+
+    Aws::String m_languageCode;
+    bool m_languageCodeHasBeenSet;
   };
 
 } // namespace Model

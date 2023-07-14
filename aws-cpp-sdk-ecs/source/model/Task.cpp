@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ecs/model/Task.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -42,6 +32,8 @@ Task::Task() :
     m_cpuHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
@@ -53,6 +45,7 @@ Task::Task() :
     m_memoryHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_pullStartedAtHasBeenSet(false),
     m_pullStoppedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
@@ -66,7 +59,8 @@ Task::Task() :
     m_taskArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -84,6 +78,8 @@ Task::Task(JsonView jsonValue) :
     m_cpuHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
@@ -95,6 +91,7 @@ Task::Task(JsonView jsonValue) :
     m_memoryHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_pullStartedAtHasBeenSet(false),
     m_pullStoppedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
@@ -108,7 +105,8 @@ Task::Task(JsonView jsonValue) :
     m_taskArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +206,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_desiredStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+
+    m_enableExecuteCommandHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("executionStoppedAt"))
   {
     m_executionStoppedAt = jsonValue.GetDouble("executionStoppedAt");
@@ -272,6 +277,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_platformVersion = jsonValue.GetString("platformVersion");
 
     m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformFamily"))
+  {
+    m_platformFamily = jsonValue.GetString("platformFamily");
+
+    m_platformFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pullStartedAt"))
@@ -359,6 +371,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_version = jsonValue.GetInt64("version");
 
     m_versionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
   }
 
   return *this;
@@ -452,6 +471,12 @@ JsonValue Task::Jsonize() const
 
   }
 
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
+  }
+
   if(m_executionStoppedAtHasBeenSet)
   {
    payload.WithDouble("executionStoppedAt", m_executionStoppedAt.SecondsWithMSPrecision());
@@ -505,6 +530,12 @@ JsonValue Task::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_platformFamilyHasBeenSet)
+  {
+   payload.WithString("platformFamily", m_platformFamily);
 
   }
 
@@ -576,6 +607,12 @@ JsonValue Task::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("version", m_version);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

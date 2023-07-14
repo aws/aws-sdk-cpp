@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/CopyDBSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -28,7 +18,9 @@ CopyDBSnapshotRequest::CopyDBSnapshotRequest() :
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
     m_preSignedUrlHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false)
+    m_optionGroupNameHasBeenSet(false),
+    m_targetCustomAvailabilityZoneHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 
@@ -74,6 +66,11 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
+  }
+
+  if(m_targetCustomAvailabilityZoneHasBeenSet)
+  {
+    ss << "TargetCustomAvailabilityZone=" << StringUtils::URLEncode(m_targetCustomAvailabilityZone.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

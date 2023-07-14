@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/ce/model/RightsizingRecommendationSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/RightsizingRecommendationConfiguration.h>
 #include <aws/ce/model/RightsizingRecommendation.h>
 #include <utility>
 
@@ -169,6 +160,52 @@ namespace Model
      */
     inline GetRightsizingRecommendationResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
+    /**
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
+     */
+    inline const RightsizingRecommendationConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
+     */
+    inline void SetConfiguration(const RightsizingRecommendationConfiguration& value) { m_configuration = value; }
+
+    /**
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
+     */
+    inline void SetConfiguration(RightsizingRecommendationConfiguration&& value) { m_configuration = std::move(value); }
+
+    /**
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
+     */
+    inline GetRightsizingRecommendationResult& WithConfiguration(const RightsizingRecommendationConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>You can use Configuration to customize recommendations across two attributes.
+     * You can choose to view recommendations for instances within the same instance
+     * families or across different instance families. You can also choose to view your
+     * estimated savings that are associated with recommendations with consideration of
+     * existing Savings Plans or RI benefits, or neither. </p>
+     */
+    inline GetRightsizingRecommendationResult& WithConfiguration(RightsizingRecommendationConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
   private:
 
     RightsizingRecommendationMetadata m_metadata;
@@ -178,6 +215,8 @@ namespace Model
     Aws::Vector<RightsizingRecommendation> m_rightsizingRecommendations;
 
     Aws::String m_nextPageToken;
+
+    RightsizingRecommendationConfiguration m_configuration;
   };
 
 } // namespace Model

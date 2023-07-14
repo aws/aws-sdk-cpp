@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/athena/model/ResultConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,17 @@ namespace Model
 
 ResultConfiguration::ResultConfiguration() : 
     m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false)
 {
 }
 
 ResultConfiguration::ResultConfiguration(JsonView jsonValue) : 
     m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +51,20 @@ ResultConfiguration& ResultConfiguration::operator =(JsonView jsonValue)
     m_encryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpectedBucketOwner"))
+  {
+    m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
+
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AclConfiguration"))
+  {
+    m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
+
+    m_aclConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +81,18 @@ JsonValue ResultConfiguration::Jsonize() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   payload.WithString("ExpectedBucketOwner", m_expectedBucketOwner);
+
+  }
+
+  if(m_aclConfigurationHasBeenSet)
+  {
+   payload.WithObject("AclConfiguration", m_aclConfiguration.Jsonize());
 
   }
 

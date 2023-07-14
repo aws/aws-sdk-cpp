@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  * 
-  *  http://aws.amazon.com/apache2.0
-  * 
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/external/gtest.h>
 
@@ -21,10 +11,10 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-const Aws::String simpleValue = "{\"testStringKey\":\"testStringValue\"}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString)
 {
+    const Aws::String simpleValue = R"({"testStringKey":"testStringValue"})";
     JsonValue value(simpleValue);
     if (value.WasParseSuccessful())
     {
@@ -38,10 +28,10 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString)
     }
 }
 
-const Aws::String simpleValue2 = "{\"testIntKey\":10}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString2)
 {
+    const Aws::String simpleValue2 = R"({"testIntKey":10})";
     JsonValue value(simpleValue2);
     if (value.WasParseSuccessful())
     {
@@ -55,11 +45,29 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString2)
     }
 }
 
-const Aws::String simpleValue3 = "{\"testBoolKey\":false}";
+
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString3)
 {
+    const Aws::String simpleValue3 = R"({"testInt64Key":8765432109876543210})";
     JsonValue value(simpleValue3);
+    if (value.WasParseSuccessful())
+    {
+        ASSERT_TRUE(value.GetErrorMessage().empty());
+        auto view = value.View();
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
+    }
+    else
+    {
+        GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
+    }
+}
+
+
+TEST(JsonSerializerTest, TestParseSimpleJsonString4)
+{
+    const Aws::String simpleValue4 = R"({"testBoolKey":false})";
+    JsonValue value(simpleValue4);
     if (value.WasParseSuccessful())
     {
         ASSERT_TRUE(value.GetErrorMessage().empty());
@@ -72,11 +80,10 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString3)
     }
 }
 
-const Aws::String jsonArrayValue =
-    "{\"array\": [\"stringArrayEntry1\", \"stringArrayEntry2\"]}";
 
 TEST(JsonSerializerTest, TestParseJsonArrayString)
 {
+    const Aws::String jsonArrayValue = R"({"array": ["stringArrayEntry1", "stringArrayEntry2"]})";
     JsonValue value(jsonArrayValue);
     if (value.WasParseSuccessful())
     {
@@ -91,20 +98,25 @@ TEST(JsonSerializerTest, TestParseJsonArrayString)
     }
 }
 
-const Aws::String jsonValue =
-    "{\"testStringKey\":\"testStringValue\", \"testIntKey\":10, "
-    "\"testBoolKey\":false, \"array\": [\"stringArrayEntry1\", \"stringArrayEntry2\"], "
-    "\"object\": {\"testObjectStringKey\":\"testObjectStringValue\"}}";
+const std::string jsonValue = R"({
+    "testStringKey":"testStringValue",
+    "testIntKey":10,
+    "testInt64Key":8765432109876543210,
+    "testBoolKey":false,
+    "array": ["stringArrayEntry1", "stringArrayEntry2"],
+    "object": {"testObjectStringKey":"testObjectStringValue"}
+})";
 
 TEST(JsonSerializerTest, TestParseJsonString)
 {
-    JsonValue value(jsonValue);
+    JsonValue value(Aws::String(jsonValue.c_str()));
     if (value.WasParseSuccessful())
     {
         auto view = value.View();
         ASSERT_TRUE(value.GetErrorMessage().empty());
         ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_TRUE(view.GetObject("object").AsString().empty());
         ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
@@ -119,7 +131,7 @@ TEST(JsonSerializerTest, TestParseJsonString)
 
 TEST(JsonSerializerTest, TestParseJsonStream)
 {
-    Aws::StringStream inputAsStream(jsonValue);
+    Aws::StringStream inputAsStream(Aws::String(jsonValue.c_str()));
     JsonValue value(inputAsStream);
 
     if (value.WasParseSuccessful())
@@ -128,6 +140,7 @@ TEST(JsonSerializerTest, TestParseJsonStream)
         ASSERT_TRUE(value.GetErrorMessage().empty());
         ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
         ASSERT_STREQ("stringArrayEntry2", view.GetArray("array")[1].AsString().c_str());
@@ -173,6 +186,36 @@ TEST(JsonSerializerTest, TestJsonIntegerValue)
 
     value.AsInteger(15);
     ASSERT_EQ(15, value.View().AsInteger());
+}
+
+TEST(JsonSerializerTest, TestJsonInt64Value)
+{
+    JsonValue value;
+    value.WithInt64("testKey", INT64_MIN);
+    ASSERT_EQ(INT64_MIN, value.View().GetInt64("testKey"));
+    value.WithInt64("testKey", INT64_MIN + 1);
+    ASSERT_EQ(INT64_MIN + 1, value.View().GetInt64("testKey"));
+    value.WithInt64("testKey", INT64_MAX);
+    ASSERT_EQ(INT64_MAX, value.View().GetInt64("testKey"));
+    value.WithInt64("testKey", INT64_MAX - 1);
+    ASSERT_EQ(INT64_MAX - 1, value.View().GetInt64("testKey"));
+
+    value.AsInt64(INT64_MIN);
+    ASSERT_EQ(INT64_MIN, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
+    value.AsInt64(INT64_MIN + 1);
+    ASSERT_EQ(INT64_MIN + 1, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
+    value.AsInt64(INT64_MAX);
+    ASSERT_EQ(INT64_MAX, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
+    value.AsInt64(INT64_MAX - 1);
+    ASSERT_EQ(INT64_MAX - 1, value.View().AsInt64());
+    ASSERT_TRUE(value.View().IsIntegerType());
+    ASSERT_FALSE(value.View().IsFloatingPointType());
 }
 
 TEST(JsonSerializerTest, TestJsonBoolValue)
@@ -224,6 +267,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     value.WithArray("testArray", arrayValue);
     value.WithString("testStringKey", "testStringValue");
     value.WithInteger("testIntegerKey", 10);
+    value.WithInt64("testInt64Key", -8765432109876543210);
     value.WithBool("testBoolKey", false);
 
     JsonValue object;
@@ -234,6 +278,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     ASSERT_EQ("testValue1", objectView.GetObject("testObjectKey").GetArray("testArray")[0].AsString());
     ASSERT_EQ("testValue2", objectView.GetObject("testObjectKey").GetArray("testArray")[1].AsString());
     ASSERT_EQ(10, objectView.GetObject("testObjectKey").GetInteger("testIntegerKey"));
+    ASSERT_EQ(-8765432109876543210, objectView.GetObject("testObjectKey").GetInt64("testInt64Key"));
     ASSERT_FALSE(objectView.GetObject("testObjectKey").GetBool("testBoolKey"));
 
     object.AsObject(value);
@@ -242,12 +287,13 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     ASSERT_EQ("testValue1", objectView.AsObject().GetArray("testArray")[0].AsString());
     ASSERT_EQ("testValue2", objectView.AsObject().GetArray("testArray")[1].AsString());
     ASSERT_EQ(10, objectView.AsObject().GetInteger("testIntegerKey"));
+    ASSERT_EQ(-8765432109876543210, objectView.AsObject().GetInt64("testInt64Key"));
     ASSERT_FALSE(objectView.AsObject().GetBool("testBoolKey"));
 }
 
 TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
 {
-    JsonValue value(jsonValue);
+    JsonValue value(Aws::String(jsonValue.c_str()));
     Aws::String outputString = value.View().WriteCompact();
     JsonValue reparsedValue(outputString);
     if (reparsedValue.WasParseSuccessful())
@@ -255,6 +301,7 @@ TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
         auto view = reparsedValue.View();
         ASSERT_EQ("testStringValue", view.GetString("testStringKey"));
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_EQ("stringArrayEntry1", view.GetArray("array")[0].AsString());
         ASSERT_EQ("stringArrayEntry2", view.GetArray("array")[1].AsString());
@@ -268,7 +315,7 @@ TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
 
 TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
 {
-    JsonValue value(jsonValue);
+    JsonValue value(Aws::String(jsonValue.c_str()));
 
     Aws::String outputString = value.View().WriteReadable();
 
@@ -279,6 +326,7 @@ TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
         auto view = reparsedValue.View();
         ASSERT_EQ("testStringValue", view.GetString("testStringKey"));
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
+        ASSERT_EQ(8765432109876543210, view.GetInt64("testInt64Key"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
         ASSERT_EQ("stringArrayEntry1", view.GetArray("array")[0].AsString());
         ASSERT_EQ("stringArrayEntry2", view.GetArray("array")[1].AsString());
@@ -332,6 +380,21 @@ TEST(JsonSerializerTest, TestCopy)
     ASSERT_FALSE(bad.WasParseSuccessful());
     copiedValue = bad;
     ASSERT_FALSE(copiedValue.WasParseSuccessful());
+}
+
+TEST(JsonSerializerTest, TestMove)
+{
+    JsonValue value;
+    ASSERT_TRUE(value.WasParseSuccessful());
+    JsonValue movedValue(value);
+    ASSERT_TRUE(movedValue.WasParseSuccessful());
+    JsonValue movedValue2;
+    movedValue2 = value;
+    ASSERT_TRUE(movedValue2.WasParseSuccessful());
+    JsonValue bad(Aws::String("not valid json"));
+    ASSERT_FALSE(bad.WasParseSuccessful());
+    movedValue = bad;
+    ASSERT_FALSE(movedValue.WasParseSuccessful());
 }
 
 TEST(JsonSerializer, TestBuilderPatternReplacesKeys)

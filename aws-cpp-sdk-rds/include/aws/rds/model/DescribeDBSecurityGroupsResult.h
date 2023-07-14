@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -38,8 +28,8 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p> Contains the result of a successful invocation of the
-   * <code>DescribeDBSecurityGroups</code> action. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the result of a successful invocation of the
+   * <code>DescribeDBSecurityGroups</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroupMessage">AWS
    * API Reference</a></p>
    */
@@ -52,87 +42,87 @@ namespace Model
 
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSecurityGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSecurityGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSecurityGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline const Aws::Vector<DBSecurityGroup>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<DBSecurityGroup>& value) { m_dBSecurityGroups = value; }
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline void SetDBSecurityGroups(Aws::Vector<DBSecurityGroup>&& value) { m_dBSecurityGroups = std::move(value); }
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline DescribeDBSecurityGroupsResult& WithDBSecurityGroups(const Aws::Vector<DBSecurityGroup>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline DescribeDBSecurityGroupsResult& WithDBSecurityGroups(Aws::Vector<DBSecurityGroup>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline DescribeDBSecurityGroupsResult& AddDBSecurityGroups(const DBSecurityGroup& value) { m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
+     * <p>A list of <code>DBSecurityGroup</code> instances.</p>
      */
     inline DescribeDBSecurityGroupsResult& AddDBSecurityGroups(DBSecurityGroup&& value) { m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 

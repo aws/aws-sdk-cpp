@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsEc2InstanceDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -37,7 +27,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails() :
     m_iamInstanceProfileArnHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_launchedAtHasBeenSet(false)
+    m_launchedAtHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -50,7 +41,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue) :
     m_iamInstanceProfileArnHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_launchedAtHasBeenSet(false)
+    m_launchedAtHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +118,16 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     m_launchedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkInterfaces"))
+  {
+    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("NetworkInterfaces");
+    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+    {
+      m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
+    }
+    m_networkInterfacesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +196,17 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
   if(m_launchedAtHasBeenSet)
   {
    payload.WithString("LaunchedAt", m_launchedAt);
+
+  }
+
+  if(m_networkInterfacesHasBeenSet)
+  {
+   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+   {
+     networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
+   }
+   payload.WithArray("NetworkInterfaces", std::move(networkInterfacesJsonList));
 
   }
 

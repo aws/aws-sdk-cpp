@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An activity that adds information from the AWS IoT Device Shadows service to
-   * a message.</p><p><h3>See Also:</h3>   <a
+   * <p>An activity that adds information from the IoT Device Shadow service to a
+   * message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceShadowEnrichActivity">AWS
    * API Reference</a></p>
    */
@@ -49,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline DeviceShadowEnrichActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline DeviceShadowEnrichActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the 'deviceShadowEnrich' activity.</p>
+     * <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
      */
     inline DeviceShadowEnrichActivity& WithName(const char* value) { SetName(value); return *this;}
 

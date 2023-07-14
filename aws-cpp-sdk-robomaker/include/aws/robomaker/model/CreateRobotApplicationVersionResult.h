@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/robomaker/model/RobotSoftwareSuite.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/robomaker/model/Environment.h>
 #include <aws/robomaker/model/Source.h>
 #include <utility>
 
@@ -287,6 +278,37 @@ namespace Model
      */
     inline CreateRobotApplicationVersionResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
+
+    /**
+     * <p>The object that contains the Docker image URI used to create your robot
+     * application.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create your robot
+     * application.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environment = value; }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create your robot
+     * application.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environment = std::move(value); }
+
+    /**
+     * <p>The object that contains the Docker image URI used to create your robot
+     * application.</p>
+     */
+    inline CreateRobotApplicationVersionResult& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The object that contains the Docker image URI used to create your robot
+     * application.</p>
+     */
+    inline CreateRobotApplicationVersionResult& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -302,6 +324,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Aws::String m_revisionId;
+
+    Environment m_environment;
   };
 
 } // namespace Model

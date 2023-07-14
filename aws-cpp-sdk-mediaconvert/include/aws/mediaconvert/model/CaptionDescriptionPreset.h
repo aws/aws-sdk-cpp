@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -155,44 +145,62 @@ namespace Model
 
 
     /**
-     * Specific settings required by destination type. Note that
-     * burnin_destination_settings are not available if the source of the caption data
-     * is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job
+     * JSON, an instance of captions DestinationSettings is equivalent to one captions
+     * tab in the console. Usually, one captions tab corresponds to one output captions
+     * track. Depending on your output captions format, one tab might correspond to a
+     * set of output captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
 
     /**
-     * Specific settings required by destination type. Note that
-     * burnin_destination_settings are not available if the source of the caption data
-     * is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job
+     * JSON, an instance of captions DestinationSettings is equivalent to one captions
+     * tab in the console. Usually, one captions tab corresponds to one output captions
+     * track. Depending on your output captions format, one tab might correspond to a
+     * set of output captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
 
     /**
-     * Specific settings required by destination type. Note that
-     * burnin_destination_settings are not available if the source of the caption data
-     * is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job
+     * JSON, an instance of captions DestinationSettings is equivalent to one captions
+     * tab in the console. Usually, one captions tab corresponds to one output captions
+     * track. Depending on your output captions format, one tab might correspond to a
+     * set of output captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
 
     /**
-     * Specific settings required by destination type. Note that
-     * burnin_destination_settings are not available if the source of the caption data
-     * is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job
+     * JSON, an instance of captions DestinationSettings is equivalent to one captions
+     * tab in the console. Usually, one captions tab corresponds to one output captions
+     * track. Depending on your output captions format, one tab might correspond to a
+     * set of output captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline void SetDestinationSettings(CaptionDestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
 
     /**
-     * Specific settings required by destination type. Note that
-     * burnin_destination_settings are not available if the source of the caption data
-     * is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job
+     * JSON, an instance of captions DestinationSettings is equivalent to one captions
+     * tab in the console. Usually, one captions tab corresponds to one output captions
+     * track. Depending on your output captions format, one tab might correspond to a
+     * set of output captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline CaptionDescriptionPreset& WithDestinationSettings(const CaptionDestinationSettings& value) { SetDestinationSettings(value); return *this;}
 
     /**
-     * Specific settings required by destination type. Note that
-     * burnin_destination_settings are not available if the source of the caption data
-     * is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job
+     * JSON, an instance of captions DestinationSettings is equivalent to one captions
+     * tab in the console. Usually, one captions tab corresponds to one output captions
+     * track. Depending on your output captions format, one tab might correspond to a
+     * set of output captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     inline CaptionDescriptionPreset& WithDestinationSettings(CaptionDestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
 

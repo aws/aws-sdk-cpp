@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
@@ -29,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>A request to change information about the <a>BasePathMapping</a>
+   * <p>A request to change information about the BasePathMapping
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMappingRequest">AWS
    * API Reference</a></p>
@@ -49,156 +39,148 @@ namespace Model
 
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline UpdateBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline UpdateBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * <p>The domain name of the BasePathMapping resource to change.</p>
      */
     inline UpdateBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path of the BasePathMapping resource to change.</p> <p>To specify an
+     * empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateBasePathMappingRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateBasePathMappingRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateBasePathMappingRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of update operations to be applied to the specified resource and in
-     * the order specified in this list.</p>
+     * <p>For more information about supported patch operations, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+     * Operations</a>.</p>
      */
     inline UpdateBasePathMappingRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 

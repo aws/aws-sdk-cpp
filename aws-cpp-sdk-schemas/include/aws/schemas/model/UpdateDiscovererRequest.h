@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
@@ -83,29 +73,70 @@ namespace Model
     inline UpdateDiscovererRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline const Aws::String& GetDiscovererId() const{ return m_discovererId; }
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline bool DiscovererIdHasBeenSet() const { return m_discovererIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline void SetDiscovererId(const Aws::String& value) { m_discovererIdHasBeenSet = true; m_discovererId = value; }
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline void SetDiscovererId(Aws::String&& value) { m_discovererIdHasBeenSet = true; m_discovererId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline void SetDiscovererId(const char* value) { m_discovererIdHasBeenSet = true; m_discovererId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline UpdateDiscovererRequest& WithDiscovererId(const Aws::String& value) { SetDiscovererId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline UpdateDiscovererRequest& WithDiscovererId(Aws::String&& value) { SetDiscovererId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the discoverer.</p>
+     */
     inline UpdateDiscovererRequest& WithDiscovererId(const char* value) { SetDiscovererId(value); return *this;}
+
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline bool CrossAccountHasBeenSet() const { return m_crossAccountHasBeenSet; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccountHasBeenSet = true; m_crossAccount = value; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline UpdateDiscovererRequest& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
 
   private:
 
@@ -114,6 +145,9 @@ namespace Model
 
     Aws::String m_discovererId;
     bool m_discovererIdHasBeenSet;
+
+    bool m_crossAccount;
+    bool m_crossAccountHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ebs/model/ValidationExceptionReason.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,13 @@ namespace Aws
         static const int INVALID_BLOCK_TOKEN_HASH = HashingUtils::HashString("INVALID_BLOCK_TOKEN");
         static const int INVALID_SNAPSHOT_ID_HASH = HashingUtils::HashString("INVALID_SNAPSHOT_ID");
         static const int UNRELATED_SNAPSHOTS_HASH = HashingUtils::HashString("UNRELATED_SNAPSHOTS");
+        static const int INVALID_BLOCK_HASH = HashingUtils::HashString("INVALID_BLOCK");
+        static const int INVALID_CONTENT_ENCODING_HASH = HashingUtils::HashString("INVALID_CONTENT_ENCODING");
+        static const int INVALID_TAG_HASH = HashingUtils::HashString("INVALID_TAG");
+        static const int INVALID_DEPENDENCY_REQUEST_HASH = HashingUtils::HashString("INVALID_DEPENDENCY_REQUEST");
+        static const int INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("INVALID_PARAMETER_VALUE");
+        static const int INVALID_VOLUME_SIZE_HASH = HashingUtils::HashString("INVALID_VOLUME_SIZE");
+        static const int CONFLICTING_BLOCK_UPDATE_HASH = HashingUtils::HashString("CONFLICTING_BLOCK_UPDATE");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -60,6 +57,34 @@ namespace Aws
           {
             return ValidationExceptionReason::UNRELATED_SNAPSHOTS;
           }
+          else if (hashCode == INVALID_BLOCK_HASH)
+          {
+            return ValidationExceptionReason::INVALID_BLOCK;
+          }
+          else if (hashCode == INVALID_CONTENT_ENCODING_HASH)
+          {
+            return ValidationExceptionReason::INVALID_CONTENT_ENCODING;
+          }
+          else if (hashCode == INVALID_TAG_HASH)
+          {
+            return ValidationExceptionReason::INVALID_TAG;
+          }
+          else if (hashCode == INVALID_DEPENDENCY_REQUEST_HASH)
+          {
+            return ValidationExceptionReason::INVALID_DEPENDENCY_REQUEST;
+          }
+          else if (hashCode == INVALID_PARAMETER_VALUE_HASH)
+          {
+            return ValidationExceptionReason::INVALID_PARAMETER_VALUE;
+          }
+          else if (hashCode == INVALID_VOLUME_SIZE_HASH)
+          {
+            return ValidationExceptionReason::INVALID_VOLUME_SIZE;
+          }
+          else if (hashCode == CONFLICTING_BLOCK_UPDATE_HASH)
+          {
+            return ValidationExceptionReason::CONFLICTING_BLOCK_UPDATE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +109,20 @@ namespace Aws
             return "INVALID_SNAPSHOT_ID";
           case ValidationExceptionReason::UNRELATED_SNAPSHOTS:
             return "UNRELATED_SNAPSHOTS";
+          case ValidationExceptionReason::INVALID_BLOCK:
+            return "INVALID_BLOCK";
+          case ValidationExceptionReason::INVALID_CONTENT_ENCODING:
+            return "INVALID_CONTENT_ENCODING";
+          case ValidationExceptionReason::INVALID_TAG:
+            return "INVALID_TAG";
+          case ValidationExceptionReason::INVALID_DEPENDENCY_REQUEST:
+            return "INVALID_DEPENDENCY_REQUEST";
+          case ValidationExceptionReason::INVALID_PARAMETER_VALUE:
+            return "INVALID_PARAMETER_VALUE";
+          case ValidationExceptionReason::INVALID_VOLUME_SIZE:
+            return "INVALID_VOLUME_SIZE";
+          case ValidationExceptionReason::CONFLICTING_BLOCK_UPDATE:
+            return "CONFLICTING_BLOCK_UPDATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

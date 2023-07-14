@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/ArchiveCdnSettings.h>
 #include <aws/medialive/model/OutputLocationRef.h>
 #include <utility>
 
@@ -45,6 +36,37 @@ namespace Model
     ArchiveGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     ArchiveGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline const ArchiveCdnSettings& GetArchiveCdnSettings() const{ return m_archiveCdnSettings; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline bool ArchiveCdnSettingsHasBeenSet() const { return m_archiveCdnSettingsHasBeenSet; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline void SetArchiveCdnSettings(const ArchiveCdnSettings& value) { m_archiveCdnSettingsHasBeenSet = true; m_archiveCdnSettings = value; }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline void SetArchiveCdnSettings(ArchiveCdnSettings&& value) { m_archiveCdnSettingsHasBeenSet = true; m_archiveCdnSettings = std::move(value); }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline ArchiveGroupSettings& WithArchiveCdnSettings(const ArchiveCdnSettings& value) { SetArchiveCdnSettings(value); return *this;}
+
+    /**
+     * Parameters that control interactions with the CDN.
+     */
+    inline ArchiveGroupSettings& WithArchiveCdnSettings(ArchiveCdnSettings&& value) { SetArchiveCdnSettings(std::move(value)); return *this;}
 
 
     /**
@@ -103,6 +125,9 @@ namespace Model
     inline ArchiveGroupSettings& WithRolloverInterval(int value) { SetRolloverInterval(value); return *this;}
 
   private:
+
+    ArchiveCdnSettings m_archiveCdnSettings;
+    bool m_archiveCdnSettingsHasBeenSet;
 
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet;

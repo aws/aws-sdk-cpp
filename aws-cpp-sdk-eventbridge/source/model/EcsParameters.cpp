@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/eventbridge/model/EcsParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,18 @@ EcsParameters::EcsParameters() :
     m_launchTypeHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
+    m_enableECSManagedTags(false),
+    m_enableECSManagedTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false),
+    m_placementStrategyHasBeenSet(false),
+    m_propagateTags(PropagateTags::NOT_SET),
+    m_propagateTagsHasBeenSet(false),
+    m_referenceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,18 @@ EcsParameters::EcsParameters(JsonView jsonValue) :
     m_launchTypeHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_groupHasBeenSet(false)
+    m_groupHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
+    m_enableECSManagedTags(false),
+    m_enableECSManagedTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false),
+    m_placementStrategyHasBeenSet(false),
+    m_propagateTags(PropagateTags::NOT_SET),
+    m_propagateTagsHasBeenSet(false),
+    m_referenceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +109,74 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
     m_groupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CapacityProviderStrategy"))
+  {
+    Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
+    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+    {
+      m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
+    }
+    m_capacityProviderStrategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnableECSManagedTags"))
+  {
+    m_enableECSManagedTags = jsonValue.GetBool("EnableECSManagedTags");
+
+    m_enableECSManagedTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("EnableExecuteCommand");
+
+    m_enableExecuteCommandHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlacementConstraints"))
+  {
+    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
+    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+    {
+      m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
+    }
+    m_placementConstraintsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlacementStrategy"))
+  {
+    Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("PlacementStrategy");
+    for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
+    {
+      m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
+    }
+    m_placementStrategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PropagateTags"))
+  {
+    m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("PropagateTags"));
+
+    m_propagateTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReferenceId"))
+  {
+    m_referenceId = jsonValue.GetString("ReferenceId");
+
+    m_referenceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +216,73 @@ JsonValue EcsParameters::Jsonize() const
   if(m_groupHasBeenSet)
   {
    payload.WithString("Group", m_group);
+
+  }
+
+  if(m_capacityProviderStrategyHasBeenSet)
+  {
+   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+   {
+     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+   }
+   payload.WithArray("CapacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
+
+  }
+
+  if(m_enableECSManagedTagsHasBeenSet)
+  {
+   payload.WithBool("EnableECSManagedTags", m_enableECSManagedTags);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("EnableExecuteCommand", m_enableExecuteCommand);
+
+  }
+
+  if(m_placementConstraintsHasBeenSet)
+  {
+   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+   {
+     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+   }
+   payload.WithArray("PlacementConstraints", std::move(placementConstraintsJsonList));
+
+  }
+
+  if(m_placementStrategyHasBeenSet)
+  {
+   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
+   {
+     placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
+   }
+   payload.WithArray("PlacementStrategy", std::move(placementStrategyJsonList));
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithString("PropagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  }
+
+  if(m_referenceIdHasBeenSet)
+  {
+   payload.WithString("ReferenceId", m_referenceId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

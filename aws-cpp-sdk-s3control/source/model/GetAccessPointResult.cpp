@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3control/model/GetAccessPointResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -72,6 +62,31 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+    }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
+    }
+    XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
+    if(!accessPointArnNode.IsNull())
+    {
+      m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
+    }
+    XmlNode endpointsNode = resultNode.FirstChild("Endpoints");
+
+    if(!endpointsNode.IsNull())
+    {
+      XmlNode endpointsEntry = endpointsNode.FirstChild("entry");
+      while(!endpointsEntry.IsNull())
+      {
+        XmlNode keyNode = endpointsEntry.FirstChild("key");
+        XmlNode valueNode = endpointsEntry.FirstChild("value");
+        m_endpoints[keyNode.GetText()] =
+            valueNode.GetText();
+        endpointsEntry = endpointsEntry.NextNode("entry");
+      }
+
     }
   }
 

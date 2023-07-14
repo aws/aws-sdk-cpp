@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/elasticache/model/UpdateActionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -36,6 +26,9 @@ namespace Aws
         static const int stopping_HASH = HashingUtils::HashString("stopping");
         static const int stopped_HASH = HashingUtils::HashString("stopped");
         static const int complete_HASH = HashingUtils::HashString("complete");
+        static const int scheduling_HASH = HashingUtils::HashString("scheduling");
+        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
+        static const int not_applicable_HASH = HashingUtils::HashString("not-applicable");
 
 
         UpdateActionStatus GetUpdateActionStatusForName(const Aws::String& name)
@@ -65,6 +58,18 @@ namespace Aws
           {
             return UpdateActionStatus::complete;
           }
+          else if (hashCode == scheduling_HASH)
+          {
+            return UpdateActionStatus::scheduling;
+          }
+          else if (hashCode == scheduled_HASH)
+          {
+            return UpdateActionStatus::scheduled;
+          }
+          else if (hashCode == not_applicable_HASH)
+          {
+            return UpdateActionStatus::not_applicable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,12 @@ namespace Aws
             return "stopped";
           case UpdateActionStatus::complete:
             return "complete";
+          case UpdateActionStatus::scheduling:
+            return "scheduling";
+          case UpdateActionStatus::scheduled:
+            return "scheduled";
+          case UpdateActionStatus::not_applicable:
+            return "not-applicable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

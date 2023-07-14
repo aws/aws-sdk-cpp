@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -174,83 +164,91 @@ namespace Model
 
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline AssociationExecutionTarget& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline AssociationExecutionTarget& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     * <p>The resource ID, for example, the managed node ID where the association
+     * ran.</p>
      */
     inline AssociationExecutionTarget& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline AssociationExecutionTarget& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline AssociationExecutionTarget& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type, for example, instance.</p>
+     * <p>The resource type, for example, EC2.</p>
      */
     inline AssociationExecutionTarget& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

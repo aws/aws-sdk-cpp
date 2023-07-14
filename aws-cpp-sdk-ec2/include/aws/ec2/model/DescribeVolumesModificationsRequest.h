@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -82,145 +72,208 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline DescribeVolumesModificationsRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline DescribeVolumesModificationsRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the volumes for which in-progress modifications will be
-     * described.</p>
+     * <p>The IDs of the volumes.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline DescribeVolumesModificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline DescribeVolumesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline DescribeVolumesModificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code> |
-     * <code>modification-state</code> | <code>target-size</code> |
-     * <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> |
-     * <code>original-volume-type</code> | <code>start-time</code> |
-     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
-     * </p>
+     * <p>The filters.</p> <ul> <li> <p> <code>modification-state</code> - The current
+     * modification state (modifying | optimizing | completed | failed).</p> </li> <li>
+     * <p> <code>original-iops</code> - The original IOPS rate of the volume.</p> </li>
+     * <li> <p> <code>original-size</code> - The original size of the volume, in
+     * GiB.</p> </li> <li> <p> <code>original-volume-type</code> - The original volume
+     * type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * was enabled (true | false).</p> </li> <li> <p> <code>start-time</code> - The
+     * modification start time.</p> </li> <li> <p> <code>target-iops</code> - The
+     * target IOPS rate of the volume.</p> </li> <li> <p> <code>target-size</code> -
+     * The target size of the volume, in GiB.</p> </li> <li> <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard
+     * | io1 | io2 | gp2 | sc1 | st1).</p> </li> <li> <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support
+     * is to be enabled (true | false).</p> </li> <li> <p> <code>volume-id</code> - The
+     * ID of the volume.</p> </li> </ul>
      */
     inline DescribeVolumesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

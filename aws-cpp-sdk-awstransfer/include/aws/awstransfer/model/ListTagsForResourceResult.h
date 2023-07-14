@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline ListTagsForResourceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline ListTagsForResourceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline ListTagsForResourceResult& WithArn(const char* value) { SetArn(value); return *this;}
 

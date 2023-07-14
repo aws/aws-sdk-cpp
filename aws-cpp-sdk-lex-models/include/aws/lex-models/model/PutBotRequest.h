@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -186,6 +176,188 @@ namespace Model
      * OrderPizza intent. For more information, see <a>how-it-works</a>.</p>
      */
     inline PutBotRequest& AddIntents(Intent&& value) { m_intentsHasBeenSet = true; m_intents.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Set to <code>true</code> to enable access to natural language understanding
+     * improvements. </p> <p>When you set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> you can use the
+     * <code>nluIntentConfidenceThreshold</code> parameter to configure confidence
+     * scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot has access to accuracy improvements.</p> <p>The Regions where you can
+     * set the <code>enableModelImprovements</code> parameter to <code>true</code>
+     * are:</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
+     */
+    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+
+    /**
+     * <p>Set to <code>true</code> to enable access to natural language understanding
+     * improvements. </p> <p>When you set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> you can use the
+     * <code>nluIntentConfidenceThreshold</code> parameter to configure confidence
+     * scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot has access to accuracy improvements.</p> <p>The Regions where you can
+     * set the <code>enableModelImprovements</code> parameter to <code>true</code>
+     * are:</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
+     */
+    inline bool EnableModelImprovementsHasBeenSet() const { return m_enableModelImprovementsHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to enable access to natural language understanding
+     * improvements. </p> <p>When you set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> you can use the
+     * <code>nluIntentConfidenceThreshold</code> parameter to configure confidence
+     * scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot has access to accuracy improvements.</p> <p>The Regions where you can
+     * set the <code>enableModelImprovements</code> parameter to <code>true</code>
+     * are:</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
+     */
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovementsHasBeenSet = true; m_enableModelImprovements = value; }
+
+    /**
+     * <p>Set to <code>true</code> to enable access to natural language understanding
+     * improvements. </p> <p>When you set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> you can use the
+     * <code>nluIntentConfidenceThreshold</code> parameter to configure confidence
+     * scores. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence
+     * Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code>
+     * parameter in certain Regions. If you set the parameter to <code>true</code>,
+     * your bot has access to accuracy improvements.</p> <p>The Regions where you can
+     * set the <code>enableModelImprovements</code> parameter to <code>true</code>
+     * are:</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default. In these Regions setting the parameter to
+     * <code>false</code> throws a <code>ValidationException</code> exception.</p>
+     */
+    inline PutBotRequest& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
+
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline bool NluIntentConfidenceThresholdHasBeenSet() const { return m_nluIntentConfidenceThresholdHasBeenSet; }
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
+
+    /**
+     * <p>Determines the threshold where Amazon Lex will insert the
+     * <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or
+     * both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * response. <code>AMAZON.FallbackIntent</code> and
+     * <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured
+     * for the bot.</p> <p>You must set the <code>enableModelImprovements</code>
+     * parameter to <code>true</code> to use confidence scores in the following
+     * regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US
+     * West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney)
+     * (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul>
+     * <p>In other Regions, the <code>enableModelImprovements</code> parameter is set
+     * to <code>true</code> by default.</p> <p>For example, suppose a bot is configured
+     * with the confidence threshold of 0.80 and the
+     * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
+     * with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC
+     * (0.50). The response from the <code>PostText</code> operation would be:</p> <ul>
+     * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
+     * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
+     */
+    inline PutBotRequest& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
 
 
     /**
@@ -372,7 +544,7 @@ namespace Model
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
      * elicit the information a few times. After that, Amazon Lex sends the message
-     * defined in <code>abortStatement</code> to the user, and then aborts the
+     * defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the
      * <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For
      * example, in a pizza ordering bot, Amazon Lex might ask a user "What type of
@@ -383,7 +555,7 @@ namespace Model
      * intent might require the <code>CrustType</code> slot. You specify the
      * <code>valueElicitationPrompt</code> field when you create the
      * <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the
-     * abort statement will not be sent to the user, the fallback intent is used
+     * cancel statement will not be sent to the user, the fallback intent is used
      * instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
@@ -393,7 +565,7 @@ namespace Model
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
      * elicit the information a few times. After that, Amazon Lex sends the message
-     * defined in <code>abortStatement</code> to the user, and then aborts the
+     * defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the
      * <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For
      * example, in a pizza ordering bot, Amazon Lex might ask a user "What type of
@@ -404,7 +576,7 @@ namespace Model
      * intent might require the <code>CrustType</code> slot. You specify the
      * <code>valueElicitationPrompt</code> field when you create the
      * <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the
-     * abort statement will not be sent to the user, the fallback intent is used
+     * cancel statement will not be sent to the user, the fallback intent is used
      * instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
@@ -414,7 +586,7 @@ namespace Model
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
      * elicit the information a few times. After that, Amazon Lex sends the message
-     * defined in <code>abortStatement</code> to the user, and then aborts the
+     * defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the
      * <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For
      * example, in a pizza ordering bot, Amazon Lex might ask a user "What type of
@@ -425,7 +597,7 @@ namespace Model
      * intent might require the <code>CrustType</code> slot. You specify the
      * <code>valueElicitationPrompt</code> field when you create the
      * <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the
-     * abort statement will not be sent to the user, the fallback intent is used
+     * cancel statement will not be sent to the user, the fallback intent is used
      * instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
@@ -435,7 +607,7 @@ namespace Model
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
      * elicit the information a few times. After that, Amazon Lex sends the message
-     * defined in <code>abortStatement</code> to the user, and then aborts the
+     * defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the
      * <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For
      * example, in a pizza ordering bot, Amazon Lex might ask a user "What type of
@@ -446,7 +618,7 @@ namespace Model
      * intent might require the <code>CrustType</code> slot. You specify the
      * <code>valueElicitationPrompt</code> field when you create the
      * <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the
-     * abort statement will not be sent to the user, the fallback intent is used
+     * cancel statement will not be sent to the user, the fallback intent is used
      * instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
@@ -456,7 +628,7 @@ namespace Model
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
      * elicit the information a few times. After that, Amazon Lex sends the message
-     * defined in <code>abortStatement</code> to the user, and then aborts the
+     * defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the
      * <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For
      * example, in a pizza ordering bot, Amazon Lex might ask a user "What type of
@@ -467,7 +639,7 @@ namespace Model
      * intent might require the <code>CrustType</code> slot. You specify the
      * <code>valueElicitationPrompt</code> field when you create the
      * <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the
-     * abort statement will not be sent to the user, the fallback intent is used
+     * cancel statement will not be sent to the user, the fallback intent is used
      * instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
@@ -477,7 +649,7 @@ namespace Model
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
      * elicit the information a few times. After that, Amazon Lex sends the message
-     * defined in <code>abortStatement</code> to the user, and then aborts the
+     * defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the
      * <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For
      * example, in a pizza ordering bot, Amazon Lex might ask a user "What type of
@@ -488,7 +660,7 @@ namespace Model
      * intent might require the <code>CrustType</code> slot. You specify the
      * <code>valueElicitationPrompt</code> field when you create the
      * <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the
-     * abort statement will not be sent to the user, the fallback intent is used
+     * cancel statement will not be sent to the user, the fallback intent is used
      * instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
@@ -1052,6 +1224,12 @@ namespace Model
 
     Aws::Vector<Intent> m_intents;
     bool m_intentsHasBeenSet;
+
+    bool m_enableModelImprovements;
+    bool m_enableModelImprovementsHasBeenSet;
+
+    double m_nluIntentConfidenceThreshold;
+    bool m_nluIntentConfidenceThresholdHasBeenSet;
 
     Prompt m_clarificationPrompt;
     bool m_clarificationPromptHasBeenSet;

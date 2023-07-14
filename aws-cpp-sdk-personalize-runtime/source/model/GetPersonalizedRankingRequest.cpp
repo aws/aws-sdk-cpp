@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/personalize-runtime/model/GetPersonalizedRankingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -26,7 +16,9 @@ GetPersonalizedRankingRequest::GetPersonalizedRankingRequest() :
     m_campaignArnHasBeenSet(false),
     m_inputListHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_contextHasBeenSet(false)
+    m_contextHasBeenSet(false),
+    m_filterArnHasBeenSet(false),
+    m_filterValuesHasBeenSet(false)
 {
 }
 
@@ -65,6 +57,23 @@ Aws::String GetPersonalizedRankingRequest::SerializePayload() const
      contextJsonMap.WithString(contextItem.first, contextItem.second);
    }
    payload.WithObject("context", std::move(contextJsonMap));
+
+  }
+
+  if(m_filterArnHasBeenSet)
+  {
+   payload.WithString("filterArn", m_filterArn);
+
+  }
+
+  if(m_filterValuesHasBeenSet)
+  {
+   JsonValue filterValuesJsonMap;
+   for(auto& filterValuesItem : m_filterValues)
+   {
+     filterValuesJsonMap.WithString(filterValuesItem.first, filterValuesItem.second);
+   }
+   payload.WithObject("filterValues", std::move(filterValuesJsonMap));
 
   }
 

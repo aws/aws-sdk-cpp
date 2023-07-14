@@ -1,24 +1,16 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/ExcludedRule.h>
+#include <aws/wafv2/model/ManagedRuleGroupConfig.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -34,16 +26,13 @@ namespace WAFV2
 {
 namespace Model
 {
+  class Statement;
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>A rule statement used to run the rules
-   * that are defined in a managed rule group. To use this, provide the vendor name
-   * and the name of the rule group in this statement. You can retrieve the required
-   * names by calling <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+   * <p>A rule statement used to run the rules that are defined in a managed rule
+   * group. To use this, provide the vendor name and the name of the rule group in
+   * this statement. You can retrieve the required names by calling
+   * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
    * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
    * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
@@ -158,60 +147,317 @@ namespace Model
 
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline ManagedRuleGroupStatement& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline ManagedRuleGroupStatement& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline ManagedRuleGroupStatement& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+
+    /**
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline ManagedRuleGroupStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline ManagedRuleGroupStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline ManagedRuleGroupStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
 
     /**
-     * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
-     * regardless of the action that is set on the rule. This effectively excludes the
-     * rule from acting on web requests. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline ManagedRuleGroupStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
+    const Statement& GetScopeDownStatement() const;
+
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
+    bool ScopeDownStatementHasBeenSet() const;
+
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
+    void SetScopeDownStatement(const Statement& value);
+
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
+    void SetScopeDownStatement(Statement&& value);
+
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
+    ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
+
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
+    ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
+
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline const Aws::Vector<ManagedRuleGroupConfig>& GetManagedRuleGroupConfigs() const{ return m_managedRuleGroupConfigs; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline bool ManagedRuleGroupConfigsHasBeenSet() const { return m_managedRuleGroupConfigsHasBeenSet; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline void SetManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = value; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline void SetManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = std::move(value); }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { SetManagedRuleGroupConfigs(value); return *this;}
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { SetManagedRuleGroupConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(const ManagedRuleGroupConfig& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Additional information that's used by a managed rule group. Most managed rule
+     * groups don't require this.</p> <p>Use this for the account takeover prevention
+     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
+     * information about the sign-in page of your application. </p> <p>You can provide
+     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
+     * group configuration, for example <code>UsernameField</code> and
+     * <code>PasswordField</code>. The configuration that you provide depends on the
+     * needs of the managed rule group. For the ATP managed rule group, you provide the
+     * following individual configuration objects: <code>LoginPath</code>,
+     * <code>PasswordField</code>, <code>PayloadType</code> and
+     * <code>UsernameField</code>.</p>
+     */
+    inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(ManagedRuleGroupConfig&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -221,8 +467,17 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
+
     Aws::Vector<ExcludedRule> m_excludedRules;
     bool m_excludedRulesHasBeenSet;
+
+    std::shared_ptr<Statement> m_scopeDownStatement;
+    bool m_scopeDownStatementHasBeenSet;
+
+    Aws::Vector<ManagedRuleGroupConfig> m_managedRuleGroupConfigs;
+    bool m_managedRuleGroupConfigsHasBeenSet;
   };
 
 } // namespace Model

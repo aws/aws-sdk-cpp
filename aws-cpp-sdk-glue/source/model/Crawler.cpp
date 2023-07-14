@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/glue/model/Crawler.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,9 @@ Crawler::Crawler() :
     m_databaseNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_classifiersHasBeenSet(false),
+    m_recrawlPolicyHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
+    m_lineageConfigurationHasBeenSet(false),
     m_state(CrawlerState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
@@ -48,7 +40,8 @@ Crawler::Crawler() :
     m_version(0),
     m_versionHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_crawlerSecurityConfigurationHasBeenSet(false)
+    m_crawlerSecurityConfigurationHasBeenSet(false),
+    m_lakeFormationConfigurationHasBeenSet(false)
 {
 }
 
@@ -59,7 +52,9 @@ Crawler::Crawler(JsonView jsonValue) :
     m_databaseNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_classifiersHasBeenSet(false),
+    m_recrawlPolicyHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
+    m_lineageConfigurationHasBeenSet(false),
     m_state(CrawlerState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
@@ -72,7 +67,8 @@ Crawler::Crawler(JsonView jsonValue) :
     m_version(0),
     m_versionHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_crawlerSecurityConfigurationHasBeenSet(false)
+    m_crawlerSecurityConfigurationHasBeenSet(false),
+    m_lakeFormationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,11 +120,25 @@ Crawler& Crawler::operator =(JsonView jsonValue)
     m_classifiersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecrawlPolicy"))
+  {
+    m_recrawlPolicy = jsonValue.GetObject("RecrawlPolicy");
+
+    m_recrawlPolicyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SchemaChangePolicy"))
   {
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
 
     m_schemaChangePolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LineageConfiguration"))
+  {
+    m_lineageConfiguration = jsonValue.GetObject("LineageConfiguration");
+
+    m_lineageConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("State"))
@@ -201,6 +211,13 @@ Crawler& Crawler::operator =(JsonView jsonValue)
     m_crawlerSecurityConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LakeFormationConfiguration"))
+  {
+    m_lakeFormationConfiguration = jsonValue.GetObject("LakeFormationConfiguration");
+
+    m_lakeFormationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,9 +266,21 @@ JsonValue Crawler::Jsonize() const
 
   }
 
+  if(m_recrawlPolicyHasBeenSet)
+  {
+   payload.WithObject("RecrawlPolicy", m_recrawlPolicy.Jsonize());
+
+  }
+
   if(m_schemaChangePolicyHasBeenSet)
   {
    payload.WithObject("SchemaChangePolicy", m_schemaChangePolicy.Jsonize());
+
+  }
+
+  if(m_lineageConfigurationHasBeenSet)
+  {
+   payload.WithObject("LineageConfiguration", m_lineageConfiguration.Jsonize());
 
   }
 
@@ -309,6 +338,12 @@ JsonValue Crawler::Jsonize() const
   if(m_crawlerSecurityConfigurationHasBeenSet)
   {
    payload.WithString("CrawlerSecurityConfiguration", m_crawlerSecurityConfiguration);
+
+  }
+
+  if(m_lakeFormationConfigurationHasBeenSet)
+  {
+   payload.WithObject("LakeFormationConfiguration", m_lakeFormationConfiguration.Jsonize());
 
   }
 

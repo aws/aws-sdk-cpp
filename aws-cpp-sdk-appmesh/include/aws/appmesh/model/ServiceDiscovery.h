@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -50,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline const AwsCloudMapServiceDiscovery& GetAwsCloudMap() const{ return m_awsCloudMap; }
 
     /**
-     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline bool AwsCloudMapHasBeenSet() const { return m_awsCloudMapHasBeenSet; }
 
     /**
-     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline void SetAwsCloudMap(const AwsCloudMapServiceDiscovery& value) { m_awsCloudMapHasBeenSet = true; m_awsCloudMap = value; }
 
     /**
-     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline void SetAwsCloudMap(AwsCloudMapServiceDiscovery&& value) { m_awsCloudMapHasBeenSet = true; m_awsCloudMap = std::move(value); }
 
     /**
-     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline ServiceDiscovery& WithAwsCloudMap(const AwsCloudMapServiceDiscovery& value) { SetAwsCloudMap(value); return *this;}
 
     /**
-     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline ServiceDiscovery& WithAwsCloudMap(AwsCloudMapServiceDiscovery&& value) { SetAwsCloudMap(std::move(value)); return *this;}
 

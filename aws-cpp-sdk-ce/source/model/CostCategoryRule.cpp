@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/CostCategoryRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -30,13 +20,19 @@ namespace Model
 
 CostCategoryRule::CostCategoryRule() : 
     m_valueHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+    m_ruleHasBeenSet(false),
+    m_inheritedValueHasBeenSet(false),
+    m_type(CostCategoryRuleType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 CostCategoryRule::CostCategoryRule(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
-    m_ruleHasBeenSet(false)
+    m_ruleHasBeenSet(false),
+    m_inheritedValueHasBeenSet(false),
+    m_type(CostCategoryRuleType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +53,20 @@ CostCategoryRule& CostCategoryRule::operator =(JsonView jsonValue)
     m_ruleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InheritedValue"))
+  {
+    m_inheritedValue = jsonValue.GetObject("InheritedValue");
+
+    m_inheritedValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = CostCategoryRuleTypeMapper::GetCostCategoryRuleTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +84,17 @@ JsonValue CostCategoryRule::Jsonize() const
   {
    payload.WithObject("Rule", m_rule.Jsonize());
 
+  }
+
+  if(m_inheritedValueHasBeenSet)
+  {
+   payload.WithObject("InheritedValue", m_inheritedValue.Jsonize());
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", CostCategoryRuleTypeMapper::GetNameForCostCategoryRuleType(m_type));
   }
 
   return payload;

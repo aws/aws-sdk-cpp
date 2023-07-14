@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -93,49 +83,49 @@ namespace Model
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline GetStatisticsRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline GetStatisticsRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
      * <p>The query used to search. You can specify "*" for the query string to get the
-     * count of all indexed things in your AWS account.</p>
+     * count of all indexed things in your Amazon Web Services account.</p>
      */
     inline GetStatisticsRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 

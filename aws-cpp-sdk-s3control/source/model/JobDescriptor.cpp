@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3control/model/JobDescriptor.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -50,7 +40,9 @@ JobDescriptor::JobDescriptor() :
     m_terminationDateHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_suspendedDateHasBeenSet(false),
-    m_suspendedCauseHasBeenSet(false)
+    m_suspendedCauseHasBeenSet(false),
+    m_manifestGeneratorHasBeenSet(false),
+    m_generatedManifestDescriptorHasBeenSet(false)
 {
 }
 
@@ -74,7 +66,9 @@ JobDescriptor::JobDescriptor(const XmlNode& xmlNode) :
     m_terminationDateHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_suspendedDateHasBeenSet(false),
-    m_suspendedCauseHasBeenSet(false)
+    m_suspendedCauseHasBeenSet(false),
+    m_manifestGeneratorHasBeenSet(false),
+    m_generatedManifestDescriptorHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -193,6 +187,18 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
       m_suspendedCause = Aws::Utils::Xml::DecodeEscapedXmlText(suspendedCauseNode.GetText());
       m_suspendedCauseHasBeenSet = true;
     }
+    XmlNode manifestGeneratorNode = resultNode.FirstChild("ManifestGenerator");
+    if(!manifestGeneratorNode.IsNull())
+    {
+      m_manifestGenerator = manifestGeneratorNode;
+      m_manifestGeneratorHasBeenSet = true;
+    }
+    XmlNode generatedManifestDescriptorNode = resultNode.FirstChild("GeneratedManifestDescriptor");
+    if(!generatedManifestDescriptorNode.IsNull())
+    {
+      m_generatedManifestDescriptor = generatedManifestDescriptorNode;
+      m_generatedManifestDescriptorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -309,6 +315,18 @@ void JobDescriptor::AddToNode(XmlNode& parentNode) const
   {
    XmlNode suspendedCauseNode = parentNode.CreateChildElement("SuspendedCause");
    suspendedCauseNode.SetText(m_suspendedCause);
+  }
+
+  if(m_manifestGeneratorHasBeenSet)
+  {
+   XmlNode manifestGeneratorNode = parentNode.CreateChildElement("ManifestGenerator");
+   m_manifestGenerator.AddToNode(manifestGeneratorNode);
+  }
+
+  if(m_generatedManifestDescriptorHasBeenSet)
+  {
+   XmlNode generatedManifestDescriptorNode = parentNode.CreateChildElement("GeneratedManifestDescriptor");
+   m_generatedManifestDescriptor.AddToNode(generatedManifestDescriptorNode);
   }
 
 }

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -48,42 +38,74 @@ namespace Model
 
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline ErrorDocument& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The object key name to use when a 4XX class error occurs.</p>
+     * <p>The object key name to use when a 4XX class error occurs.</p> 
+     * <p>Replacement must be made for object keys containing special characters (such
+     * as carriage returns) when using XML requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML related object key constraints</a>.</p> 
      */
     inline ErrorDocument& WithKey(const char* value) { SetKey(value); return *this;}
 

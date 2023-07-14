@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ssm/model/OperatingSystem.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,6 +27,11 @@ namespace Aws
         static const int REDHAT_ENTERPRISE_LINUX_HASH = HashingUtils::HashString("REDHAT_ENTERPRISE_LINUX");
         static const int SUSE_HASH = HashingUtils::HashString("SUSE");
         static const int CENTOS_HASH = HashingUtils::HashString("CENTOS");
+        static const int ORACLE_LINUX_HASH = HashingUtils::HashString("ORACLE_LINUX");
+        static const int DEBIAN_HASH = HashingUtils::HashString("DEBIAN");
+        static const int MACOS_HASH = HashingUtils::HashString("MACOS");
+        static const int RASPBIAN_HASH = HashingUtils::HashString("RASPBIAN");
+        static const int ROCKY_LINUX_HASH = HashingUtils::HashString("ROCKY_LINUX");
 
 
         OperatingSystem GetOperatingSystemForName(const Aws::String& name)
@@ -70,6 +65,26 @@ namespace Aws
           {
             return OperatingSystem::CENTOS;
           }
+          else if (hashCode == ORACLE_LINUX_HASH)
+          {
+            return OperatingSystem::ORACLE_LINUX;
+          }
+          else if (hashCode == DEBIAN_HASH)
+          {
+            return OperatingSystem::DEBIAN;
+          }
+          else if (hashCode == MACOS_HASH)
+          {
+            return OperatingSystem::MACOS;
+          }
+          else if (hashCode == RASPBIAN_HASH)
+          {
+            return OperatingSystem::RASPBIAN;
+          }
+          else if (hashCode == ROCKY_LINUX_HASH)
+          {
+            return OperatingSystem::ROCKY_LINUX;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +113,16 @@ namespace Aws
             return "SUSE";
           case OperatingSystem::CENTOS:
             return "CENTOS";
+          case OperatingSystem::ORACLE_LINUX:
+            return "ORACLE_LINUX";
+          case OperatingSystem::DEBIAN:
+            return "DEBIAN";
+          case OperatingSystem::MACOS:
+            return "MACOS";
+          case OperatingSystem::RASPBIAN:
+            return "RASPBIAN";
+          case OperatingSystem::ROCKY_LINUX:
+            return "ROCKY_LINUX";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

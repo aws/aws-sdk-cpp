@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
@@ -39,7 +29,7 @@ namespace Model
 {
 
   /**
-   * Option for host instance type.<p><h3>See Also:</h3>   <a
+   * <p>Option for host instance type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerInstanceOption">AWS
    * API Reference</a></p>
    */
@@ -53,232 +43,232 @@ namespace Model
 
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline BrokerInstanceOption& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline BrokerInstanceOption& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline BrokerInstanceOption& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * The list of available az.
+     * <p>The list of available az.</p>
      */
     inline BrokerInstanceOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline const EngineType& GetEngineType() const{ return m_engineType; }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline BrokerInstanceOption& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
 
     /**
-     * The type of broker engine.
+     * <p>The broker's engine type.</p>
      */
     inline BrokerInstanceOption& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
 
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline bool HostInstanceTypeHasBeenSet() const { return m_hostInstanceTypeHasBeenSet; }
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline void SetHostInstanceType(const Aws::String& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = value; }
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline void SetHostInstanceType(Aws::String&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::move(value); }
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline void SetHostInstanceType(const char* value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType.assign(value); }
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline BrokerInstanceOption& WithHostInstanceType(const Aws::String& value) { SetHostInstanceType(value); return *this;}
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline BrokerInstanceOption& WithHostInstanceType(Aws::String&& value) { SetHostInstanceType(std::move(value)); return *this;}
 
     /**
-     * The type of broker instance.
+     * <p>The broker's instance type.</p>
      */
     inline BrokerInstanceOption& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
 
 
     /**
-     * The broker's storage type.
+     * <p>The broker's storage type.</p>
      */
     inline const BrokerStorageType& GetStorageType() const{ return m_storageType; }
 
     /**
-     * The broker's storage type.
+     * <p>The broker's storage type.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * The broker's storage type.
+     * <p>The broker's storage type.</p>
      */
     inline void SetStorageType(const BrokerStorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * The broker's storage type.
+     * <p>The broker's storage type.</p>
      */
     inline void SetStorageType(BrokerStorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * The broker's storage type.
+     * <p>The broker's storage type.</p>
      */
     inline BrokerInstanceOption& WithStorageType(const BrokerStorageType& value) { SetStorageType(value); return *this;}
 
     /**
-     * The broker's storage type.
+     * <p>The broker's storage type.</p>
      */
     inline BrokerInstanceOption& WithStorageType(BrokerStorageType&& value) { SetStorageType(std::move(value)); return *this;}
 
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline const Aws::Vector<DeploymentMode>& GetSupportedDeploymentModes() const{ return m_supportedDeploymentModes; }
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline bool SupportedDeploymentModesHasBeenSet() const { return m_supportedDeploymentModesHasBeenSet; }
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline void SetSupportedDeploymentModes(const Aws::Vector<DeploymentMode>& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes = value; }
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline void SetSupportedDeploymentModes(Aws::Vector<DeploymentMode>&& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes = std::move(value); }
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline BrokerInstanceOption& WithSupportedDeploymentModes(const Aws::Vector<DeploymentMode>& value) { SetSupportedDeploymentModes(value); return *this;}
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline BrokerInstanceOption& WithSupportedDeploymentModes(Aws::Vector<DeploymentMode>&& value) { SetSupportedDeploymentModes(std::move(value)); return *this;}
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline BrokerInstanceOption& AddSupportedDeploymentModes(const DeploymentMode& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes.push_back(value); return *this; }
 
     /**
-     * The list of supported deployment modes.
+     * <p>The list of supported deployment modes.</p>
      */
     inline BrokerInstanceOption& AddSupportedDeploymentModes(DeploymentMode&& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedEngineVersions() const{ return m_supportedEngineVersions; }
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline bool SupportedEngineVersionsHasBeenSet() const { return m_supportedEngineVersionsHasBeenSet; }
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline void SetSupportedEngineVersions(const Aws::Vector<Aws::String>& value) { m_supportedEngineVersionsHasBeenSet = true; m_supportedEngineVersions = value; }
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline void SetSupportedEngineVersions(Aws::Vector<Aws::String>&& value) { m_supportedEngineVersionsHasBeenSet = true; m_supportedEngineVersions = std::move(value); }
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline BrokerInstanceOption& WithSupportedEngineVersions(const Aws::Vector<Aws::String>& value) { SetSupportedEngineVersions(value); return *this;}
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline BrokerInstanceOption& WithSupportedEngineVersions(Aws::Vector<Aws::String>&& value) { SetSupportedEngineVersions(std::move(value)); return *this;}
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline BrokerInstanceOption& AddSupportedEngineVersions(const Aws::String& value) { m_supportedEngineVersionsHasBeenSet = true; m_supportedEngineVersions.push_back(value); return *this; }
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline BrokerInstanceOption& AddSupportedEngineVersions(Aws::String&& value) { m_supportedEngineVersionsHasBeenSet = true; m_supportedEngineVersions.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of supported engine versions.
+     * <p>The list of supported engine versions.</p>
      */
     inline BrokerInstanceOption& AddSupportedEngineVersions(const char* value) { m_supportedEngineVersionsHasBeenSet = true; m_supportedEngineVersions.push_back(value); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -113,11 +103,38 @@ namespace Model
      */
     inline DescribeHubResult& WithSubscribedAt(const char* value) { SetSubscribedAt(value); return *this;}
 
+
+    /**
+     * <p>Whether to automatically enable new controls when they are added to standards
+     * that are enabled.</p> <p>If set to <code>true</code>, then new controls for
+     * enabled standards are enabled automatically. If set to <code>false</code>, then
+     * new controls are not enabled.</p>
+     */
+    inline bool GetAutoEnableControls() const{ return m_autoEnableControls; }
+
+    /**
+     * <p>Whether to automatically enable new controls when they are added to standards
+     * that are enabled.</p> <p>If set to <code>true</code>, then new controls for
+     * enabled standards are enabled automatically. If set to <code>false</code>, then
+     * new controls are not enabled.</p>
+     */
+    inline void SetAutoEnableControls(bool value) { m_autoEnableControls = value; }
+
+    /**
+     * <p>Whether to automatically enable new controls when they are added to standards
+     * that are enabled.</p> <p>If set to <code>true</code>, then new controls for
+     * enabled standards are enabled automatically. If set to <code>false</code>, then
+     * new controls are not enabled.</p>
+     */
+    inline DescribeHubResult& WithAutoEnableControls(bool value) { SetAutoEnableControls(value); return *this;}
+
   private:
 
     Aws::String m_hubArn;
 
     Aws::String m_subscribedAt;
+
+    bool m_autoEnableControls;
   };
 
 } // namespace Model

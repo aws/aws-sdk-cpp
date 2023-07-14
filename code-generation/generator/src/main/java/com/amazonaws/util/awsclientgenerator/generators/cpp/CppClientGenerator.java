@@ -1,17 +1,7 @@
-/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
@@ -31,6 +21,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+import org.slf4j.helpers.NOPLoggerFactory;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -43,10 +34,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     public CppClientGenerator() throws Exception {
         velocityEngine = new VelocityEngine();
-        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
-        velocityEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-        velocityEngine.setProperty(RuntimeConstants.RUNTIME_LOG_LOGSYSTEM_CLASS, "org.apache.velocity.runtime.log.NullLogChute");
-        velocityEngine.setProperty("template.provide.scope.control", true);
+        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
+        velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
+        velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
+        velocityEngine.setProperty("context.scope_control.template", true);
+        // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
+        // # Use backward compatible space gobbling
+        velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
+
         velocityEngine.init();
     }
 
@@ -70,6 +65,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientSourceFile(serviceModel));
         fileList.add(generateARNHeaderFile(serviceModel));
         fileList.add(generateARNSourceFile(serviceModel));
+        fileList.add(generateClientConfigurationFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
         fileList.add(generateErrorsHeaderFile(serviceModel));
@@ -86,7 +82,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected final VelocityContext createContext(final ServiceModel serviceModel) {
         VelocityContext context = new VelocityContext();
-        context.put("nl", "\n");
+        context.put("nl", System.lineSeparator());
         context.put("serviceModel", serviceModel);
         context.put("input.encoding", StandardCharsets.UTF_8.name());
         context.put("output.encoding", StandardCharsets.UTF_8.name());
@@ -134,15 +130,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
         else if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm", StandardCharsets.UTF_8.name());
-            EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
+            EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
         }
-        else if (shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
+        else if (shape.isEvent() && shape.getEventPayloadType().equals("blob")) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EventHeader.vm", StandardCharsets.UTF_8.name());
-            if (shape.getMembers().size() != 1) {
-                throw new RuntimeException("Blob event shape used in Event Stream should only has one member.");
-            }
-            shape.getMembers().entrySet().stream().filter(memberEntry -> memberEntry.getValue().getShape().isBlob()).forEach(blobMemberEntry -> context.put("blobMember", blobMemberEntry));
+            shape.getMembers().entrySet().stream().filter(memberEntry -> memberEntry.getKey().equals(shape.getEventPayloadMemberName())).forEach(blobMemberEntry -> context.put("blobMember", blobMemberEntry));
         }
         context.put("shape", shape);
         context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
@@ -220,7 +213,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EnumSource.vm", StandardCharsets.UTF_8.name());
-            EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
+            EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
 
             context.put("shape", shape);
@@ -278,13 +271,29 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("ErrorFormatter", ErrorFormatter.class);
+        context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("source/%sErrors.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
     }
 
     protected Set<String> getRetryableErrors() {
-        return new HashSet<>(Arrays.asList(new String[]{"ProvisionedThroughputExceededException", "EC2ThrottledException"}));
+        HashSet<String> exceptions = new HashSet<>();
+        exceptions.add("Throttling");
+        exceptions.add("ThrottlingException");
+        exceptions.add("ThrottledException");
+        exceptions.add("RequestThrottledException");
+        exceptions.add("TooManyRequestsException");
+        exceptions.add("ProvisionedThroughputExceededException");
+        exceptions.add("TransactionInProgressException");
+        exceptions.add("RequestLimitExceeded");
+        exceptions.add("BandwidthLimitExceeded");
+        exceptions.add("LimitExceededException");
+        exceptions.add("RequestThrottled");
+        exceptions.add("SlowDown");
+        exceptions.add("PriorRequestNotComplete");
+        exceptions.add("EC2ThrottledException");
+        return exceptions;
     }
 
     protected SdkFileEntry generateErrorMarshallingSourceFile(final ServiceModel serviceModel) throws Exception {
@@ -292,7 +301,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorMarshallerSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
-        context.put("ErrorFormatter", ErrorFormatter.class);
 
         String fileName = String.format("source/%sErrorMarshaller.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
@@ -304,7 +312,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         ErrorFormatter errorFormatter = new ErrorFormatter();
-        context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getServiceErrors()));
+        context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getNonCoreServiceErrors()));
         context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/%sErrors.h", serviceModel.getMetadata().getProjectName(),
@@ -320,6 +328,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateARNSourceFile(final ServiceModel serviceModel) throws Exception {
         // no-op for services other than S3.
+        return null;
+    }
+
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        // no-op for services other than S3Crt.
         return null;
     }
 
@@ -366,9 +379,16 @@ public abstract class CppClientGenerator implements ClientGenerator {
         if (serviceModel.getServiceName().equals("budgets") ||
             serviceModel.getServiceName().equals("cloudfront") ||
             serviceModel.getServiceName().equals("importexport") ||
+            serviceModel.getServiceName().equals("savingsplans") ||
             serviceModel.getServiceName().equals("waf"))
         {
             serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("ce")) {
+            serviceModel.getMetadata().setGlobalEndpoint("ce.us-east-1.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("chime")) {
+            serviceModel.getMetadata().setGlobalEndpoint("chime.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("iam")) {
             endpoints.put("cn-north-1", "iam.cn-north-1.amazonaws.com.cn");
@@ -385,14 +405,20 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
+            endpoints.put("fips-aws-global", "organizations-fips.us-east-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("route53")) {
             endpoints.put("us-gov-west-1", "route53.us-gov.amazonaws.com");
             endpoints.put("us-iso-east-1", "route53.c2s.ic.gov");
+            endpoints.put("fips-aws-global", "route53-fips.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("route53.amazonaws.com");
 
-        } else if (serviceModel.getServiceName().equals("sts")) {
+        } else if (serviceModel.getServiceName().equals("shield")) {
+            endpoints.put("fips-aws-global", "shield-fips.us-east-1.amazonaws.com");
+        }
+
+        else if (serviceModel.getServiceName().equals("sts")) {
              serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 

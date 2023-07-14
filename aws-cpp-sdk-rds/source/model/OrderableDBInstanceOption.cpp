@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/OrderableDBInstanceOption.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -35,6 +25,7 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_engineVersionHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
+    m_availabilityZoneGroupHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_multiAZCapable(false),
     m_multiAZCapableHasBeenSet(false),
@@ -70,7 +61,15 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsStorageAutoscaling(false),
     m_supportsStorageAutoscalingHasBeenSet(false),
     m_supportsKerberosAuthentication(false),
-    m_supportsKerberosAuthenticationHasBeenSet(false)
+    m_supportsKerberosAuthenticationHasBeenSet(false),
+    m_outpostCapable(false),
+    m_outpostCapableHasBeenSet(false),
+    m_supportedActivityStreamModesHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsClusters(false),
+    m_supportsClustersHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
 }
 
@@ -79,6 +78,7 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_engineVersionHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
+    m_availabilityZoneGroupHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_multiAZCapable(false),
     m_multiAZCapableHasBeenSet(false),
@@ -114,7 +114,15 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsStorageAutoscaling(false),
     m_supportsStorageAutoscalingHasBeenSet(false),
     m_supportsKerberosAuthentication(false),
-    m_supportsKerberosAuthenticationHasBeenSet(false)
+    m_supportsKerberosAuthenticationHasBeenSet(false),
+    m_outpostCapable(false),
+    m_outpostCapableHasBeenSet(false),
+    m_supportedActivityStreamModesHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsClusters(false),
+    m_supportsClustersHasBeenSet(false),
+    m_supportedNetworkTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -148,6 +156,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
     {
       m_licenseModel = Aws::Utils::Xml::DecodeEscapedXmlText(licenseModelNode.GetText());
       m_licenseModelHasBeenSet = true;
+    }
+    XmlNode availabilityZoneGroupNode = resultNode.FirstChild("AvailabilityZoneGroup");
+    if(!availabilityZoneGroupNode.IsNull())
+    {
+      m_availabilityZoneGroup = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneGroupNode.GetText());
+      m_availabilityZoneGroupHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
@@ -287,6 +301,48 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsKerberosAuthentication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsKerberosAuthenticationNode.GetText()).c_str()).c_str());
       m_supportsKerberosAuthenticationHasBeenSet = true;
     }
+    XmlNode outpostCapableNode = resultNode.FirstChild("OutpostCapable");
+    if(!outpostCapableNode.IsNull())
+    {
+      m_outpostCapable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outpostCapableNode.GetText()).c_str()).c_str());
+      m_outpostCapableHasBeenSet = true;
+    }
+    XmlNode supportedActivityStreamModesNode = resultNode.FirstChild("SupportedActivityStreamModes");
+    if(!supportedActivityStreamModesNode.IsNull())
+    {
+      XmlNode supportedActivityStreamModesMember = supportedActivityStreamModesNode.FirstChild("member");
+      while(!supportedActivityStreamModesMember.IsNull())
+      {
+        m_supportedActivityStreamModes.push_back(supportedActivityStreamModesMember.GetText());
+        supportedActivityStreamModesMember = supportedActivityStreamModesMember.NextNode("member");
+      }
+
+      m_supportedActivityStreamModesHasBeenSet = true;
+    }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
+    XmlNode supportsClustersNode = resultNode.FirstChild("SupportsClusters");
+    if(!supportsClustersNode.IsNull())
+    {
+      m_supportsClusters = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsClustersNode.GetText()).c_str()).c_str());
+      m_supportsClustersHasBeenSet = true;
+    }
+    XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
+    if(!supportedNetworkTypesNode.IsNull())
+    {
+      XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      while(!supportedNetworkTypesMember.IsNull())
+      {
+        m_supportedNetworkTypes.push_back(supportedNetworkTypesMember.GetText());
+        supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
+      }
+
+      m_supportedNetworkTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -312,6 +368,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneGroupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
   }
 
   if(m_availabilityZonesHasBeenSet)
@@ -430,6 +491,39 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsKerberosAuthentication=" << std::boolalpha << m_supportsKerberosAuthentication << "&";
   }
 
+  if(m_outpostCapableHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostCapable=" << std::boolalpha << m_outpostCapable << "&";
+  }
+
+  if(m_supportedActivityStreamModesHasBeenSet)
+  {
+      unsigned supportedActivityStreamModesIdx = 1;
+      for(auto& item : m_supportedActivityStreamModes)
+      {
+        oStream << location << index << locationValue << ".SupportedActivityStreamModes.member." << supportedActivityStreamModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
+  if(m_supportsClustersHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsClusters=" << std::boolalpha << m_supportsClusters << "&";
+  }
+
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -449,6 +543,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
+  }
+  if(m_availabilityZoneGroupHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
   }
   if(m_availabilityZonesHasBeenSet)
   {
@@ -545,6 +643,34 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsKerberosAuthenticationHasBeenSet)
   {
       oStream << location << ".SupportsKerberosAuthentication=" << std::boolalpha << m_supportsKerberosAuthentication << "&";
+  }
+  if(m_outpostCapableHasBeenSet)
+  {
+      oStream << location << ".OutpostCapable=" << std::boolalpha << m_outpostCapable << "&";
+  }
+  if(m_supportedActivityStreamModesHasBeenSet)
+  {
+      unsigned supportedActivityStreamModesIdx = 1;
+      for(auto& item : m_supportedActivityStreamModes)
+      {
+        oStream << location << ".SupportedActivityStreamModes.member." << supportedActivityStreamModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+  if(m_supportsClustersHasBeenSet)
+  {
+      oStream << location << ".SupportsClusters=" << std::boolalpha << m_supportsClusters << "&";
+  }
+  if(m_supportedNetworkTypesHasBeenSet)
+  {
+      unsigned supportedNetworkTypesIdx = 1;
+      for(auto& item : m_supportedNetworkTypes)
+      {
+        oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

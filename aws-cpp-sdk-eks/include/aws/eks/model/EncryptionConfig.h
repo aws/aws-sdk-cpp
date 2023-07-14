@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
@@ -105,38 +95,38 @@ namespace Model
 
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline const Provider& GetProvider() const{ return m_provider; }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline void SetProvider(const Provider& value) { m_providerHasBeenSet = true; m_provider = value; }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline void SetProvider(Provider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline EncryptionConfig& WithProvider(const Provider& value) { SetProvider(value); return *this;}
 
     /**
-     * <p>AWS Key Management Service (AWS KMS) customer master key (CMK). Either the
-     * ARN or the alias can be used.</p>
+     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
+     * used.</p>
      */
     inline EncryptionConfig& WithProvider(Provider&& value) { SetProvider(std::move(value)); return *this;}
 

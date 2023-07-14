@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -46,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail
+   * <p>Describes an alarm.</p> <p>An alarm is a way to monitor your Lightsail
    * resource metrics. For more information, see <a
    * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
    * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
@@ -463,13 +453,13 @@ namespace Model
     /**
      * <p>Specifies how the alarm handles missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul>
      */
     inline const TreatMissingData& GetTreatMissingData() const{ return m_treatMissingData; }
@@ -477,13 +467,13 @@ namespace Model
     /**
      * <p>Specifies how the alarm handles missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul>
      */
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
@@ -491,13 +481,13 @@ namespace Model
     /**
      * <p>Specifies how the alarm handles missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul>
      */
     inline void SetTreatMissingData(const TreatMissingData& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
@@ -505,13 +495,13 @@ namespace Model
     /**
      * <p>Specifies how the alarm handles missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul>
      */
     inline void SetTreatMissingData(TreatMissingData&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
@@ -519,13 +509,13 @@ namespace Model
     /**
      * <p>Specifies how the alarm handles missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul>
      */
     inline Alarm& WithTreatMissingData(const TreatMissingData& value) { SetTreatMissingData(value); return *this;}
@@ -533,13 +523,13 @@ namespace Model
     /**
      * <p>Specifies how the alarm handles missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul>
      */
     inline Alarm& WithTreatMissingData(TreatMissingData&& value) { SetTreatMissingData(std::move(value)); return *this;}
@@ -547,114 +537,114 @@ namespace Model
 
     /**
      * <p>The statistic for the metric associated with the alarm.</p> <p>The following
-     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest
+     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest
      * value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.</p> </li> <li> <p>
-     * <code>Maximum</code> — The highest value observed during the specified period.
+     * <code>Maximum</code> - The highest value observed during the specified period.
      * Use this value to determine high volumes of activity for your application.</p>
-     * </li> <li> <p> <code>Sum</code> — All values submitted for the matching metric
+     * </li> <li> <p> <code>Sum</code> - All values submitted for the matching metric
      * added together. You can use this statistic to determine the total volume of a
-     * metric.</p> </li> <li> <p> <code>Average</code> — The value of Sum / SampleCount
+     * metric.</p> </li> <li> <p> <code>Average</code> - The value of Sum / SampleCount
      * during the specified period. By comparing this statistic with the Minimum and
      * Maximum values, you can determine the full scope of a metric and how close the
      * average use is to the Minimum and Maximum values. This comparison helps you to
      * know when to increase or decrease your resources.</p> </li> <li> <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the
+     * <code>SampleCount</code> - The count, or number, of data points used for the
      * statistical calculation.</p> </li> </ul>
      */
     inline const MetricStatistic& GetStatistic() const{ return m_statistic; }
 
     /**
      * <p>The statistic for the metric associated with the alarm.</p> <p>The following
-     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest
+     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest
      * value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.</p> </li> <li> <p>
-     * <code>Maximum</code> — The highest value observed during the specified period.
+     * <code>Maximum</code> - The highest value observed during the specified period.
      * Use this value to determine high volumes of activity for your application.</p>
-     * </li> <li> <p> <code>Sum</code> — All values submitted for the matching metric
+     * </li> <li> <p> <code>Sum</code> - All values submitted for the matching metric
      * added together. You can use this statistic to determine the total volume of a
-     * metric.</p> </li> <li> <p> <code>Average</code> — The value of Sum / SampleCount
+     * metric.</p> </li> <li> <p> <code>Average</code> - The value of Sum / SampleCount
      * during the specified period. By comparing this statistic with the Minimum and
      * Maximum values, you can determine the full scope of a metric and how close the
      * average use is to the Minimum and Maximum values. This comparison helps you to
      * know when to increase or decrease your resources.</p> </li> <li> <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the
+     * <code>SampleCount</code> - The count, or number, of data points used for the
      * statistical calculation.</p> </li> </ul>
      */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
 
     /**
      * <p>The statistic for the metric associated with the alarm.</p> <p>The following
-     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest
+     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest
      * value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.</p> </li> <li> <p>
-     * <code>Maximum</code> — The highest value observed during the specified period.
+     * <code>Maximum</code> - The highest value observed during the specified period.
      * Use this value to determine high volumes of activity for your application.</p>
-     * </li> <li> <p> <code>Sum</code> — All values submitted for the matching metric
+     * </li> <li> <p> <code>Sum</code> - All values submitted for the matching metric
      * added together. You can use this statistic to determine the total volume of a
-     * metric.</p> </li> <li> <p> <code>Average</code> — The value of Sum / SampleCount
+     * metric.</p> </li> <li> <p> <code>Average</code> - The value of Sum / SampleCount
      * during the specified period. By comparing this statistic with the Minimum and
      * Maximum values, you can determine the full scope of a metric and how close the
      * average use is to the Minimum and Maximum values. This comparison helps you to
      * know when to increase or decrease your resources.</p> </li> <li> <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the
+     * <code>SampleCount</code> - The count, or number, of data points used for the
      * statistical calculation.</p> </li> </ul>
      */
     inline void SetStatistic(const MetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
      * <p>The statistic for the metric associated with the alarm.</p> <p>The following
-     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest
+     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest
      * value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.</p> </li> <li> <p>
-     * <code>Maximum</code> — The highest value observed during the specified period.
+     * <code>Maximum</code> - The highest value observed during the specified period.
      * Use this value to determine high volumes of activity for your application.</p>
-     * </li> <li> <p> <code>Sum</code> — All values submitted for the matching metric
+     * </li> <li> <p> <code>Sum</code> - All values submitted for the matching metric
      * added together. You can use this statistic to determine the total volume of a
-     * metric.</p> </li> <li> <p> <code>Average</code> — The value of Sum / SampleCount
+     * metric.</p> </li> <li> <p> <code>Average</code> - The value of Sum / SampleCount
      * during the specified period. By comparing this statistic with the Minimum and
      * Maximum values, you can determine the full scope of a metric and how close the
      * average use is to the Minimum and Maximum values. This comparison helps you to
      * know when to increase or decrease your resources.</p> </li> <li> <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the
+     * <code>SampleCount</code> - The count, or number, of data points used for the
      * statistical calculation.</p> </li> </ul>
      */
     inline void SetStatistic(MetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
 
     /**
      * <p>The statistic for the metric associated with the alarm.</p> <p>The following
-     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest
+     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest
      * value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.</p> </li> <li> <p>
-     * <code>Maximum</code> — The highest value observed during the specified period.
+     * <code>Maximum</code> - The highest value observed during the specified period.
      * Use this value to determine high volumes of activity for your application.</p>
-     * </li> <li> <p> <code>Sum</code> — All values submitted for the matching metric
+     * </li> <li> <p> <code>Sum</code> - All values submitted for the matching metric
      * added together. You can use this statistic to determine the total volume of a
-     * metric.</p> </li> <li> <p> <code>Average</code> — The value of Sum / SampleCount
+     * metric.</p> </li> <li> <p> <code>Average</code> - The value of Sum / SampleCount
      * during the specified period. By comparing this statistic with the Minimum and
      * Maximum values, you can determine the full scope of a metric and how close the
      * average use is to the Minimum and Maximum values. This comparison helps you to
      * know when to increase or decrease your resources.</p> </li> <li> <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the
+     * <code>SampleCount</code> - The count, or number, of data points used for the
      * statistical calculation.</p> </li> </ul>
      */
     inline Alarm& WithStatistic(const MetricStatistic& value) { SetStatistic(value); return *this;}
 
     /**
      * <p>The statistic for the metric associated with the alarm.</p> <p>The following
-     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest
+     * statistics are available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest
      * value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.</p> </li> <li> <p>
-     * <code>Maximum</code> — The highest value observed during the specified period.
+     * <code>Maximum</code> - The highest value observed during the specified period.
      * Use this value to determine high volumes of activity for your application.</p>
-     * </li> <li> <p> <code>Sum</code> — All values submitted for the matching metric
+     * </li> <li> <p> <code>Sum</code> - All values submitted for the matching metric
      * added together. You can use this statistic to determine the total volume of a
-     * metric.</p> </li> <li> <p> <code>Average</code> — The value of Sum / SampleCount
+     * metric.</p> </li> <li> <p> <code>Average</code> - The value of Sum / SampleCount
      * during the specified period. By comparing this statistic with the Minimum and
      * Maximum values, you can determine the full scope of a metric and how close the
      * average use is to the Minimum and Maximum values. This comparison helps you to
      * know when to increase or decrease your resources.</p> </li> <li> <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the
+     * <code>SampleCount</code> - The count, or number, of data points used for the
      * statistical calculation.</p> </li> </ul>
      */
     inline Alarm& WithStatistic(MetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
@@ -693,61 +683,61 @@ namespace Model
 
     /**
      * <p>The current state of the alarm.</p> <p>An alarm has the following possible
-     * states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside of the
-     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> — The alarm
+     * states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside of the
+     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm
      * has just started, the metric is not available, or not enough data is available
      * for the metric to determine the alarm state.</p> </li> <li> <p> <code>OK</code>
-     * — The metric is within the defined threshold.</p> </li> </ul>
+     * - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline const AlarmState& GetState() const{ return m_state; }
 
     /**
      * <p>The current state of the alarm.</p> <p>An alarm has the following possible
-     * states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside of the
-     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> — The alarm
+     * states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside of the
+     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm
      * has just started, the metric is not available, or not enough data is available
      * for the metric to determine the alarm state.</p> </li> <li> <p> <code>OK</code>
-     * — The metric is within the defined threshold.</p> </li> </ul>
+     * - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The current state of the alarm.</p> <p>An alarm has the following possible
-     * states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside of the
-     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> — The alarm
+     * states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside of the
+     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm
      * has just started, the metric is not available, or not enough data is available
      * for the metric to determine the alarm state.</p> </li> <li> <p> <code>OK</code>
-     * — The metric is within the defined threshold.</p> </li> </ul>
+     * - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline void SetState(const AlarmState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The current state of the alarm.</p> <p>An alarm has the following possible
-     * states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside of the
-     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> — The alarm
+     * states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside of the
+     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm
      * has just started, the metric is not available, or not enough data is available
      * for the metric to determine the alarm state.</p> </li> <li> <p> <code>OK</code>
-     * — The metric is within the defined threshold.</p> </li> </ul>
+     * - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline void SetState(AlarmState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the alarm.</p> <p>An alarm has the following possible
-     * states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside of the
-     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> — The alarm
+     * states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside of the
+     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm
      * has just started, the metric is not available, or not enough data is available
      * for the metric to determine the alarm state.</p> </li> <li> <p> <code>OK</code>
-     * — The metric is within the defined threshold.</p> </li> </ul>
+     * - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline Alarm& WithState(const AlarmState& value) { SetState(value); return *this;}
 
     /**
      * <p>The current state of the alarm.</p> <p>An alarm has the following possible
-     * states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside of the
-     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> — The alarm
+     * states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is outside of the
+     * defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm
      * has just started, the metric is not available, or not enough data is available
      * for the metric to determine the alarm state.</p> </li> <li> <p> <code>OK</code>
-     * — The metric is within the defined threshold.</p> </li> </ul>
+     * - The metric is within the defined threshold.</p> </li> </ul>
      */
     inline Alarm& WithState(AlarmState&& value) { SetState(std::move(value)); return *this;}
 

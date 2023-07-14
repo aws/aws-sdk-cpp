@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kinesis/model/StreamDescriptionSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -33,6 +23,7 @@ StreamDescriptionSummary::StreamDescriptionSummary() :
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
+    m_streamModeDetailsHasBeenSet(false),
     m_retentionPeriodHours(0),
     m_retentionPeriodHoursHasBeenSet(false),
     m_streamCreationTimestampHasBeenSet(false),
@@ -52,6 +43,7 @@ StreamDescriptionSummary::StreamDescriptionSummary(JsonView jsonValue) :
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
+    m_streamModeDetailsHasBeenSet(false),
     m_retentionPeriodHours(0),
     m_retentionPeriodHoursHasBeenSet(false),
     m_streamCreationTimestampHasBeenSet(false),
@@ -88,6 +80,13 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(JsonView jsonValu
     m_streamStatus = StreamStatusMapper::GetStreamStatusForName(jsonValue.GetString("StreamStatus"));
 
     m_streamStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StreamModeDetails"))
+  {
+    m_streamModeDetails = jsonValue.GetObject("StreamModeDetails");
+
+    m_streamModeDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RetentionPeriodHours"))
@@ -164,6 +163,12 @@ JsonValue StreamDescriptionSummary::Jsonize() const
   if(m_streamStatusHasBeenSet)
   {
    payload.WithString("StreamStatus", StreamStatusMapper::GetNameForStreamStatus(m_streamStatus));
+  }
+
+  if(m_streamModeDetailsHasBeenSet)
+  {
+   payload.WithObject("StreamModeDetails", m_streamModeDetails.Jsonize());
+
   }
 
   if(m_retentionPeriodHoursHasBeenSet)

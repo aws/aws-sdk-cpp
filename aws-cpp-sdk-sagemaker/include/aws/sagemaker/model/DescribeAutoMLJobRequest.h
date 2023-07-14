@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -45,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline DescribeAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline DescribeAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
 
     /**
-     * <p>Request information about a job using that job's unique name.</p>
+     * <p>Requests information about an AutoML job using its unique name.</p>
      */
     inline DescribeAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
 

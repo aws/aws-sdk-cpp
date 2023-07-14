@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/TaskFilter.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +108,79 @@ namespace Model
      */
     inline ListTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline const Aws::Vector<TaskFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline void SetFilters(const Aws::Vector<TaskFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline void SetFilters(Aws::Vector<TaskFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline ListTasksRequest& WithFilters(const Aws::Vector<TaskFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline ListTasksRequest& WithFilters(Aws::Vector<TaskFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline ListTasksRequest& AddFilters(const TaskFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>You can use API filters to narrow down the list of resources returned by
+     * <code>ListTasks</code>. For example, to retrieve all tasks on a specific source
+     * location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
+     * location.</p>
+     */
+    inline ListTasksRequest& AddFilters(TaskFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_maxResults;
@@ -123,6 +188,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::Vector<TaskFilter> m_filters;
+    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

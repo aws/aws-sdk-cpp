@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/HlsGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,10 +21,14 @@ namespace Model
 HlsGroupSettings::HlsGroupSettings() : 
     m_adMarkersHasBeenSet(false),
     m_additionalManifestsHasBeenSet(false),
+    m_audioOnlyHeader(HlsAudioOnlyHeader::NOT_SET),
+    m_audioOnlyHeaderHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
     m_captionLanguageSettingHasBeenSet(false),
+    m_captionSegmentLengthControl(HlsCaptionSegmentLengthControl::NOT_SET),
+    m_captionSegmentLengthControlHasBeenSet(false),
     m_clientCache(HlsClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(HlsCodecSpecification::NOT_SET),
@@ -44,6 +38,9 @@ HlsGroupSettings::HlsGroupSettings() :
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(HlsManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
@@ -62,10 +59,14 @@ HlsGroupSettings::HlsGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_segmentsPerSubdirectory(0),
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_timedMetadataId3Frame(HlsTimedMetadataId3Frame::NOT_SET),
     m_timedMetadataId3FrameHasBeenSet(false),
     m_timedMetadataId3Period(0),
@@ -78,10 +79,14 @@ HlsGroupSettings::HlsGroupSettings() :
 HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) : 
     m_adMarkersHasBeenSet(false),
     m_additionalManifestsHasBeenSet(false),
+    m_audioOnlyHeader(HlsAudioOnlyHeader::NOT_SET),
+    m_audioOnlyHeaderHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
     m_captionLanguageSettingHasBeenSet(false),
+    m_captionSegmentLengthControl(HlsCaptionSegmentLengthControl::NOT_SET),
+    m_captionSegmentLengthControlHasBeenSet(false),
     m_clientCache(HlsClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(HlsCodecSpecification::NOT_SET),
@@ -91,6 +96,9 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
+    m_imageBasedTrickPlaySettingsHasBeenSet(false),
     m_manifestCompression(HlsManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
@@ -109,10 +117,14 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_segmentsPerSubdirectory(0),
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_timedMetadataId3Frame(HlsTimedMetadataId3Frame::NOT_SET),
     m_timedMetadataId3FrameHasBeenSet(false),
     m_timedMetadataId3Period(0),
@@ -145,6 +157,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_additionalManifestsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioOnlyHeader"))
+  {
+    m_audioOnlyHeader = HlsAudioOnlyHeaderMapper::GetHlsAudioOnlyHeaderForName(jsonValue.GetString("audioOnlyHeader"));
+
+    m_audioOnlyHeaderHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("baseUrl"))
   {
     m_baseUrl = jsonValue.GetString("baseUrl");
@@ -167,6 +186,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_captionLanguageSetting = HlsCaptionLanguageSettingMapper::GetHlsCaptionLanguageSettingForName(jsonValue.GetString("captionLanguageSetting"));
 
     m_captionLanguageSettingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("captionSegmentLengthControl"))
+  {
+    m_captionSegmentLengthControl = HlsCaptionSegmentLengthControlMapper::GetHlsCaptionSegmentLengthControlForName(jsonValue.GetString("captionSegmentLengthControl"));
+
+    m_captionSegmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clientCache"))
@@ -209,6 +235,20 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlay"))
+  {
+    m_imageBasedTrickPlay = HlsImageBasedTrickPlayMapper::GetHlsImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
+
+    m_imageBasedTrickPlayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
+  {
+    m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
+
+    m_imageBasedTrickPlaySettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestCompression"))
@@ -274,6 +314,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_segmentLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = HlsSegmentLengthControlMapper::GetHlsSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("segmentsPerSubdirectory"))
   {
     m_segmentsPerSubdirectory = jsonValue.GetInteger("segmentsPerSubdirectory");
@@ -286,6 +333,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_streamInfResolution = HlsStreamInfResolutionMapper::GetHlsStreamInfResolutionForName(jsonValue.GetString("streamInfResolution"));
 
     m_streamInfResolutionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetDurationCompatibilityMode"))
+  {
+    m_targetDurationCompatibilityMode = HlsTargetDurationCompatibilityModeMapper::GetHlsTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
+
+    m_targetDurationCompatibilityModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timedMetadataId3Frame"))
@@ -338,6 +392,11 @@ JsonValue HlsGroupSettings::Jsonize() const
 
   }
 
+  if(m_audioOnlyHeaderHasBeenSet)
+  {
+   payload.WithString("audioOnlyHeader", HlsAudioOnlyHeaderMapper::GetNameForHlsAudioOnlyHeader(m_audioOnlyHeader));
+  }
+
   if(m_baseUrlHasBeenSet)
   {
    payload.WithString("baseUrl", m_baseUrl);
@@ -358,6 +417,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_captionLanguageSettingHasBeenSet)
   {
    payload.WithString("captionLanguageSetting", HlsCaptionLanguageSettingMapper::GetNameForHlsCaptionLanguageSetting(m_captionLanguageSetting));
+  }
+
+  if(m_captionSegmentLengthControlHasBeenSet)
+  {
+   payload.WithString("captionSegmentLengthControl", HlsCaptionSegmentLengthControlMapper::GetNameForHlsCaptionSegmentLengthControl(m_captionSegmentLengthControl));
   }
 
   if(m_clientCacheHasBeenSet)
@@ -390,6 +454,17 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_encryptionHasBeenSet)
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
+
+  }
+
+  if(m_imageBasedTrickPlayHasBeenSet)
+  {
+   payload.WithString("imageBasedTrickPlay", HlsImageBasedTrickPlayMapper::GetNameForHlsImageBasedTrickPlay(m_imageBasedTrickPlay));
+  }
+
+  if(m_imageBasedTrickPlaySettingsHasBeenSet)
+  {
+   payload.WithObject("imageBasedTrickPlaySettings", m_imageBasedTrickPlaySettings.Jsonize());
 
   }
 
@@ -442,6 +517,11 @@ JsonValue HlsGroupSettings::Jsonize() const
 
   }
 
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", HlsSegmentLengthControlMapper::GetNameForHlsSegmentLengthControl(m_segmentLengthControl));
+  }
+
   if(m_segmentsPerSubdirectoryHasBeenSet)
   {
    payload.WithInteger("segmentsPerSubdirectory", m_segmentsPerSubdirectory);
@@ -451,6 +531,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_streamInfResolutionHasBeenSet)
   {
    payload.WithString("streamInfResolution", HlsStreamInfResolutionMapper::GetNameForHlsStreamInfResolution(m_streamInfResolution));
+  }
+
+  if(m_targetDurationCompatibilityModeHasBeenSet)
+  {
+   payload.WithString("targetDurationCompatibilityMode", HlsTargetDurationCompatibilityModeMapper::GetNameForHlsTargetDurationCompatibilityMode(m_targetDurationCompatibilityMode));
   }
 
   if(m_timedMetadataId3FrameHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -216,42 +206,42 @@ namespace Model
 
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline const Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair>& GetUserIdGroupPairs() const{ return m_userIdGroupPairs; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline bool UserIdGroupPairsHasBeenSet() const { return m_userIdGroupPairsHasBeenSet; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline void SetUserIdGroupPairs(const Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair>& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline void SetUserIdGroupPairs(Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithUserIdGroupPairs(const Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair>& value) { SetUserIdGroupPairs(value); return *this;}
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithUserIdGroupPairs(Aws::Vector<AwsEc2SecurityGroupUserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& AddUserIdGroupPairs(const AwsEc2SecurityGroupUserIdGroupPair& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& AddUserIdGroupPairs(AwsEc2SecurityGroupUserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 
@@ -339,58 +329,58 @@ namespace Model
 
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline const Aws::Vector<AwsEc2SecurityGroupPrefixListId>& GetPrefixListIds() const{ return m_prefixListIds; }
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline void SetPrefixListIds(const Aws::Vector<AwsEc2SecurityGroupPrefixListId>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline void SetPrefixListIds(Aws::Vector<AwsEc2SecurityGroupPrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithPrefixListIds(const Aws::Vector<AwsEc2SecurityGroupPrefixListId>& value) { SetPrefixListIds(value); return *this;}
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithPrefixListIds(Aws::Vector<AwsEc2SecurityGroupPrefixListId>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& AddPrefixListIds(const AwsEc2SecurityGroupPrefixListId& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
     /**
-     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
-     * is the AWS service to access through a VPC endpoint from instances associated
-     * with the security group.</p>
+     * <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With
+     * outbound rules, this is the Amazon Web Services service to access through a VPC
+     * endpoint from instances associated with the security group.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& AddPrefixListIds(AwsEc2SecurityGroupPrefixListId&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -153,25 +143,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline DescribeTapeArchivesRequest& WithLimit(int value) { SetLimit(value); return *this;}

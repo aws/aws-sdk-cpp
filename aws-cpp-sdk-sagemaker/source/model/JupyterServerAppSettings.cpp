@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/JupyterServerAppSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,12 +19,14 @@ namespace Model
 {
 
 JupyterServerAppSettings::JupyterServerAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false)
 {
 }
 
 JupyterServerAppSettings::JupyterServerAppSettings(JsonView jsonValue) : 
-    m_defaultResourceSpecHasBeenSet(false)
+    m_defaultResourceSpecHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +40,16 @@ JupyterServerAppSettings& JupyterServerAppSettings::operator =(JsonView jsonValu
     m_defaultResourceSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LifecycleConfigArns"))
+  {
+    Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
+    for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
+    {
+      m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
+    }
+    m_lifecycleConfigArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +60,17 @@ JsonValue JupyterServerAppSettings::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_lifecycleConfigArnsHasBeenSet)
+  {
+   Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
+   for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
+   {
+     lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);
+   }
+   payload.WithArray("LifecycleConfigArns", std::move(lifecycleConfigArnsJsonList));
 
   }
 

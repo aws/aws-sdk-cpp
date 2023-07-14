@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -156,7 +146,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -164,7 +154,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -172,7 +162,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -180,7 +170,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -188,7 +178,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -196,7 +186,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -204,7 +194,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -212,7 +202,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift matchmaking configuration resource that is used
      * with this ticket.</p>
      */
@@ -237,9 +227,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
 
@@ -261,9 +251,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -285,9 +275,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline void SetStatus(const MatchmakingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -309,9 +299,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline void SetStatus(MatchmakingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -333,9 +323,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline MatchmakingTicket& WithStatus(const MatchmakingConfigurationStatus& value) { SetStatus(value); return *this;}
 
@@ -357,9 +347,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -465,42 +455,42 @@ namespace Model
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -508,42 +498,42 @@ namespace Model
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this matchmaking request stopped being processed
      * due to success, failure, or cancellation. Format is a number expressed in Unix
-     * time as milliseconds (for example "1469498468.057").</p>
+     * time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingTicket& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -624,42 +614,48 @@ namespace Model
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline const GameSessionConnectionInfo& GetGameSessionConnectionInfo() const{ return m_gameSessionConnectionInfo; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline bool GameSessionConnectionInfoHasBeenSet() const { return m_gameSessionConnectionInfoHasBeenSet; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline void SetGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = value; }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline void SetGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = std::move(value); }
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { SetGameSessionConnectionInfo(value); return *this;}
 
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
-     * request has been successfully completed.</p>
+     * request has been successfully completed. This parameter is not set when
+     * FlexMatch is being used without GameLift hosting.</p>
      */
     inline MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { SetGameSessionConnectionInfo(std::move(value)); return *this;}
 

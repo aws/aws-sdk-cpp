@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
@@ -52,130 +42,50 @@ namespace Model
   public:
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceOptionGroupIdentifier() const{ return m_sourceOptionGroupIdentifier; }
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline bool SourceOptionGroupIdentifierHasBeenSet() const { return m_sourceOptionGroupIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline void SetSourceOptionGroupIdentifier(const Aws::String& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = value; }
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline void SetSourceOptionGroupIdentifier(Aws::String&& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline void SetSourceOptionGroupIdentifier(const char* value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier.assign(value); }
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const Aws::String& value) { SetSourceOptionGroupIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(Aws::String&& value) { SetSourceOptionGroupIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier or ARN for the source option group. For information about
-     * creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
-     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
-     * <li> <p>If the source option group is in the same AWS Region as the copy,
-     * specify a valid option group identifier, for example
-     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
-     * option group is in a different AWS Region than the copy, specify a valid option
-     * group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
-     * </ul>
+     * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must specify a valid option group.</p> </li> </ul>
      */
     inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const char* value) { SetSourceOptionGroupIdentifier(value); return *this;}
 

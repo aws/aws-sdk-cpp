@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -37,17 +27,15 @@ namespace Model
 {
 
   /**
-   * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the
-   * EC2 launch type, the container instances require at least version 1.26.0 of the
-   * container agent and at least version 1.26.0-1 of the <code>ecs-init</code>
-   * package to enable a proxy configuration. If your container instances are
-   * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or
-   * later, then they contain the required versions of the container agent and
+   * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks that use
+   * the EC2 launch type, the container instances require at least version 1.26.0 of
+   * the container agent and at least version 1.26.0-1 of the <code>ecs-init</code>
+   * package to use a proxy configuration. If your container instances are launched
+   * from the Amazon ECS optimized AMI version <code>20190301</code> or later, then
+   * they contain the required versions of the container agent and
    * <code>ecs-init</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-   * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-   * requires platform version 1.3.0 or later.</p><p><h3>See Also:</h3>   <a
+   * ECS-optimized Linux AMI</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration">AWS
    * API Reference</a></p>
    */

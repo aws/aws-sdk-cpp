@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ProcessingS3Output.h>
+#include <aws/sagemaker/model/ProcessingFeatureStoreOutput.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the results of a processing job.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the results of a processing job. The processing output must specify
+   * exactly one of either <code>S3Output</code> or <code>FeatureStoreOutput</code>
+   * types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingOutput">AWS
    * API Reference</a></p>
    */
@@ -119,6 +112,78 @@ namespace Model
      */
     inline ProcessingOutput& WithS3Output(ProcessingS3Output&& value) { SetS3Output(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration for processing job outputs in Amazon SageMaker Feature Store.
+     * This processing output type is only supported when <code>AppManaged</code> is
+     * specified. </p>
+     */
+    inline const ProcessingFeatureStoreOutput& GetFeatureStoreOutput() const{ return m_featureStoreOutput; }
+
+    /**
+     * <p>Configuration for processing job outputs in Amazon SageMaker Feature Store.
+     * This processing output type is only supported when <code>AppManaged</code> is
+     * specified. </p>
+     */
+    inline bool FeatureStoreOutputHasBeenSet() const { return m_featureStoreOutputHasBeenSet; }
+
+    /**
+     * <p>Configuration for processing job outputs in Amazon SageMaker Feature Store.
+     * This processing output type is only supported when <code>AppManaged</code> is
+     * specified. </p>
+     */
+    inline void SetFeatureStoreOutput(const ProcessingFeatureStoreOutput& value) { m_featureStoreOutputHasBeenSet = true; m_featureStoreOutput = value; }
+
+    /**
+     * <p>Configuration for processing job outputs in Amazon SageMaker Feature Store.
+     * This processing output type is only supported when <code>AppManaged</code> is
+     * specified. </p>
+     */
+    inline void SetFeatureStoreOutput(ProcessingFeatureStoreOutput&& value) { m_featureStoreOutputHasBeenSet = true; m_featureStoreOutput = std::move(value); }
+
+    /**
+     * <p>Configuration for processing job outputs in Amazon SageMaker Feature Store.
+     * This processing output type is only supported when <code>AppManaged</code> is
+     * specified. </p>
+     */
+    inline ProcessingOutput& WithFeatureStoreOutput(const ProcessingFeatureStoreOutput& value) { SetFeatureStoreOutput(value); return *this;}
+
+    /**
+     * <p>Configuration for processing job outputs in Amazon SageMaker Feature Store.
+     * This processing output type is only supported when <code>AppManaged</code> is
+     * specified. </p>
+     */
+    inline ProcessingOutput& WithFeatureStoreOutput(ProcessingFeatureStoreOutput&& value) { SetFeatureStoreOutput(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When <code>True</code>, output operations such as data upload are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * output operations are managed by Amazon SageMaker.</p>
+     */
+    inline bool GetAppManaged() const{ return m_appManaged; }
+
+    /**
+     * <p>When <code>True</code>, output operations such as data upload are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * output operations are managed by Amazon SageMaker.</p>
+     */
+    inline bool AppManagedHasBeenSet() const { return m_appManagedHasBeenSet; }
+
+    /**
+     * <p>When <code>True</code>, output operations such as data upload are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * output operations are managed by Amazon SageMaker.</p>
+     */
+    inline void SetAppManaged(bool value) { m_appManagedHasBeenSet = true; m_appManaged = value; }
+
+    /**
+     * <p>When <code>True</code>, output operations such as data upload are managed
+     * natively by the processing job application. When <code>False</code> (default),
+     * output operations are managed by Amazon SageMaker.</p>
+     */
+    inline ProcessingOutput& WithAppManaged(bool value) { SetAppManaged(value); return *this;}
+
   private:
 
     Aws::String m_outputName;
@@ -126,6 +191,12 @@ namespace Model
 
     ProcessingS3Output m_s3Output;
     bool m_s3OutputHasBeenSet;
+
+    ProcessingFeatureStoreOutput m_featureStoreOutput;
+    bool m_featureStoreOutputHasBeenSet;
+
+    bool m_appManaged;
+    bool m_appManagedHasBeenSet;
   };
 
 } // namespace Model

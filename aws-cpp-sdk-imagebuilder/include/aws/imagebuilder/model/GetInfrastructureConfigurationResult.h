@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -36,8 +26,7 @@ namespace imagebuilder
 namespace Model
 {
   /**
-   * <p>GetInfrastructureConfiguration response object. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>GetInfrastructureConfiguration response object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfigurationResponse">AWS
    * API Reference</a></p>
    */
@@ -50,63 +39,63 @@ namespace Model
 
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline GetInfrastructureConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline GetInfrastructureConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p> The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline GetInfrastructureConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p> The infrastructure configuration object. </p>
+     * <p>The infrastructure configuration object.</p>
      */
     inline const InfrastructureConfiguration& GetInfrastructureConfiguration() const{ return m_infrastructureConfiguration; }
 
     /**
-     * <p> The infrastructure configuration object. </p>
+     * <p>The infrastructure configuration object.</p>
      */
     inline void SetInfrastructureConfiguration(const InfrastructureConfiguration& value) { m_infrastructureConfiguration = value; }
 
     /**
-     * <p> The infrastructure configuration object. </p>
+     * <p>The infrastructure configuration object.</p>
      */
     inline void SetInfrastructureConfiguration(InfrastructureConfiguration&& value) { m_infrastructureConfiguration = std::move(value); }
 
     /**
-     * <p> The infrastructure configuration object. </p>
+     * <p>The infrastructure configuration object.</p>
      */
     inline GetInfrastructureConfigurationResult& WithInfrastructureConfiguration(const InfrastructureConfiguration& value) { SetInfrastructureConfiguration(value); return *this;}
 
     /**
-     * <p> The infrastructure configuration object. </p>
+     * <p>The infrastructure configuration object.</p>
      */
     inline GetInfrastructureConfigurationResult& WithInfrastructureConfiguration(InfrastructureConfiguration&& value) { SetInfrastructureConfiguration(std::move(value)); return *this;}
 

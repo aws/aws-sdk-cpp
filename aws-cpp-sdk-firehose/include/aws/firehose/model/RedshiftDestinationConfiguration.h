@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -409,32 +399,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode. After you create a delivery stream, you can update
+     * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it. </p>
      */
     inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
     /**
-     * <p>The Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode. After you create a delivery stream, you can update
+     * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it. </p>
      */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode. After you create a delivery stream, you can update
+     * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it. </p>
      */
     inline void SetS3BackupMode(const RedshiftS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
-     * <p>The Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode. After you create a delivery stream, you can update
+     * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it. </p>
      */
     inline void SetS3BackupMode(RedshiftS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
 
     /**
-     * <p>The Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode. After you create a delivery stream, you can update
+     * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it. </p>
      */
     inline RedshiftDestinationConfiguration& WithS3BackupMode(const RedshiftS3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
     /**
-     * <p>The Amazon S3 backup mode.</p>
+     * <p>The Amazon S3 backup mode. After you create a delivery stream, you can update
+     * it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it. </p>
      */
     inline RedshiftDestinationConfiguration& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 

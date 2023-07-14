@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/route53resolver/model/ResolverRule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -43,7 +33,9 @@ ResolverRule::ResolverRule() :
     m_resolverEndpointIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
+    m_shareStatusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_modificationTimeHasBeenSet(false)
 {
 }
 
@@ -62,7 +54,9 @@ ResolverRule::ResolverRule(JsonView jsonValue) :
     m_resolverEndpointIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
+    m_shareStatusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_modificationTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +150,20 @@ ResolverRule& ResolverRule::operator =(JsonView jsonValue)
     m_shareStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreationTime"))
+  {
+    m_creationTime = jsonValue.GetString("CreationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModificationTime"))
+  {
+    m_modificationTime = jsonValue.GetString("ModificationTime");
+
+    m_modificationTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +243,18 @@ JsonValue ResolverRule::Jsonize() const
   if(m_shareStatusHasBeenSet)
   {
    payload.WithString("ShareStatus", ShareStatusMapper::GetNameForShareStatus(m_shareStatus));
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("CreationTime", m_creationTime);
+
+  }
+
+  if(m_modificationTimeHasBeenSet)
+  {
+   payload.WithString("ModificationTime", m_modificationTime);
+
   }
 
   return payload;

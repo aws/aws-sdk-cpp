@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/DescribeTypeResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -29,17 +19,25 @@ using namespace Aws;
 
 DescribeTypeResult::DescribeTypeResult() : 
     m_type(RegistryType::NOT_SET),
+    m_isDefaultVersion(false),
+    m_typeTestsStatus(TypeTestsStatus::NOT_SET),
     m_provisioningType(ProvisioningType::NOT_SET),
     m_deprecatedStatus(DeprecatedStatus::NOT_SET),
-    m_visibility(Visibility::NOT_SET)
+    m_visibility(Visibility::NOT_SET),
+    m_isActivated(false),
+    m_autoUpdate(false)
 {
 }
 
 DescribeTypeResult::DescribeTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_type(RegistryType::NOT_SET),
+    m_isDefaultVersion(false),
+    m_typeTestsStatus(TypeTestsStatus::NOT_SET),
     m_provisioningType(ProvisioningType::NOT_SET),
     m_deprecatedStatus(DeprecatedStatus::NOT_SET),
-    m_visibility(Visibility::NOT_SET)
+    m_visibility(Visibility::NOT_SET),
+    m_isActivated(false),
+    m_autoUpdate(false)
 {
   *this = result;
 }
@@ -76,6 +74,21 @@ DescribeTypeResult& DescribeTypeResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_defaultVersionId = Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionIdNode.GetText());
     }
+    XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
+    if(!isDefaultVersionNode.IsNull())
+    {
+      m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultVersionNode.GetText()).c_str()).c_str());
+    }
+    XmlNode typeTestsStatusNode = resultNode.FirstChild("TypeTestsStatus");
+    if(!typeTestsStatusNode.IsNull())
+    {
+      m_typeTestsStatus = TypeTestsStatusMapper::GetTypeTestsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeTestsStatusNode.GetText()).c_str()).c_str());
+    }
+    XmlNode typeTestsStatusDescriptionNode = resultNode.FirstChild("TypeTestsStatusDescription");
+    if(!typeTestsStatusDescriptionNode.IsNull())
+    {
+      m_typeTestsStatusDescription = Aws::Utils::Xml::DecodeEscapedXmlText(typeTestsStatusDescriptionNode.GetText());
+    }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
@@ -100,6 +113,17 @@ DescribeTypeResult& DescribeTypeResult::operator =(const Aws::AmazonWebServiceRe
     if(!loggingConfigNode.IsNull())
     {
       m_loggingConfig = loggingConfigNode;
+    }
+    XmlNode requiredActivatedTypesNode = resultNode.FirstChild("RequiredActivatedTypes");
+    if(!requiredActivatedTypesNode.IsNull())
+    {
+      XmlNode requiredActivatedTypesMember = requiredActivatedTypesNode.FirstChild("member");
+      while(!requiredActivatedTypesMember.IsNull())
+      {
+        m_requiredActivatedTypes.push_back(requiredActivatedTypesMember);
+        requiredActivatedTypesMember = requiredActivatedTypesMember.NextNode("member");
+      }
+
     }
     XmlNode executionRoleArnNode = resultNode.FirstChild("ExecutionRoleArn");
     if(!executionRoleArnNode.IsNull())
@@ -130,6 +154,46 @@ DescribeTypeResult& DescribeTypeResult::operator =(const Aws::AmazonWebServiceRe
     if(!timeCreatedNode.IsNull())
     {
       m_timeCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeCreatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+    }
+    XmlNode configurationSchemaNode = resultNode.FirstChild("ConfigurationSchema");
+    if(!configurationSchemaNode.IsNull())
+    {
+      m_configurationSchema = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSchemaNode.GetText());
+    }
+    XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");
+    if(!publisherIdNode.IsNull())
+    {
+      m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
+    }
+    XmlNode originalTypeNameNode = resultNode.FirstChild("OriginalTypeName");
+    if(!originalTypeNameNode.IsNull())
+    {
+      m_originalTypeName = Aws::Utils::Xml::DecodeEscapedXmlText(originalTypeNameNode.GetText());
+    }
+    XmlNode originalTypeArnNode = resultNode.FirstChild("OriginalTypeArn");
+    if(!originalTypeArnNode.IsNull())
+    {
+      m_originalTypeArn = Aws::Utils::Xml::DecodeEscapedXmlText(originalTypeArnNode.GetText());
+    }
+    XmlNode publicVersionNumberNode = resultNode.FirstChild("PublicVersionNumber");
+    if(!publicVersionNumberNode.IsNull())
+    {
+      m_publicVersionNumber = Aws::Utils::Xml::DecodeEscapedXmlText(publicVersionNumberNode.GetText());
+    }
+    XmlNode latestPublicVersionNode = resultNode.FirstChild("LatestPublicVersion");
+    if(!latestPublicVersionNode.IsNull())
+    {
+      m_latestPublicVersion = Aws::Utils::Xml::DecodeEscapedXmlText(latestPublicVersionNode.GetText());
+    }
+    XmlNode isActivatedNode = resultNode.FirstChild("IsActivated");
+    if(!isActivatedNode.IsNull())
+    {
+      m_isActivated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isActivatedNode.GetText()).c_str()).c_str());
+    }
+    XmlNode autoUpdateNode = resultNode.FirstChild("AutoUpdate");
+    if(!autoUpdateNode.IsNull())
+    {
+      m_autoUpdate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoUpdateNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
@@ -122,50 +112,50 @@ namespace Model
 
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline const Aws::Vector<Aws::String>& GetProjects() const{ return m_projects; }
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline void SetProjects(const Aws::Vector<Aws::String>& value) { m_projects = value; }
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline void SetProjects(Aws::Vector<Aws::String>&& value) { m_projects = std::move(value); }
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedProjectsResult& WithProjects(const Aws::Vector<Aws::String>& value) { SetProjects(value); return *this;}
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedProjectsResult& WithProjects(Aws::Vector<Aws::String>&& value) { SetProjects(std::move(value)); return *this;}
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedProjectsResult& AddProjects(const Aws::String& value) { m_projects.push_back(value); return *this; }
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedProjectsResult& AddProjects(Aws::String&& value) { m_projects.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The list of ARNs for the build projects shared with the current AWS account
-     * or user. </p>
+     * <p> The list of ARNs for the build projects shared with the current Amazon Web
+     * Services account or user. </p>
      */
     inline ListSharedProjectsResult& AddProjects(const char* value) { m_projects.push_back(value); return *this; }
 

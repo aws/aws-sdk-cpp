@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -102,9 +92,10 @@ namespace Model
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -116,16 +107,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline const MetricName& GetMetricName() const{ return m_metricName; }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -137,16 +132,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -158,16 +157,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -179,16 +182,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -200,16 +207,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline PutAlarmRequest& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -221,7 +232,10 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline PutAlarmRequest& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
@@ -426,13 +440,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -441,13 +455,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -456,13 +470,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -471,13 +485,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -486,13 +500,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -501,13 +515,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -520,10 +534,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline const Aws::Vector<ContactProtocol>& GetContactProtocols() const{ return m_contactProtocols; }
 
@@ -533,10 +547,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline bool ContactProtocolsHasBeenSet() const { return m_contactProtocolsHasBeenSet; }
 
@@ -546,10 +560,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline void SetContactProtocols(const Aws::Vector<ContactProtocol>& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = value; }
 
@@ -559,10 +573,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline void SetContactProtocols(Aws::Vector<ContactProtocol>&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols = std::move(value); }
 
@@ -572,10 +586,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& WithContactProtocols(const Aws::Vector<ContactProtocol>& value) { SetContactProtocols(value); return *this;}
 
@@ -585,10 +599,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& WithContactProtocols(Aws::Vector<ContactProtocol>&& value) { SetContactProtocols(std::move(value)); return *this;}
 
@@ -598,10 +612,10 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& AddContactProtocols(const ContactProtocol& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(value); return *this; }
 
@@ -611,21 +625,21 @@ namespace Model
      * the specified contact protocol if notifications are enabled for the alarm, and
      * when the alarm is triggered.</p> <p>A notification is not sent if a contact
      * protocol is not specified, if the specified contact protocol is not configured
-     * in the AWS Region, or if notifications are not enabled for the alarm using the
-     * <code>notificationEnabled</code> paramater.</p> <p>Use the
+     * in the Amazon Web Services Region, or if notifications are not enabled for the
+     * alarm using the <code>notificationEnabled</code> paramater.</p> <p>Use the
      * <code>CreateContactMethod</code> action to configure a contact protocol in an
-     * AWS Region.</p>
+     * Amazon Web Services Region.</p>
      */
     inline PutAlarmRequest& AddContactProtocols(ContactProtocol&& value) { m_contactProtocolsHasBeenSet = true; m_contactProtocols.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -643,11 +657,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -665,11 +679,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -687,11 +701,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -709,11 +723,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -731,11 +745,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -753,11 +767,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -775,11 +789,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the

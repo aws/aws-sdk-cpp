@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -203,50 +193,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS customer account used to create or copy the snapshot. Required if you
-     * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -295,80 +293,80 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeNodeConfigurationOptions</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

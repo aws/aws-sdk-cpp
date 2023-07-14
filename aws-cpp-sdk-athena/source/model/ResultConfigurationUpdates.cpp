@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/athena/model/ResultConfigurationUpdates.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,13 @@ ResultConfigurationUpdates::ResultConfigurationUpdates() :
     m_removeOutputLocationHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_removeEncryptionConfiguration(false),
-    m_removeEncryptionConfigurationHasBeenSet(false)
+    m_removeEncryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_removeExpectedBucketOwner(false),
+    m_removeExpectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false),
+    m_removeAclConfiguration(false),
+    m_removeAclConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +40,13 @@ ResultConfigurationUpdates::ResultConfigurationUpdates(JsonView jsonValue) :
     m_removeOutputLocationHasBeenSet(false),
     m_encryptionConfigurationHasBeenSet(false),
     m_removeEncryptionConfiguration(false),
-    m_removeEncryptionConfigurationHasBeenSet(false)
+    m_removeEncryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_removeExpectedBucketOwner(false),
+    m_removeExpectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false),
+    m_removeAclConfiguration(false),
+    m_removeAclConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,34 @@ ResultConfigurationUpdates& ResultConfigurationUpdates::operator =(JsonView json
     m_removeEncryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpectedBucketOwner"))
+  {
+    m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
+
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RemoveExpectedBucketOwner"))
+  {
+    m_removeExpectedBucketOwner = jsonValue.GetBool("RemoveExpectedBucketOwner");
+
+    m_removeExpectedBucketOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AclConfiguration"))
+  {
+    m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
+
+    m_aclConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RemoveAclConfiguration"))
+  {
+    m_removeAclConfiguration = jsonValue.GetBool("RemoveAclConfiguration");
+
+    m_removeAclConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +137,30 @@ JsonValue ResultConfigurationUpdates::Jsonize() const
   if(m_removeEncryptionConfigurationHasBeenSet)
   {
    payload.WithBool("RemoveEncryptionConfiguration", m_removeEncryptionConfiguration);
+
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   payload.WithString("ExpectedBucketOwner", m_expectedBucketOwner);
+
+  }
+
+  if(m_removeExpectedBucketOwnerHasBeenSet)
+  {
+   payload.WithBool("RemoveExpectedBucketOwner", m_removeExpectedBucketOwner);
+
+  }
+
+  if(m_aclConfigurationHasBeenSet)
+  {
+   payload.WithObject("AclConfiguration", m_aclConfiguration.Jsonize());
+
+  }
+
+  if(m_removeAclConfigurationHasBeenSet)
+  {
+   payload.WithBool("RemoveAclConfiguration", m_removeAclConfiguration);
 
   }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/apigatewayv2/model/CreateIntegrationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -104,6 +94,12 @@ CreateIntegrationResult& CreateIntegrationResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("integrationSubtype"))
+  {
+    m_integrationSubtype = jsonValue.GetString("integrationSubtype");
+
+  }
+
   if(jsonValue.ValueExists("integrationType"))
   {
     m_integrationType = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("integrationType"));
@@ -143,6 +139,21 @@ CreateIntegrationResult& CreateIntegrationResult::operator =(const Aws::AmazonWe
     for(auto& requestTemplatesItem : requestTemplatesJsonMap)
     {
       m_requestTemplates[requestTemplatesItem.first] = requestTemplatesItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("responseParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    for(auto& responseParametersItem : responseParametersJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> integrationParametersJsonMap = responseParametersItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> integrationParametersMap;
+      for(auto& integrationParametersItem : integrationParametersJsonMap)
+      {
+        integrationParametersMap[integrationParametersItem.first] = integrationParametersItem.second.AsString();
+      }
+      m_responseParameters[responseParametersItem.first] = std::move(integrationParametersMap);
     }
   }
 

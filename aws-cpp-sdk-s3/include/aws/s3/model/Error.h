@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -137,41 +127,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -212,38 +203,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -257,11 +249,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -269,10 +261,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -295,44 +287,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -409,20 +401,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -449,7 +442,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -497,41 +491,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -572,38 +567,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -617,11 +613,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -629,10 +625,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -655,44 +651,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -769,20 +765,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -809,7 +806,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -857,41 +855,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -932,38 +931,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -977,11 +977,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -989,10 +989,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -1015,44 +1015,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -1129,20 +1129,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -1169,7 +1170,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -1217,41 +1219,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -1292,38 +1295,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -1337,11 +1341,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -1349,10 +1353,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -1375,44 +1379,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -1489,20 +1493,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -1529,7 +1534,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -1577,41 +1583,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -1652,38 +1659,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -1697,11 +1705,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -1709,10 +1717,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -1735,44 +1743,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -1849,20 +1857,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -1889,7 +1898,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -1937,41 +1947,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -2012,38 +2023,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -2057,11 +2069,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -2069,10 +2081,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -2095,44 +2107,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -2209,20 +2221,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -2249,7 +2262,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -2297,41 +2311,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -2372,38 +2387,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -2417,11 +2433,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -2429,10 +2445,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -2455,44 +2471,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -2569,20 +2585,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -2609,7 +2626,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP
@@ -2657,41 +2675,42 @@ namespace Model
      * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your AWS account that prevents the operation from
-     * completing successfully. Contact AWS Support for further assistance.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
+     * There is a problem with your Amazon Web Services account that prevents the
+     * action from completing successfully. Contact Amazon Web Services Support for
+     * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
+     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
+     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
+     * address you provided is associated with more than one account.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
      * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
-     * Amazon S3 resource has been disabled. Contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
+     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
+     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
+     * <i>Description:</i> The Content-MD5 you specified did not match what we
+     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li> <li> <p>
-     * <i>Description:</i> The email address you provided is associated with more than
-     * one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li> <li> <p>
-     * <i>Description:</i> The authorization header you provided is invalid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you specified
-     * did not match what we received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li>
-     * <p> <i>Description:</i> The requested bucket name is not available. The bucket
-     * namespace is shared by all users of the system. Please select a different name
-     * and try again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you tried to create already exists, and you own
-     * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * Region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
-     * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
-     * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
+     * The requested bucket name is not available. The bucket namespace is shared by
+     * all users of the system. Please select a different name and try again.</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
+     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
+     * tried to create already exists, and you own it. Amazon S3 returns this error in
+     * all Amazon Web Services Regions except in the North Virginia Region. For legacy
+     * compatibility, if you re-create an existing bucket that you already own in the
+     * North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access
+     * control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409 Conflict (in all
+     * Regions except the North Virginia Region) </p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket you tried to
+     * delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409
+     * Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
      * <li> <p> <i>Description:</i> This request does not support credentials.</p>
      * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
@@ -2732,38 +2751,39 @@ namespace Model
      * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p>
      * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li>
      * <ul> <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li> <li> <p>
-     * <i>Description:</i> The AWS access key ID you provided does not exist in our
-     * records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li> <li> <p>
-     * <i>Description:</i> You must specify the Anonymous role.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
-     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidArgument</p>
-     * </li> <li> <p> <i>Description:</i> Invalid Argument</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * <i>Description:</i> The Amazon Web Services access key ID you provided does not
+     * exist in our records.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+     * <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> N/A</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The specified bucket is
-     * not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li> <p> <i>Description:</i>
-     * The request is not valid with the current state of the bucket.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5 you
-     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
-     * <li> <p> <i>Description:</i> The encryption request you specified is not valid.
-     * The valid value is AES256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
-     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li> <li>
-     * <p> <i>Description:</i> The specified location constraint is not valid. For more
-     * information about Regions, see <a
+     * InvalidArgument</p> </li> <li> <p> <i>Description:</i> Invalid Argument</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidBucketName</p> </li> <li> <p> <i>Description:</i> The
+     * specified bucket is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidBucketState</p> </li> <li>
+     * <p> <i>Description:</i> The request is not valid with the current state of the
+     * bucket.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> InvalidDigest</p> </li> <li> <p> <i>Description:</i> The
+     * Content-MD5 you specified is not valid.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidEncryptionAlgorithmError</p> </li> <li> <p> <i>Description:</i> The
+     * encryption request you specified is not valid. The valid value is AES256.</p>
+     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
+     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidLocationConstraint</p> </li> <li> <p> <i>Description:</i>
+     * The specified location constraint is not valid. For more information about
+     * Regions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How
      * to Select a Region for Your Buckets</a>. </p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The operation is not
+     * InvalidObjectState</p> </li> <li> <p> <i>Description:</i> The action is not
      * valid for the current state of the object.</p> </li> <li> <p> <i>HTTP Status
      * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
      * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPart</p>
@@ -2777,11 +2797,11 @@ namespace Model
      * number.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
      * <li> <p> <i>Code:</i> InvalidPayer</p> </li> <li> <p> <i>Description:</i> All
-     * access to this object has been disabled. Please contact AWS Support for further
-     * assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li> <p>
-     * <i>Description:</i> The content of the form does not meet the conditions
+     * access to this object has been disabled. Please contact Amazon Web Services
+     * Support for further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
+     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li> <li>
+     * <p> <i>Description:</i> The content of the form does not meet the conditions
      * specified in the policy document.</p> </li> <li> <p> <i>HTTP Status Code:</i>
      * 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p>
      * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRange</p> </li> <li>
@@ -2789,10 +2809,10 @@ namespace Model
      * <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li> <li>
      * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
      * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> Please
-     * use AWS4-HMAC-SHA256.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
-     * Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li>
-     * <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i> SOAP
-     * requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
+     * use <code>AWS4-HMAC-SHA256</code>.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p> <i>Description:</i>
+     * SOAP requests must be made over an HTTPS connection.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * InvalidRequest</p> </li> <li> <p> <i>Description:</i> Amazon S3 Transfer
@@ -2815,44 +2835,44 @@ namespace Model
      * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
      * <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p> </li> <li> <p>
-     * <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this
-     * bucket. Contact AWS Support for more information.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i> N/A</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSecurity</p> </li> <li> <p>
-     * <i>Description:</i> The provided security credentials are not valid.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidSOAPRequest</p> </li> <li> <p> <i>Description:</i> The SOAP request body
-     * is invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> InvalidStorageClass</p> </li> <li> <p>
-     * <i>Description:</i> The storage class you specified is not valid.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidTargetBucketForLogging</p> </li> <li> <p> <i>Description:</i> The target
-     * bucket for logging does not exist, is not owned by you, or does not have the
-     * appropriate grants for the log-delivery group. </p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * bucket. Contact Amazon Web Services Support for more information.</p> </li> <li>
+     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>Code:</i>
+     * N/A</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidRequest</p>
+     * </li> <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
+     * enabled on this bucket. Contact Amazon Web Services Support for more
+     * information.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> InvalidSecurity</p> </li> <li> <p> <i>Description:</i> The provided
+     * security credentials are not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i>
+     * 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li> <li>
+     * <p> <i>Description:</i> The SOAP request body is invalid.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * InvalidToken</p> </li> <li> <p> <i>Description:</i> The provided token is
-     * malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
-     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> InvalidURI</p> </li> <li> <p>
-     * <i>Description:</i> Couldn't parse the specified URI.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key is too long.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> MalformedACLError</p> </li> <li> <p> <i>Description:</i> The XML
-     * you provided was not well-formed or did not validate against our published
-     * schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * InvalidStorageClass</p> </li> <li> <p> <i>Description:</i> The storage class you
+     * specified is not valid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+     * <li> <p> <i>Description:</i> The target bucket for logging does not exist, is
+     * not owned by you, or does not have the appropriate grants for the log-delivery
+     * group. </p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
      * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li> <p>
-     * <i>Description:</i> The body of your POST request is not well-formed
+     * <li> <p> <i>Code:</i> InvalidToken</p> </li> <li> <p> <i>Description:</i> The
+     * provided token is malformed or otherwise invalid.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * InvalidURI</p> </li> <li> <p> <i>Description:</i> Couldn't parse the specified
+     * URI.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> KeyTooLongError</p> </li> <li> <p> <i>Description:</i> Your key
+     * is too long.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p>
+     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
+     * <ul> <li> <p> <i>Code:</i> MalformedACLError</p> </li> <li> <p>
+     * <i>Description:</i> The XML you provided was not well-formed or did not validate
+     * against our published schema.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400
+     * Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li> <li>
+     * <p> <i>Description:</i> The body of your POST request is not well-formed
      * multipart/form-data.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
      * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
      * </li> <li> <ul> <li> <p> <i>Code:</i> MalformedXML</p> </li> <li> <p>
@@ -2929,20 +2949,21 @@ namespace Model
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> NotSignedUp</p> </li> <li> <p>
      * <i>Description:</i> Your account is not signed up for the Amazon S3 service. You
      * must sign up before you can use Amazon S3. You can sign up at the following URL:
-     * https://aws.amazon.com/s3</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
-     * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> OperationAborted</p> </li> <li> <p>
-     * <i>Description:</i> A conflicting conditional operation is currently in progress
-     * against this resource. Try again.</p> </li> <li> <p> <i>HTTP Status Code:</i>
-     * 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p>
-     * <i>Description:</i> The bucket you are attempting to access must be addressed
-     * using the specified endpoint. Send all future requests to this endpoint.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li> <li> <p>
-     * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least
-     * one of the preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
+     * <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * OperationAborted</p> </li> <li> <p> <i>Description:</i> A conflicting
+     * conditional action is currently in progress against this resource. Try
+     * again.</p> </li> <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> PermanentRedirect</p> </li> <li> <p> <i>Description:</i> The
+     * bucket you are attempting to access must be addressed using the specified
+     * endpoint. Send all future requests to this endpoint.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 301 Moved Permanently</p> </li> <li> <p> <i>SOAP Fault Code
+     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * PreconditionFailed</p> </li> <li> <p> <i>Description:</i> At least one of the
+     * preconditions you specified did not hold.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 412 Precondition Failed</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * Redirect</p> </li> <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
      * <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p>
@@ -2969,7 +2990,8 @@ namespace Model
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * SignatureDoesNotMatch</p> </li> <li> <p> <i>Description:</i> The request
      * signature we calculated does not match the signature you provided. Check your
-     * AWS secret access key and signing method. For more information, see <a
+     * Amazon Web Services secret access key and signing method. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
      * Authentication</a> and <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP

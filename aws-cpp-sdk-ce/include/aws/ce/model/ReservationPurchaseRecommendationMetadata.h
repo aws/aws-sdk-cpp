@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -34,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about this specific recommendation, such as the time stamp for
-   * when AWS made a specific recommendation.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about this specific recommendation, such as the timestamp for
+   * when Amazon Web Services made a specific recommendation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationMetadata">AWS
    * API Reference</a></p>
    */
@@ -90,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline const Aws::String& GetGenerationTimestamp() const{ return m_generationTimestamp; }
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline bool GenerationTimestampHasBeenSet() const { return m_generationTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const Aws::String& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = value; }
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(Aws::String&& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const char* value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp.assign(value); }
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline ReservationPurchaseRecommendationMetadata& WithGenerationTimestamp(const Aws::String& value) { SetGenerationTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline ReservationPurchaseRecommendationMetadata& WithGenerationTimestamp(Aws::String&& value) { SetGenerationTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p>The time stamp for when AWS made this recommendation.</p>
+     * <p>The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline ReservationPurchaseRecommendationMetadata& WithGenerationTimestamp(const char* value) { SetGenerationTimestamp(value); return *this;}
 

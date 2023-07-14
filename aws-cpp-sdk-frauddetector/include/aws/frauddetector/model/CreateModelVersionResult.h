@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
@@ -44,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline void SetModelId(const Aws::String& value) { m_modelId = value; }
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline void SetModelId(Aws::String&& value) { m_modelId = std::move(value); }
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline void SetModelId(const char* value) { m_modelId.assign(value); }
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline CreateModelVersionResult& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline CreateModelVersionResult& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
 
     /**
-     * <p>The model ID. </p>
+     * <p>The model ID.</p>
      */
     inline CreateModelVersionResult& WithModelId(const char* value) { SetModelId(value); return *this;}
 
@@ -106,37 +96,37 @@ namespace Model
 
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline const Aws::String& GetModelVersionNumber() const{ return m_modelVersionNumber; }
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline void SetModelVersionNumber(const Aws::String& value) { m_modelVersionNumber = value; }
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline void SetModelVersionNumber(Aws::String&& value) { m_modelVersionNumber = std::move(value); }
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline void SetModelVersionNumber(const char* value) { m_modelVersionNumber.assign(value); }
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline CreateModelVersionResult& WithModelVersionNumber(const Aws::String& value) { SetModelVersionNumber(value); return *this;}
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline CreateModelVersionResult& WithModelVersionNumber(Aws::String&& value) { SetModelVersionNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the model. </p>
+     * <p>The model version number of the model version created.</p>
      */
     inline CreateModelVersionResult& WithModelVersionNumber(const char* value) { SetModelVersionNumber(value); return *this;}
 

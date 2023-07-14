@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -34,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Identifies the location of a medical transcript.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides you with the Amazon S3 URI you can use to access your
+   * transcript.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscript">AWS
    * API Reference</a></p>
    */
@@ -49,58 +39,130 @@ namespace Model
 
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline const Aws::String& GetTranscriptFileUri() const{ return m_transcriptFileUri; }
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline bool TranscriptFileUriHasBeenSet() const { return m_transcriptFileUriHasBeenSet; }
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline void SetTranscriptFileUri(const Aws::String& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = value; }
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline void SetTranscriptFileUri(Aws::String&& value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri = std::move(value); }
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline void SetTranscriptFileUri(const char* value) { m_transcriptFileUriHasBeenSet = true; m_transcriptFileUri.assign(value); }
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline MedicalTranscript& WithTranscriptFileUri(const Aws::String& value) { SetTranscriptFileUri(value); return *this;}
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline MedicalTranscript& WithTranscriptFileUri(Aws::String&& value) { SetTranscriptFileUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 object location of the medical transcript.</p> <p>Use this URI to
-     * access the medical transcript. This URI points to the S3 bucket you created to
-     * store the medical transcript.</p>
+     * <p>The Amazon S3 location of your transcript. You can use this URI to access or
+     * download your transcript.</p> <p>If you included <code>OutputBucketName</code>
+     * in your transcription job request, this is the URI of that bucket. If you also
+     * included <code>OutputKey</code> in your request, your output is located in the
+     * path you specified in your request.</p> <p>If you didn't include
+     * <code>OutputBucketName</code> in your transcription job request, your transcript
+     * is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
+     * provides you with a temporary URI you can use for secure access to your
+     * transcript.</p>  <p>Temporary URIs for service-managed Amazon S3 buckets
+     * are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you
+     * can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
+     * <code>ListTranscriptionJob</code> request.</p> 
      */
     inline MedicalTranscript& WithTranscriptFileUri(const char* value) { SetTranscriptFileUri(value); return *this;}
 

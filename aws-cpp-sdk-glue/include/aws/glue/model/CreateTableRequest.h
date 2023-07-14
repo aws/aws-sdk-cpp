@@ -1,23 +1,15 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/TableInput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/PartitionIndex.h>
 #include <utility>
 
 namespace Aws
@@ -47,49 +39,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline CreateTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline CreateTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is supplied, the Amazon Web Services account ID is used by default.</p>
      */
     inline CreateTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -179,6 +171,96 @@ namespace Model
      */
     inline CreateTableRequest& WithTableInput(TableInput&& value) { SetTableInput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline const Aws::Vector<PartitionIndex>& GetPartitionIndexes() const{ return m_partitionIndexes; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline bool PartitionIndexesHasBeenSet() const { return m_partitionIndexesHasBeenSet; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline void SetPartitionIndexes(const Aws::Vector<PartitionIndex>& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = value; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline void SetPartitionIndexes(Aws::Vector<PartitionIndex>&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes = std::move(value); }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& WithPartitionIndexes(const Aws::Vector<PartitionIndex>& value) { SetPartitionIndexes(value); return *this;}
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& WithPartitionIndexes(Aws::Vector<PartitionIndex>&& value) { SetPartitionIndexes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& AddPartitionIndexes(const PartitionIndex& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of partition indexes, <code>PartitionIndex</code> structures, to
+     * create in the table.</p>
+     */
+    inline CreateTableRequest& AddPartitionIndexes(PartitionIndex&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline CreateTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline CreateTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline CreateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -189,6 +271,12 @@ namespace Model
 
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet;
+
+    Aws::Vector<PartitionIndex> m_partitionIndexes;
+    bool m_partitionIndexesHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
   };
 
 } // namespace Model

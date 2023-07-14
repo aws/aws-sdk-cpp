@@ -1,22 +1,13 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dlm/model/CrossRegionCopyRetainRule.h>
+#include <aws/dlm/model/CrossRegionCopyDeprecateRule.h>
 #include <utility>
 
 namespace Aws
@@ -50,44 +41,125 @@ namespace Model
 
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The target Region.</p>
+     * <p>Avoid using this parameter when creating new policies. Instead, use
+     * <b>Target</b> to specify a target Region or a target Outpost for snapshot
+     * copies.</p> <p>For policies created before the <b>Target</b> parameter was
+     * introduced, this parameter indicates the target Region for snapshot copies.</p>
      */
     inline CrossRegionCopyRule& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
+
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline CrossRegionCopyRule& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline CrossRegionCopyRule& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.</p> <p>Use this parameter instead of <b>TargetRegion</b>.
+     * Do not specify both.</p>
+     */
+    inline CrossRegionCopyRule& WithTarget(const char* value) { SetTarget(value); return *this;}
 
 
     /**
@@ -124,121 +196,161 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline const Aws::String& GetCmkArn() const{ return m_cmkArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline bool CmkArnHasBeenSet() const { return m_cmkArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline void SetCmkArn(const Aws::String& value) { m_cmkArnHasBeenSet = true; m_cmkArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline void SetCmkArn(Aws::String&& value) { m_cmkArnHasBeenSet = true; m_cmkArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline void SetCmkArn(const char* value) { m_cmkArnHasBeenSet = true; m_cmkArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline CrossRegionCopyRule& WithCmkArn(const Aws::String& value) { SetCmkArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline CrossRegionCopyRule& WithCmkArn(Aws::String&& value) { SetCmkArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS customer master key (CMK) to
-     * use for EBS encryption. If this parameter is not specified, your AWS managed CMK
-     * for EBS is used.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+     * this parameter is not specified, the default KMS key for the account is
+     * used.</p>
      */
     inline CrossRegionCopyRule& WithCmkArn(const char* value) { SetCmkArn(value); return *this;}
 
 
     /**
-     * <p>Copy all user-defined tags from the source snapshot to the copied
-     * snapshot.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
+     * the cross-Region snapshot copy.</p>
      */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
     /**
-     * <p>Copy all user-defined tags from the source snapshot to the copied
-     * snapshot.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
+     * the cross-Region snapshot copy.</p>
      */
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
 
     /**
-     * <p>Copy all user-defined tags from the source snapshot to the copied
-     * snapshot.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
+     * the cross-Region snapshot copy.</p>
      */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
     /**
-     * <p>Copy all user-defined tags from the source snapshot to the copied
-     * snapshot.</p>
+     * <p>Indicates whether to copy all user-defined tags from the source snapshot to
+     * the cross-Region snapshot copy.</p>
      */
     inline CrossRegionCopyRule& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule that indicates how long snapshot copies are to be retained
+     * in the destination Region.</p>
      */
     inline const CrossRegionCopyRetainRule& GetRetainRule() const{ return m_retainRule; }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule that indicates how long snapshot copies are to be retained
+     * in the destination Region.</p>
      */
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule that indicates how long snapshot copies are to be retained
+     * in the destination Region.</p>
      */
     inline void SetRetainRule(const CrossRegionCopyRetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule that indicates how long snapshot copies are to be retained
+     * in the destination Region.</p>
      */
     inline void SetRetainRule(CrossRegionCopyRetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule that indicates how long snapshot copies are to be retained
+     * in the destination Region.</p>
      */
     inline CrossRegionCopyRule& WithRetainRule(const CrossRegionCopyRetainRule& value) { SetRetainRule(value); return *this;}
 
     /**
-     * <p>The retention rule.</p>
+     * <p>The retention rule that indicates how long snapshot copies are to be retained
+     * in the destination Region.</p>
      */
     inline CrossRegionCopyRule& WithRetainRule(CrossRegionCopyRetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     */
+    inline const CrossRegionCopyDeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
+
+    /**
+     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     */
+    inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
+
+    /**
+     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     */
+    inline void SetDeprecateRule(const CrossRegionCopyDeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
+
+    /**
+     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     */
+    inline void SetDeprecateRule(CrossRegionCopyDeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
+
+    /**
+     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     */
+    inline CrossRegionCopyRule& WithDeprecateRule(const CrossRegionCopyDeprecateRule& value) { SetDeprecateRule(value); return *this;}
+
+    /**
+     * <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
+     */
+    inline CrossRegionCopyRule& WithDeprecateRule(CrossRegionCopyDeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_targetRegion;
     bool m_targetRegionHasBeenSet;
+
+    Aws::String m_target;
+    bool m_targetHasBeenSet;
 
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
@@ -251,6 +363,9 @@ namespace Model
 
     CrossRegionCopyRetainRule m_retainRule;
     bool m_retainRuleHasBeenSet;
+
+    CrossRegionCopyDeprecateRule m_deprecateRule;
+    bool m_deprecateRuleHasBeenSet;
   };
 
 } // namespace Model

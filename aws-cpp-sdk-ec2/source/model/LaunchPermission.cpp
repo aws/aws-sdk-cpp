@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/LaunchPermission.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -33,14 +23,18 @@ namespace Model
 LaunchPermission::LaunchPermission() : 
     m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_organizationArnHasBeenSet(false),
+    m_organizationalUnitArnHasBeenSet(false)
 {
 }
 
 LaunchPermission::LaunchPermission(const XmlNode& xmlNode) : 
     m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_organizationArnHasBeenSet(false),
+    m_organizationalUnitArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +57,18 @@ LaunchPermission& LaunchPermission::operator =(const XmlNode& xmlNode)
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
     }
+    XmlNode organizationArnNode = resultNode.FirstChild("organizationArn");
+    if(!organizationArnNode.IsNull())
+    {
+      m_organizationArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationArnNode.GetText());
+      m_organizationArnHasBeenSet = true;
+    }
+    XmlNode organizationalUnitArnNode = resultNode.FirstChild("organizationalUnitArn");
+    if(!organizationalUnitArnNode.IsNull())
+    {
+      m_organizationalUnitArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitArnNode.GetText());
+      m_organizationalUnitArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -80,6 +86,16 @@ void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 
+  if(m_organizationArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OrganizationArn=" << StringUtils::URLEncode(m_organizationArn.c_str()) << "&";
+  }
+
+  if(m_organizationalUnitArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OrganizationalUnitArn=" << StringUtils::URLEncode(m_organizationalUnitArn.c_str()) << "&";
+  }
+
 }
 
 void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -91,6 +107,14 @@ void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_userIdHasBeenSet)
   {
       oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+  if(m_organizationArnHasBeenSet)
+  {
+      oStream << location << ".OrganizationArn=" << StringUtils::URLEncode(m_organizationArn.c_str()) << "&";
+  }
+  if(m_organizationalUnitArnHasBeenSet)
+  {
+      oStream << location << ".OrganizationalUnitArn=" << StringUtils::URLEncode(m_organizationalUnitArn.c_str()) << "&";
   }
 }
 

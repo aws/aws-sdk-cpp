@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -50,99 +40,99 @@ namespace Model
 
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The email address or domain that you want to verify.</p>
+     * <p>The email address or domain to verify.</p>
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
 
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the email identity.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the email identity.</p>
      */
     inline CreateEmailIdentityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -151,8 +141,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -161,8 +151,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -171,8 +161,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -181,8 +171,8 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
@@ -191,13 +181,70 @@ namespace Model
 
     /**
      * <p>If your request includes this object, Amazon SES configures the identity to
-     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
-     * to the default method, <a
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or,
+     * configures the key length to be used for <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
      * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
      * domain, as opposed to an address.</p>
      */
     inline CreateEmailIdentityRequest& WithDkimSigningAttributes(DkimSigningAttributes&& value) { SetDkimSigningAttributes(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline CreateEmailIdentityRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline CreateEmailIdentityRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration set to use by default when sending from this identity. Note
+     * that any configuration set defined in the email sending request takes
+     * precedence. </p>
+     */
+    inline CreateEmailIdentityRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
   private:
 
@@ -209,6 +256,9 @@ namespace Model
 
     DkimSigningAttributes m_dkimSigningAttributes;
     bool m_dkimSigningAttributesHasBeenSet;
+
+    Aws::String m_configurationSetName;
+    bool m_configurationSetNameHasBeenSet;
   };
 
 } // namespace Model

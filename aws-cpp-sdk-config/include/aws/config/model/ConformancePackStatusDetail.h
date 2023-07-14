@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
@@ -173,8 +163,8 @@ namespace Model
 
 
     /**
-     * <p>Indicates deployment status of conformance pack.</p> <p>AWS Config sets the
-     * state of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
+     * <p>Indicates deployment status of conformance pack.</p> <p>Config sets the state
+     * of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
      * conformance pack creation is in progress for an account.</p> </li> <li>
      * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
@@ -185,8 +175,8 @@ namespace Model
     inline const ConformancePackState& GetConformancePackState() const{ return m_conformancePackState; }
 
     /**
-     * <p>Indicates deployment status of conformance pack.</p> <p>AWS Config sets the
-     * state of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
+     * <p>Indicates deployment status of conformance pack.</p> <p>Config sets the state
+     * of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
      * conformance pack creation is in progress for an account.</p> </li> <li>
      * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
@@ -197,8 +187,8 @@ namespace Model
     inline bool ConformancePackStateHasBeenSet() const { return m_conformancePackStateHasBeenSet; }
 
     /**
-     * <p>Indicates deployment status of conformance pack.</p> <p>AWS Config sets the
-     * state of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
+     * <p>Indicates deployment status of conformance pack.</p> <p>Config sets the state
+     * of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
      * conformance pack creation is in progress for an account.</p> </li> <li>
      * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
@@ -209,8 +199,8 @@ namespace Model
     inline void SetConformancePackState(const ConformancePackState& value) { m_conformancePackStateHasBeenSet = true; m_conformancePackState = value; }
 
     /**
-     * <p>Indicates deployment status of conformance pack.</p> <p>AWS Config sets the
-     * state of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
+     * <p>Indicates deployment status of conformance pack.</p> <p>Config sets the state
+     * of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
      * conformance pack creation is in progress for an account.</p> </li> <li>
      * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
@@ -221,8 +211,8 @@ namespace Model
     inline void SetConformancePackState(ConformancePackState&& value) { m_conformancePackStateHasBeenSet = true; m_conformancePackState = std::move(value); }
 
     /**
-     * <p>Indicates deployment status of conformance pack.</p> <p>AWS Config sets the
-     * state of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
+     * <p>Indicates deployment status of conformance pack.</p> <p>Config sets the state
+     * of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
      * conformance pack creation is in progress for an account.</p> </li> <li>
      * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
@@ -233,8 +223,8 @@ namespace Model
     inline ConformancePackStatusDetail& WithConformancePackState(const ConformancePackState& value) { SetConformancePackState(value); return *this;}
 
     /**
-     * <p>Indicates deployment status of conformance pack.</p> <p>AWS Config sets the
-     * state of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
+     * <p>Indicates deployment status of conformance pack.</p> <p>Config sets the state
+     * of the conformance pack to:</p> <ul> <li> <p>CREATE_IN_PROGRESS when a
      * conformance pack creation is in progress for an account.</p> </li> <li>
      * <p>CREATE_COMPLETE when a conformance pack has been successfully created in your
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
@@ -246,42 +236,42 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline const Aws::String& GetStackArn() const{ return m_stackArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline bool StackArnHasBeenSet() const { return m_stackArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline void SetStackArn(const Aws::String& value) { m_stackArnHasBeenSet = true; m_stackArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline void SetStackArn(Aws::String&& value) { m_stackArnHasBeenSet = true; m_stackArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline void SetStackArn(const char* value) { m_stackArnHasBeenSet = true; m_stackArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline ConformancePackStatusDetail& WithStackArn(const Aws::String& value) { SetStackArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline ConformancePackStatusDetail& WithStackArn(Aws::String&& value) { SetStackArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of AWS CloudFormation stack. </p>
+     * <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
      */
     inline ConformancePackStatusDetail& WithStackArn(const char* value) { SetStackArn(value); return *this;}
 

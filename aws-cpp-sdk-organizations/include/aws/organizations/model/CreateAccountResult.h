@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -48,10 +38,10 @@ namespace Model
      * because account creation is an asynchronous process. You can pass the returned
      * <code>CreateAccountStatus</code> ID as a parameter to
      * <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-     * request at later times. You can also check the AWS CloudTrail log for the
+     * request at later times. You can also check the CloudTrail log for the
      * <code>CreateAccountResult</code> event. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-     * the Activity in Your Organization</a> in the <i>AWS Organizations User
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+     * the Activity in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline const CreateAccountStatus& GetCreateAccountStatus() const{ return m_createAccountStatus; }
@@ -62,10 +52,10 @@ namespace Model
      * because account creation is an asynchronous process. You can pass the returned
      * <code>CreateAccountStatus</code> ID as a parameter to
      * <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-     * request at later times. You can also check the AWS CloudTrail log for the
+     * request at later times. You can also check the CloudTrail log for the
      * <code>CreateAccountResult</code> event. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-     * the Activity in Your Organization</a> in the <i>AWS Organizations User
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+     * the Activity in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline void SetCreateAccountStatus(const CreateAccountStatus& value) { m_createAccountStatus = value; }
@@ -76,10 +66,10 @@ namespace Model
      * because account creation is an asynchronous process. You can pass the returned
      * <code>CreateAccountStatus</code> ID as a parameter to
      * <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-     * request at later times. You can also check the AWS CloudTrail log for the
+     * request at later times. You can also check the CloudTrail log for the
      * <code>CreateAccountResult</code> event. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-     * the Activity in Your Organization</a> in the <i>AWS Organizations User
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+     * the Activity in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline void SetCreateAccountStatus(CreateAccountStatus&& value) { m_createAccountStatus = std::move(value); }
@@ -90,10 +80,10 @@ namespace Model
      * because account creation is an asynchronous process. You can pass the returned
      * <code>CreateAccountStatus</code> ID as a parameter to
      * <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-     * request at later times. You can also check the AWS CloudTrail log for the
+     * request at later times. You can also check the CloudTrail log for the
      * <code>CreateAccountResult</code> event. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-     * the Activity in Your Organization</a> in the <i>AWS Organizations User
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+     * the Activity in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline CreateAccountResult& WithCreateAccountStatus(const CreateAccountStatus& value) { SetCreateAccountStatus(value); return *this;}
@@ -104,10 +94,10 @@ namespace Model
      * because account creation is an asynchronous process. You can pass the returned
      * <code>CreateAccountStatus</code> ID as a parameter to
      * <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-     * request at later times. You can also check the AWS CloudTrail log for the
+     * request at later times. You can also check the CloudTrail log for the
      * <code>CreateAccountResult</code> event. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
-     * the Activity in Your Organization</a> in the <i>AWS Organizations User
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+     * the Activity in Your Organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline CreateAccountResult& WithCreateAccountStatus(CreateAccountStatus&& value) { SetCreateAccountStatus(std::move(value)); return *this;}

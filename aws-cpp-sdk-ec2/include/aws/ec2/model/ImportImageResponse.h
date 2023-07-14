@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/SnapshotDetail.h>
 #include <aws/ec2/model/ImportImageLicenseConfigurationResponse.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -119,17 +110,17 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the AMI is encypted.</p>
+     * <p>Indicates whether the AMI is encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Indicates whether the AMI is encypted.</p>
+     * <p>Indicates whether the AMI is encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encrypted = value; }
 
     /**
-     * <p>Indicates whether the AMI is encypted.</p>
+     * <p>Indicates whether the AMI is encrypted.</p>
      */
     inline ImportImageResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -243,44 +234,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -537,6 +528,78 @@ namespace Model
     inline ImportImageResponse& AddLicenseSpecifications(ImportImageLicenseConfigurationResponse&& value) { m_licenseSpecifications.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline ImportImageResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline ImportImageResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline ImportImageResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the import image task.</p>
+     */
+    inline ImportImageResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const Aws::String& value) { m_usageOperation = value; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(Aws::String&& value) { m_usageOperation = std::move(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const char* value) { m_usageOperation.assign(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageResponse& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageResponse& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageResponse& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -581,6 +644,10 @@ namespace Model
     Aws::String m_statusMessage;
 
     Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
+
+    Aws::Vector<Tag> m_tags;
+
+    Aws::String m_usageOperation;
 
     ResponseMetadata m_responseMetadata;
   };

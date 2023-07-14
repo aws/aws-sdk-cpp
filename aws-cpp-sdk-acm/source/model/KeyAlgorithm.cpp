@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -30,8 +20,9 @@ namespace Aws
       namespace KeyAlgorithmMapper
       {
 
-        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
         static const int RSA_1024_HASH = HashingUtils::HashString("RSA_1024");
+        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
+        static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
         static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
         static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
         static const int EC_secp384r1_HASH = HashingUtils::HashString("EC_secp384r1");
@@ -41,13 +32,17 @@ namespace Aws
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RSA_2048_HASH)
+          if (hashCode == RSA_1024_HASH)
+          {
+            return KeyAlgorithm::RSA_1024;
+          }
+          else if (hashCode == RSA_2048_HASH)
           {
             return KeyAlgorithm::RSA_2048;
           }
-          else if (hashCode == RSA_1024_HASH)
+          else if (hashCode == RSA_3072_HASH)
           {
-            return KeyAlgorithm::RSA_1024;
+            return KeyAlgorithm::RSA_3072;
           }
           else if (hashCode == RSA_4096_HASH)
           {
@@ -79,10 +74,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case KeyAlgorithm::RSA_2048:
-            return "RSA_2048";
           case KeyAlgorithm::RSA_1024:
             return "RSA_1024";
+          case KeyAlgorithm::RSA_2048:
+            return "RSA_2048";
+          case KeyAlgorithm::RSA_3072:
+            return "RSA_3072";
           case KeyAlgorithm::RSA_4096:
             return "RSA_4096";
           case KeyAlgorithm::EC_prime256v1:

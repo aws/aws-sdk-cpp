@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sms/SMS_EXPORTS.h>
@@ -117,42 +107,42 @@ namespace Model
 
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline const Aws::Vector<VmServerAddress>& GetVmServerAddressList() const{ return m_vmServerAddressList; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline bool VmServerAddressListHasBeenSet() const { return m_vmServerAddressListHasBeenSet; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline void SetVmServerAddressList(const Aws::Vector<VmServerAddress>& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList = value; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline void SetVmServerAddressList(Aws::Vector<VmServerAddress>&& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList = std::move(value); }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& WithVmServerAddressList(const Aws::Vector<VmServerAddress>& value) { SetVmServerAddressList(value); return *this;}
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& WithVmServerAddressList(Aws::Vector<VmServerAddress>&& value) { SetVmServerAddressList(std::move(value)); return *this;}
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& AddVmServerAddressList(const VmServerAddress& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList.push_back(value); return *this; }
 
     /**
-     * <p>List of <code>VmServerAddress</code> objects</p>
+     * <p>The server addresses.</p>
      */
     inline GetServersRequest& AddVmServerAddressList(VmServerAddress&& value) { m_vmServerAddressListHasBeenSet = true; m_vmServerAddressList.push_back(std::move(value)); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/M2tsSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 M2tsSettings::M2tsSettings() : 
     m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
     m_audioBufferModelHasBeenSet(false),
+    m_audioDuration(M2tsAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -38,6 +30,8 @@ M2tsSettings::M2tsSettings() :
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
     m_bufferModelHasBeenSet(false),
+    m_dataPTSControl(M2tsDataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
     m_dvbNitSettingsHasBeenSet(false),
     m_dvbSdtSettingsHasBeenSet(false),
     m_dvbSubPidsHasBeenSet(false),
@@ -54,6 +48,8 @@ M2tsSettings::M2tsSettings() :
     m_forceTsVideoEbpOrderHasBeenSet(false),
     m_fragmentTime(0.0),
     m_fragmentTimeHasBeenSet(false),
+    m_klvMetadata(M2tsKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_maxPcrInterval(0),
     m_maxPcrIntervalHasBeenSet(false),
     m_minEbpInterval(0),
@@ -101,6 +97,8 @@ M2tsSettings::M2tsSettings() :
 M2tsSettings::M2tsSettings(JsonView jsonValue) : 
     m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
     m_audioBufferModelHasBeenSet(false),
+    m_audioDuration(M2tsAudioDuration::NOT_SET),
+    m_audioDurationHasBeenSet(false),
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -108,6 +106,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
     m_bufferModelHasBeenSet(false),
+    m_dataPTSControl(M2tsDataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
     m_dvbNitSettingsHasBeenSet(false),
     m_dvbSdtSettingsHasBeenSet(false),
     m_dvbSubPidsHasBeenSet(false),
@@ -124,6 +124,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_forceTsVideoEbpOrderHasBeenSet(false),
     m_fragmentTime(0.0),
     m_fragmentTimeHasBeenSet(false),
+    m_klvMetadata(M2tsKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_maxPcrInterval(0),
     m_maxPcrIntervalHasBeenSet(false),
     m_minEbpInterval(0),
@@ -178,6 +180,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_audioBufferModelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioDuration"))
+  {
+    m_audioDuration = M2tsAudioDurationMapper::GetM2tsAudioDurationForName(jsonValue.GetString("audioDuration"));
+
+    m_audioDurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {
     m_audioFramesPerPes = jsonValue.GetInteger("audioFramesPerPes");
@@ -207,6 +216,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_bufferModel = M2tsBufferModelMapper::GetM2tsBufferModelForName(jsonValue.GetString("bufferModel"));
 
     m_bufferModelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataPTSControl"))
+  {
+    m_dataPTSControl = M2tsDataPtsControlMapper::GetM2tsDataPtsControlForName(jsonValue.GetString("dataPTSControl"));
+
+    m_dataPTSControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dvbNitSettings"))
@@ -280,6 +296,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_fragmentTime = jsonValue.GetDouble("fragmentTime");
 
     m_fragmentTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = M2tsKlvMetadataMapper::GetM2tsKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("maxPcrInterval"))
@@ -441,6 +464,11 @@ JsonValue M2tsSettings::Jsonize() const
    payload.WithString("audioBufferModel", M2tsAudioBufferModelMapper::GetNameForM2tsAudioBufferModel(m_audioBufferModel));
   }
 
+  if(m_audioDurationHasBeenSet)
+  {
+   payload.WithString("audioDuration", M2tsAudioDurationMapper::GetNameForM2tsAudioDuration(m_audioDuration));
+  }
+
   if(m_audioFramesPerPesHasBeenSet)
   {
    payload.WithInteger("audioFramesPerPes", m_audioFramesPerPes);
@@ -467,6 +495,11 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_bufferModelHasBeenSet)
   {
    payload.WithString("bufferModel", M2tsBufferModelMapper::GetNameForM2tsBufferModel(m_bufferModel));
+  }
+
+  if(m_dataPTSControlHasBeenSet)
+  {
+   payload.WithString("dataPTSControl", M2tsDataPtsControlMapper::GetNameForM2tsDataPtsControl(m_dataPTSControl));
   }
 
   if(m_dvbNitSettingsHasBeenSet)
@@ -528,6 +561,11 @@ JsonValue M2tsSettings::Jsonize() const
   {
    payload.WithDouble("fragmentTime", m_fragmentTime);
 
+  }
+
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", M2tsKlvMetadataMapper::GetNameForM2tsKlvMetadata(m_klvMetadata));
   }
 
   if(m_maxPcrIntervalHasBeenSet)

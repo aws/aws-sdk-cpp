@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -166,48 +156,42 @@ namespace Model
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = std::move(value); }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline StepSummary& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline StepSummary& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
 

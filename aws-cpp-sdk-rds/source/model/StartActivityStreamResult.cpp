@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/rds/model/StartActivityStreamResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -30,14 +20,16 @@ using namespace Aws;
 StartActivityStreamResult::StartActivityStreamResult() : 
     m_status(ActivityStreamStatus::NOT_SET),
     m_mode(ActivityStreamMode::NOT_SET),
-    m_applyImmediately(false)
+    m_applyImmediately(false),
+    m_engineNativeAuditFieldsIncluded(false)
 {
 }
 
 StartActivityStreamResult::StartActivityStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(ActivityStreamStatus::NOT_SET),
     m_mode(ActivityStreamMode::NOT_SET),
-    m_applyImmediately(false)
+    m_applyImmediately(false),
+    m_engineNativeAuditFieldsIncluded(false)
 {
   *this = result;
 }
@@ -78,6 +70,11 @@ StartActivityStreamResult& StartActivityStreamResult::operator =(const Aws::Amaz
     if(!applyImmediatelyNode.IsNull())
     {
       m_applyImmediately = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyImmediatelyNode.GetText()).c_str()).c_str());
+    }
+    XmlNode engineNativeAuditFieldsIncludedNode = resultNode.FirstChild("EngineNativeAuditFieldsIncluded");
+    if(!engineNativeAuditFieldsIncludedNode.IsNull())
+    {
+      m_engineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(engineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
     }
   }
 

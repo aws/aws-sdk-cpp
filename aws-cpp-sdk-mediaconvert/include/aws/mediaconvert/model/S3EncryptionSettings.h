@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -141,6 +131,103 @@ namespace Model
 
 
     /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline const Aws::String& GetKmsEncryptionContext() const{ return m_kmsEncryptionContext; }
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline bool KmsEncryptionContextHasBeenSet() const { return m_kmsEncryptionContextHasBeenSet; }
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline void SetKmsEncryptionContext(const Aws::String& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = value; }
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline void SetKmsEncryptionContext(Aws::String&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = std::move(value); }
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline void SetKmsEncryptionContext(const char* value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.assign(value); }
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline S3EncryptionSettings& WithKmsEncryptionContext(const Aws::String& value) { SetKmsEncryptionContext(value); return *this;}
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline S3EncryptionSettings& WithKmsEncryptionContext(Aws::String&& value) { SetKmsEncryptionContext(std::move(value)); return *this;}
+
+    /**
+     * Optionally, specify the encryption context that you want to use alongside your
+     * KMS key. AWS KMS uses this encryption context as additional authenticated data
+     * (AAD) to support authenticated encryption. This value must be a base64-encoded
+     * UTF-8 string holding JSON which represents a string-string map. To use this
+     * setting, you must also set Server-side encryption (S3ServerSideEncryptionType)
+     * to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption
+     * context, see:
+     * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+     */
+    inline S3EncryptionSettings& WithKmsEncryptionContext(const char* value) { SetKmsEncryptionContext(value); return *this;}
+
+
+    /**
      * Optionally, specify the customer master key (CMK) that you want to use to
      * encrypt the data key that AWS uses to encrypt your output content. Enter the
      * Amazon Resource Name (ARN) of the CMK. To use this setting, you must also set
@@ -232,6 +319,9 @@ namespace Model
 
     S3ServerSideEncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
+
+    Aws::String m_kmsEncryptionContext;
+    bool m_kmsEncryptionContextHasBeenSet;
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet;

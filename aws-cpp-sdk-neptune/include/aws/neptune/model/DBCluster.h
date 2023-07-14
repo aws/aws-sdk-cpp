@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -163,42 +153,42 @@ namespace Model
 
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
@@ -838,83 +828,83 @@ namespace Model
 
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the master username for the DB cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::Vector<DBClusterOptionGroupStatus>& GetDBClusterOptionGroupMemberships() const{ return m_dBClusterOptionGroupMemberships; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool DBClusterOptionGroupMembershipsHasBeenSet() const { return m_dBClusterOptionGroupMembershipsHasBeenSet; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetDBClusterOptionGroupMemberships(const Aws::Vector<DBClusterOptionGroupStatus>& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships = value; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetDBClusterOptionGroupMemberships(Aws::Vector<DBClusterOptionGroupStatus>&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships = std::move(value); }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithDBClusterOptionGroupMemberships(const Aws::Vector<DBClusterOptionGroupStatus>& value) { SetDBClusterOptionGroupMemberships(value); return *this;}
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithDBClusterOptionGroupMemberships(Aws::Vector<DBClusterOptionGroupStatus>&& value) { SetDBClusterOptionGroupMemberships(std::move(value)); return *this;}
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& AddDBClusterOptionGroupMemberships(const DBClusterOptionGroupStatus& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(value); return *this; }
 
     /**
-     * <p> <i>(Not supported by Neptune)</i> </p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& AddDBClusterOptionGroupMemberships(DBClusterOptionGroupStatus&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(std::move(value)); return *this; }
 
@@ -1274,107 +1264,107 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
@@ -1421,90 +1411,90 @@ namespace Model
 
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline const Aws::Vector<DBClusterRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline void SetAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline void SetAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { SetAssociatedRoles(value); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(const DBClusterRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that
      * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * cluster grant permission for the DB cluster to access other Amazon services on
+     * your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
@@ -1589,6 +1579,31 @@ namespace Model
 
 
     /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB
+     * cluster that is created.</i> </p>
+     */
+    inline DBCluster& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+
+    /**
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p>
      */
@@ -1666,6 +1681,62 @@ namespace Model
      * database can't be deleted when deletion protection is enabled.</p>
      */
     inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
+
+    /**
+     * <p>If set to <code>true</code>, the DB cluster can be cloned across
+     * accounts.</p>
+     */
+    inline bool GetCrossAccountClone() const{ return m_crossAccountClone; }
+
+    /**
+     * <p>If set to <code>true</code>, the DB cluster can be cloned across
+     * accounts.</p>
+     */
+    inline bool CrossAccountCloneHasBeenSet() const { return m_crossAccountCloneHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, the DB cluster can be cloned across
+     * accounts.</p>
+     */
+    inline void SetCrossAccountClone(bool value) { m_crossAccountCloneHasBeenSet = true; m_crossAccountClone = value; }
+
+    /**
+     * <p>If set to <code>true</code>, the DB cluster can be cloned across
+     * accounts.</p>
+     */
+    inline DBCluster& WithCrossAccountClone(bool value) { SetCrossAccountClone(value); return *this;}
+
+
+    /**
+     * <p>Time at which the DB cluster will be automatically restarted.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const{ return m_automaticRestartTime; }
+
+    /**
+     * <p>Time at which the DB cluster will be automatically restarted.</p>
+     */
+    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
+
+    /**
+     * <p>Time at which the DB cluster will be automatically restarted.</p>
+     */
+    inline void SetAutomaticRestartTime(const Aws::Utils::DateTime& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = value; }
+
+    /**
+     * <p>Time at which the DB cluster will be automatically restarted.</p>
+     */
+    inline void SetAutomaticRestartTime(Aws::Utils::DateTime&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::move(value); }
+
+    /**
+     * <p>Time at which the DB cluster will be automatically restarted.</p>
+     */
+    inline DBCluster& WithAutomaticRestartTime(const Aws::Utils::DateTime& value) { SetAutomaticRestartTime(value); return *this;}
+
+    /**
+     * <p>Time at which the DB cluster will be automatically restarted.</p>
+     */
+    inline DBCluster& WithAutomaticRestartTime(Aws::Utils::DateTime&& value) { SetAutomaticRestartTime(std::move(value)); return *this;}
 
   private:
 
@@ -1774,11 +1845,20 @@ namespace Model
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
 
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
+
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    bool m_crossAccountClone;
+    bool m_crossAccountCloneHasBeenSet;
+
+    Aws::Utils::DateTime m_automaticRestartTime;
+    bool m_automaticRestartTimeHasBeenSet;
   };
 
 } // namespace Model

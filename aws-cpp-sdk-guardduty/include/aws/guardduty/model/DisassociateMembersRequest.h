@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -45,104 +35,104 @@ namespace Model
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of the detector of the GuardDuty account whose members you want
-     * to disassociate from master.</p>
+     * to disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of account IDs of the GuardDuty member accounts that you want to
-     * disassociate from master.</p>
+     * disassociate from the administrator account.</p>
      */
     inline DisassociateMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 

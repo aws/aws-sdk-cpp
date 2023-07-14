@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
@@ -46,56 +36,83 @@ namespace Model
 
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline GetRecommendationSummariesRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline GetRecommendationSummariesRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline GetRecommendationSummariesRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline GetRecommendationSummariesRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account IDs for which to return recommendation summaries.</p> <p>Only
-     * one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return recommendation
+     * summaries.</p> <p>If your account is the management account of an organization,
+     * use this parameter to specify the member account for which you want to return
+     * recommendation summaries.</p> <p>Only one account ID can be specified per
+     * request.</p>
      */
     inline GetRecommendationSummariesRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
@@ -143,29 +160,29 @@ namespace Model
 
     /**
      * <p>The maximum number of recommendation summaries to return with a single
-     * call.</p> <p>To retrieve the remaining results, make another call with the
-     * returned <code>NextToken</code> value.</p>
+     * request.</p> <p>To retrieve the remaining results, make another request with the
+     * returned <code>nextToken</code> value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of recommendation summaries to return with a single
-     * call.</p> <p>To retrieve the remaining results, make another call with the
-     * returned <code>NextToken</code> value.</p>
+     * request.</p> <p>To retrieve the remaining results, make another request with the
+     * returned <code>nextToken</code> value.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of recommendation summaries to return with a single
-     * call.</p> <p>To retrieve the remaining results, make another call with the
-     * returned <code>NextToken</code> value.</p>
+     * request.</p> <p>To retrieve the remaining results, make another request with the
+     * returned <code>nextToken</code> value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of recommendation summaries to return with a single
-     * call.</p> <p>To retrieve the remaining results, make another call with the
-     * returned <code>NextToken</code> value.</p>
+     * request.</p> <p>To retrieve the remaining results, make another request with the
+     * returned <code>nextToken</code> value.</p>
      */
     inline GetRecommendationSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

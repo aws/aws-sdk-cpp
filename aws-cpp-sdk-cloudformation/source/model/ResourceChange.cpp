@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/cloudformation/model/ResourceChange.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -39,7 +29,9 @@ ResourceChange::ResourceChange() :
     m_replacement(Replacement::NOT_SET),
     m_replacementHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
 }
 
@@ -52,7 +44,9 @@ ResourceChange::ResourceChange(const XmlNode& xmlNode) :
     m_replacement(Replacement::NOT_SET),
     m_replacementHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_changeSetIdHasBeenSet(false),
+    m_moduleInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -117,6 +111,18 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
 
       m_detailsHasBeenSet = true;
     }
+    XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
+    if(!changeSetIdNode.IsNull())
+    {
+      m_changeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetIdNode.GetText());
+      m_changeSetIdHasBeenSet = true;
+    }
+    XmlNode moduleInfoNode = resultNode.FirstChild("ModuleInfo");
+    if(!moduleInfoNode.IsNull())
+    {
+      m_moduleInfo = moduleInfoNode;
+      m_moduleInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -169,6 +175,18 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
       }
   }
 
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
+  }
+
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::StringStream moduleInfoLocationAndMemberSs;
+      moduleInfoLocationAndMemberSs << location << index << locationValue << ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -210,6 +228,16 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location)
         detailsSs << location <<  ".Details.member." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
+  }
+  if(m_changeSetIdHasBeenSet)
+  {
+      oStream << location << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
+  }
+  if(m_moduleInfoHasBeenSet)
+  {
+      Aws::String moduleInfoLocationAndMember(location);
+      moduleInfoLocationAndMember += ".ModuleInfo";
+      m_moduleInfo.OutputToStream(oStream, moduleInfoLocationAndMember.c_str());
   }
 }
 

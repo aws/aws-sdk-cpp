@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/acm-pca/model/CrlConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -34,7 +24,9 @@ CrlConfiguration::CrlConfiguration() :
     m_expirationInDays(0),
     m_expirationInDaysHasBeenSet(false),
     m_customCnameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+    m_s3BucketNameHasBeenSet(false),
+    m_s3ObjectAcl(S3ObjectAcl::NOT_SET),
+    m_s3ObjectAclHasBeenSet(false)
 {
 }
 
@@ -44,7 +36,9 @@ CrlConfiguration::CrlConfiguration(JsonView jsonValue) :
     m_expirationInDays(0),
     m_expirationInDaysHasBeenSet(false),
     m_customCnameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
+    m_s3BucketNameHasBeenSet(false),
+    m_s3ObjectAcl(S3ObjectAcl::NOT_SET),
+    m_s3ObjectAclHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +73,13 @@ CrlConfiguration& CrlConfiguration::operator =(JsonView jsonValue)
     m_s3BucketNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3ObjectAcl"))
+  {
+    m_s3ObjectAcl = S3ObjectAclMapper::GetS3ObjectAclForName(jsonValue.GetString("S3ObjectAcl"));
+
+    m_s3ObjectAclHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +109,11 @@ JsonValue CrlConfiguration::Jsonize() const
   {
    payload.WithString("S3BucketName", m_s3BucketName);
 
+  }
+
+  if(m_s3ObjectAclHasBeenSet)
+  {
+   payload.WithString("S3ObjectAcl", S3ObjectAclMapper::GetNameForS3ObjectAcl(m_s3ObjectAcl));
   }
 
   return payload;

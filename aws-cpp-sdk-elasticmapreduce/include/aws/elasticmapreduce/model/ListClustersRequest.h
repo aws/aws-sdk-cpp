@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -114,42 +104,58 @@ namespace Model
 
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline const Aws::Vector<ClusterState>& GetClusterStates() const{ return m_clusterStates; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline bool ClusterStatesHasBeenSet() const { return m_clusterStatesHasBeenSet; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline void SetClusterStates(const Aws::Vector<ClusterState>& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = value; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline void SetClusterStates(Aws::Vector<ClusterState>&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = std::move(value); }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& WithClusterStates(const Aws::Vector<ClusterState>& value) { SetClusterStates(value); return *this;}
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& WithClusterStates(Aws::Vector<ClusterState>&& value) { SetClusterStates(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& AddClusterStates(const ClusterState& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(value); return *this; }
 
     /**
-     * <p>The cluster state filters to apply when listing clusters.</p>
+     * <p>The cluster state filters to apply when listing clusters. Clusters that
+     * change state while this action runs may be not be returned as expected in the
+     * list of clusters.</p>
      */
     inline ListClustersRequest& AddClusterStates(ClusterState&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(std::move(value)); return *this; }
 

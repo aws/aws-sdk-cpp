@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -223,42 +213,42 @@ namespace Model
 
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     * <p>The name of the S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -344,32 +334,32 @@ namespace Model
 
 
     /**
-     * <p>Execution info about the export task.</p>
+     * <p>Execution information about the export task.</p>
      */
     inline const ExportTaskExecutionInfo& GetExecutionInfo() const{ return m_executionInfo; }
 
     /**
-     * <p>Execution info about the export task.</p>
+     * <p>Execution information about the export task.</p>
      */
     inline bool ExecutionInfoHasBeenSet() const { return m_executionInfoHasBeenSet; }
 
     /**
-     * <p>Execution info about the export task.</p>
+     * <p>Execution information about the export task.</p>
      */
     inline void SetExecutionInfo(const ExportTaskExecutionInfo& value) { m_executionInfoHasBeenSet = true; m_executionInfo = value; }
 
     /**
-     * <p>Execution info about the export task.</p>
+     * <p>Execution information about the export task.</p>
      */
     inline void SetExecutionInfo(ExportTaskExecutionInfo&& value) { m_executionInfoHasBeenSet = true; m_executionInfo = std::move(value); }
 
     /**
-     * <p>Execution info about the export task.</p>
+     * <p>Execution information about the export task.</p>
      */
     inline ExportTask& WithExecutionInfo(const ExportTaskExecutionInfo& value) { SetExecutionInfo(value); return *this;}
 
     /**
-     * <p>Execution info about the export task.</p>
+     * <p>Execution information about the export task.</p>
      */
     inline ExportTask& WithExecutionInfo(ExportTaskExecutionInfo&& value) { SetExecutionInfo(std::move(value)); return *this;}
 

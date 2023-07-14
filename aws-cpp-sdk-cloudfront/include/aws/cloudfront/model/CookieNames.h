@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
@@ -34,13 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that specifies whether you want CloudFront to forward cookies
-   * to the origin and, if so, which ones. For more information about forwarding
-   * cookies to the origin, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
-   * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
-   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CookieNames">AWS
+   * <p>Contains a list of cookie names.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CookieNames">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CookieNames
@@ -54,129 +39,68 @@ namespace Model
 
 
     /**
-     * <p>The number of different cookies that you want CloudFront to forward to the
-     * origin for this cache behavior. The value must equal the number of items that
-     * are in the <code>Items</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this value must
-     * be <code>1</code> or higher.</p>
+     * <p>The number of cookie names in the <code>Items</code> list.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of different cookies that you want CloudFront to forward to the
-     * origin for this cache behavior. The value must equal the number of items that
-     * are in the <code>Items</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this value must
-     * be <code>1</code> or higher.</p>
+     * <p>The number of cookie names in the <code>Items</code> list.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of different cookies that you want CloudFront to forward to the
-     * origin for this cache behavior. The value must equal the number of items that
-     * are in the <code>Items</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this value must
-     * be <code>1</code> or higher.</p>
+     * <p>The number of cookie names in the <code>Items</code> list.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of different cookies that you want CloudFront to forward to the
-     * origin for this cache behavior. The value must equal the number of items that
-     * are in the <code>Items</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this value must
-     * be <code>1</code> or higher.</p>
+     * <p>The number of cookie names in the <code>Items</code> list.</p>
      */
     inline CookieNames& WithQuantity(int value) { SetQuantity(value); return *this;}
 
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline CookieNames& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline CookieNames& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline CookieNames& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline CookieNames& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A complex type that contains one <code>Name</code> element for each cookie
-     * that you want CloudFront to forward to the origin for this cache behavior. It
-     * must contain the same number of items that is specified in the
-     * <code>Quantity</code> field.</p> <p>When you set <code>Forward =
-     * whitelist</code> (in the <code>CookiePreferences</code> object), this field must
-     * contain at least one item.</p>
+     * <p>A list of cookie names.</p>
      */
     inline CookieNames& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/savingsplans/model/SavingsPlanState.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -34,6 +24,8 @@ namespace Aws
         static const int payment_failed_HASH = HashingUtils::HashString("payment-failed");
         static const int active_HASH = HashingUtils::HashString("active");
         static const int retired_HASH = HashingUtils::HashString("retired");
+        static const int queued_HASH = HashingUtils::HashString("queued");
+        static const int queued_deleted_HASH = HashingUtils::HashString("queued-deleted");
 
 
         SavingsPlanState GetSavingsPlanStateForName(const Aws::String& name)
@@ -54,6 +46,14 @@ namespace Aws
           else if (hashCode == retired_HASH)
           {
             return SavingsPlanState::retired;
+          }
+          else if (hashCode == queued_HASH)
+          {
+            return SavingsPlanState::queued;
+          }
+          else if (hashCode == queued_deleted_HASH)
+          {
+            return SavingsPlanState::queued_deleted;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +77,10 @@ namespace Aws
             return "active";
           case SavingsPlanState::retired:
             return "retired";
+          case SavingsPlanState::queued:
+            return "queued";
+          case SavingsPlanState::queued_deleted:
+            return "queued-deleted";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

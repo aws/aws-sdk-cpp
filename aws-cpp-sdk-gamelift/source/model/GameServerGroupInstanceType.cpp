@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/gamelift/model/GameServerGroupInstanceType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -43,6 +33,22 @@ namespace Aws
         static const int c5_12xlarge_HASH = HashingUtils::HashString("c5.12xlarge");
         static const int c5_18xlarge_HASH = HashingUtils::HashString("c5.18xlarge");
         static const int c5_24xlarge_HASH = HashingUtils::HashString("c5.24xlarge");
+        static const int c5a_large_HASH = HashingUtils::HashString("c5a.large");
+        static const int c5a_xlarge_HASH = HashingUtils::HashString("c5a.xlarge");
+        static const int c5a_2xlarge_HASH = HashingUtils::HashString("c5a.2xlarge");
+        static const int c5a_4xlarge_HASH = HashingUtils::HashString("c5a.4xlarge");
+        static const int c5a_8xlarge_HASH = HashingUtils::HashString("c5a.8xlarge");
+        static const int c5a_12xlarge_HASH = HashingUtils::HashString("c5a.12xlarge");
+        static const int c5a_16xlarge_HASH = HashingUtils::HashString("c5a.16xlarge");
+        static const int c5a_24xlarge_HASH = HashingUtils::HashString("c5a.24xlarge");
+        static const int c6g_medium_HASH = HashingUtils::HashString("c6g.medium");
+        static const int c6g_large_HASH = HashingUtils::HashString("c6g.large");
+        static const int c6g_xlarge_HASH = HashingUtils::HashString("c6g.xlarge");
+        static const int c6g_2xlarge_HASH = HashingUtils::HashString("c6g.2xlarge");
+        static const int c6g_4xlarge_HASH = HashingUtils::HashString("c6g.4xlarge");
+        static const int c6g_8xlarge_HASH = HashingUtils::HashString("c6g.8xlarge");
+        static const int c6g_12xlarge_HASH = HashingUtils::HashString("c6g.12xlarge");
+        static const int c6g_16xlarge_HASH = HashingUtils::HashString("c6g.16xlarge");
         static const int r4_large_HASH = HashingUtils::HashString("r4.large");
         static const int r4_xlarge_HASH = HashingUtils::HashString("r4.xlarge");
         static const int r4_2xlarge_HASH = HashingUtils::HashString("r4.2xlarge");
@@ -57,6 +63,22 @@ namespace Aws
         static const int r5_12xlarge_HASH = HashingUtils::HashString("r5.12xlarge");
         static const int r5_16xlarge_HASH = HashingUtils::HashString("r5.16xlarge");
         static const int r5_24xlarge_HASH = HashingUtils::HashString("r5.24xlarge");
+        static const int r5a_large_HASH = HashingUtils::HashString("r5a.large");
+        static const int r5a_xlarge_HASH = HashingUtils::HashString("r5a.xlarge");
+        static const int r5a_2xlarge_HASH = HashingUtils::HashString("r5a.2xlarge");
+        static const int r5a_4xlarge_HASH = HashingUtils::HashString("r5a.4xlarge");
+        static const int r5a_8xlarge_HASH = HashingUtils::HashString("r5a.8xlarge");
+        static const int r5a_12xlarge_HASH = HashingUtils::HashString("r5a.12xlarge");
+        static const int r5a_16xlarge_HASH = HashingUtils::HashString("r5a.16xlarge");
+        static const int r5a_24xlarge_HASH = HashingUtils::HashString("r5a.24xlarge");
+        static const int r6g_medium_HASH = HashingUtils::HashString("r6g.medium");
+        static const int r6g_large_HASH = HashingUtils::HashString("r6g.large");
+        static const int r6g_xlarge_HASH = HashingUtils::HashString("r6g.xlarge");
+        static const int r6g_2xlarge_HASH = HashingUtils::HashString("r6g.2xlarge");
+        static const int r6g_4xlarge_HASH = HashingUtils::HashString("r6g.4xlarge");
+        static const int r6g_8xlarge_HASH = HashingUtils::HashString("r6g.8xlarge");
+        static const int r6g_12xlarge_HASH = HashingUtils::HashString("r6g.12xlarge");
+        static const int r6g_16xlarge_HASH = HashingUtils::HashString("r6g.16xlarge");
         static const int m4_large_HASH = HashingUtils::HashString("m4.large");
         static const int m4_xlarge_HASH = HashingUtils::HashString("m4.xlarge");
         static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
@@ -70,6 +92,22 @@ namespace Aws
         static const int m5_12xlarge_HASH = HashingUtils::HashString("m5.12xlarge");
         static const int m5_16xlarge_HASH = HashingUtils::HashString("m5.16xlarge");
         static const int m5_24xlarge_HASH = HashingUtils::HashString("m5.24xlarge");
+        static const int m5a_large_HASH = HashingUtils::HashString("m5a.large");
+        static const int m5a_xlarge_HASH = HashingUtils::HashString("m5a.xlarge");
+        static const int m5a_2xlarge_HASH = HashingUtils::HashString("m5a.2xlarge");
+        static const int m5a_4xlarge_HASH = HashingUtils::HashString("m5a.4xlarge");
+        static const int m5a_8xlarge_HASH = HashingUtils::HashString("m5a.8xlarge");
+        static const int m5a_12xlarge_HASH = HashingUtils::HashString("m5a.12xlarge");
+        static const int m5a_16xlarge_HASH = HashingUtils::HashString("m5a.16xlarge");
+        static const int m5a_24xlarge_HASH = HashingUtils::HashString("m5a.24xlarge");
+        static const int m6g_medium_HASH = HashingUtils::HashString("m6g.medium");
+        static const int m6g_large_HASH = HashingUtils::HashString("m6g.large");
+        static const int m6g_xlarge_HASH = HashingUtils::HashString("m6g.xlarge");
+        static const int m6g_2xlarge_HASH = HashingUtils::HashString("m6g.2xlarge");
+        static const int m6g_4xlarge_HASH = HashingUtils::HashString("m6g.4xlarge");
+        static const int m6g_8xlarge_HASH = HashingUtils::HashString("m6g.8xlarge");
+        static const int m6g_12xlarge_HASH = HashingUtils::HashString("m6g.12xlarge");
+        static const int m6g_16xlarge_HASH = HashingUtils::HashString("m6g.16xlarge");
 
 
         GameServerGroupInstanceType GetGameServerGroupInstanceTypeForName(const Aws::String& name)
@@ -127,6 +165,70 @@ namespace Aws
           {
             return GameServerGroupInstanceType::c5_24xlarge;
           }
+          else if (hashCode == c5a_large_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_large;
+          }
+          else if (hashCode == c5a_xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_xlarge;
+          }
+          else if (hashCode == c5a_2xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_2xlarge;
+          }
+          else if (hashCode == c5a_4xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_4xlarge;
+          }
+          else if (hashCode == c5a_8xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_8xlarge;
+          }
+          else if (hashCode == c5a_12xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_12xlarge;
+          }
+          else if (hashCode == c5a_16xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_16xlarge;
+          }
+          else if (hashCode == c5a_24xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c5a_24xlarge;
+          }
+          else if (hashCode == c6g_medium_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_medium;
+          }
+          else if (hashCode == c6g_large_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_large;
+          }
+          else if (hashCode == c6g_xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_xlarge;
+          }
+          else if (hashCode == c6g_2xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_2xlarge;
+          }
+          else if (hashCode == c6g_4xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_4xlarge;
+          }
+          else if (hashCode == c6g_8xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_8xlarge;
+          }
+          else if (hashCode == c6g_12xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_12xlarge;
+          }
+          else if (hashCode == c6g_16xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::c6g_16xlarge;
+          }
           else if (hashCode == r4_large_HASH)
           {
             return GameServerGroupInstanceType::r4_large;
@@ -183,6 +285,70 @@ namespace Aws
           {
             return GameServerGroupInstanceType::r5_24xlarge;
           }
+          else if (hashCode == r5a_large_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_large;
+          }
+          else if (hashCode == r5a_xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_xlarge;
+          }
+          else if (hashCode == r5a_2xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_2xlarge;
+          }
+          else if (hashCode == r5a_4xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_4xlarge;
+          }
+          else if (hashCode == r5a_8xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_8xlarge;
+          }
+          else if (hashCode == r5a_12xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_12xlarge;
+          }
+          else if (hashCode == r5a_16xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_16xlarge;
+          }
+          else if (hashCode == r5a_24xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r5a_24xlarge;
+          }
+          else if (hashCode == r6g_medium_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_medium;
+          }
+          else if (hashCode == r6g_large_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_large;
+          }
+          else if (hashCode == r6g_xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_xlarge;
+          }
+          else if (hashCode == r6g_2xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_2xlarge;
+          }
+          else if (hashCode == r6g_4xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_4xlarge;
+          }
+          else if (hashCode == r6g_8xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_8xlarge;
+          }
+          else if (hashCode == r6g_12xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_12xlarge;
+          }
+          else if (hashCode == r6g_16xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::r6g_16xlarge;
+          }
           else if (hashCode == m4_large_HASH)
           {
             return GameServerGroupInstanceType::m4_large;
@@ -235,6 +401,70 @@ namespace Aws
           {
             return GameServerGroupInstanceType::m5_24xlarge;
           }
+          else if (hashCode == m5a_large_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_large;
+          }
+          else if (hashCode == m5a_xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_xlarge;
+          }
+          else if (hashCode == m5a_2xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_2xlarge;
+          }
+          else if (hashCode == m5a_4xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_4xlarge;
+          }
+          else if (hashCode == m5a_8xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_8xlarge;
+          }
+          else if (hashCode == m5a_12xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_12xlarge;
+          }
+          else if (hashCode == m5a_16xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_16xlarge;
+          }
+          else if (hashCode == m5a_24xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m5a_24xlarge;
+          }
+          else if (hashCode == m6g_medium_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_medium;
+          }
+          else if (hashCode == m6g_large_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_large;
+          }
+          else if (hashCode == m6g_xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_xlarge;
+          }
+          else if (hashCode == m6g_2xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_2xlarge;
+          }
+          else if (hashCode == m6g_4xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_4xlarge;
+          }
+          else if (hashCode == m6g_8xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_8xlarge;
+          }
+          else if (hashCode == m6g_12xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_12xlarge;
+          }
+          else if (hashCode == m6g_16xlarge_HASH)
+          {
+            return GameServerGroupInstanceType::m6g_16xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -275,6 +505,38 @@ namespace Aws
             return "c5.18xlarge";
           case GameServerGroupInstanceType::c5_24xlarge:
             return "c5.24xlarge";
+          case GameServerGroupInstanceType::c5a_large:
+            return "c5a.large";
+          case GameServerGroupInstanceType::c5a_xlarge:
+            return "c5a.xlarge";
+          case GameServerGroupInstanceType::c5a_2xlarge:
+            return "c5a.2xlarge";
+          case GameServerGroupInstanceType::c5a_4xlarge:
+            return "c5a.4xlarge";
+          case GameServerGroupInstanceType::c5a_8xlarge:
+            return "c5a.8xlarge";
+          case GameServerGroupInstanceType::c5a_12xlarge:
+            return "c5a.12xlarge";
+          case GameServerGroupInstanceType::c5a_16xlarge:
+            return "c5a.16xlarge";
+          case GameServerGroupInstanceType::c5a_24xlarge:
+            return "c5a.24xlarge";
+          case GameServerGroupInstanceType::c6g_medium:
+            return "c6g.medium";
+          case GameServerGroupInstanceType::c6g_large:
+            return "c6g.large";
+          case GameServerGroupInstanceType::c6g_xlarge:
+            return "c6g.xlarge";
+          case GameServerGroupInstanceType::c6g_2xlarge:
+            return "c6g.2xlarge";
+          case GameServerGroupInstanceType::c6g_4xlarge:
+            return "c6g.4xlarge";
+          case GameServerGroupInstanceType::c6g_8xlarge:
+            return "c6g.8xlarge";
+          case GameServerGroupInstanceType::c6g_12xlarge:
+            return "c6g.12xlarge";
+          case GameServerGroupInstanceType::c6g_16xlarge:
+            return "c6g.16xlarge";
           case GameServerGroupInstanceType::r4_large:
             return "r4.large";
           case GameServerGroupInstanceType::r4_xlarge:
@@ -303,6 +565,38 @@ namespace Aws
             return "r5.16xlarge";
           case GameServerGroupInstanceType::r5_24xlarge:
             return "r5.24xlarge";
+          case GameServerGroupInstanceType::r5a_large:
+            return "r5a.large";
+          case GameServerGroupInstanceType::r5a_xlarge:
+            return "r5a.xlarge";
+          case GameServerGroupInstanceType::r5a_2xlarge:
+            return "r5a.2xlarge";
+          case GameServerGroupInstanceType::r5a_4xlarge:
+            return "r5a.4xlarge";
+          case GameServerGroupInstanceType::r5a_8xlarge:
+            return "r5a.8xlarge";
+          case GameServerGroupInstanceType::r5a_12xlarge:
+            return "r5a.12xlarge";
+          case GameServerGroupInstanceType::r5a_16xlarge:
+            return "r5a.16xlarge";
+          case GameServerGroupInstanceType::r5a_24xlarge:
+            return "r5a.24xlarge";
+          case GameServerGroupInstanceType::r6g_medium:
+            return "r6g.medium";
+          case GameServerGroupInstanceType::r6g_large:
+            return "r6g.large";
+          case GameServerGroupInstanceType::r6g_xlarge:
+            return "r6g.xlarge";
+          case GameServerGroupInstanceType::r6g_2xlarge:
+            return "r6g.2xlarge";
+          case GameServerGroupInstanceType::r6g_4xlarge:
+            return "r6g.4xlarge";
+          case GameServerGroupInstanceType::r6g_8xlarge:
+            return "r6g.8xlarge";
+          case GameServerGroupInstanceType::r6g_12xlarge:
+            return "r6g.12xlarge";
+          case GameServerGroupInstanceType::r6g_16xlarge:
+            return "r6g.16xlarge";
           case GameServerGroupInstanceType::m4_large:
             return "m4.large";
           case GameServerGroupInstanceType::m4_xlarge:
@@ -329,6 +623,38 @@ namespace Aws
             return "m5.16xlarge";
           case GameServerGroupInstanceType::m5_24xlarge:
             return "m5.24xlarge";
+          case GameServerGroupInstanceType::m5a_large:
+            return "m5a.large";
+          case GameServerGroupInstanceType::m5a_xlarge:
+            return "m5a.xlarge";
+          case GameServerGroupInstanceType::m5a_2xlarge:
+            return "m5a.2xlarge";
+          case GameServerGroupInstanceType::m5a_4xlarge:
+            return "m5a.4xlarge";
+          case GameServerGroupInstanceType::m5a_8xlarge:
+            return "m5a.8xlarge";
+          case GameServerGroupInstanceType::m5a_12xlarge:
+            return "m5a.12xlarge";
+          case GameServerGroupInstanceType::m5a_16xlarge:
+            return "m5a.16xlarge";
+          case GameServerGroupInstanceType::m5a_24xlarge:
+            return "m5a.24xlarge";
+          case GameServerGroupInstanceType::m6g_medium:
+            return "m6g.medium";
+          case GameServerGroupInstanceType::m6g_large:
+            return "m6g.large";
+          case GameServerGroupInstanceType::m6g_xlarge:
+            return "m6g.xlarge";
+          case GameServerGroupInstanceType::m6g_2xlarge:
+            return "m6g.2xlarge";
+          case GameServerGroupInstanceType::m6g_4xlarge:
+            return "m6g.4xlarge";
+          case GameServerGroupInstanceType::m6g_8xlarge:
+            return "m6g.8xlarge";
+          case GameServerGroupInstanceType::m6g_12xlarge:
+            return "m6g.12xlarge";
+          case GameServerGroupInstanceType::m6g_16xlarge:
+            return "m6g.16xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

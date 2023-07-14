@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/LaunchTemplateOverrides.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -32,13 +22,17 @@ namespace Model
 
 LaunchTemplateOverrides::LaunchTemplateOverrides() : 
     m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_launchTemplateSpecificationHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
 }
 
 LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode) : 
     m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_launchTemplateSpecificationHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +55,18 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
       m_weightedCapacity = Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText());
       m_weightedCapacityHasBeenSet = true;
     }
+    XmlNode launchTemplateSpecificationNode = resultNode.FirstChild("LaunchTemplateSpecification");
+    if(!launchTemplateSpecificationNode.IsNull())
+    {
+      m_launchTemplateSpecification = launchTemplateSpecificationNode;
+      m_launchTemplateSpecificationHasBeenSet = true;
+    }
+    XmlNode instanceRequirementsNode = resultNode.FirstChild("InstanceRequirements");
+    if(!instanceRequirementsNode.IsNull())
+    {
+      m_instanceRequirements = instanceRequirementsNode;
+      m_instanceRequirementsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,6 +84,20 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
   }
 
+  if(m_launchTemplateSpecificationHasBeenSet)
+  {
+      Aws::StringStream launchTemplateSpecificationLocationAndMemberSs;
+      launchTemplateSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchTemplateSpecification";
+      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::StringStream instanceRequirementsLocationAndMemberSs;
+      instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -89,6 +109,18 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_weightedCapacityHasBeenSet)
   {
       oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
+  }
+  if(m_launchTemplateSpecificationHasBeenSet)
+  {
+      Aws::String launchTemplateSpecificationLocationAndMember(location);
+      launchTemplateSpecificationLocationAndMember += ".LaunchTemplateSpecification";
+      m_launchTemplateSpecification.OutputToStream(oStream, launchTemplateSpecificationLocationAndMember.c_str());
+  }
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::String instanceRequirementsLocationAndMember(location);
+      instanceRequirementsLocationAndMember += ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
   }
 }
 

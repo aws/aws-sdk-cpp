@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ce/model/TargetInstance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -35,7 +25,8 @@ TargetInstance::TargetInstance() :
     m_defaultTargetInstance(false),
     m_defaultTargetInstanceHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
-    m_expectedResourceUtilizationHasBeenSet(false)
+    m_expectedResourceUtilizationHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false)
 {
 }
 
@@ -46,7 +37,8 @@ TargetInstance::TargetInstance(JsonView jsonValue) :
     m_defaultTargetInstance(false),
     m_defaultTargetInstanceHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
-    m_expectedResourceUtilizationHasBeenSet(false)
+    m_expectedResourceUtilizationHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +87,16 @@ TargetInstance& TargetInstance::operator =(JsonView jsonValue)
     m_expectedResourceUtilizationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlatformDifferences"))
+  {
+    Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("PlatformDifferences");
+    for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+    {
+      m_platformDifferences.push_back(PlatformDifferenceMapper::GetPlatformDifferenceForName(platformDifferencesJsonList[platformDifferencesIndex].AsString()));
+    }
+    m_platformDifferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +137,17 @@ JsonValue TargetInstance::Jsonize() const
   if(m_expectedResourceUtilizationHasBeenSet)
   {
    payload.WithObject("ExpectedResourceUtilization", m_expectedResourceUtilization.Jsonize());
+
+  }
+
+  if(m_platformDifferencesHasBeenSet)
+  {
+   Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
+   for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+   {
+     platformDifferencesJsonList[platformDifferencesIndex].AsString(PlatformDifferenceMapper::GetNameForPlatformDifference(m_platformDifferences[platformDifferencesIndex]));
+   }
+   payload.WithArray("PlatformDifferences", std::move(platformDifferencesJsonList));
 
   }
 

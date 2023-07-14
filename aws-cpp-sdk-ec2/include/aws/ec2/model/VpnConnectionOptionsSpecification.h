@@ -1,22 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/TunnelInsideIpVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpnTunnelOptionsSpecification.h>
 #include <utility>
 
@@ -109,6 +101,43 @@ namespace Model
 
 
     /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline const TunnelInsideIpVersion& GetTunnelInsideIpVersion() const{ return m_tunnelInsideIpVersion; }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline bool TunnelInsideIpVersionHasBeenSet() const { return m_tunnelInsideIpVersionHasBeenSet; }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline void SetTunnelInsideIpVersion(const TunnelInsideIpVersion& value) { m_tunnelInsideIpVersionHasBeenSet = true; m_tunnelInsideIpVersion = value; }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline void SetTunnelInsideIpVersion(TunnelInsideIpVersion&& value) { m_tunnelInsideIpVersionHasBeenSet = true; m_tunnelInsideIpVersion = std::move(value); }
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTunnelInsideIpVersion(const TunnelInsideIpVersion& value) { SetTunnelInsideIpVersion(value); return *this;}
+
+    /**
+     * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     * <p>Default: <code>ipv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTunnelInsideIpVersion(TunnelInsideIpVersion&& value) { SetTunnelInsideIpVersion(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tunnel options for the VPN connection.</p>
      */
     inline const Aws::Vector<VpnTunnelOptionsSpecification>& GetTunnelOptions() const{ return m_tunnelOptions; }
@@ -148,6 +177,202 @@ namespace Model
      */
     inline VpnConnectionOptionsSpecification& AddTunnelOptions(VpnTunnelOptionsSpecification&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline const Aws::String& GetLocalIpv4NetworkCidr() const{ return m_localIpv4NetworkCidr; }
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline bool LocalIpv4NetworkCidrHasBeenSet() const { return m_localIpv4NetworkCidrHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline void SetLocalIpv4NetworkCidr(const Aws::String& value) { m_localIpv4NetworkCidrHasBeenSet = true; m_localIpv4NetworkCidr = value; }
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline void SetLocalIpv4NetworkCidr(Aws::String&& value) { m_localIpv4NetworkCidrHasBeenSet = true; m_localIpv4NetworkCidr = std::move(value); }
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline void SetLocalIpv4NetworkCidr(const char* value) { m_localIpv4NetworkCidrHasBeenSet = true; m_localIpv4NetworkCidr.assign(value); }
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithLocalIpv4NetworkCidr(const Aws::String& value) { SetLocalIpv4NetworkCidr(value); return *this;}
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithLocalIpv4NetworkCidr(Aws::String&& value) { SetLocalIpv4NetworkCidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithLocalIpv4NetworkCidr(const char* value) { SetLocalIpv4NetworkCidr(value); return *this;}
+
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline const Aws::String& GetRemoteIpv4NetworkCidr() const{ return m_remoteIpv4NetworkCidr; }
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline bool RemoteIpv4NetworkCidrHasBeenSet() const { return m_remoteIpv4NetworkCidrHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline void SetRemoteIpv4NetworkCidr(const Aws::String& value) { m_remoteIpv4NetworkCidrHasBeenSet = true; m_remoteIpv4NetworkCidr = value; }
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline void SetRemoteIpv4NetworkCidr(Aws::String&& value) { m_remoteIpv4NetworkCidrHasBeenSet = true; m_remoteIpv4NetworkCidr = std::move(value); }
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline void SetRemoteIpv4NetworkCidr(const char* value) { m_remoteIpv4NetworkCidrHasBeenSet = true; m_remoteIpv4NetworkCidr.assign(value); }
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithRemoteIpv4NetworkCidr(const Aws::String& value) { SetRemoteIpv4NetworkCidr(value); return *this;}
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithRemoteIpv4NetworkCidr(Aws::String&& value) { SetRemoteIpv4NetworkCidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>0.0.0.0/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithRemoteIpv4NetworkCidr(const char* value) { SetRemoteIpv4NetworkCidr(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline const Aws::String& GetLocalIpv6NetworkCidr() const{ return m_localIpv6NetworkCidr; }
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline bool LocalIpv6NetworkCidrHasBeenSet() const { return m_localIpv6NetworkCidrHasBeenSet; }
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline void SetLocalIpv6NetworkCidr(const Aws::String& value) { m_localIpv6NetworkCidrHasBeenSet = true; m_localIpv6NetworkCidr = value; }
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline void SetLocalIpv6NetworkCidr(Aws::String&& value) { m_localIpv6NetworkCidrHasBeenSet = true; m_localIpv6NetworkCidr = std::move(value); }
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline void SetLocalIpv6NetworkCidr(const char* value) { m_localIpv6NetworkCidrHasBeenSet = true; m_localIpv6NetworkCidr.assign(value); }
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithLocalIpv6NetworkCidr(const Aws::String& value) { SetLocalIpv6NetworkCidr(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithLocalIpv6NetworkCidr(Aws::String&& value) { SetLocalIpv6NetworkCidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN
+     * connection.</p> <p>Default: <code>::/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithLocalIpv6NetworkCidr(const char* value) { SetLocalIpv6NetworkCidr(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline const Aws::String& GetRemoteIpv6NetworkCidr() const{ return m_remoteIpv6NetworkCidr; }
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline bool RemoteIpv6NetworkCidrHasBeenSet() const { return m_remoteIpv6NetworkCidrHasBeenSet; }
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline void SetRemoteIpv6NetworkCidr(const Aws::String& value) { m_remoteIpv6NetworkCidrHasBeenSet = true; m_remoteIpv6NetworkCidr = value; }
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline void SetRemoteIpv6NetworkCidr(Aws::String&& value) { m_remoteIpv6NetworkCidrHasBeenSet = true; m_remoteIpv6NetworkCidr = std::move(value); }
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline void SetRemoteIpv6NetworkCidr(const char* value) { m_remoteIpv6NetworkCidrHasBeenSet = true; m_remoteIpv6NetworkCidr.assign(value); }
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithRemoteIpv6NetworkCidr(const Aws::String& value) { SetRemoteIpv6NetworkCidr(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithRemoteIpv6NetworkCidr(Aws::String&& value) { SetRemoteIpv6NetworkCidr(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
+     * <p>Default: <code>::/0</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithRemoteIpv6NetworkCidr(const char* value) { SetRemoteIpv6NetworkCidr(value); return *this;}
+
   private:
 
     bool m_enableAcceleration;
@@ -156,8 +381,23 @@ namespace Model
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;
 
+    TunnelInsideIpVersion m_tunnelInsideIpVersion;
+    bool m_tunnelInsideIpVersionHasBeenSet;
+
     Aws::Vector<VpnTunnelOptionsSpecification> m_tunnelOptions;
     bool m_tunnelOptionsHasBeenSet;
+
+    Aws::String m_localIpv4NetworkCidr;
+    bool m_localIpv4NetworkCidrHasBeenSet;
+
+    Aws::String m_remoteIpv4NetworkCidr;
+    bool m_remoteIpv4NetworkCidrHasBeenSet;
+
+    Aws::String m_localIpv6NetworkCidr;
+    bool m_localIpv6NetworkCidrHasBeenSet;
+
+    Aws::String m_remoteIpv6NetworkCidr;
+    bool m_remoteIpv6NetworkCidrHasBeenSet;
   };
 
 } // namespace Model

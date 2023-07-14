@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
@@ -160,9 +150,9 @@ namespace Model
 
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -171,9 +161,9 @@ namespace Model
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -182,9 +172,9 @@ namespace Model
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -193,9 +183,9 @@ namespace Model
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -204,9 +194,9 @@ namespace Model
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -215,9 +205,9 @@ namespace Model
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -226,9 +216,9 @@ namespace Model
     inline RegisterActivityTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
@@ -237,9 +227,9 @@ namespace Model
     inline RegisterActivityTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p> </note> <p>The specified string must not start or end with
+     * domain.</p>  <p>The specified string must not start or end with
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not

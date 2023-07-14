@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/autoscaling/model/LifecycleState.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -43,6 +33,16 @@ namespace Aws
         static const int Detached_HASH = HashingUtils::HashString("Detached");
         static const int EnteringStandby_HASH = HashingUtils::HashString("EnteringStandby");
         static const int Standby_HASH = HashingUtils::HashString("Standby");
+        static const int Warmed_Pending_HASH = HashingUtils::HashString("Warmed:Pending");
+        static const int Warmed_Pending_Wait_HASH = HashingUtils::HashString("Warmed:Pending:Wait");
+        static const int Warmed_Pending_Proceed_HASH = HashingUtils::HashString("Warmed:Pending:Proceed");
+        static const int Warmed_Terminating_HASH = HashingUtils::HashString("Warmed:Terminating");
+        static const int Warmed_Terminating_Wait_HASH = HashingUtils::HashString("Warmed:Terminating:Wait");
+        static const int Warmed_Terminating_Proceed_HASH = HashingUtils::HashString("Warmed:Terminating:Proceed");
+        static const int Warmed_Terminated_HASH = HashingUtils::HashString("Warmed:Terminated");
+        static const int Warmed_Stopped_HASH = HashingUtils::HashString("Warmed:Stopped");
+        static const int Warmed_Running_HASH = HashingUtils::HashString("Warmed:Running");
+        static const int Warmed_Hibernated_HASH = HashingUtils::HashString("Warmed:Hibernated");
 
 
         LifecycleState GetLifecycleStateForName(const Aws::String& name)
@@ -100,6 +100,46 @@ namespace Aws
           {
             return LifecycleState::Standby;
           }
+          else if (hashCode == Warmed_Pending_HASH)
+          {
+            return LifecycleState::Warmed_Pending;
+          }
+          else if (hashCode == Warmed_Pending_Wait_HASH)
+          {
+            return LifecycleState::Warmed_Pending_Wait;
+          }
+          else if (hashCode == Warmed_Pending_Proceed_HASH)
+          {
+            return LifecycleState::Warmed_Pending_Proceed;
+          }
+          else if (hashCode == Warmed_Terminating_HASH)
+          {
+            return LifecycleState::Warmed_Terminating;
+          }
+          else if (hashCode == Warmed_Terminating_Wait_HASH)
+          {
+            return LifecycleState::Warmed_Terminating_Wait;
+          }
+          else if (hashCode == Warmed_Terminating_Proceed_HASH)
+          {
+            return LifecycleState::Warmed_Terminating_Proceed;
+          }
+          else if (hashCode == Warmed_Terminated_HASH)
+          {
+            return LifecycleState::Warmed_Terminated;
+          }
+          else if (hashCode == Warmed_Stopped_HASH)
+          {
+            return LifecycleState::Warmed_Stopped;
+          }
+          else if (hashCode == Warmed_Running_HASH)
+          {
+            return LifecycleState::Warmed_Running;
+          }
+          else if (hashCode == Warmed_Hibernated_HASH)
+          {
+            return LifecycleState::Warmed_Hibernated;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -140,6 +180,26 @@ namespace Aws
             return "EnteringStandby";
           case LifecycleState::Standby:
             return "Standby";
+          case LifecycleState::Warmed_Pending:
+            return "Warmed:Pending";
+          case LifecycleState::Warmed_Pending_Wait:
+            return "Warmed:Pending:Wait";
+          case LifecycleState::Warmed_Pending_Proceed:
+            return "Warmed:Pending:Proceed";
+          case LifecycleState::Warmed_Terminating:
+            return "Warmed:Terminating";
+          case LifecycleState::Warmed_Terminating_Wait:
+            return "Warmed:Terminating:Wait";
+          case LifecycleState::Warmed_Terminating_Proceed:
+            return "Warmed:Terminating:Proceed";
+          case LifecycleState::Warmed_Terminated:
+            return "Warmed:Terminated";
+          case LifecycleState::Warmed_Stopped:
+            return "Warmed:Stopped";
+          case LifecycleState::Warmed_Running:
+            return "Warmed:Running";
+          case LifecycleState::Warmed_Hibernated:
+            return "Warmed:Hibernated";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/s3/model/MultipartUpload.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -37,7 +27,9 @@ MultipartUpload::MultipartUpload() :
     m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ MultipartUpload::MultipartUpload(const XmlNode& xmlNode) :
     m_storageClass(StorageClass::NOT_SET),
     m_storageClassHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_initiatorHasBeenSet(false)
+    m_initiatorHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +89,12 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
       m_initiator = initiatorNode;
       m_initiatorHasBeenSet = true;
     }
+    XmlNode checksumAlgorithmNode = resultNode.FirstChild("ChecksumAlgorithm");
+    if(!checksumAlgorithmNode.IsNull())
+    {
+      m_checksumAlgorithm = ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumAlgorithmNode.GetText()).c_str()).c_str());
+      m_checksumAlgorithmHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -137,6 +137,12 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
   {
    XmlNode initiatorNode = parentNode.CreateChildElement("Initiator");
    m_initiator.AddToNode(initiatorNode);
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+   XmlNode checksumAlgorithmNode = parentNode.CreateChildElement("ChecksumAlgorithm");
+   checksumAlgorithmNode.SetText(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
 }

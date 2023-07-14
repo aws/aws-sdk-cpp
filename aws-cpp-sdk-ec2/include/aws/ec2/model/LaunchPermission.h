@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -82,44 +72,134 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline LaunchPermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline LaunchPermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p> <p>Constraints: Up to 10 000 account
+     * IDs can be specified in a single request.</p>
      */
     inline LaunchPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline bool OrganizationArnHasBeenSet() const { return m_organizationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline void SetOrganizationArn(const Aws::String& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline void SetOrganizationArn(const char* value) { m_organizationArnHasBeenSet = true; m_organizationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline LaunchPermission& WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline LaunchPermission& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline LaunchPermission& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline const Aws::String& GetOrganizationalUnitArn() const{ return m_organizationalUnitArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline bool OrganizationalUnitArnHasBeenSet() const { return m_organizationalUnitArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline void SetOrganizationalUnitArn(const Aws::String& value) { m_organizationalUnitArnHasBeenSet = true; m_organizationalUnitArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline void SetOrganizationalUnitArn(Aws::String&& value) { m_organizationalUnitArnHasBeenSet = true; m_organizationalUnitArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline void SetOrganizationalUnitArn(const char* value) { m_organizationalUnitArnHasBeenSet = true; m_organizationalUnitArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline LaunchPermission& WithOrganizationalUnitArn(const Aws::String& value) { SetOrganizationalUnitArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline LaunchPermission& WithOrganizationalUnitArn(Aws::String&& value) { SetOrganizationalUnitArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline LaunchPermission& WithOrganizationalUnitArn(const char* value) { SetOrganizationalUnitArn(value); return *this;}
 
   private:
 
@@ -128,6 +208,12 @@ namespace Model
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
+    Aws::String m_organizationArn;
+    bool m_organizationArnHasBeenSet;
+
+    Aws::String m_organizationalUnitArn;
+    bool m_organizationalUnitArnHasBeenSet;
   };
 
 } // namespace Model

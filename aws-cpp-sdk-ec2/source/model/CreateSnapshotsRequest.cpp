@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/CreateSnapshotsRequest.h>
 #include <aws/core/utils/StringUtils.h>
@@ -23,6 +13,7 @@ using namespace Aws::Utils;
 CreateSnapshotsRequest::CreateSnapshotsRequest() : 
     m_descriptionHasBeenSet(false),
     m_instanceSpecificationHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
@@ -43,6 +34,11 @@ Aws::String CreateSnapshotsRequest::SerializePayload() const
   if(m_instanceSpecificationHasBeenSet)
   {
     m_instanceSpecification.OutputToStream(ss, "InstanceSpecification");
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+    ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -121,6 +111,15 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("PartialFailureReasons"))
+  {
+    Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
+    for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
+    {
+      m_partialFailureReasons.push_back(partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("BestCandidate"))
   {
     m_bestCandidate = jsonValue.GetObject("BestCandidate");
@@ -154,6 +153,18 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ResolvedAttributes"))
   {
     m_resolvedAttributes = jsonValue.GetObject("ResolvedAttributes");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDeployConfig"))
+  {
+    m_modelDeployConfig = jsonValue.GetObject("ModelDeployConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDeployResult"))
+  {
+    m_modelDeployResult = jsonValue.GetObject("ModelDeployResult");
 
   }
 

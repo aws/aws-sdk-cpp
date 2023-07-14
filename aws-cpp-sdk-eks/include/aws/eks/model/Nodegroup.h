@@ -1,23 +1,14 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/eks/model/NodegroupStatus.h>
+#include <aws/eks/model/CapacityTypes.h>
 #include <aws/eks/model/NodegroupScalingConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/RemoteAccessConfig.h>
@@ -25,6 +16,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/NodegroupResources.h>
 #include <aws/eks/model/NodegroupHealth.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
+#include <aws/eks/model/LaunchTemplateSpecification.h>
+#include <aws/eks/model/Taint.h>
 #include <utility>
 
 namespace Aws
@@ -222,58 +216,66 @@ namespace Model
 
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline Nodegroup& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline Nodegroup& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is the AMI ID that was specified in the launch template. For node
+     * groups that weren't deployed using a launch template, this is the version of the
+     * Amazon EKS optimized AMI that the node group was deployed with.</p>
      */
     inline Nodegroup& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
 
@@ -384,6 +386,37 @@ namespace Model
 
 
     /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline const CapacityTypes& GetCapacityType() const{ return m_capacityType; }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline bool CapacityTypeHasBeenSet() const { return m_capacityTypeHasBeenSet; }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline void SetCapacityType(const CapacityTypes& value) { m_capacityTypeHasBeenSet = true; m_capacityType = value; }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline void SetCapacityType(CapacityTypes&& value) { m_capacityTypeHasBeenSet = true; m_capacityType = std::move(value); }
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline Nodegroup& WithCapacityType(const CapacityTypes& value) { SetCapacityType(value); return *this;}
+
+    /**
+     * <p>The capacity type of your managed node group.</p>
+     */
+    inline Nodegroup& WithCapacityType(CapacityTypes&& value) { SetCapacityType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
@@ -421,403 +454,460 @@ namespace Model
 
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance types associated with your node group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * instance type that is associated with the node group. If the node group was
+     * deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline Nodegroup& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline Nodegroup& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline Nodegroup& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline Nodegroup& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The subnets allowed for the Auto Scaling group that is associated with your
-     * node group. These subnets must have the following tag:
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     * is replaced with the name of your cluster.</p>
+     * <p>The subnets that were specified for the Auto Scaling group that is associated
+     * with your node group.</p>
      */
     inline Nodegroup& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
 
     /**
-     * <p>The remote access (SSH) configuration that is associated with the node
-     * group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * remote access configuration that is associated with the node group. If the node
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline const RemoteAccessConfig& GetRemoteAccess() const{ return m_remoteAccess; }
 
     /**
-     * <p>The remote access (SSH) configuration that is associated with the node
-     * group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * remote access configuration that is associated with the node group. If the node
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
 
     /**
-     * <p>The remote access (SSH) configuration that is associated with the node
-     * group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * remote access configuration that is associated with the node group. If the node
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetRemoteAccess(const RemoteAccessConfig& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
 
     /**
-     * <p>The remote access (SSH) configuration that is associated with the node
-     * group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * remote access configuration that is associated with the node group. If the node
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline void SetRemoteAccess(RemoteAccessConfig&& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = std::move(value); }
 
     /**
-     * <p>The remote access (SSH) configuration that is associated with the node
-     * group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * remote access configuration that is associated with the node group. If the node
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithRemoteAccess(const RemoteAccessConfig& value) { SetRemoteAccess(value); return *this;}
 
     /**
-     * <p>The remote access (SSH) configuration that is associated with the node
-     * group.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * remote access configuration that is associated with the node group. If the node
+     * group was deployed with a launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithRemoteAccess(RemoteAccessConfig&& value) { SetRemoteAccess(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AMI type associated with your node group. GPU instance types should use
-     * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is <code>CUSTOM</code>. For node groups that weren't deployed using a
+     * launch template, this is the AMI type that was specified in the node group
+     * configuration.</p>
      */
     inline const AMITypes& GetAmiType() const{ return m_amiType; }
 
     /**
-     * <p>The AMI type associated with your node group. GPU instance types should use
-     * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is <code>CUSTOM</code>. For node groups that weren't deployed using a
+     * launch template, this is the AMI type that was specified in the node group
+     * configuration.</p>
      */
     inline bool AmiTypeHasBeenSet() const { return m_amiTypeHasBeenSet; }
 
     /**
-     * <p>The AMI type associated with your node group. GPU instance types should use
-     * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is <code>CUSTOM</code>. For node groups that weren't deployed using a
+     * launch template, this is the AMI type that was specified in the node group
+     * configuration.</p>
      */
     inline void SetAmiType(const AMITypes& value) { m_amiTypeHasBeenSet = true; m_amiType = value; }
 
     /**
-     * <p>The AMI type associated with your node group. GPU instance types should use
-     * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is <code>CUSTOM</code>. For node groups that weren't deployed using a
+     * launch template, this is the AMI type that was specified in the node group
+     * configuration.</p>
      */
     inline void SetAmiType(AMITypes&& value) { m_amiTypeHasBeenSet = true; m_amiType = std::move(value); }
 
     /**
-     * <p>The AMI type associated with your node group. GPU instance types should use
-     * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is <code>CUSTOM</code>. For node groups that weren't deployed using a
+     * launch template, this is the AMI type that was specified in the node group
+     * configuration.</p>
      */
     inline Nodegroup& WithAmiType(const AMITypes& value) { SetAmiType(value); return *this;}
 
     /**
-     * <p>The AMI type associated with your node group. GPU instance types should use
-     * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI.</p>
+     * <p>If the node group was deployed using a launch template with a custom AMI,
+     * then this is <code>CUSTOM</code>. For node groups that weren't deployed using a
+     * launch template, this is the AMI type that was specified in the node group
+     * configuration.</p>
      */
     inline Nodegroup& WithAmiType(AMITypes&& value) { SetAmiType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::move(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline void SetNodeRole(const char* value) { m_nodeRoleHasBeenSet = true; m_nodeRole.assign(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(Aws::String&& value) { SetNodeRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
-     * receive permissions for these API calls through an IAM instance profile and
-     * associated policies. Before you can launch worker nodes and register them into a
-     * cluster, you must create an IAM role for those worker nodes to use when they are
-     * launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon
-     * EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your
+     * behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(const char* value) { SetNodeRole(value); return *this;}
 
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>No_Schedule</code>,
+     * <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     * can be used together with tolerations to control how workloads are scheduled to
+     * your nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+     * taints on managed node groups</a>.</p>
+     */
+    inline Nodegroup& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -858,26 +948,30 @@ namespace Model
 
 
     /**
-     * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * disk size in the node group configuration. If the node group was deployed with a
+     * launch template, then this is <code>null</code>.</p>
      */
     inline int GetDiskSize() const{ return m_diskSize; }
 
     /**
-     * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * disk size in the node group configuration. If the node group was deployed with a
+     * launch template, then this is <code>null</code>.</p>
      */
     inline bool DiskSizeHasBeenSet() const { return m_diskSizeHasBeenSet; }
 
     /**
-     * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * disk size in the node group configuration. If the node group was deployed with a
+     * launch template, then this is <code>null</code>.</p>
      */
     inline void SetDiskSize(int value) { m_diskSizeHasBeenSet = true; m_diskSize = value; }
 
     /**
-     * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB.</p>
+     * <p>If the node group wasn't deployed with a launch template, then this is the
+     * disk size in the node group configuration. If the node group was deployed with a
+     * launch template, then this is <code>null</code>.</p>
      */
     inline Nodegroup& WithDiskSize(int value) { SetDiskSize(value); return *this;}
 
@@ -920,106 +1014,174 @@ namespace Model
 
 
     /**
+     * <p>The node group update configuration.</p>
+     */
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline Nodegroup& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    /**
+     * <p>The node group update configuration.</p>
+     */
+    inline Nodegroup& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If a launch template was used to create the node group, then this is the
+     * launch template that was used.</p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>If a launch template was used to create the node group, then this is the
+     * launch template that was used.</p>
+     */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>If a launch template was used to create the node group, then this is the
+     * launch template that was used.</p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>If a launch template was used to create the node group, then this is the
+     * launch template that was used.</p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>If a launch template was used to create the node group, then this is the
+     * launch template that was used.</p>
+     */
+    inline Nodegroup& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>If a launch template was used to create the node group, then this is the
+     * launch template that was used.</p>
+     */
+    inline Nodegroup& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Node group tags do not propagate to any other resources associated
-     * with the node group, such as the Amazon EC2 instances or subnets. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Node group tags do not propagate to any other resources associated with the node
+     * group, such as the Amazon EC2 instances or subnets. </p>
      */
     inline Nodegroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -1049,6 +1211,9 @@ namespace Model
     NodegroupStatus m_status;
     bool m_statusHasBeenSet;
 
+    CapacityTypes m_capacityType;
+    bool m_capacityTypeHasBeenSet;
+
     NodegroupScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet;
 
@@ -1070,6 +1235,9 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_labels;
     bool m_labelsHasBeenSet;
 
+    Aws::Vector<Taint> m_taints;
+    bool m_taintsHasBeenSet;
+
     NodegroupResources m_resources;
     bool m_resourcesHasBeenSet;
 
@@ -1078,6 +1246,12 @@ namespace Model
 
     NodegroupHealth m_health;
     bool m_healthHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
@@ -47,66 +37,66 @@ namespace Model
 
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The email address of the user.</p> <note> <p>Users' email addresses are
+     * <p>The email address of the user.</p>  <p>Users' email addresses are
      * case-sensitive. During login, if they specify an email address that doesn't use
      * the same capitalization as the email address specified when their user pool
-     * account was created, a "user does not exist" error message displays.</p> </note>
+     * account was created, a "user does not exist" error message displays.</p> 
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -115,9 +105,9 @@ namespace Model
      * <p>The action to take for the welcome email that is sent to a user after the
      * user is created in the user pool. If you specify SUPPRESS, no email is sent. If
      * you specify RESEND, do not specify the first name or last name of the user. If
-     * the value is null, the email is sent. </p> <note> <p>The temporary password in
+     * the value is null, the email is sent. </p>  <p>The temporary password in
      * the welcome email is valid for only 7 days. If users don’t set their passwords
-     * within 7 days, you must send them a new welcome email.</p> </note>
+     * within 7 days, you must send them a new welcome email.</p> 
      */
     inline const MessageAction& GetMessageAction() const{ return m_messageAction; }
 
@@ -125,9 +115,9 @@ namespace Model
      * <p>The action to take for the welcome email that is sent to a user after the
      * user is created in the user pool. If you specify SUPPRESS, no email is sent. If
      * you specify RESEND, do not specify the first name or last name of the user. If
-     * the value is null, the email is sent. </p> <note> <p>The temporary password in
+     * the value is null, the email is sent. </p>  <p>The temporary password in
      * the welcome email is valid for only 7 days. If users don’t set their passwords
-     * within 7 days, you must send them a new welcome email.</p> </note>
+     * within 7 days, you must send them a new welcome email.</p> 
      */
     inline bool MessageActionHasBeenSet() const { return m_messageActionHasBeenSet; }
 
@@ -135,9 +125,9 @@ namespace Model
      * <p>The action to take for the welcome email that is sent to a user after the
      * user is created in the user pool. If you specify SUPPRESS, no email is sent. If
      * you specify RESEND, do not specify the first name or last name of the user. If
-     * the value is null, the email is sent. </p> <note> <p>The temporary password in
+     * the value is null, the email is sent. </p>  <p>The temporary password in
      * the welcome email is valid for only 7 days. If users don’t set their passwords
-     * within 7 days, you must send them a new welcome email.</p> </note>
+     * within 7 days, you must send them a new welcome email.</p> 
      */
     inline void SetMessageAction(const MessageAction& value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
 
@@ -145,9 +135,9 @@ namespace Model
      * <p>The action to take for the welcome email that is sent to a user after the
      * user is created in the user pool. If you specify SUPPRESS, no email is sent. If
      * you specify RESEND, do not specify the first name or last name of the user. If
-     * the value is null, the email is sent. </p> <note> <p>The temporary password in
+     * the value is null, the email is sent. </p>  <p>The temporary password in
      * the welcome email is valid for only 7 days. If users don’t set their passwords
-     * within 7 days, you must send them a new welcome email.</p> </note>
+     * within 7 days, you must send them a new welcome email.</p> 
      */
     inline void SetMessageAction(MessageAction&& value) { m_messageActionHasBeenSet = true; m_messageAction = std::move(value); }
 
@@ -155,9 +145,9 @@ namespace Model
      * <p>The action to take for the welcome email that is sent to a user after the
      * user is created in the user pool. If you specify SUPPRESS, no email is sent. If
      * you specify RESEND, do not specify the first name or last name of the user. If
-     * the value is null, the email is sent. </p> <note> <p>The temporary password in
+     * the value is null, the email is sent. </p>  <p>The temporary password in
      * the welcome email is valid for only 7 days. If users don’t set their passwords
-     * within 7 days, you must send them a new welcome email.</p> </note>
+     * within 7 days, you must send them a new welcome email.</p> 
      */
     inline CreateUserRequest& WithMessageAction(const MessageAction& value) { SetMessageAction(value); return *this;}
 
@@ -165,9 +155,9 @@ namespace Model
      * <p>The action to take for the welcome email that is sent to a user after the
      * user is created in the user pool. If you specify SUPPRESS, no email is sent. If
      * you specify RESEND, do not specify the first name or last name of the user. If
-     * the value is null, the email is sent. </p> <note> <p>The temporary password in
+     * the value is null, the email is sent. </p>  <p>The temporary password in
      * the welcome email is valid for only 7 days. If users don’t set their passwords
-     * within 7 days, you must send them a new welcome email.</p> </note>
+     * within 7 days, you must send them a new welcome email.</p> 
      */
     inline CreateUserRequest& WithMessageAction(MessageAction&& value) { SetMessageAction(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -54,7 +44,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>
@@ -65,7 +55,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>
@@ -76,7 +66,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>
@@ -87,7 +77,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>
@@ -98,7 +88,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>
@@ -109,7 +99,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>
@@ -120,7 +110,7 @@ namespace Model
      * <p>A database user name that is authorized to log on to the database
      * <code>DbName</code> using the password <code>DbPassword</code>. If the specified
      * DbUser exists in the database, the new user name has the same database
-     * privileges as the the user named in DbUser. By default, the user is added to
+     * permissions as the the user named in DbUser. By default, the user is added to
      * PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code>
      * is added to the listed groups for any sessions created using these
      * credentials.</p>

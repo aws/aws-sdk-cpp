@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -429,73 +419,85 @@ namespace Model
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
-     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
-     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
-     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
-     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     * observations.</p> </li> <li> <p> <code>INPROGRESS</code> - The process is
+     * underway.</p> </li> <li> <p> <code>FAILED</code> - The request to perform a
+     * batch prediction did not run to completion. It is not usable.</p> </li> <li> <p>
+     * <code>COMPLETED</code> - The batch prediction process completed
+     * successfully.</p> </li> <li> <p> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+     * </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
-     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
-     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
-     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
-     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     * observations.</p> </li> <li> <p> <code>INPROGRESS</code> - The process is
+     * underway.</p> </li> <li> <p> <code>FAILED</code> - The request to perform a
+     * batch prediction did not run to completion. It is not usable.</p> </li> <li> <p>
+     * <code>COMPLETED</code> - The batch prediction process completed
+     * successfully.</p> </li> <li> <p> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
-     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
-     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
-     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
-     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     * observations.</p> </li> <li> <p> <code>INPROGRESS</code> - The process is
+     * underway.</p> </li> <li> <p> <code>FAILED</code> - The request to perform a
+     * batch prediction did not run to completion. It is not usable.</p> </li> <li> <p>
+     * <code>COMPLETED</code> - The batch prediction process completed
+     * successfully.</p> </li> <li> <p> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const EntityStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
-     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
-     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
-     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
-     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     * observations.</p> </li> <li> <p> <code>INPROGRESS</code> - The process is
+     * underway.</p> </li> <li> <p> <code>FAILED</code> - The request to perform a
+     * batch prediction did not run to completion. It is not usable.</p> </li> <li> <p>
+     * <code>COMPLETED</code> - The batch prediction process completed
+     * successfully.</p> </li> <li> <p> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+     * </ul>
      */
     inline void SetStatus(EntityStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
-     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
-     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
-     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
-     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     * observations.</p> </li> <li> <p> <code>INPROGRESS</code> - The process is
+     * underway.</p> </li> <li> <p> <code>FAILED</code> - The request to perform a
+     * batch prediction did not run to completion. It is not usable.</p> </li> <li> <p>
+     * <code>COMPLETED</code> - The batch prediction process completed
+     * successfully.</p> </li> <li> <p> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+     * </ul>
      */
     inline BatchPrediction& WithStatus(const EntityStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
-     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * the following values:</p> <ul> <li> <p> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
-     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
-     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
-     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
-     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     * observations.</p> </li> <li> <p> <code>INPROGRESS</code> - The process is
+     * underway.</p> </li> <li> <p> <code>FAILED</code> - The request to perform a
+     * batch prediction did not run to completion. It is not usable.</p> </li> <li> <p>
+     * <code>COMPLETED</code> - The batch prediction process completed
+     * successfully.</p> </li> <li> <p> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+     * </ul>
      */
     inline BatchPrediction& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 

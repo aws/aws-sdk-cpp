@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
@@ -45,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline const Aws::Vector<DatasetContentSummary>& GetDatasetContentSummaries() const{ return m_datasetContentSummaries; }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline void SetDatasetContentSummaries(const Aws::Vector<DatasetContentSummary>& value) { m_datasetContentSummaries = value; }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline void SetDatasetContentSummaries(Aws::Vector<DatasetContentSummary>&& value) { m_datasetContentSummaries = std::move(value); }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& WithDatasetContentSummaries(const Aws::Vector<DatasetContentSummary>& value) { SetDatasetContentSummaries(value); return *this;}
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& WithDatasetContentSummaries(Aws::Vector<DatasetContentSummary>&& value) { SetDatasetContentSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& AddDatasetContentSummaries(const DatasetContentSummary& value) { m_datasetContentSummaries.push_back(value); return *this; }
 
     /**
-     * <p>Summary information about data set contents that have been created.</p>
+     * <p>Summary information about dataset contents that have been created.</p>
      */
     inline ListDatasetContentsResult& AddDatasetContentSummaries(DatasetContentSummary&& value) { m_datasetContentSummaries.push_back(std::move(value)); return *this; }
 

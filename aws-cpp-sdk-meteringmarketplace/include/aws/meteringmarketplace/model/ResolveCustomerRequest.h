@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
@@ -27,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains input to the ResolveCustomer operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains input to the <code>ResolveCustomer</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomerRequest">AWS
    * API Reference</a></p>
    */
@@ -51,56 +41,64 @@ namespace Model
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline const Aws::String& GetRegistrationToken() const{ return m_registrationToken; }
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline bool RegistrationTokenHasBeenSet() const { return m_registrationTokenHasBeenSet; }
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline void SetRegistrationToken(const Aws::String& value) { m_registrationTokenHasBeenSet = true; m_registrationToken = value; }
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline void SetRegistrationToken(Aws::String&& value) { m_registrationTokenHasBeenSet = true; m_registrationToken = std::move(value); }
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline void SetRegistrationToken(const char* value) { m_registrationTokenHasBeenSet = true; m_registrationToken.assign(value); }
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline ResolveCustomerRequest& WithRegistrationToken(const Aws::String& value) { SetRegistrationToken(value); return *this;}
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline ResolveCustomerRequest& WithRegistrationToken(Aws::String&& value) { SetRegistrationToken(std::move(value)); return *this;}
 
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
-     * resolved to obtain a CustomerIdentifier and product code.</p>
+     * resolved to obtain a <code>CustomerIdentifier</code> along with the
+     * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
      */
     inline ResolveCustomerRequest& WithRegistrationToken(const char* value) { SetRegistrationToken(value); return *this;}
 

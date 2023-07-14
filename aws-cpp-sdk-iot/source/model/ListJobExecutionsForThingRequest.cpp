@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/iot/model/ListJobExecutionsForThingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,9 +19,11 @@ ListJobExecutionsForThingRequest::ListJobExecutionsForThingRequest() :
     m_thingNameHasBeenSet(false),
     m_status(JobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +42,13 @@ void ListJobExecutionsForThingRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_namespaceIdHasBeenSet)
+    {
+      ss << m_namespaceId;
+      uri.AddQueryStringParameter("namespaceId", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;
@@ -61,6 +60,13 @@ void ListJobExecutionsForThingRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_jobIdHasBeenSet)
+    {
+      ss << m_jobId;
+      uri.AddQueryStringParameter("jobId", ss.str());
       ss.str("");
     }
 

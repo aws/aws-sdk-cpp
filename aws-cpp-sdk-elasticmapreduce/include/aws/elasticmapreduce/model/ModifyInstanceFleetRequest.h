@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -87,32 +77,32 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline const InstanceFleetModifyConfig& GetInstanceFleet() const{ return m_instanceFleet; }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline bool InstanceFleetHasBeenSet() const { return m_instanceFleetHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline void SetInstanceFleet(const InstanceFleetModifyConfig& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = value; }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline void SetInstanceFleet(InstanceFleetModifyConfig&& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = std::move(value); }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline ModifyInstanceFleetRequest& WithInstanceFleet(const InstanceFleetModifyConfig& value) { SetInstanceFleet(value); return *this;}
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline ModifyInstanceFleetRequest& WithInstanceFleet(InstanceFleetModifyConfig&& value) { SetInstanceFleet(std::move(value)); return *this;}
 

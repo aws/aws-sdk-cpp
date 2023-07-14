@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -92,64 +82,64 @@ namespace Model
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline DirectoryVpcSettings& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline DirectoryVpcSettings& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline DirectoryVpcSettings& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline DirectoryVpcSettings& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
-     * must be in different Availability Zones. AWS Directory Service creates a
-     * directory server and a DNS server in each of these subnets.</p>
+     * must be in different Availability Zones. Directory Service creates a directory
+     * server and a DNS server in each of these subnets.</p>
      */
     inline DirectoryVpcSettings& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

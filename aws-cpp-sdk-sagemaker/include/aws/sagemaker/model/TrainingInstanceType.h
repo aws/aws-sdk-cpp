@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -54,11 +44,25 @@ namespace Model
     ml_p3_8xlarge,
     ml_p3_16xlarge,
     ml_p3dn_24xlarge,
+    ml_p4d_24xlarge,
     ml_c5_xlarge,
     ml_c5_2xlarge,
     ml_c5_4xlarge,
     ml_c5_9xlarge,
-    ml_c5_18xlarge
+    ml_c5_18xlarge,
+    ml_c5n_xlarge,
+    ml_c5n_2xlarge,
+    ml_c5n_4xlarge,
+    ml_c5n_9xlarge,
+    ml_c5n_18xlarge,
+    ml_g5_xlarge,
+    ml_g5_2xlarge,
+    ml_g5_4xlarge,
+    ml_g5_8xlarge,
+    ml_g5_16xlarge,
+    ml_g5_12xlarge,
+    ml_g5_24xlarge,
+    ml_g5_48xlarge
   };
 
 namespace TrainingInstanceTypeMapper

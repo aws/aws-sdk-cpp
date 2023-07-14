@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/imagebuilder/model/Distribution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,14 +21,22 @@ namespace Model
 Distribution::Distribution() : 
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false)
+    m_containerDistributionConfigurationHasBeenSet(false),
+    m_licenseConfigurationArnsHasBeenSet(false),
+    m_launchTemplateConfigurationsHasBeenSet(false),
+    m_s3ExportConfigurationHasBeenSet(false),
+    m_fastLaunchConfigurationsHasBeenSet(false)
 {
 }
 
 Distribution::Distribution(JsonView jsonValue) : 
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false)
+    m_containerDistributionConfigurationHasBeenSet(false),
+    m_licenseConfigurationArnsHasBeenSet(false),
+    m_launchTemplateConfigurationsHasBeenSet(false),
+    m_s3ExportConfigurationHasBeenSet(false),
+    m_fastLaunchConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +57,13 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_amiDistributionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerDistributionConfiguration"))
+  {
+    m_containerDistributionConfiguration = jsonValue.GetObject("containerDistributionConfiguration");
+
+    m_containerDistributionConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("licenseConfigurationArns"))
   {
     Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
@@ -67,6 +72,33 @@ Distribution& Distribution::operator =(JsonView jsonValue)
       m_licenseConfigurationArns.push_back(licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString());
     }
     m_licenseConfigurationArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("launchTemplateConfigurations"))
+  {
+    Array<JsonView> launchTemplateConfigurationsJsonList = jsonValue.GetArray("launchTemplateConfigurations");
+    for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
+    {
+      m_launchTemplateConfigurations.push_back(launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject());
+    }
+    m_launchTemplateConfigurationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3ExportConfiguration"))
+  {
+    m_s3ExportConfiguration = jsonValue.GetObject("s3ExportConfiguration");
+
+    m_s3ExportConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fastLaunchConfigurations"))
+  {
+    Array<JsonView> fastLaunchConfigurationsJsonList = jsonValue.GetArray("fastLaunchConfigurations");
+    for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
+    {
+      m_fastLaunchConfigurations.push_back(fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject());
+    }
+    m_fastLaunchConfigurationsHasBeenSet = true;
   }
 
   return *this;
@@ -88,6 +120,12 @@ JsonValue Distribution::Jsonize() const
 
   }
 
+  if(m_containerDistributionConfigurationHasBeenSet)
+  {
+   payload.WithObject("containerDistributionConfiguration", m_containerDistributionConfiguration.Jsonize());
+
+  }
+
   if(m_licenseConfigurationArnsHasBeenSet)
   {
    Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
@@ -96,6 +134,34 @@ JsonValue Distribution::Jsonize() const
      licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
    }
    payload.WithArray("licenseConfigurationArns", std::move(licenseConfigurationArnsJsonList));
+
+  }
+
+  if(m_launchTemplateConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> launchTemplateConfigurationsJsonList(m_launchTemplateConfigurations.size());
+   for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
+   {
+     launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject(m_launchTemplateConfigurations[launchTemplateConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("launchTemplateConfigurations", std::move(launchTemplateConfigurationsJsonList));
+
+  }
+
+  if(m_s3ExportConfigurationHasBeenSet)
+  {
+   payload.WithObject("s3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
+
+  }
+
+  if(m_fastLaunchConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> fastLaunchConfigurationsJsonList(m_fastLaunchConfigurations.size());
+   for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
+   {
+     fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject(m_fastLaunchConfigurations[fastLaunchConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("fastLaunchConfigurations", std::move(fastLaunchConfigurationsJsonList));
 
   }
 

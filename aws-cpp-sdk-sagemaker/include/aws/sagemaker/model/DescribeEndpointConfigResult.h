@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <utility>
 
@@ -47,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigName = value; }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline void SetEndpointConfigName(Aws::String&& value) { m_endpointConfigName = std::move(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline void SetEndpointConfigName(const char* value) { m_endpointConfigName.assign(value); }
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline DescribeEndpointConfigResult& WithEndpointConfigName(const Aws::String& value) { SetEndpointConfigName(value); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline DescribeEndpointConfigResult& WithEndpointConfigName(Aws::String&& value) { SetEndpointConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Amazon SageMaker endpoint configuration.</p>
+     * <p>Name of the SageMaker endpoint configuration.</p>
      */
     inline DescribeEndpointConfigResult& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
 
@@ -178,44 +169,44 @@ namespace Model
 
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline DescribeEndpointConfigResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline DescribeEndpointConfigResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
-     * ML storage volume attached to the instance.</p>
+     * <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when
+     * storing it on the ML storage volume attached to the instance.</p>
      */
     inline DescribeEndpointConfigResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -245,6 +236,42 @@ namespace Model
      */
     inline DescribeEndpointConfigResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline const AsyncInferenceConfig& GetAsyncInferenceConfig() const{ return m_asyncInferenceConfig; }
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline void SetAsyncInferenceConfig(const AsyncInferenceConfig& value) { m_asyncInferenceConfig = value; }
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline void SetAsyncInferenceConfig(AsyncInferenceConfig&& value) { m_asyncInferenceConfig = std::move(value); }
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline DescribeEndpointConfigResult& WithAsyncInferenceConfig(const AsyncInferenceConfig& value) { SetAsyncInferenceConfig(value); return *this;}
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline DescribeEndpointConfigResult& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -258,6 +285,8 @@ namespace Model
     Aws::String m_kmsKeyId;
 
     Aws::Utils::DateTime m_creationTime;
+
+    AsyncInferenceConfig m_asyncInferenceConfig;
   };
 
 } // namespace Model

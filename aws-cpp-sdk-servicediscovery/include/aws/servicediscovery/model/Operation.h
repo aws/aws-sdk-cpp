@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
@@ -95,93 +85,93 @@ namespace Model
 
 
     /**
-     * <p>The name of the operation that is associated with the specified ID.</p>
+     * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline const OperationType& GetType() const{ return m_type; }
 
     /**
-     * <p>The name of the operation that is associated with the specified ID.</p>
+     * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The name of the operation that is associated with the specified ID.</p>
+     * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline void SetType(const OperationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The name of the operation that is associated with the specified ID.</p>
+     * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline void SetType(OperationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The name of the operation that is associated with the specified ID.</p>
+     * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline Operation& WithType(const OperationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The name of the operation that is associated with the specified ID.</p>
+     * <p>The name of the operation that's associated with the specified ID.</p>
      */
     inline Operation& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
+     * <p>The status of the operation. Values include the following:</p> <dl>
+     * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
+     * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
+     * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
+     * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
     inline const OperationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
+     * <p>The status of the operation. Values include the following:</p> <dl>
+     * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
+     * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
+     * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
+     * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
+     * <p>The status of the operation. Values include the following:</p> <dl>
+     * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
+     * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
+     * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
+     * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
     inline void SetStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
+     * <p>The status of the operation. Values include the following:</p> <dl>
+     * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
+     * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
+     * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
+     * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
     inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
+     * <p>The status of the operation. Values include the following:</p> <dl>
+     * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
+     * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
+     * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
+     * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
     inline Operation& WithStatus(const OperationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
-     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
-     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
-     * <code>ErrorMessage</code>.</p> </li> </ul>
+     * <p>The status of the operation. Values include the following:</p> <dl>
+     * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
+     * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
+     * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
+     * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
      */
     inline Operation& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -445,122 +435,122 @@ namespace Model
 
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline const Aws::Map<OperationTargetType, Aws::String>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline void SetTargets(const Aws::Map<OperationTargetType, Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline void SetTargets(Aws::Map<OperationTargetType, Aws::String>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& WithTargets(const Aws::Map<OperationTargetType, Aws::String>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& WithTargets(Aws::Map<OperationTargetType, Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& AddTargets(const OperationTargetType& key, const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& AddTargets(OperationTargetType&& key, const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& AddTargets(const OperationTargetType& key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& AddTargets(OperationTargetType&& key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& AddTargets(OperationTargetType&& key, const char* value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The name of the target entity that is associated with the operation:</p> <ul>
-     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
-     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
-     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
-     * property.</p> </li> </ul>
+     * <p>The name of the target entity that's associated with the operation:</p> <dl>
+     * <dt>NAMESPACE</dt> <dd> <p>The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> <dt>SERVICE</dt> <dd> <p>The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </dd>
+     * <dt>INSTANCE</dt> <dd> <p>The instance ID is returned in the
+     * <code>ResourceId</code> property.</p> </dd> </dl>
      */
     inline Operation& AddTargets(const OperationTargetType& key, const char* value) { m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this; }
 

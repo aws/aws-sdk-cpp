@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/workspaces/model/WorkspaceCreationProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,8 @@ namespace Model
 {
 
 WorkspaceCreationProperties::WorkspaceCreationProperties() : 
+    m_enableWorkDocs(false),
+    m_enableWorkDocsHasBeenSet(false),
     m_enableInternetAccess(false),
     m_enableInternetAccessHasBeenSet(false),
     m_defaultOuHasBeenSet(false),
@@ -41,6 +33,8 @@ WorkspaceCreationProperties::WorkspaceCreationProperties() :
 }
 
 WorkspaceCreationProperties::WorkspaceCreationProperties(JsonView jsonValue) : 
+    m_enableWorkDocs(false),
+    m_enableWorkDocsHasBeenSet(false),
     m_enableInternetAccess(false),
     m_enableInternetAccessHasBeenSet(false),
     m_defaultOuHasBeenSet(false),
@@ -55,6 +49,13 @@ WorkspaceCreationProperties::WorkspaceCreationProperties(JsonView jsonValue) :
 
 WorkspaceCreationProperties& WorkspaceCreationProperties::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("EnableWorkDocs"))
+  {
+    m_enableWorkDocs = jsonValue.GetBool("EnableWorkDocs");
+
+    m_enableWorkDocsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EnableInternetAccess"))
   {
     m_enableInternetAccess = jsonValue.GetBool("EnableInternetAccess");
@@ -96,6 +97,12 @@ WorkspaceCreationProperties& WorkspaceCreationProperties::operator =(JsonView js
 JsonValue WorkspaceCreationProperties::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_enableWorkDocsHasBeenSet)
+  {
+   payload.WithBool("EnableWorkDocs", m_enableWorkDocs);
+
+  }
 
   if(m_enableInternetAccessHasBeenSet)
   {

@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -78,6 +68,16 @@ namespace Aws
             static ByteBuffer CalculateSHA256TreeHash(Aws::IOStream& stream);
 
             /**
+            * Calculates a SHA1 Hash digest (not hex encoded)
+            */
+            static ByteBuffer CalculateSHA1(const Aws::String& str);
+
+            /**
+            * Calculates a SHA1 Hash digest on a stream (the entire stream is read, not hex encoded.)
+            */
+            static ByteBuffer CalculateSHA1(Aws::IOStream& stream);
+
+            /**
             * Calculates a MD5 Hash value
             */
             static ByteBuffer CalculateMD5(const Aws::String& str);
@@ -86,6 +86,26 @@ namespace Aws
             * Calculates a MD5 Hash value
             */
             static ByteBuffer CalculateMD5(Aws::IOStream& stream);
+
+            /**
+             * Calculates a CRC32 Hash value
+             */
+            static ByteBuffer CalculateCRC32(const Aws::String& str);
+
+            /**
+             * Calculates a CRC32 Hash value
+             */
+            static ByteBuffer CalculateCRC32(Aws::IOStream& stream);
+
+            /**
+             * Calculates a CRC32C Hash value
+             */
+            static ByteBuffer CalculateCRC32C(const Aws::String& str);
+
+            /**
+             * Calculates a CRC32C Hash value
+             */
+            static ByteBuffer CalculateCRC32C(Aws::IOStream& stream);
 
             static int HashString(const char* strToHash);
 

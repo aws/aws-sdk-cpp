@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/kms/model/KeyMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -50,10 +40,16 @@ KeyMetadata::KeyMetadata() :
     m_expirationModelHasBeenSet(false),
     m_keyManager(KeyManagerType::NOT_SET),
     m_keyManagerHasBeenSet(false),
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
-    m_customerMasterKeySpecHasBeenSet(false),
+    m_keySpec(KeySpec::NOT_SET),
+    m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false)
+    m_signingAlgorithmsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false),
+    m_multiRegionConfigurationHasBeenSet(false),
+    m_pendingDeletionWindowInDays(0),
+    m_pendingDeletionWindowInDaysHasBeenSet(false),
+    m_macAlgorithmsHasBeenSet(false)
 {
 }
 
@@ -79,10 +75,16 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_expirationModelHasBeenSet(false),
     m_keyManager(KeyManagerType::NOT_SET),
     m_keyManagerHasBeenSet(false),
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
-    m_customerMasterKeySpecHasBeenSet(false),
+    m_keySpec(KeySpec::NOT_SET),
+    m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false)
+    m_signingAlgorithmsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false),
+    m_multiRegionConfigurationHasBeenSet(false),
+    m_pendingDeletionWindowInDays(0),
+    m_pendingDeletionWindowInDaysHasBeenSet(false),
+    m_macAlgorithmsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -194,11 +196,11 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_keyManagerHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("CustomerMasterKeySpec"))
+  if(jsonValue.ValueExists("KeySpec"))
   {
-    m_customerMasterKeySpec = CustomerMasterKeySpecMapper::GetCustomerMasterKeySpecForName(jsonValue.GetString("CustomerMasterKeySpec"));
+    m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
 
-    m_customerMasterKeySpecHasBeenSet = true;
+    m_keySpecHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EncryptionAlgorithms"))
@@ -219,6 +221,37 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));
     }
     m_signingAlgorithmsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MultiRegion"))
+  {
+    m_multiRegion = jsonValue.GetBool("MultiRegion");
+
+    m_multiRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MultiRegionConfiguration"))
+  {
+    m_multiRegionConfiguration = jsonValue.GetObject("MultiRegionConfiguration");
+
+    m_multiRegionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PendingDeletionWindowInDays"))
+  {
+    m_pendingDeletionWindowInDays = jsonValue.GetInteger("PendingDeletionWindowInDays");
+
+    m_pendingDeletionWindowInDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MacAlgorithms"))
+  {
+    Array<JsonView> macAlgorithmsJsonList = jsonValue.GetArray("MacAlgorithms");
+    for(unsigned macAlgorithmsIndex = 0; macAlgorithmsIndex < macAlgorithmsJsonList.GetLength(); ++macAlgorithmsIndex)
+    {
+      m_macAlgorithms.push_back(MacAlgorithmSpecMapper::GetMacAlgorithmSpecForName(macAlgorithmsJsonList[macAlgorithmsIndex].AsString()));
+    }
+    m_macAlgorithmsHasBeenSet = true;
   }
 
   return *this;
@@ -310,9 +343,9 @@ JsonValue KeyMetadata::Jsonize() const
    payload.WithString("KeyManager", KeyManagerTypeMapper::GetNameForKeyManagerType(m_keyManager));
   }
 
-  if(m_customerMasterKeySpecHasBeenSet)
+  if(m_keySpecHasBeenSet)
   {
-   payload.WithString("CustomerMasterKeySpec", CustomerMasterKeySpecMapper::GetNameForCustomerMasterKeySpec(m_customerMasterKeySpec));
+   payload.WithString("KeySpec", KeySpecMapper::GetNameForKeySpec(m_keySpec));
   }
 
   if(m_encryptionAlgorithmsHasBeenSet)
@@ -334,6 +367,35 @@ JsonValue KeyMetadata::Jsonize() const
      signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString(SigningAlgorithmSpecMapper::GetNameForSigningAlgorithmSpec(m_signingAlgorithms[signingAlgorithmsIndex]));
    }
    payload.WithArray("SigningAlgorithms", std::move(signingAlgorithmsJsonList));
+
+  }
+
+  if(m_multiRegionHasBeenSet)
+  {
+   payload.WithBool("MultiRegion", m_multiRegion);
+
+  }
+
+  if(m_multiRegionConfigurationHasBeenSet)
+  {
+   payload.WithObject("MultiRegionConfiguration", m_multiRegionConfiguration.Jsonize());
+
+  }
+
+  if(m_pendingDeletionWindowInDaysHasBeenSet)
+  {
+   payload.WithInteger("PendingDeletionWindowInDays", m_pendingDeletionWindowInDays);
+
+  }
+
+  if(m_macAlgorithmsHasBeenSet)
+  {
+   Array<JsonValue> macAlgorithmsJsonList(m_macAlgorithms.size());
+   for(unsigned macAlgorithmsIndex = 0; macAlgorithmsIndex < macAlgorithmsJsonList.GetLength(); ++macAlgorithmsIndex)
+   {
+     macAlgorithmsJsonList[macAlgorithmsIndex].AsString(MacAlgorithmSpecMapper::GetNameForMacAlgorithmSpec(m_macAlgorithms[macAlgorithmsIndex]));
+   }
+   payload.WithArray("MacAlgorithms", std::move(macAlgorithmsJsonList));
 
   }
 

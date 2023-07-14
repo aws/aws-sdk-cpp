@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -245,63 +235,69 @@ namespace Model
 
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline const AutoMLSortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(const AutoMLSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(AutoMLSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortOrder(const AutoMLSortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The sort order for the results. The default is Descending.</p>
+     * <p>The sort order for the results. The default is <code>Descending</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortOrder(AutoMLSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline const AutoMLSortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline void SetSortBy(const AutoMLSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline void SetSortBy(AutoMLSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortBy(const AutoMLSortBy& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The parameter by which to sort the results. The default is AutoMLJobName.</p>
+     * <p>The parameter by which to sort the results. The default is
+     * <code>Name</code>.</p>
      */
     inline ListAutoMLJobsRequest& WithSortBy(AutoMLSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
@@ -328,50 +324,50 @@ namespace Model
 
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline ListAutoMLJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline ListAutoMLJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
+     * <p>If the previous response was truncated, you receive this token. Use it in
+     * your next request to receive the next set of results.</p>
      */
     inline ListAutoMLJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

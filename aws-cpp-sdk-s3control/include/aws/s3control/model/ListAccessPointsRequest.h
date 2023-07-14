@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -51,91 +41,171 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline ListAccessPointsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline ListAccessPointsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for owner of the bucket whose access points you want to
-     * list.</p>
+     * <p>The Amazon Web Services account ID for owner of the bucket whose access
+     * points you want to list.</p>
      */
     inline ListAccessPointsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline ListAccessPointsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline ListAccessPointsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bucket whose associated access points you want to list.</p>
+     * <p>For using this parameter with Amazon S3 on Outposts with the REST API, you
+     * must specify the name and the x-amz-outpost-id as well.</p> <p>For using this
+     * parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must
+     * specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+     * For example, to access the bucket <code>reports</code> through outpost
+     * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
+     * <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+     * The value must be URL encoded. </p>
      */
     inline ListAccessPointsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

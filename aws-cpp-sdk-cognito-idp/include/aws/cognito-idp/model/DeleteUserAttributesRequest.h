@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
@@ -50,106 +40,114 @@ namespace Model
 
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserAttributeNames() const{ return m_userAttributeNames; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline bool UserAttributeNamesHasBeenSet() const { return m_userAttributeNamesHasBeenSet; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline void SetUserAttributeNames(const Aws::Vector<Aws::String>& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = value; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline void SetUserAttributeNames(Aws::Vector<Aws::String>&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = std::move(value); }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline DeleteUserAttributesRequest& WithUserAttributeNames(const Aws::Vector<Aws::String>& value) { SetUserAttributeNames(value); return *this;}
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline DeleteUserAttributesRequest& WithUserAttributeNames(Aws::Vector<Aws::String>&& value) { SetUserAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline DeleteUserAttributesRequest& AddUserAttributeNames(const Aws::String& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline DeleteUserAttributesRequest& AddUserAttributeNames(Aws::String&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
-     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
-     * prefix to the attribute name.</p>
+     * <p>An array of strings representing the user attribute names you want to
+     * delete.</p> <p>For custom attributes, you must prependattach the
+     * <code>custom:</code> prefix to the front of the attribute name.</p>
      */
     inline DeleteUserAttributesRequest& AddUserAttributeNames(const char* value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline DeleteUserAttributesRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline DeleteUserAttributesRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token used in the request to delete user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose attributes
+     * you want to delete.</p>
      */
     inline DeleteUserAttributesRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
@@ -166,79 +156,79 @@ namespace Model
 
 
     /**
-     * <p>An optional value that specifies whether you want the results sorted in
-     * <code>Ascending</code> or <code>Descending</code> order.</p>
+     * <p>Optional. The order for displaying results. Valid values:
+     * <code>Ascending</code> and <code>Descending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>An optional value that specifies whether you want the results sorted in
-     * <code>Ascending</code> or <code>Descending</code> order.</p>
+     * <p>Optional. The order for displaying results. Valid values:
+     * <code>Ascending</code> and <code>Descending</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>An optional value that specifies whether you want the results sorted in
-     * <code>Ascending</code> or <code>Descending</code> order.</p>
+     * <p>Optional. The order for displaying results. Valid values:
+     * <code>Ascending</code> and <code>Descending</code>.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>An optional value that specifies whether you want the results sorted in
-     * <code>Ascending</code> or <code>Descending</code> order.</p>
+     * <p>Optional. The order for displaying results. Valid values:
+     * <code>Ascending</code> and <code>Descending</code>.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>An optional value that specifies whether you want the results sorted in
-     * <code>Ascending</code> or <code>Descending</code> order.</p>
+     * <p>Optional. The order for displaying results. Valid values:
+     * <code>Ascending</code> and <code>Descending</code>.</p>
      */
     inline ListHumanLoopsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>An optional value that specifies whether you want the results sorted in
-     * <code>Ascending</code> or <code>Descending</code> order.</p>
+     * <p>Optional. The order for displaying results. Valid values:
+     * <code>Ascending</code> and <code>Descending</code>.</p>
      */
     inline ListHumanLoopsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline ListHumanLoopsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline ListHumanLoopsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline ListHumanLoopsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -246,32 +236,32 @@ namespace Model
     /**
      * <p>The total number of items to return. If the total number of available items
      * is more than the value specified in <code>MaxResults</code>, then a
-     * <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.</p>
+     * <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The total number of items to return. If the total number of available items
      * is more than the value specified in <code>MaxResults</code>, then a
-     * <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.</p>
+     * <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The total number of items to return. If the total number of available items
      * is more than the value specified in <code>MaxResults</code>, then a
-     * <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.</p>
+     * <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The total number of items to return. If the total number of available items
      * is more than the value specified in <code>MaxResults</code>, then a
-     * <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.</p>
+     * <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results. </p>
      */
     inline ListHumanLoopsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

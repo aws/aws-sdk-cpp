@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/ec2/model/LaunchTemplateEbsBlockDevice.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -42,7 +32,9 @@ LaunchTemplateEbsBlockDevice::LaunchTemplateEbsBlockDevice() :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -58,7 +50,9 @@ LaunchTemplateEbsBlockDevice::LaunchTemplateEbsBlockDevice(const XmlNode& xmlNod
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
+    m_volumeTypeHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -111,6 +105,12 @@ LaunchTemplateEbsBlockDevice& LaunchTemplateEbsBlockDevice::operator =(const Xml
       m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
       m_volumeTypeHasBeenSet = true;
     }
+    XmlNode throughputNode = resultNode.FirstChild("throughput");
+    if(!throughputNode.IsNull())
+    {
+      m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
+      m_throughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -153,6 +153,11 @@ void LaunchTemplateEbsBlockDevice::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
 
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
+  }
+
 }
 
 void LaunchTemplateEbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -184,6 +189,10 @@ void LaunchTemplateEbsBlockDevice::OutputToStream(Aws::OStream& oStream, const c
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+  }
+  if(m_throughputHasBeenSet)
+  {
+      oStream << location << ".Throughput=" << m_throughput << "&";
   }
 }
 

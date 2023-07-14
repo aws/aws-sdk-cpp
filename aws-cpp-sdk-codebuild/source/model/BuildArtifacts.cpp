@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codebuild/model/BuildArtifacts.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,7 +26,9 @@ BuildArtifacts::BuildArtifacts() :
     m_overrideArtifactNameHasBeenSet(false),
     m_encryptionDisabled(false),
     m_encryptionDisabledHasBeenSet(false),
-    m_artifactIdentifierHasBeenSet(false)
+    m_artifactIdentifierHasBeenSet(false),
+    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
+    m_bucketOwnerAccessHasBeenSet(false)
 {
 }
 
@@ -48,7 +40,9 @@ BuildArtifacts::BuildArtifacts(JsonView jsonValue) :
     m_overrideArtifactNameHasBeenSet(false),
     m_encryptionDisabled(false),
     m_encryptionDisabledHasBeenSet(false),
-    m_artifactIdentifierHasBeenSet(false)
+    m_artifactIdentifierHasBeenSet(false),
+    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
+    m_bucketOwnerAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +91,13 @@ BuildArtifacts& BuildArtifacts::operator =(JsonView jsonValue)
     m_artifactIdentifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("bucketOwnerAccess"))
+  {
+    m_bucketOwnerAccess = BucketOwnerAccessMapper::GetBucketOwnerAccessForName(jsonValue.GetString("bucketOwnerAccess"));
+
+    m_bucketOwnerAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +139,11 @@ JsonValue BuildArtifacts::Jsonize() const
   {
    payload.WithString("artifactIdentifier", m_artifactIdentifier);
 
+  }
+
+  if(m_bucketOwnerAccessHasBeenSet)
+  {
+   payload.WithString("bucketOwnerAccess", BucketOwnerAccessMapper::GetNameForBucketOwnerAccess(m_bucketOwnerAccess));
   }
 
   return payload;

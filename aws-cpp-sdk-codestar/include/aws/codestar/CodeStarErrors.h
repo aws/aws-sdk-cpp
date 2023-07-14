@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codestar/CodeStar_EXPORTS.h>
 
@@ -52,7 +43,7 @@ enum class CodeStarErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +60,20 @@ enum class CodeStarErrors
   USER_PROFILE_ALREADY_EXISTS,
   USER_PROFILE_NOT_FOUND
 };
+
+class AWS_CODESTAR_API CodeStarError : public Aws::Client::AWSError<CodeStarErrors>
+{
+public:
+  CodeStarError() {}
+  CodeStarError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+  CodeStarError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+  CodeStarError(const Aws::Client::AWSError<CodeStarErrors>& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+  CodeStarError(Aws::Client::AWSError<CodeStarErrors>&& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeStarErrorMapper
 {
   AWS_CODESTAR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
@@ -300,6 +290,35 @@ namespace Model
      */
     inline ListAuditFindingsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline bool GetListSuppressedFindings() const{ return m_listSuppressedFindings; }
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline bool ListSuppressedFindingsHasBeenSet() const { return m_listSuppressedFindingsHasBeenSet; }
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline void SetListSuppressedFindings(bool value) { m_listSuppressedFindingsHasBeenSet = true; m_listSuppressedFindings = value; }
+
+    /**
+     * <p> Boolean flag indicating whether only the suppressed findings or the
+     * unsuppressed findings should be listed. If this parameter isn't provided, the
+     * response will list both suppressed and unsuppressed findings. </p>
+     */
+    inline ListAuditFindingsRequest& WithListSuppressedFindings(bool value) { SetListSuppressedFindings(value); return *this;}
+
   private:
 
     Aws::String m_taskId;
@@ -322,6 +341,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    bool m_listSuppressedFindings;
+    bool m_listSuppressedFindingsHasBeenSet;
   };
 
 } // namespace Model

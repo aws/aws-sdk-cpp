@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
@@ -41,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>A specific reservation that AWS recommends for purchase.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A specific reservation that Amazon Web Services recommends for
+   * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendation">AWS
    * API Reference</a></p>
    */
@@ -56,81 +46,81 @@ namespace Model
 
 
     /**
-     * <p>The account scope that AWS recommends that you purchase this instance for.
-     * For example, you can purchase this reservation for an entire organization in AWS
-     * Organizations.</p>
+     * <p>The account scope that Amazon Web Services recommends that you purchase this
+     * instance for. For example, you can purchase this reservation for an entire
+     * organization in Amazon Web Services Organizations.</p>
      */
     inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
 
     /**
-     * <p>The account scope that AWS recommends that you purchase this instance for.
-     * For example, you can purchase this reservation for an entire organization in AWS
-     * Organizations.</p>
+     * <p>The account scope that Amazon Web Services recommends that you purchase this
+     * instance for. For example, you can purchase this reservation for an entire
+     * organization in Amazon Web Services Organizations.</p>
      */
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
 
     /**
-     * <p>The account scope that AWS recommends that you purchase this instance for.
-     * For example, you can purchase this reservation for an entire organization in AWS
-     * Organizations.</p>
+     * <p>The account scope that Amazon Web Services recommends that you purchase this
+     * instance for. For example, you can purchase this reservation for an entire
+     * organization in Amazon Web Services Organizations.</p>
      */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
-     * <p>The account scope that AWS recommends that you purchase this instance for.
-     * For example, you can purchase this reservation for an entire organization in AWS
-     * Organizations.</p>
+     * <p>The account scope that Amazon Web Services recommends that you purchase this
+     * instance for. For example, you can purchase this reservation for an entire
+     * organization in Amazon Web Services Organizations.</p>
      */
     inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
 
     /**
-     * <p>The account scope that AWS recommends that you purchase this instance for.
-     * For example, you can purchase this reservation for an entire organization in AWS
-     * Organizations.</p>
+     * <p>The account scope that Amazon Web Services recommends that you purchase this
+     * instance for. For example, you can purchase this reservation for an entire
+     * organization in Amazon Web Services Organizations.</p>
      */
     inline ReservationPurchaseRecommendation& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
 
     /**
-     * <p>The account scope that AWS recommends that you purchase this instance for.
-     * For example, you can purchase this reservation for an entire organization in AWS
-     * Organizations.</p>
+     * <p>The account scope that Amazon Web Services recommends that you purchase this
+     * instance for. For example, you can purchase this reservation for an entire
+     * organization in Amazon Web Services Organizations.</p>
      */
     inline ReservationPurchaseRecommendation& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}
 
 
     /**
-     * <p>How many days of previous usage that AWS considers when making this
-     * recommendation.</p>
+     * <p>How many days of previous usage that Amazon Web Services considers when
+     * making this recommendation.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>How many days of previous usage that AWS considers when making this
-     * recommendation.</p>
+     * <p>How many days of previous usage that Amazon Web Services considers when
+     * making this recommendation.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>How many days of previous usage that AWS considers when making this
-     * recommendation.</p>
+     * <p>How many days of previous usage that Amazon Web Services considers when
+     * making this recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>How many days of previous usage that AWS considers when making this
-     * recommendation.</p>
+     * <p>How many days of previous usage that Amazon Web Services considers when
+     * making this recommendation.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>How many days of previous usage that AWS considers when making this
-     * recommendation.</p>
+     * <p>How many days of previous usage that Amazon Web Services considers when
+     * making this recommendation.</p>
      */
     inline ReservationPurchaseRecommendation& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>How many days of previous usage that AWS considers when making this
-     * recommendation.</p>
+     * <p>How many days of previous usage that Amazon Web Services considers when
+     * making this recommendation.</p>
      */
     inline ReservationPurchaseRecommendation& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 
@@ -167,38 +157,38 @@ namespace Model
 
 
     /**
-     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
-     * or <code>NoUpfront</code>.</p>
+     * <p>The payment option for the reservation (for example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>).</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
 
     /**
-     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
-     * or <code>NoUpfront</code>.</p>
+     * <p>The payment option for the reservation (for example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>).</p>
      */
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
-     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
-     * or <code>NoUpfront</code>.</p>
+     * <p>The payment option for the reservation (for example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>).</p>
      */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
-     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
-     * or <code>NoUpfront</code>.</p>
+     * <p>The payment option for the reservation (for example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>).</p>
      */
     inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
-     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
-     * or <code>NoUpfront</code>.</p>
+     * <p>The payment option for the reservation (for example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>).</p>
      */
     inline ReservationPurchaseRecommendation& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
 
     /**
-     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
-     * or <code>NoUpfront</code>.</p>
+     * <p>The payment option for the reservation (for example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>).</p>
      */
     inline ReservationPurchaseRecommendation& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
@@ -22,6 +12,7 @@
 #include <aws/s3/model/Owner.h>
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestCharged.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/s3/model/Part.h>
 #include <utility>
 
@@ -166,37 +157,44 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline ListPartsResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline ListPartsResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The name of the bucket to which the multipart upload was initiated. Does not
+     * return the access point ARN or access point alias if used.</p>
      */
     inline ListPartsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -400,41 +398,41 @@ namespace Model
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
-     * initiator is an AWS account, this element provides the same information as the
-     * <code>Owner</code> element. If the initiator is an IAM User, this element
-     * provides the user ARN and display name.</p>
+     * initiator is an Amazon Web Services account, this element provides the same
+     * information as the <code>Owner</code> element. If the initiator is an IAM User,
+     * this element provides the user ARN and display name.</p>
      */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
-     * initiator is an AWS account, this element provides the same information as the
-     * <code>Owner</code> element. If the initiator is an IAM User, this element
-     * provides the user ARN and display name.</p>
+     * initiator is an Amazon Web Services account, this element provides the same
+     * information as the <code>Owner</code> element. If the initiator is an IAM User,
+     * this element provides the user ARN and display name.</p>
      */
     inline void SetInitiator(const Initiator& value) { m_initiator = value; }
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
-     * initiator is an AWS account, this element provides the same information as the
-     * <code>Owner</code> element. If the initiator is an IAM User, this element
-     * provides the user ARN and display name.</p>
+     * initiator is an Amazon Web Services account, this element provides the same
+     * information as the <code>Owner</code> element. If the initiator is an IAM User,
+     * this element provides the user ARN and display name.</p>
      */
     inline void SetInitiator(Initiator&& value) { m_initiator = std::move(value); }
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
-     * initiator is an AWS account, this element provides the same information as the
-     * <code>Owner</code> element. If the initiator is an IAM User, this element
-     * provides the user ARN and display name.</p>
+     * initiator is an Amazon Web Services account, this element provides the same
+     * information as the <code>Owner</code> element. If the initiator is an IAM User,
+     * this element provides the user ARN and display name.</p>
      */
     inline ListPartsResult& WithInitiator(const Initiator& value) { SetInitiator(value); return *this;}
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
-     * initiator is an AWS account, this element provides the same information as the
-     * <code>Owner</code> element. If the initiator is an IAM User, this element
-     * provides the user ARN and display name.</p>
+     * initiator is an Amazon Web Services account, this element provides the same
+     * information as the <code>Owner</code> element. If the initiator is an IAM User,
+     * this element provides the user ARN and display name.</p>
      */
     inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 
@@ -521,6 +519,32 @@ namespace Model
     
     inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithm = value; }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline ListPartsResult& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>The algorithm that was used to create a checksum of the object.</p>
+     */
+    inline ListPartsResult& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_abortDate;
@@ -550,6 +574,8 @@ namespace Model
     StorageClass m_storageClass;
 
     RequestCharged m_requestCharged;
+
+    ChecksumAlgorithm m_checksumAlgorithm;
   };
 
 } // namespace Model

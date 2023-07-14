@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mq/model/BrokerState.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -35,6 +25,7 @@ namespace Aws
         static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int REBOOT_IN_PROGRESS_HASH = HashingUtils::HashString("REBOOT_IN_PROGRESS");
+        static const int CRITICAL_ACTION_REQUIRED_HASH = HashingUtils::HashString("CRITICAL_ACTION_REQUIRED");
 
 
         BrokerState GetBrokerStateForName(const Aws::String& name)
@@ -60,6 +51,10 @@ namespace Aws
           {
             return BrokerState::REBOOT_IN_PROGRESS;
           }
+          else if (hashCode == CRITICAL_ACTION_REQUIRED_HASH)
+          {
+            return BrokerState::CRITICAL_ACTION_REQUIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +79,8 @@ namespace Aws
             return "RUNNING";
           case BrokerState::REBOOT_IN_PROGRESS:
             return "REBOOT_IN_PROGRESS";
+          case BrokerState::CRITICAL_ACTION_REQUIRED:
+            return "CRITICAL_ACTION_REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/CaptionRectangle.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -45,6 +36,37 @@ namespace Model
     TeletextSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     TeletextSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline const CaptionRectangle& GetOutputRectangle() const{ return m_outputRectangle; }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline bool OutputRectangleHasBeenSet() const { return m_outputRectangleHasBeenSet; }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline void SetOutputRectangle(const CaptionRectangle& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = value; }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline void SetOutputRectangle(CaptionRectangle&& value) { m_outputRectangleHasBeenSet = true; m_outputRectangle = std::move(value); }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline TeletextSourceSettings& WithOutputRectangle(const CaptionRectangle& value) { SetOutputRectangle(value); return *this;}
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     */
+    inline TeletextSourceSettings& WithOutputRectangle(CaptionRectangle&& value) { SetOutputRectangle(std::move(value)); return *this;}
 
 
     /**
@@ -104,6 +126,9 @@ namespace Model
     inline TeletextSourceSettings& WithPageNumber(const char* value) { SetPageNumber(value); return *this;}
 
   private:
+
+    CaptionRectangle m_outputRectangle;
+    bool m_outputRectangleHasBeenSet;
 
     Aws::String m_pageNumber;
     bool m_pageNumberHasBeenSet;

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
@@ -90,89 +80,89 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Maximum number of tags to return in the response (integer). This
-     * parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of tags to return in the response (integer). This parameter
+     * value must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Maximum number of tags to return in the response (integer). This
-     * parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of tags to return in the response (integer). This parameter
+     * value must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>(Optional) Maximum number of tags to return in the response (integer). This
-     * parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of tags to return in the response (integer). This parameter
+     * value must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Maximum number of tags to return in the response (integer). This
-     * parameter value must be greater than 0. The number of items that Amazon FSx
-     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
-     * request and the service's internal maximum number of items per page.</p>
+     * <p>Maximum number of tags to return in the response (integer). This parameter
+     * value must be greater than 0. The number of items that Amazon FSx returns is the
+     * minimum of the <code>MaxResults</code> parameter specified in the request and
+     * the service's internal maximum number of items per page.</p>
      */
     inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>ListTagsForResource</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */

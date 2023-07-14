@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -102,10 +92,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -120,10 +108,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -138,10 +124,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -156,10 +140,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -174,10 +156,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -192,10 +172,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -210,10 +188,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>
@@ -228,10 +204,8 @@ namespace Model
      * <code>default-propagation-route-table</code> - Indicates whether this is the
      * default propagation route table for the transit gateway (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
-     * attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
-     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
-     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).</p> </li> <li> <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
      * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
      * route table.</p> </li> </ul>

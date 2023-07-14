@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/dms/model/Endpoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -56,7 +46,17 @@ Endpoint::Endpoint() :
     m_kinesisSettingsHasBeenSet(false),
     m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
-    m_redshiftSettingsHasBeenSet(false)
+    m_neptuneSettingsHasBeenSet(false),
+    m_redshiftSettingsHasBeenSet(false),
+    m_postgreSQLSettingsHasBeenSet(false),
+    m_mySQLSettingsHasBeenSet(false),
+    m_oracleSettingsHasBeenSet(false),
+    m_sybaseSettingsHasBeenSet(false),
+    m_microsoftSQLServerSettingsHasBeenSet(false),
+    m_iBMDb2SettingsHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
 }
 
@@ -88,7 +88,17 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_kinesisSettingsHasBeenSet(false),
     m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
-    m_redshiftSettingsHasBeenSet(false)
+    m_neptuneSettingsHasBeenSet(false),
+    m_redshiftSettingsHasBeenSet(false),
+    m_postgreSQLSettingsHasBeenSet(false),
+    m_mySQLSettingsHasBeenSet(false),
+    m_oracleSettingsHasBeenSet(false),
+    m_sybaseSettingsHasBeenSet(false),
+    m_microsoftSQLServerSettingsHasBeenSet(false),
+    m_iBMDb2SettingsHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -263,11 +273,81 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_elasticsearchSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NeptuneSettings"))
+  {
+    m_neptuneSettings = jsonValue.GetObject("NeptuneSettings");
+
+    m_neptuneSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RedshiftSettings"))
   {
     m_redshiftSettings = jsonValue.GetObject("RedshiftSettings");
 
     m_redshiftSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PostgreSQLSettings"))
+  {
+    m_postgreSQLSettings = jsonValue.GetObject("PostgreSQLSettings");
+
+    m_postgreSQLSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MySQLSettings"))
+  {
+    m_mySQLSettings = jsonValue.GetObject("MySQLSettings");
+
+    m_mySQLSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OracleSettings"))
+  {
+    m_oracleSettings = jsonValue.GetObject("OracleSettings");
+
+    m_oracleSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SybaseSettings"))
+  {
+    m_sybaseSettings = jsonValue.GetObject("SybaseSettings");
+
+    m_sybaseSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MicrosoftSQLServerSettings"))
+  {
+    m_microsoftSQLServerSettings = jsonValue.GetObject("MicrosoftSQLServerSettings");
+
+    m_microsoftSQLServerSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IBMDb2Settings"))
+  {
+    m_iBMDb2Settings = jsonValue.GetObject("IBMDb2Settings");
+
+    m_iBMDb2SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocDbSettings"))
+  {
+    m_docDbSettings = jsonValue.GetObject("DocDbSettings");
+
+    m_docDbSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RedisSettings"))
+  {
+    m_redisSettings = jsonValue.GetObject("RedisSettings");
+
+    m_redisSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GcpMySQLSettings"))
+  {
+    m_gcpMySQLSettings = jsonValue.GetObject("GcpMySQLSettings");
+
+    m_gcpMySQLSettingsHasBeenSet = true;
   }
 
   return *this;
@@ -419,9 +499,69 @@ JsonValue Endpoint::Jsonize() const
 
   }
 
+  if(m_neptuneSettingsHasBeenSet)
+  {
+   payload.WithObject("NeptuneSettings", m_neptuneSettings.Jsonize());
+
+  }
+
   if(m_redshiftSettingsHasBeenSet)
   {
    payload.WithObject("RedshiftSettings", m_redshiftSettings.Jsonize());
+
+  }
+
+  if(m_postgreSQLSettingsHasBeenSet)
+  {
+   payload.WithObject("PostgreSQLSettings", m_postgreSQLSettings.Jsonize());
+
+  }
+
+  if(m_mySQLSettingsHasBeenSet)
+  {
+   payload.WithObject("MySQLSettings", m_mySQLSettings.Jsonize());
+
+  }
+
+  if(m_oracleSettingsHasBeenSet)
+  {
+   payload.WithObject("OracleSettings", m_oracleSettings.Jsonize());
+
+  }
+
+  if(m_sybaseSettingsHasBeenSet)
+  {
+   payload.WithObject("SybaseSettings", m_sybaseSettings.Jsonize());
+
+  }
+
+  if(m_microsoftSQLServerSettingsHasBeenSet)
+  {
+   payload.WithObject("MicrosoftSQLServerSettings", m_microsoftSQLServerSettings.Jsonize());
+
+  }
+
+  if(m_iBMDb2SettingsHasBeenSet)
+  {
+   payload.WithObject("IBMDb2Settings", m_iBMDb2Settings.Jsonize());
+
+  }
+
+  if(m_docDbSettingsHasBeenSet)
+  {
+   payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
+
+  }
+
+  if(m_redisSettingsHasBeenSet)
+  {
+   payload.WithObject("RedisSettings", m_redisSettings.Jsonize());
+
+  }
+
+  if(m_gcpMySQLSettingsHasBeenSet)
+  {
+   payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
 
   }
 

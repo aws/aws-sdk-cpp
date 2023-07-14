@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
@@ -34,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>This structure contains the definition for a Contributor Insights
-   * rule.</p><p><h3>See Also:</h3>   <a
+   * <p>This structure contains the definition for a Contributor Insights rule. For
+   * more information about this rule, see<a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">
+   * Using Constributor Insights to analyze high-cardinality data</a> in the
+   * <i>Amazon CloudWatch User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRule">AWS
    * API Reference</a></p>
    */
@@ -134,56 +127,56 @@ namespace Model
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline InsightRule& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline InsightRule& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule",
-     * "Version": 1}</code>. For built-in rules, this is <code>{"Name":
+     * "Version": 1}</code>. For managed rules, this is <code>{"Name":
      * "ServiceLogRule", "Version": 1}</code> </p>
      */
     inline InsightRule& WithSchema(const char* value) { SetSchema(value); return *this;}

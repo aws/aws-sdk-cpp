@@ -1,20 +1,11 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/pinpoint/model/CustomDeliveryConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/pinpoint/model/Schedule.h>
@@ -38,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the settings for a campaign treatment. A treatment is a variation
-   * of a campaign that's used for A/B testing of a campaign.</p><p><h3>See
+   * <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a
+   * variation of a campaign that's used for A/B testing of a campaign.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TreatmentResource">AWS
    * API Reference</a></p>
@@ -51,6 +42,49 @@ namespace Model
     TreatmentResource(Aws::Utils::Json::JsonView jsonValue);
     TreatmentResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The delivery configuration settings for sending the treatment through a
+     * custom channel. This object is required if the MessageConfiguration object for
+     * the treatment specifies a CustomMessage object.</p>
+     */
+    inline const CustomDeliveryConfiguration& GetCustomDeliveryConfiguration() const{ return m_customDeliveryConfiguration; }
+
+    /**
+     * <p>The delivery configuration settings for sending the treatment through a
+     * custom channel. This object is required if the MessageConfiguration object for
+     * the treatment specifies a CustomMessage object.</p>
+     */
+    inline bool CustomDeliveryConfigurationHasBeenSet() const { return m_customDeliveryConfigurationHasBeenSet; }
+
+    /**
+     * <p>The delivery configuration settings for sending the treatment through a
+     * custom channel. This object is required if the MessageConfiguration object for
+     * the treatment specifies a CustomMessage object.</p>
+     */
+    inline void SetCustomDeliveryConfiguration(const CustomDeliveryConfiguration& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = value; }
+
+    /**
+     * <p>The delivery configuration settings for sending the treatment through a
+     * custom channel. This object is required if the MessageConfiguration object for
+     * the treatment specifies a CustomMessage object.</p>
+     */
+    inline void SetCustomDeliveryConfiguration(CustomDeliveryConfiguration&& value) { m_customDeliveryConfigurationHasBeenSet = true; m_customDeliveryConfiguration = std::move(value); }
+
+    /**
+     * <p>The delivery configuration settings for sending the treatment through a
+     * custom channel. This object is required if the MessageConfiguration object for
+     * the treatment specifies a CustomMessage object.</p>
+     */
+    inline TreatmentResource& WithCustomDeliveryConfiguration(const CustomDeliveryConfiguration& value) { SetCustomDeliveryConfiguration(value); return *this;}
+
+    /**
+     * <p>The delivery configuration settings for sending the treatment through a
+     * custom channel. This object is required if the MessageConfiguration object for
+     * the treatment specifies a CustomMessage object.</p>
+     */
+    inline TreatmentResource& WithCustomDeliveryConfiguration(CustomDeliveryConfiguration&& value) { SetCustomDeliveryConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -285,54 +319,49 @@ namespace Model
 
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline TreatmentResource& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline TreatmentResource& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom name of the treatment. A treatment is a variation of a campaign
-     * that's used for A/B testing of a campaign.</p>
+     * <p>The custom name of the treatment.</p>
      */
     inline TreatmentResource& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
   private:
+
+    CustomDeliveryConfiguration m_customDeliveryConfiguration;
+    bool m_customDeliveryConfigurationHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

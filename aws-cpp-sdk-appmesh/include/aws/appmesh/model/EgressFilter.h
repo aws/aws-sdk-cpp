@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -50,85 +40,55 @@ namespace Model
 
     /**
      * <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which
-     * allows
-         egress only from virtual nodes to other defined resources in the
-     * service mesh (and any
-         traffic to <code>*.amazonaws.com</code> for AWS
-     * API calls). You can set the egress filter
-         type to
-     * <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-
-     *         service mesh.</p>
+     * allows egress only from virtual nodes to other defined resources in the service
+     * mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services
+     * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
+     * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
     inline const EgressFilterType& GetType() const{ return m_type; }
 
     /**
      * <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which
-     * allows
-         egress only from virtual nodes to other defined resources in the
-     * service mesh (and any
-         traffic to <code>*.amazonaws.com</code> for AWS
-     * API calls). You can set the egress filter
-         type to
-     * <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-
-     *         service mesh.</p>
+     * allows egress only from virtual nodes to other defined resources in the service
+     * mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services
+     * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
+     * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which
-     * allows
-         egress only from virtual nodes to other defined resources in the
-     * service mesh (and any
-         traffic to <code>*.amazonaws.com</code> for AWS
-     * API calls). You can set the egress filter
-         type to
-     * <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-
-     *         service mesh.</p>
+     * allows egress only from virtual nodes to other defined resources in the service
+     * mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services
+     * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
+     * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
     inline void SetType(const EgressFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which
-     * allows
-         egress only from virtual nodes to other defined resources in the
-     * service mesh (and any
-         traffic to <code>*.amazonaws.com</code> for AWS
-     * API calls). You can set the egress filter
-         type to
-     * <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-
-     *         service mesh.</p>
+     * allows egress only from virtual nodes to other defined resources in the service
+     * mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services
+     * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
+     * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
     inline void SetType(EgressFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which
-     * allows
-         egress only from virtual nodes to other defined resources in the
-     * service mesh (and any
-         traffic to <code>*.amazonaws.com</code> for AWS
-     * API calls). You can set the egress filter
-         type to
-     * <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-
-     *         service mesh.</p>
+     * allows egress only from virtual nodes to other defined resources in the service
+     * mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services
+     * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
+     * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
     inline EgressFilter& WithType(const EgressFilterType& value) { SetType(value); return *this;}
 
     /**
      * <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which
-     * allows
-         egress only from virtual nodes to other defined resources in the
-     * service mesh (and any
-         traffic to <code>*.amazonaws.com</code> for AWS
-     * API calls). You can set the egress filter
-         type to
-     * <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-
-     *         service mesh.</p>
+     * allows egress only from virtual nodes to other defined resources in the service
+     * mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services
+     * API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to
+     * allow egress to any endpoint inside or outside of the service mesh.</p>
      */
     inline EgressFilter& WithType(EgressFilterType&& value) { SetType(std::move(value)); return *this;}
 

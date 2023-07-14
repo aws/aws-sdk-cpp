@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -19,7 +9,6 @@
 #include <aws/sagemaker/model/BooleanOperator.h>
 #include <aws/sagemaker/model/Filter.h>
 #include <aws/sagemaker/model/NestedFilters.h>
-#include <aws/sagemaker/model/SearchExpression.h>
 #include <utility>
 
 namespace Aws
@@ -45,8 +34,7 @@ namespace Model
    * twenty elements.</p> <p>A <code>SearchExpression</code> contains the following
    * components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter
    * defines a simple Boolean expression comprised of a resource property name,
-   * Boolean operator, and value. A <code>SearchExpression</code> can include only
-   * one <code>Contains</code> operator.</p> </li> <li> <p>A list of
+   * Boolean operator, and value.</p> </li> <li> <p>A list of
    * <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean
    * expressions using a list of resource properties. A nested filter is satisfied if
    * a single object in the list satisfies all Boolean expressions.</p> </li> <li>

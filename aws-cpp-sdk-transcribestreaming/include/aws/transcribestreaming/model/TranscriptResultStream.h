@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
@@ -20,6 +10,7 @@
 #include <aws/transcribestreaming/model/LimitExceededException.h>
 #include <aws/transcribestreaming/model/InternalFailureException.h>
 #include <aws/transcribestreaming/model/ConflictException.h>
+#include <aws/transcribestreaming/model/ServiceUnavailableException.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +245,37 @@ namespace Model
      */
     inline TranscriptResultStream& WithConflictException(ConflictException&& value) { SetConflictException(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline TranscriptResultStream& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline TranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+
   private:
 
     TranscriptEvent m_transcriptEvent;
@@ -270,6 +292,9 @@ namespace Model
 
     ConflictException m_conflictException;
     bool m_conflictExceptionHasBeenSet;
+
+    ServiceUnavailableException m_serviceUnavailableException;
+    bool m_serviceUnavailableExceptionHasBeenSet;
   };
 
 } // namespace Model

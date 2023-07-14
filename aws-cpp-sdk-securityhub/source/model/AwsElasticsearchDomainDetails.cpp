@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -36,8 +26,11 @@ AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails() :
     m_endpointHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
+    m_elasticsearchClusterConfigHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_logPublishingOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
+    m_serviceSoftwareOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false)
 {
 }
@@ -50,8 +43,11 @@ AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails(JsonView jsonValue)
     m_endpointHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
+    m_elasticsearchClusterConfigHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_logPublishingOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
+    m_serviceSoftwareOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -111,6 +107,13 @@ AwsElasticsearchDomainDetails& AwsElasticsearchDomainDetails::operator =(JsonVie
     m_elasticsearchVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ElasticsearchClusterConfig"))
+  {
+    m_elasticsearchClusterConfig = jsonValue.GetObject("ElasticsearchClusterConfig");
+
+    m_elasticsearchClusterConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EncryptionAtRestOptions"))
   {
     m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
@@ -118,11 +121,25 @@ AwsElasticsearchDomainDetails& AwsElasticsearchDomainDetails::operator =(JsonVie
     m_encryptionAtRestOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogPublishingOptions"))
+  {
+    m_logPublishingOptions = jsonValue.GetObject("LogPublishingOptions");
+
+    m_logPublishingOptionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("NodeToNodeEncryptionOptions"))
   {
     m_nodeToNodeEncryptionOptions = jsonValue.GetObject("NodeToNodeEncryptionOptions");
 
     m_nodeToNodeEncryptionOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceSoftwareOptions"))
+  {
+    m_serviceSoftwareOptions = jsonValue.GetObject("ServiceSoftwareOptions");
+
+    m_serviceSoftwareOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VPCOptions"))
@@ -186,15 +203,33 @@ JsonValue AwsElasticsearchDomainDetails::Jsonize() const
 
   }
 
+  if(m_elasticsearchClusterConfigHasBeenSet)
+  {
+   payload.WithObject("ElasticsearchClusterConfig", m_elasticsearchClusterConfig.Jsonize());
+
+  }
+
   if(m_encryptionAtRestOptionsHasBeenSet)
   {
    payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
 
   }
 
+  if(m_logPublishingOptionsHasBeenSet)
+  {
+   payload.WithObject("LogPublishingOptions", m_logPublishingOptions.Jsonize());
+
+  }
+
   if(m_nodeToNodeEncryptionOptionsHasBeenSet)
   {
    payload.WithObject("NodeToNodeEncryptionOptions", m_nodeToNodeEncryptionOptions.Jsonize());
+
+  }
+
+  if(m_serviceSoftwareOptionsHasBeenSet)
+  {
+   payload.WithObject("ServiceSoftwareOptions", m_serviceSoftwareOptions.Jsonize());
 
   }
 

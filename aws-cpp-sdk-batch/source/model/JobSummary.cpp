@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/batch/model/JobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -29,6 +19,7 @@ namespace Model
 {
 
 JobSummary::JobSummary() : 
+    m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_createdAt(0),
@@ -42,11 +33,13 @@ JobSummary::JobSummary() :
     m_stoppedAtHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false)
+    m_nodePropertiesHasBeenSet(false),
+    m_jobDefinitionHasBeenSet(false)
 {
 }
 
 JobSummary::JobSummary(JsonView jsonValue) : 
+    m_jobArnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_createdAt(0),
@@ -60,13 +53,21 @@ JobSummary::JobSummary(JsonView jsonValue) :
     m_stoppedAtHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false)
+    m_nodePropertiesHasBeenSet(false),
+    m_jobDefinitionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("jobArn"))
+  {
+    m_jobArn = jsonValue.GetString("jobArn");
+
+    m_jobArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
@@ -137,12 +138,25 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_nodePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jobDefinition"))
+  {
+    m_jobDefinition = jsonValue.GetString("jobDefinition");
+
+    m_jobDefinitionHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue JobSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_jobArnHasBeenSet)
+  {
+   payload.WithString("jobArn", m_jobArn);
+
+  }
 
   if(m_jobIdHasBeenSet)
   {
@@ -200,6 +214,12 @@ JsonValue JobSummary::Jsonize() const
   if(m_nodePropertiesHasBeenSet)
   {
    payload.WithObject("nodeProperties", m_nodeProperties.Jsonize());
+
+  }
+
+  if(m_jobDefinitionHasBeenSet)
+  {
+   payload.WithString("jobDefinition", m_jobDefinition);
 
   }
 

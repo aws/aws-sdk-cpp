@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -21,6 +11,7 @@
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/autoscaling/model/WarmPoolConfiguration.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -306,26 +297,47 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline int GetPredictedCapacity() const{ return m_predictedCapacity; }
+
+    /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline bool PredictedCapacityHasBeenSet() const { return m_predictedCapacityHasBeenSet; }
+
+    /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline void SetPredictedCapacity(int value) { m_predictedCapacityHasBeenSet = true; m_predictedCapacity = value; }
+
+    /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline AutoScalingGroup& WithPredictedCapacity(int value) { SetPredictedCapacity(value); return *this;}
+
+
+    /**
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline AutoScalingGroup& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
@@ -480,89 +492,85 @@ namespace Model
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * <p>The duration of the health check grace period, in seconds.</p>
      */
     inline AutoScalingGroup& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -812,50 +820,50 @@ namespace Model
 
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline AutoScalingGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline AutoScalingGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the group when <a>DeleteAutoScalingGroup</a> is in
-     * progress.</p>
+     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * operation is in progress.</p>
      */
     inline AutoScalingGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -974,76 +982,268 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline bool ServiceLinkedRoleARNHasBeenSet() const { return m_serviceLinkedRoleARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline AutoScalingGroup& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Indicates whether Capacity Rebalancing is enabled.</p>
+     */
+    inline AutoScalingGroup& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
+
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline const WarmPoolConfiguration& GetWarmPoolConfiguration() const{ return m_warmPoolConfiguration; }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline bool WarmPoolConfigurationHasBeenSet() const { return m_warmPoolConfigurationHasBeenSet; }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline void SetWarmPoolConfiguration(const WarmPoolConfiguration& value) { m_warmPoolConfigurationHasBeenSet = true; m_warmPoolConfiguration = value; }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline void SetWarmPoolConfiguration(WarmPoolConfiguration&& value) { m_warmPoolConfigurationHasBeenSet = true; m_warmPoolConfiguration = std::move(value); }
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline AutoScalingGroup& WithWarmPoolConfiguration(const WarmPoolConfiguration& value) { SetWarmPoolConfiguration(value); return *this;}
+
+    /**
+     * <p>The warm pool for the group.</p>
+     */
+    inline AutoScalingGroup& WithWarmPoolConfiguration(WarmPoolConfiguration&& value) { SetWarmPoolConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline int GetWarmPoolSize() const{ return m_warmPoolSize; }
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline bool WarmPoolSizeHasBeenSet() const { return m_warmPoolSizeHasBeenSet; }
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline void SetWarmPoolSize(int value) { m_warmPoolSizeHasBeenSet = true; m_warmPoolSize = value; }
+
+    /**
+     * <p>The current size of the warm pool.</p>
+     */
+    inline AutoScalingGroup& WithWarmPoolSize(int value) { SetWarmPoolSize(value); return *this;}
+
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline AutoScalingGroup& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline AutoScalingGroup& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline AutoScalingGroup& WithContext(const char* value) { SetContext(value); return *this;}
+
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline const Aws::String& GetDesiredCapacityType() const{ return m_desiredCapacityType; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline bool DesiredCapacityTypeHasBeenSet() const { return m_desiredCapacityTypeHasBeenSet; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline void SetDesiredCapacityType(const Aws::String& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = value; }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline void SetDesiredCapacityType(Aws::String&& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = std::move(value); }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline void SetDesiredCapacityType(const char* value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType.assign(value); }
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline AutoScalingGroup& WithDesiredCapacityType(const Aws::String& value) { SetDesiredCapacityType(value); return *this;}
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline AutoScalingGroup& WithDesiredCapacityType(Aws::String&& value) { SetDesiredCapacityType(std::move(value)); return *this;}
+
+    /**
+     * <p>The unit of measurement for the value specified for desired capacity. Amazon
+     * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
+     * instance type selection only.</p>
+     */
+    inline AutoScalingGroup& WithDesiredCapacityType(const char* value) { SetDesiredCapacityType(value); return *this;}
+
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline int GetDefaultInstanceWarmup() const{ return m_defaultInstanceWarmup; }
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline void SetDefaultInstanceWarmup(int value) { m_defaultInstanceWarmupHasBeenSet = true; m_defaultInstanceWarmup = value; }
+
+    /**
+     * <p>The duration of the default instance warmup, in seconds.</p>
+     */
+    inline AutoScalingGroup& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
 
   private:
 
@@ -1070,6 +1270,9 @@ namespace Model
 
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
+    int m_predictedCapacity;
+    bool m_predictedCapacityHasBeenSet;
 
     int m_defaultCooldown;
     bool m_defaultCooldownHasBeenSet;
@@ -1124,6 +1327,24 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
+
+    WarmPoolConfiguration m_warmPoolConfiguration;
+    bool m_warmPoolConfigurationHasBeenSet;
+
+    int m_warmPoolSize;
+    bool m_warmPoolSizeHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
+
+    Aws::String m_desiredCapacityType;
+    bool m_desiredCapacityTypeHasBeenSet;
+
+    int m_defaultInstanceWarmup;
+    bool m_defaultInstanceWarmupHasBeenSet;
   };
 
 } // namespace Model

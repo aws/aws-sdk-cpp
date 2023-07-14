@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -47,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline CreateExperimentRequest& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline CreateExperimentRequest& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the experiment. The name must be unique in your AWS account and
-     * is not case-sensitive.</p>
+     * <p>The name of the experiment. The name must be unique in your Amazon Web
+     * Services account and is not case-sensitive.</p>
      */
     inline CreateExperimentRequest& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
 

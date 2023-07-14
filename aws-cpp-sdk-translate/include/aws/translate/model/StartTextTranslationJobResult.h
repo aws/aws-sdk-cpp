@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/translate/Translate_EXPORTS.h>
@@ -92,7 +82,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -108,7 +98,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -124,7 +114,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -140,7 +130,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>
@@ -156,7 +146,7 @@ namespace Model
      * processing.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Amazon Translate is
      * processing the job.</p> </li> <li> <p> <code>COMPLETED</code> - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>
-     * <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The
+     * <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The
      * errors can be analyzed in the job's output.</p> </li> <li> <p>
      * <code>FAILED</code> - The job did not complete. To get details, use the
      * <a>DescribeTextTranslationJob</a> operation.</p> </li> <li> <p>

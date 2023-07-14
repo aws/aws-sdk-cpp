@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
@@ -159,163 +149,147 @@ namespace Model
 
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ResourceMetadata& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ResourceMetadata& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
-     * your own, then it's
-               the ID of the account that shared the mesh
+     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
+     * account ID is not your own, then it's the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ResourceMetadata& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
 
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ResourceMetadata& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ResourceMetadata& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
-     * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+     * <p>The Amazon Web Services IAM account ID of the resource owner. If the account
+     * ID is not your own, then it's the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ResourceMetadata& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
 
@@ -363,29 +337,25 @@ namespace Model
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline long long GetVersion() const{ return m_version; }
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline ResourceMetadata& WithVersion(long long value) { SetVersion(value); return *this;}
 

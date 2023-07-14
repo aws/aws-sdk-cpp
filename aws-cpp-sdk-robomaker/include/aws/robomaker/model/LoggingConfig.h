@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
@@ -44,31 +34,6 @@ namespace Model
     LoggingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline bool GetRecordAllRosTopics() const{ return m_recordAllRosTopics; }
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline bool RecordAllRosTopicsHasBeenSet() const { return m_recordAllRosTopicsHasBeenSet; }
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline void SetRecordAllRosTopics(bool value) { m_recordAllRosTopicsHasBeenSet = true; m_recordAllRosTopics = value; }
-
-    /**
-     * <p>A boolean indicating whether to record all ROS topics.</p>
-     */
-    inline LoggingConfig& WithRecordAllRosTopics(bool value) { SetRecordAllRosTopics(value); return *this;}
-
-  private:
-
-    bool m_recordAllRosTopics;
-    bool m_recordAllRosTopicsHasBeenSet;
   };
 
 } // namespace Model

@@ -1,17 +1,7 @@
-/*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 
@@ -66,7 +56,7 @@ namespace Aws
         virtual void AddQueryStringParameters(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
 
         /**
-         * Put the request to a url for later presigning. This will push the body to the url and 
+         * Put the request to a url for later presigning. This will push the body to the url and
          * then adds the existing query string parameters as normal.
          */
         virtual void PutToPresignedUrl(Aws::Http::URI& uri) const { DumpBodyToUrl(uri); AddQueryStringParameters(uri); }
@@ -160,11 +150,17 @@ namespace Aws
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
 
+        inline virtual bool ShouldValidateResponseChecksum() const { return false; }
+
+        inline virtual Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const { return {}; }
+
+        inline virtual Aws::String GetChecksumAlgorithmName() const { return {}; }
+
         virtual const char* GetServiceRequestName() const = 0;
 
     protected:
         /**
-         * Default does nothing. Override this to convert what would otherwise be the payload of the 
+         * Default does nothing. Override this to convert what would otherwise be the payload of the
          *  request to a query string format.
          */
         virtual void DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }

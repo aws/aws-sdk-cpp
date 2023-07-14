@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
@@ -277,22 +267,40 @@ namespace Model
     inline BatchReadOperation& WithGetObjectAttributes(BatchGetObjectAttributes&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline const BatchListObjectParents& GetListObjectParents() const{ return m_listObjectParents; }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline bool ListObjectParentsHasBeenSet() const { return m_listObjectParentsHasBeenSet; }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline void SetListObjectParents(const BatchListObjectParents& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = value; }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline void SetListObjectParents(BatchListObjectParents&& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = std::move(value); }
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline BatchReadOperation& WithListObjectParents(const BatchListObjectParents& value) { SetListObjectParents(value); return *this;}
 
-    
+    /**
+     * <p>Lists parent objects that are associated with a given object in pagination
+     * fashion.</p>
+     */
     inline BatchReadOperation& WithListObjectParents(BatchListObjectParents&& value) { SetListObjectParents(std::move(value)); return *this;}
 
 

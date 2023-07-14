@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/mediaconvert/model/BurninSubtitleAlignment.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -32,6 +22,7 @@ namespace Aws
 
         static const int CENTERED_HASH = HashingUtils::HashString("CENTERED");
         static const int LEFT_HASH = HashingUtils::HashString("LEFT");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         BurninSubtitleAlignment GetBurninSubtitleAlignmentForName(const Aws::String& name)
@@ -44,6 +35,10 @@ namespace Aws
           else if (hashCode == LEFT_HASH)
           {
             return BurninSubtitleAlignment::LEFT;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return BurninSubtitleAlignment::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +58,8 @@ namespace Aws
             return "CENTERED";
           case BurninSubtitleAlignment::LEFT:
             return "LEFT";
+          case BurninSubtitleAlignment::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -94,64 +84,72 @@ namespace Model
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline bool CacheParameterGroupFamilyHasBeenSet() const { return m_cacheParameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = std::move(value); }
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
      * is compatible with.</p> <p>Valid values are: <code>memcached1.4</code> |
-     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
+     * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
+     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> | </p>
      */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
@@ -199,27 +197,68 @@ namespace Model
 
     /**
      * <p>Indicates whether the parameter group is associated with a Global
-     * Datastore</p>
+     * datastore</p>
      */
     inline bool GetIsGlobal() const{ return m_isGlobal; }
 
     /**
      * <p>Indicates whether the parameter group is associated with a Global
-     * Datastore</p>
+     * datastore</p>
      */
     inline bool IsGlobalHasBeenSet() const { return m_isGlobalHasBeenSet; }
 
     /**
      * <p>Indicates whether the parameter group is associated with a Global
-     * Datastore</p>
+     * datastore</p>
      */
     inline void SetIsGlobal(bool value) { m_isGlobalHasBeenSet = true; m_isGlobal = value; }
 
     /**
      * <p>Indicates whether the parameter group is associated with a Global
-     * Datastore</p>
+     * datastore</p>
      */
     inline CacheParameterGroup& WithIsGlobal(bool value) { SetIsGlobal(value); return *this;}
+
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline CacheParameterGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline CacheParameterGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline CacheParameterGroup& WithARN(const char* value) { SetARN(value); return *this;}
 
   private:
 
@@ -234,6 +273,9 @@ namespace Model
 
     bool m_isGlobal;
     bool m_isGlobalHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

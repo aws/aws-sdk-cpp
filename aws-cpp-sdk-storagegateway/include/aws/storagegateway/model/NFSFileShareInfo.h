@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -19,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/CacheAttributes.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
@@ -39,8 +30,8 @@ namespace Model
 
   /**
    * <p>The Unix file permissions and ownership information assigned, by default, to
-   * native S3 objects when file gateway discovers them in S3 buckets. This operation
-   * is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+   * native S3 objects when an S3 File Gateway discovers them in S3 buckets. This
+   * operation is only supported in S3 File Gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo">AWS
    * API Reference</a></p>
    */
@@ -173,26 +164,30 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline NFSFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
@@ -298,66 +293,66 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
@@ -435,100 +430,120 @@ namespace Model
 
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline NFSFileShareInfo& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline NFSFileShareInfo& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
 
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline NFSFileShareInfo& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
 
@@ -597,6 +612,402 @@ namespace Model
      */
     inline NFSFileShareInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline NFSFileShareInfo& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline NFSFileShareInfo& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p>  <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
+     */
+    inline NFSFileShareInfo& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
+
+
+    /**
+     * <p>Refresh cache information for the file share.</p>
+     */
+    inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
+
+    /**
+     * <p>Refresh cache information for the file share.</p>
+     */
+    inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
+
+    /**
+     * <p>Refresh cache information for the file share.</p>
+     */
+    inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
+
+    /**
+     * <p>Refresh cache information for the file share.</p>
+     */
+    inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
+
+    /**
+     * <p>Refresh cache information for the file share.</p>
+     */
+    inline NFSFileShareInfo& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
+
+    /**
+     * <p>Refresh cache information for the file share.</p>
+     */
+    inline NFSFileShareInfo& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline void SetNotificationPolicy(const Aws::String& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = value; }
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline void SetNotificationPolicy(Aws::String&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::move(value); }
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline void SetNotificationPolicy(const char* value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy.assign(value); }
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline NFSFileShareInfo& WithNotificationPolicy(const Aws::String& value) { SetNotificationPolicy(value); return *this;}
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline NFSFileShareInfo& WithNotificationPolicy(Aws::String&& value) { SetNotificationPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
+     */
+    inline NFSFileShareInfo& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
+
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetVPCEndpointDNSName() const{ return m_vPCEndpointDNSName; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline bool VPCEndpointDNSNameHasBeenSet() const { return m_vPCEndpointDNSNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const Aws::String& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = value; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(Aws::String&& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = std::move(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const char* value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName.assign(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithVPCEndpointDNSName(const Aws::String& value) { SetVPCEndpointDNSName(value); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithVPCEndpointDNSName(Aws::String&& value) { SetVPCEndpointDNSName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithVPCEndpointDNSName(const char* value) { SetVPCEndpointDNSName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline NFSFileShareInfo& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline NFSFileShareInfo& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline NFSFileShareInfo& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+
   private:
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
@@ -652,6 +1063,24 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_fileShareName;
+    bool m_fileShareNameHasBeenSet;
+
+    CacheAttributes m_cacheAttributes;
+    bool m_cacheAttributesHasBeenSet;
+
+    Aws::String m_notificationPolicy;
+    bool m_notificationPolicyHasBeenSet;
+
+    Aws::String m_vPCEndpointDNSName;
+    bool m_vPCEndpointDNSNameHasBeenSet;
+
+    Aws::String m_bucketRegion;
+    bool m_bucketRegionHasBeenSet;
+
+    Aws::String m_auditDestinationARN;
+    bool m_auditDestinationARNHasBeenSet;
   };
 
 } // namespace Model

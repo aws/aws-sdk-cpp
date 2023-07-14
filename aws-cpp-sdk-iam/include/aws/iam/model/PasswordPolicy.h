@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -71,106 +61,138 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline void SetRequireSymbols(bool value) { m_requireSymbolsHasBeenSet = true; m_requireSymbols = value; }
 
     /**
-     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following symbols:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
      */
     inline PasswordPolicy& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline bool GetRequireNumbers() const{ return m_requireNumbers; }
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
 
     /**
-     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p>
      */
     inline PasswordPolicy& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline bool RequireUppercaseCharactersHasBeenSet() const { return m_requireUppercaseCharactersHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline void SetRequireUppercaseCharacters(bool value) { m_requireUppercaseCharactersHasBeenSet = true; m_requireUppercaseCharacters = value; }
 
     /**
-     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character (A to Z).</p>
      */
     inline PasswordPolicy& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline bool RequireLowercaseCharactersHasBeenSet() const { return m_requireLowercaseCharactersHasBeenSet; }
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline void SetRequireLowercaseCharacters(bool value) { m_requireLowercaseCharactersHasBeenSet = true; m_requireLowercaseCharacters = value; }
 
     /**
-     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character (a to z).</p>
      */
     inline PasswordPolicy& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
 
 
     /**
-     * <p>Specifies whether IAM users are allowed to change their own password.</p>
+     * <p>Specifies whether IAM users are allowed to change their own password. Gives
+     * IAM users permissions to <code>iam:ChangePassword</code> for only their user and
+     * to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not
+     * attach a permissions policy to each user, rather the permissions are applied at
+     * the account-level for all users by IAM.</p>
      */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
 
     /**
-     * <p>Specifies whether IAM users are allowed to change their own password.</p>
+     * <p>Specifies whether IAM users are allowed to change their own password. Gives
+     * IAM users permissions to <code>iam:ChangePassword</code> for only their user and
+     * to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not
+     * attach a permissions policy to each user, rather the permissions are applied at
+     * the account-level for all users by IAM.</p>
      */
     inline bool AllowUsersToChangePasswordHasBeenSet() const { return m_allowUsersToChangePasswordHasBeenSet; }
 
     /**
-     * <p>Specifies whether IAM users are allowed to change their own password.</p>
+     * <p>Specifies whether IAM users are allowed to change their own password. Gives
+     * IAM users permissions to <code>iam:ChangePassword</code> for only their user and
+     * to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not
+     * attach a permissions policy to each user, rather the permissions are applied at
+     * the account-level for all users by IAM.</p>
      */
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
 
     /**
-     * <p>Specifies whether IAM users are allowed to change their own password.</p>
+     * <p>Specifies whether IAM users are allowed to change their own password. Gives
+     * IAM users permissions to <code>iam:ChangePassword</code> for only their user and
+     * to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not
+     * attach a permissions policy to each user, rather the permissions are applied at
+     * the account-level for all users by IAM.</p>
      */
     inline PasswordPolicy& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
 
@@ -251,26 +273,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether IAM users are prevented from setting a new password after
-     * their password has expired.</p>
+     * <p>Specifies whether IAM users are prevented from setting a new password via the
+     * Amazon Web Services Management Console after their password has expired. The IAM
+     * user cannot access the console until an administrator resets the password. IAM
+     * users with <code>iam:ChangePassword</code> permission and active access keys can
+     * reset their own expired console password using the CLI or API.</p>
      */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
 
     /**
-     * <p>Specifies whether IAM users are prevented from setting a new password after
-     * their password has expired.</p>
+     * <p>Specifies whether IAM users are prevented from setting a new password via the
+     * Amazon Web Services Management Console after their password has expired. The IAM
+     * user cannot access the console until an administrator resets the password. IAM
+     * users with <code>iam:ChangePassword</code> permission and active access keys can
+     * reset their own expired console password using the CLI or API.</p>
      */
     inline bool HardExpiryHasBeenSet() const { return m_hardExpiryHasBeenSet; }
 
     /**
-     * <p>Specifies whether IAM users are prevented from setting a new password after
-     * their password has expired.</p>
+     * <p>Specifies whether IAM users are prevented from setting a new password via the
+     * Amazon Web Services Management Console after their password has expired. The IAM
+     * user cannot access the console until an administrator resets the password. IAM
+     * users with <code>iam:ChangePassword</code> permission and active access keys can
+     * reset their own expired console password using the CLI or API.</p>
      */
     inline void SetHardExpiry(bool value) { m_hardExpiryHasBeenSet = true; m_hardExpiry = value; }
 
     /**
-     * <p>Specifies whether IAM users are prevented from setting a new password after
-     * their password has expired.</p>
+     * <p>Specifies whether IAM users are prevented from setting a new password via the
+     * Amazon Web Services Management Console after their password has expired. The IAM
+     * user cannot access the console until an administrator resets the password. IAM
+     * users with <code>iam:ChangePassword</code> permission and active access keys can
+     * reset their own expired console password using the CLI or API.</p>
      */
     inline PasswordPolicy& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 

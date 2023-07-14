@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
@@ -39,7 +29,7 @@ namespace Model
    * <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about
    * managed policies, refer to <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-   * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
+   * policies and inline policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyUser">AWS API
    * Reference</a></p>
@@ -100,7 +90,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
@@ -108,7 +98,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
@@ -116,7 +106,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
@@ -124,7 +114,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
@@ -132,7 +122,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
@@ -140,7 +130,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline PolicyUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
@@ -148,7 +138,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline PolicyUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
@@ -156,7 +146,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline PolicyUser& WithUserId(const char* value) { SetUserId(value); return *this;}
 

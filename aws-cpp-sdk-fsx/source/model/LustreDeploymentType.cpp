@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/fsx/model/LustreDeploymentType.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -33,6 +23,7 @@ namespace Aws
         static const int SCRATCH_1_HASH = HashingUtils::HashString("SCRATCH_1");
         static const int SCRATCH_2_HASH = HashingUtils::HashString("SCRATCH_2");
         static const int PERSISTENT_1_HASH = HashingUtils::HashString("PERSISTENT_1");
+        static const int PERSISTENT_2_HASH = HashingUtils::HashString("PERSISTENT_2");
 
 
         LustreDeploymentType GetLustreDeploymentTypeForName(const Aws::String& name)
@@ -49,6 +40,10 @@ namespace Aws
           else if (hashCode == PERSISTENT_1_HASH)
           {
             return LustreDeploymentType::PERSISTENT_1;
+          }
+          else if (hashCode == PERSISTENT_2_HASH)
+          {
+            return LustreDeploymentType::PERSISTENT_2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +65,8 @@ namespace Aws
             return "SCRATCH_2";
           case LustreDeploymentType::PERSISTENT_1:
             return "PERSISTENT_1";
+          case LustreDeploymentType::PERSISTENT_2:
+            return "PERSISTENT_2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

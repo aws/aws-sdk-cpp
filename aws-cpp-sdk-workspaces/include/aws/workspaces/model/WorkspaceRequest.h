@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
@@ -52,107 +42,99 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
-     * can use <a>DescribeWorkspaceDirectories</a> to list the available
-     * directories.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace. You can
+     * use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
      */
     inline WorkspaceRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user for the WorkSpace. This user name must exist in the
-     * AWS Directory Service directory for the WorkSpace.</p>
+     * Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -207,50 +189,50 @@ namespace Model
 
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline const Aws::String& GetVolumeEncryptionKey() const{ return m_volumeEncryptionKey; }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline bool VolumeEncryptionKeyHasBeenSet() const { return m_volumeEncryptionKeyHasBeenSet; }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline void SetVolumeEncryptionKey(const Aws::String& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::move(value); }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline void SetVolumeEncryptionKey(const char* value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey.assign(value); }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline WorkspaceRequest& WithVolumeEncryptionKey(const Aws::String& value) { SetVolumeEncryptionKey(value); return *this;}
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline WorkspaceRequest& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline WorkspaceRequest& WithVolumeEncryptionKey(const char* value) { SetVolumeEncryptionKey(value); return *this;}
 
